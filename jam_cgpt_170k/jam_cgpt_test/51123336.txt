@@ -1,0 +1,11 @@
+TDAT:    public void testTimeInMillisApproximate() throws Exception {
+      System.out.println("IF YOU ARE ON JDK1.4, PLEASE UNCOMMENT THE CONTENTS OF testJDK to TEST 1.4 versus 1.3 method.");
+
+      Calendar cal         = Calendar.getInstance();
+      long     jdk14Method = cal.getTimeInMillis();
+      long     jdk13Method = cal.getTime()
+                                .getTime();
+      assertTrue("jdk14Method == jdk13Method", (jdk14Method == jdk13Method));
+   }
+
+COM:tests the accuracy of the getTimeInMillis() method in the Calendar class for JDK 1.3 and 1.4

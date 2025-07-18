@@ -1,0 +1,17 @@
+TDAT: 	public boolean addCenterAtom(int atomID, int collID){
+		boolean success = false;
+		try {
+			Statement stmt = con.createStatement();
+			String query = "INSERT INTO CenterAtoms \n" +
+							"VALUES ("+ atomID + ", " + collID + ")";
+			stmt.execute(query);
+			stmt.close();
+			success = true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return success;
+	}
+
+COM:adds a center atom to a database table and returns a boolean indicating whether the operation was successful or not

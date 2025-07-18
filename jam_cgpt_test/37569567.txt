@@ -1,0 +1,12 @@
+TDAT: public void setXORMode(boolean xor) {
+  if (handle == null) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+  if(xor) {
+    // need to check if "handle.setXORMode(getBackground().handle)" must be called any time the background color changes.
+    handle.setXORMode(getBackground().handle);
+  } else {
+    handle.setPaintMode();
+  }
+  isXORMode = xor;
+}
+
+COM:sets XOR mode for a graphics handle and checks if the background color needs to be updated when XOR mode is turned on

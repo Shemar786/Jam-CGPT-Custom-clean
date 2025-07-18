@@ -1,0 +1,14 @@
+TDAT:   public void setPassingTypes ( Class[] new_passing_types ) {
+    Class[] old_passing_types = passingTypes;
+    if( ArrayUtilities.equals( new_passing_types, old_passing_types ) ) {
+      return;
+    }
+    passingTypes = new_passing_types;
+    pcs.firePropertyChange(
+      "passingTypes",
+      old_passing_types,
+      new_passing_types
+    );
+  } // setPassingTypes(..)
+
+COM:sets the passing types of a Class and notifies the Property Change Support listeners of the change

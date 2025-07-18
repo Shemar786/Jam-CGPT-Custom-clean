@@ -1,0 +1,19 @@
+TDAT: 	private JButton getSelectButton() {
+		if (selectButton == null) {
+			selectButton = new JButton();
+			selectButton.setText("Kies");
+			selectButton.setSize(new Dimension(40, 25));
+			selectButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					getSelectDialog().setVisible(false);
+					int sel = getCapsList().getSelectedIndex();
+					start = mstarts.get(sel);
+				}
+				
+			});
+			
+		}
+		return selectButton;
+	}
+
+COM:returns a JButton element with specific properties and an action listener that sets a value to a variable when clicked

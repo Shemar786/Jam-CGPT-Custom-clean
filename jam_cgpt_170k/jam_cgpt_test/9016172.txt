@@ -1,0 +1,15 @@
+TDAT: 	public void displayDownRight(JFrame child) {
+		Point locationOnScreen = getLocationOnScreen();
+		double parentX = locationOnScreen.getX();
+		double parentY = locationOnScreen.getY();
+
+		double childX = parentX + FRAME_DISPLAY_INCREMENT;
+		double childY = parentY + FRAME_DISPLAY_INCREMENT;
+
+		Point childLocation = new Point();
+		childLocation.setLocation(childX, childY);
+		child.setLocation(childLocation);
+		child.setVisible(true);
+	}
+
+COM:displays a JFrame child at a location down and to the right of a parent JFrame

@@ -1,0 +1,16 @@
+TDAT:     private void lazyCreate() {
+        this.setLayout(new BorderLayout());
+
+        ed = new JEditorPane();
+        ed.setEditable(false);
+        JScrollPane jsp = new JScrollPane(ed);
+        int vs = ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
+        jsp.setVerticalScrollBarPolicy(vs);
+        this.add(jsp, BorderLayout.CENTER);
+
+        buttons = new JPanel();
+
+        this.add(buttons, BorderLayout.PAGE_END);
+    }
+
+COM:creates a layout for a JEditorPane with a JScrollPane and a JPanel for buttons, and sets the scrollbar policy

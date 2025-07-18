@@ -1,0 +1,14 @@
+TDAT:     public void selfTest() {
+        System.out.println("\n*** Nachos Kernel Successfull Started ***\n");
+        PriorityScheduler.selfTest();
+//  KThread.simpleSelfTest();
+//	KThread.selfTest();
+//	  Semaphore.selfTest();
+//        Condition.selfTest();
+//        Condition2.selfTest();
+//	Alarm.selfTest();
+//	Communicator.selfTest();
+        PriorityScheduler.selfTest();
+    }
+
+COM:performs a self-test that prints a success message and calls self-tests for various sub-components

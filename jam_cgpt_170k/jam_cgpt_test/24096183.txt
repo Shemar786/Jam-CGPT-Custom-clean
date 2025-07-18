@@ -1,0 +1,9 @@
+TDAT:    public Object invoke(String filter, Object... args) throws IOException {
+      Object args2[] = new Object[args.length + 1];
+      System.arraycopy(args, 0, args2, 1, args.length);
+      args2[0] = this;
+      Object result = wrapper.invoke(filter, args2);
+      return result;
+   }
+
+COM:takes in a filter and an array of objects as arguments, adds the current object to the array, invokes a wrapper method with the modified arguments, and returns the result

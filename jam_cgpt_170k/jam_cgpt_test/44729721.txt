@@ -1,0 +1,17 @@
+TDAT: 	public void actionSelect(String fileName) {
+		NavigationElement element = null;
+		for (int i = 0; i < contentNames.length && null == element; i++) {
+			if (contentNames[i].getName().equals(fileName)) {
+				element = contentNames[i];
+			}
+		}
+		
+		if (null != element) {
+			model.setCurrentElement(element);
+		} else {
+			// try to find the file "somewhere else"
+			model.openEntryByName(fileName);
+		}
+	}
+
+COM:takes in a file name, searches for it in the content names array, and sets the current element if it exists, or attempts to find the file elsewhere if it does not

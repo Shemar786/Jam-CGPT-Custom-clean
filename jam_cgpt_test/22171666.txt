@@ -1,0 +1,17 @@
+TDAT: 	protected void addCounterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveRepeatingTimer_counter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveRepeatingTimer_counter_feature", "_UI_EveRepeatingTimer_type"),
+				 TimerPackage.Literals.EVE_REPEATING_TIMER__COUNTER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a counter feature to a list of item property descriptors

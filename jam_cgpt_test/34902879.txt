@@ -1,0 +1,21 @@
+TDAT: 	public Object readObject() throws IOException {
+		if (readBoolean()) {
+			return null;
+		}
+		Marshaller m = null;
+		String name = readUTF();
+		Object o = MarshallerRegistry.getInstance().getUnmarshaller(name);
+		if (o instanceof Marshaller) {
+			m = (Marshaller) o;
+		} else {
+			try {
+				Class clazz = Class.forName(name);
+				m = (Marshaller) clazz.newInstance();
+			} catch (Exception e) {
+				throw new IOException("Don't know how to deserialize " + name);
+			}
+		}
+		return m.unmarshall(name, this);
+	}
+
+COM:reads an object from input and deserializes it using a marshaller, returning the deserialized object

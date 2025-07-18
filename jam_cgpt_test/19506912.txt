@@ -1,0 +1,13 @@
+TDAT: 	public void testCreateDuplicate() throws Exception {
+		final NamedElement e1 = createNEPositive(root, "foo", null);
+		checkEmptyChildren(root, e1);
+
+		// Attempt to create a duplicate element
+		createNENegative(root, "foo", null,
+				IRodinDBStatusConstants.NAME_COLLISION);
+		
+		// File has not changed
+		checkEmptyChildren(root, e1);
+	}
+
+COM:tests the creation of a duplicate NamedElement with the same name and ensures that it throws the expected exception

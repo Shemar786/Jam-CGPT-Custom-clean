@@ -1,0 +1,16 @@
+TDAT:     public void prepareForShow() {
+        //no gateway, try to suggest one
+        if (gatewayComboBox.getSelectedGateway() == null) {
+            suggestGatewayAction.actionPerformed(null);
+        }
+
+        //give focus
+        if (multiMode) {
+            gatewayComboBox.requestFocusInWindow();
+        } else {
+            nameTextField.requestFocusInWindow();
+            nameTextField.selectAll();
+        }
+    }
+
+COM:prepares for showing a GUI object, suggesting a gateway and giving focus to text fields depending on multi-mode status

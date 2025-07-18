@@ -1,0 +1,11 @@
+TDAT: 	public void setWorkers(PeerComponent component, String sdfFilePath, ModuleContext context) throws Exception {
+		
+		/*PeerSyncApplicationClient componentClient = new PeerSyncApplicationClient(context);
+		componentClient.putOnQueue(new ControlOperationResult());
+
+		componentClient.setWorkers(DescriptionFileCompile.compileSDF(TEST_FILES_PATH + sdfFilePath));*/
+		
+		setWorkers(component, DescriptionFileCompile.compileSDF(TEST_FILES_PATH + sdfFilePath));
+	}
+
+COM:sets workers in a peer component using a compiled description file and throws an exception if there is an error

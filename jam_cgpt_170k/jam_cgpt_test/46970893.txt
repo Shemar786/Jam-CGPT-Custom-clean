@@ -1,0 +1,12 @@
+TDAT:     protected boolean checkName(String name){
+        boolean checksOut = true;
+        for(int i = 0; checksOut && i < name.length(); i++){
+            char c = name.charAt(i);
+            if(!AbstractTerm.checkVar(c) && c !='$' && c !='_'){
+                checksOut = false;
+            }
+        }
+        return checksOut;
+    }
+
+COM:checks whether a given string contains valid characters for a variable name

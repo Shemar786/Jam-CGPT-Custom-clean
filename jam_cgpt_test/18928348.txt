@@ -1,0 +1,10 @@
+TDAT:   public TreeNode deepCopy() {
+    TreeNode newNode = new TreeNode(reference);
+    for (Iterator iter = children.iterator(); iter.hasNext();) {
+      TreeNode child = (TreeNode) iter.next();
+      newNode.addChildNode(child.deepCopy());
+    }
+    return newNode;
+  }
+
+COM:creates a deep copy of a TreeNode object and its child nodes recursively

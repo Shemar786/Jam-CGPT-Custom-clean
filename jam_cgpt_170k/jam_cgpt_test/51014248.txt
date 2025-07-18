@@ -1,0 +1,11 @@
+TDAT:     private String buildGoStr(int go) {
+        String goBase = go + "";
+        int zeros = 7 - goBase.length();
+        char[] zeroBuffer = new char[zeros];
+        for (int i = 0; i < zeros; i++)
+            zeroBuffer[i] = '0';
+        String goStr = "GO:" + new String(zeroBuffer) + goBase;
+        return goStr;
+    }
+
+COM:A Java method that converts an integer value to a string prefixed with "GO:" and padded with zeroes to a total length of 7 characters

@@ -1,0 +1,11 @@
+TDAT:     private String getPropertyType(Object value) {
+    	if (value==null) return null;
+    	if (value instanceof String) return "String";
+    	if (value instanceof Integer) return "Integer";
+    	if (value instanceof Modifier[]) return "Modifier[]";
+    	if (value instanceof Modifier) return "Modifier";
+    	if (value instanceof Script) return "Script";
+    	return "Object";
+    }
+
+COM:takes an object as input and returns a string representation of its type

@@ -1,0 +1,14 @@
+TDAT:   public ConfixProcessorIF createProcessor(ObjectFactoryIF aFactory) {
+    try {
+      Constructor aConstructor = _theProcessorClass.getConstructor(new Class[] {
+            ObjectFactoryIF.class
+          });
+
+      return (ConfixProcessorIF) aConstructor.newInstance(new Object[] { aFactory });
+    } catch (Exception e) {
+      throw new CompositeRuntimeException("Unable to create a Confix processor",
+        e);
+    }
+  }
+
+COM:creates and returns a Confix processor using the specified ObjectFactoryIF object

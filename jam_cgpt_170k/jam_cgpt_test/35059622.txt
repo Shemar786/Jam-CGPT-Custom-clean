@@ -1,0 +1,16 @@
+TDAT: 	public void addLink(String groupName, AutoLink link) throws Exception {
+		
+		for (Iterator<LinkGroup> iterator = linkGroups.iterator(); iterator.hasNext();) {
+			LinkGroup linkGroup = iterator.next();
+			if( linkGroup.getName() == groupName ) {
+				linkGroup.addLink( link );
+				setChanged();
+				return;
+			}
+		}
+		
+		throw new Exception( "Group with name \"" + groupName + "\" not found!" );
+		
+	}
+
+COM:adds a given auto link to a link group with a specified group name, and throws an exception if the group is not found

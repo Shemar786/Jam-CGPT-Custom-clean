@@ -1,0 +1,11 @@
+TDAT:     private void setServer( Server svr ) {
+        this.server = svr;
+        // Create a human player object and an action to lauch it
+        if( theHumanPlayer == null ) theHumanPlayer = new HumanPlayer();
+        killServerAction.setEnabled( true ); 
+        openAction.setEnabled(false);
+        closeAction.setEnabled(false);
+        enableServerActions(false);
+    }
+
+COM:sets the server variable to the passed Server object and enables/disables certain actions

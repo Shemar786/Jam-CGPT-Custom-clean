@@ -1,0 +1,12 @@
+TDAT:     private void adjustMinimumAndMaximum() {
+        // make sure every minimum size is bigger or equal to 0
+        setToMinimumArrayValue(minimumSizes, 0);
+
+        // make sure preferred is bigger or equal to minimum
+        setToMaximumSizes(preferredSizes, minimumSizes);
+
+        // make sure maximum is bigger or equal to preferred
+        setToMaximumSizes(maximumSizes, preferredSizes);
+    }
+
+COM:adjusts minimum, preferred, and maximum sizes to ensure that the minimum is at least 0, the preferred is at least the minimum, and the maximum is at least the preferred

@@ -1,0 +1,13 @@
+TDAT: 	public DStream getDataStream(String itemPID, String dsID) throws InternalException{
+		logger.debug("entering getDatastream(" + itemPID + ", " + dsID + ")");
+		try {
+			DStream ds = itemMgr.getDataStream(itemPID, dsID);
+			logger.debug("exiting getDatastream");
+			return ds;
+		} catch (Exception e) {
+			logger.error("cannot retrieve datastream ", e);
+			throw new InternalException(e);
+		}
+	}
+
+COM:retrieves a DStream object for a given item PID and data set ID, with error handling for exceptions

@@ -1,0 +1,10 @@
+TDAT:   public void onModuleLoad() {
+    // Find the slot for the calendar widget.
+    //
+    //RootPanel slot = RootPanel.get("ClassAvailibility");
+    ClsClassAvailability classAvai = new ClsClassAvailability();
+    //slot.add(classAvai);
+    RootPanel.get().add(classAvai);
+  }
+
+COM:loads a calendar widget onto the webpage

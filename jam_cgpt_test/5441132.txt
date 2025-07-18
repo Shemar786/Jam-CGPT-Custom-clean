@@ -1,0 +1,12 @@
+TDAT:     public int doAfterBody() throws JspException {
+        currentRepetition++;
+        if (currentRepetition < repetitions) return EVAL_BODY_TAG;
+        try {
+            getBodyContent().writeOut(getBodyContent().getEnclosingWriter());
+        } catch (Exception ex) {
+            throw new JspTagException(ex.getMessage());
+        }
+        return SKIP_BODY;
+    }
+
+COM:performs an action after the body of a JSP tag is evaluated a certain number of times, and returns a value indicating whether to continue evaluating the body or skip it

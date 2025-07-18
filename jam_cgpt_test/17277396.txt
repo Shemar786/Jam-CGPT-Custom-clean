@@ -1,0 +1,11 @@
+TDAT:     public void copyCurrentSelection() {
+        if (!selection.isEmpty()) {
+            for (Enumeration<SceneGraph> en = selection.elements(); en.hasMoreElements();) {
+                Window.sceneGraph.add(en.nextElement().clone());
+            }
+            selection.removeAllElements();
+            repaintPanel();
+        }
+    }
+
+COM:copies the current selection of scene graph elements and adds them to a window's scene graph while removing the elements from the selection list and repainting the panel

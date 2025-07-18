@@ -1,0 +1,11 @@
+TDAT:     public int hashCode() {
+        StringBuilder buf = new StringBuilder();
+        buf.append(Integer.toString(ton)).append(':');
+        buf.append(Integer.toString(npi)).append(':');
+        if (address != null) {
+            buf.append(address);
+        }
+        return buf.hashCode();
+    }
+
+COM:generates a hash code based on the values of the object's properties and address

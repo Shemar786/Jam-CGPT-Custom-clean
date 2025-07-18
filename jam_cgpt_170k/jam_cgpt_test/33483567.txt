@@ -1,0 +1,11 @@
+TDAT:   public LoginError findLoginErrorByUserID(String userID) {
+    List l = this.getHibernateTemplate().find(LOAD_BY_USERID, userID);
+    if (l == null || l.isEmpty()) {
+      return null;
+    }
+    else {
+      return (LoginError) l.get(0);
+    }
+  }
+
+COM:retrieves a LoginError object from a database using the provided userID as a parameter

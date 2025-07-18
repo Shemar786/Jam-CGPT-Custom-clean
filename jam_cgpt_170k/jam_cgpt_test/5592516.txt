@@ -1,0 +1,11 @@
+TDAT:   public void handleEvent(Event e) {
+
+    Node node = (Node) e.getCurrentTarget();
+    String eventType = e.getType();
+    String nodeName = node.getNodeName();
+    e.stopPropagation();
+    if (!DOMEditor.isAltered())
+      DOMEditor.setAltered(true);
+  }
+
+COM:handles an event by getting information about the current target node, the event type, and the node name, stopping the propagation of the event, and setting a flag if the DOM editor has been altered

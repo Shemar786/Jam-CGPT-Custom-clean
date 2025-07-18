@@ -1,0 +1,9 @@
+TDAT:   protected void addLevel(mondrian.olap.Level monLevel, MondrianHierarchy hierarchy) {
+    String uniqueName = monLevel.getUniqueName();
+    if (!hLevels.containsKey(uniqueName)) {
+      MondrianLevel level = new MondrianLevel(monLevel, hierarchy, this);
+      hLevels.put(uniqueName, level);
+    }
+  }
+
+COM:adds a MondrianLevel object to a hashmap if the object's unique name is not already present in the hashmap

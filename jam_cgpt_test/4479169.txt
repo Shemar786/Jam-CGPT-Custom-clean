@@ -1,0 +1,12 @@
+TDAT: 	public void testRook() {
+		Rook testingRook8 = new Rook(2,5, testingBoard, "White");
+		assertEquals(testingRook8.getX(), 2);
+		assertEquals(testingRook8.getY(), 5);
+		assertTrue(testingRook8.board.equals(testingBoard));
+		assertFalse(testingRook8.getClass().equals(NullPiece.class));
+		assertEquals(testingRook8.getType(), "  Rook   ");
+		assertEquals(testingRook8.getSide(), "White");
+		
+	}
+
+COM:tests the creation of a Rook chess piece object with specified characteristics and asserts certain conditions about its properties

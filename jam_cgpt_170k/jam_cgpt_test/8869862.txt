@@ -1,0 +1,8 @@
+TDAT: 	public void denormaliseTaxonomy(long dataResourceId){
+		long time = System.currentTimeMillis();
+		log.info("Denormalising the taxonomy for resource " + dataResourceId);
+		taxonomyUtils.denormalisedTaxonomyForResource(dataResourceId);
+		log.info("Finished denormalising taxonomy for resource[" + dataResourceId + "] in " + ((1 + System.currentTimeMillis()-time)/1000) + " secs");
+	}
+
+COM:denormalises the taxonomy for a given data resource ID and logs the process

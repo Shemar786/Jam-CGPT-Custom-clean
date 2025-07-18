@@ -1,0 +1,17 @@
+TDAT: 	protected void addOppositeSourcePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_oppositeSource_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_oppositeSource_feature", "_UI_Feature_type"),
+				 FeatureDiagramPackage.Literals.FEATURE__OPPOSITE_SOURCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a feature's opposite source attribute

@@ -1,0 +1,12 @@
+TDAT:   private boolean containsObjectOnly(Collection collection, Object obj) {
+    if (collection == null && collection.size() == 0)
+      return true;
+    Iterator items = collection.iterator();
+    while (items.hasNext()) {
+      if (items.next() != obj)
+        return false;
+    }
+    return true;
+  }
+
+COM:checks if a collection contains only one specific object

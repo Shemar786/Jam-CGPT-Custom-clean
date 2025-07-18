@@ -1,0 +1,12 @@
+TDAT:     public void notifyObservers(Session conn, SMPPEvent event) {
+        SessionObserver[] observerList = getObserverList();
+        for (SessionObserver observer : observerList) {
+            try {
+                observer.update(conn, event);
+            } catch (Exception x) {
+                LOG.error("An observer threw an exception during event processing", x);
+            }
+        }
+    }
+
+COM:notifies all registered SessionObservers of a given SMPPEvent for a specific Session, handling any exceptions thrown by the observers

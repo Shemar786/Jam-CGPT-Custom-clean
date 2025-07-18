@@ -1,0 +1,13 @@
+TDAT: 	public ITypeHierarchy getHierarchy() {
+		if (hierarchy == null) {
+			IType iType = (IType) getJavaElement();
+			try {
+				hierarchy = iType.newTypeHierarchy((IJavaProject) iType.getAncestor(IJavaElement.JAVA_PROJECT), null);
+			} catch (Throwable e) {
+				Log.logError("Could not get type hierarchy for " + getHandle(), e);
+			}
+		}
+		return hierarchy;
+	}
+
+COM:returns the type hierarchy for a given Java Element

@@ -1,0 +1,18 @@
+TDAT:       public void mouseClicked(MouseEvent event) {
+         if (event.getClickCount() == 2) {
+
+            if (mainView.isVisible()) {
+               mainView.setVisible(false);
+            }
+            else {
+               mainView.setVisible(true);
+               mainView.setState(Frame.NORMAL);
+               mainView.requestFocus();
+               mainView.toFront();
+            }
+
+         }
+
+      } // mouseClicked
+
+COM:toggles the visibility and focus of a Frame when the mouse is double-clicked

@@ -1,0 +1,7 @@
+TDAT:     public void handleNoteRef(Element node, LaTeXDocumentPortion ldp, Context oc) {
+        String sClass=node.getAttribute(XMLString.TEXT_NOTE_CLASS);
+        if (sClass.equals("footnote")) { handleFootnoteRef(node,ldp,oc); }
+        else if (sClass.equals("endnote")) { handleEndnoteRef(node,ldp,oc); }
+    } 
+
+COM:handles note references in a LaTeX document by checking the note class and calling the appropriate method for handling footnotes or endnotes

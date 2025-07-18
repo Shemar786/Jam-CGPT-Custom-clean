@@ -1,0 +1,15 @@
+TDAT: 	public void shiftAllNodes(double x, double y){
+	Node n;
+	for (int j=0;j<nnodes;j++){
+		n = nodes[j];
+		n.x += x;
+		n.y += y;
+
+		if (n.x < -Node.maxxysize) {n.x = -Node.maxxysize;}
+		else if (n.x > Node.maxxysize){n.x = Node.maxxysize;}
+		if (n.y < -Node.maxxysize){n.y = -Node.maxxysize;}
+		else if (n.y > Node.maxxysize){n.y = Node.maxxysize;}
+	}
+	}
+
+COM:shifts all nodes by a certain amount in the x and y direction, and constrains them to stay within a certain range

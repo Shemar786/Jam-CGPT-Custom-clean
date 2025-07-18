@@ -1,0 +1,7 @@
+TDAT:     public void setNearestPixel(double lon, double lat, int pixel) {
+        int[] nearestIndices = this.getNearestIndices(lon, lat);
+        if (nearestIndices == null) return;
+        this.image.setPixel(nearestIndices[0], nearestIndices[1], pixel);
+    }
+
+COM:sets the pixel value of the nearest pixel to a given latitude and longitude coordinate

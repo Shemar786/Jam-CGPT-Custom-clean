@@ -1,0 +1,17 @@
+TDAT: 	private void removeFromEnd(Document document, Element root) {
+		//  We use start minus 1 to make sure we remove the newline
+		//  character of the previous line
+
+		Element line = root.getElement(root.getElementCount() - 1);
+		int start = line.getStartOffset();
+		int end = line.getEndOffset();
+
+		try {
+			document.remove(start - 1, end - start);
+			
+		} catch(BadLocationException ble) {
+			System.out.println(ble);
+		}
+	}
+
+COM:removes a line from the end of a given Document object, including the newline character of the previous line

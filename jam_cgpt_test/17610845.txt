@@ -1,0 +1,11 @@
+TDAT: 	protected void loadVisits(JdbcPet pet) {
+		pet.setType((PetType) EntityUtils.getById(getPetTypes(), PetType.class, pet.getTypeId()));
+		List visits = this.visitsQuery.execute(pet.getId());
+		Iterator vi = visits.iterator();
+		while (vi.hasNext()) {
+			Visit visit = (Visit) vi.next();
+			pet.addVisit(visit);
+		}
+	}
+
+COM:is responsible for loading a list of visits for a given pet, by querying the database and adding the visits to the pet object

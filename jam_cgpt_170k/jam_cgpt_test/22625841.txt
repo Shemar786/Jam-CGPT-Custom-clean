@@ -1,0 +1,16 @@
+TDAT: 	public String getLogDate() {
+		String t = doc.get("logdate");
+
+		if (t == null)
+			return DEFAULT;
+		long time = -1;
+		try {
+			time = DateFieldTools.stringToTime(t);
+		} catch (ParseException pe) {
+			prtlnErr("Error in getLogDate(): " + pe);
+		}			
+
+		return new SimpleDateFormat("h:mm:ss a zzz, EEE MMM d, yyyy").format(new Date(time));
+	}
+
+COM:gets the log date from a document, formats it using a specific date and time format, and returns it as a string

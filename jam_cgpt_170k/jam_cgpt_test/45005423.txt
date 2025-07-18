@@ -1,0 +1,16 @@
+TDAT: 	public void setBMData(String command) {
+
+		//create tokenizer
+		StringTokenizer mainTokenizer = new StringTokenizer(command, "$");
+
+		//clear all current BM data
+		BlackMarket.clear();
+
+		while(mainTokenizer.hasMoreTokens()) {
+			boolean hidden = Boolean.parseBoolean(mwclient.getserverConfigs("HiddenBMUnits"));
+			CBMUnit currBMUnit = new CBMUnit(TokenReader.readString(mainTokenizer), this, hidden);
+			BlackMarket.put(currBMUnit.getAuctionID(), currBMUnit);
+		}
+	}
+
+COM:sets data for the Black Market by parsing a command string containing tokens separated by "$" and creating CBMUnit objects for each token

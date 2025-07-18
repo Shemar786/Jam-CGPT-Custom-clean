@@ -1,0 +1,10 @@
+TDAT:     public Command getOkCommand8() {
+        if (okCommand8 == null) {//GEN-END:|354-getter|0|354-preInit
+            // write pre-init user code here
+            okCommand8 = new Command("Ok", Command.OK, 0);//GEN-LINE:|354-getter|1|354-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|354-getter|2|
+        return okCommand8;
+    }
+
+COM:returns a Command object called okCommand8, and initializes it if it is currently null

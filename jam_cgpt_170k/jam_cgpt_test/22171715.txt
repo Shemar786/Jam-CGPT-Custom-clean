@@ -1,0 +1,17 @@
+TDAT: 	protected void addBirthdatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveHistoryAgent_Birthdate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveHistoryAgent_Birthdate_feature", "_UI_EveHistoryAgent_type"),
+				 SocialNetworkAnalysisPackage.Literals.EVE_HISTORY_AGENT__BIRTHDATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the birthdate feature of the EveHistoryAgent type in the SocialNetworkAnalysisPackage

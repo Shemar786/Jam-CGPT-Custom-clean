@@ -1,0 +1,10 @@
+TDAT: 	public void fireTreeNodesInserted(MutableTreeNode node) {
+		AbstractLineNode parentNode = (AbstractLineNode) node.getParent();
+		if (parentNode != null) {
+			int[] ic = {parentNode.getIndex(node)};
+			Object[] c = {node};
+			fireTreeNodesInserted(parentNode, parentNode.getPath(), ic, c);
+		}
+	}
+
+COM:fires a tree event for the insertion of a mutable tree node and notifies the parent node about the change

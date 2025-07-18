@@ -1,0 +1,14 @@
+TDAT: 	public Element getMultiBoxInput() {
+		// prtln("getMultiBoxInput() with " + xpath);
+
+		if (state.hasMdvMapping(xpath)) {
+			Element mdvMultiBox = df.createElement("st__mdvMultiBox")
+					.addAttribute("elementPath", "enumerationValuesOf(" + XPathUtils.getSiblingXPath(xpath) + ")");
+			return mdvMultiBox;
+		}
+		else {
+			return super.getMultiBoxInput();
+		}
+	}
+
+COM:retrieves a multi-box input element, with the option to include mappings from a specified XPath

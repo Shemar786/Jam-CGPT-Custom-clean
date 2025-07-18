@@ -1,0 +1,10 @@
+TDAT:   public void setObjectArray(Object[] value) {
+    this.type = OBJECT_ARRAY;
+    if (value != null) {
+      this.value = new Object[value.length];
+      System.arraycopy(value, 0, this.value, 0, value.length);
+    } else
+      this.value = null;
+  }
+
+COM:sets the value of an object array and updates the type of the object accordingly

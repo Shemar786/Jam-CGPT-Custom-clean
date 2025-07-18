@@ -1,0 +1,12 @@
+TDAT: 	private void put2AgentsAtContainer(String containerName, AID_Container cAID) {
+		AID_Container_List agentList = agentsAtContainer.get(containerName);
+		if (agentList==null) {
+			agentList = new AID_Container_List(); 
+		}
+		if (cAID!=null) {
+			agentList.put(cAID.getAID().getLocalName(), cAID);	
+		}
+		agentsAtContainer.put(containerName, agentList);
+	}
+
+COM:adds two agents to a specified container

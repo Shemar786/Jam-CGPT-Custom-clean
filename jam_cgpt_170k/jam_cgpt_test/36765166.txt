@@ -1,0 +1,20 @@
+TDAT: 	public Timestamp getDateTimestamp(String year, String month, String day){
+//		try{
+//			this.ISO_DATE.p
+//			return (Timestamp)(this.ISO_DATE.parseObject(year+"-"+month+"-"+day));
+//		}
+//		catch (Exception e){
+//			System.out.println("ERROR: error parsing date: communityBaseForm");
+//			return null;
+//		}
+		try
+		{
+			return Timestamp.valueOf(year + "-" + month + "-" + day + " 00:00:00");
+		}
+		catch (Exception e){
+			System.out.println("ERROR: error parsing date: communityBaseForm");
+			return null;
+		}		
+	}
+
+COM:accepts three strings representing year, month, and day, and returns a Timestamp object representing the date and time at midnight on that day

@@ -1,0 +1,16 @@
+TDAT:    private String determineTabName(final SessionGUI sessiongui) {
+   	assert sessiongui != null;
+   	final String name;
+   	if (sessiongui.getSession().isUseSystemName()) {
+   		name = sessiongui.getSessionName();
+   	} else {
+   		if (sessiongui.getAllocDeviceName() != null) {
+   			name = sessiongui.getAllocDeviceName();
+   		} else {
+   			name = sessiongui.getHostName();
+   		}
+   	}
+   	return name;
+   }
+
+COM:This is a Java method that takes in a SessionGUI object and determines a tab name based on the properties of the session

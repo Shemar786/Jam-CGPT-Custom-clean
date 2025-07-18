@@ -1,0 +1,6 @@
+TDAT: 	protected void selectByFieldValue(final String widgetId, final String field, final String value) {
+//		ensureDataGridRowVisible(widgetId, field, value, true);
+		Assert.assertEquals(ACTION_SUCCESS, flexSelenium.selectMatchingOnField(widgetId, field, value));
+	}
+
+COM:selects a field value in a data grid row using the given widget ID, field name and value, while asserting that the action is successful using FlexSelenium

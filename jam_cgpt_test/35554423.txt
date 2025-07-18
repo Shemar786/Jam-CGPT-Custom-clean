@@ -1,0 +1,17 @@
+TDAT: 	private int getNodeId(JList myList) {
+
+		String nodeName = myList.getSelectedValue().toString();
+
+		NetworkElement ne = networkMgr.getNodeNetworkElement(nodeName);
+
+		int nodeId = 0;
+
+		if (ne != null) {
+			nodeId = ne.getNodeId();
+		} else {
+			System.err.println("AlarmHistoryController 1 : Couldn't find NetworkElement");
+		}
+		return nodeId;
+	}
+
+COM:retrieves the node ID of a selected item in a JList by looking up the corresponding NetworkElement object in the network manager

@@ -1,0 +1,10 @@
+TDAT: 	private JScrollPane getJScrollPaneInPutPort() {
+		if (jScrollPaneInPutPort == null) {
+			jScrollPaneInPutPort = new JScrollPane();
+			jScrollPaneInPutPort.setBounds(new Rectangle(16, 150, 305, 134));
+			jScrollPaneInPutPort.setViewportView(getTxtInputPort());
+		}
+		return jScrollPaneInPutPort;
+	}
+
+COM:returns a scrollable pane containing a text input port component if it has been created or creates and returns it if it hasn't

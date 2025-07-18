@@ -1,0 +1,16 @@
+TDAT:     public void testisAvailable() {
+        System.out.println("isAvailable");
+        org.gps.types.GpsSatellite instance = new org.gps.types.GpsSatellite();
+        boolean expectedResult = false;
+        boolean result = instance.isAvailable();
+        assertTrue(expectedResult==result);
+        
+        instance.setAvailable(true);
+        expectedResult = true;
+        result = instance.isAvailable();
+        assertTrue(expectedResult==result);
+        
+        
+    }
+
+COM:tests the isAvailable method of the GpsSatellite class and verifies that it returns the expected result

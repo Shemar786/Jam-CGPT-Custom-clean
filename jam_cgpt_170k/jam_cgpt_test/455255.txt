@@ -1,0 +1,14 @@
+TDAT: 	public double getMatrixDistance(LayoutSlice slice1, LayoutSlice slice2){
+		double distance = 0;
+		SparseDoubleMatrix2D mat1 =getMatrix(slice1);
+		SparseDoubleMatrix2D mat2 =getMatrix(slice2);
+		
+		for (int i = 0; i < mat1.rows(); i++) {
+			for (int j = 0; j < mat1.columns(); j++) {
+				distance += Math.abs(mat1.getQuick(i,j)-mat2.getQuick(i,j));
+			}
+		}
+		return distance;
+	}
+
+COM:calculates the distance between two layout slices using their sparse double matrices

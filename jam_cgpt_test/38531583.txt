@@ -1,0 +1,7 @@
+TDAT:     public String getProperty(String str) throws org.xmldb.api.base.XMLDBException {
+        throw new org.xmldb.api.base.XMLDBException(
+        org.xmldb.api.base.ErrorCodes.NOT_IMPLEMENTED,"getProperty Not " +
+        "implemented in the gov.noaa.gdsg.xmldbremote.xmldbClient.XmldbClientCollection class.");
+    }
+
+COM:throws an XMLDBException indicating that the getProperty method is not implemented in the specified class

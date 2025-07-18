@@ -1,0 +1,12 @@
+TDAT:     private void copyFromParent( ISOMsg Source ){
+        this.packager = Source.packager;
+        this.fields = Source.fields;
+        this.dirty = Source.dirty;
+        this.maxFieldDirty = Source.maxFieldDirty;
+        this.header = Source.header;
+        this.fieldNumber = Source.fieldNumber;
+        this.maxField = Source.maxField;
+        this.direction = Source.direction;
+    }
+
+COM:copies the properties of an ISOMsg object passed as a parameter to the current object

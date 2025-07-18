@@ -1,0 +1,18 @@
+TDAT:     public void disconnectFromDatabase() {
+        if (!connectedToDatabase)
+            return;
+        // close Statement and Connection
+        try {
+            statement.close();
+            connection.close();
+        } // end try
+        catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        } // end catch
+        finally // update database connection status
+        {
+            connectedToDatabase = false;
+        } // end finally
+    } // end method disconnectFromDatabase
+
+COM:disconnects from a database by closing the statement and connection and updating the connection status

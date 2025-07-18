@@ -1,0 +1,13 @@
+TDAT: 	private String buildHttpParameters(List<NameValuePair> parameters) {
+		StringBuilder b = new StringBuilder();
+		boolean isFirst = true;
+		for (NameValuePair parameter : parameters) {
+		  String n = parameter.getName();
+		  String v = parameter.getValue();
+			b.append((isFirst ? "?" : "&") + n + (v != null && !v.trim().equals("") ? "=" + v : ""));
+			isFirst = false;
+		}
+		return b.toString();
+	}
+
+COM:takes a List of NameValuePairs and returns a String of formatted HTTP request parameters

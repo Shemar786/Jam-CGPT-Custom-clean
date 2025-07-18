@@ -1,0 +1,18 @@
+TDAT:   public int read(char[] buffer, int offset, int length) throws IOException {
+
+    if (length >= segment.count) {
+      if (docPos >= p1) {
+        // no more data
+        return -1;
+      }
+      loadSegment();
+    }
+
+    int i = 0;
+    for (; i < length; i++) {
+      buffer[i + offset] = segment.array[i];
+    } // end for
+    return i;
+  }
+
+COM:reads characters into a buffer at a given offset and maximum length, and returns the number of characters read

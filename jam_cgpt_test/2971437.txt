@@ -1,0 +1,11 @@
+TDAT:   public FMSample getFMSampleSampleNo(int sampleNo) {
+    FMSample fms;
+    for (int i=0;i<sampleArr.size();i++) {
+      fms = (FMSample)sampleArr.get(i);
+      if (fms.getSampleNo()==sampleNo)
+        return fms;
+    }
+    return null;
+  }
+
+COM:searches for a specific FMSample object within an ArrayList and returns it if found, otherwise returns null

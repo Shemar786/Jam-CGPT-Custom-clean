@@ -1,0 +1,15 @@
+TDAT: 	private JMenuItem getJMenuItem() {
+		if (jMenuItem == null) {
+			jMenuItem = new JMenuItem();
+			jMenuItem.setMnemonic('c');
+			jMenuItem.setText("Choose Folder...");
+			jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					getJButton().doClick();
+				}
+			});
+		}
+		return jMenuItem;
+	}
+
+COM:returns a JMenuItem object which is created and configured with a mnemonic, text, and an ActionListener that performs an action when the item is clicked

@@ -1,0 +1,26 @@
+TDAT: 	public Attribute getAttributeEx(String name) {
+		Vector attributes;
+		int size;
+		Attribute attribute;
+		String string;
+		Attribute ret;
+
+		ret = null;
+
+		attributes = getAttributesEx();
+		if (null != attributes) {
+			size = attributes.size();
+			for (int i = 0; i < size; i++) {
+				attribute = (Attribute) attributes.elementAt(i);
+				string = attribute.getName();
+				if ((null != string) && name.equalsIgnoreCase(string)) {
+					ret = attribute;
+					i = size; // exit fast
+				}
+			}
+		}
+
+		return (ret);
+	}
+
+COM:retrieves an Attribute object with the specified name from a Vector of attributes

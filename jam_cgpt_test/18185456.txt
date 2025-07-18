@@ -1,0 +1,21 @@
+TDAT:     public void close () throws IOException {
+	try {
+	    if(webos!=null) webos.close ();
+	    if(webis!=null) webis.close ();
+	    if(socket!=null) socket.close ();
+	} catch (IOException e) {
+	    // System.out.println("couldnt close WebConnection: " + e.getMessage ());
+	    throw e;
+	}
+	finally
+	{
+	    webos = null;
+	    webis = null;
+	    socket = null;
+	    ia = null;
+	    releasedAt = 0;
+	    keepalive = false;
+	}
+    }
+
+COM:closes the web output stream, web input stream, and socket, and sets all associated variables to null or default values, throwing an IOException if there is an error

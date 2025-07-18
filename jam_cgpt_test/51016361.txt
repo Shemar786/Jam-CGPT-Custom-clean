@@ -1,0 +1,12 @@
+TDAT:     private void lazyInitGraphIndexMap(Set<Network> graphs) {
+
+        if (graphIndices == null) {
+            graphIndices = new HashMap<Network,Integer>(graphs.size());
+            int i = 0;
+            for (Network g : graphs) {
+                graphIndices.put(g,i++);
+            }
+        }
+    }
+
+COM:initializes a map of graph indices lazily, if it has not already been initialized, based on the set of Networks passed in as a parameter

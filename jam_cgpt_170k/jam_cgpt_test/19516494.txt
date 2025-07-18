@@ -1,0 +1,17 @@
+TDAT: 	protected void addInv_a_condPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_COND_inv_a_cond_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_COND_inv_a_cond_feature", "_UI_COND_type"),
+				 Machine_FMS_machinePackage.Literals.COND__INV_ACOND,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a conditional property descriptor for a specified object instance

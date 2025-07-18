@@ -1,0 +1,11 @@
+TDAT:   private Map addInvalidParams(Map invalidParams, MultiParameterException ex) {
+    Iterator it = ex.getParameterNames();
+    while (it.hasNext()) {
+      String name = (String) it.next();
+      String error = ex.getMessage(name);
+      invalidParams = addInvalidParams(invalidParams, name, error);
+    }
+    return invalidParams;
+  }
+
+COM:accepts a Map of invalid parameters and a MultiParameterException object, iterates over the parameter names and messages in the exception object, and adds them to the invalidParams map before returning it

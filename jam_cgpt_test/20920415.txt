@@ -1,0 +1,10 @@
+TDAT:     protected void addState(S state,Action<S,E> entryAction,Action<S,E> exitAction){
+        //adds an entry action to the transition model
+        if(entryAction!=null)
+            transitionModel.addEntryAction(state,entryAction);
+        //adds an exit action to the transition model
+        if(exitAction!=null)
+            transitionModel.addExitAction(state,exitAction);
+    }
+
+COM:adds entry and exit actions to a transition model for a given state

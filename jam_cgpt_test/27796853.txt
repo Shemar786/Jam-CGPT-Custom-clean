@@ -1,0 +1,13 @@
+TDAT:     private double getNewValue() {
+        String number = textField.getText();
+        double newValue;
+        try {
+            newValue = Double.parseDouble(number);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("This is not a number:  "
+                    + number + ".");
+        }
+        return newValue;
+    }
+
+COM:retrieves a new double value from a text field and throws an exception if the text field does not contain a number

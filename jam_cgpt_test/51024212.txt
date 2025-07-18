@@ -1,0 +1,17 @@
+TDAT: 	public MetaDataWindow createMetaDataWindow(ONDEXGraphMetaData md, File file) {
+		final MetaDataWindow w = new MetaDataWindow(md, file);
+		registerWindow(w);
+		w.addInternalFrameListener(new InternalFrameAdapter() {
+			@Override
+			public void internalFrameClosed(InternalFrameEvent e) {
+				deregisterWindow(w);
+			}
+		});
+		try {
+			w.setSelected(true);
+			w.setMaximum(true);
+		} catch (PropertyVetoException e) {}
+		return w;
+	}
+
+COM:creates a metadata window using the provided ONDEXGraphMetaData and File inputs and returns the created window

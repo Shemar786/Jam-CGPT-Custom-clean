@@ -1,0 +1,12 @@
+TDAT: 		public void setLomvalue(String aString) {
+			String theCurrentText = getText();
+			if (theCurrentText == null || "".equals(theCurrentText))
+				setText(aString);
+			else
+				setText(theCurrentText + ", " + aString);
+			if (SuggestionCloudTest.ISACTIVE) {
+				SuggestionCloudTest.getInstance().endDragEvent(itsLOMAttribute);
+			}
+		}
+
+COM:sets a text value by either replacing it with a new string or appending it to the current value, and calls another method if a certain condition is met

@@ -1,0 +1,16 @@
+TDAT: 	private void moveNodes() {
+		if (!movingNodes) {
+			movingNodes = true;
+			// mover will add itself to layout as a mouse motion listener
+			mover = new NodeMover(Control, engine, LayoutArea);
+			MoveNodes.setText("Stop Moving");
+		} else {
+			movingNodes = false;
+			mover.endMoveNodes();
+			mover = null;
+			MoveNodes.setText("Move Nodes");
+			controlePane.requestFocusInWindow();
+		}
+	}
+
+COM:moves nodes on the layout area and changes the button text to indicate whether nodes are currently being moved or not

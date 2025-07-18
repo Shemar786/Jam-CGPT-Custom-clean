@@ -1,0 +1,9 @@
+TDAT:     public String getJobStatus(String jobId) throws PsiscoreException, InvalidArgumentException {
+    	try{
+    		return getService().getJobStatus(jobId);
+    	}catch (javax.xml.ws.soap.SOAPFaultException e){
+    		throw new PsiscoreException("Cannot connect to server.", new PsiscoreFault(), e);
+    	}
+    }
+
+COM:retrieves the status of a job by its ID, and throws exceptions for SOAP faults or invalid arguments

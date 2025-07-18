@@ -1,0 +1,5 @@
+TDAT: 	public void changeHandicap(String operatorId, String userId, String leagueId, String newHandicap) throws InvalidPlayerException, MissingAttributeException, InvalidLeagueException, InvalidLeagueOperatorException, InvalidUserException, InvalidHandcapException{
+		playersManager.changeHandicap(operatorId, userId, leagueId, newHandicap);
+	}	
+
+COM:changes the handicap of a player in a specific league and throws exceptions if necessary

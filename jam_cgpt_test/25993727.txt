@@ -1,0 +1,10 @@
+TDAT: 	public AndroBuzzDbAdapter open() throws SQLException {
+		mDbHelper 	= new DatabaseHelper(mCtx);
+		mDb 		= mDbHelper.getWritableDatabase();
+		Log.d(TAG, "******* mDb pointer: "+ mDb);
+		//mDbHelper.onUpgrade(mDb, 3, 4);								// Uncomment this for reinit database
+
+		return this;
+	}
+
+COM:opens the AndroBuzz database adapter by initializing a DatabaseHelper, getting a writable SQLite database, and returning the adapter instance

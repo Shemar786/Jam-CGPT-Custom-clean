@@ -1,0 +1,8 @@
+TDAT:     private void midPoint(PointF point, WrapMotionEvent event) {
+        // ...
+        float x = event.getX(0) + event.getX(1);
+        float y = event.getY(0) + event.getY(1);
+        point.set(x / 2, y / 2);
+    }
+
+COM:calculates the midpoint between two points and sets the result as the coordinates of a PointF object

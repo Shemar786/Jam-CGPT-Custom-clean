@@ -1,0 +1,10 @@
+TDAT:   public void setTableReader ( TableReader table_reader ) {
+    if( table_reader == null ) {
+      throw new IllegalArgumentException( "The TableReader may not be null." );
+    }
+    TableReader old_table_reader = table_reader;
+    tableReader = table_reader;
+    pcs.firePropertyChange( "tableReader", old_table_reader, table_reader );
+  } // setTableReader( TableReader )
+
+COM:sets a new "TableReader" object for the current object, and throws an exception if the input is null

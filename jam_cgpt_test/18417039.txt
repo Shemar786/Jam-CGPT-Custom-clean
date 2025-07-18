@@ -1,0 +1,14 @@
+TDAT:     static public SystemEasyDiet getInstance() {
+        if (m_System == null) {
+            m_System = new SystemEasyDiet();
+            try {
+                System.out.println("RUN FOREST.. RUN!!!");
+                _RootDAO.initialize();
+            } catch (HibernateException e) {
+                e.printStackTrace();
+            }
+        }
+        return m_System;
+    }
+
+COM:returns an instance of the SystemEasyDiet class, initializing it if it has not yet been created and printing a message before initializing the _RootDAO

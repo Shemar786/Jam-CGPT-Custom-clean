@@ -1,0 +1,25 @@
+TDAT:     private String readResponse(HttpURLConnection urlConnection) throws IOException {
+
+	BufferedReader bufferedReader = null;
+	try {
+	    bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+	    String responeLine;
+
+	    StringBuilder response = new StringBuilder();
+
+	    while ((responeLine = bufferedReader.readLine()) != null) {
+		response.append(responeLine + "\n");
+	    }
+
+	    return response.toString();
+	} finally {
+	    if (bufferedReader != null) {
+		try {
+		    bufferedReader.close();
+		} catch (Throwable ignore) {
+		}
+	    }
+	}
+    }
+
+COM:reads the response from an HTTP connection and returns it as a string

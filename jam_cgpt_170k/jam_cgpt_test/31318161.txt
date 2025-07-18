@@ -1,0 +1,16 @@
+TDAT: 	private void updateParentBlock(Line line) {
+		// apply necessary changes to parent block
+		Block parentBlock = document.findBlock(line.getParentBlockID());
+		if (parentBlock == null) {
+			log.trace(
+				"parent block with id "
+					+ line.getParentBlockID()
+					+ "is unknown");
+		} else {
+			parentBlock.setLastModified(line.getLastModified());
+			parentBlock.setModifier(line.getModifier());
+			document.blockModified(parentBlock);
+		}
+	}
+
+COM:updates the attributes of a parent block based on the attributes of a given Line object

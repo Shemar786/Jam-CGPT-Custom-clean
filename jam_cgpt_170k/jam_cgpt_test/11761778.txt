@@ -1,0 +1,14 @@
+TDAT: 	public void updateRate(Data amount, Time now) {
+		Time oldTime = last.subtract(rateSince);
+		Data oldData = Converter.getData(rate, oldTime);
+		Data allData = oldData.add(amount);
+		Time allTime = now.subtract(rateSince).add(Time.inMilliseconds(0.001));
+
+		rate = Converter.getBandwidth(allData, allTime);
+		last = now;
+		if (rateSince.isLowerThan(now.subtract(maxRatePeriod))) {
+			rateSince = now.subtract(maxRatePeriod);
+		}
+	}
+
+COM:updates the rate of data transfer based on the amount of data transferred and the current time

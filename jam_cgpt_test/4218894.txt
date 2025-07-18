@@ -1,0 +1,20 @@
+TDAT: 	public void destroyGL(GL gl) {
+		landscape.destroyGL(gl);
+		sky.destroyGL(gl);
+		plugins.destroyGL(gl);
+		light.destroyGL(gl);
+
+		// Destroy Ptolemy3D OpenGL datas
+		if (ptolemy.fontTextRenderer != null) {
+			ptolemy.fontTextRenderer.destroyGL(gl);
+			ptolemy.fontTextRenderer = null;
+		}
+		if (ptolemy.fontNumericRenderer != null) {
+			ptolemy.fontNumericRenderer.destroyGL(gl);
+			ptolemy.fontNumericRenderer = null;
+		}
+		
+		ptolemy.textureManager.destroyGL(gl);
+	}
+
+COM:destroys OpenGL data for different components and objects including landscape, sky, plugins, light, fontTextRenderer, fontNumericRenderer, and textureManager

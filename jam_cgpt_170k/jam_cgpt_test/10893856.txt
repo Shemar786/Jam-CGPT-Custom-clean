@@ -1,0 +1,15 @@
+TDAT:     public IOChannel setHead(IOChannel head) throws IOException {
+        this.head = head;
+        head.setSink(this);
+
+        // TODO: do we want to migrate them automatically ?
+        head.setDataReceivedCallback(dataReceivedCallback);
+        head.setDataFlushedCallback(dataFlushedCallback);
+        // app.setClosedCallback(closedCallback);
+
+        dataReceivedCallback = null;
+        dataFlushedCallback = null;
+        return this;
+    }
+
+COM:sets the head IOChannel, sets the sink, and sets callbacks for data received and flushed, while also returning the instance of the IOChannel

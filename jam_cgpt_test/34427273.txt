@@ -1,0 +1,14 @@
+TDAT:     private void populateNewList() {
+        newResources = mergeNewResources();
+        SwingUtilities.invokeLater(new Runnable() {
+            @SuppressWarnings("synthetic-access")
+            @Override
+            public void run() {
+                newListModel.clear();
+                for (Wrapper wr : newResources)
+                    newListModel.addElement(wr);
+            }
+        });
+    }
+
+COM:populates a new list model by merging new resources and updating the new list through a separate thread using the SwingUtilities class

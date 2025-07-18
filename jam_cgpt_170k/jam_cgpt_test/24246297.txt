@@ -1,0 +1,14 @@
+TDAT: 	protected void sentenceChooser(String header, String s) {
+		if (header.equals(GGASentence.HEADER)){
+			this.ggaSentence.setSentence(s);
+			notifyListeners(this.ggaSentence);
+		}else if (header.equals(VTGSentence.HEADER)){
+			this.vtgSentence.setSentence(s);
+			notifyListeners(this.vtgSentence);
+		}else if (header.equals(GSASentence.HEADER)){
+			gsaSentence.setSentence(s);
+			notifyListeners(this.gsaSentence);
+		}
+	}
+
+COM:chooses a specific sentence based on its header and notifies listeners of the chosen sentence

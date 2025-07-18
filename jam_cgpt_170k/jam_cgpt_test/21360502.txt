@@ -1,0 +1,10 @@
+TDAT:     public void setCheckForUnstableUpdates(boolean checkForUnstableUpdates) {
+        if (!isStableVersion()) {
+            checkForUnstableUpdates = true;
+        }
+        boolean old = this.checkForUnstableUpdates;
+        this.checkForUnstableUpdates = checkForUnstableUpdates;
+        changeSupport.firePropertyChange("checkForUnstableUpdates", old, checkForUnstableUpdates);
+    }
+
+COM:sets a boolean value for checking unstable updates, taking into account whether the current software version is stable and notifying listeners of any changes

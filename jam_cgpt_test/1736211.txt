@@ -1,0 +1,15 @@
+TDAT: 	public List findByYear(Integer year) {
+		log.debug("finding TblProject instances on a specified year: " + year);
+		Calendar cal = Calendar.getInstance();
+		cal.clear();
+		cal.set(year.intValue(), Calendar.JANUARY, 1, 0, 0, 0);
+		Date start = cal.getTime();
+	
+		cal.clear();
+		cal.set(year.intValue(), Calendar.DECEMBER, 31, 23, 59, 59);
+		Date end = cal.getTime();
+		
+		return findByDateRange (start,end);
+	}
+
+COM:takes in an Integer representing a year, converts it into a Date range between January 1st and December 31st of that year, and returns a List of TblProject instances within that range

@@ -1,0 +1,7 @@
+TDAT:     public void receiveEvent(DataEvent de) {
+        if (((Integer)de.getEventKey()).intValue() == 1) {
+            clientMessages.append("Client " + de.getClientId() + " sends data: " +  de.getData().toString() + "\n");
+        }
+    }
+
+COM:receives a DataEvent and appends a message to a clientMessages string if the event key is equal to 1

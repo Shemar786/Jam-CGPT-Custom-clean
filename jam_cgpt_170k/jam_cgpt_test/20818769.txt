@@ -1,0 +1,9 @@
+TDAT:     public void beforeRequest(HttpServletRequest request) {
+        TimerTask task = new StackTraceTask(request);
+        timer.schedule(task, delay);
+        request.setAttribute(Constants._WATCHER_STACKTIMERTASK, task);
+        request.setAttribute(Constants._WATCHER_THREAD, Thread.currentThread());
+        super.beforeRequest(request);
+    }
+
+COM:sets up a timer task for tracking runtime performance of HTTP servlet requests

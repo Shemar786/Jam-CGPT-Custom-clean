@@ -1,0 +1,9 @@
+TDAT: 	public void testQuantifiedPredicateSpecialization() {
+		assertPredicateSpecialization(te, //
+				"∀x,y·x ∈ ℕ ∧ y ∈ ℕ ⇒ x + y ∈ ℕ", //
+				mSpec(te, //
+						new String[0], //
+						mList("x", "ℤ", "t", "ℤ")));
+	}
+
+COM:tests the quantified predicate specialization of a given condition using assertions

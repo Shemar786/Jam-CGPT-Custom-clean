@@ -1,0 +1,7 @@
+TDAT: 	public SSLSocket getFeedbackSSLSocket() throws Exception, IOException, UnknownHostException, KeyStoreException, NoSuchProviderException, CertificateException, NoSuchAlgorithmException, UnrecoverableKeyException, KeyManagementException {
+		SSLSocketFactory socketFactory = getFeedbackSSLSocketFactory();
+		logger.debug( "Returning Feedback SSLSocket" );
+		return (SSLSocket) socketFactory.createSocket(appleHost, applePort);
+	}
+
+COM:returns an SSLSocket used for communicating with Apple's push notification feedback service, after creating an SSLSocketFactory

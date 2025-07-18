@@ -1,0 +1,11 @@
+TDAT:   private void copyMapReverse(Map dest,Map src) throws StrategyException{
+    Iterator iter = src.entrySet().iterator();
+    while (iter.hasNext()){
+      Map.Entry entry = (Map.Entry) iter.next();
+      dest.put(
+      transformReverseWithParent(entry.getKey()),
+      transformReverseWithParent(entry.getValue()) );
+    }
+  }
+
+COM:copies a Map in reverse order, transforming the keys and values using a specified method, and throws a StrategyException if there are any issues

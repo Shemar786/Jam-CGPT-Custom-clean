@@ -1,0 +1,17 @@
+TDAT: 	protected void addManagerNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TelephonySubsystem_managerName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TelephonySubsystem_managerName_feature", "_UI_TelephonySubsystem_type"),
+				 ConfigPackage.Literals.TELEPHONY_SUBSYSTEM__MANAGER_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the manager name of a TelephonySubsystem object

@@ -1,0 +1,9 @@
+TDAT: 	public void exportXVRL(XMLStreamWriter xvrLDoc) throws Exception{
+		JAXBContext context = JAXBContext.newInstance(ValidationReport.class);
+		Marshaller m = context.createMarshaller();
+		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		ValidationReport vReport = exportVReport();
+		if (vReport!=null) m.marshal(vReport, xvrLDoc);
+	}
+
+COM:exports a ValidationReport object to XML using JAXB and writes it to an XMLStreamWriter object

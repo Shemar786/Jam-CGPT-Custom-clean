@@ -1,0 +1,14 @@
+TDAT: 	private List getNodeList(List nodeList) {
+		List ret = new ArrayList();
+		for (int i = 0; i < nodeList.size(); i++) {
+			LayoutNode addNode = (LayoutNode) nodeList.get(i);
+			List sublist = addNode.getSubList();
+			ret.add(addNode);
+			if (sublist.size() > 0) {
+				ret.addAll(getNodeList(sublist));
+			}
+		}
+		return ret;
+	}
+
+COM:recursively builds a list of LayoutNodes from the provided nodeList and their respective sublists

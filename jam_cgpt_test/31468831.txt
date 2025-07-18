@@ -1,0 +1,19 @@
+TDAT:     public void putIdentifier(String idName, Element element) {
+
+        if (element == null) {
+            removeIdentifier(idName);
+        }
+
+        if (syncData) {
+            synchronizeData();
+        }
+
+        if (identifiers == null) {
+            identifiers = new Hashtable();
+        }
+
+        identifiers.put(idName, element);
+
+    } // putIdentifier(String,Element)
+
+COM:puts an identifier with a given name and element into a Hashtable, removes it if the element is null, synchronizes data if syncData is true, and creates a new Hashtable if identifiers is null

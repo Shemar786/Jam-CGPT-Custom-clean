@@ -1,0 +1,13 @@
+TDAT: 	protected void displayCopyright(final String packagename, final Intent intent) {
+		String text = AboutUtils.getStringExtraOrMetadata(this, packagename, intent, 
+				AboutIntents.EXTRA_COPYRIGHT, AboutMetaData.METADATA_COPYRIGHT);
+		
+		if (!TextUtils.isEmpty(text)) {
+			mCopyrightText.setText(text);
+			mCopyrightText.setVisibility(View.VISIBLE);
+		} else {
+			mCopyrightText.setVisibility(View.GONE);
+		}
+	}
+
+COM:sets the text for a copyright field if it exists, or hides the field if there is no text

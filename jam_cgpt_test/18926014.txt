@@ -1,0 +1,13 @@
+TDAT:   public void addRequestListener(String name, String value, RequestListener listener) {
+    removeRequestListener(listener);
+    String key = getKey(name, value);
+    map.put(listener, key);
+    List list = (List) inverseMap.get(key);
+    if (list == null) {
+      list = new LinkedList();
+      inverseMap.put(key, list);
+    }
+    list.add(listener);
+  }
+
+COM:adds a request listener to a map, with the option to remove any existing request listener with the same name and value

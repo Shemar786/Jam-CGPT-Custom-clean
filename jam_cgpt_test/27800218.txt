@@ -1,0 +1,11 @@
+TDAT:   public Dimension getMinimumSize ( JComponent component ) {
+    Dimension table_minimum_size =
+      treeTableTool.getTable().getMinimumSize();
+    if( treeTableTool.isHorizontal() ) {
+      return new Dimension( table_minimum_size.width, prerootDepth );
+    } else {
+      return new Dimension( prerootDepth, table_minimum_size.height );
+    }
+  } // getMinimumSize(..)
+
+COM:returns the minimum size of a JComponent based on the table minimum size and the preroot depth

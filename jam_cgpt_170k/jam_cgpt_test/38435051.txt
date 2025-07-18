@@ -1,0 +1,18 @@
+TDAT: 	public void run(IAction action) {
+		/**
+		 * log.warning(""+String.valueOf(SWT.CTRL | 'e'));
+		 * 
+		 * log.warning(""+String.valueOf(SWT.CTRL | SWT.SHIFT | 'x'));
+		 */
+		Plasm plasm = Plasm.getInstance();
+
+		try {
+			plasm.open();
+		} catch (Throwable e) {
+			MessageDialog.openError(window.getShell(), "Error", e.toString());
+			log.warning(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+
+COM:opens the Plasm instance and catches any errors that occur during the process

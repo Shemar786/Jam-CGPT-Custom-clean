@@ -1,0 +1,15 @@
+TDAT:     public boolean removeArmy(int lanceID) {
+
+        for (Iterator<CArmy> i = Armies.iterator(); i.hasNext();) {
+            if (i.next().getID() == lanceID) {
+                i.remove();
+                mwclient.getMainFrame().updateAttackMenu();// removing an army
+                // needs to reset
+                // menu
+                return (true);
+            }
+        }
+        return (false);
+    }
+
+COM:removes an army from a list by its ID, updates the attack menu, and returns true if the army was successfully removed

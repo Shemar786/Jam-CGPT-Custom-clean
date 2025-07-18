@@ -1,0 +1,17 @@
+TDAT:     public boolean isFirstInstance() {
+        try {
+            FileOutputStream out = new FileOutputStream(lockFile);
+            FileChannel channel = out.getChannel();
+            lock = channel.tryLock();
+            if (lock == null) {
+                return false;
+            }
+            lockFile.deleteOnExit();
+        } catch (Throwable t) {
+            logger.log(Level.INFO, "Program lock could not be obtained", t);
+            return false;
+        }
+        return true;
+    }
+
+COM:tries to obtain a lock on a specific file and returns true if the lock is obtained successfully, otherwise it returns false

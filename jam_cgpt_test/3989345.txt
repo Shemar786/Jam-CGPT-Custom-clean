@@ -1,0 +1,12 @@
+TDAT:     private ProcedureException createException(Throwable e) {
+        if (e instanceof ProcedureException) {
+            return (ProcedureException) e;
+        } else if (e instanceof WrappedException) {
+            return createException(((WrappedException) e).getWrappedException());
+        } else {
+            LOG.log(Level.WARNING, "Caught unhandled exception", e);
+            return new ProcedureException("Caught unhandled exception", e);
+        }
+    }
+
+COM:creates a ProcedureException object based on the type of Throwable passed into it

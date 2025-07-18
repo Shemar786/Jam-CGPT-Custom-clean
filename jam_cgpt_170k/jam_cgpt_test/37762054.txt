@@ -1,0 +1,9 @@
+TDAT:     private void addRange(TextPresentation presentation, int offset, int length, TextAttribute attr) {
+        if (attr != null) {
+            presentation.addStyleRange(
+                new StyleRange(offset, length, attr.getForeground(), attr.getBackground(), attr.getStyle())
+            );
+        }
+    }
+
+COM:adds a style range to a given text presentation at a specified offset and length with attributes for color and style

@@ -1,0 +1,10 @@
+TDAT: 	private void addCounter(Color color, long serverID, int x, int y) {
+		Counter counter = new Counter(color, serverID);
+
+		counters.add(counter);
+		Cardpanda.canvas.add(counter, x, y);
+
+		System.out.println(counter.getName() + " " + counter.getServerID() + " added at " + x + "," + y);
+	}
+
+COM:adds a new counter of a specified color and server ID at specified coordinates to a canvas, and prints a message confirming the addition

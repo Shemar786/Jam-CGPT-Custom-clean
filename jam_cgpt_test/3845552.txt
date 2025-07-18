@@ -1,0 +1,15 @@
+TDAT:     /*public Schema findSchema(String schemaName) throws SQLException {
+        // find schema
+        Schema schema = null;
+        Iterator iter = getSchemas().iterator();
+        while (iter.hasNext()) {
+            Schema s = (Schema)iter.next();
+            if (s.getSchemaName().equals(schemaName)) {
+                schema = s;
+            }
+        }
+        // schema is null -> return null
+        return schema;
+    }*/
+
+COM:finds and returns a schema object by its name, or returns null if it doesn't exist

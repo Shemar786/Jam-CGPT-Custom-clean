@@ -1,0 +1,18 @@
+TDAT: 	private void save() {
+		boolean good = true;
+		for (int i = 0; i < inputBoxes.length; ++i) {
+			try {
+				fe_.setElement(i, inputBoxes[i].getText());
+			} catch (Exception e) {
+				good = false;
+				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR",
+						JOptionPane.ERROR_MESSAGE);
+			}
+		}
+		if (good) {
+			setVisible(false);
+		}
+	}
+
+COM:saves user inputs into an array and sets visibility to false if all inputs are valid

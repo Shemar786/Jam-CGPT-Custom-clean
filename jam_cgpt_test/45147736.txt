@@ -1,0 +1,12 @@
+TDAT:   public Position createUniqueFieldersPosition(Fielder fielder) {
+    Die die = new Die(6);
+    boolean isValidPos = false;
+    Position pos = null;
+    while (!isValidPos) {
+      pos = new Position(die.roll(), die.roll(), 0);
+      isValidPos = field.isFieldingPositionEmpty(pos);
+    }
+    return pos;
+  }
+
+COM:creates a unique fielder's position using a die roll and checks if the position is empty before returning it

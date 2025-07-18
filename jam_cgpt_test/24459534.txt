@@ -1,0 +1,16 @@
+TDAT: 	public void cleanFolder(String dir){
+		File folder = new File(dir);
+		
+		if(folder.exists()){
+			
+			  File[] prevFiles = folder.listFiles();
+			  for(int x=0;x<prevFiles.length;x++){				  
+				  log.debug(prevFiles[x].getPath());
+				  if(prevFiles[x].isDirectory())cleanFolder(prevFiles[x].getPath());
+				  
+				  prevFiles[x].delete();
+			  }
+		}
+	}
+
+COM:recursively deletes all files and subdirectories in a specified folder

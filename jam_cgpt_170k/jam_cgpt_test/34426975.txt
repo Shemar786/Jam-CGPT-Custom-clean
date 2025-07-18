@@ -1,0 +1,10 @@
+TDAT:     private File initSWGUniverse(File f, SWGUniverse swgUniv) throws Exception {
+        swgUniv.swgPath(f);
+
+        SWGUniverse tc = (SWGUniverse) getPrefsKeeper().get("swgTestCenter");
+        File tf = new File(f, "testcenter");
+        if (tc != null && SWGUniverse.isValidSWGPath(tf)) tc.swgPath(tf);
+        return f;
+    }
+
+COM:initializes a SWGUniverse object and sets its path to a specified file, with the option to set the path to a test center file if one exists

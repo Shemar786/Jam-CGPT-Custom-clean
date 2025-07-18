@@ -1,0 +1,12 @@
+TDAT:   public boolean asBoolean() throws InputException {
+    if (_value == null) {
+      throw new InputException(
+        "true/false, yes/no  or on/off expected for option '" + getName() +
+        "'");
+    }
+
+    return _value.equals("true") || _value.equals("yes") ||
+    _value.equals("on");
+  }
+
+COM:returns a boolean value based on whether the _value variable is equal to "true", "yes", or "on", and throws an InputException if _value is null

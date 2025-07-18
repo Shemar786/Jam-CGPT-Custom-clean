@@ -1,0 +1,20 @@
+TDAT: 	public void testOneTwoCreate() throws Exception {
+		IRodinFile ctx = createRodinFile("P/x.ctx");
+//		ToolTrace.flush();
+		createData(ctx, "one");
+		ctx.save(null, true);
+		runBuilder();
+		
+		IRodinFile cty = createRodinFile("P/y.ctx");
+		createDependency(cty, "x");
+		createData(cty, "two");
+		cty.save(null, true);		
+		runBuilder(
+				"CSC extract /P/x.ctx",
+				"CSC run /P/x.csc",
+				"CSC extract /P/y.ctx",
+				"CSC run /P/y.csc"
+		);
+	}
+
+COM:This is a Java method that creates two Rodin files, adds data to them, saves them, and runs a builder on both files

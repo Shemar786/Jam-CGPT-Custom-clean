@@ -1,0 +1,14 @@
+TDAT:      public CostMapping getCostMapping(String name) {
+         synchronized(costMappings) {
+             Iterator it =  costMappings.iterator();
+             while (it.hasNext()) {
+                 CostMapping cm = (CostMapping) it.next();
+                 if (cm.getName().equals(name)) {
+                     return cm;
+                 }
+             }
+         }
+         return null;
+     }
+
+COM:returns a CostMapping object from a list of CostMapping objects based on a provided name, while using synchronized block to ensure thread safety

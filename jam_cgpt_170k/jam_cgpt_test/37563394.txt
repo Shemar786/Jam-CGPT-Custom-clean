@@ -1,0 +1,7 @@
+TDAT: public void subtract (int x, int y, int width, int height) {
+	if (isDisposed()) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+	if (width < 0 || height < 0) SWT.error(SWT.ERROR_INVALID_ARGUMENT);	
+  handle.subtract(new Area(new java.awt.Rectangle(x, y, width, height)));
+}
+
+COM:subtracts a rectangle of specified width and height from a graphics area, throwing errors if the graphics are already disposed or if the arguments are invalid

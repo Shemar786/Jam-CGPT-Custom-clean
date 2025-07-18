@@ -1,0 +1,17 @@
+TDAT:   public void setDbDataVector(java.util.Vector dbDataVector) {
+
+    java.util.Vector oldValueVector = fieldDbDataVector;
+
+    if ( dbDataVector != null )
+      fieldDbDataVector = dbDataVector;
+    else
+      fieldDbDataVector = new java.util.Vector();
+
+
+    firePropertyChange("dbDataVector", oldValueVector, dbDataVector);
+
+    // remove all deleted vectors
+    getDeletedDbDataVector().removeAllElements();
+  }
+
+COM:sets the value of a vector field to a new vector, and removes any deleted vectors from the vector field

@@ -1,0 +1,9 @@
+TDAT:     public void addHouse(House faction) {
+        if (faction.getId() == -1 && !faction.getName().equalsIgnoreCase("None")) {
+            faction.setId(getUnusedHouseID());
+        }
+        factions.put(faction.getId(), faction);
+        factionid.put(faction.getName().toLowerCase(), faction.getId());
+    }
+
+COM:adds a House object to a Collection while performing some conditional checks on its ID and name

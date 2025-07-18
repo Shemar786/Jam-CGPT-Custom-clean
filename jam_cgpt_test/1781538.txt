@@ -1,0 +1,10 @@
+TDAT:     public void setParameter( String name, final String[] values ) {
+        FormParameter parameter = getParameter( name );        
+        if (parameter == UNKNOWN_PARAMETER) throw new NoSuchParameterException( name );
+        if (parameter.isFileParameter()) {
+        	throw new InvalidFileParameterException(name,values);
+        }        	
+        parameter.setValues( values );
+    }
+
+COM:sets the values of a specified form parameter, but throws exceptions if the parameter is unknown or invalid

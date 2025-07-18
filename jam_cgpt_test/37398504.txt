@@ -1,0 +1,10 @@
+TDAT:   private void initMatchAllPatterns() {
+    for (int i = 0; i < this.uriPatterns.length; i++) {
+      String pattern = this.uriPatterns[i];
+      if (pattern.equals(WILDCARD) || pattern.equals("/*")) {
+        this.uriPatterns[0] = WILDCARD;
+      }
+    }
+  }
+
+COM:initializes URI patterns by checking for wildcard and slash patterns in the specified array

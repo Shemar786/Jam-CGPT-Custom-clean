@@ -1,0 +1,17 @@
+TDAT:     public String getPointerStyle(int pointerTypeCode) {
+        switch(pointerTypeCode) {
+            case ARROW_CODE :
+                return "arrow";
+            case DELETE_CODE :
+                return "eraser";
+            case MOVE_CODE :
+                return "hand";
+            case EDIT_CODE :
+                return "pen";
+        }
+        
+        assert (false) : "unknown screen pointer type found";
+        return "";
+    }
+
+COM:returns a String describing the pointer style based on the input pointerTypeCode parameter

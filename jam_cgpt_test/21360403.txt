@@ -1,0 +1,10 @@
+TDAT:     public void setLookAndFeel(ThemeManager.LAF lookAndFeel) {
+        if (lookAndFeel == null) {
+            throw new IllegalArgumentException("lookAndFeel may not be null");
+        }
+        ThemeManager.LAF oldLookAndFeel = this.lookAndFeel;
+        this.lookAndFeel = lookAndFeel;
+        changeSupport.firePropertyChange("lookAndFeel", oldLookAndFeel, lookAndFeel);
+    }
+
+COM:sets the look and feel of the application using the specified theme manager and fires a property change event

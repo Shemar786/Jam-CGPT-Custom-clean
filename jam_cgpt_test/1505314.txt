@@ -1,0 +1,10 @@
+TDAT: 	private void sortFriendsTable(int column, SortOrder order){
+		RowSorter.SortKey sortKey = new RowSorter.SortKey(column, order);
+		ArrayList alist = new ArrayList(1);
+		alist.add(sortKey);
+		((DefaultRowSorter)friendsTable.getRowSorter()).setSortable(column , true);
+		((DefaultRowSorter)friendsTable.getRowSorter()).setSortKeys(alist);
+		((DefaultRowSorter)friendsTable.getRowSorter()).sort();
+	}
+
+COM:sorts a table of friends based on a specified column and sorting order

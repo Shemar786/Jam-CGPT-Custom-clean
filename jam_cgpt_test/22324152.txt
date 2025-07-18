@@ -1,0 +1,8 @@
+TDAT:     public void setConfiguration(Configuration cfg) throws ConfigurationException {
+        this.cfg = cfg;
+        this.minLen =  cfg.getInt( "min-len", 0 );
+        this.maxLen = cfg.getInt( "max-len", 999999 );
+        this.breakOnError = cfg.getBoolean( "break-on-error", false );
+    }
+
+COM:sets the configuration values for min-len, max-len, and break-on-error, based on the input Configuration object, and throws a ConfigurationException if there is an error

@@ -1,0 +1,7 @@
+TDAT:     public PageContext getPageContext(Servlet servlet, ServletRequest request, ServletResponse response, String errorPageURL, boolean needsSession, int bufferSize, boolean autoFlush) {
+        PageContextImpl context = new PageContextImpl();
+        context.initialize(servlet, request, response, errorPageURL, needsSession, bufferSize, autoFlush);
+        return context;
+    }
+
+COM:returns a PageContext object initialized with the specified parameters

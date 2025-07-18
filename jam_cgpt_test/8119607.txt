@@ -1,0 +1,13 @@
+TDAT:     public void login(String username, String password) throws RemoteException, ServiceException {
+        rallyService = new RallyServiceServiceLocator().getRallyService();
+
+        Stub stub = (Stub) rallyService;
+        stub.setUsername(username);
+        stub.setPassword(password);
+
+        stub.setMaintainSession(true);
+
+        user = (User) rallyService.getCurrentUser();
+    }
+
+COM:logs a user into a service using their username and password, and throws RemoteException and ServiceException if there is an issue

@@ -1,0 +1,10 @@
+TDAT:     public Command getScreenCommand3() {
+        if (screenCommand3 == null) {//GEN-END:|416-getter|0|416-preInit
+            // write pre-init user code here
+            screenCommand3 = new Command("NOMINA 2", Command.SCREEN, 0);//GEN-LINE:|416-getter|1|416-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|416-getter|2|
+        return screenCommand3;
+    }
+
+COM:returns a screen command object and initializes it if it is null

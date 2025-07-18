@@ -1,0 +1,14 @@
+TDAT: 	public void logPersonalNote(String result, boolean mine) {
+		if(mine) {
+			setMyColor();
+		} else {
+			setOpponentColor();
+		}
+
+		String thisClientsName = Cardpanda.clientModel.getSessionID().getName();
+		setHTML(result.replace(thisClientsName + "'s", "your"));
+		Window.setTitle("[" + Cardpanda.clientModel.getSessionID().getName() + "] "
+				+ result.replace(thisClientsName + "'s", "your"));
+	}
+
+COM:logs a personal note and sets the color of the client based on whether they own it or not

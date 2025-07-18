@@ -1,0 +1,17 @@
+TDAT: 	private JComboBox getFunktieComboBox() {
+		if (funktieComboBox == null) {
+			funktieComboBox = new JComboBox();
+			funktieComboBox.setPreferredSize(new Dimension(31, 20));
+			funktieComboBox.addItem("");
+			funktieComboBox.addItem("HS");
+			funktieComboBox.addItem("SR");
+			funktieComboBox.addItem("KB");
+			funktieComboBox.addItem("KA");
+			funktieComboBox.addItem("HJ");
+			funktieComboBox.addItem("JS");
+			funktieComboBox.addItem("TW");
+		}
+		return funktieComboBox;
+	}
+
+COM:returns a JComboBox object with a specific list of items and preferred size if it has not been instantiated yet

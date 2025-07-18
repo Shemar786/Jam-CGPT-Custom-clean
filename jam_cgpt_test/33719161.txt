@@ -1,0 +1,14 @@
+TDAT:     public void testGetGroupId() {
+        System.out.println("GetGroupId");
+        
+        AutismGroup instance = new AutismGroup();
+        
+        int expResult = 0;
+        int result = instance.GetGroupId();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the functionality of the GetGroupId method in the AutismGroup class by checking if the expected output matches the actual output

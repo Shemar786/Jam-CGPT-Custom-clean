@@ -1,0 +1,10 @@
+TDAT:     protected void setTo(Mail newMail, InternetAddress[] to, Mail originalMail) throws MessagingException {
+        if (to != null) {
+            newMail.getMessage().setRecipients(Message.RecipientType.TO, to);
+            if (isDebug) {
+                log("apparentlyTo set to: " + arrayToString(to));
+            }
+        }
+    }
+
+COM:sets the recipient(s) of a new email message based on a provided array of InternetAddress objects, and logs the change if debug mode is enabled

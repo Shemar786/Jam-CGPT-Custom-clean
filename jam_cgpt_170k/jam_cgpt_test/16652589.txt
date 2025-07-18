@@ -1,0 +1,14 @@
+TDAT:   public void rawPrint(String text) throws RegainException {
+    if (mPrintStream == null) {
+      try {
+        mPrintStream = mResponse.getPrintStream();
+      }
+      catch (IOException exc) {
+        throw new RegainException("Getting response PrintStream failed", exc);
+      }
+    }
+    
+    mPrintStream.print(text);
+  }
+
+COM:prints the given text using a PrintStream, which is retrieved from a Response object, and throws a RegainException if the PrintStream cannot be obtained

@@ -1,0 +1,13 @@
+TDAT:   public Document createDocument(wpXSDEngine schema) throws wpException {
+
+    Document document = createEmptyDocument();
+    if (schema != null) {
+      String s = schema.targetNamespace;
+      setNameSpaceURI(document);
+      Element root = document.getDocumentElement();
+      wpXSDtoDOM(document, schema.rootXSDobj, root);
+    }
+    return document;
+  }
+
+COM:creates an XML Document using a specified XSD schema

@@ -1,0 +1,13 @@
+TDAT: 	protected void handleException(HibernateTransaction transaction, Exception e) throws StorageException {
+		LOGGER.warn("rolling back: " + transaction.getName(), e);
+		rollbackSilently();
+		StorageException result;
+		if (e instanceof StorageException) {
+			result = (StorageException) e;
+		} else {
+			result = new GenericStorageException(transaction.isReadOnly(), transaction.getName(), e);
+		}
+		throw result;
+	}
+
+COM:handles exceptions occurring during Hibernate transactions, rolls them back silently, and throws a StorageException

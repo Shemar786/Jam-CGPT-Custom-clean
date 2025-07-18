@@ -1,0 +1,14 @@
+TDAT: 	private int getMaxRetryAttempts(Object transitionObject) {
+		
+		try{
+			Idempotent idempotent = transitionObject.getClass()
+				.getMethod("doTransition", new Class[0]).getAnnotation(Idempotent.class);
+			
+			return idempotent == null ? 1 : idempotent.attempts();
+		}
+		catch(NoSuchMethodException e){
+			throw new IllegalArgumentException("transitionObject is not of type Transition or TransitionWithResult", e);
+		}
+	}
+
+COM:returns the maximum number of retry attempts allowed based on the presence of an @Idempotent annotation on the doTransition method of the given transitionObject

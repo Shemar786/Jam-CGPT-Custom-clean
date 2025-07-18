@@ -1,0 +1,20 @@
+TDAT:         public void complete() {
+            try {
+                lock.lock();
+
+                final int i = threadMap.get(Thread.currentThread());
+                assert stateOf[i] == WORKING;
+                stateOf[i] = COMPLETE;
+                inState[COMPLETE]++;
+                inState[WORKING]--;
+
+                // Signal master if waiting and this is the last worker to
+                // complete
+                if (inState[COMPLETE] == nworkers)
+                    completion.signal();
+            } finally {
+                lock.unlock();
+            }
+        }
+
+COM:marks a thread as complete and signals the master thread if all workers have finished

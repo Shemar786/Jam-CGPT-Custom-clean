@@ -1,0 +1,21 @@
+TDAT: 	public boolean isInt(float Testee) {
+
+		boolean result;
+
+		Testee = Testee * 10;
+		String Testee2 = String.valueOf(Testee);
+		int len = Testee2.length();
+
+		String first = Testee2.substring(len - 3, len - 2);
+		String second = Testee2.substring(len - 2, len - 1);
+		String third = Testee2.substring(len - 1, len);
+
+		if (first.equals("0") && second.equals(".") && third.equals("0"))
+			result = true;
+		else
+			result = false;
+
+		return result;
+	}
+
+COM:tests if a given float value has a tenths place of zero, returning true if it does and false if it doesn't

@@ -1,0 +1,13 @@
+TDAT:     public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+	boolean load = ((infoflags & ABORT) != 0 || (infoflags & ALLBITS) != 0);
+	if (load) {
+	    loaded = true;
+	    if (sleeper != null) {
+		sleeper.interrupt();
+		sleeper = null;
+	    }
+	}
+	return !load;
+    }
+
+COM:determines if an image was successfully loaded and interrupts any ongoing sleep process if needed

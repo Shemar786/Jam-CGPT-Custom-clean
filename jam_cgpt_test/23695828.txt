@@ -1,0 +1,12 @@
+TDAT: 	private JTextArea getJTextAreaCancelReason() {
+		if (jTextAreaCancelReason == null) {
+			jTextAreaCancelReason = new JTextArea();
+			jTextAreaCancelReason.setBounds(new Rectangle(35, 100, 569, 114));
+			jTextAreaCancelReason.setWrapStyleWord(true);
+			jTextAreaCancelReason.setLineWrap(true);
+			jTextAreaCancelReason.setBackground(new Color(255, 204, 204));
+		}
+		return jTextAreaCancelReason;
+	}
+
+COM:returns a JTextArea object with specific properties and dimensions, and creates it if it does not exist

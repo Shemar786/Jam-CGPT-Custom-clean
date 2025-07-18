@@ -1,0 +1,15 @@
+TDAT: 	public void addValue(IExpression<E> x, IExpression<F> y) {
+		assert x.isConstant() && y.isConstant();
+		TreeSet<IExpression<F>> xIm = map.get(x);
+		if (xIm == null) {
+			xIm = new TreeSet<IExpression<F>>(new ExpressionComparator<F>());
+			map.put(x, xIm);
+		}
+		if (!xIm.contains(y)) {
+			xIm.add(y);
+			card++;
+		}
+
+	}
+
+COM:adds the value of two constant expressions to a map and increases the cardinality if the value has not already been added

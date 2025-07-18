@@ -1,0 +1,10 @@
+TDAT: 	public boolean isShared(IResource resource) {
+		OmniCoreTrace.trace(this,"isShared("+resource+")", "(called)");
+		OmniCoreTrace.trace(this,"isShared("+resource+")", "Is shared: "+resource);
+
+		boolean val = resource != null && !isIgnored(resource) && isControlled(resource);
+		OmniCoreTrace.trace(this,"isShared("+resource+")", "(returned) "+val);
+		return val;
+	}	
+
+COM:checks if a given resource is shared and returns a boolean value

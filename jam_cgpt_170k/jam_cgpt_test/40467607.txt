@@ -1,0 +1,17 @@
+TDAT: 	protected int getAngleFromUser(Point p){
+		int degs = 0;
+		switch(mode){
+		case CTRL_ANGULAR:
+			degs =  Math.round(PApplet.degrees(calcRealAngleFromXY(p,  winApp.mouseX, winApp.mouseY)));
+			break;
+		case CTRL_HORIZONTAL:
+			degs = (int) (sensitivity * (winApp.mouseX - p.x - startMouseX));
+			break;
+		case CTRL_VERTICAL:
+			degs = (int) (sensitivity * (winApp.mouseY - p.y - startMouseY));
+			break;
+		}
+		return degs;
+	}
+
+COM:returns an integer representing an angle based on user input and the current mode

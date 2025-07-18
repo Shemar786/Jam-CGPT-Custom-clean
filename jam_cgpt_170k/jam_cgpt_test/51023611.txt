@@ -1,0 +1,15 @@
+TDAT: 	public void setEdgeColorSelection(EdgeColorSelection s) {
+		this.strategy = s;
+		if (s != EdgeColorSelection.MANUAL) {
+			// save colouring strategy to visual.xml
+			if (strategy == EdgeColorSelection.RELATIONTYPE) {
+				Config.visual.setProperty(GRAPH_COLORING_RELATION_STRATEGY, RT);
+			} else if (strategy == EdgeColorSelection.EVIDENCETYPE) {
+				Config.visual.setProperty(GRAPH_COLORING_RELATION_STRATEGY, ET);
+			}
+			if (!Config.ovtkDir.startsWith("http"))
+				Config.saveVisual();
+		}
+	}
+
+COM:sets the edge color selection strategy and saves the coloring strategy to visual.xml if it is not manual

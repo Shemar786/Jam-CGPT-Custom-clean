@@ -1,0 +1,12 @@
+TDAT: 	private void saveEditorValue(CellEditor cellEditor, Item treeItem) {
+		if (cellModifier != null) {
+			String property = null;
+			if (columnProperties != null
+					&& columnNumber < columnProperties.length) {
+				property = columnProperties[columnNumber];
+			}
+			cellModifier.modify(treeItem, property, cellEditor.getValue(), columnNumber);
+		}
+	}
+
+COM:This private Java method saves the value of a cell editor for a given tree item, and modifies the corresponding tree item's properties using the cell modifier

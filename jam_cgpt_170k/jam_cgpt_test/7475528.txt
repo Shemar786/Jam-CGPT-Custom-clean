@@ -1,0 +1,12 @@
+TDAT: 		public void setProperties(boolean audioMuted, boolean autoPlay, boolean controls, boolean inline,boolean loop, String startStyle, String stopStyle){
+			this.autoPlay = autoPlay;
+			this.showControl = controls;
+			this.doLoop = loop;
+			this.audioMuted = audioMuted;
+			this.startStyle = startStyle;
+			this.stopStyle = stopStyle;
+			this.inline = inline;			
+
+		}
+
+COM:sets various properties of a media player object

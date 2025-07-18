@@ -1,0 +1,14 @@
+TDAT:     public Collection values() {
+        List l = new ArrayList(size());
+        Iterator keys = super.keySet().iterator();
+        Iterator vals = null;
+        while (keys.hasNext()) {
+            vals = ((Set)get(keys.next())).iterator();
+            while (vals.hasNext()) {
+                l.add(vals.next());
+            }
+        }
+        return l;
+    }
+
+COM:returns a new Collection containing all the values stored in a given Map

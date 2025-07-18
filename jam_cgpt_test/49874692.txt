@@ -1,0 +1,15 @@
+TDAT: 	public String join(String separator) throws JSONException {
+		int len = length();
+		StringBuffer sb = new StringBuffer();
+		// log.debug(myArrayList.size());
+		// log.debug(myArrayList.get(0));
+		for (int i = 0; i < len; i += 1) {
+			if (i > 0) {
+				sb.append(separator);
+			}
+			sb.append(JSONObject.valueToString(this.myArrayList.get(i)));
+		}
+		return sb.toString();
+	}
+
+COM:returns a string that concatenates all the elements in an ArrayList with a separator string between each element

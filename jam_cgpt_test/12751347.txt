@@ -1,0 +1,10 @@
+TDAT: 	public Color parseColor(String rgb, String sep) {
+		StringTokenizer st = new StringTokenizer(rgb, sep);
+		int[] result = new int[st.countTokens()];
+		for (int i = 0; i < result.length; i++) {
+			result[i] = Integer.parseInt(st.nextToken());
+		}
+		return new Color(result[0], result[1], result[2]);
+	}
+
+COM:takes in a string containing RGB values separated by a specified separator, parses the values and returns a Color object

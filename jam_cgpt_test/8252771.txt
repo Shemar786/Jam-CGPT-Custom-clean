@@ -1,0 +1,8 @@
+TDAT:     public void addChild(TrackNode child){
+        this.children.add(child);
+        child.parent = this;
+        remainingEcho++;
+        ////////////////////////////////////////////
+    }
+
+COM:adds a child TrackNode to the current node, sets the child's parent to the current node, and increments a remainingEcho counter

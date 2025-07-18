@@ -1,0 +1,22 @@
+TDAT:     public void doPoll() throws Exception {
+
+        log.debug( "*** Within doPoll() *** " );
+
+        String[] addr = getSlaveHostsFromMaster();
+
+        doMarkOfflineRemovedHosts( addr );
+
+        for( int i = 0; i < addr.length; ++i ) {
+            
+            String address = addr[i];
+            doPoll( address );
+
+        }
+
+        //If a slave has been marked offline... just reconnect it.
+        reconnectOfflineSlaves();
+        driver.rebalanceConnections( profile );
+
+    }
+
+COM:performs a poll on slave hosts, removes offline hosts, and reconnects offline slaves if necessary

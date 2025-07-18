@@ -1,0 +1,23 @@
+TDAT: 	private void setupMenu() {
+		JMenuBar mb = new JMenuBar();
+
+		JMenu menu = new JMenu(
+				Config.language.getProperty("ContentsDisplay.Menu.Title"));
+
+		menu.add(createMenuItem(
+				Config.language.getProperty("ContentsDisplay.Menu.Options"),
+				"options"));
+		menu.addSeparator();
+		menu.add(createMenuItem(
+				Config.language.getProperty("ContentsDisplay.Menu.Close"),
+				"close"));
+
+		mb.add(menu);
+
+		if (parent != null)
+			parent.setJMenuBar(mb);
+		else
+			setJMenuBar(mb);
+	}
+
+COM:sets up a menu bar with options and close menu items for displaying content, and assigns it to the parent or current frame

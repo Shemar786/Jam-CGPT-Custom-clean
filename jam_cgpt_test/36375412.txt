@@ -1,0 +1,12 @@
+TDAT:     private Group initHelpOptions() {
+        this.helpOption = 
+            optBuilder.withShortName("h").withLongName("help")
+            .withDescription("Prints this help message and exits.")
+            .create();
+        
+        return 
+            groupBuilder.withOption(helpOption)
+            .withMinimum(0).withMaximum(1).withName("Getting help:").create();
+    }
+
+COM:initializes an option for getting help in a command line interface and returns a group containing that option

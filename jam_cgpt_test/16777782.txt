@@ -1,0 +1,9 @@
+TDAT:     public IVector evaluateMarginalPDFs(IVector values){
+    	IVector mean = this.values[this.valueInd];
+    	IVector std = this.values[this.stdInd];
+    	StochVector sv = new StochVector(mean,std);
+    	IVector result = sv.evaluateMarginalPDFs(values);
+    	return result;
+    }
+
+COM:evaluates the marginal probability density function of a stochastic vector given a set of values

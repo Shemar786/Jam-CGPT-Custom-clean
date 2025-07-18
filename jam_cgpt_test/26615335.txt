@@ -1,0 +1,18 @@
+TDAT:     public void addToolbarListener(final AIToolbarListener parent) {
+        listener.add(ActionListener.class,
+                     new ActionListener() {
+            /**
+             * Method declaration
+             * 
+             * 
+             * @param e
+             * 
+             * @see
+             */
+            public void actionPerformed(ActionEvent e) {
+                parent.Toolbar_Clicked(e);
+            }
+        });
+    }
+
+COM:adds an ActionListener to a listener and calls the Toolbar_Clicked method of an AIToolbarListener object when the listener is activated

@@ -1,0 +1,12 @@
+TDAT:     private void computeAndSetThetaE(Node n) {
+
+        Node dummy = computeEThetaF(n.getChild(Node.LEFT).getLeaves(),
+                n.getChild(Node.RIGHT).getLeaves());
+
+        n.e = dummy.e;
+        n.theta = dummy.theta;
+        n.logF = dummy.logF;
+
+    }
+
+COM:computes and sets the thetaE, e, and logF values for a given Node

@@ -1,0 +1,12 @@
+TDAT: 	private JTextArea getTxtNameElement() {
+		if (txtNameElement == null) {
+			txtNameElement = new JTextArea();
+			txtNameElement.setBounds(new Rectangle(138, 31, 187, 23));
+			txtNameElement.setBackground(Color.white);
+			txtNameElement.setBorder(BorderFactory.createLineBorder(Color.lightGray, 2));
+			txtNameElement.setEditable(false);
+		}
+		return txtNameElement;
+	}
+
+COM:returns a JTextArea element, and if it does not exist, it first creates and customizes it before returning it

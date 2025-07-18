@@ -1,0 +1,10 @@
+TDAT:     public void add(String type, String jar, String description) {
+        if (count < jars.length) {
+            jars[count] = new String[3];
+            jars[count][TYPE_COLUMN] = type;
+            jars[count][JAR_COLUMN] = jar;
+            jars[count++][DESCRIPTION_COLUMN] = description;
+        }
+    }
+
+COM:adds a new String array consisting of a type, jar, and description to an array of jars if the current count is less than the length of the jars array

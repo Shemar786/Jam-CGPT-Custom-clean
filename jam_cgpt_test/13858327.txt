@@ -1,0 +1,12 @@
+TDAT:     private IWizardModel createModel(String string) {
+        IWizardModel ret = null;
+        try {
+            ret = (IWizardModel) Class.forName(string).newInstance();
+        } catch (InstantiationException e) {
+        } catch (IllegalAccessException e) {
+        } catch (ClassNotFoundException e) {
+        }
+        return ret;
+    }
+
+COM:creates and returns an object of type IWizardModel based on the string parameter passed to it, using reflection to instantiate the object

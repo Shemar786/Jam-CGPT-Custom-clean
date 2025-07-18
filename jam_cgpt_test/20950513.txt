@@ -1,0 +1,19 @@
+TDAT: 	public void rename(String newName) throws SQLIOException {
+		unlockAndClose();
+
+		// parent can be null, but is not clear in which case and if this can lead
+		// to problems
+		File newFile = new File(fileHnd.getParent(), newName);
+
+		boolean renameOk = fileHnd.renameTo(newFile);
+		if (renameOk) {
+			fileHnd = newFile;
+			lockAndInit(fileHnd, false);
+		}
+		else {
+			lockAndInit(fileHnd, false);
+			throw new SQLIOException("Cannot rename table file.");
+		}
+	}
+
+COM:renames a file, throwing a SQLIOException if the file cannot be renamed

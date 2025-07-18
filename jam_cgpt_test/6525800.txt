@@ -1,0 +1,14 @@
+TDAT:     public String getRepositoryPath(Class contentClass) {
+        String className = getClassName(contentClass);
+        String repositoryPath = CmsConfig.getRepositoryPath(className);
+
+        if (StringUtils.isEmpty(repositoryPath)) {
+            repositoryPath = CmsConfig.getDefaultRepositoryPath();
+        }
+        if (!repositoryPath.endsWith("/")) {
+            repositoryPath += "/";
+        }
+        return repositoryPath;
+    }
+
+COM:retrieves the repository path for a given content class, either from the configuration or the default value if not specified

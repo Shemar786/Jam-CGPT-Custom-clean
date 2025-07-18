@@ -1,0 +1,12 @@
+TDAT: 	protected void testAction(String message, IAction act, String expected) {
+		try {
+			String actual = act.getLabel() + ": " + act.getAssignmentString();
+			assertEquals(message + ": Incorrect action", expected, actual);
+		} catch (RodinDBException e) {
+			e.printStackTrace();
+			fail("There should be no exception");
+			return;
+		}
+	}
+
+COM:tests the label and assignment string of an IAction object against an expected value and throws an exception if there is a mismatch

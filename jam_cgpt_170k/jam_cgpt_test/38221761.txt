@@ -1,0 +1,16 @@
+TDAT:   public String gotoNextToken() {
+    scanner.gotoNextToken();
+    return scanner.getToken();
+/*
+    tk = "";
+    do {
+      scanner.gotoNextToken();
+      tk += scanner.getToken();
+    } while (scanner.getTokenType() != scanner.EOF
+      && scanner.getTokenType() != scanner.COMMENT
+      && scanner.getNextTokenType() != scanner.COMMENT);
+    return tk;
+*/
+  }
+
+COM:returns the next token in a scanner object and can also retrieve multiple adjacent tokens until a comment or EOF is encountered

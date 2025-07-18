@@ -1,0 +1,12 @@
+TDAT:     public int getNatTaxMC() {
+	int taxMC = 0;
+	if (nathappy < 30) return 0;
+	taxMC = (natclans * natgov * nattax + 2500) / 5000;
+	if (taxMC > getColClans()) taxMC = getColClans();
+	if (natsort == Natives.INSECTOID) taxMC *= 2;
+	int taxRate = getConfig().nativeTaxRate(getOwner());
+	taxMC = (taxMC * taxRate + 50) / 100;
+	return taxMC;
+    }
+
+COM:calculates the tax amount for a Native player

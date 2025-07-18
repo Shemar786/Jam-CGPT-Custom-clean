@@ -1,0 +1,11 @@
+TDAT: 	public GraceletPhaseListener () {
+		if (singleton != null) throw new IllegalStateException("You must have a singel gracelets jar for each application");
+		singleton = this;
+
+		String impl = getClass().getPackage().getImplementationVersion();
+		log.info("Welcome to Gracelets" + (impl == null ? "" : " " + impl));
+		
+		this.searchForGraceletComponents();
+	}
+
+COM:is a constructor for a GraceletPhaseListener class that checks for a singleton instance, logs a welcome message and searches for Gracelet components

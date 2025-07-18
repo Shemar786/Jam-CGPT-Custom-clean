@@ -1,0 +1,15 @@
+TDAT:   public Object include(Object context) throws ResourceNotFoundException, IOException, Exception{
+    InputStream is = null;
+    try{
+      Resource res = resolve();
+      is = res.getInputStream();
+      Object obj = doInclude(is, context);
+      pop();
+      return obj;
+    }finally{
+      if(is != null)
+        is.close();
+    }
+  }  
+
+COM:includes a resource and returns an object, while handling potential exceptions

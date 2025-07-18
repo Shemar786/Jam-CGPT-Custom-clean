@@ -1,0 +1,16 @@
+TDAT:     public String getRealName(String name, boolean ignoreCase) throws UsersRepositoryException {
+        if (ignoreCase) {
+            Iterator<String> it = list();
+            while (it.hasNext()) {
+                String temp = it.next();
+                if (name.equalsIgnoreCase(temp)) {
+                    return temp;
+                }
+            }
+            return null;
+        } else {
+            return objectRepository.containsKey(name) ? name : null;
+        }
+    }
+
+COM:returns the actual name from a list or map of usernames, either by matching case-insensitively or by checking if a key exists in a map

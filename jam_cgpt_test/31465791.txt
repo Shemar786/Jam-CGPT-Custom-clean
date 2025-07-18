@@ -1,0 +1,17 @@
+TDAT:     public int compareTo(Object other) {
+	Version ver = (Version) other;
+	// and if the above fails, it's OK according to the Comparable interface -
+	// yay!
+	int c = major - ver.major;
+	if (c == 0) {
+	    c = minor - ver.minor;
+	    if (c == 0) {
+		c = patch - ver.patch;
+		if (c == 0)
+		    return build - ver.build;
+	    }
+	}
+	return c;
+    }
+
+COM:compares the version numbers of two objects implementing Comparable interface and returns an integer value indicating their relative order

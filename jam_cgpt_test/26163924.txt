@@ -1,0 +1,10 @@
+TDAT:     public void verifyNoActionErrors() {
+        if (logger.isDebugEnabled())
+            logger.debug("Entering");
+        init();
+        Common.verifyNoActionMessages(request,Globals.ERROR_KEY,"error");
+        if (logger.isDebugEnabled())
+            logger.debug("Exiting");
+    }
+
+COM:verifies that no action errors occurred during the execution of a web application

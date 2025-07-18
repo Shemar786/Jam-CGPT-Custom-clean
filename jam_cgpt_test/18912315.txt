@@ -1,0 +1,17 @@
+TDAT: 	protected void handleIncomingMessage(final QName messageType, final NotificationType params) throws RemoteException{
+
+		final BACoordinator coord = getBACoordinatorOrThrowFault();
+		final AbstractCoordParticipant part = getBAParticipantOrThrowFault(coord);
+
+		System.out.println("+++ CoordIncoming: "+messageType+" ("+params+"+ in TX "+coord+" from participant "+part);
+	
+		if (messageType.equals(State.MESSAGE_GETSTATUS)){
+			// Reply with the status
+			
+			part.tellStatus();
+		}else{
+			part.handleIncomingMessage(messageType, params);
+		}
+	}
+
+COM:handles incoming messages by retrieving a coordinator and participant, printing a notification, and either replying with the status or handling the message

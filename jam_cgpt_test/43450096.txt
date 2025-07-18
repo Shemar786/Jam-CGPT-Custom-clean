@@ -1,0 +1,12 @@
+TDAT:     public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
+        
+if ("contactdb".equals(portName)) {
+            setcontactdbEndpointAddress(address);
+        }
+        else 
+{ // Unknown Port Name
+            throw new javax.xml.rpc.ServiceException(" Cannot set Endpoint Address for Unknown Port" + portName);
+        }
+    }
+
+COM:sets the endpoint address for a specified port, throwing a ServiceException if the port name is unknown

@@ -1,0 +1,12 @@
+TDAT:     private void actionTableSelect() {
+        if (updateViewer) {
+            int row = table.getSelectedRow();
+            if (row >= 0) {
+                row = table.convertRowIndexToModel(row);
+                updateViewer = SWGSchemResViewer.updateDisplay(
+                        wrappersFiltered().get(row).getResource(), this);
+            }
+        }
+    }
+
+COM:selects a row from a table and updates the display if necessary

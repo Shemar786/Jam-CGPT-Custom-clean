@@ -1,0 +1,10 @@
+TDAT: 	public String toString() {
+		String theAddress = "{not specified}";
+		if (address != null) {
+			theAddress = address.toString();
+		}
+		return "id: [" + id + "], name: [" + name + "], address: <"
+				+ theAddress + ">, created: [" + sdf.format(created) + "]";
+	}
+
+COM:returns a string representation of an object with its id, name, address, creation date formatted as a string using a SimpleDateFormat object

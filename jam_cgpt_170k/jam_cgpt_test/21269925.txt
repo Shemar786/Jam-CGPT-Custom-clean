@@ -1,0 +1,9 @@
+TDAT:     private void createSashForm() {
+        sashForm = new SashForm( top, SWT.NONE );
+        sashForm.setOrientation( org.eclipse.swt.SWT.VERTICAL );
+        messageBoardText = new StyledText( sashForm, SWT.BORDER | SWT.V_SCROLL | SWT.WRAP );
+        messageBoardText.setEditable( false );
+        createComposite1();
+    }
+
+COM:creates a sash form with a vertical orientation, adds a styled text with border, vertical scroll, and wrap properties, sets it to non-editable, and creates another composite

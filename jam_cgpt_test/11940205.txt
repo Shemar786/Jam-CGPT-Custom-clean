@@ -1,0 +1,16 @@
+TDAT: 	public WsmlEntityVo findMatchingWsmlEntityVo(Entity entity) {
+
+		// create new Vo from parsed entity
+		WsmlEntityVo parsedWsmlEntityVo = new WsmlEntityVo(0, entity);
+		// compare with each serilized Vo
+		for (WsmlEntityVo serialWsmlEntityVo : this.getWsmlEntityVos()) {
+			// compare
+			if (serialWsmlEntityVo.equals(parsedWsmlEntityVo)) {
+				return serialWsmlEntityVo;
+			}
+		}
+		// if not found return null
+		return null;
+	}
+
+COM:searches for a WsmlEntityVo object that matches the input Entity object by comparing it with a list of serialized WsmlEntityVo objects

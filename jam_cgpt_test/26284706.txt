@@ -1,0 +1,6 @@
+TDAT:     public void paintIcon(Component c, Graphics g, int x, int y) {
+        if (icon == null) super.paintIcon(c, g, x, y);
+        else icon.paintIcon(c, g, x, y);
+    }
+
+COM:paints an icon onto a Component using Graphics, with the option to use a backup icon if the main one is null

@@ -1,0 +1,13 @@
+TDAT:     private E genMonoE(String lem, String par, String restrict) {
+        E e = new E();
+        String stem = Guesser.stemFromPardef(lem, par);
+        e.lemma = lem;
+        I i = new I();
+        i.setValue(stem);
+        e.children.add(i);
+        e.children.add(new Par(par));
+        e.restriction = restrict;
+        return e;
+    }
+
+COM:generates an object of type E with specific attributes and returns it

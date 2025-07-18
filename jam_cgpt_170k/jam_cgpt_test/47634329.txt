@@ -1,0 +1,13 @@
+TDAT:     public TableCellRenderer getNewDefaultRenderer(Class columnClass) {
+        TableCellRenderer renderer = getDefaultRenderer(columnClass);
+        if (renderer != null) {
+            try {
+                return (TableCellRenderer) renderer.getClass().newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+COM:returns a new table cell renderer for the specified column class, or null if the default renderer cannot be instantiated

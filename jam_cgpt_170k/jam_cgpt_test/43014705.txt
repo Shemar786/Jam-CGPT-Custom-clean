@@ -1,0 +1,12 @@
+TDAT: 	protected void fillHBComboFromData() {
+		
+		String[] hbs = new String[getEditedCanvas()._current.hitBoxes.size()]; 
+		for(int i= 0;i< getEditedCanvas()._current.hitBoxes.size();i++){
+			hbs[i]=getEditedCanvas()._current.hitBoxes.get(i).name;
+			System.out.println(hbs[i]);
+		}
+		
+		currentHitboxCombo.setItems(hbs);
+	}
+
+COM:fills a combo box with hit box names from the current edited canvas

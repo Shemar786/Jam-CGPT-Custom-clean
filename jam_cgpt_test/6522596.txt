@@ -1,0 +1,30 @@
+TDAT: 	public ReturnAny deregister() throws WSRPException {
+		ReturnAny any = null;
+
+		try {
+			if (registrationContext != null
+					&& this.registrationInterface != null) {
+
+				any = registrationInterface
+						.deregister(this.registrationContext);
+				registrationContext = null;
+				registrationRequired = false;
+
+				stateChanged();
+
+			}
+			else {
+				// TODO: Either we aren't registered at the producer or 
+				//      the producer does not support in-band registration
+			}
+
+		}
+		catch (java.rmi.RemoteException wsrpFault) {
+
+			WSRPXHelper.handleWSRPFault(logger, wsrpFault);
+		}
+
+		return any;
+	}
+
+COM:deregisters the current registration context, updates the registration status, and returns a ReturnAny object

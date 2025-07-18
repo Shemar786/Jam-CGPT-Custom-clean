@@ -1,0 +1,16 @@
+TDAT: 	protected void add(Action action) {
+		for (Action act : actions) {
+			if (act.getIdentifier().equals(action.getIdentifier())) {
+				System.out.println("Action with identifier: " + act.getIdentifier() + " already added.");
+				return;
+			}
+		}
+
+		System.out.println("ServiceContextManager ADDING Action (" + action.getClass().getName() + ")");
+
+		actions.add(action);
+
+		fireActionsChanged(action, ActionsChangedEvent.Type.ADDED);
+	}
+
+COM:adds an action to a collection of actions, if not already present, and triggers an event indicating the addition of the action

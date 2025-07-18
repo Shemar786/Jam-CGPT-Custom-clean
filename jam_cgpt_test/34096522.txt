@@ -1,0 +1,11 @@
+TDAT:     protected void configureAnalysisContext(AnalysisContext analysisContext) {
+    	boolean max = SystemProperties.getBoolean("dataflow.max");
+    
+    	for (Knob knob : KNOB_LIST) {
+    		boolean enable = max || SystemProperties.getBoolean(knob.systemPropertyName); 
+    		System.out.println("Setting " + knob.systemPropertyName + "=" + enable);
+    		analysisContext.setBoolProperty(knob.analysisProperty, enable);
+    	}
+    }
+
+COM:configures the analysis context by setting Boolean properties based on system properties and a list of predefined knobs

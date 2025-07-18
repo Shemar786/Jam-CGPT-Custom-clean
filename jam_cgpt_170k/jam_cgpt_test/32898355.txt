@@ -1,0 +1,9 @@
+TDAT:         private void storeAlpha(Window w, byte alpha) {
+            if (w instanceof RootPaneContainer) {
+                JRootPane root = ((RootPaneContainer)w).getRootPane();
+                Byte b = alpha == (byte)0xFF ? null : new Byte(alpha);
+                root.putClientProperty(TRANSPARENT_ALPHA, b);
+            }
+        }
+
+COM:stores the alpha value of a window's transparency property as a byte in a JRootPane object

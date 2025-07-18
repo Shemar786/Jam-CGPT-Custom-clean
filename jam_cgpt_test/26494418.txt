@@ -1,0 +1,10 @@
+TDAT:   public String toString() {
+    StringBuffer aBuffer = new StringBuffer(super.toString());
+    aBuffer.append("[faultcode=").append(_theCode).append(" faultactor=")
+           .append(_theActor).append(" faultstring=").append(_theString)
+           .append(" detail=").append(_theDetail).append("]");
+
+    return aBuffer.toString();
+  }
+
+COM:returns a string representation of a fault code, actor, string, and detail

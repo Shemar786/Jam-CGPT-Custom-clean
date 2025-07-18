@@ -1,0 +1,19 @@
+TDAT:     public void parse() throws BuildfileParsingException {
+        BuildfileParsingException e = null;
+        final AntBuildfile file = getAntBuildfile();
+
+        try {
+            file.parse();
+            //setName(getName());
+        } catch (BuildfileParsingException bpe) {
+            e = bpe;
+        }
+
+        firePropertyChange(TARGET_LIST, null, getTargetMap());
+
+        if (e != null) {
+            throw e;
+        }
+    }
+
+COM:parses an Ant build file and throws a BuildfileParsingException if there is an error in parsing

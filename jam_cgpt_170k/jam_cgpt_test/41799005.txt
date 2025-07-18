@@ -1,0 +1,14 @@
+TDAT:     public void initLogFile() {
+
+        try {
+            sc = (SocketConnection) Connector.open(serverUrl);
+            sc.setSocketOption(SocketConnection.LINGER, 5);
+
+            os = sc.openOutputStream();
+        } catch (Exception e) {
+            System.out.println("Cannot open socket at: " + serverUrl);
+            e.printStackTrace();
+        }
+    }
+
+COM:initializes a log file by opening a socket connection and setting an output stream

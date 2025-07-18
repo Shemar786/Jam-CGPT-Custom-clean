@@ -1,0 +1,10 @@
+TDAT:     public void testSetExample() {
+        System.out.println("testSetExample");
+        testString = "<tag:foo>\n";
+        testString += "\t<tag:bar />";
+        testString += "</tag:foo>";
+        tag.setExample(testString);
+        assertEquals( tag.getExample(), testString );
+    }
+
+COM:tests the set and get example functionality of a "tag" object, by setting a string example and asserting it is equal to the expected value

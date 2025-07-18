@@ -1,0 +1,15 @@
+TDAT: 	public void doPrevYear(ActionEvent event) {
+		try {
+			logger.debug("ProjectListBean.doPrevYear");
+			listData = projectService.findAllPrevYear();
+			if (listData.size() == 0)
+				throw new IASException("There is no audit project on previous year.");
+			populateList();
+			this.lastButtonClicked = ProjectListBean.DO_PREV_YEAR;
+		} catch (Exception ex) {
+			logger.error(ex);
+			FacesUtils.addErrorMessage(ex.getMessage());
+		}
+	}
+
+COM:retrieves a list of audit projects from the previous year and populates it in a list, throwing an error message if none exist

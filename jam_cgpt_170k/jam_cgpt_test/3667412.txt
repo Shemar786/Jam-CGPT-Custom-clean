@@ -1,0 +1,21 @@
+TDAT:     protected int getComponentPixelSize() {
+        
+        // fetch the component insets
+        Insets insets = getInsets();
+        
+        // return the appropriate size
+        if (m_orientation == ORIENTATION_HORIZONTAL) {
+         
+            // horizontal scale
+            return (getWidth() - insets.left - insets.right);
+            
+        } else {
+            
+            // vertical scale
+            return (getHeight() - insets.top - insets.bottom);
+            
+        }
+        
+    }
+
+COM:calculates and returns the size of a component in pixels based on its orientation and dimensions

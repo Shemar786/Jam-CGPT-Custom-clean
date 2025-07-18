@@ -1,0 +1,15 @@
+TDAT:     public void backup() {
+        File f = file();
+        if (!exists() || f.length() <= 0)
+            return; // nothing to backup
+
+        synchronized (content) {
+            String subDir = station != null
+                    ? subDir = station.getName()
+                    : null;
+
+            ZWriter.backup(f, subDir, 10);
+        }
+    }
+
+COM:creates a backup of a file if it exists and is not empty, using a synchronized block and a specified sub-directory and backup version

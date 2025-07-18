@@ -1,0 +1,19 @@
+TDAT:    protected boolean getMbrInfo(String file, String member) {
+
+      executeCommand("RCMD","dspfd FILE(" + file + ")" +
+                        " TYPE(*MBR)" +
+                        " OUTPUT(*OUTFILE) " +
+                        "OUTFILE(QTEMP/FML) ");
+
+      if (!lastResponse.startsWith("2"))
+         return false;
+
+      if (getMbrSize(member))
+
+      if (!lastResponse.startsWith("2"))
+         return false;
+
+      return true;
+   }
+
+COM:retrieves information about a specified member in a file using an external command and returns a boolean value indicating success or failure

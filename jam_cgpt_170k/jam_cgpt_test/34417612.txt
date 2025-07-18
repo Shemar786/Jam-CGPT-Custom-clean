@@ -1,0 +1,25 @@
+TDAT: 	private String getColumnTitle(int index){
+		String title = "";
+		if(index==0){
+			title = "Name";
+		} else if(index==1){
+			title = "Type";
+		} else {
+			Iterator<Entry<String, PropertyEntry>> itr = _propertyList.entrySet().iterator();
+			Entry<String,PropertyEntry> entry;
+			index = index - 2;
+			if(!itr.hasNext()){
+				return "None"; 
+			}
+			entry = itr.next();
+			int count = 0;
+			while(count<index&&itr.hasNext()){
+				entry = itr.next();
+				count++;
+			}
+			title = entry.getValue().getPath();
+		}
+		return title;
+	}
+
+COM:returns the column title for a given index, where the first two indices are fixed and the rest are generated from an iterator

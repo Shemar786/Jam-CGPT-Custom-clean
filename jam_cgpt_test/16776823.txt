@@ -1,0 +1,12 @@
+TDAT: 	private void checkBox_actionListener(MouseEvent e) {
+		JCheckBox checkBox = (JCheckBox) e.getSource();
+		checkBox.setSelected(!checkBox.isSelected());
+
+		Variation variationFunction = this.getUncertaintiesObject().getVariationFunction(currentRow);
+
+		if (currentCol == COLUMN_IS_ACTIVE) {
+			variationFunction.getUncertainItem().setActive(checkBox.isSelected());
+		}
+	}
+
+COM:is an action listener for a checkbox that toggles the checkbox's selection and updates the state of an "uncertain item" based on the checkbox's current column

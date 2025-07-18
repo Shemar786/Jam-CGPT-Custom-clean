@@ -1,0 +1,13 @@
+TDAT:     public boolean equals(Object obj) {
+        if ((obj != null) && (obj instanceof MyUrl)) {
+            MyUrl data = (MyUrl) obj;
+            return new EqualsBuilder()
+                .append(_url, data._url)
+                .append(_description, data._description)
+                .isEquals();
+        } else {
+            return false;
+        }
+    }
+
+COM:overrides the equals method to compare the attributes of two MyUrl objects and returns true if they are the same, false otherwise

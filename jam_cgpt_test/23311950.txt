@@ -1,0 +1,14 @@
+TDAT: 	public void fireValueChanged(T value) {
+		ConfigEntry<T> entry = null;
+		try {
+			entry = new ConfigEntry<T>(configOption, value);
+		} catch (InvalidConfigOptionValueException e) {
+			// TODO display a message on the status bar (where the init
+			// has been before)
+			e.printStackTrace();
+		}
+		// notify config that a value has changed -> it decides what to do
+		config.applyConfigEntry(component, entry);
+	}
+
+COM:updates the configuration entry with a new value and notifies the configuration system

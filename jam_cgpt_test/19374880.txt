@@ -1,0 +1,11 @@
+TDAT:  private void buildAnyExtension(Element procedureElement, AnyExtension anyExtension) {
+ 	Element anyExtElement = new Element(ElementConst.ANYEXTENSION);
+ 	anyExtElement.setText(anyExtension.getValue());
+ 	
+ 	procedureElement.addContent(anyExtElement);
+ 	
+//	buildExtensionActions(anyExtElement, anyExtension);
+	buildExtension(anyExtElement, anyExtension);
+ }
+
+COM:builds an XML element for an AnyExtension object and adds it as a child to a given Element object, then calls another method to build extension elements for the AnyExtension object

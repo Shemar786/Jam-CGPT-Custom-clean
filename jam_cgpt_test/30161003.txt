@@ -1,0 +1,9 @@
+TDAT:     protected void testParent(Branch parent) {
+        for (int i = 0, size = parent.nodeCount(); i < size; i++) {
+            Node node = parent.node(i);
+            assertTrue("Child node of root has parent of root", node
+                    .getParent() == parent);
+        }
+    }
+
+COM:tests if all child nodes of a given parent node have that same parent node as their parent

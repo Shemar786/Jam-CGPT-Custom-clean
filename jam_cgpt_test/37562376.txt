@@ -1,0 +1,9 @@
+TDAT: public void setGrayed (boolean grayed) {
+	checkWidget ();
+	if ((parent.style & SWT.CHECK) == 0) return;
+  handle.setGrayed(grayed);
+  if ((parent.style & SWT.VIRTUAL) != 0) cached = true;
+  ((CTree)parent.handle).getModel().nodeChanged((TreeNode)handle);
+}
+
+COM:sets the grayed state of a widget and updates its parent tree node if the widget is a check box

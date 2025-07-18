@@ -1,0 +1,9 @@
+TDAT: 	public void setTorrentComment(String[] ids, String comment) throws XmlRpcFault, SecurityException, IllegalArgumentException, IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+		for (String id : ids) {
+			TorrentInfo info=new TorrentInfo(id);
+			Process process=ProcessPool.getProcess(info.getProcessId(), user);
+			process.setComment(info,comment);
+		}		
+	}
+
+COM:sets a comment for the specified torrents using the provided IDs and comments, utilizing various exception handling

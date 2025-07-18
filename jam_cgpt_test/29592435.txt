@@ -1,0 +1,15 @@
+TDAT:   public String toStringN() {
+    buf.setLength(0);
+    buf.append("    ");
+    getFullNameN( buf);
+
+    ucar.netcdf.AttributeIterator iter = ncvar.getAttributes().iterator();
+    while (iter.hasNext()) {
+      buf.append( "\n                  ");
+      iter.next().toCdl(buf);
+    }
+    buf.append("\n");
+    return buf.toString();
+  }
+
+COM:generates a string representation of an object by appending its full name followed by its attribute values in a specific format

@@ -1,0 +1,8 @@
+TDAT:     public void createMenuItem(JMenu menu, String itemLabel, EnumMenuItemAction action, int mnemonic){
+	JMenuItem menuItem = new JMenuItem(DataObjectFactory.getInstance().getLanguageContent(AppController.getInstance().getActiveLanguage(), itemLabel));
+	menuItem.setMnemonic(mnemonic);
+	menuItem.addActionListener(new Action(action));
+	menu.add(menuItem);
+    }
+
+COM:creates a menu item with a label, action, and mnemonic and adds it to a specified menu

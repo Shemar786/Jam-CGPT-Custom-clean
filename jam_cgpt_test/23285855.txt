@@ -1,0 +1,12 @@
+TDAT: 	protected String generateMyRoleService(final PartnerLink bpelPartnerLink) {
+		if (hasWsdlService(bpelPartnerLink)) {
+			Service wsdlService = DeploymentDataProvider.findWsdlService(
+					bpelPartnerLink, DeploymentDataProvider
+							.getWsdlImportsForPartnerLinkType(moduleArtifact,
+									bpelPartnerLink));
+			return wsdlService.getQName().getLocalPart();
+		}
+		return "" + bpelPartnerLink.getName() + "Service";
+	}
+
+COM:generates a string representing the name of a service, either from a WSDL service or from the partner link name

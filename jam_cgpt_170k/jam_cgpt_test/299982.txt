@@ -1,0 +1,13 @@
+TDAT:     private void enableMinimizerOptions(boolean b){
+        dim.setEnabled(b);
+        iter.setEnabled(b);
+        initLayout.setEnabled(b);
+        attrExp.setEnabled(b);
+        repuExp.setEnabled(b);
+        grav.setEnabled(b);
+        noWeight.setEnabled(b);
+        vertRepu.setEnabled(b);
+        loadInitLayout.setEnabled(b);
+    }
+
+COM:enables or disables a set of options based on a boolean value

@@ -1,0 +1,13 @@
+TDAT: 	public void editPropertyType(String propName, String propValue, String path, String userId) {
+		ModifyPropertyThread mpt = _containerEditor.modifyProperty(propName+"/@valueType", path, propValue, getObjectId()+".xml", "", userId, false);
+		try{
+			mpt.start();
+			mpt.join();
+		}
+		catch(InterruptedException ie){
+			ie.printStackTrace(System.err);
+		}
+		mpt.cleanThread();
+	}
+
+COM:edits the value type of a property using a separate thread

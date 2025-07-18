@@ -1,0 +1,17 @@
+TDAT: 	public String publishCurrentResultsToWeb() {
+		// Todo: make this URL configurable in ini file
+		String url = "http://avtobaby.info/results/update.php";
+
+		try {
+			// Todo: make param name configurable in ini file
+			HttpPostRequest.sendPostRequest(getResultsAsHtml(), url, "text");
+		} catch (IOException e) {
+			return "Error occured: " + e.toString();
+		}
+
+		// Todo: make this URL configurable in ini file
+		String viewResultsURL = "http://avtobaby.info/results";
+		return "Results successfully published and available at " + viewResultsURL;
+	}
+
+COM:publishes current results to a web server and returns a message indicating whether the results were successfully published or if an error occurred

@@ -1,0 +1,12 @@
+TDAT:   private Collection getEnermiesForFleet(Object fleet) {
+    ArrayList result = new ArrayList();
+    Iterator items = fleets.values().iterator();
+    while (items.hasNext()) {
+      Fleet current = (Fleet) items.next();
+      if (current != fleet && !current.isDestroyed())
+        result.add(current);
+    }
+    return result;
+  }
+
+COM:returns a collection of non-destroyed fleets that are not the same as the input fleet

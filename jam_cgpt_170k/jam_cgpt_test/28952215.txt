@@ -1,0 +1,13 @@
+TDAT: 	public String getId() {
+		if (localId != null) return localId;
+		if (idTable.isEmpty()) return null;
+		Enumeration<List<String>> ids = idTable.elements();
+        //Just return the next available id.
+        while (ids.hasMoreElements()) {
+            List<String> idList = ids.nextElement();
+            return idList.get(idList.size()-1);
+        }
+        return null;
+    }
+
+COM:returns the next available id from an idTable, if one exists, or the locally stored id if it has been set

@@ -1,0 +1,15 @@
+TDAT:     public void setMaxHandlerThreads(int max) {
+        if (max < 1) {
+            throw new IllegalArgumentException("maxHandlers must be greater than zero.");
+        }
+
+        if (max < getMinHandlerThreads()) {
+            throw new IllegalArgumentException("maxHandlers must be greater than minHandlers.");
+        }
+
+        maxHandlers = max;
+
+        myPool.setCapacity(maxHandlers);
+    }
+
+COM:sets the maximum number of handler threads for a pool, with validation checks for the input parameter

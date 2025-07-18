@@ -1,0 +1,17 @@
+TDAT: 	private Component makeButtonPanel() {
+		JPanel panel = new JPanel();
+		panel.setLayout(new FlowLayout(FlowLayout.RIGHT, 5, 5));
+		panel.add(makeButton("Cancel",new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		}));
+		panel.add(makeButton("OK",new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ok();
+			}
+		}));
+		return panel;
+	}
+
+COM:creates and returns a panel with two buttons ("Cancel" and "OK") in a right-aligned layout, each with its own action listener

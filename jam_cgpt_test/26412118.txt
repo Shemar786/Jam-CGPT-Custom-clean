@@ -1,0 +1,10 @@
+TDAT:     public void connectionErrorOccurred(ConnectionEvent event) {
+        logger.warn("Received Connection Error event from a conection in pool " + info.getName());
+
+        if (info.isRemoveOnExceptions()) {
+            checkIn(event.getSource(), true);
+            logger.warn("removeOnExceptions == true, closed connection");
+        }
+    }
+
+COM:logs a connection error event from a connection pool and checks in the source connection if "removeOnExceptions" is true

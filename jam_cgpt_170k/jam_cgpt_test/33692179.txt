@@ -1,0 +1,18 @@
+TDAT:     protected void closeMediaApplication() {
+        
+    	log.debug( "closeMediaApplication", "Init..." );
+        
+        if ( audioApp != null ) {
+            
+            audioApp.stopMedia();
+            audioApp = null;
+        }
+        
+        if ( videoApp != null ) {
+            
+            videoApp.stopMedia();
+            videoApp = null;
+        }
+    }
+
+COM:closes the media application by stopping the audio and video playback and setting them to null

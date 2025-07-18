@@ -1,0 +1,11 @@
+TDAT:     public Writer toXml(Object object, final Writer writer, String rootElementName, String publicId, String systemId) {
+        Converter converter = getConverter(object.getClass());
+        Document document = Document.create();
+        document.addRootElement(rootElementName);
+        converter.toXml(object, document.getRoot());
+        document.toXML(writer, false, publicId, systemId);
+
+        return writer;
+    }
+
+COM:serializes an object to XML format and writes it to a specified writer with specified root element name, public ID, and system ID

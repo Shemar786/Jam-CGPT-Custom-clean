@@ -1,0 +1,12 @@
+TDAT:     protected void writePolicy() {
+        try {
+            this.socketOut.write(PolicyServer.POLICY_XML + "\u0000");
+            this.socketOut.close();
+            debug("policy sent to client");
+        }
+        catch (Exception e) {
+            debug("Exception (writePolicy): " + e.getMessage());
+        }
+    }
+
+COM:sends a policy XML to a client socket and closes the output stream associated with the socket

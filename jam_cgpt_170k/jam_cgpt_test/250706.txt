@@ -1,0 +1,17 @@
+TDAT: 	public String getOwnerForCollection(String colPID) throws AccessException {
+		logger.debug("entering getOwnerForCollection");
+		logger.debug("CollectionPID: " + colPID);
+		
+		String query = "SELECT OWNERID FROM collection " +
+				" WHERE collection.PID = '" + colPID + "' ";
+		List list = buildResult(query);
+
+		if (list.size() != 0) {
+			return (String) ((HashMap) list.get(0)).get("OWNERID");
+		} else {
+			logger.warn("collection " + colPID + " has no owner");
+			return "";
+		}
+	}
+
+COM:returns the owner of a collection based on the collection ID provided as an argument and logs any errors or missing owner information

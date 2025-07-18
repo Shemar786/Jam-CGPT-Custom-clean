@@ -1,0 +1,17 @@
+TDAT:   protected void addSkipWeeksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WeeklyOccursModel_skipWeeks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WeeklyOccursModel_skipWeeks_feature", "_UI_WeeklyOccursModel_type"),
+				 TimeBasedRoutingPackage.Literals.WEEKLY_OCCURS_MODEL__SKIP_WEEKS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "skip weeks" feature of a weekly occurs model

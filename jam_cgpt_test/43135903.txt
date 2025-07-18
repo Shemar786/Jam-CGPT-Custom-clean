@@ -1,0 +1,15 @@
+TDAT:     final public void setPosition(Position pos) {
+    	boolean doInvalidate = false;
+    	if (anim.paused = true) {
+    		anim.paused = false;
+    		doInvalidate = true;
+    	}
+    	if (!this.pos.equals(pos)) {
+    		this.pos = new Position(pos);
+    		doInvalidate = true;
+    	}
+    	if (doInvalidate)
+    		invalidate();
+    }
+
+COM:sets the position of an object and invalidates it if the position has changed or if an animation is unpaused

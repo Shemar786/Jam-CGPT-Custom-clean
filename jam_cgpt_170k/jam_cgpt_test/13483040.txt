@@ -1,0 +1,12 @@
+TDAT:     public LocalVariableGen newLocal(Type type) {
+        // Why don't we add Type information to the LocalVariable? Are we
+        // assuming that type checking has already been done and so its a
+        // moot point?
+
+        LocalVariableGen var = new LocalVariableGen(colorsUsed, "retAdr"
+                + colorsUsed, type, null, null);
+        colorsUsed += type.getSize();
+        return var;
+    }
+
+COM:creates a new local variable with a specified type and returns it

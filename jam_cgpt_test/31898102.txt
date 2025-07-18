@@ -1,0 +1,14 @@
+TDAT:   public void setDBA(org.dbgen.support.DbAccess DBA) {
+    /* Get the old property value for fire property change event. */
+    org.dbgen.support.DbAccess oldValue = fieldDBA;
+
+    /* Set the DBA property (attribute) to the new value. */
+    fieldDBA = DBA;
+
+    /* Fire (signal/notify) the DBA property change event. */
+    firePropertyChange("DBA", oldValue, DBA);
+
+    return;
+  }
+
+COM:sets the DBA attribute to a new value and triggers a property change event with the old and new values

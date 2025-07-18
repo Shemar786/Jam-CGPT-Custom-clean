@@ -1,0 +1,12 @@
+TDAT:     public String getSqlMapPackage() {
+        SqlMapGeneratorConfiguration config = ibatorContext.getSqlMapGeneratorConfiguration();
+        
+        StringBuffer sb = new StringBuffer(config.getTargetPackage());
+        if (StringUtility.isTrue(config.getProperty(PropertyRegistry.ANY_ENABLE_SUB_PACKAGES))) {
+            sb.append(fullyQualifiedTable.getSubPackage());
+        }
+            
+        return sb.toString();
+    }
+
+COM:retrieves the SQL map package name based on the SQL map generator configuration and table sub-package info

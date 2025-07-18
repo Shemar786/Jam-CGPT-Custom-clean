@@ -1,0 +1,12 @@
+TDAT: 	private JButton getJButtonCheck() {
+		if (jButtonCheck == null) {
+			jButtonCheck = new JButton();
+			jButtonCheck.setPreferredSize(new Dimension(64, 26));
+			jButtonCheck.setLocation(new Point(360, 585));
+			jButtonCheck.setSize(new Dimension(80, 30));
+			jButtonCheck.setText("CHECK");
+		}
+		return jButtonCheck;
+	}
+
+COM:returns a JButton object with specific dimensions, location, and text

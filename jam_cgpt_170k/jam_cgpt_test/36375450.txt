@@ -1,0 +1,9 @@
+TDAT:     private void initInputFileOptions() {
+        this.fileInputOption = 
+            optBuilder.withShortName("f").withLongName("file")
+            .withDescription("Reads the input from the given file.")
+            .withArgument(argBuilder.withName("<file name>").withMinimum(1).create())
+            .create();          
+    }
+
+COM:initializes input file options with a short and long name, description, and argument specifications

@@ -1,0 +1,14 @@
+TDAT: 	public void run() {
+		String locale;
+
+		synchronized (mLocale) {
+			mLocales = Locale.getAvailableLocales();
+			locale = mFilter.getLocale().getDisplayName();
+			for (int i = 0; i < mLocales.length; i++)
+				if (!locale.equals(mLocales[i].getDisplayName()))
+					mLocale.addItem(mLocales[i].getDisplayName());
+			mLocale.invalidate();
+		}
+	}
+
+COM:populates a dropdown menu with available locales, excluding the current locale, and invalidates the menu

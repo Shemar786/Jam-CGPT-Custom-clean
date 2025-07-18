@@ -1,0 +1,10 @@
+TDAT:     public void clearNamespaces() throws org.xmldb.api.base.XMLDBException {
+        try {
+            stub.clearNamespaces(this.service);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e);
+        }
+        
+    }
+
+COM:clears namespaces using a stub, and throws an XMLDBException if there is a remote exception

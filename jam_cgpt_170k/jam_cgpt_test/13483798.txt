@@ -1,0 +1,28 @@
+TDAT:     public void negate() {
+        switch (comparison) {
+        case EQ:
+            comparison = NE;
+            break;
+        case NE:
+            comparison = EQ;
+            break;
+        case LT:
+            comparison = GE;
+            break;
+        case GE:
+            comparison = LT;
+            break;
+        case GT:
+            comparison = LE;
+            break;
+        case LE:
+            comparison = GT;
+            break;
+        }
+
+        Block t = trueTarget;
+        trueTarget = falseTarget;
+        falseTarget = t;
+    }
+
+COM:negates a comparison and swaps the true and false targets

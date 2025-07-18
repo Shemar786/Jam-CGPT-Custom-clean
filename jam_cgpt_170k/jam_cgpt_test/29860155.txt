@@ -1,0 +1,10 @@
+TDAT:   public void addPhiJoin(BasicBlock bb) {
+    if (phis[bb.getIndex()] == null) {
+      //the type is not used, the rigth type of all operands,
+      //   will be defined when passing operands to SSA form.
+      QVar variable = new QVar(var, Constants.TYP_REFERENCE);
+      phis[bb.getIndex()] = new QPhiJoin(variable, bb);
+    }
+  }
+
+COM:adds a QPhiJoin to the phis array indexed by the BasicBlock's index if it does not already exist

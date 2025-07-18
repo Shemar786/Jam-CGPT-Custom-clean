@@ -1,0 +1,11 @@
+TDAT: 	public void fireResourcesChanged(IResource[] resources) {
+		OmniCoreTrace.trace(this,"fireResourcesChaged("+resources+")","(called)");
+		if (resources == null || resources.length == 0 || listeners.isEmpty())
+			return;
+		for (Iterator i= listeners.iterator(); i.hasNext();) {
+			IResourceStateListener listener= (IResourceStateListener) i.next();
+			listener.stateChanged(resources);
+		}
+	}
+
+COM:fires notifications to resource state listeners when a change occurs in specified resources

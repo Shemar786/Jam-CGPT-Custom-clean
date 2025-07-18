@@ -1,0 +1,12 @@
+TDAT:     public void compact() {
+        int bitIndex = (size() - 1) * numberOfBits; 
+        int pos = bitIndex >> INDEX_SHIFT;
+        pos++;
+        if (pos < data.length - 1) {
+            long[] newData = new long[pos + 1];
+            System.arraycopy(data, 0, newData, 0, pos + 1);
+            data = newData;
+        }
+    }
+
+COM:shrinks the underlying long array used to store the bits of a BitSet object to the exact size needed to represent the bits

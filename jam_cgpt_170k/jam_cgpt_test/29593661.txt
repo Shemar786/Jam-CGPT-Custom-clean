@@ -1,0 +1,5 @@
+TDAT:   static public void arraycopy( ArrayAbstract arraySrc, int srcPos, ArrayAbstract arrayDst, int dstPos, int len) {
+    System.arraycopy( arraySrc.getStorage(), srcPos, arrayDst.getStorage(), dstPos, len);
+  }
+
+COM:copies a specified number of elements from one array to another starting from a specified position in both arrays

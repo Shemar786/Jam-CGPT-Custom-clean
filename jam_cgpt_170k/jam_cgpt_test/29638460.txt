@@ -1,0 +1,9 @@
+TDAT: 	public int getImageIndex(int imageLayer) throws IllegalArgumentException {
+		if ((imageLayer < BACKGROUND) || (imageLayer > FOREGROUND3))
+			 throw new IllegalArgumentException("Input parameter [imageLayer :: " + imageLayer + "] was out of bounds :: " + BACKGROUND + " >= imageLayer =< " + FOREGROUND3);
+
+		// return image index
+		return (imageIndex[imageLayer]);
+	}
+
+COM:returns the image index for a specified layer, but throws an exception if the layer parameter is out of a certain range

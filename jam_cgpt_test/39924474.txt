@@ -1,0 +1,11 @@
+TDAT:     public void end() {
+        containerLayer.getRootPane().setGlassPane(savedGlassPane);
+        containerLayer.getRootPane().getGlassPane().setVisible(false);
+        animationLayer.setVisible(false);
+        containerLayer.setVisible(true);
+	containerLayer.repaint();
+        animator = null;
+        transitionTarget.transitionComplete();
+    }
+
+COM:ends a visual transition by resetting the glass pane, hiding animation and showing the container, then sets the animator to null and marks the transition as complete

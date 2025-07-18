@@ -1,0 +1,21 @@
+TDAT: 	public void elementChanged(ElementChangedEvent event) {
+
+		TheoryDeltaProcessor processor = new TheoryDeltaProcessor(event
+				.getDelta());
+		final ArrayList<IRodinElement> toRefresh = processor.getToRefresh();
+		final ArrayList<IRodinElement> toRemove = processor.getToRemove();
+
+		PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
+			public void run() {
+				cleanUpModel(toRemove);
+				// refresh the model
+				for (IRodinElement elem : toRefresh) {
+					refreshModel(elem);
+
+				}
+				notifyListeners(toRefresh);
+			}
+		});
+	}
+
+COM:handles changes to an element, using a dedicated processor to refresh and update the model asynchronously

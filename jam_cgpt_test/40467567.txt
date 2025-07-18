@@ -1,0 +1,8 @@
+TDAT: 	private void initThumbColor() {
+		thumbCol[0] = localColor.acbFirst;
+		thumbCol[NBR_THUMBS-1] = localColor.acbLast;
+		for(int i = 1; i < NBR_THUMBS - 1; i++)
+			thumbCol[i]= PApplet.lerpColor(thumbCol[0], thumbCol[NBR_THUMBS-1], ((float)i)/(NBR_THUMBS-1), PApplet.HSB);
+	}
+
+COM:initializes the color of the slider thumbs by applying a color gradient using the first and last colors as reference points

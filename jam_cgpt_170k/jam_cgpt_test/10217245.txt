@@ -1,0 +1,15 @@
+TDAT: 	public ITemplateEngine getTemplateEngine(String type) throws Exception {
+		// Get template engine defined into the Spring config
+		ITemplateEngine templateEngine = (ITemplateEngine) applicationContext
+				.getBean(type);
+		// Test if template engine have configuration ID
+		String configurationId = templateEngine.getConfigurationId();
+		if (!StringUtils.isEmpty(configurationId)) {
+			// Template engine works with Configuration, get it
+			ITemplateConfiguration configuration = getTemplateConfiguration(configurationId);
+			templateEngine.setConfiguration(configuration);
+		}
+		return templateEngine;
+	}
+
+COM:returns an instance of a specified template engine and configures it with a configuration ID if it has one

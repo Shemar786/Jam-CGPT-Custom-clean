@@ -1,0 +1,10 @@
+TDAT:     public int getCountOfAll(final MetaClass metaClass) {
+        assert (!isCompleted());
+        Criteria crit = getSession().createCriteria(metaClass.getJavaClass());
+        crit = createCriteriaFromAttributeMap(crit, metaClass.getJavaClass(), Collections.EMPTY_MAP);
+
+        Integer count = (Integer) crit.setProjection(Projections.rowCount()).uniqueResult();
+        return count.intValue();
+    }
+
+COM:retrieves the count of all objects in a given meta class using Hibernate criteria

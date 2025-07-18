@@ -1,0 +1,20 @@
+TDAT:     public int doAfterBody() throws JspException {
+
+        BodyContent body = getBodyContent();
+        try {
+            body.writeOut(getPreviousOut());
+	        parent.nextRow();
+        } catch (IOException e) {
+            parent.printMessage("Error in IO body repeat" + e) ;
+        }
+        body.clearBody();
+
+        if (parent.getHasRowData()) {
+            return EVAL_BODY_TAG;
+        } else {
+            return SKIP_BODY;
+        }
+
+    }
+
+COM:writes out the body content of a JSP tag, advances to the next row, clears the body, and returns an evaluation status code

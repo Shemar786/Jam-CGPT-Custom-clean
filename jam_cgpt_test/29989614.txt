@@ -1,0 +1,22 @@
+TDAT:     public boolean isAvailable() {
+
+        StructuredSelection sel = (StructuredSelection) _treeViewer.getSelection();
+
+        Iterator it = sel.iterator();
+        while (it.hasNext()) {
+
+            Object o = it.next();
+
+            if (o instanceof SessionTreeNode) {
+                SessionTreeNode node = (SessionTreeNode) o;
+                if (!node.isAutoCommitMode()) {
+                    return true;
+                }
+            }
+
+        }
+
+        return false;
+    }
+
+COM:checks if any selected SessionTreeNode object in a StructuredSelection is not in auto-commit mode and returns true if so

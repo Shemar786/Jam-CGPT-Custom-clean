@@ -1,0 +1,10 @@
+TDAT:   public boolean setWidth ( double width ) {
+    view.setNodeDoubleProperty( rootGraphIndex,
+                               PGraphView.NODE_WIDTH,
+                               width );
+    //setBounds( getX(), getY(), width, getHeight() );
+    super.setWidth( width );
+    return true;
+  }
+
+COM:sets the width of a node in a graph view and returns a boolean value indicating if the operation was successful

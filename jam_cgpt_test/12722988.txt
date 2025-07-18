@@ -1,0 +1,23 @@
+TDAT: public int nextInt() {
+	int c=0;
+	double u,f;
+	u = this.randomGenerator.raw();
+//#if KNUTH_CONVENTION
+//    c = (int)(u*(g->K));
+//#else
+	u *= this.K;
+	c = (int)u;
+	u -= c;
+//#endif
+	f = this.F[c];
+	// fprintf(stderr,"c,f,u: %d %.4f %f\n",c,f,u); 
+	if (f == 1.0) return c;
+	if (u < f) {
+		return c;
+	}
+	else {
+		return this.A[c];
+	}
+}
+
+COM:generates a random integer using a specified algorithm and a seed value

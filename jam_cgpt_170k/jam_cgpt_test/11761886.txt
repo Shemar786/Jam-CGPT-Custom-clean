@@ -1,0 +1,18 @@
+TDAT: 	protected void handlePieceMessage(PieceMessage message, Finger remotePeer) {
+		AbstractBlock block = message.getBlock();
+		state.getStorageWrapper().setBlockDownloaded(block, remotePeer,
+				getPeer().getClock().getTime());
+		
+		blockReceived(block, remotePeer);
+
+		cancelRemainingRequests(block);
+
+		ConnectionState cs = state.getNeighborManager().getConnectionState(
+				remotePeer);
+		if (cs != null && !cs.isPeerChoking()) {
+			// send new request
+			requestBlock(remotePeer);
+		}
+	}
+
+COM:Handles a received PieceMessage by marking the block as downloaded, processing it, cancelling remaining requests, and sending a new request if the remote peer is not choking

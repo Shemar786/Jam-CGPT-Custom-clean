@@ -1,0 +1,16 @@
+TDAT: 	private Message deleteSubjectHandler(Object deleteSubject) {
+		if (deleteSubject instanceof Subject) {
+			Subject subject = (Subject) deleteSubject;
+			boolean flag = dataAccess.deleteSubject(subject.getName());
+			if (flag) {
+				printToLog("delete subject succeed ");
+				return (new Message(Message.DELETE_SUBJECT_RESPOND,
+						Message.SUCCEED));
+			}
+
+		}
+		printToLog("delete subject failed ");
+		return (new Message(Message.DELETE_SUBJECT_RESPOND, Message.FAIL));
+	}
+
+COM:handles the deletion of a subject and returns a Message object indicating whether or not the delete operation was successful

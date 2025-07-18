@@ -1,0 +1,14 @@
+TDAT: 	public void removeSetInfo(int i) {
+		synchronized (setInfosLock) {
+			//prtln("removeSetInfo(): index " + i);
+
+			// Get the item from disc to be sure we've got the right one.
+			removeSetFromIndex((SetInfo) arrayListGetItem(i, Keys.SET_INFOS, true));
+			arrayListRemoveItem(i, Keys.SET_INFOS);
+
+			// Reset so that these will get re-generated
+			resetSetsData();
+		}
+	}
+
+COM:removes a set information object from an ArrayList, synchronizes the action with a lock, and resets other data

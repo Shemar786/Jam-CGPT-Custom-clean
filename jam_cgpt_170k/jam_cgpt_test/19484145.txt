@@ -1,0 +1,12 @@
+TDAT: 	public boolean isComplete(Stack<MachineValuationPair> valuation, int index) {
+		MachineValuationPair val = valuation.get(index);
+		assert val.machine == this;
+		
+		for (GlobalVariable<?> var : variables.values()) {
+			if (!val.valuation.containsKey(var.getName())) return false;
+		}
+		if (getAbstraction()!=null) return getAbstraction().isComplete(valuation, index+1);
+		return true;
+	}
+
+COM:checks whether a given stack of MachineValuationPairs is complete by verifying if each GlobalVariable in the stack has a value

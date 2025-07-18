@@ -1,0 +1,10 @@
+TDAT:     public void addImplementationBean(Long referenceID, Object beanImpl) {
+        if (referenceID.equals(new Long(0))) {
+            mBeanImpl = beanImpl;
+        }
+        WeakReference wr = new WeakReference(beanImpl);
+        mRefBeans.put(referenceID, new WeakReference(beanImpl));
+        mBeanRefs.put(beanImpl, referenceID);
+    }
+
+COM:adds an implementation bean with a given reference ID and object to a map, using weak references

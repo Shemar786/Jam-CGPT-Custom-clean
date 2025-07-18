@@ -1,0 +1,9 @@
+TDAT:   public DatabaseColumn getColumnInfo(boolean nullable) {
+    if ((width != -1) && (height != -1))
+      new DatabaseTextColumn(nullable, 
+                             (width == -1) ? null : new Integer(width), 
+                             (height == -1) ? null : new Integer(height));
+    return new DatabaseTextColumn(nullable);
+  }  
+
+COM:returns a DatabaseTextColumn object with nullable parameter as input and sets its width and height attributes if they are not -1

@@ -1,0 +1,9 @@
+TDAT:     public void refresh(boolean forceLoad) {
+        // TODO async call
+        list = DataManager.getList(type, subType, settings, forceLoad);
+        if (comparator != null)
+            Collections.sort(list, comparator);
+        fireContentsChanged(this, -1, -1);
+    }
+
+COM:refreshes a list of data, potentially using async calls, and will sort the refreshed list based on a specified comparator

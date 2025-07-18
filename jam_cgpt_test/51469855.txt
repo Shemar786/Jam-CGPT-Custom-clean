@@ -1,0 +1,13 @@
+TDAT:     protected double totalFromChildren(Doer thingToDo, ResultName result, int tnum) {
+        double total = 0;
+        if (myChildren != null && ! myChildren.isEmpty()) {
+            for (ModelBit kid : myChildren) {
+                if (thingToDo.isAccepted(kid)) {
+                    total += kid.getDoubleResult(result, tnum);
+                }
+            }
+        }
+        return total;
+    }
+
+COM:calculates the total double result from accepted child ModelBits based on a given Doer and ResultName

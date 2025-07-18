@@ -1,0 +1,18 @@
+TDAT: 	private Composite createComposite(Composite parent, int numColumns) {
+		Composite composite = new Composite(parent, SWT.NULL);
+
+		// GridLayout
+		GridLayout layout = new GridLayout();
+		layout.numColumns = numColumns;
+		layout.makeColumnsEqualWidth = false;
+		layout.marginHeight = 0;
+		layout.marginWidth = 0;
+		composite.setLayout(layout);
+
+		// GridData
+		GridData data = new GridData(SWT.FILL, SWT.FILL, true, false);
+		composite.setLayoutData(data);
+		return composite;
+	}
+
+COM:creates a composite with a grid layout and fills it with data

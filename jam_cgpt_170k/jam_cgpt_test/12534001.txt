@@ -1,0 +1,10 @@
+TDAT: 	protected void driverOnDuty(Driver driver){
+		List<Driver> drivers = getIdleDrivers(driver.getCurrentLocation());
+	//	System.out.println("t> "+getTime()+" Driver:"+driver.getId()+" is now ON DUTY WITHOUT A TASK at Location "+driver.getCurrentLocation().getName());
+		drivers.add(driver);
+		myNumIdleDrivers.increment();
+		myNumOffDutyDrivers.decrement();
+		myNumOffDutyWithoutTaskDrivers.decrement();
+	}
+
+COM:adds a driver to a list of idle drivers and updates various driver count variables

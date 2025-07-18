@@ -1,0 +1,9 @@
+TDAT: 	private void deleteChar() {
+		if(startSelect != endSelect) { 					// if a bunch of text is selected
+			deleteSubstring(startSelect, endSelect); 	// delete substring function with range of selected text
+		} else if(cursorPos < text.length()){ 			// no selection and can't be at the end of the text
+			deleteSubstring(cursorPos, cursorPos + 1); 	// delete one character to right of cursor
+		}
+	}
+
+COM:deletes either a selected range of characters or a single character to the right of the cursor

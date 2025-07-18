@@ -1,0 +1,9 @@
+TDAT:     public void putAll(PersistentMap map) throws IOException {
+        PersistentIterator it = map.entrySet().iterator();
+        while (it.hasNext()) {
+            PersistentMap.Entry entry = (PersistentMap.Entry)it.next();
+            put(entry.getKey(), entry.getValue());
+        }
+    }
+
+COM:copies all the entries from a given PersistentMap to another PersistentMap by using iterators and the put method

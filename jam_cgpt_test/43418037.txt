@@ -1,0 +1,12 @@
+TDAT: 	private JProgressBar getJLoadCPU() {
+		if (jLoadCPU == null) {
+			jLoadCPU = new JProgressBar();
+			jLoadCPU.setPreferredSize(new Dimension(150, 18));
+			jLoadCPU.setFont(new Font("Dialog", Font.PLAIN, 12));
+			jLoadCPU.setStringPainted(true);
+			jLoadCPU.setToolTipText("CPU-Load of the System");
+		}
+		return jLoadCPU;
+	}
+
+COM:creates and returns a progress bar with specific dimensions, font, and tooltip for measuring the CPU usage of a system

@@ -1,0 +1,25 @@
+TDAT: 	public void render(Graphics2D g) {
+		if (!this.visible) {
+			return;
+		}
+		
+		try {
+			if (this.customRendering) {
+				this.renderCustomUI(g, this.screenX, this.screenY, this.width,
+				        this.height);
+				
+			}
+			else {
+				this.renderer.renderUI(g, this.screenX, this.screenY, this,
+				        this.ui);
+				
+			}
+		}
+		catch (Exception e) {
+			System.out.println("error rendering = " + this);
+			e.printStackTrace();
+			System.exit(0);
+		}
+	}
+
+COM:renders a user interface onto a Graphics2D object, taking into account visibility and the option for custom rendering

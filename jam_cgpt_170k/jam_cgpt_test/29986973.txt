@@ -1,0 +1,21 @@
+TDAT: 	public ImageData getImageData(String imageKey) {
+		if (imageKey.equals("Lock")) {
+			return getLockImageData();
+		}
+		if (imageKey.equals("Error")) {
+			return getErrorImageData();
+		}
+		if (imageKey.equals("Success")) {
+			return getSuccessImageData();
+		}
+		if (imageKey.equals("Run")) {
+			return getRunningImageData();
+		}
+		if (imageKey.equals("LockRunInBatch")) {
+			return getLockRunInBatchImageData();
+		}
+		
+		return null;
+	}
+
+COM:returns an instance of ImageData based on the input imageKey, each case corresponding to a different getImageData method

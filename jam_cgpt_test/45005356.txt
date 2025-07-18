@@ -1,0 +1,17 @@
+TDAT:     public boolean getAccessLevels(CampaignData Data) {
+        try {
+            BinReader in = openConnection("CommandAccessLevels");
+
+            Data.importAccessLevels(in);
+            // in.close();
+        } catch (IOException e) {
+            CampaignData.mwlog.errLog(e);
+            return false;
+        } catch (RuntimeException e) {
+            CampaignData.mwlog.errLog(e);
+            return false;
+        }
+        return true;
+    }
+
+COM:gets access levels for a campaign data object, imports them, and returns a boolean indicating success or failure

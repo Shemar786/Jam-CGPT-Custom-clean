@@ -1,0 +1,12 @@
+TDAT:     public boolean removeMessage(Object obj) {
+        LiveMessage msg = LiveMessage.cast(obj);
+        for (int i = 0; i < messages.size(); i++) {
+            if(((LiveMessage)messages.get(i)).equals(msg)) {
+                messages.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
+
+COM:removes a LiveMessage object from a list of messages and returns true if the object was successfully removed, otherwise false

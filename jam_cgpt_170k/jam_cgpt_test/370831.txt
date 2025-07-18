@@ -1,0 +1,13 @@
+TDAT: 	protected void createListViewer(Composite parent, int width, int height) {
+		fListViewer= CheckboxTableViewer.newCheckList(parent, SWT.BORDER);
+		fListViewer.setUseHashlookup(true);
+		GridData data= new GridData(GridData.FILL_BOTH);
+		data.widthHint= width;
+		data.heightHint= height;
+		fListViewer.getTable().setLayoutData(data);
+		fListViewer.setContentProvider(fListContentProvider);
+		fListViewer.setLabelProvider(fListLabelProvider);
+		fListViewer.addCheckStateListener(this);
+	}
+
+COM:creates a checkbox table viewer with specified dimensions, assigns content and label providers, and adds a check state listener to it

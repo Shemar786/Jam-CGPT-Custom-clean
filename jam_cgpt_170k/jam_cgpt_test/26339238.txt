@@ -1,0 +1,13 @@
+TDAT:     static private void close(ArrayList entries) {
+        if (null != entries) {
+            for (int i = entries.size(); --i >= 0;) {
+                try {
+                    ((Entry)entries.get(i))._xaConnection.close();    
+                }
+                catch(SQLException e) {
+                }
+            }
+        }
+    }
+
+COM:This is a non-public static method that takes an ArrayList of entries as a parameter and attempts to close any open database connections within the entries

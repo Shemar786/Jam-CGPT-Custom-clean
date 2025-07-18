@@ -1,0 +1,14 @@
+TDAT:     public InputStream read(int size, boolean extraCRLF) throws DecodingException {
+
+        // Unset the next char.
+        nextSeen = false;
+        nextChar = 0;
+        FixedLengthInputStream fin = new FixedLengthInputStream(this.in, size);
+        if (extraCRLF) {
+            return new EolInputStream(this, fin);
+        } else {
+            return fin;
+        }
+    }
+
+COM:reads a specified number of bytes from an input stream and optionally adds a carriage return-line feed sequence at the end

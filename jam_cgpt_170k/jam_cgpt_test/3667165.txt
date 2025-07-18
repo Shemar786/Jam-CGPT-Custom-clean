@@ -1,0 +1,20 @@
+TDAT:     public void setFontAntialiased(boolean fontAntialiased) {
+        
+        // store the old value
+        boolean oldAAF = m_antialiasedFont;
+        
+        // set the new value
+        m_antialiasedFont = fontAntialiased;
+        
+        // recalculate things and repaint if anything has changed
+        if (oldAAF != m_antialiasedFont) {
+            calculateDrawingParams();
+            repaint();
+            firePropertyChange(
+                PROPERTY_FONTANTIALIASED, oldAAF, m_antialiasedFont
+            );
+        }
+        
+    }
+
+COM:sets the font antialiasing for a graphical element and updates the rendering if necessary

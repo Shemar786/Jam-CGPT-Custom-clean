@@ -1,0 +1,13 @@
+TDAT:     public int getIntArg(String arg) throws Exception {
+        try {
+            return Integer.parseInt(getArg(arg));
+        } catch (Exception e) {
+            System.out.println();
+            System.out.println("Error processing integer argument " + arg
+                    + "  - " + e.getMessage());
+            System.out.println();
+            throw e;
+        }
+     }
+
+COM:retrieves an integer type argument based on a given string argument, throwing an exception if an error occurs during parsing

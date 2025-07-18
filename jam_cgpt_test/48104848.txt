@@ -1,0 +1,9 @@
+TDAT:     public boolean addTaxSet(String name, TaxaSet taxSet, Taxa taxa) {
+        Set set = new HashSet();
+        for (int t = 1; t <= taxa.getNtax(); t++)
+            if (taxSet.get(t))
+                set.add(taxa.getLabel(t));
+        return addTaxSet(name, set);
+    }
+
+COM:adds a tax set to a hash set and returns a boolean value

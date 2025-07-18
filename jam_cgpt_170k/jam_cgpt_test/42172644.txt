@@ -1,0 +1,17 @@
+TDAT:   protected void addDefaultValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Variable_defaultValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Variable_defaultValue_feature", "_UI_Variable_type"),
+				 DbPackage.Literals.VARIABLE__DEFAULT_VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a default value property descriptor to an object

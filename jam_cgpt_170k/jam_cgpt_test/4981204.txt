@@ -1,0 +1,6 @@
+TDAT:     protected void getControlData() {
+        if ((this.getPnPermissions()!=null) && (this.getJbsBaseObject()!=null) && (this.getJbsBaseObject() instanceof JbsObject))
+            this.getPnPermissions().getControlData((JbsObject)this.getJbsBaseObject());
+    }
+
+COM:checks if the class has permission and retrieves control data for an object if both conditions are met

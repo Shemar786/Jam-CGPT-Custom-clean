@@ -1,0 +1,15 @@
+TDAT:     public boolean stopCellEditing() {
+        if (textField.isEditValid()) {
+        	try {
+        		textField.commitEdit();
+            } 
+            catch (java.text.ParseException exc) { }
+        } 
+        else {
+	        textField.setBorder(new LineBorder(Color.red));
+        	return false; 
+        }
+        return super.stopCellEditing();
+    }
+
+COM:checks if a text field is in a valid edit state, commits the edit if valid, sets the border to red and returns false if invalid, and then calls the superclass' stopCellEditing method

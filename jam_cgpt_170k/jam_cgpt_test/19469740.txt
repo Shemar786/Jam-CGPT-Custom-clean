@@ -1,0 +1,9 @@
+TDAT: 	public String getLabel() {
+		if (getType()!=null){
+			//return ((UMLBelement)getExtends()).getContaining(UMLBPackage.eINSTANCE.getUMLBconstruct()).getName()+"::"+((UMLBelement)getType()).getName();
+			return ((UMLBelement)getType()).getName(); 
+		}
+		else return null;
+	}
+
+COM:gets the name of a UMLB element

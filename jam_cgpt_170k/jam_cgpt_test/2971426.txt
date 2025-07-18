@@ -1,0 +1,9 @@
+TDAT:   private void updateResolutionTF() {
+    DecimalFormat df = new DecimalFormat("###.#");
+    squareSizemm = Double.parseDouble(lengthTF.getText());
+    double squareSizein = squareSizemm/25.4;
+    double resdpi = squareSizept / squareSizein;
+    resolutionTF.setText(df.format(resdpi));
+  }
+
+COM:updates a text field with the resolution calculated based on user input values

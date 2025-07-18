@@ -1,0 +1,12 @@
+TDAT:   public void popParams(Map memento) {
+    for (Iterator it = memento.entrySet().iterator(); it.hasNext();) {
+      Map.Entry e = (Entry) it.next();
+      SessionParam p = (SessionParam) e.getValue();
+      if (p == null)
+        removeParam((String) e.getKey());
+      else
+        setParam(p);
+    }
+  }
+
+COM:takes a map as input and loops through its entries to either remove or set a SessionParam based on its value

@@ -1,0 +1,11 @@
+TDAT:   public void insertExpressionValue(int pos, String value){
+    StringBuffer sb = new StringBuffer(expressionText.getText());
+    if (pos < 0) pos = sb.length();
+    if (pos > sb.length()) pos = 0;
+    sb.insert(pos, value);
+    expressionText.setText(sb.toString());
+
+    setCursorPosition(pos+value.length());
+  }
+
+COM:inserts a given string value to a specified position in a text area, updates the text area with the new string, and sets the cursor position after the inserted value

@@ -1,0 +1,11 @@
+TDAT: 	public void setServletContext(ServletContext servletContext) {
+		super.setServletContext(servletContext);
+		try {
+			smileMoveEventUrl = new URL((String) servletContext.getInitParameter("smileMoveEventUrl"));
+		} catch (Throwable t) {
+			prtlnErr("SmileEventLister could not be instantiated: " + t.getMessage());
+		}
+		prtln("instantiated with url: " + smileMoveEventUrl);
+	}
+
+COM:sets the servlet context and initializes a URL with an initialization parameter, logging relevant information

@@ -1,0 +1,8 @@
+TDAT:     private void applyParProperties(StyleWithProperties style, BeforeAfter ba) {
+        palette.getPageSc().applyPageBreak(style,true,ba);
+        ba.add("","\\par");
+        applyLineSpacing(style,ba);
+        applyMargins(style,ba);
+    }
+
+COM:applies various properties such as page break, line spacing, and margins to a style object

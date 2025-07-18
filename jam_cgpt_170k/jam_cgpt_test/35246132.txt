@@ -1,0 +1,13 @@
+TDAT:     public boolean setResetPassword(String UserID, boolean ResetPassword) throws SQLException{
+        CallableStatement cs = dc.getConnection().prepareCall("{call setResetPassword(?,?)}");
+        cs.setString(1, UserID);
+        cs.setBoolean(2, ResetPassword);
+        int result = cs.executeUpdate();
+        if (result != 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+COM:sets a flag for whether a user needs to reset their password and returns a boolean indicating success or failure

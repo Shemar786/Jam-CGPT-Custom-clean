@@ -1,0 +1,13 @@
+TDAT:     public void deleteFile(String path, String filename){
+        File newFile = null;
+        if(!path.endsWith("/"))
+            path += "/";
+
+        newFile = new File(path+filename);
+        if (newFile.delete())
+            log("File Deleted! "+path+filename);
+        else
+            warn("Failed to Delete File! "+path+filename);
+    }
+
+COM:deletes a file located at the specified path and with the specified filename, and logs whether the deletion was successful or not

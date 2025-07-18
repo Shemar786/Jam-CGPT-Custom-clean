@@ -1,0 +1,17 @@
+TDAT: 	public void setColumnCount(int cols) {
+		if (cols < 1) {
+			throw new IllegalArgumentException("Argument wrong: Set column amount not 0 and not negative!");
+		}
+		this.columnCount = cols;
+		cells = null;
+		if (colWidths == null) {
+			colWidths = new int[cols];
+		} else {
+			int[] newCols = new int[cols];
+			System.arraycopy(colWidths, 0, newCols, 0, colWidths.length > cols ? cols : colWidths.length);
+			colWidths = newCols;
+		}
+		requireRedraw();
+	}
+
+COM:sets the number of columns in a table, checks if the input is valid, initializes the column widths array if it hasn't been done before, and triggers a redraw of the table

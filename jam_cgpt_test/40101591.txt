@@ -1,0 +1,11 @@
+TDAT:     public void init(ServletConfig servletConfig, BlojsomConfiguration blojsomConfiguration) throws BlojsomFetcherException {
+        String ignoreFlavors = blojsomConfiguration.getBlojsomPropertyAsString(IGNORE_FLAVORS_PARAM);
+        if (!BlojsomUtils.checkNullOrBlank(ignoreFlavors)) {
+            _ignoreFlavors = ignoreFlavors;
+        }
+        _logger.debug("Ignoring flavors: " + _ignoreFlavors);
+
+        _logger.debug("Initialized standard fetcher");
+    }
+
+COM:initializes a standard fetcher and sets a parameter for ignoring flavors based on the input ServletConfig and BlojsomConfiguration

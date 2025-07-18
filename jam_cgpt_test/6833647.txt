@@ -1,0 +1,19 @@
+TDAT: 	private void paste() {
+		try {
+			Clipboard clipboard = getSystemClipboard();
+			Transferable clipData = clipboard.getContents(clipboard);
+			if (   clipData != null
+				&& clipData.isDataFlavorSupported(DataFlavor.stringFlavor))
+			{
+				String str = (String)
+					clipData.getTransferData(DataFlavor.stringFlavor);
+				_textPane.replaceSelection(str);
+			}
+			_textPane.requestFocus();
+		}
+		catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+
+COM:pastes the contents of the system clipboard into a text pane

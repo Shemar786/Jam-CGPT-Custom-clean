@@ -1,0 +1,12 @@
+TDAT:     public I_JoHost getHost(I_JoServletRequest aRequest) {
+        String theHostname = aRequest.getHeader(C_Http.C_HTTP_Host);
+        if (theHostname != null) {
+            int colon;
+            if ((colon = theHostname.indexOf(':')) != -1) {
+                theHostname = theHostname.substring(0, colon);
+            }
+        }
+        return getHost(theHostname);
+    }
+
+COM:returns a I_JoHost object by extracting the hostname from a I_JoServletRequest object and passing it to another method

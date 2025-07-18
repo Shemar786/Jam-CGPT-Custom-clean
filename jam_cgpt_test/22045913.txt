@@ -1,0 +1,15 @@
+TDAT:     public void left(){ 
+	//System.out.println( "###left" );
+	int pos = textPane.getCaret().getDot();
+	java.util.ListIterator<Integer> i;
+	for( i = navigator.dots().listIterator(); i.hasNext(); ){
+	    int p = i.next();
+	    if( p >= pos ){
+		i.previous();
+		break;
+	    }
+	}
+	dotPosition = i.hasPrevious() ? i.previous() : 0;
+    }
+
+COM:updates the dot position in a text pane to the leftmost position of the current line

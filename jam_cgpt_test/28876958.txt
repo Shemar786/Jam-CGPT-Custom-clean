@@ -1,0 +1,9 @@
+TDAT:     private void append(final String text) {
+        if (mLogBuffer.length() > mSize / 2) {
+            mLogBuffer.delete(0, mSize / 2);
+            mLogBuffer.append("----------- buffer truncated ----------" + NL);
+        }
+        mLogBuffer.append(text);
+    }
+
+COM:appends a given string to a log buffer and truncates the buffer if it exceeds a certain size

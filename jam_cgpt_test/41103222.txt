@@ -1,0 +1,10 @@
+TDAT: 	private void startAppServerProcess(String _name, RegistryContainer _regCont) throws RegistryException {
+		try {
+			((AppServerProcess) _regCont.getModule()).moduleStart();
+			_regCont.releaseModule();
+		} catch (Exception _ex) {
+			throw new RegistryException("Exception thrown during startup in module " + _name + ": " + _ex.getMessage());
+		}
+	}
+
+COM:starts an application server process using a given name and registry container, and throws a RegistryException if there is an error during the process

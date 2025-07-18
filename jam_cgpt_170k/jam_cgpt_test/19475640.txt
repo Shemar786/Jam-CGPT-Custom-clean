@@ -1,0 +1,17 @@
+TDAT: 	protected void addErrorsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBelement_errors_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBelement_errors_feature", "_UI_UMLBelement_type"),
+				 UMLBPackage.Literals.UML_BELEMENT__ERRORS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "errors" feature of a UMLBelement object

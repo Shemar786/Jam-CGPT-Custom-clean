@@ -1,0 +1,11 @@
+TDAT:     protected CCDDocument getDocument(boolean addStyleSheet) {
+        CCDDocument ccdDocument = new CCDDocument(); 
+        ccdDocument.setContent(getDocumentString( addStyleSheet ) );
+    	ccdDocument.setErrors( errors.toArray(new Error[errors.size()]));
+    	processMetadata();
+        ccdDocument.setMetadata( metadata );
+
+        return ccdDocument;
+    }
+
+COM:retrieves a CCDDocument with content and metadata and the option to add a style sheet

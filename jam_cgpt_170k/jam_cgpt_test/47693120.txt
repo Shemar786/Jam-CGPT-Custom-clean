@@ -1,0 +1,15 @@
+TDAT: 	public void executeUntil(int endIndex) {
+		// Check that SVF is not empty
+		if (count == 0)
+			return;
+		// Check exec region
+		if (endIndex < 0)
+			endIndex = count - 1;
+		if ((endIndex < currentIndex) || (endIndex >= count))
+			throw new IllegalArgumentException("Invalid execution region: "
+					+ currentIndex + "-" + endIndex);
+		
+		setEndIndex(endIndex);		
+	}
+
+COM:executes code within a specified range, throwing an exception for invalid regions

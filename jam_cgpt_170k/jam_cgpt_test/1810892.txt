@@ -1,0 +1,10 @@
+TDAT:   public CDATASection createCDATASection(String data) {
+    try {
+      return (CDATASection) NodeImpl.build(XMLParserImpl.createCDATASection(
+        this.getJsObject(), data));
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_CHARACTER_ERR, e, this);
+    }
+  }
+
+COM:creates a CDATA section node containing the specified data

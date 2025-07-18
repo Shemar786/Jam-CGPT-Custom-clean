@@ -1,0 +1,21 @@
+TDAT: 	public void testAcc_03() throws Exception {
+		IContextRoot abs = createContext("abs");
+
+		addAxioms(abs, makeSList("T"), makeSList("x∈ℕ"), true);
+		
+		saveRodinFileOf(abs);
+		
+		IContextRoot con = createContext("ctx");
+		addContextExtends(con, "abs");
+		
+		addAxioms(con, makeSList("X"), makeSList("1<0"), true);
+		
+		saveRodinFileOf(con);
+		
+		runBuilder();
+		
+		containsMarkers(con, false);
+		isNotAccurate(abs.getSCContextRoot());
+	}
+
+COM:creates and tests axioms in a Rodin file, checking if there are any markers and if the results are accurate

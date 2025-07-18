@@ -1,0 +1,14 @@
+TDAT: 	public IMenuitem insertItemAt(int index, String label) {
+		IMenuitem menuitem = (IMenuitem) this.getOwnerDocument()
+				.createElementNS(XulConstants.XUL_NAMESPACE_URI,
+						XulConstants.MENUITEM_ELEMENT);
+		menuitem.setAttribute("label", label);
+		NodeList nodes = menupopup.getElementsByTagNameNS(
+				XulConstants.XUL_NAMESPACE_URI, XulConstants.MENUITEM_ELEMENT);
+		IMenuitem item = (IMenuitem) nodes.item(index);
+		menupopup.insertBefore(menuitem, item);
+		((MenupopupImpl) menupopup).addComboItem(index, menuitem);
+		return menuitem;
+	}
+
+COM:inserts a new menu item at a specified index in a menu, using XUL constants and attributes to define the item's label and position within the menu

@@ -1,0 +1,21 @@
+TDAT: 	private String fitToDotLevel(String stringToFit, int levelOfDot) {
+		
+		int dotIndex = 0;
+		int plusDot = 0;
+		String sub = stringToFit;
+		for(int i=0; i<levelOfDot; i++){
+			dotIndex = stringToFit.indexOf(".");
+			if(dotIndex > 0){
+				sub = sub.substring(dotIndex,sub.length());
+				plusDot = 1;
+			}
+			else{
+				dotIndex = 0;
+				break;
+			}
+		}
+		
+		return stringToFit.substring(dotIndex+plusDot, stringToFit.length());
+	}
+
+COM:takes in a string and a level of dot and returns a substring of the original string starting from the dot index at the level of dot

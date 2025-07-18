@@ -1,0 +1,15 @@
+TDAT: 	public boolean instanceOf(Class c, String className) {
+		if (c.getName().equals(className))
+			return true;
+		Class[] ifcs = c.getInterfaces();
+		for (int i = 0; i < ifcs.length; i++)
+			if (instanceOf(ifcs[i], className))
+				return true;
+		c = c.getSuperclass();
+		if (c != null)
+			return instanceOf(c, className);
+		return false;
+
+	}
+
+COM:checks if an object instance or one of its superclasses implements a specified class or interface

@@ -1,0 +1,20 @@
+TDAT: 	private InputStream lookupConfig() throws Exception {
+		InputStream ins = null;
+		// check explicit context-param['logging-config']
+		String param = servletContext.getInitParameter(LOGGING_CONTEXT_PARAM);
+		if (param != null) {
+			ins = servletContext.getResourceAsStream(param);
+		}
+		// check /WEB-INF/logging.properties
+		if (ins == null) {
+			ins = servletContext.getResourceAsStream("/WEB-INF/logging.properties");
+		}
+		// check classpath: logging.properties
+		if (ins == null) {
+			ClassLoader cl = Thread.currentThread().getContextClassLoader();
+			ins = cl.getResourceAsStream("logging.properties");
+		}
+		return ins;
+	}
+
+COM:looks up a configuration file for logging based on a specific order of sources

@@ -1,0 +1,7 @@
+TDAT: public void drawRectangle (int x, int y, int width, int height) {
+	if (handle == null) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+  handle.drawRect(x, y, width, height);
+//  ensureAreaClean(x, y, width, height);
+}
+
+COM:draws a rectangle shape with the specified position and dimensions, and checks for any graphics disposal errors

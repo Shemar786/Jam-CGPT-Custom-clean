@@ -1,0 +1,12 @@
+TDAT: 	public void mouseEntered(MouseEvent e) {
+	    if (mouseEnteredHook != null) {
+            Object[] args = { new GPoint(e.getX(), e.getY()) };
+            try {
+                mouseEnteredHook.invoke(myProgram, args);
+            } catch (Exception ex) {
+                throw new ErrorException(ex);
+            }
+        }
+	}
+
+COM:handles when the user's mouse enters a component and invokes a hook with the mouse location as an argument

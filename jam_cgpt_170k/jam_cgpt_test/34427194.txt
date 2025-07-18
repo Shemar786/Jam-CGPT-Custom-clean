@@ -1,0 +1,11 @@
+TDAT:     private void schematicSelect(SWGSchematic s, JComponent src, boolean go) {
+        if (!isSelectingSchem && isGuiFinished && go && s != null) {
+            isSelectingSchem = true;
+
+            if (src != draftSchems) draftSchems.schemSelect(s);
+            if (src != laboratory) laboratory.schemSelect(s);
+            isSelectingSchem = false;
+        }
+    }
+
+COM:selects a schematic for a software tool based on certain conditions

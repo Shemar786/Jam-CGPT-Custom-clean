@@ -1,0 +1,15 @@
+TDAT:     protected void rejectRemoteRecipient(MailAddress recipient) throws MessagingException {
+        // Update the flags of the received message
+        if (!isLeaveRemoteRecipient())
+            setMessageDeleted();
+
+        if (isMarkRemoteRecipientSeen())
+            setMessageSeen();
+
+        StringBuilder messageBuffer = new StringBuilder("Rejected mail intended for remote recipient: ");
+        messageBuffer.append(recipient);
+        messageBuffer.append('.');
+        logStatusInfo(messageBuffer.toString());
+    }
+
+COM:rejects a mail intended for a remote recipient and logs the event

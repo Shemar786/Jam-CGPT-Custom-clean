@@ -1,0 +1,14 @@
+TDAT: 	public List getSubjects() {
+		if (this.subjects == null) {
+			this.subjects = new ArrayList();
+
+			File[] subjectFiles = mappingsDir.listFiles(new XMLFileFilter());
+			for (int i = 0; i < subjectFiles.length; i++) {
+				String filename = subjectFiles[i].getName();
+				this.subjects.add(filename.substring(0, filename.length() - 4));
+			}
+		}
+		return this.subjects;
+	}
+
+COM:returns a list of subjects by reading XML files from a specified directory and extracting the file names

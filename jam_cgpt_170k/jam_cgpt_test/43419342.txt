@@ -1,0 +1,11 @@
+TDAT: 	public void printVersionInfo() {
+		System.out.println(this.getFullVersionInfo(true, " "));
+		if (debug==true) {
+			System.out.println("Version.Mayor " + this.getVersionMajor());
+			System.out.println("Version.Minor " + this.getVersionMinor());
+			System.out.println("Version.Build " + this.getVersionBuild());
+			System.out.println("Version.Date " + this.getVersionDate().toString());
+		}
+	}
+
+COM:prints version information including major, minor, build, and date, and also checks if debug mode is enabled

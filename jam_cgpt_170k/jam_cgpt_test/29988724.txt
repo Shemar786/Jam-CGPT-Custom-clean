@@ -1,0 +1,14 @@
+TDAT:     public void createPartControl(Composite parent) {
+
+        PlatformUI.getWorkbench().getHelpSystem().setHelp(parent, SQLExplorerPlugin.PLUGIN_ID + ".SQLResultsView");
+
+        _parent = parent;
+
+        // set default message
+        if (_results == null || _results.length == 0) {
+            setDefaultMessage();
+        }
+
+    }
+
+COM:sets the help system, initializes the parent composite, and sets a default message for a SQL results view

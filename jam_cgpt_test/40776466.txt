@@ -1,0 +1,15 @@
+TDAT: 	public void addJDLJob(String jdl, boolean addToHistory) throws CompilerException {
+		assert jdl != null: "Null must not be passed by the GUI";
+		
+		List<JobSpec> jobs = DescriptionFileCompile.compileJDL( jdl );
+		
+		for ( JobSpec jobSpec : jobs ) {
+			getManager().addJob(getManagerClient(), jobSpec);
+			
+			if (addToHistory)
+				getModel().addJobToHistory(jdl);
+		}
+		
+	}
+
+COM:adds a JDL job and optionally adds it to the job history

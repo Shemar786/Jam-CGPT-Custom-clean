@@ -1,0 +1,10 @@
+TDAT:   public Cursor fetchChecklistItem(long itemId) {
+    Cursor cursor = mDb.query(true, CHECKLIST_ITEM_TBL, new String[] {KEY_ROWID, KEY_LIST_ID, KEY_IS_DONE, KEY_ITEM},
+        KEY_ROWID + "=" + itemId, null, null, null, null, null);
+    if (cursor != null) {
+      cursor.moveToFirst();
+    }
+    return cursor;
+  }
+
+COM:fetches a particular checklist item from a database and returns a cursor pointing to the result, if it exists

@@ -1,0 +1,13 @@
+TDAT:     public void testSetErrmsg() {
+        System.out.println("setErrmsg");
+        
+        String errmsg = "";
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.setErrmsg(errmsg);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a test function that sets an error message for a SystemClient_DBImpl instance and prints a message to the console

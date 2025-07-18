@@ -1,0 +1,6 @@
+TDAT:     public String toString() {
+        String operationString = (operation.getPrefix() != null && !operation.getPrefix().equals(emptyString) ? operation.getPrefix() + ":" + operation.getLocalPart() : operation.getLocalPart());
+        return "wsdl.bindingOperation(" + binding + "/" + operationString + ")";
+    }
+
+COM:returns a string representation of a WSDL binding operation

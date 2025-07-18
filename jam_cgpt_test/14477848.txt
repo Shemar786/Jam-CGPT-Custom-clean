@@ -1,0 +1,17 @@
+TDAT: 	public void execute() throws BuildException {
+		System.out.println("HolyCowAntTask: course=" + courseId + " dest=" + destdir);
+
+		args[0] = "-course";
+		args[1] = courseId;
+		args[2] = "-o";
+		args[3] = destdir;
+
+		try  {
+			Content2HTML.main(args);
+		} catch (Throwable e)  {
+			//e.printStackTrace();
+			throw new BuildException("error in Content2HTML.main() " + e, e);
+		}
+	}
+
+COM:executes a command and prints a message with course and destination information, then calls the Content2HTML method with specified arguments and catches any errors that occur

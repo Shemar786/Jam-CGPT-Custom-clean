@@ -1,0 +1,9 @@
+TDAT:     public void addName(String name, boolean isRequired) throws XdsRimException, SOAPException {
+        if (name != null) {
+            addRimNameElement(root, name, rimNameSpace);
+        } else if (isRequired) {
+            throw new XdsRimException("Required Name not supplied.");
+        }
+    }
+
+COM:adds a name element to a root object if a non-null name is provided, otherwise it throws an exception if the name is required but not supplied

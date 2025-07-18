@@ -1,0 +1,13 @@
+TDAT:     public String getTitle() {
+        if (null != this.title) {
+            return this.title;
+        }
+        ValueExpression _ve = getValueExpression("title");
+        if (_ve != null) {
+            return (java.lang.String) _ve.getValue(getFacesContext().getELContext());
+        } else {
+            return null;
+        }
+    }
+
+COM:returns a String value representing the title, either from a stored value or from a ValueExpression if one exists

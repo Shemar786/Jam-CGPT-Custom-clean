@@ -1,0 +1,21 @@
+TDAT:   public String getErrorMessage() {
+    switch (status) {
+      case STATUS_EXCEPTION: {
+        return exception.getMessage();
+      }
+      case STATUS_REPORT: {
+        return "Report: "+reportPDU.get(0);
+      }
+      case STATUS_TIMEOUT: {
+        return "Request timed out.";
+      }
+      case STATUS_WRONG_ORDER: {
+        return "Agent did not return variable bindings in lexicographic order.";
+      }
+      default: {
+        return "";
+      }
+    }
+  }
+
+COM:returns an error message based on the status of the operation

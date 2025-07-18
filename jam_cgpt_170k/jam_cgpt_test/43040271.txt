@@ -1,0 +1,12 @@
+TDAT:     protected Object getValue(String property, Object bean) throws TechnicalException {
+        try {
+            final IValueAccessor<?> get = getters.get(property);
+            if (get == null)
+                return NO_GETTER;
+            return get.getValue(bean, null);
+        } catch (Exception e) {
+            throw new TechnicalException("Error while reading " + property + " from " + bean, e);
+        }
+    }
+
+COM:retrieves the value of a specified property from a bean object using a mapping of property getters, and throws a TechnicalException if an error occurs during the retrieval process

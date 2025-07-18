@@ -1,0 +1,15 @@
+TDAT: 	public SessionContainer getByAppID(String clientID, String applicationID) {
+		Map<String, SessionContainer> sessionMap = getSessionMap(clientID);
+		
+		// iterate through the sessions to find one with the specified appId
+		for (Iterator<SessionContainer> it = sessionMap.values().iterator(); it.hasNext(); ) {
+			SessionContainer store = it.next();
+			if (applicationID.equals(store.getApplicationId())) {
+				return store;
+			}
+		}
+		
+		return null;
+	}
+
+COM:returns a SessionContainer object based on the specified client ID and application ID

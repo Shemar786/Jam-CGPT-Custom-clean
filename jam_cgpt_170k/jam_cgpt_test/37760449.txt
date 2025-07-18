@@ -1,0 +1,12 @@
+TDAT: 	public Dependency extractDependency(File referencedPom) throws Exception {
+		Project referencedProject = read(referencedPom);
+		Dependency dependency = new Dependency();
+		dependency.setGroupId(referencedProject.getGroupId());
+		dependency.setArtifactId(referencedProject.getArtifactId());
+		dependency.setVersion(referencedProject.getCurrentVersion());
+		//dependency.setArtifact(referencedPom.getParent());
+		//dependency.setJar(referencedPom.getParent());
+		return dependency;
+	}
+
+COM:extracts dependency information from a specified pom.xml file and returns it in a pre-defined format

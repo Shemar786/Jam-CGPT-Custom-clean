@@ -1,0 +1,15 @@
+TDAT:   public DODSStructure findStructure(String name) {
+    if (name == null) return null;
+
+    for (int i=0; i<structures.size(); i++) {
+      DODSStructure v = (DODSStructure) structures.get(i);
+      if (name.equals(v.getName()))
+        return v;
+      if (null != (v = v.findStructure( name)))
+        return v;
+    }
+
+    return null;
+  }
+
+COM:finds and returns a DODSStructure object corresponding to the given name or null if the name is null or no such object exists

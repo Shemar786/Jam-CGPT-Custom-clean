@@ -1,0 +1,20 @@
+TDAT: 	private int getDistance(FingerPrint category) {
+		int distance = 0;
+		int count = 0;
+		for (Entry<String, Integer> entry : this.entries) {
+			String ngram = entry.getKey();
+			count++;
+			if (count > 1000) {
+				break;
+			}
+			if (!category.containsKey(ngram)) {
+				distance += category.size();
+				continue;
+			}
+			distance += Math.abs(this.getPosition(ngram)
+					- category.getPosition(ngram));
+		}
+		return distance;
+	}
+
+COM:calculates the distance between two fingerprints based on their n-gram positions

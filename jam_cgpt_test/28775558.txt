@@ -1,0 +1,11 @@
+TDAT: 	private JTextField getDeviceCounter() {
+		if (devCounter==null) {
+			devCounter=new JTextField();
+			devCounter.setBounds(new Rectangle(180, 340, 16, 16));
+			devCounter.setText((new Integer((ActiveSituation.getDeviceList()).size())).toString());
+			devCounter.setEditable(false);
+		}
+		return devCounter;
+	}
+
+COM:returns a JTextField object that displays the number of devices stored in a device list

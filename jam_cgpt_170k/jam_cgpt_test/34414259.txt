@@ -1,0 +1,13 @@
+TDAT: 	protected void updateObjectInformation(String name, String value) {
+		ModifyPropertyThread mpt = _containerEditor.modifyProperty(name, INFORMATION, value, getObjectId()+".xml", "false", "", true);
+		try{
+			mpt.start();
+			mpt.join();
+		}
+		catch(InterruptedException ie){
+			ie.printStackTrace(System.err);
+		}
+		mpt.cleanThread();
+	}
+
+COM:updates information about a specified object by creating and running a ModifyPropertyThread and waiting for it to finish before cleaning up the thread

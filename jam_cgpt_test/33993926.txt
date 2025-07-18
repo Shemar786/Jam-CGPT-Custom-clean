@@ -1,0 +1,17 @@
+TDAT: 	protected void addPageSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TableWidget_pageSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TableWidget_pageSize_feature", "_UI_TableWidget_type"),
+				 UiPackage.Literals.TABLE_WIDGET__PAGE_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a page size property descriptor to a table widget object

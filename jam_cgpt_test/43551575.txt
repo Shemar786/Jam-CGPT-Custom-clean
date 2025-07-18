@@ -1,0 +1,17 @@
+TDAT:     private int getDayDifference(String dt1, String dt2){
+        int diff = 0;
+        int dt1Day = Integer.parseInt(dt1.substring(8,10));
+
+//        System.out.println("months: " + months);
+//        System.out.println("add years: " + addYears);
+        int dt2Day = Integer.parseInt(dt2.substring(8,10));
+
+        if(dt1Day < dt2Day){
+            diff = (30 - dt2Day) + dt1Day;
+        }else{
+            diff = dt1Day - dt2Day;
+        }
+        return diff;
+    }
+
+COM:calculates the difference in days between two dates passed as strings

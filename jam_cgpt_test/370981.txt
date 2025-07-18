@@ -1,0 +1,12 @@
+TDAT: 	protected void createOptionsGroup(Composite parent) {
+		Composite optionsGroup= new Composite(parent, SWT.NONE);
+		GridLayout layout= new GridLayout();
+		layout.marginHeight= 0;
+		optionsGroup.setLayout(layout);
+
+		fExportStructural= new Button(optionsGroup, SWT.CHECK | SWT.LEFT);
+		fExportStructural.setText(JarPackagerMessages.JarRefactoringDialog_export_structural);
+		fExportStructural.setSelection(fData.isExportStructuralOnly());
+	}
+
+COM:creates a group of options including a checkbox for exporting a specific element only and sets certain properties such as text and selection status

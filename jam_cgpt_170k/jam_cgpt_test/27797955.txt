@@ -1,0 +1,15 @@
+TDAT:   public void 	internalFrameActivated(InternalFrameEvent e) {
+    String network_id = ( String )componentMap.get( e.getInternalFrame() );
+    
+    if ( network_id == null ) {
+      return;
+    }
+    
+   
+
+    firePropertyChange( CytoscapeDesktop.NETWORK_VIEW_FOCUSED,
+                        null,
+                        network_id );
+  }
+
+COM:sets a property change for the network view when the internal frame of a component is activated

@@ -1,0 +1,9 @@
+TDAT:     private void synchronizeVisualStyle(Color newColor) {
+        VisualMappingManager vmm = Cytoscape.getCurrentNetworkView().getVizMapManager();
+        VisualStyle style = vmm.getVisualStyle();
+        GlobalAppearanceCalculator gCalc =
+                style.getGlobalAppearanceCalculator();
+        gCalc.setDefaultBackgroundColor(newColor);
+    }
+
+COM:synchronizes the visual style of a current network view in Cytoscape with a new background color

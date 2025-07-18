@@ -1,0 +1,12 @@
+TDAT: 	public Collection getPeptideReportByIdentificationId(Long identificationId, boolean publicOnly) throws PridePersistenceException {
+		checkPersistenceBrokerStatus();
+		Criteria crit = new Criteria();
+		crit.addEqualTo("iIdentification.iId", identificationId);
+		if (publicOnly) {
+			crit.addLessOrEqualThan("iIdentification.iExperiment.iPublicDate", new java.sql.Date(new java.util.Date().getTime()));
+		}
+
+        return controller.collectionQuery(PeptideBean.class, crit, false);
+	}
+
+COM:retrieves a collection of peptide reports based on identification ID and a boolean value indicating whether to include only reports marked as public

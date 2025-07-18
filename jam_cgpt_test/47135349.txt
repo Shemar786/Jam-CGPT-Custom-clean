@@ -1,0 +1,13 @@
+TDAT:     public void requestMedia(int id){
+        try {
+            writer.write(String.format("MEDIAPLAY %d\n",id));
+            writer.flush();
+            System.out.println("Client: MEDIAPLAY");
+            request=true;
+            runSocket();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+COM:sends a request to play media with the specified ID using a socket connection

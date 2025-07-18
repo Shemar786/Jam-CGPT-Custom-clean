@@ -1,0 +1,13 @@
+TDAT:     public Collectingevent getCollectingevent(String stationFieldNumber) {
+
+        logger.info("getCollectingevent - stationFieldNumber: {}", stationFieldNumber);
+
+        try {
+            return service.path("search").path("collectingevent").path(stationFieldNumber).accept(MediaType.APPLICATION_JSON).get(Collectingevent.class);
+        } catch (Exception ex) {
+            logger.error(ex.getMessage());
+            return null;
+        }
+    }
+
+COM:retrieves a collecting event object by its station field number

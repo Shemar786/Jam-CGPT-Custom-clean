@@ -1,0 +1,8 @@
+TDAT: 	public JavaStates endRegion(String name, String statename){
+		//assert name==this.name;
+		if(name!=this.current.getRegionManager().getName())throw new BadClosingException(this.current.getRegionManager().getName(), name);
+		current= this.endRootState(statename).endSubRegion(name);
+		return this;
+	}
+
+COM:ends a sub-region of the current state and returns the JavaStates object

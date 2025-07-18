@@ -1,0 +1,10 @@
+TDAT:     public void notifyAttributeListeners(Object o, String attribute, String value) {
+        ArrayList<AttributeListener> listeners = this.attributeListener.get(attribute);
+        if (listeners != null) {
+            for (AttributeListener listener : listeners) {
+                listener.attributeSet(o, attribute, value);
+            }
+        }
+    }
+
+COM:notifies the attribute listeners of a specified attribute with the updated value

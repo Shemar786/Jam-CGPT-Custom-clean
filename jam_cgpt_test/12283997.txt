@@ -1,0 +1,20 @@
+TDAT: 	public ScreenConfiguration getDescriptor(String iName) {
+		ScreenConfiguration descr;
+
+		synchronized (this) {
+			descr = getConfiguration(iName);
+			if (descr == null) {
+				// LOAD FROM DESCRIPTOR
+				descr = loadDescriptor(iName);
+				if (descr != null) {
+					addConfiguration(iName, descr);
+
+					// REGISTER DESCRIPTOR FILE TO BE WAKED UP ON RELOADING
+					Roma.component(AutoReloadManager.class).addResource(descr.getFile(), this);
+				}
+			}
+		}
+		return descr;
+	}
+
+COM:returns a ScreenConfiguration object based on the input String iName, and if the configuration is not already set or loaded, it loads it from a descriptor file and registers it for auto-reloading

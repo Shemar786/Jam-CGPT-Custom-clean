@@ -1,0 +1,10 @@
+TDAT:     public int compareTo(TimeUnit t) throws ClassCastException {
+        TimeValue<DimensionlessTimeUnit> factor = null;
+        try {
+            return getConversionFactor(t.getClass()).compareTo(new IntegerTimeValue<DimensionlessTimeUnit>(new DimensionlessTimeUnit(), 1));
+        } catch(TimeConversionException tce) {
+            throw new ClassCastException(tce.getMessage());
+        }
+    }
+
+COM:compares the conversion factor of two time units

@@ -1,0 +1,9 @@
+TDAT:   static public StringBuffer toLower(String str) {
+    StringBuffer res = new StringBuffer(str);
+    for (int i=0; i<str.length(); i++) {
+      res.setCharAt(i,Character.toLowerCase(str.charAt(i)));
+    }
+    return res;
+  }
+
+COM:takes a string as input, creates a new StringBuffer object with the same characters, converts all uppercase characters to lowercase, and returns the modified StringBuffer object

@@ -1,0 +1,10 @@
+TDAT:   public void setStrength(int n) {
+    this.strength = n;
+    float dash[] = { 10, 5, 10, 5 };
+    this.regBorderStroke = new BasicStroke(n, BasicStroke.CAP_BUTT,
+                                           BasicStroke.JOIN_MITER, 10,
+                                           dash, 0);
+    this.borderStroke = this.regBorderStroke;
+  }
+
+COM:sets the strength of a border stroke and creates a regular border stroke with specified properties

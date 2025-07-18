@@ -1,0 +1,26 @@
+TDAT: 	public Structure getStructure(File filename) throws IOException {
+
+		InputStreamProvider isp = new InputStreamProvider();
+		
+		InputStream inStream = isp.getInputStream(filename);
+		
+		BufferedInputStream bis = new BufferedInputStream(inStream);
+
+		PDBFileParser pdbpars = new PDBFileParser();
+		pdbpars.setParseSecStruc(parseSecStruc);
+        pdbpars.setAlignSeqRes(alignSeqRes);
+        pdbpars.setParseCAOnly(parseCAOnly);
+		Structure struc = pdbpars.parsePDBFile(bis);
+		
+		
+		
+		//ra bugfix: => instream closed...
+		bis.close();
+		inStream.close();
+		
+		
+		return struc ;
+
+	}
+
+COM:retrieves a molecular structure from a file, parses it using various options, and returns the parsed structure object

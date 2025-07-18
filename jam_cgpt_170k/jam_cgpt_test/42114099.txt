@@ -1,0 +1,12 @@
+TDAT: 	public void fallDamage(float distance) {
+		super.fallDamage(distance);
+		
+		// Only play Sound if you didnt die
+		if(distance <= 25 && Game.getGame().getSettings().isSFX()) {
+			Sound.getInstance().getAudioTrack("sounds/falldamage.wav").setWorldPosition(this.getWorldTranslation());
+			Sound.getInstance().getAudioTrack("sounds/falldamage.wav").play();
+		}
+		updateHealthText();
+	}
+
+COM:calculates fall damage and plays a sound if the distance fallen is less than or equal to 25 and the game settings allow for sound, and updates the health text

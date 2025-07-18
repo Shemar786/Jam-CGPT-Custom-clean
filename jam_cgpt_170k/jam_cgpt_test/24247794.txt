@@ -1,0 +1,14 @@
+TDAT: 	private void createFilesPanel() {
+		filesPanel.add(tablePane, BorderLayout.CENTER);
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.add(deleteButton);
+		buttonPanel.add(uploadButton);
+		buttonPanel.add(downloadButton);
+		buttonPanel.add(runButton);
+		buttonPanel.add(soundButton);
+		buttonPanel.add(formatButton);
+		buttonPanel.setPreferredSize(filesButtonsPanelSize);
+		filesPanel.add(buttonPanel, BorderLayout.SOUTH);
+	}
+
+COM:creates a panel that includes a table and buttons for deleting, uploading, downloading, running, adjusting sound, and formatting files

@@ -1,0 +1,16 @@
+TDAT:     private void fireContentChanged() {
+        synchronized (listeners) {
+            final ListDataEvent e =
+                    new ListDataEvent(this, ListDataEvent.CONTENTS_CHANGED, 0,
+                                      getSize());
+
+            final Iterator iterator = listeners.iterator();
+
+            while (iterator.hasNext()) {
+                ListDataListener l = (ListDataListener) iterator.next();
+                l.contentsChanged(e);
+            }
+        }
+    }
+
+COM:notifies all registered listeners of a change in the contents of a list

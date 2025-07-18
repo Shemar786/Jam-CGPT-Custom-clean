@@ -1,0 +1,12 @@
+TDAT: 	public Document getItemRecord() throws Exception {
+		Element root = this.getNativeDataStream(this.nativeDataStreamFormat);
+		if (root == null)
+			throw new Exception("itemRecord not found in " + this.getHandle());
+		try {
+			return DocumentHelper.createDocument(root);
+		} catch (Throwable t) {
+			throw new Exception("could not create itemRecord for " + this.getHandle() + ": " + t.getMessage());
+		}
+	}
+
+COM:returns an XML Document object of the native data stream's root element, or throws an exception if the root element is not found or cannot be created

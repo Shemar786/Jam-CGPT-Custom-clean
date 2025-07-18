@@ -1,0 +1,13 @@
+TDAT:   public void setLogConf(String logConf) {
+    this.logConf = logConf;
+    try {
+      logHandler.applyConfig(logConf);
+    } catch(Exception e) {
+      String msg = e.getMessage();
+      if(msg == null)
+        msg = e.toString();
+      throw new FormatException(msg);
+    }
+  }
+
+COM:sets the logging configuration and applies it to the log handler, throwing a FormatException if there is an error

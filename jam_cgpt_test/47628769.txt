@@ -1,0 +1,13 @@
+TDAT:     public void setViewSelectionModel(ListSelectionModel selection) {
+        ListSelectionModel old = this.viewSelection;
+        if (old != null) {
+            old.removeListSelectionListener(viewSelectionListener);
+            modelSelection.clearSelection();
+        }
+        this.viewSelection = selection;
+        mapTowardsModel();
+        viewSelection.addListSelectionListener(getViewSelectionListener());
+        isListening = true;
+    }
+
+COM:sets the selection model for the view and updates the corresponding model selection

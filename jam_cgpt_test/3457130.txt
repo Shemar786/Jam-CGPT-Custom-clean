@@ -1,0 +1,17 @@
+TDAT: 		public void addParameters( String className, String[] paramNames, Object[] paramValues ){
+			
+			if( paramNames.length != paramValues.length )
+				throw new IllegalArgumentException("Parameter Names and values must have the same lenght.");
+			
+			Hashtable params = (Hashtable)mappings.get(className);
+			
+			if( params == null ){
+				params = new Hashtable();
+				mappings.put(className, params);
+			}
+			
+			for (int i = 0; i < paramNames.length; i++)
+				params.put(paramNames[i], paramValues[i]);
+		}
+
+COM:adds a set of parameters with corresponding values to a Hashtable, mapped to a specific class name

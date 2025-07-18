@@ -1,0 +1,8 @@
+TDAT: 	protected void convertAatFile(File file, File outFolder, String outFileExtension, URLList urlList, String baseUrl) throws IOException {
+		Test test = ToFromXML.fromXML(file, urlList);
+		outFolder = new File(outFolder, file.getName());
+		outFolder.mkdirs();
+		testConverter.convert(test, outFolder);
+	}
+
+COM:converts an AAT file to XML format and then converts it to a test folder with specified base URL and file extension

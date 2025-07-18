@@ -1,0 +1,10 @@
+TDAT:     public Continent getBiggestEnvironment() {
+        Continent result = new Continent(0,new Terrain());
+        for (Iterator<Continent> it = iterator(); it.hasNext();) {
+            Continent p = it.next();
+            if (p.getSize() > result.getSize()) result = p;
+        }
+        return result;
+    }
+
+COM:returns the continent with the biggest environment by iterating through a list of continents and comparing their sizes

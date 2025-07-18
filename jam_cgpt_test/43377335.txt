@@ -1,0 +1,14 @@
+TDAT:     public void addPROCParam(PROCParam ce) {
+        ce.setParent(this);
+        //Set an inital location for this
+        ce.setX(this.getX());
+        ce.setY(this.getY());
+
+        if(ce instanceof VAR){
+            ((VAR) ce).setIsPROCParam(true);
+        }
+
+        params.add(ce);
+    }
+
+COM:adds a PROCParam object to a list of parameters, sets its parent, location, and a boolean flag if it is a VAR type

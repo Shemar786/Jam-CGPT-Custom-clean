@@ -1,0 +1,17 @@
+TDAT:     private Method getSetter(String name) {
+        if(setters == null)
+            populateSetters();
+
+        Method method = null;
+        Iterator it = setters.iterator();
+        while (it != null && it.hasNext()) {
+            Method m = (Method) it.next();
+            if (m.getName().equals(name)) {
+                method = m;
+                break;
+            }
+        }
+        return method;
+    }
+
+COM:returns a Method object for the setter method with a given name, after checking if the setters have been populated and iterating through them to find the matching name

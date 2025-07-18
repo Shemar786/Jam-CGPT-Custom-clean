@@ -1,0 +1,5 @@
+TDAT:   protected String convertTimestamp(int yy, int mo, int dd, int hh, int mi, int ss, int ns) {
+    return "TO_DATE('" + yy + "-" + mo + "-" + dd + " " + hh + ":" + mi + ":" + ss + "', 'YYYY-MM-DD HH24:MI:SS')";
+  }
+
+COM:converts a timestamp specified by year, month, day, hour, minute, second, and nanosecond values into a string in Oracle SQL format

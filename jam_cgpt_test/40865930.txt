@@ -1,0 +1,10 @@
+TDAT:     public Command getOkCommand4() {
+        if (okCommand4 == null) {//GEN-END:|303-getter|0|303-preInit
+            // write pre-init user code here
+            okCommand4 = new Command("Ok", Command.OK, 0);//GEN-LINE:|303-getter|1|303-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|303-getter|2|
+        return okCommand4;
+    }
+
+COM:This is a Java method that returns a Command object named "Ok" with the command type OK and priority 0, creating it if it does not already exist

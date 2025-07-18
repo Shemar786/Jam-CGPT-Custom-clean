@@ -1,0 +1,8 @@
+TDAT:   public void setWaitMode ( boolean wait_mode ) {
+    Iterator graph_views = graphViewIterator();
+    //while( graph_views.hasNext() ) {
+    //  ( ( PGraphView )graph_views.next() ).setWaitMode( wait_mode );
+    //}
+  } // setWaitMode( boolean )
+
+COM:sets a wait mode for PGraphView

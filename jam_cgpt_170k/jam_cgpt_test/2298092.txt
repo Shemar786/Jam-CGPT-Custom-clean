@@ -1,0 +1,10 @@
+TDAT:     public void setViewRectSize(int width, int height) {
+        Rectangle oldRect = new Rectangle(viewRect);
+        viewRect.setSize((int)Math.round(width*SCALE), 
+                (int)Math.round(height*SCALE));
+        oldRect.add(viewRect);
+        repaint(oldRect.x-2, oldRect.y-2, oldRect.width+4, 
+                oldRect.height+4);
+    }
+
+COM:sets the size of a rectangular view and triggers a repaint of the previous view

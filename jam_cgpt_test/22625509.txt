@@ -1,0 +1,10 @@
+TDAT: 	protected String getCost() throws Exception {
+		List nodes = getDom4jDoc().selectNodes("/*[local-name()='collectionRecord']/*[local-name()='general']/*[local-name()='cost']");
+
+		if (nodes.size() != 1)
+			return null;
+		Element element = (Element) nodes.get(0);
+		return element.getText().replaceAll(":", "").replaceAll(" ", "");
+	}
+
+COM:retrieves the cost value from an XML document using XPath expression and returns it as a string after removing any colons or spaces in the text

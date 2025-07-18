@@ -1,0 +1,17 @@
+TDAT: 	public boolean validateUMLBabstractState_notransitionsfromfinal(UMLBabstractState umlBabstractState, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (umlBabstractState.isFinal() && !umlBabstractState.getOutgoing().isEmpty()) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 UMLBValidator.DIAGNOSTIC_SOURCE,
+						 UMLBValidator.UML_BABSTRACT_STATE__NOTRANSITIONSFROMFINAL,
+						 "There must be no outgoing transitions from a final pseudo-state",
+						 new Object [] { umlBabstractState }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+COM:checks if a state is a final pseudo-state and has no outgoing transitions

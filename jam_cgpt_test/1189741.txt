@@ -1,0 +1,8 @@
+TDAT:    public void setString(Block blk, int offset, String val) {
+      concurMgr.xLock(blk);
+      Buffer buff = myBuffers.getBuffer(blk);
+      int lsn = recoveryMgr.setString(buff, offset, val);
+      buff.setString(offset, val, txnum, lsn);
+   }
+
+COM:sets a String value at a specified offset in a block using a concurrent manager, recovery manager, and buffer

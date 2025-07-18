@@ -1,0 +1,12 @@
+TDAT: 	public void fireButtonPressedEvent(int button) {
+		ButtonPressedEvent w = new ButtonPressedEvent(this, button);
+		for(int i=0; i < this.wiimotelistener.size(); i++) {
+			this.wiimotelistener.get(i).buttonPressReceived(w);
+		}
+		
+		if(w.isRecognitionInitEvent() || w.isTrainInitEvent()) {
+			this.resetFilters();
+		}
+	}
+
+COM:fires a button pressed event and calls the buttonPressReceived method for each listener, while also resetting filters if the event type is a recognition or train initialization event

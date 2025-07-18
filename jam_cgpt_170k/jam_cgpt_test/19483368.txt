@@ -1,0 +1,21 @@
+TDAT: 	public void navigate(Object association) {
+		if (association == null)
+			throw new IllegalArgumentException(ExceptionMessages.NULL_ARGUMENT);
+		if (!(association instanceof IRodinElement))
+			throw new IllegalArgumentException(
+					ExceptionMessages.WRONG_ARGUMENT_TYPE);
+
+		if (((IRodinElement) association).getElementType() != IAssociation.ELEMENT_TYPE)
+			return;
+
+		IAssociation association1 = (IAssociation) association;
+		try {
+			IInternalElement element = association1.getElement();
+			if (element.exists())
+				UIUtils.linkToEventBEditor(element);
+		} catch (RodinDBException e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:takes in an object and navigates to the associated element in an Event-B editor if it exists

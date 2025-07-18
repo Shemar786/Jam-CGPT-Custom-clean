@@ -1,0 +1,15 @@
+TDAT:     public void setCurrentState(ChatState newState, Chat chat) throws XMPPException {
+        if(chat == null || newState == null) {
+            throw new IllegalArgumentException("Arguments cannot be null.");
+        }
+        if(!updateChatState(chat, newState)) {
+            return;
+        }
+        Message message = new Message();
+        ChatStateExtension extension = new ChatStateExtension(newState);
+        message.addExtension(extension);
+
+        chat.sendMessage(message);
+    }
+
+COM:sets the current chat state, generates an appropriate message and sends it to the chat

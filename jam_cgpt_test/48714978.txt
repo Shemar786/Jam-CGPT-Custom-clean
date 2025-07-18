@@ -1,0 +1,8 @@
+TDAT:     public boolean removeModule(String moduleName) {
+        ModuleOperation operation = facade.getModuleOperationRegistry().getOperation(
+                ModuleOperationConstants.RemoveModuleOperation);
+        ModuleOperationInput moduleOperationInput = new ModuleOperationInput(null, null, moduleName);
+        return execute(operation, moduleOperationInput).isSuccess();
+    }
+
+COM:removes a specified module and returns true if the execution was successful

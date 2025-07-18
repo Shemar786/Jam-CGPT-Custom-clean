@@ -1,0 +1,11 @@
+TDAT: 	public void setFlowControl(FlowControl flowControl) throws FTD2xxException {
+
+		if (flowControl == FlowControl.XON_XOFF)
+			throw new IllegalArgumentException(Localizer.getLocalizedMessage(
+					Port.class, "error.setFlowControl1.invalidUsage"));
+
+		setFlowControl(device.getHandle(), flowControl.value, (char) 0,
+				(char) 0);
+	}
+
+COM:sets the flow control for a device handle and throws an exception if the flow control provided is not valid

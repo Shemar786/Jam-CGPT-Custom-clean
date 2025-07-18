@@ -1,0 +1,12 @@
+TDAT:     static private boolean addItemStats(MuItemStats ItemStats) {
+        if (_allItemStats.containsValue(ItemStats)) {
+            return false;
+        } else {
+            _allItemStats.put(Integer.valueOf(
+                    (int) ((ItemStats.get_groupIndex() << 4) + (ItemStats.get_index() & 0x00FF))),
+                    ItemStats);
+            return true;
+        }
+    }
+
+COM:adds an item's statistics to a collection if not already in it and returns a boolean indicating if the addition was successful

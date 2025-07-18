@@ -1,0 +1,16 @@
+TDAT: 	public void addUserOverviewPanel(String username) {
+		if (tabs.containsKey(username)) {
+			UserOverviewPanel albumOverviewPanel = (UserOverviewPanel) tabs
+					.get(username);
+			albumOverviewPanel.refresh();
+			gotoTab(albumOverviewPanel);
+		} else {
+			UserOverviewPanel albumOverviePanel = new UserOverviewPanel(
+					m_Main.getClientServerConnectorAsync(), this, username,
+					loggedIn);
+			tabs.put(username, albumOverviePanel);
+			addTab(albumOverviePanel);
+		}
+	}
+
+COM:adds a user overview panel to a tab if it exists, otherwise it creates a new panel and adds it to the tab

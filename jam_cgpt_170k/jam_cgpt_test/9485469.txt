@@ -1,0 +1,12 @@
+TDAT:     public boolean isAspectEnabled(final String aspectclass) {
+        DripsAspectInfo dripsAspectInfo = getAspectInfo(aspectclass);
+        try {
+            return Utils.getLocalMBeanServer().isRegistered(
+                    new ObjectName(dripsAspectInfo.getObjectName()));
+        } catch (MalformedObjectNameException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+COM:checks if a specific aspect class is enabled and returns a boolean value indicating its status

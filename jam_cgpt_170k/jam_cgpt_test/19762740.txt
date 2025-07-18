@@ -1,0 +1,11 @@
+TDAT:   public String listToString(List<String> list) {
+    String string = "";
+    // use comma to dilemma every element
+    for (String curString : list) {
+      string = string + curString + ", ";
+    }
+    string = string.substring(0, string.lastIndexOf(", "));
+    return string;
+  }
+
+COM:takes a list of strings and returns a comma-separated string representation of all the elements in the list

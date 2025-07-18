@@ -1,0 +1,10 @@
+TDAT:     public void testCacheSizeZero() {
+        Cache cache = new Cache(0);
+        for (int i = 0; i < 3; i++) {
+            cache.addElement(this.keys[i], this.values[i]);
+            assertEquals(0, cache.size());
+            assertFalse(cache.contains(this.keys[i]));
+        }    
+    }
+
+COM:tests that a Cache object with a size of zero does not store any elements

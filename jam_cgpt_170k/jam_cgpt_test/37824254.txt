@@ -1,0 +1,10 @@
+TDAT:    public void startDatabase() {
+      m_prDatabase.startDatabase();
+      dbState = m_prDatabase.getDatabaseState();
+      assertTrue("Testing database is open after startDatabase().",dbState == Database.DATABASE_OPEN);
+      
+      assertTrue("Testing state retrieved from listener.",listenerDBState == Database.DATABASE_OPEN);
+      
+   }
+
+COM:starts the database, retrieves its state, and checks if the database's state is open

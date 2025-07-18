@@ -1,0 +1,23 @@
+TDAT: 	public void modify(Object element, String property, Object value) {
+		if (element == null || value == null)
+			throw new IllegalArgumentException(ExceptionMessages.NULL_ARGUMENT);
+
+		if (!(element instanceof IDocument || element instanceof Item))
+			throw new IllegalArgumentException(
+					ExceptionMessages.WRONG_ARGUMENT_TYPE);
+
+		if (element instanceof Item)
+			element = ((Item) element).getData();
+
+		IDocument doc = (IDocument) element;
+
+		try {
+			doc.setName((String) value, null);
+		} catch (RodinDBException e) {
+			e.printStackTrace();
+		}
+
+		viewer.refresh();
+	}
+
+COM:modifies a document's name and refreshes the current viewer

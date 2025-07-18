@@ -1,0 +1,6 @@
+TDAT:     protected void setControlData() {
+        if ((this.getPnPermissions()!=null) && (this.getJbsBaseObject()!=null) && (this.getJbsBaseObject() instanceof JbsObject))
+            this.getPnPermissions().setControlData((JbsObject)this.getJbsBaseObject());
+    }
+
+COM:sets control data for a JbsObject instance based on the permission and base object attributes

@@ -1,0 +1,10 @@
+TDAT:     public OObject pow( OObject y ){
+	if( (this instanceof Complex) && (y instanceof Complex) ) {
+	    return ((Complex)this).pow( (Complex)y );
+	} else if( !((this instanceof Error) || (y instanceof Error)) ){
+	    return new jscicalc.expression.Power( this, y );
+	}
+	return new Error( "OObject pow( y ) error" );
+    }
+
+COM:takes in an OObject parameter and returns the result of raising the object to the power of another object, handling special cases for Complex and Error objects

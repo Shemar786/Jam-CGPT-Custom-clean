@@ -1,0 +1,13 @@
+TDAT: 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
+		if (selection instanceof IStructuredSelection) {
+			Object first = ((IStructuredSelection) selection).getFirstElement();
+			if (first instanceof IJavaElement) {
+				IJavaElement jElem = (IJavaElement) first;
+				if (canDoMetrics(jElem)) {
+					setJavaElement(jElem, false);
+				}
+			}
+		}
+	}
+
+COM:responds to changes in the selected item in an Eclipse workbench, checks if it is a Java element, and sets the element if it can be used for metrics

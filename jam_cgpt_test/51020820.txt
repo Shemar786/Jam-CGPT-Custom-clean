@@ -1,0 +1,17 @@
+TDAT: 	public void actionPerformed(ActionEvent arg0) {
+		ONDEXJUNGGraph aog = (ONDEXJUNGGraph) graph;
+		JComboBox box = (JComboBox) arg0.getSource();
+		String name = (String) box.getSelectedItem();
+		an = aog.getMetaData().getAttributeName(name);
+		if (an == null) {
+			this.lengthFunction = UNITLENGTHFUNCTION;
+			currentIteration = 0;
+			done = false;
+		} else {
+			this.lengthFunction = new GDSEdges(an, inverseScaleBox.isSelected());
+			currentIteration = 0;
+			done = false;
+		}
+	}
+
+COM:retrieves the selected item from a JComboBox and uses it to update certain variables in the program

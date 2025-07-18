@@ -1,0 +1,16 @@
+TDAT: 	private JButton getConectorButton() {
+		if (conectorButton == null) {
+			conectorButton = new JButton();
+			conectorButton.setText(Messages.getString("gui.GUI.40")); //$NON-NLS-1$
+			conectorButton.setIcon(new ImageIcon("data/icons/usb.png")); //$NON-NLS-1$
+			conectorButton
+					.addActionListener(new java.awt.event.ActionListener() {
+						public void actionPerformed(java.awt.event.ActionEvent e) {
+							abrirConexiones();
+						}
+					});
+		}
+		return conectorButton;
+	}
+
+COM:returns a created or existing JButton for opening connections, with text and an icon, and an ActionListener that opens connections when clicked

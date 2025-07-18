@@ -1,0 +1,13 @@
+TDAT:     public JButton getProductButton1() {
+        if ( productButton1 == null ) {
+            productButton1 = new JButton();
+            productButton1.setText( "Pepsi Cola" );
+            productButton1.setToolTipText( "Pepsi Cola" );
+            productButton1.setBorderPainted( true );
+            ImageIcon icon = new ImageIcon("icons/pepsibuttonsmall.gif");
+            productButton1.setIcon( icon );
+        }
+        return productButton1;
+    }
+
+COM:returns a JButton object with specific properties and an icon for a Pepsi Cola product button

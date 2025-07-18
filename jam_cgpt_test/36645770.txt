@@ -1,0 +1,19 @@
+TDAT: 	public int nextval(String key) {
+		Sequence seq = null;
+
+		// If the sequence exists, get it; otherwise, create it with a value 0
+		if (m_sequences.containsKey(key))
+			seq = m_sequences.get(key);
+		else {
+			seq = new Sequence();
+			m_sequences.put(key, seq);
+		}
+
+		if (!seq.registered())
+			System.err.println("Warning: sequence key '" + key + "' being used without registration");
+
+		// increment the number, then return it; the sequence begins at '1'
+		return seq.nextval();
+	}
+
+COM:returns the next value in a sequence identified by a given key, and creates the sequence if it does not already exist

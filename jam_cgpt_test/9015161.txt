@@ -1,0 +1,15 @@
+TDAT: 	protected String getLocation(HttpURLConnection http) {
+		String key;
+		String value;
+		String ret;
+
+		ret = null;
+
+		for (int i = 0; ((null == ret) && (null != (value = http.getHeaderField(i)))); i++)
+			if ((null != (key = http.getHeaderFieldKey(i))) && (key.equalsIgnoreCase("Location")))
+				ret = value;
+
+		return (ret);
+	}
+
+COM:retrieves the location value from the header of an HTTP connection if it exists

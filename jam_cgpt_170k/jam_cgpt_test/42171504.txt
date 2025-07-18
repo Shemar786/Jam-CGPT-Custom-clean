@@ -1,0 +1,17 @@
+TDAT: 	protected void addInputsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ParameterizedActionstep_inputs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterizedActionstep_inputs_feature", "_UI_ParameterizedActionstep_type"),
+				 ActionStepPackage.eINSTANCE.getParameterizedActionstep_Inputs(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a parameterized action step's inputs

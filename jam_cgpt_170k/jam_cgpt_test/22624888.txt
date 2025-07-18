@@ -1,0 +1,13 @@
+TDAT: 	protected Element getElement(String xpath) {
+		List list = getElements(xpath);
+		if ((list == null) || (list.size() == 0)) {
+			prtln("getElement() did not find element for " + xpath);
+			return null;
+		}
+		if (list.size() > 1) {
+			prtln("getElement() found mulitple elements for " + xpath + " (returning first)");
+		}
+		return (Element) list.get(0);
+	}
+
+COM:returns an XML element given an XPath expression, and prints messages indicating whether no element or multiple elements were found

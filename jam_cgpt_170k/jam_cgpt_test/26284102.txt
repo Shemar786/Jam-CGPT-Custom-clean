@@ -1,0 +1,14 @@
+TDAT:     public void datePickerSelectedSlot() {
+        //Set the bookmark before hiding
+        model.setBookmark();
+        popup.setVisible(false);
+        //return focus to the button
+        dateButton.requestFocus();
+        if (editable)
+            dateField.requestFocus();
+        else
+            dateButton.requestFocus();
+        firePropertyChange(PROPERTY_DATECHANGE, null, model.getCalendar());
+    }
+
+COM:selects a date on a calendar and updates the associated properties while returning focus to the appropriate UI element

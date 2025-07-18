@@ -1,0 +1,14 @@
+TDAT:   public boolean hideEdgeView ( EdgeView ev ) {
+
+    // get and reset the change event.
+    ChangeEvent event = getChangeEvent();
+    event.reset();
+    event.addHiddenEdgeIndex( ev.getRootGraphIndex() );
+    // fire the Event
+    if ( event != null )
+      fireGraphViewChanged( event );
+
+    return hideGraphObject( ev );
+  }
+
+COM:hides an EdgeView and triggers a GraphView change event

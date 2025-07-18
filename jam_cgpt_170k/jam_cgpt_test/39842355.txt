@@ -1,0 +1,14 @@
+TDAT:     protected Locale getCurrentLocale() {
+
+        Locale userLocale = RequestUtils.retrieveUserLocale(pageContext, Globals.LOCALE_KEY);
+
+        // Store a new current Locale, if requested
+        if (this.locale) {
+            HttpSession session = ((HttpServletRequest) this.pageContext.getRequest()).getSession();
+            session.setAttribute(Globals.LOCALE_KEY, userLocale);
+        }
+
+        return userLocale;
+    }
+
+COM:retrieves the user's locale, stores a new current locale if requested, and returns the user's locale

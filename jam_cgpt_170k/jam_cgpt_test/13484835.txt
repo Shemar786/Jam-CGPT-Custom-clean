@@ -1,0 +1,8 @@
+TDAT:     public void visitNEWARRAY(NEWARRAY nAI) {
+        BasicType type = (BasicType) ((ArrayType) nAI.getType()).getBasicType();
+        Expr size = stack.pop(Type.INT);
+        Expr top = new NewArrayExpr(size, type, (ArrayType) nAI.getType());
+        stack.push(top);
+    }
+
+COM:visits a NEWARRAY instruction, retrieves the type and size of the array, creates a new array expression, and pushes it onto the stack

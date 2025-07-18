@@ -1,0 +1,15 @@
+TDAT: 	public void receive(Load load) {
+
+		if (load == null)
+			throw new IllegalArgumentException("The load was null!");
+
+		if (load.getNetwork() != this)
+			throw new IllegalArgumentException("The load was not made by this network!");
+		
+	//	System.out.println("t> "+getTime()+" Load "+load.getId()+" sent by the Load Generator is received by "+getName());
+		
+		if (myDispatcher != null)
+			myDispatcher.receive(load);
+	}
+
+COM:receives a Load object, checks if it is null or matches its network, and passes it on to its dispatcher if it exists

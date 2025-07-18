@@ -1,0 +1,6 @@
+TDAT:   public Cursor fetchChecklistItems(long listId) {
+    return mDb.query(CHECKLIST_ITEM_TBL, new String[] {KEY_ROWID, KEY_IS_DONE, KEY_ITEM},
+        KEY_LIST_ID + "=" + listId, null, null, null, null);
+  }
+
+COM:fetches checklist items from a database based on the specified list ID

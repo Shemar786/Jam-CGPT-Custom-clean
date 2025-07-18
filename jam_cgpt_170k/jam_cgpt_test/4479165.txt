@@ -1,0 +1,10 @@
+TDAT: 	public void testGetType() {
+		assertTrue(bishop.getType() == " Bishop  ");
+		assertTrue(bishop1.getType() == " Bishop  ");
+		assertTrue(bishop2.getType() == "BK-Bishop");
+		assertTrue(bishop3.getType() == " Bishop  ");
+		assertTrue(bishop4.getType() == "BK-Bishop");
+		assertTrue(bishop5.getType() == "BK-Bishop");
+	}
+
+COM:tests whether different instances of the Bishop class have the correct type

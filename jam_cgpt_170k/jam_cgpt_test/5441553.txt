@@ -1,0 +1,15 @@
+TDAT:     private void expandCapacity(int minimumCapacity) {
+        int newCapacity = (value.length + 1) * 2;
+
+        if (minimumCapacity > newCapacity) {
+            newCapacity = minimumCapacity;
+        }
+
+        char newValue[] = new char[newCapacity];
+
+        System.arraycopy(value, 0, newValue, 0, count);
+
+        value = newValue;
+    }
+
+COM:expands the capacity of a character array to hold more characters based on a minimum capacity requirement

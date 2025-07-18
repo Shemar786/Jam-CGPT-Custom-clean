@@ -1,0 +1,14 @@
+TDAT: 	public Cursor fetchBook(long rowId) throws SQLException {
+
+		Cursor mCursor =
+
+		mDb.query(true, DATABASE_TABLE, new String[] { KEY_ID, KEY_TITLE },
+				KEY_ID + "=" + rowId, null, null, null, null, null);
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+		return mCursor;
+
+	}
+
+COM:fetches book data from a database table based on a given row ID and returns a cursor for the result set

@@ -1,0 +1,12 @@
+TDAT: 	private void clearStates() {
+		if( gridSize == null || gridSize.x < 0 || gridSize.y < 0 )
+			states = null;
+		else {
+			states = new int[gridSize.x][gridSize.y];
+			for (int i = 0; i < states.length; i++) {
+				Arrays.fill( states[i], defaultState );
+			}
+		}
+	}
+
+COM:clears the states of a grid by setting it to null or initializing it with default values based on the given gridSize

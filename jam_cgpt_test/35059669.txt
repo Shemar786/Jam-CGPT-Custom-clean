@@ -1,0 +1,15 @@
+TDAT: 	public Room findRoomAt(Vec2i cellLoc) throws Exception {
+		if( !isValidCell(cellLoc) )
+			throw new Exception( "Invalid cell location" );
+		
+		for (Iterator<Room> iterator = rooms.iterator(); iterator.hasNext();) {
+			Room room = iterator.next();
+			if( room.getRoomArea().contains(cellLoc) ) {
+				return room;
+			}
+		}
+		
+		return null;
+	}
+
+COM:finds a Room object based on a given cell location and throws an exception if the location is invalid

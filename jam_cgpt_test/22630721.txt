@@ -1,0 +1,11 @@
+TDAT: 	private void removeSetFromIndex(SetInfo set) {
+		//String setSpec = set.getSetSpec();
+		ArrayList dirInfos = set.getDirInfos();
+		DirInfo dirInfo;
+		for (int j = 0; j < dirInfos.size(); j++) {
+			dirInfo = (DirInfo) dirInfos.get(j);
+			fileIndexingService.deleteDirectory(dirInfo.getDirectory());
+		}
+	}
+
+COM:removes a set of directory information from the file indexing service

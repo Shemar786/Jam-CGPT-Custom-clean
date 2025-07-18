@@ -1,0 +1,12 @@
+TDAT: 	private void removeIsland( Vec2i loc, MoveList moveList ) throws Exception {
+		
+		Island island = islands.get(loc);
+		if( island == null ) throw new Exception( "Removing unexisting island" );	
+		removeAllBridges( island, loc, moveList );
+		
+		islands.remove(loc);
+		usageMap[loc.x][loc.y] = false;
+		moveList.addMove( new MoveRemoveIsland(loc, island.getValue()) );		
+	}
+
+COM:removes an island from a game board by removing all bridges connected to it and updating the game state accordingly

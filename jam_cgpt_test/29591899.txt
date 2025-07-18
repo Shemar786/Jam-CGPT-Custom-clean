@@ -1,0 +1,12 @@
+TDAT:   public Object getValue() {
+    if (isString()) return valString;
+
+    // have to create an array of primitives
+    Object data = Array.newInstance(dataType.getPrimitiveClassType(), nvals);
+    for (int i=0; i<nvals; i++) {
+      Array.set(data, i, getNumericValue(i));
+    }
+    return data;
+  }
+
+COM:returns a value that could be either a string or an array of primitive data types

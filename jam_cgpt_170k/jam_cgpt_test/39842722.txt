@@ -1,0 +1,16 @@
+TDAT:     protected void prepareTextEvents(StringBuffer handlers) {
+
+        if (onselect != null) {
+            handlers.append(" onselect=\"");
+            handlers.append(getOnselect());
+            handlers.append("\"");
+        }
+
+        if (onchange != null) {
+            handlers.append(" onchange=\"");
+            handlers.append(getOnchange());
+            handlers.append("\"");
+        }
+    }
+
+COM:prepares text events by appending onselect and onchange events to the given StringBuffer

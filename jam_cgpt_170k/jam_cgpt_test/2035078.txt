@@ -1,0 +1,16 @@
+TDAT: 	public void printFileHeader(StringBuffer sb) {
+		Date date = new Date();
+		sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
+		sb.append("<!--");
+		sb.append("Auto generated at ");
+		sb.append(date.toString());
+		sb.append(" by Visual Ant Editor");
+		sb.append("-->\r\n");
+		sb.append("<project ");
+		// print all the attributes of the project element
+		printAttributes(sb, proj);
+		sb.append(">\r\n");
+		
+	}
+
+COM:prints a file header in XML format with an auto-generated comment including the current date and attributes of a project element

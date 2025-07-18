@@ -1,0 +1,10 @@
+TDAT:     public void testDocumentWrite() throws Exception {
+        DomWindow window1 = createMainWindow();
+        window1.getDocument().write( "A simple string" );
+        assertEquals( "Contents of write buffer", "A simple string", window1.getDocumentWriteBuffer() );
+        window1.discardDocumentWriteBuffer();
+        assertEquals( "Contents of cleared write buffer", "", window1.getDocumentWriteBuffer() );
+
+    }
+
+COM:tests the ability of a DomWindow object to write a simple string to its document and clear the write buffer

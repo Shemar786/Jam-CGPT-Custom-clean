@@ -1,0 +1,7 @@
+TDAT: 	public String getNumberOfLosses(String userId, String leagueId) throws InvalidUserException, InvalidLeagueException {
+		ValidateAttribute.validateUserId(userId);
+		ValidateAttribute.validateLeagueId(leagueId);
+		return (ServiceLocator.singleton().getService().selectObjectsByFields(new BLMSMatch(), "loserId", "leagueId",  new Integer(userId), new Integer(leagueId)).size()) + "";
+	}
+
+COM:returns the number of losses for a user in a given league, throwing exceptions for invalid user and league IDs

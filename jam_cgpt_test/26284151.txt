@@ -1,0 +1,10 @@
+TDAT:     private void doSetYear(int year) {
+        int date = getDate();
+        internalCalendar.set(Calendar.YEAR, year);
+        // if invalid date, change date, but don't fire event.
+        if (getDaysInMonth() < date)
+            doSetDate(getDaysInMonth());
+        enforceMinMax();
+    }
+
+COM:sets the year in an internal calendar and checks if the date is valid, adjusting it if necessary

@@ -1,0 +1,19 @@
+TDAT: 	public void visit_astore(final Instruction inst) {
+		final LocalVariable operand = (LocalVariable) inst.operand();
+
+		Expr expr = stack.peek();
+
+		if (expr.type().isAddress()) {
+			Assert.isTrue(sub != null);
+			Assert.isTrue(!saveValue);
+			expr = stack.pop(Type.ADDRESS);
+			sub.setReturnAddress(operand);
+			addStmt(new AddressStoreStmt(sub));
+		} else {
+			expr = stack.pop(Type.OBJECT);
+			final LocalExpr target = new LocalExpr(operand.index(), expr.type());
+			addStore(target, expr);
+		}
+	}
+
+COM:visits an astore instruction and either stores an address or object value in a local variable operand

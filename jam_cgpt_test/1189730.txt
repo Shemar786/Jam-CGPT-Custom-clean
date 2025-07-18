@@ -1,0 +1,8 @@
+TDAT:    public void setInt(Block blk, int offset, int val) {
+      concurMgr.xLock(blk);
+      Buffer buff = myBuffers.getBuffer(blk);
+      int lsn = recoveryMgr.setInt(buff, offset, val);
+      buff.setInt(offset, val, txnum, lsn);
+   }
+
+COM:sets an integer value in a block and ensures that the block is locked for concurrent access

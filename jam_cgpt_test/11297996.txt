@@ -1,0 +1,14 @@
+TDAT:     public String toString() {
+        if (shorthandPointer.equals(emptyNCName)) {
+            StringBuffer buffer = new StringBuffer();
+            Iterator parts = pointerParts.iterator();
+            while (parts.hasNext()) {
+                buffer.append(parts.next());
+            }
+            return buffer.toString();
+        } else {
+            return shorthandPointer.toString();
+        }
+    }
+
+COM:overrides the default toString() method and returns a String based on the values of shorthandPointer and pointerParts

@@ -1,0 +1,7 @@
+TDAT:     public void setWidth(int row, int column, String width) {
+      // Give the subclass a chance to prepare the cell.
+      prepareCell(row, column);
+      DOM.setAttribute(getCellElement(tableElem, row, column), "width", width);
+    }
+
+COM:sets the width of a specific cell in a table

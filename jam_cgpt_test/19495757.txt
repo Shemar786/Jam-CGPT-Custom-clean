@@ -1,0 +1,23 @@
+TDAT: 	private void notifyElementChangedListeners(final IRodinElementDelta delta) {
+		IElementChangedListener[] safeCopy;
+		synchronized (listeners) {
+			safeCopy = listeners.toArray(new IElementChangedListener[listeners
+					.size()]);
+		}
+		for (final IElementChangedListener listener : safeCopy) {
+			SafeRunner.run(new ISafeRunnable() {
+				@Override
+				public void handleException(Throwable exception) {
+					// do nothing, will be logged by the platform
+				}
+
+				@Override
+				public void run() throws Exception {
+					listener.elementChanged(new ElementChangedEvent(delta,
+							ElementChangedEvent.POST_CHANGE));
+				}
+			});
+		}
+	}
+
+COM:notifies registered listeners of changes to a specified Rodin element, using thread-safe and exception-safe mechanisms

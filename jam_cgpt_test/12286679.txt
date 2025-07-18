@@ -1,0 +1,17 @@
+TDAT: 	public void test(Aspect aspect, String url) {
+		for (Generator g : this.getPlatform().getGenerator()) {
+			if (g.getFixture().getAspect().equals(aspect)
+					&& g.getFixture().getTool().equals(
+							this.getDefaults().getUnit())) {
+				// Test case matched
+				Collection<URL> in = new ArrayList<URL>();
+				in.add(this.class2URL(url));
+				Collection<Map<String, Object>> tc = g.getTransformer()
+						.transform(in);
+				g.getWriter().write(tc);
+			}
+		}
+		this.copyAnt();
+	}
+
+COM:runs a test case with a specified aspect and URL, iterating through various generators and checking for a match before writing output and performing a copy operation

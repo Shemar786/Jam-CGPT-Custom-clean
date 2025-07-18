@@ -1,0 +1,11 @@
+TDAT:     public boolean removeLocalAction(ISelectionAction action) {
+        for (int i = 0, cnt = localActions.size(); i < cnt; i++) {
+            if (localActions.get(i).getAction() != action)
+                continue;
+            localActions.remove(i);
+            return true;
+        }
+        return false;
+    }
+
+COM:removes a selection action from a list of local actions and returns true if the action was successfully removed, false otherwise

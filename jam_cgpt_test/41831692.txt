@@ -1,0 +1,13 @@
+TDAT: 	public Date getYoungestMeasurementTime(int measurementID) {
+		Date ret = null;
+		Cursor c = db.rawQuery("SELECT max(" + Measure_time + ") FROM "
+				+ Measure_TABLE + " WHERE " + Measure_measurement + "="
+				+ measurementID, null);
+		if (c.moveToFirst()) {
+			ret = new Date(c.getLong(0));
+		}
+		c.close();
+		return ret;
+	}
+
+COM:retrieves the latest measurement time from a specified database table for a given measurement ID

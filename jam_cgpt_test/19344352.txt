@@ -1,0 +1,13 @@
+TDAT:     private void setTableDetails(JTable tbl) {
+        DefaultCellEditor includeEditor = new DefaultCellEditor(new JCheckBox());
+        TableColumn tc;
+
+        setTableDetailsCol0(tbl);
+
+		tc = tbl.getColumnModel().getColumn(1);
+	  	tc.setCellRenderer(new CheckBoxTableRender());
+		tc.setCellEditor(includeEditor);
+		tc.setPreferredWidth(SECOND_COLUMN_WIDTH);
+    }
+
+COM:sets the details of a JTable by creating a default cell editor with a checkbox, rendering the second column with a checkbox table render, and setting the preferred width of the second column

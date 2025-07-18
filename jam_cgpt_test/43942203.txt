@@ -1,0 +1,12 @@
+TDAT:     public void closeAll() {
+        for (Entry<ZipItemNode, CopyOnWriteArrayList<SwingWorker<?, ?>>> entry
+                : taskMap.entrySet()) {
+            for (SwingWorker<?, ?> task : entry.getValue()) {
+                task.cancel(true);
+            }
+        }
+        taskMap.clear();
+        setModel(new DefaultTreeModel(new DefaultMutableTreeNode()));
+    }
+
+COM:cancels all SwingWorker tasks in the taskMap and clears it, then sets a new empty DefaultTreeModel as the model

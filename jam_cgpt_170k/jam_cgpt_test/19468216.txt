@@ -1,0 +1,14 @@
+TDAT: 	private void addAllAbstract(ITypeEnvironment te) throws RodinDBException {
+		ISCMachineRoot model = (ISCMachineRoot) event.getParent();
+		IRodinFile[] abss = model.getAbstractSCMachines();
+		if (abss.length == 1) {
+			ITypeEnvironment absEnv = ((ISCMachineRoot) abss[0].getRoot())
+					.getTypeEnvironment(ff);
+			for (ISCEvent abs : event.getAbstractSCEvents()) {
+				te.addAll(abs.getTypeEnvironment(absEnv, ff));
+			}
+		}
+
+	}
+
+COM:adds all abstract events to a given type environment

@@ -1,0 +1,9 @@
+TDAT: 	public Manifest createOuterOneJar(JarPackageData jarPackage) {
+		Manifest manifest= createDefault("1.0");
+		addNoneEmptyAttribute(manifest, "Created-By", "FAT-JAR/ONE-JAR Eclipse Plug-In");
+		addNoneEmptyAttribute(manifest, Attributes.Name.MAIN_CLASS, "com.simontuffs.onejar.Boot");
+		addNoneEmptyAttribute(manifest, Attributes.Name.CLASS_PATH, ojBuilder.getManifestClasspath());
+		return manifest;
+	}
+
+COM:creates a manifest file for a one-jar package with specific attributes

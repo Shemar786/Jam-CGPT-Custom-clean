@@ -1,0 +1,15 @@
+TDAT: 	private void initJobOutListeners() throws Exception {
+		if (m_stdoutStream != null)
+			return;
+		// job output vars
+		m_stdoutStream = new JobOutputStream(this);
+		m_stderrStream = new JobOutputStream(this);
+		m_jobid = String.valueOf(System.currentTimeMillis());
+
+		// register output listeners
+		m_gassServer.registerJobOutputStream("err-" + m_jobid, m_stderrStream);
+		m_gassServer.registerJobOutputStream("out-" + m_jobid, m_stdoutStream);
+		return;
+	}
+
+COM:This private Java method initializes output listeners for a job and registers them with a GASS server

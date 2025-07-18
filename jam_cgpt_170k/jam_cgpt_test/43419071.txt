@@ -1,0 +1,12 @@
+TDAT: 	private JButton getBtnZoomReset() {
+		if (btnZoomReset == null) {
+			btnZoomReset = new JButton();
+			btnZoomReset.setPreferredSize(new Dimension(45, 26));
+			btnZoomReset.setIcon(new ImageIcon(getClass().getResource(PathImage + "Refresh.png")));
+			btnZoomReset.setToolTipText("Reset to 100%");
+			btnZoomReset.addActionListener(canvas.new ResetTransformAction());
+		}
+		return btnZoomReset;
+	}
+
+COM:returns a JButton with specified properties and an ActionListener to reset a canvas transform

@@ -1,0 +1,12 @@
+TDAT: 	static public Element makeXMLElement(LOMValue aLOMValue) {
+		if (aLOMValue instanceof LOMValueInt)
+			return LOMValueInt.makeXMLElement((LOMValueInt) aLOMValue);
+		if (aLOMValue instanceof LOMValueSet)
+			return LOMValueSet.makeXMLElement((LOMValueSet) aLOMValue);
+		if (aLOMValue instanceof LOMValueVocabularySet)
+			return LOMValueVocabularySet
+					.makeXMLElement((LOMValueVocabularySet) aLOMValue);
+		return null;
+	}
+
+COM:converts a LOMValue object into an XML Element object based on its type

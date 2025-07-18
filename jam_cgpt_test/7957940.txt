@@ -1,0 +1,12 @@
+TDAT: 		/*
+		 * public void removeRange(int fromIndex, int toIndex) { int remaining =
+		 * toIndex - fromIndex;
+		 * 
+		 * ListIterator iter = listIterator(fromIndex);
+		 * 
+		 * while (iter.hasNext() && remaining-- > 0) { ((Stmt)
+		 * iter.next()).cleanup(); }
+		 * 
+		 * super.removeRange(fromIndex, toIndex); }
+
+COM:removes a range of elements from a list and calls a cleanup method on each removed element

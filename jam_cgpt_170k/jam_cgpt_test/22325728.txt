@@ -1,0 +1,10 @@
+TDAT:     private void setupDefaults() {
+        log.debug("Running ClientConfig.setupDefaults()..");
+        setBrokerHost("127.0.0.1");
+        setBrokerComPort(1980);
+        setFilesDir("files");
+        setTempDir("temp");
+        setClientGFTPPort(1984);
+    }
+
+COM:sets default values for various configurations related to a client

@@ -1,0 +1,7 @@
+TDAT: 	private void setData() throws CustomMetaDataException {
+		String file = "<ExtMd><field><name>habitat</name><value>South America</value></field><field><name>tree</name><value>green</value></field></ExtMd>";
+		byte[] b = file.getBytes();
+		customMetaData.setXmlData(b);
+	}
+
+COM:sets custom metadata for a file based on a predefined XML format and throws an exception if there is an error in the data

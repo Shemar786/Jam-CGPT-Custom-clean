@@ -1,0 +1,10 @@
+TDAT: 	public Element getSelectInput(String xpath) {
+		Element input = DocumentHelper.createElement("html__select")
+			.addAttribute("name", formBeanName)
+			.addAttribute("property", "valueOf(" + xpath + ")");
+		Element options = input.addElement("html__optionsCollection")
+			.addAttribute("property", "selectOptions(" + xpath + ")");
+		return input;
+	}
+
+COM:returns an HTML select input element with options based on the given XPath expression

@@ -1,0 +1,9 @@
+TDAT:     public void testUpdateAfterFlushBuffer() throws Exception {
+        ServletUnitHttpResponse servletResponse = new ServletUnitHttpResponse();
+        servletResponse.getWriter();
+        assertFalse( "Should not be committed yet", servletResponse.isCommitted() );
+        servletResponse.flushBuffer();
+        assertTrue( "Should be committed now", servletResponse.isCommitted() );
+    }
+
+COM:tests if a servlet response is committed after flushing the buffer

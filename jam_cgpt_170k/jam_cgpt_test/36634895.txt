@@ -1,0 +1,10 @@
+TDAT:     public void swapItems(int index, int change){
+        if(index >= 0 && index < allItems.length &&
+                change >= 0 && change < allItems.length){
+            MenuItem temp = allItems[index];
+            allItems[index] = allItems[change];
+            allItems[change] = temp;
+        }
+    }
+
+COM:swaps the positions of two items in an array of MenuItem objects if the given indexes are valid

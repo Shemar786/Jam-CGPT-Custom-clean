@@ -1,0 +1,12 @@
+TDAT: 	public void addIdentifier(String name, String type, Identifier authority) {
+		if (authority != null) {
+			if (name != null) {
+				if (identifiers == null) identifiers = new Hashtable<String, Pair>();
+				identifiers.put(name.toLowerCase(), new Pair(type, authority));
+			} else {
+				LOG.debug("Adding identifier with no name to connection: " + this.name);
+			}
+		}
+	}
+
+COM:adds an identifier with a name, type, and authority to a Hashtable if the provided authority is not null

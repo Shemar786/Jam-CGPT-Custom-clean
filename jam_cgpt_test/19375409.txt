@@ -1,0 +1,14 @@
+TDAT: 	protected Entity findSubEntity(Vector all, Vector vent, Vector remain) {
+		for (Iterator iall = all.iterator(); iall.hasNext();) {
+			Block b = (Block) iall.next();
+			if (b instanceof AbstractActiveEntityBlock) {
+				Entity ent =
+					((AbstractActiveEntityBlock) b).findSubEntity(vent, remain);
+				if (ent != null)
+					return ent;
+			}
+		}
+		return null;
+	}
+
+COM:searches for a sub-entity within a collection of blocks that belong to an active entity block

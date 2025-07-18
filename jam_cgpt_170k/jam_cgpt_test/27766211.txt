@@ -1,0 +1,13 @@
+TDAT:     protected ServerController () {
+        /** Creates the category for log4j, 
+         * with the current instance class name
+         */
+        m_log = Category.getInstance(this.getClass().getName());
+        
+        m_log.debug ("Instanciated ServerController.");
+        
+        /** Creatings my factory */
+        m_factory = ServerThreadFactory.getInstance();
+    }
+
+COM:This is a constructor method for the ServerController class that creates a log4j category with the current instance class name and initializes a factory object

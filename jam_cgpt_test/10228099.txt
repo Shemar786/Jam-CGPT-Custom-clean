@@ -1,0 +1,17 @@
+TDAT: 	protected void addIsOutPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Parameter_isOut_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Parameter_isOut_feature", "_UI_Parameter_type"),
+				 ModelPackage.Literals.PARAMETER__IS_OUT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "isOut" feature of a Parameter object to an item property descriptor list

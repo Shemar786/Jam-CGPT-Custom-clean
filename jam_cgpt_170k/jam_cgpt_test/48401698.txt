@@ -1,0 +1,10 @@
+TDAT: 	private void setResolveMethod(Class<?> nonterminal) {
+		try {
+			_resolve_method = nonterminal.getMethod("resolve", new Class<?>[] {
+					Class.class, Iterator.class, int.class });
+		} catch (Exception e) {
+			LOG.error("Error finding resolve() method!", e);
+		}
+	}
+
+COM:sets the resolve method for a specified nonterminal class, and logs an error if the method is not found

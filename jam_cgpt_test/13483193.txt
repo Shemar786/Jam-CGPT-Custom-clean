@@ -1,0 +1,8 @@
+TDAT:     private void finalize(ExprInfo exprInfo) {
+        // We assume that all availDef for exprInfo are tack.
+        // Perform a perorder traversal of the dominance tree. Remember that
+        // the root of the dominance tree is also the root of the CFG.
+        finalizeVisit(exprInfo, cfg.source(), null);
+    }
+
+COM:performs a pre-order traversal of the dominance tree and finalizes a visit for a given expression information and control flow graph

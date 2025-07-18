@@ -1,0 +1,14 @@
+TDAT: 	public int compareSourceLines(BugCollection lhsCollection, BugCollection rhsCollection, SourceLineAnnotation lhs, SourceLineAnnotation rhs) {
+		if (lhs == null || rhs == null) {
+			return compareNullElements(lhs, rhs);
+		}
+
+		// Classes must match fuzzily.
+		int cmp = compareClassesByName(lhsCollection, rhsCollection, lhs.getClassName(), rhs.getClassName());
+		if (cmp != 0)
+			return cmp;
+
+		return 0;
+	}
+
+COM:compares the source lines of two bug collections and returns an integer value

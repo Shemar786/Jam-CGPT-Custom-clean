@@ -1,0 +1,10 @@
+TDAT: 	protected Date getAccessionDate() throws Exception {
+		if (!getAccessionStatus().equals("accessioned"))
+			return null;
+		Node dateElement = getDom4jDoc().selectSingleNode("/collectionRecord/approval/collectionStatuses/collectionStatus[@state='Accessioned']");
+		if (dateElement != null)
+			return MetadataUtils.parseUnionDateType(((Element) dateElement).attribute("date").getText());
+		return null;
+	}
+
+COM:retrieves the accession date of a collection if it has been accessioned, using the Dom4j library

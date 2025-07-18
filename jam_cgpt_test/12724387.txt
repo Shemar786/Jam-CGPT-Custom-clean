@@ -1,0 +1,13 @@
+TDAT: public int lastIndexOfFromTo(double element, int from, int to) {
+	// overridden for performance only.
+	if (size==0) return -1;
+	checkRangeFromTo(from, to, size);
+
+	double[] theElements = elements;
+	for (int i = to ; i >= from; i--) {
+	    if (element==theElements[i]) {return i;} //found
+	}
+	return -1; //not found
+}
+
+COM:returns the index of the last occurrence of a specified double element within a given range in an array, or -1 if it is not found

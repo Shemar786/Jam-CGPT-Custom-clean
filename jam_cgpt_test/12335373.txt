@@ -1,0 +1,18 @@
+TDAT: 	public void setReversePath(LinkedList<ServerID> reversePath) {
+		LinkedList<ServerID> realPath = new LinkedList<ServerID>();
+		Set<ServerID> stack = new HashSet<ServerID>();
+		for (ServerID node : reversePath) {
+			if (stack.contains(node)) {
+				while (!realPath.getLast().equals(node)) {
+					ServerID previous = realPath.removeLast();
+					stack.remove(previous);
+				}
+			} else {
+				stack.add(node);
+				realPath.addLast(node);
+			}
+		}
+		this.reversePath = realPath;
+	}
+
+COM:takes a linked list of server IDs and creates a new linked list of server IDs with duplicates removed and the order reversed

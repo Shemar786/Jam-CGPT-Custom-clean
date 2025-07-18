@@ -1,0 +1,21 @@
+TDAT: 	public void testGetNextBufferedObjects() throws Exception{
+		FedoraInterface fedI = new FedoraAPI();
+		
+		List allItems = fedI.getBufferedObjects(5);
+		assertFalse(allItems.isEmpty());
+		assertEquals(5, allItems.size());
+		
+		allItems = fedI.getNextBufferedObjects();
+		assertEquals(5, allItems.size());
+		
+		allItems = fedI.getNextBufferedObjects();
+		assertEquals(5, allItems.size());
+		
+		allItems = fedI.getNextBufferedObjects();
+		assertEquals(3, allItems.size());
+		
+		allItems = fedI.getNextBufferedObjects();
+		assertEquals(0, allItems.size());
+	}
+
+COM:tests the functionality of a method in the Fedora interface that retrieves buffered objects in batches

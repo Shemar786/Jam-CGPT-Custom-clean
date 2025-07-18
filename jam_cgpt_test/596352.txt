@@ -1,0 +1,11 @@
+TDAT:     public void setRowHeight(int rowHeight) {
+        if (rowHeight > 0) {
+        super.setRowHeight(rowHeight);
+        if (JTreeTable.this != null &&
+            JTreeTable.this.getRowHeight() != rowHeight) {
+            JTreeTable.this.setRowHeight(this.getRowHeight());
+        }
+        }
+    }
+
+COM:sets the height of a row in a JTreeTable and ensures that it has a positive value

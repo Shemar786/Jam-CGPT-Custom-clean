@@ -1,0 +1,20 @@
+TDAT: 	private DataSource findDataSource(String cv) throws Exception {
+		// sanity checks
+		if (cv == null) {
+			cv = "unknown";
+		}
+
+		// retrieve right DataSource
+		DataSource elementOf = null;
+		if (!cvMap.containsKey(cv)) {
+			System.err.println("Missing DataSource mapping: " + cv);
+			cv = "unknown";
+		}
+		elementOf = graph.getMetaData().getDataSource(cvMap.get(cv));
+		if (elementOf == null)
+			throw new DataSourceMissingException(cv + " is missing.");
+
+		return elementOf;
+	}
+
+COM:finds and returns a DataSource object based on a provided string parameter, with error handling for missing mappings or missing data sources

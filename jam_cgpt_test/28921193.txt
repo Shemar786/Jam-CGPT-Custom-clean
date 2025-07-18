@@ -1,0 +1,17 @@
+TDAT: 	public FenceNode getMatchingFence() {
+		if (this == PredefinedFence.OPEN_PARENTHESIS) {
+			return PredefinedFence.CLOSE_PARENTHESIS;
+		} else if (this == PredefinedFence.CLOSE_PARENTHESIS) {
+			return PredefinedFence.OPEN_PARENTHESIS;
+		} else if (this == PredefinedFence.OPEN_FUNCTION_ARGUMENTS_FENCE) {
+			return PredefinedFence.CLOSE_FUNCTION_ARGUMENTS_FENCE;
+		} else if (this == PredefinedFence.CLOSE_FUNCTION_ARGUMENTS_FENCE) {
+			return PredefinedFence.OPEN_FUNCTION_ARGUMENTS_FENCE;
+		} else {
+			// all possibilities should be covered by the if-else-ifs above
+			assert false;
+			return null;
+		}
+	}
+
+COM:returns the matching fence type (e.g. open parenthesis matches with close parenthesis) based on the current fence type

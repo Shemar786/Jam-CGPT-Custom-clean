@@ -1,0 +1,14 @@
+TDAT: 	private void deleteFile (File destFile) {
+		prtln ("deleteFile: " + destFile + " (setSpec: " + this.dcsSetInfo.getSetSpec() + ")");
+		destFile.delete();
+		
+		if (this.nldrExportHelper != null) {
+			try {
+				nldrExportHelper.deleteMirroredFile (destFile.getName());	
+			} catch (Exception e) {
+				prtlnErr ("WARNING: unable to delete mirrored dlese_collect file: " + e.getMessage());
+			}
+		}
+	}
+
+COM:deletes a specified file and also attempts to delete a mirrored file if applicable

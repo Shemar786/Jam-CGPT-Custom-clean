@@ -1,0 +1,13 @@
+TDAT:     private JMenuItem newWinAction(String label, ReFrame newFrame) {
+
+        if (windowActionMap.containsKey(newFrame)) {
+            return windowActionMap.get(newFrame);
+        }
+
+        JMenuItem mi = new JMenuItem(new WindowAction(label, newFrame));
+
+        windowActionMap.put(newFrame, mi);
+        return mi;
+    }
+
+COM:creates a new JMenuItem with a label and associates it with a ReFrame object, and returns the JMenuItem if it already exists in a map, otherwise it adds the JMenuItem to the map and returns it

@@ -1,0 +1,13 @@
+TDAT:     private void emitChangeSignal() {
+        if (labelObservers != null) {
+            final Iterator<ChangeObserver> iterator = labelObservers.iterator();
+            while (iterator.hasNext()) {
+                iterator.next().update(this);
+            }
+        }
+        if (this.node != null) {
+            this.node.diagram.sendChangeEvent();
+        }
+    }
+
+COM:This private Java method emits a change signal to all registered observers and sends a change event to a diagram node if it exists

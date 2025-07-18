@@ -1,0 +1,16 @@
+TDAT:   public void createPackageContents() {
+		if (isCreated) return;
+		isCreated = true;
+
+		// Create classes and their features
+		productIdentifiableEClass = createEClass(PRODUCT_IDENTIFIABLE);
+		createEAttribute(productIdentifiableEClass, PRODUCT_IDENTIFIABLE__PRODUCT_ID);
+
+		threadSensitiveEClass = createEClass(THREAD_SENSITIVE);
+
+		platformDispositionEClass = createEClass(PLATFORM_DISPOSITION);
+		createEAttribute(platformDispositionEClass, PLATFORM_DISPOSITION__PLATFORM_ID);
+		createEAttribute(platformDispositionEClass, PLATFORM_DISPOSITION__PLATFORM_DEPENDANT);
+	}
+
+COM:creates several classes and their features if they have not already been created

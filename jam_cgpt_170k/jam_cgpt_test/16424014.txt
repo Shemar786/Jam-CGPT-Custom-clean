@@ -1,0 +1,13 @@
+TDAT: 	public void customInit() {
+        display = new Display(new LWJGLBinding());
+        input = new FengJMEInputHandler(display);
+        
+        MenuPixmapBackgrounds.loadImages();
+        new GameMenuGUI().buildGUI(display);
+        
+        display.layout();
+        MouseInput.get().setCursorVisible(true);
+        
+    }
+
+COM:initializes a custom game menu GUI using display and input handlers, loads menu background images, and sets the mouse cursor to visible

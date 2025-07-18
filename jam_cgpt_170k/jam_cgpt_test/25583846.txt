@@ -1,0 +1,17 @@
+TDAT: 	public void triggerProjectileHit() {
+		projectileState = ProjectileState.Hit;
+
+		setRealisation(hitAsset);
+
+		// It is assumed that once hit a projectile stops (i.e. explodes
+		// and cannot interact other objects). This is not a necessary
+		// assumption and could be extended to support projectiles that
+		// can bounce off a number of different objects, etc.
+		velocityx = 0.0;
+		velocityy = 0.0;
+		canIntersectOtherGraphicalObjects = false;
+
+		projectileTriggerTime = System.nanoTime();
+	}
+
+COM:triggers a hit event for a projectile in a game simulation, updating its state and setting its velocity and intersection capabilities to zero

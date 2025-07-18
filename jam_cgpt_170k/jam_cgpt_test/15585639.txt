@@ -1,0 +1,15 @@
+TDAT:     public void callReceived(CallEvent evt){
+        try {
+            mediaManager.start();
+            Call call = evt.getSourceCall();
+            Interlocutor interlocutor = new Interlocutor();
+            interlocutor.setCall(call);
+            guiManager.addInterlocutor(interlocutor);
+            call.addStateChangeListener(this);
+        }catch(Exception e){
+        	
+        }finally {
+        }
+    }
+
+COM:handles an incoming call event by starting media, creating an interlocutor, adding the interlocutor to the GUI, and adding a state change listener to the call

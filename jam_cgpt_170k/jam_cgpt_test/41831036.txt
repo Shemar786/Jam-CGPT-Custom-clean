@@ -1,0 +1,11 @@
+TDAT: 	public int getUnreadEntryCount(int geoRSSID) {
+		Cursor c = db.rawQuery("SELECT COUNT(" + ID + ") FROM " + ENTRIES_TABLE
+				+ " WHERE " + ENTRIES_READ + "=" + FALSE + " AND "
+				+ ENTRIES_GEORSS + "=" + geoRSSID, null);
+		c.moveToFirst();
+		int ret = c.getInt(0);
+		c.close();
+		return ret;
+	}
+
+COM:returns the count of unread entries in a specific geoRSS feed by querying a database table

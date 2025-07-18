@@ -1,0 +1,10 @@
+TDAT:   public DBusInterface getRemoteObject(String objectpath) throws DBusException {
+    if (null == objectpath) { throw new DBusException(_("Invalid object path: null")); }
+
+    if (!objectpath.matches(OBJECT_REGEX) || (objectpath.length() > MAX_NAME_LENGTH)) { throw new DBusException(
+        _("Invalid object path: ") + objectpath); }
+
+    return dynamicProxy(objectpath);
+  }
+
+COM:returns a remote DBus interface object based on the specified object path, and throws a DBusException if the object path is invalid

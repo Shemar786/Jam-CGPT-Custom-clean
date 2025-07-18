@@ -1,0 +1,27 @@
+TDAT:    private void compose() {
+
+      // creation of graphycal elements
+      _searchButton = new JButton("Search!");
+
+      _searchButton.addActionListener(this);
+
+      _inputField = new JTextField();
+
+      _inputField.addActionListener(this);
+
+      _queryTypes = new JComboBox(SearchType.ALL);
+
+      // add elements
+      add(new JLabel("Search Form"), BorderLayout.NORTH);
+
+      _inputField.setColumns(TEXT_FIELD_LENGTH);
+
+      add(_inputField, BorderLayout.CENTER);
+
+      add(_searchButton, BorderLayout.CENTER);
+
+      add(_queryTypes);
+
+   } // operation compose
+
+COM:composes a graphical search form with a search button, input field, and query type dropdown

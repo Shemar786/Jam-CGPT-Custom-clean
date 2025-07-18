@@ -1,0 +1,11 @@
+TDAT: 	public int countNearby(String flag,int x, int y, int r) {
+		int count = 0;
+		for (int lx = x - r; lx <= x + r; lx++)
+			for (int ly = y - r; ly <= y + r; ly++) {
+				if (getFlaggedObject(lx, ly,flag) != null)
+					count++;
+			}
+		return count;
+	}
+
+COM:counts the number of objects flagged with a given flag within a certain radius around a specified point

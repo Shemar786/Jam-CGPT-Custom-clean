@@ -1,0 +1,11 @@
+TDAT:     private void MouseButtonClicked(java.awt.event.MouseEvent evt) {
+        String evtName = evt.getComponent().getName();
+        System.out.println("evtName = " + evtName);
+        if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
+            if (evtName.equals("jGetFlickr")) {
+                runRpcClient();
+            }
+        }
+    }
+
+COM:prints the name of the component when a mouse button is clicked and if the left mouse button is clicked on a specific component, it runs a method called "runRpcClient"

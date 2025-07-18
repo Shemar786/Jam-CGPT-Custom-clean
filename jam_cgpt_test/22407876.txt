@@ -1,0 +1,16 @@
+TDAT:     private String getErrorMessage(final String str) {
+        if ((errorMessage == null) && (fileExtension != null)) {
+            int startLineNumber =
+                    str.indexOf(fileExtension) + fileExtension.length() + 1;
+
+            int endLineNumber = str.indexOf(": ", startLineNumber);
+
+            if (endLineNumber > 0) {
+                errorMessage = str.substring(endLineNumber + 2);
+            }
+        }
+
+        return errorMessage;
+    }
+
+COM:returns an error message from a string based on the file extension and the position of the error message in the string

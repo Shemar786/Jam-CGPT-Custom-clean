@@ -1,0 +1,11 @@
+TDAT:     public void setActionForm(ActionForm form) {
+        if (logger.isDebugEnabled())
+            logger.debug("Entering - form = " + form);
+        init();
+        // make sure ActionServlet is initialized.
+        Common.setActionForm(form,request,request.getPathInfo(),config.getServletContext());
+        if (logger.isDebugEnabled())
+            logger.debug("Exiting");
+    }
+
+COM:sets an ActionForm and initializes an ActionServlet

@@ -1,0 +1,11 @@
+TDAT:     public void execute() {
+        for (int i = 0; i < this.unitList.size(); i++) {
+            if (!this.unitList.get(i).build()
+                    && this.unitList.get(i).isJobFinished()) {
+                this.unitList.remove(i);
+                i--;
+            }
+        }
+    }
+
+COM:executes the build method on each unit in a list and removes the unit from the list if it cannot be built and its job is finished

@@ -1,0 +1,8 @@
+TDAT:     static public boolean contains(Document part, Document doc) {
+        Collection<Element> remainingLeafs = new ArrayList<Element>();
+        boolean c = contains(part.getDocumentElement(), doc.getDocumentElement(), remainingLeafs);
+        dumpLeafs("remaining leafs", remainingLeafs);
+        return c;
+    }
+
+COM:This static Java method checks if a given Document instance contains another Document instance

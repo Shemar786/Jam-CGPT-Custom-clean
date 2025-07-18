@@ -1,0 +1,15 @@
+TDAT:     public SchemaTO readSchema(String kind, String name) {
+        SchemaTO schema = null;
+
+        try {
+            schema = restTemplate.getForObject(
+                    baseURL
+                    + "schema/" + kind + "/read/" + name + ".json",
+                    SchemaTO.class);
+        } catch (SyncopeClientCompositeErrorException e) {
+            LOG.error("While reading a user schema", e);
+        }
+        return schema;
+    }
+
+COM:reads a schema using REST and returns its representation as a SchemaTO object

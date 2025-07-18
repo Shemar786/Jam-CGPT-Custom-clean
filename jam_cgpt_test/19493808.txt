@@ -1,0 +1,22 @@
+TDAT: 	public void createModel() {
+		final String projectName = rodinProject.getElementName();
+		final URI resourceURI = URI.createPlatformResourceURI(projectName + "/"
+				+ fNAME, true);
+		@SuppressWarnings("unused")
+		Exception exception = null;
+		Resource resource = null;
+		try {
+			// Load the resource through the editing domain.
+			//
+			resource = editingDomain.getResourceSet().getResource(resourceURI,
+					true);
+		} catch (Exception e) {
+			exception = e;
+			resource = editingDomain.getResourceSet().getResource(resourceURI,
+					false);
+		}
+		@SuppressWarnings("unused")
+		final Resource result = resource;
+	}
+
+COM:creates a model resource for a given project name and filename using an editing domain

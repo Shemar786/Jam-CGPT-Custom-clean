@@ -1,0 +1,13 @@
+TDAT: 	public void scroll() {
+		this.removeAll();
+		this.add(scrollUp);
+		this.add(scrollDown);
+		for(int i = index; i < index + 3 && i < serverConnect.size(); i++) {
+			serverName.get(i).setLocation(36, (i * 24) + 4);
+			this.add(serverName.get(i));
+			serverConnect.get(i).setLocation(320, i * 24);
+			this.add(serverConnect.get(i));
+		}
+	}
+
+COM:clears all elements of the current component and adds scroll up and scroll down buttons, as well as populates the component with server names and connections based on an index and a limit of three elements

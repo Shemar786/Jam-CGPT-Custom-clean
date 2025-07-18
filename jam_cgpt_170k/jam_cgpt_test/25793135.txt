@@ -1,0 +1,12 @@
+TDAT: 	private void integrate() {
+		calculateDerivatives(_x, _xDot1);
+		for (int i = 0; i < _x.length; i++) {
+			_x[i] += _dt * _xDot1[i];
+		}
+		calculateDerivatives(_x, _xDot2);
+		for (int i = 0; i < _x.length; i++) {
+			_x[i] += 0.5 * _dt * (_xDot2[i] - _xDot1[i]);
+		}
+	}
+
+COM:performs numerical integration using the Runge-Kutta method

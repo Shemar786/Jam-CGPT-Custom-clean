@@ -1,0 +1,16 @@
+TDAT: 	public void slowEmulation() {
+		try {
+			long[] time2 = null;
+			time2 = new long[time.size()];
+			for (int i = 0; i < time.size(); i++) {
+				time2[i] = getLongMsFromTimeString(time.get(i));
+			}
+			runnable = new FileRunnable(dateAndTime, simulationType, time,
+					values, time2, this, breakingPlaces);
+			runnable.run();
+		} catch (Exception e) {
+			// messagePanel.append("Open file for battery emulation first!\n");
+		}
+	}
+
+COM:initiates a slow emulation by creating a new file runnable object with specified parameters and then running it, while handling any possible exceptions

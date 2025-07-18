@@ -1,0 +1,13 @@
+TDAT:     protected Collection getRecipients(Mail originalMail) throws MessagingException {
+        Collection recipients = (isStatic()) ? this.recipients : getRecipients();
+        if (recipients != null) {
+            if (recipients.size() == 1 && (recipients.contains(SpecialAddress.UNALTERED) || recipients.contains(SpecialAddress.RECIPIENTS))) {
+                recipients = null;
+            } else {
+                recipients = replaceMailAddresses(originalMail, recipients);
+            }
+        }
+        return recipients;
+    }
+
+COM:returns a Collection of recipients for a given Mail object, and if the Collection is null or only contains specific addresses, it returns null instead

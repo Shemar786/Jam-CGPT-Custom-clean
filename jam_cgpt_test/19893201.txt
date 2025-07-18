@@ -1,0 +1,7 @@
+TDAT: 	    public JSONObject getVideo(String userId, int videoId) {
+			//securityContext.checkIfAuthorized();
+			String url = API_VIDEO_URL.replaceFirst("%s", userId).replaceFirst("%s", String.valueOf(videoId));
+			return (JSONObject) getUserData(url, new HashMap<String, String>());
+		}
+
+COM:retrieves a video JSON object for a given user ID and video ID

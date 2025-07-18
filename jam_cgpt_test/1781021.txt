@@ -1,0 +1,12 @@
+TDAT:         public void sendOnChangeEvent() {
+        	// TODO check why the test for this does not work although
+        	// the javascript function call is done in the corresponding testcase
+        	// testCallOnChange()
+        	HTMLElement element=this.get_element();
+        	if (element instanceof FormControl) {
+        		FormControl control=(FormControl)element;
+        		control.sendOnChangeEvent();
+        	}
+        }
+
+COM:sends an on-change event for a specified form control element

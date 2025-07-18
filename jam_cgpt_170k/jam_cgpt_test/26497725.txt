@@ -1,0 +1,14 @@
+TDAT:   public Attribute setName(String name){
+    _name = name;
+    int i;
+    if((i = name.indexOf(':')) >= 0){
+      _localName = name.substring(0, i);
+      _nameSpace = name.substring(i+1);
+    }
+    else{
+      _localName = name;
+    }
+    return this;
+  }
+
+COM:sets the name of an attribute and if the name contains a ":" it will also set the local name and namespace of the attribute

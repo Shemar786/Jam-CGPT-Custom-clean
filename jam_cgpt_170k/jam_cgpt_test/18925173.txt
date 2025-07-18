@@ -1,0 +1,10 @@
+TDAT:   public void checkRequired(Locale locale, Element elem, boolean empty) {
+    if (!"true".equals(elem.getAttribute("required")))
+      return;
+    if (empty) {
+      ResourceBundle rb = ResourceBundle.getBundle("com.tonbeller.wcf.convert.messages", locale);
+      throw new FormatException(rb.getString("wcf.input.required"));
+    }
+  }
+
+COM:checks if an element is required and throws a format exception if it is empty

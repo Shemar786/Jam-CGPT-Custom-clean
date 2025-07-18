@@ -1,0 +1,16 @@
+TDAT: 	public boolean isAdmin(String userName) throws AccessException {
+		logger.debug("Entering isAdmin");
+		String query = "SELECT ISADMIN FROM user "
+			+ " WHERE USERNAME = '" + userName + "'";
+		List list = buildResult(query);
+
+		// if the user name is invalid
+		if (list.size() == 0) {
+			return false;
+		} else {
+			return ((String) ((HashMap) list.get(0)).get("ISADMIN"))
+					.equals("1");
+		}
+	}
+
+COM:checks if a user is an administrator by querying a database and returning a boolean value

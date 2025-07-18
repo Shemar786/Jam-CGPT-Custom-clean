@@ -1,0 +1,11 @@
+TDAT:     public void setHelpText(String text){
+        helpText = text;
+        pixture.setOpacity(0.1);
+        pixture.addImage(0, pixture.getTextPicture(helpText));
+
+        setItemImage(2, 0, pixture.getImage(0));
+        textWidth = pixture.getX(0);
+        setPosition();
+    }
+
+COM:sets the help text for an object and updates its image accordingly

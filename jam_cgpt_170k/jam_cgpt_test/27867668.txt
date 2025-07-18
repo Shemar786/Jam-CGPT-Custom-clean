@@ -1,0 +1,10 @@
+TDAT:     public void setInitParameter(String key, String value){
+        if (logger.isDebugEnabled())
+            logger.debug("Entering -  key = " + key + ", value = " + value);
+        this.config.setInitParameter(key, value);
+        this.actionServletIsInitialized = false;
+        if (logger.isDebugEnabled())
+            logger.debug("Exiting");
+    }
+
+COM:sets an initialization parameter for a configuration and logs debug messages

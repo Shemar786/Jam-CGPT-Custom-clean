@@ -1,0 +1,15 @@
+TDAT:     public String getString (String fpath) {
+        String s = null;
+        try {
+            Object obj = getValue(fpath);
+            if (obj instanceof String)
+                s = (String) obj;
+            else if (obj instanceof byte[])
+                s = ISOUtil.hexString ((byte[]) obj);
+        } catch (ISOException e) {
+            // ignore ISOException - return null
+        }
+        return s;
+    }
+
+COM:takes a file path as input and returns a string value, converting byte arrays to hex strings if necessary

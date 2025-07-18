@@ -1,0 +1,15 @@
+TDAT:     protected boolean CompareBits(byte[] a, byte[] b) {
+
+        if (a.length != b.length) {
+            return false;
+        } else {
+            for (int i = 0; i < a.length; i++) {
+                if (a[i] != b[i]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+COM:compares two byte arrays and returns true if they have exactly matching values for each byte

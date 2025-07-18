@@ -1,0 +1,13 @@
+TDAT: 	public String getFeature(int featureID) {
+		Cursor c = db.query(Feature_TABLE, new String[] { Feature_feature }, ID
+				+ "=" + featureID, null, null, null, null);
+
+		String ret = null;
+		if (c.moveToFirst()) {
+			ret = c.getString(0);
+		}
+		c.close();
+		return ret;
+	}
+
+COM:retrieves the feature from the specified ID in the database and returns it as a String

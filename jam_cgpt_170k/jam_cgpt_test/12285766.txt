@@ -1,0 +1,17 @@
+TDAT: 	private void cleanAop() {
+		final String metainf = this.getApplication().getRootSrc() + "/META-INF";
+		final File fileC4j = new File(metainf + "/c4j.properties");
+		final File fileAop = new File(metainf + "/aop.xml");
+		final File fileGraph = new File(metainf + "/auto.graphml");
+		if (fileC4j.exists()) {
+			fileC4j.delete();
+		}
+		if (fileAop.exists()) {
+			fileAop.delete();
+		}
+		if (fileGraph.exists()) {
+			fileGraph.delete();
+		}
+	}
+
+COM:deletes three files (c4j.properties, aop.xml, and auto.graphml) from a specific directory

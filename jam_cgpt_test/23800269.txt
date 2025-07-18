@@ -1,0 +1,16 @@
+TDAT:     @Test
+    public void testGetViewDataMap() throws Exception {  
+        
+        logger.info("testGetViewDataMap");
+        
+        Map expResult = new HashMap();
+        Map result = testInstance.getViewDataMap();
+         
+        assertEquals(expResult, result); 
+        assertEquals(0, result.size());
+        
+        testInstance.createDisciplineView(viewname);
+        assertEquals(1, result.size());
+    }
+
+COM:This is a unit test method that tests the functionality of the getViewDataMap() method of the testInstance object

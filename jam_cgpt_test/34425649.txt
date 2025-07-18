@@ -1,0 +1,13 @@
+TDAT:     private void focusChanged(ChangeEvent evt) {
+        SWGTreeNode fn = SWGTreeNode.focusedNode();
+        if (frame.getTabPane().getSelectedComponent() == this) {
+            frame.editMenuAdd(unhideMenuItem);
+            SWGTreeNode.focusTransition(fn, evt);
+
+        } else {
+            frame.editMenuRemove(unhideMenuItem);
+            SWGTreeNode.focusTransition(null, evt);
+        }
+    }
+
+COM:handles focus changes for a tab component in a GUI, adding or removing a menu item based on the current status of the tab

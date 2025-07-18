@@ -1,0 +1,18 @@
+TDAT:    protected void initApplicationResources() {
+      logCat.info("initialize Application Resources.");
+
+      String value = getServletConfig()
+                        .getInitParameter(ValidatorConstants.RESOURCE_BUNDLE);
+
+      if (value == null) {
+         logCat.warn(" Application Resources file not setted in Web.xml, ApplicationResources handler disabled!");
+
+         return;
+      }
+
+      MessageResources.setSubClass(value);
+
+      logCat.info(" DbForms Application Resources : SubClass initialized ");
+   }
+
+COM:initializes application resources and sets a subclass for the DbForms application resources if specified in the Web.xml file

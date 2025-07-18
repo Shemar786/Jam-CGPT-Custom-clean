@@ -1,0 +1,13 @@
+TDAT:   public Namespace getNamespaceFor(Class aClass) {
+    Namespace aNamespace = null;
+
+    for (Iterator it = _theDelegates.iterator();
+          it.hasNext() && (aNamespace == null);) {
+      NamespaceFactoryIF aFactory = (NamespaceFactoryIF) it.next();
+      aNamespace = aFactory.getNamespaceFor(aClass);
+    }
+
+    return aNamespace;
+  }
+
+COM:retrieves a Namespace object based on a given class by iterating through a collection of NamespaceFactoryIF objects

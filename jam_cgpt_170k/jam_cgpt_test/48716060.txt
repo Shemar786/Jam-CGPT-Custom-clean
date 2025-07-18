@@ -1,0 +1,15 @@
+TDAT:     public void _testReadThenWriteLock() throws Exception {
+        lockHolder.readLock();
+        Thread t = new Thread(new Runnable(){
+
+            public void run() {
+                System.out.println("About to hang trying to get write lock");
+                lockHolder.writeLock();
+            }
+            
+        });
+        t.start();
+        t.join();
+    }
+
+COM:tests whether a read lock acquired by lockHolder can be upgraded to a write lock

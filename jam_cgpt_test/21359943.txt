@@ -1,0 +1,17 @@
+TDAT:     public int getSMSLength() {
+        int min = Integer.MAX_VALUE;
+        for (Contact c : contacts) {
+            Gateway gateway = Gateways.getGateway(c.getGateway());
+            if (gateway == null) {
+                continue;
+            }
+            min = Math.min(min, gateway.getSMSLength());
+        }
+        if (min <= 0) {
+            //sms length is unspecified
+            min = -1;
+        }
+        return min;
+    }
+
+COM:calculates the minimum length of an SMS message for a list of contacts, and returns -1 if the length is unspecified

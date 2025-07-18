@@ -1,0 +1,12 @@
+TDAT: private boolean xforEachCoordinate(final cern.colt.function.IntIntIntProcedure procedure) {
+	for (int column=columns; --column >= 0;) {
+		for (int slice=slices; --slice >=0;) {
+			for (int row=rows; --row >= 0;) {
+				if (!procedure.apply(slice,row,column)) return false;
+			}
+		}
+	}
+	return true;
+}
+
+COM:iterates through the coordinates of a 3D array and applies a given procedure to each, returning true if all have been successful and false otherwise

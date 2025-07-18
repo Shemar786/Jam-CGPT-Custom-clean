@@ -1,0 +1,20 @@
+TDAT:     private Node family(boolean not, boolean singleLetter) {
+        next();
+        String name;
+
+        if (singleLetter) {
+	    int c = temp[cursor];
+	    if (!Character.isSupplementaryCodePoint(c)) {
+		name = String.valueOf((char)c);
+	    } else {
+		name = new String(temp, cursor, 1);
+	    }
+	    name = name.intern();
+            read();
+        } else {
+            int i = cursor;
+            mark('}');
+            while(read() != '}') {
+            }
+
+COM:returns a Node object and takes in two boolean parameters - "not" and "singleLetter" - which are used to perform various operations within the method

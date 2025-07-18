@@ -1,0 +1,14 @@
+TDAT:   public void setCobolName(String val) {
+
+      if ((val == null || "".equals(val))
+      && (cobolName == null || "".equals(cobolName))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(cobolName)) || (updateStatus == NULL_INT_VALUE)) {
+           cobolName = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets the cobolName variable and updates the updateStatus variable if the input value is different from the current cobolName value or if the updateStatus is null

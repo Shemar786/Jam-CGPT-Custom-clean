@@ -1,0 +1,5 @@
+TDAT: 		public boolean sendA04PatientFeed(PatientDescriptor patient, Identifier authority) throws IheConfigurationException, PatientException, HL7Exception, PatientIdentityException, IOException {
+			return sendPatientIdentityFeed(patient, "A04", new Date(), CreationReason.OUTPATIENT_REGISTER, authority, null);
+		}
+
+COM:sends an A04 patient feed along with the necessary parameters, and returns a boolean value indicating success or failure

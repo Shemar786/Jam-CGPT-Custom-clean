@@ -1,0 +1,12 @@
+TDAT:     public String getCurrentSessionKey() {
+
+    	if (ServiceDispatchImpl.ch != null) {
+    		// Return a global session key created in ServiceDispatchImpl
+    		return ServiceDispatchImpl.ch.sessionKey; 
+    	}
+    	return null;
+    	// This should be the same session key as is used in CryptoContentProvider.
+    	// TODO: Clean up the code above?
+    }
+
+COM:returns the current session key stored in ServiceDispatchImpl or null if it doesn't exist

@@ -1,0 +1,9 @@
+TDAT: 	public void deleteAllRegistrationInformation() throws PridePersistenceException {
+		checkPersistenceBrokerStatus();
+		Collection persistablesToDelete = controller.collectionQuery(Party.class, null, false);
+		persistablesToDelete.addAll(controller.collectionQuery(MembershipBean.class, null, false));
+		persistablesToDelete.addAll(controller.collectionQuery(ExperimentReadPermissionBean.class, null, false));
+		controller.deletePersistableCollection(persistablesToDelete);
+	}
+
+COM:deletes all registration information from the database

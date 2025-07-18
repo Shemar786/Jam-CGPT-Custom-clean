@@ -1,0 +1,12 @@
+TDAT:     public RdfGraph executeGraphQuery(String query) throws RdfStoreException {
+        //TODO: Wrap a CloseableIterator, not a List
+        try {
+            List<Statement> statements = repository.evaluateGraphQuery(
+                    QueryLanguage.SPARQL, query, new ArrayList<Statement>());
+            return new RdfGraphAdapter(statements);
+        } catch (MalformedQueryException e) {
+            throw new QueryException(e);
+        }
+    }
+
+COM:executes a SPARQL query on an RDF repository and returns the results as an RDF graph

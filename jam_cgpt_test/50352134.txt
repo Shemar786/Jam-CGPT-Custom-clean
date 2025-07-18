@@ -1,0 +1,11 @@
+TDAT:     protected boolean getStatus(String user) {
+        try {
+            if (!status.containsKey(user))
+                status.put(user, new Boolean(db.getAlert(user)));
+            return ((Boolean)status.get(user)).booleanValue();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed setting alert status for " + user, e);
+        }
+    }
+
+COM:retrieves the alert status for a given user from a database and stores the status in a HashMap

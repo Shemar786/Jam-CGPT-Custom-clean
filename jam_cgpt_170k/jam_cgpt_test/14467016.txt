@@ -1,0 +1,11 @@
+TDAT:   private void syncDeleteButton() {
+    int selRow = table.getSelectedRow();
+    int selCol = table.getSelectedColumn();
+    if (selRow == -1 || selCol == -1) {
+      buttonDelete.setEnabled(false);
+    } else {
+      buttonDelete.setEnabled(this.table.getValueAt(selRow, selCol) != null);
+    }
+  }
+
+COM:disables the delete button if no row or column is selected in the table, otherwise it enables the delete button if the selected cell has a non-null value

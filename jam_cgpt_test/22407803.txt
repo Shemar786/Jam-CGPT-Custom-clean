@@ -1,0 +1,27 @@
+TDAT:     private int getStartOfFilename(final String text) {
+        if (text.startsWith("file:")) {
+            return 5;
+        }
+
+        int start = text.indexOf("] ");
+
+        if (start > 0) {
+            return start + 2;
+        }
+
+        start = text.indexOf(": ");
+
+        if (start > 0) {
+            return start + 2;
+        }
+
+        start = text.indexOf("file:");
+
+        if (start > 0) {
+            return start + 5;
+        }
+
+        return 0;
+    }
+
+COM:returns the starting character index of a filename within a given string, prioritizing different patterns of the filename's appearance

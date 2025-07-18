@@ -1,0 +1,17 @@
+TDAT: 	private void processFileName(String absFilePath) {
+		File file = new File(absFilePath);
+		// set project path and project name = name of xsd file
+		Constants.PROJECTNAME = Utility.getFileName(file.getName());
+		Constants.PROJECTPATH = file.getParent() + "/";
+
+		Constants.XSDFILE = absFilePath;
+		// Constants.XSDFILE = Constants.XSDFILETEST;
+
+		Constants.WSMLFILE = Constants.PROJECTPATH + Constants.PROJECTNAME
+				+ ".wsml";
+		Constants.MPJFILE = Constants.PROJECTPATH + Constants.PROJECTNAME
+				+ ".mpj";
+
+	}
+
+COM:processes a file path and sets various constants that are used throughout the program

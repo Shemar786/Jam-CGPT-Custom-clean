@@ -1,0 +1,11 @@
+TDAT: 	private void initialize() {
+        labelDate = new Label(this, SWT.NONE);
+        labelDate.setText("Date:");
+        super.putOnScreen(labelDate, 70, 17);
+        date = new DateTime(this,SWT.BORDER);
+        super.putOnScreen(date, 90, 17);
+        this.setSize(new Point(322, 164));
+        
+    }
+
+COM:initializes and sets up a SWT-based user interface component for displaying and selecting a date

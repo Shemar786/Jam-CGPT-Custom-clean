@@ -1,0 +1,15 @@
+TDAT: 	private Message bookDetailsHandler(Object value) {
+		if (value instanceof String) {
+			String ISBN = (String) value;
+			Book book = dataAccess.getBookByISBN(ISBN);
+			if (book != null) {
+				printToLog("succeed to return to client a book");
+				return (new Message(Message.BOOK_DETAILS_RESPOND, book));
+			}
+		}
+		printToLog("failed to return to client a book");
+		return (new Message(Message.BOOK_DETAILS_RESPOND,
+				Message.ERROR_PARAMETERS));
+	}
+
+COM:handles requests for book details by retrieving the book from dataAccess based on passed ISBN value, and returning the book details or an error message if not found

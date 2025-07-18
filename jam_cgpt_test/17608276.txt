@@ -1,0 +1,23 @@
+TDAT: 	public void delete(final int profileId) throws DAOException {
+		PreparedStatement ps = null;
+		try {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append("delete from  ");
+			sb.append(TABLE_RELATIONSHIP_ADMIN_PROFILE_FUNCTIONALITY);
+			sb.append(" where profile_id = ?");
+
+			ps = getConnection().prepareStatement(sb.toString());
+			int i = 1;
+
+			ps.setInt(i++, profileId);
+
+			ps.executeUpdate();
+			ps.close();
+
+		} catch (SQLException e) {
+			throw new DAOException("Error creating Profile.", e);
+		}
+	}
+
+COM:deletes a record from a specific table based on the given profile ID

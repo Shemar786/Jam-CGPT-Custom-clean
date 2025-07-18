@@ -1,0 +1,13 @@
+TDAT:     private void updateContextMenusEnablement() {
+        JTree tree = window.getFileSystemTree();
+
+        /* generate a "fake" tree selection event */
+        TreeSelectionEvent event = new TreeSelectionEvent(tree, null, false, null, null);
+        for (TreeSelectionListener listener : tree.getTreeSelectionListeners()) {
+            listener.valueChanged(event);
+        }
+
+        log.debug("Updating the initial enablement state of context menus");
+    }
+
+COM:updates the initial enablement state of context menus by generating a "fake" tree selection event and notifying all tree selection listeners

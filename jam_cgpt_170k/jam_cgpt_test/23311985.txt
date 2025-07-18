@@ -1,0 +1,17 @@
+TDAT: 	public void algorithmTerminated() {
+		// the methods called are similar to those when the stop button is pressed
+		stopButton.setEnabled(false);
+		runButton.setEnabled(true);
+		startGUI.enableTabbedPane();
+		
+//		System.out.println("TEST");
+		
+		// enable tree button
+		if(((config.getLearningAlgorithm() instanceof OCEL)
+				&& (config.getLearningProblem() instanceof PosNegLPStandard))
+			|| (config.getLearningAlgorithm() instanceof CELOE )) {
+			treeButton.setEnabled(true);
+		}
+	}
+
+COM:disables the stop button, enables the run button and tabbed pane, and enables the tree button if certain learning algorithm and problem conditions are met

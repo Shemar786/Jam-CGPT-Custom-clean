@@ -1,0 +1,17 @@
+TDAT: 	public void resetState(PDEState state) {
+		if (fState != null && fState.equals(state))
+			return;
+		// clear all models and add new ones
+		int type = IModelProviderEvent.TARGET_CHANGED;
+		IModel[] removed = fState.getTargetModels();
+		if (removed.length > 0)
+			type |= IModelProviderEvent.MODELS_REMOVED;
+		IModel[] added = state.getTargetModels();
+		if (added.length > 0)
+			type |= IModelProviderEvent.MODELS_ADDED;
+		modelsChanged(new ModelProviderEvent(state, type, added, removed, new IModel[0]));
+
+		fireStateChanged(state);
+	}
+
+COM:resets the state of a PDE application by clearing all models and adding new ones, then notifying listeners with the updated state

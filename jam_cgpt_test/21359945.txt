@@ -1,0 +1,15 @@
+TDAT:     public boolean addAll(Collection<Gateway> gateways) {
+        Validate.notNull(gateways);
+        Validate.noNullElements(gateways);
+
+        logger.log(Level.FINE, "Adding {0} gateways: {1}",
+                new Object[]{gateways.size(), gateways});
+        boolean changed = Gateways.gateways.addAll(gateways);
+
+        if (changed) {
+            valuedSupport.fireEventOccured(Events.ADDED_GATEWAYS, null);
+        }
+        return changed;
+    }
+
+COM:adds a collection of Gateway objects to the Gateways collection and returns a boolean indicating whether the collection was changed

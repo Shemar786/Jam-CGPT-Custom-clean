@@ -1,0 +1,12 @@
+TDAT:   public Vector checkCalculatorUsage(Calculator c) {
+    Vector conflicts = new Vector();
+    for (Iterator iter = styles.iterator(); iter.hasNext();) {
+	    VisualStyle vs = (VisualStyle) iter.next();
+	    Vector styleName = vs.checkConflictingCalculator(c);
+	    if (styleName.size() != 1)
+        conflicts.add(styleName);
+    }
+    return conflicts;
+  }
+
+COM:checks for conflicts between a given calculator and visual styles, and returns a vector of conflicting style names

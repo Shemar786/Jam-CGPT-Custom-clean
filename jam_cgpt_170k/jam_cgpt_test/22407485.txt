@@ -1,0 +1,16 @@
+TDAT:     public void setProperties(Map mapProperties) {
+        properties.clear();
+
+        if (mapProperties != null) {
+            Iterator iterator = mapProperties.keySet().iterator();
+
+            while (iterator.hasNext()) {
+                String key = (String) iterator.next();
+                properties.add(new Property(key, (String) mapProperties.get(key)));
+            }
+        }
+
+        fireTableChanged(new TableModelEvent(this));
+    }
+
+COM:takes a Map of properties, clears the current properties, adds the new properties to a List, and fires a TableModelEvent

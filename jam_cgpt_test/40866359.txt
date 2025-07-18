@@ -1,0 +1,10 @@
+TDAT:     public Command getItemCommand1() {
+        if (itemCommand1 == null) {//GEN-END:|342-getter|0|342-preInit
+            // write pre-init user code here
+            itemCommand1 = new Command("Item", Command.ITEM, 0);//GEN-LINE:|342-getter|1|342-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|342-getter|2|
+        return itemCommand1;
+    }
+
+COM:returns a Command object for an item, creating and initializing it if it does not already exist

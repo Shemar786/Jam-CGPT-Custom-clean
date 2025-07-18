@@ -1,0 +1,13 @@
+TDAT:     public Map getLocalEnvProperties() {
+        String[] properties = localEnvProperties.getValues(this);
+        Map mapProperties = new Hashtable();
+
+        for (int i = 0; i < properties.length; i++) {
+            Property property = new Property(properties[i]);
+            mapProperties.put(property.getKey(), property.getValue());
+        }
+
+        return mapProperties;
+    }
+
+COM:returns a Map containing all local environment properties

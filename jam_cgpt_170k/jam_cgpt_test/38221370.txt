@@ -1,0 +1,14 @@
+TDAT:   public void internalFrameDeactivated(InternalFrameEvent e) {
+    try {
+      if (isMaximum())
+        setMaximum(false);
+    } catch (Exception e1) {}
+
+    module.deactivateModule();
+    ((CAbstractMainForm)parentDesktop.getMainForm()).fireModuleChanged(
+      new CModuleEvent(parentDesktop.getMainForm(), null, module,
+      CModuleEvent.DEACTIVATED));
+    parentDesktop.activeModule = null;
+  }
+
+COM:deactivates a module by setting it to non-maximized state and firing a module changed event

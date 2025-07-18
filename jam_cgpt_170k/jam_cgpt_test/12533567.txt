@@ -1,0 +1,14 @@
+TDAT: 	public int getNumberOfOutGoingLanes(TransportLocationIfc origin){
+		if (origin == null)
+			throw new IllegalArgumentException("The supplied location was null.");
+		
+		if (!myTransportLocations.contains(origin))
+			throw new IllegalArgumentException("The supplied location is not in the network.");
+		
+		if (myOutGoingLanes.get(origin)==null)
+			throw new IllegalArgumentException("The outgoing lane list was null for:"+origin.getName()+"!");
+		
+		return(myOutGoingLanes.get(origin).size());
+	}
+
+COM:returns the number of outgoing lanes from a given transport location, with appropriate error handling for cases where the input is invalid

@@ -1,0 +1,7 @@
+TDAT:     protected void fireElementsRemoved(Collection nodes,Collection edges) {
+        EventListener[] listeners=m_listeners.getListeners(GraphListener.class);
+        for (int i=0;i<listeners.length;i++)
+            ((GraphListener)listeners[i]).elementsRemoved(this,nodes,edges);
+    }
+
+COM:fires an event to all registered listeners that elements (nodes and/or edges) have been removed from a graph

@@ -1,0 +1,9 @@
+TDAT:         public ClassAdjectiveAggregate makeClassAdjectiveAggregate(URI senseURI, String lemmaWrittenForm) {
+                Sense sense = factory.makeSense(senseURI);
+                ClassAdjectiveAggregate classAdjRep = new ClassAdjectiveAggregate(sense, factory, uriMethod);
+                classAdjRep.getLemma().setWrittenForm(lemmaWrittenForm);
+
+                return classAdjRep;
+        }
+
+COM:creates a ClassAdjectiveAggregate object using a given Sense URI and written form of a lemma

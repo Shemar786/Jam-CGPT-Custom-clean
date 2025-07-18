@@ -1,0 +1,13 @@
+TDAT: 	public void ensure(Row row, TestResults testResults) throws Exception {
+		expectedResult = new Boolean(true);
+		try {
+		    Object result = callMethodInRow(row,testResults, true);
+		    row.cell(0).passOrFail(testResults,((Boolean)result).booleanValue());
+		} catch (IgnoredException e) {
+			// No result, so ignore
+		} catch (Exception e) {
+		    row.cell(0).fail(testResults);
+		}
+	}
+
+COM:ensures that a given row passes a test by calling a method within the row and handling exceptions

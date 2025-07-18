@@ -1,0 +1,9 @@
+TDAT:     private void firePageIndexChanged() {
+        EventListener[] listeners = getEventListenerList().getListeners(PageIndexChangeListener.class);
+        PageIndexChangeEvent e = new PageIndexChangeEvent(getPageIndex());
+        for (int i = 0; i < listeners.length; ++i) {
+            ((PageIndexChangeListener) listeners[i]).pageIndexChanged(e);
+        }
+    }
+
+COM:fires a page index change event to all registered PageIndexChangeListener event listeners

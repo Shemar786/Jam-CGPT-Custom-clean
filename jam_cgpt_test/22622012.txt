@@ -1,0 +1,15 @@
+TDAT: 	public List getMinimalRecordPaths() {
+		if (this.minimalRecordPaths == null) {
+			ArrayList paths = new ArrayList();
+			for (Iterator i = nameMap.values().iterator(); i.hasNext(); ) {
+				SchemaPath schemaPath = (SchemaPath) i.next();
+				if (schemaPath.requiredByMinimalRecord)
+					paths.add(schemaPath);
+			}
+			Collections.sort (paths, new SchemaPathComparator());
+			this.minimalRecordPaths =  paths;
+		}
+		return this.minimalRecordPaths;
+	}
+
+COM:returns a list of minimal record paths sorted by a custom comparator

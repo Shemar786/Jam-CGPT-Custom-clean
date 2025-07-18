@@ -1,0 +1,17 @@
+TDAT:     private void initialize() {
+
+        // perform an important internal consistency check - this is to
+        // catch any subtle threading bugs - we do not declare this in the
+        // javadoc since it should not happen
+
+        if (initialized) {
+            throw new IllegalStateException("already initialized");
+        }
+
+        (new DefaultServiceConfigurationLoader())
+            .loadServiceConfiguration(this);
+
+        initialized = true;
+    }
+
+COM:initializes a service configuration loader and performs an internal consistency check to prevent threading bugs

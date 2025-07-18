@@ -1,0 +1,13 @@
+TDAT: 	public CertificateSigningRequestType toRequestType() {
+		CertificateSigningRequestType requestType = getObjectFactory().createCertificateSigningRequestType();
+		super.fillInRequestType(requestType);
+
+		requestType.setCertificateType(certificateType);
+		requestType.setCSR(csr);
+		requestType.setDistinguishedName(distinguishedName);
+		requestType.setValidityPeriodMonths(BigInteger.valueOf(validityPeriodMonths));
+
+		return requestType;
+	}
+
+COM:converts a certificate signing request object into a certificate signing request type object, with various attributes including the type of certificate, CSR, and validity period

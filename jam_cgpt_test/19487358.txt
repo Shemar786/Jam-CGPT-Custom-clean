@@ -1,0 +1,9 @@
+TDAT: 	public void testFUNIMAGE() {
+
+		final ITypeEnvironment te = mTypeEnvironment("A", "ℙ(A)", "B", "ℤ ↔ ℤ",
+				"f", "ℤ");
+
+		testTranslationV2_0VerDefaultSolver(te, "B(f) = B(f)", "false");
+	}
+
+COM:tests the translation of a given expression with a specific type environment and solver

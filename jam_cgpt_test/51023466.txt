@@ -1,0 +1,16 @@
+TDAT: 	public void updateMenuBarMode(String mode) {
+		JMenuBar mb = frame.getJMenuBar();
+		// when there is something going on
+		for (int i = 0; i < mb.getMenuCount(); i++) {
+			JMenu menu = mb.getMenu(i);
+			if (menu.getText()
+					.equals(Config.language.getProperty("Menu.Tools"))) {
+				if (!mode.equals("none"))
+					menu.setEnabled(false);
+				else
+					menu.setEnabled(true);
+			}
+		}
+	}
+
+COM:updates the enabled status of a specific menu in the menu bar based on a given mode parameter

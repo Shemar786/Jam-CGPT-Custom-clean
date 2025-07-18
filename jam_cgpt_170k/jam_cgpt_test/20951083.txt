@@ -1,0 +1,22 @@
+TDAT: 	private StringBuilder createTableDef(ThsTable table) {
+		String tableName = table.getName();
+		StringBuilder sb = new StringBuilder(tableName);
+		sb.append('|');
+
+		List<? extends ThsColumn> columns = table.getColumns();
+		for (int i = 0; i < columns.size(); i++) {
+			ThsColumn column = columns.get(i);
+
+			char type = valueTypeToSymbol(column.getType());
+
+			sb.append(column.getName()).append(',')
+			  .append(type).append(',')
+			  .append(column.getLen());
+
+			if (i < columns.size() - 1) sb.append(';');
+		}
+
+		return sb;
+	}
+
+COM:creates a StringBuilder object that represents the definition of a table, including its name and column details, based on the provided ThsTable parameter

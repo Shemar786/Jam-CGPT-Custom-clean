@@ -1,0 +1,16 @@
+TDAT: 	private Coordinate calculate(double angle, double length) {
+		Latitude lt = new Latitude(Arc
+				.asin(
+						(lattitude.sin() * Math.cos(length))
+								+ (lattitude.cos() * Math.sin(length) * Math
+										.cos(angle))).length());
+		if (lt.cos() == 0) {
+			return new Coordinate(lt, new Longitude(Longitude.GREENWICH));
+		}
+		Arc delta = Arc.asin((Math.sin(length) * Math.sin(angle))
+				/ lattitude.cos());
+		Longitude lg = new Longitude(longitude.add(delta).length());
+		return new Coordinate(lt, lg);
+	}
+
+COM:calculates the latitude and longitude of a point based on an angle and length

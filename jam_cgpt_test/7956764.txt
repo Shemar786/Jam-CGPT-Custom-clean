@@ -1,0 +1,21 @@
+TDAT: 	public void addOpcode(final int opcode) {
+		if (ClassEditor.DEBUG || CodeArray.DEBUG) {
+			System.out.println("    " + codeLength + ": " + "opcode "
+					+ Opcode.opcNames[opcode]);
+		}
+
+		lastInst = codeLength;
+
+		addByte(opcode);
+
+		if ((opcode == Opcode.opc_tableswitch)
+				|| (opcode == Opcode.opc_lookupswitch)) {
+			// Switch instructions are followed by padding so that table
+			// starts on a 4-byte boundary.
+			while (codeLength % 4 != 0) {
+				addByte(0);
+			}
+		}
+	}
+
+COM:adds an opcode to a code array and prints debug information if enabled, and adds padding for switch instructions so that they start on a 4-byte boundary

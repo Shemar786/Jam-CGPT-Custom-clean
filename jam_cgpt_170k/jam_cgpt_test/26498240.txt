@@ -1,0 +1,9 @@
+TDAT:   public void testAccepts() {
+    InstanceOfSelector ios = new InstanceOfSelector(TestService.class);
+    ServiceMetaData smd = new ServiceMetaData(new SotoContainer(), null, new TestServiceImpl());
+    super.assertTrue(ios.accepts(smd));
+    smd = new ServiceMetaData(new SotoContainer(), null, new TestServiceImplEx());
+    super.assertTrue(ios.accepts(smd));
+  }
+
+COM:tests if a selector can accept a given service metadata object based on its class type

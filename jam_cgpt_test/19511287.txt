@@ -1,0 +1,21 @@
+TDAT: 	private void createContents() {
+		GridLayout gl = new GridLayout();
+		gl.numColumns = 2;
+		group.setLayout(gl);
+
+		// Project label
+		Label label = new Label(group, SWT.NONE);
+		label.setText(Messages.label_project); //$NON-NLS-1$
+
+		// Project chooser
+		createProjectChooser();
+
+		// Machine label
+		label = new Label(group, SWT.NONE);
+		label.setText(Messages.label_machine); //$NON-NLS-1$
+
+		// Machine chooser
+		createMachineChooser();
+	}
+
+COM:creates the contents of a graphical user interface (GUI) which includes labels and choosers for projects and machines

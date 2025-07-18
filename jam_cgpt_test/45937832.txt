@@ -1,0 +1,12 @@
+TDAT:     protected void render(float interpolation) {
+    	// Render the GameTaskQueue
+    	GameTaskQueueManager.getManager().getQueue(GameTaskQueue.RENDER).execute();
+    	
+        // Clear the screen
+        display.getRenderer().clearBuffers();
+        //display.getRenderer().draw(scene);
+        /** Have the PassManager render. */
+        passManager.renderPasses(display.getRenderer());
+    }
+
+COM:renders the game with a given interpolation and clears the screen before rendering the PassManager

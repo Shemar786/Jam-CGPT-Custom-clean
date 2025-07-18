@@ -1,0 +1,9 @@
+TDAT:     protected boolean isSingleValuedRelationshipProperty(Member property) {
+        AnnotatedElement annotatedProperty = (AnnotatedElement)property;
+        return annotatedProperty.isAnnotationPresent(EmbeddedId.class)
+            || annotatedProperty.isAnnotationPresent(Embedded.class)
+            || annotatedProperty.isAnnotationPresent(ManyToOne.class)
+            || annotatedProperty.isAnnotationPresent(OneToOne.class);
+    }
+
+COM:checks if a given property is a single-valued relationship property based on the presence of certain annotations

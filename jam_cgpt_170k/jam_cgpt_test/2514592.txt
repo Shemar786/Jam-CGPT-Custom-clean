@@ -1,0 +1,11 @@
+TDAT: 	public void updateWordnetOccurrances(int id, int nouns, int verbs, int adjectives, int adverbs) throws Exception{
+		String update_stm = 
+		  "UPDATE "+DataDefinitions.getRelTagsTableName()+" SET wn_nouncount = " + nouns + 
+		  	", wn_verbcount = " + verbs +
+		  	", wn_adverbcount = " + adverbs +
+		  	", wn_adjectivecount = " + adjectives +
+		  	" WHERE id = "+id;
+		execute(update_stm);
+	}
+
+COM:updates the Wordnet occurrences of a specific record in a database table with the given parameters for noun, verb, adjective and adverb counts

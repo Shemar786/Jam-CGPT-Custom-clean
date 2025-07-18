@@ -1,0 +1,13 @@
+TDAT:   public void setSize(int newSize) {
+    if ((newSize > elementCount) && (newSize > elementData.length)) {
+      ensureCapacityHelper(newSize);
+    } else {
+      for (int i = newSize; i < elementCount; i++) {
+        elementData[i] = null;
+      }
+    }
+
+    elementCount = newSize;
+  }
+
+COM:This is a method that resizes an array by either adding null elements to the end or increasing the capacity of the array

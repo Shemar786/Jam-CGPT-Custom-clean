@@ -1,0 +1,10 @@
+TDAT: 	protected String decode(String in) {
+		// remove
+		in = in.replace("&lt;", "<").replace("&gt;", ">"); // html tags
+		in = in.replace("&amp;", "&");
+		in = in.replace("&quot;", "\"");
+		in = in.replace("&#039;", "'");
+		return in;
+	}
+
+COM:decodes a string containing HTML tags and encoded characters

@@ -1,0 +1,19 @@
+TDAT: 	private EditPart getPartForElement(Object modelElement) {
+		if (modelElement instanceof Docflow) {
+			return new DocflowPart();
+		}
+		if (modelElement instanceof State) {
+			return new StatePart();
+		}
+		if (modelElement instanceof Transition) {
+			return new TransitionPart();
+		}
+		if (modelElement instanceof Connection) {
+			return new ConnectionPart();
+		}
+		throw new RuntimeException("Can't create part for model element: "
+				+ ((modelElement != null) ? modelElement.getClass().getName()
+						: "null"));
+	}
+
+COM:returns an EditPart object based on the type of the input model element

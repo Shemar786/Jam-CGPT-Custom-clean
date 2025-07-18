@@ -1,0 +1,11 @@
+TDAT: 	public boolean canConvert(String fromFormat, String toFormat) {
+		//prtln("canConvert(): fromFormat '" + fromFormat + "' toFormat '" + toFormat + "'");
+		if (fromFormat.equals(toFormat))
+			return true;
+		Hashtable formatConverters = (Hashtable) converters.get(fromFormat);
+		if (formatConverters == null)
+			return false;
+		return (formatConverters.containsKey(toFormat));
+	}
+
+COM:checks if a conversion can be made between two specified formats

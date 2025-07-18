@@ -1,0 +1,9 @@
+TDAT:   public void setConstituentCreator(Constituent c, String newCreator, String oldCreator) {
+    c.setCreator(newCreator);
+    setDirty(true);
+    notifyObservers(Model.CONSTITUENT_SET_CREATOR, c, null);
+    addUndoableEvent(new UndoableEvent(UndoableEvent.CHANGE_CREATOR, c, oldCreator));
+    setUndoMark();
+  }
+
+COM:sets the creator of a Constituent object, notifies observers of the change, adds an undoable event to the history, and sets an undo marker

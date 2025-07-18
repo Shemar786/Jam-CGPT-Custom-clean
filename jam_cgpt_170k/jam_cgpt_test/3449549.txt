@@ -1,0 +1,11 @@
+TDAT: 	private void setUserForm(final ActionForm form) throws Exception {
+		
+		List orderBy = new ArrayList();
+		orderBy.add(new Order("username", Globals.ORDER_ASC));
+    	List principals = EntityHelper.getEntities(null, Globals.ENTITY_PRINCIPAL, orderBy, 0, 0, principal, dbSession);
+
+		((UserForm) form).setPrincipals(principals);
+		
+	}
+
+COM:sets a list of principals in a user form object

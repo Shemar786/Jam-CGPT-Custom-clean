@@ -1,0 +1,11 @@
+TDAT:     public void addMapObjectFactory(MapObjectFactory factory) {
+	if (size >= factories.length) {
+	    MapObjectFactory b[] = new MapObjectFactory[factories.length << 1];
+	    System.arraycopy(factories, 0, b, 0, factories.length);
+	    factories = b;
+	}
+	factories[size++] = factory;
+	modcount++;
+    }
+
+COM:adds a MapObjectFactory to an array of MapObjectFactories and increases the size of the array if necessary

@@ -1,0 +1,10 @@
+TDAT:     public String getCharacterEncoding() {
+        String encoding = header.getHeader(C_HTTP_ContentType);
+        if (encoding == null) return DEFAULT_CHARENCODING;
+        int i = encoding.indexOf('=');
+        if (i == -1) return DEFAULT_CHARENCODING;
+        if (encoding.length() > i + 1) return encoding.substring(i + 1);
+        return DEFAULT_CHARENCODING;
+    }
+
+COM:returns the character encoding of the content type header, or a default encoding if none is specified

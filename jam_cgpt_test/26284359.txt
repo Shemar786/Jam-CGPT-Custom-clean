@@ -1,0 +1,9 @@
+TDAT:     public void showHTMLDocument(String s, String targetFrame) {
+        if (s != null) {
+            if (targetFrame == null)
+                targetFrame = viewer.name;
+            showDocument(new HistoryItem(null, targetFrame, null, null, null), s, false, HTMLConstants.HISTORY_NEW, 0);
+        }
+    }
+
+COM:displays an HTML document in a specified target frame or in a new one if none is specified

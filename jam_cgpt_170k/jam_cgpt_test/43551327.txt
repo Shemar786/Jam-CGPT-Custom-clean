@@ -1,0 +1,11 @@
+TDAT:     public RevenueSourceBO create() throws Exception{
+        String id = GUID.generate();
+        BackupBO bo = new BackupBO(id);
+        Cache c = Cache.getInstance();
+        bo.setType("backup");
+        c.put(bo.getRevSrcID(), bo);
+        
+        return bo;
+    }
+
+COM:creates a new instance of RevenueSourceBO with a generated ID, sets its type to "backup", adds it to a cache, and returns it

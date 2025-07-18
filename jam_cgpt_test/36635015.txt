@@ -1,0 +1,17 @@
+TDAT:     public File getResourceFile(String filename){
+        File newFile = null;
+
+        URL tempURL = Thread.currentThread().getContextClassLoader()
+            .getResource(filename);
+        if(tempURL != null){
+            try {
+                newFile = new File(tempURL.toURI());
+            } catch (URISyntaxException ex) {
+                warn("File Resource Error! "+filename);
+            }
+        }
+
+        return newFile;
+    }
+
+COM:returns a File object representing a resource file with the given filename, found in the current thread's class loader

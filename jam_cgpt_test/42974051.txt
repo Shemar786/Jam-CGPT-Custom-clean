@@ -1,0 +1,19 @@
+TDAT: 	public String parse() {
+		String result = templateString();
+		Set<String> keys = variables().keySet();
+
+		for( String key : keys ) {
+			Object value = variables().get( key );
+
+			if( value != null ) {
+				result = USStringUtilities.replace( result, "${" + key + "}", value.toString() );
+			}
+			else {
+				result = USStringUtilities.replace( result, "${" + key + "}", "" );
+			}
+		}
+
+		return result;
+	}
+
+COM:parses a template string by replacing all occurrences of variables enclosed in ${} with their corresponding values, retrieved from a set of variables, and returns the resulting string

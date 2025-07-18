@@ -1,0 +1,12 @@
+TDAT:     public void testadd() {
+        System.out.println("add");
+        int index = 0;
+        org.gps.types.GpsSatellite element = null;
+        org.gps.types.GpsSatelliteArray instance = new org.gps.types.GpsSatelliteArray();
+        instance.add(index,element);
+        
+        //TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the add method of the GpsSatelliteArray class by adding a null element at index 0 and outputs "add" to the console

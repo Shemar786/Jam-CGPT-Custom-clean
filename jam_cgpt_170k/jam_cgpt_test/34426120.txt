@@ -1,0 +1,14 @@
+TDAT:     private JMenuItem makeImportMenuItem() {
+        JMenuItem imp = new JMenuItem("Import file...");
+        imp.setToolTipText("Import harvesters and owners from file");
+        imp.addActionListener(new ActionListener() {
+
+            @SuppressWarnings("synthetic-access")
+            public void actionPerformed(ActionEvent e1) {
+                actionImport();
+            }
+        });
+        return imp;
+    }
+
+COM:creates a JMenuItem object with the label "Import file..." and an attached ActionListener that calls the actionImport() method when clicked, while also setting a tooltip on the JMenuItem

@@ -1,0 +1,14 @@
+TDAT:     public String listToString(List<String> ids) {
+        String ret = "";
+        if (null != ids) {
+            for (int i=0; i<ids.size(); i++) {
+                if (i != 0)
+                    ret += ", ";
+
+                ret += ids.get(i);
+            }
+        }
+        return ret;
+    }
+
+COM:takes a list of strings as input and returns a comma-separated string representation of the list

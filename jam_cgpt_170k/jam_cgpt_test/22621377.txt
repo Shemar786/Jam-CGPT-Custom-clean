@@ -1,0 +1,15 @@
+TDAT: 	public void saveUser(User user) throws Exception {
+		if (user.getSource() == null) {
+			String username = user.getUsername();
+			if (username.trim().length() == 0)
+				throw new Exception("cannot save user because no username is defined for it");
+			else {
+				File newFile = new File(this.userDataDir, username + ".xml");
+				user.setSource(newFile);
+			}
+		}
+		user.flush();
+		this.register(user);
+	}
+
+COM:saves a user object to disk and registers it, throwing an exception if the user has no username defined

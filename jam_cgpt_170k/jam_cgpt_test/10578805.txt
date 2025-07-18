@@ -1,0 +1,5 @@
+TDAT:     private String getSeparator(String targetString) {
+        return (targetString.indexOf(',') > -1 ? "," : (targetString.indexOf(';') > -1 ? ";" : (targetString.indexOf("regex:") > -1 ? "" : ":")));
+    }
+
+COM:returns a separator character based on the input targetString, using a ternary operator to check for the presence of various separator characters

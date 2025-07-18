@@ -1,0 +1,21 @@
+TDAT: 	public void testSimpleConnection() {
+		startServer(5555);
+		StandardConnectionDescription description = new StandardConnectionDescription();
+		description.setHostname("127.0.0.1");
+		description.setPort(5555);
+		description.complete();
+		StandardConnection sc = new StandardConnection(description);
+		sc.connect();
+		connection = sc;
+		buildStreams();
+
+		super.assertEquals("Greeting recieved from server", readFromServer(), greeting);
+		writer.println("Simple client message");
+		super.assertEquals("Greeting recieved from server", readFromServer(), reply);
+		try {
+			reader.close();
+			writer.close();
+		} catch (IOException e) { System.out.println("Error closing streams: " + e); }
+	}
+
+COM:tests a simple connection to a server on the same machine, sends a message, and verifies the server's response

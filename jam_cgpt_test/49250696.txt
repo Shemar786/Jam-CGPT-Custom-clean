@@ -1,0 +1,9 @@
+TDAT:     public void flattenNamespaces() throws IOException, RefactorDWException {
+        LOGGER.info("RefactoringManager.flattenNamespaces(...): Flattening name spaces..."); //$NON-NLS-1$
+        final List<Namespace> list = ConfigurationFactory.getInstance().getConfiguration().getNamespacesToBeFlattended();
+        for (final Namespace ns : list) {
+            nso.flattenNamespace(ns);
+        }
+    }
+
+COM:flattens namespaces by iterating through a list of namespaces to be flattened and calling another method to flatten each one, while also logging the process and throwing possible exceptions

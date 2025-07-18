@@ -1,0 +1,21 @@
+TDAT:     public Point_List getForegroundPoint(PImage Image)throws WrongSizeException,LearningStateException{
+
+		Point_List Points;
+		if (!end_learn || learn_state)
+			throw new LearningStateException();
+		
+		if(Image.width!=width || Image.height!=height)
+			throw new WrongSizeException();
+
+		Points=new Point_List();
+		for(int x=0;x<width;x++){
+			for(int y=0;y<height;y++){
+				if(!isBackground(x,y,Image.pixels[y*width+x]))
+					Points.addPoint(x, y);
+			}
+		}
+		return Points;
+		
+	}
+
+COM:retrieves a list of foreground points from a given image, throwing exceptions for wrong image size or learning state issues

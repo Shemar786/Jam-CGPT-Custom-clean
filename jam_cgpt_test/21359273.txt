@@ -1,0 +1,10 @@
+TDAT:     protected TaskPane wrapAsTaskPane(GatewayMessage gm, String title, Icon icon) {
+        TaskPane pane = new TaskPane(gm);
+        pane.setTitle(title);
+        pane.setIcon(icon);
+        pane.setScrollOnExpand(true);
+        pane.setCollapsed(true);
+        return pane;
+    }
+
+COM:creates a task pane object with a specified GatewayMessage, title, and icon, and returns it

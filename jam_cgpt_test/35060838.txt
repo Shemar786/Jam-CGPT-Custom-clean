@@ -1,0 +1,13 @@
+TDAT: 	private void createStringWidget( String style ) {
+		AbsolutePanel topPanel = new AbsolutePanel();
+		VerticalPanel panel = new VerticalPanel();
+		panel.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+		panel.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
+		label  = new Label();
+		if( style != null )	label.setStylePrimaryName( style );
+		panel.add( label );
+		topPanel.add( panel );
+		setWidget(topPanel);
+	}
+
+COM:creates a string widget with a specified style and adds it to an AbsolutePanel and a VerticalPanel

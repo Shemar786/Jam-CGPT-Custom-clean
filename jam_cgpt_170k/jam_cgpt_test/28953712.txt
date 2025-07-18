@@ -1,0 +1,15 @@
+TDAT: 	public void recordImported(ParticipantObject patient, String mediaDesc) {
+		try {
+			ActiveParticipant user = getUser();
+			user.role = ActiveParticipantIds.Destination;
+			ActiveParticipant media = getMedia(ActiveParticipantIds.SourceMedia, mediaDesc);
+			patient.role = ParticipantObjectRoleCode.Patient;
+			patient.typeCode = ParticipantObjectTypeCode.Person;
+			
+			this.dataImport(user, media, patient);
+		} catch (JAXBException e) {
+			LOG.error("Unable to log record import.", e);
+		}
+	}
+
+COM:records the import of a participant object along with media description

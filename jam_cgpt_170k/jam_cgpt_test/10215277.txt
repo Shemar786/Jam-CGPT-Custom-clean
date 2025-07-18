@@ -1,0 +1,17 @@
+TDAT: 	protected void addControllerErrorListener() {
+		ITkuiController controller = tkuiDocument.getController();
+		if (controller != null
+				&& this.getContainer() instanceof ITkuiWizardContainer) {
+			final ITkuiWizardContainer tkuiContainer = (ITkuiWizardContainer) this
+					.getContainer();
+			final ITkuiWizardPage page = this;
+			controller
+					.addControllerErrorListener(new ITkuiControllerErrorListener() {
+						public void errorThrowed(Exception e) {
+							tkuiContainer.addControllerError(page, e);
+						}
+					});
+		}
+	}
+
+COM:adds a listener to the controller to catch and handle any errors thrown by the controller during runtime

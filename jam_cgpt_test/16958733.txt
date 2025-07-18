@@ -1,0 +1,16 @@
+TDAT: 	public boolean isOccupied(int x, int y){
+		if(myBoard.carrier.get_position(x, y))
+			return true;
+		if(myBoard.battleship.get_position(x, y))
+			return true;
+		if(myBoard.cruiser.get_position(x, y))
+			return true;
+		if(myBoard.submarine.get_position(x, y))
+			return true;
+		if(myBoard.patrolboat.get_position(x, y))
+			return true;
+		
+		return false;
+	}
+
+COM:returns a boolean value indicating whether a given coordinate on a board is occupied by one of five different types of ships

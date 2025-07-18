@@ -1,0 +1,16 @@
+TDAT:   public String createListString(List<String> listElements) {
+    int listSize = listElements.size();
+    int listCount = 1;
+    StringBuffer listString = new StringBuffer();
+    for (String element : listElements) {
+      if (listCount < listSize) {
+        element += ", ";
+      }
+      listString.append(element);
+      listCount++;
+    }
+    
+    return listString.toString();
+  }
+
+COM:takes a List of String elements and creates a comma-separated String representation of the list

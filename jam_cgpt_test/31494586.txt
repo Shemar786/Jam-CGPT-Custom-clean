@@ -1,0 +1,6 @@
+TDAT:     public Rectangle rectOfMatrixEntry(int row, int col){
+	return new Rectangle(gridRect.x+(int)Math.round(col*side), gridRect.y +(int)Math.round(row*side), 
+			     (int)Math.round(side), (int)Math.round(side));
+    }
+
+COM:returns a new rectangle object based on the specified row and column of a matrix

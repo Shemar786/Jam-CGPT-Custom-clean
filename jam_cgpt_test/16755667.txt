@@ -1,0 +1,19 @@
+TDAT: 	private void init() {
+		try {
+			Install.installJogl();
+		} catch (InstallException e) {
+			// fatal
+			JOptionPane.showMessageDialog(null, Resources.getLabel("error.install", Install.LOCAL_DATA_DIR.getAbsolutePath()),
+					Resources.getLabel("fatal.error"), JOptionPane.ERROR_MESSAGE);
+			System.exit(-1);
+		}
+		_mainPanel = new MainPanel();
+		getContentPane().add(_mainPanel, BorderLayout.CENTER);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		pack();
+		setLocationRelativeTo(null);
+		setVisible(true);
+		_mainPanel.afterShow();
+	}
+
+COM:initializes the program by attempting to install JOGL, creating a main panel, setting the default close operation of the frame, packing and setting the location of the frame, then making the frame visible and calling a method on the main panel after it is shown

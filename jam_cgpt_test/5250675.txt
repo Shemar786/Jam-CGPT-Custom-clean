@@ -1,0 +1,13 @@
+TDAT:     public void clearSelection() {
+        if (hasSelected()) {
+            multiSelection = false;
+            for (Selectable select : selectionList) {
+                select.setSelected(false);
+            }
+            this.selectionList.clear();
+            // TODO use listener to update gui
+            GuiManager.getInstance().updateSelection(selectionList);
+        }
+    }
+
+COM:clears the current selection by setting multiSelection to false, deselecting all elements in the selectionList, and updating the GUI

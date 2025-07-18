@@ -1,0 +1,17 @@
+TDAT: 	protected void addSafiServerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TelephonySubsystem_safiServer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TelephonySubsystem_safiServer_feature", "_UI_TelephonySubsystem_type"),
+				 ConfigPackage.Literals.TELEPHONY_SUBSYSTEM__SAFI_SERVER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "safiServer" feature of the "TelephonySubsystem" type

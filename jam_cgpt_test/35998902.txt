@@ -1,0 +1,13 @@
+TDAT:     public void readMessages() {
+        WebContext wctx = WebContextFactory.get();
+        Util utilThis = new Util(wctx.getScriptSession());
+
+        // Clear the list and add in the new set of messages
+        utilThis.removeAllOptions("chatlog");
+        utilThis.addOptions("chatlog", messageCache, "message");
+
+        // FIXKE:  hope to solve this with client code only
+        utilThis.addFunctionCall("scrollToBottomOfChatDiv");
+    }
+
+COM:This is a Java method that clears and updates a list of messages in a chat log, as well as calls a function to scroll the chat log to the bottom

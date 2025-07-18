@@ -1,0 +1,11 @@
+TDAT: 	private JCheckBox getJCheckBoxOpClassifiersEquals() {
+		if (jCheckBoxOpClassifiersEquals == null) {
+			jCheckBoxOpClassifiersEquals = new JCheckBox();
+			jCheckBoxOpClassifiersEquals.setBounds(new Rectangle(204, 53, 161,
+					21));
+			jCheckBoxOpClassifiersEquals.setText("All classifiers identical?");
+		}
+		return jCheckBoxOpClassifiersEquals;
+	}
+
+COM:returns a JCheckBox object with specified properties if it does not already exist

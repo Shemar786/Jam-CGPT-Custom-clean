@@ -1,0 +1,11 @@
+TDAT: 	public String toString() {
+		final StringBuffer buf = new StringBuffer();
+		buf.append("    BinaryArrayImpl:")
+				.append(" DataLength=").append(iDataLength)
+				.append(", DataEndian=").append(iDataEndian)
+				.append(", DataPrecision=").append(iDataPrecision)
+				.append("\n, Base64 String='").append(iBase64String).append("'");
+
+		buf.append("}\n");
+
+COM:returns a string representation of an object and includes information about binary data length, endianess, precision, and a Base64 string

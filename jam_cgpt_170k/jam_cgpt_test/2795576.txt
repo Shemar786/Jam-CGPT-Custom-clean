@@ -1,0 +1,16 @@
+TDAT: 	public void start() {
+		if (state.getStartTime() == null) {
+			String description;
+			if (state.getAccumulatedTime() == 0) {
+				description = Messages.getString("StopWatch.txt.start-sw"); //$NON-NLS-1$
+			} else {
+				description = Messages
+						.getString("StopWatch.txt.continue-sw"); //$NON-NLS-1$
+			}
+
+			doChangeState(description, state.getAccumulatedTime(),
+					new Date());
+		}
+	}
+
+COM:starts a stopwatch timer if it has not already been started and updates its state with the current time

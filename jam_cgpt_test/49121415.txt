@@ -1,0 +1,16 @@
+TDAT:     private XYDataset createDataset(double[]values,String name) {
+
+        // create dataset 1...
+        final XYSeries series = new XYSeries(name);
+        
+        for(int i=0; i<values.length;i++){
+        	series.add(i,values[i]);
+        }
+        
+        final XYSeriesCollection collection = new XYSeriesCollection();
+        collection.addSeries(series);
+        return collection;
+
+    }
+
+COM:creates an XYDataset of XYSeriesCollection from an input array of double values and a given name for the series

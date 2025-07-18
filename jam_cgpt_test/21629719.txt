@@ -1,0 +1,17 @@
+TDAT:     public void decode(FacesContext context, UIComponent component) {
+
+        if ((context == null) || (component == null)) {
+            throw new NullPointerException();
+        }
+        MapComponent map = (MapComponent) component;
+
+        String key = getName(context, map);
+        String value = (String)
+            context.getExternalContext().getRequestParameterMap().get(key);
+        if (value != null) {
+            map.setCurrent(value);
+        }
+
+    }
+
+COM:decodes a parameter value from a request and sets it as the current value of a MapComponent in a FacesContext

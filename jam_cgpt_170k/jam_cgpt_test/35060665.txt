@@ -1,0 +1,14 @@
+TDAT: 	protected void changeMarkerLocation() {
+		int posY;
+		float ratio = (value-minValue) / (maxValue-minValue);
+		if( ratio < 0 )
+			ratio = 0;
+		else if( ratio > 1 )
+			ratio = 1;
+		int posX = BAR_MARGIN_X - MARKER_WIDTH/2 + (int)(ratio * barWidth);
+
+		posY = (BAR_CONTAINER_HEIGHT - MARKER_HEIGHT)/2;
+		barContainer.setWidgetPosition( marker, posX, posY );
+	}
+
+COM:updates the position of a marker based on a given value and min/max values

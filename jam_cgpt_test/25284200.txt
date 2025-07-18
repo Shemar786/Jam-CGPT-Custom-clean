@@ -1,0 +1,12 @@
+TDAT: 	private Method findMethod(Class<? extends PpRemote> iface, String name, Object[] arguments) {
+		int argumentsCount = arguments == null ? 0 : arguments.length;
+		Method[] methods = iface.getMethods();
+		for (Method method : methods) {
+			if (name.equals(method.getName()) && method.getParameterTypes().length == argumentsCount) {
+				return method;
+			}
+		}
+		return null;
+	}
+
+COM:finds a method with a specific name and the same number of parameters as the passed arguments in a given interface

@@ -1,0 +1,17 @@
+TDAT:   protected void addParameterNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InputItem_parameterName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InputItem_parameterName_feature", "_UI_InputItem_type"),
+				 ActionStepPackage.eINSTANCE.getInputItem_ParameterName(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a parameter name to an item property descriptor list

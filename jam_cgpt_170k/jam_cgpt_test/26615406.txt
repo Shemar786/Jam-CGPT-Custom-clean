@@ -1,0 +1,23 @@
+TDAT:     public boolean loadProject(String filename) {
+        AIDesktop.getStatusBar().info("Loading project",filename);
+
+        boolean ret = false;
+
+        try {
+            AIDesktop.getProjectController().loadProject(filename);
+            ret = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if (!ret)
+            AIDesktop.getStatusBar().info("ERROR LOADING PROJECT!");
+
+        desktop.refreshTree();
+
+        AIDesktop.getStatusBar().clear();
+
+        return ret;
+    }
+
+COM:loads a project specified by a filename and returns a boolean indicating whether the loading was successful or not

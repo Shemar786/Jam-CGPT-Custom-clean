@@ -1,0 +1,9 @@
+TDAT:     public void save(Component root, String fileName) throws IOException {
+	checkSaveRestoreArgs(root, fileName);
+	Map<String, Object> stateMap = new HashMap<String, Object>();
+	saveTree(Collections.singletonList(root), stateMap);
+	LocalStorage lst = getContext().getLocalStorage();
+	lst.save(stateMap, fileName);
+    }
+
+COM:saves the state of a GUI component tree to local storage using a specified file name

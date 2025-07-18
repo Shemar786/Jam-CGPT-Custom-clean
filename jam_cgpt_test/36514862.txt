@@ -1,0 +1,12 @@
+TDAT:     public void setClasspath(List<String> cp) {
+        String classpathString = "";
+        for (String path : cp)
+        {
+            classpathString += path + ";";
+        }
+        getPreferences().put(IREPORT_CLASSPATH, classpathString);
+        
+        ((ReportClassLoader)getReportClassLoader()).rescanAdditionalClasspath();
+    }
+
+COM:sets the classpath by concatenating a list of strings and then updates the preferences before rescanning the additional classpath

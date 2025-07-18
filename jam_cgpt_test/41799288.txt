@@ -1,0 +1,21 @@
+TDAT:     private void closeConnection() {
+        try {
+            if (os != null) {
+                os.close();
+            }
+            if (is != null) {
+                is.close();
+            }
+            if (sc != null) {
+                sc.close();
+            }
+        } catch (IOException e) {
+            Log.error("[CTPService] Cannot force socket closure");
+        } finally {
+            os = null;
+            is = null;
+            sc = null;
+        }
+    }
+
+COM:closes the input and output streams and the socket connection and handles any IOExceptions that may occur

@@ -1,0 +1,12 @@
+TDAT:     private void enableSVGOptions(boolean b){
+        hideSource.setEnabled(b);
+        blackCircle.setEnabled(b);
+        anim.setEnabled(!b);
+        minVert.setEnabled(b);
+        fontSize.setEnabled(b);
+        scale.setEnabled(b);
+        annot.setEnabled(b);
+        backColor.setEnabled(b);
+    }
+
+COM:This is a method to enable or disable certain SVG options based on a boolean input

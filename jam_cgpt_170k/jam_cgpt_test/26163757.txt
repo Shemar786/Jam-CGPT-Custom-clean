@@ -1,0 +1,10 @@
+TDAT:     public void setRequestPathInfo(String pathInfo) {
+        if (logger.isDebugEnabled())
+            logger.debug("Entering - pathInfo = " + pathInfo);
+        init();
+        this.setRequestPathInfo("",pathInfo);
+        if (logger.isDebugEnabled())
+            logger.debug("Exiting");
+    }
+
+COM:sets the request path info and logs its entry and exit if the logger is in debug mode

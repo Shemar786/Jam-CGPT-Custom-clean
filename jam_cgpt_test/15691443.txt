@@ -1,0 +1,21 @@
+TDAT:     public String getClassTypeName(Class clazz) {
+        
+        String type = null;
+
+        if (clazz.isInterface()) {
+            type = "interface";
+        }
+        else if (clazz.isPrimitive()) {
+            type = null;
+        }
+        else if (clazz.isArray()) {
+            type = null;
+        }
+        else {
+            type = "class";
+        }
+
+        return type;
+    }
+
+COM:determines if a given Class object is a class or interface and returns the corresponding type string

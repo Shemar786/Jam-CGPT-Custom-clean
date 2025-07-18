@@ -1,0 +1,8 @@
+TDAT:     private void requireAttribute(String value, String name_attr, String name_elem) {
+        if (value.equals("")) {
+            throw new RuntimeException("Error (" + reader.getLocation().getLineNumber() +
+                "): '" + name_elem + "' must be specified non-void '" + name_attr + "' attribute");
+        }
+    }
+
+COM:checks if a certain attribute in an XML element has a non-void value and throws a RuntimeException with an error message if it doesn't

@@ -1,0 +1,14 @@
+TDAT:     public void testGetId() {
+        System.out.println("getId");
+        
+        Event_DBImpl instance = new Event_DBImpl();
+        
+        int expResult = 0;
+        int result = instance.getId();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the getId() method of the Event_DBImpl class by asserting that the expected result is equal to the actual result

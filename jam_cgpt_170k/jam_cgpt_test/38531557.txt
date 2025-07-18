@@ -1,0 +1,9 @@
+TDAT:     public void clear() throws org.xmldb.api.base.XMLDBException {
+        try {
+            this.stub.clear(this.resourceSet);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e);
+        }
+    }
+
+COM:clears a resource set using the underlying stub and throws an XMLDBException if there is a vendor error

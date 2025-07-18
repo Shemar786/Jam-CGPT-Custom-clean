@@ -1,0 +1,8 @@
+TDAT:    public void setMaxResultSetSize(int maxResultSetSize) {
+      int oldValue = maxResultSetSize;
+      this.maxResultSetSize = maxResultSetSize;
+      propertyChangeSupport.firePropertyChange(PROPERTY_MAX_RESULT_SET_SIZE,
+            oldValue, maxResultSetSize);
+   } // setMaxResultSetSize
+
+COM:sets the maximum size of the result set and notifies any registered property change listeners

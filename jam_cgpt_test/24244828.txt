@@ -1,0 +1,13 @@
+TDAT: 	public FirmwareInfo getFirmwareVersion() throws IOException {
+		byte [] request = {SYSTEM_COMMAND_REPLY, GET_FIRMWARE_VERSION};
+		byte [] reply = nxtComm.sendRequest(request, 7);
+		FirmwareInfo info = new FirmwareInfo();
+		info.status = reply[2];
+		if(info.status == 0) {
+			info.protocolVersion = reply[4] + "." + reply[3];
+			info.firmwareVersion = reply[6] + "." + reply[5];
+		}
+		return info;
+	}
+
+COM:retrieves the firmware version information of a device by sending a request and parsing the received reply

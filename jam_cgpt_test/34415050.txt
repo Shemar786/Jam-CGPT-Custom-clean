@@ -1,0 +1,9 @@
+TDAT: 	public void renameContainer(Object source, String containerId, String newName, String userId){
+		ContainerEditor editor = DbModule.getInstance().getContainerEditor(containerId);
+		if(editor!=null){
+			editor.setContainerName(source,newName,userId);
+		}		
+		this.sendContainerChangeEvent(source,containerId, userId, new Date());
+	}
+
+COM:renames a container by updating the container name in the database and triggering a container change event

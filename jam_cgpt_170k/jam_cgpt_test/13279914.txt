@@ -1,0 +1,14 @@
+TDAT:     public RangeConstraint getUpperBoundRangeConstraint() {
+        synchronized(rangeConstraints) {
+	    Iterator it = rangeConstraints.iterator();
+            while (it.hasNext()) {
+                RangeConstraint rc = (RangeConstraint) it.next();
+                if (rc.upperBound == upperBound) {
+                    return rc;
+                }        
+            }//while
+        }
+	return null;
+    }
+
+COM:returns a RangeConstraint object with the upper bound value matching the upper bound of the current object, after searching through a synchronized list of RangeConstraint objects

@@ -1,0 +1,18 @@
+TDAT:     public void abort(HttpChannel http, String t) throws IOException {
+        if (switchedProtocol != null) {
+            switchedProtocol.abort(http, t);
+            return;
+        }
+        keepAlive = false;
+        if (net != null ) {
+            if (net.isOpen()) {
+                net.close();
+                net.startSending();
+            }
+        }
+        if (http != null) {
+            http.abort(t);
+        }
+    }
+
+COM:aborts a HTTP channel and closes the network connection if it is open

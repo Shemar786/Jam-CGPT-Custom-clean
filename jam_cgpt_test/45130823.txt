@@ -1,0 +1,11 @@
+TDAT:     public Value castLiteral(Literal literal) throws IllegalCastException {
+        try {
+            Long.parseLong(literal.getLabel());
+            return this.factory.createLiteral(literal.getLabel(),
+                    SPARQLConstants.DECIMAL_TYPE);
+        } catch (NumberFormatException e) {
+            throw new IllegalCastException("Unable to cast string to integer");
+        }
+    }
+
+COM:takes a Literal object as input, attempts to parse it into a Long, and returns a Value object with a DECIMAL_TYPE if successful, throwing an IllegalCastException if the Literal cannot be parsed into a Long

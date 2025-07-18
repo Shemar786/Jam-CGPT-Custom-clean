@@ -1,0 +1,16 @@
+TDAT: 	private String getPreference(String name, IProject project) {
+		String toReturn = null;
+		if(project != null) {
+			try {
+				 toReturn = project.getPersistentProperty(new QualifiedName(PLUGIN_ID, name));
+			} catch (CoreException e) {
+				// Ignore as this means we don't have any project properties...
+			}
+		}
+		if(toReturn == null) {
+			toReturn = this.getPreferenceStore().getString(name);
+		}
+		return toReturn;
+	}
+
+COM:retrieves a preference value based on a name and an Eclipse project, falling back to the default preference store if no project-specific value is found

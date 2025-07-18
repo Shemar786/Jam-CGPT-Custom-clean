@@ -1,0 +1,10 @@
+TDAT:   protected void addChkEditTalkPage(JPanel panel) {
+    if (getTextContents() != null) {
+      chkEditTalkPage = Utilities.createJCheckBox(
+          GT._("&Add a note on talk page"), false);
+      getTextContents().setCheckBoxAddNote(chkEditTalkPage);
+      panel.add(chkEditTalkPage);
+    }
+  }
+
+COM:adds a checkbox for adding a note on a talk page to a given JPanel if there is text content available

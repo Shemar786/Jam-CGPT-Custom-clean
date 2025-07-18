@@ -1,0 +1,15 @@
+TDAT: 	public CSSStyleDeclaration getComputedStyle(Element elt, String pseudoElt) {
+		// Loop for CSS StyleSheet list parsed
+		StyleSheetList styleSheetList = documentCSS.getStyleSheets();
+		int l = styleSheetList.getLength();
+		for (int i = 0; i < l; i++) {
+			CSSStyleSheet styleSheet = (CSSStyleSheet) styleSheetList.item(i);
+			CSSStyleDeclaration styleDeclaration = getComputedStyle(styleSheet,
+					elt, pseudoElt);
+			if (styleDeclaration != null)
+				return styleDeclaration;
+		}
+		return null;
+	}
+
+COM:returns the computed style of an element, taking into account the stylesheets applied to it and any pseudo-elements

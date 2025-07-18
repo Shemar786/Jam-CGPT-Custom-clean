@@ -1,0 +1,17 @@
+TDAT:   protected void addDbPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SafiServer_dbPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SafiServer_dbPort_feature", "_UI_SafiServer_type"),
+				 ConfigPackage.Literals.SAFI_SERVER__DB_PORT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "dbPort" feature of the "SafiServer" type

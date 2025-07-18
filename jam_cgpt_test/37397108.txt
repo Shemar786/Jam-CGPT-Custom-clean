@@ -1,0 +1,14 @@
+TDAT:   private Map initEntryMap(Serializable wrappedObject) {
+    Map entrySet = new HashMap();
+
+    List fields = initFields(wrappedObject.getClass());
+    Iterator i = fields.iterator();
+    while (i.hasNext()) {
+      Field field = (Field) i.next();
+      entrySet.put(field.getName(), new FieldEntry(field));
+    }
+
+    return Collections.unmodifiableMap(entrySet);
+  }
+
+COM:initializes and returns an unmodifiable map that contains field entries of a given serializable object

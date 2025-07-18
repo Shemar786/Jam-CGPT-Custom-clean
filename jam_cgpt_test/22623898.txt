@@ -1,0 +1,16 @@
+TDAT: 	public String getMetadataHandle(String collectionSetSpec) throws Exception {
+		String mdHandle = null;
+		try {
+			HandleServiceClient client = new HandleServiceClient(getHandleServiceBaseUrl());
+			mdHandle = client.getMetadataHandle(getId(), collectionSetSpec);
+		} catch (Throwable t) {
+			String msg = "Unable to obtain metadataHandle: " + t.getMessage();
+			// System.out.println(msg);
+			throw new Exception(msg);
+		}
+		System.out.println("mdHandle: " + mdHandle);
+
+		return mdHandle;
+	}
+
+COM:retrieves the metadata handle for a given collection set specification

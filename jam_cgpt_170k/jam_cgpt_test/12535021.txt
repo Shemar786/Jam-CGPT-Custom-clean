@@ -1,0 +1,22 @@
+TDAT: 	private int convert(int nodes){
+		int result = -1;// impossible value
+		if (nodes <= 0){
+			System.out.println("invalid number of nodes.");
+		}else if (nodes <= 1){//serial jobs
+			result = 1;
+		}else if(nodes == 2){
+			result =2;
+		}else if(nodes <= 4){
+			result = 4;
+		}else if(nodes <= 8){
+			result = 8;
+		}else if(nodes <= 12){
+			result = 12;
+		}else {
+			//nodes > 12
+			result = 16;
+		}
+		return result;
+	}
+
+COM:converts the number of nodes to a specific value based on predetermined conditions

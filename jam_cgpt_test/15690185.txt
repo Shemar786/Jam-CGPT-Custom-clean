@@ -1,0 +1,12 @@
+TDAT:     public void put(Object key, Object value) {
+        Retriever r = getRetriever(key);
+        synchronized (r) {
+            mInvalidCache.remove(key);
+            mValidCache.put(key, value);
+            // Bypass the factory produced value so that any waiting
+            // threads are notified.
+            r.bypassValue(value);
+        }
+    }
+
+COM:puts a key-value pair into a cache with synchronization and notifies waiting threads by bypassing the factory produced value

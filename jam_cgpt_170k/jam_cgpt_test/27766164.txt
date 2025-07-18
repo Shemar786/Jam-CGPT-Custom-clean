@@ -1,0 +1,13 @@
+TDAT:     public Thread createListenerThread(final String nameOfListenerThread) {
+        
+        Object fooObj = m_factory.create( nameOfListenerThread);
+        
+        IListenerThread tempListenerThread = (IListenerThread)fooObj;
+
+        add(tempListenerThread);
+        
+        return new Thread(m_thrGrp, tempListenerThread, tempListenerThread.getThreadName());
+        
+    }
+
+COM:creates and returns a new thread using the provided name and an object created from a factory with the name, which is cast to an IListenerThread object and added to the thread group

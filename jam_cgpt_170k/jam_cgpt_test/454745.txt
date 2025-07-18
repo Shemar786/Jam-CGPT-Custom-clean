@@ -1,0 +1,11 @@
+TDAT: 	private double coordToTime(double coord){
+		double plotStart = Double.parseDouble(settings.getProperty(LayoutSettings.SLICE_START));
+		double plotEnd = Double.parseDouble(settings.getProperty(LayoutSettings.SLICE_END));
+		int plotWidth = drawArea.getWidth() - (2 * sidePad);
+		double dataOffset = plotStart;
+		double scaleFactor = (double) plotWidth / (plotEnd - plotStart);
+		// compute the data-time where the mouse is
+		return((double) coord - sidePad) / scaleFactor+ dataOffset;
+	}
+
+COM:takes a coordinate value and converts it to a corresponding time value based on certain settings and parameters

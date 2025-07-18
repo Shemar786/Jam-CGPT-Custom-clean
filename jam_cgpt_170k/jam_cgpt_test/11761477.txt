@@ -1,0 +1,9 @@
+TDAT:     public FingerDescriptor clone(){
+        FingerDescriptor fingerDescriptor=new FingerDescriptor(this.getFinger().clone());
+        HashMap<Enum, Object> descriptors=new HashMap();
+        descriptors.putAll(this.getDescriptors());
+        fingerDescriptor.setDescriptors(descriptors);
+        return fingerDescriptor;
+    }
+
+COM:creates a new FingerDescriptor object with the same values as the original, and returns the new object

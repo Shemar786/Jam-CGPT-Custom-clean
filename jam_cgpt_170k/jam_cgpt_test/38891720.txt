@@ -1,0 +1,16 @@
+TDAT:   public int read(byte[] b, int off, int len) throws IOException {
+    int got = 0;
+    int ch;
+
+    while (got < len) {
+      if ((ch = read()) == -1) {
+        return (got == 0) ? (-1) : got;
+      }
+
+      b[off + (got++)] = (byte) (ch & 0xFF);
+    }
+
+    return got;
+  }
+
+COM:reads up to a specified number of bytes from the input stream into a byte array, starting at a particular offset

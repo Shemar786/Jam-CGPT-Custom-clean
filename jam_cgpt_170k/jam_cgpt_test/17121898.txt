@@ -1,0 +1,17 @@
+TDAT:   public int compareTo(TPoint o) {
+    if ((this.value == o.value()) && (this.tstamp == o.tstamp())) {
+      return 0;
+    }
+    else if (this.tstamp > o.tstamp) {
+      return 1;
+    }
+    else if (this.tstamp < o.tstamp) {
+      return -1;
+    }
+    else if (this.value > o.value) {
+      return 1;
+    }
+    return -1;
+  }
+
+COM:compares two TPoint objects based on their value and timestamp, and returns an integer value indicating the result of the comparison

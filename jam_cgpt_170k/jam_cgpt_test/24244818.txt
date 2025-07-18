@@ -1,0 +1,10 @@
+TDAT: 	public byte resetMotorPosition(int port, boolean relative) throws IOException {
+		// !! Needs to check port to verify they are correct ranges.
+		// !!! I'm not sure I'm sending boolean properly
+		byte boolVal = 0;
+		if(relative) boolVal = (byte)0xFF;
+		byte [] request = {DIRECT_COMMAND_NOREPLY, RESET_MOTOR_POSITION, (byte)port, boolVal};
+		return sendRequest(request, 3);
+	}
+
+COM:resets the motor position for a given port, with an option to reset the position relative to the current position, and returns the result as a byte

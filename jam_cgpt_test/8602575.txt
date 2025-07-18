@@ -1,0 +1,24 @@
+TDAT: 	public void assignRulers() {
+		int playerNum = getPlayerList().size();
+		int index = 0;
+		ArrayList<Territory> territories = allTerritories();
+
+		Collections.shuffle(territories);
+
+		while (!territories.isEmpty()) {
+			if (index >= playerNum) {
+				index = 0;
+			}
+			Territory temp = territories.get(0);
+			territories.remove(temp);
+			temp.setRuler(getPlayerList().get(index));
+			temp.addTroop(1);
+			getPlayerList().get(index).removeBonus(1);
+			index++;
+		}
+		this.setPhase(GamePhase.PLACING);
+		this.setChanged();
+		this.notifyObservers();
+	}
+
+COM:assigns rulers and adds troops to territories for a game and notifies observers of the change in phase

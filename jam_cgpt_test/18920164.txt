@@ -1,0 +1,19 @@
+TDAT: 	public ActivityDesigner createDesigner(){
+	
+		Class activityCls = getClass();
+		//String clsName = UEngineUtil.getComponentClassName(activityCls, "designer");					
+		designer = null;
+		
+		try{
+			//Class designerCls = Thread.currentThread().getContextClassLoader().loadClass(clsName);
+			designer = (ActivityDesigner)UEngineUtil.getComponentByEscalation(activityCls, "designer");
+			designer.setActivity(this);
+		
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return designer;
+	}
+
+COM:creates an ActivityDesigner instance and sets it to the current activity object

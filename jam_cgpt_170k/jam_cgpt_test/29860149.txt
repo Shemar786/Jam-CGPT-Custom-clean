@@ -1,0 +1,10 @@
+TDAT:   public void addPhiCatch(BasicBlock bb) {
+    if (phis[bb.getIndex()] == null) {
+      //the type is not used, the rigth type of all operands,
+      //   will be defined when passing operands to SSA form.
+      QVar variable = new QVar(var, Constants.TYP_REFERENCE);
+      phis[bb.getIndex()] = new QPhiCatch(variable);
+    }
+  }
+
+COM:adds a QPhiCatch variable to a BasicBlock if it doesn't already exist

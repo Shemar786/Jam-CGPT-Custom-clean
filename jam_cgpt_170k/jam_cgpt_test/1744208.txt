@@ -1,0 +1,15 @@
+TDAT: 	public boolean updateStatus(ExternalData exd) throws FriendStalkerException.IExternalClient {
+		Log.e(TAG, "trying to send status: " + exd.statusText + "\nusername " + exd.login + 
+				"appId: " + exd.application);
+		IExternalClient client = systems.get(exd.application);
+		if(client != null)
+		{
+			
+			return client.updateStatus(exd);
+		}
+		else 
+			Log.e(TAG, "Could not find client... id: " + exd.application);
+			return false;
+	}
+
+COM:updates the status of an external client and returns a boolean value indicating success or failure, while throwing a FriendStalkerException if necessary

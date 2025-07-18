@@ -1,0 +1,10 @@
+TDAT: 	    @Deprecated public Object postMood(String userId, int mood) {
+			//securityContext.checkIfAuthorized();
+			String url = API_PUT_MOOD_URL.replaceFirst("%s", userId);
+			HashMap<String, String> map = new HashMap<String, String>();
+			HashMap<String, String> appParams = new HashMap<String, String>();
+			appParams.put("mood", "" + mood);
+			return putUserData(url, map, appParams);
+		}
+
+COM:posts the user's mood to a specified URL using the HTTP PUT method, and returns the response as an Object, but is marked as deprecated and should not be used in new code

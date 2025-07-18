@@ -1,0 +1,21 @@
+TDAT:     private void evolve(Genotype genotype) throws Exception {
+		double previousFitness = Double.MAX_VALUE;
+		for (int i = 0; i < EVOLUTIONS; i++) {
+			genotype.evolve();
+
+			double fitness = genotype.getFittestChromosome().getFitnessValue();
+			if (fitness < previousFitness) {
+				System.err.println(fitness);
+				this.drawImage(genotype.getFittestChromosome());
+				previousFitness = fitness;
+			}
+
+			if (i % 100 == 0) {
+				System.out.println("Evolutions = " + i);
+			}
+		}
+
+		this.drawImage(genotype.getFittestChromosome());
+	}
+
+COM:uses a genetic algorithm to evolve a given genotype over a fixed number of evolutions, printing fitness statistics and drawing the fittest chromosome at the end

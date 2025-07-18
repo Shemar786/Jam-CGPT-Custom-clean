@@ -1,0 +1,12 @@
+TDAT:     public void getIntegerDifference(SensorEvent e1, SensorEvent e2) {
+    	final int max = 3;
+    	if (mIntegerValues == null) {
+    		mIntegerValues = new int[max];
+    	}
+    	
+    	for (int i = 0; i < max; i++) {
+    		mIntegerValues[i] = e1.mIntegerValues[i] - e2.mIntegerValues[i];
+    	}
+    }
+
+COM:calculates the difference between two SensorEvent objects' integer values and stores the result in an int array

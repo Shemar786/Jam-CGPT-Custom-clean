@@ -1,0 +1,17 @@
+TDAT:   private boolean removeLocal(Module module) {
+
+    // todo this method is not abstract ! handles CVS only.
+
+    AdminHandler handler = new AdminHandler(module);
+    if (!handler.isEqualLocation()) {
+      try {
+        FileUtils.deleteDirectory(module.getBaseDir());
+      } catch (IOException e) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+COM:removes a local module, handling CVS only, and returns a Boolean value indicating whether the operation was successful

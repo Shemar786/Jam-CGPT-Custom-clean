@@ -1,0 +1,15 @@
+TDAT:         public PayloadType parsePayload(final XmlPullParser parser) throws Exception {
+            PayloadType pte = super.parsePayload(parser);
+            PayloadType.Audio pt = new PayloadType.Audio(pte);
+            int ptClockRate = 0;
+
+            try {
+                ptClockRate = Integer.parseInt(parser.getAttributeValue("", "clockrate"));
+            } catch (Exception e) {
+            }
+            pt.setClockRate(ptClockRate);
+
+            return pt;
+        }
+
+COM:takes in an XmlPullParser object, parses it to extract certain attributes, and then returns a PayloadType object with those extracted attributes set

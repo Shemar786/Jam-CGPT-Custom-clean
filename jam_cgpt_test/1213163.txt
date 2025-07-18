@@ -1,0 +1,12 @@
+TDAT: 	private void setBinHover(Counter counter, int x, int y) {
+		final List<Bin> bins = Cardpanda.clientModel.getBinsThisClientControls();
+		for(Bin bin : bins) {
+			if(withinBinCoordinates(counter, bin, x, y)) {
+				bin.setHover();
+			} else {
+				bin.removeHover();
+			}
+		}
+	}
+
+COM:sets the hover state of a bin based on its coordinates and the counters within it

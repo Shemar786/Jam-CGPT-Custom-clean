@@ -1,0 +1,10 @@
+TDAT:     public int getTotalBooks() throws SQLException {
+        CallableStatement cs = dc.getConnection().prepareCall("{call getTotalBooks()}");
+        ResultSet rs = cs.executeQuery();
+        if (rs.next()) {
+            return rs.getInt("NumberResults");
+        }
+        return 0;
+    }
+
+COM:gets the total number of available books in the database using a stored procedure call and returns the result as an integer

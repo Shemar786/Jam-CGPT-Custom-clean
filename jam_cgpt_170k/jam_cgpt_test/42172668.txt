@@ -1,0 +1,17 @@
+TDAT: 	protected void addPromptDirectoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TelephonySubsystem_promptDirectory_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TelephonySubsystem_promptDirectory_feature", "_UI_TelephonySubsystem_type"),
+				 ConfigPackage.Literals.TELEPHONY_SUBSYSTEM__PROMPT_DIRECTORY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for configuring a prompt directory in a telephony subsystem

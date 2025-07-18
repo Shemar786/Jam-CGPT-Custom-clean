@@ -1,0 +1,15 @@
+TDAT: 	protected void displayCentered(JInternalFrame internal) {
+
+		// do the location calculation
+		Rectangle visible = this.getDesktopPane().getVisibleRect();
+		Dimension size = internal.getSize();
+		internal.setLocation((visible.width / 2) - (size.width / 2),
+				(visible.height / 2) - (size.height / 2));
+
+		// add to desktop and show
+		this.getDesktopPane().add(internal);
+		internal.setVisible(true);
+		internal.toFront();
+	}
+
+COM:centers a given JInternalFrame on the desktop and adds it to the desktop pane

@@ -1,0 +1,16 @@
+TDAT:   public void decrMarker(int length) {
+    if (length > size) {
+      throw new ArrayIndexOutOfBoundsException(
+        "[Buffer] ERROR : decrMarker too large");
+    }
+
+    if (length > length()) {
+      throw new ArrayIndexOutOfBoundsException(
+        "[Buffer] ERROR : decrMarker -> marker overflow");
+    }
+
+    marker = (marker - length) % size;
+    marker += ((marker < 0) ? size : 0);
+  }
+
+COM:decreases the value of the marker in a buffer by a specified length, throwing an exception if the length is greater than the buffer size or if the operation would result in a marker overflow

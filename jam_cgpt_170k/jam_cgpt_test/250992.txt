@@ -1,0 +1,15 @@
+TDAT: 	public User copy(){
+		User user = new User();
+		user.setAuthenticated(this.authenticated);
+		user.setEmail(new String(this.email));
+		user.setFirstName(new String(this.firstName));
+		user.setIsAdministrator(this.isAdministrator());
+		user.setIsDisabled(this.isDisabled);
+		user.setLastName(new String(this.lastName));
+		user.setPassword(new String(this.password));
+		user.setUserID(new String(this.userID));
+		user.setUserName(new String(this.userName));
+		return user;
+	}
+
+COM:creates a copy of a User object with all of its attributes and returns it

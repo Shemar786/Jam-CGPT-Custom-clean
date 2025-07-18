@@ -1,0 +1,20 @@
+TDAT: 	private void setResiduesNum(){
+		residuesNumA = 0;
+		residuesNumB = 0;
+		
+		Hashtable residues = domainA.getResidues();
+		for(Enumeration e = residues.elements(); e.hasMoreElements();){
+			Residue residue = (Residue)e.nextElement();
+			if(residue.isInteracting())
+				residuesNumA++;
+		}
+		
+		residues = domainB.getResidues();
+		for(Enumeration e = residues.elements(); e.hasMoreElements();){
+			Residue residue = (Residue)e.nextElement();
+			if(residue.isInteracting())
+				residuesNumB++;
+		}
+	}
+
+COM:sets the number of interacting residues in two domains, domainA and domainB

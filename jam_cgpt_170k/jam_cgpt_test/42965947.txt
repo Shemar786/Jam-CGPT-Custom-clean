@@ -1,0 +1,21 @@
+TDAT: 	public boolean add(EquippableItem e) {
+		Slot slot = e.getSlot();
+		if (this.gear.containsKey(slot)) {
+			if (owner.canReceiveItem()) {
+				EquippableItem old = gear.remove(slot);
+				owner.receiveItem(old);
+				owner.removeStatEffects(old.getEffects());
+				gear.put(slot, e);
+				owner.addStatEffects(e.getEffects());
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			gear.put(slot, e);
+			owner.addStatEffects(e.getEffects());
+			return true;
+		}
+	}
+
+COM:adds an EquippableItem to a gear slot, removing any previous item and applying relevant stat effects based on the item's slot and effects

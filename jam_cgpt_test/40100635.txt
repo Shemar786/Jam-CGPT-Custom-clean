@@ -1,0 +1,15 @@
+TDAT:     protected void commonQueries(StringBuffer rslt) throws WarlockException {
+        rslt.append("<status>");
+        queryStatus(rslt);
+        rslt.append("</status>");
+
+        rslt.append("<navigation>");
+        queryNavigation(rslt);
+        rslt.append("</navigation>");
+
+        rslt.append("<current>");
+        querySelections(rslt);
+        rslt.append("</current>");
+    }
+
+COM:appends XML query results for status, navigation, and selections to a StringBuffer object

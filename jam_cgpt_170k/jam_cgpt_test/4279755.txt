@@ -1,0 +1,11 @@
+TDAT:     public void copyStream(final URL url, final File file) {
+        new VoidExceptionHandler() {
+                public void run() throws Exception {
+                    InputStream inputStream = url.openStream();
+                    Assert.isTrue(inputStream != null, "Cannot open stream from url: " + url);
+                    copyStream(inputStream, file);
+                }
+            };
+    }
+
+COM:copies the contents of a URL to a file

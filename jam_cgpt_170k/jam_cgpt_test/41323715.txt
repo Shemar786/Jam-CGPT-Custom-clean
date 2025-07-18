@@ -1,0 +1,18 @@
+TDAT: 	public PBounds getUnionOfChildrenBounds(PBounds dstBounds) {
+		if (dstBounds == null) {
+			dstBounds = new PBounds();
+		} else {
+			dstBounds.resetToZero();
+		}
+
+		int count = getChildrenCount();
+		for (int i = 0; i < count; i++) {
+			PNode each = (PNode) getChildrenReference().get(i);
+			if (each != itsTitleNode)
+				dstBounds.add(each.getFullBoundsReference());
+		}
+
+		return dstBounds;
+	}
+
+COM:returns the union of the bounds of all child nodes, excluding the title node, and sets the result to the specified destination bounds object

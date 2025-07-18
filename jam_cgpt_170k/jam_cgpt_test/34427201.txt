@@ -1,0 +1,13 @@
+TDAT:     private void actionSchematicMouse(MouseEvent e) {
+        int em = e.getButton();
+        if (em == MouseEvent.BUTTON1) {
+            int row = schematicsList.getSelectedIndex();
+            if (row < 0) return;
+            SWGSchematic s = schematicsListModel.element(row);
+            schemTab.schematicSelect(s, this);
+        } else if (em == MouseEvent.BUTTON3) {
+            schematicsPopup(e);
+        }
+    }
+
+COM:handles mouse events on a schematic by selecting and displaying the corresponding schematic or displaying a popup menu

@@ -1,0 +1,13 @@
+TDAT:     public void testSetStartTime() {
+        System.out.println("setStartTime");
+        
+        String startTime = "";
+        Event_DBImpl instance = new Event_DBImpl();
+        
+        instance.setStartTime(startTime);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a unit test for the "setStartTime()" method of the "Event_DBImpl" class and prints a message indicating which test case is being executed, initializes a new object of the "Event_DBImpl" class, sets the start time attribute of the object to an empty string and fails the test case with a message stating that the test case is a prototype

@@ -1,0 +1,14 @@
+TDAT:   public void deleteSelected() {
+    if (this.selConstituent!=null) {
+      // this could be consolidated into one method, removeConstituent,
+      // however some model types must do some extra bookeeping when removing
+      // Relations
+      if (this.selConstituent instanceof Node) {
+        removeNode((Node)this.selConstituent);
+      } else {  //VisualRelation
+        removeRelation((Relation)this.selConstituent);
+      }
+    }
+  }
+
+COM:deletes the selected constituent (either a node or a visual relation) from a model, after checking its type and performing some extra bookkeeping if necessary

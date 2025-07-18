@@ -1,0 +1,13 @@
+TDAT:         public TransportCandidate getBestRemoteCandidate() {
+            // Hopefully, we only have one validRemoteCandidate
+            ArrayList cands = getValidRemoteCandidatesList();
+            if (!cands.isEmpty()) {
+                LOGGER.debug("RAW CAND");
+                return (TransportCandidate) cands.get(0);
+            } else {
+                LOGGER.debug("No Remote Candidate");
+                return null;
+            }
+        }
+
+COM:returns the best remote transport candidate from a list of valid candidates or null if there are no valid candidates

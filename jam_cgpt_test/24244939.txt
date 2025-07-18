@@ -1,0 +1,32 @@
+TDAT: 	public void run() {
+		// Keep running until the program should exit.
+		do {
+			// Quiesce
+			while (state != START && Subsumption1.main.running) {
+				yield();
+			}
+
+			// Execute the FSM until it stops...
+			do {
+				int toSleepFor;
+				
+				synchronized (Subsumption1.main) {
+					toSleepFor = actions[state].act();
+					state = fsm[state];
+				}
+				if (toSleepFor > 0) {
+					try {
+						sleep(toSleepFor);
+					} catch (InterruptedException ie) {
+					}
+				}
+				else	
+					yield();
+			} while (state != END && Subsumption1.main.running);
+			
+			// Its over, release the actuators.
+			release();
+		} while (Subsumption1.main.running);
+	}
+
+COM:runs a finite state machine (FSM) until it stops, while also yielding and sleeping at necessary times

@@ -1,0 +1,14 @@
+TDAT: 	public ONDEXConcept clone(ONDEXConcept oldC, String newPID) {
+
+		// first clone concept with new PID
+		ONDEXConcept newC = graph.createConcept(newPID, oldC.getAnnotation(),
+				oldC.getDescription(), oldC.getElementOf(), oldC.getOfType(),
+				oldC.getEvidence());
+
+		// copies everything else
+		copyEverythingElse(oldC, newC);
+
+		return newC;
+	}
+
+COM:creates a new ONDEXConcept object with a new PID and copies all attributes from an existing ONDEXConcept object into it

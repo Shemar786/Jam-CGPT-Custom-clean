@@ -1,0 +1,18 @@
+TDAT:   public VKCommandDefinition getCommandDef(String name) {
+    Object	obj = commands.get(name);
+
+    if (obj != null) {
+      return (VKCommandDefinition)obj;
+    } else {
+      for (int i = inserts.length - 1; i >= 0; i--) {
+	obj = inserts[i].getCommandDef(name);
+	if (obj != null) {
+	  commands.put(name, obj);
+	  return (VKCommandDefinition)obj;
+	}
+      }
+      return null;
+    }
+  }
+
+COM:retrieves the command definition for a specified command name, and if it is not found, searches through a list of command insertions until a matching command definition is found

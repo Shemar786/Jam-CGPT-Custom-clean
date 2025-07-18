@@ -1,0 +1,17 @@
+TDAT: 	private String readFile(String fileName) throws IOException {
+		//ArrayList<String> lines = new ArrayList<String>();
+		StringBuffer ret = new StringBuffer(); 
+		String s;
+		
+		BufferedReader r = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
+		
+		while ((s = r.readLine()) != null) {
+			ret.append(s.trim());
+		}
+		r.close();
+				
+		return ret.toString();
+	//	InputS
+	}
+
+COM:reads the contents of a file and returns it as a string

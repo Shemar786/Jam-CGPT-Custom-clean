@@ -1,0 +1,16 @@
+TDAT:     public void replaceImplementationBean(Object implBean, Object withImplBean) {
+
+        Long ref = (Long) mBeanRefs.get(implBean);
+
+        mRefBeans.put(ref, new WeakReference(withImplBean));
+        mBeanRefs.remove(implBean);
+        mBeanRefs.put(withImplBean, ref);
+
+        if (mBeanImpl == implBean) {
+            mBeanImpl = withImplBean;
+        }
+
+
+    }
+
+COM:replaces an implementation bean with another implementation bean, updating various references accordingly

@@ -1,0 +1,8 @@
+TDAT:     public void clientConnect() throws DCOMException {
+
+        if (!isConnected()) {
+            getServiceConnection().connect(getClientInfo().getDomain(), getClientInfo().getUserName(), getClientInfo().getPassword(), getClientInfo().getServer(), _progId);
+        }
+    }
+
+COM:connects a client to a server using DCOM, throwing an exception if the connection fails

@@ -1,0 +1,14 @@
+TDAT: 	public void addToExtends(ExtendRelation euc) {
+		// *TODO*
+		extend_ucases.add(euc);
+		ExtendUseCase extuc = euc.getExtendUseCase();
+		for (Iterator i = this.getExtensionPoints().iterator(); i.hasNext();) {
+			ExtensionPoint ep = (ExtensionPoint)i.next();
+			Part p = extuc.findPart(ep.getValue());
+			if (p != null) {
+				ep.setAsPart(euc.getExtendCondition(),p);
+			}
+		}
+	}
+
+COM:adds an ExtendRelation object to a collection, and iterates through a collection of ExtensionPoints to set their values based on a corresponding part from an ExtendUseCase object

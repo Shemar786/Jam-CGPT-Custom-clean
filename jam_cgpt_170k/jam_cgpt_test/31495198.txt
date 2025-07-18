@@ -1,0 +1,15 @@
+TDAT:     public void run() {
+	int numPics = AlbumUtil.getNumPicsRecursive(rootAlbum);
+	infoStatus.setTotalNumTasks(numPics);
+	processAlbum(rootAlbum);
+	log.debug("Done processing, writing final index.");
+	write();
+	if (keepGoing) {
+	    infoStatus.allTasksCompleted();
+	}
+	log.debug("Processed album with " + numPics + " pictures");
+	log.debug("PictureSource now contains " + targetSource.size() + " pictures.");
+
+    }
+
+COM:processes an album by setting the total number of tasks, writing the final index, and logging the debug information about the completed tasks and picture sources

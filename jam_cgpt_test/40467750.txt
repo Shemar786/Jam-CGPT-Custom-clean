@@ -1,0 +1,13 @@
+TDAT: 	public void setText(String text) {
+		if(text != null && text != ""){
+			if(useImages && imageAlign == GAlign.CENTER)
+				setImageAlign(GAlign.LEFT);
+			this.text = text;
+			winApp.textFont(localFont, localFont.getFont().getSize());
+			textWidth = Math.round(winApp.textWidth(text));
+			calcAlignX();
+			calcAlignY();
+		}
+	}
+
+COM:sets the text content of a Java object and calculates its alignment

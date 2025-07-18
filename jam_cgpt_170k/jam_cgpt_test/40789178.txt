@@ -1,0 +1,13 @@
+TDAT:     public JingleSession createIncomingJingleSession(JingleSessionRequest request) throws XMPPException {
+        if (request == null) {
+            throw new NullPointerException("Received request cannot be null");
+        }
+
+        JingleSession session = new JingleSession(connection, request, request.getFrom(), connection.getUser(), jingleMediaManagers);
+
+        triggerSessionCreated(session);
+
+        return session;
+    }
+
+COM:creates an incoming Jingle session and throws an exception if the request is null

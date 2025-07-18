@@ -1,0 +1,22 @@
+TDAT: 	private void number(final GraphNode node, final Set visited) {
+		visited.add(node);
+
+		// Visit in pre-order
+		node.setPreOrderIndex(preOrder.size());
+		preOrder.addNode(node);
+
+		final Iterator iter = succs(node).iterator();
+
+		while (iter.hasNext()) {
+			final GraphNode succ = (GraphNode) iter.next();
+			if (!visited.contains(succ)) {
+				number(succ, visited);
+			}
+		}
+
+		// Visit in post-order
+		node.setPostOrderIndex(postOrder.size());
+		postOrder.addNode(node);
+	}
+
+COM:sets pre-order and post-order indices for nodes in a graph using recursion and a depth-first search traversal

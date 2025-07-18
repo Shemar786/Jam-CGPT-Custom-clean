@@ -1,0 +1,18 @@
+TDAT:     public boolean create(String name) throws RecordStoreException, IOException {
+        // If the record store was actually opened,
+        if(objs.create(name)){
+            // and it was already created
+            if(objs.size() > 0) {
+                // get the map
+                objmap.load();
+            }
+            else {
+                // otherwise initialize it
+                objmap.init();
+            }
+            return true;
+        }
+        return false;
+    }
+
+COM:creates a new record store with the given name and returns true if the store was successfully opened and initialized

@@ -1,0 +1,12 @@
+TDAT: 	private JPanel getJContentPane() {
+		if (jContentPane == null) {
+			jContentPane = new JPanel();
+			jContentPane.setLayout(new BorderLayout());
+			jContentPane.add(getTopPanel(), BorderLayout.NORTH);
+			jContentPane.add(getLeftPanel(), BorderLayout.WEST);
+			jContentPane.add(getDrawingScrollPane(), BorderLayout.CENTER);
+		}
+		return jContentPane;
+	}
+
+COM:creates and returns a JPanel with a BorderLayout layout that includes a top panel, left panel, and a drawing scroll pane in the center

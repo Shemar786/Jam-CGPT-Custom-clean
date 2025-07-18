@@ -1,0 +1,10 @@
+TDAT:     public boolean isFindCollectionView() {
+        if((getMode()==MODESTACK_LISTING)&&
+           (sizeofModeStack()>=2)&&
+           (getModeStack(sizeofModeStack()-2)==MODESTACK_FINDING)&&
+           (getFindCollection()!=null)) {
+            return true; }
+        return false;
+    }
+
+COM:checks if the current mode in a stack is a finding mode and a collection is found

@@ -1,0 +1,17 @@
+TDAT: 	public void config() {
+		String cfgIgnore = getConfiguration(PAR_IGNORE_FIELDS);
+		if (cfgIgnore != null) {
+			StringTokenizer tokenizer = new StringTokenizer(cfgIgnore, ",");
+			while (tokenizer.hasMoreTokens())
+				ignoreFields.add(tokenizer.nextToken());
+		}
+
+		cfgIgnore = getConfiguration(PAR_IGNORE_ACTIONS);
+		if (cfgIgnore != null) {
+			StringTokenizer tokenizer = new StringTokenizer(cfgIgnore, ",");
+			while (tokenizer.hasMoreTokens())
+				ignoreActions.add(tokenizer.nextToken());
+		}
+	}
+
+COM:reads configuration parameters and sets the corresponding ignoreFields and ignoreActions lists

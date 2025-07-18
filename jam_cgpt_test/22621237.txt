@@ -1,0 +1,13 @@
+TDAT: 		public void removeAvailableDocs () {
+/* 			Iterator entryIter = this.entrySet().iterator();
+			while (entryIter.hasNext()) {
+				Map.Entry entry = (Map.Entry) entryIter.next();
+				DocInfoStatus info = (DocInfoStatus)entry.getValue();
+				if (info.registered)
+					this.remove((String)entry.getKey());
+			} */
+			for (Iterator i=this.getAvailableDocIds().iterator();i.hasNext();)
+				this.remove ((String)i.next());
+		}
+
+COM:removes all available documents from a Map object

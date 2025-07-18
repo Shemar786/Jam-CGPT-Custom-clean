@@ -1,0 +1,14 @@
+TDAT:   protected Iterator getPrimaryAttributes() {
+    Vector primary = new Vector();
+    
+    Iterator items = DESCRIPTIONS.iterator();
+    while (items.hasNext()) {
+      String item = (String)items.next();
+      if (usecase_.isTraitSet(item)) {
+        primary.add(item);
+      }  
+    }
+    return primary.iterator();  
+  }
+
+COM:returns an iterator of primary attributes obtained from a vector of strings that meet a certain condition

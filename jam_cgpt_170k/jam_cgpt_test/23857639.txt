@@ -1,0 +1,14 @@
+TDAT: 	public void onCallModifying(Call call, String sdp, Message invite) {
+		printLog("onCallModifying()", LogLevel.LOW);
+		if (call != this.call) {
+			printLog("NOT the current call", LogLevel.LOW);
+			return;
+		}
+		printLog("RE-INVITE/MODIFY", LogLevel.HIGH);
+		// to be implemented.
+		// currently it simply accepts the session changes (see method
+		// onCallModifying() in CallListenerAdapter)
+		super.onCallModifying(call, sdp, invite);
+	}
+
+COM:logs information about a call being modified and accepts the changes made to the session

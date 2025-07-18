@@ -1,0 +1,14 @@
+TDAT: 	private void addMultipleValuesToColumn(int col, ArrayList<ModelObject> objects, String path){
+		Iterator<ModelObject> itr = objects.iterator();
+		ModelObject tempObject;
+		if(itr.hasNext()){
+			tempObject = itr.next();
+			this.addValueToRow(tempObject.getPropertyValue(path));
+		}
+		while(itr.hasNext()){
+			tempObject = itr.next();
+			this.addValueToColumn(tempObject.getPropertyValue(path), col);
+		}
+	}
+
+COM:adds multiple values to a specified column in a model object's array list

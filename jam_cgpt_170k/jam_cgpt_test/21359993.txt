@@ -1,0 +1,9 @@
+TDAT:         private void updateUI(DocumentEvent e) {
+            try {
+                envelope.setText(e.getDocument().getText(0,e.getDocument().getLength()));
+            } catch (BadLocationException ex) {
+                logger.log(Level.SEVERE, "Error getting sms text", ex);
+            }
+        }
+
+COM:updates the UI by setting the text of the "envelope" object to the text contained within the document event, and logs an error if a BadLocationException is caught during the process

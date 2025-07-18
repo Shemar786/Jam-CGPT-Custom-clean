@@ -1,0 +1,12 @@
+TDAT: 	public XdsResponse extractXdsResponse(ResponseType responseType, OMElement message) {
+		if (message == null) return null;
+		// Pull out the response
+        if (responseType == ResponseType.REGISTRY_RESPONSE)
+        	return registry.getRegistryResponse(message);
+        else if (responseType == ResponseType.RETRIEVE_DOCUMENT_SET_RESPONSE)
+        	return registry.getRetrieveDocumentSetResponse(message);
+        else
+        	return null;
+	}
+
+COM:extracts an XDS response based on the input response type and message element, returning null if the message element is null or the response type is not supported

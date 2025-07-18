@@ -1,0 +1,7 @@
+TDAT:     public Position2D getCoordinate1() {
+        ValueWithUnit<Meter> newX1 = new ValueWithUnit<Meter>(getX1(), UnitsPool.getDistanceUnitMeter());
+        ValueWithUnit<Meter> newY1 = new ValueWithUnit<Meter>(getY1(), UnitsPool.getDistanceUnitMeter());
+        return new Position2D(newX1, newY1);
+    }
+
+COM:returns a Position2D object with coordinate values converted to meters using ValueWithUnit and UnitsPool

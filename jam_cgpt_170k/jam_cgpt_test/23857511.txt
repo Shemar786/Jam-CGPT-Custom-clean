@@ -1,0 +1,11 @@
+TDAT: 	public void onTransTimeout(TransactionClient transaction) {
+		if (transaction.getTransactionMethod().equals(SipMethods.REGISTER)) {
+			printLog("Registration failure: No response from server.", LogLevel.HIGH);
+			registered = false;
+			if (listener != null) {
+				listener.onUaRegistrationFailure(this, target, contact, "Timeout");
+			}
+		}
+	}
+
+COM:handles transaction timeout and triggers a registration failure if the transaction method is REGISTER

@@ -1,0 +1,10 @@
+TDAT:     private InputStream getImageAsStream(String suffix) throws IOException {
+        StringBuffer buffer = getBaseImageUrl();
+        buffer.append(suffix);
+        URL url = new URL(buffer.toString());
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.connect();
+        return conn.getInputStream();
+    }
+
+COM:returns an input stream of an image after connecting to a URL using HTTPURLConnection

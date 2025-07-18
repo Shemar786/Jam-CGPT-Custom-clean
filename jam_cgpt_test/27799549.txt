@@ -1,0 +1,16 @@
+TDAT:   public Object get () {
+    while( true ) {
+      Thread t = threadVar.get();
+      if( t == null ) {
+        return getValue();
+      }
+      try {
+        t.join();
+      } catch( InterruptedException e ) {
+        Thread.currentThread().interrupt(); // propagate
+        return null;
+      }
+    }
+  } // get()
+
+COM:returns the value of an object, potentially waiting for a thread that is currently holding the object to finish before returning

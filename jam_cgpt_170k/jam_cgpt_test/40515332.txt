@@ -1,0 +1,14 @@
+TDAT: 	protected void setRangeMarkers(){
+		String rangeMarkerParam = "";
+		int i = 0;
+        for ( Iterator it = rangeMarkers.iterator(); it.hasNext(); ) 
+        {
+            RangeMarker marker = (RangeMarker)it.next();
+			rangeMarkerParam += (i++ > 0 ) ? "|" + marker.toString() : marker.toString();
+		}
+		if (rangeMarkers.size() > 0){
+			addParameter(MARKER_PARAM, rangeMarkerParam);
+		}
+	}
+
+COM:sets range markers and adds them as a parameter in a specific format

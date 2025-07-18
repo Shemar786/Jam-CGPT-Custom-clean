@@ -1,0 +1,12 @@
+TDAT: 	private boolean isContentHTML(String contentType) {
+		// watch out, some sites have charset specifiers!
+		if(contentType.indexOf(';') != -1) {
+			contentType = contentType.substring(0, contentType.indexOf(';'));
+		}
+		contentType = contentType.trim();
+		
+		return contentType.equals("text/html") ||
+			contentType.equals("application/xhtml+xml");
+	}
+
+COM:checks if the given content type is HTML or XHTML

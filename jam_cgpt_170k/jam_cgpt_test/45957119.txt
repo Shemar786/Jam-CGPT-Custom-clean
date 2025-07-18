@@ -1,0 +1,7 @@
+TDAT:   public Person getPersonByVgrId(String vgrId) throws KivException {
+    AndFilter andFilter = new AndFilter();
+    andFilter.and(new EqualsFilter("cn", vgrId));
+    return this.searchPerson("cn=" + vgrId + "," + PERSON_SEARCH_BASE.toString(), SearchControls.OBJECT_SCOPE, andFilter.encode());
+  }
+
+COM:searches for a Person object by their vgrId and returns it, using LDAP filters and search controls

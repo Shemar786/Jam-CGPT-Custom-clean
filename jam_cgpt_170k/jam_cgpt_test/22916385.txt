@@ -1,0 +1,7 @@
+TDAT:    public boolean getAutoCommit() throws SQLException {
+      //throw new UnsupportedOperationException("Connection.getAutoCommit() unsupported");
+      return false; // at present this is just a read only driver: you can't do update/insert operations -> it
+      				  // makes no sense giving the chance to set auto commit, so this is always false
+   }
+
+COM:returns a boolean indicating whether auto commit is enabled for a database connection, and always returns false since the driver only supports read-only operations

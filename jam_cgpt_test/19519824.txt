@@ -1,0 +1,14 @@
+TDAT: 	public void simplify(ISimple s, IFactory fact, IHypothesis H) {
+		for (int i = 0; i < elts.size() && !H.isFalse(); i++) {
+			if (!removed.get(i)) {
+				final INormalizedPredicate simplify = elts.get(i).simplify(s,
+						fact, H);
+				if (simplify != null) {
+					removed.set(i);
+					simplify.addToHyp(fact, H);
+				}
+			}
+		}
+	}
+
+COM:simplifies a collection of normalized predicates by applying a specific simplification algorithm to each element until the algorithm results in null or the hypothesis is determined to be false

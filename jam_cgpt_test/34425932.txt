@@ -1,0 +1,16 @@
+TDAT:     private Component makeClearButton() {
+        clearButton = new JButton("  Clear  ");
+        clearButton.setToolTipText("Clear and reset this panel");
+
+        clearButton.addActionListener(new ActionListener() {
+
+            @SuppressWarnings("synthetic-access")
+            public void actionPerformed(ActionEvent e) {
+                actionClearAndReset();
+            }
+        });
+
+        return clearButton;
+    }
+
+COM:creates a JButton with a tooltip that, when clicked, calls the actionClearAndReset() method

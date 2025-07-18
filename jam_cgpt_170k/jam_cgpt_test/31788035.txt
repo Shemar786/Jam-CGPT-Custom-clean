@@ -1,0 +1,10 @@
+TDAT:     protected void removeSubscriber(Messageable node,String msgClass) {
+        String key=msgClass.intern();
+        ArrayList al=(ArrayList)(getSubTable().get(key));
+        if(al!=null) {
+            int index=al.indexOf(node);
+            if(index>=0) {
+                al.remove(index); } }
+    }
+
+COM:removes a subscriber from the subscription table if the subscriber exists

@@ -1,0 +1,14 @@
+TDAT: 	public void testBoundIdentDecl() throws Exception {
+		final QuantifiedPredicate predicate = mQuantifiedPredicate(
+				mList(b_x, b_y, b_z), pA);
+		assertTrace(predicate, "0");
+		assertTrace(predicate, "1");
+		assertTrace(predicate, "2");
+		final Expression expression = mQuantifiedExpression(
+				mList(b_x, b_y, b_z), pA, eA);
+		assertTrace(expression, "0");
+		assertTrace(expression, "1");
+		assertTrace(expression, "2");
+	}
+
+COM:tests the bound identifier declaration by asserting traces of a quantified predicate and expression with different numerical values

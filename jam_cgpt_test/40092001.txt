@@ -1,0 +1,13 @@
+TDAT:   protected Object newReporterInstance() {
+    Object result = null;
+    Class reporterClass = ClassHelper.forName(m_className);
+    if (reporterClass != null) {
+      result = ClassHelper.newInstance(reporterClass);
+      for (ReporterConfig.Property property : m_properties) {
+        PropertyUtils.setProperty(result, property.getName(), property.getValue());
+      }
+    }
+    return result;
+  }
+
+COM:creates an instance of a reporter class and sets its properties

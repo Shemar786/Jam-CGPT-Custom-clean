@@ -1,0 +1,10 @@
+TDAT:     public void verifyForward(String forwardName) throws AssertionFailedError {
+        if (logger.isDebugEnabled())
+            logger.debug("Entering - forwardName = " + forwardName);
+        init();
+        Common.verifyForwardPath(actionPath,forwardName,getActualForward(),false,request,config.getServletContext(),config);
+        if (logger.isDebugEnabled())
+            logger.debug("Exiting");
+    }
+
+COM:verifies the forward path of a specified forwardName

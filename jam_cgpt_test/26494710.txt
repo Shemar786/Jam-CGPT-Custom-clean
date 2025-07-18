@@ -1,0 +1,13 @@
+TDAT:   public CmdLine filterArgs() {
+    List args = new ArrayList();
+
+    for (int i = 0; i < _elems.size(); i++) {
+      if (_elems.get(i) instanceof Arg) {
+        args.add((Arg) _elems.get(i));
+      }
+    }
+
+    return new CmdLine(args, _options);
+  }
+
+COM:filters arguments from a list and creates a new CmdLine object with the filtered list and options

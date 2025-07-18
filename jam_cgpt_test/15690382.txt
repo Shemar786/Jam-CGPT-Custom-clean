@@ -1,0 +1,13 @@
+TDAT:     public Object get(Object key) {
+        Object value = mCacheMap.get(key);
+        if (value != null || mCacheMap.containsKey(key)) {
+            return value;
+        }
+        value = mBackingMap.get(key);
+        if (value != null || mBackingMap.containsKey(key)) {
+            mCacheMap.put(key, value);
+        }
+        return value;
+    }
+
+COM:retrieves an object from a cache map or a backing map and adds it to the cache map if not already present

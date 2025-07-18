@@ -1,0 +1,14 @@
+TDAT:     public void actionPerformed( java.awt.event.ActionEvent actionEvent ){
+	synchronized( applet ){
+	    if( getApplet().getMode() != 0 ){
+		getApplet().setMode( 0 );
+		getApplet().setShift( false );
+	    }
+	    getApplet().clearStatMemory();
+	    getApplet().setShift( false );
+	    getApplet().updateDisplay( true, true );
+	    getApplet().requestFocusInWindow();
+	}
+    }
+
+COM:handles an action event by synchronizing with an applet, resetting the applet's mode, clearing its statistics memory, updating its display, and setting focus to the window

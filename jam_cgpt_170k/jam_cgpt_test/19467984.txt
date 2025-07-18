@@ -1,0 +1,20 @@
+TDAT: 	public void updateElements(final Object[] elements) {
+		final Control control = viewer.getControl();
+		if (control.isDisposed())return;
+		final Display display = control.getDisplay();
+		if (display.getThread() == Thread.currentThread()){
+			viewer.update(elements, upd);
+		}
+		else{
+			display.asyncExec(new Runnable(){
+
+				public void run() {
+					if (control.isDisposed())return;
+					viewer.update(elements, upd);
+				}
+				
+			});
+		}
+	}
+
+COM:updates elements in a viewer, using a control and display, and runs asynchronously if necessary

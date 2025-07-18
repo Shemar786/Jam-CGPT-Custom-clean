@@ -1,0 +1,12 @@
+TDAT:     public void switchPallete(int newPalleteIndex) {
+        synchronized (this) {
+            if (rgbMaps[newPalleteIndex] == null) {
+                throw new RuntimeException("Pallete " + newPalleteIndex + " is undefined.");
+            }
+            currentRgbMap = rgbMaps[newPalleteIndex];
+            draw(0, 0, activeWidth, activeHeight);
+        }
+        flushGraphics(0, 0, activeWidth, activeHeight);
+    }
+
+COM:switches to a new palette index and updates the RGB map, throwing an exception if the new index is undefined

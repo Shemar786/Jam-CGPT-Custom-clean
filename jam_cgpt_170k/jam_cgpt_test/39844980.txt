@@ -1,0 +1,13 @@
+TDAT:     protected void log(String message, Throwable throwable) {
+
+        if (logWriter != null) {
+            logWriter.print("GenericDataSource[");
+            logWriter.print(description);
+            logWriter.print("]: ");
+            logWriter.println(message);
+            throwable.printStackTrace(logWriter);
+        }
+
+    }
+
+COM:logs a message and a stack trace for a throwable object

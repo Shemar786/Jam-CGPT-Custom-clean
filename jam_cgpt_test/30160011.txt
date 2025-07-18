@@ -1,0 +1,9 @@
+TDAT:   private void initialize() {
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setContentPane(getJPanel());
+    this.setJMenuBar(getJJMenuBar());
+    this.setSize(300, 200);
+    this.setTitle("Application");
+  }
+
+COM:initializes a JFrame with a default close operation, a JPanel content pane, a JMenuBar, a set size of 300 by 200, and a title of "Application"

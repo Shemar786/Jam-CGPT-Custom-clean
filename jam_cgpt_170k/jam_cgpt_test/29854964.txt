@@ -1,0 +1,9 @@
+TDAT:   public Fixed getFixed() {
+    if (value instanceof Fixed) {
+      return (Fixed)value;
+    }
+    // !!! check somewhere else but not in gen code !!!throw new PositionedError(getTokenReference(), "vk-not-fixed", getLabel(), value);
+    throw new InconsistencyException();
+  }
+
+COM:returns a Fixed object if the 'value' variable is an instance of Fixed, otherwise it throws an error

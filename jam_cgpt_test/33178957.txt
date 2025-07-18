@@ -1,0 +1,17 @@
+TDAT:     public String getToken(int maxNumWhiteSpaceChars) {
+	lastPosition = position;
+
+	try {
+	    RE expression = new RE("\\S+");
+	    REMatch match = expression.getMatch(source, position);
+	    if (match.getStartIndex() <= position + maxNumWhiteSpaceChars)
+	    {
+		position = match.getEndIndex();
+		return match.toString();
+	    }
+	    else return "";
+	}
+	catch (Exception e) { return null; }
+    }
+
+COM:returns a string token from a source string with a specified maximum number of consecutive white space characters

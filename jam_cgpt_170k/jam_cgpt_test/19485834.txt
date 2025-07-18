@@ -1,0 +1,10 @@
+TDAT: 	public void testContains() {
+		ISet S = createExpression("{1,2}<| {1|->2, 1|->4, 3|->5}");
+		assertTrue(S.contains(createMapplet(1,2)));
+		assertFalse(S.contains(createMapplet(3,5)));
+		 S = createExpression("{1,2}<| %x.(x : 1..10 | 2*x)");
+		assertTrue(S.contains(createMapplet(2,4)));
+		assertFalse(S.contains(createMapplet(3,6)));
+	}
+
+COM:tests whether certain elements are contained within specific sets and mapplets

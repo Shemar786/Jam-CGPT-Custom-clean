@@ -1,0 +1,17 @@
+TDAT:   protected void addCallNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IncomingCall2_callName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IncomingCall2_callName_feature", "_UI_IncomingCall2_type"),
+				 Actionpak1Package.Literals.INCOMING_CALL2__CALL_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "callName" feature of the "IncomingCall2" type

@@ -1,0 +1,11 @@
+TDAT:     private XComponentContext getRemoteContext(XUnoUrlResolver xUrlResolver) throws BootstrapException, ConnectionSetupException, IllegalArgumentException, NoConnectException {
+
+        Object context = xUrlResolver.resolve(oooConnectionString);
+        XComponentContext xContext = (XComponentContext) UnoRuntime.queryInterface(XComponentContext.class, context);
+        if (xContext == null) {
+            throw new BootstrapException("no component context!");
+        }
+        return xContext;
+    }
+
+COM:returns a remote XComponentContext object obtained through an XUnoUrlResolver

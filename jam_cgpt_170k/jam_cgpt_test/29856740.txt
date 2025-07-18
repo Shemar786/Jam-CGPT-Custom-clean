@@ -1,0 +1,13 @@
+TDAT:   public void clipRect(int x, int y, int width, int height) {
+    y = swapCoord(y);
+    clippingRect = new Rectangle(x, y, width, height);
+
+    stream.println("initclip");
+    emitMoveto(x, y);
+    emitLineto(x + width, y);
+    emitLineto(x + width, y - height);
+    emitLineto(x, y - height);
+    stream.println("closepath eoclip newpath");
+  }
+
+COM:sets a clipping rectangle and emits PostScript commands to create a new path within the rectangle

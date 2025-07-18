@@ -1,0 +1,9 @@
+TDAT: 	public boolean getMuiFormattable(String encodedPath) {
+		String xpath = XPathUtils.decodeXPath(encodedPath);
+		VocabNode vNode = vocab.getVocabNode(getXmlFormat(), vocabAudience, "en-us", encodedPath, null);
+		if (vNode != null)
+			prtln("vNode found");
+		return (vNode != null);
+	}
+
+COM:decodes an encoded XPath, retrieves a VocabNode based on specified criteria, and returns a boolean indicating whether or not the node was found

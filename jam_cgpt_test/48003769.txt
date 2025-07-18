@@ -1,0 +1,17 @@
+TDAT: 	private Message deleteBookHandler(Object value) throws Exception {
+		if (value instanceof String) {
+			String isbn = (String) value;
+			Message message = new Message(Message.DELETE_BOOK_RESPOND, null);
+			if (dataAccess.deleteBook(isbn)) { 
+				printToLog("Deleting book secceed");
+				message.setValue(Message.SUCCEED);
+			} else {
+				printToLog("Deleting book didn't secceed");
+				message.setValue(Message.FAIL);
+			}
+			return message;
+		}
+		throw new NotImplementedException();
+	}
+
+COM:deletes a book with a provided ISBN and returns a message indicating success or failure, but throws an exception if the value provided is not a string

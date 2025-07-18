@@ -1,0 +1,7 @@
+TDAT:     public void layoutParagraphCluster(FlowContext flowContext, ParagraphCluster cluster, LayoutingContext context) throws RegionChangedException {
+        Paragraph p = paragraphBuilder.buildParagraph(cluster, context);
+		//System.out.println ("Layout of paragraph: " + p.debugContent());
+        layoutParagraph(flowContext, p, 0, context);
+    }
+
+COM:takes in a flowContext, a ParagraphCluster, and a LayoutingContext as parameters and builds and lays out a paragraph based on those inputs

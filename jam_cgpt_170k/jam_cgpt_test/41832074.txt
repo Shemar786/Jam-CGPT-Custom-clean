@@ -1,0 +1,14 @@
+TDAT: 	private int getMeasurementID(int propertyID, int featureID) {
+		Cursor c = db.query(Measures_TABLE, new String[] { ID },
+				Measures_property + "=" + propertyID + " AND "
+						+ Measures_feature + "=" + featureID, null, null, null,
+				null);
+		int ret = -1;
+		if (c.moveToFirst()) {
+			ret = c.getInt(0);
+		}
+		c.close();
+		return ret;
+	}
+
+COM:retrieves the measurement ID from a database based on the provided property and feature IDs

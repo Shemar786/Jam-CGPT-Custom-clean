@@ -1,0 +1,15 @@
+TDAT:     public XComponentContext connect(String host, int port) throws BootstrapException {
+
+        // host and port
+        String hostAndPort = "host="+host+",port="+port;
+
+        // accept option
+        String oooAcceptOption = "-accept=socket,"+hostAndPort+";urp;";
+
+        // connection string
+        String unoConnectString = "uno:socket,"+hostAndPort+";urp;StarOffice.ComponentContext";
+
+        return connect(oooAcceptOption, unoConnectString);
+    }
+
+COM:connects to a remote server with specified host and port, and returns an XComponentContext object

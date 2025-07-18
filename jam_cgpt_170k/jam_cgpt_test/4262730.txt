@@ -1,0 +1,27 @@
+TDAT: 	public void draw() {
+		background(bgColor);
+		
+		/* Log FPS data */
+		clickFrameTimer();
+		
+		if (keyPressed) console.println("Frame rate: "+averagedFPS);
+		if (mousePressed) console.setVisible(true);
+		else console.setVisible(false);
+		
+		/* Pass off control based on game state */
+		switch(gameState) {
+		case INTRO:
+			setGameState(GameState.LEVELPLAY);
+			break;
+		case LEVELPLAY:
+			break;
+		case ABOUT:
+			setGameState(GameState.LEVELPLAY);
+			break;
+		}
+		
+		/* Draw any debugging information to the screen */
+		console.draw();
+	}
+
+COM:draws the game screen, logs FPS data, sets game state based on conditions, and displays debugging information if necessary

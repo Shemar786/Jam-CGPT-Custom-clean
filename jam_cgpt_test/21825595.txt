@@ -1,0 +1,13 @@
+TDAT: 	public Repository open() {
+		Crud crud = this.newCrud();
+
+		Enhancer e = new Enhancer();
+		e.setSuperclass(getRepositoryImplementorClass());
+		e.setInterfaces(getInterfaces(crud));
+		ProxyWrapper pw = createPersistentWrapper(crud);
+		e.setCallbacks(getCallbacks(crud, pw));
+		e.setCallbackFilter(getCallbackFilter(crud));
+		return (Repository) e.create(new Class[] { Crud.class, ProxyWrapper.class }, new Object[] { crud, pw });
+	}
+
+COM:creates and returns a repository object using various enhancements and proxy wrappers

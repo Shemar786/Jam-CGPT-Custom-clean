@@ -1,0 +1,12 @@
+TDAT: 	private JPanel getEnrtyPanel() {
+		if (enrtyPanel == null) {
+			enrtyPanel = new JPanel();
+			enrtyPanel.setLayout(new BorderLayout());
+			enrtyPanel.add(getProgrammaPanel(), java.awt.BorderLayout.NORTH);
+			enrtyPanel.add(getInvoerPanel(), java.awt.BorderLayout.WEST);
+			enrtyPanel.add(getVerenigingsklassementButton(), java.awt.BorderLayout.EAST);
+		}
+		return enrtyPanel;
+	}
+
+COM:returns a JPanel with a specific layout and components only if it hasn't been previously initialized

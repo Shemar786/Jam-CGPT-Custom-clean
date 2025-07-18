@@ -1,0 +1,18 @@
+TDAT: 	public void changeLeagueAttribute(String id, String attribute, String attributeValue) throws UnknownAttributeException, MissingAttributeException, InvalidUserException, InvalidLeagueNameException {
+
+		BLMSLeague league = getLeague(id);
+		
+		ValidateAttribute.attributeValid(attribute);
+		
+		ValidateAttribute.emptyAttributeValue(attribute, attributeValue);
+
+		String attributeInSetFormat = ReflectionUtil.prepareAttributeName(attribute);
+
+		ReflectionUtil.setAttribute(league, attributeInSetFormat, getAttributeValue(attribute, attributeValue), "league");
+		
+		ValidateAttribute.leagueUniqueName(league);
+		
+		updateLeague(league);
+	}
+
+COM:changes an attribute value of a league object identified by its id and throws specific exceptions if the attribute is unknown, missing, the user is invalid or the league name is invalid

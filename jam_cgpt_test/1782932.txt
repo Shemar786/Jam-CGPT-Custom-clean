@@ -1,0 +1,9 @@
+TDAT:     private void processMetaTag( ByteTag tag ) {
+        if (isHttpEquivMetaTag( tag, "content-type" )) {
+            inferContentType( tag.getAttribute( "content" ) );
+        } else if (isHttpEquivMetaTag( tag, "refresh" )) {
+            inferRefreshHeader( tag.getAttribute( "content" ) );
+        }
+    }
+
+COM:processes meta tags by inferring the content type and refresh header

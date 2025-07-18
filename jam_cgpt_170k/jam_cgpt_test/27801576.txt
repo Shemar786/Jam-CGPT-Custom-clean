@@ -1,0 +1,10 @@
+TDAT:   public ZViewNode getZViewNode() {
+    if ( viewNode == null ) {
+      viewNode = new ZViewNode(this);
+      //System.out.print("it is null...");
+    }
+    //System.out.println("getting the ZViewNode!");
+    return viewNode;
+  }
+
+COM:returns a ZViewNode object and creates a new one if it does not already exist

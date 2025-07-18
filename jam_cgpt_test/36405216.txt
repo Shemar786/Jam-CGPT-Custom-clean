@@ -1,0 +1,8 @@
+TDAT:     private void applyChangeCase(StyleWithProperties style, boolean bInherit, BeforeAfter ba) {
+        if (style==null) { return; }
+        if (bIgnoreAll) { return; }
+        String s = changeCase(style.getProperty(XMLString.FO_TEXT_TRANSFORM));
+        if (s!=null) { ba.add(s+"{","}"); }
+    }
+
+COM:applies a change of case to the text transform property of a style with properties object, adding the modified property to a BeforeAfter object

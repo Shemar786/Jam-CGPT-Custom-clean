@@ -1,0 +1,14 @@
+TDAT: 	public void copy(NetSPRanking s) {
+		strModeName = s.strModeName;
+		strRuleName = s.strRuleName;
+		gameType = s.gameType;
+		style = s.style;
+		rankingType = s.rankingType;
+		maxRecords = s.maxRecords;
+		listRecord = new LinkedList<NetSPRecord>();
+		for(int i = 0; i < s.listRecord.size(); i++) {
+			listRecord.add(new NetSPRecord(s.listRecord.get(i)));
+		}
+	}
+
+COM:copies the properties and records of a NetSPRanking object into another NetSPRanking object

@@ -1,0 +1,11 @@
+TDAT:     public int getInt16() throws EOFException {
+        if (position <= length - 2) {
+            byte[] b = byteBuffer;
+
+            return ((b[position++] & 0xff) << 8) | (b[position++] & 0xff);
+        }
+
+        throw new EOFException("End Of File in getInt16()");
+    }
+
+COM:returns a 16-bit signed integer from a byte buffer, throwing an EOFException if the end of the buffer is reached

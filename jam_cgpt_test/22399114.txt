@@ -1,0 +1,18 @@
+TDAT:   static private char read_redo(boolean init, boolean old_redo) {
+    if(init) {
+      if(redobuff.hasNext() == false) {
+	return FAIL;
+      } else {
+	redobuff_idx = 0;
+	return OK;
+      }
+    }
+    char c = NUL; // assume none left
+    if(redobuff.hasCharAt(redobuff_idx)) {
+      c = redobuff.getCharAt(redobuff_idx);
+      redobuff_idx++;
+    }
+    return c;
+  }
+
+COM:reads and returns the next character from a buffer used for redo operations

@@ -1,0 +1,11 @@
+TDAT:     public void init(ServletConfig aConfig) throws ServletException {
+        super.init(aConfig);
+
+        myHost = getInitParameter("host");
+        myTo = getInitParameter("to");
+        myFrom = getInitParameter("from");
+        mySubject = getInitParameter("subject");
+        myBody = getInitParameter("body");
+    }
+
+COM:initializes the servlet by setting instance variables to values from the servlet's configuration parameters

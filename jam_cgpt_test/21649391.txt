@@ -1,0 +1,19 @@
+TDAT: 	public void run() throws IllegalArgumentException {
+		try {
+			final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os), 50 /*
+																						 * keep
+																						 * small
+																						 * for
+																						 * tests
+																						 */);
+			for (int i = 99; i >= 0; i--) {
+				bw.write("Dummy counter: " + i);
+				bw.write(lineSeparator);
+			}
+			bw.close();
+		} catch (IOException e) {
+			throw new IllegalArgumentException("IOException sending data to child process.");
+		}
+	}
+
+COM:writes a sequence of numbers from 99 to 0 to a specified output stream in a buffered manner, catching and throwing an IllegalArgumentException if any IOException occurs while writing

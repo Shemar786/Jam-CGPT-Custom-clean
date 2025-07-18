@@ -1,0 +1,11 @@
+TDAT: 		private EClass getRootClass(Resource resource) {
+			if (resource.getURI() != null) {
+				if ("bum".equals(resource.getURI().fileExtension()))
+					return MachinePackage.eINSTANCE.getMachine();
+				if ("buc".equals(resource.getURI().fileExtension()))
+					return ContextPackage.eINSTANCE.getContext();
+			}
+			return null;
+		}
+
+COM:retrieves the root class from a given resource file based on its file extension

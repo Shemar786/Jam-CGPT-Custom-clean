@@ -1,0 +1,13 @@
+TDAT:     public boolean equals(Object other) {
+        try {
+            ChargeBatteryActivity act = (ChargeBatteryActivity) other;
+            return (getChargeLocation().equals(act.getChargeLocation()) 
+                    && getTimeInterval().equals(act.getTimeInterval()) 
+                    && getActivitySubject().equals(act.getActivitySubject()));
+        } 
+        catch (ClassCastException e) {
+            return false;
+        }
+    }
+
+COM:checks if the provided object is equal to the current object based on the equality of its charge location, time interval, and activity subject properties

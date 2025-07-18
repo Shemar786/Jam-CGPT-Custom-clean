@@ -1,0 +1,17 @@
+TDAT:   public void incrOffset(int length) {
+    if (length > size) {
+      if (DEBUG) {
+        System.out.println("[Buffer] WARNING : incrOffset too large");
+      }
+    }
+
+    if (length > length()) {
+      if (DEBUG) {
+        System.out.println("[Buffer] ERROR : incrOffset -> offset overflow");
+      }
+    }
+
+    offset = (offset + length) % size;
+  }
+
+COM:increments the offset of a buffer by a specified length, while checking for size and overflow errors

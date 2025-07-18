@@ -1,0 +1,7 @@
+TDAT: 		public JSONObject getFriendship(String userId, String friendIds) {
+			//securityContext.checkIfAuthorized();
+			String url = API_FRIENDSHIP_URL.replaceFirst("%s", userId).replaceFirst("%s", friendIds);
+			return (JSONObject) getUserData(url, new HashMap<String, String>());
+		}
+
+COM:retrieves friendship data between a user and their friends as a JSONObject

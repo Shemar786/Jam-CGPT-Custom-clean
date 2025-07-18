@@ -1,0 +1,11 @@
+TDAT:     public void setAttribute(RadiusAttribute radiusAttribute) throws InvalidParameterException{
+        if (null == radiusAttribute){
+            throw new InvalidParameterException("radiusAttribute was null");
+        }
+        validateAttribute(radiusAttribute);
+        synchronized(this.attributes){
+            this.attributes.put(new Integer(radiusAttribute.getType()),radiusAttribute);
+        }
+    }
+
+COM:sets a radius attribute and throws an exception if the given parameter is null

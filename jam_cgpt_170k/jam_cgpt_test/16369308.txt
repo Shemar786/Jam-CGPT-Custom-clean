@@ -1,0 +1,15 @@
+TDAT: 	public IReportConsole getReportConsole() {
+	    if (_consoleAppender == null) {
+	      try {
+	        IConfigurationElement[] consoleProvider = ExtensionPointHelper.getConfigurationElements(PLUGIN_ID, CONSOLE_EXTENSION_ID);
+	        for (IConfigurationElement configurationElement : consoleProvider) {
+	          _consoleAppender = (IReportConsole) ExtensionPointHelper.createInstance(configurationElement, ExtensionPointHelper.ATT_CLASS);
+	        }
+	      } catch (Throwable ex) {
+	        ex.printStackTrace();
+	      }
+	    }
+	    return _consoleAppender;
+	}
+
+COM:returns an instance of the IReportConsole interface, checking if it has been previously initialized and creating it if necessary using configuration elements retrieved from a specific extension point

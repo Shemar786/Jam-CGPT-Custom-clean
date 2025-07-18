@@ -1,0 +1,10 @@
+TDAT:     public String printCount() {
+        if (isNull()) return "";
+        String countBase = "";
+        for (int aCount : baseCount) {
+            countBase += aCount + "\t";
+        }
+        return chromosome + "\t" + index + "\t" + ref + "\t" + countBase + indel;
+    }
+
+COM:prints the chromosome, index, reference, base count and indel information of a given object, but returns an empty string if it is null

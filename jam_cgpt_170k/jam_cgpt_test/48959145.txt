@@ -1,0 +1,13 @@
+TDAT:     public void deoccupy() {
+        assert guestInvariant();
+        // Save the old location so we can free it after resetting ourselves
+        Cell oldLocation = location;
+        // Reset the guest's pointer
+        location = null;
+        // Reset the cell's inhabitant pointer.
+        oldLocation.free();
+        assert !oldLocation.isOccupied();
+        assert guestInvariant();
+    }
+
+COM:releases the occupancy of a guest in a location, resets the guest's pointer and the cell's inhabitant pointer, and asserts that the location is no longer occupied

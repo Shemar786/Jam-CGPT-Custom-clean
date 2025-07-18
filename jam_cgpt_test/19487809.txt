@@ -1,0 +1,13 @@
+TDAT: 	public SMTSortSymbol freshSort(final String name) {
+		final String freshName = freshSortName(name);
+		final SMTSortSymbol freshSort = new SMTSortSymbol(freshName,
+				!SMTSymbol.PREDEFINED, smtlibVersion);
+		final boolean successfullyAdded = sorts.add(freshSort);
+		if (!successfullyAdded) {
+			throw new IllegalArgumentException(
+					Messages.FreshSymbolCreationFailed + freshSort.toString());
+		}
+		return freshSort;
+	}
+
+COM:takes a name, creates a fresh sort symbol based on that name, adds it to a collection of sort symbols, and returns the fresh symbol

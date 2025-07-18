@@ -1,0 +1,13 @@
+TDAT:     public I_JoRemoteSession newSession() throws RemoteException {
+        if (Log.getLog(getName()).isLog(C_Log.METHOD)) {
+            Log.getLog(getName()).log("Generated new session.", C_Log.METHOD);
+        }
+
+        I_JoRemoteSession theSession = new JoRemoteSession();     // should make this a factory (rik)
+
+        theSession.setSessionContext(this);
+
+        return theSession;
+    }
+
+COM:creates and returns a new remote session object while logging the action if logging is enabled

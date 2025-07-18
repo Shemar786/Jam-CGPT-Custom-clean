@@ -1,0 +1,21 @@
+TDAT: 	public void dragGestureRecognized(DragGestureEvent event) {
+		Component component;
+		String cls;
+		Filter filter;
+		StringSelection text;
+
+		component = event.getComponent();
+		try {
+			cls = component.getName(); // (String)Filter.mWrappers.get
+										// (component.getName ());
+			if (null != cls) {
+				filter = Filter.instantiate(cls);
+				text = new StringSelection(Filter.deconstitute(new Filter[] { filter }));
+				mDragSource.startDrag(event, DragSource.DefaultMoveDrop, text, this);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:recognizes a drag gesture and initiates a drag operation with the selected component, filter, and text

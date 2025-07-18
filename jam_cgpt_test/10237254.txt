@@ -1,0 +1,11 @@
+TDAT:     public void eventPerfomed(FelperEvent event) {
+        if (event instanceof FelperMessageReceiveEvent) {
+            FelperMessageReceiveEvent newFelperMessageReceiveEvent = (FelperMessageReceiveEvent) event;
+          
+            if(logger.isDebugEnabled())
+                logger.debug("Receive Event: " + newFelperMessageReceiveEvent + " with Message " +
+                    newFelperMessageReceiveEvent.getMessage());
+        }
+    }
+
+COM:checks if an event is an instance of a certain type and logs a receive event with its message

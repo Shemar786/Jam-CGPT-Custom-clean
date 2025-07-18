@@ -1,0 +1,16 @@
+TDAT:     public GUINeuron checkNeuronPosition(int posX,int posY) {
+        GUINeuron gNeuron;
+        Iterator iNeurons = iterator();
+
+        while (iNeurons.hasNext()) {
+            gNeuron = (GUINeuron) (iNeurons.next());
+
+            if (gNeuron.contains(posX,posY)) {
+                return gNeuron;
+            }
+        }
+
+        return null;
+    }
+
+COM:checks if a neural network GUI neuron contains a specified position and returns it if it does

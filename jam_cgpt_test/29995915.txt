@@ -1,0 +1,9 @@
+TDAT: 	private void checkConversion(LinearMove l, String s) {
+		LinearMove a = l;
+		LinearMove b = new LinearMove(s);
+		System.out.println("new LinearMove(" + a + ")=" + b);
+		assertEquals("Conversion", a, b);
+		assertEquals("Conversion", a.toString(), b.toString());
+	}
+
+COM:checks whether a LinearMove object can be converted to a string representation without losing any information

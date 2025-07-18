@@ -1,0 +1,15 @@
+TDAT:     public double sumSquaredError(V parentEntry) {
+        double distance = 0.0;
+        if (isLeaf()) {
+            for (V key : keys) {
+                distance += key.distanceSquared(parentEntry);
+            }
+        } else {
+            for (int i = 0; i < count(); ++i) {
+                distance += children.get(i).sumSquaredError(keys.get(i));
+            }
+        }
+        return distance;
+    }
+
+COM:calculates the sum squared error between a parent entry and its children entries in a tree structure

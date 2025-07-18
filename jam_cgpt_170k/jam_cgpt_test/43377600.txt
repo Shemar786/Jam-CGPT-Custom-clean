@@ -1,0 +1,15 @@
+TDAT:     public void addBlock(CodeBlock toAdd) {
+	blocks.add(toAdd);
+//        toAdd.setCanvas(this);
+	toAdd.addedToCanvas(this);
+	
+	//This is a sneaky hack to get things to be the right size and lay out
+	//correctly before they are actually drawn
+	BufferedImage image = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
+	toAdd.draw(image.getGraphics());
+	
+	pack();
+	repaint();
+    }
+
+COM:adds a code block to a canvas and performs layout adjustments before repainting the canvas

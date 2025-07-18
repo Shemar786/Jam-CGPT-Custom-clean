@@ -1,0 +1,20 @@
+TDAT: 	public void doModelLoadedEvent(final IAdaptable model) {
+		if (model == this.model && !viewer.getControl().isDisposed()) {
+			Display display = this.getViewSite().getShell().getDisplay();
+			if (display.getThread() != Thread.currentThread()) {
+				display.asyncExec(
+						new Runnable() {
+							public void run() {
+								doModelLoadedEvent(model);
+							}
+						}
+				);
+			} else {
+				this.controller.setInput(model);
+				this.progressMonitor.done();
+				this.modelLoaded = true;
+			}
+		}
+	}
+
+COM:handles a model loaded event by checking if the model equals an instance variable, running certain actions on the input controller if true, and ensuring the code runs on the correct thread

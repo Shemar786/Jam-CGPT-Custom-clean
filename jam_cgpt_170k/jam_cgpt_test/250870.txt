@@ -1,0 +1,21 @@
+TDAT: 	public List getNextFedoraObjects() throws Exception{
+		logger.debug("entering getNextFedoraObjects");
+		List fedoraItems = fedoraInterface.getNextBufferedObjects();
+		if(fedoraItems.size() == 0){
+			logger.info("size 0");
+			return new ArrayList();
+		}
+		
+		List result = filter(fedoraItems);
+		
+		if(result.size()==0){
+			logger.info("no results...");
+			return getNextFedoraObjects();
+		}
+		else{
+			logger.debug("exiting getNextFedoraObjects size:" + result.size());
+			return result;
+		}
+	}
+
+COM:retrieves a list of Fedora objects, filters the list based on specific criteria, and returns the filtered list

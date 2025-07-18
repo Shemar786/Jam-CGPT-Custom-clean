@@ -1,0 +1,13 @@
+TDAT: public int indexOfFromTo(double element, int from, int to) {
+	// overridden for performance only.
+	if (size==0) return -1;
+	checkRangeFromTo(from, to, size);
+
+	double[] theElements = elements;
+	for (int i = from ; i <= to; i++) {
+	    if (element==theElements[i]) {return i;} //found
+	}
+	return -1; //not found
+}
+
+COM:searches for a specified double element within a certain range and returns its index if found, otherwise it returns -1

@@ -1,0 +1,13 @@
+TDAT:     public void removeMatchingFiles(IFilter filter) {
+        Iterator<String> walkFiles = state.keySet().iterator();
+        while (walkFiles.hasNext()) {
+            String resource = walkFiles.next();
+            if (null != resource) {
+                if (filter.matches(resource)) {
+                    walkFiles.remove();
+                }
+            }
+        }
+    }
+
+COM:removes files from the state map based on whether they match a given filter

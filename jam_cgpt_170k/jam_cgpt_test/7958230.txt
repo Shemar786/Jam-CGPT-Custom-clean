@@ -1,0 +1,16 @@
+TDAT: 	public void replace(int depth, final Expr expr) {
+		for (int i = stack.size() - 1; i >= 0; i--) {
+			final Expr top = (Expr) stack.get(i);
+
+			if (depth == 0) {
+				stack.set(i, expr);
+				return;
+			}
+
+			depth -= top.type().stackHeight();
+		}
+
+		throw new IllegalArgumentException("Can't replace below stack bottom.");
+	}
+
+COM:replaces an expression in a stack at a given depth by looping through the stack and calculating the depth until it reaches the desired depth, and then replaces the expression with the given one, otherwise throws an exception

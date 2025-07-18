@@ -1,0 +1,5 @@
+TDAT:     private void repaintDateCell(int row, int col) {
+        repaint((int)xDaysOffsets[col]-5, (int)yDaysOffsets[row]-5, (int)getDayColWidth(col)+10, (int)getDayRowHeight(row)+10);
+    }
+
+COM:updates the appearance of a specific cell in a calendar display by repainting it

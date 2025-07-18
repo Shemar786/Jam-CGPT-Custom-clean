@@ -1,0 +1,16 @@
+TDAT: 	public void createPartControl(Composite parent) {
+		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
+		drillDownAdapter = new DrillDownAdapter(viewer);
+		viewer.setContentProvider(new JmxTreeContentProvider());
+		viewer.setLabelProvider(new ViewLabelProvider());
+		viewer.setSorter(new NameSorter());
+		viewer.setInput(JmxGuiPlugin.getDefault().getServerManager());
+
+		makeActions();
+		hookContextMenu();
+		hookDoubleClickAction();
+		hookSelectionChangedAction();
+		contributeToActionBars();
+	}
+
+COM:creates a tree viewer in a parent composite and sets various content, label, and sorting providers, as well as hooks for context menu, double click actions, and selection changed actions

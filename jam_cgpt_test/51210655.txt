@@ -1,0 +1,13 @@
+TDAT: 	private void getFilesEmbedded(File dir, ArrayList<File> files, String extension) {
+		if (dir.isDirectory()) {
+			System.out.println("  ~ searching dir: " + dir);
+			for (File subfile : dir.listFiles()) {
+				getFilesEmbedded(subfile, files, extension);
+			}
+		}
+		if (dir.isFile() && dir.getPath().toLowerCase().endsWith(extension)) {
+			files.add(dir);
+		}
+	}
+
+COM:recursively searches for files with a specified file extension within a given directory and its subdirectories, and adds them to an ArrayList

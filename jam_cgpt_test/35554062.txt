@@ -1,0 +1,21 @@
+TDAT: 	public void setUserRole(String lUserName, String role) {
+
+		AUTHENTICATION_TYPE = AUTHENTICATION_RADIUS;
+		
+		userName = lUserName;
+
+		DBManager dbMgr = DBManager.getInstance();
+			
+			if(role.equalsIgnoreCase("ADMIN")){
+				userGrp = DBDataDesc.USER_ADMIN;
+			}else if(role.equalsIgnoreCase("MAINTENANCE")){
+				userGrp = DBDataDesc.USER_MAINTENANCE;
+			}else if (role.equalsIgnoreCase("MONITOR")){
+				userGrp = DBDataDesc.USER_MONITOR;
+			}
+			
+			userId = dbMgr.getUserId(userName);
+			
+		}
+
+COM:sets the user role based on the input role parameter and retrieves the user ID from the database

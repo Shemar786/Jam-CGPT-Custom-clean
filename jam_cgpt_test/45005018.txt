@@ -1,0 +1,12 @@
+TDAT:     public Auth authenticate(MWChatClient client, String password) throws Exception{
+    	// allow/store Guests ignored
+    	String newUserId = client.getUserId();
+    	/*int i = 1;
+    	while (getUserId(newUserId) != null) {
+    		newUserId = newUserId + i;
+    		i++;
+    	}*/
+        return new Auth(newUserId, GUEST);
+    }
+
+COM:authenticates a chat client and returns an authentication object with a user ID and guest status

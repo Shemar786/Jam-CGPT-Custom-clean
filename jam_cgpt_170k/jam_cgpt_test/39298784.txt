@@ -1,0 +1,13 @@
+TDAT:     public void setConnectionRouter(ConnectionRouter cr) {
+        if (cr == null)
+            cr = ConnectionRouter.NULL;
+        if (connectionRouter != cr) {
+            connectionRouter.remove(this);
+            Object old = connectionRouter;
+            connectionRouter = cr;
+            firePropertyChange(Connection.PROPERTY_CONNECTION_ROUTER, old, cr);
+            revalidate();
+        }
+    }
+
+COM:sets the connection router and updates the connections accordingly

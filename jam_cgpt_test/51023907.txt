@@ -1,0 +1,11 @@
+TDAT: 	public void addDeepRoot(Object object){
+		addRoot(object);
+		for(Class<?> cls : object.getClass().getInterfaces())addRoot(cls, object);
+		Class<?> temp = object.getClass().getSuperclass();
+		while(temp != Object.class){
+			addRoot(temp, object);
+			temp = temp.getClass().getSuperclass();
+		}
+	}
+
+COM:adds all interfaces and superclasses of an object as roots in a tree-based structure

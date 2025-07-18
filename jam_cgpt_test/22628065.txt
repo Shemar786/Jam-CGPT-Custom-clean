@@ -1,0 +1,16 @@
+TDAT: 	private void setProtocolVersion(String value) {
+		if (value == null)
+			return;
+		try {
+			if (!adminData.oidExists(Keys.PROTOCOL_VERSION)) {
+				adminData.put(Keys.PROTOCOL_VERSION, value);
+			}
+			else {
+				adminData.update(Keys.PROTOCOL_VERSION, value);
+			}
+		} catch (Exception e) {
+			prtlnErr("Error saving serialized PROTOCOL_VERSION: " + e);
+		}
+	}
+
+COM:sets the protocol version in the admin data if the value is not null and updates it if it already exists

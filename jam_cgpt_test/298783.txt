@@ -1,0 +1,13 @@
+TDAT: 	public void hideRelationshipsOfType(Class partClass) {
+		if (RelationshipPart.class.isAssignableFrom(partClass)) {
+			for (RelationshipModel rModel : getRelationshipsOfType(partClass)) {
+				rModel.setVisible(false);
+				rModel.getSourceModel().addImplicitRelationship(rModel);
+				rModel.getTargetModel().addImplicitRelationship(rModel);
+			}
+		} else {
+			GreenException.illegalOperation("Wrong type of object specified");
+		}
+	}
+
+COM:hides relationships of a specific class and adds them as implicit relationships to their source and target models

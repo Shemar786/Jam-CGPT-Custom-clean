@@ -1,0 +1,16 @@
+TDAT: 	public void execute(Event event) {
+		if (event instanceof SimpleEvent) {
+			SimpleEvent e = (SimpleEvent) event;
+			SimpleObject so = AbstractSimKernel.getInstance().elements().get(
+					SimpleObject.class, e.getObject());
+			String content = so.readContent();
+			if (Math.random() < 0.5) {
+				so.emptyContent();
+			} else {
+				so.fillContent(content + contentToBeAdded);
+			}
+			contentToBeAdded = content;
+		}
+	}
+
+COM:executes an event and modifies the content of a SimpleObject in a probabilistic manner

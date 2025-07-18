@@ -1,0 +1,15 @@
+TDAT:     public String getDateAsFormat(String format) {
+        if (_commentDate == null || format == null) {
+            return null;
+        }
+
+        SimpleDateFormat sdf = null;
+        try {
+            sdf = new SimpleDateFormat(format);
+            return sdf.format(_commentDate);
+        } catch (IllegalArgumentException e) {
+            return _commentDate.toString();
+        }
+    }
+
+COM:returns a formatted date string based on the input format string

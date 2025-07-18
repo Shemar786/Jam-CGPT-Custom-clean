@@ -1,0 +1,17 @@
+TDAT: 	protected void testEventGuards(String message, IEvent evt, String... expected) {
+		try {
+			IGuard[] grds = evt.getGuards();
+			assertEquals(message + ": Incorrect number of guards",
+					expected.length, grds.length);
+			for (int i = 0; i < grds.length; i++) {
+				testGuard(message, grds[i], expected[i]);
+				
+			}
+		} catch (RodinDBException e) {
+			e.printStackTrace();
+			fail("There should be no exception");
+			return;
+		}
+	}
+
+COM:tests the guards of an event and verifies that they match the expected values

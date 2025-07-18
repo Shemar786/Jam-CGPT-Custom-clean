@@ -1,0 +1,13 @@
+TDAT: 	public String getOpmlFromNode( DefaultMutableTreeNode selection ) {
+		StringBuffer ret = new StringBuffer();
+		if ( selection.getUserObject() instanceof OTag ) {
+			OTag tag = (OTag) selection.getUserObject();
+			String title = tag.getAttribute( "text" );
+			ret.append( getOpmlDeclaration( title, "" ) );
+			ret.append( writeTraverse( selection ) );
+			ret.append( "\t</body>\n</opml>" );
+		}
+		return ret.toString();
+	}
+
+COM:returns an OPML file as a string, generated from a DefaultMutableTreeNode selection

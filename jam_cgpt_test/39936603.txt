@@ -1,0 +1,17 @@
+TDAT: 	protected void addBoundLL73PropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TechnicRMLL73_boundLL73_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TechnicRMLL73_boundLL73_feature", "_UI_TechnicRMLL73_type"),
+				 TechnicRMLL73Package.Literals.TECHNIC_RMLL73__BOUND_LL73,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a specific feature of a TechnicRMLL73 object, allowing for its display and manipulation in a graphical user interface

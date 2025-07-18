@@ -1,0 +1,13 @@
+TDAT:   private JMenu getMDatei() {
+    if (mDatei == null) {
+      mDatei = new JMenu();
+      mDatei.setText("Datei");
+      mDatei.setMnemonic(KeyEvent.VK_D);
+      mDatei.add(getMiImport());
+      mDatei.add(getMiImportDir());
+      mDatei.add(getMiBeenden());
+    }
+    return mDatei;
+  }
+
+COM:returns a JMenu object representing a menu called "Datei" with three menu items

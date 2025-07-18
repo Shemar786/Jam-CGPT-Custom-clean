@@ -1,0 +1,7 @@
+TDAT: 	public String createUser(String firstName, String lastName, String homePhone, String workPhone,
+							 String cellPhone, String email, String picture) throws MissingAtributeException, UserAlreadyRegisteredException {	
+		UserBlms user = userDBManagement.createUser(firstName, lastName, homePhone, workPhone, cellPhone, email, picture);
+		return userDBManagement.getUserID( user );
+	}
+
+COM:creates a new user with the given details and returns their ID, while throwing exceptions for missing attributes or if the user is already registered

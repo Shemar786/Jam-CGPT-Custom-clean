@@ -1,0 +1,13 @@
+TDAT: 	private DashBoardDefinition buildFilterDependants(DashBoardDefinition dashBoardDefinition) {
+		for (FilterDefinition filter : dashBoardDefinition.getFilters()) {
+			DataSourceDefinition dataSourceDefinition = filter.getDataSourceDefinition();
+			if (dataSourceDefinition != null) {
+				for (String filterName : filter.getDataSourceDefinition().getDependencies()) {
+					dashBoardDefinition.getFilter(filterName).getDependants().add(filter.getName());
+				}
+			}
+		}
+		return dashBoardDefinition;
+	}
+
+COM:builds a dashboard definition by iterating through its filters and adding dependants to each filter based on its data source's dependencies

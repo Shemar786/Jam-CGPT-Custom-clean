@@ -1,0 +1,34 @@
+English: “List cities with the highest population.”
+
+Jam-CGPT (scratch):
+    SELECT building FROM department ORDER BY budget DESC LIMIT 1;
+
+Jam-CGPT (SO13M):
+    SELECT Name FROM city ORDER BY Population DESC LIMIT 1;
+
+
+English: "List cities with the highest population."
+
+Jam-CGPT (scratch):
+    SELECT building FROM department ORDER BY budget DESC LIMIT 1;
+
+ Jam-CGPT (SO13M):
+    SELECT Name FROM city ORDER BY Population DESC LIMIT 1;
+
+
+English: "List students who never took any courses."
+
+Jam-CGPT (scratch):
+    SELECT Name FROM member WHERE Member_ID NOT IN (SELECT Member_ID FROM member_attendance);
+
+ Jam-CGPT (SO13M):
+    SELECT id FROM Student EXCEPT SELECT StuID FROM Sportsinfo;
+
+
+English: "Show the census ranking of cities whose status are not 'Village'."
+
+Jam-CGPT (scratch):
+    SELECTbuying_low_low_temperature) FROM weekly_weather;
+
+ Jam-CGPT (SO13M):
+    SELECT cName FROM tryout WHERE pPos != 'Village';

@@ -1,0 +1,16 @@
+TDAT:     public void setUDPPort(int udpPort) {
+        
+        m_udp_port = udpPort;
+        
+        try {
+            
+            m_info_out = new DatagramSocket();
+            m_info_out.connect(m_socket.getInetAddress(),m_udp_port);
+            
+        } catch (IOException ioe) {
+            m_log.error(this, ioe);
+        }
+        
+    }
+
+COM:sets the UDP port and initializes a DatagramSocket for sending information to the specified IP address and port number

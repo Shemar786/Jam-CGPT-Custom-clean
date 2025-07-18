@@ -1,0 +1,12 @@
+TDAT:     private Component makeWestWeights() {
+        schematicWeights = new JLabel("");
+        schematicWeights.setFont(SWGGuiUtils.fontPlain());
+        schematicWeights.setToolTipText(
+                "Experimental weights for the selected schematic, or n/a");
+        schematicWeights.setBorder(BorderFactory.createTitledBorder(
+                BorderFactory.createEtchedBorder(EtchedBorder.LOWERED),
+                " Experimental weights "));
+        return schematicWeights;
+    }
+
+COM:creates a labeled component for displaying experimental weights related to a selected schematic

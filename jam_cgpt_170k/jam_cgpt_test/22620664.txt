@@ -1,0 +1,7 @@
+TDAT: 	public ComplexTypeLabel getComplexTypeLabel(String xpath, String siblingPath, String indexId) {
+		ComplexTypeLabel labelObj = super.getComplexTypeLabel(xpath, siblingPath, indexId);
+		labelObj.editMeTag = getEditMeTag(xpath, siblingPath, indexId);
+		return labelObj;
+	}
+
+COM:returns a ComplexTypeLabel object with an updated editMeTag property based on the input xpath, siblingPath, and indexId parameters

@@ -1,0 +1,15 @@
+TDAT: 	public URLEncoder getURLEncoderInstance() {
+		if (Validator.isNull(getURLEncoderClass())) {
+			return null;
+		}
+
+		if (_portletApp.isWARFile()) {
+			PortletBag portletBag = PortletBagPool.get(getRootPortletId());
+
+			return portletBag.getURLEncoderInstance();
+		}
+
+		return (URLEncoder)InstancePool.get(getURLEncoderClass());
+	}
+
+COM:returns an instance of the URLEncoder class depending on the availability and location of the class

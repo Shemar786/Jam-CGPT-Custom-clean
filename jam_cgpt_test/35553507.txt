@@ -1,0 +1,13 @@
+TDAT: 	private FieldPosition getPrevField(int caretLoc) {
+		FieldPosition fieldPosition = null;
+		for (int ctr = m_fieldPositions.size() - 1; ctr > -1; --ctr) {
+			FieldPosition chkFieldPosition = (FieldPosition) m_fieldPositions.get(ctr);
+			if (chkFieldPosition.getEndIndex() <= caretLoc) {
+				fieldPosition = chkFieldPosition;
+				break;
+			}
+		}
+		return (fieldPosition);
+	}
+
+COM:returns the previous field position based on a given caret location

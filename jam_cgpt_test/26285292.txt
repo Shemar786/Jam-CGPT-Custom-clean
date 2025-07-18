@@ -1,0 +1,13 @@
+TDAT:         private Vector explode(String in, char separator) {
+            Vector result = new Vector();
+            int index=in.indexOf(separator);
+            while(index >= 0) {
+                result.add(in.substring(0, index));
+                in=in.substring(index+1);
+                index=in.indexOf(separator);
+            }
+            result.add(in);
+            return result;
+        }
+
+COM:takes a string and a separator character and returns a Vector containing the substrings of the original string split at the separator

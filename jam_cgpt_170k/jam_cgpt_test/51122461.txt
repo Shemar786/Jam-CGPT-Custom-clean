@@ -1,0 +1,14 @@
+TDAT:    private DbFormsConfig lookup(String name) throws Exception {
+      DbFormsConfig config = null;
+
+      if (servletContext != null) {
+         config = (DbFormsConfig) servletContext.getAttribute(name);
+      } else {
+         throw new Exception("cannot lookup a config object with the name ["
+                             + name + "]");
+      }
+
+      return config;
+   }
+
+COM:is used to lookup a DbFormsConfig object by name, which is stored as an attribute in the servlet context and an exception is thrown if the servlet context is null

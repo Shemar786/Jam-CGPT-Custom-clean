@@ -1,0 +1,23 @@
+TDAT:     public void nextPosition() {
+        if (isCleared()) {
+            return;
+        }
+
+        if (!hasFocus()) {
+            setFocus(true);
+            return;
+        }
+
+        currentPosition += granularity;
+
+        if (currentPosition >= polysomnograph.getEpochDuration() &&
+                canBeDisplayed()) {
+            resetPosition();
+            setFocus(false);
+            polysomnograph.incrementStartRecord();
+        }
+
+        positionChanged();
+    }
+
+COM:updates the current position of a polysomnographic recording and increments the start record if necessary, while also changing the focus and notifying any listeners of the position change

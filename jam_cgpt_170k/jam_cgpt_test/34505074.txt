@@ -1,0 +1,19 @@
+TDAT: 		public void matchBracket() {
+
+			String editorId = fTextEditor.getSite().getId();
+			String commandId;
+
+			if (editorId.equals(EDITORID_CDT_EDITOR)) {
+				commandId = CMD_MATCH_BRACKET_CDT;
+			} else if (editorId.equals(EDITORID_JDT_EDITOR)) {
+				commandId = CMD_MATCH_BRACKET_JDT;
+			} else {
+				DEBUG("Match bracket command not supported for editor id "
+						+ editorId);
+				return;
+			}
+
+			executeCommand(commandId);
+		}
+
+COM:checks the editor ID and selects the appropriate command for matching brackets, then executes the command

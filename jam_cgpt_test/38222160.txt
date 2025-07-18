@@ -1,0 +1,16 @@
+TDAT:   public boolean queryClose() {
+    boolean canClose = true;
+    try {
+      beginRead();
+      Iterator items = new DownNodeIterator(moduleContainer.getRootNode());
+      while (items.hasNext() && canClose) {
+        Module current = ((ModuleNode) items.next()).getModule();
+        canClose &= current.unsetContextQuery();
+      }
+    } finally {
+      endRead();
+    }
+    return canClose;
+  }
+
+COM:attempts to close a query by iterating through module nodes and returning a boolean indicating whether or not the close was successful

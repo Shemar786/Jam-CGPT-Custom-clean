@@ -1,0 +1,16 @@
+TDAT: 	private void updateHighlight() throws Exception {
+		if( lastStartCorner.equals(startCorner) && 
+				lastOppositeCorner.equals(oppositeCorner) )
+			return;
+			
+		if( lastStartCorner.x != -1 )		
+			highlighter.unhighlightCells( lastStartCorner, lastOppositeCorner );
+		
+		if( startCorner.x != -1 )
+			highlighter.highlightCells( startCorner, oppositeCorner );
+		
+		lastStartCorner.copy(startCorner);
+		lastOppositeCorner.copy(oppositeCorner);			
+	}
+
+COM:updates highlighted cells on a grid and compares the changes made to the last set of highlighted cells

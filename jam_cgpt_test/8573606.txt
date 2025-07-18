@@ -1,0 +1,16 @@
+TDAT: 	private JPanel getTitle() {
+		if (title==null){
+			JLabel titleName = new JLabel("   Bingo");
+			titleName.setFont(new Font("Arial", Font.BOLD, 24));
+			titleName.setForeground(Color.BLUE);
+			titleName.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+			
+			title = new JPanel();
+			title.setOpaque(false);
+			title.setLayout(new BorderLayout());
+			title.add(titleName, BorderLayout.CENTER);
+		}
+		return title;
+	}
+
+COM:returns a JPanel object with a centered, stylized title "Bingo"

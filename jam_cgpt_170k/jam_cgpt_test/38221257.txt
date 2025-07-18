@@ -1,0 +1,11 @@
+TDAT:   protected CInternalFrame findFrameForModule(CModule module) {
+    JInternalFrame[] frames = desktop.getAllFrames();
+    for (int i = 0; i < frames.length; i++) {
+      if ((frames[i] instanceof CInternalFrame)
+        && (((CInternalFrame) frames[i]).getModule() == module))
+        return (CInternalFrame) frames[i];
+    }
+    return null;
+  }
+
+COM:searches for a specified module within all internal frames in a desktop and returns the first frame that contains the module, or null if no frame is found

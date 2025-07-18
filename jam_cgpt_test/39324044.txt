@@ -1,0 +1,11 @@
+TDAT:     public Argument getVarArg(int offset) {
+        final int Rn = registerOffset + offset;
+        if (Rn > MAX_REGISTER) {
+            // Fetch from memory
+            return new Argument(memoryMap.getWord(memoryBase + (Rn - NUM_REGISTER_ARGUMENTS) * 4));
+        } else {
+            return new Argument(cpu.R[Rn]);
+        }
+    }
+
+COM:returns an Argument object based on an offset, and will fetch from memory if the offset is outside the range of available registers

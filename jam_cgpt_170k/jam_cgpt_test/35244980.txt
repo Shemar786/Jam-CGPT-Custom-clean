@@ -1,0 +1,10 @@
+TDAT:     public ImageIcon resize(ImageIcon icon, int width, int height) {
+        int type = BufferedImage.TYPE_INT_ARGB;
+        BufferedImage dst = new BufferedImage(width, height, type);
+        Graphics2D g2 = dst.createGraphics();
+        g2.drawImage(icon.getImage(), 0, 0, width, height, null);
+        g2.dispose();
+        return new ImageIcon(dst);
+    }
+
+COM:resizes a given ImageIcon to the specified width and height using a Graphics2D object and returns a new ImageIcon with the resized image

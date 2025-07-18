@@ -1,0 +1,13 @@
+TDAT: 	public void showBank() {
+		RSCPacketBuilder s = new RSCPacketBuilder();
+		s.setID(93);
+		s.addByte((byte)player.getBank().size());
+		s.addByte((byte)Bank.MAX_SIZE);
+		for(InvItem i : player.getBank().getItems()) {
+			s.addShort(i.getID());
+			s.addInt(i.getAmount());
+		}
+		packets.add(s.toPacket());
+	}
+
+COM:retrieves data from a player's bank and sends it to the client in the form of an RSC packet

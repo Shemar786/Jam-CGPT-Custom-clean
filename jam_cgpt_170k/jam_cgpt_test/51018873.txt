@@ -1,0 +1,25 @@
+TDAT: 	public void closeIndex() {
+		try {
+			// check if index open for writing
+			if (!indexWriterIsOpen)
+				return;
+
+			// add last document to index
+			addMetadataToIndex();
+
+			im.optimize();
+			im.prepareCommit();
+			im.commit();
+			im.close();
+			indexWriterIsOpen = false;
+		} catch (CorruptIndexException cie) {
+			fireEventOccurred(new DataFileErrorEvent(cie.getMessage(),
+					"[LucenceEnv - closeIndex]"));
+		} catch (IOException ioe) {
+			fireEventOccurred(new DataFileErrorEvent(ioe.getMessage(),
+					"[LucenceEnv - closeIndex]"));
+		}
+
+	}
+
+COM:closes an index, optimizes it, adds metadata, commits the index, and sets a flag indicating it is closed

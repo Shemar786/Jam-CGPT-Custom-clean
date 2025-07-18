@@ -1,0 +1,9 @@
+TDAT:     public boolean genJarExists() {
+        String filespec=getAntProject().getBaseDir().toString() + 
+                        File.separator + "env" + File.separator +
+                        getAntProject().getName() + "_gen.jar";
+        File genJar=new File(filespec);
+        return genJar.exists();
+    }
+
+COM:checks whether a generated JAR file exists in the project environment

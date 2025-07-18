@@ -1,0 +1,8 @@
+TDAT: 	public DataEntry storeUpd(final long estdSize, final Type entryType, final byte[] headerHash, HashInputStream in) throws IOException {
+		final LocEntry locEntry = store.storeUpd(estdSize, entryType, in);
+		headerDB.add(locEntry.entry.size(), headerHash);
+		entryDB.add(locEntry.entry.size(), locEntry.entry.hash(), locEntry.location);
+		return locEntry.entry;
+	}
+
+COM:stores and updates data entries, while also updating header and entry databases and returning the stored entry

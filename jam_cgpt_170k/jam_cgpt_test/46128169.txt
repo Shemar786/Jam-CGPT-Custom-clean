@@ -1,0 +1,13 @@
+TDAT:    private Stack grabPortData(){
+      Stack returnStack = new Stack();
+      short porttype = this.portType(); //Get the port type
+      if(porttype == PORT_USB){
+         returnStack = this.grabUSBDefaultPortData();
+      }
+      else{
+         returnStack = this.grabSerialPortData();
+      }
+      return returnStack;
+   }
+
+COM:selects and retrieves data from either a USB or serial port and returns it in a stack

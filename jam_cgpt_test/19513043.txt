@@ -1,0 +1,9 @@
+TDAT: 	public MenuManager buildOpenWithMenu() {
+		MenuManager menu = new MenuManager("Open With", ICommonMenuConstants.GROUP_OPEN_WITH);
+		ISelection selection = site.getStructuredViewer().getSelection();
+		Object obj = ((IStructuredSelection) selection).getFirstElement();
+		menu.add(new OpenWithMenu(TheoryUIPlugIn.getActivePage(), ((IInternalElement) obj).getRodinFile().getResource()));
+		return menu;
+	}
+
+COM:builds a "Open With" menu with the selected item in the structured viewer as the target

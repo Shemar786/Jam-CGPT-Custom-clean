@@ -1,0 +1,23 @@
+TDAT:     public ApplicationContext getContainingApplicationContext(String beanName) {
+
+        if (parentGetBean) {
+            final ApplicationContext applicationContext = 
+                BeanFactoryUtils.maybeFindApplicationContext(parent, beanName);
+            
+            if (applicationContext != null) {
+                return applicationContext;
+            }
+        }
+
+        for (ApplicationContext applicationContext : nonAncestorDependentContexts) {
+
+            if (containsBeanDefintion(applicationContext, beanName)) {
+                return applicationContext;
+            }
+        }
+
+        return null;
+        
+    }
+
+COM:returns the application context containing the specified bean name, checking both the parent context and non-ancestor dependent contexts

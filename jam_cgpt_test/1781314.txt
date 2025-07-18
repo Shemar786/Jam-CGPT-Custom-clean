@@ -1,0 +1,14 @@
+TDAT:     private String getScript( Node scriptNode ) {
+        String scriptLocation = NodeUtils.getNodeAttribute( scriptNode, "src", null );
+        if (scriptLocation == null) {
+            return NodeUtils.asText( scriptNode.getChildNodes() );
+        } else {
+            try {
+                return getIncludedScript( scriptLocation );
+            } catch (IOException e) {
+                throw new RuntimeException( "Error loading included script: " + e );
+            }
+        }
+    }
+
+COM:retrieves a script from a given Node, either by reading its contents or by loading it from a separate file location specified in the Node attribute "src."

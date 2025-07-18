@@ -1,0 +1,16 @@
+TDAT:     private void addRetPhi(Subroutine sub, Block block) {
+        if (phis[cfg.preOrderIndex(block)] != null) {
+            return;
+        }
+
+        VarExpr target = (VarExpr) prototype.clone();
+
+        PhiReturnStmt phi = new PhiReturnStmt(target, sub);
+        phis[cfg.preOrderIndex(block)] = phi;
+
+        if (SSA.DEBUG) {
+            System.out.println("  place " + phi + " in " + block);
+        }
+    }
+
+COM:adds a PhiReturnStmt to a block if there is no pre-existing PhiReturnStmt already associated with it

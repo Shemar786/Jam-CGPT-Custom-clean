@@ -1,0 +1,18 @@
+TDAT: 	private String getLogItem(String subSystemLoggerName) {
+		String logItem = null;
+
+		if ( subSystemLoggerName.contains("platform") )
+			logItem = PLATFORM_LOG_FILE;
+		else if ( subSystemLoggerName.contains("r3") )
+			logItem = R3_LOG_FILE;
+		else if ( subSystemLoggerName.contains("r4") )
+			logItem = R4_LOG_FILE;
+		else if ( subSystemLoggerName.contains("network") )
+			logItem = NETWORK_LOG_FILE;
+		else
+			logItem = PLATFORM_LOG_FILE;
+
+		return logItem;
+	}
+
+COM:takes a string input representing a subsystem logger name, and returns the corresponding log file name

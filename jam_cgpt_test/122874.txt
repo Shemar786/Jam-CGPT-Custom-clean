@@ -1,0 +1,13 @@
+TDAT:   public void fireSimEvent(SimEvent evt) {
+    ArrayList copy;
+    synchronized(listenerList) {
+      copy = (ArrayList)listenerList.clone();
+    }
+
+    for (int i = 0, n = copy.size(); i < n; i++) {
+      SimEventListener l = (SimEventListener)copy.get(i);
+      l.simEventPerformed(evt);
+    }
+  }
+
+COM:notifies all listeners of a simulation event by creating a copy of the listener list and invoking the "simEventPerformed" method for each listener in the copied list

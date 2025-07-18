@@ -1,0 +1,11 @@
+TDAT:     protected String getDescription() {
+        if (helpDocument != null) {
+            List pEls = helpDocument.getRoot().getChild("body").getChildren("p");
+
+            return (pEls.size() == 0) ? null : ((Element)pEls.iterator().next()).getText();
+        }
+
+        return null;
+    }
+
+COM:This is a protected Java method that returns the first paragraph text content from a help document if it is not empty

@@ -1,0 +1,13 @@
+TDAT: 	private void init() throws URISyntaxException, IOException {
+		// init lookup service
+		_lookupService = new LookupService(Install.GEO_DATA_FILE, LookupService.GEOIP_MEMORY_CACHE);
+		// public IP
+		URL URL = new URL("http://www.whatismyip.org/");
+		HttpURLConnection connection = (HttpURLConnection) URL.openConnection();
+		InputStream inStream = connection.getInputStream();
+		InputStreamReader isr = new InputStreamReader(inStream);
+		BufferedReader br = new BufferedReader(isr);
+		_publicIp = br.readLine();
+	}
+
+COM:initializes a lookup service and retrieves the public IP address

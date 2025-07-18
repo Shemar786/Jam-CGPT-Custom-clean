@@ -1,0 +1,12 @@
+TDAT:     public void addTextToGridImage(String text, int locx, int locy){
+        mergeGridToImage();
+        if(editOpacity < 1)
+            g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,
+                (float)editOpacity));
+        g.setColor(Color.WHITE);
+        g.drawString(text, locx, locy);
+        if(editOpacity < 1)
+            g.setComposite(AlphaComposite.SrcOver);
+    }
+
+COM:adds text to a grid image at the specified location with a customizable opacity level

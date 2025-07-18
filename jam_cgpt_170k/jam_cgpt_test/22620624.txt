@@ -1,0 +1,8 @@
+TDAT: 	private String resolveQualifiedName(String name, GlobalDef typeDef) {
+		String localPrefix = NamespaceRegistry.getNamespacePrefix(name);
+		Namespace localPrefixNS = typeDef.getSchemaReader().getNamespaces().getNSforPrefix(localPrefix);
+		String topLevelPrefix = getInstancePrefix(localPrefixNS, typeDef);
+		return NamespaceRegistry.makeQualifiedName(topLevelPrefix, NamespaceRegistry.stripNamespacePrefix(name));
+	}
+
+COM:resolves a fully qualified name by extracting the prefix and namespace from a given name and returning the name with the top level prefix and namespace

@@ -1,0 +1,11 @@
+TDAT:     public void testgetVelocity() {
+        System.out.println("getVelocity");
+        org.gps.types.GpsPosition instance = new org.gps.types.GpsPosition();
+        henson.midp.Float expectedResult = Float.ZERO;
+        henson.midp.Float result = instance.getVelocity();
+        assertEquals(expectedResult, result);
+        
+    
+    }
+
+COM:tests the "getVelocity" method of the org.gps.types.GpsPosition class by creating an instance of it and asserting that the expected result matches the actual result

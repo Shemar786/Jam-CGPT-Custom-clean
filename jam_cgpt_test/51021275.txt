@@ -1,0 +1,26 @@
+TDAT: 	private void getAtomics(ONDEXConcept p, List<ONDEXConcept> v) {
+
+		// check selection of edge direction
+		Collection<ONDEXConcept> parents = null;
+		if (reversed)
+			parents = graph.getPredecessors(p);
+		else
+			parents = graph.getSuccessors(p);
+		for (ONDEXConcept c : parents) {
+
+			// check selection of edge direction
+			Collection<ONDEXConcept> children = null;
+			if (reversed)
+				children = graph.getPredecessors(c);
+			else
+				children = graph.getSuccessors(c);
+
+			if (children.size() == 0) {
+				v.add(c);
+			} else {
+				getAtomics(c, v);
+			}
+		}
+	}
+
+COM:recursively finds all atomic concepts connected to a given concept p in a graph, based on the selected edge direction

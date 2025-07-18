@@ -1,0 +1,11 @@
+TDAT:   public void ensureValuesAreContiguousFrom1 ( OpenIntIntHashMap map ) {
+    IntArrayList keys = new IntArrayList( map.size() );
+    map.keys( keys ); 
+    // TODO: Make sure that this is threadsafe.
+    ContiguityEnsuringProcedure proc = getContiguityEnsuringProcedure();
+    proc.map = map;
+    keys.forEach( contiguityEnsuringProcedure );
+    proc.reset();
+  } // ensureValuesAreContiguousFrom1( OpenIntIntHashMap )
+
+COM:takes an OpenIntIntHashMap as input and ensures that the values in the map are contiguous starting from 1

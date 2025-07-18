@@ -1,0 +1,19 @@
+TDAT:    protected void fireEvent(final ResultSet resultSet) {
+	  
+	  Executor executor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
+	  for (final GestureHandler gestureHandler : resultSet.getSource().getGestureHandlers()) {
+	     LOGGER.info("Handler: "+gestureHandler.getClass());
+	     if (gestureHandler != null) {
+	        executor.execute(new Runnable() {
+	
+	           @Override
+	           public void run() {
+	              gestureHandler.handle(resultSet);
+	           }
+	           
+	        });
+	     }
+	  }
+   } // fireEvent
+
+COM:fires a sequence of events by executing multiple GestureHandler objects in separate threads based on a given ResultSet

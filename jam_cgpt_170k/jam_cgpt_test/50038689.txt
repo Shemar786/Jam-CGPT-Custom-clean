@@ -1,0 +1,9 @@
+TDAT:     public void setFilters(String flowPatternString, boolean shouldLogSessionSize) {
+        //could use StringUtils.isNotBlank but keeping size low
+        if (!(flowPatternString == null || flowPatternString.trim().equals(""))) {
+            flowPattern = Pattern.compile(flowPatternString);
+        }
+        this.shouldLogSize = shouldLogSessionSize;
+    }
+
+COM:sets filters by compiling a flow pattern string and specifies whether or not to log session size

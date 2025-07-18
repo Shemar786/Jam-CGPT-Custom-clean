@@ -1,0 +1,11 @@
+TDAT: 	public void testViewDublinCore() throws IOException, SAXException {
+		linkToViewDublinCore();
+		assertNotNull(response);
+		assertEquals("viewItemPage", response.getTitle());
+
+		WebTable tbl = response.getTableStartingWith("Creator(s)");
+		TableCell cell = tbl.getTableCell(1, 1);
+		assertEquals(" label", cell.asText());
+	}
+
+COM:tests the view of Dublin Core metadata for an item and checks for the presence of certain information

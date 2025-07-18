@@ -1,0 +1,11 @@
+TDAT: 	private void addDisjunctLeaveActions(UMLBTransition disjunctTransition, UMLBClass ownerClass) {
+		for (UMLBTransition transition : disjunctTransition.getDisjunctBy())
+			if (transition.getDisjunctBy().isEmpty()) {
+				if (!transition.getSource().isSalmiakki())
+					addLeaveNestedActions(transition, ownerClass);
+			} else {
+				addDisjunctLeaveActions(transition, ownerClass);
+			}
+	}
+
+COM:adds leave actions for disjunct transitions to the specified UMLBClass

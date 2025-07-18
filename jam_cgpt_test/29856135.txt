@@ -1,0 +1,14 @@
+TDAT:   public Object getValueAt(int row, int column) {
+    Object x = null;
+
+    try {
+      x = visibleRows[row].getValueAt(column);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return visibleRows[row].getLevel() < displayLevels[reverseOrder[column]] ?
+      null : 
+      x;
+  }
+
+COM:returns the value at a specified row and column position, with the possibility of returning null based on certain conditions

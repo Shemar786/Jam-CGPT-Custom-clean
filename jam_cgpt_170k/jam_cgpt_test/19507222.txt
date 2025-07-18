@@ -1,0 +1,12 @@
+TDAT: 	public void testMoveIntFromSnapshot() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neParent = createNEPositive(rSource, "parent", null);
+		NamedElement neSource = createNEPositive(neParent, "foo", null);
+		rfSource.save(null, false);
+		
+		moveNegative(neSource.getSnapshot(), neParent, null, "bar", false,
+				IRodinDBStatusConstants.READ_ONLY);
+	}
+
+COM:creates and moves a named element from a snapshot to its parent element

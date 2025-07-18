@@ -1,0 +1,17 @@
+TDAT:   public Object parse(Document jdoc, Container container) throws Exception {
+    this.jdoc = jdoc;
+    this.lbl_map.clear();
+    this.mac_map.clear();
+    
+    Object result = getSwing(processCustomAttributes(jdoc.getDocumentElement()), container);
+
+    linkLabels();
+    supportMacOS();
+
+    this.lbl_map.clear();
+    this.mac_map.clear();
+
+    return result;
+  }
+
+COM:parses a Document object, processes custom attributes, and returns a Swing component after linking labels and supporting macOS

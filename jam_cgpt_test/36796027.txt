@@ -1,0 +1,17 @@
+TDAT:     protected boolean silentEvict(int address) {
+       T evicted = null;
+        for (T line: lines.values()) {
+            if (line.silentlyEvictable() && line.address != address) {
+                evicted = line;
+                break;
+            }
+        }
+        if (evicted != null) {
+            lines.remove(evicted.address);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+COM:is used to silently evict a cache line with a given address if it is marked as silently evictable

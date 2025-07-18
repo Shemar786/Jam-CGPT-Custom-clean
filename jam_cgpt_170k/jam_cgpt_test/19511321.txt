@@ -1,0 +1,18 @@
+TDAT: 	private void createLabels(final Composite parent) {
+		Label availableLabel = new Label(parent, SWT.LEFT);
+		availableLabel.setText(Messages.label_available);
+		GridData gd = new GridData(GridData.FILL_HORIZONTAL);
+		availableLabel.setLayoutData(gd);
+
+		Label tmpLabel = new Label(parent, SWT.CENTER);
+		gd = new GridData();
+		gd.verticalAlignment = GridData.CENTER;
+		tmpLabel.setLayoutData(gd);
+
+		Label selectedLabel = new Label(parent, SWT.LEFT);
+		selectedLabel.setText(ch.ethz.eventb.internal.decomposition.utils.Messages.label_selected);
+		gd = new GridData(GridData.FILL_HORIZONTAL);
+		selectedLabel.setLayoutData(gd);
+	}
+
+COM:creates and sets attributes for three labels in a given composite parent widget

@@ -1,0 +1,17 @@
+TDAT: 	public boolean equalsIgnoreCase(Object obj) {
+		DbTable other = (DbTable) obj;
+		if (name == null || other.name == null) {
+			return super.equals(obj);	
+		}
+		if (name.equalsIgnoreCase(other.name)) {
+			if (schema == null && other.schema == null) {
+				return true;
+			}
+			if (schema != null) {
+				return schema.equalsIgnoreCase(other.schema);
+			}
+		}
+		return false;
+	}
+
+COM:compares two DbTable objects for equality, ignoring case sensitivity in the name and schema fields

@@ -1,0 +1,12 @@
+TDAT: 	private void inserRecordAttribute(String name, String value) {
+		ClassAdSyntacticalAnalyzerStream.changeSystemErrToStream();
+		RecordExpr expr = (RecordExpr) new ClassAdParser(value).parse();
+		String errorMessage = ClassAdSyntacticalAnalyzerStream.getErrorMessage();
+		if(errorMessage.length() > 0){
+			throw new IllegalArgumentException("Mal formed attribute "+name+" "+errorMessage);
+		}
+		this.record.insertAttribute(name, expr);
+		ClassAdSyntacticalAnalyzerStream.resetSystemErr();
+	}
+
+COM:is used to insert a record attribute with a given name and value after parsing and validating it against a ClassAd grammar

@@ -1,0 +1,11 @@
+TDAT: 	public void stableStatus(int oldStatus) {
+		/**
+		 * Multiple threads can try to stable deque at the same time. It's not
+		 * important that which thread did the actual work. We need CAS to
+		 * ensure atomicity. If CAS fails, it means other thread did the work.
+		 * This thread can return without any further action.
+		 */
+		STATUS_UPDATER.compareAndSet(this, oldStatus, STABLE);
+	}
+
+COM:coordinates multiple threads trying to update the status of a deque atomically using the CAS (Compare and Swap) technique

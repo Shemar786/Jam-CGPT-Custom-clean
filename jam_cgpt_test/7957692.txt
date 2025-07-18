@@ -1,0 +1,23 @@
+TDAT: 		public void addReal(final Expr real) {
+			if (SSAPRE.DEBUG) {
+				System.out.println("    add to worklist=" + real);
+			}
+
+			final ExprKey key = new ExprKey(real);
+
+			ExprInfo exprInfo = (ExprInfo) exprInfos.get(key);
+
+			if (exprInfo == null) {
+				exprInfo = new ExprInfo(real, key);
+				exprs.add(exprInfo);
+				exprInfos.put(key, exprInfo);
+
+				if (SSAPRE.DEBUG) {
+					System.out.println("    add info");
+				}
+			}
+
+			exprInfo.addReal(real);
+		}
+
+COM:adds a real value to a worklist and creates an ExprInfo object for it if it doesn't already exist

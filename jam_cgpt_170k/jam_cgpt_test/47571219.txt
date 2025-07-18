@@ -1,0 +1,12 @@
+TDAT: 	private String getWildSpecies() {
+		ArrayList<String> potentialSpecies = new ArrayList<String>();
+		do {
+			for (String species : m_dayPokemonChances.keySet()) {
+				if (random.nextInt(101) < m_dayPokemonChances.get(species))
+					potentialSpecies.add(species);
+			}
+		} while (potentialSpecies.size() <= 0);
+		return potentialSpecies.get(random.nextInt(potentialSpecies.size()));
+	}
+
+COM:returns a random species of wild Pokémon based on a set of chances for each species during the day

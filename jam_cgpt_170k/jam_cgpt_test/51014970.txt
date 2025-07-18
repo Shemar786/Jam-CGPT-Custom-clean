@@ -1,0 +1,6 @@
+TDAT:     public void setOf_type_fk(String of_type_fk) {
+        if (of_type_fk == null || of_type_fk.length() == 0) throw new NullPointerException("of_type_fk is null");
+        this.of_type_fk = of_type_fk.intern();
+    }
+
+COM:sets the value of a variable 'of_type_fk' and throws a NullPointerException if it is null or has zero length

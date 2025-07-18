@@ -1,0 +1,23 @@
+TDAT: 	public void testRunnableInResourceDelta() throws Exception {
+		final CheckingRunnable inner = new CheckingRunnable();
+		final IResourceChangeListener listener = new IResourceChangeListener() {
+			public void resourceChanged(IResourceChangeEvent event) {
+				try {
+					RodinCore.run(inner, null);
+				} catch (RodinDBException e) {
+					fail("Unexpected exception");
+				}
+			}
+		};
+		final IProject project = workspace.getRoot().getProject("P");
+		try {
+			workspace.addResourceChangeListener(listener);
+			project.create(null);
+		} finally {
+			workspace.removeResourceChangeListener(listener);
+			project.delete(true, null);
+		}
+		assertTrue(inner.done);
+	}
+
+COM:tests the functionality of a Runnable object in a resource delta event listener

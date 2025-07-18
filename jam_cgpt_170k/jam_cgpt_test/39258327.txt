@@ -1,0 +1,20 @@
+TDAT: 	public String getCollectionName(int collectionID) {
+		String name = "";
+		try {
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT Name\n" +
+					"FROM Collections\n" +
+					"WHERE CollectionID = " +
+					collectionID);
+			rs.next();
+			name = rs.getString("Name");
+			stmt.close();
+		} catch (SQLException e) {
+			ErrorLogger.writeExceptionToLogAndPrompt(getName(),"Error retrieving the collection name for collectionID "+collectionID);
+			System.err.println("Exception grabbing the collection name:");
+			System.err.println(e);
+		}
+		return name;
+	}
+
+COM:retrieves the name of a collection given its ID from a database table called Collections

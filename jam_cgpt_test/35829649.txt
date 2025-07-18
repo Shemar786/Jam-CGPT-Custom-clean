@@ -1,0 +1,13 @@
+TDAT:     protected int _lookingBrother(int node, char chr) {
+        int brother = factory.getBrother(node);
+        char brotherLabel = factory.getBrotherLabel(node);
+        
+        if (brother >= 0 && brotherLabel <= chr) {
+            if (brotherLabel == chr)
+                return brother;
+            return _lookingBrother(brother, chr);
+        }
+        return -1;
+    }
+
+COM:looks for a brother node with a certain label and returns its index

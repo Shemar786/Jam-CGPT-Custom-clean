@@ -1,0 +1,11 @@
+TDAT: 	protected LinkedList getVariablesOfDocOffsetMethod(){
+		LinkedList returnList = new LinkedList();
+		HashMap emptyStringAdditionalMap = new HashMap();
+		HashMap esl = this.cpc.getVariablesOfMethod();
+		emptyStringAdditionalMap.put("EmptyStringVariables", CCAdministration.getInstance().
+				  buildTrieForExternalList(esl));
+		returnList.addAll(searchInTries(wordToComplete, emptyStringAdditionalMap, false));
+		return returnList;
+	}
+
+COM:returns a LinkedList of variables that correspond to a specific document offset

@@ -1,0 +1,9 @@
+TDAT:     private LocationSubGroupTreeEditPart getStorageLocationGroup() {
+        if(storageLocationGroup == null) {
+            setStorageLocationGroup((LocationSubGroupTreeEditPart)createChild(new LocationSubGroupDelegate("StorageLocations")));
+            addChild(getStorageLocationGroup(), -1);
+        }
+        return this.storageLocationGroup;
+    }
+
+COM:retrieves or creates a new LocationSubGroupTreeEditPart representing storage locations and returns it

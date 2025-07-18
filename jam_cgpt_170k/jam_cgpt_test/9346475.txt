@@ -1,0 +1,12 @@
+TDAT:     public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
+        
+if ("InternalCRMProvider".equals(portName)) {
+            setInternalCRMProviderEndpointAddress(address);
+        }
+        else 
+{ // Unknown Port Name
+            throw new javax.xml.rpc.ServiceException(" Cannot set Endpoint Address for Unknown Port" + portName);
+        }
+    }
+
+COM:sets the endpoint address for a specified port name within a web service and throws an exception if the port name is unknown

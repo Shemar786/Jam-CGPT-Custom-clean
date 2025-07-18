@@ -1,0 +1,7 @@
+TDAT:         private void initPOSTagger(POSTaggerResource posTaggerResource) throws Exception {
+                POS_TAGGER tagger = posTaggerResource.getPOSTaggerType();
+                String modelFilePath = posTaggerResource.getPOSModelPath();
+                posManager = new POSManager(tagger, modelFilePath, posTaggerResource.getTagSetFile());
+        }
+
+COM:initializes a POSManager object with a specified POS tagger, model file path, and tag set file, and throws an exception if there is an error

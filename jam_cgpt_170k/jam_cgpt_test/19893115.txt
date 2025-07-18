@@ -1,0 +1,10 @@
+TDAT: 	    public Object setStatusMood(String userId, String status, int mood) {
+			String url = API_PUT_MOOD_URL.replaceFirst("%s", userId);
+			HashMap<String, String> map = new HashMap<String, String>();
+			HashMap<String, String> appParams = new HashMap<String, String>();
+			appParams.put("status", status);
+			appParams.put("mood", "" + mood);
+			return putUserData(url, map, appParams);
+		}
+
+COM:sets the status and mood of a user and returns an Object

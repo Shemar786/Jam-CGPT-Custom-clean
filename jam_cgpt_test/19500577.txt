@@ -1,0 +1,14 @@
+TDAT: 	public void upgradePredicate(String input, UpgradeResult<Predicate> result) {
+		final FormulaFactory factory = result.getFactory();
+		final IParseResult parseResult = factory.parsePredicate(input,
+				sourceVersion, null);
+		if (parseResult.hasProblem()) {
+			copyProblems(parseResult, result);
+			result.setUpgradeNeeded(true);
+			return;
+		}
+		final Predicate pred = parseResult.getParsedPredicate();
+		upgrade(input, pred, result);
+	}
+
+COM:upgrades a given input predicate using a formula factory and returns the upgraded result in an UpgradeResult object

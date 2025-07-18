@@ -1,0 +1,13 @@
+TDAT:     public void clearCache() throws PersistenceException {
+        if (broker != null) {
+            try {
+                broker.clearCache();
+            } catch (PersistenceBrokerException e) {
+                throw new PersistenceException("Could not clear broker cache", e);
+            }
+        } else {
+            throw new IllegalStateException("Called to clear broker cache when broker not properly initialized!");
+        }
+    }
+
+COM:clears the cache of a persistence broker, throwing exceptions if the broker is not properly initialized or if clearing the cache is not possible

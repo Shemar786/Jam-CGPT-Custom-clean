@@ -1,0 +1,21 @@
+TDAT: 	public void executeMethodOnPeer(Peer peer) {
+		try {
+			methodToCall.setAccessible(true);
+			if (clazz == Peer.class) {
+				methodToCall.invoke(peer);
+			} else {
+				Object target = peer.getPeerletOfType(clazz);
+				if (target == null) {
+					logger.error(getGeneralFailureString(peer) + ": peerlet of type " + clazz.getCanonicalName()
+							+ " not found");
+					return;
+				} else {
+					methodToCall.invoke(target);
+				}
+			}
+		} catch (Exception e) {
+			logger.error(getGeneralFailureString(peer), e);
+		}
+	}
+
+COM:executes a specified method on a given peer object, first checking if it is accessible, and determining whether the method will be called on the peer object itself or a peerlet object based on the provided class type

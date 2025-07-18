@@ -1,0 +1,10 @@
+TDAT:     protected String getValForAttr(String attr,SandAttrVal[] attrvals) {
+        if((attr==null)||(attrvals==null)) {
+            return ""; }
+        for(int i=0;i<attrvals.length;i++) {
+            if(attrvals[i].getAttr().equals(attr)) {
+                return attrvals[i].getVal(); } }
+        return "";
+    }
+
+COM:returns a string value for a specified attribute using an array of SandAttrVal objects

@@ -1,0 +1,13 @@
+TDAT:     public void write(OutputStream out) throws IOException {
+        int len = length - 1;
+
+        byte[] b = byteBuffer;
+        b[1] = (byte) (len >>> 24);
+        b[2] = (byte) (len >>> 16);
+        b[3] = (byte) (len >>> 8);
+        b[4] = (byte) (len & 0xff);
+
+        out.write(b, 0, position);
+    }
+
+COM:writes the content of a byte buffer to an output stream with the length of the buffer encoded in the first four bytes

@@ -1,0 +1,11 @@
+TDAT: 	public void addDeepRootMethod( Method m){
+		stoMethods.put(m.getReturnType(), m);
+		for(Class<?> cls : m.getReturnType().getClass().getInterfaces())stoMethods.put(cls, m);
+		Class<?> temp = m.getReturnType().getClass().getSuperclass();
+		while(temp != Object.class){
+			stoMethods.put(temp, m);
+			temp = temp.getClass().getSuperclass();
+		}
+	}
+
+COM:adds a Method object and implements it into a Hash Map by getting its return type and its interfaces, and superclasses

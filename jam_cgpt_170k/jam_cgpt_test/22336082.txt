@@ -1,0 +1,12 @@
+TDAT: 	private void createFootComposite() {
+		GridLayout gridLayout4 = new GridLayout();
+		gridLayout4.numColumns = 2;
+		footComposite = new Composite(detailFKGroup, SWT.NONE);
+		footComposite.setLayout(gridLayout4);
+		addDetailButton = new Button(footComposite, SWT.NONE);
+		addDetailButton.setText("Add");
+		deleteDetailButton = new Button(footComposite, SWT.NONE);
+		deleteDetailButton.setText("Delete");
+	}
+
+COM:creates a composite with a grid layout and two buttons ("Add" and "Delete") inside it

@@ -1,0 +1,9 @@
+TDAT:     private void createFilterableCategories() {
+        _filterableCats = new ArrayList<FilterableCategory>();
+        FilterableCategory.clearAll();
+        _filterableCats.add(new FilterableCategory("both"));
+        _filterableCats.add(new FilterableCategory("fields"));
+        _filterableCats.add(new FilterableCategory("methods"));
+    }
+
+COM:creates a list of filterable categories and initializes it with "both", "fields", and "methods"

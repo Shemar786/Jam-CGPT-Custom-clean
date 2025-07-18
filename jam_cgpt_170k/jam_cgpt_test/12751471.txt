@@ -1,0 +1,12 @@
+TDAT:     public void add(MyRectangle r) {
+	int x1 = Math.min(x, r.x);
+	int x2 = Math.max(x + width, r.x + r.width);
+	int y1 = Math.min(y, r.y);
+	int y2 = Math.max(y + height, r.y + r.height);
+	x = x1;
+	y = y1;
+	width = x2 - x1;
+	height = y2 - y1;
+    }
+
+COM:adds a rectangle object to another rectangle object and updates the coordinate positions and dimensions accordingly

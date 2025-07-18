@@ -1,0 +1,14 @@
+TDAT: 	public int compare(Object o1, Object o2) {
+		Date dateOne;
+		Date dateTwo;
+		try {
+			dateOne = ((StatusEntry) o1).getDate();
+			dateTwo = ((StatusEntry) o2).getDate();
+		} catch (Exception e) {
+			prtlnErr("Error: unable to find last modified date: " + e.getMessage());
+			return 0;
+		}
+		return dateTwo.compareTo (dateOne);
+	}
+
+COM:compares the last modified dates of two status entries and returns the result as an integer

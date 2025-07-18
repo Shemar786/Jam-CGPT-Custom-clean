@@ -1,0 +1,11 @@
+TDAT:     public ModelAndView logoutBot( HttpServletRequest request, HttpServletResponse response ) {
+    	
+    	BotConfigRequestMapper bcrm = new BotConfigRequestMapper();
+    	long id = Long.parseLong(request.getParameter(bcrm.getIdKey()));
+    	
+		BotManager.logout( id );
+		
+		return new ModelAndView("redirect:/bot/list.state");
+    }
+
+COM:logs out a specific bot based on the ID provided and redirects to the bot list page

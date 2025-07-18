@@ -1,0 +1,9 @@
+TDAT:   public String lookupWord(String word) {
+    // Checks the first character.
+    if (word.charAt(0) < 65 || word.charAt(0) > 122
+      || (word.charAt(0) > 90 && word.charAt(0) < 97))
+      return null;
+    return readPhonemeFromFile(word);
+  }
+
+COM:looks up a word and checks if its first character is a valid letter, returning null if it is not, and reading the phoneme from a file if it is valid

@@ -1,0 +1,13 @@
+TDAT:     public void start(boolean return_when_done) {
+        final SwingWorker worker = new SwingWorker() {
+            public Object construct() {
+                return new NodeDistancesTask();
+            }//construct
+        };
+        worker.start();
+        if (return_when_done) {
+            worker.get(); // maybe use finished() instead
+        }
+    }//starts
+
+COM:starts a SwingWorker thread and optionally waits for it to complete before returning

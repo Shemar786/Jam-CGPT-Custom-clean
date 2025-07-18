@@ -1,0 +1,12 @@
+TDAT: 	public void addXslStylesheet(String fromFormat, String toFormat, String xslFilePath) {
+		//fromFormat = fromFormat;
+		//toFormat = toFormat;
+
+		Hashtable formatConverters = (Hashtable) converters.get(fromFormat);
+		if (formatConverters == null)
+			formatConverters = new Hashtable();
+		formatConverters.put(toFormat, new XslConverter(fromFormat, toFormat, xslFilePath));
+		converters.put(fromFormat, formatConverters);
+	}
+
+COM:adds an XSL stylesheet to a hashtable of format converters

@@ -1,0 +1,16 @@
+TDAT: 	public boolean reverseAccrualIt() {
+		log.info("reverseAccrualIt - " + toString());
+		// Before reverseAccrual
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_BEFORE_REVERSEACCRUAL);
+		if (m_processMsg != null)
+			return false;
+		
+		// After reverseAccrual
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_AFTER_REVERSEACCRUAL);
+		if (m_processMsg != null)
+			return false;
+		
+		return false;
+	}	//	reverseAccrualIt
+
+COM:is used to reverse the accrual and validate the document before and after the reversal

@@ -1,0 +1,17 @@
+TDAT: 	protected void addAssociationsDecisionToDecisionSourcePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DecisionElement_associationsDecisionToDecisionSource_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DecisionElement_associationsDecisionToDecisionSource_feature", "_UI_DecisionElement_type"),
+				 ProcessPackagePackage.Literals.DECISION_ELEMENT__ASSOCIATIONS_DECISION_TO_DECISION_SOURCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the decision element's association with its decision source

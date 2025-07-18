@@ -1,0 +1,19 @@
+TDAT: 	public void signalUpdatedFile(File iFile) {
+		synchronized (this) {
+			for (ScreenConfiguration d : configuration.values()) {
+				if (d.getFile().equals(iFile)) {
+					log.warn("[DesktopConfigurationLoader.signalUpdatedFile] Reloading file: " + iFile);
+
+					try {
+						d.load();
+					} catch (Exception e) {
+						log.error("[DesktopConfigurationLoader.signalUpdatedFile] Error on loading updated descriptor: "
+								+ iFile.getAbsolutePath());
+					}
+					break;
+				}
+			}
+		}
+	}
+
+COM:signals that a file has been updated and reloads the file's configuration if it exists in the current screen configuration

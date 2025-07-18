@@ -1,0 +1,15 @@
+TDAT:     public void createDefaultVariationFunctions(Uncertainties uncertainties) {
+		for (int n = 0; n < uncertainties.pdfCount(); n++) {
+			PDF pdf = uncertainties.getPdf(n);
+
+			//create new UncertainItem.
+		    UncertainItem uncertainItem = pdf.getUncertainItem().clone();
+
+		    //create new default VariationFunction.
+			Variation variationFunction = new RangeVariation();
+			variationFunction.setUncertainItem(uncertainItem);
+		    uncertainties.addVariationFunction(variationFunction);
+		}
+    }
+
+COM:creates default variation functions for a set of uncertainties

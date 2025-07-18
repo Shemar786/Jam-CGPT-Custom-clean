@@ -1,0 +1,10 @@
+TDAT:     public void setContacts(Collection<Contact> contacts) {
+        if (contacts.size() <= 1) {
+            setContact(contacts.size() <= 0 ? null : contacts.iterator().next());
+            return;
+        }
+        setMultiMode(true);
+        gatewayComboBox.setSelectedGateway(contacts.iterator().next().getGateway());
+    }
+
+COM:sets the contacts and determines the selected gateway based on the number of contacts passed as a collection

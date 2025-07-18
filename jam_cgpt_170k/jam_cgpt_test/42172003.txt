@@ -1,0 +1,17 @@
+TDAT: 	protected void addJobNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnscheduleSaflet_jobName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnscheduleSaflet_jobName_feature", "_UI_UnscheduleSaflet_type"),
+				 Actionpak1Package.Literals.UNSCHEDULE_SAFLET__JOB_NAME,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:is used to add a property descriptor for the job name feature in the UnscheduledSaflet class

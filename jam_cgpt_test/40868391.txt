@@ -1,0 +1,10 @@
+TDAT:     public Command getExitCommand6() {
+        if (exitCommand6 == null) {//GEN-END:|452-getter|0|452-preInit
+            // write pre-init user code here
+            exitCommand6 = new Command("Exit", Command.EXIT, 0);//GEN-LINE:|452-getter|1|452-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|452-getter|2|
+        return exitCommand6;
+    }
+
+COM:returns a Command object named "Exit" with Command.EXIT type and a priority of 0, and initializes it if it has not been previously initialized

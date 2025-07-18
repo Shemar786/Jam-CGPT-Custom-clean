@@ -1,0 +1,18 @@
+TDAT:     protected String safeTrim(String inStr, boolean escapeXML) {
+        if (inStr != null) {
+            String tmp = inStr.trim();
+            if (tmp.length() > 0) {
+                if (escapeXML) {
+                    return StringEscapeUtils.escapeXml(tmp);
+                } else {
+                    return tmp;
+                }
+            } else {
+                return null;
+            }
+        } else {
+            return null;
+        }
+    }
+
+COM:trims a string and optionally escapes any XML entities within the resulting string

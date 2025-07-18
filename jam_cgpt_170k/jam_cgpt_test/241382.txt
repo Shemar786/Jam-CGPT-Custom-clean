@@ -1,0 +1,14 @@
+TDAT: 	public void getTransactionTypesFromDB() {
+
+		allTypes.clear();
+		List retrievals = DB.getEntityManager().createQuery("SELECT t FROM transactionType t").getResultList(); //$NON-NLS-1$
+		int currentTransaction = 0;
+		for (Iterator iter = retrievals.iterator(); iter.hasNext();) {
+			transactionType currentlyRetrieved =  (transactionType)iter.next();
+			getInstanceByTypeIndex(currentTransaction).setType(currentlyRetrieved);
+			allTypes.add(currentlyRetrieved);
+			currentTransaction++;
+		}
+	}
+
+COM:retrieves transaction types from a database and populates a list with them

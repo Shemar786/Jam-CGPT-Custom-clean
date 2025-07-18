@@ -1,0 +1,15 @@
+TDAT:   public Document getDocumentFrom(File aFile) {
+    DocumentBuilderFactory tmpFactory = DocumentBuilderFactory.newInstance();
+    Document tmpDocument = null;
+
+    try {
+      DocumentBuilder tmpBuilder = tmpFactory.newDocumentBuilder();
+      tmpDocument = tmpBuilder.parse(aFile);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
+    return tmpDocument;
+  }
+
+COM:returns a Document object parsed from a given File using DocumentBuilder and DocumentBuilderFactory

@@ -1,0 +1,11 @@
+TDAT:     public void clear() {
+        this.attacks = null;
+        this.current = null;
+        this.currentAction = 0;
+        //for(Vertex v : oldVertices.keySet()){
+        //    getPortunesController().getVertexController().swapVertex(v, oldVertices.get(v));
+        //}
+        getPortunesController().notifyObservers(Message.ATTACK_CLEARED);
+    }
+
+COM:clears the current state of attacks and notifies the PortunesController object that the attack has been cleared

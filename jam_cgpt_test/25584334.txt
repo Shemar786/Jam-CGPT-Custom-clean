@@ -1,0 +1,13 @@
+TDAT:     public Asset deepClone() {
+        ImageAsset clone = (ImageAsset) shallowClone();
+
+        clone.image = new BufferedImage(
+                image.getWidth(), image.getHeight(), image.getType());
+        Graphics2D graphics2D = clone.image.createGraphics();
+        graphics2D.drawImage(image, null, 0, 0);
+        graphics2D.dispose();
+
+        return clone;
+    }
+
+COM:creates and returns a deep clone of an ImageAsset object

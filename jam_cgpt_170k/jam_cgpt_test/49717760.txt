@@ -1,0 +1,10 @@
+TDAT: 	private String createTooltipText(ResultTreeNode info) {
+		StringBuffer buf = new StringBuffer();
+		//buf.append("<html><body>&nbsp;Total: " + info.getExists());
+		//buf.append("<br>&nbsp;Unseen: " + info.getUnseen());
+		//buf.append("<br>&nbsp;Recent: " + info.getRecent());
+		//buf.append("</body></html>");
+		return buf.toString();
+	}
+
+COM:creates a tooltip text using information from a ResultTreeNode object

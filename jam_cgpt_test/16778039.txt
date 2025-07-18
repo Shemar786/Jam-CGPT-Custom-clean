@@ -1,0 +1,14 @@
+TDAT: 	public double evaluateFunction(double lagDistance) throws ArithmeticException, IllegalArgumentException {
+		double sill = this.getSill();
+		double range = this.getRange();
+
+        //The model is isotropic
+        if (orderOfAnisotropy == ISOTROPIC) {
+            return sill * (1.0 - Math.exp(-(lagDistance/range)));
+        }
+        else {
+			throw new IllegalArgumentException("Error: the correlation model is two-dimensional. Please specify two- or three-dimensional coordinates.");
+        }
+	}
+
+COM:evaluates a spatial correlation function for a given lag distance, based on a specified model and parameters

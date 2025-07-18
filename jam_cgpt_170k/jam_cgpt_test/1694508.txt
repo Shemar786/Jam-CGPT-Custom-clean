@@ -1,0 +1,18 @@
+TDAT: 	public String processCommand(String command) throws Exception {
+		// output string
+		String outputStr = "";
+		String outputLine;
+		// init the Java Process class and exection the command
+		Process process = Runtime.getRuntime().exec(command);
+		// init buffered reader object and get the process's input stream
+		BufferedReader bufferedReader = new BufferedReader(
+				new InputStreamReader(process.getInputStream()));
+		// get the output data
+		while ((outputLine = bufferedReader.readLine()) != null) {
+			outputStr += outputLine + "\n";
+		}
+		process.destroy();
+		return outputStr;
+	}
+
+COM:takes a command as input and executes it using the Runtime class, reading the output from the command's input stream and returning it as a string

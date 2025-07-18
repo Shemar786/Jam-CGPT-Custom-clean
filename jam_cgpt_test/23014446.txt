@@ -1,0 +1,8 @@
+TDAT:     public void addMaterial(String key, Material material){
+        if (materials.containsKey(key)){
+            Logger.getLogger(MaterialLibrary.class.getName()).log(Level.WARNING, "Key " + key +" allready defined in MaterialLibrary.");
+        }
+        materials.put(key,material);
+    }
+
+COM:adds a material object to the materials map, checking if the given key already exists and logging a warning if it does

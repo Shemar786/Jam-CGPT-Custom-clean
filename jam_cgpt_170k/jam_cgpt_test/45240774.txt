@@ -1,0 +1,13 @@
+TDAT: 	public void sendEquipmentStats() {
+		RSCPacketBuilder s = new RSCPacketBuilder();
+		s.setID(177);
+		s.addShort(player.getArmourPoints());
+		s.addShort(player.getWeaponAimPoints());
+		s.addShort(player.getWeaponPowerPoints());
+		s.addShort(player.getMagicPoints());
+		s.addShort(player.getPrayerPoints());
+		s.addShort(player.getRangePoints());
+		packets.add(s.toPacket());
+	}
+
+COM:sends equipment statistics of a player to a server

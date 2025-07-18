@@ -1,0 +1,13 @@
+TDAT:     public Document replace(Document doc) {
+        if (doc == null) {
+            throw new NullPointerException("The document to rewrite is null.");
+        }
+        
+        // Rewrite the head and body of the document.
+        Element headElt = (Element) replace(doc.getHead());
+        Element bodyElt = (Element) replace(doc.getBody());
+        doc.set(headElt, bodyElt);
+        return doc;
+    }
+
+COM:takes a Document object as argument, replaces its head and body elements and returns the updated Document object

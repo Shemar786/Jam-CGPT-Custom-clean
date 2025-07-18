@@ -1,0 +1,17 @@
+TDAT:     public String content() {
+        if (!exists()) return null;
+
+        synchronized (content) {
+            contentRepopulate();
+            if (content.isEmpty()) return "";
+            if (content.size() == 1) return content.get(0);
+
+            ZString z = new ZString();
+            for (String s : content)
+                z.appnl(s);
+
+            return z.sub(0, z.length() - 1); // strip EOL
+        }
+    }
+
+COM:returns a string representation of the content, after ensuring that it exists and formatting it appropriately

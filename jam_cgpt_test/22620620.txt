@@ -1,0 +1,11 @@
+TDAT: 	private String getInstancePrefix(Namespace ns, GlobalDef typeDef) {
+		if (!sh.getNamespaceEnabled())
+			return null;
+		NamespaceRegistry namespaces = sh.getDefinitionMiner().getGlobalDefMap().getNamespaces();
+		String instancePrefix = namespaces.getPrefixforUri(ns.getURI());
+		if (instancePrefix.equals(""))
+			instancePrefix = namespaces.getNamedDefaultNamespace().getPrefix();
+		return instancePrefix;
+	}
+
+COM:retrieves the prefix for a given namespace based on global definitions and returns it as a string

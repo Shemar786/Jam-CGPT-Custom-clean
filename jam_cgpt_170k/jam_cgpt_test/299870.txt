@@ -1,0 +1,14 @@
+TDAT:     public void addNode(GraphVertex vertex){
+        int index = graph.vertices.indexOf(vertex);
+        nodes.add(new Integer(index));
+        vertex.color = color;
+        changed = true;
+        
+        Cluster clt = writer.getCluster(indexToCltName[index]);
+        if(clt != null){
+            clt.removeNodeByIndex(index);
+        }
+        indexToCltName[index] = name;
+    }
+
+COM:adds a GraphVertex node to a graph, updates its color and marks the graph as changed, and removes the node from a cluster if it exists

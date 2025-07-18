@@ -1,0 +1,19 @@
+TDAT: 	public void resetContents() {
+
+		FrameLayout contentView = (FrameLayout) getRootView().findViewById(
+				R.id.content);
+
+		FrameLayout placeHolder = (FrameLayout) getRootView().findViewById(
+				PLACEHOLDER_ID);
+		FrameLayout background = (FrameLayout) getRootView().findViewById(
+				BACKGROUND_ID);
+		ViewGroup parent = (ViewGroup) placeHolder.getParent();
+		background.removeView(this);
+		contentView.removeView(background);
+		resetLayout();
+		parent.addView(this, mIndex);
+		parent.removeView(placeHolder);
+		parent.invalidate();
+	}
+
+COM:resets the contents of a FrameLayout by removing specific views and then adding them back in a specific order

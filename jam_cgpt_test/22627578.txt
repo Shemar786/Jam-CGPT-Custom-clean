@@ -1,0 +1,12 @@
+TDAT: 	public QName getQName(String qualifiedName) throws Exception {
+		if (!isQualified(qualifiedName))
+			throw new Exception("getQName expects a qualifiedName is input");
+		String prefix = getNamespacePrefix(qualifiedName);
+		Namespace ns = this.getNSforPrefix(prefix);
+		if (ns == NO_NAMESPACE)
+			throw new Exception("Namespace not found for prefix: " + prefix);
+		String name = stripNamespacePrefix(qualifiedName);
+		return DocumentHelper.createQName(name, ns);
+	}
+
+COM:returns a QName (qualified name) object based on the given qualified name string, after validating and checking its namespace

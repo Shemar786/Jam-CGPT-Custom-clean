@@ -1,0 +1,7 @@
+TDAT:     public void requestNumber() throws Exception {
+        CommunicationMessage request = MessageUtil.createCommunicationMessage(new Message(EMIT_NUMBER_REQUEST,
+                this.fPeerService.getPeerName(), null), EMIT_NUMBER_REQUEST);
+        this.fPeerService.sendMessage(request, PRIME_NUMBER_GROUP + ":" + this.fMasterPeerName);
+    }
+
+COM:sends a request for a number to a peer service and throws an exception if a problem occurs

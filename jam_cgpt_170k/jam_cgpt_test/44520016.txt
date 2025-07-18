@@ -1,0 +1,14 @@
+TDAT: 	public Domain getSCADomain(DomainDefinition domainDefinition){
+		List subDomainDef = domainDefinition.getSubDomainDefinitions();
+		Vector domainAtoms = new Vector();
+		
+		for( Iterator li = subDomainDef.listIterator(); li.hasNext(); ) {
+			SubChain sc = (SubChain)li.next();
+			domainAtoms.addAll(getSCAtoms(sc));
+		}
+		
+		domainAtoms.trimToSize();
+		return new Domain(domainDefinition.getDomainID(),domainAtoms,true);
+	}
+
+COM:retrieves a Domain object based on a DomainDefinition object, which includes iterating through subdomains to gather atoms and returning a new Domain object with the collected data

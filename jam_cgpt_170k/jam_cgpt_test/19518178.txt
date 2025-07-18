@@ -1,0 +1,15 @@
+TDAT: 	public void extract(IPOSequent sequent) throws RodinDBException {
+		final IInternalElement root = sequent.getRoot();
+		if (root instanceof IPORoot) {
+			final IProofComponent pc = pm.getProofComponent((IPORoot) root);
+			final IProofTree proofTree = getProofTree(sequent, pc);
+			if (proofTree != null) {
+				IProofTreeNode ptNode = proofTree.getRoot();
+				if (ptNode != null) {
+					listPtNode.add(ptNode);
+				}
+			}
+		}
+	}
+
+COM:extracts a proof tree node from a specific IPOSequent and adds it to a list of proof tree nodes

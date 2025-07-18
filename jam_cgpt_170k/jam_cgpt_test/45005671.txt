@@ -1,0 +1,17 @@
+TDAT:     public void activate(Planet p, boolean center) {
+
+        if (p == null) {
+            return;
+        }
+
+        // activate normally
+        this.activate(p);
+
+        // then center on the world
+        if (center) {
+            conf.offset.setLocation(-p.getPosition().x * conf.scale, p.getPosition().y * conf.scale);
+        }
+
+    }// end activate(p,center)
+
+COM:activates a planet and centers it on the world if specified

@@ -1,0 +1,16 @@
+TDAT: 	public void remove(int index) {
+	if (index < 0 || index >= ncomponents) {
+		throw new ArrayIndexOutOfBoundsException(index);
+	}
+	Component comp = component[index];
+
+	if (peer != null) {
+		comp.removeNotify();
+	}
+
+	comp.parent = null;
+	System.arraycopy(component, index + 1, component, index, ncomponents - index - 1);
+	component[--ncomponents] = null;
+	}
+
+COM:removes a component at the specified index from an array, and throws an exception if the index is out of bounds

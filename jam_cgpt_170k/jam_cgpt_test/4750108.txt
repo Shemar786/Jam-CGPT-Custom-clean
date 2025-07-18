@@ -1,0 +1,13 @@
+TDAT:         public void flushBase64() throws java.io.IOException {
+            if (position > 0) {
+                if (encode) {
+                    out.write(encode3to4(b4, buffer, position));
+                    position = 0;
+                } else {  // end if: encoding
+                    throw new java.io.IOException("Base64 input not properly padded.");
+                }   // end else: decoding
+            }   // end if: buffer partially full
+
+        }   // end flush
+
+COM:flushes any remaining Base64 encoded data in the buffer to the output stream

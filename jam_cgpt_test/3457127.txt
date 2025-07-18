@@ -1,0 +1,15 @@
+TDAT: 	protected void initCommand(Command command){
+		
+		Hashtable table = initParameters.getParameters(command.getClass().getName());
+		
+		if( table == null || table.size() == 0 )
+			return;
+		
+		Enumeration enum = table.keys();
+		while( enum.hasMoreElements() ){
+			String key = (String)enum.nextElement();
+			BeanUtils.writeProperty( command, key, table.get(key).toString() );
+		}
+	}
+
+COM:initializes a given command object by setting its properties with values from a Hashtable of parameters obtained from the initParameters object, using the BeanUtils.writeProperty() method

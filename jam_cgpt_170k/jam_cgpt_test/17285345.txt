@@ -1,0 +1,8 @@
+TDAT: 	public void update(InetSocketAddress inetAddress, PrivateKey signKey) throws Exception{
+		CertificateData old_c;
+		old_c = (CertificateData)SecurityHandler.getObject(_data);
+		_data = SecurityHandler.getBytes(new CertificateData(old_c.getId() , old_c.getKey(), inetAddress.getAddress() , inetAddress.getPort()));
+		_signature = SecurityHandler.sign(_data, signKey);
+	}
+
+COM:updates the certificate data with a new InetSocketAddress and PrivateKey, and signs the updated data using SecurityHandler

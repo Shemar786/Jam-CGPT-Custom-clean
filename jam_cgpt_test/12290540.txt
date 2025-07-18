@@ -1,0 +1,14 @@
+TDAT: 	public void refresh(boolean addedNote) {
+		if ((oldNotes.size() == 0) || (addedNote)) {
+			oldNotes.clear();
+			List<BoardNote> notes = Roma.component(BoardNoteRepository.class).retrieveByProject(project);
+			for (BoardNote n : notes) {
+				OldBoardNoteInstance old = new OldBoardNoteInstance();
+				old.setEntity(n);
+				oldNotes.add(old);
+			}
+			Roma.fieldChanged(this, "oldNotes");
+		}
+	}
+
+COM:refreshes the old notes list by retrieving notes from a repository and adding them to a new instance of old notes if there are no old notes or a note has been added

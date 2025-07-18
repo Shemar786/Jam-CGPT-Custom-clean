@@ -1,0 +1,18 @@
+TDAT: 	private void buildViewForMeasuring() {
+		// clear all items
+		if (itemsLayout != null) {
+			recycle.recycleItems(itemsLayout, firstItem, new ItemsRange());			
+		} else {
+			createItemsLayout();
+		}
+		
+		// add views
+		int addItems = visibleItems / 2;
+		for (int i = currentItem + addItems; i >= currentItem - addItems; i--) {
+			if (addViewItem(i, true)) {
+			    firstItem = i;
+			}
+		}
+	}
+
+COM:builds a view for measuring, clears all existing items, possibly creates a new layout, adds views to the layout based on the visible items and the current item, and updates the first item variable

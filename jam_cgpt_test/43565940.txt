@@ -1,0 +1,8 @@
+TDAT: 	private void checkPost(Post post1, Post post2) {
+		
+		assertEquals("wrong id", post1.getId(), post2.getId());
+		assertEquals("wrong thread id", post1.getThreadId(), post2.getThreadId());
+		assertEquals("wrong content", post1.getContent(), post2.getContent());				
+	}
+
+COM:This private Java method checks if two Post objects have the same id, thread id, and content

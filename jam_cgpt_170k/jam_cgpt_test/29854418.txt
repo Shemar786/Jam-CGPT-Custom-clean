@@ -1,0 +1,11 @@
+TDAT:   public GregorianCalendar toCalendar() {
+    GregorianCalendar   calendar = new GregorianCalendar();
+    
+    calendar.clear();
+    calendar.set(Calendar.YEAR, getYear());
+    calendar.set(Calendar.MONTH, getMonth() - 1);
+    calendar.set(Calendar.DAY_OF_MONTH, getDay());
+    return calendar;
+  }
+
+COM:returns a GregorianCalendar object with year, month, and day values set based on the values of the object calling the method

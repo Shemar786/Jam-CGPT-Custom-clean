@@ -1,0 +1,15 @@
+TDAT: 	private JList getFoundArtifactsList() {
+		if (foundArtifactsList == null) {
+			foundArtifactsList = new JList();
+			foundArtifactsList.setModel(new DefaultListModel());
+			foundArtifactsList
+					.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+						public void valueChanged(javax.swing.event.ListSelectionEvent e) {
+							doShowArtifact();
+						}
+					});
+		}
+		return foundArtifactsList;
+	}
+
+COM:returns a JList of found artifacts and creates it if it doesn't already exist

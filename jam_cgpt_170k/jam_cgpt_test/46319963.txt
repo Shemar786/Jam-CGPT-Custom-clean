@@ -1,0 +1,16 @@
+TDAT: 	public void startSimulation() {
+		
+		CustomerQueue queue = new CustomerQueue(NOF_CHAIRS, this);
+		doorman = new Doorman(queue, this);
+		System.out.println("over startthread");
+		doorman.startThread();
+		System.out.println("under startthread");
+		barbers = new Barber[NOF_BARBERS];
+		for(int i = 0; i < NOF_BARBERS; i++) {
+			barbers[i] = new Barber(queue, this, i);
+			barbers[i].startThread();
+		}
+		System.out.println("startsim");
+	}
+
+COM:initiates a simulation of a barber shop by creating objects for a customer queue, doorman, and barbers, and starting threads for the doorman and each barber

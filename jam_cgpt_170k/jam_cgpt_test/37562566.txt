@@ -1,0 +1,12 @@
+TDAT: public void setBackgroundMode (int mode) {
+  checkWidget ();
+  if(backgroundMode == mode) return;
+  backgroundMode = mode;
+  Control [] children = _getChildren ();
+  for (int i = 0; i < children.length; i++) {
+    children [i].updateBackgroundMode ();   
+  }
+  handle.repaint();
+}
+
+COM:sets the background mode of a widget and updates the mode for its children, then repaints the widget's handle

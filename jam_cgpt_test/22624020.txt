@@ -1,0 +1,10 @@
+TDAT: 	private String getIdFromFileName(String osmCollectFileName) throws Exception {
+		try {
+			verifyOsmCollectFileName(osmCollectFileName);
+		} catch (Exception e) {
+			throw new Exception("\'" + osmCollectFileName + "\' is an invalid file name : " + e.getMessage());
+		}
+		return osmCollectFileName.substring(0, osmCollectFileName.length() - 4);
+	}
+
+COM:takes a file name as input, verifies its validity, and returns the file name without the file extension

@@ -1,0 +1,11 @@
+TDAT: 	public void doSave(IProgressMonitor monitor) {
+//		symbolEditorPage.updateManipulator();
+//		if (buildMani.isDocumentSyncronisator()){
+//			   IDocument content = buildMani.getAsDocument();
+//			   this.textEditorPage.getDocumentProvider().getDocument(textEditorPage).set(content.get());
+//	    }
+		textEditorPage.doSave(monitor);
+		setInput(textEditorPage.getEditorInput());
+	}
+
+COM:saves the current state of a text editor and updates its content if it is synchronized with a document manipulator

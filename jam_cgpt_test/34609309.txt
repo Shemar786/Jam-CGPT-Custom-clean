@@ -1,0 +1,9 @@
+TDAT:     public void testGetMark() {
+        System.out.println("getMark");
+        Tagset tagset = createTagset();
+        String mark = "tag_1.1:tag_3.2:tag_2.1";
+        GrammaticalPropertiesImpl instance = new GrammaticalPropertiesImpl(mark, tagset);
+        assertEquals(mark, instance.getMark());
+    }
+
+COM:tests the getMark() method of the GrammaticalPropertiesImpl class by creating a tagset and ensuring that the returned mark matches the expected value

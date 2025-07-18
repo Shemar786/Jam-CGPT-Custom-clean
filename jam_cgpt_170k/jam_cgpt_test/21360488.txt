@@ -1,0 +1,10 @@
+TDAT:     public void setCheckUpdatePolicy(CheckUpdatePolicy checkUpdatePolicy) {
+        if (checkUpdatePolicy == null) {
+            checkUpdatePolicy = CheckUpdatePolicy.CHECK_ALL;
+        }
+        CheckUpdatePolicy old = this.checkUpdatePolicy;
+        this.checkUpdatePolicy = checkUpdatePolicy;
+        changeSupport.firePropertyChange("checkUpdatePolicy", old, checkUpdatePolicy);
+    }
+
+COM:sets the check update policy and notifies listeners of the change

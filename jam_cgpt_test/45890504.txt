@@ -1,0 +1,17 @@
+TDAT: 	protected void displayRecentChanges(final String packagename, final Intent intent) {
+		
+		int resourceid = AboutUtils.getResourceIdExtraOrMetadata(this, packagename, intent, 
+				AboutIntents.EXTRA_RECENT_CHANGES_RESOURCE, AboutMetaData.METADATA_RECENT_CHANGES);
+		
+		if (resourceid == 0) {
+			// Tab is hidden if there are no recent changes.
+			//mRecentChangesText.setText(R.string.no_information_available);
+			return;
+		}
+		
+		String recentchanges = getRawResource(packagename, resourceid, true);
+    	
+    	mRecentChangesText.setText(recentchanges);
+	}
+
+COM:displays recent changes for a given package name and intent in a text view, and if there are no recent changes, the text "no information available" is displayed instead

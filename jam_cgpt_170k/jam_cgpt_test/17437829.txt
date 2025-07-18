@@ -1,0 +1,9 @@
+TDAT: 	private SSLSocketFactory getPushSSLSocketFactory() throws KeyStoreException, NoSuchProviderException, CertificateException, NoSuchAlgorithmException, IOException, UnrecoverableKeyException, KeyManagementException{
+		if( pushSSLSocketFactory == null ) {
+			pushSSLSocketFactory = createSSLSocketFactoryWithTrustManagers( null );
+		}
+		logger.debug( "Returning Push SSLSocketFactory" );
+		return pushSSLSocketFactory;
+	}
+
+COM:returns an instance of SSLSocketFactory for sending push notifications, and creates one if it doesn't exist

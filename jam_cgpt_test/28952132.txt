@@ -1,0 +1,13 @@
+TDAT:     public void addObjectList(ObjectList objectList) {
+        if (objectList != null) {
+            String mapName = objectList.getName();
+            if (mapName != null) {
+                if (objectLists == null) objectLists = new Hashtable<String, ObjectList>();
+                objectLists.put(mapName, objectList);
+            } else {
+                LOG.debug("Adding object list with no name to connection: " + name);
+            }
+		}
+	}
+
+COM:adds an object list to a hashtable if it is not null and has a valid name

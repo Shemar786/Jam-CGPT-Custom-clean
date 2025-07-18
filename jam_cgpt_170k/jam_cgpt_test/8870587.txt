@@ -1,0 +1,12 @@
+TDAT: 	protected void init() throws Exception {
+		String[] locations = {
+				"classpath*:org/gbif/portal/**/applicationContext-*.xml",
+				"classpath*:org/ala/**/applicationContext-*.xml"
+		};
+		context = new ClassPathXmlApplicationContext(locations);
+		dataSource = (DataSource) context.getBean("dataSource");
+		dTemplate = new JdbcTemplate(dataSource);
+		outputStream = new FileOutputStream(outputFileLocation);
+	}
+
+COM:initializes the application context by loading multiple XML files, creates a data source, and sets up a JDBC template and output stream

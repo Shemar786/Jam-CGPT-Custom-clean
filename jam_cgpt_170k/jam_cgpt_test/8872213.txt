@@ -1,0 +1,10 @@
+TDAT:     private String getRank(Integer id) {
+        Integer rank = rankMappings.get(id);
+        if(rank != null)
+            return Integer.toString(rankMappings.get(id));
+        log.warn("A mapping for rank [" + id + "] does not exist.");
+        return nullString;
+        //return dTemplate.queryForInt(rankSQL, new Object[]{id});
+    }
+
+COM:takes an Integer ID as input and returns the corresponding rank as a String, or logs a warning message if the mapping does not exist

@@ -1,0 +1,9 @@
+TDAT:     public void testSetTimeBetweenChecks() {
+        System.out.println("testSetTimeBetweenChecks");
+        
+        // TODO add your test code below by replacing the default call to fail.
+        handler.setMillisBetweenChecks(5);
+        assertEquals("Unexpected millis",5,handler.getMillisBetweenChecks());
+    }
+
+COM:tests setting the time between checks for a handler object

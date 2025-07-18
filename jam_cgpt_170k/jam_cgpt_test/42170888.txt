@@ -1,0 +1,17 @@
+TDAT:   protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeItem_description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeItem_description_feature", "_UI_TimeItem_type"),
+				 TimeBasedRoutingPackage.Literals.TIME_ITEM__DESCRIPTION,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the description feature of a TimeItem object

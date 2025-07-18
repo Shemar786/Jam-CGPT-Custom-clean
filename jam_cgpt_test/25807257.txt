@@ -1,0 +1,14 @@
+TDAT: 	public Cursor fetchPage(long rowId) throws SQLException {
+
+		Cursor mCursor =
+
+		mDb.query(true, DATABASE_TABLE, new String[] { KEY_ID, KEY_TITLE, KEY_BODY },
+				KEY_ID + "=" + rowId, null, null, null, null, null);
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+		return mCursor;
+
+	}
+
+COM:fetches a page from a database table and returns a Cursor object containing the requested data

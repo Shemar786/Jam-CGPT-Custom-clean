@@ -1,0 +1,13 @@
+TDAT:     protected boolean saveData() {
+        boolean result = true;
+        if (this.getPnEditJbsObject() != null) {
+            result = this.getPnEditJbsObject().saveData();
+        }
+        if (result && (this.getPnList() != null)) {
+            this.getPnList().reload();
+            this.getPnList().reloadToolPane();
+        }
+        return result;
+    }
+
+COM:saves data and reloads a list and tool pane if the save is successful

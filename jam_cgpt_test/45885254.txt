@@ -1,0 +1,18 @@
+TDAT: 	public long fetchCipherAccess(String packageName) {
+		long expires=-1;	// default to not found
+		try {
+			Cursor c = db.query(true, TABLE_CIPHER_ACCESS, new String[] {"expires"},
+			"packagename="+packageName, null, null, null, null,null);
+			if(c.getCount() > 0) {
+				c.moveToFirst();
+				expires=c.getLong(0);
+			}
+			c.close();
+		} catch (SQLException e)
+		{
+			Log.d(TAG,"SQLite exception: " + e.getLocalizedMessage());
+		}
+		return expires;
+	}
+
+COM:fetches the expiration date for a given package name from a SQLite database

@@ -1,0 +1,11 @@
+TDAT:     private UsersEntityFacadeLocal lookupUsersEntityFacade() {
+        try {
+            Context c = new InitialContext();
+            return (UsersEntityFacadeLocal) c.lookup("NewsApp/UsersEntityFacade/local");
+        } catch(NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE,"exception caught" ,ne);
+            throw new RuntimeException(ne);
+        }
+    }
+
+COM:returns a local instance of a UsersEntityFacade object using a JNDI lookup in the NewsApp context

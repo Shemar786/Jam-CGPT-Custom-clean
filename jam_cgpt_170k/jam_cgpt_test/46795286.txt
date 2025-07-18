@@ -1,0 +1,14 @@
+TDAT: 	private int calculateDotLevel(String toCalc) {
+		int level = 0;
+		char ch;
+        for ( int i = 0;  i < toCalc.length();  i++ ) {
+            ch = toCalc.charAt(i);  // Get the i-th character in str.
+            if ( ch == '.'){
+               level++;
+            }
+        }     
+		
+		return level;
+	}
+
+COM:calculates the level of dots present in the input string and returns an integer value

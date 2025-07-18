@@ -1,0 +1,12 @@
+TDAT: 	private RelationType getRelationType(String name) {
+		RelationType rt = aog.getMetaData().getRelationType(name);
+		if (rt != null) {
+			return aog.getMetaData().getFactory().createRelationType(rt.getId(),rt);
+		} else {
+			Parser.propagateEventOccurred(
+					new RelationTypeMissingEvent("Missing RelationType: "+name, "getRelationType(String name)"));
+		}
+		return null;
+	}
+
+COM:returns the type of relation specified by the given name, and creates a relation type if it is not already present in the metadata, or throws an exception if it is missing

@@ -1,0 +1,9 @@
+TDAT:   public void setScale(int record, int scale) throws VExecFailedException {
+    if (scale > maxScale) {
+      throw new InconsistencyException(MessageCode.getMessage("VIS-00060", String.valueOf(scale), String.valueOf(maxScale)));
+    }
+
+    currentScale[record] = scale;
+  }
+
+COM:sets the scale for a given record and throws an exception if the scale is greater than the maximum allowed scale

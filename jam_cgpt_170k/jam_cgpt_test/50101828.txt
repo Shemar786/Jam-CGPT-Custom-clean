@@ -1,0 +1,19 @@
+TDAT:     private String buildURL() {
+	StringBuffer retURL = new StringBuffer("http://bible.gospelcom.net/bible?passage=");
+	retURL.append(book);
+	retURL.append("+");
+	retURL.append(chapter);
+	if(fromVerse != -1)
+	    retURL.append(":" + fromVerse);
+
+	if(toVerse != -1 && toVerse >= fromVerse)
+	    retURL.append("-" + toVerse);
+
+	retURL.append("&language=english&version=");
+	retURL.append(version);
+	retURL.append("&showfn=off&showxref=off");
+	debug("buildURL value: " + retURL.toString() );
+	return retURL.toString();
+    }
+
+COM:builds a URL for a Bible passage using input parameters and returns a string value of the URL

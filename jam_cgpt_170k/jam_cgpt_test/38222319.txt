@@ -1,0 +1,17 @@
+TDAT:   public boolean isDestroyed() {
+    Map ships = retrieveShips();
+    boolean result = true;
+    try {
+      Iterator items = ships.values().iterator();
+      while (items.hasNext()) {
+        Ship ship = (Ship) items.next();
+        result &= ship.isDestroyed();
+      }
+    }
+    finally {
+      releaseShips(ships);
+    }
+    return result;
+  }
+
+COM:checks if all ships in the game are destroyed and returns true if they are, and false otherwise

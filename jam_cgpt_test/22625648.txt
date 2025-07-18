@@ -1,0 +1,12 @@
+TDAT: 	protected String getCost() throws Exception {
+		String val = "";
+		for (int i = 0; i < adnXmlDoc.length; i++) {
+			String[] cost = adnXmlDoc[i].getXmlFields("rights/cost");
+			for (int j = 0; j < cost.length; j++)
+				val += " " + cost[j].replaceAll(":", "").replaceAll(" ", "");
+		}
+		//prtln("creators: " + val);
+		return val.trim();
+	}
+
+COM:retrieves a concatenated string of costs from an XML document's "rights/cost" fields

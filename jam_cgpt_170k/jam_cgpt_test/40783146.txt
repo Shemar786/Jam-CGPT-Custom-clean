@@ -1,0 +1,7 @@
+TDAT: 	public DeploymentID login(Module application, XMPPAccount user, String brokerPublicKey) {
+	    AccountingAggregator peerAccounting = getAccountingAggregator();
+	    return login(application, user.getUsername(), user.getServerAddress(), user.getUserpassword(), brokerPublicKey, 
+	    		null, peerAccounting, false);
+	}
+
+COM:logs in a user with specified application and broker credentials, and returns a deployment ID

@@ -1,0 +1,14 @@
+TDAT:     public boolean isOKP() {
+        try {
+            STSet io = this.interest.getSTSet(ContextSpace.DIM_DIRECTION);
+            SemanticTag out = io.getSemanticTagBySi(ContextSpace.OUTSI);
+            if (out != null) {
+                return true;
+            }
+        } catch (SharkKBException ex) {
+            L.e(ex.getMessage(), this);
+        }
+        return false;
+    }
+
+COM:checks if a certain condition is met and returns a boolean value based on the result

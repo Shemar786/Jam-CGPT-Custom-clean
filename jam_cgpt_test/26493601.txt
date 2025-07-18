@@ -1,0 +1,11 @@
+TDAT:   public void testAddErrors() {
+    Status st = new Status(null);
+    List errs = new ArrayList();
+    for(int i = 0; i < 5; i++){
+      errs.add(new ValidationErr(""+i, "msg" + i));
+    }
+    st.addErrors(errs);
+    super.assertEquals(5, st.getErrors().size());
+  }
+
+COM:tests the ability of the "Status" class to correctly add a list of "ValidationErr" objects to its internal list of errors

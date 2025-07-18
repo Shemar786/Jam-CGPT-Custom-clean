@@ -1,0 +1,20 @@
+TDAT: 	private Number getNumberValue(Cell cell) {
+            //**** HACK AR 2004.01.10
+		//String value = cell.getFormattedValue();
+                Object value = cell.getValue();
+
+		DecimalFormatSymbols dfs = new DecimalFormatSymbols(locale);
+		DecimalFormat formatter = new DecimalFormat();
+		formatter.setDecimalFormatSymbols(dfs);
+		Number number = null;
+		try {
+			number = (Number)value;
+                        //number = formatter.parse(value, new ParsePosition(0));
+		}
+		catch (Exception e) {
+			number = null;
+		}
+		return number;
+	}
+
+COM:This is a Java method that takes a Cell object as a parameter and returns a Number object, attempting to parse the value of the cell as a number using a DecimalFormat object and the current locale

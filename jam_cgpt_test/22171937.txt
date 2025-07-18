@@ -1,0 +1,17 @@
+TDAT: 	protected void addAgentPoolPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveAgent_agentPool_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveAgent_agentPool_feature", "_UI_EveAgent_type"),
+				 EvesimPackage.Literals.EVE_AGENT__AGENT_POOL,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for an agent pool to the item property descriptor list

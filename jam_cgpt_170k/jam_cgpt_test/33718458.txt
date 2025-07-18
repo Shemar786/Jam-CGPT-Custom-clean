@@ -1,0 +1,13 @@
+TDAT:     public void testSetClassId() {
+        System.out.println("setClassId");
+        
+        int classId = 0;
+        Event_StubImpl instance = new Event_StubImpl();
+        
+        instance.setClassId(classId);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a unit test for the setClassId method of the Event_StubImpl class, which sets the classId to 0 and prints "setClassId," but fails the test case

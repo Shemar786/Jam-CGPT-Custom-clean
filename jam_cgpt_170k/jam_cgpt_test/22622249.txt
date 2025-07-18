@@ -1,0 +1,11 @@
+TDAT: 	public List getSubList() {
+		if (subList == null) {
+			subList = new ArrayList();
+			for (Iterator i = this.element.elementIterator(); i.hasNext(); ) {
+				subList.add(new LayoutNode((Element) i.next(), this.vocabLayout, this));
+			}
+		}
+		return subList;
+	}
+
+COM:returns a List of LayoutNode objects and, if subList is null, populates it by iterating through a given element's elements and adding new LayoutNode objects to the subList

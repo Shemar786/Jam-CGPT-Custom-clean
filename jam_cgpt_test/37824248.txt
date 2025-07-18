@@ -1,0 +1,10 @@
+TDAT:    public void quickStart() {
+      // Test the quick start the database.
+      m_prDatabase.quickStart();
+      dbState = m_prDatabase.getDatabaseState();
+      assertTrue("Testing database is open after quickStart.",dbState == Database.DATABASE_OPEN);
+      
+      assertTrue("Testing state retrieved from listener.",listenerDBState == Database.DATABASE_OPEN);
+   }
+
+COM:tests the quick start of a database and checks that the database is open and the state retrieved from a listener is also open

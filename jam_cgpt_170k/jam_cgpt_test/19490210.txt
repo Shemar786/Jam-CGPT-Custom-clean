@@ -1,0 +1,20 @@
+TDAT: 	public boolean validateStatemachine_hasValidName(Statemachine statemachine, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		String name = statemachine.getName();
+		if (name == null || !name.trim().matches("\\w+")) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.WARNING,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "Statemachine should have a valid name", getObjectLabel(statemachine, context) },
+						 new Object[] { statemachine },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+COM:validates if a Statemachine object has a valid name by checking if the name is not null and matches a regular expression. If the name is not valid, it returns a warning diagnostic message and false, otherwise, it returns true

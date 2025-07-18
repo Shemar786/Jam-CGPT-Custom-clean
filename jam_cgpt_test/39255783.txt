@@ -1,0 +1,13 @@
+TDAT: 	protected Point getAxisTitlePointY() {
+		Rectangle dataArea = getDataAreaBounds();
+		if(seriesNumber==1)
+			return new Point(dataArea.x - (int)(1.35*V_AXIS_PADDING),
+				dataArea.y + (dataArea.height / 2));
+		if(seriesNumber==2)
+			return new Point(dataArea.x + dataArea.width + (int)(1.35*V_AXIS_PADDING),
+					dataArea.y + (dataArea.height / 2));
+		System.err.println("Invalid Series Number for a ChartArea.");
+		return null;
+	}
+
+COM:returns the Y-axis title's position as a Point object based on the chart's data area and the number of series in the chart

@@ -1,0 +1,14 @@
+TDAT:     private Component makeMiddleRow() {
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout(FlowLayout.LEFT));
+        panel.setBorder(BorderFactory.createEtchedBorder());
+
+        panel.add(makeNewAtGalaxyList());
+        panel.add(makeStatlessList());
+
+        panel.add(makeNotesButtonsPanel());
+
+        return panel;
+    }
+
+COM:creates a middle row JPanel consisting of various sub-components with a specified layout and border

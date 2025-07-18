@@ -1,0 +1,18 @@
+TDAT: 	public Object get(String key) {
+		String xpath = XPathUtils.decodeXPath(key);
+		Node node = doc.selectSingleNode(xpath);
+		String val = "";
+		if (node == null) {
+			// prtln("DocMap.get(): couldn't find node for " + xpath);
+		}
+		else {
+			try {
+				val = node.getText();
+			} catch (Exception e) {
+				prtlnErr("DocMap.get(): unable to get Text for " + xpath);
+			}
+		}
+		return val;
+	}
+
+COM:takes a key (encoded in XPath syntax), searches for a node in a document object, retrieves the text value of the node, and returns it as an Object

@@ -1,0 +1,13 @@
+TDAT:         public void run() {
+            // We were monitoring an operation whose idx is nextTimed
+            // check if it terminated
+            if (terminated == false) {
+                // The operation did not terminate
+                // We force an exception to wake up the thread
+                Log.error("[CTPService] An IO operation did not complete before"
+                        + " maximum allowed time. Restart the CTPService");
+                closeConnection();
+            }
+        }
+
+COM:checks if a monitored operation has terminated, and if not, forces an exception to wake up the thread

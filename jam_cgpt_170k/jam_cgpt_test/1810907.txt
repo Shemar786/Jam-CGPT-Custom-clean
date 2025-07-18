@@ -1,0 +1,10 @@
+TDAT:   public Element createElement(String tagName) {
+    try {
+      return (Element) NodeImpl.build(XMLParserImpl.createElement(this
+        .getJsObject(), tagName));
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_CHARACTER_ERR, e, this);
+    }
+  }
+
+COM:creates an XML element with the specified tag name and returns it as an Element object

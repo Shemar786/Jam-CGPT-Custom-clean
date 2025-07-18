@@ -1,0 +1,11 @@
+TDAT: 	public void userLogout(SuccessCode success, ActiveParticipant user) {
+		try {
+			if (user == null) user = getUser();
+			user.role = ActiveParticipantIds.Source;
+			this.userAuthentication(user, AuditTypeCodes.Logout, success);
+		} catch (JAXBException e) {
+			LOG.error("Unable to log user authentication.", e);
+		}
+	}
+
+COM:logs out an active participant user with a specified success code and logs the user authentication event as a logout audit

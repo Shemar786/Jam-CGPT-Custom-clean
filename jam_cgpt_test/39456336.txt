@@ -1,0 +1,26 @@
+TDAT:     public boolean conforms(PeakListRow row) {
+	switch (type) {
+	case NAME:
+	    PeakIdentity identity = row.getPreferredPeakIdentity();
+	    if (identity == null)
+		return false;
+	    String name = identity.getName();
+
+	    if (isEmpty(nameRegex.toString()) || isEmpty(name)) {
+		return false;
+	    }
+
+	    Matcher matcher = nameRegex.matcher(name);
+	    return matcher.find();
+
+	case MASS:
+	    return range.contains(row.getAverageMZ());
+
+	case RT:
+	    return range.contains(row.getAverageRT());
+
+	}
+	return false;
+    }
+
+COM:checks if a given PeakListRow object conforms to a certain type of criteria, which can be based on either the name, mass, or retention time

@@ -1,0 +1,15 @@
+TDAT: 	public int getTSlotLineClearAll(boolean big) {
+		int result = 0;
+
+		for(int j = 0; j < width; j++) {
+			for(int i = 0; i < getHeightWithoutHurryupFloor() - 2; i++) {
+				if(getLineFlag(i) == false) {
+					result += getTSlotLineClear(j, i, big);
+				}
+			}
+		}
+
+		return result;
+	}
+
+COM:returns the total number of lines cleared in the T-Spin slot by iterating over the game board and calling the getTSlotLineClear method

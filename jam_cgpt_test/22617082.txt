@@ -1,0 +1,13 @@
+TDAT:     public Tree getFPart(Tree t, String prefix) {
+        List tlist = t.getChildrenAsList();
+        Iterator it = tlist.iterator();
+        while (it.hasNext()) {
+            Tree tree = (Tree) it.next();
+            if (tree.nodeString().startsWith(prefix)) {
+                return tree;
+            }
+        }
+        return null;
+    }
+
+COM:returns the first child node of a given parent node that starts with a specified prefix

@@ -1,0 +1,13 @@
+TDAT: 	public void startMonitor(IMonitor monitor) throws CoreException {
+		if (!monitors.contains(monitor))
+			return;
+		
+		if (AcceptThread.isPortInUse(monitor.getLocalPort()))
+			throw new CoreException(new Status(IStatus.ERROR, MonitorPlugin.PLUGIN_ID, 0, NLS.bind(Messages.errorPortInUse, monitor.getLocalPort() + ""), null));
+		
+		AcceptThread thread = new AcceptThread(monitor);
+		thread.startServer();
+		threads.put(monitor, thread);
+	}
+
+COM:starts monitoring by creating a new thread for the given monitor, throwing a CoreException if the local port is in use, and adding the thread to a map

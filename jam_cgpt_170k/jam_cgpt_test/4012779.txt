@@ -1,0 +1,9 @@
+TDAT: 	public void defineHandicapExpression(String leagueId, String expression) throws InvalidSyntaxException, InvalidVariablesException, InvalidLeagueException, MissingAttributeException {
+		ValidateAttribute.handicapExpressionEmptyAttributes(leagueId, expression);
+		validateExpressionHandicapSyntax(expression);
+		validateHandicapVariables(expression);
+		BLMSLeague league = getLeague(leagueId);
+		updateLeagueHandicap(league, expression);
+	}	
+
+COM:defines a handicap expression for a league, validates its syntax and variables, retrieves the league using the league ID, and updates the league handicap with the expression

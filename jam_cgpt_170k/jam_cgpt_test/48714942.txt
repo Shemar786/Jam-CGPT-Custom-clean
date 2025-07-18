@@ -1,0 +1,8 @@
+TDAT:     protected String getName(Element definitionElement) {
+        Element nameElement = DomUtils.getChildElementByTagName(definitionElement, ModuleElementNames.NAME_ELEMENT);
+        String name = DomUtils.getTextValue(nameElement);
+        Assert.notNull(nameElement, ModuleElementNames.MODULE_ELEMENT + " must contain an element: " + ModuleElementNames.NAME_ELEMENT);
+        return name;
+    }
+
+COM:takes in an element and returns the name element as a string after validating its existence

@@ -1,0 +1,13 @@
+TDAT: 	protected MyRoleType generateMyRole(final PartnerLink bpelPartnerLink) {
+		if (bpelPartnerLink.getMyRole() == null)
+			return null;
+
+		MyRoleType myRole = PddFactory.eINSTANCE.createMyRoleType();
+		myRole.setAllowedRoles("");
+		myRole.setBinding(MyRoleBindingType.get(MyRoleBindingType.MSG));
+		myRole.setService(generateMyRoleService(bpelPartnerLink));
+
+		return myRole;
+	}
+
+COM:generates a new instance of a MyRoleType object based on the provided PartnerLink, setting the allowed roles, binding, and service properties of the object

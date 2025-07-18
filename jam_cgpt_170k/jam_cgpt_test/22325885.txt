@@ -1,0 +1,8 @@
+TDAT:     private void readCFG(InputStream taskCFGInputStream) throws Exception {
+        log.debug("Running TaskJarAnalyzer.readCFG(taskCFGInputStream)..");
+        Config taskConfig = new Config(taskCFGInputStream);
+        taskClassName = taskConfig.getStringValue("taskClassName");
+        taskStateClassName = taskConfig.getStringValue("taskStateClassName");
+    }
+
+COM:reads a configuration file from an input stream and retrieves two string values, taskClassName and taskStateClassName

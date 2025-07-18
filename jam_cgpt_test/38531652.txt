@@ -1,0 +1,10 @@
+TDAT:     public void testGetContentAsDOM() throws Exception {
+        System.out.println("testGetContentAsDOM");
+        
+        // TODO add your test code below by replacing the default call to fail.
+        Node node = resource.getContentAsDOM();
+        assertNotNull("expected a valid node",node);
+        assertEquals("expected a document root","#document",node.getNodeName());
+    }
+
+COM:tests that the getContentAsDOM() method returns a valid node and that its document root has the expected node name

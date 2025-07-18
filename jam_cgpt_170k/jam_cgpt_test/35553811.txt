@@ -1,0 +1,20 @@
+TDAT: 	private void checkCookieFile() {
+
+		try {
+			if (DBManager.getEmsOprType() == DBManager.SINGLE_CONNECTION) {
+				if (!STAND_ALONE_COOKIE.exists()) {
+					STAND_ALONE_COOKIE.createNewFile();
+				}
+				setStandAloneClientIP(STAND_ALONE_COOKIE);
+			} else {
+				if (!CS_COOKIE.exists()) {
+					CS_COOKIE.createNewFile();
+				}
+				setClientIP(CS_COOKIE);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:checks for the existence of cookie files and sets client IP address based on the type of database manager used

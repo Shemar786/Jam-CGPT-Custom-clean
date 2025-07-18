@@ -1,0 +1,9 @@
+TDAT: 	public SpaceVec times(Time time) {
+		double t = time.amount(Time.S);
+
+		return new SpaceVec(Space.M.times(vector[0].amount(Speed.M_S) * t),
+				Space.M.times(vector[1].amount(Speed.M_S) * t), Space.M
+						.times(vector[2].amount(Speed.M_S) * t));
+	}
+
+COM:takes a Time object and returns a new SpaceVec object, calculated by multiplying each element in the existing SpaceVec object by the amount of time in seconds

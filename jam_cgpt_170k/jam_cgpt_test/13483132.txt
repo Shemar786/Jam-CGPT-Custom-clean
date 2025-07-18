@@ -1,0 +1,21 @@
+TDAT:     public void replacePhis(final FlowGraph cfg) {
+        replaceCatchPhis(cfg);
+        replaceJoinPhis(cfg);
+
+        // Remove the phis.
+        cfg.visit(new TreeVisitor() {
+            public void visitTree(Tree tree) {
+                Iterator e = tree.stmts().iterator();
+
+                while (e.hasNext()) {
+                    Stmt s = (Stmt) e.next();
+
+                    if (s instanceof PhiStmt) {
+                        e.remove();
+                    }
+                }
+            }
+        });
+    }
+
+COM:replaces catch and join phis in a given FlowGraph object, and removes all phis from the object

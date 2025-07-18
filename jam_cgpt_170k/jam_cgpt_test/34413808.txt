@@ -1,0 +1,18 @@
+TDAT: 	private void init() {
+		_innerData = Collections.synchronizedMap(new LinkedHashMap<String,Object>());
+		Iterator<Entry<String,Object>> itr = _srcModel.entrySet().iterator();
+		while(itr.hasNext()){
+			Entry<String, Object> entry = itr.next();
+			_innerData.put(entry.getKey(), entry.getValue());
+		}
+		
+		_srcListener = new ListDataListener(){
+			public void onChange(ListDataEvent event) {
+				onListDataChange(event);
+			}
+		};
+		
+		_srcModel.addListDataListener(_srcListener);
+	}
+
+COM:initializes an object by setting up a synchronized map and listener using a LinkedHashMap and ListDataListener

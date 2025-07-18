@@ -1,0 +1,9 @@
+TDAT:     private void resizeComponent(Component comp, int column, int modifier) {
+        TableColumn c = table.getColumnModel().getColumn(column);
+        Dimension d = new Dimension(c.getWidth() + modifier, comp.getHeight());
+        comp.setPreferredSize(d);
+        comp.setMinimumSize(d);
+        comp.setMaximumSize(d);
+    }
+
+COM:resizes a component based on the width of a specific column in a table and a modifier value

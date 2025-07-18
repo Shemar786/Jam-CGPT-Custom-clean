@@ -1,0 +1,16 @@
+TDAT:     protected void doOneIteration() throws Exception {
+        totalRequests++;
+        final long urlRetrievalTime = getUrlContent();
+        stats.addDataPoint(urlRetrievalTime);
+
+        if(urlRetrievalTime > maxRetrievalTime) {
+            lateRequests++;
+            storeProblemInfo();
+            statusColor = Color.YELLOW;
+        } else {
+            statusColor = Color.GREEN;
+        }
+        updateStatus();
+    }
+
+COM:performs one iteration of retrieving content from a URL, collecting statistics on the retrieval time, and updating the status based on the retrieval time

@@ -1,0 +1,9 @@
+TDAT:     public void addExternalIdentifier(String name, String value, String identificationScheme, boolean isRequired) throws XdsRimException, SOAPException {
+        if (value != null) {
+            addRimExternalIdentifierElement(root, value, identificationScheme, name, rimNameSpace);
+        } else if (isRequired) {
+            throw new XdsRimException("Required external identifier \"" + name + "\" not supplied.");
+        }
+    }
+
+COM:adds an external identifier with a name, value, identification scheme, and a boolean indicating if it is required or not, and throws an exception if the value is null and it is required

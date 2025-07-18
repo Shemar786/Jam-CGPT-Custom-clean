@@ -1,0 +1,10 @@
+TDAT:     private void sourceName() {
+        FileChooser dc = new FileChooser(new javax.swing.JFrame(), true,
+                "open", "jpg", "JPEG files", System.getProperty("user.dir"));
+        //dc.show();
+        dc.setVisible(true);
+        sourceImage = dc.getFilePath();
+        System.out.println("sourceImage = " + sourceImage);
+    }
+
+COM:creates a pop-up window allowing the user to select a JPG file, and sets the file path to a variable called "sourceImage"

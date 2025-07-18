@@ -1,0 +1,13 @@
+TDAT:     public void addHeader( String name, String value ) {
+        synchronized (_headers) {
+            String key = name.toUpperCase();
+            ArrayList values = (ArrayList) _headers.get( key );
+            if (values == null) {
+                values = new ArrayList();
+                _headers.put( key, values );
+            }
+            values.add( value );
+        }
+    }
+
+COM:adds a key-value pair to a synchronized list of headers

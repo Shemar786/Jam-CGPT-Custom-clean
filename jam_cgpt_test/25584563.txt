@@ -1,0 +1,18 @@
+TDAT:     public int indexOf(Object o) {
+        if (o == null) {
+            for (int i = 0; i < size; i++) {
+                if (gameObjects[i] == null) {
+                    return i;
+                }
+            }
+        } else {
+            for (int i = 0; i < size; i++) {
+                if (o.equals(gameObjects[i])) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
+COM:returns the index of the first occurrence of the specified element in the array or -1 if the element is not present

@@ -1,0 +1,14 @@
+TDAT: 	private void postLabelEvents(final LabelProviderChangedEvent[] events) {
+		OmniUITrace.trace(this,"postLabelEvents("+events+")","(called)");
+		if (events != null && events.length > 0) {
+			Display.getDefault().asyncExec(new Runnable() {
+				public void run() {
+					for (int i= 0; i < events.length; i++) {
+						fireLabelProviderChanged(events[i]);
+					}
+				}
+			});
+		}
+	}
+
+COM:posts label events asynchronously to the display for a label provider if there are events and they are not null

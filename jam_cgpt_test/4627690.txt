@@ -1,0 +1,11 @@
+TDAT:     public void createDerivedSchema(String kind, DerivedSchemaTO schemaTO) {
+        try {
+            restTemplate.postForObject(baseURL
+                    + "derivedSchema/" + kind + "/create", schemaTO,
+                    DerivedSchemaTO.class);
+        } catch (SyncopeClientCompositeErrorException e) {
+            LOG.error("While creating a derived user schema", e);
+        }
+    }
+
+COM:creates a derived schema for a specified kind of object and catches any exceptions that may occur

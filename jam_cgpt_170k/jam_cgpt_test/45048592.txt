@@ -1,0 +1,22 @@
+TDAT: 	protected String readFile(File f) {
+		String record = null, fileContents = "";
+		try {
+			FileReader fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+			record = new String();
+			while ((record = br.readLine()) != null) {
+				fileContents += record + "\n";
+			}
+			if (fileContents.indexOf('\\') != -1)
+				fileContents = fileContents.replace('\\', '/');
+
+			fr.close();
+			br.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return fileContents;
+	}
+
+COM:takes in a File object, reads the contents of the file, replaces all backslashes with forward slashes, and returns the contents of the file as a String

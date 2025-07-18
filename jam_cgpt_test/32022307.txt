@@ -1,0 +1,14 @@
+TDAT:     public IschoolSetup findCurrentSchool() {
+        IschoolSetup ret = null;
+        List<IschoolSetup> list = null;
+        try {
+            list = super.find(FIND_CURRENT_SCHOOL);
+            if ((list != null) && (list.size() > 0))
+                ret = list.get(0);
+        } catch(Exception e) {
+            log.error("findCurrentSchool failed", e);
+        }
+        return ret;
+    }
+
+COM:retrieves the current school setup information from a database and returns it as an IschoolSetup object

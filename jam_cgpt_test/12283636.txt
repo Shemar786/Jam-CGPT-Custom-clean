@@ -1,0 +1,16 @@
+TDAT: 	private boolean classpathChanged(final Application app) throws IOException {
+		boolean out = false;
+		final String classpath = app.getRoot() + "/.classpath";
+		final FileReader freader = new FileReader(new File(classpath));
+		final BufferedReader breader = new BufferedReader(freader);
+		String str = breader.readLine();
+		while (str != null) {
+			out |= (str.contains("classpathentry") & str.contains(app.getOut()));
+			str = breader.readLine();
+		}
+		breader.close();
+		freader.close();
+		return out;
+	}
+
+COM:checks if the classpath of an application has changed by reading the ".classpath" file and comparing it to the application's output

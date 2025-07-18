@@ -1,0 +1,19 @@
+TDAT:     public Node cloneNode(boolean deep) {
+
+        // NOTE: Cloning causing full fluffing. -Ac
+        DocumentImpl newdoc = new DocumentImpl();
+
+    	if (deep) {
+    		for(NodeImpl n = (NodeImpl)getFirstChild();
+                n != null;
+                n = n.nextSibling)
+                {
+    			newdoc.appendChild(newdoc.importNode(n,true));
+            }
+        }
+
+    	return newdoc;
+
+    } // cloneNode(boolean):Node
+
+COM:clones a node and creates a copy of it with the option to either deeply or shallowly copy all of its children

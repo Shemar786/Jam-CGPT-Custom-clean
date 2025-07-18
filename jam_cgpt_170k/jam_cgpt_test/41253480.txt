@@ -1,0 +1,9 @@
+TDAT:         public ProperNounAggregate makeProperNounAggregate(URI individualURI, String lemmaWrittenForm) {
+                Sense sense = factory.makeSense(individualURI);
+                ProperNounAggregate nameAggregate = new ProperNounAggregate(sense, factory, uriMethod);
+                nameAggregate.getLemma().setWrittenForm(lemmaWrittenForm);
+
+                return nameAggregate;
+        }
+
+COM:creates a ProperNounAggregate object with a specified URI and written form lemma and returns it

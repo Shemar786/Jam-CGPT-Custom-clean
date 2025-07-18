@@ -1,0 +1,17 @@
+TDAT:   public void xmlMethodSelectors(boolean start, Attributes attributes) {
+    if (start) {
+      m_currentSelectors = new ArrayList<XmlMethodSelector>();
+    }
+    else {
+      if (m_inTest) {
+        m_currentTest.setMethodSelectors(m_currentSelectors);
+      }
+      else {
+        m_currentSuite.setMethodSelectors(m_currentSelectors);
+      }
+      
+      m_currentSelectors = null;
+    }
+  }
+
+COM:sets method selectors for either the current test or suite depending on a boolean parameter and a set of attributes

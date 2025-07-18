@@ -1,0 +1,12 @@
+TDAT:     private void markIfReady(SMS sms) {
+        Validate.notNull(sms);
+
+        long delay = getSMSDelay(sms);
+        if (sms.getStatus() == SMS.Status.WAITING && delay <= 0) {
+            logger.log(Level.FINER, "Marking SMS as ready: {0}", sms);
+            sms.setStatus(SMS.Status.READY);
+            valuedSupport.fireEventOccured(Events.NEW_SMS_READY, sms);
+        }
+    }
+
+COM:checks if an SMS object is ready to be sent and updates its status accordingly

@@ -1,0 +1,14 @@
+TDAT: 	public void stateChanged(TreePath path) {
+		if (path != null) {
+			TreeModelEvent ev = new TreeModelEvent(this, path);
+			Object[] listeners = eventListeners.getListenerList();
+			for (int i = 0; i < listeners.length; i++) {
+				if (listeners[i] == TreeModelListener.class) {
+					// NOTE: Only every second element is the listener
+					 ((TreeModelListener) listeners[++i]).treeNodesChanged(ev);
+				}
+			}
+		}
+	}
+
+COM:handles changes to a tree structure by notifying all registered listeners of the change through a TreeModelEvent

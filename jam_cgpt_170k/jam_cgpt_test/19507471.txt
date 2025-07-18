@@ -1,0 +1,11 @@
+TDAT: 	public void testRenameIntWithCollision() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neParent = createNEPositive(rSource, "parent", null);
+		NamedElement neSource = createNEPositive(neParent, "foo", null);
+		NamedElement neDest = createNEPositive(neParent, "bar", null);
+
+		renameNegative(neSource, neDest.getElementName(), false, IRodinDBStatusConstants.NAME_COLLISION);
+	}
+
+COM:tests the renaming of a named element with a possible name collision

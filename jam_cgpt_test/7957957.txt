@@ -1,0 +1,22 @@
+TDAT: 	public Collection operands() {
+		if (operands == null) {
+			return new ArrayList();
+		}
+
+		for (int i = 0; i < operands.size(); i++) {
+			final LocalExpr ei = (LocalExpr) operands.get(i);
+
+			for (int j = operands.size() - 1; j > i; j--) {
+				final LocalExpr ej = (LocalExpr) operands.get(j);
+
+				if (ei.def() == ej.def()) {
+					ej.cleanup();
+					operands.remove(j);
+				}
+			}
+		}
+
+		return operands;
+	}
+
+COM:returns a collection of operands after removing any duplicates based on a certain condition

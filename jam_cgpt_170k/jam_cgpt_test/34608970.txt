@@ -1,0 +1,9 @@
+TDAT:     public int hashCode() {
+        int hash = HASH1;
+        hash = HASH2 * hash + (this.form != null ? this.form.hashCode() : 0);
+        hash = HASH2 * hash + (int) (Double.doubleToLongBits(this.accuracy) 
+                ^ (Double.doubleToLongBits(this.accuracy) >>> HASH3));
+        return hash;
+    }
+
+COM:calculates a unique hash code for an object based on the values of its properties

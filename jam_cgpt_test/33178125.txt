@@ -1,0 +1,9 @@
+TDAT:     protected void generateFormatsByName() {
+        java.lang.reflect.Field[] fields = clazz.getFields();
+        for (int i = 0; i < fields.length; ++i) {
+            try { add(new AccessorFormat(new FieldAccessor(fields[i]), null)); }
+            catch (java.lang.NoSuchMethodException e) {}
+        }
+    }
+
+COM:generates AccessorFormats by iterating through the fields of a class and adding them to a list

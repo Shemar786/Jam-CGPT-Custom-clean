@@ -1,0 +1,14 @@
+TDAT: 	public void checkIncludeCycles() throws IncorrectElementException {
+		java.util.Vector nodes =  createNodeGraph();
+		//Debug.defaultPrintln(this,"size:" + nodes.size());
+		for (Iterator i = nodes.iterator(); i.hasNext();) {
+			GraphNode node = (GraphNode)i.next();
+			
+			String inc = inclusionLoopFrom(node);
+			if (inc != null) {
+				throw new IncorrectElementException(" includes inclusion loop " + inc);
+			}
+		}
+	}
+
+COM:checks for any inclusion cycles in a node graph and throws an exception if found

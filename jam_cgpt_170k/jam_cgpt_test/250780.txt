@@ -1,0 +1,22 @@
+TDAT: 	public String parse(byte[] file) {
+
+		InputStream is = new ByteArrayInputStream(file);
+		Reader r = new BufferedReader(new InputStreamReader(is));
+
+		MyCallback callback = new MyCallback();
+
+		try {
+			/**
+			 * parses the html/xml file, as pointed by the Reader, and handles
+			 * it as specified by the callback. The ignoreCharSet equals false.
+			 */
+			new ParserDelegator().parse(r, callback, false);
+		} catch (IOException ex) {
+			logger.error("error parsing file", ex);
+			return "";
+		}
+
+		return callback.htmlString;
+	}
+
+COM:takes in a byte array representing an HTML/XML file, parses it using a ParserDelegator, and handles it as specified by a user-defined callback function, before returning the parsed HTML as a string

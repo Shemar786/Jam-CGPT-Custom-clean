@@ -1,0 +1,12 @@
+TDAT:     public boolean deleteReport(int ReportID) throws SQLException {
+        CallableStatement cs = dc.getConnection().prepareCall("{call deleteReport(?)}");
+        cs.setInt(1, ReportID);
+        int result = cs.executeUpdate();
+        if (result != 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+COM:deletes a report from a database based on its ID and returns a boolean value indicating if the operation was successful or not

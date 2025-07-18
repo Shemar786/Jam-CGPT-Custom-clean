@@ -1,0 +1,15 @@
+TDAT: 	protected int findPlace(XMLNode node) {
+		int count = 0;
+		int place = children.size();
+		for (int i=0; i<children.size(); i++) {
+			String name = ((XMLNode)children.get(i)).getName();
+			if (name.equals(node.getName())) {
+				count++;
+				place = i+1;
+			}	
+		}
+		node.occurs = count;
+		return place;
+	}
+
+COM:finds the position of a given XMLNode in a list of child nodes and updates its occurrence count

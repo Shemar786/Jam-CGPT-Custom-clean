@@ -1,0 +1,13 @@
+TDAT: 	public void showRelationshipsOfType(Class partClass) {
+		if (RelationshipPart.class.isAssignableFrom(partClass)) {
+			for (RelationshipModel rModel : getRelationshipsOfType(partClass)) {
+				rModel.setVisible(true);
+				rModel.getSourceModel().removeImplicitRelationship(rModel);
+				rModel.getTargetModel().removeImplicitRelationship(rModel);
+			}
+		} else {
+			GreenException.illegalOperation("Wrong type of object specified");
+		}
+	}
+
+COM:shows all relationships of a specified type and removes any implicit relationships associated with them

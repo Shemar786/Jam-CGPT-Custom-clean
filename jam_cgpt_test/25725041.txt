@@ -1,0 +1,13 @@
+TDAT: 	public List getMaximaFromChildren(String name, String per) {
+		List maxes = new ArrayList();
+		for (Iterator i = getChildren().iterator(); i.hasNext();) {
+			AbstractMetricSource next = (AbstractMetricSource)i.next();
+			Max nextMax = next.getMaximum(name, per);
+			if (nextMax != null) {
+				maxes.add(nextMax);
+			}
+		}
+		return maxes;
+	}
+
+COM:returns a list of the maximum values of a given metric and period from the children of a metric source

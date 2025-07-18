@@ -1,0 +1,12 @@
+TDAT:         public void run() {
+            synchronized (_cache) {
+                String[] filter = null;
+                BlogEntry[] entries = getEntriesAllCategories(_user, filter, -1, _blogDirectoryDepth);
+                _cache.flushEntry(_user.getId());
+                _cache.putInCache(_user.getId(), entries);
+            }
+
+            return;            
+        }
+
+COM:synchronizes access to a cache, retrieves blog entries for a user, updates the cache with the entries, and then returns

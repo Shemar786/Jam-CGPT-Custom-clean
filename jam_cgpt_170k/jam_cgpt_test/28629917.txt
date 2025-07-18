@@ -1,0 +1,17 @@
+TDAT: 	private JButton getDesconecta() {
+		if (desconecta == null) {
+			desconecta = new JButton();
+			desconecta.setText("Desconecta"); //$NON-NLS-1$
+			desconecta.setEnabled(false);
+			desconecta.setIcon(new ImageIcon("data/icons/usbDisable.png")); //$NON-NLS-1$
+			desconecta.setVisible(true);
+			desconecta.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					cerrarConexiones();
+				}
+			});
+		}
+		return desconecta;
+	}
+
+COM:returns a JButton object with customized text, icon, and action listener, which is initially disabled

@@ -1,0 +1,16 @@
+TDAT: 	public void testMultipleConfigurations() throws Exception {
+		final IMachineRoot abs = createMachine("M1");
+		final String oldConfig = abs.getConfiguration();
+		final String newConfig = oldConfig + ";" + INEXISTENT_CONFIG;
+		abs.setConfiguration(newConfig, null);
+		addInitialisation(abs);
+		saveRodinFileOf(abs);
+
+		runBuilder();
+		assertMarkers(abs.getRodinProject(), GraphProblem.UnknownConfigurationWarning);
+		assertGenerated(abs);
+		
+		assertEquals(newConfig, abs.getSCMachineRoot().getConfiguration());
+	}
+
+COM:contains a series of tests that creates a machine, modifies its configuration, adds initialization, and then checks for the presence of unknown configuration warnings and generated files

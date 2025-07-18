@@ -1,0 +1,11 @@
+TDAT:   private String getAnchorSection(HttpServletRequest request) {
+    StringBuilder sb = new StringBuilder();
+    sb.append("<section>");
+    sb.append("<anchors>");
+    sb.append(this.printAnchorPoints(request));
+    sb.append("</anchors>");
+    sb.append("</section>");
+    return sb.toString();
+  }
+
+COM:generates a string that includes HTML code for an anchor section with anchor points obtained from a HttpServletRequest object

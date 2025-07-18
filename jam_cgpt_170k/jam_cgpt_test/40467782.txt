@@ -1,0 +1,19 @@
+TDAT: 	private void makeClipboardObject(){
+		SecurityManager security = System.getSecurityManager();
+		if (security != null) {
+			try {
+				security.checkSystemClipboardAccess();
+				clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+			} catch (SecurityException e) {
+				clipboard = new Clipboard("Application Clipboard");
+			}
+		} else {
+			try {
+				clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+			} catch (Exception e) {
+				// THIS IS DUMB - true but is there another way - I think not
+			}
+		}
+	}
+
+COM:creates a clipboard object, checking for security permissions and using a default clipboard if permitted, or creating a new clipboard specific to the application if not

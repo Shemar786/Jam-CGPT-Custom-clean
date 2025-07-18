@@ -1,0 +1,15 @@
+TDAT: 	public void check4change() {
+
+		if (! ((oldRecordName.equals(sfRecordName.getText()))
+			&& (oldDescription.equals(sfDescription.getText()))
+			&& (oldRecordType == sfRecordType.getSelectedIndex())
+			&& (oldSystem     == sfSystem.getSelectedIndex())
+			&& (oldList       == sfList.getSelectedIndex()))) {
+
+			searchAction.searchArgChanged();
+			saveScreenVals();
+
+		}
+	}
+
+COM:checks if certain fields have changed and calls other methods if they have

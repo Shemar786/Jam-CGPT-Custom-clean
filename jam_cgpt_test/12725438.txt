@@ -1,0 +1,16 @@
+TDAT: 	public void setWindow(int n) throws Exception {
+		if (n < 2) {
+			throw new Exception(
+					"Fraction Of Low Energy Frames's window length must be 2 or greater");
+		} else {
+			number_windows = n;
+			dependencies = new String[number_windows];
+			offsets = new int[number_windows];
+			for (int i = 0; i < number_windows; ++i) {
+				dependencies[i] = "Root Mean Square";
+				offsets[i] = 0 - i;
+			}
+		}
+	}
+
+COM:sets the window length for a fraction of low energy frames and initializes an array of dependencies and offsets based on the specified window length

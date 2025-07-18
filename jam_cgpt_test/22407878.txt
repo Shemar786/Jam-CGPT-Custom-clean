@@ -1,0 +1,22 @@
+TDAT:     private void close() {
+        if (!connected) {
+            return;
+        }
+
+        connected = false;
+
+        // We have to close the output stream first, so that the
+        // WaitForKillThread does not attempt to send a bye.
+        try {
+            out.close();
+            out = null;
+            in.close();
+            socket.close();
+        } catch (IOException ignore) {
+            // Nothing to do here.
+        } finally {
+            in = null;
+        }
+    }
+
+COM:closes the output stream followed by closing the socket and input stream if the connection is open

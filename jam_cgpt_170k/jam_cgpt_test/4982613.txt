@@ -1,0 +1,10 @@
+TDAT:     public boolean belongsToCompany(JbsCompany company) {
+        boolean result = false;
+        Iterator<JbsCompany> it = this.getCompanies().iterator();
+        while ((!result) && (it.hasNext())) {
+            result = it.next().getId() == company.getId();
+        }
+        return result;
+    }
+
+COM:checks if a given JbsCompany object belongs to a collection of companies and returns a boolean value

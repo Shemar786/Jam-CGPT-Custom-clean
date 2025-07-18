@@ -1,0 +1,15 @@
+TDAT: 	private JButton getJButton14() {
+		if (jButton14 == null) {
+			jButton14 = new JButton();
+			jButton14.setBounds(new Rectangle(167, 175, 90, 28));
+			jButton14.setText("Parse");
+			jButton14.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					runParser();
+				}
+			});
+		}
+		return jButton14;
+	}
+
+COM:returns a JButton object and sets its properties and an ActionListener to run a parsing method when clicked

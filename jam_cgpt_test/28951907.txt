@@ -1,0 +1,10 @@
+TDAT: 	public void addEntry(String code, String displayName, String codingSchemeName, String ext) {
+		CodeSetEntry entry = new CodeSetEntry();
+		entry.value = code;
+		entry.displayName = displayName;
+		entry.codingScheme = codingSchemeName;
+		entry.ext = ext;
+		entries.put(new Pair(code, codingSchemeName), entry);
+	}
+
+COM:adds a new entry to a CodeSet using the provided code, display name, coding scheme name, and extension

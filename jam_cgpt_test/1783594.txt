@@ -1,0 +1,8 @@
+TDAT:     public void testReplaceChild() throws Exception {
+        Element baz = _document.createElement( "baz" );
+        Node old = _foo1.replaceChild( baz, _text );
+        assertSame( "Removed node", _text, old );
+        verifyNodeList( "foo1 child", _foo1.getChildNodes(), new Node[] { _bar1, baz, _foo2 } );
+    }
+
+COM:tests the replacement of a child element in a document and verifies the changes made to the document

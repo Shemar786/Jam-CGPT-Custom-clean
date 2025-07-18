@@ -1,0 +1,8 @@
+TDAT:   protected char getMnemonic(String key, String defaultValue) {
+    String value = CUtilities.getStringResource(context.getMainForm(),
+      CControls.CFORMS_BUNDLE_NAME, "menu." + key + ".mnemonic", defaultValue);
+    if (value == null && value.length() == 0) return defaultValue.charAt(0);
+    return value.charAt(0);
+  }
+
+COM:returns the first character of a specified string resource or the first character of a default value if the resource is not found or is empty

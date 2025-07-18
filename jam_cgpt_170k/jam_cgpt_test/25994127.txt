@@ -1,0 +1,13 @@
+TDAT: 	public long addBuddy(String name, String email, String profileId) {
+		ContentValues initialValues = new ContentValues();
+		
+		Log.d(TAG, "profile ID: " + profileId);
+		initialValues.put("name", name);
+		initialValues.put("email", email);
+		initialValues.put("profiles_id", profileId);
+		
+		Log.d(TAG, "Add new buddy <" +email+ "> to database");
+		return mDb.insert(DATABASE_TABLE_BUDDIES, null, initialValues);
+	}
+
+COM:adds a new buddy to a database using the provided name, email, and profile ID, and returns the ID of the newly inserted row

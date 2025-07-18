@@ -1,0 +1,17 @@
+TDAT: 	public boolean removeEdge(Edge<E> e) {
+		if (!e.getStart().equals(headNode))
+			return false;
+
+		AdjacentNode<E> adjNode;
+		for (int i = 0, len = linkedNodes.size(); i < len; ++i) {
+			adjNode = linkedNodes.get(i);
+			if (adjNode.getNode().equals(e.getEnd())
+					&& adjNode.getWeight() == e.getWeight()) {
+				linkedNodes.remove(i);
+				return true;
+			}
+		}
+		return false;
+	}
+
+COM:removes an edge from a directed graph by checking if the start node is equal to the head node and then iterating through linked nodes to find the matching end node and weight and removing it if found

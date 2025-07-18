@@ -1,0 +1,9 @@
+TDAT:     private boolean doSciNamesMatch(String n1, String n2){
+        ParsedName<?> pn1 =  parser.parse(n1);
+        ParsedName<?> pn2 =  parser.parse(n2);
+        if(pn1 != null && pn2!= null)
+            return pn1.buildCanonicalName().equals(pn2.buildCanonicalName());
+        return false;
+    }
+
+COM:compares two scientific names and returns true if they match

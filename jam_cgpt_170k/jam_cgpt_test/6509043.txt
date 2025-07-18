@@ -1,0 +1,26 @@
+TDAT: 	public void testIterator() {
+		this.fillArray();
+		Iterator<Integer> iterator = this.testedArray.iterator();
+		for (int i = 0; i < BASE_SIZE; i++) {
+			assertTrue(iterator.hasNext());
+			assertEquals(i,(int)iterator.next());
+		}
+		assertFalse(iterator.hasNext());
+		try {
+			iterator.next();
+			fail();
+		} catch (NoSuchElementException e) {
+			//Comportamiento correcto
+		}
+		this.testedArray.setLength(0);
+		iterator = this.testedArray.iterator();
+		assertFalse(iterator.hasNext());
+		try {
+			iterator.next();
+			fail();
+		} catch (NoSuchElementException e) {
+			//Comportamiento correcto
+		}
+	}
+
+COM:tests the functionality of an iterator object with different scenarios

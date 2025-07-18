@@ -1,0 +1,22 @@
+TDAT:     public void communicate() throws IOException {
+
+            // read the body
+	    String data;
+
+            if((data = in.readLine())==null) {
+	        return;
+	    }
+
+            if("".equals(data)) {
+	        return;
+	    }
+
+            write("You said: "+data);
+
+            if("quit".startsWith(data)) {
+                this.sock.close();
+                throw new IOException("client said quit");
+            }
+    }
+
+COM:reads input from a client socket and writes back a message, closing the socket if the input matches "quit"

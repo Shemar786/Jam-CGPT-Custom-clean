@@ -1,0 +1,9 @@
+TDAT:     protected String makeBibCitation(MetadataBean bean){
+        String bibCitation = super.makeBibCitation(bean);
+        if(bean.getIssn()!=null && !bean.getIssn().equals("")){           
+            bibCitation+="&"+CTX_ISSN+"="+issnWithHyphen(bean.getIssn());
+        } 
+        return bibCitation;
+    }
+
+COM:takes a MetadataBean object as input and returns a bibliographic citation string that includes an ISSN number if present

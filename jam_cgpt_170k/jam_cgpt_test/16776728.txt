@@ -1,0 +1,11 @@
+TDAT: 	private void deleteVariationFunctionRow(int tableRowIndex) {
+    	if (tableRowIndex >= 0 && tableRowIndex < this.uiModel.getUncertaintiesObject().variationFunctionCount()) {
+			this.uiModel.getUncertaintiesObject().removeVariationFunction(tableRowIndex);
+			updateGUI();
+
+            //select first row.
+    		this.variationPerParameterTableController.setSelectedRow(0);
+        }
+	}
+
+COM:deletes a row from a table of variation functions, updates the GUI, and selects the first row

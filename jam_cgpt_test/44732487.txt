@@ -1,0 +1,17 @@
+TDAT: 	private void doSetTime() {
+		String input = ibcDisplay.getText();		
+		Date date = null;
+		//Parse
+	    try {
+	        date = timePicker.getDateFormatter().parse(input);
+	        Date tpTime = timePicker.getTime();
+	        if (!tpTime.equals(date)) {
+		        timePicker.setTime(date);		        
+	        }
+	    } catch (ParseException e) {	    		    	
+	    	errCtrl.setText("Unable to parse input as date.");	    	
+	    	errCtrl.setVisible(true);	    	
+	    }	   
+	}	
+
+COM:sets the time of a time picker based on the input entered by the user, but shows an error message if the input cannot be parsed as a date

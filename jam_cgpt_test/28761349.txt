@@ -1,0 +1,8 @@
+TDAT:   private void updateTreeToc2() {
+    MWPaneTitleTreeNode rootNode2 = new MWPaneTitleTreeNode(null);
+    MWPaneTitleTreeNode rootNode = (MWPaneTitleTreeNode) modelToc.getRoot();
+    updateTreeToc2Node(rootNode2, rootNode);
+    modelToc2.setRoot(rootNode2);
+  }
+
+COM:updates a tree structure by creating a new root node and copying the contents of another root node into it

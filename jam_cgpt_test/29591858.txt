@@ -1,0 +1,11 @@
+TDAT:   static public String makeName( List axes) {
+    StringBuffer buff = new StringBuffer();
+    for (int i=0; i<axes.size(); i++) {
+      CoordinateAxis axis = (CoordinateAxis) axes.get(i);
+      if (i>0) buff.append("-");
+      buff.append( axis.getName());
+    }
+    return buff.toString();
+  }
+
+COM:takes a list of axes and returns a concatenated string of their names joined by "-"

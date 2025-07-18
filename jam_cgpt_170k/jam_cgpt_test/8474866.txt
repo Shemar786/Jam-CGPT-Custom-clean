@@ -1,0 +1,8 @@
+TDAT: 	public void stateChanged(ChangeEvent e) {
+		title.setText(model.getTitle());
+		url.setText(model.getURL());
+		depthCount.setText(safeToString(model.getDepth()));
+		inOutLinks.setText(safeToString(model.getInLinkCount())+" / "+safeToString(model.getOutLinkCount()));
+	}
+
+COM:updates the GUI display by setting the text of various components based on the values obtained from the model object

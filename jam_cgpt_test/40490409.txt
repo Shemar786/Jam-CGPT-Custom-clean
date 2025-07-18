@@ -1,0 +1,12 @@
+TDAT:     public void dataRecieved(SocketEvent e) {
+        if (e.getData() == null) {
+            System.out.println("null data");
+            return;
+        }
+        //tokenize the command
+        String[] commands = Util.separateString(e.getData());
+        log("RSHServer receive: " + Util.arraytoString(commands));
+        notifyListeners(commands);
+    }
+
+COM:receives data from a socket event, checks if it is null, tokenizes the command, logs it, and notifies listeners

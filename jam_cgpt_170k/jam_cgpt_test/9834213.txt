@@ -1,0 +1,7 @@
+TDAT: 	@Override protected FaceletHandler doCompile(URL src, String alias) throws IOException, FaceletException, ELException, FacesException {
+		if (src == null) return null;
+		if (alias.endsWith(".xhtml")) return this.handleNonGraceletCompileRequest(src, alias);
+		return this.getGraceletHandler(new GraceletURLSource(src), alias);
+  }
+
+COM:compiles a FaceletHandler from a given URL and alias, handling both non-Gracelet requests and Gracelet requests

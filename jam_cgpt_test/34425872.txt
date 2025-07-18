@@ -1,0 +1,15 @@
+TDAT:     private void actionDeleteEntry(int row) {
+        if (isWorking)
+            return;
+
+        SWGInventoryWrapper wr = wrappersFiltered().get(row);
+
+        if (JOptionPane.OK_OPTION == showConfirmQuestion(String.format(
+                "Delete the entry for \"%s\"?", wr.getResource().getName()),
+                "Confirm deletion")) {
+            SWGResController.inventoryRemove(wr, recentGalaxy);
+            updateDisplay();
+        }
+    }
+
+COM:deletes an entry from the inventory and updates the display after displaying a confirmation message

@@ -1,0 +1,12 @@
+TDAT:   public String getColumnName ( int col_i ) {
+    String name = "";
+
+    while( col_i >= 0 ) {
+      // TODO: Test this.
+      name = ( ( char )( ( char )( col_i % 26 ) + 'A' ) ) + name;
+      col_i = ( ( col_i / 26 ) - 1 );
+    }
+    return name;
+  } // getColumnName(..)
+
+COM:takes an integer as a parameter and returns the corresponding column name in Excel, represented by a String

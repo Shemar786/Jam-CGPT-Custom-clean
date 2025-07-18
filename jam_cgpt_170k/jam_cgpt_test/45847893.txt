@@ -1,0 +1,20 @@
+TDAT: 	public void testShortBufferedStream() {
+		Object element = new Object();
+		Stream<Object> s = 
+			new BufferedStream<Object>(
+				256, new SingleElementStream<Object>(element)); 
+		
+		assertTrue(s.hasNext());
+		assertTrue(element == s.next()); 
+		assertFalse(s.hasNext()); 
+		
+		boolean x = false; 
+		try { 
+			s.next(); 
+		} catch (NoSuchElementException ex) {
+			x = true; 
+		}
+		assertTrue(x); 
+	}
+
+COM:tests the functionality of a BufferedStream that wraps a SingleElementStream with a specific buffer size

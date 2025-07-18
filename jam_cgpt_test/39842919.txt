@@ -1,0 +1,16 @@
+TDAT:   public int doEndTag() throws JspException {
+    /* reset the reference */
+    HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
+
+    if (originalNesting == null) {
+      NestedPropertyHelper.deleteReference(request);
+    } else {
+      NestedPropertyHelper.setName(request, originalNestingName);
+      NestedPropertyHelper.setProperty(request, "nestOne");
+    }
+    this.name = originalName;
+
+    return (EVAL_PAGE);
+  }
+
+COM:resets a reference in a JSP page and returns an evaluation page code

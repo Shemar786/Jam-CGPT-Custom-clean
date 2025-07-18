@@ -1,0 +1,17 @@
+TDAT: 	public int getPosition(String key) {
+		int pos = 1;
+
+		int value = this.entries.first().getValue();
+		for (Entry<String, Integer> entry : this.entries) {
+			if (value != entry.getValue()) {
+				value = entry.getValue();
+				pos++;
+			}
+			if (entry.getKey().equals(key)) {
+				return pos;
+			}
+		}
+		return -1;
+	}
+
+COM:takes a key as input and finds its position in a map, based on its value, returning the position or -1 if the key is not found

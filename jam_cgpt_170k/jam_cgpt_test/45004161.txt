@@ -1,0 +1,17 @@
+TDAT: 	public int getPlayerBidOnAuction(String playerName, int auctionID) {
+		
+		// return 0 if the requested auction doesn't exist
+		MarketListing currList = currentAuctions.get(auctionID);
+		if (currList == null)
+			return 0;
+		
+		// return 0 if the player hasn't bid
+		MarketBid playersBid = currList.getAllBids().get(playerName.toLowerCase());
+		if (playersBid == null)
+			return 0;
+		
+		// a real bid exists. return its amount.
+		return playersBid.getAmount();
+	}
+
+COM:returns the amount that a player has bid on a specific auction, or 0 if the auction doesn't exist or the player hasn't bid

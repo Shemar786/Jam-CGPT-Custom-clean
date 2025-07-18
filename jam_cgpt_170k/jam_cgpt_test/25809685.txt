@@ -1,0 +1,18 @@
+TDAT:     public String getXml() {
+
+	String xml = "";
+	xml += "<OSCPACKET ADDRESS=\"" + address.getHostAddress() +
+	    "\" PORT=\"" + port +
+	    "\" TIME=\""+ time + "\">";
+
+	Enumeration m = messages.elements();
+	while (m.hasMoreElements()) {
+	    OscMessage mess = (OscMessage)m.nextElement();
+	    xml += mess.getXml();
+	}
+
+	xml += "</OSCPACKET>";
+	return xml;
+    }
+
+COM:returns an XML string containing OSC packet information and messages

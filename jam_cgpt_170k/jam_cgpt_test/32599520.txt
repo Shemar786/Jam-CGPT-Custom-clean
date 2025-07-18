@@ -1,0 +1,10 @@
+TDAT: 	private void swapEntries (int index1, int index2) {
+		Object listObj = listModel.getElementAt(index1);
+		String entryObj = entriesArray.get(index1);
+		listModel.setElementAt( listModel.getElementAt(index2), index1);
+		entriesArray.set(index1, entriesArray.get(index2));
+		listModel.setElementAt(listObj, index2);
+		entriesArray.set(index2, entryObj);
+	}
+
+COM:swaps the entries of two indices in a list model and an array

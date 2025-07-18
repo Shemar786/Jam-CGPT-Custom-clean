@@ -1,0 +1,17 @@
+TDAT:     public void rollbackAll() throws SQLException {
+    	for (Connection con: connections) {
+            try {
+            	con.rollback();
+            } catch(SQLException e) {
+        		_log.warn(e.getMessage());
+        	}
+            try {
+            	con.close();
+            } catch(SQLException e) {
+        		_log.warn(e.getMessage());
+        	}
+    	}
+    	connection = new ThreadLocal<Connection>();
+    }
+
+COM:rolls back and closes all database connections stored in a list and resets the current connection

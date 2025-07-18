@@ -1,0 +1,13 @@
+TDAT: 	public void movePositive(IRodinElement element, IRodinElement container, IRodinElement sibling, String rename, boolean force) throws RodinDBException {
+		IRodinElement[] siblings = new IRodinElement[] {sibling};
+		String[] renamings = new String[] {rename};
+		if (sibling == null) {
+			siblings = null;
+		}
+		if (rename == null) {
+			renamings = null;
+		}
+		movePositive(new IRodinElement[] {element}, new IRodinElement[] {container}, siblings, renamings, force);
+	}
+
+COM:moves an IRodinElement to a positive index in a container, potentially renaming it and forcing the move

@@ -1,0 +1,17 @@
+TDAT: 	protected void addPreviousPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComputeBox_previous_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComputeBox_previous_feature", "_UI_ComputeBox_type"),
+				 GeneralArchitecturePackage.Literals.COMPUTE_BOX__PREVIOUS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "previous" feature of a ComputeBox object

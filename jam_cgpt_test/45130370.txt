@@ -1,0 +1,13 @@
+TDAT: 	public Value evaluate(Value stringValue, Value startIndex) throws ExternalFunctionException {
+
+		if (!(stringValue instanceof Literal && startIndex instanceof Literal)) {
+			throw new ExternalFunctionException("Values need to be literals to be understood");
+		}
+
+		String string = this.converter.convertString((Literal) stringValue);
+		int start = this.converter.convertInteger((Literal) startIndex);
+
+		return this.converter.convertString(string.substring(start));
+	}
+
+COM:takes in a string value and a starting index, and returns a substring of the original string starting from the specified index

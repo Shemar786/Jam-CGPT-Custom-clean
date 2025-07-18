@@ -1,0 +1,11 @@
+TDAT:     private String getPreferredLanguage(Gateway gateway) {
+        List<String> languages = Arrays.asList(gateway.getSupportedLanguages());
+        String defLang = Locale.getDefault().getLanguage();
+        if (languages.isEmpty() || languages.contains(defLang)) {
+            return defLang;
+        } else {
+            return languages.get(0);
+        }
+    }
+
+COM:returns a preferred language based on the supported languages of a gateway and the default language settings of the system

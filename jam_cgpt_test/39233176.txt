@@ -1,0 +1,11 @@
+TDAT: 	public void setBaudRate(long baudRate) throws FTD2xxException {
+
+		// check the upper bound because the native API expects 32 bit values.
+		if (baudRate > 0xFFFFFFFFL)
+			throw new IllegalArgumentException(Localizer.getLocalizedMessage(
+					Port.class, "error.invalidBaudRate", baudRate));
+
+		setBaudRate(device.getHandle(), baudRate);
+	}
+
+COM:sets the baud rate of a device and throws an exception if the baud rate is invalid

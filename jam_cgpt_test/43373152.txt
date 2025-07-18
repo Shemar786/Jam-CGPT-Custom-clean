@@ -1,0 +1,14 @@
+TDAT:     public char getMostBase() {
+        int n = 0;
+        int most = 0;
+        for (int i = 0; i < baseCount.length / 2; i++) {
+            if (baseCount[i] + baseCount[i + 4] > n) {
+                n = baseCount[i] + baseCount[i + 4];
+                most = i;
+            }
+        }
+        if (bases[most] < indel) return 0;
+        return bases[most];
+    }
+
+COM:returns the base with the highest count from an array, based on specific conditions

@@ -1,0 +1,12 @@
+TDAT:     private void addCat(SWGCategory cat) {
+        if (cat == this || cat.id == this.id)
+            throw new IllegalArgumentException("Adding self to self");
+
+        if (categories == null)
+            categories = new ArrayList<SWGCategory>();
+        
+        if (!categories.contains(cat))
+            categories.add(cat);
+    }
+
+COM:adds a new category to a list of categories, as long as it is not already in the list and does not already match the current category

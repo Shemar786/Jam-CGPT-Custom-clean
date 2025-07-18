@@ -1,0 +1,7 @@
+TDAT: 	public ContainerEditor createContainer(String containerFileName, String containerName, String containerDescription, int containerType, String creator, String clientContext){
+		ContainerEditor editor = null;
+		editor = createContainer(containerFileName,containerName, containerDescription, containerType, "", creator, clientContext);
+		return editor;
+	}
+
+COM:creates a container editor object with specified properties and returns it

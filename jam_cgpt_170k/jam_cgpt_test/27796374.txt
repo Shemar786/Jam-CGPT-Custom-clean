@@ -1,0 +1,14 @@
+TDAT:   public VisualStyle setVisualStyle(VisualStyle vs) {
+    if (vs != null) {
+      VisualStyle tmp = visualStyle;
+      visualStyle = vs;
+      this.fireStateChanged();
+      return tmp;
+    } else {
+      String s = "VisualMappingManager: Attempt to set null VisualStyle";
+      logger.severe(s);
+      return null;
+    }
+  }
+
+COM:sets a new visual style, fires a state change event, and returns the previous visual style if the new one is not null

@@ -1,0 +1,13 @@
+TDAT:     public void testSetCity() {
+        System.out.println("setCity");
+        
+        String c = "";
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.setCity(c);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the setCity() method in the SystemClient_DBImpl class by setting an empty city string and generating a fail message for the test case

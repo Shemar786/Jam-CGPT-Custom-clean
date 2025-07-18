@@ -1,0 +1,17 @@
+TDAT: 	public void addPcName(String pcName) throws Exception{
+
+		String[] tabKeyVal = pcName.split(":");
+		String key = tabKeyVal[0];
+		String vals = tabKeyVal[1];
+		String[] tabVal = vals.split(",");
+		LinkedList<String> listVal = new LinkedList<String>();
+		for(int i = 0 ; i < tabVal.length ; i++)
+		{
+			listVal.add(tabVal[i]);
+		}
+		this.pcList.put(key, listVal);
+
+		this.pcNumber++;
+	}
+
+COM:adds a PC name to a list by splitting and organizing the input string

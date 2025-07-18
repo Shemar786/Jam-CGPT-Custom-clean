@@ -1,0 +1,21 @@
+TDAT: 	private void initialise() {
+		IEvent evt = (IEvent) this.getElement();
+		try {
+			this.setRenamingString(evt.getLabel());
+		} catch (RodinDBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			IParameter[] pars = evt.getParameters();
+			for (IParameter par : pars) {
+				ParameterRenaming renaming = new ParameterRenaming(this, par);
+				this.addChild(renaming);
+			}
+		} catch (RodinDBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+COM:This private Java method initializes a set of parameter renamings based on the label and parameters of an event, and adds them as children of the current element

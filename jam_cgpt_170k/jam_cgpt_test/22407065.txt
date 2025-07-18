@@ -1,0 +1,19 @@
+TDAT:     public boolean equals(final Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
+        if (obj instanceof Locale) {
+            return locale.equals(obj);
+        }
+
+        if (obj.getClass() != IDELocaleListItem.class) {
+            return false;
+        }
+
+        IDELocaleListItem item = (IDELocaleListItem) obj;
+
+        return locale.equals(item.locale);
+    }
+
+COM:returns a boolean value indicating whether the given object is equal to the current Locale object based on their respective locale values

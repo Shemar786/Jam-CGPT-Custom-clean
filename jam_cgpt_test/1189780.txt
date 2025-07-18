@@ -1,0 +1,10 @@
+TDAT:    public void beforeFirst(Constant searchkey) {
+      close();
+      BTreeDir root = new BTreeDir(rootblk, dirTi, tx);
+      int blknum = root.search(searchkey);
+      root.close();
+      Block leafblk = new Block(leafTi.fileName(), blknum);
+      leaf = new BTreeLeaf(leafblk, leafTi, searchkey, tx);
+   }
+
+COM:closes the current block, searches for a specified key in a B-tree directory, closes the directory, and creates a new B-tree leaf with the specified key and transaction

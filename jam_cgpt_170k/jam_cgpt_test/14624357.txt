@@ -1,0 +1,12 @@
+TDAT:     public void testsetLatitude() {
+        System.out.println("setLatitude");
+        henson.midp.Float latitude = Float.ONE;
+        org.gps.types.GpsPosition instance = new org.gps.types.GpsPosition();
+        instance.setLatitude(latitude);
+        
+        assertEquals(instance.getLatitude(), Float.ONE);
+        
+    
+    }
+
+COM:tests the setLatitude() function of the GpsPosition class by setting a latitude value and asserting that it has been set correctly

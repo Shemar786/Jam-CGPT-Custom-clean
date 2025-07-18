@@ -1,0 +1,11 @@
+TDAT:     private void otherDoEndTagOperations() {
+        //
+        // TODO: code that performs other operations in doEndTag
+        //       should be placed here.
+        //       It will be called after initializing variables,
+        //       finding the parent, setting IDREFs, etc, and
+        //       before calling shouldEvaluateRestOfPageAfterEndTag().
+        //
+    }
+
+COM:This is a private Java method that contains code for performing other operations in doEndTag, to be called after initializing variables and before calling shouldEvaluateRestOfPageAfterEndTag()

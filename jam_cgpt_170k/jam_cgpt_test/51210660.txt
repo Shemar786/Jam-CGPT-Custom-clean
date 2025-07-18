@@ -1,0 +1,9 @@
+TDAT: 	private void setValues(String line, String errorString, int searchStartPosition, String errorMessage) {
+		int start = line.indexOf(errorString, searchStartPosition);
+		startPos = start;
+		length = errorString.length();
+		errorMsg = errorMessage;
+		//System.out.println("parseError.setValues(): startpos: "+startPos+" length: "+length+" line: "+line);
+	}
+
+COM:sets values for variables related to error messages in a given string

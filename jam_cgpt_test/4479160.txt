@@ -1,0 +1,10 @@
+TDAT: 	public void testGetY() {
+		assertTrue(bishop.getY() == 0);
+		assertTrue(bishop1.getY() == 0);
+		assertTrue(bishop2.getY() == 3);
+		assertTrue(bishop3.getY() == 4);
+		assertTrue(bishop4.getY() == 7);
+		assertTrue(bishop5.getY() == 7);
+	}
+
+COM:tests the getY() function for multiple instances of a Bishop object and ensures that the getY() value matches the expected values

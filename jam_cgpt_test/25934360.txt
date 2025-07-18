@@ -1,0 +1,11 @@
+TDAT:     public void prepare() {
+        if (getRequest().getMethod().equalsIgnoreCase("post")) {
+            // prevent failures on new
+            String whoId = getRequest().getParameter("who.did");
+            if (whoId != null && !whoId.equals("")) {
+                who = whoManager.get(new Long(whoId));
+            }
+        }
+    }
+
+COM:prepares data for processing a post request by retrieving and parsing parameters related to "who did"

@@ -1,0 +1,15 @@
+TDAT:   public void setShowingVerticalLines ( boolean new_showing ) {
+    if( showingVerticalLines == new_showing ) {
+      return;
+    }
+    showingVerticalLines = new_showing;
+    // Notify.  It's bound.
+    firePropertyChange(
+      "showingVerticalLines",
+      !showingVerticalLines,
+      showingVerticalLines
+    );
+    repaint();
+  } // setShowingVerticalLines(..)
+
+COM:sets the visibility of vertical lines in a component and notifies any listeners of the change

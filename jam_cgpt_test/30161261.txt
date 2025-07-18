@@ -1,0 +1,17 @@
+TDAT:     protected void removeDuplicates(List list, Map sortValues) {
+        // remove distinct
+        HashSet distinctValues = new HashSet();
+
+        for (Iterator iter = list.iterator(); iter.hasNext();) {
+            Object node = iter.next();
+            Object value = sortValues.get(node);
+
+            if (distinctValues.contains(value)) {
+                iter.remove();
+            } else {
+                distinctValues.add(value);
+            }
+        }
+    }
+
+COM:removes duplicates from a given list, considering a unique identifier in a map for each element

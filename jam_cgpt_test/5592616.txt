@@ -1,0 +1,7 @@
+TDAT:   private void addDOModelListener(wpDOModelListener listener) {
+    Document document = ( (wpTreeModel) getModel()).getDocument();
+    EventTarget target = (EventTarget) document;
+    target.addEventListener(MutationEventImpl.DOM_SUBTREE_MODIFIED, listener, false);
+  } // end addListener
+
+COM:adds a listener to the Document Object Model (DOM) of a wpTreeModel using the wpDOModelListener interface

@@ -1,0 +1,20 @@
+TDAT: 	public boolean accept(IMember element) throws JavaModelException {
+		// see if the element type applies
+		if ((_type & element.getElementType()) != _type) {
+			return false;
+		}
+		
+		// see if the flags match
+		if ((_flags & element.getFlags()) != _flags) {
+			return false;
+		}
+		
+		// see if the text matches
+		if (!_pattern.matcher(element.getElementName()).matches()) {
+			return false;
+		}
+		
+		return false;
+	}
+
+COM:checks if a given IMember element meets specific criteria related to its type, flags, and text, and returns a boolean value accordingly

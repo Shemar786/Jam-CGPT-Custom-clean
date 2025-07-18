@@ -1,0 +1,13 @@
+TDAT:   private String printAllTagFromIteratorToTable(Iterator it) {
+    StringBuilder sb = new StringBuilder();
+    
+    while(it.hasNext()) {
+      HierarchicalSemanticTag tag = (HierarchicalSemanticTag) it.next();
+      sb.append("<td>");
+      sb.append(tag.getName());
+      sb.append("</td>");
+    }
+    return sb.toString();
+  }
+
+COM:takes an Iterator of HierarchicalSemanticTag objects and prints the name of each tag in an HTML table cell format

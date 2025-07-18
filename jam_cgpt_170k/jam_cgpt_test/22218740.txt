@@ -1,0 +1,17 @@
+TDAT:     public SMPPPacket readNextPacket(boolean block) throws IOException {
+        SMPPPacket packet = null;
+        try {
+            synchronized (packetQueue) {
+                if (packetQueue.size() < 1 && block) {
+                    packetQueue.wait();
+                } else {
+                    packet = packetQueue.remove(0);
+                }
+            }
+        } catch (InterruptedException x) {
+            LOG.info("Thread interrupted while blocked waiting on a packet.");
+        }
+        return packet;
+    }
+
+COM:reads the next packet from the SMPP packet queue, with a boolean option to block if there are no packets available

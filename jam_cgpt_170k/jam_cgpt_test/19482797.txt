@@ -1,0 +1,7 @@
+TDAT: 		private void createXMBResource(IResource file) throws IOException, CoreException {
+			Resource res = rSet.createResource(URI.createPlatformResourceURI(file.getFullPath().toOSString(), true));
+			Resource xmbRes = rSet.createResource(URI.createPlatformResourceURI(getTeamworkResourcePath(file), true));
+			createResourceCopy(res, xmbRes);
+		}
+
+COM:creates and copies a teamwork resource file from the given input resource file

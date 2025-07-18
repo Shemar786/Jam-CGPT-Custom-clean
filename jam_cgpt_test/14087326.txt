@@ -1,0 +1,11 @@
+TDAT: 	public void caseANewStructurePrimaryNoNewArray(ANewStructurePrimaryNoNewArray node) {
+		structStack.push(new HashMap(13));
+		if(node.getStructVars() != null) {
+        	node.getStructVars().apply(this);
+        }
+		Map map = (Map) structStack.pop();
+		IStruct struct = alg.createStruct(map);
+		values.setStructValue(node, struct);
+    }
+
+COM:creates a new structure primary, pushes a HashMap onto a stack, applies a function if the provided node has structural variables, pops the HashMap from the stack, creates a new struct from the HashMap, and sets the value of the node's struct to the created struct

@@ -1,0 +1,12 @@
+TDAT:     private String formatMDLString(String s, int le) {
+        s = s.trim();
+        if (s.length() > le)
+            return s.substring(0, le);
+        int l;
+        l = le - s.length();
+        for (int f = 0; f < l; f++)
+            s += " ";
+        return s;
+    }
+
+COM:formats a string by trimming it, truncating it if it exceeds a certain length, and padding it with spaces if it is shorter than the specified length

@@ -1,0 +1,11 @@
+TDAT:     private ScripsExchangeEntityFacadeLocal lookupExchangeEntityFacade() {
+        try {
+            Context c = new InitialContext();
+            return (ScripsExchangeEntityFacadeLocal) c.lookup("NewsApp/ScripsExchangeEntityFacade/local");
+        } catch(NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE,"exception caught" ,ne);
+            throw new RuntimeException(ne);
+        }
+    }
+
+COM:looks up and returns a local instance of the ScripsExchangeEntityFacade entity

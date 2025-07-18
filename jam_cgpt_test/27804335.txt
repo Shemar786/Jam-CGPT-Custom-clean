@@ -1,0 +1,11 @@
+TDAT: 	public void drawSelected() {
+		// For each point in handlePointList, add a handle.
+		for (int i = 0; i < handlePointList.size(); i++) {
+			PNamedHandle h = createHandle((Point2D) handlePointList.get(i));
+			h.addInputEventListener( edgeView.getEdgeHandler() );
+			edgeView.addChild(h);
+			handleList.add(h);
+		}
+	}
+
+COM:adds a handle to each point in a list of handle points, attaches an event listener to the handle, and adds the handle to a list of handles

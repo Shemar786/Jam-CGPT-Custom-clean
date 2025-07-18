@@ -1,0 +1,11 @@
+TDAT: 	private void clrList() {
+
+		Integer newState = new Integer(CMD_VIEW);
+		for (int rowCount = 0; rowCount < modelNE.getRowCount(); rowCount++) {
+			modelNE.setValueAt((Object) "", rowCount, RESULT_COLUMN);
+			modelNE.setValueAt((Object) newState, rowCount, CMD_STATE_COLUMN);
+		}
+		modelNE.fireTableDataChanged();
+	}
+
+COM:clears a list by setting all rows in a model to empty and a new state value

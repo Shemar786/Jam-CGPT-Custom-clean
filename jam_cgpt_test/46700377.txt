@@ -1,0 +1,13 @@
+TDAT:     public String getQualification() {
+	if (m_logger.isDebugEnabled()) {
+	    m_logger.debug("getQualification() - start");
+	}
+
+	String returnString = (strQualification);
+	if (m_logger.isDebugEnabled()) {
+	    m_logger.debug("getQualification() - end - return value=" + returnString);
+	}
+	return returnString;
+    }
+
+COM:returns a string value of the qualification and logs debug messages

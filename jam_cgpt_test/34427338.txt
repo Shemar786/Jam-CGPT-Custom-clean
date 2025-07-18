@@ -1,0 +1,17 @@
+TDAT:     private JMenuItem makeMenuWriteList(boolean enable) {
+        JMenuItem write = new JMenuItem("Write to file");
+        write.setToolTipText("Write the list of resource classes to file");
+        write.setEnabled(enable);
+
+        write.addActionListener(new ActionListener() {
+            @SuppressWarnings("synthetic-access")
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                actionWriteResourceClasses();
+            }
+        });
+
+        return write;
+    }
+
+COM:creates a JMenuItem with a tooltip and an ActionListener that calls the method actionWriteResourceClasses() depending on whether it is enabled or disabled

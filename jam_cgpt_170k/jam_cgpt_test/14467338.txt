@@ -1,0 +1,10 @@
+TDAT:   private void synchToModel( Model m ) {
+    for( Iterator i = this.model.nodes(); i.hasNext(); )
+      addGraphConstituent( (Constituent) i.next() );
+
+    for( Iterator i = this.model.relations(); i.hasNext(); )
+      addGraphConstituent( (Constituent) i.next() );
+
+  }
+
+COM:synchronizes the graph constituents to the given model

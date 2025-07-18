@@ -1,0 +1,24 @@
+TDAT: 	protected boolean makeSpace(int space) {
+
+		int limit;
+
+		limit = this.getSpaceLimit();
+
+		/* if space is already available */
+		if (getCurrentSpace() + space <= limit) {
+			return true;
+		}
+
+		/* if entry is too big for cache */
+		if (space > limit) {
+			return false;
+		}
+
+		/* Free up space by removing oldest entries */
+		while (getCurrentSpace() + space > limit && fEntryQueueTail != null) {
+			removeForSpace(fEntryQueueTail);
+		}
+		return true;
+	}
+
+COM:checks if there is enough space available in the cache, frees up space by removing oldest entries if necessary, and returns true if enough space is made available, otherwise false

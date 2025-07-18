@@ -1,0 +1,12 @@
+TDAT: 	public void showBigView(StateModel model, StateViewSmall smallView) {
+		mCurrentBigView = new StateViewBig(model, smallView, this);
+		mCurrentSmallView = smallView;
+		// TODO: move controller (like StateControllerSmall is instantiate)
+		new StateControllerBig(mModel, this, model, mCurrentBigView);
+		mRightPanel.removeAll();
+		mRightPanel.add(mCurrentBigView, BorderLayout.CENTER);
+		mModel.setCurrentPosition(indexOfView(smallView));
+		refresh();
+	}
+
+COM:displays a larger view of the current state using a StateModel and StateViewSmall, while also instantiating a StateControllerBig and removing and adding panels

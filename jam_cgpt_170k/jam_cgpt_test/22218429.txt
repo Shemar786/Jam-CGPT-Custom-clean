@@ -1,0 +1,16 @@
+TDAT:     public void disconnect() throws IOException {
+        out = null;
+        in = null;
+        buffer = null;
+        encoder = null;
+        decoder = null;
+        if (isAutoCloseSnoop()) {
+            closeQuietly(snoopOut);
+            closeQuietly(snoopIn);
+        } else {
+            flushQuietly(snoopOut);
+            flushQuietly(snoopIn);
+        }
+    }
+
+COM:disconnects the input and output streams, buffers, and encoders/decoders and optionally closes or flushes the snoop streams

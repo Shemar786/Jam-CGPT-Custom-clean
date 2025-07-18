@@ -1,0 +1,12 @@
+TDAT:     public Value evaluate(Value leftValue, Value rightValue) {
+
+        Literal leftBool = this.boolLogic.forceBoolean(leftValue);
+        Literal rightBool = this.boolLogic.forceBoolean(rightValue);
+
+        boolean result = evaluateBoolean(
+                this.converter.convertBoolean(leftBool),
+                this.converter.convertBoolean(rightBool));
+        return this.converter.convertBoolean(result);
+    }
+
+COM:evaluates two input values and returns a converted boolean result

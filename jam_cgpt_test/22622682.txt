@@ -1,0 +1,15 @@
+TDAT: 	public String getCollectionsQueryClause() {
+		String query = "";
+		List colList = this.getAuthorizedCollections();
+		String[] collections = (String[]) colList.toArray(new String[]{});
+		if (collections != null && collections.length > 0) {
+			query = "(collection:0" + collections[0];
+			for (int i = 1; i < collections.length; i++) {
+				query += " OR collection:0" + collections[i];
+			}
+			query += ")";
+		}
+		return query;
+	}
+
+COM:returns a query clause for authorized collections in the form of a string

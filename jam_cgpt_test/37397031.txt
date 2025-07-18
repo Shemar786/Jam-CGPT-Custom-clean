@@ -1,0 +1,16 @@
+TDAT:   public int search(Object object) {
+    int i = data.size() - 1; // Current index
+    int n = 1; // Current distance
+    while (i >= 0) {
+      Object current = data.get(i);
+      if ((object == null && current == null)
+        || (object.equals(current))) {
+        return n;
+      }
+      i--;
+      n++;
+    }
+    return -1;
+  }
+
+COM:searches for an object in a data structure and returns its index if found, or -1 if not found

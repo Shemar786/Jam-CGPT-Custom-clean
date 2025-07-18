@@ -1,0 +1,17 @@
+TDAT: 		public void execute(final Event event) {
+			LandEvent ev = (LandEvent) event;
+			System.out.println(ev);
+			final Elements elements = AbstractSimKernel.getInstance()
+					.elements();
+			Airport land = elements.get(Airport.class, ev.getAirport());
+			Airplane plane = elements.get(Airplane.class, ev.getAirplane());
+			if (plane.isFlying()) {
+				plane.land(land);
+				land.landAirplane(plane);
+			} else {
+				throw new IllegalStateException("Plane " + plane
+						+ " is not flying!");
+			}
+		}
+
+COM:executes an event where a plane lands on a specified airport, checks if the plane is flying, and throws an exception if it is not

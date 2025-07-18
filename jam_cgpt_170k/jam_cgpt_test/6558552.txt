@@ -1,0 +1,15 @@
+TDAT: 	public FriendlyURLMapper getFriendlyURLMapperInstance() {
+		if (Validator.isNull(getFriendlyURLMapperClass())) {
+			return null;
+		}
+
+		if (_portletApp.isWARFile()) {
+			PortletBag portletBag = PortletBagPool.get(getRootPortletId());
+
+			return portletBag.getFriendlyURLMapperInstance();
+		}
+
+		return (FriendlyURLMapper)InstancePool.get(getFriendlyURLMapperClass());
+	}
+
+COM:retrieves an instance of FriendlyURLMapper either from a PortletBag or from InstancePool, based on certain conditions

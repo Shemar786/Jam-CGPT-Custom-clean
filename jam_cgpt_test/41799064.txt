@@ -1,0 +1,10 @@
+TDAT:     public int getDaysSince(Date date) {
+        long millisecs = date.getTime();
+        Date d = cal.getTime();
+        long time = d.getTime();
+        long daysMillisecs = time - millisecs;
+        int days = (int)((((daysMillisecs / 1000)/60)/60)/24);
+        return days;
+    }
+
+COM:calculates the number of days that have elapsed between a specified date and the current date, and returns this value as an integer

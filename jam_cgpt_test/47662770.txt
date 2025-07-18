@@ -1,0 +1,17 @@
+TDAT: 	protected void addStepPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TaskStepAggregation_step_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TaskStepAggregation_step_feature", "_UI_TaskStepAggregation_type"),
+				 MethodcontentclassdiagramPackage.Literals.TASK_STEP_AGGREGATION__STEP,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to the item property descriptors list for the task step aggregation

@@ -1,0 +1,18 @@
+TDAT: 	public String getID(Superfamily sf){
+		String query = "select id from des where des.sccs='"+sf.getSCCS()+"'";
+		try {
+			Statement s = con.createStatement();
+			ResultSet rs = s.executeQuery(query);
+			rs.next();
+			return rs.getString(1);
+		}catch (SQLException e) {
+			System.out.println("Exception at Scop.getID");
+			System.out.println(e.getErrorCode());
+			System.out.println(e.getSQLState());
+			System.out.println(e.getMessage());
+			System.out.println(e);
+			return null;
+		}
+	}
+
+COM:takes a Superfamily object as input and returns a String representing the ID of that object by making a database query

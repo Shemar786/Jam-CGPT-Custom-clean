@@ -1,0 +1,13 @@
+TDAT:    public int getCorners() {
+      int corners = 0;
+      for (int i = 1; i < directions.size(); i++) {
+         if ((isStraight(directions.get(i - 1)) && isDiagonal(directions.get(i)))
+               || isDiagonal(directions.get(i - 1))
+               && isStraight(directions.get(i))) {
+            corners++;
+         }
+      }
+      return corners;
+   }
+
+COM:counts the number of corners in directions represented as a list of moves

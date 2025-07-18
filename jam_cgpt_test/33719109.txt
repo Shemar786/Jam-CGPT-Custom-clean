@@ -1,0 +1,14 @@
+TDAT:     public void testGetAllEmail() {
+        System.out.println("getAllEmail");
+        
+        Email_DBImpl instance = new Email_DBImpl();
+        
+        ResultSet expResult = null;
+        ResultSet result = instance.getAllEmail();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the getAllEmail() method of the Email_DBImpl class by asserting that the expected result matches the actual result returned by the method

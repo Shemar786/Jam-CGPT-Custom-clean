@@ -1,0 +1,17 @@
+TDAT: 	protected void addHiddenPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConfigurationProperty_hidden_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConfigurationProperty_hidden_feature", "_UI_ConfigurationProperty_type"),
+				 CanvasPackage.Literals.CONFIGURATION_PROPERTY__HIDDEN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a hidden configuration property

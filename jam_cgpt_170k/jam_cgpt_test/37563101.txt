@@ -1,0 +1,11 @@
+TDAT: public void setHotImage (Image image) {
+	checkWidget();
+	if ((style & SWT.SEPARATOR) != 0) return;
+	if (image != null && image.isDisposed()) error(SWT.ERROR_INVALID_ARGUMENT);
+	hotImage = image;
+//  hotImage = Image.swing_new(getDisplay(), SWT.BITMAP, );
+  ((CToolItem)handle).setRolloverIcon(image == null? null: new ImageIcon(image.handle));
+//	updateImages ();
+}
+
+COM:sets the hot image for a tool item and updates it, but only if the style is not a separator and the provided image is not null or disposed

@@ -1,0 +1,18 @@
+TDAT:   public boolean editModeToggle() throws wpException {
+
+    boolean toggleOK = false;
+    // Toggle the edit mode, and check if succesfull.
+    if (editMode == EDIT_MODE_DOM) {
+      if( toggleOK = setEditMode(EDIT_MODE_RAW)){
+        updateActions(false);
+      }
+    }
+    else {
+      if( toggleOK = setEditMode(EDIT_MODE_DOM)){
+        updateActions(true);
+      }
+    }
+    return toggleOK;
+  }
+
+COM:toggles the edit mode and throws an exception of type wpException if there is an error, then returns a boolean value indicating the success of the toggle

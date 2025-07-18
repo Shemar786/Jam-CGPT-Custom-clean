@@ -1,0 +1,14 @@
+TDAT: 	private void setName(List<Event> events) {
+		StringBuilder result = new StringBuilder(DEFAULT_NAME);
+		if (events.isEmpty() == false) {
+			Iterator<Event> it = events.iterator();
+			result.append(it.next().getName());
+			while (it.hasNext()) {
+				result.append(NAME_SEPARATOR);
+				result.append(it.next().getName());
+			}
+		}
+		name = result.toString();
+	}
+
+COM:sets the name of an event by concatenating the names of the events in a list separated by a specified separator if the list is not empty

@@ -1,0 +1,15 @@
+TDAT:     public String columnList(String prefix) {
+        String list = "";
+        for (Column column: getColumns()) {
+            if (list.length() > 0) {
+                list += ", ";
+            }
+            if (prefix != null) {
+                list += prefix;
+            }
+            list += column.name;
+        }
+        return list;
+    }
+
+COM:returns a string listing the names of all columns with an optional prefix

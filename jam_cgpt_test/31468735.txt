@@ -1,0 +1,18 @@
+TDAT:     public void appendData(String data) {
+
+        if (readOnly) {
+        	throw new DOMExceptionImpl(
+        		DOMException.NO_MODIFICATION_ALLOWED_ERR,
+        		"DOM001 Modification not allowed");
+        }
+
+        if (syncData) {
+            synchronizeData();
+        }
+        
+		// Handles mutation event generation, if any
+        setNodeValue(value+data);
+
+    } // appendData(String)
+
+COM:appends data to the node's value and handles mutation event generation, but only if the node is not read-only and if data synchronization is enabled

@@ -1,0 +1,10 @@
+TDAT:     private void updateMean(V parentEntry) {
+        assert (!isLeaf());
+        int[] weights = new int[count()];
+        for (int iChild = 0; iChild < count(); ++iChild) {
+            weights[iChild] = children.get(iChild).totalCount;
+        }
+        parentEntry.updateMean(keys, weights);
+    }
+
+COM:updates the mean value of a parent entry based on the weights of its children

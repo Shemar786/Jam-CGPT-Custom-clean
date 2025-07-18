@@ -1,0 +1,14 @@
+TDAT: 	public Document getStandardResponse(String asnId) throws Exception {
+
+		String serviceUrl = getBaseUrl() + "?verb=GetStandard&id=" + asnId;
+
+		URL url = new URL(serviceUrl);
+		Document response = getResponseDoc(url);
+		Element error = (Element) response.selectSingleNode("/ASNWebService/error");
+		if (error != null)
+			throw new Exception("Error: " + error.getText());
+		response = Dom4jUtils.localizeXml(response);
+		return response;
+	}
+
+COM:gets a standard response from a web service using an ASN ID, throws an exception if there's an error, and returns the localized XML document response

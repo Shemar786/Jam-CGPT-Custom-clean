@@ -1,0 +1,16 @@
+TDAT: 	public String getRequestDate() {
+		String t = doc.get("requestdate");
+
+		if (t == null)
+			return DEFAULT;
+		long time = -1;
+		try {
+			time = DateFieldTools.stringToTime(t);
+		} catch (ParseException pe) {
+			prtlnErr("Error in getRequestDate(): " + pe);
+		}			
+
+		return new SimpleDateFormat("EEE MMM d, yyyy h:mm:ss a zzz").format(new Date(time));
+	}
+
+COM:retrieves the "requestdate" value from a document and converts it to a formatted date string, or returns a default value if the "requestdate" value is null

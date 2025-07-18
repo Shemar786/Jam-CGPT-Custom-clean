@@ -1,0 +1,13 @@
+TDAT:    private void getRemoteDirectory() {
+
+      executeCommand("PWD");
+
+      int i = lastResponse.indexOf("\"");
+      int j = lastResponse.lastIndexOf("\"");
+      if(i != -1 && j != -1)
+         remoteDir = lastResponse.substring(i + 1, j);
+      else
+         remoteDir = "Can't parse remote dir!";
+   }
+
+COM:retrieves the remote directory on a server by sending a PWD command and parsing the server's response

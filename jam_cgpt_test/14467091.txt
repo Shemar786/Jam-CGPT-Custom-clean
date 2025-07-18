@@ -1,0 +1,10 @@
+TDAT:   public boolean areAdjacent(Constituent a, Constituent b) {
+    for (Iterator i = relations.iterator(); i.hasNext();) {
+      Relation r = (Relation)i.next();
+      if ((r.getOrigin() == a && r.getDestination() == b) ||
+          (r.getOrigin() == b && r.getDestination() == a)) return true;
+    }
+    return false;
+  }
+
+COM:checks if two given Constituents are adjacent by iterating through a list of Relations and comparing their Origins and Destinations

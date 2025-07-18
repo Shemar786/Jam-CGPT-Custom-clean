@@ -1,0 +1,9 @@
+TDAT:    public void deleteService() {
+      int dbState = whatIsTheState();
+      if( dbState == DATABASE_CLOSED ) {
+         String output = runCommand("oradim  -delete -sid famous"); // TODO: SID should be dynamic.
+         System.out.println("deleteServiceOutput:"+output );
+      }
+   }
+
+COM:deletes a service if the database is closed and prints out the output of the deletion process

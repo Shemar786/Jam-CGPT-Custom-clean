@@ -1,0 +1,17 @@
+TDAT: 	private String covertToMetricXMLFragment(final String xmlString, final String wrappingElementNamespaceURI, final String wrappingElementTagName) {
+		final String wrappingElementOpenTag = "<" + 
+			wrappingElementTagName + 
+			" xmlns=\"" + 
+			wrappingElementNamespaceURI + 
+			"\">";
+		final String wrappingElementCloseTag = "</" + 
+			wrappingElementTagName + 
+			">";
+
+		return XML_DECLARATION
+			+ wrappingElementOpenTag
+			+ xmlString
+			+ wrappingElementCloseTag;
+	}
+
+COM:takes in an XML string, a namespace URI, and a tag name, and returns a formatted XML fragment with the input string wrapped in the specified element with the given namespace

@@ -1,0 +1,10 @@
+TDAT:     public String getMainClassName() {
+        String className = _element.getCode();
+        if (className.endsWith( CLASS_EXTENSION )) {
+            className = className.substring( 0, className.lastIndexOf( CLASS_EXTENSION ));
+        }
+        className = className.replace( '/', '.' ).replace( '\\', '.' );
+        return className;
+    }
+
+COM:returns the main class name from the code element after removing the file extension and replacing '/' and '\' with '.'

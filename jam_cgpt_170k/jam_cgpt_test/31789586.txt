@@ -1,0 +1,9 @@
+TDAT:     protected String getSrcBase(SandDecl sd) {
+        String srcbase=sd.getSourceFile().toString();
+        srcbase=srcbase.substring(0,srcbase.lastIndexOf(File.separator));
+        srcbase=srcbase.substring(0,srcbase.lastIndexOf("structs"));
+        srcbase+="sandmessages" + File.separator;
+        return srcbase;
+    }
+
+COM:returns a string that represents the source directory for sand messages by manipulating a SandDecl object's source file path

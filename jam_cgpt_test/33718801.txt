@@ -1,0 +1,16 @@
+TDAT:     public boolean Contains(int gid){
+        if (this.groupList==null){
+            return false;
+        }else{
+            Iterator itr = this.groupList.iterator();
+            while(itr.hasNext()){
+                AutismGroup ag = (AutismGroup)itr.next();
+                if(ag.GetGroupId()==gid){
+                    return true;
+                }
+            }   
+        }
+        return false;
+    }
+
+COM:checks if a group ID is present in a list of AutismGroups

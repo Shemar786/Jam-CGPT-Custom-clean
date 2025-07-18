@@ -1,0 +1,14 @@
+TDAT:     public void Display_store() {
+        Iterator iter = IndStore.values().iterator();
+
+        while (iter.hasNext()) {
+            Swizzler indswz = (Swizzler) iter.next();
+
+            System.out.println("\nIV: " + indswz.ind_var() + " tgt: "
+                    + indswz.target() + "\narray: " + indswz.array()
+                    + " init: " + indswz.init_val() + " end: "
+                    + indswz.end_val());
+        }
+    }
+
+COM:displays the values of an iterator object containing Swizzler instances

@@ -1,0 +1,14 @@
+TDAT: 	private SearchPatternData getPatternData() {
+		SearchPatternData match = findInPrevious(xpathCombo.getText());
+		if (match != null) {
+			fPreviousSearchPatterns.remove(match);
+		}
+		match = new SearchPatternData(getXPath(), getXPathProcessorId(),
+				fFileTypeEditor.getFileTypes(), getContainer()
+						.getSelectedScope(), getContainer()
+						.getSelectedWorkingSets());
+		fPreviousSearchPatterns.add(0, match);
+		return match;
+	}
+
+COM:retrieves or creates a SearchPatternData object based on user input and stores it in a list of previous search patterns

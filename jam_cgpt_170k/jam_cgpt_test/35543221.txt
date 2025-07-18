@@ -1,0 +1,12 @@
+TDAT: 	private void setOntRingType() {
+		for (int i = 0; i < onuontBtn.length; i++) {
+			if (dbOntRingType.get(Integer.valueOf(i)) != null){
+				int ringType = dbOntRingType.get(Integer.valueOf(i)).intValue();
+				onuontBtn[i].setRingType(ringType);
+			} else {
+				onuontBtn[i].setRingType(DBDataDesc.RING_PRIMARY);
+			}
+		}
+	}
+
+COM:sets the ring type for a collection of buttons based on the values stored in a database

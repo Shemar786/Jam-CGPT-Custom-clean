@@ -1,0 +1,9 @@
+TDAT:     public void applyFontEffects(StyleWithProperties style, boolean bInherit, BeforeAfter ba) {
+        if (style==null) { return; }
+        applyTextPosition(style, bInherit, ba);
+        applyUnderline(style, bInherit, ba);
+        applyCrossout(style, bInherit, ba);
+        applyChangeCase(style, bInherit, ba);
+    }
+
+COM:applies various font effects to a given style, such as underline and change case

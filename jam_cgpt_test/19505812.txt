@@ -1,0 +1,12 @@
+TDAT: 	protected void copyResources(IResource[] resources, IPath destinationPath) throws RodinDBException {
+		IProgressMonitor subProgressMonitor = getSubProgressMonitor(resources.length);
+		IWorkspace workspace = resources[0].getWorkspace();
+		try {
+			workspace.copy(resources, destinationPath, false, subProgressMonitor);
+			this.setAttribute(HAS_MODIFIED_RESOURCE_ATTR, TRUE); 
+		} catch (CoreException e) {
+			throw new RodinDBException(e);
+		}
+	}
+
+COM:copies a given array of resources to a specified destination path in the workspace and sets a boolean attribute

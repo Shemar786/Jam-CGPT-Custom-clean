@@ -1,0 +1,12 @@
+TDAT:     public void loginOK() {
+        ChatContainerPanel chatPanel = new ChatContainerPanel(this);
+        client.setChat(chatPanel);
+        client.setGameWaitPanel(gameWaitPanel);
+        add(chatPanel, BorderLayout.SOUTH);
+        MenuPanel menuPanel = new MenuPanel(this);
+        client.setMenuPanel(menuPanel);
+        mainPanel.add(menuPanel, "menu");
+        show("menu");
+    }
+
+COM:initializes and displays various GUI components such as the chat panel and menu panel for the user upon successful login

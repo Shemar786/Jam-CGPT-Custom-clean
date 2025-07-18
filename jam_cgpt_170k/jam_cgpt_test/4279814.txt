@@ -1,0 +1,17 @@
+TDAT:     public String toHex(byte[] fileDigest) {
+        StringBuffer hex = new StringBuffer();
+
+        for (int i = 0; i < fileDigest.length; i++) {
+            String hexStr = Integer.toHexString(0x00ff & fileDigest[i]);
+
+            if (hexStr.length() < 2) {
+                hex.append("0");
+            }
+
+            hex.append(hexStr);
+        }
+
+        return hex.toString();
+    }
+
+COM:converts a byte array into a hexadecimal string representation

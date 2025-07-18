@@ -1,0 +1,9 @@
+TDAT:     public Object convert(Context context, Object file) throws ConversionException {
+        try {
+            return new FileInputStream((File) file);
+        } catch (FileNotFoundException e) {
+            throw new ConversionException("Cannot find file '" + ((File) file).getName() + "'", e);
+        }
+    }
+
+COM:converts an Object file to a FileInputStream, with a possibility of throwing a ConversionException if the file is not found

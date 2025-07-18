@@ -1,0 +1,13 @@
+TDAT:     public void mutate(int amount) {
+	int f, s, temp;
+
+	for (int i = 0; i < amount; i++) {
+	    f = (int) (randNum.nextDouble() * (double) (this.getLength()));
+	    s = (int) (randNum.nextDouble() * (double) (this.getLength()));
+	    temp = this.valList[f];
+	    this.valList[f] = this.valList[s];
+	    this.valList[s] = temp;
+	}
+    }
+
+COM:mutates an object's value list by randomly swapping elements a specified number of times

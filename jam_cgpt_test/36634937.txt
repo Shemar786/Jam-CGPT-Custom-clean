@@ -1,0 +1,13 @@
+TDAT:     private void initialize(int width, int height){
+    	mainTitle = "JSlix Window";
+        sizex = width;
+        sizey = height;
+        showRate = false;
+        window = new JFrame(mainTitle);
+        window.setBackground(Color.BLACK);
+        setBackground(Color.BLACK);
+        frameUpdate = true;
+        SlixLibrary.setFrame();
+    }
+
+COM:initializes variables and creates a JFrame for a window with a specified size and background

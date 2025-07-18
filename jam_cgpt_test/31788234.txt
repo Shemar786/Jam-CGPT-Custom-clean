@@ -1,0 +1,7 @@
+TDAT:     protected String getStdMBeanInterfaceFile(SandDecl sd) {
+        String srcname=sd.getSourceFile().toString();
+        String srcdir=srcname.substring(0,srcname.lastIndexOf(File.separator)+1);
+        return srcdir + getStdMBeanInterface(sd.getClassDoc()) + ".java";
+    }
+
+COM:returns the file name of the standard MBean interface given a SandDecl object

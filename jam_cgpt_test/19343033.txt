@@ -1,0 +1,23 @@
+TDAT:   public ExternalRecord () {
+      super(true);
+
+      recordId = 0;
+      recordName = "";
+      description = "";
+      recordType = 0;
+      system = 0;
+      listChar = "";
+      copyBook = "";
+      delimiter = "";
+      quote = "";
+      posRecInd = 0;
+      recSepList = "";
+      recordSep = NULL_BYTES;
+      fontName = "";
+      recordStyle = 0;
+      fileStructure = 0;
+
+      setKeys();
+  }
+
+COM:initializes an ExternalRecord object with default values and sets keys

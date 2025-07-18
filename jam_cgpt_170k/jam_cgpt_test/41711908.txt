@@ -1,0 +1,11 @@
+TDAT:     private void addStep(String instructions) {
+        int step = instructionsPanel.getComponentCount() + 1;
+        InstructionPanel instructionPanel = new InstructionPanel(instructions);
+        instructionPanel.addPanelRemovedEventListener(this);
+        instructionPanel.setStep(step);
+        instructionsPanel.add(instructionPanel);
+        instructionsPanel.revalidate();
+        instructionsPanel.repaint();
+    }
+
+COM:adds a new step with instructions to the instructions panel and updates the step count for it

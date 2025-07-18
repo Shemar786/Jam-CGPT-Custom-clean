@@ -1,0 +1,12 @@
+TDAT:     public Object createObject(Attributes attributes) throws Exception {
+
+        String partnerLinkName = attributes.getValue(NAME);
+        String partnerLinkType = attributes.getValue(PARTNER_LINK_TYPE);
+        String myRole = attributes.getValue(MY_ROLE);
+        String partnerRole = attributes.getValue(PARTNER_ROLE);
+
+        return getElementFactory().createPartnerLink(partnerLinkName,
+                partnerLinkType, myRole, partnerRole);
+    }
+
+COM:creates a partner link object based on the provided attributes

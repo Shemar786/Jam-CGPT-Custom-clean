@@ -1,0 +1,12 @@
+TDAT:     public void setupFileTypeTableModel() {
+        JTable table = window.getFileTypeTable();
+
+        table.setModel(extensionsTableModel);
+        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.setColumnModel(new FileTypeColumnModel());
+        table.setRowHeight(20);
+
+        table.setRowSorter(new TableRowSorter<FileTypeExtensionsTableModel>(extensionsTableModel));
+    }
+
+COM:sets up a JTable with a specific table model, selection mode, column model, row height, and row sorter

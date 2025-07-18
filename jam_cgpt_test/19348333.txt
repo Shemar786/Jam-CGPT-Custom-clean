@@ -1,0 +1,13 @@
+TDAT: 	protected BigDecimal getBigDecimal(FieldDetail field, String val) {
+
+	    BigDecimal decimalVal = new BigDecimal(Conversion.numTrim(val));
+
+	    if ((field.getDecimal() > 0) && adjustTheDecimal) {
+	        decimalVal = decimalVal.multiply(new BigDecimal(
+		        java.lang.Math.pow(BASE_10, field.getDecimal())));
+	    }
+
+	    return decimalVal;
+	}
+
+COM:returns a BigDecimal object after performing calculations on the input parameters field and val

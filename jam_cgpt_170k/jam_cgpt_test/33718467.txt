@@ -1,0 +1,14 @@
+TDAT:     public void testGetGroupId() {
+        System.out.println("getGroupId");
+        
+        Event_StubImpl instance = new Event_StubImpl();
+        
+        int expResult = 0;
+        int result = instance.getGroupId();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the "getGroupId" method of the "Event_StubImpl" class by calling it and verifying that the result matches the expected value

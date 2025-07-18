@@ -1,0 +1,10 @@
+TDAT: 	private String formatMap( Map<String,String> map ) {
+		StringBuilder sb = new StringBuilder("[\n");
+		Set<Entry<String,String>> entrySet = map.entrySet();
+		for ( Entry<String,String> entry : entrySet ) {
+			sb.append( "\t" + entry.getKey() + ": " + entry.getValue() + "\n" );
+		}
+		return sb.append( "]\n" ).toString();
+	}
+
+COM:formats a passed Map<String,String> object by appending each key-value pair to a StringBuilder object and returning the formatted string enclosed in square brackets

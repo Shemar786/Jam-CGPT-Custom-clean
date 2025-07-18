@@ -1,0 +1,18 @@
+TDAT:     public void removeSelection(IEntity selection) {
+
+        // Assertions.
+        if (selection == null) {
+            String msg = "Argument 'selection' cannot be null.";
+            throw new IllegalArgumentException(msg);
+        }
+        
+        entitySel.remove(selection.getEntityId());
+        if(selection.getType().equals(EntityType.MEMBER)){          
+            memberCount--;
+        }else{
+            groupCount--;
+        }
+        
+    }
+
+COM:removes a specified IEntity selection from a collection, updates the member/group count accordingly, and throws an exception if the selection argument is null

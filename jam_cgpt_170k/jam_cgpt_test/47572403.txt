@@ -1,0 +1,14 @@
+TDAT: 	public void switchOutHealthyPoke() {
+			for(int i = 1; i < getParty().length && getParty()[i] != null; i++) {
+				if(getParty()[i].getHealth() > 0) {
+					Pokemon temp = getParty()[0];
+					getParty()[0] = getParty()[i];
+					getParty()[i] = temp;
+					arrangeParty();
+					initialiseClientParty();
+					break;
+				}
+			}
+	}
+
+COM:switches out the first Pokemon in a party with the first healthy Pokemon found in the remaining Pokemon in the party, and ensures the updated party is arranged and initialized

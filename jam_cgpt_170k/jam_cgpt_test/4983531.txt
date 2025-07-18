@@ -1,0 +1,12 @@
+TDAT: 	public JbsLangString getLangString(JbsLanguage language) {
+		JbsLangString result = null;
+		Iterator<JbsLangString> it = this.iterator();
+		while ((it.hasNext()) && (result==null)) {
+			JbsLangString langString = it.next();
+			if (langString.getLanguage().getLangCode().equals(language.getLangCode()))
+				result=langString;
+		}
+		return result;
+	}
+
+COM:retrieves a JbsLangString object based on the specified JbsLanguage parameter

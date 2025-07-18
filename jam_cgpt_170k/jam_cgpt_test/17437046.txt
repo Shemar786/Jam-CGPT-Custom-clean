@@ -1,0 +1,15 @@
+TDAT:     public void sendPacket(byte[] data) throws IOException {
+        synchronized (this) {
+            // this is time consuming.. only enable for debugging
+
+
+            {
+                System.out.println("\n" + printData(data, data.length, "[S->C]"));
+            }
+
+            _out.write(data, 0, data.length);
+            _out.flush();
+        }
+    }
+
+COM:sends a byte array packet over a network and throws an IOException if an error occurs

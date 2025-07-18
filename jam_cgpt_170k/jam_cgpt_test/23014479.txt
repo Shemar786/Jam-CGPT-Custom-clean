@@ -1,0 +1,7 @@
+TDAT:     public void addScale(Vector3f scale) {
+        matrix.multiplyFactor(0, 0, scale.getX());
+        matrix.multiplyFactor(1, 1, scale.getY());
+        matrix.multiplyFactor(2, 2, scale.getZ());
+    }
+
+COM:scales a 3-dimensional vector by multiplying each dimension by a corresponding scaling factor

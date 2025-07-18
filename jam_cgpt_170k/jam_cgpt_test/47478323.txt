@@ -1,0 +1,14 @@
+TDAT: 	private IPath searchExtensionLocations(IPath relativePath) {
+		List extensionLocations = getExtensionLocations();
+		for (Iterator iterator = extensionLocations.iterator(); iterator.hasNext();) {
+			SourceLocation currentLocation = (SourceLocation) iterator.next();
+			IPath fullPath = currentLocation.getPath().append(relativePath);
+			File file = fullPath.toFile();
+			if (file.exists()) {
+				return fullPath;
+			}
+		}
+		return null;
+	}
+
+COM:searches for a given relative path in a list of extension locations and returns the full path if found, or null if not found

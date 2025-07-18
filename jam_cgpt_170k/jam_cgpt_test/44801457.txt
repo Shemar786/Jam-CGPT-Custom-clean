@@ -1,0 +1,15 @@
+TDAT:     private void initialize() {
+        MibSymbol              symbol;
+        ObjectIdentifierValue  oid;
+
+        oid = new ObjectIdentifierValue("iso", 1);
+        symbol = new MibValueSymbol(new FileLocation(null, -1, -1),
+                                    null,
+                                    "iso",
+                                    new ObjectIdentifierType(),
+                                    oid);
+        oid.setSymbol((MibValueSymbol) symbol);
+        symbols.put("iso", symbol);
+    }
+
+COM:initializes a MibSymbol object with an ObjectIdentifierValue and adds it to a HashMap called symbols with the key "iso"

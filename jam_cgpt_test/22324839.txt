@@ -1,0 +1,14 @@
+TDAT:     public PersistentPeer getPeer (Object obj) throws NoPeerException {
+        if (obj instanceof PersistentPeer) 
+            return (PersistentPeer) obj;
+        else {
+            try {
+                Class c = Class.forName (obj.getClass().getName()+"Peer");
+                return (PersistentPeer) c.newInstance();
+            } catch (Exception e) {
+                throw new NoPeerException (e.toString());
+            }
+        }
+    }
+
+COM:returns a PersistentPeer object based on the input object or creates a new one using reflection if the input is not an instance of PersistentPeer

@@ -1,0 +1,8 @@
+TDAT:   private void fetchBlogs() {
+    if (BloggerApplication.getInstance().getBlogCollection() == null)
+      GetBlogCollectionTask.execute(getProgressIndicator("Getting list of blogs"), feedCallback);
+    else
+      onReceiveBlogCollection(BloggerApplication.getInstance().getBlogCollection());
+  }
+
+COM:fetches a collection of blogs from BloggerApplication and executes a task to get the list of blogs if the collection is null, otherwise it receives the collection

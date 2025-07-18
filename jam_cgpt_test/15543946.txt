@@ -1,0 +1,15 @@
+TDAT: 	public void globalUpdatePheromoneWeighted( int weight ) {
+	    double        d_tau;
+	    int NumCities = Problem.NumCities;
+//	    TRACE ( printf("global pheromone update weighted\n"); );
+
+	    d_tau = (double) weight / (double) TourLen;
+	    for ( int i = 0 ; i < NumCities ; i++ ) {
+	    	int j = Tour[i];
+	    	int h = Tour[i+1];
+	    	Problem.Pheromone[j][h] += d_tau;
+	    	Problem.Pheromone[h][j] = Problem.Pheromone[j][h];
+	    }       
+	}
+
+COM:updates the pheromone levels of a TSP problem by adding a weighted value to selected links between cities in a tour

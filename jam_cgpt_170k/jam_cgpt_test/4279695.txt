@@ -1,0 +1,19 @@
+TDAT:     public Object construct(Class clazz) {
+        Constructor constructor;
+
+        try {
+            constructor = clazz.getDeclaredConstructor(new Class[] {  });
+        } catch (NoSuchMethodException e) {
+            throw new BuildException("A no-arg constructor must be provided", e);
+        }
+
+        constructor.setAccessible(true);
+
+        try {
+            return constructor.newInstance(new Object[] {  });
+        } catch (Exception e) {
+            throw new BuildException(e);
+        }
+    }
+
+COM:constructs an object by using a no-argument constructor provided in the Class parameter

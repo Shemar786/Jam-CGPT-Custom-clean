@@ -1,0 +1,12 @@
+TDAT: 	protected int nextNode(NumberNode startNode, NumberNode currNode) {
+		if (empty() || !contains(startNode)) {
+			return NOSUCHNODE;
+		}
+		int currNodeNum = 0;
+		if (currNode != null) {
+			currNodeNum = currNode.getNodeNum()+1;
+		}
+		return calcNextNode(startNode.getNodeNum(), currNodeNum);
+	}
+
+COM:returns the next node number in a linked list of NumberNode objects, given the start node and current node

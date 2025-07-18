@@ -1,0 +1,10 @@
+TDAT:   public Object createMemberExpression(List members) {
+    ArrayList memberList = new ArrayList();
+    for (Iterator iter = members.iterator(); iter.hasNext();) {
+      MondrianMember mem = (MondrianMember) iter.next();
+      memberList.add(mem.getMonMember());
+    }
+    return memberList;
+  }
+
+COM:creates a list of member expressions from a given list of MondrianMembers

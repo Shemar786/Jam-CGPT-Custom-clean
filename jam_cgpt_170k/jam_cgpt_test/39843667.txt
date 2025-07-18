@@ -1,0 +1,19 @@
+TDAT:     public void add(String property, ActionMessage message) {
+
+        ActionMessageItem item = (ActionMessageItem) messages.get(property);
+        List list = null;
+
+        if (item == null) {
+            list = new ArrayList();
+            item = new ActionMessageItem(list, iCount++);
+
+            messages.put(property, item);
+        } else {
+            list = item.getList();
+        }
+
+        list.add(message);
+
+    }
+
+COM:adds an ActionMessage to a list associated with a given property, creating a new list if necessary

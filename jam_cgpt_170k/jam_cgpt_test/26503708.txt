@@ -1,0 +1,16 @@
+TDAT: 	public void deploy(DeployOutputStream deployOutput) throws IOException{
+		long length = getMetadata().getContentLength();
+		InputStream is = _conn.getInputStream();
+		long total = 0;
+		byte[] buf = new byte[BUFSZ];
+		int read = 0;
+		while(total < length && (read = is.read(buf, 0, BUFSZ)) > 0){
+			total = total + read;
+			deployOutput.write(buf, 0, read);
+		}
+		deployOutput.close();
+		ClientCallback cb = new ClientCallback();
+		cb.handleResult(this, deployOutput.getProgressQueue());
+	}
+
+COM:deploys an input stream by writing it to a DeployOutputStream and calling a client callback to handle the result

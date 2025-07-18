@@ -1,0 +1,19 @@
+TDAT: 	public void generateMenus() {
+		Iterator it = menuMap.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry entry = (Entry) it.next();
+			String menuname = (String) entry.getValue();
+			JMenu menu = (JMenu) menuItemMap.get(menuname);
+			Integer mnemonic = (Integer) mnemonicMap.get(menuname);
+
+			if (menu != null) {
+				jMainMenuBar.add(menu);
+			}
+			if (mnemonic != null) {
+				menu.setMnemonic(mnemonic.intValue());
+			}
+		}
+
+	}
+
+COM:generates menus using maps of menu items, names, and mnemonics

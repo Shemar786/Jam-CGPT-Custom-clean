@@ -1,0 +1,17 @@
+TDAT: 	public Date getStartTime() {
+		/*
+		 * Not totally sure about this. FindBugs complains Date is a mutable
+		 * object but AFAIK it is immutable (mutating methods are all deprecated
+		 * a long time ago). Anyway, we'll stick with this...
+		 */
+		Date returnValue;
+		if (startTime == null) {
+			returnValue = null;
+		} else {
+			returnValue = new Date(startTime.getTime());
+		}
+
+		return returnValue;
+	}
+
+COM:returns a Date object representing the start time, making a defensive copy to prevent mutation

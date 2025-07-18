@@ -1,0 +1,13 @@
+TDAT: 	public void deleteTempAggregateBasis() {
+		try {
+			Statement stmt = con.createStatement();
+			stmt.execute("DROP TABLE #TimeBins;\n");
+			stmt.close();
+		} catch (SQLException e) {
+			ErrorLogger.writeExceptionToLogAndPrompt(getName(),"SQL exception deleting aggregate basis temp table");
+			System.err.println("SQL exception deleting aggregate basis temp table");
+			e.printStackTrace();
+		}
+	}
+
+COM:drops a temporary SQL table named #TimeBins used for storing aggregate basis information

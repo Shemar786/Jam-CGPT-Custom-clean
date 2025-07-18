@@ -1,0 +1,12 @@
+TDAT:     public void addMapping(String name, Class m) throws DuplicateCalculatorNameException, IllegalArgumentException {
+	// verify that the class is in the mapping hierarchy
+	if (!ObjectMapping.class.isAssignableFrom(m))
+	    throw new IllegalArgumentException("Class " + m.getName() + " is not an ObjectMapper!");
+
+	// check for duplicate names
+	if (mappers.keySet().contains(name))
+	    throw new DuplicateCalculatorNameException("Duplicate mapper name " + name);
+	mappers.put(name, m);
+    }
+
+COM:adds a mapping from a given string name to a class, throwing exceptions if the class is not a subclass of ObjectMapping or if the name already exists in the mapping

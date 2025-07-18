@@ -1,0 +1,26 @@
+TDAT: 	private void createNewLine(LineMessage lineMessage) {
+		log.trace("new line received with id " + lineMessage.getLineID());
+
+		User modifier =
+			ProtocolCommonLogic.getUserWithData(
+				document,
+				lineMessage.getModifier(),
+				NetworkID.NULL_NET_ID);
+
+		Line newLine =
+			new Line(
+				lineMessage.getLineID(),
+				lineMessage.getBlockID(),
+				modifier,
+				lineMessage.getLastModified(),
+				lineMessage.getPreviousLineID(),
+				lineMessage.getNextLineID(),
+				lineMessage.getLineContents(),
+				lineMessage.getXPosition(),
+				lineMessage.getYPosition(),
+				lineMessage.getLineNum());
+
+		document.addLine(newLine);
+	}
+
+COM:creates a new line object with the specified attributes and adds it to the document

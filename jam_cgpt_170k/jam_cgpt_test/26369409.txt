@@ -1,0 +1,12 @@
+TDAT:     public Image getIcon( int type ) {
+        Image img;
+        if( type == BeanInfo.ICON_COLOR_16x16 || type == BeanInfo.ICON_MONO_16x16 ) {
+            img = Utilities.loadImage( "com/goulbourn/docenforcer/CheckStyleOptionsSettingsIcon.gif" );
+        }
+        else {
+            img = Utilities.loadImage( "com/goulbourn/docenforcer/CheckStyleOptionsSettingsIcon.gif" );
+        }
+        return img;
+    }
+
+COM:returns an image icon based on the input type parameter

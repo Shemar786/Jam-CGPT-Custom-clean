@@ -1,0 +1,17 @@
+TDAT: 	private JTable getChosenFieldTable() {
+		if (ChosenFieldTable == null) {
+			ChosenFieldTable = new JTable();
+			ChosenFieldTable.setLocation(new Point(0, 0));
+			DefaultTableModel model = new AggFeatureListModel(new Object[]{"Selected Features"},0);
+			String[] names = aggregator.getFeaturesToApply();
+			if(names != null){
+				for(int i=0;i<names.length;++i){
+					model.addRow(new Object[]{names[i]});
+				}
+			}
+			ChosenFieldTable.setModel(model);
+		}
+		return ChosenFieldTable;
+	}
+
+COM:returns a JTable object containing a list of features that have been selected for aggregation

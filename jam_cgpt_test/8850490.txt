@@ -1,0 +1,12 @@
+TDAT:     protected boolean isValidImageWidthHeight(InputStream in, int width, int height){
+    	ImageInfo ii = new ImageInfo();
+    	ii.setInput(in); // in can be InputStream or RandomAccessFile
+		if (ii.check() == true && (ii.getWidth() <= width && ii.getHeight() <= height)) {
+				return true;
+		}
+		else {
+			return false;
+		}
+    }
+
+COM:checks if an image file's width and height dimensions are less than or equal to specified values

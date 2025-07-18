@@ -1,0 +1,9 @@
+TDAT:     //public void setNumberOfSelectedIndividuals(int numberOfSelectedIndividuals) {
+    //    if (algorithmType == AlgorithmType.STEADY_STATE)
+    //        this.numberOfSelectedIndividuals = numberOfSelectedIndividuals;
+    //    else
+    //        System.out.println("Warning: number of selected individuals "
+    //                + "will be ignored in a generational algorithm");
+    //}
+
+COM:sets the number of selected individuals for a steady state algorithm and displays a warning message for generational algorithms

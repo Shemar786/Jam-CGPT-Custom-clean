@@ -1,0 +1,14 @@
+TDAT: 	public void addTimeSpan(String timePosition) {
+		String[] set = new String[this.timeSpan.length+1];
+		int i = 0;
+		if (this.timeSpan.length != 0){
+			for (i = 0;i<this.timeSpan.length;i++){
+				set[i] = this.timeSpan[i];
+			}
+		}
+		set[this.timeSpan.length] = timePosition;
+		this.timeSpan = set;
+		this.timeSpanExist = true;
+	}
+
+COM:adds a new time span to an array of time spans and sets a flag indicating that there is at least one time span

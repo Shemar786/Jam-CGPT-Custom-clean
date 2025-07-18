@@ -1,0 +1,10 @@
+TDAT: 	private JComboBox getJComboBoxV_Type() {
+		if (jComboBoxV_Type == null) {
+			jComboBoxV_Type = new JComboBox(new String [] {
+					"", "Cosmid", "Phage", "Plasmid", "YAC", "other"});
+			jComboBoxV_Type.setBounds(new Rectangle(434, 116, 135, 17));
+		}
+		return jComboBoxV_Type;
+	}
+
+COM:creates and returns a JComboBox object with preset options if it has not already been initialized

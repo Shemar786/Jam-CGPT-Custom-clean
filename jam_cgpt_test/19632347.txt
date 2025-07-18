@@ -1,0 +1,17 @@
+TDAT: 	protected void addPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IterationStrategyPortNode_port_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IterationStrategyPortNode_port_feature", "_UI_IterationStrategyPortNode_type"),
+				 CanvasPackage.Literals.ITERATION_STRATEGY_PORT_NODE__PORT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for an iteration strategy port node

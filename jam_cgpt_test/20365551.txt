@@ -1,0 +1,11 @@
+TDAT:     public Expression create() {
+        if ( components.isEmpty() ) {
+            throw new IllegalStateException( "expression is empty" );
+        }
+        if ( dataStackSize != 1 ) {
+            throw new IllegalStateException( "expression is incomplete" );
+        }
+        return new Expression( components.toArray( new ExpressionComponent[components.size()] ) );
+    }
+
+COM:creates an Expression object based on an array of ExpressionComponents, but throws exceptions if the components list is empty or the data stack size is not equal to one

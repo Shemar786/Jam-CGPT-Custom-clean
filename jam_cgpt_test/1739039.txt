@@ -1,0 +1,15 @@
+TDAT: 	public String doSave() {
+
+		try {
+			this.appVariablesService.updateModel(tblAppVariables);
+
+			getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Save successful", ""));
+
+		} catch (IASException e) {
+			getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, e.getCode(), ""));
+		}
+
+		return doCancel();
+	}
+
+COM:updates a model and displays a success message, but if it encounters an exception it displays an error message before cancelling the process

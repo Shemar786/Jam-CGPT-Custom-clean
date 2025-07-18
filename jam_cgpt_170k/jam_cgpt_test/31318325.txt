@@ -1,0 +1,17 @@
+TDAT: 	public void testAddThenRemoveBlock() {
+		document.getAccessLock();
+		addElementsToDocument();
+		document.deleteBlock(block.getElementID());
+		Block foundBlock = document.findBlock(block.getElementID());
+		assertEquals(
+			"Found block after deletion does not equal inserted block",
+			block,
+			foundBlock);
+		assertTrue(foundBlock.isDeleted());
+		
+		Line foundLine = document.findLine(line1.getElementID());
+		assertTrue(foundLine.isDeleted());
+		document.releaseAccessLock();
+	}
+
+COM:tests adding and removing a block in a document and ensures that the deleted block and line are properly marked as deleted

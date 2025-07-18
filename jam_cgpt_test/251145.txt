@@ -1,0 +1,22 @@
+TDAT: 	public void removeItem(String itemPID) throws SecurityException, InternalException {
+		logger.debug("entering removeItem");
+		updateClearance(itemPID);
+		
+		if(!clearance.canDelete()){
+			logger.info("insufficient privilages to delete item");
+			throw new SecurityException("insufficient privilages");
+		}
+		
+		try{
+			// remove db record
+			dbManage.removeItem(itemPID);
+			fedI.removeItem(itemPID);
+			searchMgr.deleteItemIndex(itemPID);
+			logger.info("leaving removeItem");
+		}catch(Throwable e){
+			logger.error(e);
+			throw new InternalException(e);
+		}
+	}
+
+COM:removes an item identified by its itemPID, after checking for user clearance and updating the necessary records, and throws exceptions in case of security or internal errors

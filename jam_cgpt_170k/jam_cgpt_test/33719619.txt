@@ -1,0 +1,12 @@
+TDAT:     public void testAddUser() {
+        System.out.println("addUser");
+        
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.addUser();
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the addUser() function of the SystemClient_DBImpl class and prints "addUser" to the console

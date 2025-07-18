@@ -1,0 +1,8 @@
+TDAT: 	public void sendLockEvent(Object source, String objectId, String userName, Date dateTime){
+		ArrayList<String> data = new ArrayList<String>(1);
+		data.add(objectId);
+		ViewEvent ve = new ViewEvent(source,"","",userName,dateTime,ViewEvent.LOCK_EVENT, data);
+		this.newViewEvent(ve);
+	}
+
+COM:sends a lock event with object ID, username, and timestamp information to the specified source

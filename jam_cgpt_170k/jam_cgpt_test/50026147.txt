@@ -1,0 +1,9 @@
+TDAT:   public void append(String sig, Object... data) throws DBusException {
+    byte[] sigb = sig.getBytes();
+    int j = 0;
+    for (int i = 0; i < sigb.length; i++) {
+      i = appendone(sigb, i, data[j++]);
+    }
+  }
+
+COM:appends data to a DBus message with a specified signature

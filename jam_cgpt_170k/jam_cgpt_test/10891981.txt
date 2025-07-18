@@ -1,0 +1,10 @@
+TDAT:     public void setProperties(Map<String,InterceptorProperty> properties) {
+        this.properties = properties;
+        final String useEquals = "useEquals";
+        InterceptorProperty p = properties.get(useEquals);
+        if (p!=null) {
+            setUseEquals(Boolean.parseBoolean(p.getValue()));
+        }
+    }
+
+COM:sets the properties of an Interceptor object and checks if the "useEquals" property is included, and if so, sets the useEquals attribute to its corresponding Boolean value

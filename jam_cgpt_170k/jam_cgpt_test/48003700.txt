@@ -1,0 +1,23 @@
+TDAT:     public boolean BookHide(String isbn){
+    	;
+		try {
+			PersistentTransaction transaction = GoodReading3PersistentManager
+			.instance().getSession().beginTransaction();// Do not change
+			Book book=Book.getBookByORMID(isbn);
+			boolean status=book.getIsVisible();
+			book.setIsVisible(!status);
+			book.save();
+			transaction.commit();
+			return true;
+			
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+	}
+		
+	return false;	
+		
+
+    }
+
+COM:toggles the visibility of a book based on its ISBN and returns true if successful

@@ -1,0 +1,9 @@
+TDAT:     private void installDeferredBreakpoints() {
+        IBreakpoint[] breakpoints = DebugPlugin.getDefault().getBreakpointManager()
+                .getBreakpoints(ParserLaunchConstants.PARSER_DEBUG_MODEL_ID);
+        for(int i = 0; i<breakpoints.length; i++ ) {
+            breakpointAdded(breakpoints[i]);
+        }
+    }
+
+COM:installs deferred breakpoints by retrieving them from the breakpoint manager and calling the breakpointAdded() method for each one

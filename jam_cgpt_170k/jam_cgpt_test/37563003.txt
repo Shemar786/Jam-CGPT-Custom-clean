@@ -1,0 +1,13 @@
+TDAT: public void setPreferredSize (int width, int height) {
+	checkWidget ();
+	if(Compatibility.IS_JAVA_5_OR_GREATER) {
+	  handle.setPreferredSize(new Dimension(width, height));
+	} else if(handle instanceof JComponent) {
+    ((JComponent)handle).setPreferredSize(new Dimension(width, height));
+	}
+  handle.invalidate();
+  handle.validate();
+  handle.repaint();
+}
+
+COM:sets the preferred size of a widget and handles compatibility for different Java versions

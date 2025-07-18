@@ -1,0 +1,14 @@
+TDAT: 	public boolean routeEvent(String key,PlugableEvent evt){
+        // The following cast is guaranteed to work -- The event can only be
+        // instantiated with a PlugableEvent as source.  So, we should be
+        // safe enough.
+		Iterator plugins=instance.getInstances((Plugable)evt.getSource(),key);
+		if(plugins!=null){
+			while(plugins.hasNext() && !evt.isEventConsumed()){
+				((Plugin)plugins.next()).eventFired(evt);
+			}
+		}
+		return evt.isEventConsumed();
+	}
+
+COM:routes a PlugableEvent to a set of plugins based on a given key and returns whether or not the event was consumed

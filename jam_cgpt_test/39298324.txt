@@ -1,0 +1,9 @@
+TDAT:     private LocationSubGroupTreeEditPart getParkingLocationGroup() {
+        if(parkingLocationGroup == null) {
+            setParkingLocationGroup((LocationSubGroupTreeEditPart)createChild(new LocationSubGroupDelegate("ParkingLocations")));
+            addChild(getParkingLocationGroup(), -1);
+        }
+        return this.parkingLocationGroup;
+    }
+
+COM:returns a LocationSubGroupTreeEditPart representing a parking location group, and creates it if it doesn't exist yet

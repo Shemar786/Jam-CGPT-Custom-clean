@@ -1,0 +1,12 @@
+TDAT:     public String formatPaths(Collection paths, boolean onlyConflicted) {
+        StringBuffer sb = new StringBuffer();
+
+        for (Iterator i = paths.iterator(); i.hasNext();) {
+            ResolvedPath path = (ResolvedPath)i.next();
+            sb.append(formatPath(path, onlyConflicted));
+        }
+
+        return sb.toString();
+    }
+
+COM:formats a collection of resolved paths by iterating through each path and appending the formatted version to a StringBuffer, and then returning the resulting string

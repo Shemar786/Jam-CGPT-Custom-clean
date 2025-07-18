@@ -1,0 +1,14 @@
+TDAT:     private void sizeText() {
+      Dimension d = this.getPreferredSize();
+      this.setSize( d );
+
+/*
+      Insets insets = getParent().getInsets();
+      d.height += insets.bottom + insets.top;// + url.getHeight();
+      d.width+= insets.left + insets.right;
+      getParent().setSize( d );
+*/
+      sizeNode();
+    }
+
+COM:resizes the text inside a component to fit the preferred size and then resizes the parent component to fit the resized text

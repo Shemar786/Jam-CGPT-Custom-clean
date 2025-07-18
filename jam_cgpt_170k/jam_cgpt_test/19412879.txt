@@ -1,0 +1,14 @@
+TDAT:     private void pruneEmptyDirectories() throws IOException {
+        final Iterator it = emptyDirectories.iterator();
+        while (it.hasNext()) {
+            final File dir = (File)it.next();
+            // we might have deleted it already (due to recursive delete)
+            // so we need to check existence
+            if (dir.exists()) {
+                pruneEmptyDirectory(dir);
+            }
+        }
+        emptyDirectories.clear();
+    }
+
+COM:prunes any empty directories in the file system by iterating over a list of directories, checking for existence, and deleting empty directories

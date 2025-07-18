@@ -1,0 +1,10 @@
+TDAT:   public void setStrength(int n) {
+    this.strength = n;
+    // probably should point this to the same stroke or eliminate
+    // different stroke states but this needs to be cleaned elsewhere
+    // so leave it here for now
+    this.regBorderStroke = new BasicStroke(n);
+    this.borderStroke = this.regBorderStroke;
+  }
+
+COM:sets the strength of the border stroke for a graphical element

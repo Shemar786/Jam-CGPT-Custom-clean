@@ -1,0 +1,19 @@
+TDAT: 	private PluginInfo parsePluginInfo(URL pluginLocation) throws PluginConversionException {
+		InputStream input = null;
+		try {
+			input = new BufferedInputStream(pluginLocation.openStream());
+			return new PluginConverterParser(context, target).parsePlugin(input);
+		} catch (Exception e) {
+			String message = NLS.bind(PDECoreMessages.PluginConverter_EclipseConverterErrorParsingPluginManifest, pluginManifestLocation);
+			throw new PluginConversionException(message, e);
+		} finally {
+			if (input != null)
+				try {
+					input.close();
+				} catch (IOException e) {
+					//ignore exception
+				}
+		}
+	}
+
+COM:parses plugin information from a given URL location, using a PluginConverterParser, and throws a PluginConversionException if an error occurs during parsing

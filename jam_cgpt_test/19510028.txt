@@ -1,0 +1,8 @@
+TDAT: 	public void testBinaryPredicateSpecializationRight() {
+		te = mTypeEnvironment("S", "ℙ(S)", "T", "ℙ(T)", "x", "S", "y", "T");
+		assertPredicateSpecialization(te, //
+				"x ∈ S ⇒ y ∈ T", //
+				mSpec(te, mList("T", "U"), mList("y", "T", "c", "U")));
+	}
+
+COM:tests the binary predicate specialization on the right with a given set of type environments and assertions

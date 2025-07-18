@@ -1,0 +1,10 @@
+TDAT: 	public String toString() {
+		StringBuffer buf = new StringBuffer();
+		String fieldName = (getField() != null)?getField().getName():"unknown field";
+		buf.append("  ").append("field [").append(fieldName).append(
+			"] has value, oldvalue [").append(getFieldValue()).append(", ")
+			.append(getOldValue()).append("]\n");
+		return buf.toString();
+	}
+
+COM:returns a string representation of a field that includes its name, value, and old value

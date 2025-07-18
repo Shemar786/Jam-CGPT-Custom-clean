@@ -1,0 +1,16 @@
+TDAT: 	private JButton getCancel() {
+		if (Cancel == null) {
+			Cancel = new JButton();
+			Cancel.setText("Cancel");
+			Cancel.setBackground(new Color(192, 218, 255));
+			Cancel.setToolTipText("Return to previous window without changing the aggregator");
+			Cancel.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					shutdown();
+				}
+			});
+		}
+		return Cancel;
+	}
+
+COM:creates and returns a JButton with specific properties and an ActionListener that calls the shutdown() method when clicked

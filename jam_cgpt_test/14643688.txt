@@ -1,0 +1,12 @@
+TDAT:     public void moveToMid() {
+        if (size() == 0)
+            return;
+
+        Object element = this.fElements.remove(this.fActPos);
+        int midPos = size() / 2 + this.fActPos;
+        if (midPos > size())
+            midPos -= size();
+        this.fElements.add(midPos, element);
+    }
+
+COM:moves an element from the current position to the middle position of an ArrayList

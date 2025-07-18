@@ -1,0 +1,13 @@
+TDAT:     private String qualifiedTableName(Table t) {
+    	String schema = t.getOriginalSchema("");
+    	String mappedSchema = CommandLineParser.getInstance().getSchemaMapping().get(schema);
+    	if (mappedSchema != null) {
+    		schema = mappedSchema;
+    	}
+    	if (schema.length() == 0) {
+    		return t.getUnqualifiedName();
+    	}
+		return schema + "." + t.getUnqualifiedName();
+	}
+
+COM:returns the fully qualified name of a table, including the schema name if present and mapped to a different name

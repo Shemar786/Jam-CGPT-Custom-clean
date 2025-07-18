@@ -1,0 +1,23 @@
+TDAT:     public void clearSelection() {
+        GUILayer gLayer;
+        Iterator iLayers;
+
+        iLayers = iterator();
+
+        while (iLayers.hasNext()) {
+            gLayer = (GUILayer) (iLayers.next());
+
+            gLayer.setSelected(false);
+        }
+
+        GUIConnection gCon;
+        Iterator iCons = getAllConnections().iterator();
+
+        while (iCons.hasNext()) {
+            gCon = (GUIConnection) (iCons.next());
+
+            gCon.setSelected(false);
+        }
+    }
+
+COM:clears the selection of all GUILayers and GUIConnections

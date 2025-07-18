@@ -1,0 +1,16 @@
+TDAT: 	public void start(String pid_file_path) throws Exception {
+		File pidfile = new File(pid_file_path);
+		if (pidFileHelper.pidExists(pidfile)) {// 检查进程ID是否存在
+			log.info("QuartzServer already started.");
+		} else {
+
+			if (serverDaemon == null) {
+				init();
+			}
+			Method method = serverDaemon.getClass().getMethod("start",
+					new Class[] { String.class });
+			method.invoke(serverDaemon, new Object[] { pid_file_path });
+		}
+	}
+
+COM:starts a Quartz server and writes its process ID to a file, throwing an exception if it fails

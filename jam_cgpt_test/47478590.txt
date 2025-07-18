@@ -1,0 +1,14 @@
+TDAT: 	private IFeatureImport findImport(List imports, String id, String version, int match) {
+		for (int i = 0; i < imports.size(); i++) {
+			IFeatureImport iimport = (IFeatureImport) imports.get(i);
+			if (iimport.getId().equals(id)) {
+				if (version == null)
+					return iimport;
+				if (version.equals(iimport.getVersion()) && match == iimport.getMatch())
+					return iimport;
+			}
+		}
+		return null;
+	}
+
+COM:searches for a specific feature import within a list, based on its ID, version, and match

@@ -1,0 +1,17 @@
+TDAT: 	public void createPackageContents() {
+		if (isCreated) return;
+		isCreated = true;
+
+		// Create classes and their features
+		dataEClass = createEClass(DATA);
+		createEReference(dataEClass, DATA__SOURCE);
+		createEReference(dataEClass, DATA__DATA_LINK);
+
+		dataSourceEClass = createEClass(DATA_SOURCE);
+
+		canvasEClass = createEClass(CANVAS);
+		createEReference(canvasEClass, CANVAS__DATA_LINKS);
+		createEReference(canvasEClass, CANVAS__WORKFLOW);
+	}
+
+COM:creates various classes and their features, including data, data sources, and a canvas, and sets a flag to indicate they have been created

@@ -1,0 +1,11 @@
+TDAT:   public void show(String title, String text, RequestListener accept, RequestListener cancel) {
+    // remove stuff from previous call
+    DomUtils.removeChildNodesExceptAttributes(body);
+    this.title.setAttribute("value", title);
+    DomUtils.setText(body, text);
+    this.acceptHandler = accept;
+    this.cancelHandler = cancel;
+    setVisible(true);
+  }
+
+COM:displays a dialog box with a title, text, and buttons to accept or cancel actions, and removes any previous content before showing it

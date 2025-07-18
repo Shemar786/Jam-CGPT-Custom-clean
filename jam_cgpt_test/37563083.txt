@@ -1,0 +1,11 @@
+TDAT: public int getWidth () {
+	checkWidget();
+  return handle.getWidth();
+//	int hwnd = parent.handle;
+//	int index = OS.SendMessage (hwnd, OS.TB_COMMANDTOINDEX, id, 0);
+//	RECT rect = new RECT ();
+//	OS.SendMessage (hwnd, OS.TB_GETITEMRECT, index, rect);
+//	return rect.right - rect.left;
+}
+
+COM:retrieves the width of a handle after verifying its validity

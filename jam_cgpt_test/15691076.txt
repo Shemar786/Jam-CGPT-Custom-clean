@@ -1,0 +1,12 @@
+TDAT:     private void saveEntriesToWrite() throws IOException {
+        List list = mEntriesToWrite;
+        synchronized (list) {
+            int size = list.size();
+            for (int i=0; i<size; ) {
+                mBackingMap.put(list.get(i++), list.get(i++));
+            }
+            list.clear();
+        }
+    }
+
+COM:saves entries in a list to a backing map and clears the list, while handling I/O exceptions and using synchronization

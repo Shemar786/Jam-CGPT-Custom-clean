@@ -1,0 +1,23 @@
+TDAT:   public void dispose() {
+    thread = null;
+    try {
+      // do io streams need to be closed first?
+      if (input != null) input.close();
+      if (output != null) output.close();
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    input = null;
+    output = null;
+
+    try {
+      if (socket != null) socket.close();
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    socket = null;
+  }
+
+COM:disposes of the thread, closes the input and output io streams, closes the socket, and sets all references to null

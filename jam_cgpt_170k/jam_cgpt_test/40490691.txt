@@ -1,0 +1,15 @@
+TDAT:     public void startBlinkLoop() {
+        blinking = true;
+        new Thread() {
+
+            public void run() {
+                while (blinking) {
+                    blinkonBlack();//sends commands that will take 50ms to run
+                    //sleep 1 BLINK_TIME for the on, sleep 1 BLINK_TIME for off.
+                    Util.sleep(BLINK_TIME * 2);
+                }
+            }
+        }.start();
+    }
+
+COM:starts a loop that creates a new thread and turns on and off a blinking function in a continuous loop

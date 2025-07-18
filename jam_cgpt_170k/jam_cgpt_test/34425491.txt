@@ -1,0 +1,17 @@
+TDAT:     public void erase(boolean instance) {
+        synchronized (content) {
+            try {
+                backup();
+                if (instance) {
+                    if (station != null) station.notesRemove(this);
+                    notes.remove(this);
+                    file().delete();
+                } else
+                    setText("");
+            } catch (Throwable e) {
+                SWGAide.printError("SWGNotes:erase: " + file.toString(), e);
+            }
+        }
+    }
+
+COM:erases a note and removes it from a station if specified

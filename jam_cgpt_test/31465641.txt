@@ -1,0 +1,14 @@
+TDAT:     public boolean canClose() {
+	if (mapPanel == null)
+	    return true;
+	if (mapPanel.isChanged()) {
+	    int option = JOptionPane.showConfirmDialog(this, app.getString("dialog.changed.body"), app.getString("dialog.changed.title"),
+						       JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
+	    if (option == JOptionPane.YES_OPTION)
+		saveMap();
+	    return option != JOptionPane.CANCEL_OPTION;
+	}
+	return true;
+    }
+
+COM:checks whether the map panel is changed and confirms with the user if they want to save the changes before closing

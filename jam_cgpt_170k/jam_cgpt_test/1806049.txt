@@ -1,0 +1,14 @@
+TDAT:     private void handleDocumentAboutToBeChanged() {
+        IDocument document= fDocument;
+        if (fCharSequence == null || document == null)
+            return;
+        String content= document.get();
+        synchronized (this) {
+            if (fCharSequence == null)
+                return;
+            fCharSequence= content;
+        }
+        releaseDocument();
+    }
+
+COM:handles the actions to be performed when a document is about to be changed

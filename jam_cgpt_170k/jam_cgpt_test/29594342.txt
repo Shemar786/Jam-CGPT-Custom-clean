@@ -1,0 +1,13 @@
+TDAT:    static private long computeStrides(int [] shape, int [] stride) {
+    long product = 1;
+    for(int ii = shape.length-1; ii >= 0; ii--) {
+      final int thisDim = shape[ii];
+      if(thisDim < 0)
+        throw new NegativeArraySizeException();
+      stride[ii] = (int) product;
+      product *= thisDim;
+    }
+    return product;
+  }
+
+COM:computes the stride of an array and throws an exception if the shape element is negative

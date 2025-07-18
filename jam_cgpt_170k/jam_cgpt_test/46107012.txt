@@ -1,0 +1,9 @@
+TDAT:     public void printInfo() {
+        for (int i = 0; i < frames.size(); i++) {
+            GLHotSpotFrame frame = (GLHotSpotFrame) frames.elementAt(i);
+            System.out.println("Frame " + i + ": " + frame.getHotSpot().width
+                    + "," + frame.getHotSpot().height);
+        }
+    }
+
+COM:prints information about each "GLHotSpotFrame" object in a vector called "frames"

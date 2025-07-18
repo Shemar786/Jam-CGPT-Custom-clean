@@ -1,0 +1,7 @@
+TDAT:     public void resetData(Connection conn) throws SQLException {
+        deleteData(conn, sqlQueries.getSqlString("deleteHamTokens", true));
+        deleteData(conn, sqlQueries.getSqlString("deleteSpamTokens", true));
+        deleteData(conn, sqlQueries.getSqlString("deleteMessageCounts", true));
+    }
+
+COM:resets data in a database by deleting ham tokens, spam tokens, and message counts using SQL queries obtained from a separate file

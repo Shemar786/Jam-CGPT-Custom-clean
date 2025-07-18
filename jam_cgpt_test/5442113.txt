@@ -1,0 +1,16 @@
+TDAT:     public void rebuild(Object obj) throws BuildException {
+        MetaServer theService = (MetaServer)obj;
+
+        try {
+            Properties theProperties = loadProperties(new URL(getURL(), "metaserver.properties"));
+
+            buildService(theService, getName(), theProperties, getURL());
+
+            buildListeners(new URL(getURL(), "metalistener.properties"), theService);
+        }
+        catch (Throwable t) {
+            throw new BuildException(t);
+        }
+    }
+
+COM:rebuilds a MetaServer instance by loading properties and building the service and listeners based on the provided URL and properties

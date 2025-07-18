@@ -1,0 +1,27 @@
+TDAT: 	private String validate() {
+		final StringBuilder errorBuilder = new StringBuilder();
+
+		if (solverConfig == null) {
+			if (errorBuilder.length() > 0) {
+				errorBuilder.append("; ").append(SOLVER_CONFIG_ERROR);
+			} else {
+				errorBuilder.append(SOLVER_CONFIG_ERROR);
+			}
+		}
+
+		if (solver == null) {
+			if (errorBuilder.length() > 0) {
+				errorBuilder.append("; ").append(SOLVER_ERROR);
+			} else {
+				errorBuilder.append(SOLVER_ERROR);
+			}
+		}
+
+		if (errorBuilder.length() != 0) {
+			return errorBuilder.toString();
+		} else {
+			return null;
+		}
+	}
+
+COM:validates if the solver configuration and solver are set and returns an error message if they are not

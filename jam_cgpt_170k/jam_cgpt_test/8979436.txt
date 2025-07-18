@@ -1,0 +1,16 @@
+TDAT: 	public void setType(final String type) throws BuildException {
+
+		if (type == null) {
+			throw new NullArgumentException("type");
+		}
+
+		if (!"JvYAML".equals(type) && !"yaml4j".equals(type)) {
+
+			throw new BuildException("Invalid conversion type: '" + type
+			        + "'. " + "Valid values include: 'JvYAML' or 'yaml4j'.");
+		}
+
+		this.type = type;
+	}
+
+COM:sets the type for a conversion process and throws a BuildException if the type is invalid

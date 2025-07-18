@@ -1,0 +1,11 @@
+TDAT: 	private void showAllPhotosButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		//GEN-FIRST:event_showAllPhotosButtonActionPerformed
+		javax.swing.ListModel model = this.photoResultList.getModel();
+		JdaiPhoto[] photos = new JdaiPhoto[model.getSize()];
+		for (int i = 0; i < photos.length; i++) {
+			photos[i] = (JdaiPhoto) model.getElementAt(i);
+		}
+		this.delegate.viewPhotos(photos);
+	}
+
+COM:retrieves all photos from a given list model and passes them to a delegate to be viewed

@@ -1,0 +1,7 @@
+TDAT:     public void sendTrackbackEmail(String emailPrefix, String title, String trackback, Map context, String author, Blog blog) {
+        String recipientEmail = blog.getAuthorizedUserEmail(author);
+
+        EmailUtils.notifyBlogAuthor(emailPrefix + title, trackback, context, recipientEmail);
+    }
+
+COM:sends a trackback email notification to a blog author with the specified email prefix, title, trackback, map context, author, and blog

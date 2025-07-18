@@ -1,0 +1,19 @@
+TDAT: 	public ArrayList getSets() {
+		RepositoryManager rm =
+			(RepositoryManager) getServlet().getServletContext().getAttribute("repositoryManager");
+		if (rm == null)
+			return new ArrayList();
+
+		try {
+			ArrayList sets = rm.getSetInfos();
+			if (sets == null)
+				return new ArrayList();
+			else
+				return sets;
+		} catch (Throwable e) {
+			prtlnErr("getSets() error: " + e);
+			return new ArrayList();
+		}
+	}
+
+COM:returns an ArrayList of set information objects obtained from the RepositoryManager, or an empty ArrayList if the RepositoryManager is not available or an error occurs

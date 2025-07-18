@@ -1,0 +1,18 @@
+TDAT:     public FoodAmount (Food food, float amount, QuantityUnit unit) {
+        m_Food = food;
+        m_Amount = amount;
+		
+		if ((unit == null) && (food != null)) {
+
+			QuantityUnits u = QuantityUnits.getInstance();
+
+			if (food instanceof Recipe) {
+				unit = u.getDefaultRecipeUnit();
+			} else {
+				unit = u.getDefaultUnit();
+			}
+		}
+        m_Unit = unit;	
+    }
+
+COM:initializes a FoodAmount object with a specified food, amount, and unit, and sets the unit to a default value if one is not provided

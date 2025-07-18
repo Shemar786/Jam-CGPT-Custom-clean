@@ -1,0 +1,17 @@
+TDAT: 	protected void addLocLatitudePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveComponent_locLatitude_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveComponent_locLatitude_feature", "_UI_EveComponent_type"),
+				 EvesimPackage.Literals.EVE_COMPONENT__LOC_LATITUDE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 getString("_UI_LocationCoordinatesPropertyCategory"),
+				 null));
+	}
+
+COM:adds a property descriptor for the location latitude of an object

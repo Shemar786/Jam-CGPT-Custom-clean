@@ -1,0 +1,19 @@
+TDAT: 	public void run() {
+		String msg;
+		try {
+			while (true) {
+				msg = in.readLine();
+				if(msg==null) throw new IOException();
+				System.out.println("<- "+msg);
+				handleMessageFromServer(msg);
+			}
+		} catch (IOException e) {
+			if (!exit) {
+				closeAll();
+				client.print("ERROR: Connection to server lost. Use the connect command to reconnect.");
+				client.connectionClosed();
+			}
+		}
+	}
+
+COM:continually reads input from 'in', prints the message to the console, and handles the message from the server until an IOException is thrown, at which point it closes the connection and prints an error message

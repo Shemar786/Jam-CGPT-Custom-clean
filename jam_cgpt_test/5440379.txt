@@ -1,0 +1,12 @@
+TDAT:     public void init(Parser aParser, I_Element anElement, SSIPage aSSIPage, ServletConfig aServletConfig) throws ServletException {
+        myParser = aParser;
+        myElement = anElement;
+        mySSIPage = aSSIPage;
+        myServletConfig = aServletConfig;
+        myServletContext = aServletConfig.getServletContext();
+
+        myServletContext.log("init: " + getClass() + "/" + myElement);
+        init();
+    }
+
+COM:initializes several variables and logs a message using the ServletContext

@@ -1,0 +1,15 @@
+TDAT:         public void createWorker(int i, Runnable r) {
+            try {
+                lock.lock();
+
+                assert threads[i] == null;
+                threads[i] = new Thread(r);
+                threadMap.put(threads[i], i);
+                stateOf[i] = CREATED;
+                inState[CREATED]++;
+            } finally {
+                lock.unlock();
+            }
+        }
+
+COM:creates a worker thread with a given index and task, and locks a shared resource during the creation process

@@ -1,0 +1,13 @@
+TDAT: 	public boolean prooveNotImp(IPred2 r, IFactory fact, IHypothesis H) {
+
+		for (BoundedVariable v : vars) {
+			v.setValue(fact.newSkolem(), this);
+		}
+		final IPred extract = p.extract(fact, null);
+		for (final BoundedVariable v : vars) {
+			v.unlock(this);
+		}
+		return extract.prooveNotImp(r, fact, H);
+	}
+
+COM:takes in a predicate, a factory, and a hypothesis, sets values for bounded variables, extracts the predicate, and attempts to prove its negation does not imply another predicate

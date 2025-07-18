@@ -1,0 +1,19 @@
+TDAT: 	public int login(String userName, String passwd) {
+
+		int result = ErrorInspect.LOGIN_FAIL;
+
+		if (DBManager.getEmsOprType() == DBManager.SINGLE_CONNECTION) {
+			result = serverReceiver.loginLocal(userName, passwd);
+		} else {
+			try {
+				if (serverInterface != null) {
+					result = serverInterface.login(userName, passwd);
+				}
+			} catch (Exception ex) {
+				logger.log(Level.SEVERE, "message transmit error", ex);
+			}
+		}
+		return result;
+	}
+
+COM:takes in a username and password, checks if the database connection is single or multiple, tries to log in and returns an integer value indicating success or failure

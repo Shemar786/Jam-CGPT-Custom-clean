@@ -1,0 +1,16 @@
+TDAT:     private void assignComboOptions() {
+        int i, j;
+
+        for (j = 0; j < fieldModels.length; j++) {
+            fieldModels[j].removeAllElements();
+
+             fieldModels[j].addElement("");
+
+            for (i = 0; i < getFieldCount(layoutIndex); i++) {
+                fieldModels[j].addElement(
+                        layout.getAdjField(layoutIndex, i).getName());
+            }
+        }
+    }
+
+COM:assigns options to combo boxes by populating them with names of fields in a layout

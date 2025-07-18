@@ -1,0 +1,11 @@
+TDAT:   protected void printTree() {
+    System.out.println(""); //$NON-NLS-1$
+    if (rootNode == null) {
+      System.out.println("tree is empty"); //$NON-NLS-1$
+      return;
+    }
+    System.out.println("Here's the entire tree structure:"); //$NON-NLS-1$
+    printNodeRecursion(rootNode);
+  }
+
+COM:prints the entire tree structure, starting with the root node, if it exists, and prints a message indicating the tree is empty otherwise

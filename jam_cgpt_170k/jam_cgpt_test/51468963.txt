@@ -1,0 +1,11 @@
+TDAT:     public double calcInvestmentIncome(int rnum, int tnum) {
+        double rate = External.getInstance().getRate();
+        double ans = 0;
+        ans += getLastValue() * rate;
+        ans += getCashflow(Timing.START) * rate;
+        ans += getCashflow(Timing.MIDDLE) * rate/2;
+        // end period cashflows don't earn interest
+        return ans;
+    }
+
+COM:calculates the investment income based on a given rate, number of periods and cashflows

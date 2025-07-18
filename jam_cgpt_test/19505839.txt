@@ -1,0 +1,15 @@
+TDAT: 	protected void createFolder(IContainer parentFolder, String name, boolean forceFlag) throws RodinDBException {
+		IFolder folder= parentFolder.getFolder(new Path(name));
+		try {
+			// we should use true to create the file locally. Only VCM should use tru/false
+			folder.create(
+				forceFlag ? IResource.FORCE | IResource.KEEP_HISTORY : IResource.KEEP_HISTORY,
+				true, // local
+				getSubProgressMonitor(1));
+			this.setAttribute(HAS_MODIFIED_RESOURCE_ATTR, TRUE); 
+		} catch (CoreException e) {
+			throw new RodinDBException(e);
+		}
+	}
+
+COM:creates a new folder within a specified parent folder, with an option to force the creation and keep a history of it, and throws an exception if there is an error during the creation process

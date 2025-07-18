@@ -1,0 +1,18 @@
+TDAT: 	protected AbstractMetricSource createNewSource(IJavaElement input) {
+		Map metrics = getSourceMap();
+		for (Iterator i = metrics.keySet().iterator(); i.hasNext();) {
+			Class next = (Class)i.next();
+			if (next.isInstance(input)) {
+				try {
+					Class msc = (Class)metrics.get(next);
+					AbstractMetricSource ms = (AbstractMetricSource)msc.newInstance();
+					return ms;
+				} catch (InstantiationException e) {
+				} catch (IllegalAccessException e) {
+				}
+			}
+		}
+		return null;
+	}
+
+COM:creates a new instance of an AbstractMetricSource based on the input parameter and a mapping of Class objects to their corresponding AbstractMetricSource implementations

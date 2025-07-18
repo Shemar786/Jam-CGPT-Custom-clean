@@ -1,0 +1,14 @@
+TDAT:   public void setQuote(String val) {
+
+      if ((val == null || "".equals(val))
+      && (quote == null || "".equals(quote))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(quote)) || (updateStatus == NULL_INT_VALUE)) {
+           quote = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets a quote value and updates its status if the new value is not null and different from the current value

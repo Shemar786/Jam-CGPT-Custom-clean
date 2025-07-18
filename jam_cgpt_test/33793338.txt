@@ -1,0 +1,12 @@
+TDAT:     public void testGetFornecedor() {
+        /*System.out.println("getFornecedor");
+        Integer id = 151;
+        FornecedorDAO instance = new FornecedorDAO();
+        //Fornecedor expResult = null;
+        Fornecedor result = instance.getFornecedor(id);
+        assertNotNull(result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");*/
+    }
+
+COM:tests the functionality of the "getFornecedor" method from the "FornecedorDAO" class by checking if it returns a non-null value when given a specific ID

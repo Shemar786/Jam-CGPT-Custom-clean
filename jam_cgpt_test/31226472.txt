@@ -1,0 +1,13 @@
+TDAT:   public int hashCode() {
+    int result;
+    result = getRuleNames()[ruleIndex].hashCode();
+    int noDecl = getNumberOfDeclarations()[ruleIndex];
+    for (int i = 0; i < noDecl; i++) {
+      Object obj;
+      obj = this.getObject(ruleIndex, i);
+      result += obj.hashCode();
+    }
+    return result;
+  }
+
+COM:calculates and returns the hash code for an object

@@ -1,0 +1,11 @@
+TDAT:     private String indentSpaces(int indent) {
+        StringBuffer result = new StringBuffer();
+        for (int i = 1; i < indent; ++i) {
+            for (int j = 0; j < 8; ++j) {
+                result.append("&nbsp;");
+            }
+        }
+        return result.toString();
+    }
+
+COM:creates a string of spaces (8 per indent level) based on the specified indentation level

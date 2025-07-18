@@ -1,0 +1,13 @@
+TDAT:   public List removeAnonymousErrors(){
+    List toReturn = new ArrayList();
+    for(int i = 0; i < _validationErrs.size(); i++){
+      ValidationErr err = (ValidationErr)_validationErrs.get(i);
+      if(err.getId() == null){
+        toReturn.add(err);
+        _validationErrs.remove(i--);
+      }
+    }
+    return toReturn;
+  }
+
+COM:removes any validation errors that do not have an ID assigned to them and returns a list of the removed errors

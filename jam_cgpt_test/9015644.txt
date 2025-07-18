@@ -1,0 +1,16 @@
+TDAT: 	public void setupDropTargets(Filter[] filters) {
+		SubFilterList list;
+		Component[] components;
+
+		for (int i = 0; i < filters.length; i++) {
+			list = getEnclosed(filters[i]);
+			if (null != list) {
+				components = list.getDropTargets();
+				for (int j = 0; j < components.length; j++)
+					new DropTarget(components[j], this);
+				setupDropTargets(list.getFilters());
+			}
+		}
+	}
+
+COM:sets up drop targets for a given array of filters recursively

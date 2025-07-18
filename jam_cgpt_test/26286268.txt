@@ -1,0 +1,8 @@
+TDAT:     public void setTitle(String title) {
+        this.title = title;
+        if(header!=null) header.setTitle(title);
+        contentBorder.setTitle(title);
+        repaint(0, 0, 0, getWidth(), contentBorder.getBorderInsets(this).top);
+    }
+
+COM:sets the title of the object and updates the titles of other related objects

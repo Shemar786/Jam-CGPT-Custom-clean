@@ -1,0 +1,11 @@
+TDAT: 	public boolean isRecompileNeeded () {
+		if (tree == null) return true;
+		if (GraceletContext.getInstance().isEalierThanSources(lastBuild)) return true;
+		if (this.src != null) 
+			return this.src.isModifiable() && 
+						 this.src.isReloadable() && 
+						 this.src.hasBeenModified();
+		return false;
+	}
+
+COM:checks if recompilation is needed for a class tree based on whether the tree is null, the last build for the Gracelet context is earlier than the sources, and whether the source is modifiable, reloadable, and has been modified

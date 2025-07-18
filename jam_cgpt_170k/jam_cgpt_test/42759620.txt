@@ -1,0 +1,12 @@
+TDAT: 	protected void removeComponentFactories(List<ComponentFactory> componentFactories, Class<? extends ComponentFactory>... classes) {
+	    for (Iterator<ComponentFactory> iterator = componentFactories.iterator(); iterator
+                .hasNext();) {
+            ComponentFactory componentFactory = (ComponentFactory) iterator
+                    .next();
+            if (isAssignableToAny(componentFactory, classes)) {
+                iterator.remove();
+            }
+        }
+	}
+
+COM:removes all ComponentFactory objects from a given list if they are assignable to any of the specified classes

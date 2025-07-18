@@ -1,0 +1,13 @@
+TDAT: 	public void setNELocation(int _neId, int _shelfId) {
+		this.neId = _neId;
+		this.shelfId = _shelfId;
+
+		if (tfNodeId != null) {
+			tfNodeId.setText(getNodeName());
+		}
+		if (cbShelf != null) {
+			cbShelf.setSelectedItem(dbSupporter.getShelfName(shelfId));
+		}
+	}
+
+COM:sets the location of an object, updates certain UI elements if they exist, and retrieves the name of a shelf from a database to be displayed in a drop-down menu

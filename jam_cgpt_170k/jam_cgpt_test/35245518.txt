@@ -1,0 +1,12 @@
+TDAT:     public boolean deleteEmployee(String EmployeeID) throws SQLException {
+        CallableStatement cs = conn.prepareCall("{call deleteEmployee(?)}");
+        cs.setString(1, EmployeeID);
+        int result = cs.executeUpdate();
+        if (result != 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+COM:deletes an employee with a specified ID and returns a boolean indicating whether the deletion was successful or not, throwing a SQLException if there is an error

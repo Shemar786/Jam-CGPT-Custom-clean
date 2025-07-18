@@ -1,0 +1,16 @@
+TDAT: 	public void unregisterPlayer(Player p) {
+		p.setLoggedIn(false);
+		p.resetAll();
+		p.save();
+		Mob opponent = p.getOpponent();
+		if(opponent != null) {
+			p.resetCombat(CombatState.ERROR);
+			opponent.resetCombat(CombatState.ERROR);
+		}
+  		server.getLoginConnector().getActionSender().playerLogout(p.getUsernameHash());
+  		delayedEventHandler.removePlayersEvents(p);
+  		players.remove(p);
+		setLocation(p, p.getLocation(), null);
+	}
+
+COM:unregisters a player by performing several actions such as resetting their combat status, saving their progress, removing their events, and logging them out

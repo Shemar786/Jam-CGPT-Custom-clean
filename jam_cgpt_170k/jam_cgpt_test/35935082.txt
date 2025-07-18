@@ -1,0 +1,13 @@
+TDAT:     public void compile() throws IOException {
+        templates.clear();
+        
+        ZipHandler h = new ZipHandler(PROPS().getFile(COMPILED));
+        CompileAll ca = new CompileAll();
+        ca.add(new LogHandler());
+        ca.add(h);
+        ca.compile();
+        h.close();
+        load();
+    }
+
+COM:clears templates, compiles all files specified in CompileAll using ZipHandler and LogHandler, saves the compiled files, and loads them

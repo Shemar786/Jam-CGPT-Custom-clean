@@ -1,0 +1,17 @@
+TDAT: 	public boolean isInReview(String pid) throws AccessException {
+		logger.debug("entering isInReview");
+
+		String query = "SELECT item.PID "
+				+ " FROM  item "
+				+ " WHERE item.PID = '" + pid + "'"
+				+ " AND item.ISREVIEWED = '0'";
+		List list = buildResult(query);
+		if (list.size() > 0) {
+			logger.debug("isInReview: true");
+			return true;
+		}
+		logger.debug("isInReview: false");
+		return false;
+	}	
+
+COM:checks if a given PID is currently under review and returns a boolean value

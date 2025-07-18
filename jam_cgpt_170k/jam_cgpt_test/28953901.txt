@@ -1,0 +1,9 @@
+TDAT:     public void addSlot(String name, List<String> values, boolean isRequired)  throws XdsRimException, SOAPException {
+        if (values != null) {
+            addRimSlotElement(root, name, values, rimNameSpace);
+        } else if (isRequired) {
+            throw new XdsRimException("Required slot \"" + name + "\" not supplied.");
+        }
+    }
+
+COM:adds a slot element to the root by taking in parameters for the name, values, and whether it is required or not, and throws exceptions if necessary

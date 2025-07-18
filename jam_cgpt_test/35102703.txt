@@ -1,0 +1,12 @@
+TDAT:   private JTabbedPane getTpGroszanzeige() {
+    if (tpGroszanzeige == null) {
+      tpGroszanzeige = new JTabbedPane();
+      tpGroszanzeige.setBackground(new Color(238, 238, 238));
+      tpGroszanzeige
+          .addTab("Gro\u00dfanzeige", null, getSpGroszanzeige(), null);
+      tpGroszanzeige.addTab("Zusatzdetails", null, getSpZusatzdetails(), null);
+    }
+    return tpGroszanzeige;
+  }
+
+COM:returns a JTabbedPane with two tabs - "Großanzeige" and "Zusatzdetails" - that have corresponding components attached to them

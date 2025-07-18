@@ -1,0 +1,19 @@
+TDAT:     public boolean accept(File f) {
+        if (inclDirectories && f.isDirectory()) {
+            return true;
+        }
+        
+        
+        String extension = getExtension(f);
+        if (extension != null) {
+            for (int i = 0; i < extensionList.length; i++){
+                if (extension.equalsIgnoreCase(extensionList[i])) {
+                    return true;
+                }
+            }
+            return false;
+        }        
+        return false;
+    }
+
+COM:is used to determine whether a given file should be included in a list of accepted files based on whether it is a directory or has a specified file extension

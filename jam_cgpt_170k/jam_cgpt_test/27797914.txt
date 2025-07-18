@@ -1,0 +1,11 @@
+TDAT:   public void applySelLayout() {
+    if (view == null) return;
+
+    int[] selNodes = view.getSelectedNodeIndices();
+    int[] selEdges = view.getSelectedEdgeIndices();
+    GraphView selView =
+      GinyFactory.createGraphView(view.getRootGraph().createGraphPerspective(selNodes, selEdges));
+    applyLayout(selView);
+  }
+
+COM:applies a selected layout to a graph view including only the selected nodes and edges

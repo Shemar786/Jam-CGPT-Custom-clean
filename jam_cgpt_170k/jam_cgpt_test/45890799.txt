@@ -1,0 +1,10 @@
+TDAT: 	protected void displayWebsiteLink(final String packagename, final Intent intent) {
+		String websitelabel = AboutUtils.getStringExtraOrMetadata(this, packagename,
+			intent, AboutIntents.EXTRA_WEBSITE_LABEL, AboutMetaData.METADATA_WEBSITE_LABEL);
+		String websiteurl = AboutUtils.getStringExtraOrMetadata(this, packagename,
+				intent, AboutIntents.EXTRA_WEBSITE_URL, AboutMetaData.METADATA_WEBSITE_URL);
+		
+		setAndLinkifyWebsiteLink(websitelabel, websiteurl);
+	}
+
+COM:displays a website link with a defined label and URL using package name and intent parameters

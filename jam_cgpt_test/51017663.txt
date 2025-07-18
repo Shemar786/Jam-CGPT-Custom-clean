@@ -1,0 +1,10 @@
+TDAT: 	private boolean equalAttribute(Attribute attribute1, Attribute attribute2) {
+		boolean equal = true;
+		equal = attribute1.getOfType().getId()
+				.equals(attribute2.getOfType().getId());
+		equal = equal && attribute1.getValue().equals(attribute2.getValue());
+		equal = equal && (attribute1.isDoIndex() == attribute2.isDoIndex());
+		return equal;
+	}
+
+COM:compares two Attribute objects and determines if they are equal based on their type, value, and index properties

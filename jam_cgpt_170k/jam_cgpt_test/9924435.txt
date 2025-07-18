@@ -1,0 +1,12 @@
+TDAT:  public String toString(Locale locale) throws MissingResourceException {
+  String message;
+  if (params == null) {
+   message = Localization.getString(bundleName, locale, messageID);
+  }
+  else {
+   message = Localization.formatString(bundleName, locale, messageID, params);
+  }
+  return message;
+ }
+
+COM:returns a localized string message with optional parameters, based on the specified locale and resource bundle

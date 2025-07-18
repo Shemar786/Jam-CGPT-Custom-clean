@@ -1,0 +1,13 @@
+TDAT:   private QBP_Q21 createPdqQuery(int chunkSize) throws DataTypeException, IheConfigurationException {
+		String messageId = getMessageId();
+		QBP_Q21 message = new QBP_Q21();
+		// Add the MSH segment
+		HL7v25.populateMSH(message.getMSH(), "QBP", "Q22", messageId, connection);
+		// Add the QPD segment
+		populateQPD(message.getQPD(), messageId);
+		// Add the RCP segment
+		populateRCP(message.getRCP(), chunkSize);
+		return message;
+	}
+
+COM:creates a PDQ query message with specific segment data and returns the message object

@@ -1,0 +1,17 @@
+TDAT: 	protected void addSourceContainerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_sourceContainer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_sourceContainer_feature", "_UI_Transition_type"),
+				 StatemachinesPackage.Literals.TRANSITION__SOURCE_CONTAINER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the source container of a Transition object

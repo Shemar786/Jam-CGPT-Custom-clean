@@ -1,0 +1,9 @@
+TDAT: 	public void setValueToTickNumber(int tickNo){
+		if(_stickToTicks){
+			tickNo = PApplet.constrain(tickNo, 0, _numTicks);
+			float newValue = PApplet.map((float)tickNo, 0.0f, (float)_numTicks, minValue, maxValue);
+			_stickToTickByValue(newValue);
+		}		
+	}
+
+COM:sets a value to a tick number within a specified range and maps it to a corresponding value if a "stick to tick" option is enabled

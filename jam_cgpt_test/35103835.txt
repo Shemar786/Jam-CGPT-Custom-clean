@@ -1,0 +1,12 @@
+TDAT:   private JScrollPane getSpBilddetails() {
+    if (spBilddetails == null) {
+      spBilddetails = new JScrollPane();
+      spBilddetails.setBorder(BorderFactory.createTitledBorder(null,
+          "Bilddetails", TitledBorder.DEFAULT_JUSTIFICATION,
+          TitledBorder.DEFAULT_POSITION, null, null));
+      spBilddetails.setViewportView(getTBilddetails());
+    }
+    return spBilddetails;
+  }
+
+COM:returns a JScrollPane with a titled border and a JTable component inside, and initializes it if it has not yet been created

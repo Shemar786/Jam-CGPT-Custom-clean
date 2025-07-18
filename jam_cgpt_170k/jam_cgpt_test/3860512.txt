@@ -1,0 +1,9 @@
+TDAT:     public void testUserWithEmptyCredentials() {
+        PamReturnValue pamReturnValue = pam.authenticate(user1Credentials, "");
+        //RedHat and Mac OS X
+        assertTrue(pamReturnValue.equals(PamReturnValue.PAM_AUTH_ERR)
+            // Novell Linux Desktop 9
+            || pamReturnValue.equals(PamReturnValue.PAM_USER_UNKNOWN));
+    }
+
+COM:tests whether a user with empty credentials can be authenticated using the PAM library

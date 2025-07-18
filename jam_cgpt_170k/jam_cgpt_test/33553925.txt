@@ -1,0 +1,18 @@
+TDAT: 	private void initiateSearch() {
+		CharSequence query = ((EditText)findViewById(R.id.searchText)).getText();
+		if (query.length() > 0) {
+			showDialog(DIALOG_SEARCHING);
+			AsyncBlipApi.startSearch(query.toString(),
+					new AsyncBlipApi.ResultCallback() {
+				public void onComplete(final Bundle result) {
+					runOnUiThread(new Runnable() {
+						public void run() {
+							onSearchResult(result);
+						}
+					});
+				}
+			});
+		}
+	}
+
+COM:initiates a search using a provided query and displays a progress dialog, then asynchronously executes the search and handles the results using a callback function

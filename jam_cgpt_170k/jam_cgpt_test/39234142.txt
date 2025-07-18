@@ -1,0 +1,11 @@
+TDAT:     public Object createCorrelation(String set, String initiate, String pattern) {
+        Correlation correlation = new CorrelationImpl();
+        correlation.setSet(set);
+        correlation.setInitiate(BooleanUtils.yesNoToBoolean(initiate));
+        if (StringUtils.isNullOrEmpty(pattern)) {
+            correlation.setPattern(createCorrelationPattern(pattern));
+        }
+        return correlation;
+    }
+
+COM:creates a Correlation object with set, initiate, and pattern parameters and returns it

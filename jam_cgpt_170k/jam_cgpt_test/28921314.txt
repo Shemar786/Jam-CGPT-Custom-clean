@@ -1,0 +1,15 @@
+TDAT: 	private Node inlinePresentationMathML(final String data) {
+		try {
+			ComputereseTree computereseTree = computereseParser.parse(data);
+			DocumentFragment docFrag = presentationMathMLTranslator.translate(computereseTree, true, MathDisplayMode.INLINE);
+			Node mathNode = docFrag.getFirstChild();
+			
+			return mathNode;		
+		} catch (ComputereseParserException cpe) {			
+			cpe.printStackTrace();
+			
+			return document.createCDATASection(cpe.getMessage()); 
+		}		
+	}
+
+COM:converts a string of computerese data into MathML and returns the inline presentation of the equation as a node

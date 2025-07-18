@@ -1,0 +1,17 @@
+TDAT: 	private void loadChilds() {
+		childs = new ArrayList<FileTreeNode>();
+		if (file.isDirectory()) {
+			File[] subdirs = file.listFiles(new FileFilter () {
+				public boolean accept(File pathname) {
+					return pathname.isDirectory();
+				}
+			});
+			if (subdirs != null) {
+				for (int i = 0; i < subdirs.length; i++) {
+					childs.add(new FileTreeNode(this, subdirs[i]));
+				}
+			}
+		}
+	}
+
+COM:loads all child directories of a given file and adds them as nodes to a tree structure

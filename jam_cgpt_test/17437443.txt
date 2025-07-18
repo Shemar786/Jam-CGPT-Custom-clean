@@ -1,0 +1,9 @@
+TDAT:     public void removeObject(MuObject Obj) {
+        Obj.getCurrentWorldRegion().removeObject(Obj);
+        _allObjects.remove(new Integer(Obj.getObjectId()));
+        if (Obj instanceof MuPcInstance)
+            _allPlayers.remove(((MuPcInstance)Obj).getName().toLowerCase());
+        Obj = null;
+    }
+
+COM:removes an object, updates object lists, and sets the object to null

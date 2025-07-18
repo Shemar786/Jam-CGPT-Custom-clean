@@ -1,0 +1,10 @@
+TDAT: 	public void setSigmaX( double newSigmaX) throws IllegalArgumentException, DimensionMismatchException {
+		if (this.dimension == 1)
+			throw new DimensionMismatchException(this.dimension + "D-Punkt hat keine X-Genauigkeit");
+		if (newSigmaX>0)
+			this.sigmaX = newSigmaX;
+		else
+			throw new IllegalArgumentException("Standardabweichung muss groesser Null sein " + newSigmaX);
+	}
+
+COM:sets the value of sigmaX with the exception of DimensionMismatchException and IllegalArgumentException

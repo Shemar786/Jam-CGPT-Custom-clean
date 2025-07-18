@@ -1,0 +1,5 @@
+TDAT: 	public String getPlayerStanding(String id, String leagueId) throws NumberFormatException, InvalidUserException, InvalidLeagueException, InvalidSyntaxException, DivisionByZeroException {
+			return LeaguesManager.getInstance().calculateStanding(Integer.parseInt(getNumberOfWins(id, leagueId)), Integer.parseInt(getNumberOfLosses(id, leagueId)), leagueId);
+	}	
+
+COM:calculates a player's standing in a specific league based on their number of wins and losses and returns it as a String

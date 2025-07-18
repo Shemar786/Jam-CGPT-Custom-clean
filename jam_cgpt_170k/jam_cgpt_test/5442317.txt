@@ -1,0 +1,17 @@
+TDAT:     public String getMultiMethodName(HttpServletRequest req) {
+        String theKey = req.getPathInfo();
+
+        if (theKey == null) {
+            return null;
+        }
+
+        int idx = theKey.indexOf('/', 1);
+
+        if (idx != -1) {
+            theKey = theKey.substring(0, idx);
+        }
+
+        return theKey;
+    }
+
+COM:extracts the first part of a path from the HttpServletRequest object

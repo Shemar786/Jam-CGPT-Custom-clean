@@ -1,0 +1,8 @@
+TDAT:     public double calculateHeight(double x, double y){
+        double d = origin.dotProduct(normal);
+        // ax + by +cz + d = 0 , normal (a,b,c)
+        // z = (-d - ax - by)/c;
+        return (d - normal.getX()*x - normal.getY()*y)/normal.getZ();
+    }
+
+COM:calculates the height based on given x and y values using a dot product and a mathematical formula

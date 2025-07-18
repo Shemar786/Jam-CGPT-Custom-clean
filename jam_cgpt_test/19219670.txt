@@ -1,0 +1,10 @@
+TDAT:     private void deleteNode(SDDElementTreeNode node) {
+        // removeNode will remove the SDDObject from the parent's list
+        SDDObjectImpl sddObject = removeNode(node); // get rid of tree nodes
+        sddObject.getBaseElement().removeDynamicSDDUpdateListener(sddObject);
+        // should be no more refs to this SDDObject at this point
+        // do not iterate children, the sddObjects of the baselement are still
+        // live and relevant
+    }
+
+COM:deletes a node from an SDDElementTreeNode and removes its associated SDDObject

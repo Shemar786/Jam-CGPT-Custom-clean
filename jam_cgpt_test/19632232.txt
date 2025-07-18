@@ -1,0 +1,17 @@
+TDAT: 	protected void addFieldTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConfigurationPropertyLiteral_fieldType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConfigurationPropertyLiteral_fieldType_feature", "_UI_ConfigurationPropertyLiteral_type"),
+				 CanvasPackage.Literals.CONFIGURATION_PROPERTY_LITERAL__FIELD_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the field type feature of a ConfigurationPropertyLiteral object

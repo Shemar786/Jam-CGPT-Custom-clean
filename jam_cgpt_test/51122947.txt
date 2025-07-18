@@ -1,0 +1,14 @@
+TDAT:    public Object createObject(Attributes attributes) {
+      Object obj = null;
+
+      try {
+         obj = ReflectionUtil.invoke(className, "instance", null, null);
+      } catch (Exception e) {
+         logCat.error("::createObject - cannot instance the class ["
+                      + className + "]", e);
+      }
+
+      return obj;
+   }
+
+COM:creates an object using reflection and returns it

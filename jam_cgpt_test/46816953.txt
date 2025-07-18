@@ -1,0 +1,23 @@
+TDAT: 	private void stabilizeLeft(AnchorType<E> a) {
+		DequeNode<E> prev, prevnext;
+
+		prev = a.left.right.get();
+		if (a.status != LPUSH)
+			return;
+		prevnext = prev.left.get();
+		if (prevnext != a.left) {
+			if (a.status != LPUSH)
+				return;
+			/*
+			 * Modification to <code>left</code> pointer should be atomic
+			 * operation. It doesn't matter which thread stablized the deque. If
+			 * CAS fails, thread will return without doing anything.
+			 */
+			if (!prev.left.compareAndSet(prevnext, a.left))
+				return;
+		}
+
+		a.stableStatus(LPUSH);
+	}
+
+COM:stabilizes the left side of a deque data structure by ensuring that the previous node's next pointer correctly points to the current node

@@ -1,0 +1,13 @@
+TDAT:     private ArrayList getFunAppArgs(Expr expr) {
+        ArrayList ret = new ArrayList();
+        expr = expr.stripOutermostParens();
+        while (expr instanceof FunApp) {
+            Expr func = ((FunApp)expr).getFunc();
+            Expr arg = ((FunApp)expr).getArg();
+            ret.add(arg.stripOutermostParens());
+            expr = func.stripOutermostParens();
+        }
+        return ret;
+    }
+
+COM:extracts the arguments of a function expression and returns them in an ArrayList

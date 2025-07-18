@@ -1,0 +1,14 @@
+TDAT:     private Map readPermissionsForBlog(Map context, String blogID) {
+        Map permissions = new TreeMap();
+        try {
+            Properties permissionsProperties = readPermissionsConfiguration(blogID);
+            permissions = new TreeMap(BlojsomUtils.blojsomPropertiesToMap(permissionsProperties));
+        } catch (IOException e) {
+            _logger.error(e);
+            addOperationResultMessage(context, "Unable to read permissions for blog: " + blogID);
+        }
+
+        return permissions;
+    }
+
+COM:reads permissions configuration for a blog and returns a map of permissions

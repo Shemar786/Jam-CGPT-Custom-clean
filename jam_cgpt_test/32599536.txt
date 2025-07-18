@@ -1,0 +1,10 @@
+TDAT:     protected boolean applyValues() {
+    	text = new String[2];
+        text[0] = segmentNameTextField.getText();
+        text[1] = "segment " + segmentNameTextField.getText() + " {\n"
+        			+ advancedTextArea.getText() + "\n"
+        			+ "}\n";
+        return true;
+    }
+
+COM:sets values for a text array and returns true

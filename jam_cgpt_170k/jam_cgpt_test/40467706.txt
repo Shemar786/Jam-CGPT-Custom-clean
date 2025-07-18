@@ -1,0 +1,10 @@
+TDAT: 	protected int getAngleFromValue(float value){
+		int angle;
+		if(clockwiseValues)
+			angle = (int) PApplet.map(value, valueStart, valueEnd, aLow, aHigh);
+		else
+			angle = (int) PApplet.map(-value, -valueStart, -valueEnd, aLow, aHigh);
+		return angle;
+	}
+
+COM:calculates the angle from a given float value based on a set of parameters

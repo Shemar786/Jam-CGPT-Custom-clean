@@ -1,0 +1,9 @@
+TDAT:     protected void createMBean() {
+        try {
+            jmxPool = new org.apache.tomcat.jdbc.pool.jmx.ConnectionPool(this);
+        } catch (Exception x) {
+            log.warn("Unable to start JMX integration for connection pool. Instance["+getName()+"] can't be monitored.",x);
+        }
+    }
+
+COM:creates a JMX ConnectionPool for monitoring a Tomcat JDBC connection pool instance

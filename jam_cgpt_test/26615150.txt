@@ -1,0 +1,16 @@
+TDAT:     public Cell getCell(int index) {
+	Iterator iter = getCellIterator();
+	Object o = null;
+
+	if (index<0 || index>=this.getSize())
+	    throw new IndexOutOfBoundsException(
+	        "No such element in Population: index "+index+" of "+
+	        this.getSize());
+
+	for(int i = 0; i<=index; i++)
+	    o = iter.next();
+
+	return (Cell) o;
+    }
+
+COM:returns a specific Cell object from a Population object by its index position

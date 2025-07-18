@@ -1,0 +1,18 @@
+TDAT: 	private void setButtonText() {
+		String txt = menuItem.getTitle() + " ("
+				   + menuItem.getStock()
+				   + " in Stock)";
+		try {
+			Course tmpCourse = (Course)menuItem;
+			if(tmpCourse.getCourseType() == Course.FIRST_COURSE) {
+				txt = "1st: " + txt;
+			} else {
+				txt = "2nd: " + txt;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		this.setText(txt);
+	}
+
+COM:sets the text of a button by combining the title and stock of a menu item and adding information about the course type, if applicable

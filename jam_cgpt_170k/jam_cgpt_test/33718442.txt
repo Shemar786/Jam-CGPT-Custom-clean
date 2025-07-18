@@ -1,0 +1,13 @@
+TDAT:     public void testSearchEvent() {
+        System.out.println("searchEvent");
+        
+        String searchString = "";
+        Event_StubImpl instance = new Event_StubImpl();
+        
+        instance.searchEvent(searchString);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the searchEvent method of the Event_StubImpl class by passing an empty string as the search string

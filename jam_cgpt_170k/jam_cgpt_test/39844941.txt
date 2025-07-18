@@ -1,0 +1,13 @@
+TDAT:     private void evaluateExpressions() throws JspException {
+        Boolean bool    = null;
+
+        if ((bool = EvalHelper.evalBoolean("locale", getLocaleExpr(),
+                                           this, pageContext)) != null)
+            setLocale(bool.booleanValue());
+
+        if ((bool = EvalHelper.evalBoolean("xhtml", getXhtmlExpr(),
+                                           this, pageContext)) != null)
+            setXhtml(bool.booleanValue());
+    }
+
+COM:evaluates expressions for locale and XHTML and sets corresponding values if the expression is not null

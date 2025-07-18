@@ -1,0 +1,9 @@
+TDAT:     public void removeEmptyNameSpaces() throws IOException {
+//        LOGGER.debug("NameSpaceOperations.removeEmptyNameSpaces(...): Deleting empty name space directories..."); //$NON-NLS-1$
+        deleteEmptyDirectories(Workspace.getPagesPath());
+        if (Workspace.getMediaPath().exists()) {
+            deleteEmptyDirectories(Workspace.getMediaPath());
+        }
+    }
+
+COM:removes empty name space directories from the workspace, throwing an IOException if there is an issue

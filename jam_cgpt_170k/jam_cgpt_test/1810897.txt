@@ -1,0 +1,9 @@
+TDAT:   public void deleteData(int offset, int count) {
+    try {
+      XMLParserImpl.deleteData(this.getJsObject(), offset, count);
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_MODIFICATION_ERR, e, this);
+    }
+  }
+
+COM:deletes a specified amount of data from an XML parser object

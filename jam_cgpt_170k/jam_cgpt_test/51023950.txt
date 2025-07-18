@@ -1,0 +1,17 @@
+TDAT: 	private void loadOndexKBGraph(String fileName) {
+		try {
+			System.out.println("Start Loading OndexKB Graph..."+fileName);
+			Parser oxl = new Parser();
+			ONDEXPluginArguments pa = new ONDEXPluginArguments(
+					oxl.getArgumentDefinitions());
+			pa.setOption(FileArgumentDefinition.INPUT_FILE, fileName);
+			oxl.setArguments(pa);
+			oxl.setONDEXGraph(graph);
+			oxl.start();
+			System.out.println("OndexKB Graph Loaded Into Memory");			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:loads an OndexKB graph from a specified file and prints a message when the process is completed

@@ -1,0 +1,19 @@
+TDAT: 	public boolean validateFinal_hasIncoming(Final final_, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (final_.getIncoming().isEmpty()) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.WARNING,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "Final state should have an incoming transition", getObjectLabel(final_, context) },
+						 new Object[] { final_ },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+COM:validates that a final state has an incoming transition

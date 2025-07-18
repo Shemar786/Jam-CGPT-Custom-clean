@@ -1,0 +1,15 @@
+TDAT:     private int getNextStep(int currentStep) {
+        int nextStep = -1;
+        
+        // we find the next available step.
+        for (int i = currentStep + 1; i <= STEP_THANKS; i++) {
+            if(isStepEnabled(i)) {
+                nextStep = i;
+                break;
+            }
+        }
+
+        return nextStep;
+    }
+
+COM:returns the next available step by looping through the steps after the current step and checking if they are enabled

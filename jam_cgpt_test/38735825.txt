@@ -1,0 +1,15 @@
+TDAT:     public String encrypt(String str) {
+        if (str == null) return null;
+        try {
+            // Encode the string into bytes using utf-8
+            byte[] utf8 = str.getBytes("UTF8");
+            // Encrypt
+            byte[] enc = ecipher.doFinal(utf8);
+            // Encode bytes to base64 to get a string
+            return StringEncoder64.encode(enc);
+        } catch (Exception e) {
+        }
+        return null;
+    }
+
+COM:encrypts a given string using a specified cipher and returns the encrypted string encoded in base64 format

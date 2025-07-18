@@ -1,0 +1,17 @@
+TDAT: 	public void focusGained(FocusEvent e) {
+		if (e.isTemporary())
+			return;
+
+		// We call selectAll() via invokeLater in case something else is dealing
+		// with the component - this was an issue with JFormattedTextFields
+		final Component comp = e.getComponent();
+		if (comp instanceof JTextComponent)
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					if (comp.hasFocus())  // make sure we still have focus
+						((JTextComponent) comp).selectAll();
+				}
+			});
+	}
+
+COM:selects all contents of a JTextComponent when it gains focus, through a delayed invokeLater method, to address issues with JFormattedTextFields

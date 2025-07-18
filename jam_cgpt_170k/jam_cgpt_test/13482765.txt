@@ -1,0 +1,16 @@
+TDAT:     private void insertCode(FlowGraph cfg, SSAConstructionInfo info) {
+        Iterator blocks = cfg.nodes().iterator();
+
+        while (blocks.hasNext()) {
+            Block block = (Block) blocks.next();
+
+            PhiStmt phi = info.phiAtBlock(block);
+
+            if (phi != null) {
+                Assert.isFalse(phi instanceof PhiReturnStmt);
+                block.tree().prependStmt(phi);
+            }
+        }
+    }
+
+COM:inserts a Phi statement at the beginning of each block in a given flow graph, based on the SSA construction information provided

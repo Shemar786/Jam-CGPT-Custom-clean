@@ -1,0 +1,14 @@
+TDAT:     protected void checkNewNodes(Set newNodes) {
+        Iterator partsIt = allParts.iterator();
+
+        while (partsIt.hasNext()) {
+            Object o = partsIt.next();
+
+            if (o instanceof TypeDockingUnconnectedNACPart) {
+                TypeDockingUnconnectedNACPart part = (TypeDockingUnconnectedNACPart) o;
+                findNewMatchesForPart(part, newNodes);
+            }
+        }
+    }
+
+COM:iterates through a set of objects and checks for a specific type before calling another method with the matched objects and a set of new nodes

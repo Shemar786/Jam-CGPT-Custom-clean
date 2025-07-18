@@ -1,0 +1,14 @@
+TDAT:     public void testGetLastVisit() {
+        System.out.println("getLastVisit");
+        
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        Date expResult = null;
+        Date result = instance.getLastVisit();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the 'getLastVisit' method of the SystemClient_DBImpl class and returns the result of the test

@@ -1,0 +1,7 @@
+TDAT: 		public void add(Object parent, int index, Object newNode) throws IndexOutOfBoundsException{
+			((TreeNode)parent).add(index, (TreeNode)newNode);
+			nodeMap.put(((TreeNode)newNode).getId(), (TreeNode)newNode);
+			fireEvent(parent,index,index,TreeDataEvent.INTERVAL_ADDED);			
+		}
+
+COM:adds a new node to a tree at a specified index under a parent node, updates a node map with the new node, and fires a TreeDataEvent notifying listeners of the change

@@ -1,0 +1,11 @@
+TDAT: 	public void afterPhase(PhaseEvent evt) {
+		if (evt.getPhaseId() == PhaseId.RESTORE_VIEW) {
+			this.recompileSourcesIfNecesary();
+		}
+		
+		this.executeGraceletClosure(evt.getFacesContext(), evt.getPhaseId(), GraceletPhaseClosure.Type.AFTER);
+		this.executeHooks(evt.getPhaseId(), false);
+		if (evt.getPhaseId() == PhaseId.RENDER_RESPONSE) this.cleanupGracelet();
+	}
+
+COM:executes certain tasks after a specific phase of the application lifecycle and also cleans up after rendering the response

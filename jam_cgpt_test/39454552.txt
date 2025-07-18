@@ -1,0 +1,14 @@
+TDAT:     private ScalarMap findMapByType(final DisplayRealType type) {
+
+        ScalarMap scalarMap = null;
+        for (Iterator<?> iterator = display.getMapVector().iterator();
+             scalarMap == null && iterator.hasNext(); ) {
+            final ScalarMap map = (ScalarMap) iterator.next();
+            if (type.equals(map.getDisplayScalar())) {
+                scalarMap = map;
+            }
+        }
+        return scalarMap;
+    }
+
+COM:searches for a ScalarMap object in a collection based on the DisplayRealType parameter and returns the matching object, or null if none are found

@@ -1,0 +1,10 @@
+TDAT:     public void buildFinished(BuildEvent event) {
+        if (errorList.size() > 0 && event.getException() == null) {
+            event.setException(new BuildException(
+                    "Warnings and/or errors found in build output:\n" +
+                    getErrors()));
+        }
+        super.buildFinished(event);
+    }
+
+COM:checks for errors in build output and sets an exception if there are any, then calls the superclass buildFinished method

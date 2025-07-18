@@ -1,0 +1,15 @@
+TDAT: 	private boolean derivedFromBoolean(Type type, FormulaFactory ff) {
+		if (type.equals(ff.makeBooleanType()))
+			return true;
+		final Type baseType = type.getBaseType();
+		if (baseType != null)
+			return derivedFromBoolean(baseType, ff);
+		if (type instanceof ProductType) {
+			final ProductType productType = (ProductType) type;
+			return derivedFromBoolean(productType.getLeft(), ff)
+					&& derivedFromBoolean(productType.getRight(), ff);
+		}
+		return false;
+	}
+
+COM:recursively checks if a given type or its subtypes are derived from the Boolean type

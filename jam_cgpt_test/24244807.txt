@@ -1,0 +1,7 @@
+TDAT: 	public byte LSWrite(byte port, byte [] txData, byte rxDataLength) throws IOException {
+		byte [] request = {DIRECT_COMMAND_NOREPLY, LS_WRITE, port, (byte)txData.length, rxDataLength};
+		request = appendBytes(request, txData);
+		return sendRequest(request, 3);
+	}
+
+COM:sends a request to write data to a specific port and returns the response in byte format while throwing an IOException

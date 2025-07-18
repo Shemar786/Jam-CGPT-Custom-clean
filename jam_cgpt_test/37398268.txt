@@ -1,0 +1,13 @@
+TDAT:   public void testExpansionOverflow() {
+    try {
+      Config config = ConfigFactory.getConfig(Overflow.class);
+      fail("Should throw ConfigurationException");
+    } catch (ConfigurationException ex) {
+      assertEquals(
+        "Overflow expanding property circular.foo "
+          + "for resource test.org.chwf.config.ConfigTest$Overflow",
+        ex.getMessage());
+    }
+  }
+
+COM:tests for an Overflow in expanding property circular.foo for a specified resource and expects it to throw a ConfigurationException

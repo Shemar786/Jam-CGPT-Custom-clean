@@ -1,0 +1,11 @@
+TDAT:     public JTable createMailbox(List messages) {
+        tableModel.setData(messages);
+        mailboxTable.setModel(tableModel);
+        mailboxTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        mailboxTable.setShowGrid(false);
+        mailboxTable.getColumnModel().setColumnMargin(0);
+        setColumnWidths(mailboxTable.getColumnModel());
+        return mailboxTable;
+    }
+
+COM:creates a mailbox JTable with a list of messages and returns the table

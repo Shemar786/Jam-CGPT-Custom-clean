@@ -1,0 +1,17 @@
+TDAT: 	public void update() {
+		TreeViewer viewer = getTreeViewer();
+		if (viewer != null) {
+			Control control = viewer.getControl();
+			if (control != null && !control.isDisposed()) {
+				control.setRedraw(false);
+
+				// Saving the expanded elements
+				Object[] elements = viewer.getExpandedElements();
+				viewer.setInput(fInput.exists() ? fInput : null);
+				viewer.setExpandedElements(elements);
+				control.setRedraw(true);
+			}
+		}
+	}
+
+COM:updates the TreeViewer and saves the expanded elements

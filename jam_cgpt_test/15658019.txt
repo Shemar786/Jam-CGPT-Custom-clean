@@ -1,0 +1,11 @@
+TDAT: 	protected void advanceTop(Parse p) {
+		buildModel.eval(buildContextGenerator.getContext(p.getChildren(), 0),
+				bprobs);
+		p.addProb(Math.log(bprobs[topStartIndex]));
+		checkModel.eval(checkContextGenerator.getContext(p.getChildren(),
+				TOP_NODE, 0, 0), cprobs);
+		p.addProb(Math.log(cprobs[completeIndex]));
+		p.setType(TOP_NODE);
+	}
+
+COM:advances the parsing algorithm by evaluating the model and probabilities, updating the parse tree, and setting its type to TOP_NODE

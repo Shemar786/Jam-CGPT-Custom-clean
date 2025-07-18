@@ -1,0 +1,14 @@
+TDAT: 	/* 	protected void writeCollectionData (CollectionConfig collectionConfig, DcsDataRecord collDcsDataRecord) {
+		collDcsDataRecord.clearSyncErrors();
+		RepositoryWriterPlugin plugin = getRepositoryWriterPlugin (collectionConfig.getId());
+		if (plugin != null) {
+			try {
+				plugin.putCollectionData (collectionConfig, collDcsDataRecord);
+			} catch (RepositoryWriterPluginException e) {
+				collDcsDataRecord.setNdrSyncError(e.getSyncMessage());
+				collDcsDataRecord.flushToDisk();
+			}
+		}
+	} */
+
+COM:writes data from a collection to a repository using a specified plugin, and handles any exceptions that occur

@@ -1,0 +1,17 @@
+TDAT: 	public void testUpdateLine() throws Exception{
+		long oldSequenceNo = 0;
+
+    	// User 1 updates the second line
+		oldSequenceNo = service.updateLine(documentHash,2,user1ID,
+			"update",sequenceNo);
+		TestCase.assertEquals(++sequenceNo, service.getSequenceNo(
+			documentHash,0,2));
+
+    	// User 1 updates the fifth line
+		oldSequenceNo = service.updateLine(documentHash,5,user1ID,
+			"update2",sequenceNo);
+		TestCase.assertEquals(++sequenceNo, service.getSequenceNo(
+			documentHash,1,5));
+	}
+
+COM:tests the updateLine method of a service by updating the second and fifth lines of a document and checking if their sequence numbers are correctly incremented

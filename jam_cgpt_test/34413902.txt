@@ -1,0 +1,21 @@
+TDAT: 	private void openTo(String objectId){
+		if (getObjectById(objectId) == null)
+		{
+			// Recurse on the parent.
+			String parentId = getParentObject(objectId);
+			if (parentId != null && parentId.length() > 0)
+			{
+				openTo(parentId);
+			}
+		}
+		// Open down to this level.
+		Treeitem t = (Treeitem) getObjectById(objectId);
+		while (t != null)
+		{
+			this.getChildren(t, null);
+			t.setOpen(true);
+			t = t.getParentItem();
+		}
+	}
+
+COM:recursively opens a tree structure starting from a specified object ID and going up to the root and down to the specified object ID

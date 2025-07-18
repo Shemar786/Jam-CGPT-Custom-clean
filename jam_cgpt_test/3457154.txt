@@ -1,0 +1,15 @@
+TDAT: 	protected String getElementText( Element element ){
+		
+		String value = null;
+		
+		NodeList list = element.getChildNodes();
+		
+		for (int i = 0; value == null || i < list.getLength(); i++) {
+			if( list.item(i).getNodeType() == Node.TEXT_NODE )
+				value = list.item(i).getNodeValue();
+		}
+		
+		return value;
+	}
+
+COM:retrieves the text content of a given XML element

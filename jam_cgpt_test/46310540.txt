@@ -1,0 +1,14 @@
+TDAT: 	public void readSGIPResponse(InputStream is) throws IOException {
+		DataInputStream in = new DataInputStream(is);
+
+		int total_Length = in.readInt();
+		int command_Id = in.readInt();
+		byte buf[] = new byte[total_Length - 8];
+		in.readFully(buf);
+		System.out.println("command id = " + command_Id);
+		if (command_Id == 0x80000001)
+			SGIPBindResponseListener(new SGIPBindRepMessage(buf));
+
+	}
+
+COM:reads a response from an InputStream, extracts and prints the command ID, and invokes a listener for a specific type of response if the command ID is correct

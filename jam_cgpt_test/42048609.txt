@@ -1,0 +1,10 @@
+TDAT:     private void setBorderLocation() {
+        for (int i = 0; i < X_GRID; i++) {
+            map[i][0] = itemCodes.WALL;
+            map[0][i] = itemCodes.WALL;
+            map[i][Y_GRID - 1] = itemCodes.WALL;
+            map[X_GRID - 1][i] = itemCodes.WALL;
+        }
+    }
+
+COM:sets the border locations of a 2D map to the value of "itemCodes.WALL"

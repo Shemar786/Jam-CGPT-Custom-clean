@@ -1,0 +1,14 @@
+TDAT:     public ActionResult perform() {
+        updateDeploymentsFile();
+        final Task task = ProxyDispatcherFactory.createActionProxyDispatcherTask(context, project, depotMgr.getFramework());
+        final BaseActionResult result = BaseActionResult.create(resultParams);
+        try {
+            task.execute();
+            result.setSuccessful(true);
+        } catch (BuildException e) {
+            result.setBuildException(e);
+        }
+        return result;
+    }
+
+COM:performs a task and returns a result based on whether the task was successful or not

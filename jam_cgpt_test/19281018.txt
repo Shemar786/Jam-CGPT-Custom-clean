@@ -1,0 +1,11 @@
+TDAT: 	private ByteOrder getByteOrder() {
+		if (BIG_ENDIAN_LABEL.equals(this.getDataEndian())) {
+			return ByteOrder.BIG_ENDIAN;
+		} else if (LITTLE_ENDIAN_LABEL.equals(this.getDataEndian())) {
+			return ByteOrder.LITTLE_ENDIAN;
+		} else {
+			throw new IllegalStateException("The value for data endian for this binary array must be either 'big' or 'little'.  In this case it is: " + this.getDataPrecision());
+		}
+	}
+
+COM:determines the byte order of a binary array based on its data endian label

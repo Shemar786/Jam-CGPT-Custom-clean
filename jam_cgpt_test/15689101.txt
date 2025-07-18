@@ -1,0 +1,12 @@
+TDAT:     public MethodInfo addDefaultConstructor() {
+        Modifiers modifiers = new Modifiers();
+        modifiers.setPublic(true);
+        MethodInfo mi = addConstructor(modifiers, null);
+        CodeBuilder builder = new CodeBuilder(mi);
+        builder.loadThis();
+        builder.invokeSuperConstructor(null);
+        builder.returnVoid();
+        return mi;
+    }
+
+COM:adds a default constructor to a class with public access modifier using CodeBuilder

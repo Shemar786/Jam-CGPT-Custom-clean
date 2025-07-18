@@ -1,0 +1,7 @@
+TDAT:     protected Activity applyLaw(Influence inf, EnvironmentState env,Collection activities) {
+        SenseNeighbouringStationsInfluence senseInf = (SenseNeighbouringStationsInfluence) inf;
+        AGVRobot agv = senseInf.getInfluenceAuthor().getAgvRobot();
+        return new SenseNeighbouringStationsActivity(new ActivitySubject(agv), getTimeInterval(senseInf), senseInf.getPerceptionResult());
+    }
+
+COM:applies a sense neighbouring stations influence to an environment state, and returns a new sense neighbouring stations activity based on the result

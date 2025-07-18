@@ -1,0 +1,11 @@
+TDAT:   public String makeUniqueStringForGlobalWithLength(String global, int length) {
+    String toReturn = "";
+    do {
+      toReturn += super.utils.generateUnique();
+    } while (toReturn.length() < length);
+    toReturn = toReturn.substring(toReturn.length() - length);
+    super.utils.setGlobal(global, toReturn);
+    return toReturn;
+  }
+
+COM:generates a unique string of a specified length for a global variable and returns the string value

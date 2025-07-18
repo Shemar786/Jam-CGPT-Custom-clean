@@ -1,0 +1,11 @@
+TDAT:   public JExpression genConstructorCall()  {
+    TokenReference ref = getTokenReference();
+    JExpression expr = new JUnqualifiedInstanceCreation(ref,
+						CReferenceType.lookup("BLOCK_" + getIdent()),
+						JExpression.EMPTY);
+    JExpression left = new JFieldAccessExpression(ref, getIdent());
+
+    return new JAssignmentExpression(ref, left, expr);
+  }
+
+COM:generates a constructor call and returns a JAssignmentExpression

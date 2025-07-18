@@ -1,0 +1,18 @@
+TDAT: 	private double computeWeight(int occurrence_cnt) {
+		Double weight = 0.0;
+		if (occurrence_cnt!=0) {
+			// compute weight
+			if (occurrence_cnt>THRESHOLDS.get(3)) {
+				weight=1.0;
+			} else if (occurrence_cnt>THRESHOLDS.get(2)) {
+				weight=.75;
+			} else if (occurrence_cnt>THRESHOLDS.get(1)) {
+				weight=.5;
+			} else {
+				weight=.25;
+			}
+		}
+		return weight;
+	}
+
+COM:computes the weight of a feature based on the occurrence count and predefined thresholds

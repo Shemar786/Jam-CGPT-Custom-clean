@@ -1,0 +1,13 @@
+TDAT:     public void setSelectedItem(AntTarget target) {
+        if (m_targetMap.isSelected(target.getName())) {
+            m_selectedTarget = target;
+        } else {
+            if (m_vecTargets.size() > 0) {
+                m_selectedTarget = (AntTarget) m_vecTargets.elementAt(0);
+            } else {
+                m_selectedTarget = null;
+            }
+        }
+    }
+
+COM:sets the selected AntTarget object based on whether or not it is contained within the target map

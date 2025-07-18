@@ -1,0 +1,11 @@
+TDAT:   public GregorianCalendar toCalendar() {
+    GregorianCalendar   calendar = new GregorianCalendar();
+    
+    calendar.clear();
+    calendar.set(Calendar.HOUR_OF_DAY, getHours());
+    calendar.set(Calendar.MINUTE, getMinutes());
+    calendar.set(Calendar.SECOND, getSeconds());
+    return calendar;
+  }
+
+COM:converts a time object to a Gregorian calendar object

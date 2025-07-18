@@ -1,0 +1,8 @@
+TDAT:   public void setRowHeight ( int new_height ) {
+    for( int row_i = 0; row_i < getRowCount(); row_i++ ) {
+      getRowModel().getDimensionUnit( row_i ).setPreferredDistanceAcross( new_height );
+    }
+    resizeAndRepaint();
+  } // setRowHeight( int )
+
+COM:sets the preferred height of all rows in a table to a specified value

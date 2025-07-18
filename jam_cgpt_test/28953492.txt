@@ -1,0 +1,16 @@
+TDAT: 	public enum Severity {
+		Emergency(0), // System is unusable
+		Alert(1),     // Sction must be taken immediately
+		Critical(2),  // Critical conditions
+		Error(3),     // Error conditions
+		Warning(4),   // Warning conditions
+		Notice(5),    // Normal, but significant condition
+		Info(6),      // Informational messages
+		Debug(7);     // Debugging messages
+		
+		Severity(int value) { this.value = value; }
+	    private final int value;
+	    public int value() { return value; }
+	}
+
+COM:defines an enumeration called Severity with different levels of severity assigned with integer values

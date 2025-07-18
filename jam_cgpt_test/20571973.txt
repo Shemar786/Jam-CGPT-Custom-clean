@@ -1,0 +1,13 @@
+TDAT:   public void setCollectors(Iterator<String> collectors){
+    this.collectors = collectors; 
+    //setup a new destination from our list of collectors if one hasn't been set up
+    if (currCollector == null){
+      if (collectors.hasNext()){
+        currCollector = collectors.next();
+      }
+      else
+        log.error("No collectors to try in send(), not even trying to do doPost()");
+    }
+  }
+
+COM:sets the list of collectors and initializes the current collector if one hasn't been set up yet

@@ -1,0 +1,11 @@
+TDAT:     public SubmitButton getSubmitButtonWithID( String ID ) {
+        SubmitButton[] buttons = getSubmitButtons();
+        for (int i = 0; i < buttons.length; i++) {
+            if (buttons[i].getID().equals( ID )) {
+                return buttons[i];
+            }
+        }
+        return null;
+    }
+
+COM:returns a SubmitButton object with a specific ID if it exists within an array of SubmitButtons

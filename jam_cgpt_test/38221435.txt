@@ -1,0 +1,7 @@
+TDAT:   private void drawSecArrow(Graphics g, double min) {
+    Point p = countPoint(radius * 0.85, min);
+    g.setColor(new Color(41, 44, 49));
+    g.drawLine(center.x, center.y, p.x, p.y);
+  }
+
+COM:draws a second arrow on a graphics object using a specified radius and color

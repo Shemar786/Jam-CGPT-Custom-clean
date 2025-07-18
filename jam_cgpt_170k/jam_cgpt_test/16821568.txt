@@ -1,0 +1,18 @@
+TDAT: 	private int getSequence()throws Exception {
+		PreparedStatement stmtSeq=null;
+		ResultSet rsSeq=null;
+		String strSQL="Select hidden_system_seq.nextval from dual";
+		try {
+			stmtSeq = mcnMain.prepareStatement(strSQL);
+			rsSeq=stmtSeq.executeQuery();
+			if(rsSeq.next()) {
+				return rsSeq.getInt(1);
+			}
+			return -1;
+		} finally {
+			Database.closeObject(rsSeq);
+			Database.closeObject(stmtSeq);			
+		}		
+	}
+
+COM:returns an integer value representing the next sequence value from a database table

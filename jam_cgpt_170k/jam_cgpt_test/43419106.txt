@@ -1,0 +1,14 @@
+TDAT: 	private JSplitPane getJSplitPaneControlls() {
+		if (jSplitPaneControlls == null) {
+			jSplitPaneControlls = new JSplitPane();
+			jSplitPaneControlls.setOrientation(JSplitPane.VERTICAL_SPLIT);
+			JScrollPane scpTree = new JScrollPane();
+			scpTree.setViewportView(getTreeEnvironment());
+			jSplitPaneControlls.setTopComponent(scpTree);
+			jSplitPaneControlls.setBottomComponent(getTpSettings());
+			jSplitPaneControlls.setDividerLocation(150);
+		}
+		return jSplitPaneControlls;
+	}
+
+COM:returns a JSplitPane component populated with a tree view and settings panel

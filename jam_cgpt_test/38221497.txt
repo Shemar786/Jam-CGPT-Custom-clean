@@ -1,0 +1,13 @@
+TDAT:   private void setButtonsHeight(Container panel, int height) {
+    for (int i=0; i<panel.getComponentCount(); i++) {
+      Component component = panel.getComponent(i);
+      if (component instanceof JButton) {
+        JButton button = (JButton) component;
+        Dimension d = button.getPreferredSize();
+        d.height = height;
+        button.setPreferredSize(d);
+      }
+    }
+  }
+
+COM:sets the height of all buttons within a container to a specified value

@@ -1,0 +1,17 @@
+TDAT: 	protected void addDataTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConfigurationPropertyLiteral_dataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConfigurationPropertyLiteral_dataType_feature", "_UI_ConfigurationPropertyLiteral_type"),
+				 CanvasPackage.Literals.CONFIGURATION_PROPERTY_LITERAL__DATA_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a configuration property literal's data type to an item property descriptor list

@@ -1,0 +1,18 @@
+TDAT: 	private DefaultComboBoxModel createSeverityTypeList() {
+
+		PrimitiveType type = sevType.getPrimitiveType("severitytype");
+		Object[] names = type.getAllName();
+		DefaultComboBoxModel typeModel = new DefaultComboBoxModel();
+
+		typeModel.addElement(dbSupporter.getAlarmSeverity(selectedSeverity));
+
+		for (int i = 0; i < names.length; i++) {
+			if (names[i].equals(dbSupporter.getAlarmSeverity(selectedSeverity)))
+				continue;
+			typeModel.addElement(names[i]);
+		}
+
+		return typeModel;
+	}
+
+COM:creates a default combo box model list for a severity type, excluding the currently selected severity

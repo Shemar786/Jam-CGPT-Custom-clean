@@ -1,0 +1,10 @@
+TDAT: 	private void viewSection() {
+		javax.swing.ListModel model = this.sectionResultList.getModel();
+		JdaiSection section = (JdaiSection)this.sectionResultList.getSelectedValue();
+		JdaiPhoto[] photos = section.getPhotos();
+		if (photos != null && photos.length > 0) {
+			this.delegate.selectedForViewing( photos , 0, false);
+		}
+	}
+
+COM:This is a method that retrieves a selected JdaiSection object from a list and uses its JdaiPhoto array to display photos in a viewer interface

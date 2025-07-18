@@ -1,0 +1,18 @@
+TDAT:     public void close() {
+        if (sequencer != null) {
+            if (sequencer.isOpen() && sequencer.isRunning()) {
+                sequencer.stop();
+            }
+            sequencer.close();
+            sequencer = null;
+        }
+
+        if (synthesizer != null) {
+            if (synthesizer.isOpen()) {
+                synthesizer.close();
+            }
+            synthesizer = null;
+        }
+    }
+
+COM:closes the sequencer and synthesizer objects if they are not null and are open/running

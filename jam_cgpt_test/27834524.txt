@@ -1,0 +1,15 @@
+TDAT:     private String getPackageName(Class _class) {
+        String packageName = "";
+        try {
+          packageName = _class.getPackage().getName();
+        } catch (Exception e) {
+          packageName = _class.getName();
+          int lastDotPos = packageName.lastIndexOf('.');
+          if (lastDotPos > -1)
+            packageName = packageName.substring(0, lastDotPos);
+        }
+
+        return packageName;
+    }
+
+COM:returns the package name of a given class

@@ -1,0 +1,17 @@
+TDAT: 	protected void addSourcePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssociationDecisionToDecision_source_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationDecisionToDecision_source_feature", "_UI_AssociationDecisionToDecision_type"),
+				 ProcessPackagePackage.Literals.ASSOCIATION_DECISION_TO_DECISION__SOURCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a source property descriptor to a set of item property descriptors

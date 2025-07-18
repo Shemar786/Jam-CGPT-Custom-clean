@@ -1,0 +1,17 @@
+TDAT: 	public LockResult getLock(String locker) throws LockException{
+		LockResult result = new LockResult();
+		synchronized (lockingMutex) {
+			if(!_locked||locker.equals("system")){
+				result = ((ModelContainerEditor)_containerEditor).getObjectLock(_id, locker);
+				//update the wrapper
+				_locked = true;
+				_locker = locker;
+				_lockDate = (new Date(result.LockDate)).toString();
+			} else {
+				throw new LockException(LockException.OBJECT_LOCKED, _id);
+			}
+		}
+		return result;
+	}
+
+COM:retrieves a lock on an object and returns a LockResult, throwing a LockException if the object is already locked by someone other than the system

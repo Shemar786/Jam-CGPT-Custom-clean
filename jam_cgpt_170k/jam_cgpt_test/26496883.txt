@@ -1,0 +1,10 @@
+TDAT:   public void testPop() {
+    CallStack st = new CallStack(new IdFactory());
+    super.assertTrue(st.peek() == null);
+    Call c = st.create();
+    super.assertEquals(c, st.peek());
+    st.pop();
+    super.assertTrue(st.peek() == null);
+  }
+
+COM:tests the pop functionality of a CallStack object

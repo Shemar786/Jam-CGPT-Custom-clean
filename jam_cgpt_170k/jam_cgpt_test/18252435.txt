@@ -1,0 +1,19 @@
+TDAT: 	public void selectAllCells(String tableName) {
+		multiSelection = true;
+		selectedCells.clear();
+		selectedTableName = tableName;
+		for (List<CellInfo> cL : cellInfos) {
+			for (CellInfo cellInfo : cL) {
+				if (cellInfo != null) {
+					if (cellInfo.tableName.equals(tableName)) {
+						if (cellInfo.numberOfRows > 0) {
+							selectCell(cellInfo);
+						}
+					}
+				}
+			}
+		}
+		repaint();
+	}
+
+COM:selects all cells belonging to a specified table name by iterating through the cellInfos list and calling the selectCell method for each cell with matching table name, then triggers a repaint of the component

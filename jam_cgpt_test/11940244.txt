@@ -1,0 +1,19 @@
+TDAT: 	protected void setFields(Composite group) {
+
+		// entity name
+		Label nameLabel = new Label(group, SWT.SINGLE);
+		nameLabel.setText("Name: ");
+
+		nameText = new Text(group, SWT.SINGLE | SWT.BORDER);
+
+		// entity Type
+		Label typeLabel = new Label(group, SWT.SINGLE);
+		typeLabel.setText("Type: ");
+
+		this.typeText = new Text(group, SWT.SINGLE | SWT.BORDER);
+
+		Label parentLabel = new Label(group, SWT.SINGLE);
+		parentLabel.setText("Parent: ");
+	}
+
+COM:sets up fields for entity name, type, and parent within a given composite group

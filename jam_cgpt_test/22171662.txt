@@ -1,0 +1,17 @@
+TDAT: 	protected void addMaxRepeatPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveRepeatingTimer_maxRepeat_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveRepeatingTimer_maxRepeat_feature", "_UI_EveRepeatingTimer_type"),
+				 TimerPackage.Literals.EVE_REPEATING_TIMER__MAX_REPEAT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the maximum number of repeats for a repeating timer in the Eclipse environment

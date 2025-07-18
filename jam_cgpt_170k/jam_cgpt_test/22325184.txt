@@ -1,0 +1,16 @@
+TDAT:     public void setConnect (boolean connect) {
+        this.doConnect = connect;
+        if (!connect && isConnected()) {
+            channel.setUsable(false);
+            try {
+                channel.disconnect();
+            } catch (IOException e) { 
+                Logger.log (new LogEvent(this, "set-connect", e));
+            }
+            synchronized(this) {
+                this.notify();
+            }
+        }
+    }
+
+COM:sets the connection status and disconnects the channel if the connection is false

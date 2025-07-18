@@ -1,0 +1,16 @@
+TDAT:     private void maybeRelease() throws IOException {
+        synchronized (this) {
+            if (release && sendReceiveDone) {
+                if (debug) {
+                    trace("RELEASE");
+                }
+                if (getConnector() != null) {
+                    getConnector().returnToPool(this);
+                } else {
+                    log.severe("Attempt to release with no pool");
+                }
+            }
+        }
+    }
+
+COM:releases a resource back to a pool if certain conditions are met and throws an IOException if there is an error while releasing

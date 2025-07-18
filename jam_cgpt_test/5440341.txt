@@ -1,0 +1,12 @@
+TDAT:     public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        Enumeration e = myTag.getAttributeNames();
+
+        while (e.hasMoreElements()) {
+            String attributeName = ((String)e.nextElement()).toLowerCase();
+            String theName = "com.tagtraum.jo.ssi." + attributeName;
+
+            req.setAttribute(theName, myTag.getAttribute(attributeName));
+        }
+    }
+
+COM:sets attribute values for a HttpServletRequest object based on attribute names obtained from an Enumeration object

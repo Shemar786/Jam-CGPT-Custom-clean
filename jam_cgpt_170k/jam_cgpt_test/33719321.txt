@@ -1,0 +1,13 @@
+TDAT:     public void testSetClassId() {
+        System.out.println("setClassId");
+        
+        int classId = 0;
+        Event_DBImpl instance = new Event_DBImpl();
+        
+        instance.setClassId(classId);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the setClassId method of the Event_DBImpl class by assigning a value to the classId variable and passing it to the setClassId method

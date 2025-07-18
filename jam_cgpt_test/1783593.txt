@@ -1,0 +1,11 @@
+TDAT:     public void testIFrameAccessById() throws Exception {
+        defineWebPage( "Frames",
+                       "<iframe id='frame1'></iframe>" +
+                       "<script>" +
+                       "var frame = document.getElementById('frame1');" +
+                       "</script>" );
+
+        _wc.getResponse(getHostPath() + "/Frames.html");
+    }
+
+COM:tests access to an iframe on a web page using its ID

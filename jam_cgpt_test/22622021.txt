@@ -1,0 +1,13 @@
+TDAT: 	public String toString() {
+		String s = "Collection Registry";
+		for (Iterator i = getIds().iterator(); i.hasNext(); ) {
+			String key = (String) i.next();
+			s += "\n\t" + key;
+			/* s += "\n **" + key + " **";
+			CollectionConfig config = (CollectionConfig) collections.get(key);
+			s += config.toString(); */
+		}
+		return s;
+	}
+
+COM:returns a string representation of a collection registry, including the IDs of each collection

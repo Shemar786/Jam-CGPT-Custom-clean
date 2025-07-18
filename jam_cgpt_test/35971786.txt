@@ -1,0 +1,18 @@
+TDAT: 	private String getDslExpressionValue(StringTokenizer dslTokenizer) {
+		StringBuilder valueBuilder = new StringBuilder();
+		boolean closeMethod = false;
+		while (dslTokenizer.hasMoreElements() && !closeMethod) {
+			if (valueBuilder.length() > 0) {
+				valueBuilder.append(".");
+			}
+			String value = dslTokenizer.nextToken(); 
+			if (value.endsWith(")")) {
+				value = value.substring(0, value.length() - 1);
+				closeMethod = true;
+			}
+			valueBuilder.append(value);
+		}
+		return valueBuilder.toString();
+	}
+
+COM:returns a string value from a DSL expression passed in as a StringTokenizer

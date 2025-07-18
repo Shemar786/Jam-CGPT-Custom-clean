@@ -1,0 +1,17 @@
+TDAT:    public String DOM2String(Document doc) {
+      StringWriter writer = new StringWriter();
+
+      try {
+         StreamResult result = new StreamResult(writer);
+         DOMSource    source = new DOMSource(doc);
+         transformer.transform(source, result);
+      } catch (Exception e) {
+         logCat.error("write", e);
+      }
+
+      String s = writer.toString();
+
+      return s;
+   }
+
+COM:takes a Document object, converts it to a string using DOM parsing, and returns the string representation

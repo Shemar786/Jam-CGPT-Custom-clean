@@ -1,0 +1,12 @@
+TDAT: 	protected void setDirectionButtonStatus() {
+
+		boolean allowBack = currRow > 0;
+		boolean allowForward = fileView != null && currRow < fileView.getRowCount() - 1;
+
+	    btn[0].setEnabled(allowBack);
+	    btn[1].setEnabled(allowBack);
+	    btn[2].setEnabled(allowForward);
+	    btn[3].setEnabled(allowForward);
+	}
+
+COM:sets the enabled status of four buttons based on the current row and file view

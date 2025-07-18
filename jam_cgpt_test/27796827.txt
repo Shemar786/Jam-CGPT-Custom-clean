@@ -1,0 +1,12 @@
+TDAT:     public Object clone() {
+        DiscreteMapping clone = new DiscreteMapping
+                (defaultObj, attrName, mapType);
+        //  Copy over all listeners...
+        for (int i=0; i<observers.size(); i++) {
+            clone.addChangeListener((ChangeListener) observers.get(i));
+        }
+        clone.putAll((TreeMap) treeMap.clone());
+        return clone;
+    }
+
+COM:creates a clone of a DiscreteMapping object with copied listeners and a cloned TreeMap

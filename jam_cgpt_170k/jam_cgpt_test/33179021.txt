@@ -1,0 +1,16 @@
+TDAT:     public String substituteReferences(String name, String value) {
+        value = substituteMultiple(
+            escapedHomeDirectoryRe, value, homeDirectory);
+        value = substituteMultiple(
+            escapedFileSeparatorRe, value, fileSeparator);
+
+        if (value.indexOf(VARIABLE_PREFIX) != -1)
+            value = substituteVariables(name, value);
+
+        if (value.indexOf(SHELL_PREFIX) != -1)
+            value = substituteShell(name, value);
+
+        return value;
+    }
+
+COM:substitutes references in a String with given values for variables and shell commands

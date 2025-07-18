@@ -1,0 +1,16 @@
+TDAT:     public void initializeAndWait() throws XMPPException {
+        this.initialize();
+        try {
+            LOGGER.debug("Initializing transport resolver...");
+            while (!this.isInitialized()) {
+                LOGGER.debug("Resolver init still pending");
+                Thread.sleep(1000);
+            }
+            LOGGER.debug("Transport resolved\n");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+COM:initializes and waits for the transport resolver to be resolved, throwing an XMPPException if something goes wrong

@@ -1,0 +1,12 @@
+TDAT:   private void printLabel() throws IOException, JspException {
+    JspWriter out = pageContext.getOut();
+    out.print("<label for='");
+    out.print(getFor());
+    out.print("'");
+    printAttributes();
+    out.print(">");
+    out.print(deriveLabel());
+    out.print("</label>");
+  }
+
+COM:prints an HTML label tag with attributes and text derived from other methods, while potentially throwing IOException and JspException

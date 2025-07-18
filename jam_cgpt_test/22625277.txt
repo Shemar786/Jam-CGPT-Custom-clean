@@ -1,0 +1,21 @@
+TDAT: 	public int getTermFrequency(String term) {
+		//prtln("getTermFrequency()");
+
+		int freq = -1;
+		List fields = getFields();
+		if (fields != null) {
+			synchronized (_readerSearcherUpdateLock) {
+				if (_myReader != null) {
+					try {
+						freq = 0;
+						for (int i = 0; i < fields.size(); i++) {
+							freq += _myReader.docFreq(new Term((String) fields.get(i), term));
+						}
+					} catch (Exception e) {}
+				}
+			}
+		}
+		return freq;
+	}
+
+COM:retrieves the frequency of a given term in the fields of a reader, and returns it as an integer

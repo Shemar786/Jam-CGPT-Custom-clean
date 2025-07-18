@@ -1,0 +1,12 @@
+TDAT: 	public void startRoute(){
+	
+		if (!isPositionEqualTo(myRoute.getStartingLocationCoordinate()))//TODO concerned about this check
+			throw new IllegalStateException("The vehicle is not at the starting position of the route.");
+		
+		if (myRouteIterator != null)
+			throw new IllegalStateException("The vehicle has already started its route.");
+		myRouteIterator = myRoute.getTaskIterator();
+		continueRoute();
+	}
+
+COM:checks if a vehicle is at the starting position of a route, throws an exception if it's not, sets a task iterator for the route, and continues the route

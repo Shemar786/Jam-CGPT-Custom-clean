@@ -1,0 +1,12 @@
+TDAT:     public String getBody() throws MercuryException {
+        /*
+         * TODO: This should probably return an IAttachment instead, to associate
+         * it with a Mimetype so we know how to format it (html versus plain text)
+         */
+        if (!contentDone)
+            handleContent();
+        // There may not be a body (attachments only, if that).
+        return (body == null ? "" : body.getText());
+    }
+
+COM:returns the body of an email message as a String, and includes a TODO comment indicating a potential improvement to the return type

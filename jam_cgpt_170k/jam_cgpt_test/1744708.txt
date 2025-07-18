@@ -1,0 +1,11 @@
+TDAT: 	public User leaveNotifications(String screenName) {
+		Map<String, String> vars = newMap("screen_name", screenName);
+		String page = http.getPage(TWITTER_URL+"/notifications/leave.json", vars, true);
+		try {
+			return new User(new JSONObject(page), null);
+		} catch (JSONException e) {
+			throw new TwitterException(e);
+		}
+	}
+
+COM:allows a user to leave Twitter notifications for a specified screen name

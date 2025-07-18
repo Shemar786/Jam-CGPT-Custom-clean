@@ -1,0 +1,12 @@
+TDAT:   public void setSortMode(int mode) {
+    extension.setSortMode(mode);
+    AxisStyleUI asu = (AxisStyleUI) table.getExtensions().get(AxisStyleUI.ID);
+    if (asu == null)
+      return;
+    if (mode == SortRank.ASC || mode == SortRank.DESC)
+      asu.setLevelStyle(false);
+    else
+      asu.setLevelStyle(true);
+  }
+
+COM:sets the sorting mode for an extension and toggles the level style of an AxisStyleUI based on the selected mode

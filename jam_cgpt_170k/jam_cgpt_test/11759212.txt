@@ -1,0 +1,10 @@
+TDAT: 	public void mergeIn(Scenario newScenario, int peerIndexNumberFilter, double timeFilter) {
+		for (ScenarioEvent scenarioEvent : newScenario.scenarioEvents) {
+			if (scenarioEvent.getExecutionTime() > timeFilter
+					&& scenarioEvent.indexNumberMatches(peerIndexNumberFilter)) {
+				this.scenarioEvents.add(scenarioEvent);
+			}
+		}
+	}
+
+COM:merges a new scenario with the current scenario, filtering by a specific peer index number and execution time

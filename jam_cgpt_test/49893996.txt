@@ -1,0 +1,19 @@
+TDAT: 	protected boolean receive(SelectionKey sk) throws IOException {
+		boolean R = false;
+		try {
+			if (requestReceived) {
+				R = true;
+			} else if (!cio.doHandshake(sk)) {
+				R = false;
+			} else if ((cio.read() < 0) || JN_Request.isComplete(cio.getReadBuf())) {
+				rbb = cio.getReadBuf();
+				R = (requestReceived = true);
+			} else
+				R = false;
+		} finally {
+			Assert.postcondition("valid_state", R && requestReceived);
+		}
+		return R;
+	}
+
+COM:receives a SelectionKey and returns a boolean based on whether or not a request has been received

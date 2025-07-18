@@ -1,0 +1,10 @@
+TDAT:     public Command getBackCommand17() {
+        if (backCommand17 == null) {//GEN-END:|456-getter|0|456-preInit
+            // write pre-init user code here
+            backCommand17 = new Command("Back", Command.BACK, 0);//GEN-LINE:|456-getter|1|456-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|456-getter|2|
+        return backCommand17;
+    }
+
+COM:returns a backCommand17 object that is either initialized or newly created with certain properties

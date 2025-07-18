@@ -1,0 +1,10 @@
+TDAT: 	public boolean isMinusOne() {
+	    if( string.size() != 1 ) return false;
+	    if( string.firstElement().size() != 2 ) return false;
+	    if( string.firstElement().elementAt( 0 ) != minus.elementAt( 0 ) )
+		return false;
+	    if( string.firstElement().elementAt( 1 ) != "1" ) return false;
+	    return true;
+	}
+
+COM:checks if a vector called "string" contains a single element that is equal to "-1"

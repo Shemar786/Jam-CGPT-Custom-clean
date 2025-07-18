@@ -1,0 +1,12 @@
+TDAT:   private void addButtonsListener(Container panel) {
+    for (int i=0; i<panel.getComponentCount(); i++) {
+      Component component = panel.getComponent(i);
+      if (component instanceof JButton) {
+        JButton button = (JButton) component;
+        button.addActionListener(this);
+        button.addKeyListener(this);
+      }
+    }
+  }
+
+COM:adds action and key listeners to all buttons within a given container

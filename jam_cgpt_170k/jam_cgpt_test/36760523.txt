@@ -1,0 +1,10 @@
+TDAT: 	public void removeSelf() throws IOException {
+		//TODO Check if transactions are active. If so abort them.
+		while (this.getDataDictionary().getStoredRelations().size() > 0) {
+			Iterator<StoredRelation> iterator = this.getDataDictionary().getStoredRelations().values().iterator();
+			StoredRelation storedRelation = iterator.next();
+			this.removeStoredRelation(storedRelation);
+		}
+	}
+
+COM:removes all stored relations and throws an IOException if any active transactions are detected

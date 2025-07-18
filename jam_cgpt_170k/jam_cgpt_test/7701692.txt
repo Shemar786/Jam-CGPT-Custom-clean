@@ -1,0 +1,13 @@
+TDAT:     public void writeSocketAddress(SocketAddress addr) throws IOException {
+        if (addr instanceof InetSocketAddress
+                && !((InetSocketAddress)addr).isUnresolved()) {
+            InetSocketAddress iaddr = (InetSocketAddress)addr;
+            
+            writeInetAddress(iaddr.getAddress());
+            writePort(iaddr.getPort());
+        } else {
+            writeByte(0);
+        }
+    }
+
+COM:writes the SocketAddress to the output stream while checking if the address is an InetSocketAddress and resolving the address if its not a previously resolved InetSocketAddress

@@ -1,0 +1,12 @@
+TDAT: 
+	public boolean greater(VeecheckVersion currentVersion) {		
+		if (currentVersion.versionCode != null && this.versionCode != null
+				&& Long.parseLong(currentVersion.versionCode) < Long.parseLong(this.versionCode))
+			return true;
+		if (currentVersion.versionName != null && this.versionName != null 
+				&& !currentVersion.versionName.equals(this.versionName))
+			return true;
+		return false;
+	}
+
+COM:compares the version code and version name of two VeecheckVersion objects and returns true if the current version is greater than the other version

@@ -1,0 +1,9 @@
+TDAT: 	private void createRuntimePart() {
+		String actorname = "a1";
+		graph.addIEdge(actorname, "Actor");
+		graph.addIEdge(actorname+"behaviorExecution", "BehaviorExecution");
+		graph.addEdge(actorname, "execution", actorname+"behaviorExecution");
+		graph.addEdge(actorname+"behaviorExecution", "host", actorname);
+	}
+
+COM:creates a new runtime part for an "Actor" object and adds it to a "BehaviorExecution" object in a graph data structure

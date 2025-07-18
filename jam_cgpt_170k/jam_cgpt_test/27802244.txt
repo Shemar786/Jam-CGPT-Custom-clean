@@ -1,0 +1,12 @@
+TDAT:   public boolean intersects( Point2D pt ) {
+	  double rectSize = 20.0;
+		for ( int i = 0; i < drawPoints.length-1; i++ ) {
+			Rectangle2D rect = new Rectangle2D.Double( pt.getX()-rectSize/2, pt.getY()-rectSize/2, rectSize,rectSize);
+			Line2D l = new Line2D.Double( drawPoints[i], drawPoints[i+1] );
+			if ( l.intersects( rect ) ) 
+				return true;
+		}
+		return false;
+	}
+
+COM:checks if a point intersects with a line created by a set of points within a rectangular area

@@ -1,0 +1,14 @@
+TDAT:   public void setParameter(String val) {
+
+      if ((val == null || "".equals(val))
+      && (parameter == null || "".equals(parameter))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(parameter)) || (updateStatus == NULL_INT_VALUE)) {
+           parameter = val;
+           setUpdateStatus(UPDATED);
+      }
+  }
+
+COM:sets a parameter value and updates its status if it has changed

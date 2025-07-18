@@ -1,0 +1,12 @@
+TDAT:   protected void createChecklistItem() {
+    if (mListRowId != null) {
+      Intent intent = new Intent(this, ChecklistItemEdit.class);
+      intent.putExtra(ChecklistDBAdapter.KEY_LIST_ID, mListRowId);
+      startActivityForResult(intent, ACTIVITY_CREATE);
+    }
+    else {
+      Log.e(TAG, "Trying to add item to non-existing checklist.");
+    }
+  }
+
+COM:creates a checklist item by starting an activity, but only if the list row ID is not null

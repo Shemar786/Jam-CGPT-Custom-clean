@@ -1,0 +1,17 @@
+TDAT:     private void notifyListeners() {
+        String message = getMessage();
+
+        // Workaround
+        // strips trailing carriage return and line feed
+        if (message.endsWith( SYSTEM_CR )) {
+            message = message.substring( 0, message.length() - SYSTEM_CR.length() );
+        }
+
+        if (message.length() > 0) {
+            for (ISendMessagelListener l : listeners) {
+                l.notifySendMessage( message );
+            }
+        }
+    }
+
+COM:notifies all listeners with a message after stripping trailing carriage return and line feed

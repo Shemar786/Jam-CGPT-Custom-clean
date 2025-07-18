@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField() {
+        if (textField == null) {//GEN-END:|438-getter|0|438-preInit
+            // write pre-init user code here
+            textField = new TextField("Descuento Cr\u00E9dito que Solicita:", null, 32, TextField.DECIMAL);//GEN-LINE:|438-getter|1|438-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|438-getter|2|
+        return textField;
+    }
+
+COM:retrieves a TextField object and initializes it if it hasn't been already

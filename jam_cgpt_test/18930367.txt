@@ -1,0 +1,11 @@
+TDAT:   protected void removeLogicalNameFromList(final String hierName) {
+      for (int i = 0; i < aLogicalModel.size(); i++) {
+          String listName = (String) aLogicalModel.get(i);
+          if (listName.startsWith(hierName)) {
+              aLogicalModel.remove(i);
+              break;
+          }
+      }
+  }
+
+COM:removes a string from a list if it starts with the input string

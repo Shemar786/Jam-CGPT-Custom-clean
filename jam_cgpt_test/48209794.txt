@@ -1,0 +1,22 @@
+TDAT: 	public void addInternalFrame(JInternalFrame frame) {
+
+		boolean found = false;
+		for (int i = 0; i < this.desktopPane.getComponentCount(); i++) {
+			if (this.desktopPane.getComponent(i).getClass().equals(
+					frame.getClass())) {
+				found = true;
+			}
+		}
+		if (!found) {
+			this.desktopPane.add(frame);
+		} else {
+			frame.setVisible(true);
+		}
+		try {
+			frame.setSelected(true);
+		} catch (Exception e) {
+		}
+		this.validate();
+	}
+
+COM:adds a JInternalFrame to a desktop pane and checks if it already exists before adding it, and then selects and validates it

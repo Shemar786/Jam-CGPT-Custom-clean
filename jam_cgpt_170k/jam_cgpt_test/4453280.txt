@@ -1,0 +1,8 @@
+TDAT:     protected void firePropertyChange(String propertyName, Object oldValue, Object newValue) {
+        if (oldValue != null && newValue != null && oldValue.equals(newValue)) {
+	    return;
+        }
+        pcs.firePropertyChange(propertyName, oldValue, newValue);
+    }
+
+COM:fires a property change event if there is a change in the value of a property

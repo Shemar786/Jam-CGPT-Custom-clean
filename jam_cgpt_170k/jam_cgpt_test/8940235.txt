@@ -1,0 +1,13 @@
+TDAT:     public boolean startsWith(Ustr us, int start) {
+        prepareNext();
+        while (start-- > 0)
+            nextChar();
+        
+        for (int i = 0; us.s[base + i] != 0; i++)
+            if (s[base + offset + i] != us.s[us.base + i])
+                return false;
+        
+        return true;
+    }
+
+COM:checks whether a given string starts with a specified substring, with the starting point determined by an integer parameter

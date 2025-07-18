@@ -1,0 +1,18 @@
+TDAT: 	public void writeAxiomElementMessage(OMElement message) {
+		if (log.isInfoEnabled()) {
+			if (message != null) {
+				StreamResult result = new StreamResult(new StringWriter());
+				try {
+					AxiomUtil.prettify(message, result);
+					log.info(result.getWriter().toString());
+				}catch(Exception e) {
+					log.error("Can't write OMElement to logger", e);
+				}
+				log.info(message);
+			} else {
+				log.info("NULL");
+			}
+		}
+	}
+
+COM:writes the content of an OMElement to a log message in a pretty-printed format if the log level is info

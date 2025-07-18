@@ -1,0 +1,15 @@
+TDAT: 	public BrowsingSettings getBrowsingSettings(){
+		// look through the blocks for one with a matching header
+		BrowsingSettings settings = null;
+		for (int i = 0; i < settingsBlocks.length; i++) {
+			if (settingsBlocks[i].trim().startsWith(BrowsingSettings.class.getName())){
+				
+				settings = (BrowsingSettings)addProps(new BrowsingSettings(),settingsBlocks[i]);
+				break;
+			}
+			
+		}
+		return settings;
+	}
+
+COM:returns an instance of BrowsingSettings after searching through an array of settingsBlocks for one with a matching header

@@ -1,0 +1,25 @@
+TDAT: 	public void addFile(String filename) {
+		try {
+			clearMainSection();
+			InputStream is = new FileInputStream(filename);
+			InputStreamReader isr = new InputStreamReader(is);
+			BufferedReader br = new BufferedReader(isr);
+			boolean isMainSection = true;
+			String line = br.readLine();
+			while (line != null) {
+				ManifestLine ml = new ManifestLine(line);
+				if (ml.isEmptyLine())
+					isMainSection = false;
+				if (isMainSection)
+					manifestMainSection.add(ml);
+				else
+					manifestIndividualSection.add(ml);
+				line = br.readLine();
+			}
+			br.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:adds a file to the program's manifest, separating the file into the main section and individual sections

@@ -1,0 +1,7 @@
+TDAT: 	public void harvest(Map<String, String> params) throws Exception {
+		Map<String, Object> paramsCopy = new HashMap<String, Object>();
+		paramsCopy.putAll(params);
+		harvest(params.get("name"), params.get("url"), params.get("uddiKey"), Constants.BASE_DIR.concat(File.separator).concat(params.get("directory")), paramsCopy);
+	}
+
+COM:harvests data from a given URL and saves it to a specified directory, based on the parameters provided in a map, while throwing an exception if there are errors

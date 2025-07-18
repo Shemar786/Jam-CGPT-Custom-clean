@@ -1,0 +1,12 @@
+TDAT: 	private StaffAdvance setStaffAdvanceForm(final Integer staffYearlyId, final ActionForm form) throws Exception {
+				
+    	StaffAdvance advance = StaffAdvanceHelper.getStaffAdvance(staffYearlyId, principal, dbSession);
+		
+		//add staff advance and seasonal info to form
+		((StaffAdvanceForm) form).setStaffAdvance(advance);
+		((StaffAdvanceForm) form).setStaffYearly(advance.getStaffYearly());
+		
+		return advance;
+	}
+
+COM:sets the StaffAdvance and StaffYearly object values in the input ActionForm using the provided staffYearlyId and returns the StaffAdvance object

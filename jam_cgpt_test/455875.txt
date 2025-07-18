@@ -1,0 +1,12 @@
+TDAT: 	private void parseArcColHeader(String arcHeader) {
+		// tokenize the string
+		StringTokenizer arcHeaderTokens = new StringTokenizer(arcHeader, "\t");
+		int numCols = arcHeaderTokens.countTokens();
+		arcHeaderMap = new HashMap<String, Integer>();
+		// copy cols into map
+		for (int n = 0; n < numCols; n++) {
+			arcHeaderMap.put(arcHeaderTokens.nextToken(), Integer.valueOf(n));
+		}
+	}
+
+COM:parses and maps the column headers of an input string

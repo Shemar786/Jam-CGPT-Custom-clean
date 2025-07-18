@@ -1,0 +1,9 @@
+TDAT:     public void service() throws ServletException, IOException {
+        if (isFilterActive()) {
+            getFilter().doFilter( getRequest(), getResponse(), getFilterChain() );
+        } else {
+            getServlet().service( getRequest(), getResponse() );
+        }
+    }
+
+COM:checks if a filter is active and either processes the request through the filter or directly sends the request to the servlet for service

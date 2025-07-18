@@ -1,0 +1,15 @@
+TDAT: 	private void createTree(Composite container, FormToolkit toolkit) {
+		TreePart treePart = getTreePart();
+		createViewerPartControl(container, SWT.MULTI, 2, toolkit);
+
+		fTocTree = treePart.getTreeViewer();
+		fTocTree.setContentProvider(new TocContentProvider());
+		fTocTree.setLabelProvider(PDEPlugin.getDefault().getLabelProvider());
+
+		PDEPlugin.getDefault().getLabelProvider().connect(this);
+
+		createTreeListeners();
+		initDragAndDrop();
+	}
+
+COM:creates a Tree Viewer with certain content and label providers, initializes listeners and drag-and-drop functionality

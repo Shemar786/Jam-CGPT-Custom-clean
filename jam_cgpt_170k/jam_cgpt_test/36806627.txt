@@ -1,0 +1,23 @@
+TDAT: 	public ContactItem findNextCoord(String brokenID)
+	{		
+		ContactItem minContact = null;
+		
+		for(ContactItem ci : ParserDriver.ReadContacts(Constants.contactXML))
+		{	
+			if(ci.getID().equalsIgnoreCase(brokenID))
+			{
+				continue;
+			}
+			if(minContact == null)
+			{
+				minContact = ci;
+			}
+			else if ( (Integer.valueOf(minContact.getID()) > Integer.valueOf(ci.getID())) ) 
+			{
+				minContact = ci;
+			}
+		}
+		return minContact;
+	}
+
+COM:searches for the ContactItem with the next smallest ID number in a list of contacts, excluding the ContactItem with an ID matching a given broken ID

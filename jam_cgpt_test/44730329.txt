@@ -1,0 +1,17 @@
+TDAT: 	public SessionContainer create(String clientID, String applicationID) {
+		
+		Map<String, SessionContainer> sessionMap = getSessionMap(clientID);
+		
+		
+		long idNum = idCount++;
+		String id = idNum + "-" + System.currentTimeMillis();
+		
+		SessionContainer store = new SessionContainer(id, clientID);
+		store.setApplicationId(applicationID);
+		
+		sessionMap.put(id, store);
+		
+		return store;
+	}
+
+COM:creates a new session for a specific client and application, generates a unique ID for the session, saves it to a session map and returns the session container

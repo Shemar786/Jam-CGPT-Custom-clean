@@ -1,0 +1,12 @@
+TDAT:     public boolean deleteUser(String UserID) throws SQLException {
+        CallableStatement cs = dc.getConnection().prepareCall("{call deleteUser(?)}");
+        cs.setString(1, UserID);
+        int result = cs.executeUpdate();
+        if (result != 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+COM:deletes a user from a database and returns true if the deletion was successful, otherwise false

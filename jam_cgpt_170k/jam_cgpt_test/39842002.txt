@@ -1,0 +1,16 @@
+TDAT:     public void testSetSimpleString() {
+
+        try {
+            String oldValue = (String) dynaForm.get("stringProperty");
+            String newValue = oldValue + " Extra Value";
+            dynaForm.set("stringProperty", newValue);
+            assertEquals("Matched new value",
+                    newValue,
+                    (String) dynaForm.get("stringProperty"));
+        } catch (Throwable e) {
+            fail("Exception: " + e);
+        }
+
+    }
+
+COM:This is a JUnit test method that sets a new value to a dynamic form's string property and asserts that the new value matches the expected value

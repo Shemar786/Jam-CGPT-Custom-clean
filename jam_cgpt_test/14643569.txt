@@ -1,0 +1,15 @@
+TDAT:     public ChunkMetaData getChunk(int position) {
+        ChunkMetaData chunkMD = null;
+
+        for (Iterator iter = this.fChunks.iterator(); iter.hasNext();) {
+            ChunkMetaData element = (ChunkMetaData) iter.next();
+            if (position == element.getPosition()) {
+                chunkMD = element;
+                break;
+            }
+        }
+
+        return chunkMD;
+    }
+
+COM:retrieves a ChunkMetaData object from a collection of chunks based on its position

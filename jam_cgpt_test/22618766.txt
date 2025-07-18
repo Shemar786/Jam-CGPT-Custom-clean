@@ -1,0 +1,11 @@
+TDAT: 	public Element getSelectInput() {
+		// prtln ("getSelectInput() with " + xpath);
+		Element input = df.createElement("html__select")
+				.addAttribute("name", "${formBean}")
+				.addAttribute("property", "valueOf(" + xpath + ")");
+		Element options = input.addElement("html__optionsCollection")
+				.addAttribute("property", "enumerationOptions(" + normalizedXPath + ")");
+		return input;
+	}
+
+COM:returns an HTML select input element with certain attributes and options based on input parameters

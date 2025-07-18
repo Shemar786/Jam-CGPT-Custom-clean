@@ -1,0 +1,9 @@
+TDAT: 	public void testMarkerAttrNull() throws Exception {
+		IRodinFile rodinFile = createRodinFile("P/x.test");
+		RodinTestRoot root = (RodinTestRoot) rodinFile.getRoot();
+		IInternalElement ne = createNEPositive(root, "ne1", null);
+		rodinFile.save(null, false);
+		createMarkerPositive(ne, (IAttributeType) null, TestProblem.err0);
+	}
+
+COM:creates a Rodin test file, adds a new internal element with null attribute, saves the file, and creates a marker with a null attribute

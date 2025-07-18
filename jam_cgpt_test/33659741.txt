@@ -1,0 +1,10 @@
+TDAT:     public void init(Context ctx, String queueName) throws NamingException, JMSException {
+        qconFactory = (QueueConnectionFactory) ctx.lookup(QUEUE_CONNECTION_FACTORY);
+        qcon = qconFactory.createQueueConnection();
+        qsession = qcon.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
+        queue = (Queue) ctx.lookup(queueName);
+        qsender = qsession.createSender(queue);
+        //qcon.start();
+    }
+
+COM:initializes a connection to a JMS queue using the provided context and queue name

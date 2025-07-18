@@ -1,0 +1,22 @@
+TDAT: 	protected List getKeywords() {
+		ArrayList result = new ArrayList();
+		XMLNode parent = xmlRecord.getNode("record:0.general:0");
+		int num = parent.likeChildren("keywords");
+		if (num > 0) {
+			StringBuffer key = new StringBuffer();
+			for (int i = 0; i < num; i++) {
+				key.delete(0, key.length());
+				key.append("record:0.general:0.keywords:")
+						.append(Integer.toString(i))
+						.append(".langstring:0");
+				String value = getStringValue(key.toString());
+				if (value != null) {
+					//CatalogTools.insertToList(result, value);
+					result.add(value);
+				}
+			}
+		}
+		return result;
+	}
+
+COM:retrieves a list of keywords from an XML record, adding each keyword to an ArrayList and returning the list

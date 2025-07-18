@@ -1,0 +1,18 @@
+TDAT:     public void testIsTransaction() throws org.omg.CORBA.UserException {
+        stream.writeVerbose("Get the current object'");
+        Current current = CurrentHelper.narrow( _orb.resolve_initial_references("TransactionCurrent") );
+
+        stream.writeVerbose("Commit the transaction");
+        try
+        {
+            current.commit( false );
+        }
+        catch ( NoTransaction e )
+        {
+            return;
+        }
+
+        fail("Transaction not commited");
+    }
+
+COM:tests whether a transaction has been committed or not

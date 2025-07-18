@@ -1,0 +1,17 @@
+TDAT:     public Date getEndDate() {
+        Date endDate;
+        if (hasChildren()) {
+            refreshDateRanges();
+            endDate = latestChildEndDate;
+        } else {
+            endDate = DateUtil.getEndDate(startDate, (int) Math.ceil(work),
+                                          Configuration.getConfiguration(project).isWorkWeekends());
+            if (endDate.before(startDate)) {
+                endDate = startDate;
+            }
+        }
+
+        return endDate;
+    }
+
+COM:returns the end date of a task, either by using the latest child task end date or by calculating it based on the start date, work duration, and project configuration

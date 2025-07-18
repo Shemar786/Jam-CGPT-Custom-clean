@@ -1,0 +1,13 @@
+TDAT:     public Object render(Reader xul_reader) {
+        root = null;
+        try {
+            root = Parser.getInstance().parse(xul_reader, idmap);
+            mapMembers(this);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            e.printStackTrace();
+        }
+        return root;
+    }
+
+COM:renders a XUL document by parsing it and returning its root element

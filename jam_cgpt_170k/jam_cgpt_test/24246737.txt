@@ -1,0 +1,20 @@
+TDAT: 		public Rectangle2D getBounds2D() {
+            float x, y, w, h;
+            if (x1 < x2) {
+                x = x1;
+                w = x2 - x1;
+            } else {
+                x = x2;
+                w = x1 - x2;
+            }
+            if (y1 < y2) {
+                y = y1;
+                h = y2 - y1;
+            } else {
+                y = y2;
+                h = y1 - y2;
+            }
+            return new Rectangle2D.Float(x, y, w, h);
+		}
+
+COM:calculates the bounds of the object as a Rectangle2D and returns it

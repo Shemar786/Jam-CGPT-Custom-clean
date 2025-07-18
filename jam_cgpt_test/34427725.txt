@@ -1,0 +1,11 @@
+TDAT:     private void displayDraft(SWGSchematic schem) {
+        draftTitle.setTitle(schem.getName());
+        draftCategory.setText(draftDataCategory(schem));
+        draftData.setText(draftData(schem));
+        draftResAndComps(schem);
+        draftExpGroups(schem);
+        draftMisc.setText(draftMisc(schem));
+        draftPanel.repaint();
+    }
+
+COM:displays a draft of a SWGSchematic object by setting various components with corresponding data

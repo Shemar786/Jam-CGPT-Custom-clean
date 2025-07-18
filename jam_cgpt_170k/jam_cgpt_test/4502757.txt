@@ -1,0 +1,21 @@
+TDAT: 	public boolean deactivate() {
+		if (!this.isActive())
+			return true;
+		if (this.isInitialized) {
+			FireMonitoringServiceStub.UpdateFireSprinklerStatus msg = new FireMonitoringServiceStub.UpdateFireSprinklerStatus();
+			msg.setSchool(this.SCHOOL_PROFILE_SERVICE_ADDRESS);
+			msg.setIsActivated(false);
+
+			try {
+				this.active = false;
+				this.fireMonitoringService.updateFireSprinklerStatus(msg);
+				this.schoolProfileService.waterSprinklerDeactivated();
+				return this.active;
+			} catch (RemoteException e) {
+				log.error(e.getMessage(), e);
+			}
+		}
+		return this.active;
+	}
+
+COM:deactivates a fire sprinkler system in a school if it is currently active and initialized, and returns the new status of the system

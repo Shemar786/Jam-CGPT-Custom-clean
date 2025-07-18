@@ -1,0 +1,14 @@
+TDAT:    protected EventInfo getEventInfo(String id) {
+      EventInfo einfo = null;
+
+      if ((eventInfoMap != null) && (eventInfoMap.containsKey(id))) {
+         einfo = (EventInfo) eventInfoMap.get(id);
+      } else {
+         logCat.error("::getEventInfo - event having id [" + id
+                      + "] is not registered into the factory, returning a NULL event");
+      }
+
+      return einfo;
+   }
+
+COM:retrieves the EventInfo object associated with a given ID from a map, or returns null if the map does not contain that ID

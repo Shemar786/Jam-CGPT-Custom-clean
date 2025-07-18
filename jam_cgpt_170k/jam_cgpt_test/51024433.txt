@@ -1,0 +1,19 @@
+TDAT: 		public void init(Collection<EdgeMappingDescriptor> descriptors) {
+			id2descriptor.clear();
+			cc2descriptorList.clear();
+			for (EdgeMappingDescriptor d: descriptors) {
+				String id = d.getId();
+				id2descriptor.put(id,d);
+				
+				String ccId = d.getConceptClasses()[0];
+				ArrayList<EdgeMappingDescriptor> list = cc2descriptorList.get(ccId);
+				if (list == null) {
+					list = new ArrayList<EdgeMappingDescriptor>();
+					cc2descriptorList.put(ccId, list);
+				}
+				list.add(d);
+			}
+			setFocus(getCurrentTreeSelection());
+		}
+
+COM:initializes a collection of EdgeMappingDescriptors by clearing out previous data and populating it with new elements from the input collection, before setting the focus to the current tree selection

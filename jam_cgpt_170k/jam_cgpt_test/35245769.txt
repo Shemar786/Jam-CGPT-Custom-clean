@@ -1,0 +1,10 @@
+TDAT:     public int getTotalCheckedOut() throws SQLException {
+        CallableStatement cs = dc.getConnection().prepareCall("{call getTotalCheckedOut()}");
+        ResultSet rs = cs.executeQuery();
+        if (rs.next()) {
+            return rs.getInt("NumberCheckedOut");
+        }
+        return 0;
+    }
+
+COM:retrieves the total number of checked-out items from a database using a stored procedure call and returns it as an integer value, but may throw an SQLException

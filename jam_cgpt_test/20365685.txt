@@ -1,0 +1,14 @@
+TDAT:     public String toPostfixString() {
+        StringBuilder buffer = new StringBuilder();
+        boolean separator = false;
+        for ( ExpressionComponent component : components ) {
+            if ( separator ) {
+                buffer.append( ' ' );
+            }
+            buffer.append( component.getPostfixSymbol() );
+            separator = true;
+        }
+        return buffer.toString();
+    }
+
+COM:takes a set of mathematical expressions and returns a string in postfix notation format

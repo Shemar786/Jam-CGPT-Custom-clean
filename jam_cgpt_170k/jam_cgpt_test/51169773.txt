@@ -1,0 +1,15 @@
+TDAT:   synchronized public void setSeed(long value) {
+    super.setSeed(value);
+
+    int seed = (int) value;
+    values = new int[MAX];
+
+    for (index = 0; index < MAX; index++) {
+      values[index] = seed & MASK;
+      seed = (MULTIPLIER * seed) + 1;
+      values[index] |= (seed & MASK) >>> 16;
+      seed = (MULTIPLIER * seed) + 1;
+    }
+  }
+
+COM:sets the seed value for a random number generator and generates a set of initialized values based on that seed

@@ -1,0 +1,19 @@
+TDAT: 	public boolean add(T word){
+		if (contains(word.toString())){
+			T t = fastLookup.get(word.toString());
+			try {
+				dict.put(word, dict.get(word)+1);
+				return true;
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return true;
+			}
+		} else {
+			dict.put(word, 1);
+			fastLookup.put(word.toString(), word);
+			return false;
+		}
+	}
+
+COM:adds a generic type 'word' to the dictionary and returns true if it already exists and false if it doesn't

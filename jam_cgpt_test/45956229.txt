@@ -1,0 +1,11 @@
+TDAT:   public void printOrganisation(Organization organization, Writer writer) {
+    printUnits(organization.getUnit(), writer, 0);
+    try {
+      writer.write("\n");
+      writer.write("Total units in organisation tree: " + unitCount);
+    } catch (IOException e) {
+      logger.error("Failed to write out content", e);
+    }
+  }
+
+COM:prints the units of an organization and the total number of units in the organization tree using a provided writer

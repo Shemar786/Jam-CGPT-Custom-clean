@@ -1,0 +1,12 @@
+TDAT: 		public void setKeys(int part, SimValue key) {
+			if (this.keys != null) {
+				if (part >= this.keys.length) {
+					SimValue[] keys = new SimValue[part + 1];
+					System.arraycopy(this.keys, 0, keys, 0, this.keys.length);
+					this.keys = keys;
+				}
+				this.keys[part] = key;
+			}
+		}
+
+COM:sets a specified key value at a given index position in an array, resizing the array if necessary

@@ -1,0 +1,12 @@
+TDAT:     private File backupFile(File file) throws IOException {
+        if (!file.exists()) {
+            return null;
+        }
+        String backupName = file.getAbsolutePath() + "~";
+        File backup = new File(backupName);
+        FileUtils.copyFile(file, backup);
+        file.delete();
+        return backup;
+    }
+
+COM:creates a backup file of the input file and returns the backup file, while also deleting the original file

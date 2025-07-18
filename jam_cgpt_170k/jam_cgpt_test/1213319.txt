@@ -1,0 +1,20 @@
+TDAT: 	public void shuffleLibrary() {
+		String logForMe = "You shuffle your library.";
+		String logForOthers = Cardpanda.clientModel.getSessionID().getName() + "'s library has been shuffled.";
+
+		switch(sessionID) {
+			case P1:
+				p1lib.shuffle();
+				NoteTip.get().log(logForMe, logForOthers);
+				break;
+
+			case P2:
+				p2lib.shuffle();
+				NoteTip.get().log(logForMe, logForOthers);
+				break;
+
+			default: // do nothing
+		}
+	}
+
+COM:shuffles the library of either player 1 or player 2 based on the input session ID, and logs the action for both the current session ID and the other player

@@ -1,0 +1,16 @@
+TDAT:     public int compare(Object arg0, Object arg1) {
+        PooledObject obj1 = (PooledObject) arg0;
+        PooledObject obj2 = (PooledObject) arg1;
+
+        long         diff = obj1.getLastUsedTime() - obj2.getLastUsedTime();
+
+        if (diff == 0L) {
+            return 0;
+        } else if (diff > 0L) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+
+COM:compares the last used times of two PooledObject instances and returns 1 if the first object's last used time is greater, 0 if they are equal, and -1 if the second object's last used time is greater

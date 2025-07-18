@@ -1,0 +1,14 @@
+TDAT:   private String getActionURL() {
+    String action = getAction();
+    if (action.charAt(0) == '/') {
+      HttpServletRequest request =
+        (HttpServletRequest) pageContext.getRequest();
+      action = request.getContextPath() + action;
+    }
+    HttpServletResponse response =
+      (HttpServletResponse) pageContext.getResponse();
+    action = response.encodeURL(action);
+    return action;
+  }
+
+COM:returns a string representing the action URL for a web page

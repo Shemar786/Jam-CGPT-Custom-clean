@@ -1,0 +1,11 @@
+TDAT: 	private void buildRedirectElement(Element extensionElement, Redirect redirect) {
+		Element operationElement = new Element(ElementConst.OPERATIONINST);
+		operationElement.setText(redirect.getValue());
+		Element actionElement = new Element(ElementConst.ACTION);
+		actionElement.setAttribute(ElementConst.ATTRIBUTE_OPERATION_REDIRECT,Boolean.TRUE.toString());
+		actionElement.setAttribute(ElementConst.ATTRIBUTE_STEP_NUMBER, redirect.getStepLabel().trim());
+		operationElement.addContent(actionElement);
+		extensionElement.addContent(operationElement);
+	}
+
+COM:This is a Java method that builds and adds a redirect element to an extension element

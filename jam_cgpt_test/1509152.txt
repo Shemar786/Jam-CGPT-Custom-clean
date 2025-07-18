@@ -1,0 +1,16 @@
+TDAT:     public void assignNewMontage() {
+        clear();
+        downPanel.add(Ok);
+//        downPanel.add(jlAssignTo);
+//        downPanel.add(jbM1);
+//        downPanel.add(jbM2);
+//        downPanel.add(jbM3);
+//        downPanel.add(jbM4);
+//        downPanel.add(cancelButton);
+        updateTexts();
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
+COM:assigns a new montage by performing some actions and updating certain components of the GUI

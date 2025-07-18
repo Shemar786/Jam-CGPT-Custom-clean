@@ -1,0 +1,17 @@
+TDAT:     public void setChunkExtension(String chunkExtension) {
+        this.chunkExtension = chunkExtension;
+        if (chunkExtension != null) {
+            try {
+                chunkExtensionBytes = chunkExtension.getBytes("ASCII");
+            }
+            catch (UnsupportedEncodingException uee) {
+                // this should not be possible
+                uee.printStackTrace();
+                // fallback
+                chunkExtensionBytes = chunkExtension.getBytes();
+            }
+        }
+        else chunkExtensionBytes = null;
+    }
+
+COM:sets the chunk extension and converts it to bytes using ASCII encoding if possible, and if not, falls back to default encoding

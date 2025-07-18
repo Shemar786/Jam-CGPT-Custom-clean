@@ -1,0 +1,19 @@
+TDAT: 	public double stdDev(double average) {
+		if (this.values == null) return Double.NaN;
+
+		double sumsqdev = 0.0;
+		int count = 0;
+		for (double value : this.values) {
+			if (!Double.isNaN(value)) {
+				final double dev = (value - average);
+				sumsqdev += (dev * dev);
+				++count;
+			}
+		}
+
+		if (count == 0) return Double.NaN;
+		if (count == 1) return 0.0;
+		return Math.sqrt(sumsqdev / (count - 1));
+	}
+
+COM:calculates the standard deviation of an array of values, given the average value

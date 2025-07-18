@@ -1,0 +1,10 @@
+TDAT:   private void setKeyBindings(final String api) {
+    final KeyBindingManager keyboard = KeyBindingManager.getKeyBindingManager();
+
+    keyboard.set("forward", KeyInput.KEY_W);
+    keyboard.set("backward", KeyInput.KEY_S);
+    keyboard.set("turnRight", KeyInput.KEY_D);
+    keyboard.set("turnLeft", KeyInput.KEY_A);
+  }
+
+COM:sets key bindings for specific actions using the KeyBindingManager

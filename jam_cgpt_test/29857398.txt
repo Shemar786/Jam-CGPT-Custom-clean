@@ -1,0 +1,16 @@
+TDAT:   protected String formatString(String value) {
+    int	code = -1;	// cannot be null
+
+    for (int i = 0; code == -1 && i < codes.length; i++) {
+      if (value == codes[i]) {
+	code = i;
+      }
+    }
+    if (code == -1) {
+      throw new InconsistencyException("bad code value " + value);
+    }
+
+    return formatCode(code);
+  }
+
+COM:takes a string value, searches for a matching code in an array, and then returns a formatted version of the code

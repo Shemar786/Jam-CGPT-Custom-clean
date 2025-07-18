@@ -1,0 +1,17 @@
+TDAT:     public Dimension preferredLayoutSize(Container target) {
+        synchronized (target.getTreeLock()) {
+            Dimension d = new Dimension(0, 0);
+
+            addPreferredSize(d, east);
+            addPreferredSize(d, west);
+            addPreferredSize(d, center);
+
+            Insets insets = target.getInsets();
+            d.width += insets.left + insets.right;
+            d.height += insets.top + insets.bottom;
+
+            return d;
+        }
+    }
+
+COM:calculates the preferred layout size of a container based on its contents and insets, using the synchronized tree lock

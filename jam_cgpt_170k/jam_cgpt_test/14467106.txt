@@ -1,0 +1,9 @@
+TDAT:   public boolean areDirectedAdjacent(Constituent oc, Constituent dc) {
+    for (Iterator i = relations.iterator(); i.hasNext();) {
+      Relation r = (Relation)i.next();
+      if (r.getOrigin() == oc && r.getDestination() == dc) return true;
+    }
+    return false;
+  }
+
+COM:checks if two Constituent objects are adjacent and directed by iterating through a list of Relation objects

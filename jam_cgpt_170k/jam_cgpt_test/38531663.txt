@@ -1,0 +1,11 @@
+TDAT:     public void testGetUrlString() {
+        System.out.println("testGetUrlString");
+        
+        // TODO add your test code below by replacing the default call to fail.
+        
+        String urlStr = this.handler.getUrlString();
+        assertNotNull("urlStr was expected",urlStr);
+        assertEquals("unexpected urlString",testUrl.toExternalForm(),urlStr);
+    }
+
+COM:This is a JUnit test method that checks if the getUrlString() method in the class being tested returns the expected URL string

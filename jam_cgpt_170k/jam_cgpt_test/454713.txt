@@ -1,0 +1,13 @@
+TDAT: 	public MovieSettings getMovieSettings(){
+//		 look through the blocks for one with a matching header
+		MovieSettings settings = null;
+		for (int i = 0; i < settingsBlocks.length; i++) {
+			if (settingsBlocks[i].trim().startsWith(MovieSettings.class.getName())){
+				settings = (MovieSettings)addProps(new MovieSettings(),settingsBlocks[i]);
+				break;
+			}
+		}
+		return settings;
+	}
+
+COM:retrieves movie settings by looking through the blocks for one with a matching header

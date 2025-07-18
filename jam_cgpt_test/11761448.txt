@@ -1,0 +1,12 @@
+TDAT:     public FingerDescriptor selectPeer(){
+        switch(policy){
+            case RAND:
+                return this.getView().get((int)(Math.random()*this.getView().size()));
+            case OLD:
+                return this.ageManager.getOldestDescriptor(this.view);
+            default:
+                return null; //no defined policy
+        }
+    }
+
+COM:selects a peer based on a predefined policy, such as random selection or selection of the oldest descriptor

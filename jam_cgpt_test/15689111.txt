@@ -1,0 +1,10 @@
+TDAT:     public MethodInfo addInitializer() {
+        MethodDesc md = MethodDesc.forArguments(null, null);
+        Modifiers af = new Modifiers();
+        af.setStatic(true);
+        MethodInfo mi = new MethodInfo(this, af, "<clinit>", md);
+        mMethods.add(mi);
+        return mi;
+    }
+
+COM:adds an initializer method to a MethodInfo object and returns it

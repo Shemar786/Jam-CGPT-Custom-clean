@@ -1,0 +1,16 @@
+TDAT: 	private void decideCompose(Attribute data, StringBuffer clause) {
+		Object o = data.getValue();
+		if (o instanceof Number) {
+			composeNumber((Number) o, clause);
+		} else if (o instanceof Boolean) {
+			composeBoolean((Boolean) o, clause);
+		} else if (o instanceof String) {
+			composeString((String) o, clause);
+		} else {
+			composeObject(o, clause);
+		}
+		clause.append(data.isDoIndex());
+		clause.append(").\n");
+	}
+
+COM:A method that decides how to compose a clause based on the type of the data object and appends it to a StringBuffer

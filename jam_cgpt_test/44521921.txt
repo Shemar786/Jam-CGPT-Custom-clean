@@ -1,0 +1,15 @@
+TDAT: 	private Thing sortZGetFirst(Thing top) {
+		if (top.next == null)
+			return top;
+		top.next = sortZGetFirst(top.next);
+
+		if (top.getZ() <= top.next.getZ()) {
+			return top;
+		}
+        Thing t = top.next;
+        top.next = t.next;
+        t.next = sortZGetFirst(top);
+        return t;
+	}
+
+COM:sorts a linked list of "Thing" objects by their Z value and returns the first element

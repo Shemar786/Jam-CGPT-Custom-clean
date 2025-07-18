@@ -1,0 +1,13 @@
+TDAT: 	public double precision(SortedSet<String> retrieved) {
+		if (retrieved.size() == 0) {
+			return 0.0d;
+		}
+		SortedSet<String> retrievedClean = new TreeSet<String>(retrieved);
+		retrievedClean.removeAll(posTrain);
+		retrievedClean.removeAll(negTrain);
+
+		int posAsPos = Helper.intersection(retrievedClean, getPosTest()).size();
+		return ((double) posAsPos) / ((double) retrievedClean.size());
+	}
+
+COM:calculates precision by measuring the ratio of relevant results retrieved to total results retrieved

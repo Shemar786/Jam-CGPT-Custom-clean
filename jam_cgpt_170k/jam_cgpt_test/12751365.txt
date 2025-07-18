@@ -1,0 +1,19 @@
+TDAT: 	public boolean connect(String url, boolean cache,int version) {
+		ht = new Hashtable();
+		try {
+			URLConnection connection = new URL(url).openConnection();
+			connection.setUseCaches(cache);
+			connection.connect();
+			System.out.println("Content length: "+connection.getContentLength());
+			contentLength=connection.getContentLength();
+			in = connection.getInputStream();
+			loadFile(version);
+		}
+		catch (IOException e) {
+			System.out.println(e.toString());
+			return false;
+		}
+		return true;
+	}
+
+COM:connects to a URL, sets caching based on a boolean value, and returns true if successful or false if there is an IOException

@@ -1,0 +1,7 @@
+TDAT:     private boolean validateInput(java.util.List<org.hupo.psi.mi.psiscore.AlgorithmDescriptor> algorithmDescriptor, org.hupo.psi.mi.psiscore.ResultSet inputData) throws PsiscoreClientException, PsiscoreException, InvalidArgumentException{
+    	EntrySet rs = PsiTools.getInstance().getEntrySetFromInput(inputData);
+    	rs = null;
+    	return true;
+    }
+
+COM:validates input by retrieving an EntrySet from inputData and returning true

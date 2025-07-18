@@ -1,0 +1,10 @@
+TDAT: 	public void setValue(Metric value) {
+		// System.err.println(input.getElementName()+"."+value.getName() + " = "
+		// + value.doubleValue());
+		values.put(value.getName(), value);
+		if (MetricsPlugin.isWarningsEnabled() && !value.isPropagated()) {
+			checkRange(value);
+		}
+	}
+
+COM:sets a metric value and checks if the value is within a certain range if warnings are enabled

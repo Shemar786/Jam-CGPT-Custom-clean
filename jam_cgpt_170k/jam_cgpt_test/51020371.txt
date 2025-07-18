@@ -1,0 +1,15 @@
+TDAT: 		private boolean hasParent(KeyEvent e) {
+			boolean hasParent = false;
+			if (e.getSource() instanceof JComponent) {
+				JComponent c = (JComponent) e.getSource();
+				while (c.getParent() != null && c.getParent() != parent) {
+					c = (JComponent) c.getParent();
+				}
+				;
+				if (c.getParent() != null && c.getParent() == parent)
+					hasParent = true;
+			}
+			return hasParent;
+		}
+
+COM:checks if a KeyEvent object has a parent JComponent object

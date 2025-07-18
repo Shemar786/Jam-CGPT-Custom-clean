@@ -1,0 +1,17 @@
+TDAT: 	private void determineLastContact () throws MissingContactException {
+		if (m_Contacts.size() == 0) {
+			throw new MissingContactException();
+		} 
+		
+		for (Contact contact : m_Contacts) {
+			if (m_LastContact == null) {
+				m_LastContact = contact;
+			} else {
+				if (m_LastContact.getDate().before(contact.getDate())) {
+					m_LastContact = contact;
+				}
+			}
+		}
+	}
+
+COM:determines the most recent contact stored in a list of contacts, throwing a MissingContactException if the list is empty

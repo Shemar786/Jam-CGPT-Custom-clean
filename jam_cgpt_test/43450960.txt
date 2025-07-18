@@ -1,0 +1,15 @@
+TDAT:     public void startApp() {
+        initialize();
+        try {
+        	SOAPServer soapServer = MainTemperatureService.setup();
+        	soapServer.getServiceRegistry().registerPreProcessingService(this);
+    		soapServer.getServiceRegistry().registerPostProcessingService(this);
+    		MainTemperatureService.startHTTPServer(soapServer);
+    		
+    	}catch (Exception e) {
+    		e.printStackTrace();
+			textItem.setText(e.toString());
+   		}
+    }
+
+COM:initializes and starts a SOAP server for a temperature service, with pre-processing and post-processing services registered

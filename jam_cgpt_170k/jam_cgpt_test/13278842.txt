@@ -1,0 +1,14 @@
+TDAT:     private void enterNodeWaitingForInterpretation(Object node) {
+        nodesWaitingForInterpretation.push(node);
+        dl.print(1, "\nnodesWaitingForInterpretation.push ");
+
+        if (node == NULL_SCNode) {
+            dl.print(1, "null \n");
+        } else {
+            dl.print(1, 
+                     Registry.nodeType[((SCNode) node).typeID].getTypeName() + 
+                     "\n");
+        }
+    }
+
+COM:adds a node to a stack and prints information about the node's type

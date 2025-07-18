@@ -1,0 +1,9 @@
+TDAT:     protected void fireValueChanged(int index0, int index1) {
+        ListSelectionEvent event = new ListSelectionEvent(this, index0, index1, getValueIsAdjusting());
+        EventListener[] listeners = listenerList.getListeners(ListSelectionListener.class);
+        for (int i = listeners.length-1; i>=0; i--) {
+            ((ListSelectionListener)listeners[i]).valueChanged(event);
+        }
+    }
+
+COM:fires a ListSelectionEvent to the registered ListSelectionListeners

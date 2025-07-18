@@ -1,0 +1,13 @@
+TDAT: 	public void setForeground(Color foreground) {
+		copyrightField.setForeground(foreground);
+		statusField.setForeground(foreground);
+
+		progressBar.setForeground(foreground);
+		progressField.setBorder(new CompoundBorder(new EmptyBorder(4, 0, 4, 10), new LineBorder(foreground, 1)));
+		productPanel.setBackground(foreground);
+		cancelButton.setForeground(foreground);
+		cancelButton.setBorder(new CompoundBorder(new LineBorder(foreground, 1), new EmptyBorder(0, 10, 0, 10)));
+		cancelButton.setPressedBackground(foreground);
+	}
+
+COM:sets the foreground color of several GUI elements to the specified color

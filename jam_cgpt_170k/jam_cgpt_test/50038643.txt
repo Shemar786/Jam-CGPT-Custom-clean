@@ -1,0 +1,13 @@
+TDAT:     public String reset() {
+        if (hibernateStatsImpl == null) {
+            return "The original version is already available";
+        } else {
+            setStatsImplementation(hibernateStatsImpl);
+            // loose the local reference to restore the swap logic
+            hibernateStatsImpl = null;
+            GeneralUtils.getService(SessionStatsCollector.class).deActivate();
+            return "Switched to the hibernate version";
+        }
+    }
+
+COM:resets the hibernateStatsImpl object and switches back to the original version if it has already been set

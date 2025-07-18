@@ -1,0 +1,5 @@
+TDAT: 	public void cancelEditImage(){
+		model.resetModel(NavigationEnum.ALBUM_IMAGE_PREVIEW, model.getSelectedImage().getAlbum().getShelf().getOwner(), model.getSelectedImage().getAlbum().getShelf(), model.getSelectedImage().getAlbum(), model.getSelectedImage(), model.getSelectedImage().getAlbum().getImages() );		
+	}
+
+COM:cancels the editing of an image by resetting the model with the previously selected image and its associated album information

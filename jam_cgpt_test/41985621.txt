@@ -1,0 +1,8 @@
+TDAT:     protected void PrintCurrentPos() {
+    	System.out.print("Current pos = {");
+    	System.out.print(positions[0] + ",");
+    	System.out.print(positions[1] + ",");
+    	System.out.println(positions[2] + "}");
+    }
+
+COM:prints the current position values of an object/array in the format "Current pos = {x,y,z}"

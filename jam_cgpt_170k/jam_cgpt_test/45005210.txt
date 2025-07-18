@@ -1,0 +1,16 @@
+TDAT:     private int getFreeID() {
+        int id = 0;
+        boolean found = false;
+        while (!found) {
+            found = true;
+            for (int i = 0; i < units.size(); i++) {
+                if (units.get(i).getPosId() == id) {
+                    found = false;
+                    id++;
+                }
+            }
+        }
+        return id;
+    }
+
+COM:searches for a free integer ID by comparing it with the position IDs of the elements in a list and increments the ID until it finds a free one

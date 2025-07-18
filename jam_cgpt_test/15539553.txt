@@ -1,0 +1,17 @@
+TDAT:   public void closeOutput() {
+
+    try {
+      //sends telnetprotocol logout acknowledgement
+      write(IAC);
+      write(DO);
+      write(LOGOUT);
+      //and now close underlying outputstream
+
+      m_Out.close();
+    } catch (IOException ex) {
+      log.error("closeOutput()", ex);
+      //handle?
+    }
+  }//close
+
+COM:sends a logout acknowledgement and then closes an underlying output stream

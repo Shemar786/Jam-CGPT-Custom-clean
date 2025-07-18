@@ -1,0 +1,12 @@
+TDAT: 	public void handleError(IFormComponent parent, Throwable t) {
+		String message = "An (un)expected error occured. Sorry for the inconvenience.\n"
+				+ "Please report the following text at \"mehdi.rande@tanaephis.net\":\n\n"
+				// + StringFunctions.getExceptionTraceText(t);
+				+ t.getMessage() + "\n";
+		StackTraceElement[] stack = t.getStackTrace();
+		for (int i = 0; i < stack.length; i++)
+			message += stack[i].toString() + "\n";
+		handleError(parent, message);
+	}
+
+COM:generates an error message containing the stack trace and error message of a thrown exception, and then passes the message to another method for handling

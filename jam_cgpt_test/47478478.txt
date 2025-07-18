@@ -1,0 +1,13 @@
+TDAT: 	protected boolean isInterestingFolder(IFolder folder) {
+		if (folder.getName().equals("META-INF") && folder.getParent() instanceof IProject) { //$NON-NLS-1$
+			return true;
+		}
+
+		if (folder.getName().equals("schema") && folder.getParent() instanceof IProject) { //$NON-NLS-1$
+			return true;
+		}
+
+		return false;
+	}
+
+COM:returns a boolean value indicating whether the given IFolder object is considered an interesting folder based on its name and parent

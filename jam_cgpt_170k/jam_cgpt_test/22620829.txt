@@ -1,0 +1,15 @@
+TDAT: 	private void diagnose(Standard parentStd) {
+		prtln("\nDIAGNOSE: " + parentStd.getId());
+
+		List children = parentStd.getChildren();
+		prtln("children (" + children.size() + ")");
+		for (Iterator i = children.iterator(); i.hasNext(); ) {
+			Standard childStd = (Standard) i.next();
+			if (childStd == null)
+				prtln("NULL");
+			else
+				prtln(childStd.getId());
+		}
+	}
+
+COM:diagnoses the children of a given Standard parent and prints their IDs

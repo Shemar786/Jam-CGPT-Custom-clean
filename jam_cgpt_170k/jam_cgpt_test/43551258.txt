@@ -1,0 +1,12 @@
+TDAT:     public void calcSubTotal(){
+        this.transSubTotal = 0.0;
+        //if there is content in the list, calculate the subtotal
+        if(this.TxLineList != null){
+            for(int i=0; i< this.TxLineList.size(); i++){
+                this.transSubTotal += this.TxLineList.get(i).getLineAmount();
+                
+            }
+        }
+    }
+
+COM:calculates the subtotal of a transaction by iterating through a list of transaction lines and adding up their individual amounts

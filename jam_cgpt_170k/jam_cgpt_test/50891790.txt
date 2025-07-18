@@ -1,0 +1,8 @@
+TDAT:     public void testGetExample() {
+        System.out.println("testGetExample");
+        testString = "<tag:foo name=\"<%= do.getFoo()%>\"/>";
+        tag.setExample(testString);
+        assertEquals( tag.getExample(), testString );
+    }
+
+COM:tests the getExample function of a tag and verifies if the returned value matches the expected value

@@ -1,0 +1,17 @@
+TDAT: 	public Version getBlueprintVersion(Class<?> interfaceClass){
+		if(dependentBlueprintClassLoaders == null) return null;
+		IBeanClassLoader loader = null;
+		String interfaceClassName = interfaceClass.getName();
+		for(IBeanClassLoader dependentBlueprint:dependentBlueprintClassLoaders){
+			if(dependentBlueprint.isLoader(interfaceClassName)){
+				loader = dependentBlueprint;
+				break;
+			}
+		}
+		if(loader!=null){
+			return loader.jiopiClassLoader.blueprintName;
+		}
+		return null;
+	}
+
+COM:retrieves the blueprint version of a given interface class from a list of dependent blueprint class loaders

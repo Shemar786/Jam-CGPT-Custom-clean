@@ -1,0 +1,11 @@
+TDAT:     public String toString(){
+    	OmniCoreTrace.trace(this,"toString()","(called)");
+        String uri="";
+        if(this.isConnected())
+            try{uri=": "+this.getURI();}
+        	catch(NotConnectedException e){};
+        	OmniCoreTrace.trace(this,"toString()","(returned)"+uri);
+    	return uri;
+    }
+
+COM:overrides the default toString() method and returns a string representation of the URI of a connected object

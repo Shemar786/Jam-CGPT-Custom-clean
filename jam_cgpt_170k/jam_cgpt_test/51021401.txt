@@ -1,0 +1,12 @@
+TDAT: 	private void getErrors(String errors) {
+		errorReport.setText(errors.substring(1, errors.length()));
+		// show possible errors
+		if (errorReport.getText().length() > 0) {
+			JOptionPane.showMessageDialog(OVTK2Desktop.getInstance()
+					.getMainFrame(), new JScrollPane(errorReport),
+					"The following warnings were created during import...",
+					JOptionPane.WARNING_MESSAGE);
+		}
+	}
+
+COM:displays an error message in a dialog box if any errors are detected during an import process

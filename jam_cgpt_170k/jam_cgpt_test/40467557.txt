@@ -1,0 +1,15 @@
+TDAT: 	protected void fireEvent(){
+		if(eventHandlerMethod != null){
+			if(eventHandlerMethod != null){
+				try {
+					eventHandlerMethod.invoke(eventHandlerObject,
+							new Object[] { this, ownerGroup.deselectedOption() } );
+				} catch (Exception e) {
+					GMessenger.message(EXCP_IN_HANDLER, eventHandlerObject, 
+							new Object[] {eventHandlerMethodName, e } );
+				}
+			}		
+		}
+	}
+
+COM:fires an event by invoking a specific method in an event handler object, passing itself and information about the deselected option as arguments, and catches any exceptions that may occur during the invocation

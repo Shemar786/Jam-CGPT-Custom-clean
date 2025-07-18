@@ -1,0 +1,10 @@
+TDAT:     protected void dumpTables(PrintStream out,ClassDoc cd,boolean recursiveCall) {
+        if(!isRootStruct(cd)) {
+            dumpTables(out,cd.superclass(),true); }
+        String tablename=getMappedStructName(cd);
+        if(recursiveCall) {
+            tablename+=", "; }
+        out.print(tablename);
+    }
+
+COM:recursively traverse a class hierarchy and prints out the table names of the database corresponding to each class

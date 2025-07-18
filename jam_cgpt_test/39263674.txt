@@ -1,0 +1,19 @@
+TDAT: 	public boolean addBackupFile(String name, String path) {
+		boolean success = false;
+		try {
+			name = removeReservedCharacters(name);
+			String query = "EXEC sp_addumpdevice \'disk\', \'" + name + "\', \'" + path + "\'";
+			con.createStatement().execute(query);
+			
+			success = true;
+		}
+		catch (SQLException ex) {
+			ErrorLogger.writeExceptionToLogAndPrompt(getName(), "Error adding backup file");
+			System.err.println("Error adding backup file - executing sp_adddumpdevice");
+			ex.printStackTrace();			
+		}
+
+		return success;
+	}
+
+COM:adds a backup file to a SQL Server database using a stored procedure and returns a boolean indicating whether or not the operation was successful

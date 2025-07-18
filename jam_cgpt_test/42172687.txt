@@ -1,0 +1,17 @@
+TDAT:   protected void addUrlRegexPatternPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBDriver_urlRegexPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBDriver_urlRegexPattern_feature", "_UI_DBDriver_type"),
+				 DbPackage.Literals.DB_DRIVER__URL_REGEX_PATTERN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to an item if it is a DBDriver and has a URL regex pattern feature

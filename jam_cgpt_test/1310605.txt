@@ -1,0 +1,15 @@
+TDAT:     private int calculateColumnHeight(Collection<MindMapNode> childNodesOfColumn) {
+    	
+    	//TODO: Return a default value until implemented
+    	int height = childNodesOfColumn.size()*SINGLE_COLUMN_HEIGHT;
+    	
+    	/*for(MindMapNode v : childNodesOfColumn) {
+    		
+    	}*/
+    
+    	this.sizeOfLayout.height = this.sizeOfLayout.height + height; 
+    	
+    	return height;
+    }
+
+COM:calculates the height of a column of nodes in a mind map and updates the overall layout size accordingly

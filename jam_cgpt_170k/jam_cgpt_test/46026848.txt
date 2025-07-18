@@ -1,0 +1,14 @@
+TDAT: 	public int getHighestGarbageBlockY() {
+		for(int i = (hidden_height * -1); i < getHeightWithoutHurryupFloor(); i++) {
+			if(getLineFlag(i) == false) {
+				for(int j = 0; j < width; j++) {
+					if(!getBlockEmpty(j, i) && getBlock(j, i).getAttribute(Block.BLOCK_ATTRIBUTE_GARBAGE))
+						return i;
+				}
+			}
+		}
+
+		return height;
+	}
+
+COM:returns the highest y-coordinate value of a non-filled garbage block present in the game field

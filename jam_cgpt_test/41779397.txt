@@ -1,0 +1,9 @@
+TDAT:     public ChoiceGroup getLstCanale() {
+        if (lstCanale == null) {//GEN-END:|49-getter|0|49-preInit
+            lstCanale = new ChoiceGroup("Canale", Choice.POPUP);//GEN-BEGIN:|49-getter|1|49-postInit
+            lstCanale.setSelectedFlags(new boolean[] {  });//GEN-END:|49-getter|1|49-postInit
+        }//GEN-BEGIN:|49-getter|2|
+        return lstCanale;
+    }
+
+COM:returns a ChoiceGroup object, creating a new one if it doesn't exist yet, which represents a list of channels as a popup menu

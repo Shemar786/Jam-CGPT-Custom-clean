@@ -1,0 +1,17 @@
+TDAT: 	protected void addInv_actout_actPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ACT_inv_actout_act_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ACT_inv_actout_act_feature", "_UI_ACT_type"),
+				 Context_FmsCPackage.Literals.ACT__INV_ACTOUT_ACT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the ACT_inv_actout_act feature in the ACT_type class

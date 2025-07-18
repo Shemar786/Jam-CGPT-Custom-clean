@@ -1,0 +1,10 @@
+TDAT: 	    public String getStatusHistory(String userId) {
+			String url = API_ACTIVITIES_URL.replaceFirst("%s", userId);
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("activityTypes", "StatusMoodUpdate");
+			String reqUrl = server.generateRequestUrl(url, map);
+			String response = server.doHttpReq(reqUrl);
+			return response;
+		}
+
+COM:returns the status history of a specified user by making an API call and returning the HTTP response

@@ -1,0 +1,14 @@
+TDAT: /*	public HelpSet getHelpSet(String helpsetfile) {
+		HelpSet hs = null;
+		ClassLoader cl = this.getClass().getClassLoader();
+		try {
+			URL hsURL = HelpSet.findHelpSet(cl, helpsetfile);
+			hs = new HelpSet(null, hsURL);
+		} catch (Exception ee) {
+			System.out.println("HelpSet: " + ee.getMessage());
+			System.out.println("HelpSet: " + helpsetfile + " not found");
+		}
+		return hs;
+	}*/
+
+COM:returns a HelpSet object based on a specified helpset file name

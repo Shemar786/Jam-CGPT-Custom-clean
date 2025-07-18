@@ -1,0 +1,10 @@
+TDAT:     public void testIsBrowse() throws IOException, RecordException {
+
+        assertFalse("file should be editable ", poFileRep.isBrowse());
+
+        FileView tmp = new FileView(poFileName, poCopyBook, true);
+        assertTrue("file should not be editable ", tmp.isBrowse());
+
+    }
+
+COM:tests whether a file is editable or not

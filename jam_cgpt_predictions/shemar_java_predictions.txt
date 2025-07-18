@@ -1,0 +1,37 @@
+INPUT 1:
+public boolean isPrime(int num) {
+    if (num <= 1) return false;
+    for (int i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i == 0) return false;
+    }
+    return true;
+}
+===
+public boolean isPrime(int num) {
+    if (num <= 1) return false;
+    for (int i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i == 0) return false;
+    }
+    return true;
+}
+
+CONTEXT
+This method checks if the given number is a prime number.
+This method checks if the given number is a prime number.
+This method checks if the given number is a prime number.
+This method checks if the given
+
+INPUT 2:
+public int square(int x) {
+    return x * x;
+}
+===
+public int square(int x) {
+    return x * x;
+} // square()
+
+CONTEXT
+This method calculates the square of the given value x using the square root function.
+This method calculates the square of the given value x using the square root function.
+This method calculates the square of the given
+

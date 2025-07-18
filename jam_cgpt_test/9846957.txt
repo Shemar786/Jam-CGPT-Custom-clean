@@ -1,0 +1,6 @@
+TDAT: 	public void include (Closure closure) {
+		GraceletBuilderSource src = GraceletBuilderContext.instance().getBuilderSource();
+		this.simulateNode("include", new GraceletClosureSource (src.getSource(), src.getSourceName() + "_" + Integer.toHexString( closure.hashCode() ), new ContextClosure( closure )), null);
+	}
+
+COM:includes a closure in a GraceletBuilderSource and simulates a node with the closure information

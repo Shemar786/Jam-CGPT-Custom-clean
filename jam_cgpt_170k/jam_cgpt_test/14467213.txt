@@ -1,0 +1,12 @@
+TDAT:   public void stateChanged(ChangeEvent e) {
+    int index = ((JTabbedPane)e.getSource()).getSelectedIndex();
+    if (index == -1) {
+      this.propertyTable.setModel(this.emptyTableModel);
+    } else {
+      Model model = (Model)this.project.getModel(index);
+      Constituent selected = model.getSelection();
+      loadPropertyTable(model, selected);
+    }
+  }
+
+COM:handles changes to the state of a JTabbedPane and updates a property table accordingly

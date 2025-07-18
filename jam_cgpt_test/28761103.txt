@@ -1,0 +1,15 @@
+TDAT:   private void setColor(List<ColorButton> list, int line, Color color) {
+    if (list == null) {
+      return;
+    }
+    if ((line < 0) || (line >= list.size())) {
+      return;
+    }
+    ColorButton button = list.get(line);
+    if (button == null) {
+      return;
+    }
+    button.setColor(color);
+  }
+
+COM:sets the color of a specific ColorButton in a given List based on the provided line number and color

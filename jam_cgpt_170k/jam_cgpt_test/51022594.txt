@@ -1,0 +1,26 @@
+TDAT: 	public void showEdgeLabels(boolean show) {
+		if (show) {
+			viewer.getMetaGraphPanel()
+					.getVisualizationViewer()
+					.getRenderContext()
+					.setEdgeLabelTransformer(
+							new ONDEXMetaRelationLabels(viewer
+									.getONDEXJUNGGraph()));
+		} else {
+			viewer.getMetaGraphPanel()
+					.getVisualizationViewer()
+					.getRenderContext()
+					.setEdgeLabelTransformer(
+							new Transformer<ONDEXMetaRelation, String>() {
+
+								@Override
+								public String transform(ONDEXMetaRelation input) {
+									return null;
+								}
+							});
+		}
+		updateMenuBar();
+		viewer.getMetaGraphPanel().repaint();
+	}
+
+COM:toggles the visibility of edge labels in a graph visualization and updates the menu bar and repaints the visualization panel accordingly

@@ -1,0 +1,10 @@
+TDAT:   public boolean isComplete(Variable v) {
+    List dims = v.getDimensions();
+    for (int i=0; i<dims.size(); i++) {
+      Dimension d = (Dimension) dims.get(i);
+      if (!(domain.contains(d))) return false;
+    }
+    return true;
+  }
+
+COM:checks if all dimensions of a Variable object are contained within a specific domain and returns a boolean value accordingly

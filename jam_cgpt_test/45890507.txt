@@ -1,0 +1,17 @@
+TDAT: 	public void connect(int port) {
+		try {
+			serverSocket = new Socket("localhost", port);
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		try {
+			out = new PrintStream(serverSocket.getOutputStream());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		// mSimulator.addMessage("Telnet connection opened ");
+	}
+
+COM:establishes a connection using the specified port number and creates a print stream for output

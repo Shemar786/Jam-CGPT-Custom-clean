@@ -1,0 +1,11 @@
+TDAT:     public boolean intersectsWith(Rectangle other) {
+        if (other==null) return false;
+        boolean result = false;
+        if (other.intersectsWith(getLine12())) result = true;
+        if (other.intersectsWith(getLine23())) result = true;
+        if (other.intersectsWith(getLine34())) result = true;
+        if (other.intersectsWith(getLine41())) result = true;
+        return result;
+    }
+
+COM:checks whether a given rectangle intersects with the rectangle it is called on, by checking if any of their respective lines intersect

@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField11() {
+        if (textField11 == null) {//GEN-END:|33-getter|0|33-preInit
+            // write pre-init user code here
+            textField11 = new TextField("Bono 3:", null, 32, TextField.DECIMAL);//GEN-LINE:|33-getter|1|33-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|33-getter|2|
+        return textField11;
+    }
+
+COM:returns a TextField object with a label "Bono 3", no initial value, and a maximum length of 32 that is created if it does not already exist

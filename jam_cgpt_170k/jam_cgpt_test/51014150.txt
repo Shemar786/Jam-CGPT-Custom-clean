@@ -1,0 +1,7 @@
+TDAT:     public void isValidArgument(Object obj) throws InvalidPluginArgumentException {
+        return ;
+        //throw new InvalidPluginArgumentException("A " + getName() + " argument is required to be specified as a String for " + this.getName() + " class " + obj.getClass().getName() + " was found ");
+        
+    }
+
+COM:checks if an argument is valid and throws an exception if it is not

@@ -1,0 +1,13 @@
+TDAT:   private JScrollPane getSpGroszanzeige() {
+    if (spGroszanzeige == null) {
+      spGroszanzeige = new JScrollPane();
+      spGroszanzeige
+          .setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+      spGroszanzeige
+          .setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+      spGroszanzeige.setViewportView(getPGroszanzeige());
+    }
+    return spGroszanzeige;
+  }
+
+COM:returns a scroll pane with no vertical or horizontal scroll bars that contains a view component called "PGroszanzeige", which is created if it does not already exist

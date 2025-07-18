@@ -1,0 +1,11 @@
+TDAT: 	static public boolean canEditTutorial( UserInfo userInfo, PuzzleInfo puzzleInfo ) {
+		if( !puzzleInfo.isTutorial() ) 
+			return false;
+		if( userInfo == null || puzzleInfo.getStatus() != Status.PRIVATE ) 
+			return false;
+		if( userInfo.isAdministrator() )
+			return true;
+		return userInfo.getEmail().equals( puzzleInfo.getAuthorEmail() );
+	}
+
+COM:Checks whether a given UserInfo can edit a given PuzzleInfo tutorial based on their user status and authorship

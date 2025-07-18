@@ -1,0 +1,17 @@
+TDAT:   protected void addDayPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MonthlyOccursModel_day_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MonthlyOccursModel_day_feature", "_UI_MonthlyOccursModel_type"),
+				 TimeBasedRoutingPackage.Literals.MONTHLY_OCCURS_MODEL__DAY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a monthly occurs model's day feature

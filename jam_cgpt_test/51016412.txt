@@ -1,0 +1,12 @@
+TDAT:     private Reader getLookupFileReader() throws FileNotFoundException {
+
+        if (parser.getLookupFile() != null) {
+            return new FileReader(parser.getLookupFile());
+        } else {
+            InputStream metadataStream = getClass().getClassLoader().getResourceAsStream("psimi2ondex_metadata.tsv");
+            return new InputStreamReader(metadataStream);
+        }
+
+    }
+
+COM:returns a Reader object that reads the contents of a file or an input stream depending on the existence of a lookup file

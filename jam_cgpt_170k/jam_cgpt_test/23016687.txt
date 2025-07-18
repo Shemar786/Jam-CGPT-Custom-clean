@@ -1,0 +1,13 @@
+TDAT: 	public void reset() {
+		for (int col = 0; col < columns; col++) {
+			for (int row = 0; row < rows; row++) {
+				leds[col][row].onOff = false;
+				leds[col][row].appearsOn = false;
+				leds[col][row].lastFallingEdgeTime = -eyeDelayOffClocks;
+				leds[col][row].lastRisingEdgeTime = 0;
+			}
+		}
+		repaint();
+	}
+
+COM:resets the state of all LED objects in a grid to their default values

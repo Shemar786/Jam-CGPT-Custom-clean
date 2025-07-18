@@ -1,0 +1,15 @@
+TDAT: 	public void executeJavaScriptFile(String file) {
+		try {
+			String code = readTextFile(file);
+			printAndPrompt(code);
+			fireCommandEvent(new CommandEvent(this, code, this));
+		} catch (FileNotFoundException e) {
+			JOptionPane.showMessageDialog(this, "File not found: " + file);
+			e.printStackTrace();
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(this, "IO exception: " + file);
+			e.printStackTrace();
+		}
+	}
+
+COM:runs a JavaScript file by reading its contents, printing and prompting the code, and firing a command event

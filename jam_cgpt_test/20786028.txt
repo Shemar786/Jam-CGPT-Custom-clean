@@ -1,0 +1,10 @@
+TDAT:    /*
+    * private void loadData() { gestureClasses = new ArrayList<GestureClass>();
+    * 
+    * for (GestureClass dataObject : storageManager.load(GestureClass.class)) {
+    * gestureClasses.add(dataObject); }
+    * 
+    * for (GestureSet dataObject : storageManager.load(GestureSet.class)) {
+    * gestureSets.add(dataObject); } } // loadData
+
+COM:loads data from the storage manager into array lists of gesture classes and gesture sets

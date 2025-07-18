@@ -1,0 +1,17 @@
+TDAT:   protected void addIndexPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBQueryParamId_index_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBQueryParamId_index_feature", "_UI_DBQueryParamId_type"),
+				 ActionStepPackage.eINSTANCE.getDBQueryParamId_Index(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds an item property descriptor for a DBQueryParamId index feature

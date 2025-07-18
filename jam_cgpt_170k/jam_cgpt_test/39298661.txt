@@ -1,0 +1,11 @@
+TDAT:     protected void initializeGraphicalViewer() {
+    	System.out.println("testinit");
+        super.initializeGraphicalViewer();
+        GraphicalViewer viewer = getGraphicalViewer();
+        viewer.setContents(getEnvironmentDelegate()); // set the contents of this editor
+
+        // listen for dropped parts
+        viewer.addDropTargetListener(createTransferDropTargetListener());
+    }
+
+COM:initializes a graphical viewer, prints a test message, sets its contents, and listens for dropped parts

@@ -1,0 +1,14 @@
+TDAT: 	private RdfBean doGet(URI resource) throws Exception {
+		RdfBean bean = null;
+		// does the resource even exist?
+		if (helper.resourceExists(resource, this.data)) {
+			// load schema
+			URI type = typeMapper.resolveType(resource, this.data);
+			Schema schema = getSchema(type);
+			// load bean
+			bean = loader.getBean(this.data, resource, schema, this.nodeMapper);
+		}
+		return bean;
+	}
+
+COM:retrieves an RDFBean object by checking if the resource exists, loading the schema and providing the data and schema to construct a new RDFBean object

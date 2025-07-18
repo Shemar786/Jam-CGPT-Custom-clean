@@ -1,0 +1,10 @@
+TDAT:     public int indexOf(SWGResource o, Comparator<SWGResource> comp) {
+        for (int i = 0; i < storage.size(); ++i) {
+            SWGResource r = storage.get(i);
+            if (r == o || comp.compare(r, o) == 0)
+                return i;
+        }
+        return -1;
+    }
+
+COM:searches for a given SWGResource object in an array list using a Comparator to determine equality and returns the index of the element if found, otherwise returns -1

@@ -1,0 +1,17 @@
+TDAT: 	protected void addVersionIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TelephonySubsystem_versionId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TelephonySubsystem_versionId_feature", "_UI_TelephonySubsystem_type"),
+				 ConfigPackage.Literals.TELEPHONY_SUBSYSTEM__VERSION_ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the version ID of a TelephonySubsystem object

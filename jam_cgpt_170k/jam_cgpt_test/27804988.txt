@@ -1,0 +1,11 @@
+TDAT:   public void setDragEnabled ( boolean new_drag_enabled ) {
+    if( dragEnabled == new_drag_enabled ) {
+      return;
+    }
+    if( new_drag_enabled && GraphicsEnvironment.isHeadless() ) {
+      throw new HeadlessException();
+    }
+    dragEnabled = new_drag_enabled;
+  } // setDragEnabled(..)
+
+COM:sets the dragEnabled property to a new value, but throws a HeadlessException if it is trying to enable dragging in a headless environment

@@ -1,0 +1,13 @@
+TDAT:     public boolean contains(Partition p) {
+        Iterator<Entry<String, Range>> i = mRanges.entrySet().iterator();
+        while (i.hasNext()) {
+            Entry<String, Range> e = i.next();
+            boolean x = e.getValue().contains(p.getRanges().get(e.getKey()));
+            if (!x) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+COM:checks whether a given Partition object contains all the ranges present in the current object's map

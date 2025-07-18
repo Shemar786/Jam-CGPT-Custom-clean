@@ -1,0 +1,9 @@
+TDAT:   private String getPid(TaskAttemptID tipID) {
+    Path pidFileName = getPidFilePath(tipID, taskTracker.getJobConf());
+    if (pidFileName == null) {
+      return null;
+    }
+    return ProcfsBasedProcessTree.getPidFromPidFile(pidFileName.toString());
+  }
+
+COM:retrieves the process ID (PID) associated with a given task attempt ID

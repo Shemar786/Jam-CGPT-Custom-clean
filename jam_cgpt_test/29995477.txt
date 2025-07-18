@@ -1,0 +1,21 @@
+TDAT: 	private Time simulate() throws SimulationException {
+		Time current = startSimulation();
+		try {
+			if (endTime.isLT(current)) {
+				throw new SimulationException("Requested time " + endTime
+						+ " is smaller than current time " + current + "!");
+			}
+			while (isRunning()) {
+				if (current.isGE(endTime)) {
+					break; // The requested end time has been reached
+				}
+				current = continueSimulation(current, endTime);
+				Thread.yield();
+			}
+		} finally {
+			finishSimulation();
+		}
+		return currentTime();
+	}
+
+COM:simulates a process until a given end time and returns the final current time, handling exceptions if the end time is reached before the current time

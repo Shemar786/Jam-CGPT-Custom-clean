@@ -1,0 +1,13 @@
+TDAT: 	public void transform(final FlowGraph cfg) {
+		context = cfg.method().declaringClass().context();
+
+		final BitSet[] seen = new BitSet[PersistentCheckElimination.SIZE];
+
+		for (int i = 0; i < PersistentCheckElimination.SIZE; i++) {
+			seen[i] = new BitSet();
+		}
+
+		search(cfg, cfg.source(), seen);
+	}
+
+COM:transforms a flow graph by performing a search on it and storing the results in a set of bitsets

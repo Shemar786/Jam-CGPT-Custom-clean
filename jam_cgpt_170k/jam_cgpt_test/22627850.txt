@@ -1,0 +1,8 @@
+TDAT: 	public boolean acceptsNewMember() {
+		prtln ("choiceGuard.acceptsNewMember()");
+		prtln ("\t super.acceptsNewMember(): " + super.acceptsNewMember());
+		prtln ("\t getAcceptableMembers().size(): " + getAcceptableMembers().size());
+		return (super.acceptsNewMember() && getAcceptableMembers().size() > 0);
+	}
+
+COM:checks if a choice guard accepts new members based on the size of the acceptable members list

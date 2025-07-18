@@ -1,0 +1,12 @@
+TDAT:     public WordFormGenerator getMostAccurateGenerator(final Locale locale) throws MorphologyException {
+        if (locale == null) {
+            throw new IllegalArgumentException("The 'loc' argument cannot be null.");
+        }
+        WordFormGenerator component = (WordFormGenerator) mostAccurateGenerators.get(locale);
+        if (component == null) {
+            throw new MorphologyException("Cannot find generator for locales : " + locale.toString());
+        }
+        return component;
+    }
+
+COM:returns the most accurate WordFormGenerator for a given Locale or throws a MorphologyException if the generator cannot be found

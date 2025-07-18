@@ -1,0 +1,10 @@
+TDAT: 	public void testRelationalPredicateSpecialization() {
+		te = mTypeEnvironment("S", " ℙ(S)", "s", "S");
+		assertPredicateSpecialization(te, //
+				"s ∈ S", //
+				mSpec(te, //
+						mList("S", "T"), //
+						new String[0]));
+	}
+
+COM:tests the relational predicate specialization by asserting that a certain expression evaluates to a certain specification

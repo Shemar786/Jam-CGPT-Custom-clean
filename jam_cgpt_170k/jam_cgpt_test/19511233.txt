@@ -1,0 +1,13 @@
+TDAT: 	public Expression getTypeExpression() throws RodinDBException {
+		if (element.getElementType() == IConstant.ELEMENT_TYPE) {
+			return EventBUtils.getTypeExpression((IContextRoot) element
+					.getRoot(), name);
+		}
+		if (element.getElementType() == IVariable.ELEMENT_TYPE) {
+			return EventBUtils.getTypeExpression((IMachineRoot) element
+					.getRoot(), name);
+		}
+		return null;
+	}
+
+COM:returns an Expression object that represents the type of a given element if it is a constant or variable in a Root element, otherwise it returns null and throws RodinDBException if there is an issue with the Rodin database

@@ -1,0 +1,14 @@
+TDAT: 	private MyIntegerField getJTFPruebas() {
+		if (jTFPruebas == null) {
+			jTFPruebas = new MyIntegerField();
+			jTFPruebas.addUpdateIntegerListener(new UpdateIntegerListener(){
+				public void valueUpdated(UpdateIntegerEvent e) {
+					ch.fijaHorasPruebas(jCalendar.getStringDate(), e.getValue());
+					actualizaHorasTotales(jCalendar.getStringDate());
+				}				
+			});
+		}
+		return jTFPruebas;
+	}
+
+COM:returns an instance of MyIntegerField and adds an UpdateIntegerListener to it if it is null

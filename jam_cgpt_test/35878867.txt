@@ -1,0 +1,25 @@
+TDAT:     public double getProgress() {
+	   	if (transferType == 0) {
+			if (localMonitor != null) {
+	    		progress = localMonitor.getProgress();
+	    		return progress;
+			}
+			else {
+	    		return -1;
+			}
+   		}
+   		else if (transferType == 1) {
+   			if (remoteMonitor != null) {
+   				progress = remoteMonitor.getProgress();
+   				return progress;
+   			}
+   			else {
+   				return -1;
+   			}
+   		}
+   		else {
+   			return -1;
+   		}
+    }
+
+COM:returns a double value indicating the progress of a file transfer process, either from a local or remote monitor, with a value of -1 indicating an error

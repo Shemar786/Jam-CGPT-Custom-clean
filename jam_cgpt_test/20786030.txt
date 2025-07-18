@@ -1,0 +1,17 @@
+TDAT:    public void loadGestureSet(GestureSet gestureSet) {
+      if (!configuration.getGestureSets().contains(gestureSet))
+         configuration.addGestureSet(gestureSet);
+
+      this.gestureSet = gestureSet;
+      gestureClassesTable.clear();
+
+      for (GestureClass gc : gestureSet.getGestureClasses()) {
+         gestureListModel.add(gc);
+         gestureClassesTable.put(gc.getName(), gc);
+
+      }
+
+      toBeSaved = true;
+   } // loadGestureSet
+
+COM:loads a GestureSet object and adds it to the configuration if it doesn't already contain it, and then clears and populates a data structure with gesture classes from the GestureSet

@@ -1,0 +1,18 @@
+TDAT: 	public void setNumDimensions(int n) throws Exception {
+		if (n < 1) {
+			throw new Exception("Must have at least 1 LPC coeffecient - " + n
+					+ " provided");
+		} else {
+			numDimensions = n;
+			String name = definition.name;
+			String description = definition.description;
+			String[] attributes = definition.attributes;
+			definition = new FeatureDefinition(name, description, true,
+					numDimensions, attributes);
+			if (parent != null) {
+				parent.updateTable();
+			}
+		}
+	}
+
+COM:sets the number of dimensions for a feature, throws an exception if the provided number is less than 1, updates the feature definition, and updates the parent table if it exists

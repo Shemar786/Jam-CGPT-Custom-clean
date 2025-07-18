@@ -1,0 +1,15 @@
+TDAT: 	private void createEdges() {
+		edges.clear();
+		Stack<InteractionNode> remainingNodes = new Stack<InteractionNode>();
+		remainingNodes.addAll(nodes);
+		while (remainingNodes.size() > 1) {
+			InteractionNode node1 = remainingNodes.pop();
+			for (InteractionNode node2 : remainingNodes) {
+				List<Event> commons = getCommonEvents(node1, node2);
+				if (commons.isEmpty() == false)
+					edges.add(new InteractionEdge(node1, node2, commons));
+			}
+		}
+	}
+
+COM:creates edges between interaction nodes based on the common events they share

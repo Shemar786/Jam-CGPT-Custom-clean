@@ -1,0 +1,13 @@
+TDAT:   public void destroy() {
+    logger.info(null);
+    super.destroy();
+    if (monConnection != null) {
+      if (logger.isDebugEnabled())
+        logger.debug("MondrianModel: closing connection " + monConnection);
+      monConnection.close();
+      monConnection = null;
+    }
+    this.sessionId = null;
+  }
+
+COM:destroys the current object, logs information, closes a connection if it exists, and sets the session ID to null

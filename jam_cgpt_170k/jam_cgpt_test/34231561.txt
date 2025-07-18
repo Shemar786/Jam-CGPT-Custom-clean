@@ -1,0 +1,14 @@
+TDAT: 	public void setProgress( double value ) {
+		progressBar.setSelection( (int) value );
+		short progress = (short)( value / (double)maximum * (double)100 );
+		if( progress - previousProgress >= 1) {
+			progressLabel.setText("Simulation Progress: " +  progress + "%");
+			progressLabel.update();
+			previousProgress = progress;
+			if( progress == 100 ) 
+				finishButton.setEnabled( true );
+			shell.update();
+		}
+	}
+
+COM:updates a progress bar and label to reflect the progress of a simulation, and enables a "finish" button once the simulation is complete

@@ -1,0 +1,7 @@
+TDAT: 	private void initializeComboControls(Composite composite, String[] labels, Key[] keys, int tabkind) {
+		for (int i = 0, max = labels.length; i < max; i++) {
+			createComboControl(composite, labels[i], keys[i], tabkind);
+		}
+	}
+
+COM:initializes combo controls by creating them in a given composite with specified labels, keys, and tabkind

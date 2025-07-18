@@ -1,0 +1,12 @@
+TDAT: 	public Document getWritableDocument() {
+		Element root = doc.getRootElement().createCopy();
+
+		root.addAttribute("xmlns", "http://ns.nsdl.org/ncs");
+
+		root.add(DocumentHelper.createNamespace("xsi", "http://www.w3.org/2001/XMLSchema-instance"));
+		root.addAttribute("schemaLocation",
+			"http://ns.nsdl.org/ncs http://ns.nsdl.org/ncs/ncs_collect/1.02/schemas/ncs-collect.xsd");
+		return DocumentHelper.createDocument(root);
+	}
+
+COM:returns a new writable Document object with a modified root element that includes added attributes and namespaces

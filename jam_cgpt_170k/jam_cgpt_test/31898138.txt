@@ -1,0 +1,14 @@
+TDAT:   public JLabel getMessage() {
+    /* Returns the message property value. */
+    if (fieldMessage == null) {
+      try {
+        fieldMessage = new JLabel(messages.getString("WELCOME_TO_WIZARD_EXPERT"));
+      } catch (Throwable exception) {
+        System.err.println("Exception creating message property.");
+      }
+    };
+
+    return fieldMessage;
+  }
+
+COM:returns the message property value, which is a JLabel displaying a welcome message

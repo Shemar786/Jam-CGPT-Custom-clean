@@ -1,0 +1,13 @@
+TDAT: 	private JFrame getJFrame() {
+		if (jFrame == null) {
+			jFrame = new JFrame();
+			jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			jFrame.setJMenuBar(getJJMenuBar());
+			jFrame.setSize(824, 511);
+			jFrame.setContentPane(getJTabbedPane());
+			jFrame.setTitle("ESTsSubmitter");
+		}
+		return jFrame;
+	}
+
+COM:returns a JFrame object and initializes it if it is null, setting the default close operation, menu bar, size, content pane, and title

@@ -1,0 +1,13 @@
+TDAT:   public void saveLibrary() {
+    if (userLibrary != null) {
+      try {
+        FileOutputStream out_s = new FileOutputStream(getPropertyFileObject());
+        userLibrary.store(out_s, "user defined common rgx patterns");
+      }
+      catch (IOException ioex) {
+        ioex.printStackTrace();
+      }
+    }
+  }
+
+COM:saves a user-defined common regular expression pattern library to a file

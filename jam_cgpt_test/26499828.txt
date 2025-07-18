@@ -1,0 +1,13 @@
+TDAT:   public String getNamespacePrefix(String aNamespaceURI) {
+    LinkedList someNamespaces = (LinkedList) _theNamespaceByURI.get(aNamespaceURI);
+
+    if (someNamespaces == null) {
+      return null;
+    } else {
+      NamespaceReference aNamespaceRef = (NamespaceReference) someNamespaces.getFirst();
+
+      return aNamespaceRef.getNamespace().getPrefix();
+    }
+  }
+
+COM:retrieves the namespace prefix associated with a given namespace URI

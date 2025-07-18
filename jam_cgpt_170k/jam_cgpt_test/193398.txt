@@ -1,0 +1,10 @@
+TDAT: 	public void header(String version, String encoding, String standalone) throws Exception {
+		outputStream.write("<?xml version=\"" + (version != null ? version : "1.0") + "\"");
+		if (encoding != null)
+			outputStream.write(" encoding=\"" + encoding + "\"");
+		if (standalone != null)
+			outputStream.write(" standalone=\"" + standalone + "\"");
+		outputStream.write("?>" + eol);
+	}
+
+COM:writes an XML header to the output stream, including version, encoding, and standalone attributes if they are specified

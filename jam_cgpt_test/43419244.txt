@@ -1,0 +1,17 @@
+TDAT: 	private void setEnvironment(Physical2DEnvironment environment){
+		if(environment != null){
+			this.environment = environment;
+			this.envWrap = new EnvironmentWrapper(environment);
+			this.currentlyMovingAgents = new HashSet<ActiveObject>();
+			this.currentlyMovingObjects = new HashSet<Physical2DObject>();
+			this.masterNode = true;
+		}else{
+			this.environment = null;
+			this.envWrap = null;
+			this.currentlyMovingAgents = null;
+			this.currentlyMovingObjects = null;
+			this.masterNode = false;
+		}
+	}
+
+COM:sets the environment and related variables for a 2D physical simulation, with null checking

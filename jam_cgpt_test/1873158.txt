@@ -1,0 +1,7 @@
+TDAT:   public double getDistance(Point p) {
+    double dX = getDelta(this.getX(), p.getX());
+    double dY = getDelta(this.getY(), p.getY());
+    return Math.sqrt(Math.pow(dX, 2) + Math.pow(dY, 2));
+  }
+
+COM:calculates the distance between two points

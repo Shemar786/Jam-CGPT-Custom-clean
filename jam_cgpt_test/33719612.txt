@@ -1,0 +1,13 @@
+TDAT:     public void testSetClassification() {
+        System.out.println("setClassification");
+        
+        Set c = null;
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.setClassification(c);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the setClassification() method of a SystemClient_DBImpl class by setting the classification as null and generating a fail message

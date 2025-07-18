@@ -1,0 +1,10 @@
+TDAT:     private JLabel makeLabel() {
+        JLabel l = new JLabel();
+        l.setBorder(BorderFactory.createEmptyBorder(0, 6, 0, 6));
+        l.setFont(SWGGuiUtils.fontPlain());
+        l.setBackground(Color.WHITE);
+        l.setOpaque(true);
+        return l;
+    }
+
+COM:creates and returns a new JLabel with specified border, font, background color, and opacity

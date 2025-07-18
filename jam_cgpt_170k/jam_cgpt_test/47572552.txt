@@ -1,0 +1,12 @@
+TDAT: 	public void switchPokes(int a, int b) throws Exception {
+		if (a >= 0 && b <= 5 && getParty()[a] != null && getParty()[b] != null
+				&& !isBlocked()) {
+			Pokemon temp = getParty()[a];
+			getParty()[a] = getParty()[b];
+			getParty()[b] = temp;
+			arrangeParty();
+			initialiseClientParty();
+		}
+	}
+
+COM:switches the positions of two specified Pokemon in a party, as long as they both exist and the party is not blocked

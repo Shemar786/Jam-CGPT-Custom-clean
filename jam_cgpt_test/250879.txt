@@ -1,0 +1,17 @@
+TDAT: 	public String authenticateUser(String userName, String password) throws InternalException {
+		logger.debug("entering isUserValid()");
+		User fedoraUser = securityMgr.authenticateUser(userName, password);
+		if (fedoraUser.getIsDisabled()) {
+			logger.debug("exiting authenticateUser, user is disabled");
+			return "disabled";
+		}
+		if (!fedoraUser.isAuthenticated()) {
+			logger.debug("exiting authenticateUser, user is invalid");
+			return "invalid";
+		}
+		
+		logger.debug("user is valid");
+		return "valid";
+	}
+
+COM:takes in a username and password as parameters, attempts to authenticate the user with a security manager, and returns a string indicating whether the user is valid, invalid, or disabled

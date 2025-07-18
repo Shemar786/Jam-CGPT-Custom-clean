@@ -1,0 +1,11 @@
+TDAT: 	public void connectionErrorOccurred(ConnectionEvent event) {
+		Object obj = event.getSource();
+		PooledConnection pc = (PooledConnection) obj;
+		pool.nextGeneration(pc);
+		pool.removeLockedObject(pc); // remove the object from the locked pool
+		expire(pc); // kill the connection (from super)
+		log.debug(
+			"StandardXAPoolDataSource:connectionErrorOccurred remove the object from the pool");
+	}
+
+COM:handles connection errors in a connection pool by removing the affected connection and logging the event

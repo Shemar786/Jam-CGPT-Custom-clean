@@ -1,0 +1,21 @@
+TDAT:   public  void 	windowGainedFocus(WindowEvent e) {
+
+   
+
+    String network_id = ( String )componentMap.get( e.getWindow() );
+   
+    System.out.println( " Window Gained Focus: "+ network_id );
+ 
+    if ( network_id == null ) {
+      return;
+    }
+    
+   
+
+    firePropertyChange( CytoscapeDesktop.NETWORK_VIEW_FOCUSED,
+                        null,
+                        network_id );
+    
+  }
+
+COM:prints the network ID when a window gains focus and fires a property change event for the focused network view in Cytoscape Desktop

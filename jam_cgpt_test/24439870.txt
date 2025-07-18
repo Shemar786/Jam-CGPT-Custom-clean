@@ -1,0 +1,9 @@
+TDAT:     public double getPhase () {
+        if (r == 0.D) {
+            return i<0.D ? -PI2 : i>0.D ? +PI2 : 0.D;
+        }
+        final double at = Math.atan (i/r);
+        return r>0.D ? at : i<0.D ? at-Math.PI : at + Math.PI;
+    }
+
+COM:returns the phase angle of a complex number in radians, based on its real and imaginary components

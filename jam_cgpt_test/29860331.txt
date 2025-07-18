@@ -1,0 +1,18 @@
+TDAT:   private int numberBlock(short[] startblock, Instruction[] insts) {
+    short blockNumber = 0;
+
+    if (startblock.length == 0) {
+      return 0;
+    } else {
+      startblock[0] = blockNumber;
+      for(int j=1;j<insts.length;j++) {
+        if (startblock[j] == 1) {
+          ++blockNumber;
+        }
+        startblock[j] = blockNumber;
+      }
+      return blockNumber + 1;
+    }
+  }
+
+COM:assigns a block number to each instruction in an array and returns the total number of blocks

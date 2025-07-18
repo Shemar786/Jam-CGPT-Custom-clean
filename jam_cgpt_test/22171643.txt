@@ -1,0 +1,19 @@
+TDAT: 	protected void addDelimeterFieldPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveFileMessageSink_delimeterField_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveFileMessageSink_delimeterField_feature", "_UI_EveFileMessageSink_type"),
+				 MsgPackage.Literals.EVE_FILE_MESSAGE_SINK__DELIMETER_FIELD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_FilePropertyCategory"),
+				 new String[] {
+					"file"
+				 }));
+	}
+
+COM:adds a property descriptor for a delimiter field in an EveFileMessageSink object

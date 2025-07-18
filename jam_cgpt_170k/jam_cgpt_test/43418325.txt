@@ -1,0 +1,15 @@
+TDAT: 	public void putMigration() {
+		
+		// --- Fill InMovement-list with Sensors from the 'migrationStore' ----
+		while (this.migrationListInMovement.size() < this.migrationsParallelMax) {
+			
+			if (migrationList.size()==0) {
+				break;
+			}
+			migrationListInMovement.addElement(migrationList.get(0));
+			migrationList.get(0).sensor.putMigrationLocation(migrationList.get(0).getSensorAgentsNewLocation());
+			migrationList.remove(0);
+		}
+	}
+
+COM:puts migrations into an InMovement-list for sensors in a migration store

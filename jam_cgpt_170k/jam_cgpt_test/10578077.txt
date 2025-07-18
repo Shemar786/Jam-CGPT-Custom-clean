@@ -1,0 +1,15 @@
+TDAT:     public void initSqlQueries(Connection conn, File sqlFile) throws Exception {
+        try {
+            if (conn.getAutoCommit()) {
+                conn.setAutoCommit(false);
+            }
+
+            sqlQueries.init(sqlFile, JDBCBayesianAnalyzer.class.getName(), conn, getSqlParameters());
+
+            checkTables(conn);
+        } finally {
+            theJDBCUtil.closeJDBCConnection(conn);
+        }
+    }
+
+COM:initializes SQL queries using a connection and a file, checks tables, and then closes the connection

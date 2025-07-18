@@ -1,0 +1,14 @@
+TDAT:     private LinkedHashSet getNames(LinkedHashSet set) {
+        Data  bind;
+
+        if (parent != null) {
+            parent.getNames(set);
+        }
+        for (int i = 0; i < data.arraySize(); i++) {
+            bind = data.getData(i);
+            set.add(bind.getString("name", null));
+        }
+        return set;
+    }
+
+COM:This private Java method returns a LinkedHashSet containing the names obtained from the "name" attribute of the Data objects in a LinkedHashSet called "set", and also from its parent LinkedHashSet

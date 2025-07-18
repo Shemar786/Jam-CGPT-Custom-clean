@@ -1,0 +1,12 @@
+TDAT: 	public void setProperty(String name, String value) {
+		if (name != null) {
+			if (value != null) {
+				if (properties == null) properties = new Hashtable<String, String>();
+				properties.put(name.toLowerCase(), value);
+			} else {
+				if (properties != null) properties.remove(name.toLowerCase());
+			}
+		}
+	}
+
+COM:sets a property in a hashtable with a given name and value, and removes the property if the value is null

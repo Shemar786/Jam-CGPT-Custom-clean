@@ -1,0 +1,15 @@
+TDAT: 	private void drawQuotation(final Graphics2D p_g2, final int p_formation) {
+		if (p_formation == FormationPanel.FORMATION_V) {
+			this.drawQuotationV(p_g2);
+		} else {
+			if (p_formation == FormationPanel.FORMATION_CIRCLE) {
+				this.drawQuotationCircle(p_g2);
+			} else {
+				if (p_formation == FormationPanel.FORMATION_LINE) {
+					this.drawQuotationLine(p_g2);
+				}
+			}
+		}
+	}
+
+COM:draws a quotation based on a specific formation type, either vertical, circular, or in a line

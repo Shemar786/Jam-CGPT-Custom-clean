@@ -1,0 +1,10 @@
+TDAT:     public Object clone() throws CloneNotSupportedException {
+        if (this.getParent() instanceof ServletClassLoader) {
+            ServletClassLoader parentLoader = (ServletClassLoader)((ServletClassLoader)this.getParent()).clone();
+            return new ServletClassLoader(this.getURLs(), parentLoader);
+        } else {
+            return new ServletClassLoader(this.getURLs(), getParent());
+        }
+    }
+
+COM:creates a copy of an object and returns it while possibly throwing an exception if the object does not support cloning

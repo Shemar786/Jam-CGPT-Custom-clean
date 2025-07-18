@@ -1,0 +1,26 @@
+TDAT: 	public void elementChanged(ElementChangedEvent event) {
+
+		refreshAll = false;
+		toRefresh = new LinkedList<IRodinElement>();
+
+		processDelta(event.getDelta());
+
+		if (page.getViewer() == null
+				|| page.getViewer().getControl().isDisposed())
+			return;
+
+		Display.getDefault().syncExec(new Runnable() {
+			public void run() {
+
+				if (refreshAll)
+					page.getViewer().refresh();
+				else
+					refreshTree(toRefresh);
+
+				updateText();
+			}
+		});
+
+	}
+
+COM:responds to changes in an element by refreshing the viewer and updating the text

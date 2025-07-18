@@ -1,0 +1,8 @@
+TDAT:     public void setResourceRef(I_JoServletContextPeer aPeer, Node aNode) {
+        if (aNode == null) return;
+        if (Log.isLog(host.getName())) {
+            log.log("WARNING: Resource references are not supported yet.", C_Log.ERROR);
+        }
+    }
+
+COM:sets a resource reference for a given servlet context peer and node, and logs a warning if the node is null

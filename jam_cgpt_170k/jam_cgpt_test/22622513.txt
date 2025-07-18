@@ -1,0 +1,12 @@
+TDAT: 	private Element getHistoryElement(String changeDate) {
+		List dateElements = doc.selectNodes("//dcsDataRecord/statusEntries/statusEntry/changeDate");
+		if (dateElements != null && dateElements.size() > 0)
+			for (Iterator i = dateElements.iterator(); i.hasNext(); ) {
+				Element dateElement = (Element) i.next();
+				if (dateElement.getText().equals(changeDate))
+					return dateElement.getParent();
+			}
+		return null;
+	}
+
+COM:retrieves an XML element that has a specific "changeDate" value as one of its child elements

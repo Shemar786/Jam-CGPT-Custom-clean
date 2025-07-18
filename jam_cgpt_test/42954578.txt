@@ -1,0 +1,13 @@
+TDAT: 	public Field getField(int posX, int posY) throws RemoteException {
+		if(posX>=this.size || posX<0 || posY>=this.size || posY<0) {
+			return null;
+		} else {
+			if(this.platform[posX][posY] instanceof Field) {
+				return (Field)this.platform[posX][posY];
+			} else {
+				return null;
+			}
+		}
+	}
+
+COM:returns a Field object at a specified position on a platform, or null if the position is invalid or does not contain a Field object

@@ -1,0 +1,17 @@
+TDAT: 	protected void addInv_det_condPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_COND_inv_det_cond_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_COND_inv_det_cond_feature", "_UI_COND_type"),
+				 Context_FmsCPackage.Literals.COND__INV_DET_COND,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "inv_det_cond" feature of the "COND" type within the "Context_FmsCPackage" class

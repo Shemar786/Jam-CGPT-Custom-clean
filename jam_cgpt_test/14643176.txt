@@ -1,0 +1,10 @@
+TDAT:     private void buildDependencies(Element componentsNode) throws MalformedObjectNameException {
+        if ("components".equals(componentsNode.getNodeName())) {
+            NodeList children = componentsNode.getElementsByTagName("component");
+            for (int i = 0; i < children.getLength(); i++) {
+                parseDescription(children.item(i));
+            }
+        }
+    }
+
+COM:builds dependencies for the components of a specified Element node

@@ -1,0 +1,18 @@
+TDAT: 	public Node parent(int type, Data data, int limit) throws SQLException {
+		LinkBean link = query(new Node(type, -1), this, limit);
+		Iterator it = link.iterator();
+
+		while(it.hasNext()) {
+			Node node = new Node();
+			node.copy((NodeBean) it.next());
+			node.meta();
+
+			if(node.meta(data.getType()).getString().equals(data.getString())) {
+				return node;
+			}
+		}
+
+		return null;
+	}
+
+COM:searches for a parent Node matching a specified type, data, and limit within a LinkBean and returns it, throwing an SQLException if it encounters an issue

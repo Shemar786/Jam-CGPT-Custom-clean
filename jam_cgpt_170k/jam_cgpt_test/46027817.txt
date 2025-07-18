@@ -1,0 +1,19 @@
+TDAT: 	public boolean registerRecord(int rtype, NetSPRecord r1) {
+		NetSPRecord r2 = getRecord(r1.strRuleName, r1.strModeName, r1.gameType);
+
+		if(r2 != null) {
+			if(r1.compare(rtype, r2)) {
+				// Replace with a new record
+				r2.copy(r1);
+			} else {
+				return false;
+			}
+		} else {
+			// Register a new record
+			listRecord.add(r1);
+		}
+
+		return true;
+	}
+
+COM:registers a NetSPRecord object and returns true if successful, comparing and possibly replacing existing records with the same properties

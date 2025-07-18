@@ -1,0 +1,17 @@
+TDAT: 	private void copyContext(ONDEXConcept oldC, ONDEXConcept newC) {
+
+		// add new concept to same references as old concept
+		for (ONDEXConcept c : graph.getConceptsOfTag(oldC)) {
+			c.addTag(newC);
+		}
+		for (ONDEXRelation r : graph.getRelationsOfTag(oldC)) {
+			r.addTag(newC);
+		}
+
+		// transfer context from old concept to new concept
+		for (ONDEXConcept c : oldC.getTags()) {
+			newC.addTag(c);
+		}
+	}
+
+COM:copies the context of an ONDEXConcept from an old concept to a new concept and adds the new concept to the same references as the old concept

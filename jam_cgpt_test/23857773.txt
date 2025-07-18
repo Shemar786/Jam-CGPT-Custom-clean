@@ -1,0 +1,15 @@
+TDAT: 	public Date getDate() {
+		// DateFormat df=new
+		// SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss 'GMT'",Locale.US);
+		try { // Date d=df.parse(str,new ParsePosition(index));
+			Date d = DateFormat.parseEEEddMMM(str, index);
+			index = str.indexOf("GMT", index) + 3;
+			return d;
+		} catch (Exception e) {
+			e.printStackTrace();
+			index = str.length();
+			return null;
+		}
+	}
+
+COM:parses a date string in a specific format and returns a corresponding Date object

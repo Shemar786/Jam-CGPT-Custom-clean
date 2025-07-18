@@ -1,0 +1,18 @@
+TDAT: 	public ADNItemDocReader getDocReader() {
+		if (docReader == null) {
+			try {
+				prtln("getDocReader() creating new docReader for id=" + id);
+				docReader = new ADNItemDocReader(id, getDocument(), rs.getVocab());
+			} catch (Exception e) {
+				System.err.println("Error reading document: " + e);
+				e.printStackTrace();
+				return null;
+			}
+		}
+		else {
+			// prtln ("getDocReader() returning existing docReader");
+		}
+		return docReader;
+	}
+
+COM:returns a document reader object, creating a new one if it does not already exist

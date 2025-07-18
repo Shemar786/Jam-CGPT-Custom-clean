@@ -1,0 +1,14 @@
+TDAT: 	private void setupContentPane() {
+		getContentPane().setLayout(new BorderLayout());
+		
+		JPanel p = new JPanel(new BorderLayout());
+		p.setBorder(BorderFactory.createLoweredBevelBorder());
+		desktop = new JDesktopPane();
+		p.add(desktop, BorderLayout.CENTER);
+		getContentPane().add(p, BorderLayout.CENTER);
+		
+		statusbar = new JLabel("Ready");
+		getContentPane().add(statusbar, BorderLayout.SOUTH);
+	}
+
+COM:sets up the content pane of a JFrame with a JDesktopPane and a status bar JLabel

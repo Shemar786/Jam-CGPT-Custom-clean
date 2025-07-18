@@ -1,0 +1,19 @@
+TDAT:     public void initialize() {
+        try {
+            // Prepare registry view
+            Object view = getRegistryView(false);
+            XPropertySet xProps = (XPropertySet)
+                UnoRuntime.queryInterface(XPropertySet.class,view);
+
+            // Load settings using method from subclass
+            loadSettings(xProps);
+
+            // Dispose the registry view
+            disposeRegistryView(view);
+        }
+        catch (com.sun.star.uno.Exception e) {
+            // Failed to get registry view
+        }
+    }
+
+COM:initializes a registry view, loads settings using a method from a subclass and disposes of the registry view, with exception handling for a failed registry view retrieval

@@ -1,0 +1,17 @@
+TDAT: 	public String getDescription() {
+		int level = this.getLevel();
+		String baseText = this.getAsnStatement().getDescription();
+		if (level != 2)
+			return baseText;
+
+		AsnStandard parent = this.getParentStandard();
+		String parentNum = this.getNumber(parent);
+		String myNum = this.getNumber(this);
+		if (parentNum != null && myNum != null) {
+			return parentNum + "." + myNum + ". " +
+				getNonNumberText(baseText, level);
+		}
+		return baseText;
+	}
+
+COM:returns a description of an AsnStandard object, including its parent and child numbers, if applicable

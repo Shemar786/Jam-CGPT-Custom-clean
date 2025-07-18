@@ -1,0 +1,14 @@
+TDAT:     public void removeKnownObject(MuObject object, int why) {
+        super.removeKnownObject(object, why);
+        switch (why) {
+            case 1://RemKnow_ForgetID
+                sendPacket(new SForgetId(object));
+                break;
+            case 2://RemKnow_DieId
+                sendPacket(new SIdGoneDie(object.getObjectId()));
+                break;
+        }
+
+    }
+
+COM:removes a known object and sends a packet depending on the reason for removal

@@ -1,0 +1,12 @@
+TDAT: 	public int getSelectedOffering(int sosID) {
+		Cursor c = db.query(SOS_TABLE, new String[] { SOS_selectedOffering },
+				ID + "=" + sosID, null, null, null, null);
+		int ret = -1;
+		if (c.moveToFirst()) {
+			ret = c.getInt(0);
+		}
+		c.close();
+		return ret;
+	}
+
+COM:returns the selected offering from a database table based on the input SOS ID

@@ -1,0 +1,9 @@
+TDAT: 	public void testLocate() {
+		LinearMove a = new LinearMove(ORIGIN, Time.ZERO, TARGET, TIME);
+		SpaceVec r = a.readSpaceVec(TIME);
+		System.out.println("r=TARGET: " + r + "=" + TARGET);
+		assertEquals("Move", r, TARGET);
+		assertTrue("Write and read into XML", r.equals(writeAndReadXML(r)));
+	}
+
+COM:tests the functionality of the LinearMove class by creating a movement from a given origin to a target with a specific duration, reading the current position after a certain time, and comparing it to the target position

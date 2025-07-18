@@ -1,0 +1,15 @@
+TDAT:   public Templates getTemplateFromCache(String xsl) {
+    Templates xslTemplate = null;
+
+    // Get template from cache (templates hashtable)
+    if (this.useCache()) {
+      logger.info("Getting XSLT template [" + xsl + "] from cache");
+      xslTemplate = (Templates) templates.get(xsl);
+    } else {
+      // Will remove from cache
+      templates.remove(xsl);
+    }
+    return xslTemplate;
+  }
+
+COM:retrieves an XSLT template from a cache hashtable

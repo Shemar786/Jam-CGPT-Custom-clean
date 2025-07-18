@@ -1,0 +1,12 @@
+TDAT: 	public List getSchemaPathsByValueType(String valueType) {
+		ArrayList paths = new ArrayList();
+		for (Iterator i = nameMap.values().iterator(); i.hasNext(); ) {
+			SchemaPath schemaPath = (SchemaPath) i.next();
+			if (schemaPath.valueType != null && schemaPath.valueType.equals(valueType))
+				paths.add(schemaPath);
+		}
+		Collections.sort (paths, new SchemaPathComparator());
+		return paths;
+	}
+
+COM:returns a sorted list of schema paths that match a given value type

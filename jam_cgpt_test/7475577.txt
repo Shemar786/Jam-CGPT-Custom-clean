@@ -1,0 +1,27 @@
+TDAT: 	public String getNetwork() {
+		NetworkInfo ni = mConnectivityManager.getActiveNetworkInfo();
+        String networkType = "unknown";
+		if (ni == null){
+			networkType = "offline";
+		}
+		else{
+			switch (ni.getState()) {
+			case UNKNOWN:
+				networkType = "unknown";
+				break;
+			case DISCONNECTED:
+				networkType = "offline";
+				break;
+			default:
+				int type = ni.getType();
+				if (type == ConnectivityManager.TYPE_MOBILE)
+					networkType = "cell";
+				else if (type == ConnectivityManager.TYPE_WIFI)
+					networkType = "wifi";
+			}
+		}
+		Log.d(LOG_TAG, "getNetwork: " + networkType);
+		return networkType;
+	}
+
+COM:returns the type of active network connection (offline, cell, wifi, or unknown), determined by the device's connectivity manager

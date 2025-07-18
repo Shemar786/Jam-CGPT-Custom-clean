@@ -1,0 +1,15 @@
+TDAT:     private void init() {
+        log.debug("Running Broker.init()..");
+        try {
+            serverSocket = new ServerSocket(config.getLocalComPort());
+        } catch (Exception e) {
+            log.fatal("Unable to create server socket", e);
+            throw new RuntimeException(e);
+        }
+
+        dataBase = new DataBase();
+
+        taskDispenser = new StandardTaskDispenser();
+    }
+
+COM:initializes the server socket, database, and task dispenser while logging debug and fatal messages

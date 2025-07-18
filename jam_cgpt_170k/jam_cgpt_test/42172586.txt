@@ -1,0 +1,17 @@
+TDAT:   protected void addBindIPPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SafiServer_bindIP_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SafiServer_bindIP_feature", "_UI_SafiServer_type"),
+				 ConfigPackage.Literals.SAFI_SERVER__BIND_IP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the bind IP feature of a SafiServer object

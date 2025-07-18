@@ -1,0 +1,16 @@
+TDAT: 	private Message reviewListReturn(Object value) {
+		if(value instanceof String){
+			String isbn=(String) value;
+		
+		    Review[] reviewList = dataAccess.returnAllReviews(isbn);
+		    if (reviewList != null) {
+			  printToLog(" SM: reviewListReturn :return all list of reviews");
+			  return (new Message(Message.REVIEW_LIST_RESPOND, reviewList));
+		  }  else {
+			return (new Message(Message.REVIEW_LIST_RESPOND, Message.FAIL));
+		}
+		}
+		return (new Message(Message.REVIEW_LIST_RESPOND, Message.NOT_THE_TYPE_THAT_SEND));
+	}
+
+COM:takes in an object value, checks if it is a string, and returns a message with either a list of reviews or a fail message depending on whether or not the review list is null

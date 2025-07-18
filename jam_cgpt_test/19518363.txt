@@ -1,0 +1,18 @@
+TDAT:   public ProverRepresentative getProverRepForName(String aName) {
+    ProverRepresentative result = null;
+    Class<? extends ProverRepresentative> lClass = proverReps.get(aName);
+    if (lClass != null) {
+      try {
+        result = lClass.newInstance();
+        result.setDefault();
+      } catch (InstantiationException e) {
+        // Ignore
+      } catch (IllegalAccessException e) {
+        // Ignore
+      }
+    }
+
+    return result;
+  }
+
+COM:retrieves a ProverRepresentative object based on a given name and sets it to default values

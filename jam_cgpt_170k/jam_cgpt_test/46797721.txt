@@ -1,0 +1,15 @@
+TDAT:     private TrieEntry followLeft(TrieEntry node) {
+        while(true) {
+            TrieEntry child = node.left;
+            // if we hit root and it didn't have a node, go right instead.
+            if(child.isEmpty())
+                child = node.right;
+            
+            if(child.bitIndex <= node.bitIndex)
+                return child;
+            
+            node = child;
+        }
+    }
+
+COM:follows a path from a given TrieEntry node to its leftmost non-empty child node and returns it

@@ -1,0 +1,20 @@
+TDAT:     public void setTrackPositionLeading(boolean trackPositionLeading) {
+        
+        // store the old value
+        boolean oldTrackPositionLeading = m_trackPositionLeading;
+        
+        // set the new value
+        m_trackPositionLeading = trackPositionLeading;
+        
+        // update things if necessary
+        if (oldTrackPositionLeading != m_trackPositionLeading) {
+            configureSubcomponents();
+            firePropertyChange(
+                PROPERTY_TRACKPOSITIONLEADING,
+                oldTrackPositionLeading, m_trackPositionLeading
+            );
+        }
+        
+    }
+
+COM:sets a track position and updates certain components if the new value is different from the old one

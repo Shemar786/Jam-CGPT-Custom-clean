@@ -1,0 +1,15 @@
+TDAT: 	protected void test_HeavyProject(String projectName) throws Exception {
+		IRodinProject rProject = getProject(projectName);
+		System.out.println(getMRTName() + isBeingTested + "on " + projectName);
+		if (rProject == null) {
+			return;
+		}
+		for (IRodinFile file : rProject.getRodinFiles()) {
+			System.gc();
+			x = extractFile(file);
+			System.out.println(testingFile + file.getElementName());
+			suitePerfMeasure(1);
+		}
+	}
+
+COM:tests a heavy project, printing information about the project and its files while measuring performance

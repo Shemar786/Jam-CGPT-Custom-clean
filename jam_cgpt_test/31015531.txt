@@ -1,0 +1,10 @@
+TDAT:     public boolean isAdvancedRefinery() {
+	Hullfunc hullfunc=game.getHullfunc();
+	Vector cloakvec=(Vector)hullfunc.getFunctionVector(funcadvancedrefinery);
+	for (int i=cloakvec.size()-1; i>=0; i--) {
+	    if (((Hullfunc.Allowed)cloakvec.elementAt(i)).hull==id) return true;
+	}
+	return false;
+    }
+
+COM:checks if the game's advanced refinery feature is available for a given hull

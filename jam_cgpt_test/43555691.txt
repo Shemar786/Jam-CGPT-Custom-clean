@@ -1,0 +1,12 @@
+TDAT:     public boolean check(String input) {
+
+        Iterator<TurkicWordParse> it = parser.parseIterator(input);
+        while (it.hasNext()) {
+            // check if input is formatted correctly.
+            if (wordFormatter.format(input, it.next()).equals(input))
+                return true;
+        }
+        return false;
+    }
+
+COM:checks whether the input string is formatted correctly according to a specified formatter and returns a boolean value

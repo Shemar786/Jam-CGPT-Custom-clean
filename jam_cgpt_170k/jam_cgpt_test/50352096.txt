@@ -1,0 +1,14 @@
+TDAT:     public void setSavedGames(SavedGames savedGames) {
+        super.setSavedGames(savedGames);
+        try {
+            FileOutputStream fos = new FileOutputStream("savedgames.ser");
+            BufferedOutputStream bos = new BufferedOutputStream(fos, 100000);
+            ObjectOutputStream oos = new ObjectOutputStream(bos);
+            oos.writeObject(filter);
+            oos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+COM:sets the saved games and serializes them to a file

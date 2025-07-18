@@ -1,0 +1,11 @@
+TDAT:   public Iterator getNumberedChildren() {
+  	Vector nnchildren = new Vector();
+  	for (Iterator i = getChildren(); i.hasNext();) {
+  		Block b = (Block) i.next();
+  		//if (! (b instanceof ExtensionPoint)) nnchildren.addElement(b);
+  		if (b.isNumbered()) nnchildren.addElement(b);
+  	}
+  	return nnchildren.iterator();
+  }
+
+COM:returns an iterator of numbered children

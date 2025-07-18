@@ -1,0 +1,9 @@
+TDAT: 	private BigInteger getResultReasonCode(KeyBindingType keyBinding) {
+		if (keyBinding == null || keyBinding.getProcessInfo() == null || keyBinding.getProcessInfo().getAny() == null) {
+			return null;
+		}
+
+		return (BigInteger) getFromJAXBElementList(keyBinding.getProcessInfo().getAny(), "ReasonCode");
+	}
+
+COM:returns a BigInteger representing the reason code from a KeyBindingType object's ProcessInfo property

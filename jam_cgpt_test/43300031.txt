@@ -1,0 +1,18 @@
+TDAT: 	public void testGetApplicationNames() {
+		ArrayList<String> activeNames = new ArrayList<String>();
+		ArrayList<String> popularNames = new ArrayList<String>();
+		int counter = 0;
+
+		testScraper.jumpToThisHTML(sampleHTML);
+		activeNames = testScraper.getApplicationNames("most_active");
+		popularNames = testScraper.getApplicationNames("most_downloaded");
+
+		for (String appName : activeNames) {
+			counter++;
+		}
+
+		assertEquals(counter, 3);
+		assertEquals(popularNames.get(0), "Download 1");
+	}
+
+COM:tests the functionality of "getApplicationNames" method by passing different parameters and asserting the values returned by the method

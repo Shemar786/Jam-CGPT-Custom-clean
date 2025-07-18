@@ -1,0 +1,11 @@
+TDAT:   public void updateNewLinks() {
+    for (int i = 0; i < links.size(); i++)
+      try {
+        CTableLink link = ((CTableLink) links.get(i));
+        if (!link.isUpdated())
+          link.updateShape();
+      }
+      catch (Exception e) {}
+  }
+
+COM:updates new links by looping through a list of links, checking if they are updated and updating them if they are not

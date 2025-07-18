@@ -1,0 +1,10 @@
+TDAT:     protected OutputPin createOutputPin(String name) {
+        //A pin object is created using the name provided.
+        OutputPin pin = new OutputPin(this, name);
+        //The pin added to the map, using the name as the key.
+        outputPins.put(name, pin);
+        //We then return a reference to the newly created pin to the subclass that created it.
+        return pin;
+    }
+
+COM:creates and adds a new OutputPin object to a map using a given name as the key, and returns a reference to the newly created pin

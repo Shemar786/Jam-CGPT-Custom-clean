@@ -1,0 +1,12 @@
+TDAT:     private void initOptionsMenu(JMenuBar bar) {
+        optionsMenu = new JMenu("Options");
+        optionsMenu.setToolTipText("Options for SWGAide");
+        optionsMenu.setMnemonic(KeyEvent.VK_O);
+
+        optionsMenu.add(optionsSWGCraftMenuItem());
+
+        optionsMenu.setEnabled(true);
+        bar.add(optionsMenu);
+    }
+
+COM:initializes an "Options" menu in a JMenuBar and adds a menu item for SWGAide

@@ -1,0 +1,9 @@
+TDAT:   public void initEndpoint() {
+    if (!StringUtil.isEmpty(signatureServiceEndpoint)) {
+      BindingProvider bindingProvider = (BindingProvider) signatureservice;
+      Map<String, Object> requestContext = bindingProvider.getRequestContext();
+      requestContext.put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, signatureServiceEndpoint);
+    }
+  }
+
+COM:initializes the endpoint for a signature service if the endpoint is not empty

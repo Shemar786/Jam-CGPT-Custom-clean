@@ -1,0 +1,10 @@
+TDAT:     private void addNotesObject() {
+        SWGNotesNode node = SWGNotesNode.newNode(this);
+        if (node == null) return;
+        ((DefaultTreeModel) mainTab.tree.getModel()).insertNodeInto(node, this,
+                this.getChildCount() - 1);
+        mainTab.tree.setSelectionPath(new TreePath(node.getPath()));
+        node.focusGained(null);
+    }
+
+COM:adds a new notes object to a tree model and selects it

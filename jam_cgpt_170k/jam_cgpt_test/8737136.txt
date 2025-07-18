@@ -1,0 +1,10 @@
+TDAT:     private String getFilePath() {
+    	String s = System.getProperty("user.dir");
+    	int i = s.lastIndexOf("\\");
+    	String filePath = s.substring (0,i);
+    	filePath += "\\com.secdec.ark.net.alpacka.test\\src\\com\\secdec\\ark\\net\\alpacka\\test\\" ;
+    	
+    	return filePath;
+	}
+
+COM:returns the file path of the project's test package

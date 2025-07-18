@@ -1,0 +1,14 @@
+TDAT:     public String getJoinCondition() {
+        if (dataModel.getRestrictionModel() != null) {
+            String restriction = dataModel.getRestrictionModel().getRestriction(this);
+            if (restriction != null) {
+                if (restriction == RestrictionModel.IGNORE) {
+                    return null;
+                }
+                return "(" + joinCondition + ") and " + restriction;
+            }
+        }
+        return joinCondition;
+    }
+
+COM:gets the join condition for a data model, including any applicable restrictions

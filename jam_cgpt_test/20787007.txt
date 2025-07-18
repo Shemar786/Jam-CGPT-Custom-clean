@@ -1,0 +1,9 @@
+TDAT:   public void store(String path, InputStream stream) throws IOException {
+    toIgnore.add(normalizePath(path));
+    ZipEntry entry = new ZipEntry(path);
+    zipOutput.putNextEntry(entry);
+    IOUtils.copy(stream, zipOutput);
+    zipOutput.closeEntry();
+  }
+
+COM:stores an InputStream into a zip file at a specified path, ignoring certain paths, and throws an IOException if there is an error

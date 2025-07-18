@@ -1,0 +1,13 @@
+TDAT:   public DefaultListModel toListModel(wpGrammar grammar) {
+
+    DefaultListModel listModel = new DefaultListModel();
+    wpGrammarVector vec = new wpGrammarVector();
+    parseGrammar(vec);
+    Iterator it = vec.iterator();
+    while (it.hasNext()) {
+      listModel.addElement( (String) it.next());
+    }
+    return listModel;
+  }
+
+COM:converts a wpGrammar object into a DefaultListModel object

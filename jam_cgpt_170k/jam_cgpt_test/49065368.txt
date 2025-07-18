@@ -1,0 +1,16 @@
+TDAT:     public void mouseReleased(MouseEvent e) {
+        int button = e.getButton();
+        if (osName.equals("Mac OS X")) {
+            if ((e.getModifiers() & 2) == 0) {
+                button = 1;
+            } else {
+                button = 3;
+            }
+        }
+        if (button != 3) {
+            isDragging = false;
+            handleWindowMove(e.getX(), e.getY());
+        }
+    }
+
+COM:handles the release of a mouse button and determines if a window should be moved

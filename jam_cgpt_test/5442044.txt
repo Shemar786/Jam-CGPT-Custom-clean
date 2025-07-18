@@ -1,0 +1,13 @@
+TDAT:     public void read(ServletInputStream in) throws IOException, HttpException {
+        byte[] b = new byte[1024];
+        int len = in.readLine(b, 0, 1024);
+
+        // complain about too long URIs
+        if (len == 1024) {
+            throw new HttpException("ResponseLine is too long.");
+        }
+
+        parseResponseLine((new String(b, 0)).trim());
+    }
+
+COM:reads data from a ServletInputStream, checks if the response line is too long, and then parses the response line

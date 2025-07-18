@@ -1,0 +1,10 @@
+TDAT:     public void add(byte b) {
+        if (bytesBuffer.length <= length) {
+            byte[] newBytesBuffer = new byte[length + length/2];
+            System.arraycopy(bytesBuffer, 0, newBytesBuffer, 0, bytesBuffer.length);
+            bytesBuffer = newBytesBuffer;
+        }
+        bytesBuffer[length++] = b;
+    }
+
+COM:adds a byte to a buffer and dynamically increases the buffer size if it is full

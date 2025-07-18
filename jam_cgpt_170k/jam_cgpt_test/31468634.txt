@@ -1,0 +1,13 @@
+TDAT:     protected void synchronizeData() {
+
+        // no need to sync in the future
+        syncData = false;
+
+        // fluff data
+        DeferredDocumentImpl ownerDocument = (DeferredDocumentImpl)this.ownerDocument;
+        value = ownerDocument.getNodeValueString(fNodeIndex);
+        ignorableWhitespace = ownerDocument.getFirstChild(fNodeIndex) == 1;
+
+    } // synchronizeData()
+
+COM:synchronizes data by setting a boolean flag to false and assigning values to two variables

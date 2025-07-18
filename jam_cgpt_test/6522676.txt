@@ -1,0 +1,19 @@
+TDAT: 	private void check(UpdateResponse response) throws MissingParametersFault {
+
+		// check UpdateResponse  object pointer
+		if (response instanceof UpdateResponse) {
+
+			check(response.getSessionContext(), Constants.NILLABLE_TRUE);
+			check(response.getPortletContext(), Constants.NILLABLE_TRUE);
+			check(response.getMarkupContext(), Constants.NILLABLE_TRUE);
+
+			// TODO: check for valid window states and portlet modes
+
+		}
+		else {
+
+			throwMissingParametersFault("No valid update response found.");
+		}
+	}
+
+COM:checks if an UpdateResponse object has valid session context, portlet context, and markup context, and throws a MissingParametersFault exception if it does not

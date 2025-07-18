@@ -1,0 +1,19 @@
+TDAT:     public int indexOf(int ch, int start) {
+        int i = 0;
+        prepareNext();
+        while (start-- > 0) {
+            nextChar();
+            i++;
+        }
+        int c;
+        while ((c = nextChar()) != 0) {
+            if (c == ch)
+                return i;
+            i++;
+        }
+        if (ch == 0)
+            return i;
+        return -1;
+    }
+
+COM:returns the index of the first occurrence of a specified character in a string starting from a given index

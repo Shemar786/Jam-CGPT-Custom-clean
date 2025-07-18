@@ -1,0 +1,8 @@
+TDAT:     public void doTestKeepCase(boolean preserveTagCase, String[] expected1, String[] expected2) throws Exception {
+    	prepareTestCase();
+      verifyMatchingBoldNodes( wc, request, expected1 );
+      HTMLParserFactory.setPreserveTagCase( preserveTagCase);
+      verifyMatchingBoldNodes( wc, request, expected2 );
+    }
+
+COM:prepares and executes a test case by verifying matching bold nodes in HTML content while optionally preserving tag case

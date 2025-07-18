@@ -1,0 +1,13 @@
+TDAT:   public int addAndGetIndex(E e) {
+    Integer index = indexes.get(e);
+    if (index != null) {
+   	 return index;
+    }
+    //  Else, add
+    int newIndex = size();
+    objects.add(e);
+    indexes.put(e,newIndex); 
+    return newIndex;
+  }
+
+COM:adds a new item to a list and returns its index, or returns the index of an existing item if it already exists in the list

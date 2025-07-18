@@ -1,0 +1,12 @@
+TDAT:   public void readXYFrom(LSBReader source) throws IOException {
+      // support explorer
+      int newX = source.readShort();
+      int newY = source.readShort();
+      if ((newX<minDim) || (newX>maxDim) || (newY<minDim) || (newY>maxDim)) return;
+
+      setX(newX);
+      setY(newY);
+      realPlanets++;
+  }
+
+COM:reads X and Y coordinates from a LSBReader object and sets them using the setX() and setY() methods, while also incrementing a counter if the values fall within certain limits

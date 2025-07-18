@@ -1,0 +1,14 @@
+TDAT:   public void pad(byte type) {
+    int a = getAlignment(type);
+    int b = (int) ((bytecounter - preallocated) % a);
+    if (0 == b) { return; }
+    a = (a - b);
+    if (preallocated > 0) {
+      paofs += a;
+      preallocated -= a;
+    } else {
+      appendBytes(padding[a]);
+    }
+  }
+
+COM:pads a byte array with a specified alignment type and a preallocated amount of padding

@@ -1,0 +1,11 @@
+TDAT:         protected void copy(Annotation a, Configuration cfg) throws ExternalConfigurationException {
+            try {
+                cfg.addEntry(dstParam, srcParam.invoke(a));
+            } catch (InvocationTargetException e) {
+                throw new ExternalConfigurationException(e);
+            } catch (IllegalAccessException e) {
+                throw new ExternalConfigurationException(e);
+            }
+        }
+
+COM:copies an annotation to a configuration, handling any exceptions thrown during the process

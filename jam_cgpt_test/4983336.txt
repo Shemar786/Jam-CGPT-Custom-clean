@@ -1,0 +1,9 @@
+TDAT:     protected void retrieveList(int index) {
+        //Get new data from the server:
+        this.setStartIndex(this.getNewStartIndex(index));
+        this.setSize();
+        this.setJbsBaseObjects(this.getDataFromServer(this.getStartIndex(), this.getRowsPerPage()));
+        this.setDeprecated(false);
+    }
+
+COM:retrieves a new list of data from the server and updates the class attributes accordingly

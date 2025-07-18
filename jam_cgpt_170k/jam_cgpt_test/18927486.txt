@@ -1,0 +1,12 @@
+TDAT:   private List memListForHier(int hierIndex, List positions) {
+    List memList = new ArrayList();
+    PositionLoop : for (Iterator iter = positions.iterator(); iter.hasNext();) {
+      Position pos = (Position) iter.next();
+      Member m = pos.getMembers()[hierIndex];
+      if (!memList.contains(m))
+        memList.add(m);
+    }
+    return memList;
+  }
+
+COM:takes in a hierarchical index and a list of positions, iterates through each position, retrieves a member based on the hierarchical index, and adds the member to a list if it is not already in the list

@@ -1,0 +1,14 @@
+TDAT: 	public double getLow() {
+		Element units = channel.getChild("units", this.namespace);
+
+		Element forecast = item.getChild("forecast", this.namespace);
+		String content = forecast.getAttributeValue("low");
+		double low = Double.parseDouble(content);
+		if (units.getAttributeValue("temperature").equals("F")) {
+			// Converte de Farehreit para Celcius.
+			low = (low - 32) * 5 / 9;
+		}
+		return low;
+	}
+
+COM:retrieves the low temperature forecasted for an item and converts it to Celsius if the units are in Fahrenheit

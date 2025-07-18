@@ -1,0 +1,9 @@
+TDAT: 	public void makeConstituentVisible( Constituent c ) {
+		Dimension size = scrollPane.getSize();
+    GraphViewConstituent gvc = this.pnlGraph.findConstituent( c );
+
+    scrollPane.getHorizontalScrollBar().setValue( gvc.getCenterX() - size.width / 2 );
+    scrollPane.getVerticalScrollBar().setValue( gvc.getCenterY() - size.height / 2 );
+	}
+
+COM:makes a specific constituent visible by adjusting the scroll bars based on its position within a graph view

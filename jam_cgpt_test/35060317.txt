@@ -1,0 +1,19 @@
+TDAT: 	protected void updateHistory(Object arg) {
+	
+		if( arg instanceof HistoryMoveAddMove ) {
+			HistoryMoveAddMove moveAddMove = (HistoryMoveAddMove)arg;
+			if( !moveAddMove.anyMoveDeleted() && moveAddMove.getTime() != MoveImpl.NO_TIME ) 
+				addNode( moveAddMove.getPuzzleMove() );
+			else 
+				recreateAllNodes();
+			updateNodesPos();
+		}
+		else if( !(arg instanceof HistoryMoveChangeTime) ) {
+			recreateAllNodes();
+			updateNodesPos();
+		}
+		
+		super.updateHistory(arg);
+	}	
+
+COM:updates the history of puzzle moves, adding or recreating nodes based on the argument passed in

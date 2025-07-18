@@ -1,0 +1,15 @@
+TDAT: 	public void act(ActionExec action, List<ActionExec> feedback) {
+		super.act(action, feedback);
+		Structure actionTerm = action.getActionTerm();
+		String functor = actionTerm.getFunctor();
+		Method m = annotatedMethods.get(functor);
+		if (m != null) {
+			try {
+				m.invoke(this, (Object)actionTerm.getTermsArray());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}	
+
+COM:invokes a method with a given functor from a list of annotated methods based on an ActionExec term

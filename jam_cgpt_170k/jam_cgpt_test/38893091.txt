@@ -1,0 +1,24 @@
+TDAT:   protected void stopAllThreads() {
+    if (pollThread != null) {
+      try {
+        pollThread.halt();
+        pollThread.join();
+      } catch (Exception e) {
+        // Discard silently
+      }
+
+      pollThread = null;
+    }
+
+    if (eventThread != null) {
+      try {
+        eventThread.halt();
+        eventThread.join();
+      } catch (Exception e) {
+      }
+
+      eventThread = null;
+    }
+  }
+
+COM:stops and joins two threads (pollThread and eventThread) if they are not null

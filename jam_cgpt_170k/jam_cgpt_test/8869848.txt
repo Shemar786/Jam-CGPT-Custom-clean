@@ -1,0 +1,13 @@
+TDAT: 	public void createNub(Map<String, String> params){
+		long dataResourceId = getDataResourceId(params);
+		if(dataResourceId > 0){
+			int taxPriority= getDataResourceDao().getById(dataResourceId).getTaxonomicPriority();
+			
+			//now create the nub
+			createNub(dataResourceId, taxPriority);
+		}
+		else
+			log.warn("Unable to create nub.  No data resource id could be found.");
+	}
+
+COM:creates a nub by obtaining a data resource ID and a taxonomic priority from a set of parameters and then using them to create the nub

@@ -1,0 +1,17 @@
+TDAT:   protected void addScriptTextPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SafletScript_scriptText_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SafletScript_scriptText_feature", "_UI_SafletScript_type"),
+				 ScriptingPackage.Literals.SAFLET_SCRIPT__SCRIPT_TEXT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the SafletScript's script text feature to the item property descriptors list

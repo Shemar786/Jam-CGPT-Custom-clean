@@ -1,0 +1,16 @@
+TDAT: 	public boolean reverseCorrectIt() {
+		log.info("reverseCorrectIt - " + toString());
+		// Before reverseCorrect
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_BEFORE_REVERSECORRECT);
+		if (m_processMsg != null)
+			return false;
+		
+		// After reverseCorrect
+		m_processMsg = ModelValidationEngine.get().fireDocValidate(this,ModelValidator.TIMING_AFTER_REVERSECORRECT);
+		if (m_processMsg != null)
+			return false;
+		
+		return voidIt();
+	}	//	reverseCorrectionIt
+
+COM:logs an information message, performs validation checks before and after a reversal correction, and returns a boolean value based on the success of the method's execution

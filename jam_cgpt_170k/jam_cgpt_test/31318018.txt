@@ -1,0 +1,12 @@
+TDAT: 	private void checkIfBlockMissing(NetworkID blockID) {
+		log.trace("checking whether block with id " + blockID + " is missing");
+		if (blockID.isNullID()) {
+			log.trace("this is the null network id: no need to check");
+			return;
+		} else if (findBlock(blockID) == null) {
+			log.trace("adding block with id " + blockID + " to missing list");
+			missingElements.addRequest(blockID);
+		}
+	}
+
+COM:checks if a block with a specific ID is missing and adds it to a missing list if it is not found

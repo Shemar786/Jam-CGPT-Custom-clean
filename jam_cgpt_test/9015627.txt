@@ -1,0 +1,14 @@
+TDAT: 	public void setupMouseListeners(Filter[] filters) {
+		SubFilterList list;
+
+		for (int i = 0; i < filters.length; i++) {
+			// set us up as a mouse listener on it
+			((Component) filters[i]).addMouseListener(this);
+			((Component) filters[i]).addMouseMotionListener(this);
+			list = getEnclosed(filters[i]);
+			if (null != list)
+				setupMouseListeners(list.getFilters());
+		}
+	}
+
+COM:sets up mouse listeners on a list of filters and their enclosed subfilters

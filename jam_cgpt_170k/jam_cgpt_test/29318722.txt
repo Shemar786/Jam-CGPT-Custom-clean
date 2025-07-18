@@ -1,0 +1,11 @@
+TDAT:   private void addMessageID(SOAPHeaderElement elem) throws MalformedURIException {
+    if (this.messageID == null) {
+      this.messageID = new MessageID(elem);
+    } else {
+      this.addrHeaderFault = new AddressingHeaderFault(
+        AddressingHeaderFault.INVALID_CARDINALITY,
+        Constants.MESSAGE_ID);
+    }
+  }
+
+COM:adds a message ID to a SOAP header element, throwing a MalformedURIException if the message ID is invalid or the cardinality of the header element is invalid

@@ -1,0 +1,16 @@
+TDAT: 	public void testChangePONotLoaded() throws Exception {
+		POUtil
+				.addSequent(poRoot, originalPO, "1 = 2", hyp0,
+						mTypeEnvironment());
+		POUtil.addSequent(poRoot, dischargedPO, "1 = 1", hyp1,
+				mTypeEnvironment());
+		saveRodinFileOf(poRoot);
+		runBuilder();
+		userSupport = newUserSupport(psRoot);
+		startDeltas();
+		PSWrapperUtil.copyPO(poRoot, psRoot, prRoot, originalPO, dischargedPO);
+		assertDeltas("Changed: PO is not loaded ", "");
+		stopDeltas();
+	}
+
+COM:tests that a proof obligation (PO) is not loaded if it has been changed

@@ -1,0 +1,15 @@
+TDAT:   protected void prepareCell(int row, int column) {
+    // Ensure that the indices are not negative.
+    prepareRow(row);
+    if (column < 0) {
+      throw new IndexOutOfBoundsException("Cannot access a cell at column "
+        + column);
+    }
+
+    if (column >= numColumns) {
+      throw new IndexOutOfBoundsException("There are " + numRows
+        + " columns, so no element can be added at column " + column);
+    }
+  }
+
+COM:prepares a cell in a table by ensuring that the indices are not negative and throws an exception if the column index is out of bounds

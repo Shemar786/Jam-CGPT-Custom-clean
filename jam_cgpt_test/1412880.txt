@@ -1,0 +1,11 @@
+TDAT:     public void clearPoolFilter(String filter_type) {
+        HashSet<String> filter = filters.get(filter_type);
+        HashSet<String> new_filter = (HashSet<String>)filter.clone();
+        for(String s : filter) {
+            if(s.startsWith("pool:"))
+                new_filter.remove(s);
+        }
+        filters.put(filter_type, new_filter);
+    }
+
+COM:clears a filter in a hash set by removing any string that starts with "pool:"

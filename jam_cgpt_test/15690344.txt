@@ -1,0 +1,14 @@
+TDAT:     public Object firstKey() throws NoSuchElementException {
+        Entry first = (mReverse) ? mLeastRecent : mMostRecent;
+        if (first != null) {
+            return first.mKey;
+        }
+        else if (mRecentMap.size() == 0) {
+            throw new NoSuchElementException();
+        }
+        else {
+            return null;
+        }
+    }
+
+COM:returns the first key in a collection or throws a NoSuchElementException if the collection is empty

@@ -1,0 +1,13 @@
+TDAT: 	public boolean equals(Player player) {
+		
+		if (player.getName().equals(this.getName()) &&
+				player.getBalanceSheetValue().equals(this.getBalanceSheetValue()) &&
+				player.getCategory().equals(this.getCategory()) &&
+				player.getLeague().equals(this.getLeague())) {
+			
+			return true;
+		}
+		return false;
+	}	
+
+COM:checks if the inputted player object is equal to the current player object based on their name, balance sheet value, category, and league

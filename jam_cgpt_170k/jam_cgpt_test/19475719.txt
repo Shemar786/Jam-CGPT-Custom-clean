@@ -1,0 +1,17 @@
+TDAT: 	protected void addMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBError_message_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBError_message_feature", "_UI_UMLBError_type"),
+				 UMLBPackage.Literals.UMLB_ERROR__MESSAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to the item property descriptors list

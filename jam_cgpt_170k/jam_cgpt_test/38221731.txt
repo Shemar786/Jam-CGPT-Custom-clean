@@ -1,0 +1,13 @@
+TDAT:   public void setRightTable(CTableBox rightTable) {
+    if (this.rightTable != rightTable) {
+      if (this.rightTable != null)
+        this.rightTable.removeLink(this);
+      this.rightTable = rightTable;
+      if (rightTable != null)
+        rightTable.addLink(this);
+      updated = false;
+      updateShape();
+    }
+  }
+
+COM:sets the right table of a CTableBox object and updates its shape, while also adding and removing links between the tables as necessary

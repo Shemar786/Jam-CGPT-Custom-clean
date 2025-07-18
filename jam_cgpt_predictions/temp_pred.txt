@@ -1,0 +1,139 @@
+35714220	starts the server by loading properties and setting up the smtp user for server using the provided user and password
+19345643	sets the index of the current record and updates the corresponding "record" object accordingly
+39971220	returns a JRadioButton object with specific properties related to setting and adding an item listener to it
+22171689	adds a property descriptor to an item property descriptor list for an "isExponential" feature in an EvesFunctionTimer class
+24665658	draws a double value with a specified color and font, and a specified size
+21826505	tests the replaceAttribute method of a repository and asserts that the attribute is no longer present and is present
+23800126	generates a new catalog number for a given catalog number
+24041795	migrates a database table to one specified by the connection, and throws a SQLException if there is an error
+41799278	serializes the object map into an OutputStream
+10578066	resets data for each SQL query and throws a SQLException if there is a problem
+19348945	sets the low display date and validates it against a given date, updating the low display date and setting it to the next valid date if necessary
+31318161	updates the parent block of a document's parent block and logs its modification
+38894424	outputs a protocol by ensuring it doesn't already exist in the map
+19344352	sets the table details in a JTable, taking into account two columns, and adds a checkbox to the table details column
+51014970	sets the value of a FK variable to a given string input
+41985621	prints the current pos of a game object and prints the result of the printCurrentPos method
+14466801	retrieves information about an object's attributes, including the width, height, and width, and returns the updated HashMap
+34099744	adds a source line to a bug instance with a specified instruction handle
+46795453	searches for a signature element in a collection of signatures and returns them as a LinkedList, separated by a specified element and returns it as a LinkedList
+40865150	returns a Command object named "ExitCommand2", creating it if it does not already exist
+14642620	tests the descriptor filter, creating a new file and verifying that it matches a desired file name
+22075693	reads a file from a specified location and writes the contents to the output stream
+40102085	sends an email using a provided email prefix and title, using certain email settings for author and blog, and notifies blog author
+31227092	updates matrix with a given array of data and separated by commas
+1873139	returns an input stream for reading a file, but throws a FileNotFoundException if there's an error
+46797721	takes a TrieEntry object and a TrieNode object, checks if there is no way to follow the left and right subtrees of the node
+3449549	sets the user's information for a given action form and sets their principals
+35059757	handles the deletion of a puzzle by checking if a puzzle has been deleted
+19374288	returns a Set of resume states for a given SCState or SCStateCont object
+27796518	calculates the size of a Node with a given CyNetwork object and returns the size of the Node
+42170937	adds a property descriptor for the "byIndex" feature of a monthlyOccursModel object
+45005018	authentifies a client by checking if the user is logging in, password, and returns an authentication object based on whether or not the login was successful or not
+17669281	sets a progress status property value for a given ProgressStatus object
+3501107	tests for the closing of a Conduit instance by calling the Conduit.close() method of the Conduit class and ensuring that it is closed before calling the Conduit class
+49866820	creates a checklist item for a given row ID and starts an intent for it to show a confirmation dialog when the item is created
+25432545	moves a player at a specified location on a game, and sets the facing right if it is facing right
+17176380	returns a formatted string representing a date, including the year and month, and has the format ofYYYYMMDD(0,1) format
+33719445	tests the "getState" method in the system client class
+40783146	disconnects users from a broker with a given broker public key and returns the login ID
+18925452	renders an element with a given attributes and returns the element
+47628860	sets the searchable property and fires a property change event if the old searchable is equal to the searchable value
+26163595	clears the request parameters and removes any header values related to a location
+8870538	checks if anpared geometry is a marine and returns a boolean value
+19510052	tests the specialization of a boolean expression specialization by setting its properties for a given type environment, checking for specializations
+43040383	adds mapped properties to a class called base, and also adds accessor mappings to the source and destination accessors for each mapped property
+1212944	logs a personal note in a specified game session and sets its color and title
+22045656	creates a copy of an object of Sum, sets its complex values, and returns the copied object
+26495530	creates a new ScheduledFuture object that is scheduled with the specified task, and throws an exception if the ScheduledExecutor is not running
+29601593	generates a given string using a given stem and an integer value
+22407318	initializes a GUI component by setting its layout, adding a component to a panel with a GridBagLayout and adding a component to it
+1313748	sets the title of a View object, and updates changes in the current view if it is the only view if it has been saved
+22622159	retrieves the item formats of all items in a collection, including non-dlese items, and then adds them as additional formats to a list
+36405658	applies properties to a style object based on a given style, properties, and background
+43022440	initializes the variables and initializes the connection to a database using SQL and an array of records
+40844755	finds and updates the target of a specified index array and returns the index of the last occurrence of the specified target
+454713	retrieves a MovieSettings object and returns it if it exists, otherwise it returns null with a default settings
+44521073	determines the distance between all nodes connected to nodes in a specified order
+11761872	handles cancel message by removing a neighbor and removing a block descriptor if the remote peer is not already connected to a specific peer
+26494576	reads input from a keyboard and returns its contents as a string
+48004597	removes a last view selected by its ID if it exists to be deleted
+19511321	creates a composite with a layout for displaying available and selected components
+19102562	reads a line of text, checks if it matches the pattern "^[ ]*" or "^[ %]*"
+2971444	retrieves the selected test from a list of TestData objects and returns the test ID as a integer
+13279656	fires a change event for all relevant listeners in a ChangeListenerList using the EventMulticaster
+22408401	returns a Map of local environment properties if available and throws an exception if there is an illegal argument
+36221537	retrieves a hash Tree object from a metrics record store and returns it, with error handling for exceptions
+33719676	tests the "getMyEvents" method of the "SystemClient_DBImpl" class by comparing the expected and actual result using a statement and a database connection
+12751347	parses a hexadecimal string '{0}' and returns a Color object obtained from an array of RGB values
+34427053	sets an ActionListener for saving a file, adds a listener, and sets its tooltip text to the default tool tip if it is not already enabled, and enables or disables the save menu item
+26199069	initializes EJBObject for a given ActivityManagerHome, creating it if it does not exist yet
+24244305	takes in an integer ID and returns a Rectangle object based on its ID, or returns null if the ID is invalid
+26163877	verifies that input forward is defined in the module using the application's configuration and logs an event message
+43419905	returns a JTextField object with predefined dimensions and text values added when a component is clicked
+47661261	adds a property descriptor for the tasks feature of a task package
+22620829	This private Java method diagnosticates the parent of an standard object in the specified parent object with a specified child object type
+22627464	retrieves the imports from a given document document
+38893338	reads an array of bytes from the input stream and returns the number of bytes read
+35060572	checks whether a given user information and puzzle information are private with a specific status and administrator status
+47429540	sends a file to a specific host and returns a boolean indicating success or failure
+38531653	tests the functionality of handling the "getResourceAsDocument" method in the XMLHandler class
+1312929	writes a file to an XML file using FreeMind, saves an XML file with specified format, and saves the XML file into a file
+126375	calculates the minimum size of a component and its bounds, based on its parent and child row
+38531533	retrieves the document ID of a specified resource transport and returns it as a string
+7316417	returns a String representation of the publication details, including the publication key, and returns the result of the database to the user
+31318315	changes the block type of a block in a document model and sends the updated block list to the protocol controller while also attempting to release the access lock if the document is not in use, and updates the block type face and protocol controller if the document is in use
+28761880	waits for a retry count to occur and waits for it to finish until the end of the retry process, while throwing an InterruptedException if necessary
+47661297	adds a property descriptor for the decision element of an association task use decision element
+5440508	returns an ImageIcon object, or creates an ImageIcon if it doesn't exist
+31468831	adds an identifier to a hashtable, synchronizes the data, removes an identifier from a hashtable, and stores it in a map, and synchronizes the identifiers and data
+370895	This is a method that checks whether the selection is a structured selection and updates the current tree selection accordingly
+29318952	checks if the port type of a request is an instance of a QName and throws a remote exception if it does not
+1213163	sets the hover of a Bin object and updates the list of Bin objects based on the location and size of the Bin object
+5269013	removes triggers associated with a specified bot ID from a scheduler
+18252350	takes a Table and Association as input, replaces those associations with their labels, and returns a formatted string that contains the number of rows added
+6221215	serializes a File object to a disk using ObjectOutputStream
+3989803	activates a connection and throws an exception if the connection is already closed
+51123002	takes a Document instance, writes it into a PrintWriter, and returns a string representing the result of an transformation
+42172615	This is a Java method that adds a property descriptor to the item property descriptors list
+19630714	registers a problem with a specified item type, checking for a valid result type and adding it to a list if necessary
+19521449	retrieves an extended record from a DataRecord object and updates its extended record if it is an instance of the Record object obtained from the old object
+19282804	initializes an XML marshaller to use a JAXP parser by setting the parser class and setting the XmlSerializer as the default serializer
+1189466	calculates the number of blocks output by converting each record length to a block size
+13278699	returns the hash code of a part object in a hashcode format
+46106794	updates a position by the button down and then increments the position if it is fixed and updates the position based on the button down
+22626628	returns a string containing all attribute keys
+20085539	starts a connection to a slave, checking for errors and starts a new thread if specified
+41761118	parses a factor and returns the parsed TreeNode object, while also handling potential exceptions
+12284510	sends a signal to all listeners in a certain class loader to that class
+14624389	tests whether an instance of the GpsSatellite class is available
+35235931	checks if the XML file is a indexable XML file, and returns a boolean value indicating whether it is an indexed mzML file
+9924462	paints a logo image using a Graphics object
+39937954	adds a property descriptor for a atomic sub task's atomic feature to an item property descriptor list
+6248756	tests the updates by attempting to update the third line in a document using a service
+41799151	tests the parsing of the UTCDate object using a provided date object and prints its result and expected result
+20566944	runs a map and reduce each key in a map with a specified context and its value values
+28920121	draws an edge between two axes with a given input and a given target direction, and then a switch statement to draw the edge with the axis direction
+51024346	creates a JComboBox object with namespaces and allows for user input for a namespace
+251041	checks if a specified collection is currently shared and returns a boolean indicating whether the collection is private or not
+28761737	accepts a text field value, updates the section's signature, and optionally attempts to create a new section
+19463762	refreshes a page by changing its content if needed and updating its properties based on the change state of the display
+46708800	updates the state of the root behaviour, removing the root behaviour from the ready queue, and restarting the root behaviour
+45147826	paints a coin using 3D graphics (Graphic) and either scaling or drawing it on the screen depending on the show status, or drawn it on the screen depending on the shows status
+51016859	traces back a specific path node, adding the parent node to the relation's attribute if it is a direct parent node
+38755898	executes a partial attack by updating all vertices, finding the partial attack, and generating full graph based on the selected edges
+27799066	resets the ignore columns and marks them as deleted, but may throw an exception if necessary
+33993860	adds a property descriptor for the icon feature of a ButtonWidget object
+19471246	checks if a given UMLBabstractState is a final state
+1782958	returns the response object based on the method type parameter passed as input
+23312109	checks if optional options are enabled by setting a set of options based on a given source, either enabling or disabling the optional options
+45931054	returns the log prior probability of an OCL partition and throws an exception if the partition is ghost or not the partition is ghost
+10577222	handles thebps of a Mail object and handles the message deletion accordingly
+9015182	takes a URL as input and returns a string with spaces, and updates the length of the string with the space characters before the first non-space character
+40101955	retrieves a specific tag value from a document and returns it as a String
+51022594	updates the visualization panel for a graph based on a given viewer and edge label transformer
+45240314	reads an integer from a byte array using an array of integers
+19507083	tests the copying of a top-level element within an internal element
+26323719	finds a file by name of a given project and throws a PyntException if not found
+40467765	sets the alignments based on the alignment of a given image and image element
+45550307	synchronizes a set of contexts and sets a boolean flag to true if the context store has been enabled or not, while also clearing the list if the first one is true

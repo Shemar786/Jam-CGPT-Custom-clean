@@ -1,0 +1,20 @@
+TDAT: 	private IEventBRoot getSelectedRoot() {
+		if (!(selection instanceof IStructuredSelection))
+			return null;
+
+		final IStructuredSelection ssel = (IStructuredSelection) selection;
+		if (ssel.size() != 1)
+			return null;
+
+		final Object obj = ssel.getFirstElement();
+		if (!(obj instanceof IInternalElement))
+			return null;
+
+		final IInternalElement root = (IInternalElement) obj;
+		if (!(root instanceof IContextRoot || root instanceof IMachineRoot))
+			return null;
+
+		return (IEventBRoot) root;
+	}
+
+COM:returns an instance of the IEventBRoot interface based on certain selection criteria

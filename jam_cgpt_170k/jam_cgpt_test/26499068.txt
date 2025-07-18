@@ -1,0 +1,11 @@
+TDAT:   public Registry lookup(String jndiName, Properties props) throws Exception{
+    props.setProperty(InitialContext.INITIAL_CONTEXT_FACTORY, RemoteInitialContextFactory.class.getName());
+    InitialContext ctx = new InitialContext(props);
+    try{
+      return new RemoteRegistryProxy((Registry)ctx.lookup(jndiName));
+    }finally{
+      ctx.close();
+    }
+  }
+
+COM:takes a JNDI name and properties as input, sets the initial context factory, initializes an initial context, performs a JNDI lookup, creates a remote registry proxy, and closes the context

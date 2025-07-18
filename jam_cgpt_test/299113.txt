@@ -1,0 +1,13 @@
+TDAT: 	public void toXML(XMLConverter converter) {
+		converter.pushHeader(XML_NOTE);
+		converter.writeKey(XML_NOTE_TEXT, toHTML());
+		converter.writeKey(XML_NOTE_HEIGHT, "" + getSize().height);
+		converter.writeKey(XML_NOTE_WIDTH, "" + getSize().width);
+		converter.writeKey(XML_NOTE_X, "" + getLocation().x);
+		converter.writeKey(XML_NOTE_Y, "" + getLocation().y);
+
+		super.toXML(converter);
+		converter.popHeader();
+	}
+
+COM:converts the object into an XML format using the given XMLConverter and writes the note text, height, width, X coordinate, Y coordinate, and XML header and footer

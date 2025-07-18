@@ -1,0 +1,13 @@
+TDAT: 	public void sortPopulation(IntegerTypePopulation population, boolean sign){
+		Integer[] fitness = new Integer[population.getChromossomesSet().size()];
+		
+		for (int i = 0; i < population.getChromossomesSet().size(); i++){
+			fitness[i] = population.getChromossomesSet().get(i).getFitness();
+		}
+		
+		IntegerQuickSort qs = new IntegerQuickSort();
+		qs.sort(population.getChromossomesSet(), sign);
+        			
+	}
+
+COM:sorts the chromosomes in a given population based on their fitness values using the quick sort algorithm

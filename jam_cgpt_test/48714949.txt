@@ -1,0 +1,12 @@
+TDAT:     public void repairModules() {
+        RootModuleDefinition rootModuleDefinition = getModuleStateHolder().getRootModuleDefinition();
+        ModuleOperation operation = facade.getModuleOperationRegistry().getOperation(
+                ModuleOperationConstants.RepairModuleOperation);
+        ConstructedModuleDefinitionSource newModuleDefinitionSource = new ConstructedModuleDefinitionSource(
+                rootModuleDefinition);
+
+        ModuleOperationInput input = new ModuleOperationInput(newModuleDefinitionSource, null, null);
+        execute(operation, input);
+    }
+
+COM:is used to repair modules by getting the root module definition, creating a new module definition source, and executing a module operation

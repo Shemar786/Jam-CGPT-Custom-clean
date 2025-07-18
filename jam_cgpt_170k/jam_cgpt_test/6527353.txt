@@ -1,0 +1,10 @@
+TDAT:     private String getLink( String contentId, String contentVersion, String layoutId){
+    	Map linkVariables = new HashMap();
+    	linkVariables.put("contentId", contentId);
+    	linkVariables.put("layoutId", layoutId);
+    	linkVariables.put("contentVersion", contentVersion);
+    	linkVariables.put("portletId", this.portletId);
+        return CmsToolsConfig.getContentUrl(linkVariables);    	
+    }
+
+COM:retrieves a content URL by passing in content ID, content version, and layout ID as parameters

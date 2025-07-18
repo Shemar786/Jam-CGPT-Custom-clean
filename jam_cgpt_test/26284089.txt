@@ -1,0 +1,9 @@
+TDAT:     public void parse(String date) throws ParseException {
+        if (dateFormatter == null)
+            dateFormatter = new UICCalendarDateFormatter(DateFormat.SHORT, locale);
+        Calendar parsedDate = Calendar.getInstance(locale);
+        parsedDate.setTime(dateFormatter.parse(date));
+        setCalendar(parsedDate);
+    }
+
+COM:parses a date string using a UICCalendarDateFormatter and sets the resulting calendar instance

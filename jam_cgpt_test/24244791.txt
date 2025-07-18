@@ -1,0 +1,15 @@
+TDAT: 	public String getFriendlyName() throws IOException {
+		byte[] request = { SYSTEM_COMMAND_REPLY, GET_DEVICE_INFO };
+		byte[] reply = nxtComm.sendRequest(request, 33);
+		char nameChars[] = new char[16];
+		int len = 0;
+
+		for (int i = 0; i < 15 && reply[i + 3] != 0; i++) {
+			nameChars[i] = (char) reply[i + 3];
+			len++;
+		}
+
+		return new String(nameChars, 0, len);
+	}
+
+COM:retrieves the friendly name of a device by sending a system command and returning the name as a string

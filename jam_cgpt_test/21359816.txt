@@ -1,0 +1,7 @@
+TDAT:     public String toDebugString() {
+        return "[name=" + name + ", number=" + Contact.anonymizeNumber(number) +
+                ", gateway=" + gateway + ", status=" + status + ", gatewayMsg=" +
+                gatewayMsg + ", errMsg=" + errMsg + "]";
+    }
+
+COM:returns a string representation of a Contact object with certain fields anonymized

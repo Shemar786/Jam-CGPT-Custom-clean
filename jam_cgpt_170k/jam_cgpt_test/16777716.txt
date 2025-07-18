@@ -1,0 +1,10 @@
+TDAT: 	public void setExtraValues(String key, double[] extraValues) {
+		if ((this.times == null) || (this.times.length != extraValues.length)) {
+			throw new RuntimeException(
+					"TimeSeries: length for times and extra values do not match.");
+		}
+		this.extraValues.put(key, new double[extraValues.length]);
+		System.arraycopy(extraValues, 0, this.extraValues.get(key), 0, extraValues.length);
+	}
+
+COM:sets the extra values associated with a particular key, throwing an exception if the length of the provided values does not match the length of the times array

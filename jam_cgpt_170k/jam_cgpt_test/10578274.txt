@@ -1,0 +1,21 @@
+TDAT:     public void testMessageCloningViaCoW3() throws Exception {
+        MimeMessage mmorig = getSimpleMessage();
+
+        MimeMessage mm = new MimeMessageCopyOnWriteProxy(mmorig);
+
+        LifecycleUtil.dispose(mmorig);
+        mmorig = null;
+        System.gc();
+        Thread.sleep(200);
+
+        try {
+            mm.writeTo(System.out);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail("Exception while writing the message to output");
+        }
+
+        LifecycleUtil.dispose(mm);
+    }
+
+COM:tests message cloning via Copy-on-Write

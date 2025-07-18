@@ -1,0 +1,14 @@
+TDAT:   public void changeCurrentManifest(String manifestName) throws ManifestException, LocationException {
+
+    ManifestFactory manifestFactory = new ManifestFactory();
+    ManifestLoader loader = new ManifestLoader(workingContext);
+    Manifest newManifest = manifestFactory.create(workingContext, loader.load(manifestName));
+
+    // If we are here, loading the new manifest was succesfull.
+    //
+    currentManifest = newManifest;
+
+    register();
+  }
+
+COM:changes the current manifest and registers it, but throws exceptions for Manifest and Location errors

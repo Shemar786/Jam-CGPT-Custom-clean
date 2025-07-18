@@ -1,0 +1,12 @@
+TDAT:     private void actionFavoriteList(MouseEvent e) {
+        if (e.getButton() == MouseEvent.BUTTON1
+                && e.getClickCount() > 1) { // double-click
+
+            int i = favoriteList.locationToIndex(e.getPoint());
+            if (i < 0) return;
+
+            remSfromA((SWGSchematic) favoriteList.getModel().getElementAt(i));
+        }
+    }
+
+COM:handles double-click events on a particular component and removes the selected item from a list

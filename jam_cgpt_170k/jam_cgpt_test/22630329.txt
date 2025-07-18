@@ -1,0 +1,18 @@
+TDAT: 	public void enableSet(String setUid) {
+		try {
+			ArrayList setInfos = this.getSetInfos();
+			int index = getIndexOfSetInfo(setUid, setInfos);
+			//prtln("enabling set: " + index);
+			((SetInfo) setInfos.get(index)).setEnabled("true");
+
+			synchronized (setInfosLock) {
+				adminData.update(Keys.SET_INFOS, setInfos);
+				resetSetsData();
+			}
+
+		} catch (Throwable e) {
+			return;
+		}
+	}
+
+COM:enables a set by updating its set information and resetting its data

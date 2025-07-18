@@ -1,0 +1,13 @@
+TDAT:     public OObject add( Sum x ){
+	Sum s = clone();
+	// Add complex
+	s.complex = s.complex.add( x.complex );
+	OObject sum = (OObject)s;
+	for( java.util.ListIterator<Expression> i = x.expressionList.listIterator();
+	     i.hasNext(); ){
+	    sum = sum.add( i.next() );
+	}
+	return sum;
+    }
+
+COM:adds a Sum object to the current object and returns the result as an OObject

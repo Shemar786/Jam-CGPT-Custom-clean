@@ -1,0 +1,13 @@
+TDAT:     public void actionPerformed(ActionEvent e) {
+        if (e.getActionCommand().compareTo("Copy") == 0) {
+            this.copy();
+        }
+        if (e.getActionCommand().compareTo("Paste") == 0) {
+            this.paste();
+        }
+        if (e.getActionCommand().compareTo("Cut") == 0) {
+            this.cut();
+        }
+    }
+
+COM:handles various actions based on the user's selection of a menu option

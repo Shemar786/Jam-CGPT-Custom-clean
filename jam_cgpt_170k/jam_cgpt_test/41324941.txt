@@ -1,0 +1,17 @@
+TDAT: 	public double unNormalizedScore(double aScore){
+		double theMin = getMinimumScore();
+		double theMax = getMaximumScore();
+		double theNormalizedMin,theNormalizedMax ;
+		if (isNaturalOrder) {
+			theNormalizedMin = 0.02;
+			theNormalizedMax = 1;
+		} else {
+			theNormalizedMin = 0.01;
+			theNormalizedMax = 0.99;
+		}
+		double theScore = aScore * (theMax + (theNormalizedMin - theMin)) / theNormalizedMax;
+		theScore = theScore + theMin - theNormalizedMin;
+		return theScore;
+	}
+
+COM:returns an unnormalized score based on a given score and some minimum and maximum score values

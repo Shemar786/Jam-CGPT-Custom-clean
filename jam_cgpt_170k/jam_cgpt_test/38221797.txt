@@ -1,0 +1,9 @@
+TDAT:   public void labelMouseDragged(MouseEvent e) {
+    Point pos = this.getLocation();
+    pos.x += e.getPoint().x - reposPoint.x;
+    pos.y += e.getPoint().y - reposPoint.y;
+    this.setLocation(pos);
+    updateLinks();
+  }
+
+COM:updates the location of a label and updates its links when the mouse is dragged

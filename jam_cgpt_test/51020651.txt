@@ -1,0 +1,17 @@
+TDAT: 	public void setViewScaling(boolean enabled) {
+		if (enabled) {
+			// only use view scaling
+			this.remove(scalingPlugin);
+			this.scaler = new ViewScalingControl();
+			this.scalingPlugin = new ScalingGraphMousePlugin(scaler, 0, out, in);
+			this.add(scalingPlugin);
+		} else {
+			// cross over scaling
+			this.remove(scalingPlugin);
+			this.scaler = new CrossoverScalingControl();
+			this.scalingPlugin = new ScalingGraphMousePlugin(scaler, 0, out, in);
+			this.add(scalingPlugin);
+		}
+	}
+
+COM:sets the view scaling of a graph mouse plugin, either using only view scaling or allowing for crossover scaling

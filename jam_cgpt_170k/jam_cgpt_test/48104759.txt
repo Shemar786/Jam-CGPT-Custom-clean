@@ -1,0 +1,12 @@
+TDAT:     public boolean equals(Taxa taxa) {
+        if (getNtax() != taxa.getNtax())
+            return false;
+
+        for (int t = 1; t <= getNtax(); t++) {
+            if (getLabel(t).equals(taxa.getLabel(t)) == false)
+                return false;
+        }
+        return true;
+    }
+
+COM:checks if two Taxa objects are equal based on their number of taxonomies and their labels

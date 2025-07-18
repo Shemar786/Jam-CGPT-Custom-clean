@@ -1,0 +1,10 @@
+TDAT:   public void loadModules() {
+    for(int i = 0; i < modules.length; i++) {
+      getMainForm().loadModule(null, modules[i], null);
+    }
+    CUtilities.updateStatus(getMainForm(),
+      CUtilities.getStringResource(getMainForm(), CControls.CFORMS_BUNDLE_NAME,
+        "main.allmodulesloaded", "All modules have been loaded."));
+  }
+
+COM:loads all modules and updates the status when all modules have been loaded

@@ -1,0 +1,11 @@
+TDAT: 	private Element addSimpleElement(Element parent, String elementName, String value) throws Exception{
+		if(parent == null) throw new Exception(ExchangeErrorCodes.EXPORT_SIMPLE_ELT_NO_PARENT);
+		if(elementName == null) throw new Exception(ExchangeErrorCodes.EXPORT_SIMPLE_ELT_NO_NAME);
+		if(value == null) throw new Exception(ExchangeErrorCodes.EXPORT_SIMPLE_ELT_NO_VALUE);
+		Element child = parent.getOwnerDocument().createElement(elementName);
+		child.setTextContent(value);
+		parent.appendChild(child);
+		return child;
+	}
+
+COM:adds a simple element with a given name and value as a child to a given parent element, and returns the created child element

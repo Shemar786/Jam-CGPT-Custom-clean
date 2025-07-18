@@ -1,0 +1,11 @@
+TDAT:     public Asset retrieveAsset(String assetName) {
+        if (assetStore.containsKey(assetName) == false) {
+            throw new IllegalArgumentException( "AssetManager.retrieveAsset: " +
+                    "Cannot locate " + assetName + " in asset store.");
+        }
+        
+        Asset asset = assetStore.get(assetName);
+        return asset.shallowClone();
+    }
+
+COM:retrieves an asset by its name, throws an exception if it is not found, and returns a cloned copy of the asset

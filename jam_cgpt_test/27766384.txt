@@ -1,0 +1,23 @@
+TDAT:   public boolean addListener(String listenerIP) {
+
+    Enumeration myEnum = this.elements();
+    String foo = null;
+    boolean found = false;
+    while(myEnum.hasMoreElements()) {
+      foo = (String)myEnum.nextElement();
+      if(foo.equals(listenerIP)) {
+        found = true;
+      }
+
+    }
+
+    if(found) {
+      return false;
+    } else {
+      this.add(listenerIP);
+      return true;
+    }
+
+  }
+
+COM:checks if a listener IP is already in the collection and adds it if not, returning a boolean

@@ -1,0 +1,11 @@
+TDAT:     public boolean equals(final OrderedReversePath o, final int baseDirThis, final int baseDirOth) {
+	final String [] othParts = o.getParts();
+	int minCommonPartsThis = parts.length - baseDirThis;
+	int minCommonPartsOth = othParts.length - baseDirOth;
+	if (minCommonPartsOth == minCommonPartsThis)
+	    return noCommonParts(o) >= minCommonPartsThis;
+	else
+	    return false;
+    }
+
+COM:checks if two ordered reverse paths have the same common parts starting from a given base directory

@@ -1,0 +1,12 @@
+TDAT:     private void refresh() {
+    	int firstItem = pageIndex * JwizApp.MESSAGES_PER_PAGE + 1;//
+        int lastItem = firstItem + JwizApp.MESSAGES_PER_PAGE - 1;
+        if (lastItem > totalItems) {
+        	lastItem = totalItems;
+        }
+            
+        genericTableModel.fireTableDataChanged();
+            displayedItems = viewableList.getRows(firstItem, lastItem);
+    }
+
+COM:refreshes the display by updating the range of displayed items and firing an event to update the table data

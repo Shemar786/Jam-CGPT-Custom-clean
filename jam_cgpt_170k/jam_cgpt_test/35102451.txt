@@ -1,0 +1,14 @@
+TDAT:   private JButton getBSuchen() {
+    if (bSuchen == null) {
+      bSuchen = new JButton();
+      bSuchen.setText("Suchen");
+      bSuchen.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+          hauptfenster.sucheNach(gibSuchtext(), 0);
+        }
+      });
+    }
+    return bSuchen;
+  }
+
+COM:creates and returns a JButton that, when clicked, invokes a search function with the current search text as a parameter

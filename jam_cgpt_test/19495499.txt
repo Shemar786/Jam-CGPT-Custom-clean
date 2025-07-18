@@ -1,0 +1,14 @@
+TDAT: 	private void handleClosedProjects(IRodinElementDelta[] changedDeltas) {
+		for (final IRodinElementDelta child : changedDeltas) {
+			final IRodinElement elt = child.getElement();
+			if (elt instanceof IRodinProject
+					&& (child.getFlags() & IRodinElementDelta.F_CLOSED) != 0) {
+				final IRodinProject project = elt.getRodinProject();
+				final IProject prj = project.getProject();
+				final EditorInputFilter filter = new ProjectInputFilter(prj);
+				closeRelatedEditors(filter);
+			}
+		}
+	}
+
+COM:handles closed projects by identifying the project, creating a filter based on the project, and then closing any related editors using that filter

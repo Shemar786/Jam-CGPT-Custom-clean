@@ -1,0 +1,10 @@
+TDAT:     private String getString(String key, String encoding) throws BadGGEPPropertyException, IllegalArgumentException {
+        try {
+            return new String(getBytes(key), encoding);
+        } catch (UnsupportedEncodingException e) {
+            throw new IllegalArgumentException("Cannot get GGEP key value as " +
+            		"String due to unsupported encoding", e);
+        }
+    }
+
+COM:takes a key and encoding as input parameters and returns the corresponding string value, throwing an exception if the encoding is not supported

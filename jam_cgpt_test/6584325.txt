@@ -1,0 +1,19 @@
+TDAT: 	public void setByDay(DayAndPosition[] b) {
+		if (b == null) {
+			byDay = null;
+
+			return;
+		}
+
+		byDay = new DayAndPosition[b.length];
+
+		/*
+		 * System.arraycopy isn't good enough -- we want to clone each
+		 * individual element.
+		 */
+		for (int i = 0; i < b.length; i++) {
+			byDay[i] = (DayAndPosition)b[i].clone();
+		}
+	}
+
+COM:sets the values of an array of DayAndPosition objects, cloning each individual element to avoid relying on System.arraycopy

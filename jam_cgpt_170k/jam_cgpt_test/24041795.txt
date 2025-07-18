@@ -1,0 +1,26 @@
+TDAT: 	public boolean migrate(Connection connection) throws SQLException, DBException {
+		Statement statement = connection.createStatement();
+		
+		SQLException e2 = null;
+		try {
+			try {
+				return tTicket.createTable(statement);
+			} catch (SQLException e) {
+				e2 = e;
+			}
+			
+			if (e2 != null) {
+				StringBuilder msg = new StringBuilder();
+				msg.append("Table creation failed: ");
+				boolean first = true;
+				first = appendError(msg, first, e2);
+				throw new DBException(msg.toString());
+			}
+		} finally {
+			statement.close();
+		}
+		
+		return false;
+	}
+
+COM:creates a table in a database using a SQL statement and returns true if successful, throws an exception if there is an error

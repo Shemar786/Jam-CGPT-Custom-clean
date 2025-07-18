@@ -1,0 +1,22 @@
+TDAT: 	public int divide() {
+		final SwingWorker worker = new SwingWorker() {
+			public Object construct() {
+				int returnThis = innerDivide(true);	
+				return returnThis;
+			}
+		};
+		
+		errorUpdate = new JDialog((JFrame)container,"Clustering",true);
+		errorLabel = new JLabel("Clusters stabilize when change in error = 0");
+		errorLabel.setSize(100,250);
+		errorUpdate.add(errorLabel);
+		errorUpdate.pack();
+		errorUpdate.validate();
+		// XXX: still a race condition!  Not a really bad one, though.  		System.out.println("HERE");
+		worker.start();
+		errorUpdate.setVisible(true);
+		
+		return returnThis;
+	}
+
+COM:divides numbers using an innerDivide method and displays a JDialog with an error message while the operation is in progress

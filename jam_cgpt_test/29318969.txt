@@ -1,0 +1,9 @@
+TDAT:   private void assertActorEquals(String expectedActor) {
+    Map<String, String> handlerConfig = getHandler().getHandlerConfigProperties();
+    assertNotNull(handlerConfig);
+    assertEquals(expectedActor,
+                 handlerConfig.get(AbstractAddressingHandler.CONFIG_PROP_ACTOR));
+    assertEquals(expectedActor, getHandler().getActor());
+  }
+
+COM:asserts that the expected actor matches the actor returned by a handler's configuration properties and actor method

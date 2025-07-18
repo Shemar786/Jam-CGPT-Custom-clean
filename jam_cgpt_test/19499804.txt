@@ -1,0 +1,11 @@
+TDAT: 	public Predicate instantiate(Expression[] replacements, FormulaFactory formulaFactory) {
+		BoundIdentSubstitution subst = 
+			new BoundIdentSubstitution(quantifiedIdentifiers, replacements, formulaFactory);
+		Predicate newPred = pred.rewrite(subst);
+		List<BoundIdentDecl> newBoundIdentDecls = subst.getNewDeclarations();
+		if (newBoundIdentDecls.isEmpty())
+			return newPred;
+		return formulaFactory.makeQuantifiedPredicate(getTag(), newBoundIdentDecls, newPred, getSourceLocation());
+	}
+
+COM:creates a new predicate with quantified identifiers replaced by expressions provided with the help of BoundIdentSubstitution and returns the new predicate

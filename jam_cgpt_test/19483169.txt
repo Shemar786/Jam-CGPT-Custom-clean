@@ -1,0 +1,22 @@
+TDAT: 	private boolean checkCanParse(IDocument document, IDocumentParser parser) {
+		assert document != null && parser != null;
+
+		String filename;
+		String docname;
+		try {
+			docname = document.getName();
+			filename = document.getFilename();
+		} catch (RodinDBException e) {
+			e.printStackTrace();
+			return false;
+		}
+
+		if (!parser.canParse(filename)) {
+			result.addProblem(docname, PARSER_NOT_APPLICABLE(parser.getName()));
+			return false;
+		}
+
+		return true;
+	}
+
+COM:checks if a document can be parsed by a given parser and returns a boolean value

@@ -1,0 +1,25 @@
+TDAT: 	public ProgressDirection giveProgressDirection() throws SyntaxError {
+		final int leftKind = parentKind.val;
+		final int rightKind = t.kind;
+		if (!grammar.isOperator(rightKind)) {
+			return LEFT;
+		}
+		final OperatorRelationship opRel = grammar.getOperatorRelationship(
+				leftKind, rightKind);
+		switch (opRel) {
+		case INCOMPATIBLE:
+			throw syntaxError(new ASTProblem(makeSourceLocation(t),
+					ProblemKind.IncompatibleOperators, ProblemSeverities.Error,
+					grammar.getImage(leftKind), grammar.getImage(rightKind)));
+		case RIGHT_PRIORITY:
+			return RIGHT;
+		case COMPATIBLE:
+			// process as left associative
+		case LEFT_PRIORITY:
+			return LEFT;
+		default:
+			return LEFT;
+		}
+	}
+
+COM:returns the direction of operator association based on the parent and current operator kinds, and throws a syntax error if the operators are not compatible

@@ -1,0 +1,27 @@
+TDAT: 	public void setElementsToInvalid() {
+		if (DEBUG) {
+			System.out.println("setElementsToInvalid");
+		}
+
+		if (binaryInputs != null) {
+			setInvalid(binaryInputs);
+		}
+
+		if (binaryOutputs != null) {
+			setInvalid(binaryOutputs);
+		}
+
+		if (counters != null) {
+			setInvalid(counters);
+		}
+
+		if (analogInputs != null) {
+			setInvalid(analogInputs);
+		}
+
+		if (analogOutputs != null) {
+			setInvalid(analogOutputs);
+		}
+	}
+
+COM:sets all binary inputs, binary outputs, counters, analog inputs, and analog outputs to an invalid state and prints a debug message if the DEBUG flag is set to true

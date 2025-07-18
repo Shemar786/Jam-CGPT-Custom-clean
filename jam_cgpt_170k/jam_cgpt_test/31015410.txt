@@ -1,0 +1,10 @@
+TDAT:   public void writeMessageTo(LSBWriter sink) throws IOException {
+    int length=content.length();
+    for (int j=0;j<length;j++) {
+      char c=content.charAt(j);
+      if (c=='\012') c='\015';
+      sink.writeByte((byte)(c+MESSCODE));
+    }
+  }
+
+COM:writes a modified version of the given message to the specified LSBWriter sink, by changing line feed characters to carriage return characters and adding a MESSCODE to each byte representation of the message

@@ -1,0 +1,7 @@
+TDAT:     public void applyProperties(Properties props, String baseKey, ValueParser parser) {
+        String contKey = baseKey + ".controller";
+        String contValue = props.getProperty(contKey);
+        if (contValue != null) {setControllingAttributeName(contValue, null, false);}
+    }
+
+COM:accepts properties, a base key, and a value parser, and sets a controlling attribute name if it exists within the properties

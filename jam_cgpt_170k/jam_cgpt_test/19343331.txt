@@ -1,0 +1,17 @@
+TDAT: 	private void adjustLength(final int recordIdx) {
+
+		RecordDetail pref = layout.getRecord(recordIdx);
+		int newSize = pref.getLength(); //field.getEnd();
+
+		if (newSize != getLineData().length) {
+			if (newRecord) {
+				this.writeLayout = recordIdx;
+				this.preferredLayoutAlt = recordIdx;
+				this.preferredLayout = recordIdx;
+			}
+
+			newRecord(newSize);
+		}
+	}
+
+COM:adjusts the length of a record based on a given index, by checking if the new size is different from the current size and creating a new record if necessary

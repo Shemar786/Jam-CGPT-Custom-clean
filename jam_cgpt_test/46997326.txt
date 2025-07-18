@@ -1,0 +1,22 @@
+TDAT:     public boolean add(Number number) {
+        Number current = null;
+
+        if (size() > maxSize) {
+            current = get(0);
+            super.remove(0);
+        }
+
+        boolean flag = super.add(number);
+
+        if (autoRange) {
+            if (current == null) {
+                recomputeRange(number.doubleValue());
+            } else {
+                recomputeRange(current.doubleValue(), number.doubleValue());
+            }
+        }
+
+        return flag;
+    }
+
+COM:adds a number to a collection, removes the first element if the collection exceeds its maximum size, computes the range if autoRange is true, and returns a boolean indicating whether the operation was successful

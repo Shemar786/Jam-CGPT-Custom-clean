@@ -1,0 +1,20 @@
+TDAT: 	public void run() {
+		while ( keepRunning ) {
+			try {
+				sleep( sleepDuration );
+			}
+			catch ( Exception e ) {                                      // thrown upon interrupt when sleeping
+				keepRunning = false;
+				Thread.currentThread().interrupt();
+			}
+			String getLast = getLastUpdate();
+			if ( keepRunning && ( !lastUpdate.equals( getLast ) ) ) {
+				System.out.println( "Reloading vocab instance '" + instanceName + "'" );
+				lastUpdate = getLast;
+				loaderServlet.loadVocabs();
+			}
+		}
+		closeConnections();
+	}
+
+COM:runs continuously until a specified condition is met, and during each iteration, it checks for updates and reloads a vocabulary instance if updates are found

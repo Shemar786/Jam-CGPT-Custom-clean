@@ -1,0 +1,11 @@
+TDAT:     public Activity apply(Influence inf, EnvironmentState env, Collection activities) throws LawNotApplicableException {
+        if(inf == null || env == null) {
+            throw new IllegalArgumentException();
+        }
+        if(! isApplicableTo(inf)) {
+            throw new LawNotApplicableException();
+        }
+        return applyLaw(inf,env,activities);
+    }
+
+COM:applies a law to an Influence, EnvironmentState, and Collection of activities, throwing an exception if the law is not applicable

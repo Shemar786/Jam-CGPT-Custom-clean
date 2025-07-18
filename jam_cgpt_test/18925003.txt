@@ -1,0 +1,11 @@
+TDAT:   public PopUp getPopUp1b() {
+    PopUp p = new PopUp();
+    p.setLabel("popup 1b");
+    // anonymous group
+    GroupItem g = new GroupItemSupport("Group 1");
+    addItems(g.getChildren());
+    p.addItem(g);
+    return p;
+  }
+
+COM:creates and returns a PopUp object with a label "popup 1b" and includes a group named "Group 1" with child items

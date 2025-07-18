@@ -1,0 +1,11 @@
+TDAT:   public double getDouble(String key) throws ConfigurationException {
+    try {
+      return NumberFormat.getNumberInstance().parse(get(key)).doubleValue();
+    } catch (ParseException ex) {
+      throw new ConfigurationException(
+        ConfigurationException.MESSAGE_PROPERTY_NOT_NUMBER,
+        new Object[] { this.localizedResource, key });
+    }
+  }
+
+COM:retrieves and returns a double value associated with a specific key in the configuration, throwing a ConfigurationException if the value cannot be parsed as a number

@@ -1,0 +1,15 @@
+TDAT:     public boolean get(long index) throws IOException {
+        try {
+            lock().acquireReadLock();
+            int value = mFile.read(index >> 3);
+            return value > 0 && ((value << (index & 7)) & 0x80) != 0;
+        }
+        catch (InterruptedException e) {
+            throw new InterruptedIOException();
+        }
+        finally {
+            lock().releaseLock();
+        }
+    }
+
+COM:reads a bit from a file at the specified index and returns true if the bit is 1 and false if the bit is 0

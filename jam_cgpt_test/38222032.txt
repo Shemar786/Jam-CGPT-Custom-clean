@@ -1,0 +1,15 @@
+TDAT:   protected void syntaxAnalyze5() throws CParseError {
+    if (!hasMoreTokens())
+      throw new CParseError("Unexpected and of expression.");
+
+    syntaxAnalyze6();
+    while (hasMoreTokens()) {
+      CParseToken token = getToken();
+      if (token.token != POWER) break;
+      shiftToken();
+      syntaxAnalyze6();
+      expressionBuffer.add(token);
+    }
+  }
+
+COM:performs the syntax analysis of a mathematical expression, checking for unexpected ends, tokens of power, and adding tokens to the expression buffer

@@ -1,0 +1,13 @@
+TDAT:     public void saveToFile(File f) {
+        try {
+            FileOutputStream file = new FileOutputStream(f);
+            saveToFile(file);
+            file.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+COM:saves data to a file using a FileOutputStream object

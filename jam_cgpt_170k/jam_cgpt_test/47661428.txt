@@ -1,0 +1,17 @@
+TDAT: 	protected void addTaskusePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssociationTaskUseToFinalState_taskuse_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationTaskUseToFinalState_taskuse_feature", "_UI_AssociationTaskUseToFinalState_type"),
+				 ProcessPackagePackage.Literals.ASSOCIATION_TASK_USE_TO_FINAL_STATE__TASKUSE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a task use object in an association to a final state

@@ -1,0 +1,17 @@
+TDAT:   protected void addTextPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicValue_text_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicValue_text_feature", "_UI_DynamicValue_type"),
+				 ActionStepPackage.eINSTANCE.getDynamicValue_Text(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a dynamic text value

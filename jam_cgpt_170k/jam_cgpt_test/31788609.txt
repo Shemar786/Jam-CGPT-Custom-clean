@@ -1,0 +1,10 @@
+TDAT:     protected void getSandProjectsRec(ArrayList al,SandProject proj) {
+        if(proj==null) {
+            return; }
+        al.add(proj);
+        SandProject[] downstream=proj.getRequiredBy();
+        for(int i=0;i<downstream.length;i++) {
+            getSandProjectsRec(al,downstream[i]); }
+    }
+
+COM:recursively retrieves downstream SandProjects and adds them to an ArrayList

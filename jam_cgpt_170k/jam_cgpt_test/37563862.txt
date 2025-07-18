@@ -1,0 +1,7 @@
+TDAT: public void drawOval (int x, int y, int width, int height) {
+	if (handle == null) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+  handle.drawOval(x, y, width, height);
+//  ensureAreaClean(x, y, width, height);
+}
+
+COM:draws an oval shape with the given dimensions and coordinates using the SWT library

@@ -1,0 +1,15 @@
+TDAT: 	public void renameCol(String oldName, String newName) throws THSException {
+		checkNewNameCollision(newName);
+
+		for (ThsColumn column : getColumns()) {
+			if (column.getName().equals(oldName)) {
+				column.rename(newName);
+				updateImage();
+				return;
+			}
+		}
+
+		throw new THSException (ErrCode.COLUMN_NOT_FOUND, oldName);
+	}
+
+COM:renames a column in a table, checking for name collisions and throwing an exception if the old name is not found

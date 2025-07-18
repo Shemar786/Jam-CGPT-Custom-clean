@@ -1,0 +1,17 @@
+TDAT:     public String toShortString(Object object) {
+        if (object == null) {
+            return "null";
+        }
+
+        if (object instanceof ShortString) {
+            return (((ShortString)object).toShortString());
+        } else {
+            Generator generator = getGenerator(object.getClass());
+            StringBuffer sb = new StringBuffer();
+            generator.toString(sb, object, this);
+
+            return sb.toString();
+        }
+    }
+
+COM:takes an input object and returns a string representation of it, either through an existing ShortString method or by generating a string using a Generator object based on the input object's class

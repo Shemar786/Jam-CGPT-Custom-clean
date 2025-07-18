@@ -1,0 +1,16 @@
+TDAT:     public void testGetStartSpacing() {
+        assertEquals(testPosition.getStartSeparation(), 0);
+
+        int newValue = 9872;
+
+        testPosition.setStartSeparation(newValue);
+        assertEquals(testPosition.getStartSeparation(), newValue);
+
+        int invalidValue = -1;
+
+        testPosition.setStartSeparation(invalidValue);
+        assertEquals(testPosition.getStartSeparation(), 0);
+
+    }
+
+COM:tests and sets the start separation value of a position object for valid and invalid values

@@ -1,0 +1,10 @@
+TDAT:     protected void gameRender(Graphics2D graphics2D) {
+        for (int layerIdx = 0; layerIdx < gameLayersDrawOrderSorted.size(); layerIdx++) {
+            GameLayer gameLayer = gameLayersDrawOrderSorted.get(layerIdx);
+            if (gameLayer.getVisibility() == GameLayer.GameLayerVisibility.VISIBLE) {
+                gameLayer.draw(graphics2D);
+            }
+        }
+    }
+
+COM:This Java method, "gameRender," renders visible layers of a game using Graphics2D

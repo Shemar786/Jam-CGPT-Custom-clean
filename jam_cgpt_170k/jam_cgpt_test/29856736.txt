@@ -1,0 +1,14 @@
+TDAT:   private void disposeAfterLostFocus(final Window window) {
+    SwingUtilities.invokeLater(new Runnable() {
+        // in the event-queue there may be some event
+        // which has do be done before this window can close.
+        // Therefore enqueue it at the end.
+
+        public void run() {
+          window.setVisible(false);
+          window.dispose();
+        }
+      });
+  }
+
+COM:disposes a given window after it has lost focus in a GUI application using the Swing Utilities class

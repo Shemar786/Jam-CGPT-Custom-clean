@@ -1,0 +1,15 @@
+TDAT: 	public String addDatastream(Object[] parameters) throws Exception {
+		logger.debug("entering addDatastream");
+
+		try {
+			QName fedoraType = new QName(Config.getProperty("FEDORA_DEF_API"),
+					"addDatastream");
+			Call call = getConfiguredCall(fedoraType);		
+			return (String) call.invoke(parameters);
+		} catch (Exception ex) {
+			logger.error("failed to Add Datastream", ex);
+			throw new Exception("failed to Add Datastream:" + ex.getMessage());
+		}
+	}
+
+COM:adds a datastream to a Fedora repository using an array of parameters

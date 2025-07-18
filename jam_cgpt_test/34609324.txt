@@ -1,0 +1,12 @@
+TDAT:     public List getAllGenerators(final Locale locale) {
+        if (locale == null) {
+            throw new IllegalArgumentException("The 'locale' argument cannot be null.");
+        }
+        List result = (List) generators.get(locale);
+        if (result == null) {
+            result = Collections.EMPTY_LIST;
+        }
+        return result;
+    }
+
+COM:returns a List of generators based on a given Locale, throwing an exception if the Locale argument is null

@@ -1,0 +1,29 @@
+TDAT: 	private void writePackage(Package pkg) {
+		
+		File destFile = null;
+
+		try {
+			if (outputFileName == null) {
+				destFile = createOutputFile(
+						destination,
+						pkg.getName(),
+						pkg.getName(),
+						DroolsRulesCompiler.OUTPUT_FILE_ENDING
+				);
+			} else {
+				destFile = createOutputFile(
+						destination,
+						pkg.getName(),
+						outputFileName,
+						DroolsRulesCompiler.OUTPUT_FILE_ENDING
+				);
+			}
+			
+			writePackage(destFile, pkg);
+			
+		} catch (IOException e) {
+			log.error(0, "class.cant.write", outputFileName, e.getMessage());
+		}
+	}
+
+COM:writes a package to a specified output file or creates an output file if none is specified

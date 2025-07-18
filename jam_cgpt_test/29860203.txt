@@ -1,0 +1,13 @@
+TDAT:   public Set getExceptionNextBlocks() {
+    Set set = new HashSet();
+    Iterator it = getOutEdges();
+    while (it.hasNext()) {
+      CFGEdge edge = (CFGEdge) it.next();
+      if (edge.getType() == CFGEdge.EXCEPTION_EDGE) {
+        set.add(edge.getTarget());
+      }
+    }
+    return set;
+  }
+
+COM:returns a set of next blocks in a control flow graph that are associated with an exception edge

@@ -1,0 +1,17 @@
+TDAT:     public ISOMsg getResponse(int timeout) {
+        synchronized (this) {
+            if (response == null) {
+                try {
+                    if (timeout > 0)
+                        wait(timeout);
+                    else
+                        wait();
+                } catch (InterruptedException e) { }
+            }
+            setExpired (response == null);
+        }
+        Logger.log (new LogEvent (this, "ISORequest", this));
+        return response;
+    }
+
+COM:retrieves a response and sets it to expire if the timeout elapses, using synchronization and logging

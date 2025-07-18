@@ -1,0 +1,9 @@
+TDAT: 	public BugInstance addSourceLine(ClassContext classContext, MethodGen methodGen, String sourceFile, @NonNull InstructionHandle handle) {
+		SourceLineAnnotation sourceLineAnnotation =
+			SourceLineAnnotation.fromVisitedInstruction(classContext, methodGen, sourceFile, handle);
+		if (sourceLineAnnotation != null)
+			add(sourceLineAnnotation);
+		return this;
+	}
+
+COM:adds a source line annotation to a bug instance if it exists for the given class context, method generation, source file, and instruction handle

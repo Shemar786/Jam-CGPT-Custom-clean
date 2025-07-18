@@ -1,0 +1,15 @@
+TDAT:     protected String toPrintable(String notPrintable) {
+	StringBuffer printable = new StringBuffer(notPrintable.length());
+	for (int i = 0; i < notPrintable.length(); ++i) {
+	    char c = notPrintable.charAt(i);
+	    switch (c) {
+		case '\n': printable.append("\\n"); break;
+		case '\t': printable.append("\\t"); break;
+		default: printable.append(c); break;
+	    }
+	}
+
+	return printable.toString();
+    }
+
+COM:takes a string as input, replaces newline and tab characters with their printable representations, and returns the modified string

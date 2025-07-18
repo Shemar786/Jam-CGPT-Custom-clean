@@ -1,0 +1,9 @@
+TDAT:     public HttpError validate() {
+        if(clientId==null|| (!this.getTomcatBayeux().hasClient(clientId)))
+            return new HttpError(400,"Client Id not valid.", null);
+        if (subscription==null||subscription.length()==0)
+            return new HttpError(400,"Subscription missing.",null);
+        return null;//no error
+    }
+
+COM:validates the client ID and subscription fields, and returns an HTTP error if they are missing or invalid

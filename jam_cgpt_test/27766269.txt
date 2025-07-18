@@ -1,0 +1,23 @@
+TDAT:     public boolean equals(final Object obj) {
+        try {
+            if (obj instanceof ISource) {
+                
+                ISource compareSrc = (ISource)obj;
+                if( compareSrc.getIdentifyingName().equals( this.getIdentifyingName() ) ) {
+                    return true;
+                } else {
+                    return false;
+                }
+                
+            } else {
+                return false;
+            }
+        } catch ( final java.lang.RuntimeException e) {
+            
+            m_log.error(this, e);
+            return false;
+            
+        }
+    }
+
+COM:checks if two ISource objects have the same identifying name

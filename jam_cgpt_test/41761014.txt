@@ -1,0 +1,14 @@
+TDAT: 	public TreeNode createNewNode() {
+		TreeNode t = SyntaxTree.makeNewNode(token);
+		if ((t != null)) {
+			if (token.getType() == Token.TokenType.BEGIN) {
+				beginFirst = false;
+			} else if (token.getType() == Token.TokenType.END) {
+				endFirst = false;
+			}
+		}
+		tryMatch(token.getType());
+		return t;
+	}
+
+COM:creates a new node in a syntax tree based on a given token and updates flags based on the type of token

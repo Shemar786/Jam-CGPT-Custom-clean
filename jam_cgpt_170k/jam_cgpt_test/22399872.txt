@@ -1,0 +1,10 @@
+TDAT:   static private void nv_dollar(CMDARG cap) {
+    cap.oap.motion_type = MCHAR;
+    cap.oap.inclusive = true;
+    G.curwin.w_curswant = MAXCOL;	// so we stay at the end
+    if (Edit.cursor_down(cap.count1 - 1, cap.oap.op_type == OP_NOP) == FAIL) {
+      clearopbeep(cap.oap);
+    }
+  }
+
+COM:sets certain variables and moves the cursor down a certain number of lines in the text editor, with an option to beep if the operation fails

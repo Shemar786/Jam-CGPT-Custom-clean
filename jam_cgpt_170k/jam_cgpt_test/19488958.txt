@@ -1,0 +1,11 @@
+TDAT: 		private void createResourceContent(Resource resource) throws NoEClassException {
+			EClass clazz = getRootClass(resource);
+			if (clazz == null)
+				throw new NoEClassException("Cannot find root class of a resource " + resource.getURI());
+			EObject element = EcoreUtil.create(clazz);
+			if (clazz.getEStructuralFeature("name") != null)
+				EMFCoreUtil.setName(element, resource.getURI().trimFileExtension().lastSegment());
+			resource.getContents().add(element);
+		}
+
+COM:creates the content of a resource by retrieving the root class, creating an instance of it, setting its name if possible, and adding it to the resource's contents

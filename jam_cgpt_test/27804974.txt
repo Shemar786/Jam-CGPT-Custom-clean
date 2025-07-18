@@ -1,0 +1,15 @@
+TDAT:   public void initialize( Dimension size ) {
+    if ( currentSize != null ) {
+      this.currentSize = size;
+    } else {
+      // currentSize = new Dimension(  graphView.getComponent().getWidth(),
+      //                              graphView.getComponent().getHeight() );
+       currentSize = new Dimension( 1000, 1000 );
+    }
+
+    initialize_local();
+    initializeLocations();
+    
+  }
+
+COM:initializes the size of a graphical component and calls two other initialization methods

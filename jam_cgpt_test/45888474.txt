@@ -1,0 +1,14 @@
+TDAT: 	public InteractionType loadFromCursor(Cursor cursor, int pos) {
+		
+		cursor.moveToPosition(pos);
+		
+		Uri iconUri = Uri.parse(cursor.getString(COLUMN_ICON_URI)); 
+		String actionTitle = cursor.isNull(COLUMN_INTERACT_ACTION_TITLE) ? 
+				cursor.getString(COLUMN_NAME) : 
+				cursor.getString(COLUMN_INTERACT_ACTION_TITLE);
+		String intentAction = cursor.getString(COLUMN_INTERACT_INTENT);
+		
+		return new InteractionType(iconUri, actionTitle, intentAction);
+	}
+
+COM:loads data from a cursor and instantiates an InteractionType object with that data

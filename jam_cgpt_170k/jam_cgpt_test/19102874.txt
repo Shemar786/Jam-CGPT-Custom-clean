@@ -1,0 +1,9 @@
+TDAT: 	public void rename(String oldKey, String newKey) throws MappingException {
+		if (queried.contains(oldKey)) queried.add(newKey);
+		if (settings.containsKey(oldKey)) {
+			String before = settings.put(newKey, settings.remove(oldKey));
+			if (before != null) throw new MappingException(newKey, "overwritten");
+		}
+	}
+
+COM:renames a key in a map, adds the new key to a list if the old key exists in the list, and throws a MappingException if the new key overwrites an existing key in the map

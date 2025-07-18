@@ -1,0 +1,11 @@
+TDAT:     public void addError(AuditEvent auditEvent) {
+        try { 
+            String output = auditEventToString(auditEvent);
+            ((CheckstyleAction)listener).register(output, auditEvent);
+            outputWriter.println(output, listener);
+        } catch (java.io.IOException ioe) {
+            outputWriter.println(auditEventToString(auditEvent));
+        }
+    }
+
+COM:adds an error to an audit event and registers it with a listener, while also catching any potential IOExceptions

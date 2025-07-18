@@ -1,0 +1,17 @@
+TDAT: 	public String getAccessionDate() {
+		String t = doc.get("accessiondate");
+
+		if (t == null)
+			return "";
+
+		try {
+			long modTime = DateFieldTools.stringToTime(t);
+			SimpleDateFormat df = new SimpleDateFormat("MMM' 'dd', 'yyyy");
+			return df.format(new Date(modTime));
+		} catch (Throwable e) {
+			prtlnErr("Error getAccessionDate(): " + e);
+			return "";
+		}
+	}
+
+COM:returns a formatted date string from a field in a document, or an empty string if the field is null or there is an error parsing the date

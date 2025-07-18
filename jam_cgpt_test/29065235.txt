@@ -1,0 +1,17 @@
+TDAT: 	private void initGUI() throws Exception {
+		//panel to choose the strategy
+		addPanelNorth(this);	  
+		//splitPane with treeView on the left and JTreeMap on the right
+		addPanelCenter(this);
+		//panel to choose the color provider
+		addPanelSouth(this);
+		//panel to choose the fields for a TM3 file
+		addPanelEast(this);
+		
+		//update the chosen strategy
+		updateStrategy();
+		//update the chosen color provider
+		updateLegendPanel();
+	}
+
+COM:initializes the graphical user interface (GUI) by adding various panels and updating strategies and color providers

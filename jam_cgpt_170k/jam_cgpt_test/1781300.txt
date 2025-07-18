@@ -1,0 +1,9 @@
+TDAT:     public WebForm getFirstMatchingForm( HTMLElementPredicate predicate, Object criteria ) {
+        WebForm[] forms = getForms();
+        for (int i = 0; i < forms.length; i++) {
+            if (predicate.matchesCriteria( forms[i], criteria )) return forms[i];
+        }
+        return null;
+    }
+
+COM:returns the first instance of a matching HTML form based on a given predicate and criteria

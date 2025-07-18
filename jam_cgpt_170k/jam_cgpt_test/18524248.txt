@@ -1,0 +1,11 @@
+TDAT:     public void testNewChildBrowser() throws Exception {
+        IE theIE = getIe();
+        
+        findLinkAndClick(theIE, "New Browser Testing 1");
+        assertPageTitle("Web Testing New Parent Browser Window");  
+        
+        findLinkAndClick(theIE, "Child window using Target");
+        assertPageTitle("Web Testing New Child Browser Window");
+    }
+
+COM:tests the functionality of opening a new child browser window using a target and asserts the expected page titles

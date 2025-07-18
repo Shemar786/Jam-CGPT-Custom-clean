@@ -1,0 +1,13 @@
+TDAT:     protected MailAddress getReplyTo(Mail originalMail) throws MessagingException {
+        MailAddress replyTo = (isStatic()) ? this.replyTo : getReplyTo();
+        if (replyTo != null) {
+            if (replyTo == SpecialAddress.UNALTERED) {
+                replyTo = null;
+            } else if (replyTo == SpecialAddress.SENDER) {
+                replyTo = originalMail.getSender();
+            }
+        }
+        return replyTo;
+    }
+
+COM:returns the email address to use for replying to a received email, based on predefined rules and the original email's sender

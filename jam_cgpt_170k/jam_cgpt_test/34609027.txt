@@ -1,0 +1,8 @@
+TDAT:     public void write(final DataOutputStream out) throws IOException {
+        TagsetStreamPacker.writeString(symbol, out);
+        TagsetStreamPacker.writeStringsMap(names, out);
+        TagsetStreamPacker.writeStringsMap(descriptions, out);
+        TagsetStreamPacker.writeStringArrayMap(examples, out);
+    }
+
+COM:writes various data to a DataOutputStream object using helper methods from TagsetStreamPacker and may throw an IOException

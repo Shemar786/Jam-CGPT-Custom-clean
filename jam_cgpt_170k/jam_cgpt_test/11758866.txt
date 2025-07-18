@@ -1,0 +1,18 @@
+TDAT: 	public GlobalState getGlobalState() {
+		if (MainConfiguration.getSingleton().staticGlobalState) {
+			return GlobalStateServer.getStaticallySharedGlobalState();
+		} else {
+			// check if you are server first
+			GlobalStateServer server = (GlobalStateServer) getPeerletOfType(GlobalStateServer.class);
+			if (server != null) {
+				return server.getGlobalState();
+			}
+			GlobalStateClient client = (GlobalStateClient) getPeerletOfType(GlobalStateClient.class);
+			if (client != null) {
+				return client.getGlobalState();
+			}
+			return null;
+		}
+	}
+
+COM:returns the global state of either the server or client, depending on the configuration of the MainConfiguration object

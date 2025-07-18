@@ -1,0 +1,13 @@
+TDAT:     public void testRemoveEvent() {
+        System.out.println("removeEvent");
+        
+        int id = 0;
+        Event_StubImpl instance = new Event_StubImpl();
+        
+        instance.removeEvent(id);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the removal of an event by initializing an instance of Event_StubImpl class and calling its removeEvent method with a parameter 'id'

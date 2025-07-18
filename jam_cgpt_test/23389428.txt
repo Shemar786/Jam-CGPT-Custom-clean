@@ -1,0 +1,16 @@
+TDAT: 	public void start() {
+		server.gameStarted(this);
+		StringBuffer playerNames = new StringBuffer("");
+		for (int playerId = 0; playerId<nrOfPlayers; playerId++) {
+			players[playerId].gameStarted(this, playerId);
+			playerNames.append(LIST_DELIMITER+players[playerId].getPlayerName());
+		}
+		//verstuur start commando en postitie startsteen
+		try {
+			sendToAllPlayers(START+DELIMITER+playerNames.substring(1));
+			sendToAllPlayers(MADEMOVE+DELIMITER+STARTSTEEN+DELIMITER+STARTKLEUR+DELIMITER+start_x+DELIMITER+start_y);
+			doMove();
+		} catch(IOException e) {handleIOException();}
+	}
+
+COM:initiates the start of a game by sending commands to all players and executing the first move

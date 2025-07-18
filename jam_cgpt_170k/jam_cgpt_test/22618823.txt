@@ -1,0 +1,14 @@
+TDAT: 	protected Element getChoiceTest(Element choice, String name, String path) {
+
+		// prtln ("\tchoice element:    " + aChoice.asXML());
+
+		Element existenceTest = df.createElement("logic__equal")
+				.addAttribute("name", "sef")
+				.addAttribute("property", "nodeExists(" + path + ")")
+				.addAttribute("value", "true");
+
+		renderElementDebugInfo(existenceTest, "existenceTest");
+		return existenceTest;
+	}
+
+COM:returns an XML element that tests for the existence of another XML element at a specified path

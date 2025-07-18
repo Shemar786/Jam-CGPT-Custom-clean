@@ -1,0 +1,22 @@
+TDAT: 	public void testConnect() throws Exception {
+		UPnPRemoteDeviceServer server = new UPnPRemoteDeviceServer(TESTCOMMPORT, TESTSTATUSPORT);
+		UPnpRemoteDeviceClient client = new UPnpRemoteDeviceClient(TESTSTATUSPORT+1);
+		
+		assertEquals(ConnectionStatus.SEARCHING,client.getConnectionStatus());
+		assertEquals(ConnectionStatus.WAITING,server.getConnectionStatus());
+		
+		server.start();		
+		client.connectToServer("localhost",TESTCOMMPORT);
+		
+		//wait for connection
+		Thread.sleep(1000L);
+		
+		assertEquals(ConnectionStatus.CONNECTED,client.getConnectionStatus());
+		assertEquals(ConnectionStatus.CONNECTED,server.getConnectionStatus());
+		
+		server.stop();
+		client.stop();
+		
+	}
+
+COM:tests the connection between a UPnP remote device server and client and asserts that the connection statuses are correct before and after connecting

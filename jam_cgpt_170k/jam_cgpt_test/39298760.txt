@@ -1,0 +1,18 @@
+TDAT:     public void layout() {
+        if (getSourceAnchor() != null && getTargetAnchor() != null)
+            getConnectionRouter().route(this);
+
+        Rectangle oldBounds = bounds;
+        super.layout();
+        bounds = null;
+
+        if (!getBounds().contains(oldBounds)) {
+            getParent().translateToParent(oldBounds);
+            getUpdateManager().addDirtyRegion(getParent(), oldBounds);
+        }
+
+        repaint();
+        fireMoved();
+    }
+
+COM:is responsible for laying out a component and routing the connection between its source and target anchors using a connection router object, and then updating its bounds and notifying its parent of the changes

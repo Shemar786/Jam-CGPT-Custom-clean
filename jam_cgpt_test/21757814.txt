@@ -1,0 +1,12 @@
+TDAT: 	private void generate(Dialect dialect) {
+		new java.io.File(workingDir + "/schema").mkdirs();
+
+		cfg.setProperty("hibernate.dialect", dialect.getDialectClass());
+
+		SchemaExport export = new SchemaExport(cfg);
+		export.setDelimiter(";");
+		export.setOutputFile(workingDir + "/schema/ddl_" + dialect.name().toLowerCase() + ".sql");
+		export.execute(true, false, false, false);
+	}
+
+COM:generates a database schema for a given dialect using Hibernate

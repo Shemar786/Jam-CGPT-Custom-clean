@@ -1,0 +1,12 @@
+TDAT: 	public String getProperty(int propertyID) {
+		Cursor c = db.query(Property_TABLE, new String[] { Property_property },
+				ID + "=" + propertyID, null, null, null, null);
+		String ret = null;
+		if (c.moveToFirst()) {
+			ret = c.getString(0);
+		}
+		c.close();
+		return ret;
+	}
+
+COM:retrieves the property value for a given ID from a SQLite database table

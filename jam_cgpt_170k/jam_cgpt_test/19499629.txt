@@ -1,0 +1,15 @@
+TDAT: 	private void assertKeepProofs(List<IPRProof> keepProofs, List<IPRRoot> keepFiles) {
+		for (IPRProof pr : keepProofs) {
+			assertTrue("Some proofs were erased by error: "
+					+ pr.getRodinFile().getPath()
+					+ ":"
+					+ pr.getElementName(), pr.exists());
+		}
+		for (IPRRoot root : keepFiles) {
+			final IRodinFile file = root.getRodinFile();
+			assertTrue("Some files were erased by error: " + file.getPath(),
+					file.exists());
+		}
+	}
+
+COM:checks that certain proofs and files are kept and have not been accidentally deleted

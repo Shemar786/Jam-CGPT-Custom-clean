@@ -1,0 +1,23 @@
+TDAT: 	private void replaceConstruct(int amount) {
+
+		Matcher m = pConstruct.matcher(current);
+		StringBuffer sb = new StringBuffer();
+		while (m.find()) {
+			String variablename = m.group(1);
+			// System.out.println(variablename);
+			StringBuffer b = new StringBuffer();
+			for (int i = 0; i < amount; i++) {
+				b.append(" ?");
+				b.append(variablename);
+				b.append(i);
+			}
+
+			m.appendReplacement(sb, b.toString());
+		}
+		m.appendTail(sb);
+		// System.out.println(sb);
+
+		current =  sb.toString();
+	}
+
+COM:replaces occurrences of a certain pattern in a string with a variable name and a number of question marks, according to the specified amount

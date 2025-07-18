@@ -1,0 +1,14 @@
+TDAT: 	public String toString() {
+		StringBuilder str = new StringBuilder();
+		str.append("Contains ").append(plugins.size()).append(" Plugins: \n");
+		
+		for (Map.Entry<Integer, CrawlerPlugin> entry : plugins.entrySet())
+		{
+			str.append("Plugin ").append(entry.getValue().getClass().getName());
+			str.append(" with order ").append(entry.getKey()).append("\n");
+		}
+		
+		return str.toString();
+	}
+
+COM:returns a String representation of a collection of plugins with their order, stored in a HashMap

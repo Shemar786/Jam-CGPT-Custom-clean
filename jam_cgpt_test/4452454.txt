@@ -1,0 +1,13 @@
+TDAT: public void addStatusListener(PropertyChangeListener l) {
+  Validate.notNull(l, "PropertyChangeListener for Status can not be null");
+  try {
+    _boundPropertiesLock.lock();
+
+    _boundProperties.addPropertyChangeListener(PropertyNames.Status.toString(), l);
+  }
+  finally {
+    _boundPropertiesLock.unlock();
+  }
+}
+
+COM:adds a PropertyChangeListener to listen for changes in the status property and throws an exception if the listener is null

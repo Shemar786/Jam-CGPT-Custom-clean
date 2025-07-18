@@ -1,0 +1,10 @@
+TDAT:     public int getResourceCount() throws org.xmldb.api.base.XMLDBException {
+        try {
+            return this.stub.getResourceCount(this.collectionTransport);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e);
+        }
+        
+    }
+
+COM:returns the resource count of a collection using the XMldb API, and throws a remote exception if there is an error

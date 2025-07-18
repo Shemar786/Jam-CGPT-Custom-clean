@@ -1,0 +1,12 @@
+TDAT:    public void takeSnapshot(SnapshottableMemory memory) {
+      Validate.notNull(this.snapshotFile, "snapshot file not set");
+
+      try {
+         this.basicTakeSnapshot(memory);
+      }
+      catch (IOException exc) {
+         throw new SnapshotException("failed to create snapshot (file=" + this.snapshotFile + ")", exc);
+      }
+   }
+
+COM:takes a snapshot of a SnapshottableMemory object and throws a SnapshotException if there's an IO exception during the snapshot creation

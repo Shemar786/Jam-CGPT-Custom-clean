@@ -1,0 +1,10 @@
+TDAT:     public boolean addAll(Collection<GameObject> c) {
+        Object[] a = c.toArray();
+        int numNew = a.length;
+        ensureCapacity(size + numNew); // Increments modCount
+        System.arraycopy(a, 0, gameObjects, size, numNew);
+        size += numNew;
+        return numNew != 0;
+    }
+
+COM:adds all elements from the input collection to an array of GameObjects, and returns true if at least one element was added

@@ -1,0 +1,13 @@
+TDAT: public void testGetOsidContext() {
+    System.out.println("testGetOsidContext");
+    
+    try {
+        OsidContext oc = azMgr.getOsidContext();
+        System.out.println("Context:"+oc);
+    } catch (OsidException oe) {
+        fail("OsidException: "+oe.getMessage());
+    }
+    
+}
+
+COM:tests for the retrieval of an OSID context and prints the result if successful, otherwise an OsidException failure is thrown

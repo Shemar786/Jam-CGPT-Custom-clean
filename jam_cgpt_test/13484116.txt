@@ -1,0 +1,16 @@
+TDAT:         private void sortKills(List list) {
+            Collections.sort(list, new Comparator() {
+                public int compare(Object a, Object b) {
+                    if (a == b) {
+                        return 0;
+                    }
+
+                    int ka = ((Kill) a).key();
+                    int kb = ((Kill) b).key();
+
+                    return ka - kb;
+                }
+            });
+        }
+
+COM:sorts a list of objects of the "Kill" class based on their "key" attribute, using a custom comparator

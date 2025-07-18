@@ -1,0 +1,11 @@
+TDAT:     public JScrollPane getEditorScrollPane() {
+        if(null == editorScrollPane){
+            editorScrollPane = new JScrollPane(getJTxtaCurrentTable());
+            editorScrollPane.setVerticalScrollBarPolicy(
+                            JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+            editorScrollPane.setHorizontalScrollBarPolicy( JScrollPane.HORIZONTAL_SCROLLBAR_NEVER );
+        }
+        return editorScrollPane;
+    }
+
+COM:returns a JScrollPane object and creates one if it hasn't been instantiated

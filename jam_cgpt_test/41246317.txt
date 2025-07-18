@@ -1,0 +1,19 @@
+TDAT: 	protected void writeXrefs() {
+		xrefStart = offset;
+		println("xref");
+		print(0+"");
+		print(" ");
+		print("" + (xrefs.size() + 1));
+		print("\n");
+		// "fake" entry at 0, always 0, -1, f(free).
+		printXref(0, 65535, 'f');
+		// Remaining xref entries are for real objects.
+		for (int i=0; i<xrefs.size(); i++) {
+			Long lo = (Long)xrefs.get(i);
+			long l = lo.longValue();
+			printXref(l, 0, 'n');
+		}
+
+	}
+
+COM:writes cross-reference information to a PDF file

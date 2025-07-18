@@ -1,0 +1,25 @@
+TDAT: 	private void printToFile(String filename){
+
+		try
+		{
+			//print
+			OutputFormat format = new OutputFormat(dom);
+			format.setIndenting(true);
+			//format.setEncoding("UTF-8");
+
+			//to generate output to console use this serializer
+			//XMLSerializer serializer = new XMLSerializer(System.out, format);
+
+
+			//to generate a file output use fileoutputstream instead of system.out
+			XMLSerializer serializer = new XMLSerializer(
+			new FileOutputStream(new File(filename)), format);
+
+			serializer.serialize(dom);
+
+		} catch(IOException ie) {
+		    ie.printStackTrace();
+		}
+	}
+
+COM:prints an XML object (dom) to a file specified by the filename parameter

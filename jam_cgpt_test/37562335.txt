@@ -1,0 +1,9 @@
+TDAT: public void setChecked (boolean checked) {
+	checkWidget ();
+	if ((parent.style & SWT.CHECK) == 0) return;
+  handle.setChecked(checked);
+  if ((parent.style & SWT.VIRTUAL) != 0) cached = true;
+  ((CTree)parent.handle).getModel().nodeChanged((TreeNode)handle);
+}
+
+COM:sets the checked state of a widget and updates the model accordingly if the widget is of type CHECK and available in a CTree parent

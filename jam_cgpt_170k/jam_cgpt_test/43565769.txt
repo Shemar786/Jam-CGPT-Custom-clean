@@ -1,0 +1,16 @@
+TDAT: 	private Problem newProblem(long id, long contestId, Limit limit) {
+		Problem problem = new Problem();
+		problem.setId(id);
+		problem.setContestId(contestId);
+		problem.setCode("code" + id);
+		problem.setAuthor("author" + id);
+		problem.setChecker(id % 2 == 1);
+		problem.setContest("contest" + id);
+		problem.setLimit(limit);
+		problem.setRevision((int) id * 10);
+		problem.setSource("source" + id);
+		problem.setTitle("title" + id);		
+		return problem;
+	}	
+
+COM:creates a new Problem object with specific properties, such as id, contest id, code, author, checker, contest, revision, source, and title

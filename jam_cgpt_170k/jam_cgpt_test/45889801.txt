@@ -1,0 +1,12 @@
+TDAT:     private void saveAsNote() {
+    	mFileContent = mText.getText().toString();
+    	
+    	Intent intent = new Intent();
+    	intent.setAction(NotepadInternalIntents.ACTION_SAVE_TO_SD_CARD);
+    	intent.setData(mUri);
+    	intent.putExtra(NotepadInternalIntents.EXTRA_TEXT, mFileContent);
+    	
+    	startActivityForResult(intent, REQUEST_CODE_SAVE_AS);
+    }
+
+COM:saves the content of a text file to the SD card using an implicit intent

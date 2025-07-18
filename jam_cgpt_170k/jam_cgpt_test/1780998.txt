@@ -1,0 +1,11 @@
+TDAT:         public void click() throws IOException, SAXException {
+        	// TODO check whether the empty body of this method was correct
+        	// call onclick event handler
+        	HTMLElement element=this.get_element();
+        	if (element instanceof FormControl) {
+        		FormControl control=(FormControl)element;
+        		control.sendOnClickEvent();
+        	}	
+        }
+
+COM:simulates a button click by calling the onclick event handler and sending it to the FormControl element

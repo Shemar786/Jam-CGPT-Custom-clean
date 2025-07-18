@@ -1,0 +1,19 @@
+TDAT: public SafeContents getSafeContents(int i) throws IOException, ASN1Exception {
+	byte[] encodedData;
+	ByteArrayInputStream bais;
+	ContentInfo cinfo = (ContentInfo) this.get(i);
+	if (cinfo.getContent() instanceof Data)
+		encodedData = ((Data) cinfo.getContent()).getByteArray();
+	else {
+		System.out.println("This bag is either password or public-key protected.");
+		return null;
+	}
+	bais = new ByteArrayInputStream(encodedData);
+	SafeContents safe = new SafeContents();
+	BERDecoder decoder = new BERDecoder(bais);
+	safe.decode(decoder);
+	bais.close();
+	return safe;
+}
+
+COM:retrieves the safe contents of a specified index from a ContentInfo object, and returns it as a SafeContents object after decoding it using a BERDecoder and throwing an IOException or ASN1Exception if necessary

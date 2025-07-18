@@ -1,0 +1,13 @@
+TDAT:     private void closeClient(Connection c) {
+        if (c.readBuffer != null) {
+            releaseBuffer(c.readBuffer);
+            c.readBuffer = null;
+        }
+        if (c.writeBuffer != null) {
+            releaseBuffer(c.writeBuffer);
+            c.writeBuffer = null;
+        }
+        try { c.close(); } catch (Exception dummy) {}
+    }
+
+COM:closes a connection and releases its read and write buffers if they are not null

@@ -1,0 +1,16 @@
+TDAT: 	public void fordwardToVisualation(HashMap<AID,PositionUpdate> positionUpdates) throws Exception	{
+	    
+		if (envHelper==null) {
+			throw new Exception("The EnvironmentProviderService is currently not running !");
+		}
+
+		Set<AID> keys    = positionUpdates.keySet();
+		Object[] newKeys = keys.toArray();
+		
+		for(int i=0;i<newKeys.length;i++) {
+			AID key=(AID) newKeys[i];
+			envHelper.stepModel(key, positionUpdates.get(key));
+		}		
+	}
+
+COM:receives a HashMap of AID and PositionUpdate objects, and forwards them to the EnvironmentProviderService for updating the model

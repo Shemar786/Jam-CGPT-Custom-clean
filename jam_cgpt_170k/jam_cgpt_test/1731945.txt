@@ -1,0 +1,15 @@
+TDAT:        public InputStream getHTTSPage(String url) {
+               URL myURL;
+               try {
+                       myURL = new URL(url);
+                       InputStream is = myURL.openStream();
+                       return is;
+               } catch (MalformedURLException e) {
+                       e.printStackTrace();
+               } catch (IOException e) {
+                       e.printStackTrace();
+               }
+               return null;
+       }
+
+COM:retrieves an HTTP page from a specified URL and returns its InputStream

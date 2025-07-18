@@ -1,0 +1,14 @@
+TDAT:   public int currentSegment(float[] coords) {
+    int type = cloudPath.pointTypes[typeIdx];
+    int numCoords = curvesize[type];
+    if (numCoords > 0 && affine != null) {
+      affine.transform(cloudPath.pointCoords, pointIdx,
+                       coords, 0,
+                       numCoords / 2);
+    } else {
+      System.arraycopy(cloudPath.pointCoords, pointIdx, coords, 0, numCoords);
+    }
+    return type;
+  }
+
+COM:returns the type of the current segment and transforms the coordinates of the path using an affine transformation if applicable

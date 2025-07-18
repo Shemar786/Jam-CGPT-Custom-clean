@@ -1,0 +1,6 @@
+TDAT:   private void jMenuHelpHelp_actionPerformed(ActionEvent e){
+//    help.jMenuHelp(userTabbedPane.getTabCount(),userTabbedPane.getSelectedIndex());
+    new Browser( "http://"+SERVER+"/index.htm", "Instructions" ).setVisible( true );
+  }
+
+COM:opens a browser window displaying instructions and does not return a value

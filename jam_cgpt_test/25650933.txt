@@ -1,0 +1,13 @@
+TDAT:     protected String getManifestAttributeValue(Attributes.Name attributeName) {
+        try {
+            String value = attributes.getValue(attributeName);
+            return value != null ? value : "undefined";
+        } catch (NullPointerException e) {
+            return "undefined";
+        } catch (IllegalArgumentException e) {
+            logger.error("Invalid attribute name when reading jar manifest for reading version information: " + e.getMessage());
+            return "undefined";
+        }
+    }
+
+COM:returns the value of a specified manifest attribute or "undefined" if the attribute is not found, and handles possible exceptions

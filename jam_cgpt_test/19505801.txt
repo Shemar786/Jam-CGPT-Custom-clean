@@ -1,0 +1,13 @@
+TDAT: 	protected IRodinDBStatus commonVerify() {
+		if (elementsToProcess == null || elementsToProcess.length == 0) {
+			return new RodinDBStatus(IRodinDBStatusConstants.NO_ELEMENTS_TO_PROCESS);
+		}
+		for (int i = 0; i < elementsToProcess.length; i++) {
+			if (elementsToProcess[i] == null) {
+				return new RodinDBStatus(IRodinDBStatusConstants.NO_ELEMENTS_TO_PROCESS);
+			}
+		}
+		return RodinDBStatus.VERIFIED_OK;
+	}
+
+COM:verifies if the elements to be processed are not null and returns a status indicating whether the verification was successful or not

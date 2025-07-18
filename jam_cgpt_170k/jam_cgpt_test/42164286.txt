@@ -1,0 +1,10 @@
+TDAT:   protected IStatus getWarningStatus(String message, int code) {
+    String statusMessage = message;
+    if (statusMessage == null) {
+      statusMessage = NLS.bind(UndoMessages.AbstractWorkspaceOperation_GenericWarningMessage,
+          getLabel());
+    }
+    return new Status(IStatus.WARNING, IDEWorkbenchPlugin.IDE_WORKBENCH, code, statusMessage, null);
+  }
+
+COM:returns a warning status with a message and code, and if the message is null, it generates a generic warning message

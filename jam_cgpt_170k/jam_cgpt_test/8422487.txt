@@ -1,0 +1,11 @@
+TDAT:     public String normalizeURI(String uriStr) {
+        URI uri;
+        try {
+            uri = new URI(uriStr);
+        } catch (URISyntaxException ex) {
+            throw new IllegalArgumentException("Malformed URI: " + uriStr, ex);
+        }
+        return stripTrailingSlash(uri.normalize().toString());
+    }
+
+COM:accepts a URI string, normalizes it, removes any trailing slashes, and returns the resulting URI as a string

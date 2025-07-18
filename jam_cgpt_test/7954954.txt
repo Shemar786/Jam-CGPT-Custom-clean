@@ -1,0 +1,9 @@
+TDAT:     public void enhance(String sourceDir, String targetDir) throws Exception{
+        Db4oFileInstrumentor instrument = new Db4oFileInstrumentor(new BloatClassEdit[]{
+            new TranslateNQToSODAEdit(),
+            new InjectTransparentActivationEdit(new AcceptAllClassesFilter()),
+        });
+        instrument.enhance(sourceDir, targetDir, new String[]{});
+    }
+
+COM:enhances files in a source directory and saves the enhanced versions to a target directory using the Db4oFileInstrumentor with specified class edits

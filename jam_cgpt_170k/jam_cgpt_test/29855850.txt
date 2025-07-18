@@ -1,0 +1,13 @@
+TDAT:   public void setWaitInfo(String message) {
+    if (!SwingUtilities.isEventDispatchThread()) {
+      System.err.println("ERROR: DFootPanel.setWaitInfo(..) calles outside of Eventdispatching Thread");
+    }
+
+    oldMessage = messagePanel.getText();
+    if (message != null) {
+      messagePanel.setText(message, true);
+    }
+    waitPanel.setWaiting(true);
+  }
+
+COM:sets wait information on a panel and displays an error if it is called outside of the event dispatching thread

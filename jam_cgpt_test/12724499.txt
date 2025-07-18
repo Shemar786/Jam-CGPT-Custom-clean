@@ -1,0 +1,12 @@
+TDAT: public void removeFromTo(int from, int to) {
+	checkRangeFromTo(from, to, size);
+	int numMoved = size - to - 1;
+	if (numMoved > 0) {
+		replaceFromToWithFrom(from, from-1+numMoved, this, to+1);
+		//fillFromToWith(from+numMoved, size-1, 0.0f); //delta
+	}
+	int width = to-from+1;
+	if (width>0) setSizeRaw(size-width);
+}
+
+COM:removes elements from a certain range within a list, shifting elements as necessary

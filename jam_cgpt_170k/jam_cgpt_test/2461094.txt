@@ -1,0 +1,11 @@
+TDAT:     public File getSelectedFile() {
+        TreePath treePath = getSelectionPath();
+        if (treePath == null)
+            return null;
+        
+        DefaultMutableTreeNode treeNode = (DefaultMutableTreeNode)treePath.getLastPathComponent();
+        FileTreeNode fileTreeNode = (FileTreeNode)treeNode.getUserObject();
+        return fileTreeNode.file;
+    }
+
+COM:returns the selected file represented by a FileTreeNode object in a JTree component

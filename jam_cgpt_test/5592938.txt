@@ -1,0 +1,11 @@
+TDAT:   public void setFileActionDefaultStat() {
+    try {
+      wpMask mask = new wpMask(FILE_ACTIONS, fileActionIndices,
+                               fileActionDefaultStat);
+      wpMaskEvent event = new wpMaskEvent(this, mask);
+      maskHandler.fireMaskChanged(event);
+    }
+    catch (wpMaskException me) {}
+  }
+
+COM:sets a default status for a file action in a mask object and fires a mask change event

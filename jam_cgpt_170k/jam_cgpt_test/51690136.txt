@@ -1,0 +1,11 @@
+TDAT:     public void mergeGenKill(Collection gen, SlotSet kill) {
+        grow(gen.size());
+    big_loop:
+        for (Iterator i = gen.iterator(); i.hasNext(); ) {
+            LocalInfo li2 = (LocalInfo) i.next();
+	    if (!kill.containsSlot(li2.getSlot()))
+		add(li2.getLocalInfo());
+        }
+    }
+
+COM:merges a collection of gen with a SlotSet kill by iterating through the collection and adding any LocalInfo element that is not contained in the SlotSet

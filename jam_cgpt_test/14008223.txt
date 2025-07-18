@@ -1,0 +1,15 @@
+TDAT: 	public String addFilmAward(String filmID, String awardID) {
+		String msg = "";
+		try {
+			String query = "INSERT INTO film_award( filmID, awardID ) VALUES ( " + filmID + ", " + awardID + " )";
+			Statement st = DBManager.GetStatement();
+			st.executeUpdate(query);
+			DBManager.close(st);
+			msg = "SUCCESS: Film-Award assigned";
+		}catch(SQLException e){
+			msg = "ERROR: Assigning film-award failed";
+		}
+		return msg;
+	}
+
+COM:inserts a film-award relation into a database and returns a success or error message

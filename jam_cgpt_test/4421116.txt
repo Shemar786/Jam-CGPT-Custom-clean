@@ -1,0 +1,11 @@
+TDAT:     public void refreshInterest() {
+      if(this.anchorset != null && this.fp != null) {
+        // all variables initialized to create interest
+        Interest _interest = this.kb.createInterest(anchorset, this.fp);
+        this.interest = _interest;
+      } else {
+        L.d("Can't refresh interest w/o anchorset and fragmentation parameter!", this);
+      }
+    }
+
+COM:refreshes interest and creates a new interest object if the anchorset and fragmentation parameter are initialized

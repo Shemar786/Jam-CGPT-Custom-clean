@@ -1,0 +1,9 @@
+TDAT:     public boolean acceptsURI(String uri) throws org.xmldb.api.base.XMLDBException {
+        try {
+            return stub.acceptsURI(uri);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e);
+        }
+    }
+
+COM:checks if a given URI is accepted and returns a boolean value while throwing an exception if the remote method is not available

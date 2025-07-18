@@ -1,0 +1,12 @@
+TDAT:     private void addNext() {
+        if (++stackPointer < menus.length) {
+            menus[stackPointer].reset();
+            return;
+        }
+        final Segment[] old = menus;
+        menus = new Segment[menus.length + 1];
+        System.arraycopy(old, 0, menus, 0, old.length);
+        menus[stackPointer] = new Segment();
+    }
+
+COM:adds a new segment to an array of segments if the current index is less than the length of the array, otherwise it creates a new array with a length one greater than the existing array and copies the contents of the old array to the new array before adding a new segment

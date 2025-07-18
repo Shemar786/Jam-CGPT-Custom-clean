@@ -1,0 +1,11 @@
+TDAT:   public void updateTargetArrow () {
+    targetEdgeEnd.drawIcon(
+                           bend.getTargetHandlePoint(),
+                           targetPoint);
+    //targetEdgeEnd.moveToFront();
+    targetPoint.setLocation(
+                            targetEdgeEnd.getNewX(),
+                            targetEdgeEnd.getNewY());
+  }
+
+COM:updates the position of a target arrow based on the position of the target edge

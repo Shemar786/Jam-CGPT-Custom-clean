@@ -1,0 +1,18 @@
+TDAT: 	public void destroy() {
+		
+		application.preDestroy();
+		if (state != STATE_DESTROYED) {
+			fireEvent(new SessionEvent(null), SESSION_STOPPED );
+			state = STATE_DESTROYED;
+			for (Iterator<Control> it = controls.values().iterator(); it.hasNext(); ) {
+				Control control = it.next();
+				it.remove();
+				control.destroy();
+			}
+		}
+		JWicRuntime.getJWicRuntime().sessionDestroyed(this);
+		application.postDestroy();
+		
+	}
+
+COM:destroys the current session and invoked pre and post destroy operations while removing all associated controls

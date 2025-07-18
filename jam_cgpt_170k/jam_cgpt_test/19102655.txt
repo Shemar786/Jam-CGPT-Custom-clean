@@ -1,0 +1,11 @@
+TDAT:   static public boolean deleteDirectory(File file) {
+  	if (file.isFile()) return file.delete();
+    if (file.isDirectory()) {
+    	for (File child : file.listFiles()) 
+    		if (!deleteDirectory(child)) return false;
+    	return file.delete();
+    }
+  	return false;
+  }
+
+COM:recursively deletes a directory and all its contents

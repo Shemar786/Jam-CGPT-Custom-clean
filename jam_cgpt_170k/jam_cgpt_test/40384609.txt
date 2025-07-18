@@ -1,0 +1,19 @@
+TDAT: 	protected void transferFocusBackward(TComponent component) {
+		for (int i = 0; i < this.childCount; i++) {
+			if (component == this.childs[i]) {
+				int j = i;
+				do {
+					if (++i >= this.childCount) {
+						i = 0;
+					}
+					if (i == j) {
+						return;
+					}
+				} while (!this.childs[i].requestFocus());
+				
+				break;
+			}
+		}
+	}
+
+COM:iterates through a list of child components and transfers the focus back to the previous component in the list if the current component loses focus

@@ -1,0 +1,25 @@
+TDAT: 	public void close() {
+		try {
+			stopIndexing();
+			synchronized (_readerSearcherUpdateLock) {
+				if (optimizeMonitorThread != null)
+					optimizeMonitorThread.stopMonitoring();
+				if (_myReader != null)
+					_myReader.close();
+				if (_mySearcher != null)
+					_mySearcher.close();
+				if(_myFacetTaxonomyReader != null)
+					_myFacetTaxonomyReader.close();					
+				_myReader = null;
+				_mySearcher = null;
+				_myFacetTaxonomyReader = null;
+			}
+
+			optimizeMonitorThread = null;
+		} catch (Exception e) {
+			prtlnErr("Problem closing resources: " + e);
+			e.printStackTrace();
+		}
+	}
+
+COM:closes various resources used for indexing and searching, including the reader, searcher, and facet taxonomy reader

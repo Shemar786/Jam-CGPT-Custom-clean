@@ -1,0 +1,11 @@
+TDAT:     public WebConnection (InetAddress ia, int port) throws IOException {
+	this.ia = ia; 
+	this.port = port;
+	
+	if(port<=0 || port >65535) throw new java.net.UnknownHostException("Port number out of range");
+        if(ia==null) throw new java.net.UnknownHostException("Host not found in WebConnection");
+	socket=null;
+	reconnect();
+    }
+
+COM:creates a web connection using the given InetAddress and port, checks for valid input and initializes the necessary components for the connection

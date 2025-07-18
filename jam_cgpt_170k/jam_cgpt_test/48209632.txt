@@ -1,0 +1,9 @@
+TDAT: 	public void testDisplayFoodPopularity() {
+		
+		ArrayList<SummarisedMenuItem> arrCourses = DataObjectFactory.getSummarisedMenuItems(DataObjectFactory.TYPE_COURSE);		
+		assertNotNull(arrCourses);
+		assertTrue(arrCourses.size() > 1);
+		assertTrue(arrCourses.get(0).getQuantity() >= arrCourses.get(arrCourses.size()-1).getQuantity());
+	}
+
+COM:tests the display of food popularity by retrieving a list of summarized menu items, checking that the list is not null and has more than one item, and ensuring that the quantity of the first item is greater than or equal to the quantity of the last item in the list

@@ -1,0 +1,13 @@
+TDAT:     protected void newClient() {
+        log.debug("Running BrokerConnection.newClient()..");
+        userID = UniqueID.getNextId();
+        connectionMode = BrokerConnection.CLIENT_MODE;
+        try {
+            out("OK " + userID.toString());
+        } catch (Exception e) {
+            log.warn("Command execution error", e);
+            throw new CommandException(e);
+        }
+    }
+
+COM:establishes a new client connection with unique ID and sets the connection mode as a client

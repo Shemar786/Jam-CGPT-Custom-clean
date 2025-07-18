@@ -1,0 +1,13 @@
+TDAT: 	public boolean validateFieldNotNull(PObject obj, String field, String label) {
+		if(obj.get(field) == null) {
+			String i18n = label;
+			if(i18n == null) {
+				i18n = "error." + obj.getType().getName().toLowerCase() + "." + field + ".notNull";
+			}
+			addFieldError(field, getText(i18n));
+			return false;
+		}
+		return true;
+	}
+
+COM:validates whether a specific field in a PObject object is not null, and adds an error message if it is

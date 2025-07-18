@@ -1,0 +1,17 @@
+TDAT: 	public int getMaxOccurs() {
+
+//		int maxOccurs = 1;
+//
+//		if (sMaxOccurs != null) {
+//			if (sMaxOccurs.equals(R4Constants.MAX_OCCURS_VALUE_UNBOUNDED)) {
+//				maxOccurs = Integer.MAX_VALUE;
+//			} else {
+//				maxOccurs = Integer.parseInt(sMaxOccurs);
+//			}
+//		}
+//
+//		return maxOccurs;
+		return 0;
+	}
+
+COM:returns an integer value representing the maximum number of occurrences allowed for a particular object

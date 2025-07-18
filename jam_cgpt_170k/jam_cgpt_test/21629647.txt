@@ -1,0 +1,13 @@
+TDAT:     public String getHeight() {
+        if (null != this.height) {
+            return this.height;
+        }
+        ValueExpression _ve = getValueExpression("height");
+        if (_ve != null) {
+            return (java.lang.String) _ve.getValue(getFacesContext().getELContext());
+        } else {
+            return null;
+        }
+    }
+
+COM:retrieves the value of the "height" attribute from either the current object's instance variable or a value expression, and returns it as a string

@@ -1,0 +1,17 @@
+TDAT: 	protected void addFamilyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentInstance_family_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_family_feature", "_UI_ComponentInstance_type"),
+				 WorkflowPackage.Literals.COMPONENT_INSTANCE__FAMILY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the family feature of a ComponentInstance object

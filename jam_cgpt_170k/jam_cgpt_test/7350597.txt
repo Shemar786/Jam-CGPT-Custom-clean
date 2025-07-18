@@ -1,0 +1,11 @@
+TDAT:         public int getChiSquareLevel(final int actualSize) {
+            final double chiSquare = getChiSquare(actualSize);
+            int i = 0;
+            while (i < CHI_SQUARE_CRITICAL_VALUES.length
+                    && chiSquare > CHI_SQUARE_CRITICAL_VALUES[i]) {
+                i++;
+            }
+            return i - 1;
+        }
+
+COM:returns the level of significance based on the chi-square value and actual size of data

@@ -1,0 +1,12 @@
+TDAT: 	private void removeContainerEntry(String section, String containerId){
+		DeletePropertyThread dpt = ce.deleteProperty("Container[@containerId='"+containerId+"']", "/Containers/"+section, "user.xml", "", true);
+		dpt.start();
+		try{
+			dpt.join();
+		}
+		catch(InterruptedException ie){
+			ie.printStackTrace(System.err);
+		}
+	}
+
+COM:removes a container entry from a specified section by deleting the corresponding property in the user.xml file

@@ -1,0 +1,14 @@
+TDAT: 	public void clrSiPort() {
+		piuLine = DBDataDesc.R4_PIUPORT_NORMAL;
+		cesLine = DBDataDesc.R4_PIUPORT_NORMAL;
+
+		for (int i = 0; i < piuPort_100M.length; i++) {
+			piuPort_100M[i] = DBDataDesc.R4_PIUPORT_DEACT;
+		}
+
+		for (int j = 0; j < piuPort_1G.length; j++) {
+			piuPort_1G[j] = DBDataDesc.R4_PIUPORT_DEACT;
+		}
+	}
+
+COM:resets certain port values to a default state

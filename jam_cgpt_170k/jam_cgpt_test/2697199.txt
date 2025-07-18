@@ -1,0 +1,15 @@
+TDAT: 	private Chain isKnownChain(String chainID, List<Chain> chains){
+
+		for (int i = 0; i< chains.size();i++){
+			Chain testchain =  chains.get(i);
+			//System.out.println("comparing chainID >"+chainID+"< against testchain " + i+" >" +testchain.getName()+"<");
+			if (chainID.equals(testchain.getName())) {
+				//System.out.println("chain "+ chainID+" already known ...");
+				return testchain;
+			}
+		}
+
+		return null;
+	}
+
+COM:searches for a specific "chainID" within a list of "chains" and returns the corresponding "Chain" object if found, otherwise returns null

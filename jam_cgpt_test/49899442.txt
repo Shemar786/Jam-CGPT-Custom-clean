@@ -1,0 +1,16 @@
+TDAT: 	public int executeUpdate(String sql) throws SQLException {
+		// Create a statement, and run query
+		try {
+			statement = connection.createStatement();
+			int affectedRow = statement.executeUpdate(sql);
+			return affectedRow;
+		} catch(SQLException e) {
+			System.out.print("Error creating or running statement: ");
+			try {
+				connection.close();
+			} catch(Exception exc) { exc.printStackTrace(); }
+			throw e;
+		}
+	}
+
+COM:executes an SQL update statement and returns the number of rows affected

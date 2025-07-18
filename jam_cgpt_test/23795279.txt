@@ -1,0 +1,13 @@
+TDAT:     public String editlist() {
+        
+        logger.info("editlist"); 
+        
+        styleBean.setDialogbox(CSSName.getInstance().DIALOGBOX_INVISIBLE);
+        styleBean.setDialogboxedit(CSSName.getInstance().DIALOGBOXEDIT_INVISIBLE);
+        styleBean.setSamplelistdiv(false);
+        styleBean.setSamplelisteditdiv(true);
+        
+        return NavigationHandler.getInstance().SUCCESS;
+    }
+
+COM:sets the styles and returns a success code for navigating to an edit list page

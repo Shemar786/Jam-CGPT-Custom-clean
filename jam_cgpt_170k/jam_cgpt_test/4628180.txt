@@ -1,0 +1,10 @@
+TDAT:     private void generate(Dialect dialect) {
+        cfg.setProperty("hibernate.dialect", dialect.getDialectClass());
+
+        SchemaExport export = new SchemaExport(cfg);
+        export.setFormat(true);
+        export.setDelimiter(";");
+        export.execute(true, false, false, true);
+    }
+
+COM:generates a SQL schema using the given Hibernate dialect

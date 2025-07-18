@@ -1,0 +1,12 @@
+TDAT: 	public void mapTagToId(int src_id, int tar_id, String lang){
+		String update_clause = "UPDATE "+DataDefinitions.getRelTagsTableName()+" SET spchk_mapped_to = "+tar_id+
+		                       ", tra_orig_lang = \""+lang+"\" WHERE id = "+src_id+
+		                       " OR spchk_mapped_to = "+src_id;
+		try{
+			execute(update_clause);
+		}catch (Exception e){
+			DataDefinitions.logger.addLogLine(e.getMessage()+"\n"+update_clause,2);
+		}		
+	}
+
+COM:updates the mapping of a tag ID from a source ID to a target ID in a database table, along with information about the language of the tag, and logs an error message if the update fails

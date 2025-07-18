@@ -1,0 +1,15 @@
+TDAT:     private void addWrite(JPopupMenu popup) {
+        JMenuItem write =
+                makeMenuItem("Write", "Write depleted resources to a file",
+                        new ActionListener() {
+
+                            @SuppressWarnings("synthetic-access")
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                actionWrite();
+                            }
+                        });
+        popup.add(write);
+    }
+
+COM:adds a "Write" JMenuItem to a JPopupMenu that will trigger an action to write depleted resources to a file when clicked

@@ -1,0 +1,16 @@
+TDAT:     private String trim(final String name, final int max) {
+        final StringBuffer trimmed = new StringBuffer(name.trim());
+        if (max == -1) {
+            return trimmed.toString();
+        }
+
+        final int len = trimmed.length();
+        if (len > max) {
+            trimmed.delete(max, len - 1);
+            trimmed.append("...");
+        }
+
+        return trimmed.toString();
+    }
+
+COM:takes a string and an integer as input, trims the string, and returns the trimmed string up to a maximum length with ellipses appended if the string is longer than the maximum length

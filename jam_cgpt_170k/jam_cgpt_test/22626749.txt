@@ -1,0 +1,11 @@
+TDAT: 	public void addOaiError(String error, String message) {
+		//prtln("addOaiError(): " + error + " " + this.getClass().getName());
+		if (errors == null)
+			errors = new ArrayList();
+
+		errors.add(new OAIError(error, message));
+		if(!hasBadVerbOrArgument)
+			hasBadVerbOrArgument = (error.equals(OAICodes.BAD_VERB) || error.equals(OAICodes.BAD_ARGUMENT));
+	}
+
+COM:adds an OAI error to a list and sets a boolean flag if the error is related to a bad verb or argument

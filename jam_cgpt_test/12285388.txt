@@ -1,0 +1,13 @@
+TDAT: 	public Tool string2tool(final String s) throws ClassNotFoundException {
+		Tool out = null;
+		final Class<?> c = Class.forName("org.romulus.test.Tool");
+		final Tool[] enumConstants = (Tool[]) c.getEnumConstants();
+		for (int i = 0; i < enumConstants.length; i++) {
+			if (enumConstants[i].toString().equals(s)) {
+				out = enumConstants[i];
+			}
+		}
+		return out;
+	}
+
+COM:takes a string input and searches for a matching Tool enum constant, returning the matched constant or null if none are found

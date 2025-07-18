@@ -1,0 +1,13 @@
+TDAT:   private void processTextBoxesChanges(final Object obj) {
+    if (relatedDialog.isEventRelatedToShortNameField(obj)
+        || relatedDialog.isEventRelatedToDescriptionField(obj)) {
+      if (relatedDialog.getShortName().isEmpty() 
+          || relatedDialog.getDescription().isEmpty()) {
+        relatedDialog.setOkayButtonState(false);
+      } else {
+        relatedDialog.setOkayButtonState(true);
+      }
+    }
+  }
+
+COM:processes changes to text boxes in a related dialog and sets the state of the okay button based on whether the short name and description fields are empty or not

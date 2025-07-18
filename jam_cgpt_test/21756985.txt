@@ -1,0 +1,16 @@
+TDAT: 	public void revokeCertificate(BigInteger serialNumber) throws XKMSClientException {
+		LOG.info("Revoking certificate");
+		
+		// Create the request
+		RequestType request = createRevocationElement(serialNumber);
+
+		// Execute it
+		List<RegisterResult> results = executeRequest(request);
+		if (results.size() != 1) {
+			throw new XKMSClientException("Expected one result from the XKMS service, but got " + results.size());
+		}
+		// Parse the result
+		parseRevokeCertificateResult(results.get(0));
+	}
+
+COM:revokes a certificate by creating a revocation element with a given serial number and executing the request through XKMS service, checking for expected results and parsing the resulting certificate

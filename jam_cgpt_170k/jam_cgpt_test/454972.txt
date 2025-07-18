@@ -1,0 +1,11 @@
+TDAT: 	public void setCoordsToSlice(int sliceNum) {
+		// check that sliceNumis within range
+		if ((sliceNum >= 0) & (sliceNum < layoutSlices.size())) {
+			currentXcoords = ((LayoutSlice) layoutSlices.get(sliceNum))
+			.getXCoords().clone();
+			currentYcoords = ((LayoutSlice) layoutSlices.get(sliceNum))
+					.getYCoords().clone();
+		}
+	}
+
+COM:sets the current X and Y coordinates based on the provided slice number, checking that the slice number is within range

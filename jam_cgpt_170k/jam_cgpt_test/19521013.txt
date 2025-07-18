@@ -1,0 +1,13 @@
+TDAT: 	protected void testInvariant(String message, IInvariant inv, String expected) {
+		try {
+			assertEquals(message + ": Incorrect invariant", expected, inv
+					.getLabel()
+					+ ":" + inv.getPredicateString() + ":" + inv.isTheorem());
+		} catch (RodinDBException e) {
+			e.printStackTrace();
+			fail("There should be no exception");
+			return;
+		}
+	}
+
+COM:This is a protected Java method that tests for the correctness of a given invariant, using the JUnit assertEquals method and catching any exceptions that may occur

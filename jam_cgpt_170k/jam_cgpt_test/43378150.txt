@@ -1,0 +1,14 @@
+TDAT: 	private Graph getGraph(RdfBean bean) throws Exception {
+		URI uri = bean._getResource();
+		URI type = bean._getRdfType();
+		Map state = bean._getState();
+		// RDF type may be inferred by interace in some cases...
+		if (type == null) {
+			type = typeMapper.guessRdfType(bean, this.schema);
+		}
+		Schema schema = getSchema(type);		
+		Graph graph = stateMapper.mapState(state, uri, schema);
+		return graph;
+	}
+
+COM:takes an RdfBean object, sets some variables and returns a Graph object based on the state of the bean

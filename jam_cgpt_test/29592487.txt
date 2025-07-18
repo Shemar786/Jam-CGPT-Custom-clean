@@ -1,0 +1,16 @@
+TDAT:   static public String remove( String s, int c) {
+    if (0 > s.indexOf(c)) // none
+      return s;
+
+    StringBuffer buff = new StringBuffer(s);
+    int i=0;
+    while (i<buff.length()) {
+      if (buff.charAt(i) == c)
+        buff.deleteCharAt(i);
+      else
+        i++;
+    }
+    return buff.toString();
+  }
+
+COM:removes all occurrences of a character from a given string and returns the resulting string

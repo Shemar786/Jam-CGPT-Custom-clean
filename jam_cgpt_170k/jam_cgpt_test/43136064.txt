@@ -1,0 +1,8 @@
+TDAT:     private void checkValid(Position pos, Move move) {
+        assertTrue(move != null);
+        ArrayList<Move> moveList = new MoveGen().pseudoLegalMoves(pos);
+        moveList = MoveGen.removeIllegal(pos, moveList);
+        assertTrue(moveList.contains(move));
+    }
+
+COM:checks the validity of a provided move in a given position

@@ -1,0 +1,7 @@
+TDAT:     public void registeNewCommand(GsBaseCommand com) {
+        System.out.println("Register New Command '" + com.getCmdString() + "'  -   " + com.getShortDesc());
+        _commands.put(com.getCmdString().toLowerCase(), com);
+        _commandsA.add(com);
+    }
+
+COM:registers a new command, printing its name and description and adding it to two collections

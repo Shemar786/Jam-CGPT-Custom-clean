@@ -1,0 +1,11 @@
+TDAT:     public void removeRange(int fromIndex, int toIndex) {
+	if (fromIndex > toIndex) {
+	    throw new IllegalArgumentException("fromIndex must be <= toIndex");
+	}
+	for(int i = toIndex; i >= fromIndex; i--) {
+	    delegate.remove(i);
+	}
+	fireIntervalRemoved(this, fromIndex, toIndex);
+    }
+
+COM:removes elements within a specified range from a list, while also triggering an event to notify listeners of the removal

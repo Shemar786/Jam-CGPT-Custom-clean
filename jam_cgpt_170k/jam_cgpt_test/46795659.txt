@@ -1,0 +1,13 @@
+TDAT:     private SortedMap getPrefixedByBits(String key, int offset, int length) {
+        int offsetLength = offset + length;
+        if (offsetLength > length(key)) {
+            throw new IllegalArgumentException(offset + " + " + length + " > " + length(key));
+        }
+        
+        if(offsetLength == 0)
+            return this;
+        
+        return new PrefixSubMap(key, offset, length);
+    }
+
+COM:returns a SortedMap with keys that have the specified prefix and length, given a starting offset

@@ -1,0 +1,10 @@
+TDAT:   private void checkPortType(EndpointReferenceType request) throws RemoteException {
+    AttributedQName port = request.getPortType();
+    if (port == null) {
+      throw new RemoteException("Expected port: " + PORT_TYPE);
+    } else if (!port.equals(PORT_TYPE)) {
+      throw new RemoteException("Expected: " + PORT_TYPE + " but was: " + port);
+    }
+  }
+
+COM:checks if the given endpoint reference type has a specific port type and throws a remote exception if it doesn't match

@@ -1,0 +1,11 @@
+TDAT: 	public void test(String url) throws Exception {
+		for (Generator g : this.getPlatform().getGenerator()) {
+			// Unit
+			if (g.getFixture().getTool().equals(this.getDefaults().getUnit())) {
+				// Test case matched
+				g.generate(FileUtil.class2URL(this.getApplication(), url));
+			}
+		}
+	}
+
+COM:takes in a URL string and generates unit tests for the associated class using a generator, as long as the matched test case fits the specified criteria

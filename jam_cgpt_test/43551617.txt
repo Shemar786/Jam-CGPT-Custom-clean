@@ -1,0 +1,17 @@
+TDAT:     public boolean isLessThan(MyDate md){
+        boolean tf = true;
+        if(year > md.year){
+            tf = false;
+        }else if(year == md.year){
+            if(month > md.month){
+                tf = false;
+            }else if(month == md.month){
+                if(day >= md.day){
+                    tf = false;
+                }
+            }
+        }
+        return tf;
+    }
+
+COM:determines if a given date object is less than another date object

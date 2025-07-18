@@ -1,0 +1,11 @@
+TDAT: 	public void testCopyIntNoop() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neParent = createNEPositive(rSource, "parent", null);
+		NamedElement neSource = createNEPositive(neParent, "foo", null);
+		createNEPositive(neSource, "bar", null);
+
+		copyNoop(neSource, null);
+	}
+
+COM:tests a copying operation that does not change the content of an existing element

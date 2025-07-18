@@ -1,0 +1,13 @@
+TDAT:     private Component makeBottomPanel() {
+        bottomPanel = Box.createHorizontalBox();
+
+        bottomPanel.add(makeAssigneeComboBox());
+        bottomPanel.add(makeClearButton());
+        bottomPanel.add(makeResourceClassCombo());
+        bottomPanel.add(Box.createRigidArea(new Dimension(0, 0))); // size later
+        makeStatFilterFields(bottomPanel);
+
+        return bottomPanel;
+    }
+
+COM:creates a horizontal panel with several components including combo boxes and buttons

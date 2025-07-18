@@ -1,0 +1,17 @@
+TDAT: 	public Move chooseMove(Board theboard) {
+		int myColor = this.getColor();		
+		
+		// Cast the arguments to the objects we want to work with    	
+		BTBoard board = (BTBoard) theboard;				
+
+		// Find all my pieces
+		//TODO:This can be easily optimized to be saved on the board
+		
+		
+		BTMove nextMove = new BTMove(UNASSIGNED_MOVE, -1, -1);
+		gen_move(board, myColor, myColor, 0, nextMove);
+
+		return nextMove;
+	}
+
+COM:takes a Board object as input, identifies the player's color, generates a move using a recursive function, and returns the chosen move

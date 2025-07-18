@@ -1,0 +1,13 @@
+TDAT:     public void processNestedTag(PutTag nestedTag) throws JspException {
+        // Check role
+        String role = nestedTag.getRole();
+        if (role != null
+            && !((HttpServletRequest) pageContext.getRequest()).isUserInRole(
+                role)) { // not allowed : skip attribute
+            return;
+        }
+
+        putAttribute(nestedTag.getName(), nestedTag.getRealValue());
+    }
+
+COM:processes a nested tag by checking the user's role and putting it as an attribute if the user is allowed

@@ -1,0 +1,17 @@
+TDAT: 	protected void addDeletePossiblePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Task_deletePossible_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Task_deletePossible_feature", "_UI_Task_type"),
+				 WorkspacePackage.Literals.TASK__DELETE_POSSIBLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a "deletePossible" feature in a Task object

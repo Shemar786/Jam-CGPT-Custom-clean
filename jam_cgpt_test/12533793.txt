@@ -1,0 +1,16 @@
+TDAT: 	protected void setFillerOnDemand(Demand demand){
+		// if the filler is set, use it, otherwise try to find a filler using the filler finder
+		DemandFillerIfc filler;
+		if (myDemandFiller == null){
+			filler = myDemandFillerFinder.findDemandFiller(demand);
+			if (filler == null)
+				throw new NoDemandFillerFoundException("No demand filler was found for demand: " + demand);
+		} else
+			filler = myDemandFiller;
+		
+		// set the demand filler
+		demand.setFiller(filler);
+		
+	}
+
+COM:sets a demand filler for a given demand object and throws an exception if no demand filler is found

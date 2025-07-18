@@ -1,0 +1,12 @@
+TDAT: 	protected Icon getIcon(String iconFileName) {
+		 
+		ImageIcon icon = new ImageIcon(ICON_SOURCE_FOLDER + "/" + iconFileName);
+		if(log.isWarnEnabled() && icon == null) {
+			log.warn("icon " + ICON_SOURCE_FOLDER + File.separator + iconFileName + " not found");
+		} else {
+			log.info("icon " + iconFileName + " found");
+		}
+		return icon;
+	}
+
+COM:retrieves the icon with the given file name from a source folder and returns it as an Icon object, with optional logging messages if the icon is not found

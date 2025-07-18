@@ -1,0 +1,14 @@
+TDAT: 	public void save() {
+		// --- getting the current values of the mandantory variables ---
+		this.setGlobal2Config();
+		// --- Save the config-file -------------------------------------
+		try {
+			this.store(new FileOutputStream( configFile ), configFileDefaultComment);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:saves the current values of mandatory variables into a config file using the store() method

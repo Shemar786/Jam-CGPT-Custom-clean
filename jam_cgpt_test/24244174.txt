@@ -1,0 +1,14 @@
+TDAT: 	public int sendData(int register, byte [] data, int length) {
+		byte [] txData = {address, (byte) register};
+		byte [] sendData = new byte[length+2];
+		System.arraycopy(txData,0,sendData,0,2);
+		System.arraycopy(data,0,sendData,2,length);
+		try {
+			return nxtCommand.LSWrite(this.port, sendData, (byte)0);
+		} catch (IOException ioe) {
+			System.out.println(ioe.getMessage());
+			return -1;
+		}
+	}
+
+COM:sends data to a specified register and port using the LSWrite method, and returns either the result or -1 if there is an IOException

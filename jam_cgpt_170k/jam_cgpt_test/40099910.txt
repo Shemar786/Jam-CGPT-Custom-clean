@@ -1,0 +1,11 @@
+TDAT: 	public int compare(Object o1, Object o2) {
+        try {
+           Priority p1 = ((IMessage)o1).getPriority();
+           Priority p2 = ((IMessage)o2).getPriority();
+           return p2.compareTo(p1);
+        } catch (MercuryException e) {
+            throw new RuntimeException("PriorityDescComparator: Error in getting message priority. ", e);
+        }
+	}
+
+COM:compares the priority of two IMessage objects and returns a negative integer, zero, or a positive integer depending on whether the first object's priority is higher, equal, or lower than the second object's priority, respectively

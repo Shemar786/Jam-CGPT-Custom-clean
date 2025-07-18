@@ -1,0 +1,13 @@
+TDAT:     private double getWeight(ONDEXRelation r_curr) {
+        Attribute weightAttribute = r_curr.getAttribute(weightAttributeName);
+        double w;
+        if ((weightAttribute != null) && (weightAttribute.getValue() instanceof Number))
+            w = ((Number) weightAttribute.getValue()).doubleValue();
+        else
+            w = 1.0;
+        if (inverse)
+            w = 1.0 - w;
+        return w;
+    }
+
+COM:retrieves the weight attribute value of a given ONDEX relation and returns it as a double, with a default value of 1.0 if the attribute is not present, and optionally inverses the value if a boolean flag is set

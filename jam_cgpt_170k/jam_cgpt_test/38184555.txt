@@ -1,0 +1,9 @@
+TDAT:     public void wndPreferences() {
+        log.entering("MainWindow","wndPreferences");
+        PropertiesDlg propDlg = new PropertiesDlg(this);
+        propDlg.setModal(true);
+        propDlg.setVisible(true);
+        log.exiting("MainWindow","wndPreferences");
+    }
+
+COM:displays a modal window for user preferences and logs the entering and exiting of the method

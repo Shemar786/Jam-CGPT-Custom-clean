@@ -1,0 +1,5 @@
+TDAT: 	public String createImageURL() {
+		return getSessionContext().getCallBackURL() + "&_resreq=1&controlId=" + ImageControl.this.getControlID() + (createUniqueURL ? "&time=" + System.currentTimeMillis() + "&" : "&") + getFilename();
+	}
+
+COM:creates a URL for an image control by concatenating the callback URL, control ID, filename, and optional unique timestamp

@@ -1,0 +1,17 @@
+TDAT: 	public void saveDietPlan (Dietplan dp) {
+		
+		Session currentSession = ((HibernateUtil)m_CurrentHibernateUtil).currentSession();			
+		((HibernateUtil)m_CurrentHibernateUtil).commitAndRestartTransaction();
+		
+		try {
+			currentSession.connection().prepareStatement("set AUTOCOMMIT=0").execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		currentSession.save(dp);
+		currentSession.flush();
+		((HibernateUtil)m_CurrentHibernateUtil).commitAndRestartTransaction();
+	}
+
+COM:saves a Dietplan object using Hibernate to a database and performs some transaction management operations

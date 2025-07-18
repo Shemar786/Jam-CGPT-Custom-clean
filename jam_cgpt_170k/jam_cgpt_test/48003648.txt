@@ -1,0 +1,24 @@
+TDAT: 	public boolean newPaymentMethod(Receipt recipt) {
+
+		try {
+			Random generator = new Random();
+			PersistentSession session;
+			int poel = generator.nextInt();
+			if (poel < 0)
+				poel = poel * (-1);
+			session = GoodReading3PersistentManager.instance().getSession();
+			PersistentTransaction t = session.beginTransaction();
+			recipt.setReceiptNumber(poel);
+			recipt.save();
+			t.commit();
+			boolean flag = true;
+			return flag;
+		} catch (PersistentException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return _flag;
+
+	}
+
+COM:creates a new payment method by generating a random number and saves the payment information to a persistent session, returning a boolean value indicating success

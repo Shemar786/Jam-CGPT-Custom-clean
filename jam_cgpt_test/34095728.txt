@@ -1,0 +1,12 @@
+TDAT: 	public BitSet getAllDominatedBy(BasicBlock dominator) {
+		BitSet allDominated = new BitSet();
+		for (Iterator<BasicBlock> i = cfg.blockIterator(); i.hasNext();) {
+			BasicBlock block = i.next();
+			BitSet dominators = getResultFact(block);
+			if (dominators.get(dominator.getLabel()))
+				allDominated.set(block.getLabel());
+		}
+		return allDominated;
+	}
+
+COM:takes a BasicBlock object as input and returns a BitSet containing all the BasicBlocks that are dominated by it in a control flow graph

@@ -1,0 +1,13 @@
+TDAT: 	public void test_12() throws Exception {
+		E con = getGeneric().createElement("elt");
+        
+		getGeneric().addPredicates(con, makeSList(""), makeSList("ℕ≠∅"), false);
+		
+		getGeneric().save(con);
+		
+		runBuilder();
+		
+		hasMarker(getGeneric().getPredicates(con)[0], null, GraphProblem.EmptyLabelError);
+	}
+
+COM:tests the functionality of adding predicates to an element and checking that a specific marker is present for the element's predicate

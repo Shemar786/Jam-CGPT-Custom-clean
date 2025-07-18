@@ -1,0 +1,13 @@
+TDAT:     public List exercises() { 
+        List l = new Vector();
+        for (int i = 0; i < size(); i++) {
+            ExerciseGroup g = getGroup(i);
+            for (int j = 0; j < g.size(); j++) {
+                Exercise e = g.getItem(j);
+                l.add(e);
+            }
+        }
+        return l;
+    }
+
+COM:returns a List of Exercise objects by iterating through each ExerciseGroup in the object and adding the Exercises in each group to the List

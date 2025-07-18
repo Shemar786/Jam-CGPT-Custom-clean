@@ -1,0 +1,12 @@
+TDAT: 	public void setCutoff(double c) throws Exception {
+		if (Double.isInfinite(c) || Double.isNaN(c)) {
+			throw new Exception("SpectralRolloff cutoff must be a real number");
+		} else if ((c <= 0.0) || (c >= 1.0)) {
+			throw new Exception(
+					"SpectralRolloff cutoff must be gretaer than 0 and less than 1");
+		} else {
+			cutoff = c;
+		}
+	}
+
+COM:sets a cutoff value for a SpectralRolloff computation, but throws an exception if the provided cutoff value is not a real number or is outside the range of 0 to 1

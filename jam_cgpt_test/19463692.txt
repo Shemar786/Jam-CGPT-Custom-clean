@@ -1,0 +1,16 @@
+TDAT:     private void removePressed() {
+        setPresentsDefaultValue(false);
+        int index = list.getSelectionIndex();
+        if (index >= 0) {
+            list.remove(index);
+            if(list.getItemCount() > 0){
+            	if(index > 0)
+            		afterRemoveIndex = index-1;
+            	else 
+            		afterRemoveIndex = 0;
+            }
+            selectionChanged();
+        }
+    }
+
+COM:removes the selected item from a list and updates the index of the next item to be selected

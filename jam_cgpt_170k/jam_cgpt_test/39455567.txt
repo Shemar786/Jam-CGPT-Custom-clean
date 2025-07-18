@@ -1,0 +1,14 @@
+TDAT:     private double cwtMEXHATreal(double x, double a, double b) {
+	/* c = 2 / ( sqrt(3) * pi^(1/4) ) */
+	double c = 0.8673250705840776;
+	double TINY = 1E-200;
+	double x2;
+
+	if (a == 0.0)
+	    a = TINY;
+	x = (x - b) / a;
+	x2 = x * x;
+	return c * (1.0 - x2) * Math.exp(-x2 / 2);
+    }
+
+COM:calculates the continuous wavelet transform using the Mexican hat wavelet function with real inputs x, a, and b

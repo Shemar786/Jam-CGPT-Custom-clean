@@ -1,0 +1,10 @@
+TDAT:     public boolean isOpen() throws org.xmldb.api.base.XMLDBException {
+        try {
+            return this.stub.isOpen(this.collectionTransport);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e);
+        }
+        
+    }
+
+COM:checks if the connection to a database collection is currently open

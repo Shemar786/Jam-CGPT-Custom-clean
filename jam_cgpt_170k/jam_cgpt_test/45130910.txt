@@ -1,0 +1,9 @@
+TDAT:     public Value evaluate(RdfBindingRow bindings) {
+        Variable variable = (Variable) this.data.getArguments().get(0);
+        //TODO Does bound("hi") work?
+        //TODO See what to do if the variable does not exist
+        boolean result = (bindings.getValue(variable) != null);
+        return this.converter.convertBoolean(result);
+    }
+
+COM:evaluates whether a specified variable in a set of RDF bindings is bound to a value or not and returns a boolean result

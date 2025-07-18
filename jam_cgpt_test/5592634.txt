@@ -1,0 +1,12 @@
+TDAT:   public void loadTab(Reader reader) throws wpException {
+
+    // @todo How to defined that a reader, as a certain type?
+    // for simplicity currently the type is hard coded for reader param.
+    tabFile = new wpFile("XPATH result");
+    tabFile.setType(wpFileInterface.XML_FILE);
+    setKitForType(tabFile.getType());
+    load(reader);
+    addListeners();
+  }
+
+COM:loads a tab using a reader, sets its type as an XML file, and adds listeners, and throws a wpException

@@ -1,0 +1,15 @@
+TDAT:   public void setCommandEnabled(final VCommand command, final boolean enable) {
+    SwingThreadHandler.start(new Runnable () {
+        public void run() {
+          command.setEnabled(enable);
+        }
+      });
+
+     if (enable) {
+       activeCommands.addElement(command);
+     } else {
+       activeCommands.removeElement(command);
+     }
+  }
+
+COM:sets the enabled state of a command and adds or removes it from a list of active commands based on the Boolean value passed as a parameter

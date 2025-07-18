@@ -1,0 +1,20 @@
+TDAT:     protected void checkAndBindDistributer() {
+	if (parameters.getBoolean("log.server", false)) {
+	    String bindName = this.getName();
+	    try {
+		if (Internal.traces) {
+		    Internal.log(Internal.TRACE, 
+			"trying to bind distributer under name '"
+			+ bindName + "'");
+		}
+		
+		java.rmi.Naming.rebind(
+		    bindName,
+		    java.rmi.server.UnicastRemoteObject.exportObject(this));
+	    }
+	    catch (Exception e) {
+		if (Internal.errors) Internal.log(Internal.ERROR, e); }
+	}
+    }
+
+COM:checks if "log.server" is true, attempts to bind a distributer under a specified name, and catches any exceptions if binding fails

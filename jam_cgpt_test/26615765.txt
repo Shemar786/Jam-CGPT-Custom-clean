@@ -1,0 +1,18 @@
+TDAT:         public void mouseReleased(MouseEvent e) {
+            logMouse.debug("Mouse released");
+
+            guinetwork.requestRefresh();
+
+            if (rubberband != null) {
+                logTools.info("Rubberband finished");
+                guinetwork.selectNeurons(rubberband);
+                guinetwork.removeDrawableObject("rubberband");
+                logTools.info("Selected neurons: " + guinetwork.getSelectedNeurons().size());
+
+                rubberband = null;
+            }
+
+            bPressed = false;
+        }
+
+COM:handles the action that occurs when the mouse is released, including logging messages, refreshing a GUI network, selecting neurons, and removing a rubberband

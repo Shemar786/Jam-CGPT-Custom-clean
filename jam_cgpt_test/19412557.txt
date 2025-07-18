@@ -1,0 +1,16 @@
+TDAT:     public void verify() throws AuthenticationException {
+        try {
+            process = Runtime.getRuntime().exec("cvs server"); //NOI18N
+            process.destroy();
+        }
+        catch (Exception e) {
+            String locMessage = AuthenticationException.getBundleString(
+                    "AuthenticationException.ServerVerification"); //NOI18N
+            throw new AuthenticationException("Verification error", e, locMessage); //NOI18N
+        }
+        finally {
+            reset();
+        }
+    }
+
+COM:attempts to run a command to verify a server and throws an AuthenticationException if there is an error, then resets the object

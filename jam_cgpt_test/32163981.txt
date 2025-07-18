@@ -1,0 +1,9 @@
+TDAT: 	private void addStateButtons() {
+		_states = new ButtonGroup(); // Create the group
+		addRadioButton("None", BoardStructure.NONE, 30, 20);
+		addRadioButton("Empty", BoardStructure.EMPTY, 30, 60);
+		addRadioButton("Player1", BoardStructure.PLAYER_1, 30, 100);
+		addRadioButton("Player2", BoardStructure.PLAYER_2, 30, 140);
+	}
+
+COM:creates a group of radio buttons to represent different states in a board game

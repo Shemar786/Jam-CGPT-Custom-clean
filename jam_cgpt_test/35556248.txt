@@ -1,0 +1,20 @@
+TDAT: 	public boolean registerClient(int userId, ClientInterface clientInterface) {
+
+		boolean result = false;
+
+		if (DBManager.getEmsOprType() == DBManager.SINGLE_CONNECTION) {
+			result = serverReceiver.registerClientLocal(userId, clientInterface);
+		} else {
+			try {
+				if (serverInterface != null) {
+					result = serverInterface.registerClient(userId, clientInterface);
+				}
+			} catch (Exception ex) {
+				logger.log(Level.SEVERE, "registerClient Exception", ex);
+			}
+		}
+
+		return result;
+	}
+
+COM:registers a client with a user ID and client interface

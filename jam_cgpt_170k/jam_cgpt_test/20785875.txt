@@ -1,0 +1,12 @@
+TDAT: 	public double getMaxAbsoluteAccelerationValue() {
+		double value = getMaxOverallValue();
+		// System.err.println("MAX: " + getMaxOverallValue());
+		// System.err.println("MIN: " + getMinOverallValue());
+		if (Math.abs(getMinOverallValue()) > value) {
+			value = Math.abs(getMinOverallValue());
+			// System.err.println("MIN taken");
+		}
+		return value;
+	}
+
+COM:returns the maximum absolute acceleration value, which is determined by taking the absolute value of the greatest overall value and comparing it to the absolute value of the smallest overall value

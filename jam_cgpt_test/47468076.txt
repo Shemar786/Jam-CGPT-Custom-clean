@@ -1,0 +1,20 @@
+TDAT: 	public String getStringOption(String name) {
+		TemplateOption option = (TemplateOption) options.get(name);
+		if (option != null) {
+			if (option instanceof StringOption) {
+				return ((StringOption) option).getText();
+
+			} else if (option instanceof AbstractChoiceOption) {
+				// This situation covers both Combos and Radio buttons
+				Object value = option.getValue();
+				if (value instanceof String) {
+					return (String) value;
+				} else if (value != null) {
+					return value.toString();
+				}
+			}
+		}
+		return null;
+	}
+
+COM:retrieves a string option from a set of options based on the given name

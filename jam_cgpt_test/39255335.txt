@@ -1,0 +1,11 @@
+TDAT: 	public void printLeaves(CFNode node) {
+		if (node == null)
+			return;
+		assert (node.isLeaf()) : " node is not leaf!";
+		System.out.println("PREV: " + node.prevLeaf + " CUR: " + node + 
+				" NEXT: " + node.nextLeaf);	
+		if (node.nextLeaf != null) 	
+			printLeaves(node.nextLeaf);
+	}
+
+COM:prints the previous, current, and next leaf nodes of a given CFNode recursively

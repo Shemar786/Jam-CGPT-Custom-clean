@@ -1,0 +1,14 @@
+TDAT: 	public void setFont(String fontname, int fontsize){
+		int tw = textWidth;
+		int fs = (int) localFont.getFont().getSize();
+		localFont = GFont.getFont(winApp, fontname, fontsize);
+		if(fontsize != fs){
+			height += (fontsize - fs);
+			height = Math.max(height, imgSelected.height);
+		}
+		setText(text);
+		if(textWidth != tw)
+			width += (textWidth - tw);
+	}
+
+COM:sets the font and font size, adjusts the height and width of the text, and updates the text accordingly

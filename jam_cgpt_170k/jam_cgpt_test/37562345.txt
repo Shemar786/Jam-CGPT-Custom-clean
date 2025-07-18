@@ -1,0 +1,14 @@
+TDAT: public void setText (String string) {
+	checkWidget ();
+	if (string == null) error (SWT.ERROR_NULL_ARGUMENT);
+	if ((style & SWT.READ_ONLY) != 0) {
+		int index = indexOf (string);
+		if (index != -1) select (index);
+		return;
+	}
+  ((CCombo)handle).setEditorText(string);
+  sendEvent (SWT.Modify);
+  // widget could be disposed at this point
+}
+
+COM:sets the text of a CCombo widget and triggers a modify event

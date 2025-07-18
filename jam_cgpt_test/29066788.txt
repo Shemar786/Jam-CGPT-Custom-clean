@@ -1,0 +1,22 @@
+TDAT: 	private Number getNumberValue(RubikCell c){
+        //**** HACK AR 2004.01.10
+		//String value = cell.getFormattedValue();
+		Cell cell=(Cell) c.getCell();
+        Object value = cell.getValue();
+
+        DecimalFormatSymbols dfs = new DecimalFormatSymbols(locale);
+		DecimalFormat formatter = new DecimalFormat();
+		formatter.setDecimalFormatSymbols(dfs);
+		Number number = null;
+		try {
+			number = (Number)value;
+                        //number = formatter.parse(value, new ParsePosition(0));
+		}
+		catch (Exception e) {
+			number = null;
+		}
+		return number;
+		
+	}
+
+COM:takes a RubikCell parameter, extracts a value from a contained Cell object, attempts to convert it to a Number using a DecimalFormat object and returns the resulting Number, or null if the conversion is unsuccessful

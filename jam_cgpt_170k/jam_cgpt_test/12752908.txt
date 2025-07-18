@@ -1,0 +1,8 @@
+TDAT:     public boolean isLastLevel() {
+        if (isLastLevel == null && getCode() != null && getCode().length() > 0) {
+            isLastLevel = isLastLevel(getCode());
+        }
+        return getCode() != null && getCode().length() == 0 ? true : isLastLevel;
+    }
+
+COM:checks if a given code represents the last level in a hierarchy

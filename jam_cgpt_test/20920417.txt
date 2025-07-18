@@ -1,0 +1,9 @@
+TDAT:     public void updateLogicalLayer(final ReadOnlyTimer timer){
+        final S currentStateBeforeUpdate=internalStateMachine.getCurrentState();
+        scheduler.update(previousState,currentStateBeforeUpdate,timer.getTimePerFrame());
+        //obviously the current state may change during the update
+        final S currentStateAfterUpdate=internalStateMachine.getCurrentState();
+        previousState=currentStateAfterUpdate;
+    }
+
+COM:updates the logical layer by getting the previous and current state, updating the scheduler, and setting the current state to the previous state for the next update

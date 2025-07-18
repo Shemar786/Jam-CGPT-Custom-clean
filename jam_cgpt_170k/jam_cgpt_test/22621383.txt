@@ -1,0 +1,15 @@
+TDAT: 	public List getUsers(Roles.Role maxRole) {
+		List users = new ArrayList();
+		for (Iterator i = userMap.keySet().iterator(); i.hasNext(); ) {
+			String username = (String) i.next();
+			User user = getUser(username);
+
+			if (user.hasRole(maxRole)) {
+				users.add(getUser(username));
+			}
+		}
+		Collections.sort(users, new UserNameComparator());
+		return users;
+	}
+
+COM:returns a list of users with a maximum specified role, sorted by their username

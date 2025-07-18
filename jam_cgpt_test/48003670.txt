@@ -1,0 +1,28 @@
+TDAT: 	public ChangedCatalog bookLinkToSubject(ChangedCatalog changedCatalog) {
+		try {
+			PersistentSession session = GoodReading3PersistentManager
+					.instance().getSession();
+			PersistentTransaction t = session.beginTransaction();
+
+			Subject subject = Subject.createSubject();
+			subject = changedCatalog.getSubject();
+			Book book = Book.createBook();
+			book = changedCatalog.getBook();
+			subject.book.add(book);
+			Genre genre = changedCatalog.getGenre();
+			genre.subject.add(subject);
+			session.merge(subject);
+			t.commit();
+			session.clear();
+			return changedCatalog;
+
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		}
+		return null;
+
+	}
+
+COM:adds a book to a subject and a genre in a persistent session and returns the updated catalog

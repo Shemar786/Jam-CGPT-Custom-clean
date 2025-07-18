@@ -1,0 +1,19 @@
+TDAT: 	private boolean isRegistryRunning() {
+		try {
+			Remote lookup = Naming.lookup(this.getRmiRegistryLine(this.serviceName));
+			if (lookup != null) {
+				return true;
+			}
+		} catch (ConnectException _ex) {
+			return false;
+		} catch (NotBoundException _ex) {
+			return true;
+		} catch (RemoteException _ex) {
+			_ex.printStackTrace();
+		} catch (MalformedURLException _ex) {
+			_ex.printStackTrace();
+		}
+		return false;
+	}
+
+COM:checks if a remote registry is running and returns a boolean value representing the status

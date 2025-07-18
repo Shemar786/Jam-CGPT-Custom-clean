@@ -1,0 +1,13 @@
+TDAT:     private void writeNotes(String sd) {
+        SWGStation stn = SWGFrame.getSelectedCharacter().galaxy().station();
+        String fName = "depleted.txt";
+        SWGNotes notes = stn.notes(fName);
+        if (notes == null)
+            notes = SWGNotes.getInstance(fName, stn, null, false);
+        else
+            notes.backup();
+
+        notes.setText(sd);
+    }
+
+COM:writes a given string input to a "depleted.txt" file using the SWGNotes class

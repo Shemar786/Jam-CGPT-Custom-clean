@@ -1,0 +1,15 @@
+TDAT:     public void saveMap(TileSetManager manager, java.io.OutputStream out) throws IOException {
+	DataOutputStream dout = new DataOutputStream(out);
+	dout.writeUTF("Mapper");
+	dout.writeInt(3);
+	dout.writeInt(width);
+	dout.writeInt(height);
+	dout.writeInt(floors.length);
+	dout.writeInt(curFloor);
+	manager.saveTileset(out, set);
+	HashMap hmap = set.saveSetMap(out);
+	for (int i = 0; i < floors.length; i++)
+	    floors[i].saveMapFloor(dout, hmap);
+    }
+
+COM:saves a tile map to an output stream, including map dimensions, tileset information, and floor data

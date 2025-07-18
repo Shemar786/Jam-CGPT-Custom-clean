@@ -1,0 +1,11 @@
+TDAT:     private void updateCredentialsInfoLabel() {
+        Gateway gateway = gatewayComboBox.getSelectedGateway();
+        if (gateway != null && gateway.isLoginRequired() &&
+                keyring.getKey(gateway.getName()) == null) {
+            credentialsInfoLabel.setVisible(true);
+        } else {
+            credentialsInfoLabel.setVisible(false);
+        }
+    }
+
+COM:updates the visibility of a label based on the selected gateway and its login requirements

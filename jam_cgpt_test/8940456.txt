@@ -1,0 +1,9 @@
+TDAT:     public RubyString asString() {
+        IRubyObject str = RuntimeHelpers.invoke(getRuntime().getCurrentContext(), this, "to_s");
+        
+        if (!(str instanceof RubyString)) return (RubyString)anyToString();
+        if (isTaint()) str.setTaint(true);
+        return (RubyString) str;
+    }
+
+COM:returns a RubyString object by invoking the "to_s" method on the current runtime context and checking that the returned object is a RubyString before returning it

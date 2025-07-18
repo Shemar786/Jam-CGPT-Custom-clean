@@ -1,0 +1,21 @@
+TDAT: 	private void buildStorageList(){
+		if(storageList == null){
+			storageList = new ArrayList<List<ConfigElem>>();
+			
+			int all = ImageCanvas.POINT_NUM*ImageCanvas.POINT_NUM;
+			for(int i = 0; i < all; i++){
+				storageList.add(new ArrayList<ConfigElem>());
+			}
+			
+			int index, x, y;
+			for(ConfigElem elem: elemList){
+				x = elem.getWaterNum();
+				y = elem.getHexanolNum();
+				index = ImageCanvas.POINT_NUM*y + x;
+				
+				storageList.get(index).add(elem);
+			}
+		}
+	}
+
+COM:builds a list of lists of ConfigElem objects based on their water and hexanol numbers, and initializes the list if it is null

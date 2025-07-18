@@ -1,0 +1,10 @@
+TDAT:     public void fireGun(int clientID, int shipID, int x, int y) throws RemoteException
+    {        
+        GamePlayer player = getPlayer(clientID);
+        Logger.logDebug("BattleShipGame::fireGun - Received fireGun request from " + player.getName());
+        validateTurn(player);
+        player.getFleet().fireGun(new Integer(shipID),x,y);
+        endTurn(clientID);         
+    }
+
+COM:fires a gun in a game for a specific player and ship at a designated location, and logs the action

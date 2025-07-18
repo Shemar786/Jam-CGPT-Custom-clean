@@ -1,0 +1,15 @@
+TDAT: 	public ProcessExecutor createProcessExecutor(Entity entity){
+		if (entity == null)
+			throw new IllegalArgumentException(
+					"Entity must be non-null!");
+		ProcessExecutor pe = new ProcessExecutor(this, entity);
+		if (myProcessExecutorStartListener != null)
+			pe.addBeforeExecutionListener(myProcessExecutorStartListener);
+		
+		if (myProcessExecutorCompletedListener != null)
+			pe.addAfterExecutionListener(myProcessExecutorCompletedListener);
+		
+		return(pe);
+	}
+
+COM:creates a process executor object for a given entity and adds before and after execution listeners if available

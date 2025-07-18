@@ -1,0 +1,9 @@
+TDAT:     public void setSMSSending(SMS sms) {
+        Validate.notNull(sms);
+
+        logger.log(Level.FINE, "Marking SMS as currently being sent: {0}", sms);
+        sms.setStatus(SMS.Status.SENDING);
+        valuedSupport.fireEventOccured(Events.SENDING_SMS, sms);
+    }
+
+COM:sets a specified SMS as currently being sent and logs the event

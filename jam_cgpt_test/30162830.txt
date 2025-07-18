@@ -1,0 +1,16 @@
+TDAT:     public DatatypeElementFactory getElementFactory(QName elementQName) {
+        DatatypeElementFactory result = null;
+        
+        if (DO_INTERN_QNAME) {
+            elementQName = intern(elementQName);
+        }
+
+        DocumentFactory factory = elementQName.getDocumentFactory();
+        if (factory instanceof DatatypeElementFactory) {
+            result = (DatatypeElementFactory) factory;
+        }
+        
+        return result;
+    }
+
+COM:returns a DatatypeElementFactory for a given QName element name

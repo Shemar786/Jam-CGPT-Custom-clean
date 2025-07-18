@@ -1,0 +1,18 @@
+TDAT: 	public void update(long elapsedTime,double gravity, double wind) {
+		for (int i = 0; i < this.size; i++) {
+			if (this.sprites[i].isActive()) {
+				this.sprites[i].update(elapsedTime);
+			if(gravity!=0)
+				this.sprites[i].correctGravity(gravity);
+			if(wind!=0)
+				this.sprites[i].correctWind(wind);
+			}
+		}
+		
+		if (this.scanFrequence.action(elapsedTime)) {
+			// remove all inactive sprites
+			this.removeInactiveSprites();
+		}
+	}
+
+COM:updates the position of all active sprites in a SpriteGroup object, corrects their velocity based on gravity and wind if applicable, and removes any inactive sprites based on a specified scan frequency

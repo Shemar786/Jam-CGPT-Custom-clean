@@ -1,0 +1,12 @@
+TDAT: 	private JPanel getButtonPanel() {
+		if (buttonPanel == null) {
+			buttonPanel = new JPanel();
+			buttonPanel.setLayout(new BoxLayout(getButtonPanel(), BoxLayout.Y_AXIS));
+			buttonPanel.add(getVoerinButton(), null);
+			buttonPanel.add(getWijzigButton(), null);
+			buttonPanel.add(getVerwijderButton(), null);
+		}
+		return buttonPanel;
+	}
+
+COM:creates and returns a JPanel containing three buttons arranged vertically using a BoxLayout

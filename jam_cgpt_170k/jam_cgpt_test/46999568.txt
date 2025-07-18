@@ -1,0 +1,6 @@
+TDAT:     private String deriveAcos(String exp, String vari) {
+        return (makeProduct("-1", makeDivision(derive(arg1(exp), vari),
+                                               makeSquareroot(makeSubtraction("1", makePower(arg1(exp), "2"))))));
+    }
+
+COM:This private Java method derives the arccosine of an expression with respect to a given variable and returns the result as a string

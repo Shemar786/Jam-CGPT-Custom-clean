@@ -1,0 +1,18 @@
+TDAT:     public void testRename() throws Exception {
+        Document doc = DocumentHelper.createDocument();
+        Element root = doc.addElement("foo");
+
+        assertEquals("named correctly", "foo", root.getName());
+
+        root.setName("bar");
+
+        assertEquals("named correctly", "bar", root.getName());
+
+        QName xyz = root.getQName("xyz");
+
+        root.setQName(xyz);
+
+        assertEquals("QNamed correctly", xyz, root.getQName());
+    }
+
+COM:tests the renaming and setting of a root element and its corresponding QName in an XML document

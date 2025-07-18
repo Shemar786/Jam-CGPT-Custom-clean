@@ -1,0 +1,22 @@
+TDAT:     public boolean isImplicitTeaImport(String classOrPackageName) {
+
+        if (classOrPackageName == null) {
+            return false;
+        }
+
+        if (cPrimativeClasses.get(classOrPackageName) != null) {
+            return true;
+        }
+        
+        for (int i = 0; i < IMPLICIT_TEA_IMPORTS.length; i++) {
+            String prefix = IMPLICIT_TEA_IMPORTS[i];
+
+            if (classOrPackageName.startsWith(prefix)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+COM:checks if a given class or package name is an implicit Tea import

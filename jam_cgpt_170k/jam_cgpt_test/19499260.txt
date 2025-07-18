@@ -1,0 +1,13 @@
+TDAT: 	public void testImageAxiom() throws Exception {
+		final IContextRoot ctx = createContext("ctx");
+		final IAxiom axm = createAxiom(ctx, "axm", "TRUE", false);
+		assertImage("Unexpected image descriptor for axiom",
+				IEventBSharedImages.IMG_AXIOM_PATH, axm);
+
+		axm.setTheorem(true, null);
+		assertImage(
+				"Unexpected image descriptor for axiom with theorem attribute",
+				IEventBSharedImages.IMG_THEOREM_PATH, axm);
+	}
+
+COM:tests the image descriptor of an axiom and its theorem attribute

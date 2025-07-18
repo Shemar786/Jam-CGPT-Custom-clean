@@ -1,0 +1,13 @@
+TDAT:     public ChannelDescriptor dup() {
+        synchronized (refCounter) {
+            refCounter.incrementAndGet();
+
+            int newFileno = RubyIO.getNewFileno();
+            
+            if (DEBUG) getLogger("ChannelDescriptor").info("Reopen fileno " + newFileno + ", refs now: " + refCounter.get());
+
+            return new ChannelDescriptor(channel, newFileno, originalModes, fileDescriptor, refCounter, canBeSeekable);
+        }
+    }
+
+COM:duplicates a ChannelDescriptor object with a new fileno and incremented reference counter

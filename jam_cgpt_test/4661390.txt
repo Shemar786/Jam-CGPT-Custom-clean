@@ -1,0 +1,14 @@
+TDAT:   protected void detainContext() {
+    try {
+      while (context.makeCurrent() == GLContext.CONTEXT_NOT_CURRENT) {
+//        System.out.println("Context not yet current...");
+//        new Exception().printStackTrace(System.out);
+//        Thread.sleep(1000);
+        Thread.sleep(10);
+      }
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
+
+COM:detains a context by repeatedly attempting to make it current until it succeeds or is interrupted

@@ -1,0 +1,11 @@
+TDAT: 	private void initializeContactList() throws FlickrDesktopException  {
+		SortedSet<Contact> usercontacts = this.flickrSystem.getPublicContacts();
+		this.contactList.add(this.flickrSystem.getCurrentUserName());
+		for (Iterator<Contact> iter = usercontacts.iterator(); iter.hasNext();) {
+			Contact friend = iter.next();
+			this.contacts.put(friend.getUsername(), friend);
+			this.contactList.add(friend.getUsername());
+		}
+	}
+
+COM:initializes the contact list by retrieving public contacts from Flickr API and adding them to a data structure

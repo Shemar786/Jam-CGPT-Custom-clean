@@ -1,0 +1,13 @@
+TDAT:     private int findLocal(String name) {
+        Data  bind;
+
+        for (int i = 0; i < data.arraySize(); i++) {
+            bind = data.getData(i);
+            if (name.equals(bind.getString("name", null))) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+COM:searches for a specific "name" in a set of data and returns its corresponding index, or returns -1 if the name is not found

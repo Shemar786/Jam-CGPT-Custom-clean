@@ -1,0 +1,13 @@
+TDAT:   static public void assertEquals(Map actual, Map expected) {
+    if(actual == expected) return;
+
+    if (actual == null || expected == null) {
+      fail("Maps not equal: expected: " + expected + " and actual: " + actual);
+    }
+
+    if (!actual.equals(expected)) {
+      fail("Maps differ: expected " + expected + " but got " + actual);
+    }
+  }
+
+COM:This is a static Java method that compares two maps, and throws an error if they are not equal

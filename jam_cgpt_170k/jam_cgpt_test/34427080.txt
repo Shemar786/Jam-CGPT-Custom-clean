@@ -1,0 +1,14 @@
+TDAT:     private JMenuItem makeMenuReslimit() {
+        JMenuItem sl = new JMenuItem("Resource amount...");
+        sl.setToolTipText("Adjust the max amount of resources to display");
+        sl.addActionListener(new ActionListener() {
+            @SuppressWarnings("synthetic-access")
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                actionReslimitSlider();
+            }
+        });
+        return sl;
+    }
+
+COM:creates and returns a JMenuItem that opens a dialog to adjust the maximum amount of resources displayed

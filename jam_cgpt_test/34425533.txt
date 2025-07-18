@@ -1,0 +1,8 @@
+TDAT:     public String item() {
+        // color string can be wherever
+        String i = item.replaceAll("\\\\#\\.", ""); // color default
+        i = i.replaceAll("\\\\#[0-9a-fA-F]{6}", ""); // color hex
+        return i;
+    }
+
+COM:returns a string with all instances of color codes (either default or hexadecimal) removed from the original string

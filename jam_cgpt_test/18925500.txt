@@ -1,0 +1,13 @@
+TDAT:   public void addHandler(FormatHandler newHandler) {
+    String type = newHandler.getName();
+    FormatHandler oldHandler = (FormatHandler) handlerMap.get(type);
+    if (oldHandler != null) {
+      handlerMap.remove(type);
+      handlerList.remove(oldHandler);
+    }
+
+    handlerMap.put(type, newHandler);
+    handlerList.add(newHandler);    
+  }
+
+COM:adds a new format handler to a list and map of existing handlers, replacing any previous handlers with the same type name

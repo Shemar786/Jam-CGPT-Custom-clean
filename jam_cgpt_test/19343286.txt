@@ -1,0 +1,18 @@
+TDAT: 	public String getFieldText(final int recordIdx, final int fieldIdx) {
+
+		try {
+			if (fieldIdx == Constants.FULL_LINE) {
+				return getFullLine();
+			}
+
+		    FieldDetail field = layout.getField(recordIdx, fieldIdx);
+			return layout.getField(getLineData(),
+			        				Type.ftChar,
+			        				field).toString();
+
+		} catch (final Exception ex) {
+			return "";
+		}
+	}
+
+COM:retrieves the text of a field in a record, and returns an empty string if an exception occurs

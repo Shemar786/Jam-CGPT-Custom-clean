@@ -1,0 +1,18 @@
+TDAT:     private Object readResolve() {
+        if (name == null) {
+            // XXX: remove -- introduced 0.8.11
+            name = stationPath.getName();
+            stationPath = null;
+        }
+
+        if (this.version == null) {
+            // first upgrade ever
+            // macros <= 0.8.16 had absolute file path, now they are transient
+            macros = null;
+        }
+
+        this.version = SWGConstants.version;
+        return this;
+    }
+
+COM:performs object deserialization and sets default values for certain variables if they are null

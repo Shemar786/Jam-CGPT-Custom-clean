@@ -1,0 +1,15 @@
+TDAT: 	public void addURL(String url) throws BadURLException {
+		synchronized(startURLs) {
+			try {
+				URL pURL = new URL(url);
+				// Don't add a page we've already seen
+				if(!urlToPage.containsKey(pURL.toString())) {
+					startURLs.add(pURL.toString());
+				}
+			} catch(MalformedURLException e) {
+				throw new BadURLException(e.getMessage());
+			}
+		}
+	}
+
+COM:adds a URL to a list of starting URLs for a web crawler, after checking if it has already been seen and throwing an exception if the URL is malformed

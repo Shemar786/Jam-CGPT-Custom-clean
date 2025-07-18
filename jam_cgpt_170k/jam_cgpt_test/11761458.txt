@@ -1,0 +1,14 @@
+TDAT:     public FingerDescriptor getOldestDescriptor(List<FingerDescriptor> neighbors){
+        if(neighbors.size()>0){
+            FingerDescriptor oldest=neighbors.get(0);//(int)(Math.random()*neighbors.size())
+            for(FingerDescriptor neighbor:neighbors){
+                if(isOlder(neighbor, oldest)){
+                    oldest=neighbor;
+                }
+            }
+            return oldest;
+        }
+        return null;
+    }
+
+COM:returns the FingerDescriptor object that has the oldest timestamp among the list of provided neighbors

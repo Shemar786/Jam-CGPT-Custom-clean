@@ -1,0 +1,20 @@
+TDAT: 	protected Document createLrcrudHeader(String id) {
+		Document xmldoc = null;
+		try {
+			DocumentBuilder db = DocumentBuilderFactory.newInstance()
+					.newDocumentBuilder();
+			xmldoc = db.newDocument();
+			Element root = xmldoc.createElement("lrcrud");
+			root.setAttribute("date", new Date().toString());
+			root.setAttribute("version", LRCRUD_VER);
+			Element e = xmldoc.createElement("packageIdentifier");
+			e.setTextContent(id);
+			root.appendChild(e);
+			xmldoc.appendChild(root);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return xmldoc;
+	}
+
+COM:creates a new XML document with a root element named "lrcrud", along with attributes for the date and version, and contains a child element for package identification

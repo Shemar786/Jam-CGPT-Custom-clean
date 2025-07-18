@@ -1,0 +1,8 @@
+TDAT:   private void sendChunk(byte[] b, int off, int len) throws IOException {
+    out.write(Integer.toHexString(len).getBytes());
+    out.write(CRLF);
+    out.write(b, off, len);
+    out.write(CRLF);
+  }
+
+COM:sends a chunk of data with a specified offset and length

@@ -1,0 +1,15 @@
+TDAT: 	public Record getExtendedRecord() {
+		if (extendedRecord != null && extendedRecord.eIsProxy()) {
+			InternalEObject oldExtendedRecord = (InternalEObject) extendedRecord;
+			extendedRecord = (Record) eResolveProxy(oldExtendedRecord);
+			if (extendedRecord != oldExtendedRecord) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecordsPackage.RECORD_EXTENSION__EXTENDED_RECORD, oldExtendedRecord,
+							extendedRecord));
+				}
+			}
+		}
+		return extendedRecord;
+	}
+
+COM:returns an extended record if it exists and resolves proxies if necessary

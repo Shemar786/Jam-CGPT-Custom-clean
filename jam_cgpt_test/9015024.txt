@@ -1,0 +1,18 @@
+TDAT: 	public void layoutContainer(Container target) {
+		int count;
+		Component component;
+		Dimension dimension;
+
+		synchronized (target.getTreeLock()) {
+			count = target.getComponentCount();
+			for (int i = 0; i < count; i++) {
+				component = target.getComponent(i);
+				if (component.isVisible()) {
+					dimension = component.getPreferredSize();
+					component.setSize(dimension.width, dimension.height);
+				}
+			}
+		}
+	}
+
+COM:lays out a container by setting the size of its visible components based on their preferred size

@@ -1,0 +1,11 @@
+TDAT:     public void hsvSpinnerChangedSlot() {
+        if(!allowSignals) return;
+        allowSignals = false;
+        selector.setHSVColor(
+            ((Integer) hueSpin.getValue()).intValue(),
+            ((Integer) saturationSpin.getValue()).intValue(),
+            ((Integer) valueSpin.getValue()).intValue());
+        allowSignals = true;
+    }
+
+COM:updates the HSV color of a selector based on the current values of hue, saturation, and value spinners, but only if the signals are allowed

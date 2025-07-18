@@ -1,0 +1,10 @@
+TDAT:     private String getConfigPropertyGetMethodName( String configPropertyName ) {
+        if ( ( null == configPropertyName ) ||
+             ( 0 == configPropertyName.length() ) ) {
+            throw new IllegalArgumentException( "The argument 'configPropertyName' is null or empty." );
+        }
+
+        return "get" + configPropertyName;
+    }
+
+COM:returns a string with the prefix "get" concatenated with the input configPropertyName

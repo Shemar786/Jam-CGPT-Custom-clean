@@ -1,0 +1,17 @@
+TDAT:     public StatusEffect getEffect(int lock) {
+        synchronized (m_statuses) {
+            Iterator i = m_statuses.iterator();
+            while (i.hasNext()) {
+                StatusEffect eff = (StatusEffect)i.next();
+                if ((eff == null) || !eff.isActive()) {
+                    continue;
+                }
+                if (eff.getLock() == lock) {
+                    return eff;
+                }
+            }
+        }
+        return null;
+    }
+
+COM:returns a StatusEffect object with a specified lock ID, iterating through a list of currently active StatusEffects

@@ -1,0 +1,9 @@
+TDAT: 	public void setDeactStatePiuPort(int port) {
+		if(slotInfo.unitId == DBDataDesc.R4_UNIT_PI_100M || slotInfo.unitId == DBDataDesc.R4_UNIT_PI_HP){
+			piuPort_100M[port] = DBDataDesc.R4_PIUPORT_DEACT;
+		} else if (slotInfo.unitId == DBDataDesc.R4_UNIT_PI_1G){
+			piuPort_1G[port] = DBDataDesc.R4_PIUPORT_DEACT;
+		}
+	}
+
+COM:sets a given port's deactivation state in a specific type of unit

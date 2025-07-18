@@ -1,0 +1,14 @@
+TDAT:     public boolean equals(Object o) {
+    	if (o==null){
+    		return false;
+    	}
+    	HeapPageId heapPageId;
+    	try{
+    		heapPageId = (HeapPageId) o;
+    	} catch (ClassCastException e) {
+    		return false;
+    	}    	
+        return (this.pageno() == heapPageId.pageno()) && ( this.tableid() == heapPageId.tableid() );
+    }
+
+COM:checks if two HeapPageId objects are equal by comparing their table and page numbers

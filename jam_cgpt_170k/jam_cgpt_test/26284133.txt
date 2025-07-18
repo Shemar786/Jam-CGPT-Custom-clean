@@ -1,0 +1,10 @@
+TDAT:     private void doSetMonth(int month) {
+        int date = getDate();
+        internalCalendar.set(Calendar.MONTH, month);
+        // if invalid date, change date, but don't fire event.
+        if (getDaysInMonth() < date)
+            doSetDate(getDaysInMonth());
+        enforceMinMax();
+    }
+
+COM:sets the month of an internal calendar object and adjusts the date if necessary

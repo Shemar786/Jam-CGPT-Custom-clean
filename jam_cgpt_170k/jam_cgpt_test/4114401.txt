@@ -1,0 +1,19 @@
+TDAT:     public void addDays(int n) {
+	if (n < 0)
+	    throw new IllegalArgumentException("Negative argument.");
+	
+	while (day + n > maxDaysIn(year, month)) {
+	    int restOfMonth = maxDaysIn(year, month) - day;
+	    n -= restOfMonth;
+	    day = 1;
+	    if (month == DECEMBER) {
+		month = JANUARY;
+		year++;
+	    } else {
+		month++;
+	    }
+	}
+	day += n;
+    }
+
+COM:adds a specified number of days to a date, throwing an exception for negative input and adjusting the date for the end of each month

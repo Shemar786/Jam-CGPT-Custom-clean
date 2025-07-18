@@ -1,0 +1,14 @@
+TDAT:   public void checkAreas() {
+    int previousEnd = -1;
+    for (PageElementAreas.Area area : areas) {
+      if (area.beginIndex >= area.endIndex) {
+        System.err.println("Error " + area);
+      }
+      if (previousEnd >= area.beginIndex) {
+        System.err.println("Error " + area + "/" + previousEnd);
+      }
+      previousEnd = area.endIndex;
+    }
+  }
+
+COM:checks a list of PageElementAreas for errors in their index ranges

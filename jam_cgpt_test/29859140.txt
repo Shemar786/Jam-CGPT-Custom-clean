@@ -1,0 +1,12 @@
+TDAT:   public void genAppendToStringBuffer(GenerationContext context) {
+    TypeFactory         factory = context.getTypeFactory();
+
+    if (getType(factory).equals(factory.createReferenceType(TypeFactory.RFT_STRING))) {
+      left.genAppendToStringBuffer(context);
+      right.genAppendToStringBuffer(context);
+    } else {
+      super.genAppendToStringBuffer(context);
+    }
+  }
+
+COM:generates a string representation of a given object and appends it to a StringBuffer, using a TypeFactory to determine the object's type

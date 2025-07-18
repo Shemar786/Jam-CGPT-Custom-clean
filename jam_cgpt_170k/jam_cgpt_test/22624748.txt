@@ -1,0 +1,13 @@
+TDAT: 	public List getDetailedResults() throws Exception {
+		String path = "//asn_ACSRSubjects/asn_ACSRSubjects";
+		Document response = Dom4jUtils.localizeXml(this.getResponse());
+		List docElements = response.selectNodes(path);
+
+		List results = new ArrayList();
+		for (Iterator i = docElements.iterator(); i.hasNext(); ) {
+			results.add(new SubjBean((Element) i.next()));
+		}
+		return results;
+	}
+
+COM:returns a list of detailed results as SubjBean objects, by selecting nodes from an XML document using Dom4jUtils

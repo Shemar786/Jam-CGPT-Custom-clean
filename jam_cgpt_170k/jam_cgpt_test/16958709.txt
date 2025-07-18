@@ -1,0 +1,17 @@
+TDAT: 	public void scroll(String s){
+		int x,y;
+		String temp;
+		// run x from ROWS-CHATSIZE+1 to ROWS-1
+		//  eg, 21 to 23
+		for(x=ROWS-CHATSIZE+1; x<ROWS; x++){
+			// run y from 0 to COLS-1
+			for(y=0; y<COLS; y++){
+				this.putCharAt(screen[x][y], x-1,y);
+				this.putCharAt(' ', x, y);
+			}
+		}
+		this.putStringAt(s,ROWS-1,0);
+		
+	}
+
+COM:scrolls a chat window up by one row and adds a String input to the bottom row

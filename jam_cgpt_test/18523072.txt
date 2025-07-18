@@ -1,0 +1,17 @@
+TDAT: 	private ITestStep fromText(Text text) {
+		Element row = new Element("TR");
+		Element d1 = new Element("TD");
+		d1.setText("check");
+		row.addContent(d1);
+		Element d2 = new Element("TD");
+		String check = (!text.isNot()) ? "text present" : "text not present";
+		d2.setText(check);
+		row.addContent(d2);
+		Element d3 = new Element("TD");
+		d3.setText(text.getText());
+		row.addContent(d3);
+		
+		return new TestStep(row);
+	}
+
+COM:creates a new TestStep object based on the input Text object, which contains information about whether a particular text is present or not, and returns it

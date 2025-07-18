@@ -1,0 +1,11 @@
+TDAT:   public void setXMLActionDefaultStat() {
+    try {
+      wpMask mask = new wpMask(XML_ACTIONS, xmlActionIndices,
+                               xmlActionDefaultStat);
+      wpMaskEvent event = new wpMaskEvent(this, mask);
+      maskHandler.fireMaskChanged(event);
+    }
+    catch (wpMaskException me) {}
+  }
+
+COM:sets the default status for an XML action using a mask object and triggers a mask changed event

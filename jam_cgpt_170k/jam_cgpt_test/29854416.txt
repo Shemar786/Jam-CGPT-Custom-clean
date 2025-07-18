@@ -1,0 +1,16 @@
+TDAT:   public String toString(java.util.Locale locale) {
+    StringBuffer        tmp = new StringBuffer(normal.format(timestamp));
+    final int           nanos = timestamp.getNanos();
+
+    if (nanos >= 100) {
+      tmp.append(nanos);
+    } else if (nanos >= 10) {
+      tmp.append("0" + nanos);
+    } else {
+      tmp.append("00" + nanos);
+    }
+
+    return tmp.toString();
+  }
+
+COM:returns a string containing a timestamp with nanoseconds formatted according to a provided locale

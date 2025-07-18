@@ -1,0 +1,15 @@
+TDAT: 	private Namespace getCurrentNamespace() {
+		int size = nsStack.size();
+		prtln("getCurrentNamespace (" + size + ")", 1);
+		if (size < 1) {
+			prtlnErr("WARNING: Namespace stack is empty!");
+			return null;
+		}
+		else {
+			Namespace ns = nsStack.getNamespace(size - 1);
+			prtln(" ... current namespace: " + ns.getPrefix() + ": " + ns.getURI(), 1);
+			return ns;
+		}
+	}
+
+COM:returns the current namespace, and prints a warning message if the namespace stack is empty

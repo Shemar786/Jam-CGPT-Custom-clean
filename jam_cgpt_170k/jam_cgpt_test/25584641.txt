@@ -1,0 +1,12 @@
+TDAT:     public int getNumActiveGameObjects() {
+        int numActiveGameObjects = 0;
+        for (GameLayer gameLayer : gameEngine.gameLayers.values()) {
+            if (gameLayer.gameLayerActivity == GameLayer.GameLayerActivity.ACTIVE) {
+                numActiveGameObjects += gameLayer.gameObjects.size();
+            }
+        }
+
+        return numActiveGameObjects;
+    }
+
+COM:determines the number of active game objects across all game layers in a game engine

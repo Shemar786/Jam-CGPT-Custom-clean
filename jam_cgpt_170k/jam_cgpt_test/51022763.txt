@@ -1,0 +1,19 @@
+TDAT: 	public void setEdgeFont(final Font font) {
+		visviewer.getRenderContext().setEdgeFontTransformer(
+				new Transformer<ONDEXRelation, Font>() {
+
+					@Override
+					public Font transform(ONDEXRelation input) {
+						return font;
+					}
+				});
+		visviewer.getModel().fireStateChanged();
+		// serialise font
+		ByteArrayOutputStream bos = new ByteArrayOutputStream();
+		XMLEncoder encoder = new XMLEncoder(bos);
+		encoder.writeObject(font);
+		encoder.close();
+		graph.getAnnotations().put(EDGEFONT, bos.toString());
+	}
+
+COM:sets the font of the edges in a visual viewer, serializes the font, and stores it as an annotation in a graph object

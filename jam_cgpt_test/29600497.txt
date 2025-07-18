@@ -1,0 +1,10 @@
+TDAT:         private void calculateResidualMemory(List<AppInformation> apps,int[][] I) {
+            int residualMemoryTmp =memoryCapacity;
+            for(int i=0; i< I.length;i++)
+                residualMemoryTmp-=apps.get(i).getMemoryDemand()*I[i][getPosition()];
+            
+            //TODO: What happens if residual memory < 0?
+            residualMemory=residualMemoryTmp;
+        }
+
+COM:calculates the amount of residual memory left after considering the memory demands of a list of apps and a matrix of integers

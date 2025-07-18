@@ -1,0 +1,11 @@
+TDAT:   public void makeUniqueParagraphForGlobalWithLength(String global, int length) {
+    String paragraph = "";
+    String word;
+    for (int x = 0; x < length; x++) {
+      word = makeUniqueStringForGlobalWithLength(global, (int)(Math.random() * 8) + 2);
+      paragraph += word + " ";
+    }
+    utils.setGlobal(global, paragraph);
+  }
+
+COM:creates a unique paragraph composed of randomly generated words for a specified global variable with a given length, and sets the global variable to the resulting paragraph using a utility method

@@ -1,0 +1,11 @@
+TDAT: 	public boolean interacts(Domain dom){
+
+	AllToAllInteraction calc = new AllToAllInteraction("null",this,dom);
+	System.out.println(calc.getIntersectionAtomsA()+"  "+calc.getIntersectionAtomsB());
+	if(calc.getIntersectionAtomsA()>=Threshold.NumberOfResiduePairs||calc.getIntersectionAtomsB()>=Threshold.NumberOfResiduePairs)
+		return true;
+	else
+		return false;
+	}
+
+COM:checks if two domains interact by calculating the intersection of their atoms and comparing it to a threshold value

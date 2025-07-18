@@ -1,0 +1,10 @@
+TDAT:     public void startServerWithControllerGUI(String project){
+        if(jel==null) jel = new JmxExtLauncher();
+        try{
+            if(project!=null && !project.equals(""))
+                jel.setProjectLoc(new File(project).toURI());
+            jel.launchProjectWithControllerGUI();
+        }catch (Exception e){e.printStackTrace();}
+    }
+
+COM:starts a server with a graphical user interface for a specified project using JmxExtLauncher

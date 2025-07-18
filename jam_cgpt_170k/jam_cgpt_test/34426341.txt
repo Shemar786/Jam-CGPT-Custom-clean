@@ -1,0 +1,13 @@
+TDAT:     private String notesShaveString(String string) {
+        String a = string.trim();
+        String b = null;
+        while (!a.equals(b)) {
+            b = a;
+            char c = a.charAt(0);
+            if (c == ',' || c == ';' || c == '.' || c == ':')
+                a = a.substring(1);
+        }
+        return b;
+    }
+
+COM:removes leading punctuation from a given string

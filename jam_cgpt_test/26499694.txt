@@ -1,0 +1,11 @@
+TDAT:   public KeyPairGenerator newKeyPairGenerator(String algo) throws NoSuchAlgorithmException{
+    if(_provider != null){
+      return KeyPairGenerator.getInstance(algo, _provider);
+    }
+    else if(_defaultProvider != null){
+      return KeyPairGenerator.getInstance(algo, _provider);
+    }
+    return KeyPairGenerator.getInstance(algo);
+  }
+
+COM:creates a new KeyPairGenerator instance for the provided algorithm, with an optional provider

@@ -1,0 +1,14 @@
+TDAT:   public Envelope deserialize(InputStream anInput) throws ProcessingException {
+    Object anObject = null;
+
+    try {
+      anObject = _theConfixProcessor.process(anInput);
+
+      return (Envelope) anObject;
+    } catch (ClassCastException cce) {
+      throw new ProcessingException("The object created from the input stream is not an Envelope: " +
+                                    anObject, cce);
+    }
+  }
+
+COM:deserializes an InputStream into an Envelope object using the Confix processor, while throwing a ProcessingException if the resulting object is not of type Envelope

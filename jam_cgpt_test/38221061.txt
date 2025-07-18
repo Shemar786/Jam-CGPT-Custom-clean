@@ -1,0 +1,8 @@
+TDAT:   public void addPanel(String caption, java.awt.Component panel) {
+    JPanel container = new JPanel(new BorderLayout());
+    container.add(panel, BorderLayout.CENTER);
+    container.setBorder(BorderFactory.createEmptyBorder(12,12,12,12));
+    tabbedPane.addTab(" " + caption + " ", container);
+  }
+
+COM:adds a panel with a specified caption to a tabbed pane container

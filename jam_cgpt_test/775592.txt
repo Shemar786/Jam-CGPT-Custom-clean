@@ -1,0 +1,19 @@
+TDAT: 	public void loadRegistry(String fileName) throws LoaderException {
+		ObjectInputStream inputStream = null;
+		try {
+			inputStream = new ObjectInputStream(new FileInputStream(fileName));
+		} catch (FileNotFoundException e) {
+			throw new LoaderException(e);
+		} catch (IOException e) {
+			throw new LoaderException(e);
+		}
+		try {
+			registry = (FilteredMap<?, ?, ?>) inputStream.readObject();
+		} catch (IOException e) {
+			throw new LoaderException(e);
+		} catch (ClassNotFoundException e) {
+			throw new LoaderException(e);
+		}
+	}
+
+COM:loads a serialized object from a file and casts it to a FilteredMap, throwing a LoaderException if there are any errors

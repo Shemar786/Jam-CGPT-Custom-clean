@@ -1,0 +1,21 @@
+TDAT: 	public void restart() {
+		try {
+			// Store all configuration and finish all active modules
+
+			// Build a process builder with OS-specific command and saved arguments
+			ProcessBuilder pb = new ProcessBuilder(SystemProperties.OS.getLaunchCommand());
+
+			System.out.println(pb.command().toString());
+
+			// Start new application instance
+			pb.start();
+
+		} catch (IOException e) {
+			logger.error(e.getMessage(), e);
+		} finally {
+			// Exit normally
+			System.exit(0);
+		}
+	}
+
+COM:restarts the application by storing configuration, building a new process with OS-specific command and arguments, and starting a new instance while quitting the current one

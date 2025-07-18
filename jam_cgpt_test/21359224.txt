@@ -1,0 +1,15 @@
+TDAT:     private void updateCountryCode() {
+        String countryPrefix = countryPrefixTextField.getText();
+        String countryCode = CountryPrefix.getCountryCode(countryPrefix);
+
+        boolean temp = fullyInicialized;
+        fullyInicialized = false;
+        if (StringUtils.isEmpty(countryCode)) {
+            countryCodeComboBox.setSelectedIndex(0);
+        } else {
+            countryCodeComboBox.setSelectedItem(countryCode);
+        }
+        fullyInicialized = temp;
+    }
+
+COM:updates the selected country code in a combo box based on the user input in a text field

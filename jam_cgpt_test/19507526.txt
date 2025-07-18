@@ -1,0 +1,13 @@
+TDAT: 	public void testReorderIntSnapshot() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neParent = createNEPositive(rSource, "parent", null);
+		NamedElement ne1 = createNEPositive(neParent, "foo", null);
+		NamedElement ne2 = createNEPositive(neParent, "bar", null);
+		rfSource.save(null, false);
+		
+		reorderNegative(ne2.getSnapshot(), ne1.getSnapshot(),
+				IRodinDBStatusConstants.READ_ONLY);
+	}
+
+COM:creates a Rodin file, adds named elements to it, and then reorders the snapshots of two of those elements

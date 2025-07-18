@@ -1,0 +1,13 @@
+TDAT:     public void setTextDisplayed(boolean textDisplayed) {
+        boolean oldTextDisplayed = m_textDisplayed;
+        m_textDisplayed = textDisplayed;
+        if (oldTextDisplayed != m_textDisplayed) {
+            firePropertyChange(
+                PROPERTY_TEXTDISPLAYED,
+                new Boolean(oldTextDisplayed),
+                new Boolean(m_textDisplayed)
+            );
+        }
+    }
+
+COM:sets a boolean value for the text displayed, and notifies any listeners if the value has changed

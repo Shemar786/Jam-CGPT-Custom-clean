@@ -1,0 +1,29 @@
+TDAT: 	private void searchThreadStart(){
+		if (searchThread!=null) {
+			if (searchThread.isAlive()) {
+				// it's already searching
+			} else {
+				// just rerun
+				showDialog(SEARCH_PROGRESS_KEY);
+				searchThread.run();
+			}
+			return;
+		}
+		showDialog(SEARCH_PROGRESS_KEY);
+		searchThread = new Thread(new Runnable() {
+			public void run() {
+				doSearch();
+				dismissDialog(SEARCH_PROGRESS_KEY);
+				sendBroadcast (restartTimerIntent);
+
+				Message m = new Message();
+				m.what = MSG_SEARCH_COMPLETE;
+				Search.this.myViewUpdateHandler.sendMessage(m); 
+
+				if (debug) Log.d(TAG,"thread end");
+				}
+			},"Search");
+		searchThread.start();
+	}
+
+COM:searches for a thread and starts it if it is not already running

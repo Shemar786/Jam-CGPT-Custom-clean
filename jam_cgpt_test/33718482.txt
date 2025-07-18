@@ -1,0 +1,13 @@
+TDAT:     public void testSetWarningMessage() {
+        System.out.println("setWarningMessage");
+        
+        String warningMessage = "";
+        Event_StubImpl instance = new Event_StubImpl();
+        
+        instance.setWarningMessage(warningMessage);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the functionality of setting a warning message for an Event

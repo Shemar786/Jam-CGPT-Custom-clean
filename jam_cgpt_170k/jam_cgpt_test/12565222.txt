@@ -1,0 +1,19 @@
+TDAT: 	protected int calculateBreakPosition(int p0, int p1) {
+		int p;
+		Segment segment = new Segment();// SegmentCache.getSharedSegment();
+		loadText(segment, p0, p1);
+		int currentWidth = getWidth();
+		if (wordWrap) {
+			p = p0
+					+ Utilities.getBreakLocation(segment, metrics, tabBase,
+							tabBase + currentWidth, this, p0);
+		} else {
+			p = p0
+					+ Utilities.getTabbedTextOffset(segment, metrics, tabBase,
+							tabBase + currentWidth, this, p0, false);
+		}
+
+		return p;
+	}
+
+COM:calculates the position where a break should occur in a text segment based on the current width and whether or not to wrap words

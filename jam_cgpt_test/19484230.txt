@@ -1,0 +1,14 @@
+TDAT: 		public Object getObject(String name) throws Exception {
+			// String translated = Text2EventBMathTranslator.translate(name);
+			String translated = name;// Translator.getTranslator().fromASCII(name);
+
+			final IParseResult result = FormulaFactory.getDefault()
+					.parsePredicate(translated, LanguageVersion.LATEST, this);
+			if (result.hasProblem())
+				throw new Exception(Messages.bind(
+						Messages.dict_entry_name_parse_error, name));
+
+			return result.getParsedPredicate();
+		}
+
+COM:takes a string argument and returns a parsed object, throwing an exception if there is a parsing error

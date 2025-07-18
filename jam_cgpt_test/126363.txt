@@ -1,0 +1,15 @@
+TDAT: 	private int determineStretch(String attributeValue) {
+		// If parent row is null, then comp is floating, it is forced to stretch
+		if (getParentRow() == null)
+			return STRETCH_BOTH;
+
+		if ("horizontal".equalsIgnoreCase(attributeValue))
+			return STRETCH_HORIZONTAL;
+		if ("vertical".equalsIgnoreCase(attributeValue))
+			return STRETCH_VERTICAL;
+		if ("both".equalsIgnoreCase(attributeValue))
+			return STRETCH_BOTH;
+		return STRETCH_NONE;
+	}
+
+COM:determines how a component should stretch based on its parent row and a given attribute value

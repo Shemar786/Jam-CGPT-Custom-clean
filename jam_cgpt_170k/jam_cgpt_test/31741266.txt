@@ -1,0 +1,18 @@
+TDAT: 	public void startHeader(Request request) {
+		try {
+			sendStatus(HTTP.OK);
+			sendBasicHeaders();
+			sendHeaderEntry("Content-Length: " +
+					request.getRequestFile().length());
+			sendHeaderEntry("Last-Modified: "
+					+ HTTP.formatDate(new Date(request.getRequestFile()
+							.lastModified())));
+			sendHeaderEntry("Content-Type: " + request.getMimeType());
+			
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:sends HTTP headers related to the requested file

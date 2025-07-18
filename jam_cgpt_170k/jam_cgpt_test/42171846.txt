@@ -1,0 +1,17 @@
+TDAT:   protected void addScrollModePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OpenQuery_scrollMode_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OpenQuery_scrollMode_feature", "_UI_OpenQuery_type"),
+				 ActionStepPackage.eINSTANCE.getOpenQuery_ScrollMode(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the scroll mode feature of an OpenQuery object

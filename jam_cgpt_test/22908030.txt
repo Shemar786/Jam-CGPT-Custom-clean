@@ -1,0 +1,16 @@
+TDAT:     private void setLocation(OBEXElement file) {
+        if (file == null) {
+            return;
+        }
+
+        String[] path = file.getStringPath();
+        String stringPath = "";
+
+        for (int i = 1; i < path.length; i++) {
+            stringPath += "/" + path[i];
+        }
+
+        window.getLocationTextField().setText(stringPath);
+    }
+
+COM:sets the location text field in a window using the string path derived from an OBEXElement file

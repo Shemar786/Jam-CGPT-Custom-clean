@@ -1,0 +1,14 @@
+TDAT: 	public void setDelay(int delay){
+		int I2C_Response;
+		byte h_byte;
+		byte l_byte;
+		
+		int motor = LSC_position;
+		h_byte = (byte)0xF0;
+		l_byte = (byte)(((motor)<<4) + delay);
+	     
+		I2C_Response = this.sendData((int)this.SPI_PORT, h_byte);
+		I2C_Response = this.sendData((int)this.SPI_PORT, l_byte);
+	}
+
+COM:sets a delay for a specified motor using I2C communication

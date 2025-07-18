@@ -1,0 +1,11 @@
+TDAT: 	public void createAgentJob(AgentName agentName, Date date) {
+
+		JobDetail job = createAgentJobDetail(agentName, AGENT_JOB_GROUP_NAME);
+
+		SimpleTrigger trigger =
+			new SimpleTrigger(agentName.toString(), AGENT_JOB_GROUP_NAME, date);
+
+		QuartzSheduler.getInstance().addSheduleJob(job, trigger);
+	}
+
+COM:creates a job for a specific agent at a given date using Quartz Scheduler

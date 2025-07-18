@@ -1,0 +1,19 @@
+TDAT:     public SVFParameters getRealParameters(int index) {
+        // Go down till the first Action
+        index = getPreviousActionIndex(index);
+        // Go up to first parameter
+        index++;
+
+        SVFParameters p = new SVFParameters();
+        for (int i = index; i < commands.size(); i++) {
+            SVFCommand command = getCommand(i);
+            if (command instanceof SVFAction)
+                break;
+            else
+                p.mergeParameters(command);
+        }
+
+        return p;
+    }
+
+COM:returns the real parameters for a given index by iterating through a list of commands and merging the parameters until it encounters an action

@@ -1,0 +1,10 @@
+TDAT: 	public void refeed(final XMLDocumentHandler tagBalancer) {
+		for (final Iterator iter = entries.iterator(); iter.hasNext();) {
+			final LostText.Entry entry = (LostText.Entry) iter.next();
+			tagBalancer.characters(entry.text_, entry.augs_);
+		}
+		// not needed anymore once it has been used -> clear to free memory
+		entries.clear();
+	}
+
+COM:refeeds a XMLDocumentHandler with lost text entries and clears the entries list to free memory

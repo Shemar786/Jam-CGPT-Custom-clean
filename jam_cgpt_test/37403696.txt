@@ -1,0 +1,19 @@
+TDAT:     public void run() {
+
+        // Initialize a new thread for every incoming TCP/IP
+        // connection:
+        try {
+            while (listening)
+                new NetworkServerLogon(logonSocket.accept(),
+                                       game).start();
+            // Finalize:
+            logonSocket.close();
+        }
+        catch (java.io.IOException e)
+        {
+            System.out.println("error creating logon thread for a client");
+            System.exit(-1);
+        }
+    }
+
+COM:creates and initializes a new thread for every incoming TCP/IP connection

@@ -1,0 +1,15 @@
+TDAT:     public String getWikiFileName(final boolean withExtension) {
+        if (withExtension) {
+            return wikiFileName;
+        }
+
+        final String dot = "."; //$NON-NLS-1$
+        if (!wikiFileName.contains(dot)) {
+            return wikiFileName;
+        }
+
+        final int idx = wikiFileName.lastIndexOf(dot);
+        return wikiFileName.substring(0, idx);
+    }
+
+COM:returns the Wiki file name with or without the extension

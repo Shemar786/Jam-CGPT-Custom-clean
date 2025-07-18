@@ -1,0 +1,11 @@
+TDAT:     public String ReadSensors(ArrayList<String> SensorsOn) {
+    	String result = "";
+    	Integer sensor_res;
+    	for (String name : SensorsOn){
+    		sensor_res = readSensor(name);
+    		result += "<" + name + "=" + sensor_res.toString() + ">";
+    	}
+    	return result;
+    };
+
+COM:reads sensor readings for each sensor specified in the input ArrayList and returns the results as a string

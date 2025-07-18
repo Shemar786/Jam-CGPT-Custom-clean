@@ -1,0 +1,20 @@
+TDAT:     private boolean waitDOreply(int i) {
+      switch (i) {
+        case SUPGA:
+          return WAIT_DO_REPLY_SUPGA;
+        case ECHO:
+          return WAIT_DO_REPLY_ECHO;
+        case NAWS:
+          return WAIT_DO_REPLY_NAWS;
+        case TTYPE:
+          return WAIT_DO_REPLY_TTYPE;
+        case LINEMODE:
+          return WAIT_DO_REPLY_LINEMODE;
+        case NEWENV:
+          return WAIT_DO_REPLY_NEWENV;
+        default:
+          return false;
+      }
+    }//waitDOreply
+
+COM:returns a boolean value based on the input integer corresponding to a particular case in a switch statement

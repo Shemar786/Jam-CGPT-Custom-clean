@@ -1,0 +1,15 @@
+TDAT: 	public void updatePreviewPanel(File programmeFile){
+		String content="<h1>"+programmeFile.getName()+"</h1>";
+		jGraph.clear();
+		try {
+			Controller c=ControllerFactory.loadController(null,programmeFile);
+			content+=c.getDescription();
+			jGraph.addPreview(c.getPreview());				
+		} catch (Exception e) {
+			content+="<p>couldn't load: </p><pre>"+e.getMessage()+"</pre>";
+		}
+		
+		htmlPanel.setText(content);
+	}
+
+COM:updates a preview panel with information retrieved from a loaded controller and displays an HTML-formatted string that includes the name of the file and a description of the program

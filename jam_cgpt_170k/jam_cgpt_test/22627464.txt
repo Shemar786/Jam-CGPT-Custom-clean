@@ -1,0 +1,13 @@
+TDAT: 	public ArrayList getImportPaths() {
+		ArrayList paths = new ArrayList();
+		List list = doc.selectNodes("//" + NamespaceRegistry.makeQualifiedName (xsdPrefix, "import"));
+		for (Iterator iter = list.iterator(); iter.hasNext(); ) {
+			Element element = (Element) iter.next();
+			String schemaLocation = element.attributeValue("schemaLocation");
+			String namespace = element.attributeValue("namespace");
+			paths.add(new IncludePath(schemaLocation, namespace));
+		}
+		return paths;
+	}
+
+COM:retrieves a list of import paths by selecting nodes from a document and iterating through the list to add schema locations and namespaces to an ArrayList

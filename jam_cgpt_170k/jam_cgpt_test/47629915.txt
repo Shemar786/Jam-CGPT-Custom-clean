@@ -1,0 +1,20 @@
+TDAT: 	public String getPassword(String user, String server) {
+
+		try {
+
+			KeyStore.SecretKeyEntry entry2 = (KeyStore.SecretKeyEntry) store
+					.getEntry(user + "@" + server,
+							new KeyStore.PasswordProtection(masterPassword));
+			return new String(entry2.getSecretKey().getEncoded());
+		} catch (KeyStoreException e) {
+			e.printStackTrace();
+		} catch (UnrecoverableEntryException ce) {
+			ce.printStackTrace();
+		} catch (NoSuchAlgorithmException ne) {
+			ne.printStackTrace();
+		}
+
+		return null;
+	}
+
+COM:retrieves a password for a specific user and server from a KeyStore using a master password

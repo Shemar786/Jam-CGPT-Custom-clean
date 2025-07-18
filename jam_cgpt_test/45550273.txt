@@ -1,0 +1,8 @@
+TDAT:     public void write(String property, IPropertyStore store) {
+        store.setProperty(property + PROP_PREFIX, prefix);
+        store.setProperty(property + PROP_FIRST, first);
+        store.setProperty(property + PROP_REST, rest);
+        store.setProperty(property + PROP_SUFFIX, suffix);
+    }
+
+COM:writes four properties to an object of type IPropertyStore using the given parameter as a prefix for the property names

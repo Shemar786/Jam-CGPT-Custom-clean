@@ -1,0 +1,17 @@
+TDAT: 	private void addChangeListener(JTabbedPane pane) {
+		
+		boolean listenerFound = false;
+		ChangeListener[] listener = pane.getChangeListeners();
+		for (int i = 0; i < listener.length; i++) {
+			ChangeListener cl = listener[i];
+			if (cl==this.getTabSelectionListener()) {
+				listenerFound = true;
+			}
+		} 
+		
+		if (listenerFound==false) {
+			pane.addChangeListener(this.getTabSelectionListener());
+		}
+	}
+
+COM:adds a change listener to a JTabbedPane only if it hasn't already been added

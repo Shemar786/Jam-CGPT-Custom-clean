@@ -1,0 +1,12 @@
+TDAT: 	private JTextArea getTxtElementDescription() {
+		if (txtElementDescription == null) {
+			txtElementDescription = new JTextArea();
+			txtElementDescription.setBounds(new Rectangle(136, 61, 504, 44));
+			txtElementDescription.setBackground(Color.white);
+			txtElementDescription.setBorder(BorderFactory.createLineBorder(Color.lightGray, 2));
+			txtElementDescription.setEditable(false);
+		}
+		return txtElementDescription;
+	}
+
+COM:returns a JTextArea object and initializes it if it has not yet been created, setting its bounds, background color, border, and editability

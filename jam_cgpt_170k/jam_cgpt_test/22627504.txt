@@ -1,0 +1,18 @@
+TDAT: 	public void remove(String xpath) {
+		Node node = doc.selectSingleNode(xpath);
+		if (node == null) {
+			// prtln("remove could not find node to delete (" + xpath + ")");
+			return;
+		}
+
+		Element parent = node.getParent();
+		if (parent == null) {
+			// prtln("remove could not find parent of node to delete (" + xpath + ")");
+			return;
+		}
+		if (!parent.remove(node)) {
+			prtlnErr("failed to remove node at " + xpath);
+		}
+	}
+
+COM:takes an xpath string as input, finds the corresponding node in the document, removes it if it exists, and returns nothing

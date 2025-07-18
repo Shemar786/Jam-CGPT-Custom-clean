@@ -1,0 +1,12 @@
+TDAT: 	public void start() {
+		servers = new Servers(new ServerSetup[]{smtp, pop3});
+		servers.getManagers().setSmtpManager(
+				new MySmtpManager(servers.getManagers()));
+		servers.start();
+		/* create user account on server */
+		servers.setUser("test@localhost.com", "user", "pass");
+		mailUser = servers.getManagers().getUserManager().getUser("user");
+		// System.out.println("user = " + mailUser);
+	}
+
+COM:starts up a server with SMTP and POP3 configurations, sets up a SMTP manager, creates a user account, and retrieves the user

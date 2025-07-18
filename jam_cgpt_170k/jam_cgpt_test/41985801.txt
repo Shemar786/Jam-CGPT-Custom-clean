@@ -1,0 +1,14 @@
+TDAT:     public int GetDistance() {
+    	byte[] data = new byte[2];
+    	data[0]= (byte)142;
+    	data[1]= (byte) 19;
+    	// send request
+    	iRobotBAM.Write(data);
+    	// get answer
+    	byte[] sensor = new byte[2];
+	iRobotBAM.Read(sensor);
+	int res = (int)(sensor[0] << 8) + (int)(sensor[1]&0x00FF);
+	return res;
+    }
+
+COM:sends a request to a device, reads the response, and returns an integer value representing distance

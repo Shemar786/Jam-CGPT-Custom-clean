@@ -1,0 +1,13 @@
+TDAT: 	public Map getDocContentMap(File file) {
+		String rootElementName = framework.getRootElementName();
+
+		try {
+			doc = Dom4jUtils.getXmlDocument(file);
+			doc = Dom4jUtils.localizeXml(doc, rootElementName);
+		} catch (Exception e) {
+			prtln("getXmlDocument error: " + e.getMessage());
+		}
+		return getDocContentMap(doc, framework);
+	}
+
+COM:takes a File object, reads an XML document using Dom4jUtils, localizes the XML document based on a root element name, and returns a Map of the document's content

@@ -1,0 +1,14 @@
+TDAT:   public XmlBuffer addContent(String aContent) {
+    if (_theStates.isEmpty()) {
+      throw new IllegalStateException("Could not add content [" + aContent +
+        "] there is no element started");
+    }
+
+    BufferState aState = (BufferState) _theStates.getFirst();
+    validateStartingXmlGeneration(aState);
+    _theScribe.xmlEncode(aContent, aState.getContent());
+
+    return this;
+  }
+
+COM:adds content to an XML buffer and encodes it using the XML scribe if there is a started element or else an IllegalStateException is thrown

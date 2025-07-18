@@ -1,0 +1,17 @@
+TDAT:     private void initializeChoiceTischeItem() {
+        Choice choiceTische = orderFramePanel.getChoiceTische();
+
+        Vector tische = model.getGetkar().getTische();
+        Enumeration enumeration = tische.elements();
+
+        while (enumeration.hasMoreElements()) {
+            choiceTische.add((String) enumeration.nextElement());
+        }
+
+        //choiceTische.select(0);
+        String selectedItem = choiceTische.getSelectedItem();
+        model.setLastChoosenTable( selectedItem );
+
+    }
+
+COM:initializes a Choice object with items from a Vector, sets the selected item, and saves it to a model

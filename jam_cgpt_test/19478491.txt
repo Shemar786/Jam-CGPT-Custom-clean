@@ -1,0 +1,16 @@
+TDAT: 	private OperationTree4Composition getCommandCreateElement(IInternalElement element) {
+		final OperationNode4Composition cmd = new OperationNode4Composition();
+		cmd.addCommande(new CreateIdenticalElement4Composition(element));
+		try {
+			if (element.hasChildren()) {
+				cmd.addCommande(getCommandCreateChildren(element.getChildren()));
+			}
+		} catch (RodinDBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return cmd;
+
+	}
+
+COM:returns an OperationTree4Composition object that contains a command to create an identical element with children, if any, to the given internal element

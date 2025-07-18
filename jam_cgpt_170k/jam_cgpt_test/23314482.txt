@@ -1,0 +1,18 @@
+TDAT: 	public String query(String sparqlQueryString) {
+		String jsonString;
+		if (cache == null) {
+			
+			SparqlQuery sq = new SparqlQuery(sparqlQueryString, sparqlEndpoint);
+			//SimpleClock sc = new SimpleClock();
+			sq.send(false);
+			//sc.printAndSet("querysend");
+			jsonString = sq.getJson();
+			
+		} else {
+			jsonString = cache.executeSparqlQuery(new SparqlQuery(
+					sparqlQueryString, sparqlEndpoint));
+		}
+		return jsonString;
+	}
+
+COM:takes in a SPARQL query string, sends it to an endpoint, and returns the resulting data as a JSON string

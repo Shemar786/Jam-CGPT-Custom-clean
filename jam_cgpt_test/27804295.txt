@@ -1,0 +1,12 @@
+TDAT: 	public void setHandles( java.util.List bendPoints ) {
+		if ( handleList.size() > 0 )
+			for ( int i = 0; i < handleList.size(); i++ )
+				removeHandle(i);
+		else
+			handlePointList.removeAllElements();
+
+		for ( int i = 0; i < bendPoints.size(); i++ )
+			addHandle( i, (Point2D)(bendPoints.get(i)) );
+	}
+
+COM:sets the handle points for a graphic object

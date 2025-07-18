@@ -1,0 +1,14 @@
+TDAT: 	private BufferedImage loadImage(String ref) throws IOException {
+		URL url = TextureLoader.class.getClassLoader().getResource(ref);
+		
+		if (url == null) {
+			throw new IOException("Cannot find: " + ref);
+		}
+		
+		BufferedImage bufferedImage = ImageIO.read(new BufferedInputStream(this
+		        .getClass().getClassLoader().getResourceAsStream(ref)));
+		
+		return bufferedImage;
+	}
+
+COM:loads an image from a specified file path and returns it as a BufferedImage object, throwing an IOException if the file cannot be found

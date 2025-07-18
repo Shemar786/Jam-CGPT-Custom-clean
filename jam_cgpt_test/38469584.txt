@@ -1,0 +1,10 @@
+TDAT:     static public String charTrim(String str, char cc)
+    {   
+        int i = 0, j = str.length();
+        while((i < j) && str.charAt(i) == cc) { i++; }
+        while((i < j) && str.charAt(j - 1) == cc) { j--; }
+
+        return str.substring(i,j);
+    }
+
+COM:removes all instances of a specified character from the beginning and end of a given string

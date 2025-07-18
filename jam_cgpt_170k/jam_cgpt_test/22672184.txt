@@ -1,0 +1,44 @@
+TDAT: 	private String getColumnText(Payment payment, int columnIndex) {
+		String value = null;
+			try {
+			switch (columnIndex) {
+				case 1:
+					value = MessageFormat.format(
+							"{0}",
+							payment.getCreated()
+						);
+					break;
+				case 2:
+					value = MessageFormat.format(
+							"{0}",
+							payment.getAccount()
+						);
+					break;
+				case 3:
+					value = MessageFormat.format(
+							"{0}",
+							payment.getAmount()
+						);
+					break;
+				case 4:
+					value = MessageFormat.format(
+							"{0} {1}",
+							payment.getCurrency(),
+							payment.getExchangeRate()
+						);
+					break;
+				default:
+			}
+		} catch (DAOException e) {
+			logger.error(
+				MessageFormat.format(
+					"Could not set column label for payment {0} in column {1}",
+					payment,
+					columnIndex
+				)
+			);
+		}
+		return value;
+	}
+
+COM:returns a string value based on the column index and information in a Payment object, or null if an exception is thrown

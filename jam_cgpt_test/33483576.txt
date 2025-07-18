@@ -1,0 +1,12 @@
+TDAT:   public BoardPermission findBoardPermissionByBidGid(long bid, int gid) {
+    Object[] o = {new Long(bid), new Integer(gid)};
+    List l = this.getHibernateTemplate().find(LOAD_BY_BID_GID, o);
+    if (l == null || l.isEmpty()) {
+      return null;
+    }
+    else {
+      return (BoardPermission) l.get(0);
+    }
+  }
+
+COM:finds a BoardPermission object based on the provided bid (long) and gid (int) values in a Hibernate database

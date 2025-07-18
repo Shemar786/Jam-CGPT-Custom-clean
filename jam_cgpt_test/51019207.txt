@@ -1,0 +1,12 @@
+TDAT:     public Evaluation getEvaluation(Set<ONDEXConcept> setX, Set<ONDEXConcept> setY) {
+        Evaluation first = getEvaluationAsymetric(setX, setY);
+        Evaluation second = getEvaluationAsymetric(setY, setX);
+
+        if (first.getScore() > second.getScore()) {
+            return first;
+        } else {
+            return second;
+        }
+    }
+
+COM:returns an Evaluation object by comparing the scores of two asymmetric evaluations based on two sets of ONDEXConcepts

@@ -1,0 +1,12 @@
+TDAT:   public double getPercent() {
+    // If we have no range
+    if (maxProgress <= minProgress) {
+      return 0.0;
+    }
+
+    // Calculate the relative progress
+    double percent = (curProgress - minProgress) / (maxProgress - minProgress);
+    return Math.max(0.0, Math.min(1.0, percent));
+  }
+
+COM:calculates the percentage of current progress within a given range, with a fallback value of 0 and 1 if the progress is outside of the range

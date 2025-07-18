@@ -1,0 +1,11 @@
+TDAT:     public String toString(){
+        StringBuffer sb = new StringBuffer("RadiusClient: HostName = ");
+        sb.append(this.getHostname());
+        sb.append(" Port = ");
+        sb.append(Integer.toString(this.getAuthPort()));
+        sb.append(" Shared Secret = ");
+        sb.append(this.getSharedSecret());
+        return sb.toString();
+    }
+
+COM:returns a string representation of the class' attributes

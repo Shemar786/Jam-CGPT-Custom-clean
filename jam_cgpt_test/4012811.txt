@@ -1,0 +1,7 @@
+TDAT: 	public String getMatchLength(String matchId) throws InvalidMatchException {
+		ValidateAttribute.validateMatch(matchId);
+		Integer matchLength = ((BLMSMatch)(ServiceLocator.singleton().getService().selectObjectsByField(new BLMSMatch(), "id", new Integer(matchId),"date" , "id").get(0))).getLength();
+		return matchLength == null ? "" : matchLength.toString();
+	}
+
+COM:retrieves the length of a specified BLMSMatch by its ID, and returns it as a String, throwing an InvalidMatchException if the specified match ID is invalid

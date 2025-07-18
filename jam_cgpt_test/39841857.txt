@@ -1,0 +1,14 @@
+TDAT:     public void testSetIndexedArguments() {
+
+        try {
+            dynaForm.set("intArray", -1, new Integer(0));
+            fail("Should throw IndexOutOfBoundsException");
+        } catch (IndexOutOfBoundsException e) {
+            ; // Expected response
+        } catch (Throwable t) {
+            fail("Threw " + t + " instead of IndexOutOfBoundsException");
+        }
+
+    }
+
+COM:tests the behavior of setting indexed values in a DynaForm object, specifically throwing an IndexOutOfBoundsException if an invalid index is used

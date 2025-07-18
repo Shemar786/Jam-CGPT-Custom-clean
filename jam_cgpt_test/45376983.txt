@@ -1,0 +1,14 @@
+TDAT: 	public double getTemperature() {
+		Element units = channel.getChild("units", this.namespace);
+
+		Element condition = item.getChild("condition", this.namespace);
+		String content = condition.getAttributeValue("temp");
+		double temperature = Double.parseDouble(content);
+		if (units.getAttributeValue("temperature").equals("F")) {
+			// Converte de Farehreit para Celcius.
+			temperature = (temperature - 32) * 5 / 9;
+		}
+		return temperature;
+	}
+
+COM:retrieves the temperature value from an XML file and converts it from Fahrenheit to Celsius if necessary

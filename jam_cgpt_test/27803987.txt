@@ -1,0 +1,8 @@
+TDAT:   public void setColumnWidth ( int new_width ) {
+    for( int column_i = 0; column_i < getColumnCount(); column_i++ ) {
+      getColumnModel().getDimensionUnit( column_i ).setPreferredDistanceAcross( new_width );
+    }
+    resizeAndRepaint();
+  } // setColumnWidth( int )
+
+COM:sets the preferred width of each column in a table to a specified value and then resizes and repaints the table

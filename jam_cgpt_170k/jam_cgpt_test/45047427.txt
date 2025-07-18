@@ -1,0 +1,8 @@
+TDAT: 	public Integer getNumberOfTC(final String trid, final String trOwner, final String trvNumber, final HashMap<String, String> filter){
+		filter.put("owner", trOwner);
+		filter.put("ID", trid);
+		filter.put("number", trvNumber);
+		return (Integer) this.getSqlMapClientTemplate().queryForObject("getTCByTRVersionNb", filter);
+	}
+
+COM:retrieves the number of test cases associated with a specific test requirement version based on a set of filter criteria

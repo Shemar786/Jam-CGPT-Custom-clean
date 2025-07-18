@@ -1,0 +1,9 @@
+TDAT:     protected void rejectIncomingJingleSession(JingleSessionRequest request) {
+        Jingle initiation = request.getJingle();
+
+        IQ rejection = JingleSession.createError(initiation.getPacketID(), initiation
+                .getFrom(), initiation.getTo(), 403, "Declined");
+        connection.sendPacket(rejection);
+    }
+
+COM:rejects an incoming Jingle session request by sending an error packet with a response code of 403 and a message of "Declined"

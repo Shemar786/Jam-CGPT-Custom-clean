@@ -1,0 +1,19 @@
+TDAT:     private void setDomainProperties(){
+    	
+    	String chain = ((Atom)atoms.get(0)).getChainID();
+    	
+    	for (Iterator i = atoms.iterator(); i.hasNext();){			
+			Atom atom = (Atom)i.next();
+			
+			if(atom.isHetAtom())
+				hetAtomsNo++;
+		
+			if(atom.isWater())
+				waterNo++;
+			
+			if(chain.equalsIgnoreCase(atom.getChainID()))
+				chainNo++;
+    	}
+    }
+
+COM:sets properties for a domain based on the information stored in a collection of atoms

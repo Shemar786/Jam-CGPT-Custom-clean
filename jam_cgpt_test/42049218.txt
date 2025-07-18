@@ -1,0 +1,21 @@
+TDAT:     private void playBackgroundMusic() {
+        try {
+            // From URL
+            sequence = MidiSystem.getSequence(new URL("http://elvis.rowan.edu/~varout61/ffmusic/ff7_cc88.mid"));
+
+
+            // Create a sequencer for the sequence
+            sequencer.open();
+            sequencer.setSequence(sequence);
+
+            // Start playing
+            sequencer.start();
+        } catch (MalformedURLException e) {
+        } catch (IOException e) {
+        } catch (MidiUnavailableException e) {
+        } catch (InvalidMidiDataException e) {
+        }
+
+    }
+
+COM:This private Java method plays background music using a sequencer and MIDI system

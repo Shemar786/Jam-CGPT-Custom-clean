@@ -1,0 +1,10 @@
+TDAT: 	public Npc getNpc(int id, int minX, int maxX, int minY, int maxY) {
+		for(Npc npc : npcs) {
+			if(npc.getID() == id && npc.getX() >= minX && npc.getX() <= maxX && npc.getY() >= minY && npc.getY() <= maxY) {
+				return npc;
+			}
+		}
+		return null;
+	}
+
+COM:returns the Npc object from a list of npcs that matches a given ID and falls within specified x and y ranges

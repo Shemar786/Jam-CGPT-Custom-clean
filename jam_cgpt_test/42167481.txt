@@ -1,0 +1,14 @@
+TDAT:   protected void addMessages(final Collection<Message> messages) {
+    _editor.getSite().getShell().getDisplay().asyncExec(new Runnable() {
+
+      public void run() {
+        Iterator iter = messages.iterator();
+        while (iter.hasNext()) {
+          Message message = (Message) iter.next();
+          _editor.addMessage(message);
+        }
+      }
+    });
+  }
+
+COM:adds a collection of messages to an editor's message log asynchronously

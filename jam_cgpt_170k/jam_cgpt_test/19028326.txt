@@ -1,0 +1,9 @@
+TDAT:     public void testCreateCalendar() throws Exception {
+				// First, log on to the MightyCal Calendar Registry
+        WebConversation     conversation = new WebConversation();
+				conversation.setAuthorization("admin", "admin");
+        WebRequest request = new GetMethodWebRequest( "http://localhost:8000/CALSCalendar/CalendarRegistry/addTestCalendars" );
+        WebResponse calendarRegistry = conversation.getResponse( request );
+    }
+
+COM:logs in to the MightyCal Calendar Registry and adds test calendars

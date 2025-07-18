@@ -1,0 +1,16 @@
+TDAT:     public void setActiveChar(MuPcInstance cha) {
+        _activeChar = cha;
+        if (cha != null) {
+            // we store the connection in the player object so that external
+            // events can directly send events to the players client
+            // might be changed later to use a central event management and
+            // distribution system
+            _activeChar.setNetConnection(_connection);
+
+            // update world data
+
+            //_world.storeObject(_activeChar);
+        }
+    }
+
+COM:sets the active player character and updates its network connection and world data

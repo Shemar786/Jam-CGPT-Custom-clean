@@ -1,0 +1,14 @@
+TDAT: 	public void resetPassword(String token, String oldPassword, String newPassword) throws Exception {
+		AccountManager am = new AccountManager();
+		Account acct = am.checkToken(token);
+		if (!oldPassword.equalsIgnoreCase(acct.getPassword())) {
+			am.closeSession();
+			throw new ILException(ILException.BAD_PASSWORD);
+		}
+		acct.setPassword(newPassword);
+		acct.setEmailToken("");
+		am.saveOrUpdateAccount(acct);
+		am.closeSession();
+	}
+
+COM:resets a user's password by checking their old password against the one stored in the database, updating it with a new one, and saving the changes to the database

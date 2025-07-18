@@ -1,0 +1,14 @@
+TDAT:     public void releaseChild(T pc) {
+        // XXX precond releaseChild, arg != null
+        
+        // XXX if the child is not known as Used, what should we do?
+        if ( vPCUsed.remove(pc) ) {
+            vPCFree.add(pc);
+        }
+        else {
+            LOG4J.warn("releasing a non used/known child : ignored.");
+        }
+        
+    }// end of releaseChild(ProxyChild)
+
+COM:releases a ProxyChild if it is known as "Used" and moves it to "Free", otherwise it logs a warning message

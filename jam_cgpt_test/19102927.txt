@@ -1,0 +1,11 @@
+TDAT: 	private String dataPath(byte[] hash, long size, boolean zip) {
+		final String filename = Strings.hex(hash) + "_" + size;
+		final StringBuilder targetname = new StringBuilder();
+		for (int i = 0; i < levels; i++)
+			targetname.append(File.separatorChar).append(filename.charAt(i));
+		if (zip) targetname.append(".zip");
+		targetname.append(File.separatorChar).append(filename.substring(levels));
+		return targetname.substring(1);
+	}
+
+COM:generates a file path based on a hash, size, and boolean value indicating whether or not to compress the file

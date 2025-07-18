@@ -1,0 +1,15 @@
+TDAT:   public void fileExit(ActionEvent e) {
+
+    try {
+      getDesktop().closeAllWindow();
+      appProps.savetoFile( (String) appProps.get(wpPropertyInterface.inifile));
+    }
+    catch (wpException we) {
+      statusBar.setText(we.getMessage());
+    }
+    // Garbage Collect and bye bye
+    System.gc();
+    System.exit(0);
+  }
+
+COM:handles the action event for exiting the application, closing all open windows, saving application properties, displaying error messages, and ending the program with garbage collection

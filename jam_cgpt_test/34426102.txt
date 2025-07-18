@@ -1,0 +1,12 @@
+TDAT:     private void statsDisplayPopulate() {
+        if (resourceClass != null) {
+            ZString z = new ZString();
+            for (Stat s : Stat.gameOrder())
+                if (resourceClass.has(s)) z.app(s.name()).app("    ");
+
+            singleResourceStatsDisplay.setText(z.toString());
+        } else
+            singleResourceStatsDisplay.setText("  ");
+    }
+
+COM:populates a stats display with information about a resource class, using a ZString object to format the display

@@ -1,0 +1,19 @@
+TDAT: 	public String getAttrbuteValue(String attributeName) {
+
+		String value = "";
+		try {
+
+			RMIConnectorImpl server = getParent().getServer();
+			ObjectName objectName = getObjectName();
+			value =
+				(String) "" + server.getAttribute(objectName, attributeName);
+		} catch (AttributeNotFoundException e) {
+		} catch (InstanceNotFoundException e) {
+		} catch (MBeanException e) {
+		} catch (ReflectionException e) {
+			System.err.println("cant get Attribute" + e);
+		}
+		return value;
+	}
+
+COM:retrieves the value of a specified attribute from an object using RMI connectivity

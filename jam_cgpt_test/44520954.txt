@@ -1,0 +1,9 @@
+TDAT:     public boolean set(String key, Object value) {
+        boolean didSet = realSet(key, value);
+        if(GET_SET_DEBUG&&SET_OUTPUT_DEBUG) {
+            System.out.println("set: " + key + " value: " + value + " didSet " + didSet);
+        }
+        return didSet;
+    }
+
+COM:sets a value associated with a given key and returns a boolean indicating if the operation was successful, with optional debug output

@@ -1,0 +1,15 @@
+TDAT: 	public void putInfo(Openable element, OpenableElementInfo info) {
+		IElementType<?> elementType = element.getElementType();
+		if (elementType == IRodinDB.ELEMENT_TYPE) {
+			this.modelInfo = (RodinDBInfo) info;
+		} else if (elementType == IRodinProject.ELEMENT_TYPE) {
+			this.projectCache.put(
+					(RodinProject) element,
+					(RodinProjectElementInfo) info
+			);
+		} else {
+			this.openableCache.put(element, info);
+		}
+	}
+
+COM:takes in an Openable element and its associated OpenableElementInfo, and puts it into either the modelInfo, projectCache, or openableCache depending on the element's type

@@ -1,0 +1,10 @@
+TDAT:   public int insertBlockAfter(int lineNumber,Block block_) {
+    if (!usecase_.canInsertBlockAfterLine(lineNumber)) {
+      return lineNumber;  
+    }
+    //((AbstractUseCaseDescriptionBlock)block_).setProcedure_(usecase_.procedure_);
+	InsertBlockCommand newCommand_ = new InsertBlockCommand(usecase_,lineNumber,block_);
+    return performCommand(newCommand_);
+  }
+
+COM:inserts a block after a specific line number in a use case and returns the updated line number after performing the insertion

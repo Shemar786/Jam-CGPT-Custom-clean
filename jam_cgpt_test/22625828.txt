@@ -1,0 +1,15 @@
+TDAT: 	public String getDateFileWasIndexedString() {
+		String t = doc.get("fileindexeddate");
+
+		if (t == null)
+			return DEFAULT;
+		long modTime = -1;
+		try{
+			modTime = DateFieldTools.stringToTime(t);
+		} catch (ParseException pe) {
+			prtlnErr("Error in getDateFileWasIndexedString(): " + pe); 
+		}
+		return new SimpleDateFormat("MMM d, yyyy h:mm:ss a zzz").format(new Date(modTime));
+	}
+
+COM:retrieves the indexed date of a file as a string in a specific format

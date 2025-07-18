@@ -1,0 +1,25 @@
+TDAT:   public void onModuleLoad() {
+	 
+    DecoratedTabPanel tp = new DecoratedTabPanel();
+    tp.setWidth("800px");
+    tp.setHeight("600px");
+    
+    
+
+    
+    // Add image and button to the RootPanel
+    RootPanel.get().add(tp);
+
+    TradeViewTab tvp = new TradeViewTab();
+    
+    
+    
+    tp.add(tvp,"Trade View");
+    tp.selectTab(0);
+    
+    
+    
+ 
+  }
+
+COM:initializes and displays a decorated tab panel with a trade view tab selected

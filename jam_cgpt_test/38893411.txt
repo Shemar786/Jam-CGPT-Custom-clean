@@ -1,0 +1,17 @@
+TDAT:   public void nextFrame() throws java.io.IOException {
+    // If we reached the end of frame with the read() method, don't skip the
+    // next frame...
+    if (frameEnded) {
+      // ... But next time we will.
+      frameEnded = false;
+
+      return;
+    }
+
+    // Skip bytes until we find a framing character.
+    while (raw.read() != 0xc0) {
+      ;
+    }
+  }
+
+COM:advances to the next frame by skipping bytes until a framing character is found

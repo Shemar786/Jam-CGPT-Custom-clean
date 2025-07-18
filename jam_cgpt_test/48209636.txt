@@ -1,0 +1,10 @@
+TDAT: 	public void testDisplayWinePopularity() {
+		
+		ArrayList<SummarisedMenuItem> arrWines = DataObjectFactory.getSummarisedMenuItems(DataObjectFactory.TYPE_COURSE);
+		assertNotNull(arrWines);
+		assertTrue(arrWines.size() > 1);
+		assertTrue(arrWines.get(0).getQuantity() >= arrWines.get(arrWines.size()-1).getQuantity());
+		
+	}
+
+COM:tests the display of wine popularity by retrieving summarized menu items, checking that the array list is not null and has a size greater than 1, and verifying that the quantity of the most popular wine is greater than or equal to that of the least popular wine

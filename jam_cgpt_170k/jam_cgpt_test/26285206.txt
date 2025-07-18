@@ -1,0 +1,11 @@
+TDAT:     private void buildVerticalPositionFromConstraints(AdvancedConstraints constraint) {
+        verticalPosition.setStartSeparation(constraint.getUpperRow());
+        verticalPosition.setStopSeparation(constraint.getLowerRow());
+
+        verticalPosition.setAlignment(
+            getHorizontalFromVertical(constraint.getVerticalAlignment()));
+
+        verticalPosition.setSizePolicy(constraint.getVerticalSizePolicy());
+    }
+
+COM:builds the vertical position using advanced constraints

@@ -1,0 +1,12 @@
+TDAT:     public void firstAction() {
+        if (current != null && currentAction != 0) {
+            for (int i = currentAction; i > 0; i--) {
+                if (!previousAction())
+                    break;
+            }
+            currentAction = 0;
+            getPortunesController().notifyObservers(Message.ACTION_CHANGED);
+        }
+    }
+
+COM:performs a previousAction() loop until it reaches the beginning and then notifies observers of a changed action if the current action is not null and not 0

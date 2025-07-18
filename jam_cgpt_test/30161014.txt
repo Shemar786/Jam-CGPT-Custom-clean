@@ -1,0 +1,15 @@
+TDAT:     public void start() {
+        try {
+            demoDocument = DocumentHelper.parseText(DEMO_XML);
+            new XMLWriter(OutputFormat.createPrettyPrint()).write(demoDocument);
+        } catch (DocumentException documentEx) {
+            documentEx.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        demoXPath();
+        repaint();
+    }
+
+COM:parses an XML document and prints it out in a pretty format, then proceeds to call another method and repaint the screen

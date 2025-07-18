@@ -1,0 +1,14 @@
+TDAT: 		public Value getValue(Variable variable) {
+			if (variable == null) {
+				throw new NullPointerException("Variable 'variable' cannot be null");
+			}
+
+			int columnIndex = RdfBindingSetImpl.this.getIndex(variable);
+			if (columnIndex == -1) {
+				throw new IllegalArgumentException("Variable " + variable + " is not bound in this row");
+			}
+			Value[] rowValues = ((Value[]) RdfBindingSetImpl.this.values.get(this.row));
+			return rowValues[columnIndex];
+		}
+
+COM:returns the value of a variable in a row, throwing exceptions if the variable is null or not bound in the row

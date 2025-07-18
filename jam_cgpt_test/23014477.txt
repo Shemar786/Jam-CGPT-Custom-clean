@@ -1,0 +1,7 @@
+TDAT:     public void addTranslation(Vector3f translation) {
+        matrix.addFactor(3, 0, translation.getX());
+        matrix.addFactor(3, 1, translation.getY());
+        matrix.addFactor(3, 2, translation.getZ());
+    }
+
+COM:adds a translation vector to a matrix by updating its factors

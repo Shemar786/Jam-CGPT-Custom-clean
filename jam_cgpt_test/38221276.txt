@@ -1,0 +1,11 @@
+TDAT:   public CToolBarElement createPrintToolBar() {
+    if (printToolbar != null) return printToolbar;
+
+    printToolbar = new CToolBarElement(5);
+    printToolbar.add(createButton("Print", "buttons/general/Print" + iconSize
+      + ".gif", getString("print", "Print the contents")));
+//    printToolbar.addSeparator();
+    return printToolbar;
+  }
+
+COM:creates a print toolbar element with a single "Print" button and returns it if it has already been created, otherwise it creates and returns it

@@ -1,0 +1,17 @@
+TDAT: 	public double getScoreFor(C aC) {
+		try {
+			if (isEmpty()) return 0;
+			int theScore;
+			if (itsObjectToRankMap.containsKey(aC)) {
+				theScore = itsSortedRankToScoreMap.get(itsObjectToRankMap
+						.get(aC));
+			} else
+				theScore = nextScore(itsSortedScoreToObjectMap.lastKey());
+			return getDoubleScore(theScore);
+		} catch (Exception e) {
+			System.out.println("*****************WARNING**************");
+			return 0;
+		}
+	}
+
+COM:calculates and returns a score based on a given object, using a sorted map to retrieve the corresponding score

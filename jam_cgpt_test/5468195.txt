@@ -1,0 +1,11 @@
+TDAT:     public void addPackages( String[] pkgs ) {
+        SimpleStack temp = new SimpleStack();
+        for( int i = imported; i-->0; )
+            temp.push( packages.pop() );
+        for( int i = pkgs.length; i-->0; )
+            packages.push( pkgs[i] );
+        for( int i = imported; i-->0; )
+            packages.push( temp.pop() );
+    }
+
+COM:adds an array of package names to a stack of packages and re-orders the stack to maintain the correct order

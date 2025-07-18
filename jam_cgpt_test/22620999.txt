@@ -1,0 +1,16 @@
+TDAT: /* 	public List toAdnStandardsList(StandardsList sl) {
+		List suggestions = new ArrayList();
+		int size = sl.getSize();
+		for (int i = 0; i < size; i++) {
+			StandardWrapper wrapper = sl.getStandardAt(i);
+			String adnText = getAdnText(wrapper.getIdentifier());
+			if (adnText != null)
+				suggestions.add(adnText);
+			else {
+				prtln("WARNING: AsnToAdnMapper could not find ADN standard for ASF id: " + wrapper.getIdentifier());
+			}
+		}
+		return suggestions;
+	} */
+
+COM:takes a StandardsList object and returns a List of ADN text suggestions based on the identifiers in the StandardsList

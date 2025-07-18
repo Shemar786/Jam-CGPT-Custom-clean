@@ -1,0 +1,11 @@
+TDAT:   public void merge(STSet remoteSTSet) {
+    if(!(remoteSTSet instanceof TimeSTSet)) {
+      // Can't treat non-TimeSTSets here
+      L.e("Trying to merge a non-TimeSTSet with a TimeSTSet.", this);
+      return;
+    }
+
+    this.merge(remoteSTSet);
+  }
+
+COM:merges a TimeSTSet with another STSet, but if the other STSet is not a TimeSTSet, it logs an error message and returns without merging

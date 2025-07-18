@@ -1,0 +1,12 @@
+TDAT: public void setNextUpdate(Calendar time) {
+
+    ASN1Time akt_time = (ASN1Time) nextUpdate.getInnerType();
+    if (akt_time == null) {
+        akt_time = new ASN1UTCTime(time);
+        nextUpdate.setInnerType(akt_time);
+    }
+    akt_time.setDate(time);
+    nextUpdate.setOptional(false);
+}
+
+COM:sets the next update time of an ASN1Time object with the specified Calendar time

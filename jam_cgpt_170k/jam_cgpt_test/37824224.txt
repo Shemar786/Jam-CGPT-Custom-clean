@@ -1,0 +1,10 @@
+TDAT:    protected void notifyProgressListeners() {
+      Enumeration enum = m_prProgressListeners.elements();
+      ProgressListener thisListener = null;
+      while( enum.hasMoreElements() ) {
+         thisListener = (ProgressListener)enum.nextElement();
+         thisListener.progressStateChanged( m_prUpgradeProgress );
+      }
+   } // notifyProgressListeners()
+
+COM:notifies all registered ProgressListeners of a change in progress state

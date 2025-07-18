@@ -1,0 +1,8 @@
+TDAT: 	public PpRemote createProxy(URL objectURL, Class<?> iface) throws MalformedURLException {
+		InvocationHandler handler = new InvocationHandlerImpl(objectURL);
+		URL resourceURL = new URL(objectURL, ".");
+		PpRemote proxy = (PpRemote) Proxy.newProxyInstance(URLClassLoaderFactory.getURLClassLoader(resourceURL), new Class[] { iface }, handler);
+		return proxy;
+	}
+
+COM:creates a dynamic proxy object that implements the specified interface and forwards all methods to an object at the specified URL using an invocation handler

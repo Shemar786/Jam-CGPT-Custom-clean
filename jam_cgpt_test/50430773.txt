@@ -1,0 +1,14 @@
+TDAT: 	public void send() throws MessagingException, SystemInfoException {
+		
+		// Get system properties and setup mail server
+		Properties props = System.getProperties();
+		props.put("mail.smtp.host", SystemInfo.getSmtpServer());
+		
+		// Create a session and a new mime message
+		Session session = Session.getDefaultInstance(props, null);
+		MimeMessage mimeMessage = createMimeMessage(session);
+		
+		Transport.send(mimeMessage);
+	}
+
+COM:sends an email using system properties and the specified SMTP server

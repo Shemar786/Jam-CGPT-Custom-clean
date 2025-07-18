@@ -1,0 +1,15 @@
+TDAT:     private String getValueOfTag(String tag) {
+        String result = null;
+        NodeList nodeList = _document.getElementsByTagName(tag);
+        if (nodeList != null) {
+            Node tempNode = nodeList.item(0);
+            Node value = tempNode.getFirstChild();
+            if (value != null) {
+                result = value.getNodeValue();
+            }
+        }
+
+        return result;
+    }
+
+COM:retrieves the value of an XML tag in a specified document

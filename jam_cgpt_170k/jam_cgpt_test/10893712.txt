@@ -1,0 +1,14 @@
+TDAT:     public int read() throws IOException {
+        if (isClosedAndEmpty()) {
+            return -1;
+        }
+        BBucket bucket = peekFirst();
+        if (bucket == null) {
+            return -2;
+        }
+        int res = bucket.array()[bucket.position()];
+        bucket.position(bucket.position() + 1);
+        return res & 0xFF;
+    }
+
+COM:reads the next byte of data from the input stream and returns it as an integer, but throws an IOException if it encounters an error

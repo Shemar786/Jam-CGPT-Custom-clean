@@ -1,0 +1,14 @@
+TDAT: 	public void createPackageContents() {
+		if (isCreated) return;
+		isCreated = true;
+
+		// Create classes and their features
+		abstractBasicModelEClass = createEClass(ABSTRACT_BASIC_MODEL);
+		createEAttribute(abstractBasicModelEClass, ABSTRACT_BASIC_MODEL__SCHEDULER);
+		createEAttribute(abstractBasicModelEClass, ABSTRACT_BASIC_MODEL__ID);
+		createEAttribute(abstractBasicModelEClass, ABSTRACT_BASIC_MODEL__WCET);
+		createEAttribute(abstractBasicModelEClass, ABSTRACT_BASIC_MODEL__PERIOD);
+		createEAttribute(abstractBasicModelEClass, ABSTRACT_BASIC_MODEL__DEADLINE);
+	}
+
+COM:creates package contents for a basic model

@@ -1,0 +1,15 @@
+TDAT:     protected List __getChildren(String name) {
+        Iterator i = children.iterator();
+        ArrayList al = new ArrayList();
+
+        while (i.hasNext()) {
+            Binding b = (Binding)i.next();
+            if (name.equals(b.name)) {
+                al.add(b);
+            }
+        }
+
+        return al;
+    }
+
+COM:returns a list of child Binding objects that match a given name

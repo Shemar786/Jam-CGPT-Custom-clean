@@ -1,0 +1,10 @@
+TDAT:     public void testClose() throws IOException {
+        System.out.println("testClose");
+
+        cin.close();
+        assertFalse("Close on in Conduit failed!", cin.isOpen());
+        cout.close();
+        assertFalse("Close on out Conduit failed!", cout.isOpen());
+    }
+
+COM:tests whether the input and output conduits are closed properly and prints an error message if they remain open

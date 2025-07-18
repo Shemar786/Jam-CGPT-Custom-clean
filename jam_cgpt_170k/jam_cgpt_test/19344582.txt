@@ -1,0 +1,15 @@
+TDAT: 	public void setComboName(String val) {
+
+		if ((val == null || "".equals(val))
+				&& (comboName == null || "".equals(comboName))) {
+			return;
+		}
+
+		if ((val == null) || (!val.equals(comboName))
+				|| (updateStatus == NULL_INT_VALUE)) {
+			comboName = val;
+			updateStatus = UPDATED;
+		}
+	}
+
+COM:sets the name of a combo box and updates its status if necessary

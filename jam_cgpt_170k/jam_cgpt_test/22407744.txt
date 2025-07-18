@@ -1,0 +1,11 @@
+TDAT:     public void antStarted(final String target) {
+        outputPanel.antStarted(node, target);
+        controlPanel.antStarted(node, target);
+        compilerPanel.antStarted(node, target);
+        compileStatusPanel.antStarted(node, target);
+
+        // Primary interst in ant's output not in old compiler errors.
+        tab.setSelectedComponent(outputPanel);
+    }
+
+COM:updates various panels and selects the output panel when an ant task is started

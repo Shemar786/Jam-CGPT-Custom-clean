@@ -1,0 +1,15 @@
+TDAT:     public void customizeParameter(String identifier, Object value) {
+        if (value == null) {
+            return;
+        }
+        EffectParameter ep = effect.getEffectParameter(identifier);
+        if (ep != null) {
+            ep.setValue(value);
+            parameterMap.put(ep.getIdentifier(), ep);
+            parameters.add(ep);
+        }else
+            System.out.println("identifier : " + identifier +" not found!");
+
+    }
+
+COM:customizes a specific parameter associated with an effect, using the provided identifier and value, and adds it to a parameter map and list

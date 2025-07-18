@@ -1,0 +1,22 @@
+TDAT: 	public void runTask(Object info) {
+		if (root == null) {
+			root = (CodeElement) info;
+			// If we open very fresh, we might not have a root
+			if (root != null) {
+				TreeViewer viewer = getTreeViewer();
+				if (viewer != null) {
+					viewer.setInput(root);
+					viewer.setComparator(new OutlineViewerComparator());
+					IElementComparer comparer = new CodeElementComparer();
+					viewer.setComparer(comparer);
+					viewer.expandAll();
+				}
+			}
+		} else {
+			//mani.adaptRoot(callingRoot);
+			root = (CodeElement) info;
+			update(root);
+		}
+	}
+
+COM:runs a task with an input object, sets up a tree viewer for the task, and either expands all nodes or updates the root element depending on whether or not the root element already exists

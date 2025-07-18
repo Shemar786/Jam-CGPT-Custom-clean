@@ -1,0 +1,8 @@
+TDAT: 	private void removeBridgeNoCheck(Bridge bridge, Vec2i from, Vec2i to, MoveList moveList) throws Exception {
+		bridge.disconnect();
+		bridges.remove( bridge );
+		drawLineInUsageMap( from, to, false );
+		moveList.addMove( new MoveRemoveBridge(from, to, bridge.getValue()) );		
+	}
+
+COM:removes a bridge from a game board without checking for any potential issues, updates the game board and move list accordingly, and throws an exception if necessary

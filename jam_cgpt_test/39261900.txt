@@ -1,0 +1,20 @@
+TDAT: 	public String getCollectionComment(int collectionID) {
+		String comment = "";
+		try {
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT Comment\n" +
+					"FROM Collections\n" +
+					"WHERE CollectionID = " +
+					collectionID);
+			rs.next();
+			comment = rs.getString("Comment");
+			stmt.close();
+		} catch (SQLException e) {
+			ErrorLogger.writeExceptionToLogAndPrompt(getName(),"Error retrieving the collection comment for collectionID "+collectionID);
+			System.err.println("Exception grabbing the collection comment:");
+			System.err.println(e);
+		}
+		return comment;
+	}
+
+COM:retrieves a comment associated with a particular collection ID from a database

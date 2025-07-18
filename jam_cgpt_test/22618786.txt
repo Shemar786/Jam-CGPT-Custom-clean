@@ -1,0 +1,19 @@
+TDAT: 	protected Element getLabelFieldTable(Element label, Element field) {
+		Element table = df.createElement("table")
+				.addAttribute("cellspacing", "1")
+				.addAttribute("cellpadding", "1");
+		Element row = table.addElement("tr")
+				.addAttribute("class", "form-row");
+		Element labelCell = row.addElement("td")
+				.addAttribute("class", "label-box")
+				.addAttribute("nowrap", "1");
+		attachToolHelp(labelCell, xpath);
+		labelCell.add(label);
+
+		Element fieldCell = row.addElement("td")
+				.addAttribute("class", "field-box");
+		fieldCell.add(field);
+		return table;
+	}
+
+COM:creates a table element with a label and field added to rows

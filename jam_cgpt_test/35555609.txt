@@ -1,0 +1,13 @@
+TDAT: 	public void setParams(int cmdTag, int viewId, int userId, int nodeId, int shelfId, int cmdCode, Object[] data) {
+
+		this.cmdTag = cmdTag;
+		this.viewId = viewId;
+		this.userId = userId;
+		this.nodeId = nodeId;
+		this.shelfId = shelfId;
+		this.cmdCode = cmdCode;
+		this.data = data;
+
+	}
+
+COM:sets several parameters for a command, including tags, IDs, codes, and data

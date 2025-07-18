@@ -1,0 +1,17 @@
+TDAT:   public boolean collinear(Segment s) {
+    if (this.isVertical) {
+      if (s.isVertical && this.p1.getX() == s.p1.getX()) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      if (this.a == s.a && this.b == s.b) {
+        return true; // collinear Segments
+      } else {
+        return false;
+      }
+    }
+  }
+
+COM:checks whether a given segment is collinear with another segment

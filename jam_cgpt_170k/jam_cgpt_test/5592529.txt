@@ -1,0 +1,14 @@
+TDAT:   public void add(wpWindow window) {
+    super.add(window);
+    if (getAllFrames().length == 1) {
+      separatorPos = menuWindow.getItemCount();
+      menuWindow.addSeparator();
+    }
+    window.menuItem = menuWindow.addMenuItem(window.getProject().getFile(0).
+                                             getName(),
+                                             gui.windowActions[
+                                             wpActionInterface.
+                                             WINDOW_SELECT_ACTION]);
+  }
+
+COM:adds a wpWindow object to a menu and assigns a menu item to it, and also adds a separator if it's the first frame added

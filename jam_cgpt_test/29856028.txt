@@ -1,0 +1,12 @@
+TDAT:   public Dimension getPreferredSize() {
+    FontMetrics fm = getGraphics().getFontMetrics();
+    Dimension d = new Dimension(image.getWidth(null) + 2,
+				image.getHeight(null) + 2);
+    if (caption != null) {
+      d.height += fm.getHeight() + 2;
+    }
+
+    return d;
+  }
+
+COM:returns the preferred size of a component, taking into account the size of an image and a caption

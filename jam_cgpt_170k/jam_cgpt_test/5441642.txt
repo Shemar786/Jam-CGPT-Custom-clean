@@ -1,0 +1,19 @@
+TDAT:     protected String normalizePath(String path) {
+        // get rid of first dot
+        while (path.startsWith(".")) {
+            path = path.substring(1);
+        }
+
+        // tolerate import-like syntax
+        if (path.endsWith("*")) {
+            path = path.substring(0, path.length() - 1);
+        }
+
+        if (!path.endsWith(".")) {
+            path += ".";
+        }
+
+        return path;
+    }
+
+COM:normalizes a given path by removing initial dots, tolerating import-like syntax and ensuring the path ends with a "."

@@ -1,0 +1,17 @@
+TDAT: 	protected void addCronExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ScheduleSaflet_cronExpression_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScheduleSaflet_cronExpression_feature", "_UI_ScheduleSaflet_type"),
+				 Actionpak1Package.Literals.SCHEDULE_SAFLET__CRON_EXPRESSION,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "cronExpression" feature of a ScheduleSaflet object to an item property descriptor list

@@ -1,0 +1,11 @@
+TDAT:     public ConventionalConstraint createConstraint_internal(int constraintID, Embedding embedding, int costID, Object costMappingOptions, int x, int y) {
+        if (Registry.SAFE_MODE) {
+            return createConstraint(constraintID, embedding, costID,
+                                    costMappingOptions, x, y);
+        } else {
+            return createConstraint_unsafe(constraintID, embedding, costID,
+                                           costMappingOptions, x, y);
+        }
+    }
+
+COM:creates a conventional constraint with parameters specified, and returns the result using either a safe or unsafe mode depending on the state of the Registry

@@ -1,0 +1,12 @@
+TDAT:   public DODSVariable findVariableByShortName(String shortName) {
+    if (name == null) return null;
+
+    for (int i=0; i<variables.size(); i++) {
+      DODSVariable v = (DODSVariable) variables.get(i);
+      if (shortName.equals(v.getNameShort()))
+        return v;
+    }
+    return null;
+  }
+
+COM:searches for a DODSVariable object in a list by its short name and returns it if found, otherwise returns null

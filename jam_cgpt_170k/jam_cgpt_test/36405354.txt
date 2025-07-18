@@ -1,0 +1,13 @@
+TDAT:     public boolean handleDisplayEquation(Element node, LaTeXDocumentPortion ldp) {
+        theEquation = null;
+        theSequence = null;
+        if (parseDisplayEquation(node) && theEquation!=null) {
+        	handleDisplayEquation(theEquation, theSequence, ldp);
+        	return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+COM:handles and processes a display equation element to return a boolean value

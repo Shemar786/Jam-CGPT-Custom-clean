@@ -1,0 +1,24 @@
+TDAT: 	public boolean updateSyncCommandResult(int nodeId, int result) {
+
+		boolean searchFlag = false;
+
+		Enumeration<CommandEntity> cmd = scheduleCommandTable.elements();
+
+		CommandEntity command;
+
+		while (true) {
+			try {
+				command = (CommandEntity) cmd.nextElement();
+				if ((command.getSyncFlag() == true) && (command.getNodeId() == nodeId)) {
+					searchFlag = true;
+					command.setResult(result);
+				}
+			} catch (Exception ex) {
+				command = null;
+				break;
+			}
+		}
+		return searchFlag;
+	}
+
+COM:updates the result of a synchronous command for a specific node and returns a boolean indicating whether the command was found in a specified table

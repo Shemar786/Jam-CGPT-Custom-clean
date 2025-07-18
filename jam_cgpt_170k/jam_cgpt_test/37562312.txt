@@ -1,0 +1,15 @@
+TDAT: public void select (int index) {
+	checkWidget ();
+	int count = getItemCount();
+	if (0 <= index && index < count) {
+    CCombo cCombo = (CCombo)handle;
+    if(index != cCombo.getSelectedIndex()) {
+      isAdjustingSelection = true;
+      cCombo.setSelectedIndex(index);
+      isAdjustingSelection = false;
+      sendEvent (SWT.Modify);
+    }
+	}
+}
+
+COM:selects an item from a CCombo widget if the specified index is valid and sends a modify event

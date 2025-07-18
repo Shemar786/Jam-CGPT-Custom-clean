@@ -1,0 +1,26 @@
+TDAT: 	private TreeNode parseBasicNumber() {
+		TreeNode t = null;
+		switch (token.getType()) {
+		case INTNUM:
+		case ID:
+			t = createNewNode();
+			break;
+		case LPARENS:
+			tryMatch(Token.TokenType.LPARENS);
+			t = parseExpression();
+			tryMatch(Token.TokenType.RPARENS);
+			break;
+		default:
+			String errorMsg = syntaxError("Unexpected token -> ")
+					+ token.print();
+			errorArray.add(new ParseError(errorMsg, token.getLineNumber()));
+
+			if (scanner.hasMoreTokens()) {
+				token = scanner.getNextToken();
+			}
+			break;
+		}
+		return t;
+	}
+
+COM:is used for parsing basic numbers and returning a new TreeNode object depending on the type of token encountered

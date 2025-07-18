@@ -1,0 +1,17 @@
+TDAT: 	protected void addLayoutBackgroupPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Widget_layoutBackgroup_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Widget_layoutBackgroup_feature", "_UI_Widget_type"),
+				 UiPackage.Literals.WIDGET__LAYOUT_BACKGROUP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the layout background feature of a Widget object

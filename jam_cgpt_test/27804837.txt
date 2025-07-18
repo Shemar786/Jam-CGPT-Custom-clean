@@ -1,0 +1,12 @@
+TDAT:   protected Node createNode ( int node_index ) {
+
+    if ( nodeIndexObjectMap.containsKey( node_index ) ) {
+      return ( Node )nodeIndexObjectMap.get( node_index );
+    } else {
+      LunaNode node = new LunaNode( node_index, this );
+      nodeIndexObjectMap.put( node_index, node );
+      return node;
+    }
+  }
+
+COM:creates a new node or returns an existing node based on the node index provided

@@ -1,0 +1,16 @@
+TDAT:     public int GetAutismGroupId(String gname){
+        if (this.groupList==null){
+            return -1;
+        }else{
+            Iterator itr = this.groupList.iterator();
+            while(itr.hasNext()){
+                AutismGroup ag = (AutismGroup)itr.next();
+                if(ag.GetGroupName().equals(gname)){
+                    return ag.GetGroupId();
+                }
+            }   
+        }           
+        return -1;
+    }
+
+COM:returns the group ID of a specified Autism Group by iterating through a group list and comparing the group name

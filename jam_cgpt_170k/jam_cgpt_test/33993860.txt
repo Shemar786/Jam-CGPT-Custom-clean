@@ -1,0 +1,17 @@
+TDAT: 	protected void addIconPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ButtonWidget_icon_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ButtonWidget_icon_feature", "_UI_ButtonWidget_type"),
+				 UiPackage.Literals.BUTTON_WIDGET__ICON,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds an item property descriptor for a button widget's icon feature

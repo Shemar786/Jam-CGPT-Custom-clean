@@ -1,0 +1,17 @@
+TDAT:     public void register(int classId, managedClass obj) {
+        int idx = getIndex(classId);
+
+        if (idx == invalidIndex) {
+            throw new RuntimeException("Invalid Index Supplied " + classId
+                    + " Should be between " + userRangeStart
+                    + " and " + (userRangeStart + userSize));
+        }
+        
+        if (idx > used) {
+        	used = idx;
+        }
+
+        objects[idx] = obj;
+    }
+
+COM:registers an object of a managed class with a specified class ID and stores it in an array, while also validating the index and updating the 'used' variable if necessary

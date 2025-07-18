@@ -1,0 +1,20 @@
+TDAT:     public void loadLibraryJars() {
+
+        List<String> jarNames = listOfJarFilePaths();
+
+        if( jarNames == null )
+            return;
+
+        for( String n : jarNames ) {
+            try {
+                EvaluationTarget.addURL(new URL("file:" + n));
+            } catch (MalformedURLException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
+
+COM:loads a list of jar files and adds the URLs to the evaluation target

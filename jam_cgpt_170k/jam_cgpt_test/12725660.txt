@@ -1,0 +1,18 @@
+TDAT: 	private JPanel getDescription() {
+		if (Description == null) {
+			GridBagConstraints gridBagConstraints = new GridBagConstraints();
+			gridBagConstraints.fill = GridBagConstraints.BOTH;
+			gridBagConstraints.weighty = 1.0;
+			gridBagConstraints.weightx = 1.0;
+			DescriptionTitle = new JLabel();
+			DescriptionTitle.setText("Description");
+			Description = new JPanel();
+			Description.setLayout(new BorderLayout());
+			Description.setBackground(new Color(192, 218, 255));
+			Description.add(DescriptionTitle, BorderLayout.NORTH);
+			Description.add(getDescriptionText(), BorderLayout.SOUTH);
+		}
+		return Description;
+	}
+
+COM:returns a JPanel that contains a label with the text "Description" and another component obtained from the method getDescriptionText(); if the JPanel has not been instantiated yet, it creates it with specific layout constraints and adds the label and the other component to it

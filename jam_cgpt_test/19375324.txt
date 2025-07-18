@@ -1,0 +1,14 @@
+TDAT: 	private  void addOperationCall(ActionStep step, Element opinstElement) { 
+		OperationInstance op = new OperationInstance();
+		addOperationValue(op,step,opinstElement);
+		Element opCond = opinstElement.getChild(ElementConst.CONDITION);
+		if (opCond != null) {
+			ConditionXmlConverter converter = new ConditionXmlConverter(domain_,valid_);
+			op.setCondition((Condition) converter.load(opCond));
+			valid_ = converter.isValidCondition();
+		}
+		addDelays(opinstElement, op);
+		step.setOperation(op);
+	}
+
+COM:adds an operation call to an action step

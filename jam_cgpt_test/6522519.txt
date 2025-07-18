@@ -1,0 +1,17 @@
+TDAT: 	public Logger getLogger(Class aClass) {
+		//create a Logger
+		org.apache.log4j.Logger logger = org.apache.log4j.Logger
+				.getLogger(aClass);
+
+		//determine log level for aClass
+		String propertyName = PROPERTY_PREFIX + aClass.getName();
+		int level = globalLogLevel;
+		int userDefinedLevel = getLevelFromString(wsrp4jLevels
+				.getProperty(propertyName));
+		if (userDefinedLevel != 0) {
+			level = userDefinedLevel;
+		}
+		return new LoggerImpl(logger, level);
+	}
+
+COM:creates a Logger object using the Apache log4j library and sets its log level based on a property file, returning the Logger wrapped in a custom LoggerImpl object

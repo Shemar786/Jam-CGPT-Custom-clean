@@ -1,0 +1,17 @@
+TDAT: 	protected void addSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BorderLayoutGroup_size_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BorderLayoutGroup_size_feature", "_UI_BorderLayoutGroup_type"),
+				 UiPackage.Literals.BORDER_LAYOUT_GROUP__SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the size of a border layout group

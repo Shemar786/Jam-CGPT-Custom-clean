@@ -1,0 +1,16 @@
+TDAT:     private void goOffline() {
+        
+        log("announcing: leaving the network");
+
+        this.stopping = false;
+        PeerAnnouncement announcement
+            = new PeerAnnouncement(getPeerId(), getPeerName(),
+                                   null, true);
+        try {
+            this.pipe.sendObject(announcement);
+        } catch (IOException ioe) {
+            // do nothing - we did our best
+        }
+    }
+
+COM:sends a PeerAnnouncement object through a pipe to announce that the current peer is leaving the network

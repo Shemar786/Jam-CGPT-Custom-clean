@@ -1,0 +1,12 @@
+TDAT:   private void printTextareaTag() throws IOException, JspException {
+    JspWriter out = pageContext.getOut();
+    out.print("<textarea name='");
+    out.print(getName());
+    out.print("'");
+    printAttributes();
+    out.print(">");
+    out.print(getFieldValue());
+    out.print("</textarea>");
+  }
+
+COM:prints an HTML textarea tag with attributes and a field value to the page

@@ -1,0 +1,10 @@
+TDAT: 	public void testSimilarRoot() {
+		final IRodinFile rf1 = getRodinFile("P/X.test");
+		final RodinTestRoot r1 = (RodinTestRoot) rf1.getRoot();
+		final IRodinFile rf2 = getRodinFile("P/Y.test");
+		final RodinTestRoot r2 = (RodinTestRoot) rf2.getRoot();
+		assertEquals(r1, r1.getSimilarElement(rf1));
+		assertEquals(r2, r1.getSimilarElement(rf2));
+	}
+
+COM:tests if two RodinTestRoot elements are similar to their corresponding IRodinFiles

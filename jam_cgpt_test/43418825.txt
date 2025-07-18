@@ -1,0 +1,16 @@
+TDAT: 	public String nextNetworkComponentID() {
+		//Finds the current maximum network component ID and returns the next one to it.		
+		HashMap<String, NetworkComponent> networkComponents = null;
+		networkComponents = getNetworkComponents();
+		Iterator<NetworkComponent> components = networkComponents.values().iterator();
+		int max = -1;
+		while(components.hasNext()){
+			NetworkComponent component = components.next();
+			int num = Integer.parseInt(component.getId().substring(1));
+			if(num>max)
+				max = num;
+		}
+		return "n"+(max+1);
+	}
+
+COM:finds the maximum network component ID in a HashMap and returns the next one in the series with a prefix of "n"

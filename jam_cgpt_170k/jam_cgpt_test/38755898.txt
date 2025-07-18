@@ -1,0 +1,5 @@
+TDAT:     public void partialAttack(EdgeManager edgeManager, VertexManager vertexManager, List<Edge> selected) {
+        findPartialAttack.run(edgeManager, vertexManager, generateFullGraph.getBaseConditions(), selected, maxAttacks, noLoop, memo);
+    }
+
+COM:initiates a partial attack with the given edge manager, vertex manager, selected edges, maximum attacks allowed, no-loop constraint, and memoization

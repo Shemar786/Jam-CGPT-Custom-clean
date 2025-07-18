@@ -1,0 +1,14 @@
+TDAT:     private JButton getCloseBtn() {
+    	if (m_CloseBtn == null) {
+    		m_CloseBtn = new JButton();
+    		m_CloseBtn.setText("X");
+    		m_CloseBtn.addActionListener(new ActionListener() { 
+    			public void actionPerformed(ActionEvent e) {    
+    				setVisible(false);
+    			}
+    		});
+    	}
+    	return m_CloseBtn;
+    }
+
+COM:creates and returns a button that sets the visibility of a window to false when clicked

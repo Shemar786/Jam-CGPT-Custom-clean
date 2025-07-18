@@ -1,0 +1,19 @@
+TDAT: 	public void add(TComponent comp) {
+		if (comp.getContainer() != null) {
+			throw new IllegalStateException(comp
+			        + " already reside in another container!!!");
+		}
+		
+		comp.setContainer(this);
+		
+		this.childs = (TComponent[]) Utility.expand(this.childs, 1, false);
+		this.childs[0] = comp;
+		this.childCount++;
+		
+		this.frame.setFrameWork(comp); // set child component frame work
+		
+		this.sortComponents();
+		this.latestInserted = comp;
+	}
+
+COM:adds a TComponent to a container, but only if it is not already in another container, and then sets various properties for the container and its components

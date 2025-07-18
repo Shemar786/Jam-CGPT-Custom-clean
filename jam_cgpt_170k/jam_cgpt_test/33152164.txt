@@ -1,0 +1,14 @@
+TDAT: 	public boolean verifyRule(IAtomContainer mol) throws DecisionMethodException {
+		if (descriptor != null) {
+			try {
+				descriptor.setParameters(params);
+				DescriptorValue value = ((RuleOfFiveDescriptor) descriptor).calculate(mol);
+				IntegerResult r = (IntegerResult) value.getValue();
+				return (r.intValue() == 0); //no failures
+			} catch (CDKException x) {
+				throw new DecisionMethodException(x);
+			}
+		} else throw new DRuleNotImplemented();
+	}
+
+COM:takes an IAtomContainer molecule as input, calculates the Rule of Five descriptor value for the molecule, and returns true if the descriptor value is zero (indicating no failures) or throws an exception if the descriptor is not implemented

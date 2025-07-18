@@ -1,0 +1,13 @@
+TDAT: 	public boolean equals(Object other) {
+		// could only be equal to another Tag object, not anything else
+		if (!(other instanceof Tag))
+			return (false);
+
+		// 'other' object is a Tag; equality is based on the data stored
+		// in the current and 'other' Tag instances
+		Tag otherTag = (Tag) other;
+		return (this.count == otherTag.count && this.tagName
+				.equals(otherTag.tagName));
+	}
+
+COM:checks if the input object is equal to the current Tag object based on the data stored in both objects

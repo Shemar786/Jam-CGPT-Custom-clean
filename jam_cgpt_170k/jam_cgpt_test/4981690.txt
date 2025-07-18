@@ -1,0 +1,8 @@
+TDAT:     protected void refreshVitaRows() {
+        removeAllVitaRows();
+        for (int i = 0; i < this.getVitaRows().size(); i++) {
+            this.getColRows().add(this.getVitaRows().get(i).getColumn());
+        }
+    }
+
+COM:refreshes a collection of rows by removing all existing rows and then adding new rows to the collection based on the columns in the rows

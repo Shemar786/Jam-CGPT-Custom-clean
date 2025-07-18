@@ -1,0 +1,15 @@
+TDAT:     private void flushWrite() throws IOException, BadDescriptorException {
+        if (reading || !modes.isWritable() || buffer.position() == 0) return; // Don't bother
+            
+        int len = buffer.position();
+        buffer.flip();
+        int n = descriptor.write(buffer);
+
+        if(n != len) {
+            // TODO: check the return value here
+        }
+
+        buffer.clear();
+    }
+
+COM:flushes the write buffer to a descriptor if it is not currently reading, is writable, and has data in the buffer, while throwing exceptions for any IO issues or bad descriptor

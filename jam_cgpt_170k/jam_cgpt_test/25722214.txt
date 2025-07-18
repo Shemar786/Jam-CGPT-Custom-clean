@@ -1,0 +1,16 @@
+TDAT: 	public void clear(String projectName) {
+		try {
+			keys.remove(projectName);
+			long id = recman.getNamedObject(projectName);
+			if (id != 0) {
+				recman.delete(id);
+				HTree hashtable = HTree.createInstance(recman);
+				recman.setNamedObject(projectName, hashtable.getRecid());
+				recman.commit();
+			}
+		} catch (Throwable e) {
+			Log.logError("Could not clear project " + projectName, e);
+		}
+	}
+
+COM:clears a project's data from a hashtable and a record manager

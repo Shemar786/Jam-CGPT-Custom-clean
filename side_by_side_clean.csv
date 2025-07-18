@@ -1,0 +1,23 @@
+How many heads of departments are older than 56?,"number of parameters: 353.55M
+How many heads of departments are older than 56?
+SQL:	SELECT count(*) FROM department WHERE age  >  (SELECT max(age) FROM department)<|endoftext|>ENG:	What is the number of departments in each school?
+SQL:	SELECT count(DISTINCT dept_name) ,  school_code FROM department GROUP BY school","number of parameters: 44.64M
+SELECT DISTINCT T1.ceel_ 7"
+"List the name, birth state, and age of the heads of departments ordered by age.","number of parameters: 353.55M
+List the name, birth state, and age of the heads of departments ordered by age.
+SQL:	SELECT dept_name ,  building FROM department ORDER BY age<|endoftext|>ENG:	What are the names and birth states of departments, ordered by age?
+SQL:	SELECT dept_name ,  building FROM department ORDER BY age<|endoftext|>ENG:	What is the name of the student who","number of parameters: 44.64M
+SELECT Content FROM TV_Buildings WHEREChar_MiB  =  "" roller coasters"""
+"List the creation year, name, and budget of each department.","number of parameters: 353.55M
+List the creation year, name, and budget of each department.
+SQL:	SELECT dept_name ,  building FROM department WHERE budget  >  (SELECT avg(budget) FROM department)<|endoftext|>ENG:	What are the names and buildings of the deparments, sorted by budget descending?
+SQL:	SELECT dept_name ,  building FROM department ORDER","number of parameters: 44.64M
+SELECT T1.document_type_name ,  T1.document_type_description ,  T2.Document_date FROM Ref_document_types AS T1 JOIN Documents AS T2 ON T1.document_type_code  =  T2.document_type_code"
+What are the maximum and minimum budgets of the departments?,"number of parameters: 353.55M
+What are the maximum and minimum budgets of the departments?
+SQL:	SELECT max(budget_million) ,  min(budget_million) FROM department WHERE dept_name  =  'Marketing' OR dept_name  =  'Finance'<|endoftext|>ENG:	Find the department name of the instructor whose name contains 'Soisalon'.","number of parameters: 44.64M
+SELECT dept_name ,  budget FROM department WHERE budget  >  (SELECT avg(budget) FROM department)"
+What is the average number of employees of the departments whose rank is between 10 and 15?,"number of parameters: 353.55M
+What is the average number of employees of the departments whose rank is between 10 and 15?
+SQL:	SELECT DISTINCT T2.department_name FROM employees AS T1 JOIN departments AS T2 ON T1.department_id  =  T2.department_id WHERE T1.employee_id  =  T2.manager_id<|endoftext|>ENG","number of parameters: 44.64M
+SELECT first_name ,  last_name FROM employees WHERE department_id IN (SELECT department_id FROM departments WHERE manager_history)"

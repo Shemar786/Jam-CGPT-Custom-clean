@@ -1,0 +1,10 @@
+TDAT:   public int getPanelIndex(String name) {
+    for (int i = 0; i < items.size(); i++) {
+      COutlookBarItem current = (COutlookBarItem) items.get(i);
+      if (current.getButton().getText().equals(name))
+        return i;
+    }
+    return -1;
+  }
+
+COM:returns the index of a specific panel in a list based on the panel's name, or -1 if the panel is not found

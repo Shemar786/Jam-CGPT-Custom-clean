@@ -1,0 +1,8 @@
+TDAT: 	private void assertOpen(Predicate[] hyps, Predicate goal) {
+		final IProofTreeNode node = userSupport.getCurrentPO().getCurrentNode();
+		assertNotNull("No current node in loaded PO", node);
+		assertTrue("Current node should be open", node.isOpen());
+		assertSequent(hyps, goal, node.getSequent());
+	}
+
+COM:This is a private method in Java that checks whether the current proof node is open and if it has the expected hypotheses and goal

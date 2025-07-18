@@ -1,0 +1,16 @@
+TDAT: 	public CoordinationContext registerMatchcode(final String matchcode) throws AxisFault{
+		synchronized (this.participantMatchcodes) {
+			if (matchcode == null || matchcode.length()==0 )
+				throw new IllegalArgumentException("The matchcode must not be null or emtpy!");
+			
+			if (! this.isMatchCodeAvailable(matchcode)){
+				throw DUPLICATE_MATCHCODE_SOAP_FAULT(matchcode);
+			}
+			
+			this.participantMatchcodes.put(matchcode, null);
+			
+			return this.getCoordinationContext(matchcode);
+		} // end synchronized participantMatchcodes
+	}
+
+COM:registers a match code, checks for its availability, and returns a coordination context

@@ -1,0 +1,13 @@
+TDAT:     public ImageIcon imageThumb(int max) {
+        File tf = new File(imageCache(), "thumb_" + file.getName());
+
+        Image image = tf.exists()
+                ? imageScaled(image(), max, max)
+                : imageThumbWrite(image(), tf, max);
+
+        return image != null
+                ? new ImageIcon(image)
+                : null;
+    }
+
+COM:returns an ImageIcon of a thumbnail image scaled to a maximum size

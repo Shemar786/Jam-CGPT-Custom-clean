@@ -1,0 +1,10 @@
+TDAT:   public Collection getPropertyKeys() {
+    Set keys = new TreeSet();
+    for(int i = 0; i < _nodes.size(); i++){
+      Node n = ((NodeWrapper)_nodes.get(i)).node();
+      keys.addAll(n.getPropertyKeys());
+    }
+    return keys;
+  }
+
+COM:returns a sorted collection of property keys by iterating through a list of nodes and adding their property keys to a TreeSet

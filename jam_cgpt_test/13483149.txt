@@ -1,0 +1,17 @@
+TDAT:     public void computeDominators() {
+        db("  Computing Dominators");
+
+        domEdgeModCount = edgeModCount;
+
+        removeUnreachable();
+
+        // Forward
+        DominatorTree.buildTree(this, false);
+        DominanceFrontier.buildFrontier(this, false);
+
+        // Reverse
+        DominatorTree.buildTree(this, true);
+        DominanceFrontier.buildFrontier(this, true);
+    }
+
+COM:computes dominators and builds a tree and frontier based on the dominance relationship

@@ -1,0 +1,20 @@
+TDAT: 	public boolean parse(ByteBuffer bb) {
+		if (!complete) {
+			int pos = indexOf(bb, '\n');
+			if (pos >= 0) {
+				int len = pos + 1 - bb.position();
+				ByteBuffer tmp = bb.slice();
+				tmp.limit(len);
+				bb.position(pos + 1);
+				buf = MinaUtil.expand(buf, len, len).put(tmp);
+				buf.flip();
+				complete = true;
+			} else {
+				buf = MinaUtil.expand(buf, bb.remaining()).put(bb);
+
+			}
+		}
+		return complete;
+	}
+
+COM:parses a ByteBuffer, searching for a new line character and returning true if it completes the operation

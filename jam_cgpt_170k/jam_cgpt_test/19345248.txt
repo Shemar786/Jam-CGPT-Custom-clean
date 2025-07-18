@@ -1,0 +1,10 @@
+TDAT: 	public void fireTreeNodesRemoved(MutableTreeNode node) {
+		AbstractLineNode parentNode = (AbstractLineNode) node.getParent();
+		if (parentNode != null) {
+			int[] ic = {parentNode.getIndex(node)};
+			Object[] c = {node};
+			fireTreeNodesRemoved(parentNode, parentNode.getPath(), ic, c);
+		}
+	}
+
+COM:removes a tree node and fires a notification that the node has been removed

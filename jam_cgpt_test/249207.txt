@@ -1,0 +1,27 @@
+TDAT: 	public void testCreateExtMetaData() throws Exception {
+		HashMap hm = new HashMap();
+		ArrayList a = new ArrayList();
+		a.add("South America");
+		ArrayList b = new ArrayList();
+		b.add("green");
+		hm.put("habitat", a);
+		hm.put("tree", b);
+
+		ArrayList keys = new ArrayList();
+		keys.add("habitat");
+		keys.add("tree");
+
+		boolean bool = MaAPI.createExtMetaData(
+				"demo:ext_metadata_object", hm, keys);
+
+		assertTrue(bool);
+		byte[] byt = MaAPI.getDatastreamData(
+				"demo:ext_metadata_object",
+				FedoraInterface.ELATED_DATASTREAM_EXT);
+		assertNotNull(byt);
+
+		String str = new String(byt);
+		System.out.println(str);
+	}
+
+COM:tests the creation of extended metadata for a specified object using a hashmap and an array list of keys

@@ -1,0 +1,17 @@
+TDAT: 	public void prepareToPlay() {
+		setCurrentPosition(mModel.getStartPosition());
+		float interpolationTime = mSensorSimulatorController
+				.getInterpolationTime();
+		if (interpolationTime == 0) {
+			interpolationTime = 0.1f;
+		}
+		mNumberOfIntermediarStates = (int) (mSensorSimulatorController
+				.getSavingTime() / interpolationTime) - 1;
+		if (mNumberOfIntermediarStates < 0) {
+			mNumberOfIntermediarStates = 0;
+		}
+		mScenarioTime = System.currentTimeMillis();
+		mScenarioInterpolatedTime = System.currentTimeMillis();
+	}
+
+COM:prepares for playing a scenario by setting the current position, calculating the interpolation time, calculating the number of intermediate states, and initializing some variables

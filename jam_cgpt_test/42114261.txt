@@ -1,0 +1,11 @@
+TDAT: 	public void updateWeaponIcon() {
+		if(player.getCurrentWeapon() != null) {
+			hud.setWeaponIcon(player.getCurrentWeapon().getIcon());
+			
+			weaponNode.detachAllChildren();
+			if(player.getCurrentWeapon().getWeaponModel() != null)
+				weaponNode.attachChild(player.getCurrentWeapon().getWeaponModel());
+		}
+	}
+
+COM:updates the weapon icon on the heads-up display based on the current weapon of the player and attaches the weapon model to the weapon node if it exists

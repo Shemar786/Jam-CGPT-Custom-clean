@@ -1,0 +1,16 @@
+TDAT: 	private void validate() throws ImportException {
+		if (debitAccount == null) {
+			throw new ImportException("Debit account should not be null");
+		}
+		if (debitCurrency == null) {
+			throw new ImportException("Debit currency should not be null");
+		}
+		if (creditAccount == null) {
+			throw new ImportException("Credit account should not be null");
+		}
+		if (creditCurrency == null) {
+			throw new ImportException("Credit currency should not be null");
+		}
+	}
+
+COM:validates that certain variables are not null and throws an ImportException if they are

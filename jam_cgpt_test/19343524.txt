@@ -1,0 +1,14 @@
+TDAT:   public void setFontName(String val) {
+
+      if ((val == null || "".equals(val))
+      && (fontName == null || "".equals(fontName))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(fontName)) || (updateStatus == NULL_INT_VALUE)) {
+           fontName = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets the font name if it is not already set and updates the status

@@ -1,0 +1,9 @@
+TDAT:     public WebImage getImageWithSource( String source ) {
+        WebImage[] images = getImages();
+        for (int i = 0; i < images.length; i++) {
+            if (HttpUnitUtils.matches( source, images[i].getSource() )) return images[i];
+        }
+        return null;
+    }
+
+COM:takes a String source and returns a WebImage object that matches the given source, or null if no match is found

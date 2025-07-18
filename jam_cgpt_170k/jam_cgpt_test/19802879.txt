@@ -1,0 +1,11 @@
+TDAT:   public JPanel createJPanel(JTable table) {
+    table.setPreferredScrollableViewportSize(new Dimension(1000, 40));
+    table.setFillsViewportHeight(true);
+    JScrollPane scrollPane = new JScrollPane(table);
+    JPanel viewTable = new JPanel(new GridLayout(1, 0));
+    viewTable.add(scrollPane);
+    
+    return viewTable;
+  }
+
+COM:creates a JPanel with a JTable that is wrapped in a JScrollPane and sets its preferred size and fill height properties

@@ -1,0 +1,13 @@
+TDAT:      public Calendar getDateValue(String name) {
+         Field field = getField(name);
+         if (field == null)
+             return null;
+         else if (field.getType() != null && field.getType().equalsIgnoreCase("Date"))
+             return (Calendar)field.getValueObject();
+         else {
+             logWrongTypeWarningMessage(field.getName(), "Date");
+             return null;
+         }
+     }
+
+COM:returns a Calendar object representing the value of a field given its name, or null if the field does not exist or has a different type than Date

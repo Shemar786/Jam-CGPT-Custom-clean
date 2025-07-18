@@ -1,0 +1,19 @@
+TDAT:   public void add(String name, String value) throws IOException {
+    if (this.boundary != null) {
+      boundary();
+      writeName(name);
+      newline();
+      newline();
+      writeln(value);
+    } else {
+      if (!this.first) {
+        write("&");
+      }
+      write(encode(name));
+      write("=");
+      write(encode(value));
+    }
+    this.first = false;
+  }
+
+COM:adds name-value pairs to a HTTP request or URL encoded form data

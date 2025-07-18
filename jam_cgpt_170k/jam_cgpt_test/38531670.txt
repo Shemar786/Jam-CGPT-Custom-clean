@@ -1,0 +1,9 @@
+TDAT:     public void testSetUrlString() throws Exception {
+        System.out.println("testSetUrlString");
+        
+        // TODO add your test code below by replacing the default call to fail.
+        UrlHandler handler = new UrlHandler();
+        handler.setUrlString("http://www.eatmutton.com/index.html");
+    }
+
+COM:tests the functionality of setting a URL string for a UrlHandler object

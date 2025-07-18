@@ -1,0 +1,16 @@
+TDAT:     public void step() {
+        long timeNow = System.nanoTime();
+        double dt = (timeNow - lastUpdateTime) / 1000000000.0;
+        lastUpdateTime = timeNow;
+
+        // Ensure that the step is not less than the minimum permitted
+        // step duration
+        if (dt < MINIMUM_STEP_PERIOD) {
+            dt = MINIMUM_STEP_PERIOD;
+        }
+
+        // Step the physics simulation
+        step(dt);
+    }
+
+COM:takes a step in a physics simulation, using the elapsed time since the last update

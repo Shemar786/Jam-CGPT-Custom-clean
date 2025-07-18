@@ -1,0 +1,18 @@
+TDAT:     public int undoLastTurn() {
+
+        int turn = getCurrentTurn();
+
+        for (int i = 0; i < scoresVector.size(); i++) {
+            DartScore dartScore = (DartScore) scoresVector.elementAt(i);
+            if (dartScore.getTurn() == turn) {
+                scoresVector.removeElement(dartScore);
+                i--;
+            }
+        }
+
+        previousPlayer();
+
+        return turn;
+    }
+
+COM:removes the scores of the last player's turn, goes back to the previous player's turn, and returns the number of the last turn

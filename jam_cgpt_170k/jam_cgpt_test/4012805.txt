@@ -1,0 +1,6 @@
+TDAT: 	public String getMatchDate(String matchId){
+		Date date = ((BLMSMatch)(ServiceLocator.singleton().getService().selectObjectsByField(new BLMSMatch(), "id", new Integer(matchId),"date" , "id").get(0))).getDate();
+		return DateUtil.getDateFormated(getFormat(), date);
+	}
+
+COM:retrieves the date of a specific match using its ID and returns it in a formatted string

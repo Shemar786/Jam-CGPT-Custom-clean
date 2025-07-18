@@ -1,0 +1,13 @@
+TDAT: 	public List getLineage() {
+		if (this.lineage == null) {
+			this.lineage = new ArrayList();
+			for (Iterator i = this.getAncestors().iterator(); i.hasNext(); ) {
+				TeachersDomainStandardsNode node = (TeachersDomainStandardsNode) i.next();
+				this.lineage.add(0, node.getItemText());
+			}
+			this.lineage.add(this.getLabel());
+		}
+		return this.lineage;
+	}
+
+COM:returns a list containing the item text of all ancestors and the label of the current node in a TeachersDomainStandardsNode object's lineage

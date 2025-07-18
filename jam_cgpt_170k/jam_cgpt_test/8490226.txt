@@ -1,0 +1,13 @@
+TDAT:   public E argMax() {
+    double maxCount = Double.NEGATIVE_INFINITY;
+    E maxKey = null;
+    for (Map.Entry<E, Double> entry : entries.entrySet()) {
+      if (entry.getValue() > maxCount || maxKey == null) {
+        maxKey = entry.getKey();
+        maxCount = entry.getValue();
+      }
+    }
+    return maxKey;
+  }
+
+COM:returns the key with the maximum value in a Map entry

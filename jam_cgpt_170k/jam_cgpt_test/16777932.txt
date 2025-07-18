@@ -1,0 +1,16 @@
+TDAT: 	public void plot(double[] xVals, double[] yVals, String label){
+		// clear the figure
+		this.xLineValues = new Vector<double[]>();
+		this.yLineValues = new Vector<double[]>();
+		this.lineLabels  = new Vector<String>();
+		if(xVals.length!=yVals.length){
+			throw new RuntimeException("Attempt to plot vectors of unequal length.");
+		}
+		if(xVals.length>1){
+			this.xLineValues.add(xVals);
+			this.yLineValues.add(yVals);
+		}
+		this.lineLabels.add(label);
+	}
+
+COM:plots data points represented by arrays of x and y values and assigns a label to the plotted data

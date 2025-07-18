@@ -1,0 +1,11 @@
+TDAT:     public SaleReturnBO create() {
+        id = getGUID();
+        SaleReturnBO srbo = new SaleReturnBO(id);
+        Cache c = Cache.getInstance();
+        c.put(srbo.getID(), srbo);
+        srbo.setDirty(true);
+        System.out.println(srbo.getID());
+        return srbo;
+    }
+
+COM:creates a SaleReturnBO object, generates a unique identifier, stores the object in a cache, and returns the object

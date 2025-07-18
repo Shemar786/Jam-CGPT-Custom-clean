@@ -1,0 +1,13 @@
+TDAT:   protected void setVisiblePropertiesExtension() {
+    if (extension == null)
+      return;
+    if (!showProperties || visiblePropertyMetas == null) {
+      extension.setVisibleProperties(new MemberPropertyMeta[0]);
+      return;
+    }
+    MemberPropertyMeta[] mps = new MemberPropertyMeta[visiblePropertyMetas.size()];
+    mps = (MemberPropertyMeta[]) visiblePropertyMetas.toArray(mps);
+    extension.setVisibleProperties(mps);
+  }
+
+COM:sets the visible properties for an extension based on certain conditions and the input of member property metadata

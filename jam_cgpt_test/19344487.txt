@@ -1,0 +1,15 @@
+TDAT:     private void updateLayoutForFile(String pFile) {
+    	File f = new File(pFile);
+	    String recentLayout = recent.getLayoutName(pFile, new File(pFile));
+
+	    if (recentLayout == null || "".equals(recentLayout)) {
+	    	getLayoutSelection().notifyFileNameChanged(pFile);
+	    } else {
+	    	setLayout(recentLayout);
+	    	if (recent.isEditorLaunch()) {
+	    	    loadFile(false);
+	    	}
+	    }
+    }
+
+COM:This private Java method updates the layout for a file based on whether it has a recent layout or not

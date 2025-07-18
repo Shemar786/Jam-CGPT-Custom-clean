@@ -1,0 +1,12 @@
+TDAT:     public List getAllMorphologicalAnalysers(final Locale locale) {
+        if (locale == null) {
+            throw new IllegalArgumentException("The 'locale' argument cannot be null.");
+        }
+        List result = (List) analysiers.get(locale);
+        if (result == null) {
+            result = Collections.EMPTY_LIST;
+        }
+        return result;
+    }
+
+COM:returns a list of morphological analysers based on the input locale parameter, and throws an exception if the locale argument is null

@@ -1,0 +1,7 @@
+TDAT: 	public void newLibraryContainer(Object source, String targetId, String userId, String containerName, String containerDescription){
+		//container type is selected
+		int containerType = DbModule.LIBRARY_CONTAINER;
+		this.newContainer(source, targetId, userId, containerName, containerDescription, containerType);
+	}
+
+COM:creates a new library container with a specified name, description, targetId, and userId

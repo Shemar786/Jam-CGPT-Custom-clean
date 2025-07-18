@@ -1,0 +1,21 @@
+TDAT: 	public void run() {
+		ServerMap map = null;
+		Random random = new Random();
+		while(true) {
+			while(map == null) {
+				map = this.getMap(random.nextInt(99) - 50, random.nextInt(99) - 50);
+				try {
+					Thread.sleep(25);
+				} catch(Exception e){}
+			}
+			NonPlayerChar npc = map.getRandomNPC();
+			if(npc != null)
+				while(!npc.move(GameServer.getMechanics().getRandomDirection()));
+			try {
+				Thread.sleep(500);
+			} catch(Exception e){}
+			map = null;
+		}
+	} 
+
+COM:continuously generates and moves non-player characters on a server map

@@ -1,0 +1,9 @@
+TDAT:    public void addToClassPath(String classpath) {
+      if (this.classpath == null) {
+         setClassPath(classpath);
+      } else if (this.classpath.indexOf(classpath) == -1) {
+         setClassPath(this.classpath + System.getProperty("path.separator") + classpath);
+      }
+   }
+
+COM:adds a new classpath to the existing one if it does not already exist

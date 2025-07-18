@@ -1,0 +1,12 @@
+TDAT:   public void run() {
+    SafeSaveDialog dlg = new SafeSaveDialog(StreamReader.getApp().getShell()
+        .getShell());
+    dlg.setFilterNames(Constants.FILTER_NAMES);
+    dlg.setFilterExtensions(Constants.FILTER_EXTENSIONS);
+    String fileName = dlg.open();
+    if (fileName != null) {
+      StreamReader.getApp().saveFileAs(fileName);
+    }
+  }
+
+COM:opens a save dialog box, sets the filter options, and saves the selected file using the StreamReader class

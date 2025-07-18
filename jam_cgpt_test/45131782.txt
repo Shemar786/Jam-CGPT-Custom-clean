@@ -1,0 +1,10 @@
+TDAT:     public void addDataFile(String name, String dataFile) {
+        List dataFileList = (List) this.dataFiles.get(name);
+        if (dataFileList == null) {
+            dataFileList = new ArrayList();
+            this.dataFiles.put(name, dataFileList);
+        }
+        dataFileList.add(dataFile);
+    }
+
+COM:adds a data file to the specified list of data files for a given name, creating a new list if necessary

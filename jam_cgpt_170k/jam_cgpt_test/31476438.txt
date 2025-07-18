@@ -1,0 +1,24 @@
+TDAT: 	public void insert(DispatchScheduleItem item) 
+	{ // "producer"
+		synchronized (items) 
+		{
+			boolean alreadyexists=false;
+			ListIterator it = items.listIterator();				
+			while (it.hasNext())
+			{
+				DispatchScheduleItem cur = (DispatchScheduleItem)it.next();
+				if (cur.equals(item)) 
+				{
+					alreadyexists= true; // do not add
+					break;
+				}
+				if (item.getStarttime().before(cur.getStarttime())) 
+					break; // and add
+			}
+			if (!alreadyexists)
+				it.add(item);
+			items.notifyAll(); // tell the consumer that life might have changed.
+		}
+	}
+
+COM:inserts a DispatchScheduleItem into a list while ensuring there are no duplicates and notifying the consumer thread of any changes

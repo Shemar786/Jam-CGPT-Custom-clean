@@ -1,0 +1,11 @@
+TDAT:     private void fireValueChangedListenerValueChanged(ValueChangedEvent event) {
+        if (listenerList == null) return;
+        Object[] listeners = listenerList.getListenerList();
+        for (int i = listeners.length-2; i>=0; i-=2) {
+            if (listeners[i]==ValueChangedListener.class) {
+                ((ValueChangedListener)listeners[i+1]).valueChanged(event);
+            }
+        }
+    }
+
+COM:This is a private Java method that iterates through a list of event listeners and fires a specific event to those listeners

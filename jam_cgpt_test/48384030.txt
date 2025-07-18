@@ -1,0 +1,15 @@
+TDAT: 	private void removeButtonOnClick() {
+		if (!fileGrid.anySelected()) {
+			return;
+		}
+
+		for (FileRecord fileRecord : fileGrid.getSelection()) {
+			if (!FileState.STATE_PROCESSING.equals(fileRecord.getFileState())) {
+				fileGrid.removeData(fileRecord);
+				fireEvent(new FileRemoveEvent(FileUploader.this, fileRecord
+						.getFileName()));
+			}
+		}
+	}
+
+COM:This private Java method removes selected files from a file grid and triggers a file removal event

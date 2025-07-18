@@ -1,0 +1,9 @@
+TDAT:     public void setSearchable(Searchable searchable) {
+        if ((this.searchable != null) && this.searchable.equals(searchable)) return;
+        Object old = this.searchable;
+        this.searchable = searchable;
+        setLastIndex(-1);
+        firePropertyChange("searchable", old, this.searchable);
+    }
+
+COM:sets a new searchable object for the current object and notifies any interested listeners with the new and old values

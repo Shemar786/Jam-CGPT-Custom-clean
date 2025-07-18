@@ -1,0 +1,12 @@
+TDAT:     private Node newSingle(int ch) {
+        int f = flags;
+        if ((f & (CASE_INSENSITIVE|UNICODE_CASE)) == 0) {
+            return new Single(ch);
+        }
+        if ((f & UNICODE_CASE) == 0) {
+            return new SingleA(ch);
+        }
+        return new SingleU(ch);
+    }
+
+COM:creates a new instance of a Single, SingleA, or SingleU object based on the flags set for the current instance

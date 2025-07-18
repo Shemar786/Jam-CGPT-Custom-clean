@@ -1,0 +1,14 @@
+TDAT:     public int compareTo(final Object o) {
+        if (o == null) {
+            return 1;
+        } else {
+            AnalysisResult ar = (AnalysisResult) o;
+            if (accuracy == ar.getAccuracy()) {
+                return form.compareTo(ar.getForm());
+            } else {
+                return - Double.compare(accuracy, ar.getAccuracy());
+            }
+        }
+    }
+
+COM:compares the accuracy and form of two AnalysisResult objects and returns the result of the comparison

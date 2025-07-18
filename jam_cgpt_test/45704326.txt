@@ -1,0 +1,14 @@
+TDAT: 	private JButton getZoekButton() {
+		if (zoekButton == null) {
+			zoekButton = new JButton();
+			zoekButton.setText("Zoek");
+			zoekButton.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					searchVereniging( getZoekTextField().getText() );
+				}
+			});
+		}
+		return zoekButton;
+	}
+
+COM:returns a JButton for searching a specific text entered into a JTextField

@@ -1,0 +1,12 @@
+TDAT: 	public PacketTimestamped removeFirstFlowPacket(FlowIdentifier flowId) {
+		PacketTimestamped tempPacket = super.removeFirstFlowPacket( flowId );
+		if( tempPacket != null ) {
+			sizeInBytes -= tempPacket.p.getLength();
+			return tempPacket;
+		} else {
+			Debug.print(Debug.INFO,"PFQQueueBytes.removeFirstFlowPacket(): last packet in Queue!!");
+			return null;
+		}
+	}
+
+COM:removes the first packet from a flow and decreases the size of the queue in bytes accordingly

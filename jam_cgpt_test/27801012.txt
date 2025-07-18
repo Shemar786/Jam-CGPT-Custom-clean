@@ -1,0 +1,17 @@
+TDAT:   public void setType ( Class type ) {
+    this.type = type;
+    if( type == null ) {
+      setPassingTypes( new Class[ 0 ] );
+    } else {
+      setPassingTypes( new Class[] { type } );
+    }
+    setName(
+      "Objects of type " +
+      ( ( type == null ) ?
+        null :
+        type
+      )
+    );
+  } // setType(..)
+
+COM:sets the type of an object and updates its passing types and name accordingly

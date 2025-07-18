@@ -1,0 +1,15 @@
+TDAT: 	private void doBlockUpdateForLine(Line line) {
+	    Document document = session.getDocumentModel();
+	    document.getAccessLock();
+	    
+	    Block block = document.findBlock(line.getParentBlockID());
+	    JTextArea blockView = (JTextArea)blockIDToViewMap.get(line.getParentBlockID());
+	    
+	    if(blockView != null) {
+	        SwingUtilities.invokeLater(new VisualAttributeUpdater(block, blockView));
+	    }
+	    
+	    document.releaseAccessLock();
+	}
+
+COM:updates the visual attributes of a block in a document represented by a JTextArea

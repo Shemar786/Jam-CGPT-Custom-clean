@@ -1,0 +1,12 @@
+TDAT:     public int read(ByteBuffer dst) throws IOException {
+        if (!isOpen) {
+            throw new IOException("Not open");
+        }
+        int n = libc.read(fd, dst, dst.remaining());
+        if (n > 0) {
+            dst.position(dst.position() + n);
+        }
+        return n;
+    }
+
+COM:reads bytes from a file channel into a byte buffer and returns the number of bytes read

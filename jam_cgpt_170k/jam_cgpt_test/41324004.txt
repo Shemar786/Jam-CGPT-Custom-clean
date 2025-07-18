@@ -1,0 +1,15 @@
+TDAT: 	public void paste() {
+		Set<PNode> theNodes = itsClipboard.getContent();
+		for (PNode theNode : theNodes) {
+			getActiveLayer().addChild(theNode);
+		}
+		// init the relations
+		for (PNode theNode : theNodes) {
+			if (theNode instanceof LOMRelationUI) {
+				LOMRelationUI theUI = (LOMRelationUI) theNode;
+				theUI.init();
+			}
+		}
+	}
+
+COM:pastes the contents of the clipboard onto the active layer and initializes any relations within the pasted nodes

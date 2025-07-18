@@ -1,0 +1,15 @@
+TDAT:     public Procedure storeProcedure(Data data) throws ProcedureException {
+        AddOnProcedure  proc;
+        String          msg;
+
+        proc = createProcedure(data);
+        try {
+            store.writeData(PROC_TYPE, proc.getName(), proc.getData());
+        } catch (DataStoreException e) {
+            msg = "failed to write procedure data: " + e.getMessage();
+            throw new ProcedureException(msg);
+        }
+        return proc;
+    }
+
+COM:stores a procedure by calling a createProcedure method, writing the resulting data to a data store, and returning the stored procedure

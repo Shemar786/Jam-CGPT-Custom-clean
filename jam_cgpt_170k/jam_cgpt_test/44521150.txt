@@ -1,0 +1,22 @@
+TDAT: 	public boolean isBlank(int x1, int y1, int x2, int y2) {
+		// get right order for co-ordinates
+		if (x1 > x2) {
+			int t = x1;
+			x1 = x2;
+			x2 = t;
+		}
+		if (y1 > y2) {
+			int t = y1;
+			y1 = y2;
+			y2 = t;
+		}
+
+		for (int x = x1; x <= x2; x++)
+			for (int y = y1; y <= y2; y++) {
+				if (getTile(x, y) != 0)
+					return false;
+			}
+		return true;
+	}
+
+COM:checks if a rectangular area on a grid is completely empty or not

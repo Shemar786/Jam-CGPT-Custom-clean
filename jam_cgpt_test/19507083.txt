@@ -1,0 +1,15 @@
+TDAT: 	public void testCopyTopWithInvalidRenamings() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neSource = createNEPositive(rSource, "foo", null);
+
+		copyNegative(
+				new IRodinElement[] {neSource}, 
+				new IRodinElement[] {rfSource}, 
+				null, 
+				new String[] {"bar", "baz"}, 
+				false, 
+				IRodinDBStatusConstants.INVALID_RENAMING);
+	}
+
+COM:tests copying a named element with invalid renamings using the Rodin tool

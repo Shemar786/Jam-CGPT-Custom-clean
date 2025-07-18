@@ -1,0 +1,14 @@
+TDAT:   public void setCopyBook(String val) {
+
+      if ((val == null || "".equals(val))
+      && (copyBook == null || "".equals(copyBook))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(copyBook)) || (updateStatus == NULL_INT_VALUE)) {
+           copyBook = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets the value of a copyBook variable if the input value is not null and not equal to the current value and updates the status of the variable

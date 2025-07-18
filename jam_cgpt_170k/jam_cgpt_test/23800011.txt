@@ -1,0 +1,12 @@
+TDAT:     public Collectionobject getLastCollectionobjectByGroup(String collectionCode) {
+
+        logger.info("getLastCollectionobjectByGroup: {}", collectionCode);
+
+        Query query = entityManager.createNamedQuery("Collectionobject.findLastRecordByCollectionCode");
+        query.setParameter("code", collectionCode);
+        query.setMaxResults(1);
+
+        return (Collectionobject) query.getResultList().get(0);
+    }
+
+COM:retrieves the last record of a Collectionobject by its collection code and returns it as a Collectionobject type within a collection

@@ -1,0 +1,14 @@
+TDAT:     public void stopService() {
+        if (smsconn != null) {
+            try {
+                Log.info("[OTAService] Closing");
+                smsconn.close();
+                Log.info("[OTAService] Closed");
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+                Log.error("[OTAService] IOException closing smsConnection");
+            }
+        }
+    }
+
+COM:stops a service by closing an SMS connection

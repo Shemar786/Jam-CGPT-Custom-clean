@@ -1,0 +1,19 @@
+TDAT: 	protected void insertFilters(Filter[] filters, Point point, SubFilterList list) {
+		Dimension dimension;
+
+		if (null == list) {
+			for (int i = 0; i < filters.length; i++) {
+				filters[i].setLocation(point);
+				mMainPanel.add(filters[i]);
+				dimension = filters[i].getPreferredSize();
+				point.y += dimension.height;
+			}
+		} else
+			for (int i = 0; i < filters.length; i++)
+				list.addFilter(filters[i]);
+		setupDropTargets(filters);
+		setupMouseListeners(filters);
+		relayout();
+	}
+
+COM:inserts filters into a subfilter list or main panel, sets their location and dimensions, and sets up drag-and-drop and mouse listeners

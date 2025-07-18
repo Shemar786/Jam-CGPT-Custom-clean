@@ -1,0 +1,14 @@
+TDAT: public void autoShutdownOn(AutoShutdownSignals stopOnThis) {
+
+  for (AbstractTask task : _taskList) {
+    if (task.hasAutoShutdownPolicy(stopOnThis)) {
+      task.shutdown();
+      _fireTaskListChange(new TaskListChangeEvent(TaskListChangeEvent.Type.Shutdown, task));
+    }
+  }
+
+  _removeStoppedTasksFromList();
+
+}
+
+COM:loops through a list of tasks and shuts them down if they have a specific auto-shutdown policy, and then removes the stopped tasks from the list

@@ -1,0 +1,14 @@
+TDAT:   public boolean placePiece(Position pos, Piece piece) {
+    boolean isPlaced = false;
+    Vector pieces;
+    pieces = getPiecesAt(pos);
+    if (pieces == null) {
+      pieces = new Vector();
+    }
+    pieces.add(piece);
+    setPiecesAt(pos, pieces);
+    return true; // always returns true in this instance since multiple
+    // pieces can be in any position
+  }
+
+COM:places a piece at a given position on a game board and returns true

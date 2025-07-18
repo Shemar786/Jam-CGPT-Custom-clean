@@ -1,0 +1,14 @@
+TDAT:   public void setRecSepList(String val) {
+
+      if ((val == null || "".equals(val))
+      && (recSepList == null || "".equals(recSepList))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(recSepList)) || (updateStatus == NULL_INT_VALUE)) {
+           recSepList = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets the value of a given string if it is not already equal to the current value, and updates a status variable accordingly

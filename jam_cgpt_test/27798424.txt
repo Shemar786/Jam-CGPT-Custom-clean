@@ -1,0 +1,12 @@
+TDAT:   protected JScrollPane createTitleScrollPane () {
+    if( titleField == null ) {
+      titleField = createTitleField();
+    }
+    return new JScrollPane(
+      titleField,
+      ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER,
+      ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED
+    );
+  } // createTitleScrollPane()
+
+COM:creates and returns a JScrollPane containing a title field, with vertical scrolling disabled and horizontal scrolling enabled

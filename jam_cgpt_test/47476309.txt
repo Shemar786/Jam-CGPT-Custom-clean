@@ -1,0 +1,10 @@
+TDAT: 	private void initializeModel(CtxHelpModel model) {
+		CtxHelpContext context = model.getFactory().createContext();
+		context.setID(PDEUIMessages.NewCtxHelpOperation_ExampleContextId);
+		model.getCtxHelpRoot().addChild(context);
+		CtxHelpTopic topic = model.getFactory().createTopic();
+		topic.setLabel(PDEUIMessages.NewCtxHelpOperation_ExampleTopicLabel);
+		context.addChild(topic);
+	}
+
+COM:initializes a model object with a new context and topic

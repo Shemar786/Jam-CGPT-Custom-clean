@@ -1,0 +1,13 @@
+TDAT: 	public String getLayerData(int layerID, String column) {
+		Cursor c = db.query(LAYER_TABLE, new String[] { column }, ID + "="
+				+ layerID, null, null, null, null);
+		String ret = null;
+
+		if (c.moveToFirst()) {
+			ret = c.getString(0);
+		}
+		c.close();
+		return ret;
+	}
+
+COM:returns the value in a specified column for a given layer ID from a database table, using a cursor to query the database

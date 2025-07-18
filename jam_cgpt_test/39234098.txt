@@ -1,0 +1,14 @@
+TDAT:     public Object createObject(Attributes attributes) throws Exception {
+
+        String partnerLink = attributes.getValue(PARTNER_LINK);
+        String portType = attributes.getValue(PORT_TYPE);
+        String operation = attributes.getValue(OPERATION);
+        String variable = attributes.getValue(VARIABLE);
+        String createInstance = attributes.getValue(CREATE_INSTANCE);
+
+        return getElementFactory().createReceive(
+                getStandardAttributes(attributes), partnerLink, portType,
+                operation, variable, createInstance);
+    }
+
+COM:creates a receive Object using the given attributes

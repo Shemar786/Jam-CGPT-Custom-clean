@@ -1,0 +1,25 @@
+TDAT: 	public void removePlugin(Plugin plugin){
+		String[] plugableNames=plugin.getPlugableNames();
+		String[] keys;
+		Iterator it;
+		Plugable plugable;
+		for(int i=plugableNames.length-1;i>=0;i--){
+			it=instance.getInstances(plugableNames[i]);
+			registry.removeEntry(plugableNames[i],plugin.getClass().getName());
+			keys=plugin.getKeysFor(plugableNames[i]);
+			while(it.hasNext()){
+				plugable=(Plugable)it.next();
+				Iterator plugins=instance.getInstances(plugable,keys[0]);
+				if(plugins!=null){
+					while(plugins.hasNext()){
+						((Plugin)plugins.next()).pluginRemoved(plugable);
+					}
+				}
+				for(int j=keys.length-1;j>=0;j--){
+					instance.putInstance(plugable,keys[j],null);
+				}
+			}
+		}
+	}
+
+COM:removes a plugin and all of its associated components from the registry

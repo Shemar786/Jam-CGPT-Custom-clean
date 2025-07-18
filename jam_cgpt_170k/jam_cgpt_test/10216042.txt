@@ -1,0 +1,28 @@
+TDAT: 	public void editElement(Object element, int column) {
+		if (cellEditor != null) {
+			applyEditorValue();
+		}
+
+		IStructuredSelection structuredSelection;
+		if (element instanceof TreePath) {
+			structuredSelection = new TreeSelection((TreePath) element, viewer
+					.getComparer());
+		} else {
+			structuredSelection = new StructuredSelection(element);
+		}
+		setSelection(structuredSelection, true);
+		Item[] selection = getSelection();
+		if (selection.length != 1) {
+			return;
+		}
+
+		treeItem = selection[0];
+
+		// Make sure selection is visible
+		showSelection();
+		columnNumber = column;
+		activateCellEditor();
+
+	}
+
+COM:edits a specific element in a tree or table view by selecting it, setting it as the selection, and activating a cell editor for the selected column

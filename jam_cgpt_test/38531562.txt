@@ -1,0 +1,10 @@
+TDAT:     public void removeResource(long index) throws org.xmldb.api.base.XMLDBException {
+        try {
+            this.stub.removeResource(this.resourceSet, index);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e);
+        }
+        
+    }
+
+COM:removes a resource at a specified index, and may throw a remote exception

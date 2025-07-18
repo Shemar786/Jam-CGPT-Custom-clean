@@ -1,0 +1,7 @@
+TDAT:     private void testInitList() {
+        acList.add(new AircraftInfo("Cessna 152",new Speed(90,SpeedUnit.KNOTS)));
+        acList.add(new AircraftInfo("Cessna 172",new Speed(110,SpeedUnit.KNOTS)));
+        acList.add(new AircraftInfo("Boeing 747",new Speed(260,SpeedUnit.KNOTS)));
+    }
+
+COM:adds three aircraft with their respective speeds to an aircraft list

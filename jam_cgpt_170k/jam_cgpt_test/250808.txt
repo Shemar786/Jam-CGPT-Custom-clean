@@ -1,0 +1,16 @@
+TDAT: 	public List getAllCollections() {
+		logger.debug("Entering getAllCollections");
+		try {
+			List returnList = dbAccess.getAllCollections();
+			logger.debug("getAllCollections() - exiting - return value="
+					+ returnList);
+			return returnList;
+		} catch (AccessException ex) {
+			logger.error("getAllCollections()", ex);
+
+			logger.error("Failed to access the database ", ex);
+			return new ArrayList();
+		}
+	}
+
+COM:retrieves all collections from a database and returns them as a List, while logging debug information and error messages as necessary

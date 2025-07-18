@@ -1,0 +1,9 @@
+TDAT:     protected JasperReport compileReport() throws JRException {
+        byte[] byteArray = reportTemplate.getContents().getBytes();
+        ByteArrayInputStream designStream = new ByteArrayInputStream(byteArray);
+        logger.debug("Compiling report...");
+        JasperReport jasperReport = JasperCompileManager.compileReport(designStream);
+        return jasperReport;
+    }
+
+COM:compiles a JasperReport by reading a byte array of report template, converting it to a ByteArrayInputStream, and compiling it using JasperCompileManager

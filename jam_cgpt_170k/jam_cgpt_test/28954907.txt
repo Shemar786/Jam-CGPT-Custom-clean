@@ -1,0 +1,11 @@
+TDAT: 	private void buildId(II id, Id idData, boolean useExtension) {
+		if (useExtension) {
+			id.setExtension(idData.getExtension());
+			id.setRoot(idData.getRoot());
+		} else {
+			String root = idData.getRoot() + "." + idData.getExtension();
+			id.setRoot(root); 
+		}
+	}
+
+COM:builds an ID by setting the root and extension values based on a boolean flag

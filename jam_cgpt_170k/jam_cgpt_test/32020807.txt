@@ -1,0 +1,8 @@
+TDAT:     public void setMailInfo(SimpleMail mail, List<String> attachments, List<File> fileList) {
+        bGroupMail = false;
+        this.mail = mail;
+        this.attachments = (attachments != null) ? attachments : new ArrayList<String>();
+        this.fileList = (fileList != null) ? fileList : new ArrayList<File>();
+    }
+
+COM:sets mail information using a SimpleMail object, a list of attachment strings, and a list of files

@@ -1,0 +1,13 @@
+TDAT:     private String calculateConceptDir(String dir, ONDEXConcept concept) {
+        Integer id = concept.getId();
+
+        String folder = "0_to_1,000";
+        if (id > 1000) {
+            int thousands = (int) Math.floor(id / 1000d);
+            folder = thousands + ",000_to_" + (thousands + 1) + ",000";
+        }
+
+        return dir + File.separator + folder;
+    }
+
+COM:calculates a directory path based on the ID of an ONDEXConcept object

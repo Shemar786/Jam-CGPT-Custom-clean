@@ -1,0 +1,7 @@
+TDAT:     protected void markSlots(int line, int column, byte itemXSize, byte itemYSize, boolean flag) {
+        for (int i=line; i<=line+itemYSize-1; i++)
+            for (int j=column; j<=column+itemXSize-1; j++)
+                _slots[i][j] = flag;
+    }
+
+COM:marks slots in a two-dimensional array based on the given line, column, item size, and flag

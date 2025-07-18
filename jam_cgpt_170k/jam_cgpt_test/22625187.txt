@@ -1,0 +1,11 @@
+TDAT: 	public void charactersDefinition( char ch[], int start, int length ) throws SAXException {
+		String charsValue = new String( ch, start, length );
+		if ( currentSAXElementName.equals( "definition" ) ) {
+			setDefinitions( currentSAXElementSystem, newNodeId, charsValue );
+		}
+		if ( startSavingXML ) {
+			outputXML.append( charsValue );
+		}
+	}
+
+COM:takes in an array of characters, a starting index, and a length, and sets definitions for a current SAX element if it matches a certain name while also appending the characters to an output XML string

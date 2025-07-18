@@ -1,0 +1,13 @@
+TDAT:     public void apply(EnvironmentState env) {
+
+    	Load load = getStorageLocation().deliver(getAgv());
+    	
+    	// remove load from environment
+    	((Environment)env).removeEntity(load);
+    	
+        Logger.getLogger("actionmodel.effect").info("Effect applied: "+this);
+        
+        getAgv().getAgent().setExecutionStatus(new Status(Status.SUCCEEDED));
+    }
+
+COM:applies a delivery action to an environment state, removes the delivered load entity from the environment and updates the execution status of the agent responsible for the delivery

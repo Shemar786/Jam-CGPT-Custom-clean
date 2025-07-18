@@ -1,0 +1,17 @@
+TDAT: 	public void testSecondThenThirdChild() throws CoreException {
+		setCurrentPO("PO1");
+		assertOpen(mList(), G);
+		
+		final ITactic tac = Tactics.doCase(P1.toString());
+		userSupport.applyTactic(tac, false, null);
+		assertOpen(mList(), btrue);
+		
+		gotoNextSibling();
+		assertOpen(mList(P1), G);
+
+		final ITactic tac2 = Tactics.review(REVIEWED_MAX);
+		userSupport.applyTactic(tac2, false, null);
+		assertOpen(mList(nP1), G);
+	}
+
+COM:tests the second and third child elements of a given object and applies specific tactics to assert their state

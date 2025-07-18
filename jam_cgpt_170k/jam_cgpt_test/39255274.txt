@@ -1,0 +1,20 @@
+TDAT: 	private void assignLeavesRecurse(CFNode curNode) {
+		if (curNode.isLeaf()) {
+			checkForMerge(curNode);
+			curNode.prevLeaf = prev;
+			curNode.nextLeaf = null;
+			if (prev != null)
+				prev.nextLeaf = curNode;
+			else
+				firstLeaf = curNode;
+			prev = curNode;
+		}
+		else {
+			curNode.prevLeaf = null;
+			curNode.nextLeaf = null;
+			for (int i = 0; i < curNode.getSize(); i++) 
+				assignLeavesRecurse(curNode.getCFs().get(i).child);
+		}
+	}
+
+COM:recursively assigns leaves to a tree of CFNodes and sets their previous and next leaf nodes

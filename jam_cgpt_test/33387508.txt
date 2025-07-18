@@ -1,0 +1,9 @@
+TDAT:   public void redraw() {
+    if (isAttached()) {
+      int width = DOM.getElementPropertyInt(getElement(), "clientWidth");
+      int height = DOM.getElementPropertyInt(getElement(), "clientHeight");
+      onResize(width, height);
+    }
+  }
+
+COM:redraws the element if it is attached, getting the client width and height and calling onResize with those values

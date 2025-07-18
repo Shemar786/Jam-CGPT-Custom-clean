@@ -1,0 +1,12 @@
+TDAT:     public void close(ZipItemNode node) {
+        if (((DefaultMutableTreeNode) node.getParent()).isRoot()) {
+            // Cancel all running tasks.
+            for (SwingWorker<?, ?> task : taskMap.get(node)) {
+                task.cancel(true);
+            }
+            taskMap.remove(node);
+            getModel().removeNodeFromParent(node);
+        }
+    }
+
+COM:closes a ZipItemNode, cancels all running tasks associated with it, and removes it from its parent node, but only if its parent node is the root

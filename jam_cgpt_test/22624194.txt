@@ -1,0 +1,12 @@
+TDAT: 	public void processOrderedElements(Document doc) {
+
+		List orderedElementPaths = getSchemaPathMap().getSchemaPathsByValueType("ordered");
+		// prtln(orderedElementPaths.size() + " ordered paths found");
+
+		for (Iterator i = orderedElementPaths.iterator(); i.hasNext(); ) {
+			SchemaPath schemaPath = (SchemaPath) i.next();
+			ElementsOrderer.orderElements(doc, schemaPath.xpath);
+		}
+	}
+
+COM:processes ordered elements in a given XML document using a list of schema paths

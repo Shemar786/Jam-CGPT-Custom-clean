@@ -1,0 +1,12 @@
+TDAT:     public Applet getApplet( String name ) {
+        try {
+            WebApplet[] webApplets = _webApplet.getAppletsInPage();
+            for (int i = 0; i < webApplets.length; i++) {
+                if (webApplets[i].getName().equals( name )) return webApplets[i].getApplet();
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
+
+COM:returns a specific applet from within a web page based on its name as a string input

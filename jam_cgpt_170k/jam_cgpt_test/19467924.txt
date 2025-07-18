@@ -1,0 +1,11 @@
+TDAT: 	public void updateVariableStates(List<IComponentDeltaState> deltas) {
+		for (UIModel m : models.values()) {
+			m.updateVariableValue(getDelta(deltas, m.getName()));
+		}
+		for (ComponentModel c : contexts.values()) {
+			c.updateVariableValue(getDelta(deltas, c.getName()));
+		}
+
+	}
+
+COM:updates the variable states of UI and Component models using the delta values provided in the input list

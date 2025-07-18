@@ -1,0 +1,11 @@
+TDAT: 	public void testSetInfo() throws Exception {
+	    int newStatus = LiveMessageInfo.SENT;
+	    CustomDate newDate = new CustomDate(2004, 3, 15, 17, 45);
+		LiveMessageInfo newInfo = new LiveMessageInfo(newStatus, newDate);
+		message.setInfo(newInfo);		
+		assertFalse(msgInfo.equals(message.getInfo()));
+		assertTrue(newInfo.equals(message.getInfo()));
+		
+	}
+
+COM:creates a new LiveMessageInfo object with a new status and custom date, sets it to a message, and then asserts its inequality and equality with the previous message info

@@ -1,0 +1,11 @@
+TDAT:   private int detectDirection(int anOldCoordinate, int aNewCoordinate) throws IllegalArgumentException {
+    if (aNewCoordinate - anOldCoordinate > 0) {
+      return Direction.DOWN_OR_RIGHT;
+    } else if (aNewCoordinate - anOldCoordinate < 0) {
+      return Direction.UP_OR_LEFT;
+    } else {
+      throw new IllegalArgumentException("Method does not support the direction detect for equal coordinates.");
+    }
+  }
+
+COM:This private Java method detects the direction of movement based on the difference between two integer coordinates, throwing an exception if the coordinates are equal

@@ -1,0 +1,23 @@
+TDAT: 	public void removeBWRel(BWRel r) {
+
+		assert tmpToFix.isEmpty();
+		assert toFix.isEmpty();
+		assert newRates.isEmpty();
+
+		/*
+		 * calls defreeze on the server and the client of the connection
+		 * which adds tmpToFix set with distance 1 (this triggers the correct
+		 * behavior as distance-1-neighbors can increase the bandwidth of their
+		 * connections)
+		 */
+		r.getServer().del(r);
+		r.getClient().del(r);
+		
+		reallocate();
+		
+		assert tmpToFix.isEmpty();
+		assert toFix.isEmpty();
+
+	}
+
+COM:removes a BWRel object from the server and client of a connection and triggers a reallocation of resources

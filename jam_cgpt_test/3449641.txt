@@ -1,0 +1,18 @@
+TDAT: 	private List getSessionYears() {
+		List years = new ArrayList();
+				
+		//create calendar and get year
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTime(new Date());
+		int year = calendar.get(Calendar.YEAR);
+		
+		//add 4 years to list
+		years.add(new Integer(year));
+		years.add(new Integer(year + 1));
+		years.add(new Integer(year + 2));
+		years.add(new Integer(year + 3));
+		
+		return years;
+	}
+
+COM:returns a list of four consecutive years starting with the current year

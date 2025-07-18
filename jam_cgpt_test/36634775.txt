@@ -1,0 +1,14 @@
+TDAT:     public void setFullScreen(){
+        if(SlixLibrary.isApplet())  return;
+        if(contain.getWidth() != 800 && contain.getHeight() != 600){
+            SlixLibrary.check();
+            return;
+        }
+        try {
+            contain.setFullscreen(!contain.isFullscreen());
+        } catch (SlickException ex) {
+            System.err.println(ex);
+        }
+    }
+
+COM:sets the screen to fullscreen mode if the program is not an applet and the containing window has a width and height of 800 and 600, and catches any exceptions that may occur

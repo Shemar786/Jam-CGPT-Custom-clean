@@ -1,0 +1,15 @@
+TDAT:     public void rebuildFlowGraph() {
+        try {
+            _controlFlowGraph = new FlowGraph(_methodGen);
+        } catch (ClassFormatException ex) {
+            System.err.println(ex.getMessage());
+            _context.release(_methodGen.getMethod(), _methodGen.getClassName());
+            _controlFlowGraph = null;
+
+            return;
+        }
+
+        _controlFlowGraph.initialize();
+    }
+
+COM:rebuilds the control flow graph with a new instance of FlowGraph and initializes it, while catching a ClassFormatException and releasing the methodgen and class name if necessary

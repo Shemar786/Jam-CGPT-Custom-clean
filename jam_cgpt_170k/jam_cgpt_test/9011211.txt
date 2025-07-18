@@ -1,0 +1,11 @@
+TDAT:     protected PrintWriter wrapWriter(OutputStream o) {
+        try {
+            return new
+            PrintWriter(new OutputStreamWriter(o, "ISO8859_1"), true);
+        } catch (UnsupportedEncodingException use) {
+            Util.bug("encoding.iso8859_1.not.found");
+            return null; /* dead code */
+        }
+    }
+
+COM:wraps an OutputStream in a PrintWriter with a specific character encoding and returns it

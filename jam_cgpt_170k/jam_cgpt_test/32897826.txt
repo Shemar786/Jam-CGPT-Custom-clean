@@ -1,0 +1,14 @@
+TDAT: 	private JButton getCloseButton() {
+		if (closeButton == null) {
+			closeButton = new JButton();
+			closeButton.setText("Close");
+            closeButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent e) {
+                    dispose();
+                }
+            });
+		}
+		return closeButton;
+	}
+
+COM:creates and returns a JButton with the text "Close" which, when clicked, enables the window to be disposed

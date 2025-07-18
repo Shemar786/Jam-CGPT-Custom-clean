@@ -1,0 +1,15 @@
+TDAT:     public void insertSeparation(int i) {
+        if (i < 0) {
+            throw new IllegalArgumentException(
+                "Separation count must be bigger or equal to 0, current value : "
+                    + i);
+        }
+
+        if (i >= getSeparationCount()) {
+            enlargeSeparationCount(i + 1);
+        } else {
+            insertSingleSeparation(i);
+        }
+    }
+
+COM:inserts a separation at a specified index

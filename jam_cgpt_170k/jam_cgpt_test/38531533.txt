@@ -1,0 +1,10 @@
+TDAT:     public String getDocumentId() throws org.xmldb.api.base.XMLDBException {
+        try {
+            return stub.getDocumentId(this.resourceTransport);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(
+                    org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e.toString());
+        }
+    }
+
+COM:returns the document ID using the resource transport and throws an XMLDBException if there is a remote exception

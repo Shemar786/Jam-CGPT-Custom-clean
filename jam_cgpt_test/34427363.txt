@@ -1,0 +1,12 @@
+TDAT:     private SWGSoapStatusResponse sendNew(Wrapper wrapper) {
+        SWGMutableResource mr = wrapper.mutable;
+        SWGSoapStatusResponse resp = SWGResourceManager.sendNew(mr, false);
+        if (resp != null && resp.isFaultless()) {
+            mr.whatever = "OK new";
+            updateNewList(mr);
+        }
+
+        return resp;
+    }
+
+COM:sends a new SWGSoapStatusResponse and updates the new list if the response is faultless

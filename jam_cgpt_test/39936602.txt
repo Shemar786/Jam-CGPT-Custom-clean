@@ -1,0 +1,17 @@
+TDAT: 	protected void addPUPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TechnicRMLL73_pU_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TechnicRMLL73_pU_feature", "_UI_TechnicRMLL73_type"),
+				 TechnicRMLL73Package.Literals.TECHNIC_RMLL73__PU,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:This is a protected Java method that adds a property descriptor to an item property descriptor list for a specific feature in a TechnicRMLL73 package

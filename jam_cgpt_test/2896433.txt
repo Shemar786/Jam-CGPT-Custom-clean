@@ -1,0 +1,12 @@
+TDAT:   public String toString() {
+    StringBuffer result = new StringBuffer("CharClasses:");
+
+    result.append(Out.NL);
+
+    for (int i = 0; i < classes.size(); i++) 
+      result.append("class "+i+":"+Out.NL+classes.elementAt(i)+Out.NL);    
+    
+    return result.toString();
+  }
+
+COM:returns a string representation of a list of character classes along with their respective indices

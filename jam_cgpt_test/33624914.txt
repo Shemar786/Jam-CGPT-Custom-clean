@@ -1,0 +1,13 @@
+TDAT: 	protected void compactHand() {
+		compactedArr = new PlayingCard[GameData.YANIV_NUM_CARDS];
+		int idxInComapctedArr = 0;
+		for (int idxInCards = 0; idxInCards < cards.length; idxInCards++) {
+			if (cards[idxInCards] != null) {
+				compactedArr[idxInComapctedArr++] = cards[idxInCards];
+			}
+		}
+		this.cards = compactedArr;
+		this.firstFreeLocation = idxInComapctedArr;
+	}
+
+COM:takes an array of PlayingCard objects and removes any null values, compacting the array and updating the first free location variable

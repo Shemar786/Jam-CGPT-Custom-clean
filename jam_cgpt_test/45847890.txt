@@ -1,0 +1,16 @@
+TDAT: 	public void testEmptyBufferedStream() {
+		Stream<Object> s = 
+			new BufferedStream<Object>(256, Streams.emptyStream()); 
+		
+		assertFalse(s.hasNext());
+		
+		boolean x = false; 
+		try { 
+			s.next(); 
+		} catch (NoSuchElementException ex) {
+			x = true; 
+		}
+		assertTrue(x); 
+	}
+
+COM:tests an empty BufferedStream by creating a new stream with a specified buffer size and an empty stream, then checking that it has no next element and attempting to call next() on it, resulting in a NoSuchElementException

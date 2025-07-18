@@ -1,0 +1,14 @@
+TDAT: 	public void generationStep(generationEvent e) {
+		if (e.isStep()) {
+			monitor_.worked(1);
+			if (!error) uiInterf_.writeText(".");
+		} 
+		else if (e.isError()) {
+			errorFound(e.message(),uiInterf_);
+		}
+		else if (e.isWarning()) {
+			warningFound(e.message(),uiInterf_);
+		}
+	}
+
+COM:responds to a generation event and updates the progress monitor and user interface based on the event type

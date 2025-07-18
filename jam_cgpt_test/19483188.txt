@@ -1,0 +1,24 @@
+TDAT: 	public void changeFilename(Object document) {
+		if (document == null)
+			throw new IllegalArgumentException(ExceptionMessages.NULL_ARGUMENT);
+
+		if (!(document instanceof IDocument))
+			throw new IllegalArgumentException(
+					ExceptionMessages.WRONG_ARGUMENT_TYPE);
+
+		File[] files = page.getHelpers().showFileDialog("Choose new filename",
+				false);
+		if (files.length != 1)
+			return;
+
+		try {
+			IDocument doc = (IDocument) document;
+			doc.setFilename(files[0].getAbsolutePath(), null);
+		} catch (RodinDBException e) {
+			e.printStackTrace();
+		}
+
+		page.getViewer().refresh();
+	}
+
+COM:changes the filename of an IDocument object based on user input from a file dialog, and refreshes the viewer

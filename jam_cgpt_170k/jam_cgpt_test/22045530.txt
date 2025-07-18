@@ -1,0 +1,15 @@
+TDAT:     private void setPanels() {
+	displayPanel.setUp();
+	calculatorPanels
+	    = new java.util.HashMap<SpecialButtonType,CalculatorPanel>();
+	for( SpecialButtonType sbt : SpecialButtonType.values() ){
+	    CalculatorPanel calculatorPanel
+		= CalculatorPanel
+		.createPanel( this, sbt, panelColour );
+	    calculatorPanels.put( sbt, calculatorPanel );
+	}
+
+	setCalculatorPanel( SpecialButtonType.NONE );
+    }
+
+COM:sets up calculator panels and associates them with special buttons

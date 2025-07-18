@@ -1,0 +1,19 @@
+TDAT: 	private PreferenceStore getPreferenceStore(final Shell shell) {
+		try {
+			final File preferencesFile = new File("preferences.properties"); //$NON-NLS-1$
+			PreferenceStore store;
+
+			if (!preferencesFile.exists()) {
+				// create new preferences file
+				preferencesFile.createNewFile();
+			}
+
+			store = new PreferenceStore(preferencesFile.getName());
+			store.load();
+			return store;
+		} catch (final IOException e) {
+			throw new PhotoListerException("Unable to load preferences."); //$NON-NLS-1$
+		}
+	}
+
+COM:returns a PreferenceStore object loaded with preferences from a preferences file, and creates a new file if it does not already exist

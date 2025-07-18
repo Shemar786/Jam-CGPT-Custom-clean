@@ -1,0 +1,21 @@
+TDAT:     public Node findNode(int a) {
+        nodes.ensureSize(a + 1);
+
+        Node na = (Node) nodes.get(a);
+
+        if (na == null) {
+            // Start a new set with a
+            Node root = new Node(a);
+
+            root.child = new Node(a);
+            root.child.parent = root;
+
+            nodes.set(a, root.child);
+
+            return root;
+        }
+
+        return findNode(na);
+    }
+
+COM:finds a Node object based on an integer input

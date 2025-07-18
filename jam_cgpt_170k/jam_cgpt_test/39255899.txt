@@ -1,0 +1,16 @@
+TDAT: 	private void increment(int index) {
+		// changed semantics:  When you add something past the end of a list,
+		// just add enough "0" elements for it to work.
+		try {
+			list.set(index, (list.get(index) + 1));
+		} catch (IndexOutOfBoundsException e) {
+			while(list.size() < index) {
+				// the above condition is right because size = max index + 1.
+				list.add(0);
+			}
+			list.add(index,1);
+			assert(get(index) == 1);
+		}
+	}
+
+COM:increments the value at the specified index in a list and adds enough "0" elements to the list if the index is out of bounds

@@ -1,0 +1,19 @@
+TDAT:     public Vector getSelectedNeurons() {
+        GUILayer gLayer;
+        Iterator iLayers;
+        Vector layerneurons;
+        Vector neurons = new Vector();
+
+        iLayers = iterator();
+
+        while (iLayers.hasNext()) {
+            gLayer = (GUILayer) (iLayers.next());
+            layerneurons = gLayer.getSelectedNeurons();
+
+            neurons.addAll(layerneurons);
+        }
+
+        return neurons;
+    }
+
+COM:returns a Vector of selected neurons obtained from iterating through a collection of GUILayers

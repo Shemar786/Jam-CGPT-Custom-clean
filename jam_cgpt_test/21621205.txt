@@ -1,0 +1,18 @@
+TDAT: 	public void addToResponse(byte[] addResponse) {
+		if (addResponse == null || addResponse.length == 0)
+			return;
+		
+		if (response == null || response.length == 0) {
+			setResponse(addResponse);
+			return;
+		}
+		
+		int size = response.length + addResponse.length;
+		byte[] b = new byte[size];
+		System.arraycopy(response, 0, b, 0, response.length);
+		System.arraycopy(addResponse, 0, b, response.length, addResponse.length);
+		response = b;
+		fireChangedEvent();
+	}
+
+COM:adds a byte array to a response and updates the response, triggering a 'changed' event

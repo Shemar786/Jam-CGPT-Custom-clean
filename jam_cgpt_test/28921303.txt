@@ -1,0 +1,13 @@
+TDAT: 	private Node translateMetricPI(final Node metricProcessingInstruction) {
+		final String target = metricProcessingInstruction.getNodeName();
+		
+		if (target.equals(METRIC_PI_TARGET_INLINE_PRESENTATION_MATHML)) {
+			return inlinePresentationMathML(metricProcessingInstruction.getNodeValue());
+		} else if (target.equals(METRIC_PI_TARGET_BLOCK_PRESENTATION_MATHML)) {
+			return blockPresentationMathML(metricProcessingInstruction.getNodeValue());
+		} else {		
+			return metricProcessingInstruction;
+		}
+	}
+
+COM:takes in a Node and checks if it is inline or block presentation MathML, translating it accordingly, or leaves it as is if it is not MathML

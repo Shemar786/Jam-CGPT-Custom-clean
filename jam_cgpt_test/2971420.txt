@@ -1,0 +1,11 @@
+TDAT:   public int getTotalError() {
+    int totalError = 0;
+    calculateResults();
+    for (int i=0;i<sampleArr.size();i++) {
+      FMSample fms = (FMSample) sampleArr.get(i);
+      totalError += fms.getError();
+    }
+    return totalError;
+  }
+
+COM:calculates the total error by adding up the error of each sample in a sample array

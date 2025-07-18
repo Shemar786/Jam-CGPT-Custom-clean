@@ -1,0 +1,10 @@
+TDAT:   public void clearRect(int x, int y, int width, int height) {
+    stream.println("gsave");
+    Color c = getColor();
+    setColor(backClr);
+    doRect(x, y, width, height, true);
+    setColor(c);
+    stream.println("grestore");
+  }
+
+COM:clears a rectangular area on a graphics context

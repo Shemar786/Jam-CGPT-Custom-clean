@@ -1,0 +1,18 @@
+TDAT: 	private Element getDOMElement(IInternalElement element) {
+		Element result = internalElements.get(element);
+		if (result != null) {
+			assert result.getParentNode() != null;
+			return result;
+		}
+		
+		// Not found, force a cache update
+		IRodinElement parent = element.getParent();
+		if (parent instanceof InternalElement) {
+			getElementInfo((InternalElement) parent);
+		} else if (! childrenUpToDate) {
+			computeChildren();
+		}
+		return internalElements.get(element);
+	}
+
+COM:returns a DOM element for a given internal element, and updates the cache if the element is not found

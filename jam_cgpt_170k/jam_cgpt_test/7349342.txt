@@ -1,0 +1,13 @@
+TDAT:     public int getIntentSize() {
+        if (intentSize < 0) { // not yet calculated
+            intentSize = 0;
+            final Iterator<Concept<O, A>> it = filter.iterator();
+            while (it.hasNext()) {
+                final Concept<O, A> cur = it.next();
+                intentSize += cur.getAttributeContingentSize();
+            }
+        }
+        return intentSize;
+    }
+
+COM:calculates and returns the size of the intent based on a given filter

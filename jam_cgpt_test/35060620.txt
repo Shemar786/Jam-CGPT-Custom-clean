@@ -1,0 +1,19 @@
+TDAT: 	public void fromSizeString(String sizeString) {
+		
+		String[] result = sizeString.split( "x" );
+		if( result.length != 2 ) {
+			x = -1;
+			y = -1;
+		}
+		try {
+			x = Integer.parseInt(result[0]); 
+			y = Integer.parseInt(result[1]); 
+		}
+		catch( Exception e ) {
+			x = -1;
+			y = -1;
+		}
+		
+	}
+
+COM:takes a string that represents a size, splits it into x and y dimensions, and then parses those dimensions as integers and sets them as the x and y values of the object

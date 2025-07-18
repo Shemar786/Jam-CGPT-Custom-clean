@@ -1,0 +1,21 @@
+TDAT: 	public void save(ObjectOutputStream oos) throws IOException {
+		oos.writeInt(MEMSIZE);
+		oos.writeInt(REGSIZE);
+		oos.writeObject(reg);
+		oos.writeObject(regInfo);
+		oos.writeObject(memory);
+		oos.writeObject(memInfo);
+		oos.writeObject(variables);
+		oos.writeObject(constants);
+		oos.writeBoolean(fCarry);
+		oos.writeBoolean(fOverflow);
+		oos.writeBoolean(fSign);
+		oos.writeBoolean(fZero);
+		oos.writeBoolean(fParity);
+		oos.writeBoolean(fAuxiliary);
+		oos.writeBoolean(fTrap);
+		oos.writeBoolean(fDirection);
+		oos.writeInt(nextReservableAddress);
+	}
+
+COM:saves the state of various objects and variables to an ObjectOutputStream, with a potential IOException

@@ -1,0 +1,12 @@
+TDAT:     public void centerPoint(double cartX, double cartY){
+        double w = xMax - xMin;
+        setXMax(cartX + w/2);
+        setXMin(cartX - w/2);
+        
+        double h = yMax - yMin;
+        setYMax(cartY + h/2);
+        setYMin(cartY - h/2);
+        centerPoint = new Point2D.Double(cartX,cartY);
+    }
+
+COM:centers a point on a Cartesian coordinate plane by adjusting the maximum and minimum x and y values around the point's coordinates

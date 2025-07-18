@@ -1,0 +1,18 @@
+TDAT:     public void configure (Configuration configuration) throws ConfigurationException {
+        
+        try {
+            
+            /** Extracting filename for log4j */
+            log4jConfigFile = configuration.getChild ("log4j").getChild ("filename").getValue ();
+            
+            /** Get configuration for log4j out of specified filename */
+            PropertyConfigurator.configure (log4jConfigFile);
+            
+            
+        } catch (Exception re) {
+            throw new ConfigurationException ("Could not get log4j filename value!");
+        }
+        
+    }
+
+COM:configures the log4j logging framework using a specified configuration file

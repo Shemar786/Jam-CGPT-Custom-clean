@@ -1,0 +1,12 @@
+TDAT:     public void setActionForm(ActionForm form) {
+        if (logger.isDebugEnabled())
+            logger.debug("Entering - form = " + form);
+        init();
+        // make sure action servlet is intialized
+        getActionServlet();
+        Common.setActionForm(form,request,actionPath,context);
+        if (logger.isDebugEnabled())
+            logger.debug("Exiting");
+    }
+
+COM:sets the action form, initializes the action servlet, and logs debug messages if debug mode is enabled

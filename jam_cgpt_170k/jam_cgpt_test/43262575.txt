@@ -1,0 +1,12 @@
+TDAT:     public IFrameworkResource getChild(final String name) {
+        if(childCouldBeLoaded(name)) {
+            IFrameworkResource o = loadChild(name);
+            if(null!=o){
+                return o;
+            }
+        }
+        throw new NoSuchResourceException("child resource not found: " + name
+                + ". parent resource: " + this.getName(), this);
+    }
+
+COM:returns a child resource based on the given name, or throws a NoSuchResourceException if the resource is not found

@@ -1,0 +1,13 @@
+TDAT:   public void sendTextMessage(String msg) throws Exception, JMSException{
+    TopicPublisherRef ref = null;
+    try{
+      ref = (TopicPublisherRef)super.borrowObject();
+      ref.getPublisher().send(ref.getSession().createTextMessage(msg));
+    }finally{
+      if(ref != null){
+        super.returnObject(ref);
+      }
+    }
+  }
+
+COM:sends a text message using a JMS TopicPublisher, after obtaining a reference to it from an object pool

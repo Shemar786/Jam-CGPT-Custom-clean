@@ -1,0 +1,13 @@
+TDAT: 	private void setTime( int markerPosX ) {
+		if( markerPosX < 0 || markerPosX >= barWidth )
+			return;
+		try {
+			HistoryMove move = history.setTime(convertBarPosXtoTime(markerPosX), puzzleModel);
+			puzzleModel.notifyObservers( move.getPuzzleMove() );
+			history.notifyObservers( move );
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:sets the time based on a given marker position and updates the puzzle model and history

@@ -1,0 +1,16 @@
+TDAT:     public void showDialog(Color backGround, Color textColor) {
+        newColor = backGround;
+        newTextColor = textColor;
+
+        colorChooser.setColor(newColor);
+
+        if (textColor.equals(Color.BLACK))
+            blackWhite.setSelected(true);
+        else
+            blackWhite.setSelected(false);
+
+        previewLabel.setForeground(textColor);
+        setVisible(true);
+    }
+
+COM:displays a dialog box with options to set the background color and text color, and previews the selected colors

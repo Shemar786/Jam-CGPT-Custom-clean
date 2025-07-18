@@ -1,0 +1,13 @@
+TDAT:     public Piece getPieceAt(Coord coord) {
+	if (coord.getX() < this.BOARD_SIDE 
+	    && coord.getY() < this.BOARD_SIDE
+	    && coord.getX() >= 0
+	    && coord.getY() >= 0) {
+	    return board[coord.getX()][coord.getY()];
+	}
+
+	/*Return a volcano if we are trying to look at a piece off the board.*/
+	return new Piece(coord);
+    }
+
+COM:takes a Coord object and returns the Piece object at the corresponding position on the game board, or a volcano piece if the input coordinates are off the board

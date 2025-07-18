@@ -1,0 +1,11 @@
+TDAT:     private void restoreSettings() {
+        log.config("restoring settings");
+        
+        wpDatabaseFileName = prefs.get(wpDatabaseFileNameKey,"");
+        acDatabaseFileName = prefs.get(acDatabaseFileNameKey,"");
+        
+        log.log(Level.FINE,"wpDatabaseFileName = " + wpDatabaseFileName);
+        log.log(Level.FINE,"acDatabaseFileName = " + acDatabaseFileName);
+    }
+
+COM:restores previously saved settings by retrieving and logging database file names

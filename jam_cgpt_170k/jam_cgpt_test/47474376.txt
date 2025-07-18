@@ -1,0 +1,20 @@
+TDAT: 	public void dragStart(DragSourceEvent event) {
+
+		// Workaround for 1GEUS9V
+		DragSource dragSource = (DragSource) event.widget;
+		Control control = dragSource.getControl();
+		if (control != control.getDisplay().getFocusControl()) {
+			event.doit = false;
+			return;
+		}
+
+		FileAdapter[] files = getSelectedFiles();
+
+		if (files.length == 0) {
+			event.doit = false;
+			return;
+		}
+		event.doit = true;
+	}
+
+COM:handles the logic for the start of a drag operation, checking if the control has focus and if there are selected files to be dragged

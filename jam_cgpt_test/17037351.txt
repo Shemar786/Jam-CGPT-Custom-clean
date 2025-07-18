@@ -1,0 +1,11 @@
+TDAT:     public void writeXsiType(XmlOutputStream out, String typeNS, String type) throws IOException {
+        String prefix = out.getPrefix(typeNS);
+
+        if (prefix == null || "".equals(prefix)) {
+            out.writeAttribute(Constants.SCHEMA_INSTANCE_NS, "type", type);
+        } else {
+            out.writeAttribute(Constants.SCHEMA_INSTANCE_NS, "type", prefix + ":" + type);
+        }
+    }
+
+COM:writes a value for the "type" XML attribute based on the provided namespace and type parameters

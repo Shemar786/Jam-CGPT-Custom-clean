@@ -1,0 +1,11 @@
+TDAT:     public void handleMessage(byte[] message) {
+        Message received;
+        try {
+            received = (Message) MessageUtil.createObjectFromByteArray(message);
+            result((PrimeCandidate) received.getContent());
+        } catch (Exception e) {
+            LOGGER.error("could not retrieve Message", e);
+        }        
+    }
+
+COM:takes a byte array as input, converts it into a Message object, and retrieves the content of this message as a PrimeCandidate object, while logging an error if any exceptions occur during the process

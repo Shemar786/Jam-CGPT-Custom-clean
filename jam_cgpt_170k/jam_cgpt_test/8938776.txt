@@ -1,0 +1,12 @@
+TDAT:     public int write(ByteBuffer src) throws IOException {
+        if (!isOpen) {
+            throw new IOException("Not open");
+        }
+        int n = libc.write(fd, src, src.remaining());
+        if (n > 0) {
+            src.position(src.position() + n);
+        }
+        return n;
+    }
+
+COM:writes the contents of a ByteBuffer to a file descriptor and returns the number of bytes written, while throwing an IOException if the file descriptor is not open

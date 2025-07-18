@@ -1,0 +1,23 @@
+TDAT: 	public void valueChanged(TreeSelectionEvent e) {
+		DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree
+				.getLastSelectedPathComponent();
+
+		if (node == null)
+			return;
+
+		Object nodeInfo = node.getUserObject();
+		if (node.isLeaf()) {
+			BookInfo book = (BookInfo) nodeInfo;
+			displayURL(book.bookURL);
+			if (DEBUG) {
+				logger.info(book.bookURL + ":  \n    ");
+			}
+		} else {
+			displayURL(helpURL);
+		}
+		if (DEBUG) {
+			logger.info(nodeInfo.toString());
+		}
+	}
+
+COM:handles the event of a tree selection change and displays the URL associated with the selected leaf node, or a help URL if a non-leaf node is selected

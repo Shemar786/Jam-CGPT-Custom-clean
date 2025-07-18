@@ -1,0 +1,14 @@
+TDAT:     public String getMostUsualSuffix(){
+        Map<String,Double> profile=getAveragedProfile();
+        double max=-1;
+        String exit="";
+        for(Entry pair: profile.entrySet()){
+            if(((Double)pair.getValue())>max){
+                max=(Double)pair.getValue();
+                exit=(String)pair.getKey();
+            }
+        }
+        return exit;
+    }
+
+COM:returns the most common suffix in a Map<String, Double>

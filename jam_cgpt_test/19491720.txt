@@ -1,0 +1,17 @@
+TDAT: 	protected void addTranslationTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AnimationDiagram_translationType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AnimationDiagram_translationType_feature", "_UI_AnimationDiagram_type"),
+				 AnimationMetamodelPackage.Literals.ANIMATION_DIAGRAM__TRANSLATION_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to the item property descriptors list for a specified animation diagram object

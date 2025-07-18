@@ -1,0 +1,10 @@
+TDAT:   protected void initDnD() {
+    this.dragSource = DragSource.getDefaultDragSource();
+    this.dgListener = new DGListener();
+    this.dsListener = new DSListener();
+
+    this.dragSource.createDefaultDragGestureRecognizer((Component) this,
+        DnDConstants.ACTION_MOVE, this.dgListener);
+  }
+
+COM:initializes drag and drop functionality with a default drag gesture recognizer

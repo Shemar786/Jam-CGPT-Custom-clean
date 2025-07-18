@@ -1,0 +1,16 @@
+TDAT: 	protected int getTaskPosition(Task task) {
+		int pos = Math.min(task.getLastKnownTaskPosition(), tasks.size() - 1);
+
+		if (pos == Task.NO_POSITION) {
+			pos = tasks.indexOf(task);
+		} else {
+			pos = tasks.lastIndexOf(task, pos);
+			if (pos == Task.NO_POSITION) {
+				pos = tasks.indexOf(task, pos);
+			}
+		}
+		task.updatePositionInsideTaskbar(pos);
+		return pos;
+	}
+
+COM:retrieves the position of a Task object within a collection of tasks, taking into account the last known position and updating the position if necessary

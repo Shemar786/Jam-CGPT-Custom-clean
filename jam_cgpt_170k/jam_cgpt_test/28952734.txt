@@ -1,0 +1,19 @@
+TDAT: 	public void removePhoneNumber(PhoneType type) {
+		if (phoneList == null) return;
+		// Remove the old entry for this type of address
+		for (int i=0; i<phoneList.size(); i++) {
+			PhoneNumber next = phoneList.get(i);
+			PhoneType nextType = next.getType();
+			if (nextType == null) {
+				if (type == null) {
+					phoneList.remove(i);
+					break;
+				}
+			} else if ((type != null) && nextType.equals(type)) {
+				phoneList.remove(i);
+				break;
+			}
+		}		
+	}
+
+COM:removes a phone number from a list of phone numbers based on its type

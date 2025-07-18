@@ -1,0 +1,13 @@
+TDAT:   public void run() {
+    try {
+      for (int i = 0; i < MultiClient.numWithdrawsPerSpender; i++) {
+        ac.withdraw(MultiClient.amountToWithdraw);
+      }
+    }
+    catch (Exception e) {
+      System.out.println("Aborting thread " + id + ": " + 
+                         weblogic.utils.StackTraceUtils.throwable2StackTrace(e));
+    }
+  }
+
+COM:runs a withdrawal process for a specified number of times and catches any exceptions that occur

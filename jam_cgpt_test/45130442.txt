@@ -1,0 +1,15 @@
+TDAT: 		public Iterator iterator() {
+			Value subjVar = null;
+			Value objVar = null;
+
+			if (!(this.subjExpression instanceof Variable)) {
+				subjVar = (Value) this.subjExpression;
+			}
+			if (!(this.objExpression instanceof Variable)) {
+				objVar = (Value) this.objExpression;
+			}
+
+			return new RdfsMemberIterator(this.source.getStatements(subjVar, null, objVar));
+		}
+
+COM:returns an iterator that iterates over the statements in a source object that contain a specific subject and/or object value

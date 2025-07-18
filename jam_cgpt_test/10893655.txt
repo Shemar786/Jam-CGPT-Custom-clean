@@ -1,0 +1,11 @@
+TDAT:     public ByteBuffer getByteBuffer() {
+        if (byteBuffer == null || byteBuffer.array() != buff) {
+            byteBuffer = ByteBuffer.wrap(buff, start, end - start);
+        } else {
+            byteBuffer.position(start);
+            byteBuffer.limit(end);
+        }
+        return byteBuffer;
+    }
+
+COM:returns a ByteBuffer with a specified start and end position, or creates a new one if it does not exist

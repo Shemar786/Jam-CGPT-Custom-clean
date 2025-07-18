@@ -1,0 +1,14 @@
+TDAT: 	public void getList() {
+		String s = "";
+		do {
+			System.out.print("Please enter the action(\"quit\" to exit):");
+			s = in.nextLine();
+			if (s.contains("add")) {
+				String addString = s.substring(s.indexOf(" ") + 1);
+				ea.add(addString);
+				ebx.add(addString);
+			}
+		} while (!s.contains("quit"));
+	}
+
+COM:prompts the user to enter an action and adds a string to two different lists if the action contains the word "add", until the user inputs the word "quit"

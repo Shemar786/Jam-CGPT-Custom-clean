@@ -1,0 +1,14 @@
+TDAT:     private void expand(int min){
+        double newV [];
+        if(values.length > min){
+            newV = new double[values.length * 2 + 1];
+        }else{
+            newV = new double[values.length + min];
+        }
+        for(int i = 0; i < values.length; i++){
+            newV[i] = values[i];
+        }
+        values = newV;
+    }
+
+COM:expands an array of double values to meet a given minimum length, either doubling the current length plus one or adding the minimum length to the current length, and then copying the original values into the new array

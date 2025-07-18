@@ -1,0 +1,17 @@
+TDAT:     public JingleSession getSession(String jid) {
+        for (JingleSession jingleSession : jingleSessions) {
+            if (jingleSession instanceof OutgoingJingleSession) {
+                if (jingleSession.getResponder().equals(jid)) {
+                    return jingleSession;
+                }
+            }
+            else if (jingleSession instanceof IncomingJingleSession) {
+                if (jingleSession.getInitiator().equals(jid)) {
+                    return jingleSession;
+                }
+            }
+        }
+        return null;
+    }
+
+COM:returns a Jingle session based on the provided jid (Jabber identifier) by iterating through a list of Jingle sessions and checking if the jid matches either the responder or initiator of the session

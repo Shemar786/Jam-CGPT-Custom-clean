@@ -1,0 +1,12 @@
+TDAT: 	private void readInitialDataTables(Map<String, String> sourceSchemaMapping, Table subject) throws Exception {
+		File file = CommandLineParser.getInstance().newFile(DataModel.getInitialDataTablesFile());
+		if (file.exists()) {
+			Set<Table> idTables = SqlUtil.readTableList(new CsvFile(file), datamodel, sourceSchemaMapping);
+			idTables.remove(subject);
+			initialDataTables = idTables;
+		} else {
+			initialDataTables = new HashSet<Table>();
+		}
+	}
+
+COM:reads initial data tables from a file and stores them in a HashSet, after removing a specified subject table

@@ -1,0 +1,11 @@
+TDAT:   protected void zoomOneToTwoStateChanged(ChangeEvent evt) {
+    if (((JRadioButtonMenuItem) evt.getSource()).isSelected()) {
+      if (models.zoom != null) {
+        if (models.zoom.getZoomLevel() != 2.0) {
+          models.zoom.setZoomLevel(2.0);
+        }
+      }
+    }
+  }
+
+COM:changes the zoom level of a model object to 2.0 if a specific radio button menu item is selected

@@ -1,0 +1,17 @@
+TDAT:     public Object getValueAt(int rowIndex, int columnIndex) {
+        Vector4f vector = points.get(rowIndex);
+        switch (columnIndex) {
+            case 0:
+                return vector.getX();
+            case 1:
+                return vector.getY();
+            case 2:
+                return vector.getZ();
+            case 3:
+                return vector.getW();
+            default:
+                return ZERO;
+        }
+    }
+
+COM:returns the value of a specific column from a Vector4f object located at a specific row index within a points vector

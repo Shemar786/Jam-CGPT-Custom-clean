@@ -1,0 +1,10 @@
+TDAT:     public void setToolTip(String mText, GLFont mFont, int mToolTipTimeInterval) {
+        toolTip = new String(mText);
+        toolTipFont = mFont;
+        toolTipTimeInterval = mToolTipTimeInterval;
+        toolTipCurrentTime = Utils.getTime();
+        toolTipLastTime = toolTipCurrentTime;
+        toolTipPosition = new Dimension(-20, -20);
+    }
+
+COM:sets the tooltip text, font, time interval, and position for a specified object

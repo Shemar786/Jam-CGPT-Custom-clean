@@ -1,0 +1,7 @@
+TDAT:     public String asJavaString() {
+        IRubyObject asString = checkStringType();
+        if(!asString.isNil()) return ((RubyString)asString).asJavaString();
+        throw getRuntime().newTypeError(inspect().toString() + " is not a symbol");
+    }
+
+COM:returns a string representation of a Ruby object if it is a string, and throws an exception if it is not a symbol

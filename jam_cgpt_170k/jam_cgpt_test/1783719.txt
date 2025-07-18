@@ -1,0 +1,6 @@
+TDAT:     public void testSpecifiedFileContentType() throws Exception {
+      File file = createFile( "temp.new" , new byte[] { 1, 2, 3, 4, 0x7f, 0x23 });
+      doTestFileContentType(file,"x-application/new","x-application/new:message.name=temp.new&message.lines=1");
+    }
+
+COM:tests the content type of a specified file

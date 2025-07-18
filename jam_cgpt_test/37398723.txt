@@ -1,0 +1,12 @@
+TDAT:   private Object getPropertyResult(Class expectedClass) throws JspException {
+    Object value = BeanFilter.getProperty(findObject(), getProperty());
+    if (!expectedClass.isInstance(value)) {
+      Object[] args = { getProperty(), getObject(), expectedClass.getName()};
+      throw new TagException(
+        TagException.MESSAGE_PROPERTY_UNEXPECTED_TYPE,
+        args);
+    }
+    return value;
+  }
+
+COM:returns a property value of the expected class and throws a JspException or TagException if the property value is not of the expected class

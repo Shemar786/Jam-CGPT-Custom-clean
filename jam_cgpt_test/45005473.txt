@@ -1,0 +1,14 @@
+TDAT:     public void setHangarData(String data) {
+        try {
+            CUnit unit = new CUnit(mwclient);
+            if (unit.setData(data)) {
+                Hangar.add(unit);
+                sortHangar();// sort it!
+            }
+        } catch (Exception e) {
+            CampaignData.mwlog.errLog(e);
+            return;
+        }
+    }
+
+COM:sets the data for a hangar, which includes adding a new unit and sorting the hangar

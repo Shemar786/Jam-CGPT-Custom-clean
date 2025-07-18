@@ -1,0 +1,16 @@
+TDAT:     private boolean waitWILLreply(int i) {
+      switch (i) {
+        case SUPGA:
+          return WAIT_WILL_REPLY_SUPGA;
+        case ECHO:
+          return WAIT_WILL_REPLY_ECHO;
+        case NAWS:
+          return WAIT_WILL_REPLY_NAWS;
+        case TTYPE:
+          return WAIT_WILL_REPLY_TTYPE;
+        default:
+          return false;
+      }
+    }//waitWILLreply
+
+COM:takes an integer, checks it against predefined values, and returns a boolean based on the result

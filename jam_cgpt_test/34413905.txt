@@ -1,0 +1,21 @@
+TDAT: 	public void onGridFilterEditorClose(FilterObject object){
+		//update Editor window
+		editing = false;
+		if(object!=null){
+			//onOk
+			//change of selected object	
+			selectedFilter = object;
+		}
+		else{
+			//onCancel
+			if(selectedFilter==null){
+				selectedFilter = _currentViewController.getCustomFilter();
+			}
+		}
+		gridbox.onFilterChange(selectedFilter);
+		propertyTab.setDisabled(false);
+		gridTab.setDisabled(false);
+		_tabbox.setSelectionByContainer(_currentContainer.getContainerFileName());
+	}
+
+COM:updates the editor window and sets the selected filter based on whether the filter object is null or not

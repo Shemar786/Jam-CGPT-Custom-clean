@@ -1,0 +1,16 @@
+TDAT: 	public boolean changeUser(UserSession userSession, String username, String password) {
+		if (userSession==null || username==null || password==null) {
+			throw new IllegalArgumentException("session, username or password is null");
+		}
+		User user = modelService.getUser(username);
+		if (user==null) {
+			return false;
+		} else if (password.equals(user.getPassword())) {
+			userSession.setUser(user);
+			return true;
+		} else {
+			return false;			
+		}
+	}
+
+COM:allows for changing the user associated with a UserSession object by checking if the provided login credentials match a stored User object

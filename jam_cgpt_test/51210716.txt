@@ -1,0 +1,12 @@
+TDAT: 	public void clear() {
+		registers = new double[numRegisters];
+		tags = new byte[numRegisters];
+		for (int i = 0; i < numRegisters; i++) {
+			tags[i] = TAGEMPTY;
+		}
+		fC0 = fC1 = fC2 = fC3 = false;
+		fStackFault = fPrecision = fUnderflow = fOverflow = fZeroDivide = fDenormalized = fInvalid = false;
+		top = 0;
+	}
+
+COM:clears all registers and flags in a processor simulation

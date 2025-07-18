@@ -1,0 +1,16 @@
+TDAT: 	private void displayDownRight(JFrame parent, JFrame child) {
+		Point parentLocation = parent.getLocation();
+		double parentX = parentLocation.getX();
+		double parentY = parentLocation.getY();
+
+		int parentWidth = parent.getWidth();
+		double childX = parentX + parentWidth;
+		double childY = parentY + ModelibraPanel.FRAME_DISPLAY_INCREMENT;
+
+		Point childLocation = new Point();
+		childLocation.setLocation(childX, childY);
+		child.setLocation(childLocation);
+		child.setVisible(true);
+	}
+
+COM:positions and displays a child JFrame in the bottom right corner of its parent JFrame

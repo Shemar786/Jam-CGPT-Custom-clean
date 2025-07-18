@@ -1,0 +1,12 @@
+TDAT:     public String printNDigitId(int id) {
+      String threeDigitId = String.valueOf(id);
+      int length = threeDigitId.length();
+      int fillUp = ID_DIGITS - length;
+      for(int i = 0; i < fillUp; i++) {
+        threeDigitId = "0" + threeDigitId;
+      }
+      
+      return threeDigitId;
+    }
+
+COM:takes an integer ID and returns a string representation of it, padded with leading zeroes to ensure a specified number of digits

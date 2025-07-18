@@ -1,0 +1,12 @@
+TDAT:   public void remove(Page page) {
+    if (page == null) {
+      return;
+    }
+    for (int i = errors.size(); i > 0; i--) {
+      if (Page.areSameTitle(page.getTitle(), errors.get(i - 1).getTitle())) {
+        errors.remove(i - 1);
+      }
+    }
+  }
+
+COM:removes an object of type Page from a list of errors if the title of the Page is the same as the title of an error in the list

@@ -1,0 +1,11 @@
+TDAT: 	protected void addErrorParse(int[] expectedKeywords, Token token){
+		String keywords = ""; //$NON-NLS-1$
+		final String append_and = Messages.user_and;
+		for(int keyword: expectedKeywords){
+			keywords = TaskingGrammarUtils.getKeyWord(keyword) + append_and;
+		}
+		keywords = keywords.substring(0, keywords.lastIndexOf(append_and));
+		error_description.put(new ErrorLocation(token.beginLine, token.beginColumn), Messages.bind(Messages.user_parsing_error_keywords, keywords)); //$NON-NLS-2$
+	}
+
+COM:adds a parsing error message to a HashMap with the expected keywords and the location of the error

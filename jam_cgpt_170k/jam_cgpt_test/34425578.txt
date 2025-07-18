@@ -1,0 +1,18 @@
+TDAT:     public String setText(String str) {
+        if (str != null) {
+            synchronized (content) {
+                try {
+                    File f = file();
+                    f.getParentFile().mkdirs();
+
+                    ZWriter.writeExc(str, f, false);
+                } catch (Throwable e) {
+                    SWGAide.printError("SWGNotes:setText: " + file, e);
+                    return e.getMessage();
+                }
+            }
+        }
+        return null;
+    }
+
+COM:sets the text content of a file, and returns an error message if an exception occurs

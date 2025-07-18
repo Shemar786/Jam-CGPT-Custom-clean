@@ -1,0 +1,9 @@
+TDAT: 	private File findProjectFile(String name) throws PyntException {
+		for (int i = 0; i < projectPath.length; i++) {
+			File file = new File(projectPath[i], name + ".pynt");
+			if (file.exists()) return file;
+		}
+		throw new PyntException("Project \"" + name + "\" not found");
+	}
+
+COM:searches for a project file with the specified name in multiple project paths and returns the file if found, otherwise throws a custom exception

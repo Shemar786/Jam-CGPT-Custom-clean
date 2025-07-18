@@ -1,0 +1,17 @@
+TDAT: 	public void testAcc_12() throws Exception {
+		IMachineRoot con = createMachine("cnc");
+
+		addInitialisation(con, makeSList());
+		addEvent(con, "evt", makeSList(), 
+				makeSList(), makeSList(), 
+				makeSList("A"), makeSList("x≔0"));
+		
+		saveRodinFileOf(con);
+		
+		runBuilder();
+		
+		isAccurate(con.getSCMachineRoot());
+		isNotAccurate(con.getSCMachineRoot().getSCEvents()[1]);
+	}
+
+COM:tests the accuracy of a specified event for a given machine

@@ -1,0 +1,12 @@
+TDAT: 	public String getCUT(final Application application, final Object url) {
+		final String str = url.toString();
+		int init = 2 + application.getRoot().length()
+				+ application.getSrc().length();
+		if (str.startsWith(FILEPROTOCOL)) {
+			init += FILEPROTOCOL.length();
+		}
+		final int end = str.length() - DOMAINFOLDER.length() + 1; // - domain
+		return this.replaceDot(str.substring(init, end));
+	}
+
+COM:returns a modified string based on the given application and URL parameters

@@ -1,0 +1,9 @@
+TDAT: 	public void testChangePosition() {
+		int dest = 7;
+		pawn.changePosition(dest,dest);									//changes the position of the pawn
+		assertTrue((pawn.getX() == dest) && (pawn.getY() == dest));					//confirms that the position has been changed
+		
+		pawn.changePosition(1,2);						//puts the pawn back to its origin
+	}
+
+COM:tests and confirms the ability to change the position of a pawn object in a 2D space

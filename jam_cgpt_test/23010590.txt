@@ -1,0 +1,17 @@
+TDAT: 	public void Layout()
+	{		
+		this.setSize(885, 593);
+
+		//Set the window in the center of screen
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		Dimension screenSize = toolkit.getScreenSize();
+		//Calculate the frame location
+		int x = (screenSize.width - this.getWidth()) / 2;
+		int y = (screenSize.height - this.getHeight()) / 2;
+		this.setLocation(x, y);
+		
+		this.setResizable(false);
+		this.setTitle("Repository Browser");
+	}	
+
+COM:sets the size, center position, and other properties of a window

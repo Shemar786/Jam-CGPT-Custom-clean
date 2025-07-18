@@ -1,0 +1,11 @@
+TDAT:     public void testWrongMethod() throws IOException {
+        try {
+            requestLine.read(new ByteArrayInputStream("zab /blub HTTP/1.0\r\n".getBytes()));
+            fail("Expected HttpException with statuscode " + HttpServletResponse.SC_BAD_REQUEST);
+        }
+        catch (HttpException he) {
+            assertTrue(he.getStatusCode() == HttpServletResponse.SC_BAD_REQUEST);
+        }
+    }
+
+COM:tests for an expected HttpException with status code 400 when an incorrect request line is read

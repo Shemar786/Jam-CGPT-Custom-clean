@@ -1,0 +1,26 @@
+TDAT: 	protected void refresh() {
+		if (!control.isVisible()) {
+			tracker.trace("No refresh");
+			dirty = true;
+			return;
+		}
+		tracker.start();
+		final IProofState ps = userSupport.getCurrentPO();
+		final IProverSequent sequent;
+		final Iterable<Predicate> hyps;
+		final boolean enabled;
+		if (ps == null) {
+			sequent = null;
+			hyps = Collections.emptyList();
+			enabled = false;
+		} else {
+			sequent = getProverSequent(ps);
+			hyps = getHypotheses(ps);
+			enabled = isEnabled(ps);
+		}
+		reinitialise(hyps, sequent, enabled);
+		dirty = false;
+		tracker.endTask("refresh");
+	}
+
+COM:refreshes the current proof state by fetching the hypotheses, the prover sequent and enabling status and then reinitializing them

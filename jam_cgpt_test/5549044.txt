@@ -1,0 +1,11 @@
+TDAT:     private OnReturnData findOnReturn(HashMap onReturns, Object value) {
+        OnReturnData onReturnData = (OnReturnData) onReturns.get(value);
+
+        // if no match, check for "*" (=any other)
+        if (onReturnData == null)
+            return (OnReturnData) onReturns.get("*");
+
+        return onReturnData;
+    }
+
+COM:searches for the value in a HashMap and returns the corresponding OnReturnData, and if there is no match, it returns the OnReturnData associated with the "*" key

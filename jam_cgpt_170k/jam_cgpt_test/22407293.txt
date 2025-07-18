@@ -1,0 +1,16 @@
+TDAT:     public Collection values() {
+        final Collection col = new java.util.LinkedList();
+        final AntTargetIterator iterator = targetIterator();
+
+        while (iterator.hasNext()) {
+            final AntTarget target = iterator.nextTarget();
+            col.add(target);
+        }
+
+        java.util.Collections.sort((java.util.LinkedList) col,
+                                   COMPARATOR);
+
+        return col;
+    }
+
+COM:returns a sorted Collection of Ant targets

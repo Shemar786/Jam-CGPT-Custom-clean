@@ -1,0 +1,19 @@
+TDAT: 	public void addMenuItem(JMenuItem jMenuItem, String menuname) {
+		JMenu subMenu = null;
+		// check if this menu already exists
+		if (menuItemMap.containsKey(menuname)) {
+
+			subMenu = (JMenu) menuItemMap.get(menuname);
+
+		} else {
+			// make a new menu
+			subMenu = new JMenu(menuname);
+			menuItemMap.put(menuname, subMenu);
+
+		}
+
+		subMenu.add(jMenuItem);
+
+	}
+
+COM:adds a JMenuItem to a JMenu, creating the JMenu if it does not already exist

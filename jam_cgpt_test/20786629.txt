@@ -1,0 +1,11 @@
+TDAT:   private void initTitle() {
+
+    StringBuilder sb = new StringBuilder();
+    sb.append(testClass.getName());
+
+    JLabel titleLabel = TitleFactory.createStaticTitle(sb.toString());
+    BindingFactory.createInstance(titleLabel, testClass, TestClass.PROPERTY_NAME);
+    setTitle(titleLabel);
+  }
+
+COM:initializes the title with a label created by the TitleFactory and binds it to a property of the testClass

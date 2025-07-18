@@ -1,0 +1,13 @@
+TDAT:     private JMenuItem folderAddMenuItem() {
+        JMenuItem folderAdd = new JMenuItem("Add folder...");
+        folderAdd.setToolTipText("Add another folder");
+        folderAdd.addActionListener(new ActionListener() {
+            @SuppressWarnings("synthetic-access")
+            public void actionPerformed(ActionEvent e) {
+                folderAddFolder();
+            }
+        });
+        return folderAdd;
+    }
+
+COM:creates a JMenuItem with a tooltip and an ActionListener that calls the folderAddFolder() method when clicked

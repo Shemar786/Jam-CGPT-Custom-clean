@@ -1,0 +1,19 @@
+TDAT: 	public boolean validateInitial_hasOutgoing(Initial initial, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (initial.getOutgoing().isEmpty()) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.WARNING,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "Initial state should have an outgoing transition", getObjectLabel(initial, context) },
+						 new Object[] { initial },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+COM:validates whether an Initial object has an outgoing transition or not, and returns a boolean indicating whether the validation passed or not

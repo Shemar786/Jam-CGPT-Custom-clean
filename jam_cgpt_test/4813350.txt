@@ -1,0 +1,11 @@
+TDAT:   public void removePlaceableFromTeam(Placeable aPlaceable, char anId) {
+    Team tmpTeam = getTeam(anId);
+    if (aPlaceable instanceof Figure) {
+      tmpTeam.removeFigureFromTeam((Figure) aPlaceable);
+    } else if (aPlaceable instanceof Item) {
+      // TODO Maybe the Game ends here?!
+      endGame(tmpTeam.removeItemFromTeam((Item) aPlaceable));
+    }
+  }
+
+COM:removes a placeable object from a team, either a figure or an item, and potentially ends the game if the item being removed is the winning item

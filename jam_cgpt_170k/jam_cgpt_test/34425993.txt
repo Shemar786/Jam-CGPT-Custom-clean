@@ -1,0 +1,12 @@
+TDAT:     private void actionReminderLimitModified() {
+        String s = reminderTime.getText();
+        Integer rtl = s == null || s.trim().isEmpty()
+                ? Integer.valueOf(24)
+                : Integer.valueOf(s);
+        reminderTimeLimit = rtl.intValue();
+
+        SWGFrame.getPrefsKeeper().add("resourceHarvesterReminder", rtl);
+        SWGResController.check();
+    }
+
+COM:modifies the action reminder limit and updates the preferences keeper and resource controller accordingly

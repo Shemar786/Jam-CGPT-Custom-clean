@@ -1,0 +1,15 @@
+TDAT: 	public MetsMdSecType getPrimaryDmdSec() throws HaSMETSProfileException {
+		String xql = "declare namespace m='" + METS_NS
+				+ "'; .//m:dmdSec[@STATUS='PRIMARY_DMDSEC']";
+
+		XmlObject o[] = metsDoc.selectPath(xql);
+
+		if (o.length != 1) {
+			throw new HaSMETSProfileException(
+					"There must be exactly one Primary dmdSec; this document contains "
+							+ o.length);
+		}
+		return (MetsMdSecType) o[0];
+	}
+
+COM:gets the primary demand section from an XML document in the METS format

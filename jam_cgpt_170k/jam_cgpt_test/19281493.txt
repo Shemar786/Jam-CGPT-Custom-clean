@@ -1,0 +1,15 @@
+TDAT: 	public Collection getAllMemberPeople(boolean currentOnly) {
+		// Call getChildParties recursively...
+		Collection deepChildParties = this.getChildParties(currentOnly, true);
+		// Make a new Collection from this one including only Person objects.
+		Collection memberPeopleCollection = new HashSet();
+		for (Iterator iterator = deepChildParties.iterator(); iterator.hasNext();) {
+			Party party = (Party) iterator.next();
+			if (party instanceof Person) {
+				memberPeopleCollection.add(party);
+			}
+		}
+		return memberPeopleCollection;
+	}
+
+COM:returns a collection of all member people in a party and its child parties, depending on the boolean parameter for current or all members

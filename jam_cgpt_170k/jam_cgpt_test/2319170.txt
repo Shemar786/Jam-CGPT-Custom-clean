@@ -1,0 +1,12 @@
+TDAT:         public Object convertFromSubject(Object subjectValue) {
+            if (subjectValue == null && (format instanceof NumberFormat || format instanceof DateFormat)) {
+                return "";
+            }
+            if (format instanceof MessageFormat && ! (subjectValue instanceof Object[])) {
+                return format.format(new Object[] {subjectValue});
+            } else {
+                return format.format(subjectValue);
+            }
+        }
+
+COM:converts a given subject value into a specified format, and returns the formatted object

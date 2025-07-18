@@ -1,0 +1,14 @@
+TDAT: 	public void showSonPreview(String text, int row) {
+		showSonPreview(text);
+		// figure out the correct selection positions for the row number
+		int selStart = 0;
+		int selEnd = 0;
+		for (int r = 0; r < row; r++) {
+			selStart = selEnd;
+			selEnd = text.indexOf("\n", selStart + 1);
+		}
+		sonPreview.requestFocus();
+		sonPreview.select(selStart, selEnd);
+	}
+
+COM:shows a preview of a son's text based on a given string and row number, and selects the correct positions for the text to be displayed

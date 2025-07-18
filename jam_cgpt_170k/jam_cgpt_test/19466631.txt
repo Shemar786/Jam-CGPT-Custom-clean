@@ -1,0 +1,17 @@
+TDAT: 	protected void addPartialInitialisationExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PartiallyTranslatedDecl_partialInitialisationExpression_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PartiallyTranslatedDecl_partialInitialisationExpression_feature", "_UI_PartiallyTranslatedDecl_type"),
+				 Il1Package.Literals.PARTIALLY_TRANSLATED_DECL__PARTIAL_INITIALISATION_EXPRESSION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the partially translated declaration's partial initialization expression to an item property descriptor

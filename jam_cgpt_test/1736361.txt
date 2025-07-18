@@ -1,0 +1,13 @@
+TDAT: 	private void setFinding(Integer findingId) {
+		if (findings == null || findings.size() == 0)
+			return;
+		for (int i = 0; i < findings.size(); i++) {
+			ProjectRecommendFindingHelper helper = (ProjectRecommendFindingHelper) findings.get(i);
+			if (helper.getFindingId().intValue() == findingId.intValue())
+				helper.setChecked(true);
+			else
+				helper.setChecked(false);
+		}
+	}
+
+COM:sets a helper's "checked" property to true if its finding ID matches the provided ID, or false otherwise, for a list of findings

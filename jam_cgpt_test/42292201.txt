@@ -1,0 +1,24 @@
+TDAT: 	public boolean removeVertex(int v) {
+		
+		if(this.containsVertex(v)) {
+			Vertex tmp;
+			for(Iterator<Vertex> i = vertexList.iterator(); i.hasNext(); ) {
+				tmp = i.next();
+				if(tmp.getId() == v)
+					i.remove();
+				
+				if(tmp.hasPre(v))
+					tmp.removePre(v);
+				
+				if(tmp.hasSuc(v))
+					tmp.removeSuc(v);
+			}
+			return true;					
+		} 
+		else {
+			return false;
+		}
+		
+	}	
+
+COM:removes a vertex from a graph data structure and all of its associated edges

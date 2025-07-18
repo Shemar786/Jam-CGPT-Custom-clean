@@ -1,0 +1,18 @@
+TDAT:     public Class loadClassFromFile(String fileName) throws ClassNotFoundException {
+	InputStream is;
+	try {
+	    byte buf[] = getByteArray(fileName);
+	    Class c = super.defineClass(null, buf, 0, buf.length);
+	    if (c != null) {
+		localResolveClass(c);
+	    }
+	    if (c==null)
+	      throw new ClassNotFoundException(fileName);
+	    return c;
+	} catch (Exception ex) {
+	    debug("LoadFromFile/caught "+ex+" when loading from file "+fileName);
+	    throw new ClassNotFoundException(fileName);
+	}
+    }
+
+COM:loads a class from a file by defining its bytes and resolving its dependencies, and throws a ClassNotFoundException if the class cannot be loaded

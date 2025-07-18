@@ -1,0 +1,13 @@
+TDAT: 	public List makeSortedGRList(String[] values) {
+		List sorted = new ArrayList();
+		for (int i = 0; i < values.length; i++) {
+			GradeRangeItem grItem = getGradeRangeItem(values[i]);
+			if (grItem != null)
+				sorted.add(grItem);
+		}
+		Collections.sort(sorted, new GrItemComparator());
+		showList(sorted, "sorted");
+		return pruneSortedGRList(sorted);
+	}
+
+COM:takes an array of values, retrieves GradeRangeItems from each value, sorts them using a GrItemComparator, displays the sorted list, and returns the pruned sorted list

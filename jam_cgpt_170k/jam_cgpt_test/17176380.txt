@@ -1,0 +1,15 @@
+TDAT:     public String getFechaSQL() {
+        Calendar ca = Calendar.getInstance();
+        if (fecha == null) {
+            return "";
+        }
+        ca.setTime(fecha);
+
+        String res = String.valueOf(ca.get(Calendar.YEAR)) + "-" +
+                String.valueOf(ca.get(Calendar.MONTH) + 1) + "-" +
+                String.valueOf(ca.get(Calendar.DAY_OF_MONTH));
+
+        return res;
+    }
+
+COM:returns a string representation of a date in SQL format (yyyy-mm-dd)

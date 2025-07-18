@@ -1,0 +1,9 @@
+TDAT:     public double getAlphaE() {
+        final double epsilon   = Math.sqrt(1 - ex * ex - ey * ey);
+        final double cosAlphaV = Math.cos(alphaV);
+        final double sinAlphaV = Math.sin(alphaV);
+        return alphaV + 2 * Math.atan((ey * cosAlphaV - ex * sinAlphaV) /
+                                      (epsilon + 1 + ex * cosAlphaV + ey * sinAlphaV));
+    }
+
+COM:calculates and returns the value of alphaE using mathematical operations and previously defined variables

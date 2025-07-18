@@ -1,0 +1,15 @@
+TDAT: 	public void testIsValid() {
+		assertTrue(isValid(""));
+
+		assertFalse(isValid("&")); // below lower bound
+		assertTrue(isValid("'"));
+		assertTrue(isValid(";"));
+		assertFalse(isValid("<")); // invalid inside range
+		assertTrue(isValid("="));
+		assertTrue(isValid("~"));
+		assertFalse(isValid("\u007f")); // above upper bound
+
+		assertFalse(isValid("abc<def"));
+	}
+
+COM:tests the validity of various input strings according to predefined criteria

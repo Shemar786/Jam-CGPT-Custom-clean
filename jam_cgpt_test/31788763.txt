@@ -1,0 +1,9 @@
+TDAT:     public void addEnvFile(File file) {
+        File[] oldfiles=getEnvFiles();
+        File[] newfiles=new File[oldfiles.length+1];
+        System.arraycopy(oldfiles,0,newfiles,0,oldfiles.length);
+        newfiles[oldfiles.length]=file;
+        setEnvFiles(newfiles);
+    }
+
+COM:adds a new file to an existing array of files representing environment variables

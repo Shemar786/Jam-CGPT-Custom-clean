@@ -1,0 +1,10 @@
+TDAT:   public String formatScore(int index, int length) {
+    int end = players[index].length();
+    if (end > length) end = length;
+    String result = players[index].substring(0, end);
+    while (result.length() <= length+1)
+      result += " ";
+    return result + scores[index];
+  }
+
+COM:formats and returns a string containing a player's name and score, with the name truncated if necessary to fit within a specified length

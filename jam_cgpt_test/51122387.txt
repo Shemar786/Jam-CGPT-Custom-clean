@@ -1,0 +1,18 @@
+TDAT:    public String getMessage() {
+      StringBuffer sb = new StringBuffer();
+
+      if (messages != null) {
+         for (int i = 0; i < messages.size(); i++) {
+            Object o = messages.elementAt(i);
+
+            if (o != null) {
+               sb.append(o.toString())
+                 .append("\n");
+            }
+         }
+      }
+
+      return sb.toString();
+   }
+
+COM:returns a concatenated String of all non-null elements in a messages vector separated by new line characters

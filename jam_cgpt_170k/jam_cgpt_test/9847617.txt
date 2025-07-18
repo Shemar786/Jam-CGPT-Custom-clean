@@ -1,0 +1,12 @@
+TDAT: 	private void renderChild (FacesContext ctx, UIComponent comp) throws IOException {
+		if (!comp.isRendered()) return;
+		comp.encodeBegin(ctx);
+		if (comp.getRendersChildren()) {
+			comp.encodeChildren(ctx);
+		} else {
+			for (UIComponent child : comp.getChildren()) this.renderChild(ctx, child);
+		}
+		comp.encodeEnd(ctx);
+	}
+
+COM:renders a UIComponent and its children using the specified FacesContext, and throws an IOException if there is an error during encoding

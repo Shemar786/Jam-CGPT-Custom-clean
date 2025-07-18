@@ -1,0 +1,10 @@
+TDAT: 	    @Deprecated public Object postStatus(String userId, String status) {
+			//securityContext.checkIfAuthorized();
+			String url = API_PUT_STATUS_URL.replaceFirst("%s", userId);
+			HashMap<String, String> map = new HashMap<String, String>();
+			HashMap<String, String> appParams = new HashMap<String, String>();
+			appParams.put("status", status);
+			return putUserData(url, map, appParams);
+		}
+
+COM:posts a status update for a given user ID using a deprecated approach

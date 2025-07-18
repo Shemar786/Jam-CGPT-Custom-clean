@@ -1,0 +1,12 @@
+TDAT:     public boolean checkPermission(BlogUser blogUser, Map permissionContext, String username, String permission) {
+        try {
+            _authorizationProvider.checkPermission(blogUser, permissionContext, username, permission);
+        } catch (BlojsomException e) {
+            _logger.error(e);
+            return false;
+        }
+
+        return true;
+    }
+
+COM:checks if a given user has a specific permission in a blog context and returns a boolean value indicating the result

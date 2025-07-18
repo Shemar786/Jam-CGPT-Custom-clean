@@ -1,0 +1,17 @@
+TDAT: 	private ApplicationSpec loadCurrentApplicationSpec() {
+		ApplicationSpec currentApplicationSpec = null;
+		if (currentApplicationSpecFile != null && currentApplicationSpecFile.exists()) {
+			try {
+				currentApplicationSpec = applicationSpecSerializer
+						.downloadApplicationSpec(new BufferedInputStream(new FileInputStream(
+								currentApplicationSpecFile)));
+				if (!validateCurrentApplicationSpec(currentApplicationSpec))
+					currentApplicationSpec = null;
+			} catch (Exception e) {
+				log.error("Could not read local application spec file", e);
+			}
+		}
+		return currentApplicationSpec;
+	}
+
+COM:loads the current application specification from a local file, validates it, and returns it as an object

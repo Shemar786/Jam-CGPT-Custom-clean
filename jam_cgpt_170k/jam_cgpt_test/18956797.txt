@@ -1,0 +1,15 @@
+TDAT:     public void open() throws SQLException{
+        if (opened) throw new TransactionException("Transaction already open.", this);
+        checkOpen(content);
+        if (isTransactional()) {
+            content.setAutoCommit(false);
+            content.setTransactionIsolation(getIsolationLevel());
+        }
+        opened = true;
+        happy = false; /*pessimistic*/
+        done = false;
+        executed = false;
+        log("Transaction started");
+    }
+
+COM:opens a transaction and sets various properties related to it, and throws an exception if the transaction is already open

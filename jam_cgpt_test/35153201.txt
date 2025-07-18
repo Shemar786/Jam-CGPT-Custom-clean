@@ -1,0 +1,18 @@
+TDAT: 	protected void readHeader() {
+		String id = "";
+		for (int i = 0; i < 6; i++) {
+			id += (char) read();
+		}
+		if (!id.startsWith("GIF")) {
+			status = STATUS_FORMAT_ERROR;
+			return;
+		}
+
+		readLSD();
+		if (gctFlag && !err()) {
+			globalColorTable = readColorTable(gctSize);
+			bgColor = globalColorTable[bgIndex];
+		}
+	}
+
+COM:reads the header of a GIF file, validates the format, and sets certain properties based on the content of the header

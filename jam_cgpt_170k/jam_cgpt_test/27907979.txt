@@ -1,0 +1,25 @@
+TDAT: 	private String atomToExpression(Atom atom, String name) {
+
+		String expr = name + " = ";
+		
+		if (atom instanceof BooleanAtom) {
+			BooleanAtom booleanAtom = (BooleanAtom) atom;
+			try {
+				if(booleanAtom.getBooleanValue())
+					expr += "'T'";
+				else
+					expr += "'F'";
+			} catch (InvalidStateException e) {
+				throw new Error("Thing in invalid boolean state");
+			}
+		}
+			
+		else if (atom instanceof TextAtom)
+			expr += "'" + atom.getValue() + "'";
+		else
+			expr += atom.getValue();
+
+		return expr;
+	}
+
+COM:takes an Atom and a name as input, and returns a string expression representing the Atom and its value

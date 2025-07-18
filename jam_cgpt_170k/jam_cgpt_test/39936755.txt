@@ -1,0 +1,17 @@
+TDAT: 	protected void addSchedulingPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TaskResult_scheduling_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TaskResult_scheduling_feature", "_UI_TaskResult_type"),
+				 Technic_RM_ResponseTimeNBPackage.Literals.TASK_RESULT__SCHEDULING,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a scheduling property descriptor to the item property descriptors

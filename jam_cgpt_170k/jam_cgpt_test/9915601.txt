@@ -1,0 +1,11 @@
+TDAT:     public void sqlFrom(StringBuffer sql, String typeName) {
+        sql.append(" FROM ");
+        if (encoder instanceof HatBoxFilterToSQL) {
+            HatBoxFilterToSQL hatboxEncoder = (HatBoxFilterToSQL)encoder;
+            sql.append(encoder.escapeName(hatboxEncoder.getCatalogue().getSchema()));
+            sql.append('.');
+        }
+        sql.append(encoder.escapeName(typeName));
+    }
+
+COM:appends a SELECT statement with the specified typeName and schema to the provided StringBuffer SQL object

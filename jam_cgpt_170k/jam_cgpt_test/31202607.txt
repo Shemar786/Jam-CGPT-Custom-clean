@@ -1,0 +1,12 @@
+TDAT:   public void launchViewer(String project_name, Connection connection){
+    try {
+      Sound.drumroll.play();
+      ProjectSeqsFrame frame = new ProjectSeqsFrame(login.username, login.password, Login.ORACLEDRIVER, Login.SEQTRACS_PRODUCTION, project_name, this);
+      setUpLaunchViewerFrame(frame);
+    }
+    catch (Exception ex) {
+      Debug.processException(ex,"lauchViewer project name");
+    }
+  }
+
+COM:launches a viewer for a specific project with the given project name and database connection, playing a drumroll sound and catching any exceptions that may occur

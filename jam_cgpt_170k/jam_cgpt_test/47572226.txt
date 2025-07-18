@@ -1,0 +1,14 @@
+TDAT:     public void removeStatus(StatusEffect eff) {
+        synchronized (m_statuses) {
+            Iterator i = m_statuses.iterator();
+            while (i.hasNext()) {
+                StatusEffect effect = (StatusEffect)i.next();
+                if (effect == eff) {
+                    unapplyEffect(eff);
+                    return;
+                }
+            }
+        }
+    }
+
+COM:removes a StatusEffect object from a synchronized collection by iterating through it and calling an unapplyEffect method if the object is found

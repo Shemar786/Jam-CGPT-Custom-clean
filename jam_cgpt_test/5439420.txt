@@ -1,0 +1,10 @@
+TDAT:     public void init(I_JoServletContextPeer aPeer) {
+        this.peer = aPeer;
+        this.host = peer.getHost();
+        this.factory = Recycler.getNamedRecycler(host.getName());
+        this.service = host.getService();
+        this.logPrefix = "[" + peer.getName() + "]: ";
+        this.log = Log.getLog(host.getName());
+    }
+
+COM:initializes various variables and objects related to the context of a web application

@@ -1,0 +1,16 @@
+TDAT:   public void activate() {
+    moveToFront();
+    try {
+		setSelected(true);
+	} catch (PropertyVetoException e) {
+		Code.debug(e.getMessage());
+		e.printStackTrace();
+	}
+    m_editor.activate(); 
+
+    if (m_app.getDesktopManager().active() != this) {
+      m_app.getDesktopManager().activateFrame(this);
+    }
+  }
+
+COM:activates a frame, brings it to the front, sets it as selected, and activates the editor associated with it

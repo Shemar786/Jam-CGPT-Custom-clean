@@ -1,0 +1,10 @@
+TDAT: 	private void fillUnselectedPICList() throws IASException {
+		unSelectedPics = new ArrayList();
+		List users = userService.findPicUsersByKeyword("");
+		for (Iterator itUsers = users.iterator(); itUsers.hasNext();) {
+			TblUser userPic = (TblUser) itUsers.next();
+			unSelectedPics.add(new SelectItem(userPic.getUserId().toString(), userPic.getFullname()));
+		}
+	}
+
+COM:fills an ArrayList with SelectItem objects based on a list of TblUser objects returned by a UserService

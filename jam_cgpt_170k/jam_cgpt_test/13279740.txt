@@ -1,0 +1,14 @@
+TDAT:     public StringBuffer getCostFunctionInfo() {
+        StringBuffer s = new StringBuffer();
+        int i;
+        CostFunction costFunction;
+        synchronized(costFunctions) {
+            for (i = 0; i < costFunctionNumber; i++) {
+                costFunction = (CostFunction) costFunctions.get(i);
+                s.append(costFunction.toString() + "\n");
+            }
+        }
+        return s;
+    }
+
+COM:returns a StringBuffer containing information about the cost function

@@ -1,0 +1,15 @@
+TDAT: 	private Map getUserRolesMap(User user, List setInfos) {
+
+		HashMap map = new HashMap();
+		for (Iterator i = setInfos.iterator(); i.hasNext(); ) {
+			SetInfo setInfo = (SetInfo) i.next();
+			String collection = setInfo.getSetSpec();
+			if (user == null)
+				map.put(collection, "<i>roles disabled</i>");
+			else
+				map.put(collection, user.getRole(collection));
+		}
+		return map;
+	}
+
+COM:takes a User object and a List of SetInfo objects, and returns a Map of collections and corresponding user roles

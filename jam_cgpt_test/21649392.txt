@@ -1,0 +1,19 @@
+TDAT: 	public void run() throws IllegalArgumentException {
+		try {
+			final BufferedReader br = new BufferedReader(new InputStreamReader(is), 50 /*
+																						 * keep
+																						 * small
+																						 * for
+																						 * testing
+																						 */);
+			String line;
+			while ((line = br.readLine()) != null) {
+				System.out.println(line);
+			}
+			br.close();
+		} catch (IOException e) {
+			throw new IllegalArgumentException("IOException receiving data from child process.");
+		}
+	}
+
+COM:runs a BufferedReader to read input from a child process and then prints the input to the console, throwing an IllegalArgumentException if an IOException occurs

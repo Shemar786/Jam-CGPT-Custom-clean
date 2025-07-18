@@ -1,0 +1,19 @@
+TDAT: 	private void loadFolderList() {
+		List<Folder> folders = new ArrayList<Folder>();
+		if (file.isDirectory()) {
+			File[] files = file.listFiles(new FileFilter() { 
+				/* (non-Javadoc)
+				 * @see java.io.FileFilter#accept(java.io.File)
+				 */
+				public boolean accept(File f) {
+					return f.isDirectory();
+				}
+			});
+			for (File f : files) {
+				folders.add(new Folder(f));
+			}
+		}
+		this.subFolders = folders;
+	}
+
+COM:loads a list of subfolders given a file directory

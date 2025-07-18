@@ -1,0 +1,15 @@
+TDAT: 	public void addLongBranch(final Label label) {
+		if (ClassEditor.DEBUG || CodeArray.DEBUG) {
+			System.out.println("    " + codeLength + ": " + "long branch to "
+					+ label);
+		}
+
+		branchInsts.put(new Integer(codeLength), new Integer(lastInst));
+		longBranches.put(new Integer(codeLength), label);
+		addByte(0);
+		addByte(0);
+		addByte(0);
+		addByte(0);
+	}
+
+COM:adds a long branch instruction to a code array along with its label and stores the mapping between the branch instruction and its instruction number

@@ -1,0 +1,17 @@
+TDAT: 	private JButton getJButton7() {
+		if (jButton7 == null) {
+			jButton7 = new JButton();
+			jButton7.setBounds(new Rectangle(29, 48, 107, 33));
+			jButton7.setText("Run BLAST");
+			jButton7.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					jButton7.setEnabled(false);
+					jButton9.setEnabled(true);
+					runProg();
+				}
+			});
+		}
+		return jButton7;
+	}
+
+COM:returns a JButton object that, when clicked, sets the enabled state of two other buttons and runs a program

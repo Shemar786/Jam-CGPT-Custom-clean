@@ -1,0 +1,16 @@
+TDAT: 	public void updateClock(NetworkTime networkTime) {
+		if(!used) {
+			timeNudge = networkTime.getJavaTime() - System.currentTimeMillis();
+			used = true;
+		} else {
+			NetworkTime localTime = getApplicationTime();
+			long timeDiff = networkTime.getJavaTime() - localTime.getJavaTime();
+			if(timeDiff > 0) {
+				// network time is ahead of our local time, correct the application
+				// clock
+				timeNudge += timeDiff;
+			}
+		}
+	}
+
+COM:updates the clock of an application based on the difference between the network time and local time

@@ -1,0 +1,9 @@
+TDAT:    public void paint(Graphics g) {
+      super.paint(g);
+      Dimension dimension = getSize();
+      g.drawImage(m_prImage, 0, 0, null);
+      log.log(Level.FINEST,"SplashWindow8");
+      g.drawRect(0, 0, dimension.width - 1, dimension.height - 1);
+   }
+
+COM:paints an image onto a graphic context with a rectangular border

@@ -1,0 +1,9 @@
+TDAT: 	public void notifyNoCommand() {
+		Object[] options = new Object[1];
+		options[0] = new String(labelMenuMgr.getLabel("CONFIRM"));
+
+		JOptionPane.showOptionDialog(this, "No Command to request, Please request View Command !!", "CMD-PRV-ONT", JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
+		return;
+	}
+
+COM:displays a dialog box with an error message when there is no command to request

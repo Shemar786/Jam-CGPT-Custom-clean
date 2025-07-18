@@ -1,0 +1,9 @@
+TDAT:   private void initMetaGroups(XmlTest xmlTest) {
+    Map<String, List<String>> metaGroups = xmlTest.getMetaGroups();
+
+    for (Map.Entry<String, List<String>> entry : metaGroups.entrySet()) {
+      addMetaGroup(entry.getKey(), entry.getValue());
+    }
+  }
+
+COM:This private Java method initializes meta groups by obtaining them from an XML test and adding them to an existing data structure

@@ -1,0 +1,9 @@
+TDAT:    public void insert(Constant val, RID rid) {
+      beforeFirst(val);
+      ts.insert();
+      ts.setInt("block", rid.blockNumber());
+      ts.setInt("id", rid.id());
+      ts.setVal("dataval", val);
+   }
+
+COM:inserts a constant value and record ID into a table using a provided transaction

@@ -1,0 +1,11 @@
+TDAT:     public void applyDefaultWritingDirection(StyleInfo info) {
+        MasterPage masterPage = ofr.getFirstMasterPage();
+        if (masterPage!=null) {
+            PageLayout pageLayout = ofr.getPageLayout(masterPage.getPageLayoutName());
+            if (pageLayout!=null) {
+                applyDirection(pageLayout,info);
+            }
+        }    	
+    }
+
+COM:applies default writing direction to a specified style information object based on the layout of the first master page in a document

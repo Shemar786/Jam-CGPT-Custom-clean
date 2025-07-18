@@ -1,0 +1,8 @@
+TDAT:   public boolean getLabeledURIIsValid() {
+    if (StringUtil.isEmpty(this.getLabeledURI()) || !(this.getLabeledURI().startsWith("http://") || this.getLabeledURI().startsWith("https://"))) {
+      return false;
+    }
+    return true;
+  }
+
+COM:checks if the labeled URI is a valid URL by checking if it is not empty and starts with either "http://" or "https://", and returns a boolean value

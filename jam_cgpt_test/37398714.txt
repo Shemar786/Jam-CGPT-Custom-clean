@@ -1,0 +1,10 @@
+TDAT:   private Object getObjectResult(Class expectedClass) throws JspException {
+    Object value = findObject();
+    if (!expectedClass.isInstance(value)) {
+      Object[] args = { getObject(), expectedClass.getName()};
+      throw new TagException(TagException.MESSAGE_OBJECT_UNEXPECTED_TYPE, args);
+    }
+    return value;
+  }
+
+COM:retrieves an object result of a specific class and throws an exception if the retrieved object is not of the expected class type

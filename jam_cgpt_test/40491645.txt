@@ -1,0 +1,12 @@
+TDAT: 	public boolean simulationContinues() {
+		for (PhysicalObject o : env.getObjects()) {
+			if (o.getClass().toString().equals(Beacon.class.toString())
+					&& Math.abs(o.getX() - x) < 5 && Math.abs(o.getY() - y) < 5) {
+				Simulator.out.println("GAME OVER");
+				return false;
+			}
+		}
+		return true;
+	}
+
+COM:checks if the simulation should continue by checking if there is a beacon too close to the current location

@@ -1,0 +1,16 @@
+TDAT:     public void targetStarted(final BuildEvent event) {
+        if (connected && !sentProjectInfo) {
+            String projectName = event.getProject().getName();
+            Message message = new Message(Protocol.PROJECT, projectName);
+
+            try {
+                send(message);
+            } catch (IOException ignore) {
+                System.err.println("could not send to AntRunner");
+            }
+
+            sentProjectInfo = true;
+        }
+    }
+
+COM:sends project information to AntRunner if connected and information has not already been sent

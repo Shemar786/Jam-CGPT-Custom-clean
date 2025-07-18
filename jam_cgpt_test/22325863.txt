@@ -1,0 +1,12 @@
+TDAT:     public void loadConfig(String fileName) throws ConfigException {
+        log.debug("Running Config.loadConfig(fileName)..");
+        try {
+            SAXBuilder builder = new SAXBuilder();
+            Document doc = builder.build(fileName);
+            buildConfigFromDocument(doc);
+        } catch (Exception e) {
+            throw new ConfigException(e);
+        }
+    }
+
+COM:loads a configuration file using SAXBuilder, builds a document from it, and constructs a configuration object from the document

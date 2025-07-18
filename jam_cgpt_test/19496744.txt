@@ -1,0 +1,13 @@
+TDAT: 	protected void apply(ICommandApplication commandAppli) {
+		final String[] inputs = getPredicateText().getResults();
+		final IUserSupport us = getUserSupport();
+		if (isGoal()) {
+			ProverUIUtils.applyCommand(commandAppli.getProofCommand(), us,
+					null, inputs, new NullProgressMonitor());
+			return;
+		}
+		ProverUIUtils.applyCommand(commandAppli.getProofCommand(), us,
+				getPredicate(), inputs, new NullProgressMonitor());
+	}
+
+COM:applies a proof command based on input text and a user support interface

@@ -1,0 +1,16 @@
+TDAT:     private void addInventory(JPopupMenu popup, final SWGKnownResource kr) {
+        JMenuItem inv = makeMenuItem("Add to Inventory...",
+                "Add one selected resource to inventory",
+                new ActionListener() {
+
+                    @SuppressWarnings("synthetic-access")
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        actionInventory(kr);
+                    }
+                });
+        inv.setEnabled(kr != null);
+        popup.add(inv);
+    }
+
+COM:adds an "Add to Inventory" menu item to a given popup menu, with an action listener that calls the method "actionInventory" with a given SWGKnownResource object

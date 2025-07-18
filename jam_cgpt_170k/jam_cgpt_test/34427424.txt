@@ -1,0 +1,17 @@
+TDAT:     private void actionNotes(@SuppressWarnings("unused") MouseEvent e) {
+        if (selectedSchematic != null) {
+            SWGSchematicWrapper w = SWGSchemController.
+                    wrapperDefault(selectedSchematic);
+
+            String n = SWGGuiUtils.dialogTextInput(
+                    schemNotes, "Edit schematic notes", w.notes());
+
+            if (n != null) {
+                String s = n.trim();
+                w.notes(s);
+                schemNotes.setText(s);
+            }
+        }
+    }
+
+COM:allows the user to edit the notes of a selected SWG schematic

@@ -1,0 +1,13 @@
+TDAT:     protected TrieEntry followRight(TrieEntry node) {
+        // if Trie is empty, no last entry.
+        if(node.right == null)
+            return null;
+        
+        // Go as far right as possible, until we encounter an uplink.
+        while(node.right.bitIndex > node.bitIndex)
+            node = node.right;
+        
+        return node.right;
+    }
+
+COM:follows the right branch of a Trie data structure until it encounters an uplink, and then returns the next right branch

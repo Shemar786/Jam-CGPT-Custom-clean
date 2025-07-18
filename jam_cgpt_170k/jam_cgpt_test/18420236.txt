@@ -1,0 +1,13 @@
+TDAT: 	private JTextField getContent() {
+		if(m_Content == null) {
+			m_Content = new JTextField();
+			m_Content.setEnabled(false);	
+			m_Content.setLayout(new BorderLayout());		
+			m_Content.add(getNaviPanel(), java.awt.BorderLayout.SOUTH);
+			m_Content.add(getCategoryPanel(), java.awt.BorderLayout.CENTER);
+		
+		}
+		return m_Content;
+	}
+
+COM:returns a JTextField if it exists or creates and configures a new one with additional panels

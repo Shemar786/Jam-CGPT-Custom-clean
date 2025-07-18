@@ -1,0 +1,11 @@
+TDAT: 	public void setPixels(int x, int y, int w, int h, ColorModel model, byte[] pixels, int offset, int scansize) {
+		if ((intBuffer == null) || (pixels.length > intBuffer.length))
+			intBuffer = new int[pixels.length];
+
+		for (int i = pixels.length; --i >= 0;)
+			intBuffer[i] = (int) pixels[i] & 0xFF;
+
+		raster.setPixels(x, y, w, h, intBuffer);
+	}
+
+COM:sets pixels in a raster image, converting a byte array of pixels to an integer array

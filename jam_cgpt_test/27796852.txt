@@ -1,0 +1,13 @@
+TDAT:     private void validate(ContinuousMappingPoint point) {
+        //  Get New Data Point (After User Change)
+        double newValue = getNewValue();
+
+        //  Check Previous/Next Points (if available)
+        checkPreviousPoint(newValue);
+        checkNextPoint(newValue);
+
+        //  If all goes well, update the point.
+        point.setValue(newValue);
+    }
+
+COM:validates a continuous mapping point by checking the previous and next points and updating the value of the point

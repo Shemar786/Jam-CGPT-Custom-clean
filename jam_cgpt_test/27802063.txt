@@ -1,0 +1,10 @@
+TDAT: 	public boolean handleAlreadyExists( Point2D pt ) {
+		for ( int i = 0; i < handleList.size(); i++ ) {
+			Rectangle2D rect = new Rectangle2D.Double( pt.getX(), pt.getY(), 1.0,1.0);
+			if ( ((PNamedHandle)handleList.get(i)).intersects( rect ) )
+				return true;
+		}
+		return false;
+	}
+
+COM:checks if a given Point2D object intersects with the Rectangle2D objects in a list and returns a boolean value accordingly

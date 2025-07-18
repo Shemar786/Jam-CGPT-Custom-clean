@@ -1,0 +1,18 @@
+TDAT: 	public void test_03_AddAttribute() throws Exception {
+		
+		IRodinProject project = fetchProject("V03");
+		
+		convertProjectWithSuccess(project, 1);
+		
+		IInternalElement[] elements = getElements(project, "ff.tvc", IVersionEA.ELEMENT_TYPE, 2);
+		
+		// new attribute in elements[0] added
+		
+		assertAttribute(elements[0], VersionAttributes.StringAttr, "Hello");
+		
+		// existing attributes are not modified
+		
+		assertAttribute(elements[1], VersionAttributes.StringAttr, "Byebye");
+	}
+
+COM:adds a new attribute to an element in a project and asserts that it was added successfully while also checking that existing attributes were not modified

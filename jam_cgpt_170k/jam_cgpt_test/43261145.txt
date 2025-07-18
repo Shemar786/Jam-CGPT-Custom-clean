@@ -1,0 +1,14 @@
+TDAT:     protected void runAntdepoSetup() throws ExecutionException {
+        final String fwkNode = framework.getFrameworkNodeName();
+        final Setup setup = new Setup();
+        final String[] args = new String[]{
+            "-n", fwkNode
+        };
+        try {
+            setup.execute(args);
+        } catch (Setup.SetupException e) {
+            throw new ExecutionException("setup execution failed", e);
+        }
+    }
+
+COM:sets up Antdepo by executing a Setup and throwing an ExecutionException if the setup execution fails

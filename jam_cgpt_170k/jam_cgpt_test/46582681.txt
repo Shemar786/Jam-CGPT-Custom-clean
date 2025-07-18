@@ -1,0 +1,12 @@
+TDAT:     private Graphics2D initGraphics2D( final Graphics g ) {
+        Graphics2D g2;
+        g2 = ( Graphics2D ) g;
+        g2.setRenderingHint( RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON );
+        g2.setRenderingHint( RenderingHints.KEY_RENDERING,
+                RenderingHints.VALUE_RENDER_QUALITY );
+        g2.setColor( this.color );
+        return g2;
+    }
+
+COM:initializes a  Graphics2D object by setting rendering hints, color and returns it

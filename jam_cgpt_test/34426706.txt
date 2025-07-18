@@ -1,0 +1,17 @@
+TDAT:     private void actionAlbumSelect(ListSelectionEvent e) {
+        if (!e.getValueIsAdjusting()) {
+            SWGImageSubAlbum s = (SWGImageSubAlbum) albums.getSelectedValue();
+            if (s == null) return;
+
+            currentAlbum = s;
+            currentAlbum.album().refresh();
+
+            thumbNails.getColumnModel().getColumn(0).
+                    setHeaderValue(currentAlbum.getName());
+
+            this.repaint();
+            thumbModel.fireTableDataChanged();
+        }
+    }
+
+COM:selects an album and updates the display of thumbnails

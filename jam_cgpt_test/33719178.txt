@@ -1,0 +1,14 @@
+TDAT:     public void testGetGroupMessageList() {
+        System.out.println("GetGroupMessageList");
+        
+        AutismGroup instance = new AutismGroup();
+        
+        TreeSet expResult = null;
+        TreeSet result = instance.GetGroupMessageList();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the GetGroupMessageList method of the AutismGroup class and prints "GetGroupMessageList" to the console, setting expected and actual results to null and comparing them using assertEquals, also includes a default call to fail()

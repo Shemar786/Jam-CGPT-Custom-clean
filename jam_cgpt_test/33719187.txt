@@ -1,0 +1,12 @@
+TDAT:     public void testEventListSize() {
+        System.out.println("eventListSize");
+        
+        Event_DBImpl instance = new Event_DBImpl();
+        
+        int expResult = 0;
+        int result = instance.eventListSize();
+        System.out.print(result);
+        assertEquals(expResult, result);
+    }
+
+COM:tests the event list size in an implementation of an event database

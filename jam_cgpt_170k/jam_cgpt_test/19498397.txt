@@ -1,0 +1,24 @@
+TDAT: 	public void testExtendsContext_09_abstractContextNotSaved() throws Exception {
+		IContextRoot abs = createContext("abs");
+		addCarrierSets(abs, makeSList("S"));
+		
+		IContextRoot con = createContext("ctx");
+		addContextExtends(con, "abs");
+		addCarrierSets(con, makeSList("T"));
+		
+		saveRodinFileOf(con);
+		
+		runBuilder();
+		
+
+		ISCContextRoot file = con.getSCContextRoot();
+		
+		containsMarkers(abs, true);
+		containsMarkers(con, true);
+		
+		containsCarrierSets(file, "T");
+		
+		hasMarker(con.getExtendsClauses()[0], EventBAttributes.TARGET_ATTRIBUTE);
+	}
+
+COM:tests whether an abstract context is saved and markers are properly added if it extends another context and contains carrier sets

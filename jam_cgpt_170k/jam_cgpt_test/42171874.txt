@@ -1,0 +1,17 @@
+TDAT:   protected void addQueryParamPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_QueryParamMapping_queryParam_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_QueryParamMapping_queryParam_feature", "_UI_QueryParamMapping_type"),
+				 ActionStepPackage.eINSTANCE.getQueryParamMapping_QueryParam(),
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a query parameter property descriptor to an item property descriptor list

@@ -1,0 +1,16 @@
+TDAT:     public boolean containsModel(StripChartModel model) {
+        
+        // check through all the models and return true if we find the right
+        //  one
+        for (int i=0; i < m_models.size(); i++) {
+            StripChartModel m = (StripChartModel)m_models.get(i);
+            if (m == model)
+                return true;
+        }
+        
+        // return false if we haven't found the model
+        return false;
+        
+    }
+
+COM:checks if a given StripChartModel object is contained within a list of StripChartModel objects and returns a boolean value accordingly

@@ -1,0 +1,14 @@
+TDAT: 	private JButton getUitnodigenButton() {
+		if (uitnodigenButton == null) {
+			uitnodigenButton = new JButton();
+			uitnodigenButton.setText("Nodig uit");
+			uitnodigenButton.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+				}
+			});
+		}
+		return uitnodigenButton;
+	}
+
+COM:returns a JButton object that, if not already created, creates a new one with text "Nodig uit" and an action listener that prints "actionPerformed()" when clicked

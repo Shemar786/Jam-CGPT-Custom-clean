@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField21() {
+        if (textField21 == null) {//GEN-END:|374-getter|0|374-preInit
+            // write pre-init user code here
+            textField21 = new TextField("L\u00EDquido:", null, 32, TextField.DECIMAL);//GEN-LINE:|374-getter|1|374-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|374-getter|2|
+        return textField21;
+    }
+
+COM:returns a TextField object with the label "Líquido" and a decimal input mode, and initializes it if it hasn't been already

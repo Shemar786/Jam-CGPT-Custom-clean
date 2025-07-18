@@ -1,0 +1,18 @@
+TDAT: 	public ModelAndView list(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		ModelAndView mav = new ModelAndView("webservices.list");
+		
+		List<WebService> raps = null;
+		String iso = request.getParameter("iso");
+		if(StringUtils.isEmpty(iso)){
+			raps = webServiceDAO.getAll();
+		} else {
+			raps = webServiceDAO.getForIsoCountryCode(iso);
+		}
+		
+		List<String> isoCodes = webServiceDAO.getAllHostIsoCodes();
+		mav.addObject("isoCodes",isoCodes);
+		mav.addObject("resourceAccessPoints",raps);
+		return mav;
+	}	
+
+COM:retrieves a list of web services and ISO codes to display on a webpage

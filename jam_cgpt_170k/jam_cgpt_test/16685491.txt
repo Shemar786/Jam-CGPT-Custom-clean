@@ -1,0 +1,18 @@
+TDAT:     private View getItemView(int index) {
+		if (viewAdapter == null || viewAdapter.getItemsCount() == 0) {
+			return null;
+		}
+		int count = viewAdapter.getItemsCount();
+		if (!isValidItemIndex(index)) {
+			return viewAdapter.getEmptyItem(recycle.getEmptyItem(), itemsLayout);
+		} else {
+			while (index < 0) {
+				index = count + index;
+			}
+		}
+		
+		index %= count;
+		return viewAdapter.getItem(index, recycle.getItem(), itemsLayout);
+	}
+
+COM:retrieves a view for a specified item index by accessing and manipulating the view adapter

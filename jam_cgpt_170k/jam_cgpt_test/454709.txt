@@ -1,0 +1,15 @@
+TDAT: 	public ColormapperSettings getColormapperSettings(){
+		// look through the blocks for one with a matching header
+		ColormapperSettings settings = null;
+		for (int i = 0; i < settingsBlocks.length; i++) {
+			if (settingsBlocks[i].trim().startsWith(ColormapperSettings.class.getName())){
+				
+				settings = (ColormapperSettings)addProps(new ColormapperSettings(),settingsBlocks[i]);
+				break;
+			}
+			
+		}
+		return settings;
+	}
+
+COM:retrieves the ColormapperSettings by iterating through a list of settingsBlocks and finding the one with a matching header

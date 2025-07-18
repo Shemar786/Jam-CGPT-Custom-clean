@@ -1,0 +1,11 @@
+TDAT:     public void setMethodVisibility(IRubyObject[] methods, Visibility visibility) {
+        if (getRuntime().getSafeLevel() >= 4 && !isTaint()) {
+            throw getRuntime().newSecurityError("Insecure: can't change method visibility");
+        }
+
+        for (int i = 0; i < methods.length; i++) {
+            exportMethod(methods[i].asJavaString(), visibility);
+        }
+    }
+
+COM:sets the visibility of one or more Ruby methods, but throws a security error if the safe level is too high and the context is tainted

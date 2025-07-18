@@ -1,0 +1,11 @@
+TDAT:     private ComboBoxModel subjectListModel() {
+    	Vector<String> tableNames = new Vector<String>();
+    	for (Table table: dataModel.getTables()) {
+    		tableNames.add(dataModel.getDisplayName(table));
+    	}
+    	Collections.sort(tableNames);
+    	DefaultComboBoxModel model = new DefaultComboBoxModel(tableNames);
+        return model;
+    }
+
+COM:creates a ComboBoxModel by getting table names from a data model, sorting them alphabetically, and returning the resulting model

@@ -1,0 +1,10 @@
+TDAT:     public void addPage (JComponent page) {
+// TODO add JScrollPane around the page before it goes into the cardsPanel.
+        Page lastPage = firstPage;
+        while(lastPage.getNext(false) != null)
+            lastPage = lastPage.getNext(false);
+        lastPage.addPage(page);
+        cardsPanel.add(page, find(page).getUniqueName());
+    }
+
+COM:adds a JComponent page to a cardsPanel and wraps it in a JScrollPane

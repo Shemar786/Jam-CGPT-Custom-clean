@@ -1,0 +1,9 @@
+TDAT:   public Engine getEngine(int type) {
+    if (type==UNKNOWN) return null;
+    if (type<0) return null; // illegal type (exception?)
+    if (type>engines) return null; // illegal type (exception?)
+    if (type==0) return null; // non-existing engine
+    return engine[type];
+  }
+
+COM:returns an Engine object based on the integer type passed as an argument, with additional checks for invalid input

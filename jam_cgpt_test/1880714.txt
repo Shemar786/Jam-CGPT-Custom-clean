@@ -1,0 +1,13 @@
+TDAT:     public Object upgradeValue(final String name, Object value) {
+        if (name.equalsIgnoreCase("NODE_FACTORY") && value.getClass() == Boolean.class) {
+            if (((Boolean) value).booleanValue()) {
+                value = "*";
+            } else {
+                value = "";
+            }
+        }
+
+        return value;
+    }
+
+COM:checks if a given name is "NODE_FACTORY" and the value is a Boolean; if true, it replaces true with "*" and false with ""

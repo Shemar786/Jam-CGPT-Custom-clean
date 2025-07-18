@@ -1,0 +1,19 @@
+TDAT: 	private User makeUser(Map m){
+		logger.debug("entering makeUser");
+		User user = new User();
+		if(m != null){
+			user.setUserID((String)m.get("USERID"));
+			user.setUserName((String) m.get("USERNAME"));
+			user.setPassword((String) m.get("PASSWORD"));
+			user.setFirstName((String) m.get("FIRSTNAME"));
+			user.setLastName((String) m.get("LASTNAME"));
+			user.setEmail((String) m.get("EMAIL"));
+			user.setIsDisabled(((String) m.get("ISDISABLED")).equals("1"));
+			user.setIsAdministrator(((String) m.get("ISADMIN")).equals("1"));
+		}
+		
+		logger.debug("exiting makeUser");
+		return user;
+	}
+
+COM:takes a Map of User attributes and returns a User object with those attributes set, including userID, userName, password, firstName, lastName, email, isDisabled, and isAdministrator

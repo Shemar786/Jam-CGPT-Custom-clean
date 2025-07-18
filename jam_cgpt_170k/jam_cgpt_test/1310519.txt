@@ -1,0 +1,8 @@
+TDAT: 	private void updateExtrasMenu() {
+		MenuComponent extras = new MenuComponent(EXTRAS, false);
+		extras.add(new ItemComponent(JOIN_NODES, KeyStroke.getKeyStroke('a'), false));
+		extras.add(new ItemComponent(PREFERENCES, KeyStroke.getKeyStroke('a'), false));
+		addComponents(extras, -1);
+	}
+
+COM:updates the extras menu by adding Join Nodes and Preferences components with their respective key strokes

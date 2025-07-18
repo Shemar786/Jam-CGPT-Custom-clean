@@ -1,0 +1,15 @@
+TDAT: 	public void addObject(Physical2DObject object){
+		environment.getRootPlayground().addChildObjects(object);
+		objectysById.put(object.getId(), object);
+		if(object instanceof ActiveObject){
+			agents.add((ActiveObject) object);
+		}else if(object instanceof StaticObject){
+			obstacles.add((StaticObject) object);
+		}else if(object instanceof PassiveObject){
+			payloads.add((PassiveObject) object);
+		}else if(object instanceof PlaygroundObject){
+			playgrounds.add((PlaygroundObject) object);
+		}
+	}
+
+COM:adds a Physical2DObject to an environment, categorizing it as an ActiveObject, StaticObject, PassiveObject, or PlaygroundObject based on its type

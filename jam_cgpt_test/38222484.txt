@@ -1,0 +1,7 @@
+TDAT:   public void warning(SAXParseException e) throws SAXParseException {
+    System.out.println("** Warning, line " + e.getLineNumber()
+      + ", uri " + e.getSystemId());
+    System.out.println("    " + e.getMessage());
+  }
+
+COM:prints a warning message with the line number and URI from a SAXParseException object

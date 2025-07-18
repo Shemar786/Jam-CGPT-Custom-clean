@@ -1,0 +1,12 @@
+TDAT: 	public void assertNodePending(IProofTreeNode node) {
+		assertNotEmpty(node.getChildNodes());
+		assertNotNull(node.getFirstOpenDescendant());
+		assertNotSame(node, node.getFirstOpenDescendant());
+		assertNotEmpty(node.getOpenDescendants());
+		assertNotNull(node.getRule());
+		assertTrue(node.hasChildren());
+		assertFalse(node.isClosed());
+		assertFalse(node.isOpen());
+	}
+
+COM:checks various properties of a given proof tree node to ensure that it is in a pending state

@@ -1,0 +1,15 @@
+TDAT: 	public void deleteBlock(NetworkID blockID) {
+		assert(locked) : "attempt made to modify model when not locked";
+		log.trace("request to remove block with ID" + blockID);
+
+		Block block = findBlock(blockID);
+		if (block != null) {
+			block.delete();
+		} else {
+			log.error("Attempt made to delete unknown block");
+		}
+
+		eventQueue.fireEvent(new BlockDeletedNotifier(block));
+	}
+
+COM:deletes a specific block identified by its NetworkID and notifies an event queue about the deletion

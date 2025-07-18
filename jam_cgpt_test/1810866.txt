@@ -1,0 +1,14 @@
+TDAT:   public JSONValue get(int index) throws JSONException {
+    if (wrappedTest(index)) {
+      return wrappedGet(index);
+    }
+    JSONValue wrapped = null;
+    if (rawTest(index)) {
+      wrapped = JSONParser.buildValue(rawGet(index));
+      rawSet(index, null);
+    }
+    wrappedSet(index, wrapped);
+    return wrapped;
+  }
+
+COM:gets the value at a specified index in a JSON array and returns it, while also wrapping it in an object and handling any potential exceptions

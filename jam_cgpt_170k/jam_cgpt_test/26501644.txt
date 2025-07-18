@@ -1,0 +1,12 @@
+TDAT:   public void setSelectorDaemonThread(int maxThread) {
+    if (maxThread <= 0) {
+      throw new IllegalArgumentException("The size is less than zero");
+    } else if (_theSelectorDaemons.size() > 0) {
+      throw new IllegalStateException(
+        "Cannot change the number of selector daemons on a running server socket");
+    }
+
+    _theSelectorDaemonThread = maxThread;
+  }
+
+COM:sets the maximum number of selector daemon threads for a server socket, but throws exceptions if the input is invalid or if the server socket is already running

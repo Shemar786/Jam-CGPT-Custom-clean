@@ -1,0 +1,10 @@
+TDAT:     public Room create(Hotel hotel, RoomType rt, int maxOccupancy,String desc, boolean enabled, RoomStatusEnum status){
+        Room room = new Room(hotel);        
+        room.setMaxOccupancy(maxOccupancy);
+        room.setDescription(desc);
+        room.setEnabled(enabled);
+        room.setStatus(status);
+        return roomDAO.save(room);
+    }
+
+COM:creates a new room object with the specified parameters and saves it in the database using roomDAO

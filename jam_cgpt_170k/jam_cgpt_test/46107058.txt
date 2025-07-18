@@ -1,0 +1,10 @@
+TDAT:     public void draw(int mX, int mY, float mAlpha) {
+        // Do the calculations based on the hotspot to
+        // draw the image in the right position
+        image.draw(mX - hotspot.width, mY - hotspot.height, mAlpha);
+
+        // Draw hotspot
+        // Engine.drawDot(mX, mY, 5, GLColor.RED);
+    }
+
+COM:draws an image and hotspot at a specified position with a specified opacity

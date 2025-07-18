@@ -1,0 +1,13 @@
+TDAT: 	private JRadioButton getJRadioButtonTouristiqueNon() {
+		if (jRadioButtonTouristiqueNon == null) {
+			jRadioButtonTouristiqueNon = new JRadioButton();
+			jRadioButtonTouristiqueNon.setText("non");
+			jRadioButtonTouristiqueNon.setSize(new Dimension(46, 24));
+			jRadioButtonTouristiqueNon.setLocation(new Point(153, 76));
+			jRadioButtonTouristiqueNon.setBackground(new Color(209, 209, 240));
+			bgroupTouriste.add(jRadioButtonTouristiqueNon);
+		}
+		return jRadioButtonTouristiqueNon;
+	}
+
+COM:creates and returns a JRadioButton for selecting "non" as a tourism option

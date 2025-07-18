@@ -1,0 +1,10 @@
+TDAT:   public String toString() {
+    StringBuffer aBuffer = new StringBuffer(super.toString());
+    aBuffer.append("[value='").append(_theValue).append("'")
+           .append(" languageCode='").append(_theLanguageCode).append("'")
+           .append("]");
+
+    return aBuffer.toString();
+  }
+
+COM:returns a string representation of an object with additional information about its value and language code

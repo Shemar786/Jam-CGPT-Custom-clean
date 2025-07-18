@@ -1,0 +1,9 @@
+TDAT: 	public void onShow() {
+		Roma
+				.setClassFeature(this, ViewAspect.ASPECT_NAME, ViewClassFeatures.LABEL, ProjectHelper.getInstance().getProjectName(project));
+		refresh(false);
+		Roma.setFieldFeature(this, ViewAspect.ASPECT_NAME, "newNote", ViewFieldFeatures.VISIBLE, mode);
+		Roma.setActionFeature(this, ViewAspect.ASPECT_NAME, "addNote", ViewActionFeatures.VISIBLE, !mode);
+	}
+
+COM:sets various features for the view, including a label, visibility of a field, and visibility of an action

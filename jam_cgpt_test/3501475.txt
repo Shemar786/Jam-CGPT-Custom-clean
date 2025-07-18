@@ -1,0 +1,9 @@
+TDAT:     public boolean releasedLock(Object lockObj) {
+        Thread t = Thread.currentThread();
+        StackTraceElement ste = new Throwable().fillInStackTrace().getStackTrace()[1];
+        logger.logp(Level.FINEST, ste.getClassName(), ste.getMethodName(),
+            t+" released lock on \"{0}\"", lockObj);
+        return true;
+    }
+
+COM:logs the release of a lock and returns a boolean value of true

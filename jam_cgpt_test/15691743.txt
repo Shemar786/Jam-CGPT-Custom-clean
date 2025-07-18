@@ -1,0 +1,10 @@
+TDAT:     private void syncSources(String name) {
+        TemplateSourceInfo info = (TemplateSourceInfo)mTemplateMap.get(name);
+        Unit compUnit = (Unit)this.getCompilationUnit(name,null);
+        File destFile = compUnit.getDestinationFile();
+        if (destFile != null) {
+            destFile.setLastModified(info.timestamp);
+        }
+    }
+
+COM:synchronizes the timestamp of a destination file with the timestamp of its corresponding template source file

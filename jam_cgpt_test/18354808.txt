@@ -1,0 +1,18 @@
+TDAT:    public void run() {
+      cat.info("RMIRegistry started on "+String.valueOf(new Date()));
+
+      while (true) {
+         try {
+            Thread.sleep(5000);
+         } catch (InterruptedException x) {
+            break;
+         } catch (Throwable x) {
+            cat.fatal("run()", x);
+            break;
+         }
+      }
+
+      cat.info("RMIRegistry stopped on "+String.valueOf(new Date()));
+   }
+
+COM:logs the start and stop time of an RMIRegistry and runs an infinite loop with a 5 second delay until interrupted, logging any caught exceptions or errors

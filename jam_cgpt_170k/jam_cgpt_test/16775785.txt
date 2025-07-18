@@ -1,0 +1,9 @@
+TDAT:     public void removeWdmFileFromBuffer(int wdmFileNumber) {
+        IntByReference returnCode = new IntByReference(-1);
+        nativeDLL.wdflcl_(new IntByReference(wdmFileNumber), returnCode);
+        if (returnCode.getValue() != 0) {
+            throw new RuntimeException("WdmDll: Invalid result from call to subroutine dll.wdflcl_ , returnCode = " + returnCode.getValue());
+        }
+    }
+
+COM:removes a WDM file from a buffer using a native DLL function and throws a runtime exception if an invalid result is returned

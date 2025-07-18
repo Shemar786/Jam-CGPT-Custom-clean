@@ -1,0 +1,20 @@
+TDAT: 	public boolean hasPortletMode(String mimeType, PortletMode portletMode) {
+		if (mimeType == null) {
+			mimeType = ContentTypes.TEXT_HTML;
+		}
+
+		Set<String> mimeTypeModes = _portletModes.get(mimeType);
+
+		if (mimeTypeModes == null) {
+			return false;
+		}
+
+		if (mimeTypeModes.contains(portletMode.toString())) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+COM:checks if a given portlet mode is available for a given MIME type

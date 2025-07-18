@@ -1,0 +1,13 @@
+TDAT: 	public void run(IAction action) {
+		IType entityType = this.getEntityType(action);
+
+		try {
+			this.run(entityType);
+		} catch (CoreException e) {
+			IStatus status = e.getStatus();
+			ErrorDialog.openError(this.getShell(), Messages.getString("error"), Messages.getString("creation.error"), status);
+		}
+
+	}
+
+COM:runs an action on an entity type and catches any core exceptions that may occur

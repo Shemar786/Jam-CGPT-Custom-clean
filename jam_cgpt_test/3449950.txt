@@ -1,0 +1,18 @@
+TDAT:     public boolean equals(Object o) {
+		if (o == null)
+		    return false;
+	
+	        if (this == o)
+	            return true;
+	 
+	        if (!(o instanceof PrincipalRole))
+	            return false;
+	        PrincipalRole that = (PrincipalRole)o;
+	
+		if (this.getPrincipal().equals(that.getPrincipal()) &&
+				this.getRole().equals(that.getRole()) )
+		    return true;
+		return false;
+    }
+
+COM:checks if two objects of the class PrincipalRole are equal based on their principal and role properties

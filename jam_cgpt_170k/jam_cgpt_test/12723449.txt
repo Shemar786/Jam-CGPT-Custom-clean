@@ -1,0 +1,17 @@
+TDAT: protected AbstractMatrix3D vDice(int axis0, int axis1, int axis2) {
+	super.vDice(axis0,axis1,axis2);
+	
+	// swap offsets
+	int[][] offsets = new int[3][];
+	offsets[0] = this.sliceOffsets;
+	offsets[1] = this.rowOffsets;
+	offsets[2] = this.columnOffsets;
+
+	this.sliceOffsets = offsets[axis0];
+	this.rowOffsets = offsets[axis1];
+	this.columnOffsets = offsets[axis2];
+
+	return this;
+}
+
+COM:This is a protected method in Java that returns an instance of the AbstractMatrix3D class with the slice, row, and column offsets swapped according to the order specified by the input axis0, axis1, and axis2 integers

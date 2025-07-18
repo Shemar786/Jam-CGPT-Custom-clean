@@ -1,0 +1,9 @@
+TDAT: 	public IsNullValue markInformationAsComingFromReturnValueOfMethod(XMethod methodInvoked) {
+		int flag = RETURN_VAL;
+		if (methodInvoked.getName().equals("readLine") && methodInvoked.getSignature().equals("()Ljava/lang/String;"))
+			flag = READLINE_VAL;
+		if (getBaseKind() == NO_KABOOM_NN) return new IsNullValue(kind | flag, locationOfKaBoom);
+		return instanceByFlagsList[(getFlags() | flag) >> FLAG_SHIFT][getBaseKind()];
+	}
+
+COM:This is a Java method that marks information as coming from the return value of a certain method, and returns an IsNullValue object

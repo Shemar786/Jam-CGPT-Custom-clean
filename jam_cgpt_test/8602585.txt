@@ -1,0 +1,17 @@
+TDAT: 	public int getNumArmies() {
+		ArrayList<Territory> Territories = new ArrayList<Territory>();
+		int numArmies = 0;
+		for (Continent tempContinent : map.listContinents()) {
+			for (Territory tempTerritory : tempContinent.listTerritory()) {
+				if (tempTerritory.getRuler().getName() == profile.getName()) {
+					Territories.add(tempTerritory);
+				}
+			}
+		}
+		for (Territory temp : Territories) {
+			numArmies += temp.getTroopNumber();
+		}
+		return numArmies + this.bonusArmiesReceived;
+	}
+
+COM:gets the total number of armies for a player in a given game by iterating through the player's territories and adding up the troop numbers, as well as adding any bonus armies received

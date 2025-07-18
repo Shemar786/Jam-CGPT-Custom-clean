@@ -1,0 +1,9 @@
+TDAT:     public void processRequest(boolean flag) {
+        if (logger.isTraceEnabled())
+            logger.trace("Entering - flag=" + flag);
+        ((StrutsServletContextWrapper) this.config.getServletContext()).setProcessRequest(flag);
+        if (logger.isTraceEnabled())
+            logger.trace("Exiting");
+    }
+
+COM:sets a flag and logs the entry and exit of the method if the logger is enabled

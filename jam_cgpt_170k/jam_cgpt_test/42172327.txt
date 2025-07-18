@@ -1,0 +1,11 @@
+TDAT:   protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
+    switch (getVisualID(req)) {
+      case OutputTargetEditPart.VISUAL_ID:
+        return getGEFWrapper(new OutputTargetReorientCommand(req));
+      case CaseItemTargetToolstepEditPart.VISUAL_ID:
+        return getGEFWrapper(new CaseItemTargetToolstepReorientCommand(req));
+    }
+    return super.getReorientReferenceRelationshipCommand(req);
+  }
+
+COM:returns a command to reorient a reference relationship based on the visual ID of the request object

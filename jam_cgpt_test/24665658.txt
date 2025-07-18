@@ -1,0 +1,10 @@
+TDAT: 	private void drawValues(Graphics2D g2, Point p) {
+		
+		g2.setColor(Color.BLACK);
+		g2.setFont(new Font("Courier", Font.PLAIN, this.renderRatio / 3));
+		Integer theValue = (Integer) this.potentialValues.get(p);
+		String theString = theValue.toString();
+		g2.drawString(theString, (int)p.getX() * this.renderRatio, ((int)p.getY() * this.renderRatio) + this.renderRatio);
+	}
+
+COM:draws the potential values onto a specified point on a grid-like field, using the Graphics2D object, a custom font, and specific calculations

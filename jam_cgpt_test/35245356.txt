@@ -1,0 +1,12 @@
+TDAT:     public boolean deleteBook(String ISBN) throws SQLException {
+        CallableStatement cs = dc.getConnection().prepareCall("{call deleteBook(?)}");
+        cs.setString(1, ISBN);
+        int result = cs.executeUpdate();
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+COM:deletes a book using its ISBN and returns a boolean value indicating whether the deletion was successful or not, while also throwing an SQL exception

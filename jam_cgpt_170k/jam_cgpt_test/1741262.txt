@@ -1,0 +1,14 @@
+TDAT: 	public List getActiveFunctions() {
+		List list = projectService.findAllActiveFunction();
+		if (list==null) 
+			return null;
+		List ret = new ArrayList();
+		for (int i = 0 ; i<list.size() ; i++) {
+			TblFunction func = (TblFunction) list.get(i);
+			ret.add(new SelectItem(func.getFunctionid(), func.getFunctionname()));
+		}
+		ret.add(new SelectItem(new Integer(0), new String(" ")));
+		return ret;
+	}
+
+COM:returns a list of active functions by selecting data from a project service and converting it into a list of select items

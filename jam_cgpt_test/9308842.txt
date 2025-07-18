@@ -1,0 +1,12 @@
+TDAT: 		public void actionPerformed(ActionEvent e) {
+			JMenuItem tempItem = (JMenuItem) e.getSource();
+			int actionCommand = Integer.parseInt(e.getActionCommand());
+			String thePath = getPluginData(actionCommand, "path");
+			currentManagedPath = thePath;
+			String theBackupPath = getPluginData(actionCommand, "backupPath");
+			String theName = getPluginData(actionCommand, "plugins");
+			setPluginData(thePath, theBackupPath, theName);
+			setIsRunning();
+		}
+
+COM:handles the action performed by a JMenuItem and sets plugin data and running status accordingly

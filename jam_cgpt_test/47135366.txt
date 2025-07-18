@@ -1,0 +1,16 @@
+TDAT:     public void close() {
+        try {
+            System.out.println("BYE MAMA!");
+            writer.write("BYE MAMA!\n");
+            writer.flush();
+            writer.close();
+            reader.close();
+            socket.close();
+            run = false;
+            connected = false;
+        } catch (IOException ex) {
+            System.out.println("Closed connection uncleanly");
+        }
+    }
+
+COM:closes the connection to a socket and outputs a message to the console while also flushing and closing any associated streams

@@ -1,0 +1,26 @@
+TDAT: 	protected void createPeerlets() {
+
+		createNeighborManagementPeerlets();
+
+		// state
+		StorageWrapper storageWrapper = createStorageWrapper();
+
+		setPeerState(createPeerState(storageWrapper));
+
+		// interested-management
+		addPeerlet(new InterestedClient(getPeerState()));
+
+		RemoteChunksPeerlet rcp = new RemoteChunksPeerlet(getNeighborManager());
+		addPeerlet(rcp);
+		addPeerlet(new BTInterestedServer(rcp, getPeerState()));
+
+		// choke/unchoke
+		addPeerlet(new ChokePeerlet(getPeerState()));
+
+		// Up/download
+		addPeerlet(new DownloadPeerlet(getPeerState()));
+		addPeerlet(new UploadPeerlet(getPeerState()));
+
+	}
+
+COM:creates and initializes a set of Peerlets for a peer-to-peer network

@@ -1,0 +1,14 @@
+TDAT:    private void write64ENDCENLOC( ) throws IOException {
+      log.log(Level.FINEST, "Zip64OutputStream.write64ENDCENLOC()");
+      // Zip64 end of central directory locator signature. (0x07064b50)
+      writeInt(0x7064b50L);
+      // Number of the disk with the start of the zip64 end of central directory.
+      writeInt(1);
+      // Relative offset of the zip64 end of central directory.
+      writeLong(1L);
+      // Total number of disks
+      writeInt(1);
+   
+   }
+
+COM:writes the zip64 end of central directory locator signature, the number of the disk, the relative offset of the zip64 end of central directory, and the total number of disks to a given output stream

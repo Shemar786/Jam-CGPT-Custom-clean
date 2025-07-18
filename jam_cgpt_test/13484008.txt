@@ -1,0 +1,14 @@
+TDAT:         public void addPhi(final Block block) {
+            int blockIndex = cfg.preOrderIndex(block);
+
+            if (phis[blockIndex] == null) {
+                if (DEBUG) {
+                    System.out.println("    add phi for " + prototype + " at "
+                            + block);
+                }
+
+                phis[blockIndex] = new Phi(this, block);
+            }
+        }
+
+COM:adds a Phi node to a control flow graph block if it doesn't already have one

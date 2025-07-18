@@ -1,0 +1,14 @@
+TDAT:     protected HttpChannel create() throws IOException {
+        HttpChannel res = new HttpChannel();
+        newHttpChannel.incrementAndGet();
+        res.setConnector(this);
+        if (httpEvents != null) {
+            httpEvents.onCreate(res, this);
+        }
+        if (debugHttp) {
+            res.debug = debugHttp;
+        }
+        return res;
+    }
+
+COM:creates a new HttpChannel object, sets the connector, and triggers potential event creation before returning the object

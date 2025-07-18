@@ -1,0 +1,12 @@
+TDAT: 	protected void addDocToRemove(String field, String value) {
+		if (newDocData != null) {
+			//prtln("addDocToRemove() removing  field: " + field + " value: " + value);
+			newDocData.addDocToRemove(field, value);
+		}
+		else {
+			// prtln("addDocToRemove() NOT removing  field: " + field + " value: " + value);
+		}
+
+	}
+
+COM:adds a document to be removed based on a specified field and value, if newDocData is not null

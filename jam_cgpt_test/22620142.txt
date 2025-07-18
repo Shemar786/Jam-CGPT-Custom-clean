@@ -1,0 +1,16 @@
+TDAT: 	public IdMapping createMapping(AcsrDocumentBean acsrDoc, String subject) throws Exception {
+
+		AcsrDocInfo acsrDocInfo = new AcsrDocInfo(acsrDoc);
+
+		AsnDocument asnDoc = null;
+		try {
+			asnDoc = ACSRToolkit.getAsnDocument(acsrDoc.getAcsrId());
+		} catch (Exception e) {
+			throw new Exception("Could not create AsnDocument: " + e.getMessage());
+		}
+
+		AsnDocInfo asnDocInfo = new AsnDocInfo(asnDoc);
+		return new IdMapping(acsrDocInfo, asnDocInfo, subject);
+	}
+
+COM:returns an instance of IdMapping by creating objects of AcsrDocInfo, AsnDocument, and AsnDocInfo classes based on input parameters

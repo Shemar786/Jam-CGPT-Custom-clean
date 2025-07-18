@@ -1,0 +1,13 @@
+TDAT:     private boolean allBlanks() throws XMLStreamException {
+        boolean res = true;
+        if (!reader.hasText()) {
+            return true;
+        }
+        String text = reader.getText();
+        for (int i = 0,  limit = text.length(); i < limit; i++) {
+            res = res && Character.isWhitespace(text.charAt(i));
+        }
+        return res;
+    }
+
+COM:checks if the current XML stream element only contains whitespace characters

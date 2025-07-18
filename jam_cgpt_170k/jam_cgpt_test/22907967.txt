@@ -1,0 +1,15 @@
+TDAT:     public void frameClosing() {
+        if (!queue.isEmpty() || commandConsumer.isWorking()) {
+            if (showConfirmMessage("Interrupt processing?", "Exit")) {
+                log.info("Closing the application");
+                System.exit(0);
+            }
+        } else {
+            log.info("Closing the application");
+            System.exit(0);
+        }
+
+        log.info("Close operation aborted");
+    }
+
+COM:is used to handle the closing of a frame by checking if there are any pending tasks and prompting the user to interrupt them before closing the application

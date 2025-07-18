@@ -1,0 +1,9 @@
+TDAT:     private void renderEntity(final FloorDrawing dwg, final DrawingArea a, final DwgEntity e){
+    	DrawingLayer out = dwg.getOptionsRoot().getOutputLayer();
+    	if(out != null){
+    		e.setLy(out.getName());
+    	}
+    	a.getRendering().add(e);
+    }
+
+COM:renders a specified DwgEntity on a DrawingArea with a specified FloorDrawing and checks if it has an output layer before adding it to the rendering

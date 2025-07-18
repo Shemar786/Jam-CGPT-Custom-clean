@@ -1,0 +1,10 @@
+TDAT:     public Command getOkCommand10() {
+        if (okCommand10 == null) {//GEN-END:|433-getter|0|433-preInit
+            // write pre-init user code here
+            okCommand10 = new Command("Ok", Command.OK, 0);//GEN-LINE:|433-getter|1|433-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|433-getter|2|
+        return okCommand10;
+    }
+
+COM:retrieves or creates a Command object with the label "Ok" and OK type

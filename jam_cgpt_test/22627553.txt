@@ -1,0 +1,14 @@
+TDAT: 	public String toString() {
+		String s = "";
+		String nl = "\n\t";
+		s += nl + "type: " + type;
+		s += nl + "location: " + getLocation();
+		if (getNamespace() != null && getNamespace() != Namespace.NO_NAMESPACE)
+			s += nl + "namespace: " + getNamespace().getPrefix() + ": " + getNamespace().getURI();
+		else
+			s += nl + "namespace: null";
+		s += nl + this.getElementAsXml();
+		return s;
+	}
+
+COM:returns a string representation of an object containing information about its type, location, namespace, and XML element

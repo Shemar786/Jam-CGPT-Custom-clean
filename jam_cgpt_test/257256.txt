@@ -1,0 +1,8 @@
+TDAT: 	private void deleteProductHandlesWithNoExistingItems(net.cw.jcart.transactions.persistence.Offer offer) {
+		for (Iterator productHandleGroups = offer.getGroups().iterator(); productHandleGroups.hasNext();) {
+			deleteProductHandlesWithNoExistingItems((net.cw.jcart.transactions.persistence.ProductHandleGroup) productHandleGroups
+					.next());
+		}
+	}
+
+COM:deletes product handles from an offer that do not have any existing items

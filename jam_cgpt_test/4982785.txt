@@ -1,0 +1,5 @@
+TDAT:     public List getDatasets(EntityManager entityManager, Class entityClass, String filter, String orderFields, JbsUser user, JbsCompany company, int firstResult, int resultCount) {
+        return this.getDatasets(entityManager, entityClass, filter, orderFields, "", user, company, firstResult, resultCount);
+    }
+
+COM:returns a list of datasets based on given parameters such as entity manager, entity class, filter, order fields, user information, company information, and result count

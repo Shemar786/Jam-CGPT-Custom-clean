@@ -1,0 +1,19 @@
+TDAT: 	public void distToAll(Node n){
+	int[] indirConn = new int[nnodes];
+	for(int i=0;i<nnodes;i++){
+		nodes[i].dist=-1;
+		indirConn[i]=0;
+	}
+	n.dist=0;
+	BFSdist(n,new Vector(),indirConn);
+	int upTo = nnodes;
+	for(int i=1;i<nnodes;i++){	
+		if (indirConn[i]<1){upTo=i; break;}
+	}
+	n.indirConn = new int[upTo];
+	for(int i=1;i<upTo;i++){	
+		n.indirConn[i]=indirConn[i];
+	}
+	}
+
+COM:calculates the distances between a given node and all other nodes in a network and stores the results in an array, while also determining the indirect connections between nodes

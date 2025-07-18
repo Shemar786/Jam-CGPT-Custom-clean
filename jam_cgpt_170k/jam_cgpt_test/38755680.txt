@@ -1,0 +1,11 @@
+TDAT:     public String toShortString() {
+        String typestring;
+        if ((source instanceof SpatialVertex) && (target instanceof SpatialVertex)) {
+            typestring = "neighbours ";
+        } else {
+            typestring = (this.type == EdgeType.CONTAINS ? "contains " : "delegates to ");
+        }
+        return (source.toString() + " " + typestring + target.toString());
+    }
+
+COM:returns a string representation of an edge, indicating whether it is a neighbour, contains, or delegates to another vertex

@@ -1,0 +1,17 @@
+TDAT: 	public void appendFlat(LinearQueue q) {
+		bulkMoveTest(q);
+		for (int i=0; !q.isEmpty(); i++) try {
+			Object o=q.removeFirst();
+			try {
+				this.addLast(o);
+			} catch (RuntimeException re) {
+				q.addFirst(o);
+				throw re;}
+		} catch (RuntimeException re) {
+			try {
+				while (i-->0) q.addFirst(this.removeLast());
+			} catch (RuntimeException bah) {
+				throw new RollbackError(re, bah);}
+			throw re;}}
+
+COM:appends all elements from a LinearQueue to the end of another queue, while performing error checking and handling

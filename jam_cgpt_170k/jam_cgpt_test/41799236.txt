@@ -1,0 +1,14 @@
+TDAT:     private void writeObjsRecord(ObjectStore objs) {
+        try {
+            objs.open(STORENAME);
+            objs.store(storedClass);
+            objs.store(storedContainer);
+            objs.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } catch (RecordStoreException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+COM:writes objects to an Object Store with error handling

@@ -1,0 +1,8 @@
+TDAT:     public int addEdge(int fromNodeNum, int toNodeNum) {
+        Edge newEdge = this.constructG.addEdge(
+        		this.globNodes.getNode(fromNodeNum),
+                this.globNodes.getNode(toNodeNum));
+        return this.globEdges.getEdgeNumber(newEdge);
+    }
+
+COM:adds an edge between two nodes and returns the edge number

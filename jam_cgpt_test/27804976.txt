@@ -1,0 +1,8 @@
+TDAT:   protected void initializeLocation ( NodeView v, Dimension d ) {
+    double x = Math.random() * d.getWidth();
+    double y = Math.random() * d.getHeight();
+    v.setXPosition( x, false );
+    v.setYPosition( y, false );
+    }
+
+COM:initializes the location of a NodeView object with a randomly generated x and y position within the specified dimensions

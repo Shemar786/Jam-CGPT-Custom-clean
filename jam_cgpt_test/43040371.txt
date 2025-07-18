@@ -1,0 +1,11 @@
+TDAT:     protected void inspectAnnotations(String name, AnnotatedElement el) throws InstantiationException, IllegalAccessException {
+        inspectMappingValidation(name, el);
+        addDeepValidation(name, el);
+        for (Annotation a : el.getAnnotations()) {
+            final IPropertyValidator val = createValidator(a);
+            if (val != null)
+                validator.addPropertyValidation(name, val);
+        }
+    }
+
+COM:inspects annotations of an element and adds property validation to a validator object

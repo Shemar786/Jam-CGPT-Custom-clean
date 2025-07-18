@@ -1,0 +1,14 @@
+TDAT: 	public TaskProperty getTaskPropertyObjectById(String aTaskPropertyId) {
+		Iterator<String> it = getTaskProperty().keySet().iterator();
+		TaskProperty PropertyObject;
+		String PropertyId;
+		while (it.hasNext()) {
+			PropertyId = (String) it.next();
+			PropertyObject = (TaskProperty) getTaskProperty().get(PropertyId);
+			if (PropertyObject.getId().equals(aTaskPropertyId))
+				return PropertyObject;
+		}
+		return null;
+	}
+
+COM:searches for a task property object by its ID and returns it, or returns null if not found

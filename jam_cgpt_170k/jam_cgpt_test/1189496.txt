@@ -1,0 +1,17 @@
+TDAT:    public boolean next() {
+      if (!moregroups)
+         return false;
+      for (AggregationFn fn : aggfns)
+         fn.processFirst(s);
+      groupval = new GroupValue(s, groupfields);
+      while(moregroups = s.next()) {
+         GroupValue gv = new GroupValue(s, groupfields);
+         if (!groupval.equals(gv))
+            break;
+         for (AggregationFn fn : aggfns)
+            fn.processNext(s);
+      }
+      return true;
+   }
+
+COM:iterates over groups of data and applies aggregation functions to each group, returning true if there are still more groups to process

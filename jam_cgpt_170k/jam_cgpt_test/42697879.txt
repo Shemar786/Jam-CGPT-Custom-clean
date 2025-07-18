@@ -1,0 +1,12 @@
+TDAT: 	private void initialize() {
+		this.setSize(540, 101);
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		this.setLocation(
+                ( screenSize.width - this.getWidth() ) / 2,
+                ( screenSize.height - this.getHeight() ) / 2
+		);
+		this.setContentPane(getJContentPane());
+		
+	}
+
+COM:initializes the size, location, and content pane of a window

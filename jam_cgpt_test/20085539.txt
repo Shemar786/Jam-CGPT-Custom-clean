@@ -1,0 +1,20 @@
+TDAT:     private void sleepForConnection() {
+
+        try {
+            
+            b2.start();
+
+            if ( log.isDebugEnabled() )
+                log.debug( "Sleeping to re-establish connection to slave. Last host: " + status );
+            
+            Thread.sleep( LBDriver.HOST_POLL_INTERVAL );
+            
+        } catch ( Exception e ) { 
+            log.error( e ); //won't happen in production I think.
+        } finally {
+            b2.complete();
+        }
+        
+    }
+
+COM:puts the thread to sleep to re-establish a connection to a slave and logs information about the last host before completing the task

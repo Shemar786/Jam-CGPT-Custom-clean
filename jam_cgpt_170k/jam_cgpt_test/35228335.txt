@@ -1,0 +1,13 @@
+TDAT:     public Object parse(Reader reader, Map idmap) throws Exception {
+        Object swingui = null;
+
+        try {
+            Document jdoc = saxbuilder.build(reader); // render xml file into jdom.document
+            swingui = parse(jdoc, idmap);
+        } catch (JDOMException e) {
+            System.err.println(e.getMessage());
+        }
+        return swingui;
+    }
+
+COM:parses an XML file into a JDOM document, and then parses the document into an object representation of a Swing user interface, using a mapping of IDs to objects

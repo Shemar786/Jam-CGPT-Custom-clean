@@ -1,0 +1,17 @@
+TDAT: 	protected void transformRedirects(AbstractProcedure proc,ArrayList<ActionStep> tredirs) {
+		for (Iterator i = tredirs.iterator(); i.hasNext();) {
+			ActionStep st = (ActionStep)i.next();
+			OperationInstance stiop = (OperationInstance)st.getOperation();
+			RedirectTemp rt = (RedirectTemp) stiop.getOperation();
+			Redirect redir = (Redirect) proc.createRedirectTo(rt.getValue());
+			if (redir != null) {
+				stiop.setOperation(redir);
+			}
+			else {
+				valid_ = false;
+			}
+		}
+		
+	}
+
+COM:transforms redirects by creating new redirect instances based on the values obtained from a given AbstractProcedure

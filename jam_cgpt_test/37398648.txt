@@ -1,0 +1,12 @@
+TDAT:   public int doStart() throws IOException, JspException {
+    storeDefaultObject(findObject());
+    JspWriter out = pageContext.getOut();
+    out.print("<form action='");
+    out.print(getActionURL());
+    out.print("'");
+    printAttributes();
+    out.print(">");
+    return EVAL_BODY_INCLUDE;
+  }
+
+COM:starts a JSP page, stores default objects using a findObject method, prints a form using JspWriter, and returns an integer

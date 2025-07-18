@@ -1,0 +1,12 @@
+TDAT:     public void clearRequestParameters() {
+        if (logger.isTraceEnabled())
+            logger.trace("Entering");
+        this.request.getParameterMap().clear();
+
+        // also, clear out the redirect header if it's there.
+        response.removeHeader("Location");
+        if (logger.isTraceEnabled())
+            logger.trace("Exiting");
+    }
+
+COM:clears the request parameters and the redirect header if present

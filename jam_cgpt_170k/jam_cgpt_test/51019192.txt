@@ -1,0 +1,12 @@
+TDAT: 	public double getInformationContent(int goID) {
+		if (goId2Count.get(goID) != null) {
+			double k_n = (double) goId2Count.get(goID);
+			double k_all = (double) annotatedProteins.size();
+			double p = k_n / k_all;
+			double ic = -(Math.log10(p) / Math.log10(2));
+			return ic;
+		}
+		else return Double.NaN;
+	}
+
+COM:calculates and returns the information content value for a given GO ID based on its frequency within a set of annotated proteins

@@ -1,0 +1,17 @@
+TDAT:   protected void addStartDatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WeeklyOccursModel_startDate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WeeklyOccursModel_startDate_feature", "_UI_WeeklyOccursModel_type"),
+				 TimeBasedRoutingPackage.Literals.WEEKLY_OCCURS_MODEL__START_DATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the start date of a weekly occurrence model to an item property descriptor list

@@ -1,0 +1,14 @@
+TDAT:     private void handleNAWS() throws IOException {
+      int width = read16int();
+      if (width == 255) {
+        width = read16int(); //handle doubled 255 value;
+      }
+      int height = read16int();
+      if (height == 255) {
+        height = read16int(); //handle doubled 255 value;
+      }
+      skipToSE();
+      setTerminalGeometry(width, height);
+    }//handleNAWS
+
+COM:handles the Network Virtual Terminal (NVT) Negotiate About Window Size (NAWS) option by reading the width and height of the terminal window and setting the terminal geometry accordingly

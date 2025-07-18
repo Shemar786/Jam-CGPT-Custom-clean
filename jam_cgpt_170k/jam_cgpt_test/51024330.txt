@@ -1,0 +1,15 @@
+TDAT: 	private Component makeQueryIDField() {
+		final String startMessage = "Enter IDs to query";
+		queryIDs = new JTextArea(startMessage);
+		queryIDs.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (queryIDs.getText().equals(startMessage)) {
+					queryIDs.setText("");
+				}
+			}
+		});
+		return new JScrollPane(queryIDs);
+	}
+
+COM:creates a scrollable text component with a message and functionality to clear the message on mouse click

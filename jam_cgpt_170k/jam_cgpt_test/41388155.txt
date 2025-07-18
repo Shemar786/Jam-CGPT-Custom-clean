@@ -1,0 +1,17 @@
+TDAT: 	  public Object createSession() throws Exception{
+//	    Session session = (Session)currentSession.get();  
+	    Session session = currentSession;
+		  System.out.println(session);
+	    if(session == null){
+	      System.out.println("No Session Found - Create and give the identity");
+	      
+	      session = getSessionFactory().openSession(); 
+//	      currentSession.set(session);
+	      currentSession = session;
+	      return trueOwner;
+	    }
+	    System.out.println("Session Found - Give a Fake identity");
+	    return fakeOwner;
+	  }
+
+COM:creates a session and either returns a true or fake identity depending on whether a session already exists

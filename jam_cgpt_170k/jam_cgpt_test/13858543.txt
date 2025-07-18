@@ -1,0 +1,13 @@
+TDAT: 	protected ArrayList parseMediumList(String mediumList, int backupType) {
+		ArrayList ret = new ArrayList();
+		String lines[] = mediumList.split("\n");
+		for (int i = 0; i < lines.length; i++) {
+			BackupMedium medium = parseLine(lines[i]);
+			if ((backupType & medium.getBackupType()) == medium.getBackupType()) {
+				ret.add(medium);
+			}
+		}
+		return ret;
+	}
+
+COM:parses a string that contains a list of backup medium information and returns an ArrayList of BackupMedium objects based on a specified backup type

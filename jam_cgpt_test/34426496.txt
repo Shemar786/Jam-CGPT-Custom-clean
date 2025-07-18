@@ -1,0 +1,8 @@
+TDAT:     private void setFocusNode(SWGTreeNode n) {
+        // this.userObject is ONLY used while creating the tree, the node is
+        // invisible after that and the member should not be used
+        if (focusedNode() != null || this.userObject == null) return;
+        if (this.userObject.equals(n.getUserObject())) focusedNode(n);
+    }
+
+COM:sets the focused node of a tree based on the user object of the given node

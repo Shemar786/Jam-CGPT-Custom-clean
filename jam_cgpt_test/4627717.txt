@@ -1,0 +1,10 @@
+TDAT:     public void deleteDerivedSchema(String kind, String name) {
+        try {
+            restTemplate.delete(baseURL
+                    + "derivedSchema/" + kind + "/delete/" + name + ".json");
+        } catch (SyncopeClientCompositeErrorException e) {
+            LOG.error("While deleting a derived user schema", e);
+        }
+    }
+
+COM:deletes a derived schema with the specified name and kind using a REST client, with an error being logged if it fails

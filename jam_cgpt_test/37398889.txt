@@ -1,0 +1,12 @@
+TDAT:   public void log(Class context, Object message, Throwable ex, boolean debug) {
+    if (!debug || this.debug) {
+      String msg = "[" + context.getName() + "] " + String.valueOf(message);
+      if (ServletData.isInitialized()) {
+        logToServletLog(ex, msg);
+      } else {
+        logToSystemErr(ex, msg);
+      }
+    }
+  }
+
+COM:logs a message, with optional debug level, either to a servlet log or to the system error stream depending on whether the servlet data has been initialized, along with the name of the class from which it originated and an optional Throwable object

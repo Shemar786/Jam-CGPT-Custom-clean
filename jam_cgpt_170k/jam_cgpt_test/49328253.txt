@@ -1,0 +1,8 @@
+TDAT:     public void claimInterface ( int iface) throws UsbException{
+	if ( ( iface<0 || iface>=256 || (! interfaceClaimed[iface]) ) && ( LibusbJava.usb_claim_interface(handle(), iface) < 0 ) )
+	    throw new UsbException("Claiming interface " + iface + " failed: " + LibusbJava.usb_strerror());
+	if ( iface>=0 && iface < 256 )
+	    interfaceClaimed[iface]=true;
+    }
+
+COM:claims a USB interface and throws a USB exception if the claim fails

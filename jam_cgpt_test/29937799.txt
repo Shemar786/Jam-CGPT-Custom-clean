@@ -1,0 +1,7 @@
+TDAT: 	private int core_operation(int q, int a, int b, int x, int s, int t) {
+		return addInteger_wrappingAt32(bitwiseRotate32BitNumberLeft(
+				addInteger_wrappingAt32(addInteger_wrappingAt32(a, q),
+						addInteger_wrappingAt32(x, t)), s), b);
+	}
+
+COM:performs several integer arithmetic operations and bitwise rotations to return an integer value

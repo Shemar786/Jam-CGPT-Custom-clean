@@ -1,0 +1,17 @@
+TDAT: 	public void createFieldEditors() {
+
+
+		addField(
+				new StringFieldEditor(PreferenceConstants.P_TWITTER_NAME, "Twitter user name:", getFieldEditorParent()));
+		addField(
+				new PasswordFieldEditor(PreferenceConstants.P_TWITTER_PASS, "Twitter pass:", getFieldEditorParent()));
+		addField(
+				new IntegerFieldEditor(PreferenceConstants.P_UPDATE_TIMER, "Refresh interval:", getFieldEditorParent()));
+		
+		
+	
+		
+	
+	}
+
+COM:creates field editors for Twitter user name, password, and refresh interval

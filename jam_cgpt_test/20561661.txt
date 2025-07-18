@@ -1,0 +1,14 @@
+TDAT: 	public String generateNonce() {
+		// Get the time of day and run MD5 over it.
+		Date date = new Date();   
+		long time = date.getTime();
+		Random rand = new Random();
+		long pad = rand.nextLong();
+		String nonceString = (new Long(time)).toString() + 
+				(new Long(pad)).toString();
+		byte mdbytes[] = messageDigest.digest(nonceString.getBytes());
+		// Convert the mdbytes array into a hex string.
+		return ProxyUtilities.toHexString(mdbytes);
+	}
+
+COM:generates a nonce string by combining the current time, a random value, and running MD5 encryption on the combination

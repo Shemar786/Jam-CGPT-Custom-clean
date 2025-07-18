@@ -1,0 +1,15 @@
+TDAT:     protected boolean allTypesCheckedWithAllNodes() {
+        if (newNodesForType.size() > 0) {
+            return false;
+        } else if (deletedNodesForType.size() > 0) {
+            return false;
+        } else if (expandedNodesForType.size() > 0) {
+            return false;
+        } else if (reducedNodesForType.size() > 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+COM:checks if all nodes have been checked for all types

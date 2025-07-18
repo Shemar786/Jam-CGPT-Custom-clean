@@ -1,0 +1,14 @@
+TDAT:     public boolean translateIsOneToOne(Map translate) {
+        Set keys = translate.keySet();
+
+        Iterator it = keys.iterator();
+        while (it.hasNext()) {
+            String nodeLabel = (String) it.next();
+            if (!nodeLabel.equals(translate.get(nodeLabel)))
+                return false;
+        }
+        return true;
+
+    }
+
+COM:checks if a given map has a one-to-one relationship between keys and values

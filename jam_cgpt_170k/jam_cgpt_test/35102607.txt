@@ -1,0 +1,12 @@
+TDAT:   private JPanel getPAnzahlen() {
+    if (pAnzahlen == null) {
+      pAnzahlen = new JPanel();
+      pAnzahlen.setLayout(new FlowLayout());
+      pAnzahlen.add(lAnzahl, null);
+      pAnzahlen.add(lSlash, null);
+      pAnzahlen.add(lGesamtanzahl, null);
+    }
+    return pAnzahlen;
+  }
+
+COM:returns a JPanel object that contains JLabels for displaying quantity information

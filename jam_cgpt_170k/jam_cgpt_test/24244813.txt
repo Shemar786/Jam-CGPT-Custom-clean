@@ -1,0 +1,6 @@
+TDAT: 	public byte playTone(int frequency, int duration) throws IOException {
+		byte [] request = {DIRECT_COMMAND_NOREPLY, PLAY_TONE, (byte)frequency, (byte)(frequency>>>8), (byte)duration, (byte)(duration>>>8)};
+		return sendRequest(request, 3);
+	}
+
+COM:plays a tone at a specified frequency and duration using a byte array request and returns the result of sending the request

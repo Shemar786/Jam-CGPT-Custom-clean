@@ -1,0 +1,19 @@
+TDAT:     public boolean equals(Object obj) {
+        
+        boolean retval = false;
+        
+        if (! (obj instanceof PersistentNode)) {
+            return false;
+        }
+        
+        PersistentNode other = (PersistentNode) obj;
+        
+        if (this.getHierarchy().getPrivateId() == other.getHierarchy().getPrivateId() && this.getUserNodeId() == other.getUserNodeId()) {
+            retval =  true;
+        }
+        
+        return retval;
+
+    }
+
+COM:checks if two PersistentNode objects are equal by comparing their hierarchy private IDs and user node IDs

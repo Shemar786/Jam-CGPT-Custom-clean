@@ -1,0 +1,13 @@
+TDAT: 	public void addAllSelectionChangedListeners() {
+		// Re-add the tree listener added by our parent for our parent:
+		// org.eclipse.ui.views.contentoutline.ContentOutlinePage
+		if (isViewerDefined()) {
+			viewer.addSelectionChangedListener(this);
+		}
+		// Add all current listeners
+		for (int i = 0; i < fListenerList.size(); i++) {
+			super.addSelectionChangedListener((ISelectionChangedListener) fListenerList.get(i));
+		}
+	}
+
+COM:adds all the selection changed listeners to the viewer and re-adds the tree listener added by its parent

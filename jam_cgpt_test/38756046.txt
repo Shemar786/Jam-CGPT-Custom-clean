@@ -1,0 +1,11 @@
+TDAT:     public String getCurrentActionLog() {
+        String res ="";
+        for(LogEntry l : this.currentLog){
+            if (l.getAttackAction()==this.current.get(this.currentAction)){
+                res+=l.toShortString()+" | ";
+            }
+        }
+        return res;
+    }
+
+COM:returns a string containing a summary of log entries that correspond to the current action

@@ -1,0 +1,12 @@
+TDAT:     public boolean checkInBook(String callNumber, Date returnDate) throws SQLException {
+        CallableStatement cs = dc.getConnection().prepareCall("{call checkInBook(?,?)}");
+        cs.setString(1, callNumber);
+        cs.setDate(2, returnDate);
+        int result = cs.executeUpdate();
+        if (result != 1) {
+            return false;
+        }
+        return true;
+    }
+
+COM:A Java method that checks in a book by calling a stored procedure, passing the call number and return date as parameters, and returning a boolean value indicating success or failure

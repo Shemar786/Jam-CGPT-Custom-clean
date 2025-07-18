@@ -1,0 +1,13 @@
+TDAT:     public long getDateHeader(String aName) {
+        String header = getHeader(aName);
+        if (header != null) {
+            int idx = header.indexOf(';');
+            if (idx != -1) {
+                header = header.substring(0, idx);
+            }
+            return HttpDate.parse(header);
+        }
+        return -1;
+    }
+
+COM:retrieves the Date header value of an HTTP request and returns it as a long integer

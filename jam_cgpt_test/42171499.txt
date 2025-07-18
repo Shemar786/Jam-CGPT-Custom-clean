@@ -1,0 +1,17 @@
+TDAT:   protected void addResultSetNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RunQuery_resultSetName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RunQuery_resultSetName_feature", "_UI_RunQuery_type"),
+				 ActionStepPackage.eINSTANCE.getRunQuery_ResultSetName(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a result set name to an item property descriptor list

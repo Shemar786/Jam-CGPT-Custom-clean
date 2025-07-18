@@ -1,0 +1,16 @@
+TDAT: 	private void annotateNodes(Map<ONDEXConcept, Double> map) {
+
+		AttributeName an = graph.getMetaData().getFactory()
+				.createAttributeName("Betweenness_centrality", Double.class);
+
+		// scale node size according to percentage
+		for (ONDEXConcept c : map.keySet()) {
+			Double percentBase = map.get(c);
+			if (c.getAttribute(an) == null)
+				c.createAttribute(an, percentBase, false);
+			else
+				c.getAttribute(an).setValue(percentBase);
+		}
+	}
+
+COM:annotates nodes in a graph by assigning a betweenness centrality attribute and scaling node size based on a given percentage

@@ -1,0 +1,10 @@
+TDAT:     public boolean contains(TimePoint p) {
+        if (p == null) {
+            throw new IllegalArgumentException();
+        }
+        return ((containsBegin() && p.equals(getBegin())) || 
+                (containsEnd() && p.equals(getEnd())) || 
+                (containsAsIntermediatePoint(p)));
+    }
+
+COM:checks if a given TimePoint object is contained within the begin and end TimePoints of another object, throwing an exception if the given object is null

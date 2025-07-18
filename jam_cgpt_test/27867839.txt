@@ -1,0 +1,10 @@
+TDAT:     public void verifyInputForward() {
+        if (logger.isDebugEnabled())
+            logger.debug("Entering");
+        init();
+        Common.verifyForwardPath(request.getPathInfo(),null,getActualForward(),true,request,config.getServletContext(),config);
+        if (logger.isDebugEnabled())
+            logger.debug("Exiting");
+    }
+
+COM:verifies input and logs debug messages before and after the input verification

@@ -1,0 +1,16 @@
+TDAT:     public  void stopListening() {
+        listening = false;
+        try {
+            if (serverSocket != null) serverSocket.close();
+            //Thread.yield();
+            connectionRegistry.notifyCommunicationEventObservers(
+            new CommunicationEvent(CommunicationEvent.CONNECTION_STOP_LISTENING));
+
+            serverSocket = null;
+        }
+        catch (IOException e) {
+            throw new CsccException(e.getMessage());
+        }
+    }
+
+COM:stops listening for incoming communication events on a server socket

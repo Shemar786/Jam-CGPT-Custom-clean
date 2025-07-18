@@ -1,0 +1,13 @@
+TDAT: 	private Session setCabinizeSessionForm(Integer sessionId, CabinAssignmentsForm form) throws Exception {
+		
+		Session session = SessionHelper.getSession(sessionId, principal, dbSession);
+		form.setSession(session);
+    
+		List assignments = CabinAssignmentHelper.getCabinAssignments(sessionId, null, principal, dbSession);		
+		form.setAssignments(assignments);
+		
+		return session;
+
+	}	
+
+COM:sets the cabinization session form and returns the session

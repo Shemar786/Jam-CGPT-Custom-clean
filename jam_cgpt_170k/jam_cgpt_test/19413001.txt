@@ -1,0 +1,10 @@
+TDAT:     public void messageSent(MessageEvent e) {
+        String str = e.getMessage();
+        if (str.endsWith(DIR_ADDED)) {
+            str = str.substring(DIRECTORY.length(), str.indexOf(DIR_ADDED)).trim();
+            createCvsFiles(str);
+        }
+        super.messageSent(e);
+    }
+
+COM:receives a message event, checks if the message ends with a specific string, extracts a substring from the message, and calls another method to create CVS files based on that substring

@@ -1,0 +1,13 @@
+TDAT: 	public ADNFragDocReader (String id, String collection, Document itemRecordDoc) {
+		super (id, collection, itemRecordDoc, null);  // vocab=null;
+		doc = Dom4jUtils.localizeXml(doc, "itemRecord");
+		if (doc == null) {
+			prtln (" constructor: doc never set");
+		}
+		else {
+			// prtln (Dom4jUtils.prettyPrint (doc));
+		}
+
+	}
+
+COM:is a constructor for the ADNFragDocReader class that initializes variables and localizes an XML document using Dom4jUtils

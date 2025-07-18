@@ -1,0 +1,12 @@
+TDAT:     public void print(PrintStream out) {
+        out.println("    " + entry);
+
+        Iterator e = paths().iterator();
+
+        while (e.hasNext()) {
+            Block[] path = (Block[]) e.next();
+            out.println("    path: " + path[0] + " -> " + path[1]);
+        }
+    }
+
+COM:prints an entry and the paths associated with it by iterating through a collection of Block arrays

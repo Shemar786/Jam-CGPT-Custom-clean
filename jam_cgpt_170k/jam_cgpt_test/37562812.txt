@@ -1,0 +1,10 @@
+TDAT: public int getRowCount () {
+	checkWidget ();
+  Utils.notImplemented(); return 1;
+//	if ((style & SWT.VERTICAL) != 0) {
+//		return OS.SendMessage (handle, OS.TB_BUTTONCOUNT, 0, 0);
+//	}
+//	return OS.SendMessage (handle, OS.TB_GETROWS, 0, 0);
+}
+
+COM:checks the widget and returns 1, while the rest of the code appears to be commented out

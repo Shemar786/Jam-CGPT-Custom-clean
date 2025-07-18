@@ -1,0 +1,11 @@
+TDAT: 	private void populateRCP(RCP rcp, int count) throws DataTypeException {
+		// RCP-1
+		rcp.getQueryPriority().setValue("I");
+		// RCP-2 (Optional) The number of answers to return
+		if (count > 0) {
+			rcp.getQuantityLimitedRequest().getQuantity().setValue(Integer.toString(count));
+			rcp.getQuantityLimitedRequest().getUnits().getIdentifier().setValue("RD");
+		}
+	}
+
+COM:populates an RCP object with a query priority and optionally sets the quantity of answers to return

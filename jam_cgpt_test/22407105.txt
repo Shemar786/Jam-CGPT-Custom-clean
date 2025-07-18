@@ -1,0 +1,15 @@
+TDAT:     public void readProperties() {
+        final IDESettings settings = IDESettings.getInstance();
+
+        final AntRunner antrunner = AntRunner.getInstance();
+
+        statusPanel.serverStarted(antrunner.isLoggerServerRunning());
+        statusPanel.antConfigured(settings.isConfigured());
+
+        scriptPanel.readProperties();
+        generalBehaviourPanel.readProperties();
+        localeSetting.setSelected(settings.isLocaleEnabled());
+        serverPanel.setPort(settings.getPort());
+    }
+
+COM:reads and initializes various settings and configurations

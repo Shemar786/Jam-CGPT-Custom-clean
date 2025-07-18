@@ -1,0 +1,18 @@
+TDAT: 	public void setMDCCanonicalHostNameKey(String value) {
+
+		if (value == null) { return; }
+
+		value = value.trim();
+
+		if (value.length() == 0) { return; }
+
+		try
+		{				   
+			InetAddress address = InetAddress.getLocalHost();
+			String nagios_canonical_hostname = "nagios_canonical_hostname";
+			if (null == MDC.get(nagios_canonical_hostname))
+				MDC.put(value, address.getCanonicalHostName());
+		} catch (Exception e) {}
+	}
+
+COM:sets the value of the MDC canonical host name key if it is not null or empty, using the local host's canonical host name

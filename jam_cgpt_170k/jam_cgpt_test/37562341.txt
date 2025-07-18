@@ -1,0 +1,12 @@
+TDAT: public void setExpanded (boolean expanded) {
+	checkWidget ();
+  
+  CTree tree = ((CTree)parent.handle);
+  if(expanded) {
+    tree.expandPath(new TreePath(handle.getPath()));
+  } else {
+    tree.collapsePath(new TreePath(handle.getPath()));
+  }
+}
+
+COM:sets the expansion state of a CTree node based on the value of a boolean parameter

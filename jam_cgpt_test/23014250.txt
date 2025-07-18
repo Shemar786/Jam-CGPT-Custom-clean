@@ -1,0 +1,8 @@
+TDAT:     private void notifyListeners(final int index) {
+        TableModelEvent tme = new TableModelEvent(CurveData.this, index, index, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT);
+        for (TableModelListener tml : listeners) {
+            tml.tableChanged(tme);
+        }
+    }
+
+COM:notifies all registered listeners of a change in the table model at a specific index

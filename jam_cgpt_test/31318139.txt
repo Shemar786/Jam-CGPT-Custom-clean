@@ -1,0 +1,19 @@
+TDAT: 	public void handlePacket(Packet packet) {
+		BlockMessage blockMessage = (BlockMessage) packet;
+
+		NetworkID blockID = blockMessage.getBlockID();
+
+		protocolController.updateReceived(blockMessage.getLastModified(), blockMessage.getBlockID(), PacketConstants.BLOCK_MESSAGE);
+		
+		document.getAccessLock();
+
+		if (document.findBlock(blockID) == null) {
+			addNewBlock(blockMessage);
+		} else {
+			updateBlock(blockMessage);
+		}
+
+		document.releaseAccessLock();
+	}
+
+COM:handles a received packet containing a block message, updates the protocol controller, and updates the document by adding a new block or updating an existing block

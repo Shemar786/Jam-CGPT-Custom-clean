@@ -1,0 +1,13 @@
+TDAT:     public int hashCode() {
+        int result = 17;
+        if (namespaceId != null)
+            result = 37*result +  namespaceId.hashCode();
+        if (universalId != null)
+            result = 37*result +  universalId.hashCode();
+        if (universalIdType != null)
+            result = 37*result + universalIdType.hashCode();
+
+        return result;
+    }
+
+COM:calculates and returns the hash code of an object based on its namespaceId, universalId, and universalIdType values

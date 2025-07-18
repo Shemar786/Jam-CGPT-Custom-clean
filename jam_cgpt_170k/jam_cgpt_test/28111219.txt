@@ -1,0 +1,14 @@
+TDAT:     private void readObject(ObjectInputStream stream) throws java.io.IOException, ClassNotFoundException {
+        stream.defaultReadObject();
+
+        // set transient fields
+        if (console != null) {
+            setOut(console.getOut());
+            setErr(console.getErr());
+        } else {
+            setOut(System.out);
+            setErr(System.err);
+        }
+    }
+
+COM:reads an object from an ObjectInputStream and sets transient fields based on the value of a console variable

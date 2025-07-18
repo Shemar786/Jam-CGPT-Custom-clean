@@ -1,0 +1,9 @@
+TDAT:     public String normalizeDirString(String dirspec) {
+        if((dirspec.indexOf("/")>=0)&&(File.separator.equals("\\"))) {
+            dirspec=dirspec.replace('/','\\'); }
+        if(!dirspec.endsWith(File.separator)) {
+            dirspec+=File.separator; }
+        return dirspec;
+    }
+
+COM:normalizes a directory string by replacing forward slashes with backward slashes and ensuring it ends with the correct file separator

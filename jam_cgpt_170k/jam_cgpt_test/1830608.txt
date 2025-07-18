@@ -1,0 +1,15 @@
+TDAT:     public void unZip(String fileName) {
+        dirsMade = new TreeSet<String>();
+        try {
+            zippy = new ZipFile(fileName);
+            Enumeration all = zippy.entries();
+            while (all.hasMoreElements()) {
+                getFile((ZipEntry)all.nextElement());
+            }
+        } catch (IOException err) {
+            System.err.println("IO Error: " + err);
+            return;
+        }
+    }
+
+COM:unzips a file and creates a set of directories

@@ -1,0 +1,14 @@
+TDAT:     public void setProperties(Properties properties) {
+        if(this.properties != null) {
+            this.properties.removeAttributesListener(this);
+        }
+        this.properties = properties;
+        if(logicalComponent != null){ 
+            this.logicalComponent.setProperties(properties);
+        }
+        if(this.properties != null){
+            this.properties.addAttributesListener(this);
+        } 
+    }
+
+COM:sets the properties of a logical component and assigns them to the current object, while also removing and adding an attributes listener if necessary

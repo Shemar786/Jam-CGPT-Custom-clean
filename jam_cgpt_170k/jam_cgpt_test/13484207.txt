@@ -1,0 +1,12 @@
+TDAT:         public void addKill(Block block, Kill kill) {
+            if (DEBUG) {
+                System.out.println("    add alias to worklist=" + kill.expr
+                        + " " + kill + " block: " + block.label());
+            }
+
+            int blockIndex = cfg.preOrderIndex(block);
+            kills[blockIndex].add(kill);
+            killsSorted[blockIndex] = false;
+        }
+
+COM:adds a kill record for a given block and expression to the program's worklist

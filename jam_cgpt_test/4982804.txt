@@ -1,0 +1,7 @@
+TDAT:     public List getDatasetsByQueryString(EntityManager entityManager, String query, int firstResult, int resultCount) {
+        logger.debug("Getting entities: " + query);
+        Query q = entityManager.createQuery(query);
+        return this.getDatasetsByQuery(q, firstResult, resultCount);
+    }
+
+COM:retrieves a list of datasets based on a given query string and certain parameters, using an EntityManager

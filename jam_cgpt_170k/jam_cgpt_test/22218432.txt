@@ -1,0 +1,15 @@
+TDAT:     public void setTimeout(int timeout) {
+        try {
+            sockTimeout = timeout;
+            if (sock != null) {
+                sock.setSoTimeout(sockTimeout);
+            }
+        } catch (SocketException x) {
+            LOG.error("Failed to set timeout on socket: {} ", x.getMessage());
+            if (LOG.isDebugEnabled()) {
+                LOG.debug(STACK_TRACE_ERR, x);
+            }
+        }
+    }
+
+COM:sets the timeout for a socket connection

@@ -1,0 +1,17 @@
+TDAT: 	public void add (Nutrients nu) {
+		
+		nutrientValueInitialization();
+		
+		Collection<NutrientValue> nuValues = nu.getNutrientValues();
+		Iterator<NutrientValue> iter = nuValues.iterator();
+		NutrientValue currnuval;
+		
+		int nusize = nuValues.size();
+			
+		for (NutrientValue nuVal : m_NutrientValues.values()) {
+			currnuval = iter.next();
+			getNutrientByCode(currnuval.getNutrientName().getShortcode()).add((currnuval).getValue());
+		}	
+	}
+
+COM:adds a Nutrient object to an existing NutrientValue collection by retrieving the NutrientValue values and iterating through them to update the Nutrient's value with a given Nutrient code

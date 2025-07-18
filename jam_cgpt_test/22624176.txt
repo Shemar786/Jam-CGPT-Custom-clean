@@ -1,0 +1,14 @@
+TDAT: 	public List getEnumerationPaths(String encodedPath) {
+		String xpath = XPathUtils.decodeXPath(encodedPath);
+		List nodes = docMap.selectNodes(xpath);
+		List paths = new ArrayList();
+		for (int i = 0; i < nodes.size(); i++) {
+			Node node = (Node) nodes.get(i);
+			int index = i + 1;
+			String path = xpath + "[" + index + "]";
+			paths.add(path);
+		}
+		return paths;
+	}
+
+COM:gets the list of all the paths in the XML document for a given XPath

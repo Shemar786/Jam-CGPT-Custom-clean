@@ -1,0 +1,18 @@
+TDAT:     public void cycleFrames(boolean forward) {
+
+        final int n = this.visibleFrames.size();
+        final int lastIndex = n - 1;
+
+        // only do something if there are at least two frames
+
+        if (n >= 2) {
+            final int previous = this.topFrameIndex;
+            this.topFrameIndex = nextVisibleFrameIndex(forward);
+            if (this.topFrameIndex != previous) {
+                render();
+                setStatusText(READY_MSG);
+            }
+        }
+    }
+
+COM:cycles through frames in a given direction and renders them if there are at least two available frames

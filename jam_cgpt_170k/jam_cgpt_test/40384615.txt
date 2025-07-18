@@ -1,0 +1,10 @@
+TDAT: 	public boolean intersects(TComponent comp) {
+		return (this.visible)
+		        && (comp.isVisible())
+		        && (this.screenX + this.width >= comp.screenX
+		                && this.screenX <= comp.screenX + comp.width
+		                && this.screenY + this.height >= comp.screenY && this.screenY <= comp.screenY
+		                + comp.height);
+	}
+
+COM:checks if two components intersect each other on the screen

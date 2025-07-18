@@ -1,0 +1,17 @@
+TDAT: 	protected void addTimerThreadPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveTimer_timerThread_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveTimer_timerThread_feature", "_UI_EveTimer_type"),
+				 TimerPackage.Literals.EVE_TIMER__TIMER_THREAD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a timer thread property descriptor to an item's property descriptor list

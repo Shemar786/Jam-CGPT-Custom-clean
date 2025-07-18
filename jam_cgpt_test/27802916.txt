@@ -1,0 +1,18 @@
+TDAT:   public JButton createRemoveCorrelationSetButton ( final CorrelationSetPanel panel ) {
+    return new JButton (
+      new AbstractAction( "Remove" ) {
+          public void actionPerformed ( ActionEvent evt ) {
+            // Do this in the GUI Event Dispatch thread...
+            SwingUtilities.invokeLater(
+              new Runnable() {
+                public void run() {
+                  removeCorrelationSet( panel );
+                }
+              }
+            );
+          }
+      }
+   );
+  } // createRemoveCorrelationSetButton
+
+COM:creates a JButton that, when clicked, removes a correlation set panel from the GUI

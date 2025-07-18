@@ -1,0 +1,9 @@
+TDAT:     public void addAttribute(String name, String value, boolean isRequired) throws XdsRimException {
+        if (value != null) {
+            root.setAttribute(name, value);
+        } else if (isRequired) {
+            throw new XdsRimException("Required attribute \"" + name + "\" not supplied.");
+        }
+    }
+
+COM:adds an attribute, with an optional requirement flag, to a root element and throws an exception if the value is required but not provided

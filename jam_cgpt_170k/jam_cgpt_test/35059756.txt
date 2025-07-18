@@ -1,0 +1,11 @@
+TDAT: 	private void styleRow(int row, boolean selected) {
+		if (row != -1) {
+			if (selected) {
+				table.getRowFormatter().addStyleName(row + 1, getStylePrefix()+"-SelectedRow");
+			} else {
+				table.getRowFormatter().removeStyleName(row + 1, getStylePrefix()+"-SelectedRow");
+			}
+		}
+	}
+
+COM:styles a table row by adding or removing a CSS class depending on whether it is selected or not

@@ -1,0 +1,10 @@
+TDAT:     public void update_userInfo_login(Long userid,String ip) throws IdEmptyException {
+        UserInfo ui = findUserInfoById(userid);
+        if(ui != null) {
+            ui.setLast_login_ip_address(ip);
+            ui.setLast_login_date(new Date());
+            userInfoDao.update(ui);
+        }
+    }
+
+COM:updates the login information of a user specified by their user ID, including their last login IP address and date

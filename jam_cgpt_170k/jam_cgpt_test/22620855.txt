@@ -1,0 +1,9 @@
+TDAT: 	public TeachersDomainStandardsManager getStandardsManager() {
+		if (this.getActionForm() == null)
+			prtlnErr("getStandardsManager: actionForm is unavailable");
+		else if (this.getActionForm().getFramework() == null)
+			prtlnErr("getStandardsManager: framework is unavailable");
+		return (TeachersDomainStandardsManager) this.getActionForm().getFramework().getStandardsManager();
+	}
+
+COM:returns a TeachersDomainStandardsManager object after checking if the required actionForm and framework components are available

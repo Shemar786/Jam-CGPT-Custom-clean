@@ -1,0 +1,15 @@
+TDAT: 	private String _replaceFormNameWithId(String line) throws IOException {
+		int beginIndex = line.indexOf("<form");
+		int endIndex = _getTagEndIndex(line, beginIndex);
+		String formTag = line.substring(beginIndex, endIndex + 1);
+		formTag = StringUtil.replace(formTag,
+									" name=",
+									" id=");
+
+		String preTag = line.substring(0, beginIndex);
+		String postTag = line.substring(endIndex + 1, line.length());
+
+		return preTag + formTag + postTag;
+	}
+
+COM:replaces the "name" attribute with the "id" attribute in an HTML form element

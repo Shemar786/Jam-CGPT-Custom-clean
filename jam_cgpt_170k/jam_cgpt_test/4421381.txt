@@ -1,0 +1,6 @@
+TDAT:   public void addPeerHierarchicalSemanticTag(PeerHierarchicalSemanticTag tag) {
+    PeerSemanticTag copy = this.createPeerSemanticTag(tag.getName(), tag.getSI(), tag.getAddresses());
+    Util.copyPropertiesFromPropertyHolderToPropertyHolder(tag, copy);
+  }
+
+COM:adds a hierarchical semantic tag to a peer and copies its properties to a new peer semantic tag instance

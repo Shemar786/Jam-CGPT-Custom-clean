@@ -1,0 +1,23 @@
+TDAT: 	public List listDocs() {
+		//prtln("listDocs() called");
+		ArrayList list = new ArrayList();
+		synchronized (_readerSearcherUpdateLock) {
+			if (_myReader != null) {
+				try {
+					int numdocs = _myReader.numDocs();
+					for (int i = 0; i < numdocs; i++) {
+						try {
+							list.add(_myReader.document(i));
+						} catch (Exception e) {}
+					}
+				} catch (Throwable e) {}
+			}
+			else {
+				prtlnErr("listDocs couldn't get reader...");
+			}
+		}
+
+		return list;
+	}
+
+COM:lists all documents in a Lucene index and returns them as a list

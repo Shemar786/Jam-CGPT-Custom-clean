@@ -1,0 +1,10 @@
+TDAT:     public BillTableModel getTableModel() {
+        if(null == tableModel){
+            tableModel = new BillTableModel();
+            Object [][] data = {{"1","2","Pepsi","5,30"},{"2","1","Whiskey","6,50"}};
+            tableModel.setData( data );
+        }
+        return tableModel;
+    }
+
+COM:returns a BillTableModel object and initializes its data with a pre-defined 2D array if the table model doesn't exist yet

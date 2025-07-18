@@ -1,0 +1,18 @@
+TDAT:     public boolean lock(final Object key) {
+        Object theLock;
+
+        synchronized (this) {
+            theLock = locks.get(key);
+
+            if (null == theLock) {
+                locks.put(key, getCallerId());
+                return true;
+            } else if (getCallerId() == theLock) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+COM:attempts to acquire a lock on an object based on a provided key and returns a boolean indicating whether or not the lock was successfully acquired

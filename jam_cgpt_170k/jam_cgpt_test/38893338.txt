@@ -1,0 +1,21 @@
+TDAT:   public int read(byte[] b, int off, int len) throws IOException {
+    if (pendLen == 0) {
+      pend = readRecord();
+
+      if (pend == null) {
+        return -1;
+      }
+
+      pendStart   = 0;
+      pendLen     = pend.length;
+    }
+
+    int ret = (len < pendLen) ? len : pendLen;
+    System.arraycopy(pend, pendStart, b, off, ret);
+    pendLen -= ret;
+    pendStart += ret;
+
+    return ret;
+  }
+
+COM:reads bytes from a record into a byte array, starting at a specified offset and reading for a specified length, and returns the number of bytes read

@@ -1,0 +1,14 @@
+TDAT: 	public Dimension getMinimumSize() {
+		if (getParentRow() == null)
+			return getBounds().getSize();
+		
+		int width = getComponent().getMinimumSize().width;
+		int height = getComponent().getMinimumSize().height;
+		if (isFixed())
+			width = Math.max(width, getFixed());
+		if (getParentRow().isFixed())
+			height = Math.max(height, getParentRow().getFixed());
+		return new Dimension(width, height);
+	}
+
+COM:returns the minimum size of a component, accounting for any fixed sizes set by the parent row

@@ -1,0 +1,9 @@
+TDAT:   public void onResize(int width, int height) {
+    if (textVisible) {
+      int textWidth = DOM.getElementPropertyInt(textElement, "offsetWidth");
+      int left = (width / 2) - (textWidth / 2);
+      DOM.setStyleAttribute(textElement, "left", left + "px");
+    }
+  }
+
+COM:resizes a text element to be horizontally centered within a parent element if the text is visible

@@ -1,0 +1,10 @@
+TDAT: 	protected IMachineRoot createMachine(String bareName) throws RodinDBException {
+		final String fileName = EventBPlugin.getMachineFileName(bareName);
+		final IRodinFile file = rodinProject.getRodinFile(fileName);
+		file.create(true, null);
+		final IMachineRoot result = (IMachineRoot) file.getRoot();
+		result.setConfiguration(DEFAULT_CONFIGURATION, null);
+		return result;
+	}
+
+COM:creates a new machine root with a given name and default configuration

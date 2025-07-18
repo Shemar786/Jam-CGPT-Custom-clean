@@ -1,0 +1,8 @@
+TDAT:   public DODSStructure getStructure(Index index) {
+    DStructure ds = (DStructure) pv.getValue(index.currentElement());
+    DODSStructure dataStructure = new DODSStructure(getName(), this);
+    extractData( dataStructure, new LinkedList(), ds);
+    return dataStructure;
+  }
+
+COM:returns a DODSStructure object obtained by extracting data from a DStructure object using the input Index object

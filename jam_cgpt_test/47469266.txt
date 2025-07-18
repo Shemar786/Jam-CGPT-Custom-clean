@@ -1,0 +1,18 @@
+TDAT: 	private ScrolledComposite getScrollingParent(Object obj) {
+		if (obj instanceof ExpandableComposite) {
+			ExpandableComposite ecomp = (ExpandableComposite) obj;
+			Composite parent = ecomp.getParent();
+			while (parent != null && !(parent instanceof ScrolledComposite)) {
+				parent = parent.getParent();
+			}
+			if (parent != null) {
+				return (ScrolledComposite) parent;
+			}
+		}
+		if (obj instanceof ScrolledComposite) {
+			return (ScrolledComposite) obj;
+		}
+		return null;
+	}
+
+COM:returns the ScrolledComposite parent of an ExpandableComposite or ScrolledComposite object

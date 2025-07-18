@@ -1,0 +1,8 @@
+TDAT:     public Value castBoolean(Literal literal) throws IllegalCastException {
+        if (Boolean.valueOf(literal.getLabel()).booleanValue()) {
+            return this.factory.createLiteral("1", SPARQLConstants.FLOAT_TYPE);
+        }
+        return this.factory.createLiteral("0", SPARQLConstants.FLOAT_TYPE);
+    }
+
+COM:casts a boolean literal to a float literal with value 1 if the boolean literal is true, and with value 0 if it is false

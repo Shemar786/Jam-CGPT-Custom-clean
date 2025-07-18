@@ -1,0 +1,11 @@
+TDAT:   private String fixURI(String uri) {
+    String fixedUri = uri;
+    // Do some simple validation/fixing
+    if (!StringUtil.isEmpty(uri) && !(uri.startsWith("http://") || uri.startsWith("https://"))) {
+      fixedUri = "http://" + uri;
+    }
+
+    return fixedUri;
+  }
+
+COM:takes a URI string, validates it, and adds "http://" to the beginning if it doesn't already start with "http://" or "https://"

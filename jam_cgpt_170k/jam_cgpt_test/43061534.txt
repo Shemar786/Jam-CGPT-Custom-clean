@@ -1,0 +1,16 @@
+TDAT:     public String toString() {
+
+        // Instantiate a new string
+        String myString = new String();
+
+        // Loop though all the notes
+        for( int i = 0, x = myNotes.size(); i < x ; i++ ) {
+            // Append this notes string form to the total string
+            myString = myString + ((MusicNote)myNotes.get(i)).toString();
+        }
+
+        // Return the string
+        return myString;
+    }
+
+COM:returns a string representation of a collection of music notes

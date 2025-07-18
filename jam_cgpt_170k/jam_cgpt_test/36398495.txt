@@ -1,0 +1,14 @@
+TDAT:     private void run() {
+        // run only if we have at least one configuration item
+        if (configuration.size() > 0) {
+            ExecutorService pool = Executors.newFixedThreadPool(configuration.size());
+
+            for (Configuration configItem : configuration) {
+                logger.info("Launching server thread with configuration: " + configItem.toString());
+                ServerThread serverThread = new ServerThread(configItem);
+                pool.execute(serverThread);
+            }
+        }
+    }
+
+COM:creates and launches server threads based on a configuration list using a thread pool

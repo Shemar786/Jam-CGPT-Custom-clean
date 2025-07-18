@@ -1,0 +1,9 @@
+TDAT:     public JpqlSelectClause createSelectClause(Path selectedPath) {
+        JpqlSelectExpression expression = new JpqlSelectExpression(JpqlParserTreeConstants.JJTSELECTEXPRESSION);
+        expression = appendChildren(expression, createPath(selectedPath));
+        JpqlSelectExpressions expressions = new JpqlSelectExpressions(JpqlParserTreeConstants.JJTSELECTEXPRESSIONS);
+        expressions = appendChildren(expressions, expression);
+        return appendChildren(new JpqlSelectClause(JpqlParserTreeConstants.JJTSELECTCLAUSE), expressions);
+    }
+
+COM:creates a JPQL select clause with a specified selected path

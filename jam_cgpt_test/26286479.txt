@@ -1,0 +1,15 @@
+TDAT:     protected Page getPageOn(int index) throws IndexOutOfBoundsException {
+        if(index < 0) throw new IndexOutOfBoundsException();
+        Page findPage = firstPage;
+        while(index > 0) {
+            try {
+                findPage=findPage.getNext(false);
+            } catch(NullPointerException e) {
+                throw new IndexOutOfBoundsException();
+            }
+            index--;
+        }
+        return findPage;
+    }
+
+COM:returns the Page object located at the specified index, and throws an IndexOutOfBoundsException if the index is negative or greater than the number of pages in the list

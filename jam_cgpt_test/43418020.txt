@@ -1,0 +1,11 @@
+TDAT: 	public void outputCpu() throws SigarException {
+        // --- setting cpu-Information --------------------
+		cpuInfos = this.sigar.getCpuInfoList();
+		CpuInfo info = cpuInfos[0];
+        setVendor(info.getVendor());
+        setModel(info.getModel());
+        setMhz(info.getMhz());
+        setTotalCpu(info.getTotalCores());
+    }
+
+COM:retrieves and sets CPU information using Sigar library and throws an exception if there is an error

@@ -1,0 +1,11 @@
+TDAT:   public void selectAll () {
+    if( isEditing() ) {
+      stopEditing();
+    }
+    if( ( getRowCount() > 0 ) && ( getColumnCount() > 0 ) ) {
+      setRowSelectionInterval( 0, getRowCount() - 1 );
+      setColumnSelectionInterval( 0, getColumnCount() - 1 );
+    }
+  } // selectAll()
+
+COM:selects all rows and columns in a table, but first checks if the table is in edit mode and stops it if necessary

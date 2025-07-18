@@ -1,0 +1,9 @@
+TDAT: 	public int playerIsAnAttacker(SPlayer p) {
+		for (ShortOperation currO : this.getRunningOps().values()) {
+			if (currO.getAttackers().get(p.getName().toLowerCase()) != null && currO.getStatus() != ShortOperation.STATUS_FINISHED)
+				return currO.getShortID();
+		}
+		return -1;
+	}
+
+COM:checks if a given player is an attacker in any currently running operation and returns the ID of the operation if they are, or -1 if they are not

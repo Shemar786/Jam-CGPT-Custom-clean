@@ -1,0 +1,10 @@
+TDAT: 	public void setDecorationBounds(int x, int y, int w, int h) {
+		if (this.bounds == null) {
+			this.bounds = new Rectangle(x, y, w, h);
+		} else {
+			this.bounds.setBounds(x, y, w, h);
+		}
+		synch();
+	}
+
+COM:sets the decoration bounds of an object by creating a new rectangle if none exists, and synchronizing the changes

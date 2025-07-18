@@ -1,0 +1,8 @@
+TDAT:     public void write(IPropertyStore store) {
+        store.setProperty(property + PROPERTY_PUBLIC, includePublic);
+        store.setProperty(property + PROPERTY_PACKAGE, includePackage);
+        store.setProperty(property + PROPERTY_PROTECTED, includeProtected);
+        store.setProperty(property + PROPERTY_PRIVATE, includePrivate);
+    }
+
+COM:writes the properties of an IPropertyStore

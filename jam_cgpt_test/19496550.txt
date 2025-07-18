@@ -1,0 +1,12 @@
+TDAT: 	public void setCurrentPO(IPSStatus psStatus, IProgressMonitor monitor) {
+		final IProofState proofState = userSupport.getCurrentPO();
+		if (proofState != null && proofState.getPSStatus().equals(psStatus))
+			return;
+		try {
+			userSupport.setCurrentPO(psStatus, monitor);
+		} catch (RodinDBException e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:sets the current PO (proof obligation) for a user with a given status and progress monitor

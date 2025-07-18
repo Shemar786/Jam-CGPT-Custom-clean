@@ -1,0 +1,21 @@
+TDAT: 	public String readString() throws NumberFormatException, IOException{
+		/** String value **/
+		char charBuf;
+		//Get the string length
+		long length = 0;
+		//read stream until : encountered.
+		while((charBuf = (char)stream.read()) != ':'){
+			length *= 10;
+			length += Long.parseLong(""+charBuf);
+		}
+		//read up to <length> chars from stream
+		String value = new String();
+		while(length > 0){
+			value += (char)stream.read();
+			length--;
+		}
+		//return
+		return value;
+	}
+
+COM:reads a string from an input stream by first reading the length of the string, then reading that number of characters from the stream and returning them as a string

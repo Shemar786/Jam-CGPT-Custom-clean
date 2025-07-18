@@ -1,0 +1,16 @@
+TDAT:     public void testGetHttpAuthenticationRealm() {
+        
+        //test "abc" parsed from WSDL
+        Endpoint endpoint = fEndpoints[0];
+        HTTPEndpointExtensions httpEndpointExts = 
+            (HTTPEndpointExtensions) endpoint
+                .getComponentExtensionContext(
+                        HTTPConstants.NS_URI_HTTP);
+        
+        String actual = httpEndpointExts.getHttpAuthenticationRealm();
+        assertEquals("Unexpected value for http authentication realm.", 
+                "abc",
+                actual);
+    }
+
+COM:tests if the httpAuthenticationRealm value returned by a specified Http Endpoint is equal to "abc"

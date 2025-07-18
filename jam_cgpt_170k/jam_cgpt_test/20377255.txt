@@ -1,0 +1,17 @@
+TDAT: 	public void getBars() {
+		getBarsService.getBars(new AsyncCallback<HashMap<Integer, String>>() {
+
+			public void onSuccess(HashMap<Integer, String> result) {
+				for (Integer barVal : result.keySet()) {
+					bar.addItem(result.get(barVal), Integer.toString(barVal));
+				}
+			}
+
+			public void onFailure(Throwable caught) {
+				caught.printStackTrace();
+				bar.addItem("-no bars available-");
+			}
+		});
+	}
+
+COM:retrieves a list of bars from a server and populates a drop-down menu with the results

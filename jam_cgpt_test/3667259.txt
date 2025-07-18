@@ -1,0 +1,11 @@
+TDAT:     public void setMaximum(double newMaximum) {
+        double newMin = Math.min(newMaximum, m_min);
+        double newExtent = Math.min(newMaximum - newMin, m_extent);
+        double newValue = Math.min(newMaximum - newExtent, m_value);
+        setRangeProperties(
+            newValue, newExtent, newMin, newMaximum, m_adjusting,
+            LinearRangeModelEvent.GENERAL_ADJUSTMENT
+        );
+    }
+
+COM:sets the maximum value of the range while adjusting the other properties of the range as necessary

@@ -1,0 +1,11 @@
+TDAT:     public void updateFrameForEval(IRubyObject self, String fileName, int line) {
+        this.self = self;
+        this.name = null;
+        this.fileName = fileName;
+        this.line = line;
+        this.visibility = Visibility.PRIVATE;
+        this.isBindingFrame = false;
+        this.backrefAndLastline = null;
+    }
+
+COM:updates frame for evaluation with given parameters

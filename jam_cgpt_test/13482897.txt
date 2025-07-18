@@ -1,0 +1,11 @@
+TDAT:     public void visitIfStmt(IfStmt stmt) {
+        Set targets = new LinkedHashSet();
+        targets.add(stmt.trueTarget());
+        targets.add(stmt.falseTarget());
+        targets.addAll(stmt.catchTargets());
+        verifyTargets(stmt.block(), targets);
+
+        visitNode(stmt);
+    }
+
+COM:visits an "if" statement by verifying its targets and visiting the node

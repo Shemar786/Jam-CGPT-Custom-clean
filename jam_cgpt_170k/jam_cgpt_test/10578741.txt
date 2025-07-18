@@ -1,0 +1,15 @@
+TDAT:     protected String getUsername(MailAddress m) {
+        try {
+            if (usersRepos.supportVirtualHosting()) {
+                return m.toString();
+            } else {
+                return super.getUsername(m);
+            }
+        } catch (UsersRepositoryException e) {
+            log("Unable to access UsersRepository", e);
+            return super.getUsername(m);
+
+        }
+    }
+
+COM:returns the username either as the email address or from the superclass, depending on whether virtual hosting is supported

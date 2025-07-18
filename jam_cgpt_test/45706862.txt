@@ -1,0 +1,17 @@
+TDAT: 	private Panel getPanel() {
+		if (panel == null) {
+			GridBagConstraints gridBagConstraints4 = new GridBagConstraints();
+			gridBagConstraints4.fill = GridBagConstraints.BOTH;
+			gridBagConstraints4.gridy = 0;
+			gridBagConstraints4.weightx = 1.0;
+			gridBagConstraints4.weighty = 1.0;
+			gridBagConstraints4.gridx = 0;
+			panel = new Panel();
+			panel.setLayout(new GridBagLayout());
+			panel.setBounds(new Rectangle(20, 46, 118, 427));
+			panel.add(getJList(), gridBagConstraints4);
+		}
+		return panel;
+	}
+
+COM:returns a Panel object, setting its layout and adding a JList to it if it hasn't already been initialized

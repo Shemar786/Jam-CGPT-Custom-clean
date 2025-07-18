@@ -1,0 +1,12 @@
+TDAT:     private void docsCopy(List<String> names, String jarPath, File targetDir) {
+        for (String name : names) {
+            if (name.endsWith("html") || name.endsWith("png")) {
+                InputStream in =
+                        SWGAide.class.getResourceAsStream(jarPath + '/' + name);
+                File f = new File(targetDir, name);
+                copyFile(in, f);
+            }
+        }
+    }
+
+COM:copies files with ".html" or ".png" extensions from a JAR file at a specified path to a target directory

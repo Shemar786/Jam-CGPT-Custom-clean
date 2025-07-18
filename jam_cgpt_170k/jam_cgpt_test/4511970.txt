@@ -1,0 +1,11 @@
+TDAT:   public void fireTraceChanged(TracePoint2D changed) {
+    Trace2DChangeEvent fire = new Trace2DChangeEvent(this, changed);
+    synchronized (this.buffer) {
+      Iterator it = this.changeListeners.iterator();
+      while (it.hasNext()) {
+        ((ITrace2D.Trace2DListener) it.next()).traceChanged(fire);
+      }
+    }
+  }
+
+COM:fires an event indicating that a trace point in a 2D graph has changed, and notifies all registered listeners

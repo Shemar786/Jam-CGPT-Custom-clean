@@ -1,0 +1,13 @@
+TDAT:   public Collection exploreDamages() {
+    ArrayList location = (ArrayList) getLocation();
+    Collection result = new ArrayList();
+    Iterator items = damagedDecks.iterator();
+    while (items.hasNext()) {
+      int index = ((Integer) items.next()).intValue();
+      if (index >= 0 || index < location.size())
+        result.add(location.get(index));
+    }
+    return result;
+  }
+
+COM:explores damages and returns a collection of the corresponding locations

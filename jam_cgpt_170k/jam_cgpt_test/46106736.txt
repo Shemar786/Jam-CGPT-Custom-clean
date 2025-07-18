@@ -1,0 +1,15 @@
+TDAT:     public void keyReleased(int mKey) {
+        // Return events for this widget
+        if (listener != null && hasFocus())
+            listener.keyReleased(mKey);
+
+        // Cycle the child widget list and send the keyReleased event
+        for (int i = 0; i < widgetList.size(); i++) {
+            Widget widget = (Widget) widgetList.elementAt(i);
+
+            if (widget.hasFocus())
+                widget.keyReleased(mKey);
+        }
+    }
+
+COM:sends a keyReleased event to the listener and child widgets with focus

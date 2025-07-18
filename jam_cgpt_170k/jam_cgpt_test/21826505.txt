@@ -1,0 +1,18 @@
+TDAT: 	public void testReplaceAttribute() {
+
+		Repository repo = this.createRepository();
+		PType type = repo.createType("aType");
+		type.putAttribute(ATT_NAME, PAttribute.STRING);
+		repo.commit();
+
+		type.remove(ATT_NAME);
+		type.putAttribute(ATT_NAME, PAttribute.INTEGER);
+
+//		repo.commit();
+
+		assertTrue("has attribute", type.hasAttribute(ATT_NAME));
+		assertEquals("integer att", PAttribute.INTEGER, type.getAttribute(ATT_NAME).getValueClass());
+		repo.close();
+	}
+
+COM:tests the ability to replace an attribute in a repository with a new data type

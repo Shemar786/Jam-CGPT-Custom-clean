@@ -1,0 +1,16 @@
+TDAT: 	public void popTopControl() {
+		Control frameControl = getTopControl();
+		stkTopControls.pop();
+		if (!stkTopControls.empty()) {
+			Control fctrl = stkTopControls.lastElement();
+			strTopControlID = fctrl.getControlID();
+			if (frameControl instanceof Page && fctrl instanceof Page) {
+				((Page)frameControl).setClientSettings((Page)fctrl);
+			}
+		} else {
+			strTopControlID = null;
+		}
+		setRequireRedraw(true);
+	}
+
+COM:removes the top control from the stack, sets the new top control ID, and sets a flag to require a redraw

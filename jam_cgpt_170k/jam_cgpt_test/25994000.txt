@@ -1,0 +1,11 @@
+TDAT: 	public long addToken(String token, String tokenSecret, String tokenVerifier) {
+		ContentValues initialValues = new ContentValues();
+		
+		initialValues.put("token", token);
+		initialValues.put("token_secret", tokenSecret);
+		initialValues.put("token_verifier", tokenVerifier);
+		Log.d(TAG, "inserting Token infos into DB");
+		return mDb.update(DATABASE_TABLE_PROFILES, initialValues, "selected = 1", null);
+	}
+
+COM:adds token information to a database table and returns the number of rows affected

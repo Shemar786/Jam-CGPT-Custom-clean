@@ -1,0 +1,8 @@
+TDAT: 	public Value castString(Literal literal) throws IllegalCastException {
+		if (!literal.getLabel().equalsIgnoreCase("true") && !literal.getLabel().equalsIgnoreCase("false")) {
+			throw new IllegalCastException("Unable to cast string to boolean");
+		}
+		return this.factory.createLiteral(literal.getLabel(), SPARQLConstants.BOOLEAN_TYPE);
+	}
+
+COM:casts a string literal to a boolean value, or it throws an exception if the string is not valid for conversion

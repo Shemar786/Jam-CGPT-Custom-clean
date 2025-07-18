@@ -1,0 +1,9 @@
+TDAT:   public void shutdown() {
+    Utils.log(getClass().getName(), 3, "Shutting down poolservice " + this + " terminated:"
+        + m_service.isTerminated());
+    //      if (m_service.isTerminated()) {
+    m_service.shutdown();
+    //      }
+  }
+
+COM:shuts down a pool service and logs the termination status

@@ -1,0 +1,21 @@
+TDAT: 	public String toString() {
+		StringBuilder sb=new StringBuilder();
+		
+		int s=size();
+		for (int i=0; i<s; i++) {
+			if (i>0) {
+				if ((i&15)==0) {
+					sb.append('\n');
+				} else {
+					sb.append(' ');					
+				}
+			}
+			int b=data[i];
+			sb.append(TextUtils.toHexChar(b>>4));
+			sb.append(TextUtils.toHexChar(b));
+		}
+		
+		return sb.toString();
+	}
+
+COM:converts data bytes into a formatted, readable string of hexadecimal values

@@ -1,0 +1,14 @@
+TDAT: 	private JPanel getPanelSuperior() {
+		if (panelSuperior == null) {
+			panelSuperior = new JPanel();
+			panelSuperior.setLayout(new FlowLayout());
+			panelSuperior.setBorder(BorderFactory
+					.createEtchedBorder(EtchedBorder.RAISED));
+			panelSuperior.add(getComboBoxImagenes(), null);
+			panelSuperior.add(getButtonNuevo(), null);
+			panelSuperior.add(getButtonEliminarEntorno(), null);
+		}
+		return panelSuperior;
+	}
+
+COM:returns a JPanel with etched border, FlowLayout, a JComboBox, and two JButtons if it is not already initialized

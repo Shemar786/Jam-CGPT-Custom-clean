@@ -1,0 +1,14 @@
+TDAT: 	public User createUser(String username) throws Exception {
+		if (this.userMap.containsKey(username))
+			throw new Exception("User already exists with username: " + username);
+
+		User newUser = new User();
+		newUser.setUsername(username);
+		File newFile = new File(this.userDataDir, username + ".xml");
+		newUser.setSource(newFile);
+		newUser.flush();
+		this.register(newUser);
+		return newUser;
+	}
+
+COM:creates a new user object with a given username, checks if a user with the same username already exists, creates a corresponding file in a specified directory and returns the newly created user object

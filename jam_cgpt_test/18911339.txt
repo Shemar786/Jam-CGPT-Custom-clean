@@ -1,0 +1,20 @@
+TDAT: 	protected void cleanupObject(Object obj) {
+		if (obj != null) {
+			log.debug("PreparedStatementCache:cleanupObject class='"
+					+ obj.getClass() + "'");
+			log
+					.debug("PreparedStatementCache:cleanupObject close a PreparedStatement o="
+							+ "'" + obj.toString() + "'");
+
+			try {
+				((PreparedStatement) obj).close();
+				// obj = null;
+			} catch (SQLException e) {
+				log
+						.error("PreparedStatementCache:cleanupObject problem to close"
+								+ "a PreparedStatement: " + e);
+			}
+		}
+	}
+
+COM:closes a PreparedStatement object if it is not null

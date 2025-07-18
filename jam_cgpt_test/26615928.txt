@@ -1,0 +1,16 @@
+TDAT:     public String toString() {
+        String s = "";
+
+        s += "Name: " + name + "\n";
+        s += "Number of neurons: " + neurons.size() + "\n";
+
+        for (int i = 0; i < neurons.size(); i++) {
+            Neuron n = (Neuron) neurons.elementAt(i);
+
+            s += n.toString() + "\n";
+        }
+
+        return s;
+    }
+
+COM:generates a string consisting of the name, the number of neurons, and the toString output of each neuron in the list

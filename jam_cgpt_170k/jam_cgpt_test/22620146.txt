@@ -1,0 +1,16 @@
+TDAT: 	public void addMapping(IdMapping mapping) throws Exception {
+		try {
+			mapping.validate();
+		} catch (Exception e) {
+			prtln("\nrejecting invalid mapping: " + e.getMessage());
+			return;
+		}
+		Map subjectMappings = this.getSubjectMappings(mapping.subject);
+		String asnId = mapping.asnInfo.id;
+		String acsrId = mapping.acsrInfo.id;
+		subjectMappings.put(acsrId, mapping);
+		this.asnIdMap.put(asnId, acsrId);
+		this.acsrIdMap.put(acsrId, asnId);
+	}
+
+COM:adds a mapping between two identifiers, validates it, and updates three different maps with the new information

@@ -1,0 +1,9 @@
+TDAT:     protected JavaProblem addProblem(ASTNode node, Object... args) {
+        if (null == node) {
+            throw new IllegalArgumentException("Can not log on an empty node in " + getKey());
+        }
+
+        return manager.addProblem(getKey(), node, makeMessage(args));
+    }
+
+COM:adds a problem to a manager with a specified key, node, and message, and throws an exception if the node is null

@@ -1,0 +1,11 @@
+TDAT: 	private IInformationControlCreator getOutlinePresenterControlCreator(ISourceViewer sourceViewer, final String commandId) {
+		return new IInformationControlCreator() {
+			public IInformationControl createInformationControl(Shell parent) {
+				int shellStyle = SWT.RESIZE;
+				QuickOutlinePopupDialog dialog = new QuickOutlinePopupDialog(parent, shellStyle, fSourcePage, fSourcePage);
+				return dialog;
+			}
+		};
+	}
+
+COM:returns an information control creator for a quick outline presentation in an SWT shell, based on the provided source viewer and command ID

@@ -1,0 +1,15 @@
+TDAT:   public void addElementAsLast(RingElement element) {
+    if (isEmpty()) {
+      head = current = element;
+      element.next = element;
+      element.prev = element;
+    } else {
+      element.prev = head.prev;
+      element.next = head;
+      element.prev.next = element;
+      head.prev = element;
+    }
+    elements++;
+  }
+
+COM:adds a new RingElement object as the last element in the linked list, updating pointers and increasing the element count

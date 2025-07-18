@@ -1,0 +1,14 @@
+TDAT:   public String getStringTags(int i) {
+    StringBuilder str = new StringBuilder(32);
+    for (int j=0; j<tags[i].length; j++) {
+      if (tags[i][j] != null) {
+        if (str.length()>0)
+          str.append(".");
+        str.append(tags[i][j]);
+      }
+    }
+    
+    return str.toString();
+  }
+
+COM:returns a string that contains concatenated non-null values from a multi-dimensional array of tags

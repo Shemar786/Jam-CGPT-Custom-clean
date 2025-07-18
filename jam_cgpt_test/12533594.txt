@@ -1,0 +1,14 @@
+TDAT: 	public void setLastOriginProbability(TransportLocationIfc location){
+		
+		if(!myNetwork.isOrigin(location))	
+			new IllegalArgumentException("The supplied location is not a valid origin.");
+		
+		if (!myODRVs.containsKey(location)){
+			RandomVariable rv = new RandomVariable(this, new DEmpirical());
+			myODRVs.put(location, rv);
+		}		
+		int i = myNetwork.getIndexOf(location);
+		myOriginPDF.addLastProbabilityPoint(i);
+	}
+
+COM:sets the last origin probability point for a specific location on a network, creating a new RandomVariable if necessary and throwing an exception if the location is not a valid origin

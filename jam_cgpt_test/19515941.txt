@@ -1,0 +1,17 @@
+TDAT: 	protected void addInv_detinp_detPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DET_inv_detinp_det_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DET_inv_detinp_det_feature", "_UI_DET_type"),
+				 Context_FmsCPackage.Literals.DET__INV_DETINP_DET,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a descriptor property to the item descriptor list for the DET class's INV_DETINP_DET field

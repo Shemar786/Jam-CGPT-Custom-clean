@@ -1,0 +1,20 @@
+TDAT: 	private void writeFilters(Properties props, String keyPrefix, Collection<String> filters) {
+		int counter = 0;
+		for (String s : filters) {
+			props.setProperty(keyPrefix + counter, s);
+			counter++;
+		}
+		// remove obsolete keys from the properties file
+		boolean keyFound = true;
+		while (keyFound) {
+			String key = keyPrefix + counter;
+			String property = props.getProperty(key);
+			if (property == null) {
+				keyFound = false;
+			} else {
+				props.remove(key);
+			}
+		}
+	}
+
+COM:writes a collection of strings as properties to a specified property file, and removes any obsolete keys

@@ -1,0 +1,6 @@
+TDAT:     public String getLocalizedMessage(Locale currentLocale) {
+        Object[] arguments = {this.getFieldName(), this.getFieldValue(), this.getClazz().getName()};
+        return this.getLocalizer().getFormattedErrorMessage(currentLocale, arguments);
+    }
+
+COM:returns a localized error message with dynamic arguments

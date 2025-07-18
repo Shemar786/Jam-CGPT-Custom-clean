@@ -1,0 +1,16 @@
+TDAT: 	private void createContextMenu() {
+		MenuManager mngr = new MenuManager();
+		// create context menu
+		Menu contextMenu = mngr.createContextMenu(this.mappingTable
+				.getControl());
+		// add to control
+		this.mappingTable.getControl().setMenu(contextMenu);
+		// add action to context menu
+		if (remapAction != null) {
+			mngr.add(remapAction);
+		}
+		mngr.add(this.viewAction);
+
+	}
+
+COM:creates and adds a context menu to a control, and adds specific actions to the menu if available

@@ -1,0 +1,16 @@
+TDAT:     private void updateProxy() {
+        if (!fullyInicialized) {
+            return;
+        }
+        boolean useProxy = useProxyCheckBox.isSelected();
+
+        if (useProxy) {
+            ProxyManager.setProxy(httpProxyTextField.getText(),
+                    httpsProxyTextField.getText(),
+                    socksProxyTextField.getText());
+        } else {
+            ProxyManager.setProxy(null, null, null);
+        }
+    }
+
+COM:updates the proxy settings based on user input if the application has been fully initialized

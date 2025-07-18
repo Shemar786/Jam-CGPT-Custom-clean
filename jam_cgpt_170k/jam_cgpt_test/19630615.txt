@@ -1,0 +1,17 @@
+TDAT: 	protected void addComponentDefinitionIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentDefinitionReference_componentDefinitionId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentDefinitionReference_componentDefinitionId_feature", "_UI_ComponentDefinitionReference_type"),
+				 WorkflowPackage.Literals.COMPONENT_DEFINITION_REFERENCE__COMPONENT_DEFINITION_ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a component definition ID feature with a generic value image

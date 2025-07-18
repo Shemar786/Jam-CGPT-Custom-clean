@@ -1,0 +1,11 @@
+TDAT:     public void switchRotationMode() {
+        this.mode = UserMode.Rotating;
+        setCursor(new Cursor(Cursor.MOVE_CURSOR));
+        if (selection.isEmpty()) {
+            infoBar.printMessage("Please select a shape or a transformation first.");
+        } else {
+            infoBar.printMessage("Click to rotate the selection.");
+        }
+    }
+
+COM:switches the rotation mode, sets the cursor to move, and prints a message if a shape or transformation has not been selected, or prompts to rotate the selection

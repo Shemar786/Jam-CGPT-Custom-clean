@@ -1,0 +1,14 @@
+TDAT: 	public Operation getOperation(String operationName) {
+	   Iterator children = getChildren();
+       while (children.hasNext()) {
+     	Block child = (Block)children.next();
+      	if (child instanceof Operation) {
+        	Operation op = (Operation)child;
+        	if (operationName.equals(op.getValue()))
+        		return op;
+      	}
+       }
+		return null;
+	}
+
+COM:returns an Operation object with a specific name by iterating over a list of child objects

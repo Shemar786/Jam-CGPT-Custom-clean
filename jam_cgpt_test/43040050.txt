@@ -1,0 +1,10 @@
+TDAT:     private void addSelectionBinding(final String name, final Binding b) {
+        if (selectionBindings == null)
+            selectionBindings = new HashMap<String, Binding>();
+        final Binding old = selectionBindings.put(name, b);
+        if (old != null)
+            old.unbind();
+        b.bind();
+    }
+
+COM:adds a selection binding to a HashMap and unbinds the old binding if it exists

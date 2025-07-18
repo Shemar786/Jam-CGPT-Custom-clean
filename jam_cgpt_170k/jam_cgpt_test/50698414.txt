@@ -1,0 +1,11 @@
+TDAT:     protected int getAlphaRating(int prune) {
+        int localPrune = POSINV;
+        int i = 0;
+        while ((i < nodes.length) && (localPrune > prune)) {
+            localPrune = Math.min(localPrune, nodes[i].getRating(localPrune));
+            i++;
+        }
+        return localPrune;
+    }
+
+COM:returns an integer alpha rating based on a given integer prune value

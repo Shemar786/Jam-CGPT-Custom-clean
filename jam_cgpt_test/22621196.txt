@@ -1,0 +1,15 @@
+TDAT: 	public int getSelectedCATEndGrade(String[] gradeConstraints) {
+		if (gradeConstraints == null || !this.getCatHelper().getUseGradeRanges()) {
+			return CATRequestConstraints.ANY_GRADE;
+		}
+
+		int max = CATRequestConstraints.ANY_GRADE;
+		try {
+			max = Math.max(Integer.parseInt(gradeConstraints[0]), Integer.parseInt(gradeConstraints[1]));
+		} catch (Throwable t) {
+			prtln("WARNING: getSelectedCATEndGrade problem: " + t.getMessage());
+		}
+		return max;
+	}
+
+COM:returns the maximum selected CAT end grade from a given array of grade constraints

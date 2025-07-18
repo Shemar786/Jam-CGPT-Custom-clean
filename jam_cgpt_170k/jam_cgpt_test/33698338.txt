@@ -1,0 +1,15 @@
+TDAT: 	public void attackerReportCallback(FormInfo formInfo, BaseReportItem report) {
+		if(this.isCAPTCHACrackSuccessful(formInfo, report)){return;}
+		if(formInfo.CAPTCHACrackRetryTimes>=Configuration.MAX_RETRY_CAPTCHACRACK)
+		{
+			formInfo.CAPTCHACrackRetryTimes=Configuration.MAX_RETRY_CAPTCHACRACK;//avoid potential overflow problem.
+			this.doCAPTCHAAttack(formInfo, true);
+		}
+		else
+		{
+			this.doCAPTCHAAttack(formInfo, false);
+		}
+		attacker.attack(formInfo);	
+	}
+
+COM:handles the callback for an attacker report, checks if a CAPTCHA crack was successful and retries the crack if necessary before launching an attack

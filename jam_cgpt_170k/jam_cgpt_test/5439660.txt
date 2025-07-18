@@ -1,0 +1,11 @@
+TDAT:     public I_JoSecurityRole getSecurityRole() {
+        if (this.securityRole == null) {
+            if (roleLink != null)
+                this.securityRole = (model.getServletContextPeer()).getSecurityRole(roleLink);
+            else
+                this.securityRole = (model.getServletContextPeer()).getSecurityRole(roleName);
+        }
+        return this.securityRole;
+    }
+
+COM:returns an instance of a security role or retrieves it from a servlet context peer if null

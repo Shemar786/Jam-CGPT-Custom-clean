@@ -1,0 +1,15 @@
+TDAT: 	private String getTitle(Model m, Resource r) {
+		StmtIterator iter =  m.listStatements( new SimpleSelector( r, ATOM.title, (Literal) null ) );
+		Literal title = null;
+		while (iter.hasNext()) {
+			Statement s = iter.nextStatement();
+			title = s.getLiteral();
+		}
+		if (title == null) {
+			return r.getURI();
+		} else {
+			return title.getString();
+		}
+	}
+
+COM:retrieves the title of a resource using a model and a specified selector, returning either the title as a string or the URI of the resource if no title is found

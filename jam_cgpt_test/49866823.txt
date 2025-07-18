@@ -1,0 +1,15 @@
+TDAT:   protected void copyChecklistItem(long id) {
+    Intent intent;
+    
+    if (id > 0) {
+      // Copy checklist
+      id = mDbHelper.copyChecklistItem(id);
+      
+      // Edit it now
+      intent = new Intent(this, ChecklistItemEdit.class);
+      intent.putExtra(ChecklistDBAdapter.KEY_ROWID, id);
+      startActivityForResult(intent, ACTIVITY_EDIT);
+    }
+  }
+
+COM:copies a checklist item with a given ID, and then opens an intent to edit the copied item

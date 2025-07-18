@@ -1,0 +1,12 @@
+TDAT: 	@Test
+	public void testBind() {		
+		PagedResultDataModel<Bean> pageResult = new PagedResultDataModel<Bean>();
+		PagedResult<Bean> pg = new PagedResult<Bean>(new Page(50), 1000l, list);
+		pageResult.bind(pg);
+		
+		assertEquals(new Integer(50), pageResult.getPage().getMaxResults());
+		assertEquals(1000l, pageResult.getRowCount());
+		assertEquals(list, pageResult.getWrappedData());		
+	}
+
+COM:tests the binding functionality of a PagedResultDataModel object with a PagedResult object and asserts that the expected values are returned

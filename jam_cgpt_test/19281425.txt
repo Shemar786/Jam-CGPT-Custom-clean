@@ -1,0 +1,16 @@
+TDAT: 	public String getChildPartyFormattedName() throws EncryptionException, KeyStoreException {
+		if (childParty == null) {
+			return null;
+		}
+		if (childParty instanceof PersonBean) {
+			return ((PersonBean) childParty).getTitleForenameSurname();
+		} else if (childParty instanceof AbstractOrganisationImpl) {
+			return ((AbstractOrganisationImpl) childParty).getName();
+		} else {
+			// Don't know how to deal with this object - not a Party object of any kind that
+			// the registration system is aware of!
+			return null;
+		}
+	}
+
+COM:returns the formatted name of a child party if it is either a person or an organization, and throws exceptions if there are any encryption or keystore issues

@@ -1,0 +1,12 @@
+TDAT: 	public String getBranchIsRequired(String key) {
+		String xpath = XPathUtils.decodeXPath(key);
+		boolean branchIsRequired = false;
+		try {
+			branchIsRequired = schemaHelper.isRequiredBranch(schemaHelper.getSchemaNode(xpath));
+		} catch (Throwable t) {
+			prtlnErr("error testing for requiredBranch (" + xpath + ": " + t.getMessage());
+		}
+		return branchIsRequired ? TRUE : FALSE;
+	}
+
+COM:takes a key as input, decodes it into an XPath, tests whether a required branch exists in the schema at that XPath, and returns a boolean value indicating whether or not this branch is required

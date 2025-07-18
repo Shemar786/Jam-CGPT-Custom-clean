@@ -1,0 +1,22 @@
+TDAT: 	private void createObstacles() {
+		int NUM_OBSTACLES = 40;
+
+		for (int idx = 0; idx < NUM_OBSTACLES; idx++) {
+			Body obstacle = new Body(this);
+			obstacle.setRealisationAndGeometry("BarrageBalloon");
+			obstacle.restitution = 0.25;
+
+			obstacle.setPosition(
+					obstacle.width
+							/ 2
+							+ gameEngine.randomiser
+									.nextInt((int) (this.width - obstacle.width / 2)),
+					obstacle.height
+							/ 2
+							+ gameEngine.randomiser
+									.nextInt((int) (this.height - obstacle.height / 2)));
+			this.addGameObject(obstacle);
+		}
+	}
+
+COM:creates 40 obstacle objects with specific properties and randomly positions them within the space of the main game object

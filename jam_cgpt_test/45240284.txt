@@ -1,0 +1,15 @@
+TDAT: 	public void registerItem(final Item i) {
+      		if(i.getLoc() == null) {
+      			delayedEventHandler.add(new DelayedEvent(null, 180000) {
+      				public void run() {
+      					ActiveTile tile = getTile(i.getLocation());
+					if(tile.hasItem(i)) {
+						unregisterItem(i);
+					}
+      					running = false;
+      				}
+      			});
+      		}
+	}
+
+COM:registers an item and sets a delayed event to unregister the item after a specified time if it remains in an active tile

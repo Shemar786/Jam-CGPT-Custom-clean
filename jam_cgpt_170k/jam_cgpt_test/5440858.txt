@@ -1,0 +1,8 @@
+TDAT:     public void setScratchDir(String scratchDirName) {
+        // make sure there are no single dots in there.
+        scratchDirName = StringHelper.replace(scratchDirName, "/./", "/");
+        scratchDirName = StringHelper.replace(scratchDirName, "\\.\\", "\\");
+        setScratchDir(new File(scratchDirName));
+    }
+
+COM:takes in a string representing a file directory path, replaces single dots in the path, and sets the directory as the scratch directory

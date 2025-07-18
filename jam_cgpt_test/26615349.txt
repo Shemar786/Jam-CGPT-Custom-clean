@@ -1,0 +1,16 @@
+TDAT:     private void FireClickedEvent(String Text) {
+        Object [] listeners = listener.getListenerList();
+        int i;
+        int max = listeners.length;
+        ActionEvent event;
+
+        event = new ActionEvent(this,1,Text);
+
+        for (i = 0; i <= max - 2; i = i + 2) {
+            if (listeners[i] == ActionListener.class) {
+                ((ActionListener) listeners[i + 1]).actionPerformed(event);
+            }
+        }
+    }
+
+COM:fires an action event and triggers the ActionListener interface for all listeners that are registered to receive the event

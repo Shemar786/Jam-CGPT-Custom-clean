@@ -1,0 +1,16 @@
+TDAT:  	public void actionPerformed( ActionEvent event) {
+ 		if (DEBUG) System.out.println( "FormatAction.actionPerformed( "+event+")");
+		
+		try {
+			editor.format();
+		} catch ( SAXParseException e) {
+			editor.setStatus( e.getLineNumber(), e.getMessage());
+		} catch ( final IOException e) {
+		    editor.setStatus( 0, "ERROR: "+e.getMessage());
+		} catch ( Exception e) {
+			e.printStackTrace();
+		}
+		
+ 	}
+
+COM:handles the action performed event, attempts to format the editor, catches potential SAXParseException and IOException errors, and prints out any other exceptions that occur

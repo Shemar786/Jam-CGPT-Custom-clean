@@ -1,0 +1,13 @@
+TDAT: 	public void init(FilterConfig config) throws ServletException {
+		/* if (context == null) {
+			try {
+				context = config.getServletContext();
+				if (((String)context.getInitParameter("debug")).toLowerCase().equals("true")) {
+					debug = true;
+					//prtln("Outputting debug info");
+				}
+			} catch (Throwable e) {}
+		} */
+	}
+
+COM:initializes a filter config and checks a servlet context for the value of a debug parameter

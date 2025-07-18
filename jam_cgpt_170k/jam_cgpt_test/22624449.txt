@@ -1,0 +1,14 @@
+TDAT: 	protected int getIntAtPath(Node baseElement, String relativePath) throws Exception {
+		String str = getValueAtPath(baseElement, relativePath);
+		try {
+			if (str == null) {
+				throw new Exception("Nothing found at relative path: " + relativePath);
+			}
+
+			return Integer.parseInt(str);
+		} catch (NumberFormatException nfe) {
+			throw new Exception("couldnt parse as int for relative path:" + relativePath);
+		}
+	}
+
+COM:retrieves an integer value from a specified XML node relative to a given base element, and throws exceptions if the value cannot be found or cannot be parsed as an integer

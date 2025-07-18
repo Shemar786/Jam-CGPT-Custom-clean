@@ -1,0 +1,17 @@
+TDAT: 	protected void addFilePathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Profile_filePath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Profile_filePath_feature", "_UI_Profile_type"),
+				 MethodcontentclassdiagramPackage.Literals.PROFILE__FILE_PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the file path attribute of a Profile object

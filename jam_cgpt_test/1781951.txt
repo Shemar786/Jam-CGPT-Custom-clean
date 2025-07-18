@@ -1,0 +1,12 @@
+TDAT:     public void associate( WebResponse response ) {
+      try {
+        // JavaScript.run( response ); // can't do this (yet?)      	
+      } catch (RuntimeException e) {
+        throw e;
+      } catch (Exception e) {
+      	HttpUnitUtils.handleException(e);
+      	throw new RuntimeException( e.toString() );
+      }
+    }  
+
+COM:associates a WebResponse object with a RuntimeException object and handles any exceptions that occur during the process

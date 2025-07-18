@@ -1,0 +1,12 @@
+TDAT: 	public List getDcsStatusOptions() {
+		List statusOptions = new ArrayList();
+		try {
+			statusOptions = dcsDataFramework.getSchemaHelper().getEnumerationValues("dcsStatusType", false);
+		} catch (Exception e) {
+			prtln("getStatusOptions error: " + e.getMessage());
+		}
+		// prtln ("getStatusOptions returning " + statusOptions);
+		return statusOptions;
+	}
+
+COM:retrieves a list of options for the DCS status type from the DCS Data Framework

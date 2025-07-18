@@ -1,0 +1,13 @@
+TDAT: 	public void addCodeSet(CodeSet codingScheme) {
+		if (codingScheme != null) {
+			String schemeName = codingScheme.getCodeType();
+			if (schemeName != null) {
+				if (codingSchemes == null) codingSchemes = new Hashtable<String, CodeSet>();
+				codingSchemes.put(schemeName.toLowerCase(), codingScheme);
+			} else {
+				LOG.debug("Adding coding scheme with no name to connection: " + name);
+			}
+		}
+	}
+
+COM:adds a coding scheme to a Hashtable if the scheme is not null and has a name, and logs a debug message otherwise

@@ -1,0 +1,10 @@
+TDAT: 	public void testMoveIntSameParent() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neParent = createNEPositive(rSource, "parent", null);
+		NamedElement neSource = createNEPositive(neParent, "foo", null);
+		
+		movePositive(neSource, neParent, null, "bar", false);
+	}
+
+COM:tests the successful movement of a positive named element within the same parent

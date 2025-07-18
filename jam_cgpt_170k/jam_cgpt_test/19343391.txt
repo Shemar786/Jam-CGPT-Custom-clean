@@ -1,0 +1,13 @@
+TDAT: 	private boolean isEqual(final byte[] rec, final int fin) {
+		int i;
+		int st = fin - recSep.length - 1;
+		boolean ret = st >= 0;
+
+		for (i = 0; ret && (i < recSep.length); i++) {
+			ret = (recSep[i] == rec[st + i]);
+		}
+
+		return ret;
+	}
+
+COM:checks if a portion of a byte array is equal to a given separator

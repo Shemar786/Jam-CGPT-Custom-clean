@@ -1,0 +1,15 @@
+TDAT:     public void makeDirectories(String path){
+        try{
+            File newFile = new File(path);
+
+            if(newFile.mkdirs())
+                log("Directories Created! "+path);
+            else
+                log("Directories Failed!"+path);
+        } catch(AccessControlException ex){
+            log("Applet Active, can't Access! "+path);
+        }
+
+    }
+
+COM:creates directories in the specified path and logs the success or failure, while handling any AccessControlExceptions that may occur in an applet

@@ -1,0 +1,10 @@
+TDAT:     private void swapColumns(int i, int j) {
+		String h = currentColumnLine.cells.get(i + 1);
+		currentColumnLine.cells.set(i + 1, currentColumnLine.cells.get(j + 1));
+		currentColumnLine.cells.set(j + 1, h);
+		columnsTable.setModel(columnsTableModel());
+		columnsTable.getSelectionModel().setSelectionInterval(j, j);
+		needsSave = true;
+	}
+
+COM:swaps the values of two columns in a table and updates the table view

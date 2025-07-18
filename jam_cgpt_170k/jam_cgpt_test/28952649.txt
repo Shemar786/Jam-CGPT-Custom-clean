@@ -1,0 +1,12 @@
+TDAT:   public void addAddress(Address address) {
+      // Get the address type
+      if (address == null) return;
+      AddressType type = address.getAddType();
+      // Remove the old entry
+      removeAddress(type);
+      // Add the new entry
+      if (addressList == null) addressList = new ArrayList<Address>();
+      addressList.add(address);
+  }
+
+COM:adds a new address to an address list while removing any previous entries of the same address type

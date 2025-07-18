@@ -1,0 +1,15 @@
+TDAT: 	protected void refreshCountingsAndLists() {
+		
+		noMachines = loadMachines4Balancing.size();
+		noAgents = loadContainerAgentMap.noAgentsAtPlatform;
+		
+		machineArray = new String[loadMachines4Balancing.size()];
+		new Vector<String>(loadMachines4Balancing.keySet()).toArray(machineArray);
+		
+		machinesBenchmarkSummation = 0;
+		for (int i = 0; i<noMachines; i++) {
+			machinesBenchmarkSummation += loadMachines4Balancing.get(machineArray[i]).getBenchmarkValue();
+		}
+	}
+
+COM:refreshes countings and lists by calculating the number of machines and agents, creating an array of machine names, and summing the benchmark values of all machines

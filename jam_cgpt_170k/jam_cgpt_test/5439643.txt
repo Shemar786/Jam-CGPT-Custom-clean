@@ -1,0 +1,11 @@
+TDAT:     public boolean match(String aMethod, String aURI) {
+        for (Iterator it = webResourceCollections.entrySet().iterator(); it.hasNext();) {
+            I_JoWebResourceCollection collection = (I_JoWebResourceCollection) ((Map.Entry) it.next()).getValue();
+            if (collection.match(aMethod, aURI)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+COM:checks if a given method and URI match any of the web resource collections in the map and returns true if there is a match, otherwise false

@@ -1,0 +1,19 @@
+TDAT: 	public boolean validateTransition_notFromInitialToFinal(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (transition.getSource() instanceof Initial && transition.getTarget() instanceof Final) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "Transition cannot go directly from initial to final state", getObjectLabel(transition, context) },
+						 new Object[] { transition },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+COM:checks if a transition in a state machine diagram is not from the initial state to the final state and returns a boolean value indicating the validity of the transition while also providing diagnostic information

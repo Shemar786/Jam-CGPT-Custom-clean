@@ -1,0 +1,11 @@
+TDAT:     public void addMidiAsset(String assetName, boolean continuallyPlay, URL midiURL) {
+        /*
+         * In order to ensure that the MidiAsset can return a deep clone the 
+         * loadMidiSequence method of AssetLoader is not used, instead the 
+         * MidiAsset is permitted to load the sequence itself.
+         */
+        MidiAsset midiAsset = new MidiAsset(assetName, midiURL, continuallyPlay);
+        assetStore.put(assetName, midiAsset);
+    }
+
+COM:adds a Midi asset to the asset store with a given assetName, continuallyPlay boolean value, and a URL midiURL

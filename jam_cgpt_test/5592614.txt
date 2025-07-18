@@ -1,0 +1,13 @@
+TDAT:   public int showDialog() {
+    super.show();
+    // if the dialog is not modal, the return value will always be -1.
+    // the way to get the selection button option is to call the getOption()
+    // method.
+    if (!modal) {
+      // option has not been set.
+      option = -1;
+    }
+    return option;
+  }
+
+COM:displays a dialog and returns the chosen option, or -1 if it is not a modal dialog

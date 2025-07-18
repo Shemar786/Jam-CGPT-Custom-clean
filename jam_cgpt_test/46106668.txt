@@ -1,0 +1,9 @@
+TDAT:     public void addLine(String mText, GLColor mColor) {
+        // If we are on the limit we erase the first
+        // before we insert the new
+        if (lines.size() == maxLines)
+            lines.removeElementAt(0);
+        lines.add(new Line(mText, mColor));
+    }
+
+COM:adds a new line of text with a specified color to a list, and if the list has reached its size limit, it removes the first element before adding the new one

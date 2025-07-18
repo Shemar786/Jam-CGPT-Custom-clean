@@ -1,0 +1,9 @@
+TDAT:     private void testCryptoUtils( final String testString ) {
+        final String expected = new StringBuffer( testString ).toString()
+                .trim();
+        final String encrypted = SimpleCryptoUtils.encode( testString );
+        final String decrypted = SimpleCryptoUtils.decode( encrypted );
+        assertTrue( decrypted.equals( expected ) );
+    }
+
+COM:tests the encryption and decryption functionality of the SimpleCryptoUtils class on a given input string

@@ -1,0 +1,12 @@
+TDAT:     protected Word createWord(Synset synset, int index, String lemma, String senseKey, int usageCnt) {
+        Word w = null;
+        if (synset.getPOS().equals(POS.VERB)) {
+            w = new MutableVerb(synset, index, lemma);
+        } else {
+            w = new Word(synset, index, lemma);
+            
+        }
+        return w;
+    }
+
+COM:creates a Word object based on input parameters, and determines whether the object is of type MutableVerb or Word depending on its part of speech

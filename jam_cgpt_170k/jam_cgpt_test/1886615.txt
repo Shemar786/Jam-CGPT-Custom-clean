@@ -1,0 +1,12 @@
+TDAT:   private boolean lastFewSwarmsAreDead() {
+    int backLimit = swarms.size() - ALL_SWARMS_DEAD_VISION_SIZE;
+    for (int i = swarms.size() - 1; i >= 0 && i >= backLimit; i--) {
+      if (!swarms.get(i).getAllDead()) {
+        return false;
+      }
+    }
+    
+    return true;
+  }
+
+COM:checks if the last few swarms are dead or not

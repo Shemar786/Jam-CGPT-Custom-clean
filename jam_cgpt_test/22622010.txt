@@ -1,0 +1,17 @@
+TDAT: 	public void deleteCollection(String collection) {
+		// CollectionConfig config = this.getCollectionConfig(collection);
+		CollectionConfig config = (CollectionConfig) collections.get(collection);
+		if (config == null) {
+			prtln("WARNING: deleteCollection(): config not found for " + collection);
+			String s = "Registered collection keys:";
+			for (Iterator i = getIds().iterator(); i.hasNext(); ) {
+				String key = (String) i.next();
+				s += "\n\t" + key;
+			}
+			prtln(s);
+			return;
+		}
+		deleteCollection(config);
+	}
+
+COM:deletes a collection by retrieving the collection configuration and checking if it exists before deleting it

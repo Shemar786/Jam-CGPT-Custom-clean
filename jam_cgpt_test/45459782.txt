@@ -1,0 +1,11 @@
+TDAT: 	private JTextField getJTextField10() {
+		if (jTextField10 == null) {
+			jTextField10 = new JTextField();
+			jTextField10.setBounds(new Rectangle(165, 128, 407, 31));
+			jTextField10.setText(defaultProps.getProperty("parseoutput"));
+			jTextField10.setText(applicationProps.getProperty("parseoutput"));
+		}
+		return jTextField10;
+	}
+
+COM:returns a JTextField object with a set position, default and application properties

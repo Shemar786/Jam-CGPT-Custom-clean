@@ -1,0 +1,12 @@
+TDAT:     private String getURI(FacesContext context) {
+        StringBuffer sb = new StringBuffer();
+        sb.append(context.getExternalContext().getRequestContextPath());
+
+        // if this mapping is changed, the following lines must be changed as well.
+        sb.append("/faces");
+        sb.append(context.getViewRoot().getViewId());
+
+        return (sb.toString());
+    }
+
+COM:returns the URI (Uniform Resource Identifier) of a Faces context by appending the request context path, "/faces", and the view ID into a StringBuffer

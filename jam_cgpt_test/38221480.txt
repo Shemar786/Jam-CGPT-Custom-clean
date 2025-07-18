@@ -1,0 +1,13 @@
+TDAT:   private void setButtonsWidth(Container panel, int width) {
+    for (int i=0; i<panel.getComponentCount(); i++) {
+      Component component = panel.getComponent(i);
+      if (component instanceof JButton) {
+        JButton button = (JButton) component;
+        Dimension d = button.getPreferredSize();
+        d.width = width;
+        button.setPreferredSize(d);
+      }
+    }
+  }
+
+COM:sets the preferred width of all buttons in a given container to a specific value

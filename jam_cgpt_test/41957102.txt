@@ -1,0 +1,8 @@
+TDAT:     public Options getOptions(AnnotatedPluginDocument... documents) {
+        Options options = new Options(getClass());
+        options.addFileSelectionOption(CODE_EXE, "The backtranambig executable", "");
+        options.addComboBoxOption(CODE_GEN_CODE, "Genetic code to use", GENETIC_CODES, GENETIC_CODES[0]);
+        return options;
+    }
+
+COM:returns an object of type Options with file selection and combo box options for a backtranambig executable

@@ -1,0 +1,12 @@
+TDAT:    static public String substitute( String original, String match, String subst) {
+    String s = original;
+    int pos;
+    while (0 <= (pos = s.indexOf( match))) {
+      StringBuffer sb = new StringBuffer( s);
+      s = sb.replace( pos, pos + match.length(), subst).toString();
+    }
+
+    return s;
+  }
+
+COM:substitutes all occurrences of a specified string in another string with a given replacement string

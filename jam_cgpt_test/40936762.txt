@@ -1,0 +1,12 @@
+TDAT:     public PoleCorrection getPoleCorrection(final AbsoluteDate date) {
+        final PoleCorrection eop = eopHistory.getPoleCorrection(date);
+        if (tidalCorrection == null) {
+            return eop;
+        } else {
+            final PoleCorrection tidal = tidalCorrection.getPoleCorrection(date);
+            return new PoleCorrection(eop.getXp() + tidal.getXp(),
+                                      eop.getYp() + tidal.getYp());
+        }
+    }
+
+COM:returns a PoleCorrection object based on the given date, calculated using EOP and tidal corrections if available

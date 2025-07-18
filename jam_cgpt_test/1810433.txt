@@ -1,0 +1,13 @@
+TDAT:   protected void disown(Widget w) {
+    // Only disown it if it's actually contained in this panel.
+    if (w.getParent() != this) {
+      throw new IllegalArgumentException("w is not a child of this panel");
+    }
+
+    // Remove it at the DOM and GWT levels.
+    Element elem = w.getElement();
+    DOM.removeChild(DOM.getParent(elem), elem);
+    w.setParent(null);
+  }
+
+COM:removes a specific Widget from a panel and throws an exception if the Widget is not a child of that panel

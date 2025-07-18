@@ -1,0 +1,14 @@
+TDAT: 	private void initTable() {
+		jTable1.getTableHeader().setReorderingAllowed(false);
+		jTable1.getParent().setBackground(Color.WHITE);
+		// rezise
+		int size = 20;
+
+		jTable1.getColumnModel().getColumn(0).setPreferredWidth(size);
+		size = 200;
+		jTable1.getColumnModel().getColumn(1).setPreferredWidth(size);
+		size = 75;
+		jTable1.getColumnModel().getColumn(2).setPreferredWidth(size);
+	}
+
+COM:initializes a table with specific column widths and disables column reordering

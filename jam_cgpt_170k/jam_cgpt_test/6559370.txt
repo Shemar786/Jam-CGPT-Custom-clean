@@ -1,0 +1,17 @@
+TDAT: 	public WebDAVStorage getWebDAVStorageInstance() {
+		if (Validator.isNull(getWebDAVStorageClass())) {
+			return null;
+		}
+
+		if (_portletApp.isWARFile()) {
+			PortletBagImpl portletBagImpl = (PortletBagImpl)PortletBagPool.get(
+				getRootPortletId());
+
+			return portletBagImpl.getWebDAVStorageInstance();
+		}
+
+		return (WebDAVStorage)InstancePool.get(
+			getWebDAVStorageClass());
+	}
+
+COM:returns an instance of WebDAVStorage, which is obtained either from a PortletBag or an InstancePool based on certain conditions

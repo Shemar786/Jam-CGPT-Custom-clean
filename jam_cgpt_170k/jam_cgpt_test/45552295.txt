@@ -1,0 +1,13 @@
+TDAT:     public Text createPassword(String label) {
+        Label prompt = new Label(panel, SWT.NONE);
+        prompt.setText(label);
+
+        Text answer = new Text(panel, SWT.BORDER | SWT.PASSWORD);
+        GridData gd = new GridData(SWT.FILL, SWT.DEFAULT, true, false);
+        gd.widthHint = GuiConstants.WIDTH;
+        answer.setLayoutData(gd);
+
+        return answer;
+    }
+
+COM:creates a password field with a label prompt and returns the Text object

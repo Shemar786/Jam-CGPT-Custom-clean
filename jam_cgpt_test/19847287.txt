@@ -1,0 +1,15 @@
+TDAT: 	synchronized private void sendCommand(byte command, byte[] payload) {
+		try {
+			byte[] message = new byte[2+payload.length];
+			message[0] = 82;
+			message[1] = command;
+			System.arraycopy(payload, 0, message, 2, payload.length);
+						
+			sendCon.send(message);
+		}
+		catch(IOException ioexception) {
+			System.out.println("error sending data " + ioexception);
+		}
+	}
+
+COM:This synchronized Java method sends a byte command and its payload over a "sendCon" connection

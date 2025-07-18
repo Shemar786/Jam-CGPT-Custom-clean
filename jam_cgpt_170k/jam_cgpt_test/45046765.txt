@@ -1,0 +1,18 @@
+TDAT:    public long getUncompressedSize(File archive) throws ManagerException{
+		try {
+			if(debugMode) System.out.println("Entering gov.nist.qod.manager.ArchiveManager.getUncompressedSize");
+			long fileSize=0;
+			ZipFile zipfile = new ZipFile(archive);
+			Enumeration <? extends ZipEntry> e = zipfile.entries();
+			ZipEntry entry;
+			while(e.hasMoreElements()) {
+	            entry = (ZipEntry) e.nextElement();
+	            fileSize += entry.getSize();
+			}
+			return fileSize;
+		}catch(IOException IOE){
+			throw new ManagerException(ManagerErrorCodes.ARCHMANAGER_FILE_NOTFOUND);
+		}
+	}
+
+COM:takes a file archive as input and returns the total uncompressed size of all the entries in the archive

@@ -1,0 +1,12 @@
+TDAT: 	public NonPlayerChar getNPCAt(int x, int y) {
+		NonPlayerChar n;
+		for(int i = 0; i < m_npcs.size(); i++) {
+			n = m_npcs.get(i);
+			if (n.getX() / 32 == x && (n.getY() + 8) /32 == y)
+				return n;
+		}
+		n = null;
+		return n;
+	}
+
+COM:searches for a NonPlayerChar object at specific coordinates and returns it if found

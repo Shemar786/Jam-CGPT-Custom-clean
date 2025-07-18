@@ -1,0 +1,12 @@
+TDAT:     protected SOAPMessage sendMessage(SOAPMessage msg) throws Exception {
+        try {
+            SOAPConnection conn = soapConnectionFactory.createConnection();
+            return conn.call(msg, url);
+        } catch (Exception e) {
+            if (SWGConstants.DEV_DEBUG)
+                SWGAide.printError("SOAPManager:sendMessage", e);
+            throw e;
+        }
+    }
+
+COM:sends a SOAP message using the provided message and connection URL

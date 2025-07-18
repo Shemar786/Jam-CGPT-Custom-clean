@@ -1,0 +1,8 @@
+TDAT: 	protected void handleComboModified() {
+		Object newValue = getNewValue(combo.getSelectionIndex());
+		if (newValue!=owner.eGet(getFeature())) {
+			DiagramUtilities.executeCommand(getEditingDomain(), SetCommand.create(getEditingDomain(), owner, getFeature(), newValue));
+		}
+	}
+
+COM:handles the modification of a combo box by checking if a new value has been selected and executing a command to set the new value in the editing domain

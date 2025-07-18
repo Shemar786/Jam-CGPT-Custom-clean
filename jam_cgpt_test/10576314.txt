@@ -1,0 +1,14 @@
+TDAT:     static protected String hostFromUriStr(String uriStr) {
+        debugOut("hostFromUriStr(\"" + uriStr + "\")");
+        String host = null;
+        URI uri;
+        try {
+            uri = new URI(uriStr);
+            host = uri.getHost();
+        } catch (URISyntaxException e) {
+            debugOut(e.getMessage());
+        }
+        return host;
+    }
+
+COM:takes a URI as a string and returns the host portion of the URI

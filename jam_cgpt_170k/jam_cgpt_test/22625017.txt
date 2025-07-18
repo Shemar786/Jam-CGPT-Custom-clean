@@ -1,0 +1,12 @@
+TDAT: 	public String getVocabTotalBarPercent() {
+		float percent = (float)( (float)Integer.parseInt( libraryTotal ) / (float)largestTotalInThisGroup ) *
+			PERCENT_ADJUST;
+		String perc = Float.toString( percent );
+		int ind = perc.indexOf( "." );
+		if ( ind > -1 ) {
+			perc = perc.substring( 0, ind );
+		}
+		return perc;
+	}
+
+COM:calculates the percentage of the libraryTotal compared to the largestTotalInThisGroup and returns it as a string

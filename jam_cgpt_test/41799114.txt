@@ -1,0 +1,12 @@
+TDAT:     public void testThreadPool() throws AssertionFailedException {
+        
+        for (int i=0; i<TEST_NUM_THREADS; i++) {
+            Log.debug("Request starting thread n. " + i);
+            threadPool.startThread(new MyRunnableClass());
+        }
+        
+        // assertion not really useful due to threads usage
+        assertTrue(true);
+    }
+
+COM:tests the functionality of a thread pool by starting multiple threads and executing a runnable class, with an assertion that is not useful in the context of the threads

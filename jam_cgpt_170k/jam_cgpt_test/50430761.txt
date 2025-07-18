@@ -1,0 +1,15 @@
+TDAT:     public boolean removeFolder(String fName) throws FolderManagerException {
+        int index = indexOf(fName);
+        if(index != -1) {
+            if(!((Folder)folders.get(index)).isCore()) {
+                folders.remove(index);
+                return true;
+            } else {
+                throw new FolderManagerException
+                	("Cannot remove a core folder: " + fName);
+            }
+        }
+        return false;
+    }
+
+COM:removes a folder from a list of folders, but throws a `FolderManagerException` if the folder being removed is marked as a core folder

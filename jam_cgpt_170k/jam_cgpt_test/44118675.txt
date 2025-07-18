@@ -1,0 +1,12 @@
+TDAT:     public Point getSnappedPoint(Point point) {
+        if (!isSnapOn()) // ten sam punkt jak nie zmienia
+            return new Point(point);
+        
+        Point result = new Point(
+                (((point.x + offset) / snapIncrement) * snapIncrement),
+                (((point.y + offset) / snapIncrement) * snapIncrement));
+
+        return result;
+    }
+
+COM:returns a snapped point based on a given point, snap increment, and offset

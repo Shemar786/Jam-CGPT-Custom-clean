@@ -1,0 +1,15 @@
+TDAT:     public void startSensors() {
+        log("Initializing joystick...");
+        joy = new DemoJoystick();
+        joy.addSensorChangeListener(this);
+        joy.start();
+        log("Joystick initialization success!");
+
+        log("Initializing Telemetry Server");
+        server = new TelemetryServer(joy, JOYSTICK_PORT);
+        server.start();
+        log("Telemetry server initialization success!");
+
+    }
+
+COM:initializes a joystick and telemetry server, and starts listening for sensor changes

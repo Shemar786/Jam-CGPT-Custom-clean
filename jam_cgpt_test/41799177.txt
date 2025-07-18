@@ -1,0 +1,15 @@
+TDAT:     public void test(int testNumber) throws Throwable {
+        
+        switch(testNumber) {
+            case 0: testCreate();               break;
+            case 1: testOpen();                 break;
+            case 2: testStore();                break;
+            case 3: testRetrieveExistent();     break;
+            case 4: testRetrieveNotExistent();  break;
+            case 5: testStoreVector();          break;
+            case 6: testRetrieveVector();       break;
+            default:                            break;
+        }        
+    }
+
+COM:tests different functionalities of a program based on the input parameter

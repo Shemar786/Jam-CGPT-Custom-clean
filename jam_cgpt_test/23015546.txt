@@ -1,0 +1,8 @@
+TDAT:     public void createVisualSceneInstances(ColladaScene scene,ColladaDocument document){
+        VisualSceneInstance instance = document.getVisualSceneInstance();
+        DAEGraphNode instanceNode = scene.createNode(instance,100,400,ColladaScene.ROOT,instance.getSid(),"Visual Scene instance",null);
+       createConnection(instanceNode,"current scene"); 
+       
+    }
+
+COM:creates a visual scene instance and establishes a connection to the current scene

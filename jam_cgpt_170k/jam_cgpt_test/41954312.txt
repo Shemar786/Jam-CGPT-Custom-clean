@@ -1,0 +1,29 @@
+TDAT: 	public void configure() {
+		log.debug("Hibernate starting configuration...");
+
+		if (configuration == null) {
+			log.debug("Hibernate mapping...");
+			configuration = new AnnotationConfiguration();
+		}
+
+		if (!configured) {
+			try {
+				configuration.configure();
+				log.debug("Hibernate configured.");
+			} catch (HibernateException e) {
+				throw new PersistenceHibernateException(
+						"Error on configure hibernate.", e);
+			}
+			try {
+				sessionFactory = configuration.buildSessionFactory();
+				log.debug("Session Factory created.");
+			} catch (HibernateException e) {
+				throw new PersistenceHibernateException(
+						"Error on build hibernate session factory.", e);
+			}
+			configured = true;
+		}
+
+	}
+
+COM:configures the Hibernate framework by creating an instance of AnnotationConfiguration, configuring it, building a session factory, and logging the process

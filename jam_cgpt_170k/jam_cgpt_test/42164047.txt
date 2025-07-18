@@ -1,0 +1,13 @@
+TDAT:   protected IStatus computeDeleteStatus() {
+    if (resources == null || resources.length == 0) {
+      markInvalid();
+      return getErrorStatus(UndoMessages.AbstractResourcesOperation_NotEnoughInfo);
+    }
+    if (!resourcesExist()) {
+      markInvalid();
+      return getErrorStatus(UndoMessages.AbstractResourcesOperation_ResourcesDoNotExist);
+    }
+    return checkReadOnlyResources(resources);
+  }
+
+COM:computes the status of a delete operation on resources, checking if they exist and can be deleted, and returns an error status if necessary

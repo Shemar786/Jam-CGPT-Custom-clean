@@ -1,0 +1,7 @@
+TDAT: 		private void createResource(IResource file) throws IOException, CoreException {
+			Resource xmbRes = rSet.createResource(URI.createPlatformResourceURI(file.getFullPath().toOSString(), true));
+			Resource res = rSet.createResource(URI.createPlatformResourceURI(getTeamworkReverseResourcePath(file), true));
+			createResourceCopy(xmbRes, res);
+		}
+
+COM:creates a copy of a resource file with specified exceptions thrown

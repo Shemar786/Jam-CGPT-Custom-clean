@@ -1,0 +1,15 @@
+TDAT: 	protected Element getComplexTypeBox() {
+		Element baseDiv = getDiv();
+		renderElementDebugInfo(baseDiv, "complexType");
+
+		Element anchor = baseDiv.addElement("a")
+				.addAttribute("name", xpath);
+		if (getLevel() == 0) {
+			Element branding = baseDiv.addElement("div")
+					.addAttribute("class", "element-debug-info");
+			branding.addText("Rendered by " + this.getClass().getName());
+		}
+		return baseDiv;
+	}
+
+COM:returns an Element that has been modified with additional attributes and child Elements

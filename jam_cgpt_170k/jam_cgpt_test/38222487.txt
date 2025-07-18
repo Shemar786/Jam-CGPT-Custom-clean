@@ -1,0 +1,16 @@
+TDAT:   public void loadFromStream(InputStream stream) throws Exception {
+    SAXParserFactory factory = SAXParserFactory.newInstance();
+    factory.setValidating(true);
+
+    SAXParser parser = factory.newSAXParser();
+    try {
+      parser.parse(stream, this);
+    }
+    catch (SAXException se) {
+      if (se.getException() != null)
+        throw se.getException();
+      throw se;
+    }
+  }
+
+COM:loads and parses an XML file from an input stream using a SAX parser

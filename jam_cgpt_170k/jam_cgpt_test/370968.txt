@@ -1,0 +1,12 @@
+TDAT: 	public void init(IWorkbench workbench, JarPackageData jarPackage) {
+		Assert.isNotNull(workbench);
+		Assert.isNotNull(jarPackage);
+		fJarPackage= jarPackage;
+		setInitializeFromJarPackage(true);
+		fSelection= new StructuredSelection(fJarPackage.getElements());
+		setWindowTitle(JarPackagerMessages.FatJarPackageWizard_windowTitle);
+		setDefaultPageImageDescriptor(JavaPluginImages.DESC_WIZBAN_JAR_PACKAGER);
+		setNeedsProgressMonitor(true);
+	}
+
+COM:initializes a wizard for creating a JAR package, sets various properties and creates a structured selection

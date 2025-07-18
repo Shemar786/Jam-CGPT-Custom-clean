@@ -1,0 +1,13 @@
+TDAT: 	    private ActorOperationsModel setUpActorModel() {
+	    	if (pmodel_ == null) return null;
+	    	if (pmodel_.getDomain() == null) return null;
+	    	Vector actors = pmodel_.getDomain().getActors();
+	    	amodel_ = new ActorOperationsModel(pmodel_);
+	    	for (Iterator i = actors.iterator(); i.hasNext();) {
+	    		Concept act = (Concept)i.next();
+	    		createActorOperations(act);
+	    	}
+	    	return amodel_;
+		}
+
+COM:sets up an actor operations model by retrieving actors from a domain and creating actor operations for each one

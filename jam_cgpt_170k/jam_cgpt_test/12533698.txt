@@ -1,0 +1,17 @@
+TDAT: 	public TransportLocationIfc getLocationWithMostIdleTrailers(Collection<LaneIfc> lanes, double distance){
+		TransportLocationIfc mLoc = null;
+		int max = 0;
+		for(LaneIfc lane: lanes){
+			if (lane.getDistance() <= distance){
+				TransportLocationIfc dest = lane.getDestination();
+				int nt = getNumIdleTrailers(dest);
+				if (nt > max){
+					max = nt;
+					mLoc = dest;
+				}				
+			}
+		}
+		return(mLoc);
+	}
+
+COM:returns the transport location with the most idle trailers within a certain distance from a collection of lanes

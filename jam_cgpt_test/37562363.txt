@@ -1,0 +1,11 @@
+TDAT: public void setForeground (Color color) {
+  checkWidget ();
+  if (color != null && color.isDisposed ()) {
+    SWT.error (SWT.ERROR_INVALID_ARGUMENT);
+  }
+  handle.setForeground(color == null? null: color.handle);
+  ((CTree)parent.handle).getModel().nodeChanged((TreeNode)handle);
+  parent.handle.repaint();
+}
+
+COM:sets the foreground color of a widget and repaints its parent

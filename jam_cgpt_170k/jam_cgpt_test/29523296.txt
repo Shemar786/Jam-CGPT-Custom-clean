@@ -1,0 +1,7 @@
+TDAT:     public Point2D getPerimeterPoint(EdgeView edge, Point2D source, Point2D p) {
+        if (getRenderer() instanceof MultiLinedRenderer)
+            return ((MultiLinedRenderer) getRenderer()).getPerimeterPoint(this, source, p);
+        return super.getPerimeterPoint(edge, source, p);
+    }
+
+COM:returns a Point2D coordinate on the perimeter of an EdgeView object based on a given source Point2D and another point p

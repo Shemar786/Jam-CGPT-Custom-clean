@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField13() {
+        if (textField13 == null) {//GEN-END:|423-getter|0|423-preInit
+            // write pre-init user code here
+            textField13 = new TextField("Descuento KD No REF:", null, 32, TextField.ANY);//GEN-LINE:|423-getter|1|423-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|423-getter|2|
+        return textField13;
+    }
+
+COM:returns a TextField object, and if the object is null, it initializes it with specific parameters

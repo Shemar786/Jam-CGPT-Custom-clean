@@ -1,0 +1,10 @@
+TDAT:     public RevenueSourceBO create() throws Exception{
+        String id = GUID.generate();
+        SvcRepairBO bo = new SvcRepairBO(id);
+        bo.setType("repair");
+        Cache c = Cache.getInstance();
+        c.put(bo.getRevSrcID(), bo);
+        return bo;
+    }
+
+COM:generates a unique ID, creates a new SvcRepairBO object with that ID and a type of "repair", puts it into a cache using the ID as the key, and returns the SvcRepairBO object as a RevenueSourceBO object

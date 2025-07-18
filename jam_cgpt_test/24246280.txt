@@ -1,0 +1,18 @@
+TDAT: 	private void setup(InputStream in, OutputStream out) {
+		this.in = in;
+		this.out = out;
+		this.setDaemon(true);
+		this.start();
+		
+		// TODO: Perhaps check if keyboard is a Freedom Universal (buggy) first before switching these?
+		// Freedom Universal has a bug that switches DELETE and BACKSPACE values.
+		// Switching back in scanCodes array (above):
+		scanCodes[0x71] = KeyEvent.VK_BACK_SPACE;
+		scanCodes[0x66] = KeyEvent.VK_DELETE;
+		
+		// Start typematic thread here:
+		typematicThread.setDaemon(true);
+		typematicThread.start();
+	}
+
+COM:sets up an input and output stream, starts a thread, and switches back keyboard values for certain keys if the keyboard is a Freedom Universal

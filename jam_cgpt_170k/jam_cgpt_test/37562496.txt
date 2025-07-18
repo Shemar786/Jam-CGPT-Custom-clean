@@ -1,0 +1,14 @@
+TDAT: public void deselect (int [] indices) {
+	checkWidget ();
+	if (indices == null) error (SWT.ERROR_NULL_ARGUMENT);
+	if (indices.length == 0) return;
+	DefaultListSelectionModel selectionModel = ((CTable)handle).getSelectionModel();
+  isAdjustingSelection = true;
+  for(int i=0; i<indices.length; i++) {
+    int index = indices[i];
+    selectionModel.removeSelectionInterval(index, index);
+  }
+  isAdjustingSelection = false;
+}
+
+COM:deselects items at the specified indices in a list widget

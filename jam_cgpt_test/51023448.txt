@@ -1,0 +1,14 @@
+TDAT: 	public void addAttributeName(AttributeName an) {
+		attributeNames.add(an);
+		// sort by ID
+		Collections.sort(attributeNames, new Comparator<AttributeName>() {
+
+			@Override
+			public int compare(AttributeName o1, AttributeName o2) {
+				return o1.getId().compareToIgnoreCase(o2.getId());
+			}
+		});
+		fireContentsChanged(this, 0, attributeNames.size());
+	}
+
+COM:adds an AttributeName object to a list, sorts the list by ID, and notifies registered ListDataListeners of changes to the list

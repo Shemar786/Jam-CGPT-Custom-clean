@@ -1,0 +1,14 @@
+TDAT: 	public int readInt() {
+		try {
+			return ((pData[caret++] & 0xff) << 24)
+				| ((pData[caret++] & 0xff) << 16)
+				| ((pData[caret++] & 0xff) << 8)
+				| (pData[caret++] & 0xff);
+		}
+		catch(Exception e) {
+			Logger.error(e.getMessage());
+			return 0;
+		}
+	}
+
+COM:reads four bytes from an array of data and returns them as an integer, while catching and logging any exceptions that may occur

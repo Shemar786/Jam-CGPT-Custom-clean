@@ -1,0 +1,16 @@
+TDAT:     public void binIn(BinReader in, CampaignData data) throws IOException {
+        id = in.readInt("id");
+        Name = in.readLine("name");
+
+        int environments = in.readInt("environmentsize");
+
+        for (int pos = 0; pos < environments; pos++) {
+            PlanetEnvironment PE = new PlanetEnvironment();
+
+            PE.binIn(in, data);
+
+            this.environments.add(PE);
+        }
+    }
+
+COM:reads binary data using a BinReader object and initializes properties for a CampaignData object

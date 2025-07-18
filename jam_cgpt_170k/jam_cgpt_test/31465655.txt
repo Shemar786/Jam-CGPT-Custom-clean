@@ -1,0 +1,10 @@
+TDAT:     public void forceClose() {
+	if (mapPanel != null && mapPanel.isChanged()) {
+	    int option = JOptionPane.showConfirmDialog(this, app.getString("dialog.changed.body"), app.getString("dialog.changed.title"),
+						       JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+	    if (option == JOptionPane.YES_OPTION)
+		saveMap();
+	}
+    }
+
+COM:checks if a "map panel" has been changed and prompts the user to save the changes before forcibly closing it

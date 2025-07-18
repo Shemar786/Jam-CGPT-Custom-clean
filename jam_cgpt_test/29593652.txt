@@ -1,0 +1,6 @@
+TDAT:     public D6 (int len0, int len1, int len2, int len3, int len4, int len5) {
+      super(new int [] {len0, len1, len2, len3, len4, len5});
+      ix = (Index6D) indexCalc;
+    }
+
+COM:defines a D6 object with six input integers, initializes it with a super constructor and an Index6D variable, and assigns it to the ix variable

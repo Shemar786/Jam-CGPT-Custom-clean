@@ -1,0 +1,9 @@
+TDAT: 	private ProtocolStep processProtocolStep(XmlPullParser xpp, int index) throws XmlPullParserException, IOException {
+		Collection lProtocolStepCvParams = new ArrayList();
+		Collection lProtocolStepUserParams = new ArrayList();
+
+		mzDataUnmarshaller.processParams(xpp, lProtocolStepCvParams, lProtocolStepUserParams, TAG_STEP_DESCRIPTION);
+		return new ProtocolStepImpl(index, lProtocolStepCvParams, lProtocolStepUserParams);
+	}
+
+COM:processes a protocol step by parsing XML using an unmarshaller and returning a ProtocolStep object

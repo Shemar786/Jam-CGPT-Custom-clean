@@ -1,0 +1,18 @@
+TDAT: 	public void step() {
+		Block.step(blocks);
+		
+		if(BlockGenerator.shouldGenerateBlock() || BlockGenerator.shouldGenerateBlock()) {
+			blocks.add(BlockGenerator.generateTitleBlock());
+		}
+		
+		final Iterator<Block> itr = blocks.iterator();
+		while(itr.hasNext()) {
+			if(itr.next().getYOfTop() < 0) {
+				itr.remove();
+			}
+		}
+		
+		blinkTimer = (blinkTimer + 1) % (2 * BLINK_FRAMES);
+	}
+
+COM:takes steps in the game, generates new blocks, removes blocks that have fallen out of view, and updates the blink timer

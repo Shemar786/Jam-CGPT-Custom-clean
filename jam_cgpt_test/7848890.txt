@@ -1,0 +1,15 @@
+TDAT: 	public void draw() {
+		p4vj.cSketch.rectMode(p.CORNER);
+		p4vj.cSketch.stroke(0);
+		p4vj.cSketch.fill(128);
+		p4vj.cSketch.rect(xPos, yPos, xSize, ySize);
+		p4vj.cSketch.fill(0);
+		p4vj.cSketch.rect(xBox, yBox, xBoxSize, yBoxSize);
+		p4vj.cSketch.fill(255);
+		drawLines();
+		p4vj.cSketch.textFont(p4vj.fontSS14, 14);
+		p4vj.cSketch.fill(255);
+		p4vj.cSketch.text(" :: P4VJ Output", xPos, yPos + ySize - 5);
+	}
+
+COM:draws a rectangle with a smaller rectangle inside, adds lines and text, using specific values for position, size, color, and font

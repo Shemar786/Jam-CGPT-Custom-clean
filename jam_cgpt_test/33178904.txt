@@ -1,0 +1,18 @@
+TDAT:     public void injectNewlines(int lineLength) {
+	StringBuffer newSource = new StringBuffer(source.length() + 100);
+
+	int begin = 0;
+	while (begin < source.length()) {
+	    int end = begin + lineLength;
+	    if (end > source.length()) end = source.length();
+
+	    newSource.append(source.substring(begin, end));
+	    newSource.append('\n');
+
+	    begin = end;
+	}
+
+	source = newSource.toString();
+    }
+
+COM:injects newlines into a string at a specified line length

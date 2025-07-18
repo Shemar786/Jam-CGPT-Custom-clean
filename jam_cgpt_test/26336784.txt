@@ -1,0 +1,24 @@
+TDAT: 	public ClassDescriptor getDescriptor(Class type) {
+		ClassDescriptor descriptor;
+        
+		descriptor = super.getDescriptor(type);
+
+		if ((null == descriptor) && (type == _newClass)) {
+			if (CATEGORY.isDebugEnabled()) {
+				CATEGORY.debug("Creating resource class descriptor for " + type);
+			}
+			try {
+				descriptor = new ResourceClassDescriptorImpl(type);
+				addDescriptor(descriptor);
+				_newClass = null;
+			}
+			catch(MappingException e) {
+				// this should not happen
+				throw new RuntimeException(e.toString());
+			}
+		}
+
+		return descriptor;
+	}
+
+COM:returns a ClassDescriptor object based on the given Class type, and if the descriptor does not exist for that type, it creates a new one using ResourceClassDescriptorImpl

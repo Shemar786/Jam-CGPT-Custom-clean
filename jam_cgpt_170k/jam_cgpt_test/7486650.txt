@@ -1,0 +1,20 @@
+TDAT:     protected void setState(State newState) {
+        boolean proceed = true;
+        State old = getState();
+
+        for (JingleSessionStateListener listener : stateListeners)
+            try {
+                listener.beforeChange(old, newState);
+            }
+            catch (JingleException e) {
+                proceed = false;
+            }
+
+        if (proceed)
+            super.setState(newState);
+
+        for (JingleSessionStateListener listener : stateListeners)
+            listener.afterChanged(old, getState());
+    }
+
+COM:sets the state of the current object and notifies listeners before and after the change, while ensuring the change can proceed without errors

@@ -1,0 +1,14 @@
+TDAT:     public String serialize(int type) throws SharkNotSupportedException {
+        switch(type) {
+            case KEPMessage.RDF:
+            case KEPMessage.XML:
+                try {
+                    return new XMLSerializer().serializeContextSpace(this);
+                } catch (SharkKBException ex) {
+                        throw new RuntimeException(ex.getMessage());
+                }
+            default: throw new SharkNotSupportedException("ContextMap.serialize: format not supported " + type);
+        }
+    }
+
+COM:takes an integer argument representing the type of serialization and returns the serialized context space in either RDF or XML format using the XMLSerializer class

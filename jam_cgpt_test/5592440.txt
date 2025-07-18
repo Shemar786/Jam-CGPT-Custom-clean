@@ -1,0 +1,14 @@
+TDAT:   public String getDescription(){
+
+    String s = "(";
+    for(int i=0; i < checkExt.length; i++){
+      if(checkExt[i] != null) {
+        if(i != 0)
+          s += ",";
+        s += ("*." + checkExt[i] );
+      }else break;
+    }
+    return s + ")";
+  }
+
+COM:generates a string description of file extensions that are being checked

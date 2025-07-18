@@ -1,0 +1,11 @@
+TDAT:     public ObjectName preRegister(MBeanServer server, ObjectName name) throws Exception {
+        try {
+            this.oname = createObjectName(name);
+            if (oname!=null) registerJmx();
+        }catch (MalformedObjectNameException x) {
+            log.error("Unable to create object name for JDBC pool.",x);
+        }
+        return name;   
+    }
+
+COM:registers a JDBC pool in the MBeanServer by creating an ObjectName and calling the registerJmx() method

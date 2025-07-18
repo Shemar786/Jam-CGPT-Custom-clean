@@ -1,0 +1,13 @@
+TDAT:   public double getValidCount() {
+    int k = 0;
+    for (int i = 0; i < this.nRows; i++) {
+      for (int j = 0; j < this.nCols; j++) {
+        if (this.matrix[i][j] != this.noDataVal) {
+          k++;
+        }
+      }
+    }
+    return k;
+  }
+
+COM:calculates the number of non-null values in a matrix and returns it as a double

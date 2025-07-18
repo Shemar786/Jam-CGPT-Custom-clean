@@ -1,0 +1,9 @@
+TDAT:     public boolean reloadModule(String moduleName) {
+        ModuleOperation operation = facade.getModuleOperationRegistry().getOperation(
+                ModuleOperationConstants.ReloadNamedModuleOperation);
+        ModuleOperationInput moduleOperationInput = new ModuleOperationInput(null, null, moduleName);
+        ModuleOperationResult result = execute(operation, moduleOperationInput);
+        return result.isSuccess();
+    }
+
+COM:reloads a named module and returns true if the reload operation is successful

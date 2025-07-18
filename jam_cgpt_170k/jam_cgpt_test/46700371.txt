@@ -1,0 +1,14 @@
+TDAT:     public String getName() {
+	if (m_logger.isDebugEnabled()) {
+	    m_logger.debug("getName() - start");
+	}
+
+	/* Retrieve this DefaultBlock's name. */
+	String returnString = (strName);
+	if (m_logger.isDebugEnabled()) {
+	    m_logger.debug("getName() - end - return value=" + returnString);
+	}
+	return returnString;
+    }
+
+COM:retrieves the name of a DefaultBlock object and logs debug messages when called

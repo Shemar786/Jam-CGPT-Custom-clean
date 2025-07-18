@@ -1,0 +1,10 @@
+TDAT: 	public String getRecId(int recIndex) {
+		if (recIndex > -1 && this.getNumHits() >= (recIndex + 1)) {
+			return getIdFromResultDoc(this.getResults().get(recIndex));
+		} else {
+			prtlnErr("getRecId error: requested index: " + recIndex + " size: " + this.getNumHits());
+			return null;
+		}
+	}
+
+COM:returns the ID of the search result at the specified index, or null if the index is invalid

@@ -1,0 +1,16 @@
+TDAT:     public Object getValueAt(int rowIndex, int columnIndex) {
+        String prop = (String)configKeys.get(rowIndex);
+        Object value = null;
+        try {
+            value = configMap.get(prop);
+            if(value == null) {
+                value = validationInfo.getConfig(prop);
+            }
+        } catch(JCConfigException jcce) {
+            jcce.printStackTrace();
+            return null;
+        }
+        return columnIndex == 0 ? prop : value;
+    }
+
+COM:retrieves a value from a map at a specific row and column index, and returns either the property or the value depending on the column index

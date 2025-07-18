@@ -1,0 +1,18 @@
+TDAT: 	private int findTableRowWithVid(Vector<Vector<Object>> tblInfo, Object vid) {
+
+		int rowInx = 0;
+
+		for (; rowInx < tblInfo.size(); rowInx++) {
+			Vector<Object> row = tblInfo.get(rowInx);
+			if (row.get(0).equals(vid)) {
+				break;
+			}
+		}
+		if (rowInx >= tblInfo.size()) {
+			rowInx = -1;
+		}
+
+		return rowInx;
+	}
+
+COM:finds the index of a row in a table represented by a vector of vectors, based on a specific value in the first column of the table

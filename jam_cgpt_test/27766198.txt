@@ -1,0 +1,12 @@
+TDAT:     public List getListenersSubscribedTo(final ISource source) {
+        
+        // No nulls please, fail quick.
+        if ( null == source )
+            throw new IllegalArgumentException( "Source can not be null!" );
+        
+        // Defensive copy to protect from outside modifications.
+        return (List)Collections.unmodifiableList( new ArrayList( source.getSubscribedListeners() ) );
+        
+    }
+
+COM:returns an unmodifiable list of listeners subscribed to the provided source after checking if the source is not null

@@ -1,0 +1,9 @@
+TDAT:   public boolean getBoolean() {
+    if (value instanceof Boolean) {
+      return ((Boolean)value).booleanValue();
+    }
+    throw new InconsistencyException();
+    // !!!!throw new PositionedError(getTokenReference(), "vk-not-boolean", getLabel(), value);
+  }
+
+COM:returns a Boolean value if the value stored is an instance of Boolean, otherwise it throws an InconsistencyException

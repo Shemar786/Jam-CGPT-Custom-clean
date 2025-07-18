@@ -1,0 +1,20 @@
+TDAT:     private void initSecurity() {
+        /*
+         * COMMENTED OUT FOR DEBUG PROCESS
+         *
+
+        // initializes the class shutter
+        context.setClassShutter( new ClassShutter(){
+        public boolean visibleToScripts( String className )
+        {
+        return className.startsWith( SCRIPT_API_PACKAGE );
+        }
+        });
+
+
+         */
+        // TODO implement sandbox feature.. if neccessary
+        // http:codeutopia.net/blog/2009/01/02/sandboxing-rhino-in-java/
+    }
+
+COM:initializes the security features, but includes commented out code for debugging and has a TODO note for future implementation of a sandbox feature

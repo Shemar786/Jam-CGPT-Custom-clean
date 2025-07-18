@@ -1,0 +1,19 @@
+TDAT:     private Collection filter(final NodeList children) {
+        if (children == null) {
+            return null;
+        }
+
+        final Collection filtered = new java.util.ArrayList();
+
+        for (int i = 0; i < children.getLength(); i++) {
+            final Node child = children.item(i);
+
+            if (!(child instanceof TextDOMNode)) {
+                filtered.add(child);
+            }
+        }
+
+        return filtered;
+    }
+
+COM:takes in a NodeList, filters out any TextDOMNodes, and returns a Collection of the remaining nodes

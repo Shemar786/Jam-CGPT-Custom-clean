@@ -1,0 +1,9 @@
+TDAT: 	public void paintSmallTag(Graphics g, TGPanel tgPanel, int tagX, int tagY, Color backCol, Color textCol, char character) {
+		g.setColor(backCol);
+		g.fillRect(tagX, tagY, 8, 8);
+		g.setColor(textCol);
+		g.setFont(SMALL_TAG_FONT);
+		g.drawString("" + character, tagX + 2, tagY + 7);
+	}
+
+COM:paints a small tag with a given character and colors at a specified position on a graphics panel

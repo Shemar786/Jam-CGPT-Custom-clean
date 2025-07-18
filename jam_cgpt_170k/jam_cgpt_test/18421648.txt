@@ -1,0 +1,16 @@
+TDAT:     public void actionPerformed(ActionEvent e) {
+        if ("clear".equals(e.getActionCommand())) {
+            addressSet = false;
+            streetField.setText("");
+            cityField.setText("");
+
+            //We can't just setText on the formatted text
+            //field, since its value will remain set.
+            zipField.setValue(null);
+        } else {
+            addressSet = true;
+        }
+        updateDisplays();
+    }
+
+COM:handles the action performed by a user on a GUI and updates the relevant fields accordingly

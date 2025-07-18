@@ -1,0 +1,19 @@
+TDAT: 	public void run() {
+	
+		try {
+			System.out.println("trying to make my proxy instance");
+			MyProxy myProxyInstance = new MyProxy(host, 7512);	
+			System.out.println("created myproxy instance");
+			cred = myProxyInstance.get(null, username, password, 3000);
+			//System.out.println(cred);
+			//System.out.println(cred.getRemainingLifetime());
+			status="success";
+		}	
+		catch (Exception e) {
+			System.out.println(e);
+			e.printStackTrace();
+			status = "error";
+		}
+	}
+
+COM:creates an instance of a proxy with certain host and port, tries to get credentials with a username and password within a certain time limit, and sets the status based on whether or not the operation was successful

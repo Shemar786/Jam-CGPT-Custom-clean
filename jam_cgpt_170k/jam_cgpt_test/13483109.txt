@@ -1,0 +1,14 @@
+TDAT:     public void removeEdge(GraphNode v, GraphNode w) {
+        Block src = (Block) v;
+        Block dst = (Block) w;
+
+        if (DEBUG) {
+            System.out.println("    REMOVING EDGE " + src + " -> " + dst);
+        }
+
+        super.removeEdge(src, dst);
+
+        cleanupEdge(src, dst);
+    }
+
+COM:removes an edge between two graph nodes, including a DEBUG flag and additional implementation for cleanup

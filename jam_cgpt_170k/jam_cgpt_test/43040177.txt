@@ -1,0 +1,9 @@
+TDAT:     private String getFirstEntriesGroup() {
+        final MenuPath path = entries.get(0).getPath();
+        final MenuPathSegment[] pathElements = path.getPath();
+        if (pathElements.length > 0)
+            return pathElements[0].getGroup();
+        return path.getLastGroup();
+    }
+
+COM:returns the group name of the first entry in a menu path, or the last group name if the path is empty

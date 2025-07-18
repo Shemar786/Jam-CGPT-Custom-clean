@@ -1,0 +1,11 @@
+TDAT:     public ListModel getFiltersListModel(Desktop desktop){
+    	if(_filtersProxy!=null){
+    		if(_filtersProxy.getDesktop().equals(desktop)){
+    			return _filtersProxy;
+    		}
+    	}    	
+    	_filtersProxy = (ProxyModel)_containerEditor.getFiltersListModel(desktop);
+    	return _filtersProxy;
+    }
+
+COM:returns a ListModel object containing filters for a specific Desktop, either from the stored proxy or by calling a method on a container editor if the proxy is null

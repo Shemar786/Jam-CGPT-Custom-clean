@@ -1,0 +1,21 @@
+TDAT:   public boolean reaches(Node target) {
+    if (target == this) {
+      return true;
+    } else {
+      // depth first search the adjacency list
+      setVisited(true);
+
+      for (Enumeration e = adjacency.keys(); e.hasMoreElements(); ) {
+	Node	adj = (Node)e.nextElement();
+
+	if (!adj.getVisited()) {
+	  if (adj.reaches(target)) {
+	    return true;
+	  }
+	}
+      }
+      return false;
+    }
+  }
+
+COM:checks if a given target node is reachable from the current node using depth first search

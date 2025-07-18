@@ -1,0 +1,11 @@
+TDAT:   public void setObject(String objectName) throws JspException {
+    this.objectName = objectName;
+    this.object = pageContext.findAttribute(objectName);
+    if (this.object == null) {
+      throw new TagException(
+        TagException.MESSAGE_OBJECT_NOT_FOUND,
+        new Object[] { objectName });
+    }
+  }
+
+COM:sets an object by a given name and throws a JspException if the object is not found

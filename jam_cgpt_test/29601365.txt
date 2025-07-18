@@ -1,0 +1,12 @@
+TDAT:     public Command getOkCommandLookUp() {
+        if (okCommandLookUp == null) {//GEN-END:|41-getter|0|41-preInit
+            // write pre-init user code here
+            okCommandLookUp = new Command("Ok", Command.OK, 0);//GEN-LINE:|41-getter|1|41-postInit
+        // write post-init user code here
+            
+            
+        }//GEN-BEGIN:|41-getter|2|
+        return okCommandLookUp;
+    }
+
+COM:returns a Command object named "Ok" if it exists, otherwise it creates and returns a new one

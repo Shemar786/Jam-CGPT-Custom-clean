@@ -1,0 +1,12 @@
+TDAT: 	public void printStats(){
+		final int wordlength = 20;
+		StringBuilder sb = new StringBuilder();
+		sb.append("Statistic of the diconary").append(newline);
+		sb.append("Total words: ").append(dict.size()).append(newline);
+		for (Entry<T,Integer> entry : dict.entrySet()) {
+			sb.append(entry.getKey()).append(padding(entry.getKey(),wordlength)).append(":\t").append(entry.getValue()).append(newline);
+		}
+		logger.info(sb.toString());
+	}
+
+COM:prints statistics of a dictionary, including the total number of words and their frequencies

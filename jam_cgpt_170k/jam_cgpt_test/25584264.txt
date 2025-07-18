@@ -1,0 +1,17 @@
+TDAT:     public int getVolume() {
+        int maximumVolume = -1;
+
+        if (channels != null) {
+            int channelVolume;
+            for (int idx = 0; idx < channels.length; idx++) {
+                channelVolume = channels[idx].getController(7);
+                if (channelVolume > maximumVolume) {
+                    maximumVolume = channelVolume;
+                }
+            }
+        }
+
+        return maximumVolume;
+    }
+
+COM:returns the maximum volume of all channels in an audio player

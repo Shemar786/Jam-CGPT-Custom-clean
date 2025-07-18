@@ -1,0 +1,7 @@
+TDAT: public void setLineWidth(int lineWidth) {
+	if (handle == null) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+  BasicStroke stroke = getCurrentBasicStroke();
+  handle.setStroke(new BasicStroke(lineWidth, stroke.getEndCap(), stroke.getLineJoin(), stroke.getMiterLimit(), stroke.getDashArray(), stroke.getDashPhase()));
+}
+
+COM:sets the line width of the current graphics context

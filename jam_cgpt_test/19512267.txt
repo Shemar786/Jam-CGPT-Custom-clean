@@ -1,0 +1,11 @@
+TDAT: 	public void prettyPrint(final EventBObject emfObject) {
+		final String packageNsURI = emfObject.eClass().getEPackage().getNsURI();
+
+		if (packageNsURI.equals(MachinePackage.eNS_URI)) {
+			machineSwitch.doSwitch(emfObject);
+		} else if (packageNsURI.equals(ContextPackage.eNS_URI)) {
+			contextSwitch.doSwitch(emfObject);
+		}
+	}
+
+COM:takes in an EventBObject and prints its contents in a pretty format, with conditional statements based on its EMF package URI to print either a machine or a context object using a switch statement

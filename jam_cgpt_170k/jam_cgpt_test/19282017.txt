@@ -1,0 +1,11 @@
+TDAT:     public Collection getAllUncachedExperimentAccessionStrings() throws PridePersistenceException {
+        // Return only the Experiments where iXmlCacheFile is null or empty.
+        Criteria crit = new Criteria();
+        Criteria crit2 = new Criteria();
+        crit.addIsNull("iXmlCacheFile");
+        crit2.addEqualTo("iXmlCacheFile", "");
+        crit.addOrCriteria(crit2);
+        return getExperimentAccessionStrings(crit);
+    }
+
+COM:retrieves a collection of Experiment Accession Strings where the iXmlCacheFile is null or empty

@@ -1,0 +1,9 @@
+TDAT: 	protected void outsideSpatialModelHandler(CoordinateIfc coordinate) {
+		if (myOSMHandler != null)
+			myOSMHandler.handleOutsideSpatialModel(this, coordinate);
+		else
+			throw new IllegalArgumentException("The coordinate (x1= " + coordinate.getX1()
+					+ ",x2= " + coordinate.getX2() + ",x3= " + coordinate.getX3() +") is not contained in the spatial model.");
+	}
+
+COM:This protected Java method handles a coordinate outside of the spatial model by either passing it to a designated handler or throwing an exception

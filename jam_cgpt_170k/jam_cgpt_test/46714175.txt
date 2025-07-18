@@ -1,0 +1,15 @@
+TDAT:   public void doStart(String name) {
+
+    // FIXME: Temporary hack for JSP example
+      if(myToolkit == null) {
+	  Runtime rt = Runtime.instance();
+	  setToolkit(rt.getDefaultToolkit());
+	  theDispatcher = rt.getTimerDispatcher();
+      }
+
+    if(myToolkit == null)
+      throw new InternalError("Trying to start an agent without proper runtime support.");
+    myToolkit.handleStart(name, this);
+  }
+
+COM:starts an agent with the given name using the default runtime toolkit and throws an error if the necessary runtime support is not present

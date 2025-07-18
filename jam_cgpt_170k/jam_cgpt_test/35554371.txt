@@ -1,0 +1,25 @@
+TDAT: 	public void buttonContinue() {
+		HistoryData historyData = getLinkedList();
+		currentLogId = historyData.nextLogId;
+		currentPage++;
+		buttonApplyExecute(false);
+		putLinkedList();
+
+		// currentPage = historyQueue.size() - 1;
+
+		processPage();
+
+		if (currentPage <= 1) {
+			btnPrev.setEnabled(false);
+		} else {
+			btnPrev.setEnabled(true);
+		}
+
+		if (currentPage >= totalPage) {
+			btnNext.setEnabled(false);
+		} else {
+			btnNext.setEnabled(true);
+		}
+	}
+
+COM:handles the continuation of a process by retrieving data from a linked list and updating variables, executing a button application, and updating page numbers and button enablement

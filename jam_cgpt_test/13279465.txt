@@ -1,0 +1,15 @@
+TDAT:     private void createAuxiliarList() {
+	int i;
+	// Clears the list
+	auxiliarList.clear();
+	// Building the list
+	for (i = 0; i < listNumber; i++) {
+	    Variable aux1 = (Variable) constList.get(i);
+	    Variable aux2 = (Variable) varList.get(i);
+	    Variable diff = new Variable();
+	    diff.set(Math.abs(aux1.value() - aux2.value()));
+	    auxiliarList.add(diff);
+        }
+    }
+
+COM:creates a list of differences between corresponding elements in two other lists and stores it in a third list

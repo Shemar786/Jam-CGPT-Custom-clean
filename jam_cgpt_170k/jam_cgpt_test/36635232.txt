@@ -1,0 +1,10 @@
+TDAT:     private void drawPermPixel(int colorInRGB, int locx, int locy){
+        if(locx >= 0 && locx < editSizeX){
+            if(locy >= 0 && locy < editSizeY){
+                if(colorInRGB != transparent.getRGB())
+                    editgrid[locx][locy] = colorInRGB;
+            }
+        }
+    }
+
+COM:This is a Java method that sets the pixel color of an image at a given location, as long as it is within the bounds of the image and is not transparent

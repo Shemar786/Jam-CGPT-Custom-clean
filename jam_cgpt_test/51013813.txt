@@ -1,0 +1,16 @@
+TDAT: 	private String getLocalName(ONDEXConcept c) {
+		String local = String.valueOf(c.getId());
+		if (concat) {
+			// check if preferred name is present
+			ConceptName preferredName = c.getConceptName();
+			if (preferredName != null) {
+				local = local + ": " + quote(preferredName.getName());
+			} else {
+				// use PID as fall-back
+				local = local + ": " + quote(c.getPID());
+			}
+		}
+		return local;
+	}
+
+COM:returns a String representing the local name of an ONDEXConcept, which can include a preferred name and a PID if the preferred name is not available

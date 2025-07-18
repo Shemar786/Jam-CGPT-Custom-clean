@@ -1,0 +1,11 @@
+TDAT:     protected String getCoreSpec(int elemindex) {
+        String currloc=webelems[elemindex];
+        currloc=currloc.substring(0,currloc.lastIndexOf(indexfile));
+        currloc=currloc.substring(sandhome.length());
+        if(currloc.equals("")) {
+            return currloc; }
+        currloc=currloc.substring(1);   //kill first slash
+        return currloc;
+    }
+
+COM:returns a string representing a portion of a web element's location

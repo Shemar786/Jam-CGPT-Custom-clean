@@ -1,0 +1,11 @@
+TDAT:     public int getNumberOfPages() {
+        int number = 0;
+        if ( _hits.size() > 0 && _pageRange > 0 ) {
+            number = _hits.size()/_pageRange;
+            if ( (_hits.size() - number*_pageRange) > 0 )
+                number++;
+        }
+        return number;
+    }
+
+COM:returns the number of pages for a list of hits given a specified page range

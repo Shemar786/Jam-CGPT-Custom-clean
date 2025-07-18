@@ -1,0 +1,15 @@
+TDAT: private int setInt(String value, HttpServletRequest request) {
+		int member = -1;
+
+		// look first for a parameter than for a attribute
+		if (request.getParameter(value) != null) {
+			member = Integer.parseInt(request.getParameter(value));
+		} else {
+			if (request.getAttribute(value) != null) {
+				member = Integer.parseInt(request.getAttribute(value).toString());
+			}
+		}
+		return member;
+	}
+
+COM:This is a private Java method to set an integer value based on either a parameter or attribute in an HTTP servlet request

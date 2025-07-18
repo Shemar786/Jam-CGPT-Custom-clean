@@ -1,0 +1,10 @@
+TDAT: 	private boolean isSimplePattern(Expression expr, int loIndex, int hiIndex) {
+		if (expr.getTag() == Expression.MAPSTO) {
+			BinaryExpression bin = (BinaryExpression) expr;
+			return hasBoundIndex(bin.getRight(), loIndex) &&
+					isSimplePattern(bin.getLeft(), loIndex + 1, hiIndex);
+		}
+		return loIndex == hiIndex && hasBoundIndex(expr, loIndex);
+	}
+
+COM:checks if a given expression has a simple pattern with specified lower and upper indices

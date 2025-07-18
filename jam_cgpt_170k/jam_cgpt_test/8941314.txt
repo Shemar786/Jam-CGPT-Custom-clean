@@ -1,0 +1,5 @@
+TDAT:     public IRubyObject call(ThreadContext context, IRubyObject self, RubyModule klazz, String name, IRubyObject arg, Block block) {
+        return call(context, self, klazz, name, new IRubyObject[] {arg}, block);
+    }
+
+COM:takes in a context, object, module, name, argument, and block, and returns the result of calling it with the provided arguments

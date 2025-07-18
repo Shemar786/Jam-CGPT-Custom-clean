@@ -1,0 +1,12 @@
+TDAT: 	public void setLastEditor(String userName) {
+		try {
+			Node node = getNode("/dcsDataRecord/lastEditor");
+			if (node == null)
+				node = this.doc.getRootElement().addElement("lastEditor");
+			((Element)node).setText(userName);
+		} catch (Throwable e) {
+			prtlnErr("setLastEditor failed: " + e.getMessage());
+		}
+	}
+
+COM:sets the value of "lastEditor" node in an XML document to the given user name, creating the node if it does not already exist

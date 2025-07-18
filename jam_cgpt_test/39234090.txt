@@ -1,0 +1,12 @@
+TDAT:     public Object createObject(Attributes attributes) throws Exception {
+
+        String variable = attributes.getValue(VARIABLE);
+        String part = attributes.getValue(PART);
+        String partnerLink = attributes.getValue(PARTNER_LINK);
+        String property = attributes.getValue(PROPERTY);
+
+        return getElementFactory().createTo(variable, part, property,
+                partnerLink);
+    }
+
+COM:creates an object using attributes and returns it using the getElementFactory method

@@ -1,0 +1,10 @@
+TDAT:     private void initSelectedClassList() {
+        for (IClassRelationShip classRelationShip : classRelationShipList) {
+            String className = classRelationShip.getClassName();
+            selectedClassList.add(className);
+        }
+        selectedClassesListModel = new CustomizedListModel(selectedClassList);
+        classNamesList.setModel(selectedClassesListModel);
+    }
+
+COM:This private Java method initializes a list of selected class names based on a list of class relationships and sets the model for a corresponding user interface element

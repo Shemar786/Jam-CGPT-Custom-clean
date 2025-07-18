@@ -1,0 +1,13 @@
+TDAT:     public void setBootstrapPeers(Collection<Finger> bootstrapPeers){
+        synchronized(this.view){
+            for(Finger peer:bootstrapPeers){
+                FingerDescriptor descriptor=new FingerDescriptor(peer.clone());
+                this.ageManager.initAge(descriptor);
+                this.getView().add(descriptor);
+            }
+            //gurantees there are no more than c nodes in the view at the beginning
+            this.select(new ArrayList());
+        }
+    }
+
+COM:sets the bootstrap peers for a distributed system, initializing their age and ensuring that the number of nodes in the view is within a certain limit

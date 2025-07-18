@@ -1,0 +1,10 @@
+TDAT:   public void removeControl(String type) {
+    CControl control = (CControl) controls.get(type);
+    if (control != null) {
+      control.unsetContext();
+      controls.remove(type);
+      fireControlChanged(new CControlEvent(this, control, CControlEvent.REMOVED));
+    }
+  }
+
+COM:removes a control of a specified type from a collection of controls and fires a control changed event

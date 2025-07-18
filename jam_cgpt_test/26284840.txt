@@ -1,0 +1,8 @@
+TDAT:     public void setProgress(int newValue) {
+        if(newValue < progressBar.current)
+            throw new IllegalArgumentException("Progress dropped ("+ progressBar.current +" -> "+ newValue+")");
+        Rectangle clipRect = progressBar.setCurrent(newValue);
+        internalWindow.repaint( clipRect.x, clipRect.y, clipRect.width, clipRect.height);
+    }
+
+COM:sets the progress value of a progress bar and throws an IllegalArgumentException if the new value is less than the current value, then repaints the bar's internal window

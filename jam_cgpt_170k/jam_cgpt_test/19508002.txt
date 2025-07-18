@@ -1,0 +1,22 @@
+TDAT: 	public void testNonRodinResourceRemoveAndAdd() throws CoreException {
+		createRodinProject("P");
+		IFile file = createFile("/P/read.txt", "");
+		
+		startDeltas();
+		deleteResource(file);
+		assertDeltas(
+				"Unexpected delta after deleting /P/src/read.txt",
+				"P[*]: {CONTENT}\n" + 
+				"	ResourceDelta(/P/read.txt)[-]"
+		);
+		
+		clearDeltas();
+		createFile("/P/read.txt", "");
+		assertDeltas(
+				"Unexpected delta after creating /P/src/read.txt",
+				"P[*]: {CONTENT}\n" + 
+				"	ResourceDelta(/P/read.txt)[+]"
+		);
+	}
+
+COM:tests removing and adding a non-Rodin resource in a project

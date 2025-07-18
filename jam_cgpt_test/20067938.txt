@@ -1,0 +1,14 @@
+TDAT: 	public String correctCapsUsername(String username) {
+		try {
+			DBConnection conn = DBConnectionService.getInstance().getDBConnection();
+			java.sql.ResultSet results = conn.executeQueryWithRS("SELECT `username` FROM `users` WHERE `username` LIKE '" + username + "'");
+			if (results.next()) {
+				return results.getString(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace(System.err);
+		}
+		return null;
+	}
+
+COM:takes a username string, searches a database for a match, and returns the correct capitalization of the username if found

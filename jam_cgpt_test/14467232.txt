@@ -1,0 +1,11 @@
+TDAT:   public void dropModel(Model droppedModel, int x, int y) {
+
+    if (droppedModel.getClass() == this.getClass()) {
+      dropModelClone(droppedModel, x, y);
+    } else {
+      dropModelModify(droppedModel, x, y);
+    }
+
+  }
+
+COM:The method takes in a Model object, checks if it is of the same type as the current object, and calls a corresponding method to either clone or modify the dropped model at a given x and y position

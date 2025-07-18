@@ -1,0 +1,13 @@
+TDAT:   public void addViewManager(ViewManager mgr) throws WebFlowException {
+    if (mgr.getType() == null) {
+      throw new IllegalArgumentException("View manager has no type defined");
+    }
+
+    if (_viewManagers.get(mgr.getType()) != null) {
+      throw new IllegalArgumentException("Duplicate view manager type");
+    }
+
+    _viewManagers.put(mgr.getType(), mgr);
+  }
+
+COM:adds a view manager to a HashMap as long as it has a defined type and there are no duplicate types already in the HashMap, but throws an exception if these conditions are not met

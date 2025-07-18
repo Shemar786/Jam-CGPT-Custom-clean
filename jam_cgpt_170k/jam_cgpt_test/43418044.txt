@@ -1,0 +1,12 @@
+TDAT: 	private JProgressBar getJLoadJVM() {
+		if (jLoadJVM == null) {
+			jLoadJVM = new JProgressBar();
+			jLoadJVM.setPreferredSize(new Dimension(150, 18));
+			jLoadJVM.setStringPainted(true);
+			jLoadJVM.setFont(new Font("Dialog", Font.PLAIN, 12));
+			jLoadJVM.setToolTipText("Memory Heap JVM");
+		}
+		return jLoadJVM;
+	}
+
+COM:creates and returns a JProgressBar with specific properties for displaying the memory heap usage of the Java Virtual Machine

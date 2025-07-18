@@ -1,0 +1,13 @@
+TDAT: 	public void renderRepeatingElement() {
+		String normalizedXPath = RendererHelper.normalizeXPath(xpath);
+
+		StandardsManager sm = rhelper.getFramework().getStandardsManager();
+		if (sm != null && normalizedXPath.equals(sm.getXpath())) {
+			MdeStdsNode mdeStdsNode = new MdeStdsNode(this, sm);
+			mdeStdsNode.render();
+		} else {
+			super.renderRepeatingElement();
+		}
+	}
+
+COM:renders a repeating element based on a normalized XPath, and applies Mde standards if the XPath matches standards specified by the standards manager

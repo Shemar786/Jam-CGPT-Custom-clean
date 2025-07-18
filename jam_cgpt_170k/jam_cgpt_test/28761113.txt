@@ -1,0 +1,11 @@
+TDAT:   private void applyBoolean() {
+    Configuration config = Configuration.getConfiguration();
+
+    for (Entry<ConfigurationValueBoolean, JCheckBox> entry : booleanValues.entrySet()) {
+      if ((entry.getValue() != null) && (entry.getKey() != null)) {
+        config.setBoolean(null, entry.getKey(), entry.getValue().isSelected());
+      }
+    }
+  }
+
+COM:applies boolean values from a set of checkboxes to the configuration of the program

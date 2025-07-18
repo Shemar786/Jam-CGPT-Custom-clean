@@ -1,0 +1,16 @@
+TDAT:   public void addElement(RingElement element) {
+    if (isEmpty()) {
+      head = element;
+      element.next = element;
+      element.prev = element;
+    } else {
+      element.next = current.next;
+      element.prev = current;
+      element.next.prev = element;
+      current.next = element;
+    }
+    current = element;
+    elements++;
+  }
+
+COM:adds a new RingElement to a linked list data structure

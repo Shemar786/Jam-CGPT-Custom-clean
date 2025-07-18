@@ -1,0 +1,19 @@
+TDAT: 	public boolean validateTransition_notFromFinal(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (transition.getSource() instanceof Final) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "Transition cannot go from final state", getObjectLabel(transition, context) },
+						 new Object[] { transition },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+COM:validates if a transition is not from a final state and returns a boolean indicating the result

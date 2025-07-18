@@ -1,0 +1,13 @@
+TDAT: 	public void setOriginProbability(TransportLocationIfc location, double p ){
+		if(!myNetwork.isOrigin(location))	
+			new IllegalArgumentException("The supplied location is not a valid origin.");
+
+		if (!myODRVs.containsKey(location)){
+			RandomVariable rv = new RandomVariable(this, new DEmpirical());
+			myODRVs.put(location, rv);
+		}
+		int i = myNetwork.getIndexOf(location);
+		myOriginPDF.addProbabilityPoint(i, p);
+	}
+
+COM:sets the probability of a given location being an origin in a transportation network, and adds the probability point to an origin probability density function

@@ -1,0 +1,11 @@
+TDAT:     public void addDiagram(final Diagram2D diagram) {
+        diagrams.add(diagram);
+        if (diagram instanceof WriteableDiagram2D) {
+            final WriteableDiagram2D wd2d = (WriteableDiagram2D) diagram;
+            wd2d.setEventBroker(this.eventBroker);
+        }
+        markDataDirty();
+        eventBroker.processEvent(new DiagramListChangeEvent(this));
+    }
+
+COM:adds a 2D diagram to a list, sets an event broker for writeable diagrams, marks data as dirty, and processes a diagram list change event

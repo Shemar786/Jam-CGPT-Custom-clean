@@ -1,0 +1,12 @@
+TDAT: 	private JPanel getFeatureChooser() {
+		if (FeatureChooser == null) {
+			FeatureChooser = new JPanel();
+			FeatureChooser.setLayout(new BorderLayout());
+			FeatureChooser.add(getFeatureControls(), BorderLayout.CENTER);
+			FeatureChooser.add(getChosenFeaturePanel(), BorderLayout.WEST);
+			FeatureChooser.add(getFeatureListPanel(), BorderLayout.EAST);
+		}
+		return FeatureChooser;
+	}
+
+COM:returns a JPanel that contains a feature chooser with feature controls, a chosen feature panel, and a feature list panel

@@ -1,0 +1,15 @@
+TDAT:     public void drawMap(Graphics g) {
+      int x = xInset;
+      int y = yInset;
+
+      for (int r = 0; r < yCellNum; r++ ) {
+        for (int c = 0; c < xCellNum; c++ ) {
+          drawBox(g, cells[r][c], x, y);
+          x += cellSide;
+        }
+        y += cellSide;
+        x = xInset;
+      }
+    }
+
+COM:draws a map of cells using the provided Graphics object

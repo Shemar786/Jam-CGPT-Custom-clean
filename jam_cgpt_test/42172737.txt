@@ -1,0 +1,17 @@
+TDAT:   protected void addAcquireIncrementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBConnection_acquireIncrement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBConnection_acquireIncrement_feature", "_UI_DBConnection_type"),
+				 DbPackage.Literals.DB_CONNECTION__ACQUIRE_INCREMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the acquire increment feature of a DBConnection object

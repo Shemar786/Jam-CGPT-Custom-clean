@@ -1,0 +1,9 @@
+TDAT:     public void testTextReplacement() throws Exception {
+        DomWindow window = createMainWindow();
+        window.getDocument().write( "A bit of text" );
+        window.getDocument().close();
+        assertNotNull( "No text replacement occurred", _proxy.getReplacementText() );
+        assertEquals( "Replacement text", "A bit of text", _proxy.getReplacementText() );
+    }
+
+COM:tests if text replacement occurred and checks if the replacement text matches the original text

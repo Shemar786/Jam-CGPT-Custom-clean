@@ -1,0 +1,10 @@
+TDAT:     protected void fireTreeStructureChanged(XSpaceTreeNode node) {
+        int len = treeModelListeners.size();
+        TreeModelEvent e = new TreeModelEvent(this, new Object[] {node});
+        for (int i = 0; i < len; i++) {
+            TreeModelListener tml = (TreeModelListener) treeModelListeners.get(i);
+            tml.treeStructureChanged(e);
+        }
+    }
+
+COM:fires an event to notify all listeners that a tree structure has changed

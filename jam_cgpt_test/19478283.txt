@@ -1,0 +1,20 @@
+TDAT: 	public boolean hasChildren() {
+		try {
+			return (parent.getChildrenOfType(childrenType).length != 0);
+		}
+		catch (RodinDBException e) {
+			// TODO Exception handle
+			e.printStackTrace();
+			MessageDialog
+					.openWarning(
+							EventBUIPlugin.getActiveWorkbenchShell(),
+							"Resource out of date",
+							"Component "
+									+ parent.toString()
+									+ " is out of date with the file system and will be refresh.");
+			ProjectExplorerActionGroup4Composition.refreshAction.refreshAll();
+		}
+		return false;
+	}
+
+COM:checks if a parent element has any children of a specified type and returns a boolean value. If there is an exception, it displays a warning message and refreshes the parent element before returning false

@@ -1,0 +1,14 @@
+TDAT:     public void testReadAndWriteTimeSeriesMultipleTimes() throws Exception {
+        //currently only wdm.dll available (not wdm.so), so only run this test on windows.
+        if (!BBUtils.RUNNING_ON_WINDOWS) {
+            return;
+        }
+
+        for (int n = 1; n <= 20; n++) {
+            testReadTimeSeries();
+            testWriteTimeSeries();
+            System.out.println(n);
+        }
+    }
+
+COM:tests reading and writing time series multiple times on Windows using wdm.dll

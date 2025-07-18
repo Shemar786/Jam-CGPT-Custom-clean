@@ -1,0 +1,9 @@
+TDAT:     public List findAll(String firstName, String lastName) {
+        
+        Query query = getQuery("select p from Patient as p where p.foreName = :fn and p.surName = :ln order by p.surName");
+        query.setParameter("fn", firstName, Hibernate.STRING);
+        query.setParameter("ln", lastName, Hibernate.STRING);
+        return query.list();
+    }
+
+COM:finds all patient records that match a given first and last name, and returns them in a list

@@ -1,0 +1,16 @@
+TDAT: 	public void setCorners(Double[] lowerCorner, Double[] upperCorner) {
+		if (lowerCorner[0] > upperCorner[0] || lowerCorner[1] > upperCorner[1]){
+			this.minX = upperCorner[0];
+			this.maxX = lowerCorner[0];
+			this.minY = upperCorner[1];
+			this.maxY = lowerCorner[1];
+		} else {
+			this.minX = lowerCorner[0];
+			this.maxX = upperCorner[0];
+			this.minY = lowerCorner[1];
+			this.maxY = upperCorner[1];
+		}
+		
+	}
+
+COM:sets the corner coordinates of a box object with given upper and lower corner coordinates

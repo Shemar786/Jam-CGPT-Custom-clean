@@ -1,0 +1,12 @@
+TDAT:   public TableReference getTable() {
+    FieldNameList list = alias.getFieldNameList();
+    if (list != null) {
+      if (fieldNameListTableReference == null) {
+	fieldNameListTableReference = new FieldNameListTableReference(getTokenReference(), list);
+      }
+      return fieldNameListTableReference;
+    }
+    return table;
+  }
+
+COM:returns a TableReference object based on the FieldNameList or the predefined table

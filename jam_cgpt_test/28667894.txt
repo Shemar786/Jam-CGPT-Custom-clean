@@ -1,0 +1,13 @@
+TDAT: 	public void makeInSync(IResource resource) throws TeamException{
+		TeamSitePlugin.logInfo("TeamSiteThreeWaySubscriber->makeIncSync(IResource resource)");
+		ThreeWaySynchronizer synchronizer = getSynchronizer();
+		byte[] remoteBytes = synchronizer.getRemoteBytes(resource);
+		if(remoteBytes == null){
+			if(!resource.exists())
+				synchronizer.flush(resource, IResource.DEPTH_ZERO);
+		} else {
+			synchronizer.setBaseBytes(resource, remoteBytes);
+		}
+	}
+
+COM:synchronizes a resource with the remote version in a TeamSite platform using a ThreeWaySynchronizer object, and logs any relevant information while doing so

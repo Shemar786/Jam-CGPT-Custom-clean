@@ -1,0 +1,11 @@
+TDAT:     private void addACToConnectedMainParts(final ApplicationConditionPart acp) {
+        Iterator connectedMainPartsIt = ((StructuralConstraintGraphPart) acp).getInnerGraphLinkParts()
+                                                                           .iterator();
+
+        while (connectedMainPartsIt.hasNext()) {
+            MainPartInterface mp = (MainPartInterface) connectedMainPartsIt.next();
+            mp.addAC(acp.getApplicationCondition());
+        }
+    }
+
+COM:adds an application condition to connected main parts

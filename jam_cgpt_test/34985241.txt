@@ -1,0 +1,10 @@
+TDAT: 	private void treeLogWidgetSelected(SelectionEvent evt) {
+		//System.out.println("treeLog.widgetSelected, event="+evt);
+		if (((TreeItem)evt.item).getData() != null) {
+			currentSelectionURL = "" + ((TreeItem)evt.item).getData(); //$NON-NLS-1$
+		} else {
+			currentSelectionURL = ""; //$NON-NLS-1$
+		}
+	}
+
+COM:sets the currentSelectionURL variable to the URL of the selected tree item, or an empty string if no item is selected

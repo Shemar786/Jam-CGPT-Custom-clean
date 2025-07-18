@@ -1,0 +1,17 @@
+TDAT: 	public void viewRoomDetail(int roomID) {
+		NetRoomInfo roomInfo = netPlayerClient.getRoomInfo(roomID);
+
+		if(roomInfo != null) {
+			currentViewDetailRoomID = roomID;
+
+			if(roomInfo.singleplayer) {
+				setCreateRoom1PUIType(true, roomInfo);
+				changeCurrentScreenCard(SCREENCARD_CREATEROOM1P);
+			} else {
+				setCreateRoomUIType(true, roomInfo);
+				changeCurrentScreenCard(SCREENCARD_CREATEROOM);
+			}
+		}
+	}
+
+COM:views the details of a specific room and changes the screen card based on the information retrieved

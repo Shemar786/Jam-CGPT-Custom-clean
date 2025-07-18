@@ -1,0 +1,13 @@
+TDAT: 	protected void init() {
+		if (result == null) {
+			result = new Relation<E, F>();
+			for (IExpression<IMapplet<F, E>> e : relation.getMutableValue()) {
+				result.addValue(e.getMutableValue().getRight()
+						.getImmutableValue(), e.getMutableValue().getLeft()
+						.getImmutableValue());
+			}
+		}
+
+	}
+
+COM:initializes a Relation object by adding values from another Relation through a for-loop

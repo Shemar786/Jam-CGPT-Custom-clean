@@ -1,0 +1,14 @@
+TDAT: 	public Command getCommand(Request request) {
+		if (request instanceof ReconnectRequest) {
+			Object view = ((ReconnectRequest) request).getConnectionEditPart()
+					.getModel();
+			if (view instanceof View) {
+				Integer id = new Integer(SaveccmVisualIDRegistry
+						.getVisualID((View) view));
+				request.getExtendedData().put(VISUAL_ID_KEY, id);
+			}
+		}
+		return super.getCommand(request);
+	}
+
+COM:retrieves a command based on a request, and adds a visual ID to the request's extended data if it is a ReconnectRequest and the view of the connection edit part is an instance of View

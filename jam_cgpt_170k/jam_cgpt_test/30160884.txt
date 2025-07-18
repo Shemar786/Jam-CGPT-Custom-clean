@@ -1,0 +1,13 @@
+TDAT:     protected List getInternalDeclarations() {
+        List decls = new ArrayList();
+
+        decls.add(new ElementDecl("greeting", "(#PCDATA)"));
+
+        decls.add(new AttributeDecl("greeting", "foo", "ID", "#IMPLIED", null));
+
+        decls.add(new InternalEntityDecl("%boolean", "( true | false )"));
+
+        return decls;
+    }
+
+COM:returns a list of internal declarations including an element declaration, an attribute declaration, and an internal entity declaration

@@ -1,0 +1,18 @@
+TDAT: 	public void modify(Object element, String property, Object value) {
+		if (element == null || value == null)
+			throw new IllegalArgumentException(ExceptionMessages.NULL_ARGUMENT);
+
+		if (!(element instanceof Item || element instanceof DocumentSetting))
+			throw new IllegalArgumentException(
+					ExceptionMessages.WRONG_ARGUMENT_TYPE);
+
+		if (element instanceof Item)
+			element = ((Item) element).getData();
+
+		DocumentSetting setting = (DocumentSetting) element;
+		setting.setValue((String) value);
+
+		viewer.refresh();
+	}
+
+COM:modifies a DocumentSetting object's value and refreshes a viewer, inputting an element, property, and value as parameters

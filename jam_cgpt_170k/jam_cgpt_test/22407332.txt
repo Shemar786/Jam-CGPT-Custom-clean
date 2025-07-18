@@ -1,0 +1,19 @@
+TDAT:     public Collection selectedTargets() {
+        final Collection col = new java.util.LinkedList();
+        final AntTargetIterator iterator = targetIterator();
+
+        while (iterator.hasNext()) {
+            final AntTarget target = iterator.nextTarget();
+
+            if (target.isSelected()) {
+                col.add(target);
+            }
+        }
+
+        java.util.Collections.sort((java.util.LinkedList) col,
+                                   COMPARATOR);
+
+        return col;
+    }
+
+COM:returns a collection of selected Ant targets, sorted using a comparator

@@ -1,0 +1,11 @@
+TDAT: 	private void showFrame() {
+		frame.getContentPane().add(createToolBarPanel(), BorderLayout.NORTH);
+		frame.getContentPane().add(rootWindow, BorderLayout.CENTER);
+		frame.getContentPane().add(createStatusBar(), java.awt.BorderLayout.SOUTH);
+		frame.setJMenuBar(new MenuBar().build());
+		//frame.setSize(900, 700);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+
+COM:adds components to a JFrame and sets it to be visible

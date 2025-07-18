@@ -1,0 +1,20 @@
+TDAT:     public boolean findAllParts() {
+        boolean found = true;
+        firstMissingPart = null;
+
+        Iterator it = allParts.iterator();
+
+        while (it.hasNext() && found) { // while all parts are found
+
+            MovableSubgraphPart part = (MovableSubgraphPart) it.next();
+            found = part.findOneEmbeddingAllParts();
+
+            if (! found) {
+                firstMissingPart = part;
+            }
+        }
+
+        return found;
+    }
+
+COM:searches for all parts in a movable subgraph and returns true if all parts are found and false otherwise

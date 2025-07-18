@@ -1,0 +1,11 @@
+TDAT:   public T getT(String id) {
+    for (int i = 0; i < this.ts.size(); i++) {
+      T currentT = (T)this.ts.get(i);
+      if (currentT.getId().equalsIgnoreCase(id)) {
+        return currentT;
+      }
+    }
+    return null;
+  }
+
+COM:takes in a string parameter 'id', searches for an object of type T with the same id in a list of T objects, and returns the first matching object found or null if no matching object is found

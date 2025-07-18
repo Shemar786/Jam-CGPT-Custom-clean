@@ -1,0 +1,17 @@
+TDAT: 	protected void addContextsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBMachine_contexts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBMachine_contexts_feature", "_UI_UMLBMachine_type"),
+				 UMLBPackage.Literals.UMLB_MACHINE__CONTEXTS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to an item property descriptor list for a UML-B machine's contexts feature

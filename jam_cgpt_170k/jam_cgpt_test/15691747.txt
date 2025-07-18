@@ -1,0 +1,9 @@
+TDAT:     private String createTemplateServerRequest(String servletPath,String templateName) {
+        String pathInfo = servletPath.substring(servletPath.indexOf("/",TEMPLATE_LOAD_PROTOCOL.length()));
+        if (templateName != null) {            
+            pathInfo = pathInfo + templateName;
+        }
+        return pathInfo;
+    }
+
+COM:creates a string that is used as a server request path for loading a template

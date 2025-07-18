@@ -1,0 +1,15 @@
+TDAT:     public void setSeparationCount(int i) {
+        validateSeparationCount(i);
+
+        int currentSeparationCount = getSeparationCount();
+
+        if (i > currentSeparationCount) {
+            // separation count too small, enlarge it to fit
+            enlargeSeparationCount(i);
+        } else if (i < currentSeparationCount) {
+            // separation count too large, shrink it to fit
+            shrinkSeparationCount(i);
+        }
+    }
+
+COM:sets the separation count of an object and adjusts it if necessary

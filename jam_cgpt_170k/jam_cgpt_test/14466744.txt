@@ -1,0 +1,14 @@
+TDAT:   private Constituent getDataNode(int index) {
+    int currIndex = 0;
+    Constituent currConstituent;
+    for (Iterator iter = model.nodes(); iter.hasNext();) {
+      currConstituent = (Constituent)iter.next();
+      if (currConstituent instanceof DataNode) {
+        if (index == currIndex) return currConstituent;
+        currIndex++;
+      }
+    }
+    return null;
+  }
+
+COM:returns a constituent from a model at a specified index, where the constituent is of type DataNode

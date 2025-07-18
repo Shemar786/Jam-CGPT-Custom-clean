@@ -1,0 +1,11 @@
+TDAT:   public void addProfile(Profile aProfile) {
+    if (aProfile == null) {
+      throw new IllegalArgumentException("The profile passed in is null");
+    } else if (aProfile.getName() == null) {
+      throw new IllegalArgumentException("The name of the profile passed in is null");
+    }
+
+    _theProfiles.put(aProfile.getName(), aProfile);
+  }
+
+COM:adds a non-null profile object to a HashMap, and throws an exception if the profile object or its name is null

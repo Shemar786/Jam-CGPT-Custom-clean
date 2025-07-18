@@ -1,0 +1,14 @@
+TDAT:   public Hashtable fetchTableDefinition(List v) {
+    Hashtable	table = new Hashtable();
+
+    for (int i = 0; i < v.size(); i++) {
+      Statement	stmt = (Statement)v.get(i);
+      if (stmt instanceof TableDefinition) {
+	String	TableName = ((SimpleIdentExpression)((TableDefinition)stmt).getTableName()).getIdent();
+	table.put(TableName, stmt);
+      }
+    }
+    return table;
+  }
+
+COM:takes a List of Statements, identifies any TableDefinition statements, extracts their table name and returns a Hashtable mapping table names to their respective statements

@@ -1,0 +1,14 @@
+TDAT: 	private ColDesc addColumn(TableDesc ti, Attributes atts)
+	{  
+		String name 	= atts.getValue("name");					// get the col attributes
+		String type 	= atts.getValue("type");
+		String sqltype 	= atts.getValue("sqltype");
+		String scale 	= atts.getValue("scale");
+		String precision= atts.getValue("precision");
+		
+		ColDesc c = new ColDesc(name, type, sqltype, scale, precision);	
+		ti.add(c);													// add new ColDesc to ti vector
+		return c;
+	}
+
+COM:adds a new column to a table description using the inputted attributes and returns the newly created column

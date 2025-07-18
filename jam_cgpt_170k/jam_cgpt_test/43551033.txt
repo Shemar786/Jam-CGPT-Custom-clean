@@ -1,0 +1,13 @@
+TDAT:     public EmployeeBO getManager(){
+        EmployeeBO emp = null;
+        try {
+            emp = EmployeeDAO.getInstance().read(this.getManagerID());
+        } catch (DataException ex) {
+            ex.printStackTrace();
+         } catch (ConnectionPoolException ex) {
+            ex.printStackTrace();
+        }
+        return emp;
+    }
+
+COM:retrieves the manager info of an Employee object using the EmployeeDAO class and returns it as an EmployeeBO object

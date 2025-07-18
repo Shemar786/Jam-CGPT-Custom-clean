@@ -1,0 +1,10 @@
+TDAT:     public void flipGridYAxis(){
+        int[] change = new int[editSizeX*editSizeY];
+        for(int i = 0; i < editSizeX; i++){
+            for(int j = 0; j < editSizeY; j++)
+                change[i+((editSizeY-j-1)*editSizeX)] = editgrid[i][j];
+        }
+        copyArray(change);
+    }
+
+COM:flips the content of a grid along the y-axis and then copies the result to another array

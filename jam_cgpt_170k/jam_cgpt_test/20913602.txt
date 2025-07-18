@@ -1,0 +1,10 @@
+TDAT:     public long computeTotalTime() {
+        long a = (startTime != null) ? startTime.getTime()
+                                     : ((Long.MAX_VALUE / 2) - 1);
+        long b = (stopTime != null) ? stopTime.getTime()
+                                    : ((Long.MIN_VALUE / 2) + 1);
+
+        return (b - a);
+    }
+
+COM:calculates the total time between two timestamps

@@ -1,0 +1,16 @@
+TDAT:     public void put(Object o) {
+        if (size == tableSize) {
+            throw new IllegalStateException("too many elements");
+        }
+        int hashCode = o.hashCode();
+
+        Iterator<Integer> probeSequence = prober.probeSequence(hashCode, tableSize);
+        int position = -1;
+        while (buckets.get(position = probeSequence.next()) != null)
+            collisions++;
+
+        buckets.set(position, hashCode);
+        size++;
+    }
+
+COM:adds an object to a hash table, and throws an exception if there are too many elements already in the table

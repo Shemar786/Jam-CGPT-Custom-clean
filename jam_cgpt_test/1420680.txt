@@ -1,0 +1,9 @@
+TDAT:         public FormValidation doCheckName(@QueryParameter String value) throws IOException, ServletException {
+            if(value.length()==0)
+                return FormValidation.error("Please set a name");
+            if(value.length()<4)
+                return FormValidation.warning("Isn't the name too short?");
+            return FormValidation.ok();
+        }
+
+COM:checks the validity of a name field input by the user, returning an error message if the length is zero, a warning message if the length is less than four, and otherwise returning a confirmation of validity

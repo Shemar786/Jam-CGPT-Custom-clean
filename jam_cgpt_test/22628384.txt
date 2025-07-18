@@ -1,0 +1,21 @@
+TDAT: 	protected List getSubjects() {
+		ArrayList result = new ArrayList();
+		XMLNode parent = xmlRecord.getNode("record:0.general:0.extension:0");
+		int num = parent.likeChildren("topic");
+		if (num > 0) {
+			StringBuffer key = new StringBuffer();
+			for (int i = 0; i < num; i++) {
+				key.delete(0, key.length());
+				key.append("record:0.general:0.extension:0.topic:")
+						.append(Integer.toString(i))
+						.append(".langstring:0");
+				String value = getStringValue(key.toString());
+				if (value != null) {
+					insertToList(result, value);
+				}
+			}
+		}
+		return result;
+	}
+
+COM:retrieves a list of subjects from an XML node

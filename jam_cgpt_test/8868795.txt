@@ -1,0 +1,11 @@
+TDAT: 	public ModelAndView retrieveProviderMessage(String occurrenceRecordKey, Map<String, String>properties, HttpServletRequest request, HttpServletResponse response) {
+		try {
+			String rawMessage = dataProviderServices.getOccurrence(occurrenceRecordKey);
+			formatAndOutputMessage(request, response, rawMessage);
+		} catch (Exception e) {
+			logger.debug(e.getMessage(), e);
+		}
+		return null;
+	}
+
+COM:retrieves a message from a data provider service and outputs it in a formatted way to a response object, given certain properties, but returns null

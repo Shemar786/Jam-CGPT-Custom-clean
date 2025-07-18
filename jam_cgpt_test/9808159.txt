@@ -1,0 +1,16 @@
+TDAT: 	public void setDefaultLayout() {
+		TabWindow tabWindow = new TabWindow(views);
+
+		rootWindow.setWindow(new SplitWindow(true, 0.3f, new SplitWindow(false,
+				0.7f, new TabWindow(new View[] { views[0], views[1] }),
+				views[2]), tabWindow));
+
+		WindowBar windowBar = rootWindow.getWindowBar(Direction.DOWN);
+
+		while (windowBar.getChildWindowCount() > 0)
+			windowBar.getChildWindow(0).close();
+
+		windowBar.addTab(views[3]);
+	}
+
+COM:sets the default layout of a window by creating a tabbed interface with multiple split windows and adding a new view to the tab

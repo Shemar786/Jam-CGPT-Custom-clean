@@ -1,0 +1,9 @@
+TDAT: 	protected boolean putInSubCollection(int atomID, int target)
+	{		
+		if (db.checkAtomParent(atomID,collection.getCollectionID()))
+			return db.moveAtom(atomID, collection.getCollectionID(), subCollectionIDs.get(target-1).intValue());
+		else
+			return db.addAtom(atomID,subCollectionIDs.get(target-1).intValue());
+	}
+
+COM:checks if an atom's parent collection matches a specific ID, and either moves the atom to a sub-collection or adds it to the sub-collection if it doesn't already exist

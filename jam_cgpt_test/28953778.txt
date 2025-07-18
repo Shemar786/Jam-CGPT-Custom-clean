@@ -1,0 +1,15 @@
+TDAT: 	private boolean addRawPdqQueryField(QBP_Q21 message, String field, String value) throws HL7Exception {
+		if (value == null) return false;
+		QPD qpd = message.getQPD();
+		// Query parameters are all jammed into QPD.3
+		int i = qpd.getField(3).length;
+		Varies rep = (Varies) qpd.getField(3,i);
+		// Encode the parameter
+		QIP qip = new QIP(message);
+		qip.getSegmentFieldName().setValue("@" + field);
+		qip.getValues().setValue(value);
+		rep.setData(qip);
+		return true;
+	}
+
+COM:adds a raw PDQ query field to a QBP_Q21 HL7 message

@@ -1,0 +1,11 @@
+TDAT: 	public void extractMuiGroups() {
+		if (vocab != null) {
+			prtln("\nextractMuiGroups() ... ");
+			for (Iterator i = loadedFrameworks.values().iterator(); i.hasNext(); ) {
+				MetaDataFramework framework = (MetaDataFramework) i.next();
+				framework.setMuiGroups(vocab, AUDIENCE, LANGUAGE);
+			}
+		}
+	}
+
+COM:extracts MUI (Multilingual User Interface) groups from loaded metadata frameworks

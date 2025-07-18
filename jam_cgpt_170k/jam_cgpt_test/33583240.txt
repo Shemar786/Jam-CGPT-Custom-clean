@@ -1,0 +1,16 @@
+TDAT: //	private int getGapWidth() {
+//		
+//		int gapWidth = 0;
+//
+//		int width = getWidth();
+//		int size = _hand.size();
+//		if (width > size * _cardWidth) {
+//			gapWidth = (width - size * _cardWidth) / (size + 1);
+//		} else {
+//			gapWidth = (width - size * _cardWidth) / (size - 1);
+//		}
+//		
+//		return gapWidth;
+//	}
+
+COM:calculates the gap width between cards in a hand based on the width of the hand and the number of cards in the hand

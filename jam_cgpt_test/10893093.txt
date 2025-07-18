@@ -1,0 +1,10 @@
+TDAT:     public void setExpectHeaders(String s) {
+        this.expectHeaders = new HashMap();
+        StringTokenizer tok = new StringTokenizer(s, "|");
+        while (tok.hasMoreElements()) {
+            String header = (String) tok.nextElement();
+            setHeaderDetails(header, expectHeaders, false);
+        }
+    }
+
+COM:sets the expectHeaders field to a new HashMap and populates it by splitting a String input using a "|" delimiter and calling another method to set the details for each individual header

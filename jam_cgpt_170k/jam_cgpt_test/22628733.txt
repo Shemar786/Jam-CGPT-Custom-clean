@@ -1,0 +1,11 @@
+TDAT: 	private void addNewNodes( DefaultMutableTreeNode node, DefaultMutableTreeNode newNodes ) {
+		for ( int i = 0; i < node.getChildCount(); i++ ) {
+			DefaultMutableTreeNode snode = (DefaultMutableTreeNode) node.getChildAt( i );
+			newNodes.add( snode );
+			if ( snode.getChildCount() > 0 ) {
+				addNewNodes( snode, (DefaultMutableTreeNode) newNodes.getChildAt( i ) );
+			}
+		}
+	}
+
+COM:recursively adds child nodes of a given tree node to another tree node

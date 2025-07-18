@@ -1,0 +1,18 @@
+TDAT: 	private void addToTmpToFix(Iterator<BWRel> rels, int dist, BWNode exclude) {
+		while (rels.hasNext()) {
+			BWRel r = rels.next();
+			r.defreeze();
+			BWNode other = r.getOtherNode(this);
+
+			if (!other.equals(exclude)) {
+				other.setDistance(dist);
+				getTmpToFixSet().add(other);
+			}
+			
+			if (other.isReached()) {
+				other.calculateBWProCapite();
+			}
+		}
+	}
+
+COM:adds nodes to a temporary set for processing, updates their distance, and calculates a measure if a condition is met

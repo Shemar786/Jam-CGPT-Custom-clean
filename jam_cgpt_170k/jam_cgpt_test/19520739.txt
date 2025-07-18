@@ -1,0 +1,16 @@
+TDAT: 	private void updateIndex(IWorkbenchPart part){
+		cancelled = false;
+		teamRunnable = new UpdateRodinIndexer(part);
+		
+		try {
+			teamRunnable.run();
+		} catch (InvocationTargetException e) {
+			RefactoryManager.log("Exception "+e.getMessage()+" occurred when waiting for the Indexer to update.");
+		} catch (InterruptedException e) {
+			RefactoryManager.log("InterruptedException "+e.getMessage()+" occurred when waiting for the Indexer to update.");
+		}
+		
+		showBusy();
+	}
+
+COM:updates the Rodin indexer in a separate thread and shows a busy indicator until the update is complete

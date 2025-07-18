@@ -1,0 +1,14 @@
+TDAT: 	protected String getPropertyMetadata(IProperty property) {
+		StringBuffer retstr = new StringBuffer();
+		retstr.append(" "+MetadataElements.IDotNetElement);
+		retstr.append(property.getElementType());
+		retstr.append(" "+MetadataElements.Flags);
+		retstr.append(property.getFlags());
+		retstr.append(" "+MetadataElements.Signature);
+		retstr.append(property.getSignature());
+		retstr.append(" "+MetadataElements.Return);
+		retstr.append(property.getReturnType());
+		return retstr.toString();
+	}
+
+COM:generates a string containing metadata elements for a given property object

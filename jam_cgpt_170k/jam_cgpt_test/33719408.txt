@@ -1,0 +1,14 @@
+TDAT:     public void testGetCity() {
+        System.out.println("getCity");
+        
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        String expResult = "";
+        String result = instance.getCity();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the "getCity" method of the SystemClient_DBImpl class by comparing the expected and actual results

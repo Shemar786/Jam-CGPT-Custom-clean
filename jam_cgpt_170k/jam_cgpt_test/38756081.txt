@@ -1,0 +1,9 @@
+TDAT: 	private void addVertex(GuiVertex vertex) {
+		if (this.vertices.put(vertex.getVertex(), vertex) != null) {
+            this.log.debug("Vertex with same name added to the graph: ");
+            this.log.debug(vertex.getVertex().getName());
+        }
+		this.getPortunesController().getJGraphController().addVertex(vertex);
+	}
+
+COM:adds a GuiVertex to a graph, logs a message if a vertex with the same name already exists, and calls a method to add the vertex to a JGraph controller

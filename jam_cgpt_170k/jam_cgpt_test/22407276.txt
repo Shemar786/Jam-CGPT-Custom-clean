@@ -1,0 +1,13 @@
+TDAT:     public void writeChildrenXML(final XMLWriter writer) throws IOException {
+        final NodeList children = getChildNodes();
+
+        for (int i = 0; i < children.getLength(); i++) {
+            final Node child = children.item(i);
+            if (child instanceof XMLWritable) {
+                final XMLWritable writable = (XMLWritable) child;
+                writable.writeXML(writer);
+            }
+        }
+    }
+
+COM:writes the XML representation of all the child nodes of a specified node using an XML writer interface

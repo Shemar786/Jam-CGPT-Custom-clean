@@ -1,0 +1,15 @@
+TDAT:     static public void main(String[] arg) {
+    	
+        XMPPManager connectionManager = new XMPPManager();
+        DefaultController controller = new DefaultController();
+        jTalkFrame jtalkView = new jTalkFrame(controller);
+                
+        controller.addModel(connectionManager);
+        
+        Runtime.getRuntime().addShutdownHook(new Shutdown(connectionManager));
+        
+        jtalkView.setVisible(true);
+        
+    }
+
+COM:initializes the XMPP connection manager, default controller, and jTalk frame, adds the connection manager to the controller, sets up a shutdown hook, and displays the jTalk frame

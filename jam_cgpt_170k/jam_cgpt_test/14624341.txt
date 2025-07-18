@@ -1,0 +1,12 @@
+TDAT:     public void testsetVelocity() {
+        System.out.println("setVelocity");
+        henson.midp.Float velocity = Float.ONE;
+        org.gps.types.GpsPosition instance = new org.gps.types.GpsPosition();
+        instance.setVelocity(velocity);
+        
+        assertEquals(instance.getVelocity(), Float.ONE);
+        
+    
+    }
+
+COM:tests the setVelocity method of the GpsPosition class by setting a velocity value and comparing it to the expected value

@@ -1,0 +1,8 @@
+TDAT: 	private void refineExtensions(IEventBRoot concreteEventBRoot, IEventBRoot abstractEventBRoot, IProgressMonitor monitor) throws RodinDBException {
+		for (ISerialisedExtension extension : abstractEventBRoot.getChildrenOfType(ISerialisedExtension.ELEMENT_TYPE)) {
+			if (extension.hasExtensionId() && extension.getExtensionId().startsWith(EXTENSION_ID))
+				refineExtension(concreteEventBRoot, extension, monitor);
+		}
+	}
+
+COM:refines the ISerialisedExtensions of an abstractEventBRoot that have a specific extension ID prefix and updates them in a concreteEventBRoot

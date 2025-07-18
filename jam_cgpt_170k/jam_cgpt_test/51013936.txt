@@ -1,0 +1,15 @@
+TDAT: 	public ONDEXConcept createONDEXConcept(int index) {
+
+		if (!taxids[index].isEmpty()) {
+			ONDEXConcept c = graph.getFactory().createConcept(taxids[index], dataSource, cc, et);
+
+			// publication associated Attribute
+			c.createAttribute(taxidAttributeName, taxids[index], false);
+			c.createConceptAccession(taxids[index], external, false);
+			
+			return c;
+		}
+		else { throw new RuntimeException("Organism without valid taxid tag!"); } 
+	}
+
+COM:creates an ONDEXConcept based on the given index and associated data, and throws an exception if the taxid tag is invalid

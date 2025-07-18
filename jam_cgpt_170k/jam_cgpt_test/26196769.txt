@@ -1,0 +1,14 @@
+TDAT: 	// public void setOrganization(OrganizationBean obj) {
+	// if (obj == null) {
+	// this.resetOrganization();
+	// return;
+	// }
+	// try {
+	// this.organizationVO = obj;
+	// this.checkLicenseViolation(this.getLicense());
+	// } catch(Exception e) {
+	// log.error(".setOrganization():", e);
+	// }
+	// }
+
+COM:sets the organization object and checks for license violations

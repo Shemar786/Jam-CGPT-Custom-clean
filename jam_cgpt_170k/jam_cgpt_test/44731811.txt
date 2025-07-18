@@ -1,0 +1,10 @@
+TDAT: 	protected void fireSelectionEvent(String selectedElement, boolean dblClick) {
+		ElementSelectedEvent event = new ElementSelectedEvent(this, selectedElement, dblClick);
+		Object[] list = selectionListeners.toArray();
+		for (int i = 0; i < list.length; i++) {
+			ElementSelectedListener listener = (ElementSelectedListener)list[i];
+			listener.elementSelected(event);
+		}
+	}
+
+COM:fires a selection event and notifies all registered listeners with the selected element and whether it was a double click

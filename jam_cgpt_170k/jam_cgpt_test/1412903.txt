@@ -1,0 +1,10 @@
+TDAT:     public void setChanged(boolean c) {
+        changed = c;
+        if(c) {
+            Main.getInstance().save_menu.setEnabled(true);
+            setTopText(sys_link.translate("ctrl_s"), 0);
+        } else
+            Main.getInstance().save_menu.setEnabled(false);
+    }
+
+COM:sets a boolean value for a change flag and enables/disables a save menu option based on the value

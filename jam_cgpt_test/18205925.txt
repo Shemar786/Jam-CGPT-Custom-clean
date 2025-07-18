@@ -1,0 +1,16 @@
+TDAT: 	private void cleanup(Throwable fromWhere, Throwable whyCleanedUp) {
+		try {
+			if ((this.io != null) && !isClosed()) {
+				realClose(false, false, false, whyCleanedUp);
+			} else if (this.io != null) {
+				this.io.forceClose();
+			}
+		} catch (SQLException sqlEx) {
+			// ignore, we're going away.
+			;
+		}
+
+		this.isClosed = true;
+	}
+
+COM:closes the connection to a database and sets a flag indicating that it is closed

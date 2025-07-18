@@ -1,0 +1,15 @@
+TDAT: 	private void getContent(HttpServletRequest request) throws Exception {
+		int contentLength = request.getContentLength();
+		String contentType = request.getContentType();
+		prtln("content: " + contentType + " (" + contentLength + ")");
+
+		BufferedReader reader = request.getReader();
+		CharBuffer buffer = CharBuffer.allocate(contentLength);
+		int charsRead = reader.read(buffer);
+		prtln(charsRead + " characters read from buffer");
+		prtln("\n--------------------------------");
+		prtln(buffer.toString());
+		prtln("\n--------------------------------");
+	}
+
+COM:retrieves and prints the content of a HTTP request using the HttpServletRequest object in Java

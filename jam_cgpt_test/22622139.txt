@@ -1,0 +1,12 @@
+TDAT: 	public List getVirtualPageLists() {
+		List vpls = new ArrayList();
+		List keys = Arrays.asList(this.getKeys().toArray());
+		if (keys != null && !keys.isEmpty()) {
+			Collections.sort(keys);
+			for (Iterator i = keys.iterator(); i.hasNext(); )
+				vpls.add((VirtualPageList) i.next());
+		}
+		return vpls;
+	}
+
+COM:returns a list of VirtualPageLists sorted by their keys

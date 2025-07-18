@@ -1,0 +1,9 @@
+TDAT: 		public JSONObject getAlbum(String userId, int albumId) {
+			//securityContext.checkIfAuthorized();
+			HashMap<String, String> map = new HashMap<String, String>();
+			String url = API_ALBUM_URL.replaceFirst("%s", userId);
+			url = url.replaceFirst("%s", Integer.toString(albumId));
+			return (JSONObject) getUserData(url, map);
+		}
+
+COM:retrieves album information from a specified user and album ID and returns it as a JSON object

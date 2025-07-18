@@ -1,0 +1,13 @@
+TDAT: 	public void add(Node node) throws SQLException {
+		if(node == null) {
+			throw new NullPointerException("Can't add 'null' node.");
+		}
+
+		if(id > 0 && (node.getId() == 0 || child(node.getId()) == null)) {
+			update(node);
+		}
+
+		link.add(0, node);
+	}
+
+COM:adds a non-null Node to a linked list and updates the Node's properties if necessary

@@ -1,0 +1,14 @@
+TDAT: 	protected void configuration() throws ConfigurationException {
+		log.debug("Start configuration by looking for '" + CONFIGURATION_PROPERTIES
+				+ "' property file");
+		Configuration.addConfiguration(CONFIGURATION_PROPERTIES);
+		path2enviroment = Configuration.lookup(CONFIGURATION_LOCATION);
+		log.debug("Resolving enviroment location '" + CONFIGURATION_LOCATION
+				+ "' as '" + path2enviroment + "'");
+
+		storeName = Configuration.lookup(STORE_NAME);
+		log.debug("Resolving store name '" + STORE_NAME + "' as '" + storeName
+				+ "'");
+	}
+
+COM:configures the program by looking for a specific configuration property file, adding the configuration, and setting values for specific properties

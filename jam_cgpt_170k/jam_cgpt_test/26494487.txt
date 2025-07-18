@@ -1,0 +1,15 @@
+TDAT:   public int asInt() throws InputException {
+    if (_value == null) {
+      throw new InputException("integer expected for option '" + getName() +
+        "'");
+    }
+
+    try {
+      return Integer.parseInt(_value);
+    } catch (NumberFormatException e) {
+      throw new InputException("integer expected for option '" + getName() +
+        "'");
+    }
+  }
+
+COM:converts a string value to an integer and throws an exception if the value is null or not an integer

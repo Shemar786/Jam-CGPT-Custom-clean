@@ -1,0 +1,12 @@
+TDAT:     private void onSelectWithDescription(ActionEvent e) {
+        if (m_propertyChangeSupport == null) {
+            return;
+        }
+
+        m_propertyChangeSupport.firePropertyChange(
+                PROPERTY_SELECT_WITH_DESCRIPTION,
+                new Boolean(!isSelectWithDescription()),
+                new Boolean(isSelectWithDescription()));
+    }
+
+COM:fires a property change event when a select action with description is triggered

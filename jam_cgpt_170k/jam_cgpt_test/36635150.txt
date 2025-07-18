@@ -1,0 +1,16 @@
+TDAT:     public void addData(int index, int data){
+        if(index < 0 || index > 31)
+            return;
+
+        if(index >= max)
+            max = index+1;
+
+        addCode(index);
+        if(index+1 >= max && !checkCode(index))
+            arrayData = addData(arrayData, data);
+        else
+            arrayData = insertData(arrayData,
+                    getCodePosition(index, arrayData[0])+1, data);
+    }
+
+COM:adds data to an array at a specified index and dynamically resizes the array if necessary

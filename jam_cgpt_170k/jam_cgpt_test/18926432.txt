@@ -1,0 +1,13 @@
+TDAT:   public NodeHandler getParent(NodeHandler handler) {
+    Element elem = (Element) handlerElementMap.get(handler);
+    Node node = elem.getParentNode();
+    while (node.getNodeType() == Node.ELEMENT_NODE) {
+      NodeHandler h = (NodeHandler) elementHandlerMap.get(node);
+      if (h != null)
+        return h;
+      node = node.getParentNode();
+    }
+    return null;
+  }
+
+COM:takes a NodeHandler object and returns its parent NodeHandler object by looping through the XML elements associated with the NodeHandlers

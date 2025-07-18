@@ -1,0 +1,16 @@
+TDAT:     public void append(String str) {
+        String reason;
+
+        if (str == null) {
+            return;
+        }
+        if ((reason = Verifier.checkCharacterData(str)) != null) {
+            throw new IllegalDataException(str, "character content", reason);
+        }
+
+        if (str.equals(EMPTY_STRING))
+             value = str;
+        else value += str;
+    }
+
+COM:appends a non-null string to an existing string, after verifying that the character data is legal and not empty

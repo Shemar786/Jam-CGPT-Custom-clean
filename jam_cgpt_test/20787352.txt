@@ -1,0 +1,20 @@
+TDAT: 	public float getAngle(int planes, TuioPoint3D tpoint) {
+		float angle = 0;
+		switch(planes)
+		{
+		case XY:
+			angle = getAngle(planes,tpoint.getX(),tpoint.getY());
+			break;
+		case XZ:
+			angle = getAngle(planes,tpoint.getX(),tpoint.getZ());
+			break;
+		case YZ:
+			angle = getAngle(planes,tpoint.getY(),tpoint.getZ());
+			break;
+		default:
+			System.err.println("Unknown planes entered");
+		}
+		return angle;
+	}
+
+COM:calculates the angle based on the number of planes and the coordinates of a TuioPoint3D object

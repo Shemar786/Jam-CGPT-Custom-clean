@@ -1,0 +1,13 @@
+TDAT: 		private void makeExecutable(IPath path) {
+			try {
+				final IFileSystem fs = EFS.getLocalFileSystem();
+				final IFileStore store = fs.getStore(path);
+				final IFileInfo info = store.fetchInfo();
+				info.setAttribute(EFS.ATTRIBUTE_EXECUTABLE, true);
+				store.putInfo(info, EFS.SET_ATTRIBUTES, null);
+			} catch (Exception e) {
+				log("Problem making file " + path + " executable", e);
+			}
+		}
+
+COM:sets the executable attribute on a given file path

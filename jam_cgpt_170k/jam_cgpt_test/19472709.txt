@@ -1,0 +1,11 @@
+TDAT: 	protected Object getNewValue(final int index){
+		List<Object> possVals = getComboValues();
+		if (possVals!=null) {
+			Object newValue = possVals.get(index);
+			if (newValue instanceof EEnumLiteral) newValue = ((EEnumLiteral)newValue).getInstance();		// for enumerations need to convert to the associated EEnum instance
+			return newValue;
+		}
+		return null;
+	}
+
+COM:retrieves a new value from a list of possible values at a specified index, and converts it to an associated EEnum instance if it is an enumeration

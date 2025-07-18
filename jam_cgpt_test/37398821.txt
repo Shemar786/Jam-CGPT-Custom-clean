@@ -1,0 +1,11 @@
+TDAT:   public int getInt(String key) throws ConfigurationException {
+    try {
+      return NumberFormat.getNumberInstance().parse(get(key)).intValue();
+    } catch (ParseException ex) {
+      throw new ConfigurationException(
+        ConfigurationException.MESSAGE_PROPERTY_NOT_NUMBER,
+        new Object[] { this.localizedResource, key });
+    }
+  }
+
+COM:retrieves the integer value of a specified key from a configuration file and throws an exception if the value cannot be converted to an integer

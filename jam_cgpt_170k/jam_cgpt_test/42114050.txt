@@ -1,0 +1,16 @@
+TDAT: 	private void redraw() {
+		//Texture
+		infoTex = Game.getGame().getDisplay().getRenderer().createTextureState();
+		texture = TextureManager.loadTexture(getBufferedImage(),
+				Texture.MinificationFilter.BilinearNearestMipMap , 
+				Texture.MagnificationFilter.Bilinear,
+				false);
+			
+		infoTex.setTexture(texture);
+		infoTex.setEnabled(true);
+			
+		stat.setRenderState(infoTex);
+		stat.updateRenderState();		
+	}
+
+COM:creates a texture state, loads a texture from a buffered image, sets the texture state and render state, and updates the render state

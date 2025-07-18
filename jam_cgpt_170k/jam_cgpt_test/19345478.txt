@@ -1,0 +1,16 @@
+TDAT: 	private ComboRec saveRecord() {
+
+		ComboRec rec = pnlCombo.getValues();
+		
+		if (rec.isUpdateSuccessful() 
+		&& rec.getComboName() != null && ! "".equals(rec.getComboName())) {
+			dbTblList.checkAndUpdate(rec);
+			//pnlTableList.saveTableDetails();
+			
+			pnlCombo.saveItems();
+		}
+
+		return rec;
+	}
+
+COM:saves a combo box record and returns the saved record

@@ -1,0 +1,11 @@
+TDAT:   public void close(final int code) {
+    Object[]          listeners = modelListener.getListenerList();    
+
+    for (int i = listeners.length-2; i>=0; i-=2) {
+      if (listeners[i]==ModelCloseListener.class) {
+        ((ModelCloseListener)listeners[i+1]).modelClosed(code);
+      }
+    }
+  }
+
+COM:closes a model by notifying all its listeners that the model has been closed with a specified code

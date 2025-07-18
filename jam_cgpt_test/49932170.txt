@@ -1,0 +1,10 @@
+TDAT:     public void recordUpdated(Record record) {
+        DataRecordEntry dataRecordEntry = new DataRecordEntry(record);
+        RecordUpdate ru = (new RecordUpdate(dataRecordEntry, record.getName()));
+        if (!q.offer(ru)) {
+            q.poll();
+            q.offer(ru);
+        }
+    }
+
+COM:records updates to a Record object by creating a new DataRecordEntry and adding it to a queue if space is available, or otherwise removing the oldest entry from the queue to make room before adding the new entry

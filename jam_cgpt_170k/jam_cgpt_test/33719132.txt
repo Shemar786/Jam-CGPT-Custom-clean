@@ -1,0 +1,14 @@
+TDAT:     public void testGetAutismGroupList() {
+        System.out.println("GetAutismGroupList");
+        
+        AutismGroupList instance = new AutismGroupList();
+        
+        TreeSet expResult = null;
+        TreeSet result = instance.GetAutismGroupList();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the GetAutismGroupList method of the AutismGroupList class by creating an instance of the class and comparing the expected and actual results using a TreeSet object

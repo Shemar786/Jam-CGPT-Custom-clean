@@ -1,0 +1,9 @@
+TDAT: 	public ModelAndView ownerHandler(HttpServletRequest request, HttpServletResponse response) {
+		Owner owner = this.clinic.loadOwner(ServletRequestUtils.getIntParameter(request, "ownerId", 0));
+		if (owner == null) {
+			return new ModelAndView("findOwnersRedirect");
+		}
+		return new ModelAndView().addObject(owner);
+	}
+
+COM:handles requests related to the owner and returns a ModelAndView object containing the retrieved owner or redirects to the findOwnersRedirect page if the owner is not found

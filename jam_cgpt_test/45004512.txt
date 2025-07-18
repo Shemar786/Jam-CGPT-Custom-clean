@@ -1,0 +1,16 @@
+TDAT:     public int compareTo(LongOperation o) {
+
+        try{
+        LongOperation compOp = o;
+        if (compOp.getID() > this.getID())
+            return 1;
+        else if (compOp.getID() == this.getID())
+            return 0;
+        else
+            return -1;
+        }catch(Exception ex){
+            return 0;
+        }
+    }
+
+COM:takes a LongOperation object as parameter and compares its ID with the ID of the current object, returning 1 if the parameter ID is greater, 0 if they're equal, and -1 if the parameter ID is smaller, or 0 if an exception occurs

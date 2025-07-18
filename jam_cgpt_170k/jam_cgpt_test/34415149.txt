@@ -1,0 +1,6 @@
+TDAT: 	public void sendMoveEvent(Object source, ArrayList<String> objectIds, String newParentId, String userName, Date dateTime){
+		ViewEvent ve = new ViewEvent(source,"",newParentId,userName,dateTime,ViewEvent.MOVE_EVENT, objectIds);
+		this.newViewEvent(ve);
+	}
+
+COM:sends a move event with specified parameters to create a new ViewEvent object and invoke a newViewEvent method with it

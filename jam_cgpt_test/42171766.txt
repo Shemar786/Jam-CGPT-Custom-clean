@@ -1,0 +1,17 @@
+TDAT:   protected void addJdbcStatementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBQueryId_jdbcStatement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBQueryId_jdbcStatement_feature", "_UI_DBQueryId_type"),
+				 ActionStepPackage.eINSTANCE.getDBQueryId_JdbcStatement(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a JDBC statement property descriptor to an item property descriptor list

@@ -1,0 +1,12 @@
+TDAT:    protected void notifyListeners() {
+      log.log(Level.FINEST,"DatabaseAbstr.notifyListeners()"); 
+      Enumeration enum = listeners.elements();
+      DatabaseListener thisListener = null;
+      while( enum.hasMoreElements() ) {
+         thisListener = (DatabaseListener)enum.nextElement();
+         thisListener.databaseChanged( m_prDatabaseState );
+      }
+      
+   }
+
+COM:notifies all listeners when a database state has changed

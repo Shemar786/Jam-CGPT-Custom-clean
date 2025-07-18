@@ -1,0 +1,13 @@
+TDAT:     private void notesFileWrite(SWGNotes notes) {
+        wrappers = mergeWriteResources();
+        if (wrappers.size() <= 0)
+            return;
+
+        if (((Boolean) SWGFrame.getPrefsKeeper().get(
+                "ISDroidFileContinuous", Boolean.FALSE)).booleanValue())
+            notesFileWriteContinuous(notes);
+        else
+            notesFileWritePlanets(notes);
+    }
+
+COM:writes SWGNotes to either a continuous file or multiple planet files, depending on user preferences and available resources

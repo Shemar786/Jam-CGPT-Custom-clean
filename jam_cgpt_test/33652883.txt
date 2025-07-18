@@ -1,0 +1,13 @@
+TDAT:     private String getWindowSystem() {
+        String name = System.getProperty("os.name");
+        if (name.startsWith("Linux")) {
+            return "gtk";
+        } else if (name.startsWith("Mac OS X")) {
+            return "carbon";
+        } else if (name.startsWith("Windows")) {
+            return "win32";
+        }
+        return "unknown";
+    }
+
+COM:returns a String value based on the operating system that is being used

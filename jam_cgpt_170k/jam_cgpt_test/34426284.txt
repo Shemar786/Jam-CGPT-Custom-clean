@@ -1,0 +1,10 @@
+TDAT:     private void makeStatFilterFields(Container panel) {
+        for (Stat s : Stat.gameOrder()) {
+            JTextField tf = makeStatFilterField(String.format(
+                    "%s - %s", s.name(), s.getDescription()));
+            filterFields[s.i] = tf;
+            panel.add(tf);
+        }
+    }
+
+COM:creates and adds text fields for filtering statistics to a given container panel

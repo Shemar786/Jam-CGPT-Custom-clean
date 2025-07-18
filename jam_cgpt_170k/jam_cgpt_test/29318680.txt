@@ -1,0 +1,13 @@
+TDAT:   private void addFaultTo(SOAPHeaderElement elem) throws MalformedURIException {
+    if (this.faultTo == null) {
+      this.faultTo = new FaultTo(elem);
+    } else {
+      // If this header is duplicated, we cannot assume the previous value is valid
+      this.faultTo = null;
+      this.addrHeaderFault = new AddressingHeaderFault(
+        AddressingHeaderFault.INVALID_CARDINALITY,
+        Constants.FAULT_TO);
+    }
+  }
+
+COM:adds a FaultTo header element to a SOAPHeader if it does not already exist, and if it does exist, it sets an AddressingHeaderFault indicating invalid cardinality

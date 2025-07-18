@@ -1,0 +1,12 @@
+TDAT: 	public void addHandle( Point2D pt ) {
+	
+		int ind = CubicGenerator.getListIndex(pt, drawPoints, lineStyle);
+    	PNamedHandle h = createHandle(pt);
+    	addChild(h);
+		handleList.insertElementAt( h, ind );
+		handlePointList.insertElementAt( pt, ind ); 
+
+		updateEdgeView();
+	}
+
+COM:adds a new handle at a specific point in a list and updates the visual representation of the edges

@@ -1,0 +1,14 @@
+TDAT: 	private void setSelectionInXsdTreeViewer(MappingVo selectedMappingVo) {
+		// get selected XsEntity Object
+		XsEntityVo selectedEntityVo = selectedMappingVo.getXsEntityVo();
+		XmlItem selectedXmlItem = selectedMappingVo.getXsEntityVo()
+				.getXmlItem();
+
+		// expand and set Selection
+		int level = selectedEntityVo.getLevel();
+		xsdViewer.expandToLevel(level + 1);
+		xsdViewer.setSelection(new StructuredSelection(selectedXmlItem));
+		xsdViewer.refresh();
+	}
+
+COM:sets the selection in a tree viewer for XML schema documents based on a selected mapping object

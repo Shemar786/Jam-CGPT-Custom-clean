@@ -1,0 +1,11 @@
+TDAT:     public void reconnect(PositionDelegate newSource, PositionDelegate newTarget) {
+        if (newSource == null || newTarget == null || newSource == newTarget) {
+            throw new IllegalArgumentException();
+        }
+        disconnect();
+        this.pointADelegate = newSource;
+        this.pointBDelegate = newTarget;
+        reconnect();
+    }
+
+COM:sets new source and target points for a connection and reconnects them

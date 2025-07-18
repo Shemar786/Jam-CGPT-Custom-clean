@@ -1,0 +1,18 @@
+TDAT:     private void sendLine(String line) throws IOException {
+        if (socket == null) {
+            throw new IOException("SimpleFTP is not connected.");
+        }
+        try {
+            writer.write(line + "\r\n");
+            writer.flush();
+            if (DEBUG) {
+                System.out.println("> " + line);
+            }
+        }
+        catch (IOException e) {
+            socket = null;
+            throw e;
+        }
+    }
+
+COM:sends a line of text over a socket connection, throwing an IOException if the connection is not established or if an error occurs during sending

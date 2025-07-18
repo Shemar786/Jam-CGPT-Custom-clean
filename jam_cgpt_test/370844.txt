@@ -1,0 +1,14 @@
+TDAT: 	protected void determineWhiteCheckedDescendents(Object treeElement) {
+		// always go through all children first since their white-checked
+		// statuses will be needed to determine the white-checked status for
+		// this tree element
+		Object[] children= getTreeChildren(treeElement);
+		for (int i= 0; i < children.length; ++i)
+			determineWhiteCheckedDescendents(children[i]);
+
+		// now determine the white-checked status for this tree element
+		if (determineShouldBeWhiteChecked(treeElement))
+			setWhiteChecked(treeElement, true);
+	}
+
+COM:recursively determines the white-checked status for a tree element by evaluating its children before evaluating the element itself

@@ -1,0 +1,17 @@
+TDAT:     public void initLocals(Collection locals) {
+        LocalExpr[] t = new LocalExpr[locals.size()];
+
+        if (t.length == 0) {
+            return;
+        }
+
+        Iterator iter = locals.iterator();
+
+        for (int i = 0; iter.hasNext(); i++) {
+            t[i] = (LocalExpr) iter.next();
+        }
+
+        addStmt(new InitStmt(t));
+    }
+
+COM:initializes a collection of LocalExpr locals

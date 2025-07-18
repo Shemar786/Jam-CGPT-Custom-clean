@@ -1,0 +1,15 @@
+TDAT:     public void testPreferredLayoutSize() {
+        createSampleLayout();
+
+        assertEquals(
+            new Dimension(20, 20),
+            testLayout.minimumLayoutSize(container));
+        assertEquals(
+            new Dimension(40, 40),
+            testLayout.preferredLayoutSize(container));
+        assertEquals(
+            new Dimension(60, 60),
+            testLayout.maximumLayoutSize(container));
+    }
+
+COM:tests the preferred, minimum, and maximum layout sizes of a sample layout created for a given container

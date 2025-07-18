@@ -1,0 +1,14 @@
+TDAT:     public String getItem(HashMap<String, String> fillData) {
+        for(String key: fillData.keySet()){
+            switch(refItems.get(key)){
+                case -1:
+                    warn("Language path key '"+key+"' not recognized!");
+                    break;
+                case LANG:
+                    return fillData.get(key);
+            }
+        }
+        return "";
+    }
+
+COM:retrieves a string value from a hashmap based on key and returns it if the corresponding value in another hashmap matches a predetermined value, otherwise it returns an empty string

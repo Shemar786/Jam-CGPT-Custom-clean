@@ -1,0 +1,8 @@
+TDAT:    public double getProximity() {
+      final double diag = Math.sqrt(Math.pow(note.getBounds2D().getWidth(), 2)
+            + Math.pow(note.getBounds2D().getHeight(), 2));
+      return note.getStartPoint().distance(note.getEndPoint())
+            / diag;
+   }
+
+COM:calculates the proximity between two points on a note object using diagonal distance

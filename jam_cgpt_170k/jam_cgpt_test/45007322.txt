@@ -1,0 +1,17 @@
+TDAT:     public void updateInfluences() {
+        int totalCP = getConquestPoints();
+
+        for (House house : getInfluence().getHouses()) {
+            if (house.getId() == -1) {
+                continue;
+            }
+            totalCP -= getInfluence().getInfluence(house.getId());
+        }
+
+        if (totalCP > 0) {
+            getInfluence().updateHouse(-1, totalCP);
+        }
+
+    }
+
+COM:updates the influence of a House by calculating its conquest points

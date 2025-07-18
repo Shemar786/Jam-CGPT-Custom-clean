@@ -1,0 +1,14 @@
+TDAT: 	public URL class2URL(final Application application, final String classname) {
+		URL out = null;
+		try {
+			final String sOut = "file://" + application.getRoot() + "/"
+					+ application.getSrc() + "/" + classname.replace('.', '/')
+					+ ".java";
+			out = new URL(sOut);
+		} catch (MalformedURLException exc) {
+			LOG.error("Exception in URLUtilSingleton.class2URL", exc);
+		}
+		return out;
+	}
+
+COM:converts a class name to a file URL based on the application's root and source directories

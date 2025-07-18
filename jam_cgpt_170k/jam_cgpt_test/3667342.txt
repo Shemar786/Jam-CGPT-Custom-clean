@@ -1,0 +1,12 @@
+TDAT:     public void test_constructor_String_double_boolean() {
+     
+        MarkerModel marker = new MarkerModel(
+            "Hello World", 42.0, true
+        );
+        assertEquals("Hello World", marker.getText());
+        assertEquals(42.0, marker.getTime(), 0.1);
+        assertEquals(true, marker.isTextDisplayed());
+        
+    }
+
+COM:tests the constructor of the MarkerModel class by initializing an object with certain arguments and asserting its properties

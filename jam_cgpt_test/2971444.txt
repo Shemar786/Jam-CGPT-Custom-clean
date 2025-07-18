@@ -1,0 +1,13 @@
+TDAT:   public int getSelectedTest() {
+    int selRes = resultsList.getSelectedIndex();
+    if (selRes==-1) { // no test selected
+      return -1;
+    }
+    else {
+      int testID = ( (TestData) testArr.get(selRes)).id;
+      msg("Selected index = " + selRes + " testID=" + testID);
+      return testID;
+    }
+  }
+
+COM:returns the ID of the selected test from a list of test data, or -1 if no test is selected

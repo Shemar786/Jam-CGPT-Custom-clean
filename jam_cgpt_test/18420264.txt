@@ -1,0 +1,16 @@
+TDAT: 	private JButton getCancel() {
+		if (m_Cancel == null) {
+			m_Cancel = new JButton();
+			m_Cancel.setBounds(117, 8, 107, 22);
+			m_Cancel.setText("Abbrechen");
+			m_Cancel.setIcon(new ImageIcon(getClass().getResource("/icon/delete_obj.gif")));
+			m_Cancel.addActionListener(new java.awt.event.ActionListener() { 
+				public void actionPerformed(java.awt.event.ActionEvent e) {    
+					dispose();
+				}
+			});
+		}
+		return m_Cancel;
+	}	
+
+COM:returns a JButton with the label "Abbrechen" and an icon, which when clicked disposes of a window if it exists, and if not creates and sets the JButton properties

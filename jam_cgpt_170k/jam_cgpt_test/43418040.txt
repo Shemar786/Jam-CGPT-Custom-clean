@@ -1,0 +1,12 @@
+TDAT: 	private JProgressBar getJLoadMemory() {
+		if (jLoadMemory == null) {
+			jLoadMemory = new JProgressBar();
+			jLoadMemory.setPreferredSize(new Dimension(150, 18));
+			jLoadMemory.setStringPainted(true);
+			jLoadMemory.setFont(new Font("Dialog", Font.PLAIN, 12));
+			jLoadMemory.setToolTipText("Memory-Load of the System");
+		}
+		return jLoadMemory;
+	}
+
+COM:returns a JProgressBar object representing the memory-load of the system, with specific preferences, font, and tooltip

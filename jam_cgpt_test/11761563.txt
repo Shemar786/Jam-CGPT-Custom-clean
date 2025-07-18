@@ -1,0 +1,15 @@
+TDAT: 	public void getGCBlocks() {
+		if (logger.isDebugEnabled()) {
+			logger.debug("G2G lookup triggered");
+		}
+		grandChildren = new Vector<Finger>();
+		alreadyRequestedGrandchildren = new Vector<Finger>();
+		for (Finger peer : getInterestedPeers()) {
+			// send request for children to interested peer
+			getPeer().sendMessage(peer.getNetworkAddress(), new G2GChildrenRequestMessage());
+		}
+
+		triggerG2gTimer.schedule(triggerG2gInterval);
+	}
+
+COM:sends a request to interested peers for their grandchildren and sets a timer to trigger the same request periodically

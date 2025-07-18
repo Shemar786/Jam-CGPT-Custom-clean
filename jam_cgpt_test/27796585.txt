@@ -1,0 +1,18 @@
+TDAT:     public void visualStyleChanged() {
+	// get current defaults
+        Object defaultObj = VizUIUtilities.getDefault(VMM.getVisualStyle(), this.type);
+        setCurrentCalculator(
+                VizUIUtilities.getCurrentCalculator(VMM.getVisualStyle(), this.type) );
+
+	if (defaultValueDisplayer == null) { // haven't initialized yet
+	    drawDefault(defaultObj);
+	    drawCalc();
+            refreshUI();
+	}
+	else {
+            defaultValueDisplayer.setObject(defaultObj);
+	    refreshUI();
+	}
+    }
+
+COM:updates the visual style of an object and displays the default value and calculator associated with it

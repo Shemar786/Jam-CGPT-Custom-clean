@@ -1,0 +1,10 @@
+TDAT:   public void addRowToRowModel ( BetterTableDimensionUnit row ) {
+    if( row.getLabelValue() == null ) {
+      row.setLabelValue(
+        getTableModel().getRowName( row.getModelIndex() )
+      );
+    }
+    getRowModel().addDimensionUnit( row );
+  } // addRowToRowModel(..)
+
+COM:adds a row to a table's row model, with an optional label value if none is provided

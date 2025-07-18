@@ -1,0 +1,14 @@
+TDAT:     public void testGetDescription() {
+        System.out.println("getDescription");
+        
+        Event_DBImpl instance = new Event_DBImpl();
+        
+        String expResult = "";
+        String result = instance.getDescription();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the getDescription method of an Event_DBImpl object by initializing the object and asserting that the expected result of an empty string matches the actual result returned by the method

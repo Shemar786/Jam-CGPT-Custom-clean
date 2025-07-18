@@ -1,0 +1,19 @@
+TDAT: 	private DefaultMutableTreeNode makeNode(ConceptClass cc) {
+		DefaultMutableTreeNode node = cc2node.get(cc.getId());
+		if (node == null) {
+			node = new DefaultMutableTreeNode(cc);
+
+			if (!cc.equals(rootCC)) {
+				if (cc.getSpecialisationOf() == null) {
+					cc.setSpecialisationOf(rootCC);
+				}
+				DefaultMutableTreeNode parent = makeNode(cc.getSpecialisationOf());
+				parent.add(node);
+			}
+			
+			cc2node.put(cc.getId(), node);
+		}
+		return node;
+	}
+
+COM:creates a tree node from a concept class, adds it to the tree, and returns the node

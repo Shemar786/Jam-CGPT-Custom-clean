@@ -1,0 +1,23 @@
+TDAT: 	public void addSearch(String search) {
+		if (search != null && search.length() > 0) {
+			int index = -1;
+
+			for (int i = 0; (i < searches.size()) && (index == -1); i++) {
+				if (searches.get(i).equals(search)) {
+					index = i;
+				}
+			}
+
+			if (index != -1) {
+				searches.remove(index);
+			}
+
+			searches.add(0, search);
+
+			if (searches.size() > MAX_SEARCHES) {
+				searches.remove(MAX_SEARCHES);
+			}
+		}
+	}
+
+COM:adds a new search term to a list and removes the oldest search term if the list exceeds the maximum number of searches

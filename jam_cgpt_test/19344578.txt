@@ -1,0 +1,13 @@
+TDAT:     public String getRecentLayoutName(int idx) {
+    	String ret = "";
+    	if (idx >= 0 && idx < prevFiles.length && prevFiles[idx] >= 0) {
+    		String s = layouts[prevFiles[idx]];
+    		if (s != null) {
+    			ret = s;
+     		}
+
+    	}
+    	return ret;
+    }
+
+COM:returns the name of a recent layout from an array of layouts based on the given index

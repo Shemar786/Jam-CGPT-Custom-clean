@@ -1,0 +1,22 @@
+TDAT: 	private HistoryInfo loadHistoryForced( String historyInfoKey  ) {
+		final PersistenceManager pm = PMF.get().getPersistenceManager();
+	    HistoryInfo historyInfo = null;
+	    HistoryInfoJdo historyJdo = null;
+	    try{
+	    	historyJdo = pm.getObjectById(HistoryInfoJdo.class, historyInfoKey );
+	    	historyInfo = new HistoryInfo();
+	    	historyJdo.to( historyInfo, true );
+	    }
+	    catch( Exception exception ) {
+			exception.printStackTrace();
+	    	return null;
+	    } 
+	    finally {
+	        pm.close();
+	    }
+
+	    return historyInfo;
+	
+	}
+
+COM:loads a HistoryInfo object with a specified historyInfoKey from a datastore and returns it, or returns null if an exception occurs during the loading process

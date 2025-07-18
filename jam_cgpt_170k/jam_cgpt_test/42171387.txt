@@ -1,0 +1,17 @@
+TDAT: 	protected void addUuidPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SafiCall_uuid_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SafiCall_uuid_feature", "_UI_SafiCall_type"),
+				 CallPackage.Literals.SAFI_CALL__UUID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the UUID feature of a SafiCall object

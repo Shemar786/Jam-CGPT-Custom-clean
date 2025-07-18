@@ -1,0 +1,11 @@
+TDAT:     public Collection annotate(Collection players, String user) {
+        Set saved = savedGames.getSavedGames(user);
+        List result = new ArrayList();
+        for (Iterator i = players.iterator(); i.hasNext(); ) {
+            String player = i.next().toString();
+            result.add(saved.contains(player) ? player + "*" : player);
+        }
+        return result;
+    }
+
+COM:annotates a collection of players by marking the ones that have been saved by a certain user with an asterisk

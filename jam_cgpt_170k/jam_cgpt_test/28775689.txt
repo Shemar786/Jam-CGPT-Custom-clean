@@ -1,0 +1,11 @@
+TDAT: 	private int getLifeTime() {
+		String now=DateFormat.getTimeInstance(DateFormat.FULL).format(new Date());
+		int h_now=0, m_now=0, s_now=0, time=0;
+		h_now=(new Integer(now.substring(0, 2)));
+		m_now=(new Integer(now.substring(3, 5)));
+		s_now=(new Integer(now.substring(6, 8)));
+		time=(s_now+(m_now)*60+(h_now*3600))-(s_birth+(m_birth)*60+(h_birth*3600));
+		return time;
+	}
+
+COM:calculates the lifetime in seconds based on the difference between the birth time and current time of an object

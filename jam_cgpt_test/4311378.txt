@@ -1,0 +1,6 @@
+TDAT: 	public Method getDefaultMethodInstance(String nsevent) throws SecurityException, NoSuchMethodException, InstantiationException, IllegalAccessException, ClassNotFoundException
+	{		
+		return get(nsevent).getHandlerClassInstance().getClass().getDeclaredMethod( Const.DEFAULMETHOD , new Class[]{ServletContext.class , HttpServletRequest.class , HttpServletResponse.class } );
+	}
+
+COM:returns the default method instance corresponding to a given "nsevent" string

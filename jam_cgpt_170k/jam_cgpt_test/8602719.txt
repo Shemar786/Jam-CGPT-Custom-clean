@@ -1,0 +1,18 @@
+TDAT: 	private void connect() {
+		try {
+			System.out.println("Waiting...");
+			clientSock = serverSock.accept();
+			System.out.println(clientSock);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		RiskServerHandler handler = new RiskServerHandler(clientSock, this);
+		gamersConnected.addPlayer(handler);
+		Thread toAdd = new Thread(handler); 
+		toAdd.start();
+		System.out.println("new RiskServerHandler started: #"
+				+ gamersConnected.getSize());
+	}
+
+COM:establishes a connection between a server and a client, creates a handler for the client, and starts a new thread to handle the communication

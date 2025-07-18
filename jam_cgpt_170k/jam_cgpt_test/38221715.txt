@@ -1,0 +1,13 @@
+TDAT:   public void setLeftTable(CTableBox leftTable) {
+    if (this.leftTable != leftTable) {
+      if (this.leftTable != null)
+        this.leftTable.removeLink(this);
+      this.leftTable = leftTable;
+      if (leftTable != null)
+        leftTable.addLink(this);
+      updated = false;
+      updateShape();
+    }
+  }
+
+COM:sets the left table of a CTableBox object and updates the shape accordingly while also adding or removing links between tables if necessary

@@ -1,0 +1,11 @@
+TDAT: 	public Object execute(String methodName, Object[] params) throws MsfException{
+		MsfguiLog.defaultLog.logMethodCall(methodName, params);
+		Object[] paramsNew = new Object[params.length+1];
+		paramsNew[0] = rpcToken;
+		System.arraycopy(params, 0, paramsNew, 1, params.length);
+		Object result = cacheExecute(methodName, paramsNew);
+		MsfguiLog.defaultLog.logMethodReturn(methodName, params, result);
+		return result;
+	}
+
+COM:executes a specified method with given parameters and logs the method call and return value

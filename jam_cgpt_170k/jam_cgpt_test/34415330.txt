@@ -1,0 +1,6 @@
+TDAT: 	public void sendContainerChangeEvent(Object source, String containerId, String userName, Date dateTime){
+		ViewEvent ve = new ViewEvent(source,containerId,"",userName,dateTime,ViewEvent.CONTAINER_CHANGE_EVENT, null);
+		this.newViewEvent(ve);
+	}
+
+COM:sends a container change event with relevant information

@@ -1,0 +1,11 @@
+TDAT:  private void addAnyExtension(NormalUseCaseDescription useCase, Element anyExtElement) {
+ 	String value = anyExtElement.getTextTrim();
+ 	AnyExtension aext = (AnyExtension)useCase.addAnyExtension(value);
+ 	Element extElt = anyExtElement.getChild(ElementConst.EXTENSION);
+ 	if (extElt != null) {
+ 		addAnExtension(extElt, aext);
+ 	}
+ 	
+ }
+
+COM:This is a Java method that adds an extension element to a use case description if it exists, using the value specified in the element

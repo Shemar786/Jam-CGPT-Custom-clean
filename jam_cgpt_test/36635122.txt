@@ -1,0 +1,10 @@
+TDAT:     public int get(String key){
+        key = key.toUpperCase();
+        for(int i = 0; i < list.size(); i++){
+            if(key.matches(list.getData(i)))
+                return ref.get(list.getData(i));
+        }
+        return (ref.containsKey(key)) ? ref.get(key) : -1;
+    }
+
+COM:gets the value associated with a given key, converting the key to uppercase and checking for matches in a list, and if not found, checking in a reference map

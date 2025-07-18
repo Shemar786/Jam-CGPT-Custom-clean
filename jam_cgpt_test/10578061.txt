@@ -1,0 +1,7 @@
+TDAT:     public void updateHamTokens(Connection conn) throws java.sql.SQLException {
+        updateTokens(conn, getHamTokenCounts(), sqlQueries.getSqlString("insertHamToken", true), sqlQueries.getSqlString("updateHamToken", true));
+
+        setMessageCount(conn, sqlQueries.getSqlString("updateHamMessageCounts", true), getHamMessageCount());
+    }
+
+COM:updates the ham tokens and message counts in a SQL database using the given connection and SQL queries

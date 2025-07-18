@@ -1,0 +1,12 @@
+TDAT:     public void notifyObservers(Session conn, SMPPPacket packet) {
+        SessionObserver[] observerList = getObserverList();
+        for (SessionObserver observer : observerList) {
+            try {
+                observer.packetReceived(conn, packet);
+            } catch (Exception x) {
+                LOG.error("An observer threw an exception during packet processing", x);
+            }
+        }
+    }
+
+COM:notifies all registered observers when an SMPP packet is received on the given session connection

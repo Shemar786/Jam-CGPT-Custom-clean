@@ -1,0 +1,12 @@
+TDAT:   public String getRawValue(String key) {
+    String value = (String) data.get(key);
+    if (value == null) {
+      value = getParentConfig().getWithContext(this.resource, key);
+    }
+    if (value == null) {
+      value = this.parentLocale.getRawValue(key);
+    }
+    return value;
+  }
+
+COM:retrieves the raw value associated with a given key, either from a data map or by searching through parent configurations and locales

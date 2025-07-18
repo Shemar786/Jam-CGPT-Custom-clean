@@ -1,0 +1,16 @@
+TDAT: 	private void collectValue(String token) throws TreeException {
+		int blank = token.indexOf(' ');
+
+		if ((blank < 1) || (blank > (token.length() - 2))) {
+			throw new TreeException("Could not find a blank in '" + token
+					+ "' !");
+		}
+
+		String key = token.substring(0, blank);
+		String value = token.substring(blank).trim();
+		node(CHILD, key);
+		node(CHILD, value);
+		reduceLevel();
+	}
+
+COM:collects a key-value pair from a token, creates a node for each and reduces the level of the tree

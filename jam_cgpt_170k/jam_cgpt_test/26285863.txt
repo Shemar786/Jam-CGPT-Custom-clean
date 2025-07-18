@@ -1,0 +1,10 @@
+TDAT:     public UICActionList getActionList(String name) {
+        UICActionList list = (UICActionList) actionLists.get(name);
+        if(list == null) { // create
+            list = new UICActionList(name, this);
+            actionLists.put(name, list);
+        }
+        return list;
+    }
+
+COM:returns a UICActionList object based on the specified name, creating it if it does not already exist

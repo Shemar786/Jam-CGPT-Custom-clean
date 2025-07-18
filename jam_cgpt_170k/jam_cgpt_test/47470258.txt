@@ -1,0 +1,11 @@
+TDAT: 	private void fillContextMenuRemoveAction(IMenuManager manager, TocObject tocObject) {
+		// Add to the main context menu
+
+		// Delete task object action
+		fRemoveObjectAction.setToRemove(tocObject);
+		manager.add(fRemoveObjectAction);
+
+		fRemoveObjectAction.setEnabled(tocObject.canBeRemoved() && fModel.isEditable());
+	}
+
+COM:fills a context menu with a "remove" action for a given TOC object

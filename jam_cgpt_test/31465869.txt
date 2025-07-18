@@ -1,0 +1,11 @@
+TDAT:     protected JarFile findApplicationJAR() throws IOException {
+	Class clazz = getClass();
+	ClassLoader loader = clazz.getClassLoader();
+	URL url = loader.getResource(clazz.getName().replace('.', '/').concat(".class"));
+	URLConnection con = url.openConnection();
+	if (con instanceof JarURLConnection)
+	    return ((JarURLConnection)con).getJarFile();
+	throw new RuntimeException("Application not loaded from JAR");
+    }
+
+COM:finds and returns the JAR file containing the currently running application, or throws an exception if it is not running from a JAR file

@@ -1,0 +1,11 @@
+TDAT:   public String format(String format, Locale locale) {
+    GregorianCalendar   cal = new GregorianCalendar();
+
+    cal.set(Calendar.YEAR, getYear());
+    cal.set(Calendar.MONTH, getMonth() - 1);
+    cal.set(Calendar.DAY_OF_MONTH, 1);
+
+    return new SimpleDateFormat(format, locale).format(cal.getTime());
+  }
+
+COM:formats a date using a specified format and locale

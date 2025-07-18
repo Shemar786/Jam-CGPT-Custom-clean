@@ -1,0 +1,16 @@
+TDAT:     public void openEDFFile() {
+        JFileChooser chooser = new JFileChooser();
+
+        String[] extensions = {"rec", "hyp", "edf"};
+
+        chooser.setFileFilter(new EDFFileFilter(extensions, getLocalizedString("EDF files")));
+
+        int returnVal = chooser.showOpenDialog(null);
+
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            openFile(chooser.getSelectedFile());
+        }
+        updatePermissions();
+    }
+
+COM:opens a JFileChooser dialog to select EDF files, and if a file is selected, calls the openFile method and updates certain permissions

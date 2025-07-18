@@ -1,0 +1,13 @@
+TDAT:     public double preferredScale(Container container) {
+        Container parent = container.getParent();
+        if (parent == null) {
+            return 0.0D;
+        }
+        Dimension dimension = parent.getSize();
+        if (dimension.getWidth() == 0 || dimension.getHeight() == 0 || container.getComponentCount() == 0) {
+            return DEFAULT_SCALE;
+        }
+        return -1.0D;
+    }
+
+COM:calculates and returns a preferred scale for a given container within its parent, based on the dimensions and component count of the container and its parent

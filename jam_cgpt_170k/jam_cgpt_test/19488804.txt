@@ -1,0 +1,16 @@
+TDAT: 	private void translateSetExtension(final SetExtension expression) {
+		SMTTerm[] children;
+		children = smtTerms(expression.getMembers());
+		final String macroName = signature.freshSymbolName(SMTMacroSymbol.ENUM);
+		final Type setExtensionType = expression.getMembers()[0].getType();
+
+		if (signature instanceof SMTSignatureV1_2Verit) {
+			translateSetExtensionV1_2(expression, children, macroName,
+					setExtensionType);
+		} else {
+			translateSetExtensionV2_0(expression, children, macroName,
+					setExtensionType);
+		}
+	}
+
+COM:translates a set extension expression into a corresponding SMT representation using two different translation methods depending on the version of the SMT signature used

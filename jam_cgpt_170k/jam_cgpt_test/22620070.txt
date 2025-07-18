@@ -1,0 +1,20 @@
+TDAT: 	private Map getAuthorMap() {
+		if (map == null) {
+			map = new HashMap();
+			List jurisdictionNodes = doc.getNodes("/asnJurisdictions/Jurisdiction");
+			for (Iterator i = jurisdictionNodes.iterator(); i.hasNext(); ) {
+				Element element = (Element) i.next();
+				Jurisdiction jurisdiction = null;
+				try {
+					jurisdiction = new Jurisdiction(element);
+				} catch (Throwable t) {
+					prtln("ERROR: could not create jurisdiction for " + element.asXML());
+					continue;
+				}
+				map.put(jurisdiction.purl, jurisdiction);
+			}
+		}
+		return map;
+	}
+
+COM:gets a map of jurisdiction objects from an XML document, creating the map if it does not exist and catching errors along the way

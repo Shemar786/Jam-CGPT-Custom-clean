@@ -1,0 +1,14 @@
+TDAT:   private void invoke(Runnable runnable) {
+    if (SwingUtilities.isEventDispatchThread()) {
+      try {
+        runnable.run();
+      } catch (Throwable failure) {
+        // also a VException or VRuntimeException is not allowed here
+        sendDebugMail("invoke in awt-thread ", runnable.toString(), failure);
+      }
+    } else {
+      addDebugableEventToQueue(runnable);
+    }
+  }
+
+COM:checks if the current thread is the event dispatch thread, and either runs the passed Runnable or adds it to a queue for later execution on the event dispatch thread

@@ -1,0 +1,15 @@
+TDAT:     private void getFileName(JTextField fileNameField) {
+
+		if (chooseFile == null) {
+			chooseFile = new JFileChooser();
+		}
+
+		chooseFile.setSelectedFile(new File(fileNameField.getText()));
+		int ret = chooseFile.showOpenDialog(null);
+
+		if (ret == JFileChooser.APPROVE_OPTION) {
+			fileNameField.setText(chooseFile.getSelectedFile().getPath());
+		}
+    }
+
+COM:allows the user to select a file using a JFileChooser and sets the selected filename to a JTextField

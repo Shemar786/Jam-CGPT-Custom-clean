@@ -1,0 +1,20 @@
+TDAT:     public String update() {
+	
+		if (infoClient == null) {
+			//System.out.println("in here?");
+			infoClient = loginComponent.getClient();
+		}
+	//System.out.println("die in here?");
+		try {
+			infoClient.setPassive();
+			infoClient.setLocalActive();
+			System.out.println("set client active/server passive passed!");
+
+			return "success";
+		}
+		catch (Exception e) {
+	    	return e.toString();
+		}
+    }
+
+COM:updates the client's information for the login component and returns a success message or an error if an exception occurs

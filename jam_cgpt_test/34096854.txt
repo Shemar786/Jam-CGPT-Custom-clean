@@ -1,0 +1,11 @@
+TDAT: 	private ClassVertex addClassVertexForMissingClass(ClassDescriptor missingClassDescriptor, boolean isInterfaceEdge) {
+		ClassVertex missingClassVertex = ClassVertex.createMissingClassVertex(missingClassDescriptor, isInterfaceEdge);
+		missingClassVertex.setFinished(true);
+		addVertexToGraph(missingClassDescriptor, missingClassVertex);
+
+		AnalysisContext.currentAnalysisContext().reportMissingClass(missingClassDescriptor);
+
+		return missingClassVertex;
+	}
+
+COM:adds a missing class vertex to the graph and reports it as missing to the current analysis context

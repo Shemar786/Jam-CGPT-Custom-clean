@@ -1,0 +1,8 @@
+TDAT:     public void addModule(final ModuleDefinition moduleDefinition) {
+        ModuleOperation operation = facade.getModuleOperationRegistry().getOperation(
+                ModuleOperationConstants.AddModuleOperation);
+        ModuleOperationInput moduleOperationInput = new ModuleOperationInput(null, moduleDefinition, null);
+        execute(operation, moduleOperationInput);
+    }
+
+COM:adds a module to the system using the specified module definition

@@ -1,0 +1,7 @@
+TDAT: 	private void startSslServer(int portNumber, String keyStore, String trustStore) {
+		server = new TestSslServer(greeting, reply, portNumber, keyStore, trustStore);
+		server.start();
+		try { Thread.sleep(300); } catch (Exception e) { System.out.println("I woke up early: " + e); }
+	}
+
+COM:starts an SSL server with specified port number, key store, and trust store, and sleeps for 300 milliseconds after starting the server

@@ -1,0 +1,17 @@
+TDAT: 	public boolean validateUMLBabstractState_oneOutgoingFromSalmiakki(UMLBabstractState umlBabstractState, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (umlBabstractState.isSalmiakki() && umlBabstractState.getOutgoing().size()!=1) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 UMLBValidator.DIAGNOSTIC_SOURCE,
+						 UMLBValidator.UML_BABSTRACT_STATE__ONE_OUTGOING_FROM_SALMIAKKI,
+						 "There must be exactly one outgoing branch from an OR pseudo-state",
+						 new Object [] { umlBabstractState }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+COM:validates that an abstract state in a UML-B model has exactly one outgoing branch from an OR pseudo-state called "Salmiakki"

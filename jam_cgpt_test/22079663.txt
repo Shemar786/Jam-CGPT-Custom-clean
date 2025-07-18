@@ -1,0 +1,13 @@
+TDAT:    public String hashString(String[] toHash) {
+      String hashedVal = toHash[0];//if something goes wrong
+      synchronized (this.hashEngine) {
+         this.hashEngine.init();
+         for (int i = 0; i < toHash.length; i++) {
+            this.hashEngine.updateASCII(toHash[i]);
+         }
+         hashedVal = this.hashEngine.digout();
+      }
+      return hashedVal;
+   }
+
+COM:takes in an array of strings, hashes them using a synchronized hash engine, and returns the hashed value as a string

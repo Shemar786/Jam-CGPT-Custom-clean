@@ -1,0 +1,9 @@
+TDAT: 	public String getColorizedWord(String queryWord, String word){
+		int index = words.indexOf(queryWord);
+		return new StringBuffer().append("<b>").append(word).append("</b>").toString();
+//		return new StringBuffer().append("<b><font style=\"color:").append(
+//		            availableColors[index % availableColors.length]).append("\">").append(word).append(
+//		            "</font></b>").toString();
+	}
+
+COM:returns a string with the given word surrounded by bold tags and colorized if a specific query word is found in the input string

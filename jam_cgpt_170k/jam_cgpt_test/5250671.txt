@@ -1,0 +1,13 @@
+TDAT:     public void addSelection(final Selectable result) {
+
+        if (!multiSelection) {
+            this.clearSelection();
+        }
+        if (!this.selectionList.contains(result)) {
+            this.selectionList.add(result);
+            result.setSelected(true);
+        }
+        GuiManager.getInstance().updateSelection(selectionList);
+    }
+
+COM:adds a selectable object to a selection list and updates the GUI manager with the updated selection

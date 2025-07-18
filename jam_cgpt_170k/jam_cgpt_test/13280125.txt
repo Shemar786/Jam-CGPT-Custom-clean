@@ -1,0 +1,15 @@
+TDAT:     protected boolean moreThanOneCostChoice(ConventionalConstraint c) {
+
+	int cNum = c.getNumberOfCosts();
+	int unusedCosts = 0;
+
+	for (int i = 0; (unusedCosts < 2) && (i < cNum); i++) {
+	    if (c.getCostFunctionReference(i) == null) {
+		unusedCosts++;
+	    }
+	}
+	return (unusedCosts > 1);
+
+    }
+
+COM:checks if there are more than one unused cost choices in a ConventionalConstraint object

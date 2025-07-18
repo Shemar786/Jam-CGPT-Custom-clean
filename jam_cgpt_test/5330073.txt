@@ -1,0 +1,10 @@
+TDAT:     public void reset() {
+        editCardPanel.reset();
+        editCardPanel.setNextFocusComponent(okButton);
+        similarCardsListModel.clear();
+        similarCardsList.setLineWrapping(paukerFrame.isLineWrapping());
+        batchListCellRenderer.setLineWrap(paukerFrame.isLineWrapping());
+        setLocationRelativeTo(paukerFrame);
+    }
+
+COM:resets various components and properties and sets their values based on others in the program

@@ -1,0 +1,7 @@
+TDAT:     private boolean isEmpty(XMLStreamReader reader) {
+        System.err.println("carefull, using the isEmpty() method, " +
+            "which is not really implemented yet");
+        return (reader.isStartElement() && reader.isEndElement() && !reader.hasText());
+    }
+
+COM:checks if an XML stream reader is empty and returns a boolean value

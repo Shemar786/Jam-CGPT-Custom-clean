@@ -1,0 +1,12 @@
+TDAT:     private void actionPopulateAssignees() {
+        Object prv =
+                ((SWGListModel) assigneeCombo.getModel()).getSelectedItem();
+
+        List<SWGSchematicAssignee> as = SWGSchematicTab.assignees();
+        as.add(SWGSchematicAssignee.DEFAULT);
+        ((SWGListModel) assigneeCombo.getModel()).setElements(as);
+
+        assigneeCombo.setSelectedItem(prv); // restore, if possible
+    }
+
+COM:populates a list of assignees with default values and restores the previously selected item if possible

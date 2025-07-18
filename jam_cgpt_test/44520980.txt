@@ -1,0 +1,21 @@
+TDAT: 	public int removeItems(String name, int num) {
+		int c=0;
+		for (int i=0; i<invcount; i++) {
+			Thing t=inv[i];
+			if (name.equals(t.name())) {
+				int snum=t.getStat("Number");
+				if (snum>=num) {
+					c+=num;
+					t.remove(num);
+					break;
+				}
+                t.remove();
+                num-=snum;
+                c+=snum;
+                i--; // step back one since stack is removed
+			}
+		}
+		return c;
+	}
+
+COM:removes items from an inventory based on a given name and quantity, returning the total number of items removed

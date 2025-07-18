@@ -1,0 +1,11 @@
+TDAT:     public void testdecodeNMEA() {
+        System.out.println("decodeNMEA");
+        org.gps.types.NMEAEvent event = null;
+        org.gps.interfaces.NMEAEventListener instance = null;
+        instance.decodeNMEA(event);
+        
+        //TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the decoding of NMEA event data by printing a message, initializing variables, calling the decodeNMEA method from a NMEAEventListener instance, and failing the test case as a prototype

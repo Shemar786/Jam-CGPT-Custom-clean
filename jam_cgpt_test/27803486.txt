@@ -1,0 +1,8 @@
+TDAT:   public String createNodeIdentifier ( y.base.Node node ) {
+    if( getRealizer( node ).getLabelText().equals( "" ) ) {
+      getRealizer( node ).setLabelText( String.valueOf( nextNodeIdentifier++ ) );
+    }
+    return getRealizer( node ).getLabelText();
+  } // createNodeIdentifier(..)
+
+COM:creates a unique identifier for a given node and returns it as a String

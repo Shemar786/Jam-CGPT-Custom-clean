@@ -1,0 +1,9 @@
+TDAT:     protected long specifiedUniqueID(SandAttrVal[] matches) {
+        long retval=0;
+        for(int i=0;i<matches.length;i++) {
+            if(matches[i].getAttr().equals("uniqueID")) {
+                retval=StringUtil.safeGetLongValue(matches[i].getVal()); } }
+        return retval;
+    }
+
+COM:returns a long value representing the specified Unique ID from an array of SandAttrVal objects

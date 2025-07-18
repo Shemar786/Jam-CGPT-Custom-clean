@@ -1,0 +1,15 @@
+TDAT:     public void testisInUse() {
+        System.out.println("isInUse");
+        org.gps.types.GpsSatellite instance = new org.gps.types.GpsSatellite();
+        boolean expectedResult = false;
+        boolean result = instance.isInUse();
+        assertTrue(expectedResult==result);
+        
+        instance.setInUse(true);
+        expectedResult = true;
+        result = instance.isInUse();
+        assertTrue(expectedResult==result);
+
+    }
+
+COM:tests the isInUse() and setInUse() methods of the GpsSatellite class and prints whether the expected result matches the actual result

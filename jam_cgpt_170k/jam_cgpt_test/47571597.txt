@@ -1,0 +1,9 @@
+TDAT: 	public WarpTile isWarped(int x, int y) {
+		for(int i = 0; i < m_warpTiles.size(); i++) {
+			if(m_warpTiles.get(i).getX() == x && m_warpTiles.get(i).getY() == y)
+				return m_warpTiles.get(i);
+		}
+		return null;
+	}
+
+COM:checks if a given coordinate exists in a list of WarpTiles and returns the corresponding WarpTile if it does, or null if it does not

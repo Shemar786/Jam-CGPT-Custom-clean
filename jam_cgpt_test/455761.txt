@@ -1,0 +1,18 @@
+TDAT: 	private Color parseRGB(String rgbString) throws Exception {
+		Color color = null;
+		StringTokenizer split = new StringTokenizer(rgbString, ",");
+		try {
+			int r = Integer.parseInt(split.nextToken());
+			int g = Integer.parseInt(split.nextToken());
+			int b = Integer.parseInt(split.nextToken());
+			color = new Color(r,g,b);
+		} catch (NumberFormatException nfe) {
+			String msg = "Unable to parse element of rgb color " + rgbString
+					+ " must be in range 0 to 255";
+			throw new Exception(msg);
+		}
+		
+		return color;
+	}
+
+COM:takes a string representation of an RGB color and parses it into an instance of the Color class, throwing an exception if the input is invalid

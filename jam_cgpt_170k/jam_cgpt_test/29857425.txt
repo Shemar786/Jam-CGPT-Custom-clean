@@ -1,0 +1,14 @@
+TDAT:   public void setTimestamp(int r, Timestamp v) {
+    if (isChangedUI() 
+        || value[r] == null
+        || (value[r] != null && !value[r].equals(v))) {
+      // trails (backup) the record if necessary
+      trail(r);
+      // set value in the defined row
+      value[r] = v;
+      // inform that value has changed
+      setChanged(r);
+    }
+  }
+
+COM:sets a timestamp value in a specified row, trails (backs up) the record if necessary, and notifies of the change if there was any

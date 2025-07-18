@@ -1,0 +1,20 @@
+TDAT: 	protected boolean matchesByDay(Calendar candidate) {
+		if ((byDay == null) || (byDay.length == 0)) {
+
+			/* No byDay rules, so it matches trivially */
+
+			return true;
+		}
+
+		int i;
+
+		for (i = 0; i < byDay.length; i++) {
+			if (matchesIndividualByDay(candidate, byDay[i])) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+COM:determines if a given Calendar object matches with any specified "byDay" rules

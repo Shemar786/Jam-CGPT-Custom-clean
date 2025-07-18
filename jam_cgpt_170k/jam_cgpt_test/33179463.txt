@@ -1,0 +1,11 @@
+TDAT:     public String get(String[] names) throws NameNotFoundException {
+        String result;
+        for (int i = 0; i < names.length; ++i) {
+            try { return get(names[i]); }
+            catch (NameNotFoundException e) {} // eat if boy, eat it...
+        }
+
+        throw new NameNotFoundException(names.length > 0 ? names[0] : "no names");
+    }
+
+COM:returns the string representation of the first name in the given array of strings, or raises a NameNotFoundException if none are found

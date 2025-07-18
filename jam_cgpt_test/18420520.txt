@@ -1,0 +1,12 @@
+TDAT:     private String getAuthors() {
+        int i;
+        String ret = "<html>";
+        
+        for (i = 0; i < Application.authors.length - 1; i++) {
+            ret = ret + Application.authors[i] + "<br>";
+        }
+        ret = ret + Application.authors[i] + "</html>";
+        return ret;
+    }
+
+COM:returns a formatted string of authors from an array

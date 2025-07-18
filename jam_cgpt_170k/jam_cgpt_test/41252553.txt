@@ -1,0 +1,18 @@
+TDAT: 	public String getLabel(){
+		List<Property> orderedProps = new ArrayList<Property>(properties.values());
+		Collections.sort(orderedProps,new PropertyOrderComparator());
+		
+		StringBuffer label = new StringBuffer();
+		for (Property property : orderedProps) {
+			if (property.getPropertyDefinition().isMandatory()){
+				if (label.length()>0){
+					label.append(" ");
+				}
+				label.append(property.getValue().toString());
+			}
+		}
+		if (label.length()==0) label.append(this.getUri());
+		return label.toString();
+	}
+
+COM:returns a string label for an object based on the values of its mandatory properties

@@ -1,0 +1,19 @@
+TDAT:   public void waitForRetry() {
+    if (delayRetry <= 0) {
+      return;
+    }
+    long endWait = System.currentTimeMillis() + delayRetry;
+    for (;;) {
+      long currentTime = System.currentTimeMillis();
+      if (currentTime >= endWait) {
+        return;
+      }
+      try {
+        Thread.sleep(endWait - currentTime);
+      } catch (InterruptedException e) {
+        // Try again
+      }
+    }
+  }
+
+COM:allows for a delay in retrying an operation by pausing the current thread until a designated time has passed

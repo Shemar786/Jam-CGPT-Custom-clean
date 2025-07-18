@@ -1,0 +1,10 @@
+TDAT:   public void close(boolean save) {
+    m_Table.m_CellEditor = null;
+    // m_Control.setVisible(false);
+    GC gc = new GC(m_Table);
+    m_Table.drawCell(gc, m_Col, m_Row);
+    gc.dispose();
+    this.dispose();
+  }
+
+COM:closes a graphical user interface (GUI) window, disposes of graphical resources, and sets the cell editor to null

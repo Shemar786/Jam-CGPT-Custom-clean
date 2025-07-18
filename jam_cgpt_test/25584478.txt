@@ -1,0 +1,13 @@
+TDAT:     public void stop(int clipIdx) {
+        if (clipIdx < 0 || clipIdx > clipAssembly.length) {
+            throw new IllegalArgumentException("SoundAssetAssembly.stop: " +
+                    "Invalid clip index specified: " + clipIdx);
+        }
+        
+        clipAssembly[clipIdx].stop();
+
+        // Update the next playback index to point to the stopped clip
+        nextPlaybackIdx = clipIdx;
+    }
+
+COM:stops the audio clip specified by the index provided, updates the next playback index to point to the stopped clip, and throws an exception if an invalid clip index is specified

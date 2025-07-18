@@ -1,0 +1,14 @@
+TDAT: 	public void enableComponentsIfPossible() {
+		// 0: reasoner
+		// 1: problem
+		// 2: algorithm
+		// 3: run
+
+		isEnabled[0] = mandatoryOptionsSpecified(source);
+		isEnabled[1] = isEnabled[0] && mandatoryOptionsSpecified(reasoner);
+		isEnabled[2] = isEnabled[0] && isEnabled[1] && mandatoryOptionsSpecified(lp);
+		isEnabled[3] = isEnabled[0] && isEnabled[1] && isEnabled[2]
+				&& mandatoryOptionsSpecified(la);
+	}
+
+COM:enables components based on whether mandatory options have been specified

@@ -1,0 +1,12 @@
+TDAT:     private void unbind(Collection<? extends Binding> bindings) {
+        for (final Binding b : bindings) {
+            if (b.isBound())
+                b.unbind();
+            final Object target = b.getTargetObject();
+            if (target instanceof ICleanUp)
+                b.getTargetProperty().setValue(target, null);
+            b.setSourceObject(null);
+        }
+    }
+
+COM:unbinds a collection of bindings, setting their source object to null and, if applicable, setting the target property to null as well

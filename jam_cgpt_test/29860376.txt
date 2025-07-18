@@ -1,0 +1,13 @@
+TDAT:   public Instruction resolveLabel(String name) throws UnresolvableLabelException {
+    Integer	addr = (Integer)labels.get(name);
+
+    if (addr == null) {
+      throw new UnresolvableLabelException(KsmMessages.UNDEFINED_LABEL, name);
+    }
+    if (addr.intValue() >= insns.size()) {
+      throw new UnresolvableLabelException(KsmMessages.NO_CODE_AT_LABEL, name);
+    }
+    return (Instruction)insns.elementAt(addr.intValue());
+  }
+
+COM:resolves a label to its corresponding instruction and throws an exception if the label is undefined or if there is no code at the label

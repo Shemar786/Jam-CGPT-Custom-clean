@@ -1,0 +1,15 @@
+TDAT: 	private void updateMenuDisplay(IMenuManager menu) {
+		AbstractModel selectedModel = _context.getModel();
+
+		for (IContributionItem item : menu.getItems()) {
+			if (item instanceof IMenuManager) {
+				updateMenuDisplay((IMenuManager) item);
+			} else if (item instanceof ActionContributionItem) {
+				ActionContributionItem aItem = (ActionContributionItem) item;
+				ContextAction action = (ContextAction) aItem.getAction();
+				aItem.setVisible(action.isVisible(selectedModel));
+			}
+		}
+	}
+
+COM:updates the visibility of menu items based on the current state of the application's model

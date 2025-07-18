@@ -1,0 +1,14 @@
+TDAT: 	private void injectDependencies() throws Exception {
+		if (isPopulateProtectedVariables()) {
+			if (this.managedVariableNames == null) {
+				initManagedVariableNames();
+			}
+			populateProtectedVariables();
+		}
+		else if (getAutowireMode() != AUTOWIRE_NO) {
+			getApplicationContext().getBeanFactory().autowireBeanProperties(
+					this, getAutowireMode(), isDependencyCheck());
+		}
+	}
+
+COM:This private Java method injects dependencies either by populating protected variables or by autowiring bean properties based on the autowire mode set in the application context

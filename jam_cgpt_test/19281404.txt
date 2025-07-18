@@ -1,0 +1,14 @@
+TDAT: 	public Collection getParentOrganisations(boolean currentOnly) {
+		final Collection parentOrganisations = new TreeSet(AbstractOrganisationImpl.COMPARATOR);
+		if (getMembershipParents() != null) {
+			for (Iterator membershipIterator = getMembershipParents().iterator(); membershipIterator.hasNext();) {
+				final MembershipBean membershipBean = (MembershipBean) membershipIterator.next();
+				if (!currentOnly || membershipBean.isCurrent()) {
+					parentOrganisations.add(membershipBean.getParentOrganisation());
+				}
+			}
+		}
+		return parentOrganisations;
+	}
+
+COM:retrieves a collection of parent organizations sorted by comparator, based on the current membership status of each organization and a boolean flag indication of whether to include all parents or just current parents for the given object

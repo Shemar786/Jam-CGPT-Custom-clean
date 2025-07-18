@@ -1,0 +1,18 @@
+TDAT:     private void setupFilters(String filters, Vector expressions) {
+	java.util.StringTokenizer tokens =
+	    new java.util.StringTokenizer(filters, " ");
+	
+	while (tokens.hasMoreTokens()) {
+	    String filter = tokens.nextToken();
+	    
+	    try {
+		RE expression = new RE(filter);
+		expressions.addElement(expression);
+	    }
+	    catch (Exception e) {
+		System.out.println("Log warning: bad filter '" + filter + "'");
+	    }
+	}
+    }
+
+COM:sets up filters using string tokens and populates a vector with regular expression objects

@@ -1,0 +1,10 @@
+TDAT:     public void applyProperties(StyleWithProperties style, CSVList props, boolean bInherit) {
+    	// Page break
+    	getParSc().cssPageBreak(style, props, bInherit);
+        // Apply background
+        getFrameSc().cssBackground(style,props,bInherit);
+        // Table-specific properties
+        cssTable(style,props,bInherit);
+    }
+
+COM:applies certain properties to a StyleWithProperties object and passes it through other methods to add background and table-specific properties

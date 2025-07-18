@@ -1,0 +1,6 @@
+TDAT:   public void setFuncion(String v) {
+    if (Adjetivo_Type.featOkTst && ((Adjetivo_Type)jcasType).casFeat_Funcion == null)
+      jcasType.jcas.throwFeatMissing("Funcion", "org.idtem.component.freeling.Adjetivo");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Adjetivo_Type)jcasType).casFeatCode_Funcion, v);}    
+
+COM:sets the value of a "Funcion" feature for an instance of the "Adjetivo" class, throwing an exception if the feature is missing

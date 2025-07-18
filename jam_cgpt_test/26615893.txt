@@ -1,0 +1,11 @@
+TDAT:         public void paint(Graphics g) {
+            g.setColor(Color.gray);
+            g.drawLine(_x,_y,_x,_y2);
+            g.drawLine(_x,_y2,_x2,_y2);
+            g.drawLine(_x2,_y2,_x2,_y);
+            g.drawLine(_x2,_y,_x,_y);
+
+            //g.drawRect(x, y, width, height);
+        }
+
+COM:draws a rectangle using four lines with the specified coordinates and color

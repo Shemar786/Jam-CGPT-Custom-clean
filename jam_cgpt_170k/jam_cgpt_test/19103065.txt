@@ -1,0 +1,19 @@
+TDAT: 	private void addFiles(File file, String basepath) throws SQLException {
+		if (file.isDirectory()) {
+			// directories:
+			File[] files = file.listFiles(fileFilter);
+			if (files.length == 0) {
+				// either add empty directory
+				addFile(file, basepath);
+			} else {
+				// or recurse
+				for (File subfile : files)
+					addFiles(subfile, basepath);
+			}
+		} else {
+			// files: add file
+			addFile(file, basepath);
+		}
+	}
+
+COM:adds files to a database, either by adding an empty directory or recursively adding files within a directory

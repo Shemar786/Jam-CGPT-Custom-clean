@@ -1,0 +1,16 @@
+TDAT: 	public void testRpc() {
+		try {
+			// Test the web server (which also tests the rpc server)
+			// by connecting via the clients
+			Vector params = new Vector();
+			params.add(REQUEST_PARAM_VALUE);
+			Object response = client.execute(HANDLER_NAME + ".echo", params);
+			assertEquals(REQUEST_PARAM_VALUE, response);
+			// params.removeAllElements();
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+
+COM:tests the web server and rpc server by connecting via the clients and executing an echo command with a defined request parameter value

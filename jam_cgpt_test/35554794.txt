@@ -1,0 +1,14 @@
+TDAT: 	public void getResourceInfo() {
+		ClientManager clientMgr = ClientManager.getInstance();
+		User user = User.getInstance();
+
+		CommonIF.RtrvEMSResourceInfoIF[] data = new CommonIF.RtrvEMSResourceInfoIF[1];
+		data[0] = new CommonIF.RtrvEMSResourceInfoIF();
+
+		String cmdStr = "";
+
+		clientMgr.cmdRequest(getViewId(), user.getUserId(), 1, 1, EmsCode.CMD_RTRV_EMS_RESOURCE_INFO, data, cmdStr);
+
+	}
+
+COM:retrieves EMS resource information from a server using a client manager and user instance

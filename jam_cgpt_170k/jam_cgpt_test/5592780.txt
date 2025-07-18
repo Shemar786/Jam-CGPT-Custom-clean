@@ -1,0 +1,11 @@
+TDAT:   public String toString() {
+    StringBuffer buf = new StringBuffer();
+    buf.append(this.getName() + ":");
+    int type = getType();
+    if (type != -1) {
+      buf.append(" Type: " + wpFileInterface.fileExtensions[type]);
+    }
+    return buf.toString();
+  }
+
+COM:returns a string representation of an object, including its name and type if available

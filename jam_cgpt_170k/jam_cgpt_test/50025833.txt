@@ -1,0 +1,15 @@
+TDAT:   public ReturnType getReply() throws DBusExecutionException {
+    if (null != rval) {
+      return rval;
+    } else if (null != error) { throw error; }
+    checkReply();
+    if (null != rval) {
+      return rval;
+    } else if (null != error) {
+      throw error;
+    } else {
+      throw new NoReply(_("Async call has not had a reply"));
+    }
+  }
+
+COM:returns a reply or throws an exception if there is an error or no reply

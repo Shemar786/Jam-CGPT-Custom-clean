@@ -1,0 +1,19 @@
+TDAT:   public boolean insert(Object obj) {
+  	final boolean b = this.kb.insert(obj);
+  	
+    if (b) {
+      ClassFilterReteNode entryNode;
+      entryNode = getEntryPoint(obj.getClass());
+      if (entryNode != null) {
+        entryNode.newObject(obj);
+      }
+    }
+    if(!this.running) {
+      synchronized(this){
+        this.notify();
+      }
+    }
+    return b;
+  }
+
+COM:inserts an object into a knowledge base and checks if it belongs to a specific class before notifying the system if the program is not running

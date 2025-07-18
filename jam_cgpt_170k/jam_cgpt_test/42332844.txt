@@ -1,0 +1,26 @@
+TDAT: 	public void run ( ) {
+		try {
+			String focus = null;
+			while ( true ) {
+				focus = queue.take(); // blocked
+				try {
+					if ( s == null ) {
+						s = new Socket( ip , port );					
+					}
+					if ( bw == null ) {
+						bw = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
+					}
+					bw.write( focus );
+				} catch ( Exception e ) {
+					//todo implement retry meganism..
+					//queue.offer( focus );
+					s = null;
+					focus = null;
+				}
+			}
+		} catch ( Exception e ) {
+		
+		}
+	}
+
+COM:continuously reads from a blocking queue and attempts to write the received message to a socket. If a write fails, it implements a retry mechanism

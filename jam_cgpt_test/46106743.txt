@@ -1,0 +1,10 @@
+TDAT:     public void setAlpha(float mAlpha) {
+        if (color == null)
+            color = new GLColor(1.0f, 1.0f, 1.0f, mAlpha);
+        else
+            color =
+                    new GLColor(color.getRed(), color.getGreen(), color
+                            .getBlue(), mAlpha);
+    }
+
+COM:sets the alpha (transparency) value of a GLColor object

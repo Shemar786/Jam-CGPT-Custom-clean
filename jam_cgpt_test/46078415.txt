@@ -1,0 +1,13 @@
+TDAT: 	public void start(Row row, TestResults testResults) throws Exception {
+		String className = row.text(1);
+		if (row.size() != 2)
+		    throw new ExtraCellsException("DoTraverseStart");
+		try {
+		    setSystemUnderTest(ClassUtility.newInstance(className));
+		} catch (Exception e) {
+		    throw new FitLibraryExceptionWithHelp("Unknown class: "+className,
+		            "UnknownClass.DoTraverseStart");
+		}
+	}
+
+COM:starts a test by creating an instance of a specified class and setting it as the system under test, and throws exceptions for invalid input or unknown classes

@@ -1,0 +1,12 @@
+TDAT: 	public List getUserIDForItem(String itemPID) throws AccessException {
+		logger.debug("entering getUserIDForItem");
+
+		String query = "SELECT user.USERID, user.USERNAME FROM item, user "
+			+ " WHERE PID = '" + itemPID + "'" 
+			+ " AND item.USERID = user.USERID";
+		List list = buildResult(query);
+
+		return list;
+	}
+
+COM:retrieves the userID and username of the user who owns a specific item identified by its PID

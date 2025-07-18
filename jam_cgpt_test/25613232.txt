@@ -1,0 +1,10 @@
+TDAT:     public BigDecimal getPenaltySum() {
+        BigDecimal sum = new BigDecimal(0);
+        for (Iterator<Penalty> itPenalties = getPenaltiesById().iterator(); itPenalties.hasNext();) {
+            Penalty penalty = itPenalties.next();
+            sum = sum.add(penalty.getAmount());
+        }
+        return sum;
+    }
+
+COM:calculates the total sum of penalty amounts for a given object

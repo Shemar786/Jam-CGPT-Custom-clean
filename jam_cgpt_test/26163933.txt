@@ -1,0 +1,10 @@
+TDAT:     public void verifyActionMessages(String[] messageNames) {
+        if (logger.isDebugEnabled())
+            logger.debug("Entering - messageNames = " + messageNames);
+        init();
+        Common.verifyActionMessages(request,messageNames,Globals.MESSAGE_KEY,"action");
+        if (logger.isDebugEnabled())
+            logger.debug("Exiting");
+    }
+
+COM:verifies action messages and logs debug information if enabled

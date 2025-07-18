@@ -1,0 +1,10 @@
+TDAT:     private RealmMapping getRealmMapping() throws NamingException {
+        if (realmMapping == null) {
+            Context context = new InitialContext();
+            // Get the JBoss security manager from the ENC context
+            realmMapping = (RealmMapping)context.lookup("java:comp/env/security/realmMapping");
+        }
+        return realmMapping;
+    }
+
+COM:retrieves a RealmMapping object from a JBoss server, which is used for security authentication and authorization

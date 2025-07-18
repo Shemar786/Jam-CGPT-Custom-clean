@@ -1,0 +1,14 @@
+TDAT: 	public List getItemFormats() {
+		List formats = new ArrayList();
+		List nonItemFormats = Arrays.asList(NON_ITEM_FORMATS);
+		for (Iterator i = getAllFormats().iterator(); i.hasNext(); ) {
+			String format = (String) i.next();
+			if ("dlese_collect".equals(format) && !this.allowDleseCollectItems)
+				continue;
+			if (!nonItemFormats.contains(format) && !formats.contains(format))
+				formats.add(format);
+		}
+		return formats;
+	}
+
+COM:returns a list of item formats by iterating through all formats, filtering out non-item formats and duplicates, and excluding a specific format if a certain condition is met

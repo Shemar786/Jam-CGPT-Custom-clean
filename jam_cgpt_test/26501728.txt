@@ -1,0 +1,17 @@
+TDAT:   public void write(byte[] b, int off, int len){
+    int put = 0;
+    while(put < len){
+      if(_arrayPos >= _arrayCount){
+        increase(); 
+      }      
+      put = _arrays[_arrayPos].put(b, off, len);
+      if(put < len){
+        _arrayPos++;
+      }
+      off += put;
+      len -= put;
+      put = 0;      
+    }
+  }
+
+COM:writes a byte array into the object's internal array structure, handling the case where the input array exceeds the existing bounds of the internal structure

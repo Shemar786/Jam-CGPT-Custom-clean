@@ -1,0 +1,12 @@
+TDAT:     public IncludedModuleWrapper newIncludeClass(RubyClass superClazz) {
+        IncludedModuleWrapper includedModule = new IncludedModuleWrapper(getRuntime(), superClazz, this);
+
+        // include its parent (and in turn that module's parents)
+        if (getSuperClass() != null) {
+            includedModule.includeModule(getSuperClass());
+        }
+
+        return includedModule;
+    }
+
+COM:creates a new object of type IncludedModuleWrapper with the given super class and includes its parent and parent's modules if they exist

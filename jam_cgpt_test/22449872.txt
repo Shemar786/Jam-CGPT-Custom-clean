@@ -1,0 +1,12 @@
+TDAT:     public void concatenateColumns(LPModelColumns newComponent) {
+        int offset = this.totalNumRows;
+        this.totalNumRows += newComponent.getNumRows();
+        this.mapRowToSubComponent.put(new Integer(offset), newComponent);
+        
+        if (this.broadestComponent == null ||
+                this.broadestComponent.getNumColumns() < newComponent.getNumColumns()) {
+            this.broadestComponent = newComponent;
+        }
+    }
+
+COM:concatenates columns of LPModelColumns objects and updates the total number of rows and broadest component

@@ -1,0 +1,8 @@
+TDAT: private void setLayoutManager(IFigure container, LayoutManager layoutManager) {
+	container.setLayoutManager(layoutManager);
+	this.activeLayoutManager = layoutManager;
+	if (layoutManager == xyLayoutManager) 	gESEditPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new GESXYLayoutEditPolicy());
+	else gESEditPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, null);
+}
+
+COM:sets the layout manager for a container and installs a corresponding edit policy

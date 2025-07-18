@@ -1,0 +1,14 @@
+TDAT:     private PacketHandler getHandlerForPacket(Packet packet) {
+        Integer packetType = new Integer(packet.getPacketType());
+        PacketHandler handler;
+
+        if (packetToHandlerMap.containsKey(packetType)) {
+            return (PacketHandler) packetToHandlerMap.get(packetType);
+        } else {
+            // If we get here, we received a supposedly valid NTE packet
+            // with an unknown type.
+            return unknownPacketHandler;
+        }
+    }
+
+COM:returns the handler for a given packet type, or the unknown packet handler if the type is unknown

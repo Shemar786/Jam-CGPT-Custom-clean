@@ -1,0 +1,20 @@
+TDAT: 	public void remove(ProjectWindowTab projectWindowTab) {
+	
+		DefaultMutableTreeNode node = this.getTreeNode(projectWindowTab.getTitle());
+		if (node!=null) {
+			DefaultMutableTreeNode pareNode = (DefaultMutableTreeNode) node.getParent();
+			pareNode.remove(node);
+		}
+
+		JComponent component = projectWindowTab.getComponent();
+		Container container = component.getParent();
+		if (container!=null) {
+			container.remove(component);	
+		}
+		this.tabVector.remove(projectWindowTab);
+
+		this.projectTreeModel.reload();
+		this.projectTreeExpand2Level(3, true);
+	}
+
+COM:removes a specified project window tab and its associated component from a container and updates the project tree model

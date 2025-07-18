@@ -1,0 +1,13 @@
+TDAT:     public void testSetFontColor() {
+        System.out.println("setFontColor");
+        
+        String fontColor = "";
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.setFontColor(fontColor);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the ability to set the font color in the SystemClient_DBImpl class

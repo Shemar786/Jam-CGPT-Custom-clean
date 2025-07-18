@@ -1,0 +1,12 @@
+TDAT:   public void setNextWindow() throws wpException {
+    JInternalFrame windows[] = getAllFrames();
+    if (windows.length > 0) {
+      wpWindow win = (wpWindow) windows[0];
+      win.windowSelected();
+    }
+    else {
+      throw new wpException(wpActionInterface.NO_MORE_PROJECTS);
+    }
+  }
+
+COM:sets the next internal window and throws a custom exception if there are no more available projects

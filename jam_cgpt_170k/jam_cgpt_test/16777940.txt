@@ -1,0 +1,16 @@
+TDAT:    private void readFromFile() {
+      try {
+         FileReader fr = new FileReader(this.credentials);
+         BufferedReader br = new BufferedReader(fr);
+         this.username = br.readLine();
+         this.password = br.readLine();
+         br.close();
+         fr.close();
+      }
+      catch (Exception e) {
+         this.username = "";
+         this.password = "";
+      }
+   }
+
+COM:reads the username and password from a file and assigns them to variables, handling exceptions if the file does not exist

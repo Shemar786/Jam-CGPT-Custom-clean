@@ -1,0 +1,13 @@
+TDAT:     public void testSetDescription() {
+        System.out.println("setDescription");
+        
+        String description = "";
+        Event_StubImpl instance = new Event_StubImpl();
+        
+        instance.setDescription(description);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a test case for the setDescription method of the Event_StubImpl class and prints out "setDescription"

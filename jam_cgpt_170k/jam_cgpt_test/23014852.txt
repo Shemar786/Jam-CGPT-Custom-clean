@@ -1,0 +1,14 @@
+TDAT:     public void objectPushed(Object o) {
+        if (o instanceof TargetElement) {
+            TargetElement te = (TargetElement) o;
+            if (o instanceof IdElement) {
+                IdElement element = (IdElement) o;
+                this.addElement(element);
+            } else if (o instanceof SidElement) {
+                SidElement element = (SidElement) o;
+                this.addElement(element, true);
+            }
+        }
+    }
+
+COM:takes an object as input and if it is an instance of TargetElement, it adds it to the current object's element list either as an IdElement or a SidElement

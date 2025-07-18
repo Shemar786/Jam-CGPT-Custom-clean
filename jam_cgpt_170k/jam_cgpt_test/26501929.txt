@@ -1,0 +1,14 @@
+TDAT:   public void dereference(VmId id, OID oid) {
+    if (Log.isDebug()) {
+      Log.debug(ServerGC.class,
+        "dereferencing from: " + id + " on object: " + oid);
+    }
+
+    ClientInfo info = (ClientInfo) getClientInfo(id);
+    synchronized (info) {
+      info.dereference(oid);
+      _gcDerefPerMin.hit();
+    }
+  }
+
+COM:dereferences an object belonging to a specified virtual machine ID and updates garbage collection statistics

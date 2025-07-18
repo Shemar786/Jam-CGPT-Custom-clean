@@ -1,0 +1,9 @@
+TDAT:     public void addCosts_internal(ConventionalConstraint constraint, int costID, Object costMappingOptions) {
+        if (Registry.SAFE_MODE) {
+            addCosts(constraint, costID, costMappingOptions);
+        } else {
+            addCosts_unsafe(constraint, costID, costMappingOptions);
+        }
+    }
+
+COM:adds costs to a conventional constraint while accounting for safe mode

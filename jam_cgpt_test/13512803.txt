@@ -1,0 +1,10 @@
+TDAT:     public OWLProperty findProperty(String propertyName){
+        OWLProperty property = null;
+        propertyName = propertyName.trim();
+        if (om !=null && checkNoSpaces(propertyName)){
+            property = om.getOWLProperty(propertyName);
+        }else SystemConsole.println("Knowledge base doesn't exist or invalid property name:" + propertyName);
+        return property;
+    }
+
+COM:finds and returns an OWL property based on the inputted propertyName

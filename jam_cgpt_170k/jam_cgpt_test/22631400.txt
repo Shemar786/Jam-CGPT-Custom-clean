@@ -1,0 +1,11 @@
+TDAT: 	private void putSetInIndex(SetInfo set) {
+		String setSpec = set.getSetSpec();
+		ArrayList dirInfos = set.getDirInfos();
+		DirInfo dirInfo;
+		for (int j = 0; j < dirInfos.size(); j++) {
+			//prtln("putSetInIndex(): " + (DirInfo) dirInfos.get(j));
+			putDirInIndex((DirInfo) dirInfos.get(j), setSpec);
+		}
+	}
+
+COM:takes a SetInfo object, extracts the set specification and directory information, and calls the putDirInIndex method for each directory

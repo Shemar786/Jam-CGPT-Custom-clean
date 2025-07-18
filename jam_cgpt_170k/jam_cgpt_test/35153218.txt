@@ -1,0 +1,18 @@
+TDAT: 	protected void readLSD() {
+
+		// logical screen size
+		width = readShort();
+		height = readShort();
+
+		// packed fields
+		int packed = read();
+		gctFlag = (packed & 0x80) != 0; // 1   : global color table flag
+		// 2-4 : color resolution
+		// 5   : gct sort flag
+		gctSize = 2 << (packed & 0x07); // 6-8 : gct size
+
+		bgIndex = read(); // background color index
+		pixelAspect = read(); // pixel aspect ratio
+	}
+
+COM:reads the logical screen size, packed fields, global color table flag, global color table size, background color index, and pixel aspect ratio from a GIF file

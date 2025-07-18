@@ -1,0 +1,19 @@
+TDAT: 	public void testDeleteRodinFile() throws CoreException {
+		try {
+			IRodinFile file = createRodinFile("P/X.test");
+			
+			startDeltas();
+			file.delete(false, null);
+			assertNotExists("Should be able to delete a Rodin file", file);
+			assertDeltas(
+					"Unexpected delta",
+					"P[*]: {CHILDREN}\n" + 
+					"	X.test[-]: {}"
+			);
+		} finally {
+			stopDeltas();
+			deleteFile("P/X.test");
+		}
+	}
+
+COM:tests the ability to delete a Rodin file

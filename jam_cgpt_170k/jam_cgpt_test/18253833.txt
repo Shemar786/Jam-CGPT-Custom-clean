@@ -1,0 +1,15 @@
+TDAT: 	public void setRoot(Table table) {
+		if (table != null) {
+			root = table;
+			tree.setModel(getModel());
+			resetGraphEditor(true, true, false, true);
+			if (extractionModelFrame != null && extractionModelFrame.closureBorderView != null) {
+				extractionModelFrame.closureBorderView.refresh();
+			}
+			if (extractionModelFrame != null && extractionModelFrame.restrictedDependenciesView != null) {
+				extractionModelFrame.restrictedDependenciesView.refresh();
+			}
+		}
+	}
+
+COM:sets the root of a table and refreshes certain views if the table is not null

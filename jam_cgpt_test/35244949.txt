@@ -1,0 +1,15 @@
+TDAT:     public void RemoveAll() {
+        Vector<CopyBook> vector2 = null;
+        try {
+            vector2 = getVectorCopyBookDisplay();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        getVector().removeAll(vector2);
+        if (selectedIndex != 0) {
+            vectorComboBox.removeElementAt(selectedIndex);
+            refreshComboBox();
+        }
+    }
+
+COM:removes all elements from a Vector object and updates a dropdown menu if necessary

@@ -1,0 +1,12 @@
+TDAT: 	public String getFilePathForId(MmdRec rec) {
+		if (rec == null) {
+			//prtln("getFilePathForId() Error: ID map record is null");
+			return "";
+		}
+		String pathToRecord = collBaseDir + "/"
+			 + rec.metastyleNames[rec.getMetastyle()]
+			 + "/" + rec.getCollKey() + "/" + rec.getFileName();
+		return pathToRecord;
+	}
+
+COM:takes in a MmdRec object and returns a string representing the file path for that object, including the collection base directory, metastyle name, collection key, and file name

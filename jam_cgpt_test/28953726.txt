@@ -1,0 +1,14 @@
+TDAT: 	public void recordExported(ParticipantObject patient, String mediaDesc) {
+		try {
+			ActiveParticipant user = getUser();
+			ActiveParticipant media = getMedia(ActiveParticipantIds.DestinationMedia, mediaDesc);
+			patient.role = ParticipantObjectRoleCode.Patient;
+			patient.typeCode = ParticipantObjectTypeCode.Person;
+			
+			this.dataExport(user, media, patient);
+		} catch (JAXBException e) {
+			LOG.error("Unable to log record export.", e);
+		}
+	}
+
+COM:records the export of a participant object along with information about the exporting user and media

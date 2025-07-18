@@ -1,0 +1,17 @@
+TDAT: 	public void normalize(IFactory fact, List<INormalizedList> disj, int curInd) {
+
+		substituteVariables(fact);
+
+		final ArrayList<INormalizedList> tmp = removeForClone(disj, curInd);
+		final int tmpSize = tmp.size();
+		for (final INormalizedPPTerme p : eltsD) {
+			addNewList(disj, tmp);
+			p.normalizeNeg(fact, disj, disj.size() - tmpSize);
+		}
+		for (final BoundedVariable v : ownVariable) {
+			v.unlock(this);
+		}
+
+	}
+
+COM:normalizes a list of objects using a factory and a list of normalized lists, and updates a bounded variable

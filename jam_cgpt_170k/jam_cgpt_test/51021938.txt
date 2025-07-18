@@ -1,0 +1,18 @@
+TDAT: 	private void loadConfig(File file, Properties properties, String config) {
+		try {
+			ZipInputStream stream = new ZipInputStream(
+					new FileInputStream(file));
+			ZipEntry entry;
+			while ((entry = stream.getNextEntry()) != null) {
+				if (entry.getName().equals(config)) {
+					System.out.println("Loading: " + file.getAbsoluteFile()
+							+ "#" + config);
+					properties.loadFromXML(stream);
+				}
+			}
+			stream.close();
+		} catch (Exception e) {
+		}
+	}
+
+COM:loads a configuration file from a zip archive into a Properties object

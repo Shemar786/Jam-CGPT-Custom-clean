@@ -1,0 +1,21 @@
+TDAT: 	public String getAuthorName(String purl) {
+		/* 		prtln ("getAuthor - " + purl);
+		return (String) map.get(purl); */
+		Jurisdiction juris = null;
+		try {
+			juris = (Jurisdiction) getAuthorMap().get(purl);
+		} catch (Exception e) {
+			prtln("WARNING: jurisdiction not found for " + purl + ": " + e.getMessage());
+			e.printStackTrace();
+		}
+		if (juris != null) {
+			if (juris.orgClass.equals("Organization"))
+				return juris.abbrev;
+			else
+				return juris.name;
+		}
+		else
+			return null;
+	}
+
+COM:retrieves the author name or organization abbreviation associated with a given string identifier, using a map to access the associated object and returning null if the identifier is not found

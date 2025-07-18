@@ -1,0 +1,11 @@
+TDAT:     private void setParameters() {
+
+        pgmParams.setProperty(Parameters.PROPERTY_LOOKS_CLASS_INDEX,
+                			  Integer.toString(looks.getSelectedIndex()));
+
+        pgmParams.setProperty(Parameters.PROPERTY_LOOKS_CLASS_NAME,
+                className.getText());
+        pgmParams.looksJar = jarName.getText();
+    }
+
+COM:sets program parameters based on selected index, class name and jar name

@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField5() {
+        if (textField5 == null) {//GEN-END:|27-getter|0|27-preInit
+            // write pre-init user code here
+            textField5 = new TextField("L\u00EDquido:", null, 32, TextField.DECIMAL);//GEN-LINE:|27-getter|1|27-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|27-getter|2|
+        return textField5;
+    }
+
+COM:returns a TextField object called textField5, and if it is null, it initializes it with a new TextField object that displays the text "Líquido:", has no initial text value, has a maximum size of 32 characters, and only accepts decimal values

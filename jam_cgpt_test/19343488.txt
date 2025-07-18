@@ -1,0 +1,12 @@
+TDAT:   public void setRecordSep(byte[] val) {
+
+      if ((val == null) && (recordSep == null)) {
+          return;
+      }
+      if (! isEqual(val, recordSep) || (updateStatus == NULL_INT_VALUE)) {
+           recordSep = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets the record separator byte array value if it is not already equal to the current value and sets the update status

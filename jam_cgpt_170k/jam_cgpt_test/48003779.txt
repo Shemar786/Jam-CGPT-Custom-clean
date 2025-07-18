@@ -1,0 +1,16 @@
+TDAT: 	private Message addGenreHandler(Object addGenre) {
+		if (addGenre instanceof Genre) {
+			Genre genre = (Genre) addGenre;
+			boolean flag = dataAccess.addGenre(genre);
+			if (flag != false) {
+				printToLog("succeed to add genre");
+				return (new Message(Message.ADD_GENRE_RESPOND, refreshCatalog()
+						.getValue()));
+			}
+
+		}
+		printToLog("failed to add genre");
+		return (new Message(Message.ADD_GENRE_RESPOND, Message.FAIL));
+	}
+
+COM:adds a genre object to a data access system and returns a message of successful or failed completion

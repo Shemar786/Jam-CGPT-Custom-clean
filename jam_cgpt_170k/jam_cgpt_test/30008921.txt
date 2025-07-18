@@ -1,0 +1,10 @@
+TDAT:         public void addElement(final Element element) {
+            if (size == data.length) {
+                Element[] newarray = new Element[size + 20];
+                System.arraycopy(data, 0, newarray, 0, size);
+                data = newarray;
+            }
+            data[size++] = element;
+        } // addElement(Element)
+
+COM:adds an element to an array with dynamic size, and expands the array if necessary

@@ -1,0 +1,14 @@
+TDAT: 	protected void initializeControllers () {
+		if (this.controllers == null) {
+			this.controllers = new HashMap<String, GraceletController>();
+			for (GraceletSource src : ctrlSources) {
+				log.info("Initializing controller: " + src.getName());
+				this.initializeController( new GraceletController(this.getCompiler().getClassLoader(), src) );
+			}
+			for (Class clazz : this.ctrlClasses) {
+				this.initializeController( new GraceletCompiledController(clazz) );
+			}
+		}
+	}
+
+COM:initializes controllers by creating a HashMap and initializing each controller based on sources and classes provided

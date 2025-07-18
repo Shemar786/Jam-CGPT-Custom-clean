@@ -1,0 +1,8 @@
+TDAT: //    public boolean deleteFile(String fileName) throws IllegalStateException, IOException {
+//        assertNotReadOnly();
+//        List<String> indexFiles = LuneUtils.getIndexFileNames(getDirectory());
+//        List<String> deletables = LuneUtils.getIndexDeletableNames(getDirectory());
+//        return deleteFile(new File(path, fileName), indexFiles, deletables);
+//    }
+
+COM:deletes a file with a specific file name and checks for read-only access, throwing an exception if necessary

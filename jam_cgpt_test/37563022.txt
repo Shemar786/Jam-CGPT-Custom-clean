@@ -1,0 +1,10 @@
+TDAT: public void setMinimumSize (int width, int height) {
+	checkWidget ();
+  if(Compatibility.IS_JAVA_5_OR_GREATER) {
+    handle.setMinimumSize(new Dimension(width, height));
+  } else if(handle instanceof JComponent) {
+    ((JComponent)handle).setMinimumSize(new Dimension(width, height));
+  }
+}
+
+COM:sets the minimum size of a widget or component in a GUI

@@ -1,0 +1,16 @@
+TDAT: 	public int hashCode() {
+		int result = 0;
+		for (Iterator iter = keyValueTuples.iterator(); iter.hasNext();) {
+			KeyValueTuple keyValueTuple = (KeyValueTuple) iter.next();
+
+			result += keyValueTuple.getKey().hashCode();
+			result
+				+= checkValueGet(keyValueTuple.getKey(), keyValueTuple.getValue())
+					.hashCode();
+
+		}
+
+		return result;
+	}
+
+COM:calculates a hashcode for a collection of keyValueTuples by iterating through them and calculating the hashcode for each key and value, and adding the results together

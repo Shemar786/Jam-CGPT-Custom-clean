@@ -1,0 +1,10 @@
+TDAT:     private void setCreated(OBEXElement file) {
+        try {
+            window.getCreatedTextField().setText("-");
+            window.getCreatedTextField().setText(format.format(file.getCreated()));
+        } catch (Exception exc) {
+            log.warn("Cannot set the formatted creation date", exc);
+        }
+    }
+
+COM:sets the created date of a file using an OBEXElement, and catches any exceptions that occur during the process

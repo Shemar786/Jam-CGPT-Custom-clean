@@ -1,0 +1,14 @@
+TDAT:   public int hashCode() {
+    int res = 23;
+    res = res * 37 + getStart();
+    res = res * 37 + getEnd();
+    if (getType() == null) {
+      res = res * 37;
+    } else {
+      res = res * 37 + getType().hashCode();
+    }
+
+    return res;
+  }
+
+COM:returns the hash code value for an object, using a combination of the object's start, end, and type values

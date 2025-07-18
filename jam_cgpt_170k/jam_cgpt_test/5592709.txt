@@ -1,0 +1,10 @@
+TDAT:   public void populateFields(String[] text) {
+    int i = 0;
+    while (i < this.numOfRows & i < text.length) {
+      this.fields[i].setText(text[i]);
+      this.fields[i].setToolTipText(text[i]);
+      i++;
+    }
+  }
+
+COM:populates text fields and their tooltips with values from a given string array

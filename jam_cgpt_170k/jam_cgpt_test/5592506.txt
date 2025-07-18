@@ -1,0 +1,12 @@
+TDAT:   public Reader getScanReader() throws wpException {
+    final Document doc = this.getDocument();
+    try {
+      final wpScanReader docReader = new wpScanReader(0, doc.getLength(), doc);
+      return docReader;
+    }
+    catch (IOException ioe) {
+      throw new wpException(ioe);
+    }
+  }
+
+COM:returns a document reader that can scan content, and throws a wpException if there is an IOException

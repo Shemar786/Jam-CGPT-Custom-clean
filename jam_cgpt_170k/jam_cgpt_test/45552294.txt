@@ -1,0 +1,13 @@
+TDAT:     public Text createInput(String label) {
+        Label prompt = new Label(panel, SWT.NONE);
+        prompt.setText(label);
+
+        Text answer = new Text(panel, SWT.BORDER);
+        GridData gd = new GridData(SWT.FILL, SWT.DEFAULT, true, false);
+        gd.widthHint = GuiConstants.WIDTH;
+        answer.setLayoutData(gd);
+
+        return answer;
+    }
+
+COM:creates an input field with a label attached to it

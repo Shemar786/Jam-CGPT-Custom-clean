@@ -1,0 +1,8 @@
+TDAT:     public void setKeyValue(XMLContextData data, Object toSet, String property, Object key, Object value) {
+        FieldSetter setter = getFieldSetter(property);
+        if (setter != null) {
+            setter.setKeyValue(data, toSet, key, value);
+        }
+    }
+
+COM:sets a key-value pair within an XML context data object using a specified property and value

@@ -1,0 +1,17 @@
+TDAT: 		private void setCopy(){
+			ProgressPair pair;
+			Iterator<Entry<String, ProgressPair>> itr = currentOperations.entrySet().iterator();
+			int done = 0;
+			int total = 0;
+			while(itr.hasNext()){
+				pair = itr.next().getValue();
+				done = done + pair.getDone();
+				total = total + pair.getTotal();
+			}
+			int result = (done*100)/total;
+			if(result>100) result = 100;
+			meter.setValue(result);
+			setFooterLabel("Copying... ("+Integer.toString(result)+"%)");
+		}	
+
+COM:calculates the progress of current operations, updates a progress meter and sets a footer label to indicate the current status of a copy

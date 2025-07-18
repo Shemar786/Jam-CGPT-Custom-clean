@@ -1,0 +1,19 @@
+TDAT: 	public void testCompare() {
+		double f = 123456.789;
+		Space s1 = base.times(f);
+		Space s2 = base.times(2.0 * f);
+		Space s3 = base.times(f);
+		assertTrue(s1.isEQ(s3));
+		assertTrue(s1.isGE(s3));
+		assertTrue(s1.isLE(s3));
+		assertFalse(s1.isEQ(s2));
+		assertFalse(s1.isGE(s2));
+		assertFalse(s2.isLE(s1));
+		assertFalse(s1.isNE(s3));
+		assertTrue(s2.isGT(s1));
+		assertTrue(s2.isGE(s1));
+		assertTrue(s1.isLT(s2));
+		assertTrue(s1.isLE(s2));
+	}
+
+COM:compares three Space objects using various comparison methods and asserts their expected equivalence or inequality

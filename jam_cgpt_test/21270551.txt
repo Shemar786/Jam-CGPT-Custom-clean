@@ -1,0 +1,13 @@
+TDAT:     protected XMPPConnection createConnection( String host, int port, String serviceName ) throws XMPPException {
+    	ConnectionConfiguration config;
+    	if (serviceName=="" || serviceName == null) 
+    		config = new ConnectionConfiguration(host, port);
+    	else
+    		config = new ConnectionConfiguration(host, port, serviceName);
+	//TODO: verify how the following statement works
+	config.setReconnectionAllowed(true);
+
+        return new XMPPConnection( config );
+    }
+
+COM:creates an XMPPConnection object using the specified host, port and service name and allows reconnection

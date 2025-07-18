@@ -1,0 +1,10 @@
+TDAT: 	public void setSigmaRx( double newSigmaRx) throws IllegalArgumentException, DimensionMismatchException {
+		if (this.dimension != 6)
+			throw new DimensionMismatchException(this.dimension + "D-Punkt hat keine X-Drehung");
+		if (newSigmaRx>0)
+			this.sigmaRx = newSigmaRx;
+		else
+			throw new IllegalArgumentException("Standardabweichung muss groesser Null sein " + newSigmaRx);
+	}
+
+COM:sets the standard deviation value for X-axis rotation and throws exceptions if the input is invalid

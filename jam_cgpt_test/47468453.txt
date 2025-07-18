@@ -1,0 +1,17 @@
+TDAT: 	private IBundle getBundleFromModel() {
+
+		// Do early exit checks
+		if (model != null && (model instanceof IBundlePluginModelBase)) {
+
+			IBundlePluginModelBase bundlePModel = (IBundlePluginModelBase) model;
+			IBundleModel bundleModel = bundlePModel.getBundleModel();
+
+			if (bundleModel != null) {
+				return bundleModel.getBundle();
+			}
+		}
+
+		return null;
+	}
+
+COM:returns an IBundle instance obtained from the model if it exists, otherwise returns null

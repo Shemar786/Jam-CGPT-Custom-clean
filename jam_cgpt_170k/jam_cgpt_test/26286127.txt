@@ -1,0 +1,14 @@
+TDAT:     public AbstractButton addProgressBar(int maxValue, boolean allowCancelButton) {
+        removeProgressBar();
+        progressBar = new JProgressBar(0, maxValue);
+        add(progressBar);
+        if(allowCancelButton) {
+            cancelButton = new ExtraWindow.CloseButton();
+            add(cancelButton);
+        }
+        else
+            cancelButton = null;
+        return cancelButton;
+    }
+
+COM:adds a progress bar with a specified maximum value and an optional cancel button to a GUI component and returns the cancel button

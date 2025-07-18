@@ -1,0 +1,14 @@
+TDAT:     public Object createObject(Attributes attributes) throws Exception {
+
+        String partnerLink = attributes.getValue(PARTNER_LINK);
+        String portType = attributes.getValue(PORT_TYPE);
+        String operation = attributes.getValue(OPERATION);
+        String variable = attributes.getValue(VARIABLE);
+        String faultName = attributes.getValue(FAULT_NAME);
+
+        return getElementFactory().createReply(
+                getStandardAttributes(attributes), partnerLink, portType,
+                operation, variable, faultName);
+    }
+
+COM:creates an object with given attributes and returns it, while throwing an exception if necessary

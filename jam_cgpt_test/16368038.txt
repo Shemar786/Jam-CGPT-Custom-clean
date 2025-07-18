@@ -1,0 +1,14 @@
+TDAT: 	public String getColumnText(Object obj, int index) {
+		IMarker marker = (IMarker) obj;
+		try {
+			if (marker.getType().equals(MarkerView.MARKER_ID)) {
+				return getColumnTextMarkerView(index, marker);
+			}
+			return getColumnTextMarkerDiagnostic(index, marker);
+		} catch (CoreException e) {
+			e.printStackTrace();
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+COM:retrieves the text value of a specified column for a given marker object

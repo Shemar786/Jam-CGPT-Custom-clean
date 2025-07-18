@@ -1,0 +1,17 @@
+TDAT: 	public void prependUnrolled(LinearQueue q) {
+		bulkMoveTest(q);
+		for (int i=0; !q.isEmpty(); i++) try {
+			Object o=q.removeFirst();
+			try {
+				this.addFirst(o);
+			} catch (RuntimeException re) {
+				q.addFirst(o);
+				throw re;}
+		} catch (RuntimeException re) {
+			try {
+				while (i-->0) q.addFirst(this.removeFirst());
+			} catch (RuntimeException bah) {
+				throw new RollbackError(re, bah);}
+			throw re;}}
+
+COM:pre-pends all elements from a LinearQueue to the front of the calling object, while providing rollback error handling

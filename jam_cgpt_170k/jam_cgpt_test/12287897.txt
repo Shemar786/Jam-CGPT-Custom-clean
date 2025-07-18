@@ -1,0 +1,9 @@
+TDAT:     private void fillTableModel(Object[][] dataSource) {
+        data = new Object[dataSource.length][COLUMN_NUMBER];
+        for (int i = 0; i < dataSource.length; i++) {
+            setValueAt(dataSource[i][MODULE_NAME_COLUMN], i, MODULE_NAME_COLUMN);
+            setValueAt(dataSource[i][INSTALLED_COLUMN] , i, INSTALLED_COLUMN);
+        }
+    }
+
+COM:fills a table model with data from a two-dimensional array

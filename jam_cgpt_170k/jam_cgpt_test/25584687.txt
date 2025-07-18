@@ -1,0 +1,15 @@
+TDAT:     public void removeAllBodiesAndJoints() {
+        GameObjectCollection bodies = getGameObjectCollection("Bodies");
+        while (bodies.size > 0) {
+            removeGameObject(bodies.gameObjects[0]);
+        }
+        
+        GameObjectCollection joints = getGameObjectCollection("Joints");
+        while (joints.size > 0) {
+            removeJoint((Joint) joints.gameObjects[0]);
+        }
+        
+        arbiters.clear();
+    }
+
+COM:removes all bodies and joints from a game object collection and clears the arbiters

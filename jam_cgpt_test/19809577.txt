@@ -1,0 +1,5 @@
+TDAT:     public String toString() {
+        return "CompassClassMapping: mappedClass=[" + mappedClass + "], root=[" + root + "], poly=[" + poly + "], extend=[" + extend + "], propertyMappings=[" + propertyMappings + "]";
+    }
+
+COM:returns a string representation of an object containing class mapping information for a compass index

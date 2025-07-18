@@ -1,0 +1,17 @@
+TDAT: 	public List getSubjects() {
+		if (this.subjects == null) {
+			this.subjects = new ArrayList();
+
+			File[] subjectFiles = cacheDir.listFiles(new XMLFileFilter());
+			for (int i = 0; i < subjectFiles.length; i++) {
+				String filename = subjectFiles[i].getName();
+				String subject = filename.substring(0, filename.length() - 4);
+				if (subject.length() > 0) {
+					this.subjects.add(subject);
+				}
+			}
+		}
+		return this.subjects;
+	}
+
+COM:returns a List of subjects after checking if the subjects are null, creating a new ArrayList, and then adding subjects from XML files in a cache directory

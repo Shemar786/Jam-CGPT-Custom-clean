@@ -1,0 +1,14 @@
+TDAT:     public void testGetLocation() {
+        System.out.println("getLocation");
+        
+        Event_DBImpl instance = new Event_DBImpl();
+        
+        Location_DBImpl expResult = null;
+        Location_DBImpl result = instance.getLocation();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the getLocation() method of the Event_DBImpl class and prints "getLocation" to the console

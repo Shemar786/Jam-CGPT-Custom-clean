@@ -1,0 +1,12 @@
+TDAT: 	protected void showSharedState() {
+		Set keys = this.sharedState.keySet();
+		prtln("\nSharedState (" + keys.size() + " keys)");
+		for (Iterator i = this.sharedState.keySet().iterator(); i.hasNext(); ) {
+			String key = (String) i.next();
+			Object value = this.sharedState.get(key);
+			prtln("\t" + key);
+		}
+		prtln("");
+	}
+
+COM:displays the keys and their values in a shared state data structure

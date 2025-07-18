@@ -1,0 +1,8 @@
+TDAT:     public void remove() {
+        // FIXME (magda) wlaciwie to powinna byc tez metoda mapy/jakiegos
+        // nadrzednego obiektu tego przejscia, ktora usunie je z mapy. choc
+        // jakbysmy trzymali parenta, to nie byloby problemu, bo w tej metodzie
+        // obiekt by sie odczepial od kolekcji parenta i gc() bo go usunelo
+    }
+
+COM:is a placeholder intended to be replaced by a proper method that removes an object from a map or a parent object that contains it

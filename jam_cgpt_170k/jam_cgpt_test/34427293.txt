@@ -1,0 +1,14 @@
+TDAT:     private void populateStatlessList() {
+        statlessResources = mergeStatlessResources();
+        SwingUtilities.invokeLater(new Runnable() {
+            @SuppressWarnings("synthetic-access")
+            @Override
+            public void run() {
+                statlessListModel.clear();
+                for (Wrapper wr : statlessResources)
+                    statlessListModel.addElement(wr);
+            }
+        });
+    }
+
+COM:populates a list of stateless resources by merging them and then updates the list model in a Swing UI thread

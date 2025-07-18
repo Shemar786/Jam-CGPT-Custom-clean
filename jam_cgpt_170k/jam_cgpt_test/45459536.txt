@@ -1,0 +1,18 @@
+TDAT: 	private JButton getJButton8() {
+		if (jButton8 == null) {
+			jButton8 = new JButton();
+			jButton8.setBounds(new Rectangle(345, 323, 125, 29));
+			jButton8.setText("Stop formatting");
+			jButton8.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					System.out.println("Stop formatting.");
+					if (process_formatdb != null) {
+						process_formatdb.destroy();
+					}
+				}
+			});
+		}
+		return jButton8;
+	}
+
+COM:returns a JButton that stops a formatting process and prints a message to the console when clicked

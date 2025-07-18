@@ -1,0 +1,23 @@
+TDAT:     public void parse(PushbackReader aReader) throws IOException {
+        int c = 0;
+
+        while (sb.length() < 30000) {
+            c = aReader.read();
+
+            if (c != -1 && c != '<') {
+                append((char)c);
+            } else {
+                break;
+            }
+        }
+
+        finish();
+
+        if (c == -1) {
+            return;
+        }
+
+        aReader.unread(c);
+    }
+
+COM:reads characters from a PushbackReader until it reaches a maximum length of 30000 or encounters a '<' character, then passes the appended string to another method and unread the last character if there is one

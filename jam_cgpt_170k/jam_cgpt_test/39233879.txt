@@ -1,0 +1,17 @@
+TDAT:     public void testInvokeTooLittleParameters() throws Exception {
+
+        transport.setRemoteService("ServiceOne");
+
+        call.setOperation("myOperation");
+        call.setReturnType(XMLType.XSD_STRING);
+
+        try {
+            call.invoke(new Object[] {});
+            // if no exception is thrown, this test fails
+            fail("Call with too little params must throw an Exception");
+        } catch (AxisFault e) {
+            // if we get to here, the test succeeded
+        }
+    }
+
+COM:tests the response of a remote service call if it's invoked with too little parameters

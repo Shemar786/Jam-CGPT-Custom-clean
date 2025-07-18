@@ -1,0 +1,13 @@
+TDAT: 	public void sort(List<T> list, String property) throws Exception {
+		if(list == null || list.size() == 0) return;
+		if(property == null || property.equals("")) return;
+		try{
+			GenericComparator<T> comparator = new GenericComparator<T>(property);
+			Collections.sort(list, comparator);
+		}catch(Exception e){
+			//ignore it!
+			logger.error(e.getMessage());
+		}
+	}
+
+COM:sorts a list of objects by a specified property using a generic comparator, and throws an exception if the list is empty or the property is null or empty

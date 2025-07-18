@@ -1,0 +1,14 @@
+TDAT: 	public boolean isPutBackComplete(){
+		final boolean isPutBackComplete;
+		if(isCurrentWeaponAmmunitionCountDisplayable())
+		    {final Node primaryWeaponNode=primaryHandWeaponContainer.getNode(weaponInUse);
+			 final double putBackYEnd=PUT_BACK_WEAPON_ORDINATE;
+			 //checks if the operation has completed
+			 isPutBackComplete=primaryWeaponNode.getTranslation().getY()==putBackYEnd;
+		    }
+		else
+			isPutBackComplete=true;
+		return(isPutBackComplete);
+	}
+
+COM:checks if a weapon has been put back into its container and returns a boolean value indicating whether the operation is complete or not

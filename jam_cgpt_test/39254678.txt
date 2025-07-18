@@ -1,0 +1,25 @@
+TDAT: 			public void finished() {
+				try {
+					System.out.println("Performing aggregation tests...");
+					test.run(((Integer)getValue()).intValue());
+					System.out.println("... done performing tests.");
+				}
+				catch (SQLException e) {
+					errors.add(new AssertionFailedError(e.getMessage()));
+					e.printStackTrace();
+				}
+				catch (AssertionFailedError e) {
+					errors.add(e);
+				}
+				finally {
+					db.closeConnection();
+					progressBar.disposeThis();
+					done = true;
+					
+					synchronized (this) {
+						notifyAll();
+					}
+				}
+			}
+
+COM:performs aggregation tests and handles any exceptions thrown, closes database connections, disposes of a progress bar, and sets a boolean flag to true

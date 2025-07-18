@@ -1,0 +1,12 @@
+TDAT: 	public int getFromCache( String url ) {
+		HashMap retTypes = (HashMap)
+			UserStateDirectoryBase.getUserSerializedObject( "state/urlTypes.dat" );
+		if ( ( retTypes == null ) || ( retTypes.get( url ) == null ) ) {
+			return RequestFriendly.URL_TYPE_UNKNOWN;
+		}
+		else {
+			return Integer.parseInt( (String) retTypes.get( url ) );
+		}
+	}
+
+COM:retrieves an integer value from a HashMap based on a specified URL key, and returns RequestFriendly.URL_TYPE_UNKNOWN if the key does not exist

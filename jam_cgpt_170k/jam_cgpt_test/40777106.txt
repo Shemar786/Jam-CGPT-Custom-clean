@@ -1,0 +1,15 @@
+TDAT: 	public String getXML(long handleId, String localFileName, String description, String id){
+		
+		StringBuffer buffer = new StringBuffer();
+		
+		buffer.append("<START_TRANSFER ");
+		buffer.append("handleId='" + handleId + "' ");
+		buffer.append("localFileName='" + localFileName + "' ");
+		buffer.append("description='" + description + "' ");
+		buffer.append("id='" + id + "' ");
+		buffer.append("/>");
+		
+		return buffer.toString();
+	}
+
+COM:generates an XML string with attributes for handleId, localFileName, description, and id

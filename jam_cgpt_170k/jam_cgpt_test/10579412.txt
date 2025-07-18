@@ -1,0 +1,11 @@
+TDAT:     private void setMessageId(Mail newMail, Mail originalMail) throws MessagingException {
+        String messageId = originalMail.getMessage().getMessageID();
+        if (messageId != null) {
+            newMail.getMessage().setHeader(RFC2822Headers.MESSAGE_ID, messageId);
+            if (isDebug) {
+                log("MESSAGE_ID restored to: " + messageId);
+            }
+        }
+    }
+
+COM:sets the message ID of a new email to the message ID of an original email if it exists

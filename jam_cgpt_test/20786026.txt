@@ -1,0 +1,17 @@
+TDAT:    public void initProjectView(String projectName) {
+      setTitle(GuiBundleTool.getBundle().getName(GuiBundleTool.KEY)
+            + org.sigtec.util.Constant.DASH_S + projectName);
+
+      if (!initialized) {
+         populateDialog();
+         if ((!first) || (!model.minimizeAsStartup())) {
+            setVisible(true);
+         }
+         else {
+            first = false;
+         }
+      }
+
+   }
+
+COM:initializes a project view by setting the title, populating the dialog, and making the view visible if certain conditions are met

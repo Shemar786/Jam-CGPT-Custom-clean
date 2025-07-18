@@ -1,0 +1,11 @@
+TDAT:     public void test_constructor_double() {
+        
+        MarkerModel m = new MarkerModel(56.3);
+        
+        assertEquals(null, m.getText());
+        assertEquals(56.3, m.getTime(), 0.01);
+        assertEquals(false, m.isTextDisplayed());
+        
+    }
+
+COM:tests the constructor of the MarkerModel class by creating a new instance with a double value and asserting that its text, time, and textDisplayed properties are as expected

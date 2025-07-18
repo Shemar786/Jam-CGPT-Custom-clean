@@ -1,0 +1,18 @@
+TDAT: 	public void addCatchPhi(final Block block) {
+		if (phis[cfg.preOrderIndex(block)] != null) {
+			return;
+		}
+
+		if (prototype instanceof LocalExpr) {
+			final LocalExpr target = (LocalExpr) prototype.clone();
+
+			final PhiCatchStmt phi = new PhiCatchStmt(target);
+			phis[cfg.preOrderIndex(block)] = phi;
+
+			if (SSA.DEBUG) {
+				System.out.println("  place " + phi + " in " + block);
+			}
+		}
+	}
+
+COM:adds a PhiCatchStmt to a specific block if it does not already contain one and if the prototype is an instance of LocalExpr

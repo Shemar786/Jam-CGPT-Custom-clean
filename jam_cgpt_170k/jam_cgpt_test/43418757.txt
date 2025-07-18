@@ -1,0 +1,15 @@
+TDAT: 	public GraphNode getCopy() {
+			
+		GraphNode nodeCopy = new GraphNode();
+		
+		String newID = new String (this.getId());
+		Point2D newPos = new Point2D.Double(0.0, 0.0);
+		newPos.setLocation(this.position.getX(), this.position.getY());
+		
+		nodeCopy.setId(newID);
+		nodeCopy.setPosition(newPos);
+		nodeCopy.setEncodedOntologyRepresentation(this.encodedOntologyRepresentation);
+		return nodeCopy;
+	}
+
+COM:creates and returns a copy of a GraphNode object with the same properties as the original object

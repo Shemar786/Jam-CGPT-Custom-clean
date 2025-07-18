@@ -1,0 +1,17 @@
+TDAT:     public boolean isLocal() {
+        final String hostname;
+        if (containsUserName()) {
+            hostname = extractHostname();
+        } else {
+            hostname = nodename;
+        }
+        final String fwkNodeHostname;
+        if (containsUserName(fwkNode)) {
+            fwkNodeHostname = extractHostname(fwkNode);
+        } else {
+            fwkNodeHostname = fwkNode;
+        }
+        return fwkNodeHostname.equals(hostname);
+    }
+
+COM:checks whether the hostname of the current machine matches the hostname of a specified framework node

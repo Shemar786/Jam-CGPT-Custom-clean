@@ -1,0 +1,13 @@
+TDAT: 	public ActionForward preCambio(ActionMapping mapping, ActionForm form,HttpServletRequest request, HttpServletResponse response)	throws Exception {
+		try {
+	
+            logger.debug("pantala previa de cambio de clave");
+            
+		} catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("msgError", e.getMessage());
+		}
+		return mapping.findForward("clave");
+	}
+
+COM:returns an ActionForward for the "clave" mapping while logging a message and catching and printing any exceptions

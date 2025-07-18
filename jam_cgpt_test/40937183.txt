@@ -1,0 +1,14 @@
+TDAT:     public double getThreeHourlyKP(AbsoluteDate date) {
+
+        double ap = getAp(date);
+        int i = 0;
+        for ( i= 0; ap>=apTab[i]; i++) {
+            if(i==apTab.length-1) {
+                i++;
+                break;
+            }
+        }
+        return kpTab[i-1];
+    }
+
+COM:calculates and returns the three-hourly Kp value for a given date using pre-defined arrays of Ap and Kp values

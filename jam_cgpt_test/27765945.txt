@@ -1,0 +1,18 @@
+TDAT:     public void testSetGetIdentifyingName() {
+        String name = "foo";
+        String name2 = "notFoo";
+        try {
+            
+            m_alt.setIdentifyingName( name );
+            
+            assertEquals( "foo", m_alt.getIdentifyingName() );
+            assertEquals( true, ( name2 != m_alt.getIdentifyingName() ) );
+            
+        } catch ( final Exception e) {
+            
+            fail( e.getMessage() );
+            
+        }
+    }
+
+COM:tests the functionality of the setIdentifyingName() and getIdentifyingName() methods in m_alt and ensures they behave as expected for the given input values

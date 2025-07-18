@@ -1,0 +1,13 @@
+TDAT:     private void commitStaticHeaders(long lastModified) {
+        if (!response.containsHeader("Cache-Control")) {
+            response.setHeader("Cache-Control", "public");
+        }
+        if (lastModified > 0) {
+            response.setDateHeader("Last-Modified", lastModified);
+        } else {
+            response.setDateHeader("Last-Modified",
+                                   System.currentTimeMillis());
+        }
+    }
+
+COM:sets the cache control and last modified headers of an HTTP response

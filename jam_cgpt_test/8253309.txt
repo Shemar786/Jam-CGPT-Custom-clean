@@ -1,0 +1,15 @@
+TDAT:     private void setViewpoint() {
+        Transform3D viewTrans = new Transform3D();
+        Transform3D eyeTrans = new Transform3D();
+
+        // put the View at the standard VRML default position 0,0,10
+        //Vector3f pos = new Vector3f(0, 0, 10);
+        Vector3f pos = new Vector3f(0, 0, 30);
+        eyeTrans.set(pos);
+        viewTrans.mul(eyeTrans);
+
+        // set the view transform
+        vpTransGroup.setTransform(viewTrans);
+    }
+
+COM:sets the viewpoint of a 3D scene by creating and applying Transform3D objects

@@ -1,0 +1,15 @@
+TDAT: 	public void modifyMaterial() {
+		setLOM(new LOM(itsLOM, true, true));
+		updateParentRelation();
+		for (Iterator iter = getChildrenIterator(); iter.hasNext();) {
+			PNode element = (PNode) iter.next();
+			if (element instanceof SelectionableLOM) {
+				// TODO manage relations !!!!!
+				// ((SelectionableLOM) element).detach();
+				((SelectionableLOM) element).modifyMaterial();
+
+			}
+		}
+	}
+
+COM:modifies the material properties of a parent object and recursively updates the properties of its selectable LOM children

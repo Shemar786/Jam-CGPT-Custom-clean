@@ -1,0 +1,8 @@
+TDAT:     protected String parseLine(String line) {
+        String newLine = line.substring(2, line.length()).trim();
+        if (newLine.endsWith("."))
+            newLine = newLine.substring(0, newLine.length() - 1);
+        return newLine;
+    }
+
+COM:takes in a string line, removes the first two characters and any extra spaces, and removes the period at the end if there is one, before returning the new string

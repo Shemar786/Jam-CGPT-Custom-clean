@@ -1,0 +1,10 @@
+TDAT:   public short readShort() throws IOException {
+    int one,two;
+    one=is.read(); // simulates unsigned byte behavior;
+    two=is.read();
+    pos+=2;
+    // add, then cast and return.
+    return (short)((two<<8)+one);
+  }
+
+COM:reads two bytes from an input stream and returns them as a short value, while taking into account unsigned byte behavior and handling any potential I/O errors

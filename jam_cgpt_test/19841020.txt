@@ -1,0 +1,20 @@
+TDAT:     public JSONArray findUsuarioByNome(JSONObject js) throws Exception {
+        try {
+            JSONArray ja = null;
+
+            dao = getDaoInstance();
+            dao.begin();
+
+            ja = ControleDePessoa.findUsuarioByNome(dao, js);
+
+
+            return ja;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            dao.close();
+        }
+    }
+
+COM:finds a JSONArray of usuarios by nome, using a JSONObject as a parameter and throwing an exception if an error occurs

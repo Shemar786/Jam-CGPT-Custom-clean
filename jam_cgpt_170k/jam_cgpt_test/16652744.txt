@@ -1,0 +1,17 @@
+TDAT:   public IndexSearcher getIndexSearcher() throws RegainException {
+    if (mIndexSearcher == null) {
+      if (!mWorkingIndexDir.exists()) {
+        checkForIndexUpdate();
+      }
+
+      try {
+        mIndexSearcher = new IndexSearcher(IndexReader.open(FSDirectory.open(mWorkingIndexDir)));
+      } catch (IOException exc) {
+        throw new RegainException("Creating index searcher failed", exc);
+      }
+    }
+
+    return mIndexSearcher;
+  }
+
+COM:returns an IndexSearcher object and updates the index if necessary

@@ -1,0 +1,7 @@
+TDAT: 	public String convertXML(String xml, ServletContext context) {
+		//return Dom4jUtils.localizeXml(xml.replaceFirst("<\\?xml.+version=.+encoding=.+\\?>", ""), "itemRecord");
+		// return Dom4jUtils.localizeXml(xml, "collectionRecord");
+		return Dom4jUtils.localizeXml(xml);
+	}
+
+COM:takes in an XML string and returns a localized version of it using the Dom4jUtils library

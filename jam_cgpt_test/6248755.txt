@@ -1,0 +1,17 @@
+TDAT: 	public void testDeleteLine() throws Exception{
+		long oldSequenceNo = 0;
+
+    	// User 1 deletes the first line
+		oldSequenceNo = service.deleteLine(documentHash,1,user1ID,
+			sequenceNo);
+		TestCase.assertEquals(++sequenceNo, service.getSequenceNo(
+			documentHash,0,1));
+
+    	// User 1 deletes the fourth line
+		oldSequenceNo = service.deleteLine(documentHash,4,user1ID,
+			sequenceNo);
+		TestCase.assertEquals(++sequenceNo, service.getSequenceNo(
+			documentHash,1,5));
+	}
+
+COM:tests the deletion of lines in a document by a specific user and checks the resulting sequence numbers of the document after deletion

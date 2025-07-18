@@ -1,0 +1,21 @@
+TDAT: 	public void testTwoOneCreate() throws Exception {
+		IRodinFile cty = createRodinFile("P/y.ctx");
+		createDependency(cty, "x");
+		createData(cty, "two");
+		cty.save(null, true);		
+		runBuilder();
+
+		IRodinFile ctx = createRodinFile("P/x.ctx");
+		createData(ctx, "one");
+		ctx.save(null, true);
+		
+		runBuilder(
+				"CSC extract /P/y.ctx",
+				"CSC run /P/y.csc",
+				"CSC extract /P/x.ctx",
+				"CSC run /P/x.csc",
+				"CSC run /P/y.csc"
+		);
+	}
+
+COM:creates two Rodin files, sets up a dependency between them, saves the files, runs a builder, and runs a set of commands on the files

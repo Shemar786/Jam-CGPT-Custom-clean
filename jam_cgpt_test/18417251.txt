@@ -1,0 +1,7 @@
+TDAT:     public List findAll(String letters) {
+        Query query = getQuery("select p from Patient as p where p.foreName like :pattern or p.surName like :pattern order by p.surName");
+        query.setParameter("pattern", letters + '%', Hibernate.STRING);
+        return query.list();  
+    }
+
+COM:takes a string input and returns a list of patients whose first or last name contains the input string, ordered by last name

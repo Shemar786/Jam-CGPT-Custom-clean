@@ -1,0 +1,18 @@
+TDAT:     public void launchAuto(boolean active) {
+        killAuto();
+        if (mSock != null) {
+            try {
+                mAuto = new AutomaticClusterManagementThread(this, mCluster
+                                                             .getClusterName(),
+                                                             active);
+            }
+            catch (Exception e) {
+                mAuto = new AutomaticClusterManagementThread(this, active);
+            }
+            if (mAuto != null) {
+                mAuto.start();
+            }
+        }
+    }
+
+COM:launches an automatic cluster management thread with the specified cluster name and activity, if the socket is not null

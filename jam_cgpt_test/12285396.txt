@@ -1,0 +1,13 @@
+TDAT: 	public Browser string2browser(final String s) throws ClassNotFoundException {
+		Browser out = null;
+		final Class<?> c = Class.forName("org.romulus.test.Browser");
+		final Browser[] enumConstants = (Browser[]) c.getEnumConstants();
+		for (int i = 0; i < enumConstants.length; i++) {
+			if (enumConstants[i].toString().equals(s)) {
+				out = enumConstants[i];
+			}
+		}
+		return out;
+	}
+
+COM:takes a String argument and returns a Browser object by converting the string to an enum constant

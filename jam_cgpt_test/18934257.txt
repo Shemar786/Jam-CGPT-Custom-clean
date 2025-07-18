@@ -1,0 +1,14 @@
+TDAT: 	public void write(byte[] buf, int off, int len) throws IOException {
+		long tm=System.currentTimeMillis();
+		out.write(buf,off,len);
+		tm+=Math.round(nSpB*len)-System.currentTimeMillis();
+		int ns=(int) (tm % SlowInputStream.nsPms);
+		tm/=SlowInputStream.nsPms;
+		try {
+			if (tm>0) Thread.sleep(tm,ns);
+		} catch (InterruptedException ie) {
+			InterruptedIOException iie=new InterruptedIOException();
+			iie.bytesTransferred=len;
+			throw iie;}}
+
+COM:writes a byte array to an output stream, and then sleeps for a certain amount of time to simulate a slow input stream, while handling any potential interruptions

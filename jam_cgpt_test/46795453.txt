@@ -1,0 +1,11 @@
+TDAT: 	protected LinkedList getSignatureParamsOfDocOffsetMethod(){
+		LinkedList returnList = new LinkedList();
+		HashMap emptyStringAdditionalMap = new HashMap();
+		HashMap esl = this.cpc.getMethodSignatureElements();
+		emptyStringAdditionalMap.put("EmptyStringMethods", CCAdministration.getInstance().
+				  buildTrieForExternalList(esl));
+		returnList.addAll(searchInTries(wordToComplete, emptyStringAdditionalMap, false));
+		return returnList;
+	}
+
+COM:returns a linked list of signature parameters for a document offset method

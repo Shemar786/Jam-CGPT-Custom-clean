@@ -1,0 +1,13 @@
+TDAT:     public void doUnFixColumn(int col) {
+
+        TableColumn fixedColumn = fixedTable.getColumnModel().getColumn(col);
+        int actualCol = fixedColumn.getModelIndex();
+
+        fixedTable.getColumnModel().removeColumn(fixedColumn);
+        main.getColumnModel().addColumn(mainColumnModels[actualCol]);
+        
+        showFields.addjustHiddenColumns(col, 1, Integer.MAX_VALUE);
+        correctFixedSize();
+    }
+
+COM:removes a fixed column from a table, adds the corresponding column to the main table, adjusts hidden columns, and corrects the fixed size

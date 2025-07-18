@@ -1,0 +1,13 @@
+TDAT: 	public void valueChanged(TreeSelectionEvent e) {
+		DefaultMutableTreeNode node = (DefaultMutableTreeNode)payloadTree.getLastSelectedPathComponent();
+		if (node == null || !node.isLeaf())
+			return;
+		payload = node.getUserObject().toString();
+		while(node.getParent() != node.getRoot()){
+			node = (DefaultMutableTreeNode)node.getParent();
+			payload = node.getUserObject() + "/" + payload;
+		}
+		showOptions();
+	}
+
+COM:sets the payload based on the user-selected node in a tree and shows relevant options

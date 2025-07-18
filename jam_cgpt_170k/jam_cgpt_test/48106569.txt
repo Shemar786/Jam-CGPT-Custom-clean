@@ -1,0 +1,9 @@
+TDAT:     public char getOriginal(int seq, int site) {
+        char ch = get(seq, site);
+        if (!hasAmbigStates() || ch != getFormat().getMissing() || !replacedStates.hasEntry(seq, site))
+            return ch;
+        else
+            return (replacedStates.getString(seq, site).charAt(0));
+    }
+
+COM:returns the original character from a specific sequence and site, accounting for replaced ambiguous states if applicable

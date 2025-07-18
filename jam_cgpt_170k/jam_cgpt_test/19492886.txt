@@ -1,0 +1,17 @@
+TDAT: 	protected void addSkipPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SkipNode_skip_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SkipNode_skip_feature", "_UI_SkipNode_type"),
+				 AtomicitydecompositionPackage.Literals.SKIP_NODE__SKIP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to the item property descriptors list for a skip node

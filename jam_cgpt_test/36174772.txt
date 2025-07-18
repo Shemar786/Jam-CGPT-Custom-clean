@@ -1,0 +1,11 @@
+TDAT:   public ResponseEvent set(PDU pdu, Target target) {
+    pdu.setType(PDU.SET);
+    try {
+      return send(pdu, target);
+    }
+    catch (IOException ex) {
+      return new ResponseEvent(this, null, pdu, null, target, ex);
+    }
+  }
+
+COM:sets the type of PDU and sends it to a target, returning a response event or catching an IOException and returning a new response event

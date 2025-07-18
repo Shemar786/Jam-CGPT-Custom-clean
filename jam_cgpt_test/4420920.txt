@@ -1,0 +1,10 @@
+TDAT:     public void sendMessage(String msg) throws IOException {
+        byte[] bytes = new String(msg).getBytes();
+        int len = bytes.length;
+
+        OutputStream out = this.getOutputStream(); // make sure there is a stream
+        out.write(len); // length first
+        out.write(bytes); // then the message itself
+    }
+
+COM:sends a message as bytes over an output stream, preceded by its length, and throws an IOException if the output stream is not available

@@ -1,0 +1,10 @@
+TDAT:     public File exportAsXMLFile(Document doc, String fileName) throws IOException {
+        File file = new File(fileName);
+		OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file), this.encoding);
+        serializeNode(doc, writer, this.indent);
+        writer.flush();
+        writer.close();
+		return file;
+    }
+
+COM:exports a Document object as an XML file to a specified file location

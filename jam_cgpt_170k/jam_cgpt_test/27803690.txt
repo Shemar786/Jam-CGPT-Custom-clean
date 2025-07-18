@@ -1,0 +1,19 @@
+TDAT:   protected void updateTargetPointView() {
+
+     if ( target instanceof ArrowNode ) {
+
+
+       targetPoint.setLocation( ( ( ArrowNode )target).getInPort().getX(),
+                                ( ( ArrowNode )target).getInPort().getY()
+                                );
+      
+      targetPoint = ( ( PNodeView )target).localToGlobal(targetPoint);
+    
+    } else {
+
+      super.updateTargetPointView();
+    }
+
+  }
+
+COM:updates the view of a target point based on whether it is an instance of ArrowNode or not, and invokes the parent's method if it is not an ArrowNode

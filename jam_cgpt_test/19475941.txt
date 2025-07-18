@@ -1,0 +1,18 @@
+TDAT: 	private IErrorMessageReporter getErrorReporter() {
+		return new IErrorMessageReporter(){
+			/* (non-Javadoc)
+			 * @see org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea.IErrorMessageReporter#reportError(java.lang.String)
+			 */
+			public void reportError(final String errorMessage, boolean infoOnly) {
+				setErrorMessage(errorMessage);
+				boolean valid = errorMessage == null;
+				if(valid) {
+					valid = validatePage();
+				}
+
+				setPageComplete(valid);
+			}
+		};
+	}
+
+COM:returns an instance of the interface IErrorMessageReporter that reports an error message and updates the validity state of a page

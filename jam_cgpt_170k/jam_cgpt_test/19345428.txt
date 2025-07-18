@@ -1,0 +1,13 @@
+TDAT: 	public Object getHexValueAt(int layoutIdx, int row, int col) {
+	    col = getRealColumn(layoutIdx, col);
+
+		if ((row >= getRowCount())
+		|| (col < 0)
+		|| (col >= layout.getRecord(layoutIdx).getFieldCount())) {
+			return null;
+		}
+		return lines.get(row).getFieldHex(layoutIdx, col);
+
+	}
+
+COM:returns the hexadecimal value of a field at a specific row and column index in a layout, while accounting for the layout's real column index

@@ -1,0 +1,14 @@
+TDAT: public Object set(final K1 firstKey, final K2 secondKey, final V value) {
+	// existence check on inner map
+	HashMap<K2, V> innerMap = map.get(firstKey);
+	
+	if( innerMap == null ) {
+		// no inner map, create it
+		innerMap = new HashMap<K2, V>();
+		map.put(firstKey, innerMap);
+	}
+	
+	return innerMap.put(secondKey, value);
+}
+
+COM:sets a value in a nested HashMap based on two keys, creating the inner map if necessary

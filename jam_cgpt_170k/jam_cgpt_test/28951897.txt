@@ -1,0 +1,13 @@
+TDAT:     public CodeSystem getCodeValue(String name) {
+        Field field = getField(name);
+        if (field == null)
+            return null;
+        else if (field.getType() != null && field.getType().equalsIgnoreCase("Code"))
+                return (CodeSystem)field.getValueObject();
+        else {
+            logWrongTypeWarningMessage(field.getName(), "Code");
+            return null;
+        }
+    }
+
+COM:retrieves a CodeSystem object based on the provided name and returns it, or returns null if the object does not exist or has the wrong type

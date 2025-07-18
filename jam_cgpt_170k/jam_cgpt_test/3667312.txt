@@ -1,0 +1,17 @@
+TDAT:     public void setTickPositionLeading(boolean tickPositionLeading) {
+        
+        // store the old value of tickPositionLeading
+        boolean oldTickPositionLeading = m_scale.isTickPositionLeading();
+        
+        // set the new value of tickPositionLeading
+        m_scale.setTickPositionLeading(tickPositionLeading);
+        
+        // fire a PropertyChangeEvent
+        firePropertyChange(
+            PROPERTY_TICKPOSITIONLEADING, 
+            oldTickPositionLeading, tickPositionLeading
+        );
+        
+    }
+
+COM:sets the tick position of a scale and fires a PropertyChangeEvent

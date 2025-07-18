@@ -1,0 +1,10 @@
+TDAT:     private void setupDefaultViewList() {
+        defaultViewList = new ArrayList(7);
+        defaultViewList.add(SQLEXPLORER_CONNECTIONS);
+        defaultViewList.add(SQLEXPLORER_DBSTRUCTURE);
+        defaultViewList.add(SQLEXPLORER_DBDETAIL);
+        defaultViewList.add(SQLEXPLORER_SQLRESULT);
+        defaultViewList.add(SQLEXPLORER_SQLHISTORY);
+    }
+
+COM:sets up a default list of views for a SQL explorer application

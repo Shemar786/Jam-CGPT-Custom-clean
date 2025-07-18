@@ -1,0 +1,17 @@
+TDAT: 	private SourceLocation parseSourceLocation(String text) {
+		String path;
+		try {
+			text = text.trim();
+			int commaIndex = text.lastIndexOf(',');
+			if (commaIndex == -1)
+				return new SourceLocation(new Path(text));
+
+			int atLoc = text.indexOf('@');
+			path = (atLoc == -1) ? text.substring(0, commaIndex) : text.substring(atLoc + 1, commaIndex);
+		} catch (RuntimeException e) {
+			return null;
+		}
+		return new SourceLocation(new Path(path));
+	}
+
+COM:parses a text string to create a source location object, which includes a path

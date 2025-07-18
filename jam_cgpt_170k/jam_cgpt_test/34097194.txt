@@ -1,0 +1,16 @@
+TDAT: 	public static final SetOperation ADDED_WARNINGS = new SetOperation(){
+		public SortedBugCollection perform(Set<BugInstance> result,
+				SortedBugCollection origCollection, SortedBugCollection newCollection) {
+			result.addAll(newCollection.getCollection());
+
+			// Get shared instances
+			List<BugInstance> inBoth = getSharedInstances(result, origCollection);
+
+			// Remove the shared instances from the result
+			removeBugInstances(result, inBoth);
+
+			return newCollection;
+		}
+	};
+
+COM:performs a set operation that adds warnings to a result set while removing shared instances from the original collection

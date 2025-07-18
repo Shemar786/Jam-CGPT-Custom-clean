@@ -1,0 +1,16 @@
+TDAT: public void testSupportsMaintenance() {
+    System.out.println("testSupportsMaintenance");
+    try {
+        boolean b = azMgr.supportsMaintenance();
+        if (b) {
+            fail("should NOT supportMaintenance");
+        } else {
+            System.out.println("does not support Maintenance");
+        }
+    } catch (AuthorizationException oe) {
+        fail("AuthException:"+oe.getMessage());
+        
+    }
+}
+
+COM:tests whether the authorization manager supports maintenance and prints the results

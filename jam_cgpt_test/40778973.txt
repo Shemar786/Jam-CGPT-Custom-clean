@@ -1,0 +1,17 @@
+TDAT: 	public void redistributeDeliveredWorker(List<IResponseTO> responses, LocalAllocableWorker allocableWorker, LocalWorker localWorker) {
+		
+		Request suitableRequestForWorker = DefaultAllocator.getInstance().getRequestForWorkerSpec(
+				allocableWorker.getWorkerSpec());
+		
+		if(suitableRequestForWorker == null){
+			StopWorkingResponseTO to = new StopWorkingResponseTO();
+			to.setWmAddress(allocableWorker.getWorkerAddress());
+			
+			responses.add(to);
+			return;
+		}
+		
+		allocateRequestToIdleWorker(responses, allocableWorker, suitableRequestForWorker, localWorker);
+	}
+
+COM:redistributes a delivered worker to a suitable request or stops working if no suitable request is found

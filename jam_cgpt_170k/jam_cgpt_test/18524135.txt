@@ -1,0 +1,14 @@
+TDAT: 	public Select getSelect(String aName) {
+	    Select theSelect = null;
+	    ListIterator theListIterator = getSelects().listIterator();
+	    while (theListIterator.hasNext()) {
+            Select theNextSelect = (Select) theListIterator.next();
+            if(theNextSelect.getName().equals(aName)) {
+                theSelect = theNextSelect;
+                break;
+            }
+        }
+	    return theSelect;
+	}
+
+COM:returns a Select object by searching for a specific name within a list of Select objects

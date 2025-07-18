@@ -1,0 +1,11 @@
+TDAT:     private void dump(OutputStream s, byte[] b, int offset, int len) {
+        try {
+            if (s != null) {
+                s.write(b, offset, len);
+            }
+        } catch (IOException x) {
+            LOG.warn("Couldn't write incoming bytes to input snooper.", x);
+        }
+    }
+
+COM:writes a specified portion of a byte array to an output stream, catching and logging any IOException that may occur

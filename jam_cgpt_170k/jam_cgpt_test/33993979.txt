@@ -1,0 +1,17 @@
+TDAT: 	protected void addOrientationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BorderLayoutGroup_orientation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BorderLayoutGroup_orientation_feature", "_UI_BorderLayoutGroup_type"),
+				 UiPackage.Literals.BORDER_LAYOUT_GROUP__ORIENTATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the orientation attribute of a BorderLayoutGroup object

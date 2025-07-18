@@ -1,0 +1,11 @@
+TDAT: 	private void refreshAttributes() {
+		MBeanAttributeInfo[] at = mBeanInfo.getAttributes();
+		setMBeanAttributes(new HashMap());
+
+		for (int i = 0; i < at.length; i++) {
+			Attribute attribute = new Attribute(at[i], this);
+			getMBeanAttributes().put(attribute.getName(), attribute);
+		}
+	}
+
+COM:refreshes the attributes of a Java MBean by getting the attribute info, setting new attributes using a HashMap, and adding them to the MBean

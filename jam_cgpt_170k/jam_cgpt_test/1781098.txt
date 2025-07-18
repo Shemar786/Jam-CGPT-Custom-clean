@@ -1,0 +1,10 @@
+TDAT:         protected boolean isCookieAttribute( String stringLowercase ) {
+            return stringLowercase.equals("path") ||
+                   stringLowercase.equals("domain") ||
+                   stringLowercase.equals("expires") ||
+                   stringLowercase.equals("comment") ||
+                   stringLowercase.equals("max-age") ||
+                   stringLowercase.equals("version");
+        }
+
+COM:checks if a given string matches any of the predefined cookie attribute values and returns a boolean value

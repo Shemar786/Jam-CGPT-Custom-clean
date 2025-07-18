@@ -1,0 +1,18 @@
+TDAT: 	private ASTInterpreter constructInterpreter(String input) throws Exception {
+		Environment environment = new Environment(null);
+		environment.setExecutionPhase(TargetMethodExecutionPhase.INVOCATION);
+		environment.setTargetMethod(Object.class.getMethods()[0]);
+		environment.setTargetObject(new Object());
+
+		List<IPlaceholderResolver> resolverList = new ArrayList<IPlaceholderResolver>();
+		resolverList.add(new ThreadIdPlaceholderResolver());
+		resolverList.add(new SumPlaceholderResolver());
+
+		PlaceholderScriptParser parser = new PlaceholderScriptParser(input);
+		ScriptNode scriptNode = parser.parse();
+
+		return new ASTInterpreter(scriptNode, resolverList, environment);
+
+	}
+
+COM:takes a string input, constructs an interpreter with a script node and a list of placeholder resolvers, and returns the interpreter

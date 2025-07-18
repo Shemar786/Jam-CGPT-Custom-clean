@@ -1,0 +1,17 @@
+TDAT: 	private void resetTacho(JButton b) {
+		int motor = -1;
+		
+		for (int i = 0; i < 3; i++) {
+			if (b == resetButtons[i]) motor = i;
+		}
+		
+		if (nxtCommand == null) return;
+		try {
+			nxtCommand.resetMotorPosition(motor, false);
+			tachos[motor].setText("      " + nxtCommand.getTachoCount(motor));
+		} catch (IOException ioe) {
+			showMessage("IO Exception resetting motor");
+		}
+	}
+
+COM:resets the tachometer position of a motor connected to a NXT robot, based on which button was pressed

@@ -1,0 +1,9 @@
+TDAT:   public void dump() {
+    System.out.println("PPP Packet");
+    System.out.println("- protocol 0x" + Integer.toHexString(this.protocol));
+    System.out.println("- length " + this.len);
+    System.out.println("- data");
+    ArrayUtils.output(this.data, this.off, this.len);
+  }
+
+COM:prints information about a PPP packet including its protocol, length, and data

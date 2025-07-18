@@ -1,0 +1,20 @@
+TDAT: 	public void update() {
+		TreeViewer viewer = getTreeViewer();
+		if (viewer != null) {
+			Control control = viewer.getControl();
+			if (control != null && !control.isDisposed()) {
+				viewer.removeSelectionChangedListener(this);
+				control.setRedraw(false);
+				viewer.setInput(input);
+//				viewer.expandAll();
+				control.setRedraw(true);
+                
+                int caret = editor.getCaretOffset();
+                selectSegment(caret, true);
+				
+				viewer.addSelectionChangedListener(this);
+			}
+		}
+	}
+
+COM:updates a TreeViewer by setting its input, selecting a segment, and redrawing the associated control

@@ -1,0 +1,23 @@
+TDAT: 	private Node findNode(Node node) {
+		final Stack stack = new Stack();
+
+		// Find the child of the root element.
+		while (node.parent.child == null) {
+			stack.push(node);
+			node = node.parent;
+		}
+
+		// Do path compression on the way back down.
+		final Node rootChild = node;
+
+		while (!stack.empty()) {
+			node = (Node) stack.pop();
+			node.parent = rootChild;
+		}
+
+		Assert.isTrue(rootChild.parent.child != null);
+
+		return rootChild.parent;
+	}
+
+COM:performs path compression on a Node object in a tree structure

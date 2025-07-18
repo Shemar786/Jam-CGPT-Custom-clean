@@ -1,0 +1,14 @@
+TDAT: 	public String attrFieldToString() {
+		String strResult = "";
+
+		for(int i = getHeight() - 1; i >= Math.max(-1, getHighestBlockY()); i--) {
+			strResult += attrRowToString(getRow(i));
+		}
+		while(strResult.endsWith("0/0;")) {
+			strResult = strResult.substring(0, strResult.length() - 4);
+		}
+
+		return strResult;
+	}
+
+COM:returns a string representation of the attributes in a field

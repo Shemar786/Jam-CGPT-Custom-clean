@@ -1,0 +1,18 @@
+TDAT: 	public void putPiece(Piece p){
+
+		int x = 0;
+		int y = 0;
+		for(int c = 0; c < 4; c++){
+			Point component = p.getComponent(c);
+			x = component.x;
+			y = component.y;
+			
+			if( x >= 0 && x < width && y >= 0 && y < height ){
+				data[x+y*width] = p.getType()+1;
+				//min is needed because you can slide pieces under other pieces
+				remain[x] = Math.min(y, remain[x]);
+			}
+		}
+	}
+
+COM:places a Piece object on a game board by updating the data grid and tracking the minimum remaining height of each column

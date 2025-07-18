@@ -1,0 +1,20 @@
+TDAT: 	public void testVariant_09_bug2689872() throws Exception {
+		IMachineRoot mac = createMachine("mac");
+
+		setConvergent(addEvent(mac, "evt"));
+		addInitialisation(mac);
+		addVariant(mac, "{x ∣ x /= 0}");
+
+		saveRodinFileOf(mac);
+		
+		runBuilder();
+
+		ISCMachineRoot file = mac.getSCMachineRoot();
+
+		containsVariant(file, emptyEnv);
+
+		hasMarker(mac.getVariants()[0], EventBAttributes.EXPRESSION_ATTRIBUTE,
+				ParseProblem.LexerError, "/");
+	}
+
+COM:tests for a specific bug in the Rodin platform related to the expression attribute of variants in Event-B models

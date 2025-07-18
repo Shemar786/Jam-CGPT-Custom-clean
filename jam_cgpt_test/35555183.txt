@@ -1,0 +1,20 @@
+TDAT: 	public void getAlarmStatics() {
+
+		if (jbnDay.isSelected()) {
+			get1DayAlarmStatics();
+		} else if (jbnMonth.isSelected()) {
+			get1MonthAlarmStatics();
+		} else {
+			get1YearAlarmStatics();
+		}
+
+		if (modelAlarm.getRowCount() == 0) {
+			pnlResult.updateMessage(ErrorInspect.getErrorMessage(ErrorInspect.NO_DATA));
+		} else {
+			pnlResult.updateMessage(ErrorInspect.getErrorMessage(ErrorInspect.SUCCESS));
+		}
+
+		return;
+	}
+
+COM:retrieves alarm statistics for a selected time period and updates a message on the result panel based on whether data was found or not

@@ -1,0 +1,13 @@
+TDAT:     public I_JoHost getHost(String aHostname) {
+        if (aHostname == null) {
+            aHostname = "*";
+        }
+        I_JoHost theHost = (I_JoHost)hosts.get(aHostname);
+        if (theHost == null) {
+            // try jokerhost
+            theHost = (I_JoHost)hosts.get("*");
+        }
+        return theHost;
+    }
+
+COM:returns the I_JoHost object associated with a given hostname, or returns the object associated with the wildcard hostname if the given hostname is null or not found

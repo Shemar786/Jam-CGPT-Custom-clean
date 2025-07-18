@@ -1,0 +1,24 @@
+TDAT: 	private JFileChooser getFileChooser() {
+		if (fc == null) {
+			fc = new JFileChooser();
+			fc.setFileFilter(new FileFilter() {
+				@Override
+				public boolean accept(File f) {
+					if (f.isDirectory() 
+							|| f.getName().endsWith(".tsv") 
+							|| f.getName().endsWith(".TSV")) {
+						return true;
+					} else {
+						return false;
+					}
+				}
+				@Override
+				public String getDescription() {
+					return "*.tsv Tab-separated values";
+				}
+			});
+		}
+		return fc;
+	}
+
+COM:returns a JFileChooser object with a file filter that accepts only files with the .tsv or .TSV extension

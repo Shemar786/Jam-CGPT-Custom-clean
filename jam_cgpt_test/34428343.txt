@@ -1,0 +1,14 @@
+TDAT:     private JMenuItem informationMenu(final Component comp, final String text) {
+        JMenuItem m = new JMenuItem("Information");
+        m.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e1) {
+                JOptionPane.showMessageDialog(comp,
+                        SWGSchematicsManager.informationText(text),
+                        "Information", JOptionPane.PLAIN_MESSAGE);
+            }
+        });
+        return m;
+    }
+
+COM:creates a JMenuItem that, when clicked, displays a message dialog box showing the information text passed as a parameter

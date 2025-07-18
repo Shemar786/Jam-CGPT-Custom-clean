@@ -1,0 +1,17 @@
+TDAT: 	private Message saveBookHandler(Object value) throws Exception {
+		if (value instanceof Book) {
+			Book book = (Book) value;
+			Message message = new Message(Message.SAVE_BOOK_RESPOND, null);
+			if (dataAccess.saveBook(book)) {
+				printToLog("Saving book secceed");
+				message.setValue(Message.SUCCEED);
+			} else {
+				printToLog("Saving book didn't secceed");
+				message.setValue(Message.FAIL);
+			}
+			return message;
+		}
+		throw new NotImplementedException();
+	}
+
+COM:saves a book object and returns a message indicating whether or not the process succeeded, and throws an exception if the input value is not an instance of a book

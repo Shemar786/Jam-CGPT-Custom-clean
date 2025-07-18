@@ -1,0 +1,8 @@
+TDAT:     private void createRelations(HashMap<PairKey, Integer> map) {
+        for (PairKey key : map.keySet()) {
+            ONDEXRelation r = graph.getFactory().createRelation(key.from(), key.to(), rtFeat, etCmpd);
+            r.createAttribute(atPaths, map.get(key), false);
+        }
+    }
+
+COM:creates relations between PairKeys in a HashMap and assigns an attribute to each relation

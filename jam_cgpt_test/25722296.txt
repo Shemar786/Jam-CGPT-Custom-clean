@@ -1,0 +1,17 @@
+TDAT: 	protected void invokeCalculators() {
+		for (Iterator<ICalculator> i = getCalculators().iterator(); i.hasNext();) {
+			if (metricsInterruptus()) {
+				return;
+			}
+			ICalculator c = i.next();
+			try {
+				c.calculate(this);
+			} catch (OutOfMemoryError m) {
+				throw m;
+			} catch (Throwable e) {
+				Log.logError("Error running calculators for " + getJavaElement().getHandleIdentifier(), e);
+			}
+		}
+	}
+
+COM:invokes a list of calculators to perform calculations, handling different exceptions that may occur during the process

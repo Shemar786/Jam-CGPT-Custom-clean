@@ -1,0 +1,13 @@
+TDAT: 	public void testCreateNewChildRoot() throws Exception {
+		checkEmpty(root);
+		final NamedElement e1 = createNewNEPositive(root, null);
+		checkEmptyChildren(root, e1);
+		final NamedElement e3 = createNewNEPositive(root, null);
+		checkEmptyChildren(root, e1, e3);
+		final NamedElement e0 = createNewNEPositive(root, e1);
+		checkEmptyChildren(root, e0, e1, e3);
+		final NamedElement e2 = createNewNEPositive(root, e3);
+		checkEmptyChildren(root, e0, e1, e2, e3);
+	}
+
+COM:tests the creation of new child elements with specific conditions, ensuring that they are empty and in the correct order

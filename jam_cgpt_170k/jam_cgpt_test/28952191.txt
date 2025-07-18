@@ -1,0 +1,13 @@
+TDAT: 	public boolean hasLocalUniqueId(boolean allowCrossReference) {
+		if (localId != null) {
+			// If we know it, say so
+			return true;
+		} else if (allowCrossReference) {
+			// If we don't know it, see if we can look it up
+			return xrefPatientId(true, null, null);
+		} else {
+			return false;
+		}
+	}
+
+COM:checks if there is a local unique ID and returns true if it exists, or attempts to look it up if allowed and returns the result, or returns false if not found

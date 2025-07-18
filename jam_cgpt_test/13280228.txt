@@ -1,0 +1,14 @@
+TDAT: 	public void paintComponent(Graphics g) {
+		// check if the height has changed
+		if (oldheight != this.getHeight()) {
+			// the height has changed, we must adjust the retractbutton height.
+			oldheight = this.getHeight();
+			retractButton.setBounds(0, 0, RETRACT_BUTTON_WIDTH, this
+					.getHeight());
+		}
+		viewNameButton.setBackground(this.getBackground());
+		super.paintComponent(g);
+
+	}
+
+COM:adjusts the height of the retract button based on changes to the overall height of the component and sets the background of the viewNameButton before calling the superclass's paintComponent method

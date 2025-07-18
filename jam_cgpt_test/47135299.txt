@@ -1,0 +1,14 @@
+TDAT:     private String implode(String[] array, String separator) {
+        String str = "";
+        int i = 0;
+        while(i < array.length - 1) {
+            str += array[i] + separator;
+            i++;
+        }
+        if(i < array.length) {
+            str += array[i];
+        }
+        return str;
+    }
+
+COM:takes an array of strings and a separator as input and combines all elements into a single string separated by the specified separator

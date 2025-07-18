@@ -1,0 +1,17 @@
+TDAT:   public int getRowCount() {
+    if( this.constituent == null )
+      return 0;
+
+    int rowCount = 0;
+    Iterator i = this.constituent.getAttributes().values().iterator();
+    while( i.hasNext() )
+    {
+      BelAttribute attr = (BelAttribute) i.next();
+      if( attr.isVisible() )
+        rowCount++;
+    }
+
+    return rowCount;
+  }
+
+COM:retrieves the number of visible attributes from the constituent

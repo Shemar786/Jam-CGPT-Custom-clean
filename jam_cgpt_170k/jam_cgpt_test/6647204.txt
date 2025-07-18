@@ -1,0 +1,23 @@
+TDAT: 	public Set getAllPortletModes() {
+		Set allPortletModes = new TreeSet();
+
+		Iterator itr1 = _portletModes.entrySet().iterator();
+
+		while (itr1.hasNext()) {
+			Map.Entry entry = (Map.Entry)itr1.next();
+
+			Set mimeTypeModes = (Set)entry.getValue();
+
+			Iterator itr2 = mimeTypeModes.iterator();
+
+			while (itr2.hasNext()) {
+				String portletMode = (String)itr2.next();
+
+				allPortletModes.add(portletMode);
+			}
+		}
+
+		return allPortletModes;
+	}
+
+COM:returns a Set of all available portlet modes by iterating through a map of portlet modes and adding them to a TreeSet

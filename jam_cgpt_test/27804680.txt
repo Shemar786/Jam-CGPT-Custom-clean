@@ -1,0 +1,14 @@
+TDAT:   protected void setRootGraph ( ColtRootGraph root_graph ) {
+    if( rootGraph != null ) {
+      if( rootGraph == root_graph ) {
+        return;
+      }
+      throw new IllegalStateException(
+        "Once the rootGraph is set it may not be re-set."
+      );
+    }
+    rootGraph = root_graph;
+    rootGraph.addRootGraphChangeListener( this );
+  } // setRootGraph( ColtRootGraph )
+
+COM:sets the root graph for a ColtRootGraph object and throws an exception if the root graph has already been set

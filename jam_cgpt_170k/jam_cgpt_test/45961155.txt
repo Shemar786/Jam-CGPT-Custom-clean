@@ -1,0 +1,14 @@
+TDAT:   public boolean hasHealthcareType(String healthcareType) {
+    boolean result = false;
+
+    if (healthcareType != null && this.getHealthcareTypes() != null) {
+      for (HealthcareType ht : this.getHealthcareTypes()) {
+        if (healthcareType.equals(ht.getDisplayName())) {
+          result = true;
+        }
+      }
+    }
+    return result;
+  }
+
+COM:checks if a given healthcare type exists in the healthcare types list and returns a boolean value

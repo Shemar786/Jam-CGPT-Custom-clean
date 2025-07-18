@@ -1,0 +1,20 @@
+TDAT: 	public LocalVariable newLocal(final boolean isWide) {
+		if (this.isDeleted) {
+			final String s = "Cannot change a field once it has been marked "
+					+ "for deletion";
+			throw new IllegalStateException(s);
+		}
+
+		final int index = maxLocals;
+
+		maxLocals += (isWide ? 2 : 1);
+		this.setDirty(true);
+
+		final LocalVariable local = new LocalVariable(index);
+
+		locals.put(new Integer(index), local);
+
+		return (local);
+	}
+
+COM:creates and returns a new local variable while updating the current maximum number of local variables based on whether the variable is considered "wide"

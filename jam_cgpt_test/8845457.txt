@@ -1,0 +1,13 @@
+TDAT: 	public String extractMacroBlock(String input, int start, int end) {
+		String head, string, tail, key;
+
+		head = input.substring(0, start);
+		string = input.substring(start + 1, end);
+		key = PREFIX_MACRO + mDepth + "_" + getMacroBlocksStore().size();
+		getMacroBlocksStore().put(new ScriptVariable(key, string, mDepth));
+		tail = lookupMacroBlocks(input.substring(end + 1));
+
+		return head + "$" + key + tail;
+	}
+
+COM:extracts a block of text from an input string, stores it in a map with a generated key, and replaces the extracted block with the key surrounded by "$" in the original string

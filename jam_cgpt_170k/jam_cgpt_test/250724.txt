@@ -1,0 +1,12 @@
+TDAT: 	public List getAllCollaborativeCollections() throws AccessException {
+		logger.debug("entering getAllCollaborativeCollections");
+
+		String query = "SELECT collection.PID, collection.TITLE, collectionrole.ROLE, user.USERNAME"
+				+ " FROM collectionrole, collection, user "
+				+ " WHERE collectionrole.USERID = user.USERID "
+				+ " AND collectionrole.COLLECTIONPID = collection.PID "
+				+ " ORDER BY collection.TITLE, collectionrole.ROLE";
+		return this.buildResult(query);
+	}
+
+COM:retrieves a list of all collaborative collections, along with the roles and usernames of users involved

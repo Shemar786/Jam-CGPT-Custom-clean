@@ -1,0 +1,9 @@
+TDAT:   private void optimizeClass(String fileName) throws UnpositionedError {
+    ClassInfo		info;
+
+    info = readClassFile(fileName);
+    optimizeClass(info, options.optimize, options.verbose);
+    writeClassFile(info, options.destination == null ? fileName : options.destination + File.separatorChar + com.kopiright.util.base.Utils.splitQualifiedName(info.getName())[1] + ".class");
+  }
+
+COM:optimizes a class file by reading and writing the file with the options specified, and throws an exception if there is an error in the positioning

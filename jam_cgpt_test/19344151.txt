@@ -1,0 +1,11 @@
+TDAT: 	private void runCompareDialog(DiffDefinition def) {
+		if (def != null) {
+			if (DiffDefinition.TYPE_SINGLE_LAYOUT.equals(def.type)) {
+				new CompareSingleLayout(createLayout(), def, rFiles);
+			} else {
+				new CompareTwoLayouts(createLayout(), createLayout(), def, rFiles);
+			}
+		}
+	}
+
+COM:This is a method that displays a comparison dialog between two layouts or a single layout in Java

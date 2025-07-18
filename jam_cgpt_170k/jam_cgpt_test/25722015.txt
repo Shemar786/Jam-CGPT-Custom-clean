@@ -1,0 +1,12 @@
+TDAT: 	private Color getInRangeForeground() {
+		RGB color = PreferenceConverter.getColor(MetricsPlugin.getDefault().getPreferenceStore(), "METRICS.linkedColor");
+		if (lastInRangeColor == null) {
+			lastInRangeColor = new Color(getDisplay(), color);
+		} else if (!lastInRangeColor.getRGB().equals(color)) {
+			lastInRangeColor.dispose();
+			lastInRangeColor = new Color(getDisplay(), color);
+		}
+		return lastInRangeColor;
+	}
+
+COM:retrieves a color value from the preferences and creates a new instance of Color if it's not already present or if the color value has changed

@@ -1,0 +1,13 @@
+TDAT: 	private JTable getFeatureListTable() {
+		if (FeatureListTable == null) {
+			FeatureListTable = new JTable();
+			DefaultTableModel model = new AggFeatureListModel(new Object[]{"Feature List"},0);
+			for(int i=0;i<controller.dm_.featureDefinitions.length;++i){
+				model.addRow(new Object[]{controller.dm_.featureDefinitions[i].name});
+			}
+			FeatureListTable.setModel(model);
+		}
+		return FeatureListTable;
+	}
+
+COM:returns a JTable containing a list of feature definitions, where the JTable is dynamically created if it does not already exist

@@ -1,0 +1,27 @@
+TDAT: 	public void doStep() {
+		try {
+			
+			//if not waiting for the result of a previously
+			//performed action
+			if(!isWaitingForActionResult()){
+				
+				if(strategy == null)
+					throw new NoStrategyException("The action controller must have a strategy to follow");
+
+				//get action to perform
+				currentStrategyAction = strategy.getAction(currentSituation);
+
+				setWaitingForActionResult(true);
+			}
+			
+
+			//perform (or continue performing) action
+			currentStrategyAction.perform();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+			
+	}
+
+COM:performs an action based on a predetermined strategy, throwing an exception if no strategy is defined and catching any exceptions that occur during the action

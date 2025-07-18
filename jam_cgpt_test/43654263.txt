@@ -1,0 +1,16 @@
+TDAT:     public String getNamespaceURI(String prefix) {
+        if (prefix == null) {
+            throw new IllegalArgumentException(getClass().getPackage().getName()
+                    + "." + getClass().getName() + ".getNamespaceURI(null)");
+        }
+        
+        final String uri = namespaces.get(prefix);
+        
+        if (uri == null) {
+            return XMLConstants.NULL_NS_URI;
+        }
+        
+        return uri;
+    }
+
+COM:returns the namespace URI corresponding to a given prefix, or an exception if the prefix is null

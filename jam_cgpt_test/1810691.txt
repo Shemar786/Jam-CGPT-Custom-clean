@@ -1,0 +1,19 @@
+TDAT:   private JClassType getSerializableSuperclass(JClassType serializableClass) {
+    if (serializableClass == null) {
+      return null;
+    }
+
+    JClassType superClass = serializableClass.getSuperclass();
+    if (superClass != null) {
+      SerializableTypeOracle serializationOracle = getSerializationOracle();
+      if (serializationOracle.isSerializable(superClass)) {
+        return superClass;
+      }
+
+      return getSerializableSuperclass(superClass);
+    }
+
+    return null;
+  }
+
+COM:returns the first superclass in the hierarchy of a given class that implements the Serializable interface, or null if no such class is found

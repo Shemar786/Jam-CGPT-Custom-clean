@@ -1,0 +1,12 @@
+TDAT:   public void removeSuccessor(Node node) {
+    Iterator outEdges = getOutEdges();
+    while (outEdges.hasNext()) {
+      Edge edge = (Edge) outEdges.next();
+      if (edge.getTarget() == node) {
+        node.predecessors.removeElement(edge);
+        successors.removeElement(edge);
+      }
+    }
+  }
+
+COM:removes the given node's successors from the current node's list of successors and the given node's list of predecessors

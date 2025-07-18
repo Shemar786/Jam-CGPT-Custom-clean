@@ -1,0 +1,14 @@
+TDAT: 	private Resource getContainingResource(EObject eObject) {
+		// stereotype applications may e.g. not specify an eResource but be contained within one.
+		if (eObject.eResource() != null) {
+			return eObject.eResource();
+		}
+		for (Resource resourceInScope : getResourcesInScope()) {
+			if (ModelUtils.contains(resourceInScope, eObject)) {
+				return resourceInScope;
+			}
+		}
+		return null;
+	}
+
+COM:returns the resource that contains a specified EObject, checking both the object's own resource and any resource within its scope

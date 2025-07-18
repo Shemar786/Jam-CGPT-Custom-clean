@@ -1,0 +1,13 @@
+TDAT: 	private EnvironmentModel grabEnvironmentModelFromSimulationService(){
+		EnvironmentModel envModel = null;
+		try {
+			SimulationServiceHelper simHelper = (SimulationServiceHelper) getHelper(SimulationService.NAME);
+			envModel = simHelper.getEnvironmentModel();
+		} catch (ServiceException e) {
+			System.err.println(getLocalName() +  " - Error: Could not retrieve SimulationServiceHelper, shutting down!");
+			this.doDelete();
+		}
+		return envModel;
+	}
+
+COM:retrieves an environment model from a simulation service, using a helper class, and returns it

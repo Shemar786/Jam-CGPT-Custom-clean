@@ -1,0 +1,11 @@
+TDAT:     public void registerValueChannel(Class clazz, ValueChannel channel){
+        
+        ClassValueChannelMap classChannels = classValueChannels.get(clazz.getCanonicalName());
+        if (classChannels == null){
+            classChannels = new ClassValueChannelMap();
+            classValueChannels.put(clazz.getCanonicalName(),classChannels);
+        }
+        classChannels.registerValueChannel(channel.getSemantic(),channel);
+    }
+
+COM:registers a value channel for a given class in a map of class-value channel mappings

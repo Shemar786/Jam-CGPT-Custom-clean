@@ -1,0 +1,7 @@
+TDAT:   protected void removeArgs(int i, int n) {
+      ArrayList<String> a = new ArrayList<String>(Arrays.asList(this.arguments));
+      while (n-->0) a.remove(i);
+      this.arguments =  a.toArray(new String[a.size()]);
+  }
+
+COM:removes a specified number of arguments from a list of string arguments, starting at a specified index

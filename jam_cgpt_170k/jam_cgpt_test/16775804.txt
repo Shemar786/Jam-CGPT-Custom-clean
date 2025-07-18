@@ -1,0 +1,7 @@
+TDAT:     public int getNumberOfTimeSteps(int[] startDate, int[] endDate, int timeUnit, int timeStep) {
+        IntByReference numberOftimeSteps = new IntByReference(-1);
+        nativeDLL.timdif_(startDate, endDate, new IntByReference(timeUnit), new IntByReference(timeStep), numberOftimeSteps);
+        return numberOftimeSteps.getValue();
+    }
+
+COM:calculates the number of time steps between two dates based on a time unit and time step, using a native DLL function

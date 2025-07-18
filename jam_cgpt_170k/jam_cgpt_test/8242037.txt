@@ -1,0 +1,17 @@
+TDAT: 	public void logout() {
+		if (lc != null) {
+			try {
+				lc.logout();
+			} catch (LoginException le) {
+				logger.error("[LoginException].Cannot create LoginContext. "
+						+ le.getMessage());
+			} catch (SecurityException se) {
+				logger.error("[SecurityException].Cannot create LoginContext. "
+						+ se.getMessage());
+			}
+		} else {
+			logger.error("Logout of [null] LoginContext");
+		}
+	}
+
+COM:logs out of the current LoginContext if it exists, otherwise it logs an error

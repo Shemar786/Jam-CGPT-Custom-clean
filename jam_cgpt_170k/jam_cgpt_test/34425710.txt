@@ -1,0 +1,18 @@
+TDAT:     private void activateHelper(boolean reDeed) {
+        notes = null;
+        resource = null;
+        concentration = 0;
+        lastUpdated = 0;
+        several = 1;
+        if (reDeed) {
+            owner = null;
+            setSelfPowered(false);
+            storageEfficiencyLevel = 0;
+            maintenanceEfficiencyLevel = 0;
+            energyEfficiencyLevel = 0;
+            harvestingTechnologyLevel = 0;
+            harvestFair = 0;
+        }
+    }
+
+COM:resets certain variables and properties of an object and optionally sets additional properties to default values if a boolean parameter is true

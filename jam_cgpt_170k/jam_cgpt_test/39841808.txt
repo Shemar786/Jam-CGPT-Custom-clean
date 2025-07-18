@@ -1,0 +1,16 @@
+TDAT:     public void testGetSimpleShort() {
+
+        try {
+            Object value = dynaForm.get("shortProperty");
+            assertNotNull("Got a value", value);
+            assertTrue("Got correct type", (value instanceof Short));
+            assertEquals("Got correct value",
+                    ((Short) value).shortValue(),
+                    (short) 987);
+        } catch (Throwable t) {
+            fail("Exception: " + t);
+        }
+
+    }
+
+COM:tests the functionality of a "get" method for a short property in a DynaForm object

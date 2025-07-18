@@ -1,0 +1,13 @@
+TDAT: 	public void setGesture(GestureSample3D gs) {
+		//System.err.println("SAMPLE : " + gs.getName());
+		this.gs = gs;
+//		if(gs != null){
+//			System.err.println("WiiReaderPanel.setGesture() Displaying: " + gs.getName());
+//		}
+//		else {
+//			System.err.println("WiiReaderPanel.setGesture() Displaying: null gesture");
+//		}
+		this.paintComponent(this.getGraphics());
+	}
+
+COM:sets a 3D gesture sample and calls the paintComponent method to display the gesture

@@ -1,0 +1,11 @@
+TDAT:     public UnSyncStringBuffer insert(int offset, char c) {
+        int newcount = count + 1;
+        if (newcount > value.length)
+            expandCapacity(newcount);
+        System.arraycopy(value, offset, value, offset + 1, count - offset);
+        value[offset] = c;
+        count = newcount;
+        return this;
+    }
+
+COM:inserts a single character into a StringBuffer at a specified offset position

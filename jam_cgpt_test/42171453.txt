@@ -1,0 +1,17 @@
+TDAT:   protected void addRhinoScriptPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RhinoSafletScript_rhinoScript_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RhinoSafletScript_rhinoScript_feature", "_UI_RhinoSafletScript_type"),
+				 ScriptingPackage.Literals.RHINO_SAFLET_SCRIPT__RHINO_SCRIPT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a RhinoSafletScript object

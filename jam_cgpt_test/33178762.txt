@@ -1,0 +1,9 @@
+TDAT:     protected void initialiseDerivedData() {
+        if (leftLine == null) initialiseLeftLine();
+        if (topLine == null) initialiseTopLine();
+        if (rightLine == null) initialiseRightLine();
+        if (bottomLine == null) initialiseBottomLine();
+        if (center == null) initialiseCenter();
+    }
+
+COM:initializes derived data if certain variables are null

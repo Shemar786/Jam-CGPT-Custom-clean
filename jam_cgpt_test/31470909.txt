@@ -1,0 +1,12 @@
+TDAT:     private int getNextSiblingElement(int nodeIndex) {
+        int siblingIndex = fDeferredDocumentImpl.getNextSibling(nodeIndex, false);
+        while (siblingIndex != -1) {
+            if (fDeferredDocumentImpl.getNodeType(siblingIndex, false) == Node.ELEMENT_NODE) {
+                return siblingIndex;
+            }
+            siblingIndex = fDeferredDocumentImpl.getNextSibling(siblingIndex, false);
+        }
+        return -1;
+    }
+
+COM:retrieves the index of the next sibling element node in a deferred document

@@ -1,0 +1,20 @@
+TDAT: 	public void setNutrientValue(double value, String code) throws IllegalArgumentException {
+
+		nutrientValueInitialization();
+
+		try {			
+			if (Nutrients.m_sNutrientDescriptions.containsKey(code)) {
+				if (m_NutrientValues.containsKey(code)) {
+					m_NutrientValues.remove(code);					
+				} 
+				m_NutrientValues.put(code, new NutrientValue(Nutrients.m_sNutrientDescriptions.get(code), value));	
+					
+			} else {
+				throw new IllegalArgumentException();				
+			}
+		} catch (Exception e) {
+			throw new IllegalArgumentException();
+		}
+	}
+
+COM:sets the nutrient value and code for a given nutrient, while ensuring that the code is valid and modifying the nutrient value map accordingly, or throwing an IllegalArgumentException if the code is not valid

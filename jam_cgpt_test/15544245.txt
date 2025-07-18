@@ -1,0 +1,12 @@
+TDAT: 	private void usage() {
+		System.err
+				.println("Usage: java edu.gatech.resume.Main [OPTIONS] <PDF file> [Text File]\n"
+						+ "  -create                      Create a new index\n"
+						+ "  -index <index>               Specify location of index\n"
+						+ "  -console                     Send text to console instead of file\n"
+						+ "  <PDF file>                   The PDF document to use\n"
+						+ "  [Text File]                  The file to write the text to\n");
+		System.exit(1);
+	}
+
+COM:is used for printing out the usage instructions for a program that converts a PDF file into text, and exits the program

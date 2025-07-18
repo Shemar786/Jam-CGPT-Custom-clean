@@ -1,0 +1,11 @@
+TDAT:   public void addRule(Rule rule){
+    if(rulesCurrent == rules.length){
+      final Rule[] tmp = new Rule[rules.length+10];
+        System.arraycopy(this.rules, 0, tmp, 0, this.rules.length);
+        this.rules = tmp;
+    }
+    this.rules[rulesCurrent++] = rule;
+    rule.knowledgeBase = knowledgeBase;
+  }
+
+COM:adds a rule to an array and expands the array if necessary, while also assigning a knowledge base to the rule

@@ -1,0 +1,16 @@
+TDAT:     private String getJavaType(Field field) {
+        if (field.getType().equals("int")) {
+            return "Integer";
+        } 
+        else if (field.getType().equals("boolean")) {
+            return "Boolean";
+        } 
+        else if (field.getType().equals("double")) {
+            return "Double";
+        } 
+        else {
+            return "String";
+        }
+    }
+
+COM:takes a Field object as input and returns a string representing the corresponding Java data type for the field

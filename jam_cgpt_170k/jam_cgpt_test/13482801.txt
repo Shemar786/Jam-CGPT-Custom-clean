@@ -1,0 +1,18 @@
+TDAT:     public void addCatchPhi(Block block) {
+        if (phis[cfg.preOrderIndex(block)] != null) {
+            return;
+        }
+
+        if (prototype instanceof LocalExpr) {
+            LocalExpr target = (LocalExpr) prototype.clone();
+
+            PhiCatchStmt phi = new PhiCatchStmt(target);
+            phis[cfg.preOrderIndex(block)] = phi;
+
+            if (SSA.DEBUG) {
+                System.out.println("  place " + phi + " in " + block);
+            }
+        }
+    }
+
+COM:adds a Phi statement to a given block for exception handling if a certain condition is met

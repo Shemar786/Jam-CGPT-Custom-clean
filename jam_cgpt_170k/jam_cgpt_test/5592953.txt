@@ -1,0 +1,11 @@
+TDAT:   public void saveProject() throws wpException {
+    // the model is a linked list. options are: 1. Serialize, 2. xml
+    // 1. Invoke Save method in wpProject.
+    // 1. check if the project is altered.
+    if (isAltered()) {
+      saveXPRFile();
+      setAltered(false);
+    }
+  }
+
+COM:saves a project by checking if it has been altered, and if so, saves it as an XPR file

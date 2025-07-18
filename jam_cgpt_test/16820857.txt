@@ -1,0 +1,20 @@
+TDAT: 	private String getSubID(String strIsdn) throws Exception {
+		PreparedStatement stmt=null;
+		ResultSet rs=null;
+		try {
+			String strSQL="SELECT sub_id from mc_subscriber WHERE hlr_isdn=?";
+			stmt=mcnMain.prepareStatement(strSQL);
+			stmt.setString(1, strIsdn);
+			rs=stmt.executeQuery();
+			String strResult="(-1";
+			while (rs.next()) {
+				strResult+= "," + rs.getString(1);
+			}
+			strResult += ")";
+			return strResult;
+		}finally {
+			Database.closeObject(stmt);
+		}
+	}
+
+COM:retrieves the subscriber ID from a database based on the provided ISDN number

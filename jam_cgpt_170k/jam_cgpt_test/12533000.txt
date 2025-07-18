@@ -1,0 +1,13 @@
+TDAT: 	protected void setName(String str) {
+
+		if (str == null) { // no name is being passed, construct a default name
+			String s = this.getClass().getName();
+			int k = s.lastIndexOf(".");
+			if (k != -1)
+				s = s.substring(k + 1);
+			str = s + "-" + getId();
+		}
+		myName = str;
+	}
+
+COM:sets the name of an object, either with the passed string or by constructing a default name

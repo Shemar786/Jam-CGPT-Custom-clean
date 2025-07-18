@@ -1,0 +1,17 @@
+TDAT:   protected void addPropertiesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBConnection_properties_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBConnection_properties_feature", "_UI_DBConnection_type"),
+				 DbPackage.Literals.DB_CONNECTION__PROPERTIES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a DBConnection object

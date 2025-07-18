@@ -1,0 +1,12 @@
+TDAT:   public void setUnselectedPaint ( Paint paint ) {
+    view.setEdgeObjectProperty( rootGraphIndex,
+                                PGraphView.EDGE_PAINT,
+                                paint );
+    //TODO: remove? 
+    // what happens when I set the paint of a selected node....oops.
+    if ( !selected ) {
+      super.setStrokePaint( paint );
+    }
+  }
+
+COM:sets the paint color for an unselected edge in a graph view and also adjusts the stroke paint if the edge is not currently selected

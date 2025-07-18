@@ -1,0 +1,13 @@
+TDAT: 	protected void init_100_RecentFiles(String pInFile) {
+	    Common.setCurrClass(this);
+
+		if (pInFile == null || "".equals(pInFile)) {
+			//System.out.println("!! ~~ " + Common.DEFAULT_FILE_DIRECTORY);
+		    fileName.setText(Common.OPTIONS.DEFAULT_FILE_DIRECTORY.get());
+		} else {
+		    fileName.setText(pInFile);
+		    updateLayoutForFile(pInFile);
+		}
+	}
+
+COM:initializes a list of 100 recent files and sets the filename based on the input file path

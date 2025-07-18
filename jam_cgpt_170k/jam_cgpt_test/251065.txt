@@ -1,0 +1,17 @@
+TDAT: 	private boolean isAdminOfItem(String itemPID) throws AccessException{
+		logger.debug("entering isAdminOfItem(" + itemPID +")");
+		
+		String query = "SELECT userid FROM item WHERE userid='" 
+			+ currentUser.getUserID() + "' AND pid='" + itemPID +"'";
+		try{
+			List list = conn.executeQuery(query);
+			logger.debug("exiting isAdminOfItem");
+			return !(list.isEmpty());
+		}
+		catch(SQLException e){
+			logger.error(e);
+			throw new AccessException("database error", e);
+		}
+	}
+
+COM:determines if the current user is an admin of the item specified by its PID, throwing an AccessException if a database error occurs

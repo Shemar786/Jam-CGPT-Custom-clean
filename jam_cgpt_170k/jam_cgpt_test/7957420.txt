@@ -1,0 +1,17 @@
+TDAT: 	protected Class findClass(final String name) throws ClassNotFoundException {
+
+		final ClassInfo info = this.loader.loadClass(name);
+		final ClassEditor ce = this.context.editClass(info);
+
+		this.bloat(ce);
+
+		ce.commit();
+		final ByteArrayOutputStream baos = (ByteArrayOutputStream) this.classBytes
+				.get(info);
+		Assert.isNotNull(baos, "No bytes for " + name);
+
+		final byte[] bytes = baos.toByteArray();
+		return super.defineClass(name, bytes, 0, bytes.length);
+	}
+
+COM:finds and loads a class by name, edits it, applies bloat, and then defines and returns the class

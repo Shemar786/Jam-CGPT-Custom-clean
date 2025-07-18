@@ -1,0 +1,20 @@
+TDAT: 	private void addPanelNorth(Container parent) {
+		JPanel panelNorth = new JPanel();
+		panelNorth.setBorder(BorderFactory.createEmptyBorder());
+		JLabel lblStrategy = new JLabel();
+		lblStrategy.setText("Strategy :");
+		parent.add(panelNorth, BorderLayout.NORTH);
+		panelNorth.add(lblStrategy);
+		this.cmbStrategy = new JComboBox();
+		panelNorth.add(this.cmbStrategy);
+		
+		createStrategies();
+		
+		this.cmbStrategy.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				updateStrategy();
+			}
+		});
+	}
+
+COM:adds a panel with a label and drop-down menu to the north of a given container, and sets up an action listener for the drop-down menu

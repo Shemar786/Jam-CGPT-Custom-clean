@@ -1,0 +1,19 @@
+TDAT: 	private void runWithProgress(final Runnable runnable) {
+		ProgressMonitorDialog progress = new ProgressMonitorDialog(window
+				.getShell());
+		try {
+			progress.run(false, false, new IRunnableWithProgress() {
+				public void run(IProgressMonitor monitor)
+						throws InvocationTargetException, InterruptedException {
+					monitor.beginTask("Generating QB Session",
+							IProgressMonitor.UNKNOWN);
+					runnable.run();
+					monitor.done();
+				}
+			});
+		} catch (Exception e) {
+			QuizBangUiActivator.logError(e);
+		}
+	}
+
+COM:executes a given Runnable with a progress monitor dialog to track its progress and handle any potential exceptions

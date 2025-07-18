@@ -1,0 +1,12 @@
+TDAT:     private void purgeDatabase() {
+        // We're assuming the Node IDs are totally random so
+        // chances are slim to none that we're responsible 
+        // for the values again. Even if we are there's no way
+        // to test it until we've fully re-bootstrapped in
+        // which case the other guys will send us the values
+        // anyways as from their perspective we're just a new
+        // node.
+        database.clear();
+    }
+
+COM:clears the contents of a database, assuming that the Node IDs are random and any responsibility for the values is unlikely or inconsequential

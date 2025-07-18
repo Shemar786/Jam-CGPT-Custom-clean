@@ -1,0 +1,15 @@
+TDAT: 	public Entry lookup(final String name, final Entry entry) {
+		final String[] nameParts = name.split("/");
+		// try first to look up the entry
+		Entry res = lookup(name, nameParts, 0, entry);
+		if (res != null)
+			return res;
+		// the lookup failed, so we will search the entry
+		res = searchEntry(name, entry);
+		// if the entry was found by the search, then we add it into the lookup tree
+		if (res != null)
+			mergeNodePath(nameParts, 0, res.parent);
+		return res;
+	}
+
+COM:looks up entries in a tree structure using a given name and entry, and adds the found entry into the lookup tree if it was not already there

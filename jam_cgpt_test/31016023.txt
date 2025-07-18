@@ -1,0 +1,9 @@
+TDAT:   public Torpedo getTorpedo(int type) {
+    if (type==UNKNOWN) return null;
+    if (type<0) return null; // illegal type (exception?)
+    if (type>torpedoes) return null; // illegal type (exception?)
+    if (type==0) return null; // non-existing torpedo
+    return torpedo[type];
+  }
+
+COM:returns a Torpedo object based on the type parameter, with null being returned if the type is deemed illegal or non-existent

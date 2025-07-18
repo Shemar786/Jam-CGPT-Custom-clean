@@ -1,0 +1,13 @@
+TDAT:     public void closeAllCollections(){
+        Object[] collectionObjects = this.getAllStoredObjects();
+        for (int i = 0; i < collectionObjects.length; i++){
+            Collection collection = (Collection) collectionObjects[i];
+            try {
+                collection.close();
+            } catch (XMLDBException e){
+                log.warn("Error closing collection on cleanup",e);
+            }
+        }
+    }
+
+COM:closes all collections stored in the object

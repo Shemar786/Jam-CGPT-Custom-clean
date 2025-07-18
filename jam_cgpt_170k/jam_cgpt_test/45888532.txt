@@ -1,0 +1,15 @@
+TDAT: 	public boolean hasFilters(Context context, Contact contact) {
+
+		String[] projection = new String[] { FiltersTable.CONTACT_LOOKUP_KEY };
+		String selection = Sources.FiltersTable.CONTACT_LOOKUP_KEY + " = ?";
+		String[] selectionArgs = new String[] { contact.getLookupKey() };
+
+		Cursor c = context.getContentResolver().query(ContentUris.Filters,
+				projection, selection, selectionArgs, null);
+		boolean retval = c.moveToNext();
+		c.close();
+
+		return retval;
+	}
+
+COM:checks if a contact has filters based on its lookup key using a cursor to query a content resolver

@@ -1,0 +1,18 @@
+TDAT: 	private void removeLines(DocumentEvent e) {
+		//  The root Element of the Document will tell us the total number
+		//  of line in the Document.
+
+		Document document = e.getDocument();
+		Element root = document.getDefaultRootElement();
+		System.out.println("=> " + root.getElementCount() + " <=");
+		
+		while (root.getElementCount() > maximumLines) {
+			if (isRemoveFromStart) {
+				removeFromStart(document, root);
+			} else {
+				removeFromEnd(document, root);
+			}
+		}
+	}
+
+COM:removes lines from a Document based on a maximum count, either from the start or end of the Document

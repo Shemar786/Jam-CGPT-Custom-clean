@@ -1,0 +1,12 @@
+TDAT:   protected Command getDragCommand(ChangeBoundsRequest request) {
+    return null;
+//    ChangeBoundsRequest req = new ChangeBoundsRequest(REQ_ORPHAN);
+//    req.setEditParts(request.getEditParts());
+//    req.setMoveDelta(request.getMoveDelta());
+//    req.setSizeDelta(request.getSizeDelta());
+//    req.setLocation(request.getLocation());
+//    req.setResizeDirection(request.getResizeDirection());
+//    return getHost().getCommand(req);
+  }
+
+COM:returns a null value and has commented out code to create and return a command object based on a ChangeBoundsRequest

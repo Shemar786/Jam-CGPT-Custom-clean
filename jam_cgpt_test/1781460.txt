@@ -1,0 +1,9 @@
+TDAT:     protected void addPresetParameter( String name, String value ) {
+        FormControl[] formControls = getFormControls();
+        for (int i = 0; i < formControls.length; i++) {
+            if (formControls[i].getName().equals( name)) return;
+        }
+        _presets.add( new PresetFormParameter( this, name, value ) );
+    }
+
+COM:adds a preset form parameter to the list of presets only if it does not already exist

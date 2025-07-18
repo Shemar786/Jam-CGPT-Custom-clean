@@ -1,0 +1,13 @@
+TDAT:   public String getAdditionalInfoToString() {
+    String result = null;
+    if (additionalInfo != null && additionalInfo.size() > 0) {
+      StringBuffer buf = new StringBuffer();
+      for (String s : additionalInfo) {
+        buf.append(s);
+      }
+      result = buf.toString();
+    }
+    return result;
+  }
+
+COM:returns a string representation of additional information stored in a list

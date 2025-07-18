@@ -1,0 +1,10 @@
+TDAT:     public Service getService(String name, String version) throws XMLDBException {
+        for (int i = 0; i < services.length; i++){
+            if (name.equals(services[i].getName()) && version.equals(services[i].getVersion())){
+                return services[i];
+            }
+        }
+        throw new XMLDBException(ErrorCodes.NO_SUCH_SERVICE);
+    }
+
+COM:searches for a specific service by name and version in an array of services and returns it, or throws an XMLDBException if the service does not exist

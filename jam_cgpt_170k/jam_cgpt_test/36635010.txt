@@ -1,0 +1,16 @@
+TDAT:     public File getClassFile(String filename){
+        File newFile = null;
+
+        URL tempURL = getClass().getResource("/"+filename);
+        if(tempURL != null){
+            try {
+                newFile = new File(tempURL.toURI());
+            } catch (URISyntaxException ex) {
+                warn("File Resource Error! "+filename);
+            }
+        }
+
+        return newFile;
+    }
+
+COM:takes a filename as a parameter, tries to retrieve its URL, converts it to a file object, and returns it

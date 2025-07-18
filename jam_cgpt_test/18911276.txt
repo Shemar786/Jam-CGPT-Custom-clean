@@ -1,0 +1,16 @@
+TDAT: 	public void setDriverName(String driverName) throws SQLException {
+		if (!this.driverName.equals(driverName)) {
+			this.driverName = driverName;
+			driver = null;
+		}
+		/*
+		try {
+		driver= (Driver)Class.forName (driverName).newInstance();
+		log("StandardDataSource:setDriverName a new driver instance is created");
+		} catch (Exception e) {
+		throw new SQLException ("Error trying to load driver: "+driverName+"\n"+e.getMessage());
+		} // try-catch
+		*/
+	}
+
+COM:sets the JDBC driver name and clears the driver if it is already set, but does not actually create a new driver instance

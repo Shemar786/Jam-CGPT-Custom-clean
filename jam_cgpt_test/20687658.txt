@@ -1,0 +1,11 @@
+TDAT:     public StringList serializeShape(IShape s) throws EntryNotFoundException {
+        final int headerSize = 1;
+        
+        StringList list = s.serializeToStrings();
+        // building the header, in reverse order
+        list.addFirst( getShapeUri( s ));
+        list.addFirst(Integer.toString(headerSize)); // size of the header
+        return list;
+    }
+
+COM:serializes an IShape object and returns it as a StringList with a header indicating the size and shape URI

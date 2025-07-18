@@ -1,0 +1,17 @@
+TDAT:   public Advice resolve(Map defs) throws ConfigurationException {
+    if(_id == null) {
+      throw new ConfigurationException(
+          "'id' attribute not set on advice reference");
+    }
+
+    AdviceDef def = (AdviceDef) defs.get(_id);
+
+    if(def == null) {
+      throw new ConfigurationException("No advice definitions matches ID: "
+          + _id);
+    }
+
+    return def.getInstance();
+  }
+
+COM:resolves an advice reference by checking if the 'id' attribute is set, finding the corresponding advice definition based on the ID, and returning an instance of the advice

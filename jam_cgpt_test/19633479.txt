@@ -1,0 +1,18 @@
+TDAT: 	public Document searchByTag(String strTag) {
+		Document doc = null;
+
+		try {
+			String strUrlEncodedTag = MyExperimentClient.urlEncodeQuery(strTag);
+			doc = this.doMyExperimentGET(
+					BASE_URL + "/tagged.xml?tag=" + strUrlEncodedTag
+							+ Util.composeAPIQueryElements(null))
+					.getResponseBody();
+		} catch (Exception e) {
+			logger.error("ERROR: Failed to fetch tagged items from myExperiment. Query tag was '"
+					+ strTag + "'\n" + e);
+		}
+
+		return (doc);
+	}
+
+COM:searches for an XML document by a specified tag and returns it as a Document object

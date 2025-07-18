@@ -1,0 +1,7 @@
+TDAT:   protected void fireModelRemoved(Model m, int index) {
+    for (int i = 0; i < projectObservers.size(); i++)
+      ((ProjectObserver)projectObservers.get(i)).projectUpdate(
+                                        Project.MODEL_REMOVED, this, m, index);
+  }
+
+COM:notifies all project observers that a model has been removed at a specific index

@@ -1,0 +1,14 @@
+TDAT: 	public boolean finish() {
+		if (!ensureTargetIsValid(new File(getDestinationValue()))) {
+			return false;
+		}
+
+		// Save dirty editors if possible but do not stop if not all are saved
+		// saveDirtyEditors();
+		// about to invoke the operation so save our state
+		saveWidgetValues();
+		return executeExportOperation(new AnimationExportOperation(
+				getDestinationValue(), this, checkeds));
+	}
+
+COM:saves dirty editors and executes an animation export operation if the target directory is valid

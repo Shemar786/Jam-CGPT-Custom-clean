@@ -1,0 +1,20 @@
+TDAT: 	public void setSingle(Node n, boolean value){
+	if(value){ // set single true
+		if(n!=singleSelectedNode){ // single sel was not true before
+		if (singleSelectedNode!=null){ // there was another single sel before
+			setSingle(singleSelectedNode,false);
+		}
+		n.setSingle(true);
+		singleSelectedNode = n;
+		setSingle(n.component,true);
+		setMulti(n,true);
+		}
+	} else { // singleSel = false
+		if (n==singleSelectedNode){ // n was true before
+		n.setSingle(false);
+		singleSelectedNode = null;
+		}
+	}
+	}
+
+COM:sets a single selected node to true or false, and handles any necessary changes to other nodes

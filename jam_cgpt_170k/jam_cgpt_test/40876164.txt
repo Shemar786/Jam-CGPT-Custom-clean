@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField39() {
+        if (textField39 == null) {//GEN-END:|628-getter|0|628-preInit
+            // write pre-init user code here
+            textField39 = new TextField("L\u00EDquido:", null, 32, TextField.DECIMAL);//GEN-LINE:|628-getter|1|628-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|628-getter|2|
+        return textField39;
+    }
+
+COM:returns a TextField object with a label "Líquido:" and a decimal input type with a maximum length of 32 characters, and creates the object if it does not exist

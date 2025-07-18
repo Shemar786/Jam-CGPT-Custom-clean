@@ -1,0 +1,16 @@
+TDAT: 	public void setWindowLength(int n) throws Exception {
+		if (n < 2) {
+			throw new Exception(
+					"BeatHistogram window length must be greater than 1");
+		} else {
+			number_windows = n;
+			dependencies = new String[number_windows];
+			offsets = new int[number_windows];
+			for (int i = 0; i < number_windows; ++i) {
+				dependencies[i] = "Root Mean Square";
+				offsets[i] = 0 - i;
+			}
+		}
+	}
+
+COM:sets the window length for a BeatHistogram and throws an exception if the input is less than 2, then sets the number of windows, dependencies, and offsets according to the input

@@ -1,0 +1,9 @@
+TDAT:     public boolean addDeepValidation(String property, String message) {
+        final IValueAccessor read = ValueAccessorManager.getPropertyAccessor(type, property);
+        if (!read.isReadable())
+            return false;
+        depthValidationProperties.add(new DepthValidator(property, message, read));
+        return true;
+    }
+
+COM:adds a deep validation for a given property and message, using a value accessor to check if it is readable and adding it to a list

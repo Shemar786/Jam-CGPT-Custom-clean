@@ -1,0 +1,18 @@
+TDAT:     public int getAttackersBV() {
+        int bv = 0;
+
+        for (String attacker : getAttackers().keySet()) {
+            SPlayer player = CampaignMain.cm.getPlayer(attacker);
+
+            if (player != null) {
+                SArmy army = player.getArmy(getAttackers().get(attacker));
+                if (army != null) {
+                    bv += army.getBV();
+                }
+            }
+
+        }
+        return bv;
+    }
+
+COM:calculates and returns the total battle value of all attacking armies in a campaign

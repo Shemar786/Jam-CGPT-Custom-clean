@@ -1,0 +1,14 @@
+TDAT:     private String constructJavaCode(String classname) {
+	String code = 
+	    "import java.io.*;\n" +
+	    "import net.openai.ai.agent.*;" +
+	    "\n" +
+	    "public class " + classname + " extends MigrateAndHaltAgent {\n" +
+	    "    public " + classname + "() {\n" +
+	    "        super(\"" + destHost + "\", " + destPort + ");\n" +
+	    "    }\n" +
+	    "}\n";
+	return code;
+    }
+
+COM:constructs a string of Java code for an agent class that extends a pre-existing MigrateAndHaltAgent class

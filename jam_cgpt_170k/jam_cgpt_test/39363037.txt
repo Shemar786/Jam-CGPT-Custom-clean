@@ -1,0 +1,13 @@
+TDAT:     public void createTable() {
+        String sql = 
+           "CREATE TABLE news_table ( id INTEGER IDENTITY, title VARCHAR(20), content VARCHAR(100))";
+        try {
+            stmt.executeUpdate(sql);
+            System.out.println("CreateTable OK!");
+        } catch (Exception e) {
+            
+            //do nothing
+        }
+    }
+
+COM:creates a table named "news_table" with three columns (id, title, and content) using SQL commands and attempts to execute it, outputting a success message if successful

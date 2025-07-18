@@ -1,0 +1,12 @@
+TDAT:    public void displayArray() {
+      System.out.println();
+      for(int walk = 0; walk < arr.length; walk++) {
+         for(int step = 0; step < arr[walk].length; step++) {
+            System.out.print(arr[walk][step]);
+         }
+         System.out.println();
+      }
+      System.out.println();
+   }
+
+COM:displays a 2D array by printing each element on a new line and separating rows with a blank line

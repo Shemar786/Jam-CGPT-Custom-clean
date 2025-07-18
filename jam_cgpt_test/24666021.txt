@@ -1,0 +1,18 @@
+TDAT: 	private IFigure createFigureForModel() {
+		if (getModel() instanceof Person) {
+			IFigure f = new PersonFigure((Person) getModel());
+			f.setOpaque(false);
+			return f;
+		} else if (getModel() instanceof Department) {
+			Department d = (Department) getModel();
+			IFigure f = new DepartmentFigure(d);
+			f.setOpaque(true);
+			f.setBackgroundColor(ColorConstants.green);
+			return f;
+		} else {
+			// if Shapes gets extended the conditions above must be updated
+			throw new IllegalArgumentException();
+		}
+	}
+
+COM:creates a figure for either a Person or Department model object, setting various properties such as opacity and color, and throws an IllegalArgumentException if the object is neither of these types

@@ -1,0 +1,11 @@
+TDAT: 	public void testCopyIntFromSnapshotToSameFile() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neParent = createNEPositive(rSource, "parent", null);
+		NamedElement neSource = createNEPositive(neParent, "foo", null);
+		rfSource.save(null, false);
+		
+		copyPositive(neSource.getSnapshot(), neSource, null, "bar", false);
+	}
+
+COM:creates a copy of a positive snapshot of a NamedElement object and saves it to the same file with a different name

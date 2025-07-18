@@ -1,0 +1,18 @@
+TDAT:   private void countRow() throws SQLException {
+    ResultSet result = null;
+    try {
+      result = countRowSQL.executeQuery();
+      result.next();
+      rowCount = result.getInt(1);
+      //result.close();
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+      this.context.log("DerbyPacketStore exception during countRow.", e);
+    }
+    finally {
+      result.close();
+    }
+  }
+
+COM:counts the number of rows in a SQL table and sets the variable "rowCount" to the result, while handling any potential exceptions that may occur during the process

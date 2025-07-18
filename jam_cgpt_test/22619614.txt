@@ -1,0 +1,14 @@
+TDAT: 	public void setCreationDate(String dateStr) throws Exception {
+
+		put(service_date_created_path, dateStr);
+
+		Element orgContributor = this.getOrgContributor();
+		orgContributor.addAttribute("date", dateStr);
+
+		if (docMap.nodeExists(person_contributor_path)) {
+			Element personContributor = getPersonContributor();
+			personContributor.addAttribute("date", dateStr);
+		}
+	}
+
+COM:sets the creation date of a service and updates the date attribute for the organization contributor and (if present) the person contributor

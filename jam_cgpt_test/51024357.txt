@@ -1,0 +1,17 @@
+TDAT: 	private void parsePath(String s) {
+		String[] fields = s.split(" ");
+		ArrayList<String> ccVec = new ArrayList<String>(), 
+						  rtVec = new ArrayList<String>();
+		for (int i = 0; i < fields.length; i++) {
+			boolean cc = (i % 2) == 0;
+			if (cc) {
+				ccVec.add(fields[i]);
+			} else {
+				rtVec.add(fields[i]);
+			}
+		}
+		ccs = ccVec.toArray(new String[ccVec.size()]);
+		rts = rtVec.toArray(new String[rtVec.size()]);
+	}
+
+COM:takes a string as input, splits it into fields separated by spaces, and stores alternating fields into two different ArrayLists before converting each list into an array

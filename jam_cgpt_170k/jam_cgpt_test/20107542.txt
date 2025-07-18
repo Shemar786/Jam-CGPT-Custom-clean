@@ -1,0 +1,11 @@
+TDAT:   public void wakeAll() {
+    Lib.assertTrue(conditionLock.isHeldByCurrentThread());
+    boolean status = Machine.interrupt().disable();
+    //goes through the thread queue and wakes up all the threads
+    for(KThread thread = waitQueue.nextThread(); thread != null; thread = waitQueue.nextThread()){
+      thread.ready();
+    }
+    Machine.interrupt().restore(status);
+  }
+
+COM:wakes up all threads currently waiting on a condition lock, as long as the lock is held by the current thread

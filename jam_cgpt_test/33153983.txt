@@ -1,0 +1,14 @@
+TDAT: 	public void test_bug3138566_coumarin_aromaticity() throws Exception {
+		SmilesParser p = new SmilesParser(SilentChemObjectBuilder.getInstance());
+		IMolecule m = p.parseSmiles("O=C1\\C=C/c2ccccc2O1");
+		MolAnalyser.analyse(m);
+		int aromatic = 0;
+		for (IAtom a : m.atoms()) {
+			aromatic += a.getFlag(CDKConstants.ISAROMATIC)?1:0;
+		}
+		//OK, the heteroring is not aromatic indeed 
+		Assert.assertEquals(6,aromatic);
+		
+	}
+
+COM:tests the aromaticity of a specific molecule and asserts that there are 6 aromatic atoms present

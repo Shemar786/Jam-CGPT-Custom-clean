@@ -1,0 +1,13 @@
+TDAT:     public void onCallTransferFailure( ExtendedCall call, String reason, Message notify ) {
+
+    	log.debug( "onCallTransferFailure", "Init..." );
+        
+        if ( call != this.call ) {
+        	log.debug( "onCallTransferFailure", "NOT the current call." );
+            return;
+        }
+        
+        log.debug( "onCallTransferFailure", "Transfer failed." );
+    }
+
+COM:logs a call transfer failure and verifies if the current call matches the passed call parameter

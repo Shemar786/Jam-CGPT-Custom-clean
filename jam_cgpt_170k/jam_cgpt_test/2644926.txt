@@ -1,0 +1,14 @@
+TDAT: 	private void sendNextProgramStartTimeChangedEvent(Status status) {
+		synchronized (dreamboxListeners) {	
+			if (dreamboxListeners!=null) {
+				for (Iterator<DreamboxListener> i = dreamboxListeners.iterator();i.hasNext();) {
+					try {
+						i.next().handleNextProgramStartTimeChangedEvent(status);
+					} 
+					catch (Throwable t) {t.printStackTrace();};
+				}
+			}
+		}
+	}
+
+COM:sends an event to all registered DreamboxListeners notifying them of a change in the start time of the next program

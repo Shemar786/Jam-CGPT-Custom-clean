@@ -1,0 +1,17 @@
+TDAT: 	protected void addOrderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BPredicate_order_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BPredicate_order_feature", "_UI_BPredicate_type"),
+				 BPackage.Literals.BPREDICATE__ORDER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the order feature of a BPredicate object to the item property descriptors list

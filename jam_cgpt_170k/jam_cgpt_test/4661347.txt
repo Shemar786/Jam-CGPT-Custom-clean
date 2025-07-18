@@ -1,0 +1,18 @@
+TDAT:   public Client available() {
+    synchronized (clients) {
+      int index = lastAvailable + 1;
+      if (index >= clientCount) index = 0;
+
+      for (int i = 0; i < clientCount; i++) {
+        int which = (index + i) % clientCount;
+        Client client = clients[which];
+        if (client.available() > 0) {
+          lastAvailable = which;
+          return client;
+        }
+      }
+    }
+    return null;
+  }
+
+COM:returns the next available client from a synchronized list based on an index and availability status

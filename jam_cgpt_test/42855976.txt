@@ -1,0 +1,16 @@
+TDAT:     public ExcelDefinition getDefinition(final String definitionName) {
+        Validate.notNull(this.definitions);
+
+        ExcelDefinition definition = null;
+        for (Iterator i = this.definitions.iterator(); i.hasNext();) {
+            ExcelDefinition iteratedDefinition = (ExcelDefinition) i.next();
+            if (definitionName.equalsIgnoreCase(iteratedDefinition.getName())) {
+                definition = iteratedDefinition;
+                return definition;
+            }
+        }
+        throw new RuntimeException("Invalid Excel definition name received.");
+
+    }
+
+COM:gets an ExcelDefinition object by its name, if it exists in the list of defined Excel definitions, otherwise it throws a RuntimeException

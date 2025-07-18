@@ -1,0 +1,12 @@
+TDAT: 		public String getId() {
+			StringBuilder b = new StringBuilder("");
+			if (path.getText() != null && !path.getText().equals("")) {
+				b.append(path.getText().split(" ")[0]+"#");
+			}
+			if (name.getText() != null && !name.getText().equals("")) {
+				b.append(name.getText());
+			}
+			return b.toString();
+		}
+
+COM:returns a concatenated string of the first word of a given path and the input name

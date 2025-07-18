@@ -1,0 +1,19 @@
+TDAT: 	public void draw(){
+		if(visible){
+			Point pos = new Point(0,0);
+			calcAbsPosition(pos);
+			app.noStroke();
+			app.fill(localColor.sdrBackground);
+			app.rect(pos.x, pos.y, width, height);
+			app.fill(localColor.sdrThumb);
+			app.rect(pos.x, pos.y + thumbPos - thumbSize/2, width, thumbSize);
+			if(border != 0){
+				app.strokeWeight(border);
+				app.noFill();
+				app.stroke(localColor.sdrBorder);
+				app.rect(pos.x, pos.y, width, height);
+			}
+		}
+	}
+
+COM:draws a rectangle with a colored background, colored thumb, and an optional border if the "visible" boolean is true

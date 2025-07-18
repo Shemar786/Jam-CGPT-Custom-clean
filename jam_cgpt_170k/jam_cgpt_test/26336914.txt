@@ -1,0 +1,10 @@
+TDAT:     private String getConfigPropertySetMethodName( String configPropertyName ) {
+        if ( ( null == configPropertyName ) ||
+             ( 0 == configPropertyName.length() ) ) {
+            throw new IllegalArgumentException( "The argument 'configPropertyName' is null or empty." );
+        }
+
+        return "set" + configPropertyName;
+    }
+
+COM:takes in a configuration property name as a parameter and returns the corresponding setter method name with "set" prefix

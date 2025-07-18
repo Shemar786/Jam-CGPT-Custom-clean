@@ -1,0 +1,17 @@
+TDAT: 	public void testInsert() throws Exception{
+		long oldSequenceNo = 0;
+
+    	// User 1 inserts text in the third line
+		oldSequenceNo = service.insert(documentHash,1,user1ID,3,3,"abc",
+			sequenceNo);
+		TestCase.assertEquals(++sequenceNo, service.getSequenceNo(
+			documentHash,0,1));
+
+    	// User 1 inserts text in the fourth line
+		oldSequenceNo = service.insert(documentHash,4,user1ID,3,3,"abc",
+			sequenceNo);
+		TestCase.assertEquals(++sequenceNo, service.getSequenceNo(
+			documentHash,1,4));
+	}
+
+COM:tests the insertion of text by a user into specific lines of a document and checks that the sequence number of the document has been appropriately updated

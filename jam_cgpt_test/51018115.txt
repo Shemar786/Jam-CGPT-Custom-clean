@@ -1,0 +1,10 @@
+TDAT:     private void scanClasses(Set<String> b, File file) throws IOException {
+        ZipFile zipfile = new ZipFile(file);
+        Enumeration<? extends ZipEntry> entries = zipfile.entries();
+        while (entries.hasMoreElements()) {
+            ZipEntry entry = entries.nextElement();
+            b.add(entry.getName());
+        }
+    }
+
+COM:scans the entries of a zip file and adds the names of the entries to a set

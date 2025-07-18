@@ -1,0 +1,10 @@
+TDAT:     public ActionForm getActionForm() {
+        if (logger.isDebugEnabled())
+            logger.debug("Entering");
+        init();
+        if (logger.isDebugEnabled())
+            logger.debug("Exiting");
+        return Common.getActionForm(request.getPathInfo(),request,config.getServletContext());
+    }
+
+COM:returns an action form after invoking the Common method with a request object, path information, and a servlet context

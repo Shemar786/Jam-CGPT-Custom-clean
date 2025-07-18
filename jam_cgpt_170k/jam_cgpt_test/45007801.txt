@@ -1,0 +1,19 @@
+TDAT:     public int getNumberOfNetworks() {
+        int count = 0;
+
+        for (int uid : c3Network.values()) {
+
+            try {
+                Unit master = getUnit(uid);
+                if (!c3Network.containsKey(uid) && master.hasBeenC3LinkedTo(this)) {
+                    count++;
+                }
+            } catch (Exception ex) {
+            }
+
+        }
+
+        return Math.max(1, count);
+    }
+
+COM:returns the number of C3 networks that the current object is linked to

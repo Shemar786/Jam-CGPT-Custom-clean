@@ -1,0 +1,11 @@
+TDAT: 	public void abort(L2PcInstance activeChar) {
+		Announcements _an = Announcements.getInstance();
+		_log.warning("GM: "+activeChar.getObjectId()+" issued shutdown ABORT. " + _modeText[shutdownMode] + " has been stopped!");
+		_an.announceToAll("Server aborts " + _modeText[shutdownMode] + " and continues normal operation!");
+
+		if (_counterInstance != null) {
+			_counterInstance._abort();
+		}
+	}
+
+COM:aborts a server shutdown initiated by a game master and announces to all players that the server will continue normal operation

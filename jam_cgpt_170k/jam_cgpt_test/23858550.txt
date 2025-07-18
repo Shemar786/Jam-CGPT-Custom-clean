@@ -1,0 +1,12 @@
+TDAT: 	public void close() throws IOException {
+		for (Enumeration<SplitterLine> e = splitter_lines.elements(); e.hasMoreElements();) {
+			((SplitterLine) e.nextElement()).close();
+		}
+		for (Enumeration<MixerLine> e = mixer_lines.elements(); e.hasMoreElements();) {
+			((MixerLine) e.nextElement()).close();
+		}
+		mixer_lines = null;
+		splitter_lines = null;
+	}
+
+COM:closes all splitter and mixer lines and sets their respective enumerations to null

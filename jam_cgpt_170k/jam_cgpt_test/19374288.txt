@@ -1,0 +1,14 @@
+TDAT: 	public Set getResumeStates() {
+		Set<SCStateResume> res = new HashSet<SCStateResume>();
+		for (ISCState st:scState_) {
+			if (st instanceof SCStateResume) {
+				res.add((SCStateResume) st);
+			} 
+			else if (st instanceof SCStateCont) {
+				res.addAll(((SCStateCont)st).getResumeStates());
+			}
+		}
+		return res;
+	}
+
+COM:returns a set of SCStateResume objects by iterating through the SCState objects and adding them to the set if they are of type SCStateResume or by recursively adding the resume states of SCStateCont objects if they exist

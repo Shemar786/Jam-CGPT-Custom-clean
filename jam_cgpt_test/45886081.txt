@@ -1,0 +1,13 @@
+TDAT:     public void setEmptyText(CharSequence text) {
+        ensureList();
+        if (mStandardEmptyView == null) {
+            throw new IllegalStateException("Can't be used with a custom content view");
+        }
+        mStandardEmptyView.setText(text);
+        if (mEmptyText == null) {
+            mList.setEmptyView(mStandardEmptyView);
+        }
+        mEmptyText = text;
+    }
+
+COM:sets the text for an empty view in a ListView, and throws an exception if a custom content view is being used

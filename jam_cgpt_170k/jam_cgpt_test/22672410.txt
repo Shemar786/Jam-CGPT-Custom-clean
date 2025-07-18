@@ -1,0 +1,16 @@
+TDAT: 	protected Currency getCurrency(String currencyCode) throws DAOException {
+		Currency currency = null;
+		if (currencyCode == null || currencyCode.trim().equals("")) {
+			currency = Currency.getInstance(Locale.getDefault());
+		} else {
+			try {
+				currency = Currency.getInstance(currencyCode);
+			} catch (IllegalArgumentException e) {
+				throw new DAOException(MessageFormat.format(
+						"{0} is not a valid currency code", currencyCode), e);
+			}
+		}
+		return currency;
+	}
+
+COM:retrieves a Currency object based on a given currency code, and if the code is invalid, it throws a DAOException

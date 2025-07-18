@@ -1,0 +1,8 @@
+TDAT:     public void testBaseDataSet() {
+        assertEquals("Base dataset of raw", raw, raw.baseDataSet());
+        assertEquals("Base dataset of raw2", raw2, raw2.baseDataSet());
+        assertEquals("Base dataset of subset1", staticRaw, subset1.baseDataSet());
+        assertEquals("Base dataset of subset2", staticRaw, subset2.baseDataSet());
+    }
+
+COM:tests the base dataset of multiple objects using the assertEquals method

@@ -1,0 +1,18 @@
+TDAT: 	public String getAttribute(String attName)  {
+		try {
+			//Namespace namespace = element.getNamespace();
+			// if this doesn't work, we may have to use the namespace argument
+			Attribute attribute = element.getAttribute(attName);
+			if (attribute != null) {
+				return attribute.getValue();
+			}
+			else {
+				//System.out.println("attribute = null");
+			}
+		} catch (Exception e) {
+			//System.err.println("Error: retrieving " + attName + " info for " + element.getName());
+		}
+		return null;
+	}
+
+COM:retrieves the value of a specific attribute from an XML element

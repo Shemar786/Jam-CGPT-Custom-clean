@@ -1,0 +1,13 @@
+TDAT:     public Object getPropertyValue(Object id) {
+        if(ID.equals(id))
+            return getID();
+        else if(BEGIN_POSITION.equals(id))
+            return getPointADelegate();
+        else if(END_POSITION.equals(id))
+            return getPointBDelegate();
+        else if(DIRECTION.equals(id))
+            return getDirection().toString();
+        else return super.getPropertyValue(id);
+    }
+
+COM:returns the value of a specific property based on the inputted ID

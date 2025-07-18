@@ -1,0 +1,20 @@
+TDAT: 	protected void init(String xpath, Element parent, RendererState state) {
+		this.xpath = xpath;
+		this.parent = parent;
+		this.state = state;
+		this.sh = state.getSchemaHelper();
+		this.root = state.getRoot();
+
+		df = DocumentFactory.getInstance();
+		normalizedXPath = AutoForm.normalizeXPath(xpath);
+		schemaNode = sh.getSchemaNode(normalizedXPath);
+
+		// guard against infinite loops
+		if (state.counter++ > 200) {
+			prtln("*** Sytem Exit ***");
+			System.exit(state.counter);
+		}
+
+	}
+
+COM:initializes and sets certain variables and objects for use in rendering a form element

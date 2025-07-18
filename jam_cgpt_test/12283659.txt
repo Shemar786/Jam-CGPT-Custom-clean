@@ -1,0 +1,11 @@
+TDAT: 	private boolean isCorrectKeyValue(final String key, final String value) {
+		return ("webport".equals(key) || "webapp".equals(key)
+				|| "tool".equals(key) || "login".equals(key)
+				|| "loops".equals(key) || "password".equals(key)
+				|| "threads".equals(key) || ("functional".equals(key)
+				|| "structural".equals(key) || "performance".equals(key) || "semiautomatic"
+				.equals(key))
+				&& ("true".equals(value) || "false".equals(value)));
+	}
+
+COM:checks if the given strings for key and value match certain predefined values and returns a boolean value based on the outcome

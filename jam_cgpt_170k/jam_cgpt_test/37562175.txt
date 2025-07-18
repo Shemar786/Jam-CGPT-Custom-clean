@@ -1,0 +1,13 @@
+TDAT: public void deselect (int index) {
+	checkWidget ();
+  CCombo cCombo = (CCombo)handle;
+  if(index == cCombo.getSelectedIndex()) {
+    isAdjustingSelection = true;
+    cCombo.setSelectedIndex(-1);
+    isAdjustingSelection = false;
+    sendEvent (SWT.Modify);
+  }
+	// widget could be disposed at this point
+}
+
+COM:deselects the currently selected item in a CCombo widget, triggering a Modify event

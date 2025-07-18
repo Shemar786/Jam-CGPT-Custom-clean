@@ -1,0 +1,14 @@
+TDAT:   protected void extractToken() {
+    if ((next.token.length() != 0) && (next.tokenType != UNKNOWN)) {
+      // Move next token to current token
+      current.tokenType = next.tokenType;
+      current.lineNo = next.lineNo;
+      current.position = next.position;
+      current.token = next.token;
+      // Clear next token
+      next = new Lexem();
+    } else
+      runLex(current);
+  }
+
+COM:extracts the next token and assigns its values to the current token, then clears the next token and runs the lexical analyzer

@@ -1,0 +1,13 @@
+TDAT:     protected void loginClient(UniqueID clientID) {
+        log.debug("Running BrokerConnection.loginClient(clientID)..");
+        userID = clientID;
+        connectionMode = BrokerConnection.CLIENT_MODE;
+        try {
+            out("OK");
+        } catch (IOException e) {
+            log.warn("Command execution error", e);
+            throw new CommandException(e);
+        }
+    }
+
+COM:logs in a client with a UniqueID and sets the connection mode to CLIENT_MODE

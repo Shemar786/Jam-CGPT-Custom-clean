@@ -1,0 +1,15 @@
+TDAT:     public Object create ( String channelThreadName, Configuration conf ) throws ConfigurationException {
+        
+        if ( null == channelThreadName && null == conf )
+            throw new IllegalArgumentException( "Parameters can not be null!" );
+        
+        // Create new channel...
+        Object channel = create ( channelThreadName );
+        
+        // Apply configuration on it...
+        ( ( Configurable )channel ).configure ( conf );
+        
+        return channel;
+    }
+
+COM:creates a new channel object with a specified thread name and applies a configuration to it, returning the created channel object

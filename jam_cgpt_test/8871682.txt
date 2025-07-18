@@ -1,0 +1,13 @@
+TDAT:     public  String getUIDSearchString(String[] uids){
+        StringBuilder sb = new StringBuilder();
+        for(String uid : uids){
+            if(sb.length()>0)
+                sb.append(" OR ");
+            sb.append(getUidSearchField(uid));
+            sb.append(":");
+            sb.append(uid);
+        }
+        return sb.toString();
+    }
+
+COM:takes in an array of user IDs and returns a string that can be used for searching those IDs in a database or other data source

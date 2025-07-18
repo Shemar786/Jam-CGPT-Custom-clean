@@ -1,0 +1,18 @@
+TDAT: 	private int findIntervalIndex(int offset) {
+		int low = 0;
+		int high = intervals.size() - 1;
+		int mid;
+		while (low <= high) {
+			mid = (low + high) / 2;
+
+			if (intervals.get(mid).getOffset() > offset) {
+				high = mid - 1;
+			} else if (	intervals.get(mid).getLastIndex() < offset) {
+				low = mid + 1;
+			} else
+				return mid;
+		}
+		return -1;
+	}
+
+COM:finds the index of an interval that contains a given offset value by performing a binary search on a list of intervals

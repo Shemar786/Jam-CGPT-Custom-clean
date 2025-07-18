@@ -1,0 +1,14 @@
+TDAT: 	public Depend getDependencyObjectById(String aDependId) {
+		Iterator<String> it = getDependencies().keySet().iterator();
+		Depend dependObject;
+		String dependId;
+		while (it.hasNext()) {
+			dependId = (String) it.next();
+			dependObject = (Depend) getDependencies().get(dependId);
+			if (dependObject.getId().equals(aDependId))
+				return dependObject;
+		}
+		return null;
+	}
+
+COM:returns a Depend object based on the ID of the dependency passed as the argument

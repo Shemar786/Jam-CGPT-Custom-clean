@@ -1,0 +1,12 @@
+TDAT:     public Response onCommand(POP3Session session, Request request) {
+        POP3Response response = null;
+        if (session.getHandlerState() == POP3Session.TRANSACTION) {
+            stat(session);
+            response = new POP3Response(POP3Response.OK_RESPONSE);
+        } else {
+            response = new POP3Response(POP3Response.ERR_RESPONSE);
+        }
+        return response;
+    }
+
+COM:processes a POP3 protocol command, checks the session handler state, and returns an appropriate response

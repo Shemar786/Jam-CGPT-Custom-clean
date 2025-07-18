@@ -1,0 +1,12 @@
+TDAT:   protected void updateName () {
+    setName(
+      "Objects for which \"" + key + "\" " +
+      equalityState + " " +
+      ( ( value instanceof String ) ? "\"" : "" ) +
+      value +
+      ( ( value instanceof String ) ? "\"" : "" ) +
+      " (using comparator \"" + comparator + "\")"
+    );
+  }
+
+COM:updates the name of an object using some input parameters and sets it as the new name

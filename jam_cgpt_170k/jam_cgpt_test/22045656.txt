@@ -1,0 +1,12 @@
+TDAT:     public Sum clone(){
+	Sum copy = new Sum();
+	copy.complex = new Complex( complex.real(), complex.imaginary() );
+	copy.expressionList = new java.util.LinkedList<Expression>();
+	for( java.util.ListIterator<Expression>
+		 i = getExpressionList().listIterator(); i.hasNext(); ){
+	    copy.expressionList.add( i.next() );
+	}
+	return copy;
+    }
+
+COM:creates and returns a copy of a Sum object

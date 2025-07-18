@@ -1,0 +1,11 @@
+TDAT:     public void receiveXPlanetFeedback() {
+        this.logger.fine("XPlanet was successfully executed. Receiving feedback from the GUI.");
+        if (this.isIsPreview()) {
+            this.logger.finer("In preview mode.");
+            this.showPreviewPanel();
+        } else {
+            this.logger.finer("No in preview mode.");
+        }
+    }
+
+COM:receives feedback from the GUI after executing XPlanet and shows a preview panel if the application is in preview mode

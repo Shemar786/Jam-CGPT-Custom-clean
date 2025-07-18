@@ -1,0 +1,13 @@
+TDAT:     public void removeObject(Object object) {
+        removeAllFromMap(object, patternMap);
+        // Prefix
+        removeAllFromMap(object, prefixMatchRules);
+        // Suffix
+        removeAllFromMap(object, suffixMatchRules);
+        // Exact
+        removeAllFromMap(object, exactMatchRules);
+        // Default
+        if (defaultObject.equals(object)) defaultObject = null;
+    }
+
+COM:removes an object from multiple maps and sets the default object to null if it matches the object being removed

@@ -1,0 +1,9 @@
+TDAT:   private void jbInit() throws Exception {
+    moduleLabel.setFont(new java.awt.Font("Dialog", 0, 42));
+    moduleLabel.setHorizontalAlignment(SwingConstants.CENTER);
+    moduleLabel.setText(name);
+    this.setLayout(borderLayout1);
+    this.add(moduleLabel, BorderLayout.CENTER);
+  }
+
+COM:sets the font, alignment, and text of a module label and adds it to the center of the main layout

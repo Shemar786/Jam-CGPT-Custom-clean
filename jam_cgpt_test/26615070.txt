@@ -1,0 +1,13 @@
+TDAT:     public void iterateAllWorlds(int reps, boolean iterateParallel) {
+	if (iterateParallel == true) {
+	    for (int i = 0; i < reps; i++) {
+		iterateAllWorlds();
+	    }
+	} else {
+	    for (Iterator i = getWorldIterator(); i.hasNext(); ) {
+		iterateWorld((World) (i.next()), reps);
+	    }
+	}
+    }
+
+COM:iterates through all worlds either in parallel or sequentially for a given number of repetitions

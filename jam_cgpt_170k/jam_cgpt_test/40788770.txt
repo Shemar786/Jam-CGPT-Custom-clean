@@ -1,0 +1,15 @@
+TDAT:     public TransportCandidate getPreferredCandidate() {
+        TransportCandidate result = null;
+
+        ArrayList cands = (ArrayList) getCandidatesList();
+        if (cands.size() > 0) {
+            Collections.sort(cands);
+            // Return the last candidate
+            result = (TransportCandidate) cands.get(cands.size() - 1);
+            LOGGER.debug("Result: " + result.getIp());
+        }
+
+        return result;
+    }
+
+COM:returns the preferred candidate for transportation by sorting and returning the last candidate in an ArrayList

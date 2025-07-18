@@ -1,0 +1,12 @@
+TDAT:     public void setModel(final T model) {
+        // first unbind the current model
+        if (this.model != null)
+            removeModel();
+        this.model = model;
+        this.status = TrackedBeanUtils.getBeanStatus(model);
+        // only rebind if a model was passed
+        if (model != null)
+            bind();
+    }
+
+COM:sets a new model, unbinds the current model and then binds the new model if it is not null

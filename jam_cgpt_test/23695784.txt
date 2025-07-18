@@ -1,0 +1,14 @@
+TDAT: 	private JPanel getJContentPane() {
+		if (jContentPane == null) {
+			jLabelResponseMessage = new JLabel();
+			jLabelResponseMessage.setBounds(new Rectangle(124, 55, 333, 28));
+			jLabelResponseMessage.setText("response message here");
+			jContentPane = new JPanel();
+			jContentPane.setLayout(null);
+			jContentPane.add(getJButtonHome(), null);
+			jContentPane.add(jLabelResponseMessage, null);
+		}
+		return jContentPane;
+	}
+
+COM:returns a JPanel object that contains a JLabel with a response message and a JButton for navigating to the home page

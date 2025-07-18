@@ -1,0 +1,16 @@
+TDAT: 	public void createPartControl(Composite parent) {
+		tradeviewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
+		tradeviewer.setContentProvider(new TradeListContentProvider());
+		tradeviewer.setLabelProvider(new TradeListLabelProvider("*"));
+		tradeviewer.setSorter(new NameSorter());
+		tradeviewer.setInput(getViewSite());
+		
+	
+		hookDoubleClickAction();
+		contributeActions();
+		getSite().setSelectionProvider(tradeviewer);
+		
+		
+	}
+
+COM:creates a table viewer inside a composite parent, sets its content provider, label provider, sorter, and input based on a TradeListContentProvider, TradeListLabelProvider, NameSorter, and the current view site respectively, and also hooks a double click action, contributes actions, and sets the table viewer as the selection provider for the current site

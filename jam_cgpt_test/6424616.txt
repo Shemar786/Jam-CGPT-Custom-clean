@@ -1,0 +1,21 @@
+TDAT: 	public void addPlugable(Plugable plugable){
+		instance.putInstance(plugable);
+		Iterator pluginNames=registry.getPluginClassNames(plugable.getName());
+		if(pluginNames==null)return;
+		while(pluginNames.hasNext()){
+			String current=pluginNames.next().toString();
+			try{
+				Class c=PluginLoader.getPluginClass(current);
+				Plugin p=(Plugin)c.newInstance();
+				p.pluginInstalled(plugable);
+				String[] keys=p.getKeysFor(plugable.getName());
+				for(int i=keys.length-1;i>=0;i--){
+					instance.putInstance(plugable,keys[i],p);
+				}
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+	}
+
+COM:adds a plugable object to a registry and loads any associated plugins to be used with it

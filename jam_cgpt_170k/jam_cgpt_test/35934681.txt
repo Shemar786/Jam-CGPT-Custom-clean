@@ -1,0 +1,10 @@
+TDAT:     private void passedInSuccession() {
+        SortedZone stack = getGame().getStack();
+        if(!stack.isEmpty()) {
+            MagicObject o = stack.getCards().get(stack.size() - 1);
+            //this will remove the object from the stack
+            o.getPlayInformation().getEffect().execute();
+        } else nextStep();
+    }
+
+COM:executes the effect of the last MagicObject in a SortedZone stack, or moves on to the next step if the stack is empty

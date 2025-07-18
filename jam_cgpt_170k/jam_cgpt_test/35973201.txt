@@ -1,0 +1,16 @@
+TDAT:     public void init(FilterConfig filterConfig) {
+
+        String param = filterConfig.getInitParameter("uploadMaxFileSize");
+
+        _uploadMaxFileSize = resolveSize(param, _uploadMaxFileSize);
+
+        param = filterConfig.getInitParameter("uploadThresholdSize");
+
+        _uploadThresholdSize = resolveSize(param, _uploadThresholdSize);
+
+        _uploadRepositoryPath = filterConfig.getInitParameter("uploadRepositoryPath");
+
+        _servletContext = filterConfig.getServletContext();
+    }
+
+COM:initializes a filter configuration for file uploads, retrieving and setting specific parameters

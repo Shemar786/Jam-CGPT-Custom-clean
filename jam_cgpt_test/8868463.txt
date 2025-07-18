@@ -1,0 +1,14 @@
+TDAT:     protected SolrServer initialiseSolrServer() {
+        if (this.solrServer == null & this.solrUrl  != null) {
+            // Solr running in seperate webapp/war
+            try {
+                this.solrServer = new CommonsHttpSolrServer( this.solrUrl );
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return solrServer;
+    }
+
+COM:initializes a Solr server if it was not previously initialized and returns the Solr server object

@@ -1,0 +1,10 @@
+TDAT: 	public void testRenameInt() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neParent = createNEPositive(rSource, "parent", null);
+		NamedElement neSource = createNEPositive(neParent, "foo", null);
+		
+		renamePositive(neSource, "bar", false);
+	}
+
+COM:creates a Rodin file, creates named elements within it, and renames one of the named elements to a new name

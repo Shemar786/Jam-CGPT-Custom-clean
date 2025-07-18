@@ -1,0 +1,14 @@
+TDAT: 	public void testSetMarked() {
+		System.out.println("setMarked");
+		
+		Match m = new Match(3, 5, 7);
+		LinkedListOfElementsItem instance = new LinkedListOfElementsItem(new Symbol(13), 0);
+		instance.refToUnmarked = new LinkedElementItem(instance);
+		instance.setMarked(m);
+		assertNull(instance.refToUnmarked);
+		assertEquals(m.L, instance.match.L);
+		assertEquals(m.p, instance.match.p);
+		assertEquals(m.t, instance.match.t);
+	}
+
+COM:tests whether an instance of LinkedListOfElementsItem properly sets the "marked" property

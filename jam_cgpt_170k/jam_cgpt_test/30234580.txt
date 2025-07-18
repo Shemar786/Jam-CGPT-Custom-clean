@@ -1,0 +1,15 @@
+TDAT:     public void closeMessageStream() {
+        if(messageOpen) {
+            try {
+                String xmlToSend = WSArenaClientUtils.messageEndXML();
+                myOutBuffer.write(xmlToSend);
+                myOutBuffer.flush();
+            } catch(Exception p){
+                p.printStackTrace();
+                System.out.println("Could not close message stream!");
+            }
+            messageOpen = false;
+        }
+    }
+
+COM:closes a message stream if it is open and sends a final XML message before doing so

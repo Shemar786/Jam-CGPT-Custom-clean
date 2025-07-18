@@ -1,0 +1,11 @@
+TDAT: 	private void rebuildTree(){
+		if(this.getP2DController().getEnvironmentModel() != null){
+			DefaultMutableTreeNode rootNode = getPlaygroundNode(this.getP2DController().getEnvironmentModel().getRootPlayground());
+			getTreeEnvironment().setModel(new DefaultTreeModel(rootNode));
+		}else{
+			DefaultMutableTreeNode dummyNode = new DefaultMutableTreeNode(Language.translate("Keine Umgebung definiert"));
+			getTreeEnvironment().setModel(new DefaultTreeModel(dummyNode));
+		}
+	}
+
+COM:rebuilds a tree based on the current environment model and sets the root node depending on whether or not an environment is defined

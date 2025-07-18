@@ -1,0 +1,10 @@
+TDAT:     private Date getLastUpdated(Node node) throws RepositoryException {
+        try {
+            node = node.getNode("jcr:content");
+        } catch (PathNotFoundException e) {
+            node = node.getProperty("jcr:content").getNode();
+        }
+        return node.getProperty("jcr:lastModified").getDate().getTime();
+    }
+
+COM:returns the last modified date of the "jcr:content" node in a given Node, or throws a RepositoryException if it cannot be found

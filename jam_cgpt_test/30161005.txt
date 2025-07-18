@@ -1,0 +1,8 @@
+TDAT:     protected void testDocument(Branch branch, Document doc) {
+        for (int i = 0, size = branch.nodeCount(); i < size; i++) {
+            Node node = branch.node(i);
+            assertTrue("Node has correct document", node.getDocument() == doc);
+        }
+    }
+
+COM:tests that all nodes in a given branch have the correct document

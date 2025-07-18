@@ -1,0 +1,22 @@
+TDAT:         private void resetSymbols() {
+            switch (getDatatypeID()) {
+                case Datatypes.STANDARDID:
+                    this.symbols = Datatypes.STANDARDSYMBOLS;
+                    break;
+                case Datatypes.DNAID:
+                    this.symbols = Datatypes.DNASYMBOLS;
+                    break;
+                case Datatypes.RNAID:
+                    this.symbols = Datatypes.RNASYMBOLS;
+                    break;
+                case Datatypes.PROTEINID:
+                    this.symbols = Datatypes.PROTEINSYMBOLS;
+                    break;
+                default:
+                    this.symbols = Datatypes.UNKNOWNSYMBOLS;
+                    break;
+            }
+            computeColors();
+        }
+
+COM:sets the symbols to be used based on the datatype ID and then computes the colors to be used

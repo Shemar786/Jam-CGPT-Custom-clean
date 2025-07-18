@@ -1,0 +1,18 @@
+TDAT: 	private void runInteractive() {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		while (true) {
+			System.out.print("pynt> ");
+			try {
+				String line = in.readLine();
+				if (line.trim().equals("exit")) return;
+				PyntObject result = engine.run(line);
+				if (!result.isNull()) System.out.println(result);
+			} catch (PyntException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+COM:This is a Java method that runs an interactive shell which takes input from the user, executes the input using a Pynt engine, and prints the result to the console

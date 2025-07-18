@@ -1,0 +1,11 @@
+TDAT:     public String toJavaModeString() {
+        // Do not open as 'rw' by default since a file with read-only permissions will fail on 'rw'
+        if (isWritable() || isCreate() || isTruncate()) {
+            // Java requires "w" for creating a file that does not exist
+            return "rw";
+        } else {
+            return "r";
+        }
+    }
+
+COM:returns a string indicating whether a file is writable, readable or truncate

@@ -1,0 +1,13 @@
+TDAT: 	public ContextTypeRegistry getTemplateContextRegistry() {
+		if (contextTypeRegistry == null) {
+			ContributionContextTypeRegistry registry = new ContributionContextTypeRegistry();
+			registry.addContextType(PomTemplatesContextTypeIds.DEPENDENCIES);
+			registry.addContextType(PomTemplatesContextTypeIds.ARTIFACT_ID);
+			registry.addContextType(PomTemplatesContextTypeIds.GROUP_ID);
+			registry.addContextType(PomTemplatesContextTypeIds.VERSION);
+			contextTypeRegistry = registry;
+		}
+		return contextTypeRegistry;
+	}	
+
+COM:returns a context type registry for a set of predefined template context types used in a Maven project

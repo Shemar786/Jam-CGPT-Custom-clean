@@ -1,0 +1,16 @@
+TDAT:   public Person getPersonByDn(String dn) throws KivException {
+    DistinguishedName distinguishedName = new DistinguishedName(dn);
+
+    PersonMapper personMapper = new PersonMapper();
+    try {
+      ldapTemplate.lookup(distinguishedName, personMapper);
+    } catch (NamingException e) {
+      throw new KivException("Error getting person from server: " + e.getMessage());
+    }
+
+    Person person = personMapper.getFirstPerson();
+
+    return person;
+  }
+
+COM:takes a string representing a distinguished name (dn) of a person, queries a server using LDAP to retrieve their information, and returns that person's details as a Person object, with the possibility of throwing a KivException if an error occurs

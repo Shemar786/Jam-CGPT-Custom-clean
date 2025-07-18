@@ -1,0 +1,14 @@
+TDAT: 	public void deleteMessage(Map<String, Object> map, boolean sent) {
+
+		Information info = (Information) map.get("msg");
+		String peer = (String) map.get("peer");
+		String remotePeer = (String) map.get("remotePeer");
+
+		ContextPoint cp = getPrivateMessagesCP(peer, remotePeer, sent);
+		
+		if(cp != null){
+			cp.removeInformation(info);
+		}
+	}
+
+COM:deletes a message from a private message context point based on a given map of message information and a boolean indicating whether the message was sent or received

@@ -1,0 +1,7 @@
+TDAT:     public void put(String key, long value) throws IllegalArgumentException {
+        if (value < 0) // long2minLeb doesn't work on negative values
+            throw new IllegalArgumentException("Negative value: " + value + " for key: " + key);
+        put(key, ByteUtils.long2minLeb(value));
+    }
+
+COM:stores a long value in a map at the specified key, using a variable-length encoding for storage efficiency, while also checking for and throwing an exception if the value is negative

@@ -1,0 +1,9 @@
+TDAT:     public void testRemoveParameterReturnValue() throws Exception {
+        PostMethod method = new PostMethod("/");
+
+        method.addParameter("param", "whatever");
+        assertTrue("Return value of the method is expected to be true", method.removeParameter("param"));
+        assertFalse("Return value of the method is expected to be false", method.removeParameter("param"));
+    }
+
+COM:tests the removeParameter() function of a PostMethod object by adding a parameter and then attempting to remove it and checking the return value

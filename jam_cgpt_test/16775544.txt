@@ -1,0 +1,18 @@
+TDAT: 	public IVector getAllTimes() {
+		int n = this.getCount();
+		int nextindex = 0;
+		int seriesLength;
+		double times[] = new double[n];
+		double tempTimes[] = null;
+		for (TimeSeries sery : this.series) {
+			tempTimes = sery.getTimesRef();
+			if(tempTimes!=null){
+				seriesLength = tempTimes.length;
+				System.arraycopy(sery.getTimesRef(), 0, times, nextindex, seriesLength);
+				nextindex += seriesLength;
+			}
+		}
+		return new Vector(times);
+	}
+
+COM:retrieves all the times from a group of time series and returns them as a vector

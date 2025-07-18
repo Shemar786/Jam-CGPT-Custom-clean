@@ -1,0 +1,13 @@
+TDAT:   protected void prepareRow(int row) {
+    if (row < 0) {
+      throw new IndexOutOfBoundsException(
+        "Cannot create a row with a negative index: " + row);
+    }
+
+    // Ensure that the requested row exists.
+    int rowCount = getRowCount();
+    for (int i = rowCount; i <= row; i++)
+      insertRow(i);
+  }
+
+COM:prepares a row for insertion or modification by checking if the requested row exists and inserting it if necessary

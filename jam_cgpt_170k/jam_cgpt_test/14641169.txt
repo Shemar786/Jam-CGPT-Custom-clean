@@ -1,0 +1,27 @@
+TDAT: 	protected Object checkValueGet(String key, Object pvalue) {
+
+		if (pvalue instanceof HString) {
+			HString hstring = (HString) pvalue;
+			return hstring.getString();
+		}
+
+		if (pvalue instanceof HInteger) {
+			HInteger hint = (HInteger) pvalue;
+			return hint.getInt();
+		}
+
+		if (pvalue instanceof HLong) {
+			HLong hlong = (HLong) pvalue;
+			return hlong.getLong();
+		}
+
+		if (pvalue instanceof HValueSet) {
+
+			HValueSet hValueSet = (HValueSet) pvalue;
+			return hValueSet.getValues();
+		}
+
+		return pvalue;
+	}
+
+COM:checks the type of a given value and returns the appropriate data type

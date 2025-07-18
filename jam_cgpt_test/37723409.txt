@@ -1,0 +1,12 @@
+TDAT: 	private void extract(byte[] buffer, File dir, JarInputStream in) throws IOException {
+		JarEntry entry = null;
+		while ((entry = in.getNextJarEntry()) != null) {
+			File file = new File(dir, entry.getName());
+			if (entry.isDirectory())
+				file.mkdirs();
+			else
+				writeFile(buffer, in, file);
+		}
+	}
+
+COM:extracts entries from a JarInputStream and writes them to a specified directory, creating any necessary directories for entries that are directories themselves

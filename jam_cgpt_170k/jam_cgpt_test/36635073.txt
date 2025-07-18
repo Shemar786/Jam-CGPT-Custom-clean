@@ -1,0 +1,10 @@
+TDAT:     public void addShort(int index, int value){
+        if(value < 0 || value > 65534)
+            value = 0;
+        if(index >= 0 && index < MAX_DATA-1){            
+            addByte(index, value/256);
+            addByte(index+1, value%256);
+        }
+    }
+
+COM:adds a given short integer value to a specified index in an array, first checking if the value is within the range of 0-65534

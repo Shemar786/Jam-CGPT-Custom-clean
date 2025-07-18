@@ -1,0 +1,13 @@
+TDAT: 	public void refresh() {
+		// disable Quit menu is game is over or round is over
+		// it is a little odd that user can't quit when
+		// round is over, but else Quit will put a Move into
+		// BlockingQueue when the thread has terminated.
+		if (_game.isRunning() ) {
+			_quitMenuItem.setEnabled(true);
+		} else {
+			_quitMenuItem.setEnabled(false);
+		}
+	}
+
+COM:disables the Quit menu if the game is over or the round is over, but enables it otherwise

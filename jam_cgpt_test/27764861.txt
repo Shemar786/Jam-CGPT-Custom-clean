@@ -1,0 +1,20 @@
+TDAT:   public void startServer() throws IOException {
+    /*
+     * I am not synchronizing the method because someone told me it is
+     * better style ;)
+     */
+
+    synchronized(this) {
+      if(serverThread == null) {
+
+        serverSocket = new ServerSocket(port);
+        serverThread = new Thread(this);
+        serverThread.start();
+
+      } // end of if serverThread == null
+
+    } // end of synchronized
+
+  } // end of method startServer
+
+COM:starts a server by creating a new thread and initializing a server socket, and throws an IOException

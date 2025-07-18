@@ -1,0 +1,14 @@
+TDAT: 	public boolean connect() {
+		String url = null;
+		try {
+			url = "jdbc:mysql://" + hAddr + "/" + dbName;
+			Class.forName("com.mysql.jdbc.Driver").newInstance(); //not supplied with JDK will have to download http://www.mysql.com/products/connector/j/
+			conn = DriverManager.getConnection(url, uName, pWord);
+			return true;
+		} catch (Exception e) {
+			System.err.println("Connect Failed: " + url);
+			return false;
+		}
+	}
+
+COM:attempts to establish a connection to a MySQL database using the provided hostname, database name, username, and password

@@ -1,0 +1,13 @@
+TDAT: public String getItem (int index) {
+	checkWidget ();
+  int count = getItemCount();
+  if (!(0 <= index && index < count)) error (SWT.ERROR_CANNOT_GET_ITEM);
+  try {
+    return (String)((CCombo)handle).getItemAt(index);
+  } catch(Exception e) {
+    error (SWT.ERROR_INVALID_RANGE);
+  }
+  return "";
+}
+
+COM:returns the string value of the item at the specified index of a CCombo widget, or throws an error if the index is out of range

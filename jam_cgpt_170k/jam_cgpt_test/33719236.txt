@@ -1,0 +1,13 @@
+TDAT:     public void testSetTitle() {
+        System.out.println("setTitle");
+        
+        String title = "";
+        Event_DBImpl instance = new Event_DBImpl();
+        
+        instance.setTitle(title);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the setTitle() method of the Event_DBImpl class by setting a title to an empty String and creating an instance of the class

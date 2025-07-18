@@ -1,0 +1,11 @@
+TDAT:     public JSONObject getPerson(String fields) {
+    	securityContext.checkIfAuthorized();
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("format", "json");
+		map.put("fields", "@all");
+		if (fields != null)
+			map.put("fields", fields);
+		return (JSONObject) getUserData(API_USER_URL, map);
+    }
+
+COM:gets a JSON object of a person with specified fields and checks if the security context is authorized

@@ -1,0 +1,11 @@
+TDAT: 	private void parseOption(String option) throws IOException {
+		int equalPos = option.indexOf("=");
+		if (equalPos < 0) {
+	        throw new IOException("Bad format: invalid option format");
+        }
+		String name = option.substring(0, equalPos);
+		String value = option.substring(equalPos + 1);
+		optionsMap.put(name, Boolean.valueOf(value));
+	}
+
+COM:parses an option string, checks its format, extracts the option name and value, and adds the option to a map

@@ -1,0 +1,19 @@
+TDAT: 	public void removeAddress(AddressType type) {
+		if (addressList == null) return;
+		// Remove the old entry for this type of address
+		for (int i=0; i<addressList.size(); i++) {
+			Address next = addressList.get(i);
+			AddressType nextType = next.getAddType();
+			if (nextType == null) {
+				if (type == null) {
+					addressList.remove(i);
+					break;
+				}
+			} else if ((type != null) && nextType.equals(type)) {
+				addressList.remove(i);
+				break;
+			}
+		}		
+	}
+
+COM:removes an Address object from an addressList based on its AddressType

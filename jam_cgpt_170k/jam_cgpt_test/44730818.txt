@@ -1,0 +1,17 @@
+TDAT: 	public void setLayoutData(Control control, TableData layoutData) {
+
+		if (control.getContainer() != this) {
+			throw new IllegalArgumentException("The specified control is not member of this container.");
+		}
+		
+		if (control instanceof TableLayoutContainer) {
+			allLayoutInfos.put(control.getName(), null);
+		}
+		else {
+			allLayoutInfos.put(control.getName(), layoutData != null ? layoutData : new TableData());
+		}
+		requireRedraw();
+		cells = null;
+	}
+
+COM:sets layout data for a control within a container, adding it to a hashmap if it is not a TableLayoutContainer and throwing an exception if the control is not a member of the container

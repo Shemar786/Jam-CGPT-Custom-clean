@@ -1,0 +1,9 @@
+TDAT:   public void setAttribute(String name, String value) throws DOMNodeException {
+    try {
+      XMLParserImpl.setAttribute(this.getJsObject(), name, value);
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_MODIFICATION_ERR, e, this);
+    }
+  }
+
+COM:sets the attribute with the given name and value for a DOM node, throwing a DOMNodeException with INVALID_MODIFICATION_ERR if the operation fails

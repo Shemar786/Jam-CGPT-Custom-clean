@@ -1,0 +1,17 @@
+TDAT: 	public String getMask() {
+		StringBuffer port = new StringBuffer();
+		for (int i = 0; i < 8; i++) {
+			if (portBtn[i].getPortId() == 0) {
+				port.append("0");
+			} else {
+				port.append("1");
+			}
+		}
+		String mask1 = port.substring(0, 4);
+		String mask2 = port.substring(4);
+		String maskHex1 = Integer.toHexString(binaryStringToInt(mask1));
+		String maskHex2 = Integer.toHexString(binaryStringToInt(mask2));
+		return maskHex2 + maskHex1;
+	}
+
+COM:returns a network mask as a hexadecimal string based on the values of 8 port buttons

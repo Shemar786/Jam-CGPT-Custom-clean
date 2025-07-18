@@ -1,0 +1,11 @@
+TDAT:     public DynamicArea findDynamicArea(int areaNumber) {
+        for (Iterator iterator = dynamicAreas.iterator(); iterator.hasNext();) {
+            DynamicArea dynamicArea = (DynamicArea) iterator.next();
+            if (dynamicArea.getAreaNumber() == areaNumber) {
+                return dynamicArea;
+            }
+        }
+        return null;
+    }
+
+COM:searches for a DynamicArea object in a list by areaNumber and returns it, or null if not found

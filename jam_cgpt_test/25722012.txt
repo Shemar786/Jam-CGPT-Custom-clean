@@ -1,0 +1,12 @@
+TDAT: 	private Color getDefaultForeground() {
+		RGB color = PreferenceConverter.getColor(MetricsPlugin.getDefault().getPreferenceStore(), "METRICS.defaultColor");
+		if (lastDefaultColor == null) {
+			lastDefaultColor = new Color(getDisplay(), color);
+		} else if (!lastDefaultColor.getRGB().equals(color)) {
+			lastDefaultColor.dispose();
+			lastDefaultColor = new Color(getDisplay(), color);
+		}
+		return lastDefaultColor;
+	}
+
+COM:returns the default Color value based on a preference setting and disposes of the previous Color value if it has changed

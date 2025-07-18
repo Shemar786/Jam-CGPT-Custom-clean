@@ -1,0 +1,14 @@
+TDAT:     public void testAddComment() {
+        System.out.println("addComment");
+        
+        String comment = "";
+        int userId = 0;
+        Event_DBImpl instance = new Event_DBImpl();
+        
+        instance.addComment(comment, userId);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a JUnit test for the "addComment" method in the "Event_DBImpl" Java class

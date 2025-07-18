@@ -1,0 +1,12 @@
+TDAT:     public boolean equals(Object obj) {
+        boolean bRet = false;
+        if ((obj != null) &&  (obj instanceof Message)) {
+            String message1 = getMessage();
+            String message2 = ((Message) obj).getMessage();
+            if ((message1 != null) && (message2 != null))  
+                bRet = message1.equals(message2);
+        }
+        return bRet;
+    }
+
+COM:overrides the equals() method to compare two Message objects based on their message content

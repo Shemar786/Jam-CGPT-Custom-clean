@@ -1,0 +1,11 @@
+TDAT:     private String addGT(String message) {
+        StringBuffer sb = new StringBuffer();
+        StringTokenizer stok = new StringTokenizer(message, "\n");
+        while (stok.hasMoreTokens()) {
+            sb.append("> ").append(stok.nextToken()).append("\n");
+        }
+
+        return sb.toString();
+    }
+
+COM:adds a '>' character at the beginning of each line in a given string and returns the modified string

@@ -1,0 +1,15 @@
+TDAT:   public void setGraphPerspective( GraphPerspective perspective ) {
+   
+    // hide the current nodes 
+    hideNodes( getNodeIndicesArray() );
+    // hide the current edges
+    hideEdges( getEdgeIndicesArray() );
+
+    // restore the new nodes and edges
+    restoreNodes( perspective.getNodeIndicesArray() );
+    restoreEdges( perspective.getEdgeIndicesArray() );
+    
+    fireEvent(CyNetworkEvent.GRAPH_REPLACED);
+  }
+
+COM:sets a new graph perspective by hiding current nodes and edges, restoring new nodes and edges, and triggering a graph replaced event

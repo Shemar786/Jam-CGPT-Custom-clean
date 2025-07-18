@@ -1,0 +1,13 @@
+TDAT:     public Planet getPlanetByName(String name) {
+
+        try {
+            Integer planetID = planetid.get(name.toLowerCase());
+            return getPlanet(planetID);
+        } catch (Exception ex) {
+            CampaignData.mwlog.errLog("Looking for planet: " + name);
+            // CampaignData.mwlog.errLog(ex);
+            return null;
+        }
+    }
+
+COM:takes a String representing a planet name, looks up its corresponding ID from a map, and returns the corresponding Planet object

@@ -1,0 +1,10 @@
+TDAT: 	public void addEntry(String stringValue, String codeValue) {
+		if ((stringValue != null) && (codeValue != null)) {
+			entries.put(stringValue, codeValue);
+			// Create an inverse entry if this is the first code for this string
+			if (!inverse.containsKey(codeValue))
+				inverse.put(codeValue, stringValue);
+		}
+	}
+
+COM:adds an entry to a map, and creates an inverse entry if the entry is the first code for that string value

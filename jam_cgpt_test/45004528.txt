@@ -1,0 +1,9 @@
+TDAT: 	public String validateShortAttack(SPlayer ap, SArmy aa, Operation o, SPlanet target, int longID, boolean joiningAttack) {
+		ArrayList<Integer> failures = this.shortValidator.validateShortAttacker(ap, aa, o, target, longID, joiningAttack);
+		if (failures.size() > 0)
+			return this.shortValidator.failuresToString(failures);
+
+		return null;
+	}
+
+COM:validates a short attack for a player given specific parameters and returns any failures as a string

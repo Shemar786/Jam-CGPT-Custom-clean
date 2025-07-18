@@ -1,0 +1,9 @@
+TDAT:     public void testGetBodyContent() {
+        System.out.println("testGetBodyContent");
+        testString = "Well basically what is going on Here is that-\n";
+        testString += "we want to get back a bunch of body content\n";
+        tag.setBodyContent( testString );
+        assertEquals( tag.getBodyContent(), testString );
+    }
+
+COM:tests the functionality of getting and setting the body content of a tag

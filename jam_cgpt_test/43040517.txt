@@ -1,0 +1,11 @@
+TDAT: 	public FieldDeclaration createField(String type, String name, Expression initializer, ModifierKeyword... modifiers) {
+		final VariableDeclarationFragment vars = ast.newVariableDeclarationFragment();
+		vars.setName(ast.newSimpleName(name));
+		vars.setInitializer(initializer);
+		final FieldDeclaration var = ast.newFieldDeclaration(vars);
+		var.setType(ast.newSimpleType(ast.newName(type)));
+		setModifiers(var.modifiers(), modifiers);
+		return var;
+	}
+
+COM:creates a FieldDeclaration object with the given type, name, initializer, and modifiers

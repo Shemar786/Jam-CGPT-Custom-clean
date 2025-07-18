@@ -1,0 +1,13 @@
+TDAT:   public void updateActions(boolean status){
+    try{
+      gui.maskHandler.fireMaskChanged(new wpMaskEvent(this, new wpMask(
+          wpActionInterface.DOM_ACTIONS, new int [] {wpActionInterface.
+          DOM_EDIT_NODE_ACTION}, new boolean[] { status }
+
+          )));
+    } catch( wpMaskException me){
+      // programatic error.
+    }
+  }
+
+COM:updates the status of certain actions in the graphical user interface (GUI) by firing a mask event with a specific set of attributes

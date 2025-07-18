@@ -1,0 +1,13 @@
+TDAT: 	public List getOaiSetSpecs() {
+		List setSpecs = new ArrayList();
+		if (matchingFieldsSetsList != null) {
+			for (int i = 0; i < matchingFieldsSetsList.size(); i++) {
+				String setSpec = ((Node) matchingFieldsSetsList.get(i)).valueOf("setSpec");
+				setSpecs.add(setSpec);
+			}
+		}
+		//prtln("getOaiSetSpecs(): " + setSpecs);
+		return setSpecs;
+	}
+
+COM:returns a list of set specifications for a given set of matching fields

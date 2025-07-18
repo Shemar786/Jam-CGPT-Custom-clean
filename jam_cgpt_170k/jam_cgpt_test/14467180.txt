@@ -1,0 +1,8 @@
+TDAT:   protected void notifyObservers(int event, Constituent c, Object data) {
+    for (int i = 0; i < this.modelObservers.size(); i++) {
+      ((ModelObserver)this.modelObservers.get(i)).modelUpdate(event, this, c,
+                                                              data);
+    }
+  }
+
+COM:notifies all registered observers with the specified event, constituent and data

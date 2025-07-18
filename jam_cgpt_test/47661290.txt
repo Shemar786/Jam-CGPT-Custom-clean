@@ -1,0 +1,17 @@
+TDAT: 	protected void addIterationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PhaseIteration_iteration_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PhaseIteration_iteration_feature", "_UI_PhaseIteration_type"),
+				 ProcessPackagePackage.Literals.PHASE_ITERATION__ITERATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to a list for a phase iteration object

@@ -1,0 +1,13 @@
+TDAT:     private void thumbPopupDialog(final MouseEvent e) {
+        JPopupMenu pop = new JPopupMenu();
+
+        SWGImage img = currentAlbum.get(thumbNails.rowAtPoint(e.getPoint()));
+
+        pop.add(imageSaveAsMenu(img));
+        pop.addSeparator();
+        pop.add(imagePropertiesMenu(img));
+
+        pop.show(e.getComponent(), e.getX(), e.getY());
+    }
+
+COM:creates a popup dialog that displays image options for a thumbnail when a mouse event occurs

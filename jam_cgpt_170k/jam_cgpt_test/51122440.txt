@@ -1,0 +1,16 @@
+TDAT: 	protected String renderPatternHtmlInputField() {
+		StringBuffer tagBuf = new StringBuffer();
+		String ppattern = getPattern();
+
+		if (!Util.isNull(ppattern)) {
+			tagBuf.append("<input type=\"hidden\" name=\"");
+			tagBuf.append(Constants.FIELDNAME_PATTERNTAG + getFormFieldName());
+			tagBuf.append("\" value=\"");
+			tagBuf.append(ppattern);
+			tagBuf.append("\" />");
+		}
+
+		return tagBuf.toString();
+	}
+
+COM:generates an HTML input field with a hidden pattern attribute

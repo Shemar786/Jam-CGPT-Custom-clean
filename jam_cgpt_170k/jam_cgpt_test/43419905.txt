@@ -1,0 +1,12 @@
+TDAT: 	private JTextField getClassName() {
+		if (ClassName == null) {
+			ClassName = new JTextField();
+			ClassName.setPreferredSize(new Dimension(120, 26));
+			ClassName.setEditable(false);
+			ClassName.setFont(new Font("Dialog", Font.BOLD, 12));
+			ClassName.setText( CurrOntoObject.getClassReference() );
+		}
+		return ClassName;
+	}
+
+COM:returns a JTextField that displays the class reference of the current OntoObject

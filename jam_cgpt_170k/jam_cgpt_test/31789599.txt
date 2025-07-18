@@ -1,0 +1,9 @@
+TDAT:     protected String getPackageName(ClassDoc cd) {
+        String retval=cd.qualifiedName();
+        retval=retval.substring(0,retval.lastIndexOf("."));  //kill .classname
+        retval=retval.substring(0,retval.lastIndexOf("."));  //kill ".structs"
+        retval+=".sandmessages";
+        return retval;
+    }
+
+COM:returns the package name of a given ClassDoc object after removing ".classname" and ".structs" from the qualified name and appending ".sandmessages" to it

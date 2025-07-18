@@ -1,0 +1,25 @@
+TDAT: 	public void setStrength(){
+		AtomContact atomContact;
+		strength = 0;
+		
+		if(isInteracting()){
+		
+			for(Iterator i = atomContacts.iterator(); i.hasNext();){
+				atomContact = (AtomContact)i.next();
+				if(atomContact.isInteracting()){
+					if(atomContact.isPure())
+						strength += atomContact.getStrength();
+				}
+			}
+			
+		}else{
+			
+			for(Iterator i = atomContacts.iterator(); i.hasNext();){
+				atomContact = (AtomContact)i.next();
+				strength += atomContact.getStrength();
+			}
+			
+		}
+	}
+
+COM:sets the strength value based on a collection of AtomContacts, taking into account whether or not they are interacting and if they are pure

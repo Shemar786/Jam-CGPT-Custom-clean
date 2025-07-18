@@ -1,0 +1,10 @@
+TDAT: 	protected void createNewServerProcess( Socket socket ){
+		logger.info( "Received connection on port " + getPort() + " from [" + socket.getInetAddress() + ":"+ socket.getPort() + "].");
+		
+		Thread t = new Thread( getNewServerProcess(socket) );
+		t.start();
+		getServerProcesses().add( t );
+		new Thread( new Monitor( t ) ).start();
+	}
+
+COM:creates a new server process, logs the connection, starts a new thread for the process, adds it to a list of server processes, and starts a new thread to monitor it

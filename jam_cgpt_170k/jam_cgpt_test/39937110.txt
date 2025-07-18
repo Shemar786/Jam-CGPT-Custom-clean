@@ -1,0 +1,17 @@
+TDAT: 	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BoundRMLL73_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BoundRMLL73_value_feature", "_UI_BoundRMLL73_type"),
+				 BoundRMLL73Package.Literals.BOUND_RMLL73__VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to a list of item property descriptors for a specific object

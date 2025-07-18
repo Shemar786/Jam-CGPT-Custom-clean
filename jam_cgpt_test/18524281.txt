@@ -1,0 +1,14 @@
+TDAT: 	public Vector findInputBasedOnType(String aTypeAttribute) {
+		Vector theFilteredVector = new Vector();
+
+	    ListIterator theListIterator = getInputs().listIterator();
+	    while (theListIterator.hasNext()) {
+	    	Input theNextInput = (Input) theListIterator.next();
+            if(theNextInput.getType().equals(aTypeAttribute)) {
+            	theFilteredVector.add(theNextInput);
+            }
+        }
+		return theFilteredVector;
+	}
+
+COM:takes a string input and returns a vector of inputs that match the given type attribute

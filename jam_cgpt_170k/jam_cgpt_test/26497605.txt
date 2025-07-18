@@ -1,0 +1,13 @@
+TDAT:   public void sendTextMessage(String msg) throws Exception, JMSException{
+    QueueSenderRef ref = null;
+    try{
+      ref = (QueueSenderRef)super.borrowObject();
+      ref.getSender().send(ref.getSession().createTextMessage(msg));
+    }finally{
+      if(ref != null){
+        super.returnObject(ref);
+      }
+    }
+  }
+
+COM:sends a text message through a JMS QueueSenderRef object

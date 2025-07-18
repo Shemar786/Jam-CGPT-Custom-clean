@@ -1,0 +1,13 @@
+TDAT:   private JPanel getJContentPane() {
+    if (jContentPane == null) {
+      
+      jContentPane = new JPanel();
+      jContentPane.setLayout(new BorderLayout());
+      jContentPane.add(manager, BorderLayout.CENTER);
+      jContentPane.add(getJPanel(), BorderLayout.NORTH);
+      
+    }
+    return jContentPane;
+  }
+
+COM:returns a JPanel object, creating it if it doesn't exist already, with a BorderLayout layout, adding a manager object to the center and another JPanel object to the north

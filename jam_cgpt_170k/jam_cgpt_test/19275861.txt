@@ -1,0 +1,15 @@
+TDAT:     public long getNextVal(String dbSequenceName) {
+        Connection conn = this.getSession().connection();
+        DatabaseUpdater dbu = new DatabaseUpdater(conn);
+
+        try {
+            return dbu.getNextSeqVal(dbSequenceName);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+
+    }
+
+COM:retrieves the next value from a specified database sequence using the DatabaseUpdater class

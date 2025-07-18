@@ -1,0 +1,13 @@
+TDAT:     public String getPrimaryLsid(String lsid){
+
+        TermQuery tq = new TermQuery(new Term("lsid", lsid));
+        try{
+        org.apache.lucene.search.TopDocs results = idSearcher.search(tq, 1);
+        if(results.totalHits>0)
+            return idSearcher.doc(results.scoreDocs[0].doc).get("reallsid");
+        }catch(IOException e){}
+
+        return lsid;
+    }
+
+COM:returns the primary LSID (Life Sciences Identifier) for a given LSID by searching through a Lucene index

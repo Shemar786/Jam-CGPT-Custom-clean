@@ -1,0 +1,12 @@
+TDAT:     public String getRelationName(OntResource resource, OntResource related){
+        if (resource.isClass()){
+            return getRelationName(resource.asClass(), related.asClass());
+        }
+        else if (resource.isIndividual()){
+            return getRelationName(resource.asIndividual(), 
+                    related.asIndividual());
+        }
+        else return null;
+    }
+
+COM:returns the name of the relation between two given OntResources, which can be either OntClass or OntIndividual objects

@@ -1,0 +1,22 @@
+TDAT:     public SWGMailFolder folderAdd(String name) {
+        /*
+         * If adding a method that accepts a ready-made folder, ensure the this
+         * box is set as its owner
+         */
+
+        if (folder(name) == null) {
+            synchronized (folders) {
+                List<SWGMailFolder> fl = folders();
+
+                SWGMailFolder f = new SWGMailFolder(name, this);
+
+                fl.add(f);
+                Collections.sort(fl);
+
+                return f;
+            }
+        }
+        return null;
+    }
+
+COM:adds a new email folder to the list of existing folders owned by the current object

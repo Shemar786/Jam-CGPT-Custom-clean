@@ -1,0 +1,12 @@
+TDAT:   protected String checkBase(String base) throws IllegalArgumentException{
+    if(base.length() != 1){
+      throw new IllegalArgumentException("base length must equal 1");
+    }
+    base = base.toUpperCase();
+    if(!traceMap.containsKey(base)){
+      throw new IllegalArgumentException("base must be one of A G C T");
+    }
+    return(base);
+  }
+
+COM:checks if a given string input is a single character representing one of four DNA bases (A, G, C, or T), and returns the uppercase input if it is valid

@@ -1,0 +1,17 @@
+TDAT: 	protected void addUmlbElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBError_umlbElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBError_umlbElement_feature", "_UI_UMLBError_type"),
+				 UMLBPackage.Literals.UMLB_ERROR__UMLB_ELEMENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to a list called "itemPropertyDescriptors"

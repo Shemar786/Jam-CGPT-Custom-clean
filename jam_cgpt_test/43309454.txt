@@ -1,0 +1,12 @@
+TDAT: 	public void mouseExited(MouseEvent e) {
+	    if (mouseExitedHook != null) {
+            Object[] args = { new GPoint(e.getX(), e.getY()) };
+            try {
+                mouseExitedHook.invoke(myProgram, args);
+            } catch (Exception ex) {
+                throw new ErrorException(ex);
+            }
+        }
+	}
+
+COM:invokes a mouseExitedHook method with the coordinates of the mouse pointer when it exits a component associated with myProgram

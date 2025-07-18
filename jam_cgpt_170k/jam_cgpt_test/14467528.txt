@@ -1,0 +1,14 @@
+TDAT:   public void initialize( String filter ) {
+    this.allowedTypes = null;
+    if( filter != null && !filter.equals( "" ) ) {
+
+      this.allowedTypes = new Vector();
+
+      StringTokenizer st = new StringTokenizer( filter, "," );
+      while( st.hasMoreTokens() ) {
+        this.allowedTypes.add( st.nextToken() );
+      }
+    }
+  }
+
+COM:initializes an instance variable that contains a list of allowed types based on a given input filter string

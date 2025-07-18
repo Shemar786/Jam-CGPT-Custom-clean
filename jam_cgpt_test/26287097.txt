@@ -1,0 +1,7 @@
+TDAT:     protected void paintButtonPressed(Graphics g, AbstractButton button){
+        Graphics2D g2d = (Graphics2D)g;
+        g2d.setPaint(new GradientPaint(0, 0, button.getBackground().brighter(), 0, button.getHeight(), button.getBackground()));
+        g2d.fillRect(0,0,button.getWidth(), button.getHeight());
+    }
+
+COM:paints a gradient-filled rectangle when a button is pressed

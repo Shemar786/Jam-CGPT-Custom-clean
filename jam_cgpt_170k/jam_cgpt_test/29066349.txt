@@ -1,0 +1,27 @@
+TDAT: 	public OlapModel getModel(String id){
+		OlapModel olapModel=(OlapModel) models.get(id);
+		if(olapModel==null){
+			try {
+				if(modeXmla){
+					olapModel=createXmlaModel();
+				}else{
+					olapModel=createMondrianModel();
+				}
+				olapModel.setID(id);
+				models.put(id, olapModel);
+				OlapModelManagerEvent event
+					=new OlapModelManagerEvent(this,olapModel);
+				fireModelAdded(event);
+				if(olapModel.getID().equals(DEFAULT_MODEL)){
+					fireDefaultModelChanged(event);
+				}
+				logger.debug("create "+id+" OlapModel");				
+			} catch (Exception e) {
+				logger.error(e);
+			}
+		}
+		return olapModel;
+		
+	}
+
+COM:retrieves an OlapModel object from a map of models using its ID, and if it doesn't exist, creates one using either an XMLA or Mondrian model based on a configuration flag

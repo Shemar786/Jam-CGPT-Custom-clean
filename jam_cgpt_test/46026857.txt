@@ -1,0 +1,15 @@
+TDAT: 	private void checkStageEnd(GameEngine engine) {
+		if( (clearflag) || ((stagetimeNow <= 0) && (stagetimeStart > 0) && (engine.timerActive)) ) {
+			skipflag = false;
+			engine.nowPieceObject = null;
+			engine.timerActive = false;
+			engine.stat = GameEngine.STAT_CUSTOM;
+			engine.resetStatc();
+		} else if((limittimeNow <= 0) && (engine.timerActive)) {
+			engine.nowPieceObject = null;
+			engine.stat = GameEngine.STAT_GAMEOVER;
+			engine.resetStatc();
+		}
+	}
+
+COM:This is a Java method that checks whether the game stage has ended, based on certain conditions, and then adjusts the game engine's settings accordingly

@@ -1,0 +1,13 @@
+TDAT: 	private int _getAttributeEndIndex(String tag) throws IOException {
+		int closeJavaIndex = tag.indexOf("%>");
+		int endIndex = tag.indexOf("\"", closeJavaIndex);
+		int openJavaIndex = tag.indexOf("<%=");
+
+		if (openJavaIndex != -1 && openJavaIndex < endIndex) {
+			endIndex = openJavaIndex + 3 + _getAttributeEndIndex(tag.substring(openJavaIndex + 3));
+		}
+
+		return endIndex;
+	}
+
+COM:returns the end index of an attribute in a given tag, accounting for any embedded nested Java code blocks within that tag

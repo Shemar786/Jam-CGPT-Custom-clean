@@ -1,0 +1,13 @@
+TDAT: 	public int getHighestBlockY() {
+		for(int i = (hidden_height * -1); i < getHeightWithoutHurryupFloor(); i++) {
+			if(getLineFlag(i) == false) {
+				for(int j = 0; j < width; j++) {
+					if(!getBlockEmpty(j, i)) return i;
+				}
+			}
+		}
+
+		return height;
+	}
+
+COM:returns the highest non-empty block Y-coordinate in a game

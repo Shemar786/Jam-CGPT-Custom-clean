@@ -1,0 +1,13 @@
+TDAT: 	public Value evaluate(Value outerString, Value innerString) throws ExternalFunctionException {
+
+		if (!(outerString instanceof Literal && innerString instanceof Literal)) {
+			throw new ExternalFunctionException("Values need to be literals to be understood");
+		}
+
+		String string1 = this.converter.convertString((Literal) outerString);
+		String string2 = this.converter.convertString((Literal) innerString);
+
+		return this.converter.convertBoolean(string1.endsWith(string2));
+	}
+
+COM:evaluates whether the first string ends with the second string and returns a boolean value, or throws an exception if the input values are not literals

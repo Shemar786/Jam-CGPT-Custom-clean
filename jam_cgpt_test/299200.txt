@@ -1,0 +1,16 @@
+TDAT: 	public void appendQuickFixActionsToMenu(MenuManager menu) {
+		List<QuickFix> fixes = getQuickFixes();
+		
+		if (fixes.size() > 0) {
+			MenuManager qf = new MenuManager("Quick Fixes", DESC_OBJS_QUICK_FIX, null);
+			qf.setVisible(true);
+			menu.add(new Separator());
+			menu.add(qf);
+			
+			for (QuickFix fix : fixes) {
+				qf.add(new QuickFixAction(fix));
+			}
+		}
+	}
+
+COM:appends a list of quick fix actions to a menu if the list is not empty

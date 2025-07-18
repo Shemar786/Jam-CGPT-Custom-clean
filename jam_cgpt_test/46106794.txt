@@ -1,0 +1,10 @@
+TDAT:     public void updatePosition() {
+        if (grabbed && Engine.getInstance().getMouseLeftButtonDown()) {
+            if (!fixed) {
+                xPos += Engine.getInstance().getMouseDelta().getX();
+                yPos -= Engine.getInstance().getMouseDelta().getY();
+            }
+        }
+    }
+
+COM:updates the position of an object based on the mouse movement if the object is being grabbed and the left mouse button is down

@@ -1,0 +1,12 @@
+TDAT:   private JSplitPane getSpAnzeige() {
+    if (spAnzeige == null) {
+      spAnzeige = new JSplitPane();
+      spAnzeige.setOneTouchExpandable(true);
+      spAnzeige.setDividerSize(TRENNBALKEN_GROESZE);
+      spAnzeige.setRightComponent(getPThumbnailSteuerung());
+      spAnzeige.setLeftComponent(getSpVorschauBildinfo());
+    }
+    return spAnzeige;
+  }
+
+COM:creates and returns a JSplitPane component with Right and Left components set, and some additional settings applied

@@ -1,0 +1,14 @@
+TDAT: 	public void testSecondChild() throws CoreException {
+		setCurrentPO("PO1");
+		assertOpen(mList(), G);
+		
+		final ITactic tac = Tactics.doCase(P1.toString());
+		userSupport.applyTactic(tac, false, null);
+		assertOpen(mList(), btrue);
+		
+		final ITactic tac2 = Tactics.review(REVIEWED_MAX);
+		userSupport.applyTactic(tac2, false, null);
+		assertOpen(mList(P1), G);
+	}
+
+COM:tests the application of two tactics on a proof obligation with assertions

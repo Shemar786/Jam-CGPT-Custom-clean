@@ -1,0 +1,14 @@
+TDAT:   private void parseGrammar(wpGrammarVector writer) {
+    wpGrammar gram = this.getPredictiveGrammar();
+    if (gram != null) {
+      // NOTE 6-06-2003 Escape DTD Grammar interpretation not supported (yet).
+      if (gram.getGrammar()instanceof DTDGrammar) {
+        return;
+      }
+      else {
+        parseGrammar(gram.getGrammar(), writer);
+      }
+    }
+  }
+
+COM:parses the grammar of a wpGrammarVector object, excluding DTD grammars

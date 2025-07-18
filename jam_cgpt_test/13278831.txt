@@ -1,0 +1,16 @@
+TDAT:     protected void setEdgeRemoved(Object edge) {
+        if (edge instanceof ConnectedNode) {
+            ConnectedNode cn = (ConnectedNode) edge;
+
+            if (cn.direction) {
+                removedEdges.add(cn);
+            } else {
+                removedEdges.add(cn.other);
+            }
+        } else {
+            addedEdges.remove(((EdgeData) edge).from, edge);
+            addedEdges.remove(((EdgeData) edge).to, edge);
+        }
+    }
+
+COM:removes edges from a graph data structure

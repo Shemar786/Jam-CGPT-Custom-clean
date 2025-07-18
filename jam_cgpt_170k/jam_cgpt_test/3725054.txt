@@ -1,0 +1,15 @@
+TDAT: 	public void statusChanged(GramJob job) {
+		try {
+			if (job.getStatus() == GramJob.STATUS_DONE) {
+				// notify waiting thread when job ready
+				//          m_jobOutput = "Job sent, got notification status changed. url=" + job.getIDAsString();  
+				// if notify enabled return URL as output
+				synchronized (this) {
+					notifyAll();
+				}
+			}
+		} catch (Exception ex) {
+		}
+	}
+
+COM:checks the status of a GramJob and notifies a waiting thread if the job is done

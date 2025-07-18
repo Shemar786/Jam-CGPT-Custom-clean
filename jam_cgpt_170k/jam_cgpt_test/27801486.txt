@@ -1,0 +1,12 @@
+TDAT:   public void setRenderer ( Class type, BetterTableCellRenderer renderer ) {
+    if( type == null ) {
+      throw new IllegalArgumentException( "The type must not be null." );
+    }
+    if( renderer == null ) {
+      typeRendererMap.remove( type );
+    } else {
+      typeRendererMap.put( type, renderer );
+    }
+  } // setRenderer( Class, BetterTableCellRenderer )
+
+COM:sets a BetterTableCellRenderer for a specified Class and handles cases where the type or renderer is null

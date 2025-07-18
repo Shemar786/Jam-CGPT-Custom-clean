@@ -1,0 +1,14 @@
+TDAT: 	public HashMap getEnabledSetsHashMap() {
+		if (enabledSetsHashMap == null) {
+			synchronized (setInfosLock) {
+				enabledSetsHashMap = new HashMap();
+				ArrayList es = getEnabledSets();
+				if (es != null)
+					for (int i = 0; i < es.size(); i++)
+						enabledSetsHashMap.put(es.get(i), es.get(i));
+			}
+		}
+		return (HashMap) enabledSetsHashMap.clone();
+	}
+
+COM:returns a cloned HashMap of enabled sets, creating a new HashMap if one does not already exist

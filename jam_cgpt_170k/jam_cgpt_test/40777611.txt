@@ -1,0 +1,16 @@
+TDAT: 	public int getJobIdToCancel() {
+		System.out.println("Get job id");
+		DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree.getLastSelectedPathComponent();
+		
+		if ( node == null )
+			return -1;
+
+		String nodeInfo = (String) node.getUserObject();
+
+		if ( !nodeInfo.startsWith( "Job" ) || nodeInfo.startsWith( "Jobs" ) )
+			return -1;
+
+		return getJobId( nodeInfo );
+	}
+
+COM:retrieves the job ID to cancel from a tree node and returns it as an integer value

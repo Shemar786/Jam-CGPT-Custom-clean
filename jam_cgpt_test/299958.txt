@@ -1,0 +1,11 @@
+TDAT:     private void refreshList(){
+        int nbClt = parent.getNbOfCluster();
+        lst.removeAll();
+        for(int i = 1; i < nbClt; ++i){// begin at one to ignore default
+                                        // cluster
+            Cluster clt = parent.getCluster(i);
+            lst.add(clt.getName(), 0);
+        }
+    }
+
+COM:refreshes a list by removing all items and adding new clusters from its parent object to the list

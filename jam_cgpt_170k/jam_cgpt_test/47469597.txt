@@ -1,0 +1,13 @@
+TDAT: 	protected void handleSwitchView() {
+		if (fGroupPlugins.getSelection()) {
+			ISelection selection = fPluginListViewer.getSelection();
+			fBook.showPage(fPluginTreeViewer.getControl());
+			fPluginTreeViewer.setSelection(selection);
+		} else {
+			ISelection selection = fPluginTreeViewer.getSelection();
+			fBook.showPage(fPluginListViewer.getControl());
+			fPluginListViewer.setSelection(selection);
+		}
+	}
+
+COM:handles the switching between views of Plugin List and Plugin Tree, depending on user selection

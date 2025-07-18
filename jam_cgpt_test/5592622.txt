@@ -1,0 +1,12 @@
+TDAT:   public NodeIterator applyXPath(String xpath, Document doc) throws wpException {
+
+    NodeIterator it=null;
+    try{
+      it = XPathAPI.selectNodeIterator(doc.getDocumentElement(), xpath);
+    } catch (TransformerException te) {
+      throw new wpException(te);
+    } //end Try
+    return it;
+  } // end applyXPath
+
+COM:returns a NodeIterator object obtained by applying the XPath expression on the supplied Document object, and throws a wpException if there is an error in the transformation process

@@ -1,0 +1,12 @@
+TDAT:     public SMPPPacket newResponse(SMPPPacket packet) {
+        if (packet.isResponse()) {
+            throw new SMPPRuntimeException(
+                    "Cannot create a response to a response!");
+        }
+        int id = packet.getCommandId();
+        SMPPPacket response = newInstance(id | 0x80000000, packet);
+        response.setSequenceNum(packet.getSequenceNum());
+        return response;
+    }
+
+COM:creates a new SMPPPacket response based on the input packet and throws an error if the input packet is already a response

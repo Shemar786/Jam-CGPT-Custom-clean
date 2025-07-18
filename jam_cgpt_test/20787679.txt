@@ -1,0 +1,20 @@
+TDAT: 	public void recognise(String setName) {
+		// Configure recogniser
+		//new Rubine3DAlgorithm();
+		Configuration config = new Configuration();
+		config.addAlgorithm(Rubine3DAlgorithm.class.getName());
+		config.addGestureSet(getGestureSet(setName));
+		try {
+			recogniser = new Recogniser(config);
+		} catch (AlgorithmException e) {
+			e.printStackTrace();
+		}
+		// Recognise
+		ResultSet resultSet = recogniser.recognise(reader.getGesture());
+		ui.setResultField(resultSet);
+		//
+		System.err.println("Number of Results in ResultSet: "
+				+ resultSet.getResults().size());
+	}
+
+COM:configures and runs a gesture recognition system on a specific gesture set, producing a ResultSet of recognition results

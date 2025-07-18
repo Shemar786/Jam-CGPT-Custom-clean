@@ -1,0 +1,14 @@
+TDAT:     private void coyoteService(final HttpRequest httpReq, final HttpResponse httpRes) {
+        // TODO: reuse, per req
+        RequestData rc = new RequestData();
+        rc.init(httpReq, httpRes);
+        
+        try {
+            adapter.service(rc.req, rc.res);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+COM:takes an HTTP request and response, initializes a RequestData object, and services the request using an adapter while catching any possible exceptions

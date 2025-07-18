@@ -1,0 +1,11 @@
+TDAT:     public boolean maySellOnBM() {
+        StringTokenizer blockedFactions = new StringTokenizer(this.getConfig("BMNoSell"), "$");
+        while (blockedFactions.hasMoreTokens()) {
+            if (getName().equals(blockedFactions.nextToken())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+COM:checks if the current entity is allowed to sell on a certain platform called "BM" by comparing its name to a list of blocked factions

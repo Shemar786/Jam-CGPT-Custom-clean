@@ -1,0 +1,10 @@
+TDAT:   private void _addPattern(Integer seqId, ArrayList<Integer> seqData) {
+    ArrayList<ArrayList<Integer>> patternEntry = patterns.get(seqId);
+    if (patternEntry == null) { //Nothing stored under that key yet.
+      patternEntry = new ArrayList<ArrayList<Integer>>();
+      patterns.put(seqId, patternEntry);
+    }
+    patternEntry.add(seqData);
+  }
+
+COM:adds a sequence of integers to an ArrayList associated with a specific key in a HashMap, creating the ArrayList if it does not already exist

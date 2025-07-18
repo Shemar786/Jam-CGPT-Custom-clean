@@ -1,0 +1,20 @@
+TDAT: 	 protected void fireChange(Object changedObject) {
+
+		 
+		 ChangeEvent simpleChangeEvent = new ChangeEvent(changedObject);
+
+		 
+		 Object[] listeners = listenerList.getListenerList();
+		 ChangeListener listener = null;
+
+		 for (int i = listeners.length - 2; i >= 0; i -= 2) {
+			 if (listeners[i] == ChangeListener.class) {
+
+				 ((ChangeListener) listeners[i + 1]).stateChanged( simpleChangeEvent );
+
+			 }
+
+		 }
+	 }
+
+COM:This is a Java method that triggers a ChangeEvent and notifies all registered ChangeListeners of the change

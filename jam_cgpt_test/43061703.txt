@@ -1,0 +1,8 @@
+TDAT:     public void playNote(int channel, int pitch, int velocity, int duration) {
+      //create a play midi note thread
+      playMidiNote p = new playMidiNote(channel, pitch, velocity, duration);
+      //start the thread
+      new Thread(p).start();
+    }
+
+COM:plays a MIDI note with specified channel, pitch, velocity, and duration by creating a new thread

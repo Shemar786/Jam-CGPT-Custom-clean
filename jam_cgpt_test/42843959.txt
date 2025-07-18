@@ -1,0 +1,21 @@
+TDAT: 	public boolean addItem(Item item){
+		
+		Point freeField; 
+		
+		if (item.isStackable()) {freeField = getPossibleField(item);} else freeField = getFreeField();
+		
+		
+		if (freeField == null) {
+			return false;
+		} else {
+			if (fields[freeField.x][freeField.y] != null){
+				fields[freeField.x][freeField.y].put(item);
+			} else {
+				fields[freeField.x][freeField.y] = new InventoryField(new InventoryItem(item));
+			}
+			return true;
+		}
+		
+	}
+
+COM:adds an item to an inventory and returns true if successful or false if there is no space available

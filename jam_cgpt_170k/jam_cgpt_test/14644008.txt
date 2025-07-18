@@ -1,0 +1,12 @@
+TDAT: 	public void setMainNaviStatus(int mainNavi) {
+		this.mainNaviStatus = mainNavi;
+
+		//reset mainContent to category/categories (if a form is actual mainContent)
+		if (mainNavi==CATEGORIES && getActCategory() != null)
+			setMainContentAction(IActionKeys.SHOW_CATEGORY);
+		else if (mainNavi==CATEGORIES && getActCategory() == null)
+			setMainContentAction(IActionKeys.SHOW_CATEGORIES);
+		
+	}
+
+COM:sets the status of the main navigation and updates the main content based on the selected category

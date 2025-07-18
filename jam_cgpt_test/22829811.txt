@@ -1,0 +1,18 @@
+TDAT:     public  void close() {
+        if (!connected) {
+            connected = false;
+            try {
+                // close object output stream
+                // but before write all the content which is currently not written to
+                // the communication partner
+                out.flush();
+                out.close();
+                out = null;
+            }
+            catch (IOException e) {
+                throw new CsccException(e.getMessage());
+            }
+        }
+    }
+
+COM:closes a communication channel while ensuring all pending content is written and handles any resulting exceptions

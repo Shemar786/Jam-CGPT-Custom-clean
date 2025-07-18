@@ -1,0 +1,19 @@
+TDAT:   public void delete ( int value ) {
+    Entry last_entry = null;
+    Entry entry = first;
+    while( entry != null ) {
+      if( entry.value == value ) {
+        if( last_entry == null ) {
+          first = entry.next;
+        } else {
+          last_entry.next = entry.next;
+        }
+        size--;
+        return;
+      }
+      last_entry = entry;
+      entry = entry.next;
+    }
+  } // delete( int )
+
+COM:deletes the entry with the specified value from a linked list

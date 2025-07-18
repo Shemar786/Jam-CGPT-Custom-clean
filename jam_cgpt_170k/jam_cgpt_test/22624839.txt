@@ -1,0 +1,16 @@
+TDAT: 	public String getCollectionKey() {
+		if (vocab != null &&
+			collection != null && 
+			collection.trim().length() > 0) {
+			try {
+				// prtln ("about to call vocab.getFieldValueSystemId with " + collectionKey);
+				String useVocabMapping = "key";
+				return vocab.getFieldValueSystemId(useVocabMapping, getCollection());
+			} catch (Throwable e) {
+				prtln("makeSystemCollectionKey failed with " + collection + ":\n" + e);
+			}
+		}
+		return null;
+	}
+
+COM:gets the system ID of a collection's field value using a vocabulary mapping

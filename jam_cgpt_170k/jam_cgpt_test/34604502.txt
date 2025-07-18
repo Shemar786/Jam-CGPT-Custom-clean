@@ -1,0 +1,19 @@
+TDAT: 	public String delete() {
+		//identify faxovaPonuka
+		Ponuka faxovaPonuka=null;
+		for (SelectItem ponuka: getFaxovePonuky()) {
+			if (ponuka.getLabel().equals(getReplace())) {
+				faxovaPonuka=(Ponuka) ponuka.getValue();
+				break;
+			}
+		}
+		
+		AuthBean.infoLog("Deleting fax offer "+getOffer()+" replacing with "+faxovaPonuka,LOG);
+		
+		//call service
+		ServiceLocator.getInstance().getPonukaService().delete(getOffer(), faxovaPonuka);
+		
+		return "ok";
+	}
+
+COM:deletes a fax offer and replaces it with another one

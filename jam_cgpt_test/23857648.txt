@@ -1,0 +1,14 @@
+TDAT: 	public void onCallConfirmed(Call call, String sdp, Message ack) {
+		printLog("onCallConfirmed()", LogLevel.LOW);
+		if (call != this.call) {
+			printLog("NOT the current call", LogLevel.LOW);
+			return;
+		}
+		printLog("CONFIRMED/CALL", LogLevel.HIGH);
+		changeStatus(UA_ONCALL);
+		// play "on" sound
+		if (userProfile.hangup_time > 0)
+			this.automaticHangup(userProfile.hangup_time);
+	}
+
+COM:is triggered when a call is confirmed and updates the status accordingly, plays a sound, and possibly sets up an automatic hangup

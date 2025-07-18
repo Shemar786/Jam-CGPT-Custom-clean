@@ -1,0 +1,14 @@
+TDAT:   public void unbind(Name n) throws ProcessingException{
+    n = (Name)n.clone();
+    if(n.count() == 0){
+      return;
+    }
+    NamePart np = n.chopLast();
+    try{
+      lookupNode(n, false).removeValue(np);
+    }catch(NotFoundException e){
+      // noop
+    }
+  }
+
+COM:unbinds a name passed as a parameter by removing its corresponding value from a node

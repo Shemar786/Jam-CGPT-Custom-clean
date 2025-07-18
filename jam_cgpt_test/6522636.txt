@@ -1,0 +1,20 @@
+TDAT: 	public void check(ReleaseSessions request) throws MissingParametersFault {
+		if (isCheckEnabled()) {
+			// check ReleaseSession request object pointer
+			if (request instanceof ReleaseSessions) {
+
+				// check for registration context
+				check(request.getRegistrationContext(), Constants.NILLABLE_TRUE);
+
+				// check sessionhandles array
+				check(request.getSessionIDs(), Constants.NILLABLE_FALSE);
+
+			}
+			else {
+
+				throwMissingParametersFault("Input object is not a ReleaseSession or is null");
+			}
+		}
+	}
+
+COM:checks the ReleaseSessions request object for registration context and session handles, and throws a MissingParametersFault if the input object is not a ReleaseSession or is null

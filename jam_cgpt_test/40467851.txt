@@ -1,0 +1,13 @@
+TDAT: 	public GOption makeOption(String optText){
+		GOption opt = null;
+		if(optText != null && !optText.equals("")){
+			opt = new GOption(winApp, optText, 0, 0, width - 10);
+			opt.addEventHandler(this, "processOptionSelection");
+			opt.setVisible(false);
+			opt.setOpaque(true);
+			opt.setBorder(0);
+		}
+		return opt;
+	}
+
+COM:creates a new GOption object with specified text and adds event handlers for option selection

@@ -1,0 +1,9 @@
+TDAT:     public Status update(String status) throws TwitterException {
+        if (status.length() > 160) {
+            status = status.substring(0, 160);
+        }
+        return new Status(http.post(baseURL + "statuses/update.xml",
+                new PostParameter[]{new PostParameter("status", status), new PostParameter("source", source)}, true).asDocument().getDocumentElement(), this);
+    }
+
+COM:updates a Twitter status message using the Twitter API, with an input parameter of the new status and a maximum length of 160 characters, and throws an exception if there is an error

@@ -1,0 +1,19 @@
+TDAT:   private boolean isAlwaysRun(IConfigurationAnnotation configurationAnnotation) {
+    if(null == configurationAnnotation) {
+      return false;
+    }
+
+    boolean alwaysRun= false;
+    if ((configurationAnnotation.getAfterSuite()
+        || configurationAnnotation.getAfterTest()
+        || configurationAnnotation.getAfterTestClass()
+        || configurationAnnotation.getAfterTestMethod())
+        && configurationAnnotation.getAlwaysRun())
+    {
+        alwaysRun= true;
+    }
+
+    return alwaysRun;
+  }
+
+COM:checks if a given configuration annotation has the "alwaysRun" property set to true for any of the defined test methods or classes

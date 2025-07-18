@@ -1,0 +1,14 @@
+TDAT:     public void setNumber(String number) {
+        if (number == null) {
+            number = "";
+        }
+        if (number.length() > 0 && !isValidNumber(number)) {
+            throw new IllegalArgumentException("Number is not valid: " + number);
+        }
+
+        String oldNumber = this.number;
+        this.number = number;
+        changeSupport.firePropertyChange("number", oldNumber, number);
+    }
+
+COM:sets a value for the variable "number," checks if it is valid, throws an exception if it is not valid, and notifies any listeners of the change

@@ -1,0 +1,13 @@
+TDAT:         private boolean isMatching(Class type, Object obj) {
+            if (type == Boolean.TYPE) {
+                return obj instanceof Boolean;
+            } else if (type == Integer.TYPE ) {
+                return obj instanceof Integer;
+            } else if (!type.isPrimitive() && obj == null) {
+                return true;
+            } else {
+                return type.isInstance(obj);
+            }
+        }
+
+COM:checks if a given object matches a specified class

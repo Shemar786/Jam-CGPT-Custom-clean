@@ -1,0 +1,11 @@
+TDAT:     public void remove(int index) throws UnsupportedOperationException {
+        if (this.sealed) {
+            String msg = "cannot modify sealed data object";
+            throw new UnsupportedOperationException(msg);
+        }
+        if (this.list != null && index < this.list.size()) {
+            this.list.remove(index);
+        }
+    }
+
+COM:removes an element at a specified index from a list, but throws an exception if the list is sealed and cannot be modified

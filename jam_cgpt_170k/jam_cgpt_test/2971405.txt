@@ -1,0 +1,11 @@
+TDAT:   public void write(DataOutputStream dos) throws IOException {
+    ColXYY cxyy = sampleColour.getXYY();
+    dos.writeInt(sampleNumber);
+    dos.writeInt(samplePosition);
+    dos.writeInt(sampleTray);
+    dos.writeDouble(cxyy.x);
+    dos.writeDouble(cxyy.y);
+    dos.writeDouble(cxyy.Y);
+  }
+
+COM:writes sample color information to a DataOutputStream object

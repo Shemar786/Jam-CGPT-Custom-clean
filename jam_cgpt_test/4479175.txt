@@ -1,0 +1,10 @@
+TDAT: 	public void testChangePosition() {
+		//Point newP = new Point(7,7);
+		int dest = 7;
+		bishop.changePosition(dest, dest);						//changes the position of the bishop
+		assertTrue(bishop.getX() == 7 && bishop.getY() == 7);			//confirms that the position has been changed
+			
+		bishop.changePosition(2,0);				//puts the bishop back to its origin
+	}
+
+COM:tests the ability of the bishop object to change position and confirms that the change has occurred

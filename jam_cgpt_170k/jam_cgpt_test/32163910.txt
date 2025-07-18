@@ -1,0 +1,10 @@
+TDAT: 	public void createPriority() {
+		// We calculate it as the difference between scores 
+		if(owner == GameHandler.getPlayer2()) {
+			_priority = GameHandler.getPlayer2().getVirtualCount() - GameHandler.getPlayer1().getVirtualCount();
+		} else {
+			_priority = GameHandler.getPlayer1().getVirtualCount() - GameHandler.getPlayer2().getVirtualCount();
+		}
+	}
+
+COM:calculates and sets the priority of a game object based on the scores of its owners

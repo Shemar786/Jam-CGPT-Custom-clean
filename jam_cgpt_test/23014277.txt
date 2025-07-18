@@ -1,0 +1,11 @@
+TDAT:     public int getSubIndex(Semantic semantic) {
+        for (int i = 0; i < semantics.size(); i++) {
+            if (semantics.get(i) == semantic) {
+                return i;
+            }
+        }
+        throw new IllegalArgumentException("Semantic " + semantic + " not used in this" +
+                " VertexBufferConstruct object !");
+    }
+
+COM:returns the index of a given Semantic object in a list, or throws an Exception if the Semantic object is not present in the list

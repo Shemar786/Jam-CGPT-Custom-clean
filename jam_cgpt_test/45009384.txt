@@ -1,0 +1,9 @@
+TDAT:     public void processTick(int time) {
+        // set tick counter
+        getMainFrame().getMainPanel().getPlayerPanel().setNextTick(System.currentTimeMillis() + time);
+        getMainFrame().getMainPanel().getMapPanel().getMap().processTick();
+        System.gc(); // Decicded to have the client do a GC every tick as
+        // well.
+    }
+
+COM:processes a tick by setting the tick counter and performing various actions on specific panels, including performing garbage collection

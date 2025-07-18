@@ -1,0 +1,17 @@
+TDAT: 	protected void addClassTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_toDelete_classType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_toDelete_classType_feature", "_UI_toDelete_type"),
+				 WorkspacePackage.Literals.TO_DELETE__CLASS_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "classType" feature of a "ToDelete" object to an item property descriptor list

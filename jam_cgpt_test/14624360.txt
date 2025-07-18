@@ -1,0 +1,11 @@
+TDAT:     public void testgetLongitude() {
+        System.out.println("getLongitude");
+        org.gps.types.GpsPosition instance = new org.gps.types.GpsPosition();
+        henson.midp.Float expectedResult = Float.ZERO;
+        henson.midp.Float result = instance.getLongitude();
+        assertEquals(expectedResult, result);
+        
+    
+    }
+
+COM:tests the accuracy of the getLongitude() method in the org.gps.types.GpsPosition class by comparing its output with a zero float value

@@ -1,0 +1,10 @@
+TDAT:     public boolean isRestartable() {
+        boolean restartable = true;
+        for (Enumeration e = myListeners.elements(); e.hasMoreElements() && restartable;) {
+            I_Listener listener = (I_Listener)e.nextElement();
+            if (listener.getPort() < 1024) restartable = (userId == null && groupId == null);
+        }
+        return restartable;
+    }
+
+COM:checks if a process can be restarted based on certain conditions and returns a boolean value

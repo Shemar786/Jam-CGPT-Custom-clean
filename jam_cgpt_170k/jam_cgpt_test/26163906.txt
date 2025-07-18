@@ -1,0 +1,10 @@
+TDAT:     public void verifyInputTilesForward(String definitionName) {
+        if (logger.isTraceEnabled())
+            logger.trace("Entering - definitionName=" + definitionName);
+        init();
+        Common.verifyTilesForward(actionPath,null,definitionName,true,request,config.getServletContext(),config);
+        if (logger.isTraceEnabled())
+            logger.trace("Exiting");
+    }
+
+COM:verifies the input tiles forward for a specified definition name

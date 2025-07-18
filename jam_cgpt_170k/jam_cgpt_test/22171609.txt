@@ -1,0 +1,17 @@
+TDAT: 	protected void addNewValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveUpdateMessage_newValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveUpdateMessage_newValue_feature", "_UI_EveUpdateMessage_type"),
+				 MsgPackage.Literals.EVE_UPDATE_MESSAGE__NEW_VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a new value property descriptor to an item property descriptor list

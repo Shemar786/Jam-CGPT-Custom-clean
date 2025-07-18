@@ -1,0 +1,17 @@
+TDAT:   protected void createMetaPropertyAnnotations() {
+		String source = "MetaProperty";								
+		addAnnotation
+		  (getAssignment_VariableName(), 
+		   source, 
+		   new String[] {
+			 "displayText", "Variable"
+		   });																														
+		addAnnotation
+		  (getExecuteUpdate_RowsUpdatedVar(), 
+		   source, 
+		   new String[] {
+			 "displayText", "Update Count Variable"
+		   });																																												
+	}
+
+COM:creates annotations for meta properties related to variable assignments and update counts

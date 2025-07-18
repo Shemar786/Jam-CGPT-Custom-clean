@@ -1,0 +1,19 @@
+TDAT: 	public String stackTraceToString(StackTraceElement[] elements) {
+		if (elements == null) {
+			return "";
+		}
+
+		StringBuilder strBuilder = new StringBuilder();
+		for (StackTraceElement element : elements) {
+			strBuilder.append(element.toString());
+			strBuilder.append("\n");
+		}
+
+		if (strBuilder.length() != 0) {
+			strBuilder.delete(strBuilder.length() - 1, strBuilder.length());
+		}
+
+		return strBuilder.toString();
+	}
+
+COM:converts an array of stack trace elements to a string

@@ -1,0 +1,27 @@
+TDAT: 	public void paint(Graphics g, Object obj) {
+		Graphics2D g2d = (Graphics2D)g;
+		
+		if (obj instanceof PointVertex) {
+			paintPointVertex(g2d, (PointVertex) obj);
+		}
+		
+		if (obj instanceof Edge) {
+			paintEdge(g2d, (Edge) obj);
+		}
+		
+		if (obj instanceof SimplifiedVertex) {
+			paintSimplifiedVertex(g2d, (SimplifiedVertex) obj);
+		}
+		
+		if (obj instanceof Link) {
+			paintLink(g2d, (Link) obj);
+			
+		}
+		
+		if (obj instanceof Route) {
+			paintRoute(g2d, (Route) obj);
+			
+		}
+	}
+
+COM:takes a Graphics object and an Object, then performs different painting methods based on the type of the Object

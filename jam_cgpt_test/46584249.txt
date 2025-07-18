@@ -1,0 +1,10 @@
+TDAT:     private void layoutOrderFrame() {
+        layout = new BorderLayout();
+        CardLayout cardLayout = new CardLayout();
+        setLayout(layout);
+        cardPanel.add( orderFramePanel,  MAIN_PANEL);
+        cardPanel.add(exceptionPanel, EXCEPTION_PANEL);
+        setCenterPanel(cardPanel);
+    }
+
+COM:sets up the layout and panels for the order frame, including a card layout for switching between different panels

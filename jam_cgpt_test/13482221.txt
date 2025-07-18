@@ -1,0 +1,13 @@
+TDAT:     public Swizzler getSwizzler(int vn) {
+        Iterator iter = IndStore.values().iterator();
+
+        while (iter.hasNext()) {
+            Swizzler swz = (Swizzler) iter.next();
+            if ((swz.target().valueNumber() == vn)
+                    || (swz.ind_var().valueNumber() == vn))
+                return swz;
+        }
+        return null;
+    }
+
+COM:returns a Swizzler object that matches a given value number by iterating through a collection of Swizzler objects

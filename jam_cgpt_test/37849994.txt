@@ -1,0 +1,19 @@
+TDAT: 		private void listIsClicked() {
+		    int index = gameList.getSelectedIndex();
+		    gameList.clearSelection();
+		    try {
+			if (gameArray[index] != null) {
+			    
+			    /* Remove game from list if it's over. */
+			    if (!gameArray[index].shouldRemove()) {
+				gameArray[index].drawBoard();
+			    } else {
+				gameArray[index] = null;
+			    }
+			} 
+			 
+			/*Don't do anything if you click outside of the list.*/
+		    } catch (ArrayIndexOutOfBoundsException e) { }
+		}		
+
+COM:is used to handle the clicking of an item in a list in Java, and it removes the game from the list if it is over, or draws a board for the game if it is still ongoing

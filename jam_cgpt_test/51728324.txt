@@ -1,0 +1,13 @@
+TDAT:     public boolean hasBeenCompleted() {
+        for (int i = 0; i < size(); i++) {
+            ExerciseGroup g = getGroup(i);
+            for (int j = 0; j < g.size(); j++) {
+                Exercise e = g.getItem(j);
+                if (!e.isDone())
+                    return false;
+            }
+        }
+        return true;
+    }
+
+COM:checks if all exercises in an exercise group have been completed

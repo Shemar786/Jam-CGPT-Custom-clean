@@ -1,0 +1,15 @@
+TDAT: 	protected void populateListViewer(final Object treeElement) {
+		if (treeElement == fCurrentTreeSelection)
+			return;
+		fCurrentTreeSelection= treeElement;
+		fListViewer.setInput(treeElement);
+		List listItemsToCheck= (List) fCheckedStateStore.get(treeElement);
+
+		if (listItemsToCheck != null) {
+			Iterator listItemsEnum= listItemsToCheck.iterator();
+			while (listItemsEnum.hasNext())
+				fListViewer.setChecked(listItemsEnum.next(), true);
+		}
+	}
+
+COM:populates a list viewer with elements corresponding to a selected tree element, checks previously stored checked elements, and sets the new selection

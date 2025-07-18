@@ -1,0 +1,16 @@
+TDAT:     public int setPlayMode (String wantedPlayMode) {
+        
+        int new_modi;
+        
+        if(wantedPlayMode.equalsIgnoreCase ("once")) {
+            new_modi = ONCE;
+        } else if(wantedPlayMode.equalsIgnoreCase ("loop")) {
+            new_modi = LOOP;
+        } else {
+            new_modi = ONCE;
+        }
+        
+        return new_modi;
+    }
+
+COM:A Java method that sets the play mode based on a given string and returns the corresponding integer value

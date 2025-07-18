@@ -1,0 +1,14 @@
+TDAT:     public void triggerSessionCreated(JingleSession jingleSession) {
+        jingleSessions.add(jingleSession);
+        jingleSession.addListener(this);
+        for (CreatedJingleSessionListener createdJingleSessionListener : creationListeners) {
+            try {
+                createdJingleSessionListener.sessionCreated(jingleSession);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+COM:triggers the creation of a Jingle session and adds it to a list of sessions, attaches listeners, and invokes each listener's sessionCreated method

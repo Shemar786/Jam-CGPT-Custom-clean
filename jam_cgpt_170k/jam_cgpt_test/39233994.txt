@@ -1,0 +1,7 @@
+TDAT:     public void testSetProperty() {
+        assertNull(BexeeProperties.getProperty(PROP_KEY_3));
+        BexeeProperties.setProperty(PROP_KEY_3, PROP_VAL_3);
+        assertEquals(PROP_VAL_3, BexeeProperties.getProperty(PROP_KEY_3));
+    }
+
+COM:tests the behavior of a property set operation using the BexeeProperties class

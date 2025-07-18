@@ -1,0 +1,11 @@
+TDAT:   public boolean defineScrollRegion(int topmargin, int bottommargin) throws IOException {
+    if (m_Terminal.supportsScrolling()) {
+      m_TelnetIO.write(m_Terminal.getScrollMarginsSequence(topmargin, bottommargin));
+      flush();
+      return true;
+    } else {
+      return false;
+    }
+  }//defineScrollRegion
+
+COM:defines a scrollable region in a terminal and returns a boolean value indicating if the terminal supports scrolling

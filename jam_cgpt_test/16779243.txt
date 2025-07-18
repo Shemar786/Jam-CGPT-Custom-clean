@@ -1,0 +1,14 @@
+TDAT: 	public void initialize(IVector pInit, IVector[] searchInit){
+		this.pMin = pInit;
+		this.fMin = this.f.evaluate(pInit);
+		// generate initial perturbations
+		int n = searchInit.length;
+		this.pCurrent = pInit;
+		this.fCurrent = this.fMin;
+        this.xiCurrent = new IVector[n];
+		for(int i=0;i<n;i++){
+			xiCurrent[i]=searchInit[i].clone();
+		}
+	}
+
+COM:initializes the values of several variables used in an optimization algorithm, including the minimum point, the function evaluation at the minimum point, and the search directions

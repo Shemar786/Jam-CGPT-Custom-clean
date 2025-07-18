@@ -1,0 +1,14 @@
+TDAT:   public String getStackTrace(){
+    if(!isThrowable()){
+      throw new IllegalStateException("Internal error is not an instance of " + Throwable.class.getName());
+      
+    }
+    StringWriter sw = new StringWriter();
+    PrintWriter pw = new PrintWriter(sw, true);
+    Throwable t = (Throwable)_msg;
+    t.printStackTrace(pw);
+    pw.close();
+    return sw.toString();
+  }
+
+COM:returns the stack trace of a Throwable object, while throwing an exception if the object is not actually a Throwable

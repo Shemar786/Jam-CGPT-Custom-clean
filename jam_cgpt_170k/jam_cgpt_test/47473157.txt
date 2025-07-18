@@ -1,0 +1,8 @@
+TDAT: 	private boolean updateRemoveActionWithSelection(IStructuredSelection selection) {
+		List objectsToRemove = getRemovableObjectFromSelection(selection);
+		fRemoveObjectAction.setToRemove((CtxHelpObject[]) objectsToRemove.toArray(new CtxHelpObject[objectsToRemove.size()]));
+		fRemoveObjectAction.setEnabled(fModel.isEditable());
+		return objectsToRemove.size() > 0;
+	}
+
+COM:updates a remove action by setting and enabling the objects to be removed, based on the selection, and returns a boolean indicating if there are objects to be removed

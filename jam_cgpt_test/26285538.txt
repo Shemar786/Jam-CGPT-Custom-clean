@@ -1,0 +1,10 @@
+TDAT:     public Entry (Component component, Constraints constraint) {
+        super (constraint.col1, constraint.row1,
+               constraint.col2, constraint.row2,
+               constraint.hAlign, constraint.vAlign);
+
+        singleCell = ((row1 == row2) && (col1 == col2));
+        this.component = component;
+    }
+
+COM:creates an Entry object with a specified component and constraints for its position and alignment within a grid layout

@@ -1,0 +1,16 @@
+TDAT: 	public void removeUser(@MonitoredBy(Module.CONTROL_OBJECT_NAME) PeerControlClient peerControlClient, String login) {
+		
+		RemoveUserRequestTO to = new RemoveUserRequestTO();
+		
+		//Request the remore operation to the peer user information
+		PeerLocalOperation.removePeerUser(login);
+		
+		to.setLogin(login);
+		to.setClientAddress(getServiceManager().getStubDeploymentID(
+				peerControlClient).getServiceID().toString());
+		
+		OurGridRequestControl.getInstance().execute(to, getServiceManager());
+
+	}
+
+COM:removes a user from a peer user information and sends a remove request to the OurGridRequestControl instance

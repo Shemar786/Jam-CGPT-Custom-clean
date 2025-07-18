@@ -1,0 +1,10 @@
+TDAT:     public Vector3f scale(float scale) {
+        float sx = getX() * scale;
+        float sy = getY() * scale;
+        float sz = getZ() * scale;
+        Vector3f v = VectorPool.getInstance().getVector();
+        v.setXYZ(sx, sy, sz);
+        return v;
+    }
+
+COM:scales a Vector3f object by a specified factor and returns the result as a new Vector3f object

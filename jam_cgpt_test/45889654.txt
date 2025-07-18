@@ -1,0 +1,13 @@
+TDAT: 	public void addCategory(Context context, int categoryId) {
+		Map categoryMap = categories.get(categoryId);
+		String category = (String) categoryMap.get(NAME);
+
+		// Add category
+		ContentValues cv = new ContentValues();
+		cv.put(News.Categories.NAME, category);
+		mNews.insertIfNotExists(News.Categories.CONTENT_URI, Categories.NAME
+				+ "= ?", new String[] { category }, cv);
+
+	}
+
+COM:adds a category to a news app's database using the provided context and category ID

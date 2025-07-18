@@ -1,0 +1,21 @@
+TDAT: 	public void visitForceChildren(final TreeVisitor visitor) {
+		final LinkedList list = new LinkedList(stmts);
+
+		if (visitor.reverse()) {
+			final ListIterator iter = list.listIterator(stmts.size());
+
+			while (iter.hasPrevious()) {
+				final Stmt s = (Stmt) iter.previous();
+				s.visit(visitor);
+			}
+		} else {
+			final ListIterator iter = list.listIterator();
+
+			while (iter.hasNext()) {
+				final Stmt s = (Stmt) iter.next();
+				s.visit(visitor);
+			}
+		}
+	}
+
+COM:visits all the child nodes in a tree structure in either reverse or forward order, and applies a given visitor object to each child node

@@ -1,0 +1,22 @@
+TDAT: 	private EnvironmentModel encodeComplexEnvironmentModel(EnvironmentModel envModel) {
+		
+		String complexEnvironmentBase64 = null;
+		try {
+			ByteArrayOutputStream bos = new ByteArrayOutputStream();
+			ObjectOutputStream out = new ObjectOutputStream(bos);
+	    	out.writeObject(envModel);
+	    	out.flush();
+
+	    	complexEnvironmentBase64 = new String(Base64.encodeBase64(bos.toByteArray()));
+	    	
+	    } catch(IOException ex) {
+	    	ex.printStackTrace();
+		}
+		
+	    EnvironmentModel newEnvMod = new EnvironmentModel();
+	    newEnvMod.setComplexEnvironment(true);
+	    newEnvMod.setComplexEnvironmentBase64(complexEnvironmentBase64);
+	    return newEnvMod;
+	}
+
+COM:encodes a complex environment model object into a base64 string and returns a new environment model object with the base64 string as one of its properties

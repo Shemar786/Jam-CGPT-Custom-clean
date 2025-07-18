@@ -1,0 +1,26 @@
+TDAT:     public void calculateState() {
+	try {
+	    ByteArrayOutputStream bos;
+	    ObjectOutputStream oos = null;
+	    
+	    bos = new ByteArrayOutputStream();
+	    oos = new ObjectOutputStream(bos);
+
+	    
+	    // To prevent the current byteArray from being bundled in the packet:
+	    byteArray = null; 
+	    oos.writeObject(this);
+	    
+	    // Now make the new bytearray.
+	    byteArray = bos.toByteArray();
+	    
+	    oos.close();
+	    bos.close();
+	    
+	} catch (IOException e) {
+	    e.printStackTrace();
+	}
+
+    }
+
+COM:calculates the new state of an object by creating a new byte array and writing the object to it using ObjectOutputStream

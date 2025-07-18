@@ -1,0 +1,6 @@
+TDAT: 	public void addDevice(String id, String token) throws DuplicateDeviceException, NullIdException, NullDeviceTokenException, Exception {
+		logger.debug( "Adding Token [" + token + "] to Device [" + id + "]" );
+		DeviceFactory.getInstance().addDevice(id, token);
+	}
+
+COM:adds a device identified by its id and token to the DeviceFactory and logs the action, while also handling different types of exceptions that may arise during the process

@@ -1,0 +1,15 @@
+TDAT:         public Jingle eventInfo(Jingle jin) throws XMPPException {
+
+            sendTransportCandidatesOffer();
+
+            // Parse the Jingle and get any proposed transport candidates
+            addRemoteCandidates(obtainCandidatesList(jin));
+
+            // Wait for some time and check if we have a valid candidate to
+            // use...
+            delayedCheckBestCandidate(session, jin);
+
+            return null;//super.eventInfo(jin);
+        }
+
+COM:handles Jingle events by sending transport candidates, parsing the Jingle to obtain proposed transport candidates, waiting for a valid candidate and returning null

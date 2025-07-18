@@ -1,0 +1,11 @@
+TDAT:     public void globalAndLocalListenerTest() throws InterruptedException {
+        map1.addLocalEntryListener(createEntryListener(true));
+        map2.addLocalEntryListener(createEntryListener(true));
+        map1.addEntryListener(createEntryListener(false), true);
+        map2.addEntryListener(createEntryListener(false), true);
+        int k = 1;
+        putDummyData(k);
+        checkCountWithExpected(k * 2, k);
+    }
+
+COM:adds local and global entry listeners to map1 and map2, puts dummy data, and checks the expected count

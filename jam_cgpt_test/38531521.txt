@@ -1,0 +1,10 @@
+TDAT:     public void setNamespace(String prefix, String uri) throws org.xmldb.api.base.XMLDBException {
+        try {
+            stub.setNamespace(this.service, prefix, uri);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e);
+        }
+        
+    }
+
+COM:sets the namespace for a given prefix and URI and throws an XMLDBException if there is a remote exception

@@ -1,0 +1,23 @@
+TDAT: 	public void testCycleReload() {
+		Repository repo = this.createRepository();
+		
+		PType st = repo.createType("NamedSet");
+		st.putAttribute("elements", PAttribute.SET);
+		st.save();
+		
+		PObject child = st.newInstance("parent");
+		child.save();
+		PObject parent = st.newInstance("child");
+		parent.add("elements", child);
+		parent.save();
+		child.add("elements", parent);
+		
+		repo.commit(); repo.close();
+		repo = this.createRepository();
+		PObject obj = repo.load("parent");
+		obj.describe();
+		
+		repo.close();
+	}
+
+COM:creates and tests a repository with parent-child relationships between two objects

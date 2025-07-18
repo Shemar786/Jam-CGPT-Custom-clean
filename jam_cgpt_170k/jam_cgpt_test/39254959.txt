@@ -1,0 +1,12 @@
+TDAT: 	public void add(int location, float area) {
+		assert !(peaks.containsKey(location)== true && peaks.get(location)== null) : "null peak is present in list";
+		Float tempArea = peaks.get(location);
+		if (tempArea != null)
+		{
+			peaks.put(location, tempArea + area);
+		} else {
+			peaks.put(location, area);
+		}
+	}
+
+COM:adds the specified area to the location in the peaks map if it exists, otherwise it creates a new entry

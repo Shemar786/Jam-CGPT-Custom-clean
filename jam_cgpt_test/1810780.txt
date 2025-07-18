@@ -1,0 +1,12 @@
+TDAT:   public boolean isCellPresent(int row, int column) {
+    if ((row >= getRowCount()) && (row < 0)) {
+      return false;
+    }
+    if ((column < 0) || (column >= getCellCount(row))) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+COM:checks if a cell is present in a specified row and column

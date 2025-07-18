@@ -1,0 +1,15 @@
+TDAT:     public void testGetSimpleBoolean() {
+
+        try {
+            Object value = dynaForm.get("booleanProperty");
+            assertNotNull("Got a value", value);
+            assertTrue("Got correct type", (value instanceof Boolean));
+            assertTrue("Got correct value",
+                    ((Boolean) value).booleanValue() == true);
+        } catch (Throwable e) {
+            fail("Exception: " + e);
+        }
+
+    }
+
+COM:tests whether the value of a dynamically generated form's boolean property is true

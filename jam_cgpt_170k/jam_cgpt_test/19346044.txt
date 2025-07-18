@@ -1,0 +1,15 @@
+TDAT: 	private void init(BmKeyedComboModel comboModel, boolean editable) {
+
+		this.model = comboModel;
+		//this.editable = isEditable;
+
+		//model.setTableCombo(true);
+		super.setRenderer(comboModel);
+
+		if (editable) {
+			this.setEditable(editable);
+			agent = new BmKeyedComboAgent(this, comboModel.getList(), comboModel.isSorted());
+		}
+	}
+
+COM:initializes a combo box with a given model and sets it as editable based on a boolean value

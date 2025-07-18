@@ -1,0 +1,12 @@
+TDAT:     public void testSetValueAtObjectintint() {
+        String newVal = "12";
+
+        poFileRep.setValueAt(null, 0, 0, 0, newVal);
+
+        String s = poFileRep.getValueAt(0, 2).toString();
+        //dtar020FileRep.setValueAt(tmp, 0, 2);
+
+        assertEquals("setValue " + newVal + " <> " + s, newVal, s);
+    }
+
+COM:tests the ability to set a value at a specific location in a file representation object and then verify that the value was properly set

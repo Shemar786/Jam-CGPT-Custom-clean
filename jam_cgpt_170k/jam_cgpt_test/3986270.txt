@@ -1,0 +1,12 @@
+TDAT: 	private void loadFingerPrintFromInputStream(InputStream is) {
+		entries = new TreeSet<Entry<String, Integer>>(
+				new NGramEntryComparator());
+		MyProperties properties = new MyProperties();
+		properties.load(is);
+		for (Entry<String, String> entry : properties.entrySet()) {
+			this.put(entry.getKey(), Integer.parseInt(entry.getValue()));
+		}
+		entries.addAll(this.entrySet());
+	}
+
+COM:loads fingerprint data from an input stream and populates a TreeSet with the entries sorted by a custom comparator

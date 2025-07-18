@@ -1,0 +1,10 @@
+TDAT:     public boolean eepromState ( ) throws UsbException, InvalidFirmwareException, CapabilityException {
+	byte[] buf = new byte[4];
+	checkCapability(CAPABILITY_EEPROM);
+	vendorRequest2(0x3A, "EEPROM State", 0, 0, buf, 4);
+	eepromBytes = (buf[0] & 255) | (buf[1] & 255)<<8;
+	eepromChecksum = buf[2] & 255;
+	return buf[3] == 0;
+    }
+
+COM:checks the state of EEPROM and returns a boolean value

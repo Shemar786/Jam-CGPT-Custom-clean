@@ -1,0 +1,13 @@
+TDAT: 	public int getColor(int sosID) {
+		Cursor c = db.query(SOS_TABLE, new String[] { SOS_color }, ID + "="
+				+ sosID, null, null, null, null);
+		int ret = -1;
+		if (c.moveToFirst()) {
+			ret = c.getInt(0);
+		}
+		c.close();
+		return ret;
+
+	}
+
+COM:retrieves the color associated with a given SOS ID from a database

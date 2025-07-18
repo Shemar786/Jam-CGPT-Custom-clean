@@ -1,0 +1,9 @@
+TDAT: 	public String toString() { 
+	   String envelopeStr = Double.toString(this.getMinX()) + ",";
+	   envelopeStr += Double.toString(this.getMinY()) + ",";
+	   envelopeStr += Double.toString(this.getMaxX()) + ",";
+	   envelopeStr += Double.toString(this.getMaxY());
+	   return envelopeStr;
+	}	
+
+COM:returns a string that contains the minimum and maximum values of x and y coordinates

@@ -1,0 +1,14 @@
+TDAT: private void _removeStoppedTasksFromList() {
+  ArrayList<AbstractTask> isStoppedList = new ArrayList<AbstractTask>();
+
+  for (AbstractTask task : _taskList) {
+    if (task.isShutdown()) {
+      isStoppedList.add(task);
+      _fireTaskListChange(new TaskListChangeEvent(TaskListChangeEvent.Type.Unregister, task));
+    }
+  }
+
+  _taskList.removeAll(isStoppedList);
+}
+
+COM:removes all tasks that have been shutdown from a list of AbstractTasks

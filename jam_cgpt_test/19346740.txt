@@ -1,0 +1,14 @@
+TDAT:     public void testGetColumnCount() {
+      /*  int i;
+        DetailRecord[] layouts = poCopyBook.getLayouts();
+
+        for (i = 0; i < layouts.length; i++) {
+            if (layouts)
+        }*/
+
+        assertEquals("column Count expected 11 got "
+				+ poFileRep.getColumnCount(),
+				11, poFileRep.getColumnCount());
+    }
+
+COM:tests and asserts the expected column count of a file report

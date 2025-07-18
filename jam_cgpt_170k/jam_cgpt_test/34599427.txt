@@ -1,0 +1,24 @@
+TDAT: 	private void initModel() {
+		Matrix SoEs[] = this.createSystemOfEquations(true);
+		this.A = SoEs[0];
+		this.w = SoEs[1];
+		this.R = SoEs[4];
+		this.r = SoEs[5];
+		this.B = SoEs[2];
+		this.Cll = SoEs[3];
+		SoEs = null;
+		Matrix B = null;
+		if (this.B instanceof SparseMatrix)
+			B = DefaultMatrix.convertTo(this.B);
+		else
+			B = this.B;
+		try {
+			this.P = (B.multi(Cll.multi(B.trans()))).inv();
+			if (this.v != null)
+				this.w = this.w.diff(B.multi(this.v));
+		} catch (ArithmeticException er) {
+			er.printStackTrace();
+		}	
+	}
+
+COM:initializes model parameters by calling other methods and performing matrix calculations

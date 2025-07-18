@@ -1,0 +1,13 @@
+TDAT:     private void updatePossibleRelays() {
+    	possibleRelays = StateManager.INSTANCE.getPeers();
+    	for(Object[] peerArray : possibleRelays)
+    	{
+    		if(((String)(StateManager.INSTANCE.getCalleeArray()[0])).equals((String)(peerArray[0])))
+    		{
+    			possibleRelays.remove(peerArray);
+    			break;
+    		}
+    	}
+    }
+
+COM:updates a list of possible relays by removing an element if it matches a specific condition

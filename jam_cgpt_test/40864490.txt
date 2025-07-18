@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField12() {
+        if (textField12 == null) {//GEN-END:|34-getter|0|34-preInit
+            // write pre-init user code here
+            textField12 = new TextField("Bono 4:", null, 32, TextField.DECIMAL);//GEN-LINE:|34-getter|1|34-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|34-getter|2|
+        return textField12;
+    }
+
+COM:returns a TextField object called "textField12" which is initialized with a label "Bono 4:", no initial text, a maximum of 32 characters and a decimal input mode

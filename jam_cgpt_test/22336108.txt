@@ -1,0 +1,12 @@
+TDAT: 	private void createButtonComposite() {
+		GridLayout gridLayout2 = new GridLayout();
+		gridLayout2.numColumns = 2;
+		buttonComposite = new Composite(this, SWT.NONE);
+		buttonComposite.setLayout(gridLayout2);
+		addButton = new Button(buttonComposite, SWT.NONE);
+		addButton.setText(ResourceLoader.queryString(COLUMN_ADD_BUTTON_LABEL));
+		deleteButton = new Button(buttonComposite, SWT.NONE);
+		deleteButton.setText(ResourceLoader.queryString(COLUMN_DELETE_BUTTON_LABEL));
+	}
+
+COM:creates a composite with two buttons (add and delete) and sets grid layout for the composite

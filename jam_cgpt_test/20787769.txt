@@ -1,0 +1,9 @@
+TDAT:    public void setCell(int x, int y, BitSet bitSet) {
+      if (!(x >= 0 && x < size && y >= 0 && y < size)) {
+         throw new IndexOutOfBoundsException();
+      }
+
+      grid[x][y] = bitSet;
+   } // setCell
+
+COM:sets a given cell in a 2D grid to a provided BitSet, throwing an exception if the cell coordinates are outside the bounds of the grid

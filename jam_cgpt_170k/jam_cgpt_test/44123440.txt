@@ -1,0 +1,11 @@
+TDAT:     public void setRegatta(Regatta regatta) {
+
+
+        if (regatta != null && regatta.getId() != null) {
+            Framework.onlyInstance().getPreferences().setRegattaId(regatta.getId());
+            Framework.onlyInstance().savePreferences();
+        }
+        setRegattaValue( regatta);
+    }
+
+COM:sets the regatta value and saves it in the preferences if it is not null and its ID is not null

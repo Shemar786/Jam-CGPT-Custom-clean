@@ -1,0 +1,10 @@
+TDAT:     public void testProvider() throws Exception {
+    	Class provider= HttpsProtocolSupport.getHttpsProviderClass();
+			String expected=HttpsProtocolSupport.SunJSSE_PROVIDER_CLASS;
+			Provider[] sslProviders = Security.getProviders("SSLContext.SSLv3");
+			if (sslProviders.length>0)
+				expected= sslProviders[0].getClass().getName();
+			assertEquals( "provider",expected, provider.getName() );				
+    }
+
+COM:tests the provider for HTTPS protocol support and checks if it matches the expected provider

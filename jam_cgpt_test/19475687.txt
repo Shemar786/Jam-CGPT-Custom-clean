@@ -1,0 +1,17 @@
+TDAT: 	protected void addSupertypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBclassifier_supertype_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBclassifier_supertype_feature", "_UI_UMLBclassifier_type"),
+				 UMLBPackage.Literals.UML_BCLASSIFIER__SUPERTYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the supertype feature of a UMLBclassifier

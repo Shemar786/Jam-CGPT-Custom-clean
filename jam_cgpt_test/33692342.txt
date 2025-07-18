@@ -1,0 +1,13 @@
+TDAT:     public void onCallTransferRefused( ExtendedCall call, String reason, Message resp ) {
+
+    	log.debug( "onCallTransferRefused", "Init..." );
+        
+        if ( call != this.call ) {
+        	log.debug( "onCallTransferRefused", "NOT the current call." );
+            return;
+        }
+        
+        log.debug( "onCallTransferRefused", "Transfer refused." );
+    }
+
+COM:logs a message indicating whether or not a call transfer has been refused, based on the provided parameters

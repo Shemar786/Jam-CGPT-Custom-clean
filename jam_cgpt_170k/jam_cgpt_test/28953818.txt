@@ -1,0 +1,12 @@
+TDAT:     public XmlAdhocQueryResponse getAdhocQueryResponse(SOAPBody message) {
+        //pull out the query response
+        NodeList responses = message.getElementsByTagNameNS(XmlRegistry.XDS_QUERY_V3_NAMESPACE, "AdhocQueryResponse");
+        Node response = responses.item(0);
+        if (response instanceof Element) {
+            return new XmlAdhocQueryResponse((Element) response);
+        } else {
+            return null;
+        }
+    }
+
+COM:extracts an XML ad hoc query response from a SOAP message

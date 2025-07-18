@@ -1,0 +1,18 @@
+TDAT: 	protected ImageIcon createImageIcon(String path) {
+		File imgLocation = new File(path);
+		URL imageURL = null;
+
+		try {
+			imageURL = imgLocation.toURI().toURL();
+		} catch (MalformedURLException mue) {
+			System.err.println(mue.getMessage());
+		}
+		if (imageURL != null) {
+			return new ImageIcon(imageURL);
+		} else {
+			System.err.println("Couldn't find file: " + path);
+			return null;
+		}
+	}
+
+COM:creates an ImageIcon object from a specified file path

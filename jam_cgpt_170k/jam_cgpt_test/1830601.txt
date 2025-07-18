@@ -1,0 +1,10 @@
+TDAT:     public ConversionBO create() throws Exception{
+        String id = GUID.generate();
+        ConversionBO cbo = new ConversionBO(id);
+        Cache.getInstance().put(cbo.getID(), cbo);
+        cbo.setRSDescription("Media Conversion");
+        cbo.setRSType("Conversion");
+        return cbo;
+    }
+
+COM:creates a new ConversionBO object with a unique ID, adds it to a cache, sets its description and type, and returns it

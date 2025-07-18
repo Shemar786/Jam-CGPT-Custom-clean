@@ -1,0 +1,10 @@
+TDAT:     public String toString() {
+        String res = new String();
+        res =  "Name:\t" + name + "\n";
+        res += "Elevation:\t" + new Altitude(ele).getAltitudeFtStr() + "ft\n";
+        res += "Type:\t" + type + "\n\n";
+        res += "Comment:\n" + comment;
+        return res;
+    }
+
+COM:returns a formatted string containing name, elevation, type, and comment information

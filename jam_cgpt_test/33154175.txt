@@ -1,0 +1,10 @@
+TDAT:     public void testSterimol_Rodo983() throws Exception {
+        Object[][] smiles = new Object[][] {
+                //Rodo 983
+                {"CC(C)OC1=CC=C(C=C1)NC2=CC=CC=C2","LSTM1",new Double(9.5),"B5STM1",new Double(4.31)},
+        };
+        amineGroupSubstituent(smiles);
+        
+   }     
+
+COM:performs a test on a specific chemical compound using the amineGroupSubstituent method

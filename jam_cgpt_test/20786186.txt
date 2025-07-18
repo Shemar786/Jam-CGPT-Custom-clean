@@ -1,0 +1,11 @@
+TDAT:    private boolean isInArea(Point point) {
+      if (point.getX() > bufferedImage.getWidth()
+            || point.getY() > bufferedImage.getHeight() || point.getX() < 0
+            || point.getY() < 0) {
+         return false;
+      }
+
+      return true;
+   } // isInArea
+
+COM:checks if a given point is within the boundaries of a buffered image

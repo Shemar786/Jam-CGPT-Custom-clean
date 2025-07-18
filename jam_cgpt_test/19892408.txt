@@ -1,0 +1,6 @@
+TDAT: 	    public Object clearGlobalAppData(String keys) {
+			String url = API_GLOBAL_APP_DATA_KEYS_XML_URL.replaceFirst("%s", keys);
+			return putUserData("DELETE", url, new HashMap<String, String>(), new HashMap<String, String>());
+		}
+
+COM:clears global app data for a given set of keys using an HTTP DELETE request

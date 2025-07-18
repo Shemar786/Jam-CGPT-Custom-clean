@@ -1,0 +1,11 @@
+TDAT: 	public void allUsers(){
+		try {
+			sendEncryptedMessage(new AllUsersPacket());		//sends the server an allusers request
+			UserList users = getUserListReply();			//receive the server's reply (which is a list of the users)
+			GuiFacade.getInstance().showAllUsers(users);	//shows the users in a window
+		} catch (Exception e){
+			SecurityHandler.catchException("requesting all users list", e , true);
+		}
+	}
+
+COM:sends a request to the server for a list of all users, receives the server's reply (which is a list of the users), and displays the users in a window using the GuiFacade class

@@ -1,0 +1,12 @@
+TDAT:   protected void localize(FieldLocalizer parent) {
+    TypeLocalizer       loc;
+    
+    loc = parent.getManager().getTypeLocalizer(source, type);
+    names = new String[idents.length];
+    for (int i = 0; i < names.length; i++) {
+      names[i] = loc.getCodeLabel(idents[i]);
+      this.width = Math.max(this.width, names[i].length());
+    }
+  }
+
+COM:localizes the field labels using a TypeLocalizer object obtained from a parent FieldLocalizer, and stores the localized labels in an array while also calculating the maximum width of the labels

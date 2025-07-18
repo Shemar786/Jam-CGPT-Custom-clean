@@ -1,0 +1,13 @@
+TDAT:     private boolean checkValid(JComponent c) {
+        boolean valid = true;
+        if (c == nameTextField) {
+            valid = StringUtils.isNotEmpty(nameTextField.getText());
+            updateBorder(c, valid);
+        } else if (c == numberTextField) {
+            valid = Contact.isValidNumber(numberTextField.getText());
+            updateBorder(c, valid);
+        }
+        return valid;
+    }
+
+COM:checks if a JComponent is valid based on its type and returns a boolean value

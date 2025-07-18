@@ -1,0 +1,15 @@
+TDAT:     public List findByExample(String model, Object instance) {
+        Session session = null;
+        try {
+            session = getSession();
+            List results = session.createCriteria(model).add(Example.create(instance)).list();
+            return results;
+        } catch (RuntimeException re) {
+            log.error("findByExample failed", re);
+            throw re;
+        } finally {
+            close(session);            
+        }
+    }
+
+COM:finds a list of objects in the database that match the example object provided, using Hibernate's criteria API

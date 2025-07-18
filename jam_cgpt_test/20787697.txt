@@ -1,0 +1,10 @@
+TDAT: 	public void removeSet(String setName) {
+		if (storage.load(GestureSet.class, "name", setName).get(0) != null) {
+			storage.remove(storage.load(GestureSet.class, "name", setName).get(
+					0));
+		} else
+			System.err.println("Gesture3DTool: Gesture set " + setName
+					+ " can not be removed because it does not exist");
+	}
+
+COM:removes a gesture set object from the storage if it exists, otherwise, it prints an error message

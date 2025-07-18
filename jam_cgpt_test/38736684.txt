@@ -1,0 +1,14 @@
+TDAT:     public User createUser(User user,String authToken) throws RemoteException {
+        if(!this.authToken.equals(authToken)){
+            throw new RemoteException("Invalid Login Token");
+        }
+        user=userBD.createUser(user);
+        if(user!=null){
+            passwords.put(user.getId(), serverSettingBean.getDefualtPassword());
+            return user;
+        }else{
+            return null;
+        }
+    }
+
+COM:creates a new user object with the given user parameter and authentication token, and throws an exception if the token is invalid

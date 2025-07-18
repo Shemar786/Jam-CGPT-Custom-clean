@@ -1,0 +1,12 @@
+TDAT: 	public List getInstanceDocNodes(String xpath) {
+		// xpath may be decoded, and it must be normalized before accessing instanceDoc!
+		String normalizedPath = XPathUtils.normalizeXPath(XPathUtils.decodeXPath(xpath));
+		try {
+			return instanceDocument.selectNodes(normalizedPath);
+		} catch (org.dom4j.InvalidXPathException e) {
+			prtln("getInstanceDocNode error: " + e.getMessage());
+			return null;
+		}
+	}
+
+COM:takes in an XPath expression, normalizes and decodes it, then selects and returns matching nodes from an instance document

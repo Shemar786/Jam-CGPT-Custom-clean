@@ -1,0 +1,17 @@
+TDAT: 	protected void addReleaseTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Task_releaseTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Task_releaseTime_feature", "_UI_Task_type"),
+				 GeneralModelPackage.Literals.TASK__RELEASE_TIME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "release time" attribute of a Task object

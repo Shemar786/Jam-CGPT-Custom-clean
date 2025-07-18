@@ -1,0 +1,14 @@
+TDAT: 	public boolean interacts(Residue residue){
+		if(Vertex.distance(backBoneCoord,residue.backBoneCoord)<=Threshold.InteractingDistance)
+			return true;
+		else if(Vertex.distance(sideChainCoord,residue.backBoneCoord)<=Threshold.InteractingDistance)
+			return true;
+		else if(Vertex.distance(backBoneCoord,residue.sideChainCoord)<=Threshold.InteractingDistance)
+			return true;
+		else if(Vertex.distance(sideChainCoord,residue.sideChainCoord)<=Threshold.InteractingDistance)
+			return true;
+		else
+			return false;
+	}
+
+COM:determines if a given residue interacts with another residue based on the distance between their backbone and side chain coordinates

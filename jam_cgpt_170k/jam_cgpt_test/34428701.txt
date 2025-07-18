@@ -1,0 +1,9 @@
+TDAT:     private Component makeWest() {
+        JPanel bp = new JPanel(new BorderLayout());
+        bp.add(makeWestTraceBar(), BorderLayout.PAGE_START);
+        bp.add(makeWestTreePanel(), BorderLayout.CENTER);
+        bp.add(makeWestFilterPanel(), BorderLayout.PAGE_END);
+        return bp;
+    }
+
+COM:returns a JPanel with three components added to it arranged in a BorderLayout, including a trace bar, a tree panel, and a filter panel

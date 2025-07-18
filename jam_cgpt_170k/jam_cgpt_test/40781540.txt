@@ -1,0 +1,13 @@
+TDAT: 	public void allocate( WorkerEntry chosenWorker ) {
+
+		if ( !GridProcessState.UNSTARTED.equals( this.state ) ) {
+			throw new IllegalResultException( "This replica is already running or has already finished execution",
+				replicaHandle );
+		}
+
+		this.workerEntry = chosenWorker;
+		this.replicaAccounting = new GridProcessAccounting(workerEntry.getRequestSpec(), 
+				getWorkerEntry().getWorkerID(), getWorkerEntry().getWorkerPublicKey(), workerEntry.getWorkerSpec());
+	}
+
+COM:allocates a worker for a grid process and performs accounting operations for the chosen worker

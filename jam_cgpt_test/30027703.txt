@@ -1,0 +1,15 @@
+TDAT:     public void setActiveEditor(IEditorPart part) {
+        super.setActiveEditor(part);
+
+        ITextEditor editor = null;
+
+        if (part instanceof ITextEditor) {
+            editor = (ITextEditor) part;
+        }
+
+        fContentAssistProposal.setAction(getAction(editor,
+                "ContentAssistProposal"));
+        fContentAssistTip.setAction(getAction(editor, "ContentAssistTip"));
+    }
+
+COM:sets an active editor and configures content assist actions for a text editor

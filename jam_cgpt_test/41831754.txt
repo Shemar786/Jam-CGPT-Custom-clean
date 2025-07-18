@@ -1,0 +1,14 @@
+TDAT: 	public float getYoungestMeasurementValue(int measurementID) {
+		float ret = Float.NaN;
+		Cursor c = db.rawQuery(
+				"SELECT " + Measure_value + " FROM " + Measure_TABLE
+						+ " WHERE " + Measure_measurement + "=" + measurementID
+						+ " ORDER BY " + Measure_time + " DESC LIMIT 1", null);
+		if (c.moveToFirst()) {
+			ret = c.getFloat(0);
+		}
+		c.close();
+		return ret;
+	}
+
+COM:retrieves the youngest measurement value of a specific measurement ID from a database

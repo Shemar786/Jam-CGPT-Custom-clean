@@ -1,0 +1,19 @@
+TDAT: 	public void testCompare() {
+		double f = 123456.789;
+		Speed s1 = base.times(f);
+		Speed s2 = base.times(2.0 * f);
+		Speed s3 = base.times(f);
+		assertTrue(s1.isEQ(s3));
+		assertTrue(s1.isGE(s3));
+		assertTrue(s1.isLE(s3));
+		assertFalse(s1.isEQ(s2));
+		assertFalse(s1.isGE(s2));
+		assertFalse(s2.isLE(s1));
+		assertFalse(s1.isNE(s3));
+		assertTrue(s2.isGT(s1));
+		assertTrue(s2.isGE(s1));
+		assertTrue(s1.isLT(s2));
+		assertTrue(s1.isLE(s2));
+	}
+
+COM:tests several comparison methods for three Speed objects created using the base object and a double value, and checks whether the expected comparison results are true or false

@@ -1,0 +1,12 @@
+TDAT:     public void setType(Type type) {
+        mConversions.clear();
+        mExceptionPossible = false;
+        if (type != null) {
+            // Prefer cast for initial type for correct operation of
+            // setInitialType if a conversion needs to be inserted at the
+            // beginning.
+            mConversions.add(new Conversion(null, type, true));
+        }
+    }
+
+COM:sets the type and clears the conversions list while adding a new conversion if the type is not null

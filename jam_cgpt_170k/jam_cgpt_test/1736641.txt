@@ -1,0 +1,17 @@
+TDAT: 	public void doCurYear(ActionEvent event) {
+		try {
+			logger.debug("ProjectListBean.doCurYear");
+			listData = projectService.findAllCurYear();
+			// listData = projectService.findProjectsByRiskIds(new String("'1',
+			// '2'"));
+			if (listData.size() == 0)
+				throw new IASException("There is no audit project on current year.");
+			populateList();
+			this.lastButtonClicked = ProjectListBean.DO_CUR_YEAR;
+		} catch (Exception ex) {
+			logger.error(ex);
+			FacesUtils.addErrorMessage(ex.getMessage());
+		}
+	}
+
+COM:retrieves all audit projects for the current year and populates them into a list

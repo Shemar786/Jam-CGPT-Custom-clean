@@ -1,0 +1,11 @@
+TDAT: 	private PNamedHandle createHandle( Point2D pt ) {
+    	return new PNamedHandle( pt.toString(), new PPointLocator( this, pt ) ) { 
+        	public void dragHandle(PDimension dim, PInputEvent aEvent) {
+          		localToParent(dim);
+          		((PPointLocator)getLocator()).update( dim.getWidth(), dim.getHeight() );
+				updateEdgeView();
+        	}
+		};
+	}
+
+COM:creates a named handle for a given point that can be dragged and updated

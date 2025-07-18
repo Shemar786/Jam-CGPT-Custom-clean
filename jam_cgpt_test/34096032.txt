@@ -1,0 +1,19 @@
+TDAT: 	public void handleLoadInstruction(LoadInstruction obj) {
+		int numProduced = obj.produceStack(cpg);
+		if (numProduced == Constants.UNPREDICTABLE)
+			throw new InvalidBytecodeException("Unpredictable stack production");
+
+		if (numProduced != 1) {
+			super.handleLoadInstruction(obj);
+			return;
+		}
+		int index = obj.getIndex();
+		TypeFrame frame = getFrame();
+		Type value = frame.getValue(index);
+		boolean isExact = frame.isExact(index);
+		frame.pushValue(value);
+		if (isExact)
+			setTopOfStackIsExact();
+	}
+
+COM:handles a load instruction by producing a stack, checking the stack production, handling unpredictable stack production, handling a non-1 stack production, getting the value of an index, and pushing the value onto a frame

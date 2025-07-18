@@ -1,0 +1,21 @@
+TDAT:         public boolean events() {
+            boolean result = false;
+
+            Runnable r = null;
+            while ( (r = events.poll()) != null ) {
+                result = true;
+                try {
+                    r.run();
+                    if ( r instanceof PollerEvent ) {
+                        ((PollerEvent)r).reset();
+                        eventCache.offer((PollerEvent)r);
+                    }
+                } catch ( Throwable x ) {
+                    log.error("",x);
+                }
+            }
+
+            return result;
+        }
+
+COM:processes events in a queue and returns a boolean indicating if any events were processed

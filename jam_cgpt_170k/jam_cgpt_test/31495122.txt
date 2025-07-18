@@ -1,0 +1,14 @@
+TDAT:     protected  BasicAlbum(Album parent, File dir, MediaSource picSource, PictureFilter picFilter, AlbumFilter albFilter){
+	this.picFilter = picFilter;
+	this.albumFilter = albFilter;	
+	this.dir = dir;
+	this.picSource = picSource;
+	this.parentAlbum = parent;
+
+	if(!dir.isDirectory()){
+	    throw new IllegalArgumentException("Error, can't construct BasicAlbum on non-directory: " + dir + " Check that the filename is valid.");	    
+	}
+
+    }
+
+COM:constructs a BasicAlbum object with specified parameters and throws an exception if the specified directory does not exist

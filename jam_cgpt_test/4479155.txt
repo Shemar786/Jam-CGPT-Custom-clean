@@ -1,0 +1,18 @@
+TDAT: 	protected void setUp() throws Exception {
+		Knight knight = new Knight(5, 5, board, "White");
+		board.add(knight);
+		Pawn pawn1 = new Pawn(3, 4, board, "White");
+		board.add(pawn1);
+		Pawn pawn2 = new Pawn(4,5,board, "White");
+		board.add(pawn2);
+		Pawn pawn3 = new Pawn(7,5,board, "Black");
+		board.add(pawn3);
+		King king = new King(4,7,board, "Black");
+		board.add(king);
+		King king2 = new King(5,3,board, "White");
+		board.add(king2);
+		board.print();
+		super.setUp();
+	}
+
+COM:sets up a game board with pieces including knights, pawns, and kings for both white and black teams

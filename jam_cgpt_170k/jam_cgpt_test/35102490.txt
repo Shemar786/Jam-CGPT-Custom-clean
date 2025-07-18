@@ -1,0 +1,11 @@
+TDAT:   public void close() throws java.io.IOException {
+    // write final boundary
+    out.write(PREFIX.getBytes());
+    out.write(boundary.getBytes());
+    out.write(PREFIX.getBytes());
+    out.write(NEWLINE.getBytes());
+    out.flush();
+    out.close();
+  }
+
+COM:closes an output stream and writes a final boundary

@@ -1,0 +1,15 @@
+TDAT: 	public void assignLoadBuilder(DemandSenderIfc destination, DemandLoadBuilder loadBuilder){
+		if (destination== null)
+			throw new IllegalArgumentException("The sender must be non-null.");
+
+		if (loadBuilder == null)
+			throw new IllegalArgumentException("The load builder must be non-null.");
+		
+		if (myLoadBuilders.containsKey(destination))
+			throw new IllegalArgumentException("The supplied destination has already been assigned a load builder");
+		
+		myLoadBuilders.put(destination, loadBuilder);
+		loadBuilder.setLoadFormedListener(myLoadFormedListener);
+	}
+
+COM:assigns a demand load builder to a destination by checking if the sender and load builder are non-null and the destination has not already been assigned a load builder, and then sets a load formed listener for the load builder

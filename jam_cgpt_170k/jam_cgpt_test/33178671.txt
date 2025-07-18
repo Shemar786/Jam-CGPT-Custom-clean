@@ -1,0 +1,12 @@
+TDAT:     public Offer split(double quantity) {
+        if (transaction != null) throw new AlreadyTransacted();
+        if (quantity > this.quantity) throw new InvalidSplit();
+
+        Offer split = (Offer) clone();
+        split.creationTime = split.container.world().time();
+        split.quantity = quantity;
+        this.quantity -= quantity;
+        return split;
+    }
+
+COM:splits an offer into a new offer with a specified quantity and updates the original offer's quantity accordingly, while checking for transaction status and quantity validity

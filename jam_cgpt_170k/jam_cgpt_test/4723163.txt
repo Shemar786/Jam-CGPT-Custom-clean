@@ -1,0 +1,17 @@
+TDAT: 	public boolean matchStrings() {
+		Matcher matcher = pattern.matcher(str);
+		if (matcher.matches()) {
+			if (uriTemplateVariables != null) {
+				for (int i = 1; i <= matcher.groupCount(); i++) {
+					String name = this.variableNames.get(i - 1);
+					String value = matcher.group(i);
+					uriTemplateVariables.put(name, decodeUrl(value));
+				}
+			}
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+COM:uses a pattern matcher to check if a given string matches a specified template and updates any variable values in the template if found

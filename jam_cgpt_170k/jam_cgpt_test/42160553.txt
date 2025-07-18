@@ -1,0 +1,15 @@
+TDAT:   public void stop(boolean flush) throws AudioException {
+    if (player != null) {
+      player.stop();
+      if (flush) {
+        player.flush();
+        ((Clip) player).close();
+        player = null;
+      }
+    }
+    if (recordThread != null)
+      recordThread.stop();
+    stopAudioTracker();
+  }
+
+COM:stops audio playback or recording and optionally flushes the audio buffer

@@ -1,0 +1,15 @@
+TDAT: 	private void setupUI() {
+Container contentPane = getContentPane();
+contentPane.setLayout(new BorderLayout()); // optional ?
+
+JComponent upperComp = getUpperComponent();
+contentPane.add(upperComp, BorderLayout.PAGE_START);
+
+centerTabPane = new JTabbedPane();
+contentPane.add(centerTabPane, BorderLayout.CENTER);
+
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+setSize(DFLT_SIZE);
+	}
+
+COM:sets up the user interface by adding components to a container with a BorderLayout

@@ -1,0 +1,11 @@
+TDAT:   protected void addChkCreateDabWarning(JPanel panel) {
+    if (getTextContents() != null) {
+      chkCreateDabWarning = Utilities.createJCheckBox(
+          GT._("Create disambiguation warning on talk page"),
+          false);
+      getTextContents().setCheckBoxUpdateDabWarning(chkCreateDabWarning);
+      panel.add(chkCreateDabWarning);
+    }
+  }
+
+COM:adds a JCheckBox to a JPanel with a label and sets it to create a disambiguation warning on a talk page if selected

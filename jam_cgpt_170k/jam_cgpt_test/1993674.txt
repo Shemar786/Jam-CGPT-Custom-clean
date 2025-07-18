@@ -1,0 +1,15 @@
+TDAT: 		private Image getImageForField(final IField field) throws Exception {
+			String imageName = null;
+
+			if (isPrivate(field.getFlags())) {
+				imageName = ISharedImages.IMG_FIELD_PRIVATE;
+			} else if (isProtected(field.getFlags())) {
+				imageName = ISharedImages.IMG_FIELD_PROTECTED;
+			} else if (isPublic(field.getFlags())) {
+				imageName = ISharedImages.IMG_FIELD_PUBLIC;
+			}
+
+			return this.getImage(imageName);
+		}
+
+COM:returns an image based on the access level of a given field

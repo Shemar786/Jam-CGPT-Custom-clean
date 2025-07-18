@@ -1,0 +1,12 @@
+TDAT:     public void setDatabaseInfo(final DatabaseInfo databaseInfo) {
+        if (databaseInfo == null) {
+            this.databaseInfo = null;
+        } else {
+            this.databaseInfo = new DatabaseInfo(databaseInfo);
+        }
+        markDataDirty();
+        eventBroker.processEvent(new DatabaseInfoChangedEvent(this,
+                databaseInfo));
+    }
+
+COM:sets the database information, marks the data as dirty and processes a database information changed event

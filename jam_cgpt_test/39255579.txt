@@ -1,0 +1,11 @@
+TDAT: 	public void setAxisBounds(double xmin, double xmax, double ymin, double ymax) throws IllegalArgumentException {
+		//check for errors
+		if(xmin >= xmax) throw new IllegalArgumentException("Xmin >= Xmax.");
+		else if(ymin >= ymax) throw new IllegalArgumentException("Ymin >= Ymax.");
+		xAxis.setRange(xmin, xmax);
+		yAxis.setRange(ymin, ymax);
+		
+		repaint();
+	}
+
+COM:sets the minimum and maximum values for the x and y axis of a graph in a GUI interface, throwing an exception if there are errors, and then repaints the graph

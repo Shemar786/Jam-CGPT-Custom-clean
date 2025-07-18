@@ -1,0 +1,10 @@
+TDAT:     public Album getAlbum(File dir){
+	if(!dir.exists() || !dir.isDirectory()){
+	    System.err.println("Invalid directory specified, " + dir);
+	    usage();
+	}
+	log.debug("Creating album with pictureFilter " + pictureFilter + " and AlbumFilter" + albumFilter);
+	return new AlbumWithIncludes(dir, new BasicMediaSource(), pictureFilter, albumFilter);
+    }
+
+COM:returns a new album created with the given file directory and filters for pictures and albums

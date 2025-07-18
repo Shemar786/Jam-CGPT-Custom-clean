@@ -1,0 +1,17 @@
+TDAT:   public Collection exploreDamages() {
+    Collection result = new ArrayList();
+    Map ships = retrieveShips();
+    try {
+      Iterator items = ships.values().iterator();
+      while (items.hasNext()) {
+        Ship ship = (Ship) items.next();
+        result.addAll(ship.exploreDamages());
+      }
+    }
+    finally {
+      releaseShips(ships);
+    }
+    return result;
+  }
+
+COM:retrieves a collection of damages from all ships and returns them in a single collection

@@ -1,0 +1,13 @@
+TDAT:    private void cleanUpConnectionAfterException(Connection con) {
+      try {
+         // Do only if autoCommit is disabled
+         if ((con != null) && (!con.getAutoCommit())) {
+            con.rollback();
+            con.setAutoCommit(true);
+         }
+      } catch (java.sql.SQLException e) {
+         SqlUtil.logSqlException(e);
+      }
+   }
+
+COM:rolls back a database transaction and sets autoCommit mode to true, if autoCommit is disabled, in order to clean up a database connection after an exception is encountered

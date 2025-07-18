@@ -1,0 +1,11 @@
+TDAT: 	private ReportGroup setReportGroupForm(final Integer reportGroupId, final ActionForm form) throws Exception {
+		
+		//get the group
+		ReportGroup reportGroup = ReportHelper.getReportGroup(reportGroupId, principal, dbSession);
+    	
+    	//add it to the form
+		((ReportGroupsForm) form).setReportGroup(reportGroup);
+		return reportGroup;
+	}	
+
+COM:sets the report group for a given report group ID and ActionForm, adds it to the form, and returns the report group

@@ -1,0 +1,9 @@
+TDAT: 	public void setRequestAttributes(HttpServletRequest request) {
+		request.setAttribute("dateFrom", this.dateFrom);
+		request.setAttribute("dateTill", this.dateTill);
+		request.setAttribute("scenario_id",new Integer(this.scenarioId));
+		request.setAttribute("taskgroup_id", new Integer(this.taskgroupId));
+		request.setAttribute("task_id", new Integer(this.taskId));
+	}
+
+COM:sets request attributes with specific values for date, scenario ID, task group ID, and task ID

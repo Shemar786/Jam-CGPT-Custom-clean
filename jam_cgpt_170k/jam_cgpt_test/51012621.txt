@@ -1,0 +1,15 @@
+TDAT: 	public void addCitation(String value) throws Exception{
+		Matcher m = citations.matcher(value);
+		if ( m.matches()){
+			Publication pub = null;
+			String citations = m.group(0).toUpperCase();
+			try{
+				pub = (Publication) SinkFactory.getInstance().findByUniqueId("PUB-" + citations);
+			}catch(Exception e){
+				pub = (Publication) SinkFactory.getInstance().create(Publication.class, citations);
+			}
+			this.getNode().addPublication(pub);
+		}
+	}
+
+COM:adds a citation to a publication by matching the citation format, creating or finding the publication, and adding it to a node

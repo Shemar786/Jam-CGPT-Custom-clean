@@ -1,0 +1,12 @@
+TDAT: 	public void testWDStrictExtensions() {
+		assertWDStrict(EFF.makeExtendedPredicate(fooS, TWO_EXPRS, TWO_PREDS,
+				null));
+		assertWDStrict(EFF.makeExtendedExpression(barS, TWO_EXPRS, TWO_PREDS,
+				null));
+		assertNotWDStrict(EFF.makeExtendedPredicate(fooL, TWO_EXPRS, TWO_PREDS,
+				null));
+		assertNotWDStrict(EFF.makeExtendedExpression(barL, TWO_EXPRS,
+				TWO_PREDS, null));
+	}
+
+COM:tests whether certain expressions and predicates are WD strict or not

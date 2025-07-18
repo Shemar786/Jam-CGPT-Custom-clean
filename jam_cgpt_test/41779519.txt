@@ -1,0 +1,10 @@
+TDAT:     public Command getCmdRipeti() {
+        if (cmdRipeti == null) {//GEN-END:|82-getter|0|82-preInit
+            // write pre-init user code here
+            cmdRipeti = new Command("Inserimento dati", Command.SCREEN, 0);//GEN-LINE:|82-getter|1|82-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|82-getter|2|
+        return cmdRipeti;
+    }
+
+COM:returns a Command object called "cmdRipeti", creating it if it doesn't already exist

@@ -1,0 +1,14 @@
+TDAT: 	public void setSharedVariables(Map variables) throws TemplateModelException {
+		if (variables != null) {
+			for (Iterator iter = variables.entrySet().iterator(); iter
+					.hasNext();) {
+				Map.Entry entry = (Map.Entry) iter.next();
+				String key = (String) entry.getKey();
+				Object value = entry.getValue();
+				super.setSharedVariable(key, value);
+			}
+
+		}
+	}
+
+COM:sets shared variables using a Map, iterating through each entry in the map and setting the key-value pair as a shared variable

@@ -1,0 +1,13 @@
+TDAT: 	private JSplitPane getProjectViewSplit() {
+		if (jSplitPaneProjectView == null) {
+			jSplitPaneProjectView = new JSplitPane();
+			jSplitPaneProjectView.setOneTouchExpandable(true);
+			jSplitPaneProjectView.setDividerLocation(210);
+			jSplitPaneProjectView.setDividerSize(10);			
+			jSplitPaneProjectView.setLeftComponent(getJScrollPane());			
+			jSplitPaneProjectView.setRightComponent( getProjectViewRightTabs() );
+		}
+		return jSplitPaneProjectView;
+	}
+
+COM:returns a JSplitPane object that has two components, a JScrollPane and a set of tabs, with customizable divider size and location

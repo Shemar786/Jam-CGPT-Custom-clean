@@ -1,0 +1,20 @@
+TDAT: 	private void saveTokenSecretInPrefs(Context context) {
+		SharedPreferences defaults = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		Editor editor = defaults.edit();
+
+		if (mToken != null) {
+			editor.putString(PREF_TOKEN, mToken);
+		} else {
+			editor.remove(PREF_TOKEN);
+		}
+
+		if (mTokenSecret != null) {
+			editor.putString(PREF_TOKEN_SECRET, mTokenSecret);
+		} else {
+			editor.remove(PREF_TOKEN_SECRET);
+		}
+
+		editor.commit();    	
+	}
+
+COM:saves token secrets in preferences using a shared preference editor

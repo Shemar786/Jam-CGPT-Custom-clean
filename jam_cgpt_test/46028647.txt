@@ -1,0 +1,6 @@
+TDAT: 	public int getFieldDisplayPositionX(GameEngine engine, int playerID) {
+		if(getNextDisplayType() == 2) return NEW_FIELD_OFFSET_X_BSP[engine.owner.mode.getGameStyle()][engine.displaysize + 1][playerID];
+		return NEW_FIELD_OFFSET_X[engine.owner.mode.getGameStyle()][engine.displaysize + 1][playerID];
+	}
+
+COM:returns the display position X of a game field based on the game engine and player ID

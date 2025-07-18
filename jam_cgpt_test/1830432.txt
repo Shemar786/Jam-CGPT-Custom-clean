@@ -1,0 +1,13 @@
+TDAT:     public TrxBO getTrx() {
+        TrxBO tx = null;
+        try {
+            tx = TrxDAO.getInstance().read(trx);
+        } catch (DataException ex) {
+            ex.printStackTrace();
+            String message = "Error returning Transaction object: " + ex.toString();
+            JOptionPane.showMessageDialog(null, message, "getTrx() Exception", JOptionPane.ERROR_MESSAGE);
+        }
+        return tx;
+    }
+
+COM:returns a Transaction object (TrxBO) by reading data from the database using a TrxDAO instance

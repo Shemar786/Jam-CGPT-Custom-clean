@@ -1,0 +1,26 @@
+TDAT: 	public void showNodeLabels(boolean show) {
+		if (show) {
+			viewer.getMetaGraphPanel()
+					.getVisualizationViewer()
+					.getRenderContext()
+					.setVertexLabelTransformer(
+							new ONDEXMetaConceptLabels(viewer
+									.getONDEXJUNGGraph()));
+		} else {
+			viewer.getMetaGraphPanel()
+					.getVisualizationViewer()
+					.getRenderContext()
+					.setVertexLabelTransformer(
+							new Transformer<ONDEXMetaConcept, String>() {
+
+								@Override
+								public String transform(ONDEXMetaConcept input) {
+									return null;
+								}
+							});
+		}
+		updateMenuBar();
+		viewer.getMetaGraphPanel().repaint();
+	}
+
+COM:toggles the visibility of node labels in a graph visualization, setting the label transformer to display ONDEXMetaConceptLabels if show is true and setting it to null if show is false

@@ -1,0 +1,8 @@
+TDAT:     private void updateTables() {
+   		this.pdfDefinitionTableController.updatePDFDefinitionTable(this.uiModel);
+        this.variationPerParameterTableController.updateVariationPerParameterTable(this.uiModel);
+        this.correlationTableController.updateCorrelationTable(this.uiModel);
+        this.resultsTableController.updateResultsTable(this.uiModel);
+    }
+
+COM:updates multiple tables using their respective controller classes

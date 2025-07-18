@@ -1,0 +1,14 @@
+TDAT: 	protected SuggestCommentHelper getSuggestHelper () throws ServletException {
+		if (suggestHelper == null) {
+			try {
+				suggestHelper = (SuggestCommentHelper) servlet.getServletContext().getAttribute("SuggestCommentHelper");
+				if (suggestHelper == null)
+					throw new Exception ();
+			} catch (Throwable t) {
+				throw new ServletException ("SuggestCommentHelper is not initialized");
+			}
+		}
+		return suggestHelper;
+	}
+
+COM:returns the SuggestCommentHelper if it already exists, otherwise it initializes and returns a new SuggestCommentHelper

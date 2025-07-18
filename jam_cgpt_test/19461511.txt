@@ -1,0 +1,8 @@
+TDAT: 	private void refineExtension(IEventBRoot concreteEventBRoot, ISerialisedExtension abstractExtensionRoot, IProgressMonitor monitor) throws RodinDBException 	{
+		
+		EventBElement extension = synchroniser.load(abstractExtensionRoot, null, monitor);
+		
+		synchroniser.save(refineEventBElement(extension), concreteEventBRoot, monitor);
+	}
+
+COM:refines an abstract extension root into a concrete Event-B root using a synchronizer

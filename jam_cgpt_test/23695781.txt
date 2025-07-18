@@ -1,0 +1,13 @@
+TDAT: 	private void initialize() {
+		this.setSize(667, 448);
+		this.setTitle("Cancel Reservation");
+		this.setContentPane(getJContentPane());
+		this.addWindowListener(new java.awt.event.WindowAdapter() {
+			public void windowOpened(java.awt.event.WindowEvent e) {
+				System.out.println("windowOpened()"); // TODO Auto-generated Event stub windowOpened()
+			}
+		});
+		this.setTitle("JFrame");
+	}
+
+COM:initializes a JFrame with a specific size, title, content pane, and a window listener that prints out "windowOpened()" when opened

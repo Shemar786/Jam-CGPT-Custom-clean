@@ -1,0 +1,17 @@
+TDAT: 	public void testPaging(){
+		
+		Store.pageOverAll(Versions.RAW(), new OccurrenceConsumer(){
+            int counter = 0;
+
+			public boolean consume(FullRecord fullrecord) {
+				//System.out.println("GUID: "+ fullrecord.getO().getUuid());
+                counter++;
+                if(counter>10){
+                    return false;
+                }
+                return true;
+			}
+		},null, 10);
+	}
+
+COM:performs a test for paging using a Store object and a custom consumer function to iterate over FullRecord objects

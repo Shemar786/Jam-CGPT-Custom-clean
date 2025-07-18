@@ -1,0 +1,16 @@
+TDAT: 	protected void setLabel(String s) {
+		try {
+			int index1 = s.indexOf(' ');
+			if (index1 < 0 || index1 > 15)
+				return;
+			int index2 = s.indexOf(' ', index1 + 1);
+			if (index2 < 0)
+				return;
+	
+			conn.setLabel(s.substring(index1 + 1, index2), true);
+		} catch (Exception e) {
+			// ignore
+		}
+	}
+
+COM:sets the label of a connection by extracting a substring from a given String parameter based on the position of two consecutive whitespace characters

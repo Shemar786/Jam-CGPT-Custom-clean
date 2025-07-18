@@ -1,0 +1,9 @@
+TDAT:     public void clearGrid(){
+        editgrid = new int[editSizeX][editSizeY];
+        for(int i = 0; i < editSizeX; i++){
+            for(int j = 0; j < editSizeY; j++)
+                editgrid[i][j] = transparent.getRGB();
+        }
+    }
+
+COM:clears the editgrid array by setting each element to the transparent RGB color value

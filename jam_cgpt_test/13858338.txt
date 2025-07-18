@@ -1,0 +1,10 @@
+TDAT:     public void setEnabled(IForm form, FormContext ctx, String script, boolean enabled) {
+        Command com = getCommand(form, ctx, script);
+        if (com == null) {
+            throw new RuntimeException(
+                "Command not found for script '" + script + "'");
+        }
+        com.setEnabled(enabled);
+    }
+
+COM:sets the enabled status of a command associated with a specific form and script in a given form context

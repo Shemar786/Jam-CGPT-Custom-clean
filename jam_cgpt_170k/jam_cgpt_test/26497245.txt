@@ -1,0 +1,8 @@
+TDAT:   protected void assertObjectType(Class eType, String objectName, Object actual) throws ConfigurationException {
+    if (!eType.isInstance(actual)) {
+      throw new ConfigurationException("Invalid type for the object named '" + objectName + "' on the class" +
+              getClass().getName() + " : expected " + eType + " but was " + actual.getClass().getName());
+    }
+  }
+
+COM:checks if the actual object is of the expected type and throws a ConfigurationException if it is not

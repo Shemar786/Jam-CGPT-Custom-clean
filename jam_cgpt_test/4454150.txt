@@ -1,0 +1,14 @@
+TDAT:   private void supportMacOS() {
+    if (SwingEngine.isMacOSXSupported() && SwingEngine.isMacOSX()) {
+      try {
+        Application.getInstance().getMacApp().update(mac_map);
+      } catch (Throwable t) {
+        // intentionally empty
+      	if( logger.isLoggable(Level.FINE))  
+    		logger.log( Level.WARNING, "supportMacOS invocation error", t );
+      }
+
+    }
+  }
+
+COM:updates the macOS application if running on a macOS system and using the SwingEngine library

@@ -1,0 +1,16 @@
+TDAT:     protected void resetEdgeRemoved(Object edge) {
+        if (edge instanceof ConnectedNode) {
+            ConnectedNode cn = (ConnectedNode) edge;
+
+            if (cn.direction) {
+                removedEdges.remove(cn);
+            } else {
+                removedEdges.remove(cn.other);
+            }
+        } else {
+            addedEdges.add(((EdgeData) edge).from, edge);
+            addedEdges.add(((EdgeData) edge).to, edge);
+        }
+    }
+
+COM:resets an edge that has been removed by either removing it from a list if it's a ConnectedNode or adding it to two other lists if it's an EdgeData

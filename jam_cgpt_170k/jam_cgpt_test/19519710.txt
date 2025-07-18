@@ -1,0 +1,13 @@
+TDAT: 	public boolean prooveImp(IPred2 r, IFactory fact, IHypothesis H) {
+
+		final List<INorPPU> disj = new ArrayList<INorPPU>();
+		disj.add(new NormalizedPPList(vars));
+		p.normalizePPNeg(fact, disj, 0);
+
+		// not p <=> pred(disj)
+
+		return proove(r, fact, H, disj, 0, fact.newNormalizationOrigin(this));
+
+	}
+
+COM:takes in a predicate, factory, and hypothesis, creates a list of normalized propositions, negates a proposition, and returns the result of a proof using the predicate, factory, hypothesis, and normalized propositions

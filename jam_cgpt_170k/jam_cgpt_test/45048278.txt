@@ -1,0 +1,12 @@
+TDAT: 	private Element addCDATASimpleElement(Element parent, String elementName, String value) throws Exception{
+		if(parent == null) throw new Exception(ExchangeErrorCodes.EXPORT_CDATA_ELT_NO_PARENT);
+		if(elementName == null) throw new Exception(ExchangeErrorCodes.EXPORT_CDATA_ELT_NO_NAME);
+		if(value == null) throw new Exception(ExchangeErrorCodes.EXPORT_CDATA_ELT_NO_VALUE);
+		Element child = parent.getOwnerDocument().createElement(elementName);
+		CDATASection cdata = parent.getOwnerDocument().createCDATASection(value);
+		child.appendChild(cdata);
+		parent.appendChild(child);
+		return child;
+	}
+
+COM:adds an element with a CDATA section to a parent element, given the element name and value, and throws an exception if any of the input parameters are null

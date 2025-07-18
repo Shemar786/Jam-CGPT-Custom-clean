@@ -1,0 +1,18 @@
+TDAT:     public void visitRetStmt(RetStmt stmt) {
+        Set targets = new LinkedHashSet();
+
+        Iterator iter = stmt.sub().paths().iterator();
+
+        while (iter.hasNext()) {
+            Block[] path = (Block[]) iter.next();
+            targets.add(path[1]);
+        }
+
+        targets.addAll(stmt.catchTargets());
+
+        verifyTargets(stmt.block(), targets);
+
+        visitNode(stmt);
+    }
+
+COM:visits a Return Statement, retrieves its targets, verifies them, and then visits the node

@@ -1,0 +1,21 @@
+TDAT:     protected void paintComponent(Graphics g) {
+
+        super.paintComponent(g);
+        
+        Insets insets = getInsets();
+        
+        if (m_drawXGraduations)
+            paintXGraduations(g, insets);
+        
+        if (m_drawYGraduations)
+            paintYGraduations(g, insets);
+        
+        if (m_drawHorizontalZeroLine)
+            paintHorizontalZeroLine(g, insets);
+        
+        if (m_drawVerticalZeroLine)
+            paintVerticalZeroLine(g, insets);
+        
+    }
+
+COM:is responsible for painting X and Y graduations, horizontal and vertical zero lines on a graphical component

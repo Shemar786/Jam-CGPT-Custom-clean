@@ -1,0 +1,20 @@
+TDAT: 	public void startTimerThread(long updateFrequency) {
+		if (updateFrequency == 0) {
+			stopTimerThread();
+		}
+		if (updateFrequency > 0) {
+			if (timer != null) {
+				timer.cancel();
+			}
+			// Set daemon to true
+			timer = new Timer(true);
+			// Start monitoring the metadata sourceFile directory for updates and changes.
+			timer.schedule(new FileSyncTask(),
+					6000,
+					((updateFrequency > 0) ? updateFrequency * 1000 : 60000));
+			addIndexingMessage("Auto-indexing timer started");
+			//prtln("FileIndexingService timer started");
+		}
+	}
+
+COM:starts a timer thread that monitors a directory for updates and changes at a specified frequency

@@ -1,0 +1,14 @@
+TDAT:     public int hashCode() {
+        int hash = 17;
+
+        hash += 37 * source.hashCode();
+        if (getParamsCount() != 0) {
+            for (int i = 0; i < getParamsCount(); i++) {
+                hash += 37 * getParam(i).hashCode();
+            }
+        }
+
+        return hash;
+    }
+
+COM:returns a hash code value for the object by calculating it using the values of the source and its parameters

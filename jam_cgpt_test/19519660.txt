@@ -1,0 +1,9 @@
+TDAT: 	public boolean prooveImp(IPred2 r, IFactory fact, IHypothesis H) {
+		IPred2 r2 = r;
+		for (int i = preds.length - 1; i >= 1; i--) {
+			r2 = fact.newImp2(preds[i], r2);
+		}
+		return preds[0].prooveImp(r2, fact, H);
+	}
+
+COM:takes in an IPred2 object as a parameter, creates a new IPred2 object through a factory method, and uses it to prove an implication with a hypothesis

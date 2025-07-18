@@ -1,0 +1,9 @@
+TDAT:   public void mouseDragged(MouseEvent e) {
+    if (e.getSource() == this)
+      borderMouseDragged(e);
+    else if (e.getSource() == label)
+      labelMouseDragged(e);
+//    System.out.println("Mouse dragged: " + e.getX() + "-" + e.getY());
+  }
+
+COM:handles the dragging of a mouse on either the current object or a label object

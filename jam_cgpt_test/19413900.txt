@@ -1,0 +1,9 @@
+TDAT:   public boolean isAvailable() {
+    if (!LOCAL.equals(getProtocol()) && getHost() != null && getPort() != -1) {
+      return Ping.ping(getHost(), getPort(), 3000);
+    } else {
+      return true; // Local, apparently.
+    }
+  }
+
+COM:checks if a server is available by pinging its host and port and returns a boolean value

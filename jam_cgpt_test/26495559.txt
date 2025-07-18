@@ -1,0 +1,13 @@
+TDAT:   public long calculateExpirationInstant() {
+    if (_object != null) {
+      if (_object.getTimeToLiveMillis() == PerishableObject.INFINITE_TIME_TO_LIVE) {
+        _expirationInstant = Long.MAX_VALUE;
+      } else {
+        _expirationInstant = _creationInstant + _object.getTimeToLiveMillis();
+      }
+    }
+
+    return _expirationInstant;
+  }
+
+COM:calculates the expiration instant of an object based on its time to live and creation instant

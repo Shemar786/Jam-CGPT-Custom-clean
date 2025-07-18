@@ -1,0 +1,9 @@
+TDAT:     public void stateChanged(ChangeEvent e) {
+        JSlider source = (JSlider)e.getSource();
+        if (!source.getValueIsAdjusting()) {
+ //           System.out.println((int)source.getValue());
+            setTimeRatio((int)source.getValue());
+        }
+    }
+
+COM:updates the time ratio based on the state change of a JSlider

@@ -1,0 +1,15 @@
+TDAT: 	public void fillOutReasonCode() {
+		List list = notificationReasonCodeService.findAllReasonCode();
+		if (list == null || list.size() == 0) {
+			reasonCodeList = null;
+			return;
+		}
+
+		reasonCodeList = new ArrayList();
+		for (int i = 0; i < list.size(); i++) {
+			TblReasonCode item = (TblReasonCode) list.get(i);
+			reasonCodeList.add(new SelectItem(item.getReasoncodeid(), item.getDescription()));
+		}
+	}
+
+COM:retrieves a list of reason codes and populates a select item list with their IDs and descriptions

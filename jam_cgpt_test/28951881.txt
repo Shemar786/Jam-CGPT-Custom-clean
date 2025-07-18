@@ -1,0 +1,13 @@
+TDAT:     public String getStringValue(String name) {
+        Field field = getField(name);
+        if (field == null)
+            return null;
+        else if (field.getType() == null || field.getType().equalsIgnoreCase("String"))
+                return (String)field.getValueObject();
+        else {
+            logWrongTypeWarningMessage(field.getName(), "String");
+            return null;
+        }
+    }
+
+COM:takes a string parameter "name" and returns a string value if the corresponding field is of type string, otherwise returns null

@@ -1,0 +1,16 @@
+TDAT: 	public void testDeviceDiscoveryIgnoresNonMediaDevices() throws Exception {
+		
+		MockSSDPPacket discoverPacket = new MockSSDPPacket(true,true,false,true);
+		discoverPacket.setLocation("http://localhost:9999/nonmedia.xml");
+		
+		List<Device> deviceList = upnpLocalDeviceServer.getDeviceList();
+		assertEquals("No device should be found",0,deviceList.size());
+		
+		controlPoint.sendNotifyRecieved(discoverPacket);
+		
+		deviceList = upnpLocalDeviceServer.getDeviceList();
+		assertEquals("No device should be found",0,deviceList.size());
+
+	}
+
+COM:tests that non-media devices are ignored during device discovery

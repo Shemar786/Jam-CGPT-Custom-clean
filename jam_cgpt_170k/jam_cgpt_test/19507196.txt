@@ -1,0 +1,16 @@
+TDAT: 	public void test_01_RenameElement() throws Exception {
+		
+		IRodinProject project = fetchProject("V01");
+		
+		convertProjectWithSuccess(project, 2);
+		
+		// ff does not have a version attribute, i.e., its version is 0
+		
+		getElements(project, "ff.tva", IVersionEA.ELEMENT_TYPE, 1);
+		
+		// gg has a version attribute with value 0
+		
+		getElements(project, "gg.tva", IVersionEA.ELEMENT_TYPE, 1);
+	}
+
+COM:tests renaming an element within a given Rodin project

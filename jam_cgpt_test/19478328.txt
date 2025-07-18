@@ -1,0 +1,13 @@
+TDAT: 	public void removeComposedMachineDependencies(ModelComposedMachine composedMachine){
+//		for(ModelContext ctx : composedMachine.getSeesContexts()) {
+//			ctx.removeSeenByMachine(machine);
+//		}
+//		for(ModelMachine mach : composedMachine.getRefinesMachines()) {
+//			mach.removeRefinedByMachine(machine);
+//		}
+//		for(ModelMachine mach : composedMachine.getIncludeMachines()) {
+//			mach.removeRefinedByMachine(machine);
+//		}
+	}
+
+COM:removes composed machine dependencies by removing the relationships with other machines in various contexts

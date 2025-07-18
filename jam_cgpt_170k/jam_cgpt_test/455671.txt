@@ -1,0 +1,16 @@
+TDAT: 	private String getValueForFieldName(String name) {
+		String value = null;
+		// get the field associated with the name
+		try {
+			Field f = this.getClass().getField(name);
+			// get the value of the field for this instance of the object
+			value = (String) f.get(this);
+		} catch (Exception e) {
+			// debug
+			System.out.println("error reading field value in column map class");
+			e.printStackTrace();
+		}
+		return value;
+	}
+
+COM:retrieves the value of a field associated with a given name for an instance of the object

@@ -1,0 +1,16 @@
+TDAT: 	public void reload() {
+		if( puzzleKey == null || puzzleInfo == null || isRefreshing() ) 
+			return;
+		
+		puzzleInfo = null;
+		setChanged();
+	
+		PuzzleServiceAsync puzzleService = ServiceFactory.getPuzzleService();
+		refreshing = true;
+		if( tutorial )
+			puzzleService.loadTutorial( puzzleKey, tutorialInfoCallback );
+		else
+			puzzleService.loadPuzzle( puzzleKey, puzzleInfoCallback );
+	}	
+
+COM:reloads puzzle information from a service, but only if certain conditions are met

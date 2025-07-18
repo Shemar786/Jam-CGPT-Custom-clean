@@ -1,0 +1,10 @@
+TDAT: 	public Rectangle parseRectangle(String string, String delimeter) {
+		StringTokenizer st = new StringTokenizer(string, delimeter);
+		int[] result = new int[st.countTokens()];
+		for (int i = 0; i < result.length; i++) {
+			result[i] = Integer.parseInt(st.nextToken());
+		}
+		return new Rectangle(result[0], result[1], result[2], result[3]);
+	}
+
+COM:parses a string containing integer values separated by a specified delimiter, creates an array with those integers, and returns a new Rectangle object with those integers as its dimensions

@@ -1,0 +1,21 @@
+TDAT:     public void readProperties(IPropertyStore store) {
+        synchronized (enabled) {
+            disabled.addAll(enabled);
+            enabled.clear();
+
+            ContextPropertyStore contextStore = new ContextPropertyStore(store);
+
+            for (IJavaRule rule : disabled) {
+                contextStore.setContext(rule.getKey());
+                rule.readProperties(contextStore);
+
+                if (contextStore.getProperty(ENABLED_PROP, true)) {
+                    enabled.add(rule);
+                }
+            }
+
+            disabled.removeAll(enabled);
+        }
+    }
+
+COM:reads properties from a store and enables or disables rules based on the property values

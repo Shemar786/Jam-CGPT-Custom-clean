@@ -1,0 +1,12 @@
+TDAT:   protected Edge createEdge ( int edge_index ) {
+
+    if ( edgeIndexObjectMap.containsKey( edge_index ) ) {
+      return ( Edge )edgeIndexObjectMap.get( edge_index );
+    } else {
+      LunaEdge edge = new LunaEdge( edge_index, this );
+      edgeIndexObjectMap.put( edge_index, edge );
+      return edge;
+    }
+  }
+
+COM:creates and returns an Edge object based on the given edge index, using a map to cache and reuse existing objects if possible

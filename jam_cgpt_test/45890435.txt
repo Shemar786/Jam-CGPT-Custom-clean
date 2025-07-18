@@ -1,0 +1,13 @@
+TDAT: 	protected void displayComments(final String packagename, final Intent intent) {
+		String text = AboutUtils.getStringExtraOrMetadata(this, packagename, intent, 
+				AboutIntents.EXTRA_COMMENTS, AboutMetaData.METADATA_COMMENTS);
+		
+		if (!TextUtils.isEmpty(text)) {
+			mCommentsText.setText(text);
+			mCommentsText.setVisibility(View.VISIBLE);
+		} else {
+			mCommentsText.setVisibility(View.GONE);
+		}
+	}
+
+COM:displays comments related to a given package or intent, and sets the visibility of the comments text accordingly

@@ -1,0 +1,11 @@
+TDAT:     protected void setTimeInterval(TimeInterval timeInterval) {
+        if(timeInterval == null) {
+            throw new IllegalArgumentException();
+        }
+        if(! timeInterval.isOpenTimeInterval()) {
+            throw new IllegalArgumentException("the agentwise.simulator.dynamics.time interval of an activity must be an OPEN interval");
+        }
+        this.timeInterval = timeInterval;
+    }
+
+COM:sets the time interval for an activity and ensures that it is not null and an open interval

@@ -1,0 +1,20 @@
+TDAT:     public void update(final Object object) {
+        if (node != null) {
+            if (node.isAntRunning()) {
+                if (isEnabled()) {
+                    setEnabled(false);
+                }
+            } else {
+                if (!isEnabled()) {
+                    setEnabled(true);
+                }
+            }
+        } else {
+            // There is currently no ant node.
+            if (isEnabled()) {
+                setEnabled(false);
+            }
+        }
+    }
+
+COM:This is a Java method that updates the enabled status of an object depending on the status of a node and whether or not an ant is running

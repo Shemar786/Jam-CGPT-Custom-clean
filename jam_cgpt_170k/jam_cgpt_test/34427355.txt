@@ -1,0 +1,11 @@
+TDAT:     private void actionSchematicList(MouseEvent e) {
+        if (e.getButton() == MouseEvent.BUTTON1
+                && e.getClickCount() > 1) { // double-click
+            int idx = schematicsList.locationToIndex(e.getPoint());
+            if (idx < 0) return;
+
+            addStoA((SWGSchematic) schematicsList.getModel().getElementAt(idx));
+        }
+    }
+
+COM:performs an action based on a double-click event on a schematic list

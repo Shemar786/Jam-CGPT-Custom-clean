@@ -1,0 +1,9 @@
+TDAT:     private void generateMenu(int change){
+        for(int index: vertPart){
+            super.setItemPosition(index, 0, -(change*spacingY), true);
+            super.setItemDraw(index, (vertPos.get(index) >= itemMin &&
+                vertPos.get(index) < itemMin+maxItems));
+        }
+    }
+
+COM:generates a menu by adjusting the position and visibility of items based on a given change value

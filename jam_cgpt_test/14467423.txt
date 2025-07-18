@@ -1,0 +1,9 @@
+TDAT:   public void addUndoableEvent(UndoableEvent e) {
+    if (this.undoOn) {
+      undoList.addFirst(e);
+      if (undoList.size() == 1)
+        notifyObservers(Model.UNDO_NONEMPTY, null, null, null, null, false);
+    }
+  }
+
+COM:adds an UndoableEvent to a LinkedList if the undoOn variable is true, and notifies any observers if the list is not empty

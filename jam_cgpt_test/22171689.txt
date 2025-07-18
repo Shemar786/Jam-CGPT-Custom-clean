@@ -1,0 +1,17 @@
+TDAT: 	protected void addIsExponentialPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveFunctionTimer_isExponential_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveFunctionTimer_isExponential_feature", "_UI_EveFunctionTimer_type"),
+				 TimerPackage.Literals.EVE_FUNCTION_TIMER__IS_EXPONENTIAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "isExponential" feature of the EveFunctionTimer class

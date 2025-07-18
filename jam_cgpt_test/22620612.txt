@@ -1,0 +1,17 @@
+TDAT: 	public Element bestPracticesLink(String xpath) {
+		Element bpLink = DocumentHelper.createElement("span")
+			.addAttribute("class", "action-button");
+
+		// String format = rhelper.getFramework().getXmlFormat();
+		String pathArg = RendererHelper.normalizeXPath(xpath);
+		String fieldName = XPathUtils.getNodeName(pathArg);
+
+		Element tag = DocumentHelper.createElement("st__bestPracticesLink")
+			.addAttribute("pathArg", pathArg)
+			.addAttribute("fieldName", fieldName);
+
+		bpLink.add(tag);
+		return bpLink;
+	}
+
+COM:returns an HTML element with attributes and child elements for a best practices link

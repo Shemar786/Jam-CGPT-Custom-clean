@@ -1,0 +1,11 @@
+TDAT: 	public float geTargetCoverageSequence() {
+    	int tempLengthQuery = lengthOfTargetSequence;
+    	if(targetSeqType != querySeqType){
+    	    if(targetSeqType.equals(SequenceType.AA) && querySeqType.equals(SequenceType.NA)){
+    	    	tempLengthQuery = tempLengthQuery*3; //make it NA size.
+    	    } 
+    	}
+    	return (float) overlapingLength / (float) tempLengthQuery; 
+	}
+
+COM:calculates the coverage percentage of a target sequence compared to a query sequence

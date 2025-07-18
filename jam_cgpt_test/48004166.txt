@@ -1,0 +1,16 @@
+TDAT: 	public void respondToAddGenreAndAddSubject(ManageCatalog manageCatalog) {
+		if (manageCatalog != null) {
+			manageCatalogEntryPoint(manageCatalog);
+			catalogManagmentTabView.getJLabelFail().setVisible(false);
+		} else {
+
+			catalogManagmentTabView.getJLabelFail().setVisible(true);
+		}
+		genreStatus = false;
+		subjectStatus = false;
+
+		catalogManagmentTabView.getNewNodePopUp().getJTextFieldRecieptNumber()
+				.setText("");
+	}
+
+COM:checks if a ManageCatalog object is null, and if not, calls a method and hides a JLabel, then sets two boolean variables to false and clears a text field

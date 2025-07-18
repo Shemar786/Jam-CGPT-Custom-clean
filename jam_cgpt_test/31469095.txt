@@ -1,0 +1,15 @@
+TDAT:     public void setReadOnly(boolean readOnly, boolean deep) {
+    	
+        if (syncChildren) {
+            synchronizeChildren();
+            }
+        setReadOnly(readOnly, deep);
+
+        // set read-only property
+        elements.setReadOnly(readOnly, true);
+        entities.setReadOnly(readOnly, true);
+    	notations.setReadOnly(readOnly, true);
+
+    } // setReadOnly(boolean,boolean)
+
+COM:sets the read-only state of certain elements, entities, and notations, and synchronizes their children if required

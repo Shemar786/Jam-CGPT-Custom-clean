@@ -1,0 +1,25 @@
+TDAT: 		public void write() {
+			// header goes at start of output
+			int oldPos = outputTell();
+			outputSeek(0);
+			
+			// output the header fields
+			writeInt(ChunkID);
+			writeInt(ChunkSize);
+			writeInt(Format);
+			writeInt(fmtChunkID);
+			writeInt(fmtChunkSize);
+			writeShort(AudioFormat);
+			writeShort(NumChannels);
+			writeInt(SampleRate);
+			writeInt(ByteRate);
+			writeShort(BlockAlign);
+			writeShort(BitsPerSample);
+			writeInt(Subchunk2ID);
+			writeInt(Subchunk2Size);
+			
+			// reset back to previous position
+			outputSeek(oldPos);
+		}
+
+COM:writes data to an output stream while including a header at the beginning of the output

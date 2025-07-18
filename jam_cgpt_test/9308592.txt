@@ -1,0 +1,24 @@
+TDAT: public void run() {
+ try {
+
+   while (true) {
+
+     synchronized (this) {
+       wait(cacheExecution);
+     }
+     while ((!queue.isEmpty()) && isRemovable(queue.peek())) {
+       synchronized (value) {
+         // remove value with the given key in the queue
+         removePop();
+       }
+     }
+     statLog();
+   }
+
+ } catch (InterruptedException e) {
+   
+ }
+
+}
+
+COM:runs an infinite loop that waits for a certain amount of time before removing values from a queue, logging statistics, and catching InterruptedException

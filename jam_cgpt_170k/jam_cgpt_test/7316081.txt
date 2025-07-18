@@ -1,0 +1,13 @@
+TDAT: 	private void initTabbedPane() {
+		logger.debug("initTabbedPane()"); //$NON-NLS-1$
+		initProgramInfoPanel();
+		initSystemInfoPanel();
+
+		tabbedPane = new JTabbedPane();
+		tabbedPane.addTab(Messages.getString("AboutDialog.program_info"), //$NON-NLS-1$
+				programInfoPanel); 
+		tabbedPane.addTab(Messages.getString("AboutDialog.system_info"),  //$NON-NLS-1$
+				systemInfoPanel); 
+	}
+
+COM:initializes a JTabbedPane and adds two panels, programInfoPanel and systemInfoPanel, to separate tabs

@@ -1,0 +1,18 @@
+TDAT: 	private void addData(Graph graph) throws GraphException {
+		ClosableIterator<Triple> iter = null;
+		try {
+			GraphElementFactory factory = this.data.getElementFactory();
+			TripleFactory tripleFactory = this.data.getTripleFactory();
+			iter = graph.find(ANY_SUBJECT_NODE, ANY_PREDICATE_NODE,
+					ANY_OBJECT_NODE);
+			Iterator<Triple> translator = new TripleIteratorTranslator(iter,
+					factory, tripleFactory);
+			this.data.add(translator);
+		} finally {
+			if (iter != null) {
+				iter.close();
+			}
+		}
+	}
+
+COM:adds data to a Graph object, using a combination of GraphElementFactory, TripleFactory, and TripleIteratorTranslator

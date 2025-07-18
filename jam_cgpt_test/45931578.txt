@@ -1,0 +1,8 @@
+TDAT:     public void testWeight() {
+        assertEquals("Weight of raw", 10.0, raw.weight());
+        assertEquals("Weight of raw2", 20.0, raw2.weight());
+        assertEquals("Weight of subset1", 5.0, subset1.weight());
+        assertEquals("Weight of subset2", 3.0, subset2.weight());
+    }
+
+COM:tests the weight of various objects using the assertEquals method

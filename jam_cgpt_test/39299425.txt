@@ -1,0 +1,7 @@
+TDAT:     public Segment getSegment(ID segmentID) {
+        //return getSegments().get(segmentID);
+        if(! getSegments().containsKey(segmentID)) throw new IllegalArgumentException("The given segment ID("+segmentID+") is not valid");
+        return getSegments().get(segmentID);
+    }
+
+COM:returns a Segment object from a map of segments based on a given segment ID, and throws an exception if the ID is not valid

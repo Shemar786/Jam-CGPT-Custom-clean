@@ -1,0 +1,16 @@
+TDAT:     public Object execute(Script script) {
+        assert(parsed);
+        Node n;
+        if(Util.evaluateCondition(condition,script)){
+            n = yesBlock;
+        }else{
+            n = noBlock;
+        }
+        while(n!=null){
+            n.execute(script);
+            n=n.getNext();
+        }
+        return null;
+    }
+
+COM:executes a script by evaluating a condition and executing a block of code based on that condition

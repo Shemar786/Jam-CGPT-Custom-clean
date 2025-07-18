@@ -1,0 +1,10 @@
+TDAT:     protected void configure() {
+        ONTOLOGY_DEFINITION = safeTrim(currentDefinition);
+        FULL_NAME = safeTrim(currentFullName);
+        SHORT_NAME = safeTrim(currentShortName);
+        QUERY_URL = safeTrim(currentQueryURL);
+        SOURCE_URL = safeTrim(currentSourceURL);
+        parser = new OBOFormatParser();
+    }
+
+COM:assigns values to instance variables and creates a new OBOFormatParser object

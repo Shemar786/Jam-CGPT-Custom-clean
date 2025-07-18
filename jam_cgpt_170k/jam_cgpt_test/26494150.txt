@@ -1,0 +1,11 @@
+TDAT:   public String toString() {
+    StringBuffer aBuffer = new StringBuffer(super.toString());
+    aBuffer.append("[mainClass=").append(_theMainClass).
+            append(" arguments=").append(_theArguments).
+            append(" isDaemon=").append(_isDaemon).
+            append("]");
+
+    return aBuffer.toString();
+  }
+
+COM:overrides the default toString() method to provide a customized string representation of the object

@@ -1,0 +1,9 @@
+TDAT:     public void addSlot(String name, String value, boolean isRequired) throws XdsRimException, SOAPException {
+        if (value != null) {
+            addRimSlotElement(root, name, value, rimNameSpace);
+        } else if (isRequired) {
+            throw new XdsRimException("Required slot \"" + name + "\" not supplied.");
+        }
+    }
+
+COM:adds a slot with a name, value, and optional requirement flag to an XML element and throws exceptions if necessary

@@ -1,0 +1,16 @@
+TDAT:     public void testIsIsbn10Valid() {
+        
+        BookForm bf = new BookForm();
+        
+        assertTrue(bf.isIsbn10Valid("0843610727"));
+        
+        assertTrue(bf.isIsbn10Valid("033398224X"));
+        
+        assertTrue(bf.isIsbn10Valid("0843610700"));
+        
+        assertFalse(bf.isIsbn10Valid("0843610728"));
+        
+        assertFalse(bf.isIsbn10Valid("qwertyuiop"));
+    }
+
+COM:tests whether the ISBN-10 validation method of a BookForm object returns the expected boolean values for given ISBN-10 strings

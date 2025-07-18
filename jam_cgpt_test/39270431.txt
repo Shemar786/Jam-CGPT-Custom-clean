@@ -1,0 +1,22 @@
+TDAT: 	public int getRepresentedCluster(int atomID){
+		int collectionID = -1;
+		
+		try{
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT CollectionID FROM CenterAtoms"
+					+ " WHERE AtomID = " + atomID);
+			if (rs.next()){
+				collectionID = rs.getInt("CollectionID");
+			}
+			
+			assert !rs.next() : "Atom " + atomID + " should not be the center of multiple clusters.";			
+			stmt.close();
+		} catch (SQLException e){
+			//TODO: figure out the error-logging procedures
+			e.printStackTrace();
+		}
+		
+		return collectionID;
+	}
+
+COM:retrieves the ID of the cluster that an atom belongs to

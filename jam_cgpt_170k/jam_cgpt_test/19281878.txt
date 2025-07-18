@@ -1,0 +1,12 @@
+TDAT: 	private String toHexString(final byte[] b) {
+		final StringBuffer sb = new StringBuffer(b.length << 1);
+		for (int i = 0; i < b.length; i++) {
+			// look up high nibble char
+			sb.append(hexChar[(b[i] & 0xf0) >>> 4])
+					// look up low nibble char
+					.append(hexChar[b[i] & 0x0f]);
+		}
+		return sb.toString();
+	}
+
+COM:converts a byte array to its hexadecimal representation as a String

@@ -1,0 +1,17 @@
+TDAT: 	protected void addComplexToPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConnectionComplex_complexTo_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectionComplex_complexTo_feature", "_UI_ConnectionComplex_type"),
+				 SaveccmPackage.Literals.CONNECTION_COMPLEX__COMPLEX_TO,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a complex property descriptor to the item property descriptors

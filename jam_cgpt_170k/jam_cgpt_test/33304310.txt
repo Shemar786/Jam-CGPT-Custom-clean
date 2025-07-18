@@ -1,0 +1,14 @@
+TDAT:     public MultipartFileInfo getFile(String name) {
+        Iterator          it  = null;
+        MultipartFileInfo mfi = null;
+        
+        if (! multiPart)  return null;
+        
+        it  = (Iterator)files.get(name);
+        if (it != null && it.hasNext()) {
+            mfi = (MultipartFileInfo)it.next();
+        }
+        return mfi;
+    }
+
+COM:retrieves a MultipartFileInfo object corresponding to the provided file name from a multipart form data request

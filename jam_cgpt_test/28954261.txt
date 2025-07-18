@@ -1,0 +1,15 @@
+TDAT:     public Date getServiceStartTime() {
+        String start = selectPath("ns:documentationOf/ns:serviceEvent/ns:effectiveTime/ns:low/@value");
+        Date date = null;
+
+        if (StringUtil.goodString(start)) {
+            try {
+                date = BaseBuildingComponent.dfLong.parse(start);
+            } catch (ParseException e) {
+                log.error(e);
+            }
+        }
+        return date;
+    }
+
+COM:retrieves the start time of a service and returns it as a Date object

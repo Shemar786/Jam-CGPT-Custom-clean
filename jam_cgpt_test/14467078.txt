@@ -1,0 +1,21 @@
+TDAT:   public void actionPerformed(ActionEvent e) {
+    switch (mode) {
+      case START_UP:
+        startUpActionPerformed(e);
+        break;
+      case ADD_MODEL:
+        addModelActionPerformed(e);
+        break;
+      case PROJECT_PROPERTIES:
+        projectPropertiesActionPerformed(e);
+        break;
+      case MODEL_PROPERTIES:
+        modelPropertiesActionPerformed(e);
+        break;
+      case NEW_PROJECT:
+        newProjectActionPerformed(e);
+        break;
+    }
+  }
+
+COM:handles ActionEvents depending on the mode selected through a switch statement

@@ -1,0 +1,13 @@
+TDAT: 	public void createServerChooser() {
+
+		MainMenuBar mainMenuBar = MainMenuBar.getInstance();
+
+		int nodeId = dbMgr.getNodeId((String) cbNE.getSelectedItem());
+
+		DownloadFileChooser downloadFile = new DownloadFileChooser(nodeId, DBDataDesc.SHELF_OLT1, tfFileName, tfFileNameOnly);
+		mainMenuBar.putCommand((Object) downloadFile);
+		downloadFile.setViewId(mainMenuBar.getViewId());
+		downloadFile.setVisible(true);
+	}
+
+COM:creates and displays a download file chooser for a specific node based on user-selected item and input file name fields

@@ -1,0 +1,22 @@
+TDAT: 	private void runCopy() {
+		CopyDefinition def = readXml();
+		
+		if (def != null) {
+			if (! "Yes".equalsIgnoreCase(def.complete)) {
+				runCopyDialog(def);
+			} else {
+				try {
+						DoCopy.copy(createLayout(), createLayout(), def);
+
+				} catch (Exception e) {
+					String s = "Error Running Copy";
+					e.printStackTrace();
+					message.setText(s);
+					Common.logMsg(s, e);
+					return;
+				}
+			}
+		}
+	}
+
+COM:runs a copy process using a defined copy layout and parameters specified in an XML file, displaying a dialog box if necessary, and handling any encountered errors

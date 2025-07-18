@@ -1,0 +1,16 @@
+TDAT: 	private void newRecord(int newSize) {
+		byte[] sep = layout.getRecordSep();
+		byte[] rec = new byte[newSize];
+		//byte[] d = getLineData();
+
+		System.arraycopy(data, 0, rec, 0, data.length);
+
+		if ((layout.getLayoutType() == Constants.rtGroupOfBinaryRecords)
+				&& sep != null && sep.length > 0) {
+			System.arraycopy(sep, 0, rec, newSize - sep.length, sep.length);
+		}
+
+		data = rec;
+	}
+
+COM:creates a new record with a specified size, copies data from the old record to the new one, and adds a record separator if required

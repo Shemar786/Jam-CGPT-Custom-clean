@@ -1,0 +1,15 @@
+TDAT:     public CofaxPage getPage(String id) {
+
+        if (cacheHash.get(id) instanceof CofaxPage) {
+            cacheHits++;
+            return (CofaxPage) cacheHash.get(id);
+        } else if (dirtyHash.get(id) instanceof CofaxPage) {
+            dirtyHits++;
+            return (CofaxPage) dirtyHash.get(id);
+        } else {
+            return (CofaxPage) new CofaxPage();
+        }
+
+    }
+
+COM:retrieves a CofaxPage object based on the given ID, prioritizing cached results over non-cached ones

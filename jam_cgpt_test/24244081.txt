@@ -1,0 +1,11 @@
+TDAT:   public void loadEstimation(DataInputStream dis) throws IOException {
+      estimatedX = dis.readFloat();
+      estimatedY = dis.readFloat();
+      estimatedAngle = dis.readFloat();
+      minX = dis.readFloat();
+      maxX = dis.readFloat();
+      minY = dis.readFloat();
+      maxY = dis.readFloat();
+  }
+
+COM:loads estimation data from a DataInputStream and assigns the values to instance variables

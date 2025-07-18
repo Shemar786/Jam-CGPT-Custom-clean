@@ -1,0 +1,9 @@
+TDAT:   public boolean setGraphViewHandler (GraphView graph_view, GraphViewHandler gv_handler){
+    if(this.graphViewToHandler.containsKey(graph_view)){
+      this.graphViewToHandler.put(graph_view, gv_handler);
+      return true;
+    }
+    return false;
+  }//setGraphViewHandler
+
+COM:sets a handler for a given graph view and returns true if the view is in the handler map, or false otherwise

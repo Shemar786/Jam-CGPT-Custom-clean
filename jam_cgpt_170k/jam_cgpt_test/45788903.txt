@@ -1,0 +1,23 @@
+TDAT: 	private String demarkMultispaces(String line) {
+		
+		int dblSpace = line.indexOf("  ");
+		while (dblSpace>=0){
+			StringBuffer newln = new StringBuffer(line.substring(0, dblSpace ));
+			newln.append(" ");
+			
+			line = line.substring(dblSpace+1);
+			while (line.length()>0 && line.charAt(0)== ' ') {
+				newln.append(SPACE_DEMARKATION);
+				newln.append(" ");
+				line = line.substring(1);
+			}
+			newln.append(line);
+			
+			line = newln.toString();
+			dblSpace = line.indexOf("  ");
+		}
+		
+		return line;
+	}
+
+COM:replaces multiple consecutive spaces in a string with a specified delimiter, using a StringBuffer for efficiency

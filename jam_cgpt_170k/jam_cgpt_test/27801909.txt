@@ -1,0 +1,14 @@
+TDAT:   public ZLayerGroup getZLayerGroup( int layer ) {
+    if ( layer == NODE_GROUP ) {
+      if ( nodeGroup == null ) {
+        System.out.println("WTF????");
+      }
+      return nodeGroup;
+    } else if ( layer == EDGE_GROUP ) {
+      return edgeGroup;
+    } else {
+      return otherGroup;
+    }
+  }
+
+COM:returns a ZLayerGroup based on the input layer parameter

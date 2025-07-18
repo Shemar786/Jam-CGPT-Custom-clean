@@ -1,0 +1,20 @@
+TDAT:     public GUINeuron checkNeuronPosition(int posX,int posY) {
+        GUILayer gLayer;
+        GUINeuron gNeuron;
+        Iterator iLayers;
+
+        iLayers = iterator();
+
+        while (iLayers.hasNext()) {
+            gLayer = (GUILayer) (iLayers.next());
+            gNeuron = gLayer.checkNeuronPosition(posX,posY);
+
+            if (gNeuron != null) {
+                return gNeuron;
+            }
+        }
+
+        return null;
+    }
+
+COM:checks the position of a neuron in a GUI layer and returns it, if found, otherwise returns null

@@ -1,0 +1,15 @@
+TDAT:     protected void fireStateChanged(byte type) throws IllegalArgumentException{
+	List notifyEvents = getListenerList(type);
+	    
+        // Process the listeners last to first, notifying
+        // those that are interested in this event
+        for (int i = notifyEvents.size() - 1; i>=0; i--) {
+	    ChangeListener listener = (ChangeListener) notifyEvents.get(i);
+	    // Lazily create the event:
+	    if (changeEvent == null)
+		changeEvent = new ChangeEvent(this);
+	    listener.stateChanged(changeEvent);
+        }
+    }
+
+COM:fires a state change event to all registered listeners in reverse order based on the byte type input

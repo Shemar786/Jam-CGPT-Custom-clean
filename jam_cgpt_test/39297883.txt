@@ -1,0 +1,14 @@
+TDAT: 	private void drawOutMessage(Graphics2D g) {
+		Vector<Module> modules = agv.getAllModules();
+		for(Module module: modules){
+			if(module instanceof CommunicationModule){
+				CommunicationModule commod = (CommunicationModule)module;
+		    	if(!commod.getCommunicationNode().getOutbox().isEmpty()){
+		    		g.setColor(Color.RED);
+		    		g.drawOval(0, (int)c.scale(-size), (int)c.scale(size), (int)c.scale(size));
+				}
+			}
+		}		
+	}
+
+COM:draws a red oval around an outgoing message in a communication module if the outbox is not empty

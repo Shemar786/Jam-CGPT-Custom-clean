@@ -1,0 +1,10 @@
+TDAT:   private String getSelection(Application wordAppl) {
+    Selection sel = wordAppl.getSelection();
+    // Alternative (VB): sel.moveEndWhile(?? cset:=vbCr ??, WdConstants.wdBackward);
+    // Alternative (VB): Call app.ActiveDocument.Bookmarks.Item("\endofdoc").Select()
+    sel.moveEnd();
+    sel.copy();
+    return sel.getText();
+  }
+
+COM:gets the selected text from a Microsoft Word application object

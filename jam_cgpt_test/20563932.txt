@@ -1,0 +1,12 @@
+TDAT:   private void testCounter(Counters counter) throws ParseException {
+    String compactEscapedString = counter.makeEscapedCompactString();
+    
+    Counters recoveredCounter = 
+      Counters.fromEscapedCompactString(compactEscapedString);
+    // Check for recovery from string
+    assertTrue("Recovered counter does not match on content", 
+               counter.contentEquals(recoveredCounter));
+    
+  }
+
+COM:tests if a counter object can be successfully recovered from a compact escaped string representation

@@ -1,0 +1,13 @@
+TDAT:     public Object getInterface(Class clas) throws EvalError {
+        if (clas.isInstance(this))
+            return this;
+        else {
+            EvalError te = new EvalError("Dynamic proxy mechanism not available. " + "Cannot construct interface type: " + clas);
+            te.warnUserMessage = "Dynamic proxy mechanism not available. " + "Cannot construct interface type: " + clas;
+            te.className = clas.getName();
+            throw te;
+
+        }
+    }
+
+COM:checks if a given class is an instance of the current object and returns the object if true, otherwise it throws an error

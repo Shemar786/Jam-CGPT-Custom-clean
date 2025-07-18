@@ -1,0 +1,16 @@
+TDAT: 	public void hold(String media){
+		if(media.equals(CAM)){
+        	actionHandler.handleCam();
+        	return;
+        }
+		if (interlocutors.size() < 1) {
+	    	System.out.println("ERRO: NO Interlocutors");
+            return;
+        }	    
+        int selectedRow = 0;   	
+        Interlocutor inter = (Interlocutor) interlocutors.get(selectedRow);
+        boolean mic=inter.onHoldMic(),cam=inter.onHoldCam();
+       	actionHandler.handleHold(inter,!mic,cam);
+	}
+
+COM:holds a selected media type (camera or microphone) for an interlocutor or prints an error message when there are no interlocutors included

@@ -1,0 +1,17 @@
+TDAT: 	protected void addTemporaryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SubroutineMetaData_temporary_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SubroutineMetaData_temporary_feature", "_UI_SubroutineMetaData_type"),
+				 RequiredMetadataPackage.Literals.SUBROUTINE_META_DATA__TEMPORARY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a temporary property descriptor for a given object

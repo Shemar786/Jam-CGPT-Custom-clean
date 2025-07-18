@@ -1,0 +1,15 @@
+TDAT:   public void takeReadings() {
+    // Take forward reading
+    takeReading(0f, FORWARD_READING);
+
+    // Take left reading
+    pilot.rotate(-RANGE_READING_ANGLE);
+    takeReading(-RANGE_READING_ANGLE, 0);
+
+    // Take right reading
+    pilot.rotate(2 * RANGE_READING_ANGLE);
+    takeReading(RANGE_READING_ANGLE, 2);
+    pilot.rotate(-RANGE_READING_ANGLE);
+  }
+
+COM:takes three different readings (forward, left, and right) and stores the results

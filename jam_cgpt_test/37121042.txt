@@ -1,0 +1,9 @@
+TDAT:     protected boolean scrollTextWindowTo(int newX, int newY) {
+
+        final ConstantPoint windowOrigin = this.textWindow.getWindowOrigin();
+
+        return scrollTextWindow(true, newX - windowOrigin.getX())
+            | scrollTextWindow(false, newY - windowOrigin.getY());
+    }
+
+COM:scrolls a text window by the specified amount in both the X and Y directions

@@ -1,0 +1,6 @@
+TDAT: 		private String createFieldLabel(final IField field) throws JavaModelException {
+			//			return field.getElementName() + "( " + Signature.getSignatureSimpleName(field.getTypeSignature()) + " : " + field.getTypeSignature() + ")";
+			return field.getElementName() + "( " + Signature.getSignatureSimpleName(field.getTypeSignature()) + ")";
+		}
+
+COM:creates a string label for a given field, including the field name and type signature

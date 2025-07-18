@@ -1,0 +1,11 @@
+TDAT:     protected void handleDirBrowseButtonPressed() {
+        DirectoryDialog dialog = new DirectoryDialog(getContainer().getShell(), SWT.SAVE);
+        dialog.setMessage(Messages.DirSelect);
+        dialog.setFilterPath(getDirValue());
+        String dir = dialog.open();
+        if (dir != null) {
+            _dirCombo.setText(dir);            
+        }            
+    }
+
+COM:opens a directory dialog and sets the selected directory path to a text box

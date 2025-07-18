@@ -1,0 +1,14 @@
+TDAT:   private JButton getJButton1() {
+    if (jButton1 == null) {
+      jButton1 = new JButton();
+      jButton1.setText("Select All");
+      jButton1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+          manager.waehleAlleAus();
+        }
+      });
+    }
+    return jButton1;
+  }
+
+COM:returns a JButton that, if not already initialized, creates one with the label "Select All" and an ActionListener that calls a method called "waehleAlleAus()" when the button is clicked

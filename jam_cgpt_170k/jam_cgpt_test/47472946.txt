@@ -1,0 +1,14 @@
+TDAT: 	public void adaptToPreferenceChange(PropertyChangeEvent event) {
+		if (fTagScanner == null)
+			return; //property change before the editor is fully created
+		if (affectsColorPresentation(event))
+			fColorManager.handlePropertyChangeEvent(event);
+		fTagScanner.adaptToPreferenceChange(event);
+		fPdeScanner.adaptToPreferenceChange(event);
+		String property = event.getProperty();
+		if (property.startsWith(IPDEColorConstants.P_XML_COMMENT)) {
+			adaptTextAttribute(event);
+		}
+	}
+
+COM:adapts to preference changes related to syntax highlighting in an editor and updates the color manager and scanners accordingly

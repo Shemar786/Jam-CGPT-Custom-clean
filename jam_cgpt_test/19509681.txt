@@ -1,0 +1,8 @@
+TDAT: 	public void testAssociativeExpression() {
+		doTest(mAssociativeExpression(BUNION, heS, heT), tS, tT);
+		doTest(mAssociativeExpression(BUNION, hiS, hiT), tS, tT);
+		doTest(mAssociativeExpression(BUNION, heS, heT, heU), tS, tT, tU);
+		doTest(mAssociativeExpression(BUNION, hiS, hiT, hiU), tS, tT, tU);
+	}
+
+COM:tests the associative expression for union operations with different sets and inputs

@@ -1,0 +1,11 @@
+TDAT:     public void addClassification(String codeType, Collection<String> values, String classificationScheme, boolean isRequired) throws XdsRimException, SOAPException {
+        if (values != null) {
+            for (String value: values) {
+                addClassification(codeType, value, classificationScheme, isRequired);
+            }
+        } else if (isRequired) {
+            throw new XdsRimException("Required classification \"" + codeType + "\" not supplied.");
+        }
+    }
+
+COM:adds a classification with a given codeType, collection of values, classification scheme, and a boolean indicating whether it is required, throwing exceptions if necessary

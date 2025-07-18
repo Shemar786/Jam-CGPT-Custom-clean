@@ -1,0 +1,13 @@
+TDAT: 	public void testVersion_04_machineSC() throws Exception {
+		IMachineRoot root = createMachine("mch");
+		root.setConfiguration(ORG_EVENTB_CORE_FWD, null);
+		saveRodinFileOf(root);
+		
+		runBuilder();
+		
+		ISCMachineRoot scRoot = root.getSCMachineRoot();
+		
+		assertEquals("attribute missing in SC machine", ORG_EVENTB_CORE_FWD, scRoot.getConfiguration());
+	}
+
+COM:creates and tests a machine root with a specific configuration setting

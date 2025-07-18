@@ -1,0 +1,16 @@
+TDAT: 	public float getScoreOnEntity(E entity) {
+		int id;
+		if (entity instanceof ONDEXConcept) {
+			id = entity.getId();
+		} else if (entity instanceof ONDEXRelation) {
+			id = entity.getId();
+		} else {
+			throw new RuntimeException(entity.getClass()
+					+ " is incompatible with these Hits.");
+		}
+		if (scoresForHits.containsKey(id))
+			return scoresForHits.get(id);
+		return -1; // problem if not in scores?
+	}
+
+COM:returns the score of a given entity, which can be either an ONDEXConcept or an ONDEXRelation

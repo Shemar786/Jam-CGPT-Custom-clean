@@ -1,0 +1,16 @@
+TDAT: 	private void displayAuthors(final String packagename, final Intent intent) {
+		String[] textarray = AboutUtils.getStringArrayExtraOrMetadata(this, packagename, intent, AboutIntents.EXTRA_AUTHORS, AboutMetaData.METADATA_AUTHORS);
+		
+		String text = AboutUtils.getTextFromArray(textarray);
+		
+		if (!TextUtils.isEmpty(text)) {
+			mAuthorsText.setText(text);
+			mAuthorsLabel.setVisibility(View.VISIBLE);
+			mAuthorsText.setVisibility(View.VISIBLE);
+		} else {
+			mAuthorsLabel.setVisibility(View.GONE);
+			mAuthorsText.setVisibility(View.GONE);
+		}
+	}
+
+COM:This private Java method displays the authors of an Android package or intent in a text view

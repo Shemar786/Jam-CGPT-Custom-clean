@@ -1,0 +1,13 @@
+TDAT: 	public boolean isCMFMethod(Method method) {
+		String name = method.getName();
+		if (name.startsWith("is")) {
+			return fields.containsKey(firstCharLower(name.substring(2)));
+		} else if (name.startsWith("get")) {
+			return fields.containsKey(firstCharLower(name.substring(3)));
+		} else if (name.startsWith("set")) {
+			return fields.containsKey(firstCharLower(name.substring(3)));
+		}
+		return false;
+	}
+
+COM:checks if a given method in a class is a getter or setter method for a field present in the class

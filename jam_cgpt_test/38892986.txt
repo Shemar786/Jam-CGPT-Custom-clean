@@ -1,0 +1,12 @@
+TDAT:   public void registerListeningInActiveDatabase() {
+    for (int i = 0; i < 8; ++i) {
+      DataElement elem = DatabaseApp.ACTIVE.getDataElement(databaseIDs[i]);
+
+      if ((elem != null) && (elem instanceof DigitalInput)) {
+        // We want to be the owner of this digital input
+        elem.setDataRequestListener(this);
+      }
+    }
+  }
+
+COM:registers the current object as a data request listener for a set of digital input elements in an active database

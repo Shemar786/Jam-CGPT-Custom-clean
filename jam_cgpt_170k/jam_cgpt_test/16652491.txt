@@ -1,0 +1,6 @@
+TDAT:   private String stripNoneWordChars(String uncleanString) {
+    return uncleanString.replace(".", " ").replace(":", " ").replace("@", " ").replace("-", " ").replace("_", " ").replace("<", " ").replace(">", " ");
+
+  }
+
+COM:replaces common non-word characters in a string with spaces

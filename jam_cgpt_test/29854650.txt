@@ -1,0 +1,11 @@
+TDAT:   public String getIdent() {
+    int		start = Math.max(0,
+				 Math.max(1 + getTokenReference().getFile().lastIndexOf('/'),
+					  1 + getTokenReference().getFile().lastIndexOf('\\')));
+
+    int		dot = getTokenReference().getFile().lastIndexOf('.');
+
+    return getTokenReference().getFile().substring(start, dot);
+  }
+
+COM:returns a substring of a file path obtained from a token reference

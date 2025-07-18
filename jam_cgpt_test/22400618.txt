@@ -1,0 +1,15 @@
+TDAT:   static private  void	nv_optrans (CMDARG cap) {
+    do_xop("nv_optrans");
+
+    String str = "xXDCsSY&";
+    if (!checkclearopq(cap.oap))
+    {
+      if (cap.count0 != 0) {
+	GetChar.stuffnumReadbuff(cap.count0);
+      }
+
+      GetChar.stuffReadbuff(nv_optrans_ar[str.indexOf(cap.cmdchar)]);
+    }
+  }
+
+COM:performs an operation transformation on a CMDARG object by checking for clear options, stuffing a read buffer with character data based on the command character, and invoking the do_xop method

@@ -1,0 +1,11 @@
+TDAT: 	public void unregisterJob(String group, String name) {
+		String jobFullName = group + "-" + name;
+		Job job = jobs.get(jobFullName);
+		log.info("Unregistering job [group:" + job.getGroup() + ", name:"
+				+ job.getName() + "]");
+		job.setRegistered(false);
+		job.setStop(true);
+		quartzAdapter.delete(job);		
+	}
+
+COM:unregisters a specified job in a group by setting its registered and stop flags to false and deletes it using a Quartz adapter

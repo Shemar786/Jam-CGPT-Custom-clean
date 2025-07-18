@@ -1,0 +1,13 @@
+TDAT: 	public Portlet getPortlet(Layout layout, String portletId) {
+
+		try {
+			return PortletLocalServiceUtil.getPortletById(layout.getCompanyId(), portletId);
+		}
+		catch (SystemException e) {
+			throw new PortletRuntimeException(
+				"Error getting portlet for group " + layout.getGroupId() +
+				(layout.isPrivateLayout() ? " private layout" : " public layout"), e);
+		}
+	}
+
+COM:returns a Portlet object by ID for a given layout, and throws a PortletRuntimeException if an error occurs

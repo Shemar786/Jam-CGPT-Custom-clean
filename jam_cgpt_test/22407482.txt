@@ -1,0 +1,18 @@
+TDAT:     public Map getProperties() {
+        Map mapProperties = new java.util.HashMap();
+
+        Iterator iterator = properties.iterator();
+
+        while (iterator.hasNext()) {
+            Property property = (Property) iterator.next();
+            String strKey = property.getKey().trim();
+
+            if (!"".equals(strKey)) {
+                mapProperties.put(strKey, property.getValue());
+            }
+        }
+
+        return mapProperties;
+    }
+
+COM:retrieves and returns a map of properties by iterating through a list of properties and adding valid keys and their associated values to the map

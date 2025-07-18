@@ -1,0 +1,16 @@
+TDAT: 	private TreeNode parseFactor() {
+		TreeNode t = parseBasicNumber();
+		while ((token.getType() == Token.TokenType.EXP)) {
+			TreeNode p = SyntaxTree.makeNewNode(token);
+			if (p != null) {
+				p.setChild(0, t);
+				p.setToken(token);
+				t = p;
+				tryMatch(token.getType());
+				p.setChild(1, parseBasicNumber());
+			}
+		}
+		return t;
+	}
+
+COM:parses a mathematical factor expression by creating a syntax tree using basic numerical values and exponent operators

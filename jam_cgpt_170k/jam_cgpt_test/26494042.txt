@@ -1,0 +1,14 @@
+TDAT:   protected List extractVariables(Environment anEnvironment) {
+    // Validate the arguments
+    if (anEnvironment == null) {
+      throw new IllegalArgumentException("The environment passed in is null");
+    }
+
+    ArrayList someVariables = new ArrayList();
+    ArrayList someIdentifiers = new ArrayList();
+    extractVariablesIter(anEnvironment, someVariables, someIdentifiers);
+
+    return someVariables;
+  }
+
+COM:extracts a list of variables from a specified environment while validating the arguments

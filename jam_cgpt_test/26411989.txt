@@ -1,0 +1,9 @@
+TDAT:     protected void debugMetrics() {
+        if (logger.isDebugEnabled()) {
+            logger.debug("\tPool Name: " + poolInfo.getName() + " {" + " Total Objects: " +
+                numTotalObjects() + " Objects Available: " + numCheckedInObjects() +
+                " Objects In Use: " + numCheckedOutObjects() + " }");
+        }
+    }
+
+COM:prints debugging information about a pool of objects if the logger's debug mode is enabled

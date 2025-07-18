@@ -1,0 +1,9 @@
+TDAT:   public HashMap getAttributes() {
+    HashMap h = super.getAttributes();
+    h.put(Project.XCOOR_KEY,this.getX() + "");
+    h.put(Project.YCOOR_KEY,this.getY() + "");
+    h.put(Project.WIDTH_KEY,this.getWidth() + "");
+    return h;
+  }
+
+COM:returns a HashMap containing the x-coordinate, y-coordinate, and width of a project

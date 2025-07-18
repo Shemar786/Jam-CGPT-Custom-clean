@@ -1,0 +1,10 @@
+TDAT:    public void createService() {
+      int dbState = whatIsTheState();
+      if( dbState == DATABASE_CLOSED ) {
+         String output = runCommand("oradim -new -sid famous -intpwd dwarf23 -pfile d:/famousdb/database/initfamous.ora"); // TODO: dynamic
+         System.out.println("createServiceOutput:"+output );
+
+      }
+   }
+
+COM:creates a service for a database if the database is closed

@@ -1,0 +1,12 @@
+TDAT: 	public AsnDocInfo getAsnDocByKey(String key) {
+		// prtln("getAsnDocByKey() " + key);
+		for (Iterator i = this.docMap.values().iterator(); i.hasNext(); ) {
+			AsnDocInfo doc = (AsnDocInfo) i.next();
+			if (doc.key.equals(key)) {
+				return doc;
+			}
+		}
+		return null;
+	}
+
+COM:takes a key parameter and returns an AsnDocInfo object associated with that key, if it exists in the docMap, or null otherwise

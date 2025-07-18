@@ -1,0 +1,14 @@
+TDAT:   public void close() {
+    try {
+      beginWrite();
+      Collection modules = moduleContainer.getRootNode().getChildren();
+      while (modules.size() > 0) {
+        moduleContainer.removeModule((ModuleNode) modules.toArray()[0]);
+      }
+    } finally {
+      endWrite();
+    }
+    getClassLogger().info("Application is closed.");
+  }
+
+COM:closes the application by removing all modules and logging the event

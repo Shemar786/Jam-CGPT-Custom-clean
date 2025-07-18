@@ -1,0 +1,10 @@
+TDAT:     public void registerExpandedNode(Node expandedNode, ConnectedNode cn) {
+        if (! newNodes.contains(expandedNode) && 
+                ! newNodes.contains(cn.node)) {
+            expandedNodes.add(expandedNode);
+        }
+
+        //else the node is already registered as new node it is checked there and doesnt have to be added her 
+    }
+
+COM:registers a new expanded node only if it is not already in the list of new nodes

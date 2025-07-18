@@ -1,0 +1,15 @@
+TDAT: 	public Contact add(Date thisAppointment, Date nextAppointment, String note) throws ContactDateException  {
+		Contact contact = new Contact();
+		contact.setDate(thisAppointment);		
+	    contact.setNextAppointment(nextAppointment);		
+		contact.setNotice(note);
+		contact.setCreatedBy((Dietician)m_UserHandler.getUser());
+				
+		DatabaseHandler dbH = DatabaseHandler.getInstance();
+		m_UserHandler.getCurrentPatient().addContact(contact);
+		dbH.savePatient(m_UserHandler.getCurrentPatient());
+		
+		return contact;
+	}
+
+COM:adds a contact with specified appointment dates and notes to the current patient, and throws an exception if there is an error with the contact date

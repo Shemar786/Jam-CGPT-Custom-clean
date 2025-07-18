@@ -1,0 +1,11 @@
+TDAT: 	private void initializeValues() {
+		IPreferenceStore store = getPreferenceStore();
+		home.setText(store.getString(IServletExecConstants.PREF_DEFAULT_HOME));
+		port.setText(store.getString(IServletExecConstants.PREF_DEFAULT_PORT));
+		root.setText(store.getString(IServletExecConstants.PREF_DEFAULT_ROOT));
+		mime.setText(store.getString(IServletExecConstants.PREF_DEFAULT_MIME));
+		sedJarPath.setText(store.getString(IServletExecConstants.PREF_SED_JAR_PATH));
+		mainClass.setText(store.getString(IServletExecConstants.PREF_MAIN_CLASS));
+	}
+
+COM:initializes default values for various preferences using a preference store

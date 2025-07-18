@@ -1,0 +1,15 @@
+TDAT:   public String convertSql(String from) {
+    try {
+      PostgresParser	parser = new PostgresParser(from);
+
+      System.err.println("-- NATIVE SQL: ");
+      System.err.println(parser.getText() + ";");
+      System.err.println("--");
+
+      return parser.getText();
+    } catch (SQLException e) {
+      throw new DBRuntimeException(e.getMessage());
+    }
+  }
+
+COM:accepts a SQL query as a String input, parses it using a Postgres parser, prints the native SQL statement, and returns it as a String

@@ -1,0 +1,7 @@
+TDAT:     protected String getStdMBeanClassFile(SandDecl sd) {
+        String srcname=sd.getSourceFile().toString();
+        String srcdir=srcname.substring(0,srcname.lastIndexOf(File.separator)+1);
+        return srcdir + getStdMBeanClass(sd.getClassDoc()) + ".java";
+    }
+
+COM:returns the file path for a standard MBean class based on the SandDecl parameter

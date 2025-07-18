@@ -1,0 +1,15 @@
+TDAT: 	public LayoutSettings getLayoutSettings(){
+		// look through the blocks for one with a matching header
+		LayoutSettings settings = null;
+		for (int i = 0; i < settingsBlocks.length; i++) {
+			if (settingsBlocks[i].trim().startsWith(LayoutSettings.class.getName())){
+				
+				settings = (LayoutSettings)addProps(new LayoutSettings(),settingsBlocks[i]);
+				break;
+			}
+			
+		}
+		return settings;
+	}
+
+COM:searches for a block matching a specific header and returns an instance of LayoutSettings with properties added to it

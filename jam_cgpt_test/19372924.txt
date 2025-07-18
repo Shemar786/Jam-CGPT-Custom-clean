@@ -1,0 +1,14 @@
+TDAT: 	private Set subSetSuperOf(Set conds) {
+		//Debug.defaultPrintln(this,"Set super state " + s);
+		Set sst = new HashSet();
+		for (Iterator i = subStates_.iterator(); i.hasNext();) {
+			BasicState st = (BasicState)i.next();
+			
+			if (moreGeneralSet(st.getConditions(),conds)) {
+				sst.add(st);
+			}
+		}
+		return sst;
+	}
+
+COM:returns a Set of BasicState objects that have conditions more general than the provided Set of conditions

@@ -1,0 +1,11 @@
+TDAT:     public void startupController() {
+        setAllActions(true);
+        if (getFrame().getView() != null) {
+            FileOpener fileOpener = new FileOpener();
+            DropTarget dropTarget = new DropTarget(getFrame().getView(),
+                                fileOpener);
+        }
+        getController().getMapMouseWheelListener().register(new MindMapMouseWheelEventHandler(this));
+    }
+
+COM:initializes the controller by setting all actions, creating a file opener for a drop target, and registering a mouse wheel event handler for a mind map

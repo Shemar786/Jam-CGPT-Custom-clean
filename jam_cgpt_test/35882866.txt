@@ -1,0 +1,17 @@
+TDAT: 	public void render(GLCanvas canvas ) 
+	{			
+		//
+		// clear the screen and depth buffer
+		//
+		GL gl = canvas.getGL();				
+		gl.glClearColor( 0.2f, 0.2f, 0.2f, 1 );
+		gl.glClear( GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT );
+		
+		//
+		// update the simulation and renderer it. the
+		// loop will take care of all the ugly business
+		//
+		loop.update();								
+	}
+
+COM:takes in a GLCanvas object and clears the screen and depth buffer before updating and rendering the simulation using a loop

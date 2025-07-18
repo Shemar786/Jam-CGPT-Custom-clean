@@ -1,0 +1,12 @@
+TDAT:   public void setDesktopActionDefaultStat() {
+    try {
+      wpMask mask = new wpMask(DESKTOP_ACTIONS, desktopActionIndices,
+                               desktopActionDefaultStat);
+      wpMaskEvent event = new wpMaskEvent(this, mask);
+      maskHandler.fireMaskChanged(event);
+    }
+    catch (wpMaskException me) {}
+
+  }
+
+COM:sets the default state of desktop actions and fires an event if the mask is changed

@@ -1,0 +1,14 @@
+TDAT:   private void verifyNotInTransaction(String message) {
+    if (getModel().inTransaction() && debugMessageInTransaction()) {
+      try {
+        Application.reportTrouble("DWindow",
+                                  message + " IN TRANSACTION",
+                                  this.toString(),
+                                  new RuntimeException("displayNotice in Transaction"));
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
+COM:This is a method that verifies whether a transaction is ongoing and reports an error message if it is

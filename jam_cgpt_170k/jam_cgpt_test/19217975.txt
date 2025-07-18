@@ -1,0 +1,13 @@
+TDAT:     protected boolean applyChanges() {
+        if(model != null) {
+            try {
+                model.setConfig(HtmlConfigProperties.PKEY_CASE_SENSITIVITY,
+                    new Boolean(caseSenRadioButton.isSelected()));
+            } catch(JCConfigException cex) {
+                // ignore, should never occur
+            }
+        }
+        return true;
+    }
+
+COM:updates the case sensitivity property of an HTML configuration model and returns true

@@ -1,0 +1,12 @@
+TDAT: 	public void normalizePPNeg(IFactory fact, List<INorPPU> disj, int curInd) {
+		for (int i = curInd; i < disj.size(); i++) {
+			final INorPPU l = disj.get(i);
+			for (BoundedVariable v : vars) {
+				l.addPossibleVariable(v);
+			}
+		}
+		p.normalizePPNeg(fact, disj, curInd);
+
+	}
+
+COM:adds possible variables to a list of disjunctions and calls another method to normalize the disjunctions

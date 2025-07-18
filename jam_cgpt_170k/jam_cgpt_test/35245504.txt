@@ -1,0 +1,11 @@
+TDAT:     public int getNumberPageCopyBooks(String ISBN) throws SQLException {
+        CallableStatement cs = dc.getConnection().prepareCall("{call getNumberPageCopyBooks(?)}");
+        cs.setString(1, ISBN);
+        ResultSet rs = cs.executeQuery();
+        if (rs.next()) {
+            return rs.getInt("NumberPages");
+        }
+        return 0;
+    }
+
+COM:retrieves the number of pages for a given book ISBN using a stored procedure and returns the value as an integer, or zero if no result is found

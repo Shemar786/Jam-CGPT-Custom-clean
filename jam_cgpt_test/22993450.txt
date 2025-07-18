@@ -1,0 +1,17 @@
+TDAT: 	protected void addConditionFromPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Condition_conditionFrom_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Condition_conditionFrom_feature", "_UI_Condition_type"),
+				 SaveccmPackage.Literals.CONDITION__CONDITION_FROM,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a condition from a property descriptor to the item property descriptors list

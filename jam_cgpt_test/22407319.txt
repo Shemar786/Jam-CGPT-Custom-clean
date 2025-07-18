@@ -1,0 +1,12 @@
+TDAT:     public void selectWithDescription() {
+        final AntTargetIterator iterator = targetIterator();
+
+        while (iterator.hasNext()) {
+            final AntTarget target = iterator.nextTarget();
+            boolean select = (target.getDescription() != null)
+                             && !target.getName().startsWith("-");
+            target.setSelected(select);
+        }
+    }
+
+COM:selects Ant targets with non-null descriptions and names that do not start with a "-" symbol

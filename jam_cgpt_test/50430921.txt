@@ -1,0 +1,15 @@
+TDAT: 	public void addToAddress(String address) throws AddressException {
+	    
+	    // New array is length is larger by one entry
+	    int newSize = to.length + 1;
+	    InternetAddress[] newTo = new InternetAddress[newSize];
+	    
+	    for (int i = 0; i < newSize - 1; i++)
+            newTo[i] = to[i];
+	    
+	    // Add the new recipient at the end of the array
+	    newTo[newSize - 1] = new InternetAddress(address);
+	    to = newTo;
+	}
+
+COM:adds a new email address to an existing array of InternetAddress objects representing recipients

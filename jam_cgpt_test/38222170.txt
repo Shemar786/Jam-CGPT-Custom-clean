@@ -1,0 +1,11 @@
+TDAT:   public Collection getChildren() {
+    Collection result = new ArrayList();
+    Iterator items = node.getChildren().iterator();
+    while (items.hasNext()) {
+      ModuleNode current = (ModuleNode) items.next();
+      result.add(new ModuleNodeProxy(current));
+    }
+    return result;
+  }
+
+COM:returns a collection of child nodes, where each child node is wrapped in a proxy object

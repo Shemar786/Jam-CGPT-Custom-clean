@@ -1,0 +1,13 @@
+TDAT:     protected CoderResult encodeLoop(final CharBuffer in, final ByteBuffer out) {
+        DynamicCharset cs = (DynamicCharset) charset();
+        while (in.remaining() > 0) {
+            if (out.remaining() == 0) {
+                return CoderResult.OVERFLOW;
+            } else {
+                out.put(cs.fastEncode(in.get()));
+            }
+        }
+        return CoderResult.UNDERFLOW;
+    }
+
+COM:encodes characters from a CharBuffer into a ByteBuffer using a DynamicCharset object, returning a CoderResult indicating whether the process completed successfully or encountered an overflow/underflow

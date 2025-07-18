@@ -1,0 +1,13 @@
+TDAT:     private String readerToString(FileReader fr) throws IOException {
+        StringBuffer sb = new StringBuffer();
+        char[] b = new char[8192];
+        int n;
+
+        while ((n = fr.read(b)) > 0) {
+            sb.append(b, 0, n);
+        }
+
+        return sb.toString();
+    }
+
+COM:reads the contents of a specified FileReader and returns it as a String

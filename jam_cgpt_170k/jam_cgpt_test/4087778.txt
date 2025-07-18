@@ -1,0 +1,6 @@
+TDAT:   public void setWord(String v) {
+    if (Freeling2_Type.featOkTst && ((Freeling2_Type)jcasType).casFeat_word == null)
+      jcasType.jcas.throwFeatMissing("word", "org.idtem.component.freeling.Freeling2");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Freeling2_Type)jcasType).casFeatCode_word, v);}    
+
+COM:sets the value of the "word" feature in a Freeling2 object

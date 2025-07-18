@@ -1,0 +1,13 @@
+TDAT:     public Command copy() {
+       try {
+             return (Command) this.clone();
+       }
+       catch (CloneNotSupportedException e) {
+             ui.error.ErrorHandler.newError(new ui.error.Error(
+                     "Cannot Clone Command",this.getClass().getSimpleName() +
+                     "\nThis command cannot be copied."));
+             return null;
+       }
+    }
+
+COM:creates a copy of an object using the clone method, and returns it as a Command object or null if an error occurs

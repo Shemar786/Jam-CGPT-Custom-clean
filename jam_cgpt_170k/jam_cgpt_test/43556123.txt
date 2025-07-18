@@ -1,0 +1,9 @@
+TDAT:     public TurkicLetter lastVowel() {
+        for (int i = size - 1; i >= 0; i--) {
+            if (letters[i].isVowel())
+                return letters[i];
+        }
+        throw new IllegalStateException("There is no wovel in the sequence:" + Arrays.toString(letters));
+    }
+
+COM:returns the last Turkic letter in the sequence that is a vowel, or throws an exception if there are no vowels in the sequence

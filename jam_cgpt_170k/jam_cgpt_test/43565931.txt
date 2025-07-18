@@ -1,0 +1,9 @@
+TDAT: 	private void checkForum(Forum forum1, Forum forum2) {
+		
+		assertEquals("wrong id", forum1.getId(), forum2.getId());
+		assertEquals("wrong Name", forum1.getName(), forum2.getName());
+		assertEquals("wrong Description", forum1.getDescription(), forum2.getDescription());		
+		
+	}
+
+COM:checks if two Forum objects share the same id, name, and description using the assertEquals method

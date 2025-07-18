@@ -1,0 +1,18 @@
+TDAT: 	protected void fillBuffer() throws IOException {
+		int n = in.read(readBuffer);
+		
+		if (n <= 0)
+			throw new IOException("End of input");
+		
+		// add to full buffer
+		int len = buffer.length - bufferIndex;
+		if (len < 0)
+			len = 0;
+		byte[] x = new byte[n + len];
+		System.arraycopy(buffer, bufferIndex, x, 0, len);
+		System.arraycopy(readBuffer, 0, x, len, n);
+		bufferIndex = 0;
+		buffer = x;
+	}
+
+COM:fills a byte buffer with data from an input stream, throwing an IOException if the end of input is reached

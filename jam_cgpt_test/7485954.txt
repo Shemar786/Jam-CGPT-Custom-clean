@@ -1,0 +1,14 @@
+TDAT:     public void testSendRoster() {
+        // Send user1's roster to user2
+        try {
+            RosterExchangeManager rosterExchangeManager =
+                new RosterExchangeManager(getConnection(0));
+            rosterExchangeManager.send(getConnection(0).getRoster(), getBareJID(1));
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            fail("An error occured sending the roster");
+        }
+    }
+
+COM:sends the roster of a user (user1) to another user (user2) using the RosterExchangeManager class

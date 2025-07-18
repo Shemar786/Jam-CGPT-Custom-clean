@@ -1,0 +1,23 @@
+TDAT: 	public void updateColor(ONDEXConcept node) {
+		Paint paint = null;
+		switch (strategy) {
+		case NONE:
+			paint = Color.BLACK;
+			break;
+		case MANUAL:
+			break;
+		default:
+			paint = Color.BLACK;
+			break;
+		}
+
+		// Explicitly set alpha channel of colour
+		if (paint instanceof Color && alphas.containsKey(node)) {
+			Color color = (Color) paint;
+			paint = new Color(color.getRed(), color.getGreen(),
+					color.getBlue(), alphas.get(node));
+		}
+		updateColor(node, paint);
+	}
+
+COM:updates the color of an ONDEXConcept node based on a strategy, with an option to set the alpha channel of the color

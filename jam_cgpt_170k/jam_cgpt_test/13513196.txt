@@ -1,0 +1,10 @@
+TDAT:     public void startServerWithoutGUI(String project){
+        if(jel==null) jel = new JmxExtLauncher();
+        try{
+            if(project!=null && !project.equals(""))
+                jel.setProjectLoc(new File(project).toURI());
+            jel.launchProjectNoGUI();
+        }catch (Exception e){e.printStackTrace();}
+    }
+
+COM:starts a server without a graphical user interface for a specified project location using JmxExtLauncher

@@ -1,0 +1,15 @@
+TDAT:     public void deleteRow(int row) {
+        
+        // check if we are in bounds
+        if (row < m_MealItems.size()) {
+            MealItem mealItem = (MealItem) m_MealItems.get(row);
+            
+            // remove the line from the model
+            m_MealItems.remove(row);    
+            
+            // inform all listeners that a table row was deleted
+            fireTableRowsDeleted(row, row);
+        }
+    }
+
+COM:deletes a row from a table model and notifies listeners of the deletion

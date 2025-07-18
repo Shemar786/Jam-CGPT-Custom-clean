@@ -1,0 +1,19 @@
+TDAT:     public void removeProgressBar() {
+        Runnable r = new Runnable() {
+            public void run() {
+                if(progressBar != null) {
+                    remove(progressBar);
+                    repaint();
+                }
+                progressBar = null;
+                if(cancelButton != null) remove(cancelButton);
+                cancelButton = null;
+            }
+        };
+        if(SwingUtilities.isEventDispatchThread())
+            r.run();
+        else
+            SwingUtilities.invokeLater(r);
+    }
+
+COM:removes a progress bar and cancel button from a UI component, and utilizes a Runnable to properly handle threading

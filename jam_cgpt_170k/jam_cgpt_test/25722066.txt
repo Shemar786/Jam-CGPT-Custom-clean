@@ -1,0 +1,21 @@
+TDAT: 	public void setMetrics(final AbstractMetricSource ms) {
+		try {
+			removeAll();
+			// TODO: Allow for statistics for one package only
+			if (!(ms instanceof IGraphContributor)) {
+				return;
+			}
+			deps = ((IGraphContributor) ms).getEfferent();
+			if (deps != null) {
+				external = new TreeSet<PackageStats>();
+				calculateLayers(deps, external);
+				displayInternalPackages(deps, layers);
+				displayExternalPackages(external);
+			}
+		} catch (Throwable e) {
+			Log.logError("MetricsTable::setMetrics", e);
+			e.printStackTrace();
+		}
+	}
+
+COM:sets the metrics for a given AbstractMetricSource object and displays information about efferent dependencies and package statistics

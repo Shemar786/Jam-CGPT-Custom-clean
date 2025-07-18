@@ -1,0 +1,13 @@
+TDAT:   public void removeParameters(Parameters aParameters) {
+    if (aParameters == null) {
+      throw new IllegalArgumentException("The parameters passed in is null");
+    }
+
+    if (aParameters.getProfile() == null) {
+      _theParametersByProfile.remove(_theNullProfile);
+    } else {
+      _theParametersByProfile.remove(aParameters.getProfile());
+    }
+  }
+
+COM:removes a given set of parameters from an existing list, identified by its profile

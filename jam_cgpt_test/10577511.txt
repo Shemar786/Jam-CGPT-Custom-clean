@@ -1,0 +1,10 @@
+TDAT:     protected void setMessageSeen() throws MessagingException {
+        // If the Seen flag is not handled by the folder
+        // allow a handler to do whatever it deems necessary
+        if (!getMessageIn().getFolder().getPermanentFlags().contains(Flags.Flag.SEEN))
+            handleMarkSeenNotPermanent();
+        else
+            getMessageIn().setFlag(Flags.Flag.SEEN, true);
+    }
+
+COM:marks a message as "seen" and throws a MessagingException if the "Seen" flag is not handled by the folder

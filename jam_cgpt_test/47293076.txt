@@ -1,0 +1,12 @@
+TDAT: 	public boolean hasNewMessages() throws IOException {
+		final String url = query + "action=query&meta=userinfo&uiprop=hasmsg";
+		logurl(url, "hasNewMessages");
+		final URLConnection connection = new URL(url).openConnection();
+		setCookies(connection, cookies);
+		connection.connect();
+		final BufferedReader in = new BufferedReader(new InputStreamReader(
+				new GZIPInputStream(connection.getInputStream())));
+		return in.readLine().indexOf("messages=\"\"") != -1;
+	}
+
+COM:checks if a user has new messages by querying a specified URL and performing string comparison

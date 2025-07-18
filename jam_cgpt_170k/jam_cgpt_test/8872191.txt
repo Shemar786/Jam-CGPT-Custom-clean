@@ -1,0 +1,21 @@
+TDAT:     private String getSource(String id){
+        try{
+        switch(Integer.parseInt(id)){
+            case 1001:
+                return "AFD";
+            case 1002:
+                return "APC";
+            case 1003:
+                return "APNI";
+            case 1004:
+                return "CoL";
+            default:
+                return nullString;
+        }
+        }
+        catch(NumberFormatException e){
+            return nullString;
+        }
+    }
+
+COM:takes a string input "id", tries to parse it into an integer and returns a corresponding source string based on a specified set of cases, returning null if the input is invalid

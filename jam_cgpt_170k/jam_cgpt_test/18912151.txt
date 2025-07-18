@@ -1,0 +1,19 @@
+TDAT: 	protected CoordinationContext getCoordinationContext(final String participantMATCHCODE) {
+		final CoordinationContext ctx = this.getCoordinationContext();
+		
+		// Duplicate the coordination context!
+		final CoordinationContext r = 
+			new CoordinationContext(
+					ctx.getIdentifier(), 
+					ctx.getCoordinationType(), 
+					new EndpointReference(ctx.getRegistrationService())
+			);
+
+		final MessageElement participantIDMessageElement = 
+			new MessageElement(INITIATOR_MATCHCODE, participantMATCHCODE);
+		r.getRegistrationService().getProperties().add(participantIDMessageElement);
+
+		return r;
+	}
+
+COM:returns a duplicated CoordinationContext with a MessageElement added to its registration service properties based on a given participant MATCHCODE

@@ -1,0 +1,19 @@
+TDAT: 	private boolean checkBeforeLoad() {
+		boolean isPass=false;
+		String mptClassName = infoMap.get("mptClassName");
+		boolean mptClassEnabled = Boolean.parseBoolean(infoMap.get("mptClassEnableStr"));
+		
+		if(mptClassName!=null && mptClassName.length()>0){
+			if(mptClassEnabled){
+				isPass=true;
+			}
+		}
+		if(isPass){
+			log.info("ready to load "+mptClassName);
+		}else{
+			log.info("skip to load "+mptClassName);
+		}
+		return isPass;
+	}
+
+COM:checks if a certain class is enabled before loading it, and returns a boolean indicating whether the check passed or not

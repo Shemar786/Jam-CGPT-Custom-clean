@@ -1,0 +1,14 @@
+TDAT: 	final public T get(final int first) {
+		java.util.List<T> list = getList();
+		if (first>=list.size()){
+			growTo(first+1); // size if 0 -> add one, makes size 1 and index 0 available
+		}
+		// may be at end of generated sequence
+		if (first>=list.size()){
+			throw new NoSuchElementException("get of "+first+" is more than the "+list.size()+" elements in the list");
+		}
+		
+		return list.get(first);
+	}
+
+COM:retrieves the element at a specified index from a list, and if the index is out of range, it grows the list or throws a NoSuchElementException

@@ -1,0 +1,14 @@
+TDAT:   public void setDefault(String val) {
+
+      if ((val == null || "".equals(val))
+      && (defaultValue == null || "".equals(defaultValue))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(defaultValue)) || (updateStatus == NULL_INT_VALUE)) {
+           defaultValue = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets the default value of a variable to the input string if it is not null or an empty string, and updates the status if the input string is not equal to the current default value

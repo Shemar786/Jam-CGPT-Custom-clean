@@ -1,0 +1,9 @@
+TDAT: 	private String getFormatTypeToIndex() {
+		// Format type 'canonical_nsdl_dc' or 'native'
+		String formatType = configXmlDoc.valueOf("/NFR_Collections/ncsManagedCollections/formatType");
+		if (formatType == null || formatType.trim().length() == 0 || !(formatType.equalsIgnoreCase("canonical_nsdl_dc") || formatType.equalsIgnoreCase("native")))
+			formatType = "canonical_nsdl_dc";
+		return formatType;
+	}
+
+COM:retrieves the format type from an XML document and returns it as a string, defaulting to "canonical_nsdl_dc" if the format type is null, empty, or not equal to "canonical_nsdl_dc" or "native"

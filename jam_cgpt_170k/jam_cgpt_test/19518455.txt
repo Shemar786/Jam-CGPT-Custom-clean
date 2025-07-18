@@ -1,0 +1,20 @@
+TDAT: 		private void sink(Node cur) {
+			Node max;
+			do {
+				max = cur;
+				Node left = leftChild(cur);
+				if (left != null && left.getSimilarity() > max.getSimilarity()) {
+					max = left;
+				}
+				Node right = rightChild(cur);
+				if (right != null
+						&& right.getSimilarity() > max.getSimilarity()) {
+					max = right;
+				}
+				if (max != cur) {
+					swap(max, cur);
+				}
+			} while (max != cur);
+		}
+
+COM:sinks a node down the tree by repeatedly comparing it to its children and swapping with the maximum value until it is in its correct position in a priority queue

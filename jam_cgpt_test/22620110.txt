@@ -1,0 +1,11 @@
+TDAT: 	public void report() {
+		prtln("\nAsnCatalogNew report");
+		prtln(this.idMap.size() + " asn docIDs read for the following subjects");
+		for (Iterator i = this.subjects.iterator(); i.hasNext(); ) {
+			String subject = (String) i.next();
+			int itemCount = this.getSubjectItems(subject).size();
+			prtln(" - " + subject + " (" + itemCount + ")");
+		}
+	}
+
+COM:prints a report showing the number of ASN documents read for various subjects

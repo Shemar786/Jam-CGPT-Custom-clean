@@ -1,0 +1,7 @@
+TDAT:   private boolean matchFeatures(Scmlog log) {
+    return (Tstamp.diff(logStamp, Tstamp.makeTimestamp(log.getDate().getTime())) < MINIMAL_INTERVAL_BETWEEN_COMMITS)
+        && (00 == comment.compareToIgnoreCase(log.getMessage()))
+        && (committer.equals(log.getCommitter_id()));
+  }
+
+COM:checks whether a given SCM log object matches a set of criteria based on its timestamp, comment, and committer ID

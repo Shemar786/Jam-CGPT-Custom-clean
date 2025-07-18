@@ -1,0 +1,12 @@
+TDAT:     public String toString() {
+    	String tuple=new String();
+    	for ( Field field : this.fields ){
+    		tuple = tuple + field.toString() + " ";    		
+    	}
+    	// remove the last " "
+    	tuple = tuple.substring( 0 , tuple.length()-2 );
+    	tuple = tuple +"\n";
+    	return tuple;        
+    }
+
+COM:converts a list of fields into a string of concatenated field values with a newline character at the end

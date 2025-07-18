@@ -1,0 +1,15 @@
+TDAT: 	public void removeProperty(String propName, String path, String userId) {
+		String doc_name = _id+".xml";
+		boolean system = userId.equals("");
+		DeletePropertyThread dpt = _containerEditor.deleteProperty(propName, path, doc_name, userId, system);
+		try{
+			dpt.start();
+			dpt.join();
+		}
+		catch(InterruptedException ie){
+			ie.printStackTrace(System.err);
+		}
+		dpt.cleanThread();
+	}
+
+COM:removes a specified property from a document, and starts a thread to delete the property from the document's container

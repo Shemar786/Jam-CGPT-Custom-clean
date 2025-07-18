@@ -1,0 +1,28 @@
+TDAT: 		public void run() {
+			try {
+				String line;
+
+				while ((line = reader.readLine()) != null) {
+					if (initialized) {
+						broadcast(userName + "> " + line);
+					} else {
+						// the handshake
+						userName = line;
+						sendOutMessage("OK");
+						initialized = true;
+					}
+				}
+			} catch (IOException ioe) {
+				ioe.printStackTrace();
+			} finally {
+				try {
+					reader.close();
+					writer.close();
+					sock.close();
+				} catch (Exception ignore) {
+					// we did all we could
+				}
+			}
+		}
+
+COM:reads input from a reader, performs a handshake with the user, broadcasts messages to other users if initialized, and closes the reader, writer, and socket when finished

@@ -1,0 +1,17 @@
+TDAT:   protected void addSqlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RunQuery_sql_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RunQuery_sql_feature", "_UI_RunQuery_type"),
+				 ActionStepPackage.eINSTANCE.getRunQuery_Sql(),
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a SQL property descriptor to the item property descriptors of a RunQuery object

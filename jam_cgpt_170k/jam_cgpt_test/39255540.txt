@@ -1,0 +1,23 @@
+TDAT: 	protected void createAxes() {
+		super.createAxes();
+		this.xAxis.setLabeller(
+				new AxisLabeller() {
+					private SimpleDateFormat dateFormat = 
+						new SimpleDateFormat("M/dd/yy");
+					private SimpleDateFormat timeFormat = 
+						new SimpleDateFormat("HH:mm:ss");
+					// a default labeller, which reports the value rounded to the 100s place.
+					public String[] label(double value) {
+						Date date = new Date();
+						date.setTime((long)value);
+						String[] label = new String[2];
+						label[0] = dateFormat.format(date);
+						label[1] = timeFormat.format(date);
+						return  label;
+					}
+				}
+		);
+		
+	}
+
+COM:creates custom labels for the x-axis of a chart, based on a date and time format

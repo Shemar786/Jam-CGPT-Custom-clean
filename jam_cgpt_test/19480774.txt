@@ -1,0 +1,17 @@
+TDAT: 	protected void addNewNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RenameableElement_newName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RenameableElement_newName_feature", "_UI_RenameableElement_type"),
+				 CompositionPackage.Literals.RENAMEABLE_ELEMENT__NEW_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a new property descriptor for a RenameableElement object

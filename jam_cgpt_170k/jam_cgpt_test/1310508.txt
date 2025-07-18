@@ -1,0 +1,9 @@
+TDAT: 	private void updateViewMenu() {
+		MenuComponent view = new MenuComponent(VIEW, false);
+		view.add(new ItemComponent(ZOOM_IN, KeyStroke.getKeyStroke('a'), false));
+		view.add(new ItemComponent(ZOOM_OUT, KeyStroke.getKeyStroke('a'), false));
+		view.add(new ItemComponent(PAGE_VIEW, KeyStroke.getKeyStroke('a'), false));
+		addComponents(view, -1);
+	}
+
+COM:updates the view menu by adding zoom in, zoom out, and page view item components

@@ -1,0 +1,22 @@
+TDAT:     public int read() throws IOException {
+
+        if (closed) {
+            throw new IOException("Attempted read from closed stream.");
+        }
+        if (eof) {
+            return -1;
+        } 
+        if (pos >= chunkSize) {
+            nextChunk();
+            if (eof) { 
+                return -1;
+            }
+        }
+        int b = in.read();
+        if (b != -1) {
+            pos++;
+        }
+        return b;
+    }
+
+COM:reads a byte of data from an input stream and returns it as an integer value, while throwing an IOException if the stream is closed or an end-of-file is encountered

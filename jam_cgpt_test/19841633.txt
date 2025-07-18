@@ -1,0 +1,13 @@
+TDAT: 	private void testSaveAndFindAllIteration(Class<? extends PersistentEntity> clazz)
+	{	
+		List<PersistentEntity> allBeforeSave = persistenceHelper.findAll(clazz);
+		int beforeSave = allBeforeSave.size();
+		
+		createAndSaveObject(clazz);
+		
+		List<PersistentEntity> allAfterSave = persistenceHelper.findAll(clazz);
+		assertEquals("Number of " + clazz.getCanonicalName() + " instances in DB didn't increase after save", 
+				beforeSave + 1, allAfterSave.size());		
+	}
+
+COM:tests saving and finding all iterations of a persistent entity object

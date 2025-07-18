@@ -1,0 +1,6 @@
+TDAT: 	/*
+	 * public String parseQuotedString() { int begin=str.indexOf('\"',index); if
+	 * (begin<0) return null; begin++; int end=str.indexOf('\"',begin); String
+	 * quotedtext=str.substring(begin,end); index=end; return quotedtext; }
+
+COM:parses a quoted string from a given text and returns it

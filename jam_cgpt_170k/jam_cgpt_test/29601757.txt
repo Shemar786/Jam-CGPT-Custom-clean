@@ -1,0 +1,10 @@
+TDAT:     public Command getBackCommandAboutForm() {
+        if (backCommandAboutForm == null) {//GEN-END:|134-getter|0|134-preInit
+            // write pre-init user code here
+            backCommandAboutForm = new Command("Back", Command.BACK, 0);//GEN-LINE:|134-getter|1|134-postInit
+        // write post-init user code here
+        }//GEN-BEGIN:|134-getter|2|
+        return backCommandAboutForm;
+    }
+
+COM:returns a Command object that represents a "Back" button for a form, creating the Command object if necessary

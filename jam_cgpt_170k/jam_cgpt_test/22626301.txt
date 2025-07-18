@@ -1,0 +1,12 @@
+TDAT: 	public List getRelationshipValues(String name) {
+		String xpath = "/ndr:NSDLDataRepository/ndr:NDRObject/ndr:relationships/" + qname(name);
+		List nodes = getNodes(xpath);
+		List values = new ArrayList();
+		for (Iterator i = nodes.iterator(); i.hasNext(); ) {
+			Element e = (Element) i.next();
+			values.add(e.getText());
+		}
+		return values;
+	}
+
+COM:retrieves a list of relationship values for a given name by fetching XML elements from a specific XPath and returning their associated text values

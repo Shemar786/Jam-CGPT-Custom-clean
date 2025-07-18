@@ -1,0 +1,15 @@
+TDAT:     private void setOptions() {
+        int idx = looks.getSelectedIndex();
+        boolean otherOption = idx == OTHER_ZIP_OPTION;
+
+        if (! otherOption) {
+            jarName.setText(ZIP_NAME[idx]);
+        }
+        if (idx < OTHER_ZIP_OPTION) {
+            usePng.setSelected(USE_PNG[idx]);
+        }
+        usePng.setEnabled(otherOption);
+        jarName.setEnabled(otherOption);
+    }
+
+COM:sets options for a program based on the selected index of a dropdown menu

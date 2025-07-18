@@ -1,0 +1,17 @@
+TDAT:     private void onNamedSchemaComplexType(Element schemaComplexType) {
+        Attribute nameAttr = schemaComplexType.attribute("name");
+
+        if (nameAttr == null) {
+            return;
+        }
+
+        String name = nameAttr.getText();
+        QName qname = getQName(name);
+
+        DatatypeElementFactory factory = getDatatypeElementFactory(qname);
+
+        onSchemaComplexType(schemaComplexType, factory);
+        namedTypeResolver.registerComplexType(qname, factory);
+    }
+
+COM:registers a complex type with a specified name in a named type resolver

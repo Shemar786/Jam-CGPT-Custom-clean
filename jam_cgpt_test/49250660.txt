@@ -1,0 +1,11 @@
+TDAT:     public void setBacklinkingArticles(final List<Article> backlinks) {
+        if (backlinks == null) {
+            final RuntimeException ex = new RuntimeException("backlinks parameter must not be null"); //$NON-NLS-1$
+            LOGGER.error("AbstractWikiFile.setBacklinkingArticles(...): backlinks parameter must not be null", ex); //$NON-NLS-1$
+            throw ex;
+        }
+
+        this.backlinks = backlinks;
+    }
+
+COM:sets the backlinking articles for a WikiFile object, but throws a RuntimeException if the backlinks parameter is null

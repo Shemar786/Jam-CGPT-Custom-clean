@@ -1,0 +1,17 @@
+TDAT: 	public Double doTotal(){
+			double retVal = 0;
+			Iterator iter = MainSettings.getInstance().getDrawingPanel().getRouteList().getListIterator();
+		
+			RouteMark first = null;
+			if (iter.hasNext()){
+				first = (RouteMark)iter.next();	
+			}
+			while (iter.hasNext()){
+				RouteMark mark = (RouteMark)iter.next();
+				retVal += CalcUtils.calcDistance(first,mark);
+				first = mark;
+			}
+			return new Double(retVal);
+		}
+
+COM:calculates the total distance of a route by iterating through a list of points and adding up the distances between them

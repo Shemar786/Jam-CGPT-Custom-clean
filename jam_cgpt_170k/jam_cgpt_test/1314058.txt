@@ -1,0 +1,12 @@
+TDAT:     public void mouseDragged(MouseEvent e) {
+        logger.fine("Event: mouseDragged");
+        // first stop the timer and select the node:
+        stopTimerForDelayedSelection();
+        NodeView nodeV = ((MainView) e.getComponent()).getNodeView();
+
+        // if dragged for the first time, select the node:
+        if (!c.getView().isSelected(nodeV))
+            c.extendSelection(e);
+    }
+
+COM:handles the event when the user drags the mouse while selecting a node, and selects the node being dragged

@@ -1,0 +1,7 @@
+TDAT:     public void testGetStem() throws Exception {
+        System.out.println("getStem");
+        Stemmer stemmer = DefaultMorphologyFactory.getInstance().getStemmer(Locale.ENGLISH, "name", "TestStemmer");
+        assertEquals("test_1", stemmer.getStem("test"));
+    }
+
+COM:tests the getStem() method of a Stemmer object using an English language and a custom TestStemmer

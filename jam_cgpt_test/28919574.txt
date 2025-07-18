@@ -1,0 +1,10 @@
+TDAT:     public void setMathSpace(final double x0, final double y0, final double z0, final double xR, final double yR, final double zR) {
+	this.xMin=x0;
+	this.yMin=y0;
+	this.zMin=z0;
+	this.xRange=xR;
+	this.yRange=yR;
+	this.zRange=zR;
+    }  
+
+COM:sets the minimum and range values of a mathematical space in three dimensions

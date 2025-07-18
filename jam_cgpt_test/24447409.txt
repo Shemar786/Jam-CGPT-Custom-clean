@@ -1,0 +1,14 @@
+TDAT: 	    public void actionPerformed(ActionEvent ae) {
+	    	//JOptionPane.showMessageDialog(null, "CytoscapeSQL test", "CytoscapeSQL test", JOptionPane.WARNING_MESSAGE);
+	    	
+	    	// Connect to the given database
+			ConnectSQLite.testConnection();
+			ConnectSQLite.getDataFromTable("xref");
+			
+			// Test the postgres connection
+			HepatoCoreInfo hcInfo = new HepatoCoreInfo("15926");
+			hcInfo.printInfo();
+			
+	    }
+
+COM:calls methods to connect to a SQLite database, retrieve data from a table, and test a PostgreSQL connection

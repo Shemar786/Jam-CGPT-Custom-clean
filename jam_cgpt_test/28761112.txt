@@ -1,0 +1,9 @@
+TDAT:   private void defaultValuesBoolean() {
+    for (Entry<ConfigurationValueBoolean, JCheckBox> entry : booleanValues.entrySet()) {
+      if ((entry.getValue() != null) && (entry.getKey() != null)) {
+        entry.getValue().setSelected(entry.getKey().getDefaultValue());
+      }
+    }
+  }
+
+COM:sets the default values for a map of boolean configuration values and their corresponding checkboxes

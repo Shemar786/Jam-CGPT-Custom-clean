@@ -1,0 +1,9 @@
+TDAT:     public void testGetDescription() {
+        System.out.println("testGetDescription");
+        testString = "So this is some long multi-\n";
+        testString += "line String that might appear as documention";
+        tag.setDescription( testString );
+        assertEquals( tag.getDescription(), testString );
+    }
+
+COM:tests the getDescription method of a tag object by setting a test string as the tag's description and asserting that the getDescription method returns it correctly

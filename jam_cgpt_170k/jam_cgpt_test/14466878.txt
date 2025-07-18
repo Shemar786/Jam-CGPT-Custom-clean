@@ -1,0 +1,9 @@
+TDAT:   public void detoggleRelationButtons(JToggleButton tb) {
+    JToggleButton temp;
+    for (int i = 0; i < addRelationButtons.size(); i++) {
+      temp = (JToggleButton)addRelationButtons.get(i);
+      if (temp != tb) temp.setSelected(false);
+    }
+  }
+
+COM:deselects all other toggle buttons in an array except for the one passed as an argument

@@ -1,0 +1,10 @@
+TDAT:     public Object remove() {
+        if(this.isEmpty())throw IRingBuffer.BUFFER_EMPTY;
+        Object ret = null;
+        ret = this.buffer[tailpointer];
+        this.incTail();
+        if(this.debug)System.out.println("Removing element: "+ret+" head: "+this.headpointer+" tail: "+this.tailpointer);
+        return ret;
+    }
+
+COM:removes and returns the element at the tail pointer of a ring buffer, throwing an exception if the buffer is empty

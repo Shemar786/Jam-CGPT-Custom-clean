@@ -1,0 +1,11 @@
+TDAT:     public void append(String head, String item, String separator, String terminator) {
+        if (this.head != null && !this.head.equals(head)) {
+            throw new IllegalStateException("can't append, '" + this.head + "'!='" + head + "'");
+        }
+        this.head = head;
+        this.terminator = terminator;
+        this.separator = separator;
+        body.add(item);
+    }
+
+COM:appends a string 'item' with a specified 'separator' and 'terminator' to a list called 'body', while checking if the 'head' is valid

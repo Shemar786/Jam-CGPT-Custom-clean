@@ -1,0 +1,11 @@
+TDAT:     public void removeUser(User removableUser) throws FelperUserAddRemoveOperationException{
+        if (this.users.remove(removableUser)) {
+            if(logger.isDebugEnabled())
+                logger.debug("User is Removed: " + removableUser);
+        } else {
+            logger.warn("Can`t remove user: " + removableUser);
+            throw new FelperUserAddRemoveOperationException("Can`t remove user: " + removableUser);
+        }
+    }
+
+COM:removes a user from a list of users and throws an exception if it is unable to remove the user

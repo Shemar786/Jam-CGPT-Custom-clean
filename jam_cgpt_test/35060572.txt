@@ -1,0 +1,11 @@
+TDAT: 	static public boolean canEditPuzzle( UserInfo userInfo, PuzzleInfo puzzleInfo ) {
+		if( puzzleInfo.isTutorial() ) 
+			return false;
+		if( userInfo == null || puzzleInfo.getStatus() != Status.PRIVATE ) 
+			return false;
+		if( userInfo.isAdministrator() )
+			return true;
+		return userInfo.getEmail().equals( puzzleInfo.getAuthorEmail() );
+	}
+
+COM:checks if a user can edit a puzzle based on their user information and puzzle information, and returns a boolean value indicating whether they can or not

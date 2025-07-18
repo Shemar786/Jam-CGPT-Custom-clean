@@ -1,0 +1,13 @@
+TDAT:    public void addAll(List<Gesture<?>> samples) {
+      for (Gesture<?> sample : samples) {
+         add(sample);
+      }
+
+      for (Gesture< ? > sample : samples) {
+         propertyChangeSupport.fireIndexedPropertyChange(PROPERTY_TEST_CLASSES,
+               samples.indexOf(sample), null, sample);
+      }
+
+   } // addAll
+
+COM:adds all elements from a list of generic gesture samples to the current object and fires a property change event for each added sample

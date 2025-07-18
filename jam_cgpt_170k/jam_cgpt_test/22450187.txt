@@ -1,0 +1,9 @@
+TDAT:     public void addEdgesWithWeights(int edgesWithWeights[][]) {
+        for (int i = 0; i < edgesWithWeights.length; i++) {
+            addEdge(edgesWithWeights[i][0],
+                    edgesWithWeights[i][1],
+                    edgesWithWeights[i][2]);
+        }
+    }
+
+COM:adds edges with respective weights to a graph

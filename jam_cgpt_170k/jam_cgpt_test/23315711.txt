@@ -1,0 +1,9 @@
+TDAT: 	protected void addConfigEntry(AbstractComponent component, ConfigEntry<?> entry, boolean valid) {
+		configEntryHistory.get(component).add(entry);
+		if (valid) {
+			lastValidConfigValue.get(component).put(entry.getOption(), entry.getValue());
+		}
+		logger.trace("Config entry " + entry + " has been set for component " + component + " (validity: " + valid + ").");
+	}
+
+COM:adds a configuration entry to an abstract component and updates the entry history and last valid configuration value depending on its validity

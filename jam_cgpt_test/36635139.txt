@@ -1,0 +1,12 @@
+TDAT:     private int checkFile(){
+        if(locItems != null){
+            for(int i = 0; i < locItems.length; i++){
+                if(Arrays.equals(locItems[i].getData(), tempKey.getData()))
+                    return i;
+            }
+        }
+        locItems = addData(locItems, tempKey);
+        return locItems.length-1;
+    }
+
+COM:checks if an array "locItems" contains a specific data "tempKey", adds the data if it doesn't exist already, and then returns the index of the data in the array

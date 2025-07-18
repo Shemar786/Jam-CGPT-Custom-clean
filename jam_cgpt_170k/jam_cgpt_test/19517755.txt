@@ -1,0 +1,16 @@
+TDAT: 	public void updateFoldingStructure() {
+		for (Annotation a : oldPojectionAnnotations) {
+			projectionAnnotationModel.removeAnnotation(a);
+		}
+		final Position[] positions = mapper.getFoldingPositions();
+		final Annotation[] annotations = mapper.getFoldingAnnotations();
+		Assert.isLegal(annotations.length == positions.length);
+		// TODO use AnnotationModel.replaceAnnotations(Annotation[], Map)
+		for (int i = 0; i < positions.length; i++) {
+			projectionAnnotationModel.addAnnotation(annotations[i],
+					positions[i]);
+		}
+		oldPojectionAnnotations = annotations;
+	}
+
+COM:updates the folding structure of a text editor by removing old annotations and adding new ones based on the current mapping of folding positions

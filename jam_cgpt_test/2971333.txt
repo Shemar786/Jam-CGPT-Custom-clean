@@ -1,0 +1,13 @@
+TDAT:    public void write(DataOutputStream dos) throws IOException {
+     dos.writeInt(id);
+     dos.writeUTF(surname);
+     dos.writeUTF(forename);
+     dos.writeInt(dobDay);
+     dos.writeInt(dobMonth);
+     dos.writeInt(dobYear);
+     dos.writeInt(sex);
+     dos.writeInt(colourVisionType);
+     dos.writeUTF(colourVisionDesc);
+   }
+
+COM:writes data to a DataOutputStream object

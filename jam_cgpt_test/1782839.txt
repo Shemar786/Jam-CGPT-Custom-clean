@@ -1,0 +1,10 @@
+TDAT:     public void setCharacterSet( String name, String characterSet ) {
+        WebResource resource = (WebResource) _resources.get( asResourceName( name ) );
+        if (resource == null) {
+            resource = new WebResource( "" );
+            _resources.put( asResourceName( name ), resource );
+        }
+        resource.setCharacterSet( characterSet );
+    }
+
+COM:sets the character set for a specific web resource

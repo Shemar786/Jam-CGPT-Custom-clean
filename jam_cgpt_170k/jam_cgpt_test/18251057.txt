@@ -1,0 +1,9 @@
+TDAT:     public Cardinality reverse() {
+        if (this == ONE_TO_ONE) return ONE_TO_ONE;
+        if (this == ONE_TO_MANY) return MANY_TO_ONE;
+        if (this == MANY_TO_ONE) return ONE_TO_MANY;
+        if (this == MANY_TO_MANY) return MANY_TO_MANY;
+        return null;
+    }
+
+COM:reverses a Cardinality value

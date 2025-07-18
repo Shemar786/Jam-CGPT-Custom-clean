@@ -1,0 +1,8 @@
+TDAT: public boolean equals(Object object) {
+	if (!(object instanceof AbstractBin1D)) return false;
+	AbstractBin1D other = (AbstractBin1D) object;
+	return size()==other.size() && min()==other.min() && max()==other.max()
+		&& sum()==other.sum() && sumOfSquares()==other.sumOfSquares();
+}
+
+COM:checks if two AbstractBin1D objects are equal based on their size, minimum, maximum, sum, and sum of squares

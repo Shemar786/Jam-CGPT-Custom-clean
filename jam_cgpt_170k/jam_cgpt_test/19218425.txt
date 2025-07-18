@@ -1,0 +1,12 @@
+TDAT:     public String getClassNameForLookAndFeel(String name) {
+        if (lfNameToLookAndFeel.containsKey(name)) {
+            UIManager.LookAndFeelInfo lookAndFeelInfo =
+                    (UIManager.LookAndFeelInfo) lfNameToLookAndFeel.get(name);
+            return lookAndFeelInfo.getClassName();
+        }
+        else {
+            return null;
+        }
+    }
+
+COM:retrieves the class name for a given look and feel name

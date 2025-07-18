@@ -1,0 +1,19 @@
+TDAT: 	public void check(ClonePortlet request) throws MissingParametersFault {
+		if (isCheckEnabled()) {
+			// check ClonePortlet request object pointer
+			if (request instanceof ClonePortlet) {
+
+				// check for registration context
+				check(request.getRegistrationContext(), Constants.NILLABLE_TRUE);
+				check(request.getPortletContext(), Constants.NILLABLE_FALSE);
+				check(request.getUserContext(), Constants.NILLABLE_TRUE);
+
+			}
+			else {
+
+				throwMissingParametersFault("Input object is not a ClonePortlet or is null");
+			}
+		}
+	}
+
+COM:checks if a given ClonePortlet object is valid and contains required parameters, throwing an exception if not

@@ -1,0 +1,16 @@
+TDAT: 	private void removeRow(int row){
+		for(int col = 0; col < width; col++){
+			for(int r = row - 1; r >= remain[col]-1; r--){
+				data[col+(r+1)*width] = data[col+r*width];
+			}
+			//remain can increase by more than one if there is empty space
+			//below the cleared line
+			int r = remain[col];
+			while( r < height && data[col+width*r] == EMPTY_CELL){
+				r++;
+			}
+			remain[col] = r;
+		}
+	}
+
+COM:removes a specific row from a two-dimensional array while shifting all of the rows above it down by one

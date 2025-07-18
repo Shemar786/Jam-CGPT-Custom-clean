@@ -1,0 +1,17 @@
+TDAT:     public void activate(Planet p) {
+
+        if (p == null) {
+            return;
+        }
+
+        if (mp.getPPanel() != null && mp.getPPanel().getPlanet() != p) {
+
+            mp.getPPanel().update(p);
+            conf.planetID = p.getId();
+            mp.repaint();
+
+            saveMapSelection(p);
+        }
+    }
+
+COM:activates a planet by updating the planet panel and saving the selection if the planet is not null

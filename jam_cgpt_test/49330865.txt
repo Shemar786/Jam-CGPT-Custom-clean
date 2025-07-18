@@ -1,0 +1,11 @@
+TDAT:     public void xmegaReset () throws UsbException, InvalidFirmwareException, CapabilityException {
+	checkCapability(CAPABILITY_XMEGA);
+	try {
+	    vendorCommand( 0x49, "XMEGA Reset" );
+        }
+        catch ( UsbException e ) {
+	    throw new UsbException( dev().dev(), "NVM Reset: " + xmegaStrError() ); 
+	}
+    }
+
+COM:sends a vendor command to reset an XMEGA device and throws exceptions for various errors

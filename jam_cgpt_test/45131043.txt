@@ -1,0 +1,11 @@
+TDAT:     private Literal promoteDouble(Literal numeral) {
+        Double result;
+        try {
+            result = Double.valueOf(numeral.getLabel());
+        } catch (NumberFormatException e) {
+            throw new TypeError("Cannot promote non-numeral to a double value");
+        }
+        return this.factory.createLiteral(result.toString(), SPARQLConstants.DOUBLE_TYPE);
+    }
+
+COM:takes a Literal object, attempts to convert its label to a Double value, and returns a new Literal object with the new value and a specified type

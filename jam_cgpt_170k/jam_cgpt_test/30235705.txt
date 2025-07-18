@@ -1,0 +1,10 @@
+TDAT:     public void performAccelerateAction(InputActionEvent evt) {
+        node.accelerate(evt.getTime());
+        Vector3f loc = node.getLocalTranslation();
+        loc.addLocal(node.getLocalRotation().getRotationColumn(2, tempVa)
+                     .multLocal(node.getVelocity() * evt.getTime()));
+        node.setLocalTranslation(loc);
+        
+    }
+
+COM:performs an acceleration action on a node object, updating its velocity and position based on input from an InputActionEvent object

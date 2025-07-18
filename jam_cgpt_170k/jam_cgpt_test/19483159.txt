@@ -1,0 +1,28 @@
+TDAT: 	private IDocumentParser getParser(IDocument document) {
+		assert document != null;
+
+		String parserId;
+		String docname;
+		try {
+			parserId = document.getCurrentParser();
+			docname = document.getName();
+		} catch (RodinDBException e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		if (parserId.equals("")) {
+			result.addProblem(docname, NO_PARSER());
+			return null;
+		}
+
+		IDocumentParser parser = ParserManager.getParserFromId(parserId);
+		if (parser == null) {
+			result.addProblem(docname, OUTDATED_PARSER());
+			return null;
+		}
+
+		return parser;
+	}
+
+COM:retrieves a parser for a given document, checking that the parser is not outdated and throwing an error if necessary

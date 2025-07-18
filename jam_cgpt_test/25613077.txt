@@ -1,0 +1,11 @@
+TDAT:     public BigDecimal getRidePenaltySum(int rideNum) {
+        Ride ride = getRideByNum(rideNum);
+        BigDecimal penaltySum = BigDecimal.ZERO;
+        for (Iterator<Penalty> itPenalties = ride.getPenaltiesById().iterator(); itPenalties.hasNext();) {
+            Penalty penalty = itPenalties.next();
+            penaltySum = penaltySum.add(penalty.getAmount());
+        }
+        return penaltySum;
+    }
+
+COM:calculates the total penalty amount for a specific ride

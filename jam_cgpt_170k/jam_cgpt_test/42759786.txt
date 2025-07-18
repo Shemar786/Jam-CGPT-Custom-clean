@@ -1,0 +1,16 @@
+TDAT: 	public ScalarModel getPropertyModel(PropertyMemento pm) {
+		ScalarModel scalarModel = propertyScalarModels.get(pm);
+		if (scalarModel == null) {
+			scalarModel = new ScalarModel(getObjectAdapterMemento(), pm);
+			if (isViewMode()) {
+				scalarModel.toViewMode();
+			} else {
+				scalarModel.toEditMode();
+			}
+			propertyScalarModels.put(pm, scalarModel);
+		}
+		return scalarModel;
+		
+	}
+
+COM:retrieves a scalar model for a given property memento and creates a new one if it doesn't already exist

@@ -1,0 +1,18 @@
+TDAT:     public Object remove(Object key) {
+        Retriever r = getRetriever(key);
+        synchronized (r) {
+            Object old;
+            if (mValidCache.containsKey(key)) {
+                old = mValidCache.remove(key);
+                mInvalidCache.remove(key);
+            }
+            else {
+                mValidCache.remove(key);
+                old = mInvalidCache.remove(key);
+            }
+            r.setValue(NOTHING);
+            return old;
+        }
+    }
+
+COM:removes an object associated with a key from a cache while synchronizing access to the cache and updating a value in a retriever object

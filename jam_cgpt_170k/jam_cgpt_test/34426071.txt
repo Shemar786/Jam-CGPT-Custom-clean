@@ -1,0 +1,12 @@
+TDAT:     private void filterValues(SWGWeights weights) {
+        isWorking = true;
+        if (weights != null) {
+            for (Stat s : Stat.values())
+                filterFields[s.i].setText(
+                        ZNumber.asText(weights.value(s), false, false));
+        } else
+            filterReset();
+        isWorking = false;
+    }
+
+COM:filters and updates a set of text fields based on a set of given weights

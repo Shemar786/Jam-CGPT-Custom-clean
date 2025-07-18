@@ -1,0 +1,18 @@
+TDAT:   private Object getTagResult() throws JspException {
+    String el = getEl();
+    String collection = getCollection();
+    if (el != null) {
+      return ExpressionEvaluatorManager.evaluate(
+        "el",
+        el,
+        Object.class,
+        this,
+        pageContext);
+    } else if (collection != null) {
+      return pageContext.findAttribute(collection);
+    } else {
+      return null;
+    }
+  }
+
+COM:returns the result of either an evaluated expression language (EL) or a page attribute, depending on the input

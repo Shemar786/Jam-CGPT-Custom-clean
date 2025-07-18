@@ -1,0 +1,15 @@
+TDAT: 	public void addWGS84BoundingBox(BoundingBox latlonBoundingBox){
+		BoundingBox[] set = new BoundingBox[this.WGS84BoundingBoxList.length+1];
+		int i = 0;
+		if (this.WGS84BoundingBoxList.length != 0){
+			for (i = 0;i<this.WGS84BoundingBoxList.length;i++){
+				set[i] = this.WGS84BoundingBoxList[i];
+			}
+		}
+		set[i] = new BoundingBox(latlonBoundingBox);
+		this.WGS84BoundingBoxList = set;
+		this.wgs84BoundingBoxExistence = true;
+
+	}
+
+COM:adds a WGS84 bounding box to a list of bounding boxes, creating a new array with the new bounding box added and updating the existence status of the WGS84 bounding box

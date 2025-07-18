@@ -1,0 +1,15 @@
+TDAT:   public String getCurrentOffsetText() throws wpException {
+
+    Document doc = target.getDocument();
+    String s = null;
+    try {
+      int pos = target.getCaretPosition();
+      s = doc.getText(toggleOffset, pos - toggleOffset );
+    }
+    catch (BadLocationException ble) {
+      throw new wpException(ble);
+    }
+    return s;
+  }
+
+COM:returns the current text in a target document from the toggle offset to the caret position, throwing a wpException if a BadLocationException occurs

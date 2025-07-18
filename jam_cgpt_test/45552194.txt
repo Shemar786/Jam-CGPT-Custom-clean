@@ -1,0 +1,20 @@
+TDAT:     public Image getPriorityImage(int markerPriority) {
+        String key = null;
+        switch (markerPriority) {
+        case IMarker.SEVERITY_ERROR:
+            key = ICON_PRIORITY_HIGH;
+            break;
+
+        case IMarker.SEVERITY_WARNING:
+            key = ICON_PRIORITY_MED;
+            break;
+
+        default:
+            key = ICON_PRIORITY_LOW;
+            break;
+        }
+
+        return getImageRegistry().get(key);
+    }
+
+COM:retrieves an image corresponding to the priority level of a marker

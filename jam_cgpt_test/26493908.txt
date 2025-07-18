@@ -1,0 +1,11 @@
+TDAT:   public String toString() {
+    StringBuffer aBuffer = new StringBuffer(super.toString());
+    aBuffer.append("[protocol=").append(_theProtocol).
+            append(" classname=").append(_theClassname).
+            append(" classpath=").append(_theClasspath).
+            append("]");
+
+    return aBuffer.toString();
+  }
+
+COM:overrides the default toString() method to return a string representation of an object, including the values of several variables

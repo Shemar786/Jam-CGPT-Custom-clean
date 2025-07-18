@@ -1,0 +1,10 @@
+TDAT:     public Command getCmdAbout1() {
+        if (cmdAbout1 == null) {//GEN-END:|35-getter|0|35-preInit
+            // write pre-init user code here
+            cmdAbout1 = new Command("ABOUT", Command.SCREEN, 0);//GEN-LINE:|35-getter|1|35-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|35-getter|2|
+        return cmdAbout1;
+    }
+
+COM:returns a Command object with the label "ABOUT" and the type SCREEN if cmdAbout1 is not null, otherwise it initializes cmdAbout1 and returns it

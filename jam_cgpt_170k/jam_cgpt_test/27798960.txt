@@ -1,0 +1,10 @@
+TDAT:   protected PropertyValueProvider createPropertyValueProvider ( Object peer ) {
+    SimplePropertyValueProvider simple_pvp =
+      new SimplePropertyValueProvider( getDataType(), peer );
+    if( !dataTypePropertyChangeEventSource ) {
+      simple_pvp.setBound( false );
+    }
+    return simple_pvp;
+  } // createPropertyValueProvider( Object )
+
+COM:creates and returns a new instance of SimplePropertyValueProvider with a specified data type and peer, and sets its "bound" property to false if the dataTypePropertyChangeEventSource is false

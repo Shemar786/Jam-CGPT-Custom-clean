@@ -1,0 +1,17 @@
+TDAT: 	protected void addComponentNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Declaration_ComponentName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Declaration_ComponentName_feature", "_UI_Declaration_type"),
+				 Il1Package.Literals.DECLARATION__COMPONENT_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a component name to the item property descriptors

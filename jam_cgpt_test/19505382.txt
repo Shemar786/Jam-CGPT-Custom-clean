@@ -1,0 +1,7 @@
+TDAT: 	public Clause makeEquivalenceClause(IOrigin origin, List<PredicateLiteral> predicates, List<EqualityLiteral> equalities, List<ArithmeticLiteral> arithmetic, List<EqualityLiteral> conditions) {
+		assert predicates.size() + arithmetic.size() + equalities.size() > 1;
+		
+		return new EquivalenceClause(origin, predicates, equalities, arithmetic, conditions);
+	}
+
+COM:creates an instance of EquivalenceClause containing a list of predicate literals, arithmetic literals, and equality literals based on the given parameters

@@ -1,0 +1,12 @@
+TDAT:   public void setReadAheadBufferSize(int aSize) {
+    if (aSize <= 0) {
+      throw new IllegalArgumentException("The size is less than zero");
+    } else if (_theAcceptorDaemons.size() > 0) {
+      throw new IllegalStateException(
+        "Cannot change the read ahead buffer size on a running server socket");
+    }
+
+    _theReadAheadBufferSize = aSize;
+  }
+
+COM:sets the read ahead buffer size and throws an exception if the size is less than zero or if the server socket is already running

@@ -1,0 +1,18 @@
+TDAT: 	public WorkflowProcess createWorkflowProcess() {
+		// 从文件中读取流程定义
+		try {
+			File f = new File(
+					"src/test/java/org/fireflow/pdl/fpdl20/test/service/human/HumanServiceProcess.fpdl20.xml");
+			FileInputStream fIn = new FileInputStream(f);
+			Dom4JFPDLParser parser = new Dom4JFPDLParser();
+
+			WorkflowProcess process = parser.parse(fIn);
+
+			return process;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+COM:reads a workflow process definition from a file and parses it using Dom4JFPDLParser, and returns the resulting WorkflowProcess object

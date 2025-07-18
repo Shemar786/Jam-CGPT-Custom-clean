@@ -1,0 +1,24 @@
+TDAT: 	public void testProjectImport() throws Exception {
+		importProject("Q");
+		
+		IRodinProject qProject = getRodinProject("Q");
+		
+		SCTool.RUN_SC = true;
+		SCTool.SHOW_CLEAN = true;
+		SCTool.SHOW_EXTRACT = true;
+		SCTool.SHOW_RUN = true;
+		
+		POTool.RUN_PO = false;
+		POTool.SHOW_CLEAN = false;
+		POTool.SHOW_EXTRACT = false;
+		POTool.SHOW_RUN = false;	
+		
+		runBuilder(qProject,
+				"CSC extract /Q/x.ctx",
+				"MSC extract /Q/a.mch", 
+				"CSC run /Q/x.csc",
+				"MSC run /Q/a.msc"
+			);
+	}
+
+COM:tests the import of a project and runs a series of clean, extract, and run commands on certain project files

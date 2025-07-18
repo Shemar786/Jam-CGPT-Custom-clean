@@ -1,0 +1,14 @@
+TDAT:     public void MoveRight(int vertex, int amount) {
+        if (vertex == -1) {
+            for (int i = 0; i < npoints; i++) {
+                intxpoints[i] += amount;
+                xpoints[i] = (int) intxpoints[i];
+            }
+        } else if (vertex < npoints) {
+            intxpoints[vertex] += amount;
+            xpoints[vertex] = (int) intxpoints[vertex];
+        }
+        invalidate();
+    }
+
+COM:moves a specific vertex or all vertices to the right by a given amount

@@ -1,0 +1,8 @@
+TDAT: 	public JUNGSpringLayout ( GraphView g, LengthFunction f ) {
+		super(g);
+		this.lengthFunction = f;
+    nodeIndexToDataMap = new OpenIntObjectHashMap( PrimeFinder.nextPrime( graphView.getNodeViewCount() ) );
+    edgeIndexToDataMap = new OpenIntObjectHashMap( PrimeFinder.nextPrime( graphView.getEdgeViewCount() ) );
+  }
+
+COM:initializes a JUNGSpringLayout object with a GraphView and LengthFunction, sets up node and edge index to data maps, and calls the super constructor

@@ -1,0 +1,11 @@
+TDAT: 	public PeakListRow getRow(double valueX, double valueY) {
+
+		for (int i = 0; i < displayedRows.length; i++) {
+			if ((Math.abs(valueX - getXValue(0, i)) < 0.0000001)
+					&& (Math.abs(valueY - getYValue(0, i)) < 0.0000001))
+				return displayedRows[i];
+		}
+		return null;
+	}
+
+COM:returns a PeakListRow object based on a given X and Y value

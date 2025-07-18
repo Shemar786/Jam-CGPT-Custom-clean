@@ -1,0 +1,15 @@
+TDAT:     public int getResultSetCount(ResultSet rs) {
+        int count = 0;
+        try {
+            rs.beforeFirst();
+            while (rs.next()) {
+                count++;
+            }        
+            rs.beforeFirst();
+        } catch (Exception e) {
+            log.error(Constants.EXCEPTION_CAUGHT, e);            
+        }
+        return count;
+    }
+
+COM:takes a ResultSet object and returns the number of rows in it

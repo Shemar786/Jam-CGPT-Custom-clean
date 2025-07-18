@@ -1,0 +1,9 @@
+TDAT:   public void setConstituentNotes(Constituent c, String newNotes, String oldNotes) {
+    c.setNotes(newNotes);
+    setDirty(true);
+    notifyObservers(Model.CONSTITUENT_SET_NOTES, c, null);
+    addUndoableEvent(new UndoableEvent(UndoableEvent.CHANGE_NOTES, c, oldNotes));
+    setUndoMark();
+  }
+
+COM:sets the notes of a constituent, marks the model dirty and adds an undoable event to the model

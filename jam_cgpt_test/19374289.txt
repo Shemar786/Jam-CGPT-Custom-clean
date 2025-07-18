@@ -1,0 +1,16 @@
+TDAT: 	public Set getTransitions(StateGraphEvent ev) {
+		Set trans = new HashSet();
+		for (Iterator i = getAllTransitions().iterator(); i.hasNext();) {
+			SCharTransition tr = (SCharTransition)i.next();
+			try {
+				SCharEvent tev = (SCharEvent) tr.getEvent();
+				//if (tev.getTrigger().equals(ev)) trans.add(tr);
+				if (tev.getTrigger() == ev) trans.add(tr);
+			} catch (ClassCastException e) {
+				
+			}
+		}
+		return trans;
+	}
+
+COM:retrieves a set of transitions related to a given StateGraphEvent by iterating through all transitions and checking if their event matches the given event

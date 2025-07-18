@@ -1,0 +1,23 @@
+TDAT: 	private void submitIssue() throws Exception {
+
+		// create new issue
+		Issue issue = new Issue();
+		issue.setProject(service.getProject("OVTK"));
+		issue.setType((IssueType) type.getSelectedItem());
+		issue.setPriority((Priority) priority.getSelectedItem());
+		issue.setSummary(summary.getText());
+		issue.setDescription(description.getText() + "\n\nEmail: "
+				+ email.getText());
+
+		// submit issue
+		service.createIssue(issue);
+
+		// close dialog
+		try {
+			this.setClosed(true);
+		} catch (PropertyVetoException e1) {
+			ErrorDialog.show(e1);
+		}
+	}
+
+COM:creates and submits a new issue with project name, issue type, priority, summary, description and email and closes the dialog afterwards

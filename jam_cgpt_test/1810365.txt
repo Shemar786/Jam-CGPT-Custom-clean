@@ -1,0 +1,12 @@
+TDAT:   public void submit() {
+    // Fire the onSubmit event, because javascript's form.submit() does not
+    // fire the built-in onsubmit event.
+    if (formHandlers != null) {
+      if (formHandlers.fireOnSubmit(this))
+        return;
+    }
+
+    impl.submit(getElement(), iframe);
+  }
+
+COM:submits a form, fires the onSubmit event, and checks for any form handlers before submitting the form

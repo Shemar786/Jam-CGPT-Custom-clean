@@ -1,0 +1,17 @@
+TDAT:   private boolean parseArguments(String[] args) {
+    options = new MsggenOptions();
+    if (!options.parseCommandLine(args)) {
+      return false;
+    }
+    if (options.nonOptions.length == 0) {
+      System.err.println(CompilerMessages.NO_INPUT_FILE.getFormat());
+      return false;
+    } else if (options.nonOptions.length > 1) {
+      options.usage();
+      return false;
+    }
+
+    return true;
+  }
+
+COM:parses command line arguments and returns true if successful, false otherwise

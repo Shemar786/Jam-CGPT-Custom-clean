@@ -1,0 +1,15 @@
+TDAT:     public List getVertices(){
+	List vertices = new ArrayList();
+	
+	for (Iterator e = faces.iterator(); e.hasNext();){
+	    List face_verts = ((Polygon)e.next()).getVertices();
+	    for (Iterator f = face_verts.iterator();f.hasNext();){
+		Vertex vertex = (Vertex)f.next();
+		if (vertices.indexOf(vertex) == -1)
+		    vertices.add(vertex);
+	    }
+	}
+	return vertices;
+    }
+
+COM:returns a list of vertices obtained from a list of faces through iteration

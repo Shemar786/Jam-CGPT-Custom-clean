@@ -1,0 +1,9 @@
+TDAT:         private void updateProperty(final Object newValue) {
+            final Object oldValue = cachedValue;
+            if (oldValue == null || newValue == null || !oldValue.equals(newValue)) {
+                cachedValue = newValue;
+                firePropertyStateChange(new PropertyStateEvent(StatusProperty.this, source, true, oldValue, newValue, false, false));
+            }
+        }
+
+COM:updates a property value and fires a property change event if the new value is different from the old value

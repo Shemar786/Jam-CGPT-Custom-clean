@@ -1,0 +1,14 @@
+TDAT: 	public void init(StdDocument stdDoc) throws Exception {
+
+		rootNode = makeTeachersDomainLexicon(stdDoc);
+		if (rootNode != null)
+			nodeList = getNodeList(rootNode.getSubList());
+		this.author = stdDoc.getAuthor();
+		this.topic = stdDoc.getTopic();
+		// this.created = stdDoc.getCreated();
+		this.title = stdDoc.getTitle();
+		this.id = stdDoc.getIdentifier();
+		this.uid = this.id;
+	}
+
+COM:initializes properties and sets values for a Java object using data from a StdDocument parameter

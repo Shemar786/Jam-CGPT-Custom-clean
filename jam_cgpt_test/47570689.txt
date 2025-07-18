@@ -1,0 +1,15 @@
+TDAT: 	public void goToLogin() {
+		m_logo.setVisible(true);
+		m_login.setText("Login");
+		m_userLabel.setLocation(16, 108);
+		m_username.setLocation(16, 128);
+		m_passLabel.setLocation(16, 154);
+		m_password.setLocation(16, 172);
+		m_confirmPass.setVisible(false);
+		m_confPassLabel.setVisible(false);
+		m_male.setVisible(false);
+		m_female.setVisible(false);
+		this.setTitle("Login");
+	}
+
+COM:sets the GUI components to the login state

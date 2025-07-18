@@ -1,0 +1,14 @@
+TDAT:   public void setCurrentCard(int currentCard) {
+    /* Get the old property value for fire property change event. */
+    int oldValue = fieldCurrentCard;
+
+    /* Set the currentCard property (attribute) to the new value. */
+    fieldCurrentCard = currentCard;
+
+    /* Fire (signal/notify) the currentCard property change event. */
+    firePropertyChange("currentCard", new Integer(oldValue), new Integer(currentCard));
+
+    return;
+  }
+
+COM:sets the current card attribute to a new value and signals the change through a property change event

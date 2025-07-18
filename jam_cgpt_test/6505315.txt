@@ -1,0 +1,13 @@
+TDAT: 	private void refreshOperations() {
+		//operations
+		MBeanOperationInfo[] op = mBeanInfo.getOperations();
+		setMBeanOperations(new HashMap());
+
+		for (int k = 0; k < op.length; k++) {
+			Operation operation = new Operation(op[k], this);
+			getMBeanOperations().put(operation.getName(), operation);
+		}
+
+	}
+
+COM:retrieves MBean operations information and creates a HashMap with the operations details

@@ -1,0 +1,12 @@
+TDAT: static public Color getSystemColor(int swtId) {
+  Integer bigInt = new Integer(swtId);
+  Color clr = colorMap.get(bigInt);
+  if (clr == null) {
+    Display disp = Display.getDefault();
+    clr = disp.getSystemColor(swtId);
+    colorMap.put(bigInt, clr);
+  }
+  return clr;
+}
+
+COM:retrieves a system color based on the provided SWT identifier, and caches it in a map for future use

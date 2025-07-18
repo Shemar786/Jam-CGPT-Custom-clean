@@ -1,0 +1,13 @@
+TDAT: 	public String getLibraryTotal() {
+		if ( isCollection ) {
+			// This is a collections node, so let the histogram form know which collection is
+			// being inspected (so it can add it to other vocab criteria):
+			histogramForm.setCollection( vocabNode.getId() );
+		}
+		if ( vocabNode.getList().item.size() > 0 ) {                  // Sub-headers are not currently tallied
+			return "-1";
+		}
+		return libraryTotal;
+	}
+
+COM:returns the library total unless the vocabNode contains sub-headers, in which case it returns -1 after setting the collection ID if the vocabNode is a collections node

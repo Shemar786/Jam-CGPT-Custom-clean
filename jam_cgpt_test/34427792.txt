@@ -1,0 +1,13 @@
+TDAT:     public void writeExc(List<String> ls) throws Exception {
+        if (ls == null || ls.isEmpty()) return;
+
+        Iterator<String> iter = ls.iterator();
+        writeExc(iter.next());
+        while (iter.hasNext()) {
+            writeExc(ZString.EOL);
+            writeExc(iter.next());
+        }
+        txt.flush();
+    }
+
+COM:writes the contents of a list of strings to a file, and throws an exception if an error occurs

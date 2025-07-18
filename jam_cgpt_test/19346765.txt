@@ -1,0 +1,25 @@
+TDAT: 	private void setupData(FileView file) {
+		LineDTAR0020 line;
+		int i;
+
+		for (i = 0; i < KEYCODES.length; i++) {
+			line = new LineDTAR0020((LayoutDetail) file.getLayout());
+
+			try {
+				line.setStore(STORES[i]);
+				line.setField("KEYCODE-NO", KEYCODES[i]);
+				line.setField("DATE", date);
+				line.setField("DEPT-NO", DEPT[i]);
+				line.setQuantity(QUANTITIES[i]);
+				line.setSalesRetail(RETAIL_SALES[i]);
+
+				file.add(line);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+COM:sets up data for a file view with information on keycodes, stores, dates, departments, quantities, and retail sales

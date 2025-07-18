@@ -1,0 +1,7 @@
+TDAT: 	    public Object putAppData(String userId, Map<String, String> appParams) {
+			securityContext.checkIfAuthorized();
+			String url = API_APP_DATA_XML_URL.replaceFirst("%s", userId);
+			return putUserData(url, new HashMap<String, String>(), appParams);
+		}
+
+COM:puts application data for a given user ID and returns the result

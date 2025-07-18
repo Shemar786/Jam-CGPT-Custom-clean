@@ -1,0 +1,20 @@
+TDAT: 	protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
+
+		try {
+			monitor.beginTask(PDEUIMessages.ConvertedProjectWizard_converting, projectsToConvert.length);
+
+			for (int i = 0; i < projectsToConvert.length; i++) {
+				IProject projectToConvert = projectsToConvert[i];
+
+				convertProject(projectToConvert, monitor);
+				monitor.worked(1);
+			}
+
+		} catch (CoreException e) {
+			PDEPlugin.logException(e);
+		} finally {
+			monitor.done();
+		}
+	}
+
+COM:executes a conversion process on a list of projects using a progress monitor, and catches any exceptions that may occur while logging them

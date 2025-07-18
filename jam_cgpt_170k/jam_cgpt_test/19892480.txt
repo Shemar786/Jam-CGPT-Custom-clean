@@ -1,0 +1,8 @@
+TDAT: 	    public JSONArray getUserFriendsAppData(String userId) {
+			securityContext.checkIfAuthorized();
+//			String url = API_APP_DATA_URL.replaceFirst("%s", userId);
+//			return getUserData(url, new HashMap<String, String>());
+			return getUserFriendsAppData(userId, null);
+		}
+
+COM:returns a JSON array of a user's friend's app data, after checking if the security context is authorized

@@ -1,0 +1,16 @@
+TDAT: 	public String getTitleText() throws ParserException {
+		String titleText = "";
+
+		String[] tagToBeFound = {"TITLE"};
+		TagFindingVisitor visitor = new TagFindingVisitor(tagToBeFound);
+		parser.visitAllNodesWith(visitor);
+		Node[] allTitleTags = visitor.getTags(0);
+
+		for (int i = 0; i < allTitleTags.length; i++)
+			titleText = titleText + " " + allTitleTags[i].toPlainTextString();
+
+		parser.reset();
+		return titleText;
+	}
+
+COM:returns the text contained within HTML title tags parsed by a given parser, throwing a ParserException if there is an issue

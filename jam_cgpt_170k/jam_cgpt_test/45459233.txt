@@ -1,0 +1,11 @@
+TDAT: 	private JTextField getJTextField() {
+		if (jTextField == null) {
+			jTextField = new JTextField();
+			jTextField.setBounds(new Rectangle(52, 224, 381, 33));
+			jTextField.setText(defaultProps.getProperty("binarypath"));
+			jTextField.setText(applicationProps.getProperty("binarypath"));
+		}
+		return jTextField;
+	}
+
+COM:creates and returns a JTextField with certain properties and default values if it does not already exist

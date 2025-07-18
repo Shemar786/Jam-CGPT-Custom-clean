@@ -1,0 +1,8 @@
+TDAT:   public void readRst(RstGen rstgen, int player) throws IOException {
+    report("Reading RST (player "+player+", turn "+getTurnNumber()+")");
+    Assert.assert(get() == RstOrTrn.RST);
+    rstgen.generateAll(this,player);
+    getPlayer(player).setStatus(Player.SELF);
+  }
+
+COM:reads and generates RST data for a specific player and updates their status

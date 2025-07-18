@@ -1,0 +1,23 @@
+TDAT: 	private DefaultComboBoxModel createUserList() {
+
+		DBManager dbMgr = DBManager.getInstance();
+
+		int count = dbMgr.getUserCnt();
+
+		if (count == -1)
+			return null;
+
+		String[] names = dbMgr.getUserAll(count);
+
+		DefaultComboBoxModel typeModel = new DefaultComboBoxModel();
+
+		typeModel.addElement("ALL");
+
+		for (int i = 0; i < names.length; i++) {
+			typeModel.addElement(names[i]);
+		}
+
+		return typeModel;
+	}
+
+COM:creates a combo box model of users from a database manager instance

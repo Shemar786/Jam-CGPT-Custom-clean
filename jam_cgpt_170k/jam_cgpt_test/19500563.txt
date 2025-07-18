@@ -1,0 +1,17 @@
+TDAT: 	public boolean contains(String str) {
+		if (str.isEmpty()) {
+			return false;
+		}
+		if (!isStart(str.codePointAt(0))) {
+			return false;
+		}
+		final int start = nextCodePoint(str, 0);
+		for (int i = start; i < str.length(); i = nextCodePoint(str, i)) {
+			if (!isPart(str.codePointAt(i))) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+COM:checks if a given string contains only valid characters according to specific rules

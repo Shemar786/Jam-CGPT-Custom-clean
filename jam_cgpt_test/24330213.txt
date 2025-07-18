@@ -1,0 +1,11 @@
+TDAT:     private void save() {
+        // At the moment windows command files are written only
+        // TODO: Add other operating systems like mac and linux.
+        this.saveWindowsCommandFile();
+        this.saveConfigFile();
+        this.downloadStarter.getTimer().saveConfiguration();
+        // Read the config file again to refresh the command line parameters in the comment lin
+        this.readConfigFile();
+    }
+
+COM:saves files and configurations, and refreshes command line parameters, but currently only supports Windows command files

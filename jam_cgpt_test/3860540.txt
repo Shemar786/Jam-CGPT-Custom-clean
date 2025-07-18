@@ -1,0 +1,8 @@
+TDAT:     public void testUserWithEmptyCredentials() {
+        Pam pam = new Pam();
+        PamReturnValue pamReturnValue = pam.authenticate(user1Credentials, "");
+        assertTrue(pamReturnValue.equals(PamReturnValue.PAM_USER_UNKNOWN)
+                || pamReturnValue.equals(PamReturnValue.PAM_AUTH_ERR));
+    }
+
+COM:tests for the scenario where a user tries to authenticate with empty credentials

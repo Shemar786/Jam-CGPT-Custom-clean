@@ -1,0 +1,10 @@
+TDAT:   public void loadTab(File file) throws wpException {
+    tabFile = new wpFile(file);
+    wpFileEngine fileEngine = new wpFileEngine(gui);
+    tabFile.setType(fileEngine.getExtensionType(file));
+    setKitForType(tabFile.getType());
+    load(file);
+    addListeners();
+  }
+
+COM:loads a tab from a given file, sets its type, loads it, and adds listeners, while throwing a wpException

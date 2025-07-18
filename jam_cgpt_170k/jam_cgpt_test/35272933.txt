@@ -1,0 +1,12 @@
+TDAT:     @Override protected void startup() {
+        ImageIcon imagine;
+        java.net.URL imgURL = this.getClass().getResource("resources/myicons_res/jsmbscanner.png");
+        imagine = new ImageIcon(imgURL);
+
+        JSmbScannerView main = new JSmbScannerView(this);
+        JFrame frame = main.getFrame();
+        frame.setIconImage(imagine.getImage());
+        show(main);
+    }
+
+COM:loads an image, creates a JFrame, adds the image as an icon to the JFrame, and displays the frame with a JSmbScannerView

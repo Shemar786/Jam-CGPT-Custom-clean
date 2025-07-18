@@ -1,0 +1,13 @@
+TDAT:     private String cat(Collection<String> ss, String delim) {
+        if (ss.size() == 0) {
+            return "";
+        }
+        StringBuilder b = new StringBuilder();
+        for (String s : ss) {
+            b.append(s + delim);
+        }
+        b.delete(b.length() - delim.length(), b.length());
+        return b.toString();
+    }
+
+COM:concatenates a collection of strings using a specified delimiter

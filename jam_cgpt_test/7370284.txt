@@ -1,0 +1,28 @@
+TDAT:     public File extractTags(String result, String result_ol) throws IOException{
+		try {
+			//TaggedPdfReaderTool tReader = new TaggedPdfReaderTool();
+			FileOutputStream fop, fop_ol;
+			File file = new File(result);
+			File file_ol = new File(result_ol);
+			
+			fop = new FileOutputStream(file);
+			fop_ol = new FileOutputStream(file_ol);
+			
+			convertToXmlWithAttr(fop, fop_ol);
+		      
+			//tReader.convertToXml(reader, fop);
+			
+		    fop.flush();
+		    fop.close();
+		    
+		    return file;
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+       
+
+    }
+
+COM:extracts tags from two input strings and writes the output to two file objects

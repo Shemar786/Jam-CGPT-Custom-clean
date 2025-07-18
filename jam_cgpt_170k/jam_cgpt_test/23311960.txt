@@ -1,0 +1,11 @@
+TDAT: 	private boolean isSpecial() {
+		return configOption.getName().equalsIgnoreCase("positiveExamples")
+				|| configOption.getName().equalsIgnoreCase("negativeExamples")
+				|| configOption.getName().equalsIgnoreCase("allowedConcepts")
+				|| configOption.getName().equalsIgnoreCase("ignoredConcepts")
+				|| configOption.getName().equalsIgnoreCase("allowedRoles")
+				|| configOption.getName().equalsIgnoreCase("ignoredRoles");
+
+	}
+
+COM:checks if a given configuration option name is equal to a specific set of strings

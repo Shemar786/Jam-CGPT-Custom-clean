@@ -1,0 +1,10 @@
+TDAT:     public void prepare() {
+        if (getRequest().getMethod().equalsIgnoreCase("post")) {
+            // prevent failures on new
+            if (!"".equals(getRequest().getParameter("user.id"))) {
+                user = userManager.getUser(getRequest().getParameter("user.id"));
+            }
+        }
+    }
+
+COM:prepares the user object for a POST request by retrieving the user ID parameter and setting the user object using the user manager if the parameter is not empty

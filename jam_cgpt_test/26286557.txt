@@ -1,0 +1,10 @@
+TDAT:     public void add(String type, String name, String initValue) {
+        if(variableLines.get(type) != null)
+            variableLines.put(type, variableLines.get(type) + ", " + name + (initValue!=null?("="+initValue):""));
+        else
+            variableLines.put(type, name + (initValue!=null?("="+initValue):""));
+
+        registerName(name);
+    }
+
+COM:adds a new variable with a given type, name and initial value to an existing collection of variables

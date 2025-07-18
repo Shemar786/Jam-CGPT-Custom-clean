@@ -1,0 +1,11 @@
+TDAT:     public void testwriteGpsPoint() throws Exception {
+        System.out.println("writeGpsPoint");
+        org.gps.types.GpsPosition pos = null;
+        org.gps.GpxOutputStream instance = null;
+        instance.writeGpsPoint(pos);
+        
+        //TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a test that writes a GPS point using a GpxOutputStream instance and throws an exception if it fails

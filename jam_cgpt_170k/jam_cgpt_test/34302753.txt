@@ -1,0 +1,12 @@
+TDAT:     public Node createIn(Path alias, JpqlCompiledStatement statement) {
+        JpqlIn in = new JpqlIn(JpqlParserTreeConstants.JJTIN);
+        Node path = createPath(alias);
+        path.jjtSetParent(in);
+        in.jjtAddChild(path, 0);
+        Node subselect = createSubselect(statement);
+        subselect.jjtSetParent(in);
+        in.jjtAddChild(subselect, 1);
+        return createBrackets(in);
+    }
+
+COM:creates a JPQL "IN" statement with a subquery based on a provided alias and compiled statement

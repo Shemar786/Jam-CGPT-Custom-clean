@@ -1,0 +1,10 @@
+TDAT:     public void load(float minLong, float maxLong, float minLat, float maxLat) {
+		double lat = (minLat + maxLat) / 2; 
+    	double lon = (minLong + maxLong) / 2;
+    
+		mLoading = true;
+		new NetworkThread(lat, lon).start();
+		Log.i(TAG, sInstance.toString());
+	}
+
+COM:loads data by determining the midpoint of latitude and longitude values and initiating a network thread with those values

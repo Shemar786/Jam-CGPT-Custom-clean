@@ -1,0 +1,13 @@
+TDAT: 	public String toString() {
+		StringBuffer buf = new StringBuffer("EncryptionException\nThis is a wrapper for any exception that is thrown in the course of encryption or decryption of data.\n")
+				.append(details)
+				.append("\n\nSource Exception: ")
+				.append(wrappedException.toString());
+		if (null != wrappedException.getCause()) {
+			buf.append("Root Cause: \n")
+					.append(wrappedException.getCause().toString());
+		}
+		return buf.toString();
+	}
+
+COM:returns a string representation of an EncryptionException object, including details and source exception information

@@ -1,0 +1,24 @@
+TDAT: 	public int divide() {
+		if (preClustered) {
+			numInitialClusters = db.getImmediateSubCollections(collection).size();
+		}
+		else {
+			numInitialClusters = db.getCollectionSize(collectionID);
+		}
+	    progressBar = new ProgressBarWrapper(container, "Hierarchical Clustering", numInitialClusters);
+		progressBar.constructThis();
+		progressBar.setIndeterminate(true);
+
+		final SwingWorker worker = new SwingWorker() {
+			public Object construct() {
+				int returnThis = innerDivide(true);	
+				return returnThis;
+			}
+		};
+
+		worker.start();
+
+		return returnThis;
+	}
+
+COM:divides a given collection either by sub-collections or by collection ID, and then initiates a progress bar and a SwingWorker to perform innerDivide() method and return the result

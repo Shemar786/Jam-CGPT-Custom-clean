@@ -1,0 +1,12 @@
+TDAT:   protected void addTextPageName(JPanel panel) {
+    if (textPagename == null) {
+      textPagename = new JLabel(getPageName());
+      JLabel labelPagename = Utilities.createJLabel(GT._("&Page :"));
+      labelPagename.setLabelFor(textPagename);
+      labelPagename.setHorizontalAlignment(SwingConstants.TRAILING);
+      panel.add(labelPagename);
+      panel.add(textPagename);
+    }
+  }
+
+COM:adds a label and text field for a page name to a panel, if they have not already been added

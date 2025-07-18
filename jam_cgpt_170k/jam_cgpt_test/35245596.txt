@@ -1,0 +1,11 @@
+TDAT:     public int getNumberPageSearchEmployees(String searchContent) throws SQLException {
+        CallableStatement cs = dc.getConnection().prepareCall("{call getNumberPageSearchEmployees(?)}");
+        cs.setString(1, searchContent);
+        ResultSet rs = cs.executeQuery();
+        if (rs.next()) {
+            return rs.getInt("NumberPages");
+        }
+        return 0;
+    }
+
+COM:retrieves the number of pages resulting from a search query for employees

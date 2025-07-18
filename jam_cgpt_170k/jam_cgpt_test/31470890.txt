@@ -1,0 +1,12 @@
+TDAT:     private int getFirstChildElement(int nodeIndex) {
+        int childIndex = fDeferredDocumentImpl.getFirstChild(nodeIndex, false);
+        while (childIndex != -1) {
+            if (fDeferredDocumentImpl.getNodeType(childIndex, false) == Node.ELEMENT_NODE) {
+                return childIndex;
+            }
+            childIndex = fDeferredDocumentImpl.getNextSibling(childIndex, false);
+        }
+        return -1;
+    }
+
+COM:returns the index of the first child element of a parent node in a deferred DOM document implementation

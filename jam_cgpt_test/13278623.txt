@@ -1,0 +1,14 @@
+TDAT:     public boolean checkAC(Set deletedNodes, Set reducedNodes) {
+        boolean  valid   = true;
+        Iterator partsIt = allParts.iterator();
+
+        while (partsIt.hasNext() && valid) {
+            MovableSubgraphPart pacPart = (MovableSubgraphPart) partsIt.next();
+            valid = checkPart(pacPart, deletedNodes) && 
+                    checkPart(pacPart, reducedNodes);
+        }
+
+        return valid;
+    }
+
+COM:checks if certain parts in a movable subgraph satisfy certain conditions based on their presence in specified sets

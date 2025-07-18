@@ -1,0 +1,13 @@
+TDAT:   public void load(Document doc) {
+
+    this.parseHeader(doc); // EXPERIMENTAL.
+
+    setModel(treeModel = new wpTreeModel(gui,doc));
+    int divLoc = window.leftSplitPane.getDividerLocation();
+    treeView.setPreferredSize(new Dimension(TREE_DEF_WIDTH, divLoc));
+    treeView.setViewportView(this);
+    addDOModelListener(new wpDOModelListener(this));
+
+  }
+
+COM:loads a given document, calls a parseHeader method, sets a model, sets preferred dimensions for a tree view, and adds a DO model listener

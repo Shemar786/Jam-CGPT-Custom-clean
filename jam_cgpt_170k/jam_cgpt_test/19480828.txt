@@ -1,0 +1,17 @@
+TDAT: 	protected void addEventRefinesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Event_eventRefines_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Event_eventRefines_feature", "_UI_Event_type"),
+				 CompositionPackage.Literals.EVENT__EVENT_REFINES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "eventRefines" feature of the Event class

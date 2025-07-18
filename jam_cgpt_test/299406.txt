@@ -1,0 +1,16 @@
+TDAT: 	private void updateFontHelper() {
+		try {
+			// get rid of the old font
+			Font font = getNameLabel().getFont();
+			font.dispose();
+			
+			boolean italic = model().isAbstract() || model().isInterface();
+			
+			// create the new font
+			getNameLabel().setFont(PlugIn.getFontPreference(P_FONT, italic));
+		} catch (JavaModelException e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:updates the font style of a label depending on the model's state

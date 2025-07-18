@@ -1,0 +1,12 @@
+TDAT:     protected void applyDelta(Node node,NodeMovement nodeMovement,double dx,double dy) {
+        if (nodeMovement.m_justChanged) {
+            nodeMovement.m_dx+=dx/10;
+            nodeMovement.m_dy+=dy/10;
+        }
+        else {
+            nodeMovement.m_dx+=dx;
+            nodeMovement.m_dy+=dy;
+        }
+    }
+
+COM:applies a delta value to the movement of a given Node object in both the x and y directions, adjusting the delta value based on whether it was just changed or not

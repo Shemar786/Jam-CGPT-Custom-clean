@@ -1,0 +1,12 @@
+TDAT: public Object nativeToJava(TransferData transferData){
+  String s = (String)super.nativeToJava(transferData);
+  if(s.endsWith("\n")) {
+    s = s.substring(0, s.length() - 1);
+  }
+  if(s.endsWith("\r")) {
+    s = s.substring(0, s.length() - 1);
+  }
+  return new String[] {s, null};
+}
+
+COM:takes a TransferData object, converts it to a string, removes any trailing newline or carriage return characters, and returns a String array containing the cleaned string and a null value

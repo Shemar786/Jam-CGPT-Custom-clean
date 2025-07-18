@@ -1,0 +1,17 @@
+TDAT: 	private void save(String location) {
+		File f = new File(location);
+		
+		if (f.isDirectory()) {
+			for (String table : tables) {
+				String curf = f.getPath() + File.separator + table + extension;
+				System.out.println("Saving to " + curf);
+				saveFile(table, curf);
+				System.out.println("\t...done.");
+			}
+		}
+		else {
+			System.err.println("Save location must be a directory!");
+		}
+	}
+
+COM:saves data to multiple files in a specified directory

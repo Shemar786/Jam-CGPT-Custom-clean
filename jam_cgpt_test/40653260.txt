@@ -1,0 +1,16 @@
+TDAT: 	private Entry entry(int index) {
+		if (index < 0 || index >= size)
+			throw new IndexOutOfBoundsException("Index: "+index+
+					", Size: "+size);
+		Entry e = header;
+		if (index < size/2) {
+			for (int i = 0; i <= index; i++)
+				e = e.next;
+		} else {
+			for (int i = size-1; i > index; i--)
+				e = e.previous;
+		}
+		return e;
+	}
+
+COM:returns the entry at a specified index in a doubly linked list

@@ -1,0 +1,10 @@
+TDAT: public Ticker getTicker() {
+    if (ticker == null) {//GEN-END:|24-getter|0|24-preInit
+            // write pre-init user code here
+        ticker = new Ticker("");//GEN-LINE:|24-getter|1|24-postInit
+            // write post-init user code here
+    }//GEN-BEGIN:|24-getter|2|
+    return ticker;
+}
+
+COM:returns an object of type "Ticker", and if the object does not already exist, it creates one before returning it

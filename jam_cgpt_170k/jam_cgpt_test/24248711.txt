@@ -1,0 +1,17 @@
+TDAT: 	private void runFile() {
+		int row = table.getSelectedRow();
+		if (row < 0) return;
+		String fileName = fm.getFile(row).fileName;
+		
+		try {
+			nxtCommand.startProgram(fileName);
+			nxtCommand.close();
+			nxtCommand = null;
+			updateConnectionStatus(nxtTable.getSelectedRow(), nxts[row].connectionState);
+			clearFiles();
+		} catch (IOException ioe) {
+			showMessage("IOException running program");
+		}
+	}
+
+COM:runs a file selected from a table, sends a command to start the program on a device, closes the connection, updates the connection status on the table and clears the file list

@@ -1,0 +1,17 @@
+TDAT:     private LinkedList removeAdjacent(LinkedList queryList){
+	ListIterator iter = queryList.listIterator();
+	ZOrderRange prev = null;
+	while(iter.hasNext()){
+	    ZOrderRange crnt = (ZOrderRange) iter.next();
+	    if(prev != null && (prev.max+1) >= crnt.min){
+		    int nmax = crnt.max;
+		    iter.remove(); // remove current
+		    prev.max = nmax;		
+	    }else{
+		prev = crnt;
+	    }
+	}
+	return queryList;
+    }
+
+COM:removes adjacent elements in a LinkedList and merges them into a single element with updated max value

@@ -1,0 +1,13 @@
+TDAT:     public List cornerList() {
+        if (leftLine == null) initialiseLeftLine();
+        if (rightLine == null) initialiseRightLine();
+
+        List corners = new java.util.Vector();
+        corners.add(leftLine.begin());
+        corners.add(leftLine.end());
+        corners.add(rightLine.begin());
+        corners.add(rightLine.end());
+        return corners;
+    }
+
+COM:returns a list containing the beginning and end points of two lines (leftLine and rightLine) after initialising them if they are null

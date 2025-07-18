@@ -1,0 +1,9 @@
+TDAT:     private BLSDetailPanel getBLSDetailPanel() {
+    	if (m_BLSDetailPanel == null) {
+    		m_BLSDetailPanel = new BLSDetailPanel(m_FoodHandler);			
+    		m_BLSDetailPanel.setBounds(5, 2, 465, 300);
+    	}
+    	return m_BLSDetailPanel;
+    }
+
+COM:returns a BLSDetailPanel object and creates a new one if it does not exist

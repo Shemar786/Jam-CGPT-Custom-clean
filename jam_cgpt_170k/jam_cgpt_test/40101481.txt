@@ -1,0 +1,14 @@
+TDAT:     public String getAuthorizedUserEmail(String username) {
+        if (_authorization.containsKey(username)) {
+            String[] parsedPasswordAndEmail = BlojsomUtils.parseLastComma((String)_authorization.get(username));
+            if (parsedPasswordAndEmail.length < 2) {
+                return getBlogOwnerEmail();
+            } else {
+                return parsedPasswordAndEmail[1];
+            }
+        }
+
+        return null;
+    }
+
+COM:takes a username as input parameter, checks if it exists in a map of authorized users, and returns the associated email address if present

@@ -1,0 +1,18 @@
+TDAT:     protected boolean toBoolean(String value) {
+        Boolean bool = BOOLEANS.get(value);
+        if (bool == null) {
+            try {
+                if (Integer.parseInt(value) != 0) {
+                    bool = Boolean.TRUE;
+                } else {
+                    bool = Boolean.FALSE;
+                }
+            } catch (NumberFormatException x) {
+                throw new InvalidConfigurationException(
+                        "Invalid boolean property", value);
+            }
+        }
+        return bool.booleanValue();
+    }
+
+COM:converts a string value to a boolean value, either by looking up the value in a map or by parsing it as an integer

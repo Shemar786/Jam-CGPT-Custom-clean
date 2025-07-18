@@ -1,0 +1,10 @@
+TDAT:     private void readObject(final ObjectInputStream s) throws IOException, ClassNotFoundException {
+        s.defaultReadObject();
+        final int length = s.readInt();
+        // The new string will be compact.
+        hashLength = -1;
+        expand(length);
+        s.readFully(array, 0, length);
+    }
+
+COM:reads an object from an ObjectInputStream and initializes a string with a specified length

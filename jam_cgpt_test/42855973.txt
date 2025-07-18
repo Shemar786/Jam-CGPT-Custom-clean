@@ -1,0 +1,13 @@
+TDAT:     public ExcelMapping getMapping(final String className) {
+        ExcelMapping mapping = null;
+        for (Iterator iter = this.getMappings().iterator(); iter.hasNext();) {
+            ExcelMapping listMapping = (ExcelMapping) iter.next();
+            if (listMapping.getClassName().equalsIgnoreCase(className)) {
+                mapping = listMapping;
+                break;
+            }
+        }
+        return mapping;
+    }
+
+COM:returns an ExcelMapping object based on the input className parameter, by iterating through the mappings list and matching the class name

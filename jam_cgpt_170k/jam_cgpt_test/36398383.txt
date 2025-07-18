@@ -1,0 +1,18 @@
+TDAT:     public boolean deletePreparedStatement(String name) {
+        if (portals.containsKey(name)) {
+            portals.remove(name);
+        }
+        if (statements.containsKey(name)) {
+            PreparedStatement pStmt = statements.get(name).getStatement();
+            try {
+                pStmt.close();
+            } catch (SQLException e) {
+                // do nothing
+            }
+            statements.remove(name);
+            return true;
+        }
+        return false;
+    }
+
+COM:attempts to delete a prepared statement with the given name, returning true if successful and false otherwise

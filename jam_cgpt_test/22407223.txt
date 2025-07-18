@@ -1,0 +1,19 @@
+TDAT:     private void initContextAction() {
+        ProjectView.registerContextActionProvider(new ContextActionProvider() {
+            public Action getContextAction(
+                    final Browser browser,
+                    final Node[] nodes) {
+                if (nodes.length == 1) {
+                    Node node = nodes[0];
+
+                    if (node instanceof AntNode) {
+                        return new AntNodeContextGroup((AntNode) node);
+                    }
+                }
+
+                return null;
+            }
+        });
+    }
+
+COM:initializes a context action provider that registers a specific action for a selected node in a project view, only if the node is an instance of the AntNode class

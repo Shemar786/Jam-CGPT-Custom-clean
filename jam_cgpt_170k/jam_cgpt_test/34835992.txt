@@ -1,0 +1,11 @@
+TDAT: 	protected String getTableString(DbTable table) {
+		StringBuffer str = new StringBuffer();
+		if (supportsSchemaInTableName && table.getSchema() != null) {
+        	str.append(table.getSchema());
+        	str.append(".");
+        }
+        str.append(table.getName());
+        return str.toString();
+	}
+
+COM:returns a String that represents the name of a database table, including its schema if applicable

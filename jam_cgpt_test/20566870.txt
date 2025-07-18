@@ -1,0 +1,12 @@
+TDAT:   protected void addContext(String pathSpec, String dir, boolean isFiltered) {
+    HttpContext context = new HttpContext();
+    context.setContextPath(pathSpec);
+    context.setResourceBase(dir);
+    context.addHandler(new ResourceHandler());
+    webServer.addContext(context);
+    if (isFiltered) {
+      addFilterPathMapping(pathSpec);
+    }
+  }
+
+COM:adds a new context path to a web server with a specified directory and applies a resource handler, and can also add a filter path mapping if specified

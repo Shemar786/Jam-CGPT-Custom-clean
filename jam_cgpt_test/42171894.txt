@@ -1,0 +1,17 @@
+TDAT:   protected void addExceptionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SafletContext_exceptions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SafletContext_exceptions_feature", "_UI_SafletContext_type"),
+				 SafletPackage.Literals.SAFLET_CONTEXT__EXCEPTIONS,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for exceptions to a SafletContext object

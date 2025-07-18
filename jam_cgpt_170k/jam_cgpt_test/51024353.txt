@@ -1,0 +1,23 @@
+TDAT: 	private Component makeNeighboursField() {
+		JPanel panel = new JPanel();
+		panel.setLayout(new BoxLayout(panel, BoxLayout.LINE_AXIS));
+
+		useNeighbourhood = new JCheckBox("and neighbourhood: ");
+		panel.add(useNeighbourhood);
+
+		neighbourhood = new JSpinner();
+		neighbourhood.setModel(new SpinnerNumberModel(1, 1, 4, 1));
+		neighbourhood.setEnabled(false);
+		panel.add(neighbourhood);
+
+		useNeighbourhood.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				neighbourhood.setEnabled(useNeighbourhood.isSelected());
+			}
+		});
+
+		return panel;
+	}
+
+COM:creates a JPanel with a JCheckBox and JSpinner components for selecting and adjusting a neighbourhood value

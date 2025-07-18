@@ -1,0 +1,13 @@
+TDAT:     public int hashCode() {
+        long h = 0;
+        long c;
+        long n = length() - 1;
+        prepareNext();
+        while ((c = nextChar()) != 0) {
+            h += c * pow(31, n);
+            n--;
+        }
+        return (int) (h & 0xffffffff);
+    }
+
+COM:calculates the hash code of a string using the 31-bit polynomial rolling hash algorithm

@@ -1,0 +1,10 @@
+TDAT: 	public void addPrimitiveTypes(){
+		EList<UMLBTypeExpression> te=getTypeExpressions();
+			te.add(new UMLBTypeExpressionImpl(RodinKeyboardPlugin.getDefault().translate("BOOL")));
+			te.add(new UMLBTypeExpressionImpl(RodinKeyboardPlugin.getDefault().translate("NAT")));
+			te.add(new UMLBTypeExpressionImpl(RodinKeyboardPlugin.getDefault().translate("NAT1")));
+			te.add(new UMLBTypeExpressionImpl(RodinKeyboardPlugin.getDefault().translate("INT")));
+
+	}
+
+COM:adds primitive types to a list of UMLBTypeExpressions

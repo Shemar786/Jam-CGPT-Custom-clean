@@ -1,0 +1,11 @@
+TDAT: 	private QBP_Q21 createContinuationQuery(QBP_Q21 message, String continuationPointer) throws DataTypeException {
+		// First, update the message header
+		HL7v25.updateMSH(message.getMSH(), getMessageId());
+		// Next, update the DSC
+		message.getDSC().getContinuationPointer().setValue(continuationPointer);
+		message.getDSC().getContinuationStyle().setValue("I");
+		// Done
+		return message;
+	}
+
+COM:updates certain fields in a QBP_Q21 message and returns the updated message object as a continuation query

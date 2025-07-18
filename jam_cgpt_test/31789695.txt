@@ -1,0 +1,10 @@
+TDAT:     protected void writeSubArray(PrintStream out,String key,TreeSet ts) {
+        out.print("        { \"" + key + "\"");
+        Iterator subiter=ts.iterator();
+        while(subiter.hasNext()) {
+            String subclass=(String)subiter.next();
+            out.print(",\"" + subclass + "\""); }
+        out.print("}");
+    }
+
+COM:writes a specified TreeSet as a JSON array to the PrintStream output, with a given key

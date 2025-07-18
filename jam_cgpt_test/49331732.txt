@@ -1,0 +1,17 @@
+TDAT:     public void xmegaFuseWrite ( int addr, int val ) throws UsbException, InvalidFirmwareException, CapabilityException {
+	checkCapability(CAPABILITY_XMEGA);
+
+	try {
+	    vendorCommand( 0x4d, "XMEGA Fuse write", val, addr);
+        }
+        catch ( UsbException e ) {
+	    throw new UsbException( dev().dev(), "XMEGA Fuse write: " + xmegaStrError() ); 
+	}
+	try {
+    	    Thread.sleep( 3 );
+    	}
+	catch ( InterruptedException e) {
+    	} 
+    }
+
+COM:writes a value to a specific address in the XMEGA fuse and checks for errors during the process

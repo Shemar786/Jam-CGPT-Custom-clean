@@ -1,0 +1,16 @@
+TDAT: 	public String getTrashObjectAug() {
+		String result = null;
+		ModelContainerEditor mace = getCompositeParent();
+		if (mace == null) {
+			result = _trashObject;
+		} else {
+			// The ID of the Composite parent's base object (aug-aware).
+			String aug_base_id = mace.getTrashObjectAug();
+			// The corresponding object.
+			ModelObject aug_base = getObjectWrapperAug(aug_base_id);
+			result = aug_base.getObjectId();
+		}
+		return result;
+	}
+
+COM:returns the ID of the base object or trash object of a ModelObject, depending on whether the ModelObject has a composite parent or not

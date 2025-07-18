@@ -1,0 +1,13 @@
+TDAT:     public ModelAndView stopBotletGateway( HttpServletRequest request, HttpServletResponse response ) {
+    	
+    	long id = Long.parseLong(request.getParameter("gatewayId"));
+    	BotletGatewayConfiguration gatewayConfig = botletGatewayConfigDao.get(id);
+		try {
+			BotletGatewayServer.stop(gatewayConfig.getPort());
+		} catch ( IOException ex ) {
+			throw new RuntimeException(ex);
+		}
+    	return new ModelAndView("redirect:/botlet_gateway/list.state");
+    }
+
+COM:stops a specific BotletGatewayConfiguration by ID and returns a redirect to a list of BotletGateway servers

@@ -1,0 +1,13 @@
+TDAT:   public long readPackedULong(byte[] source, int offset) {
+    long result = 0;
+    int val;
+    int shift = 0;
+    do {
+      val = source[offset++] & 0xff;
+      result |= (long)(val & 0x7f) << shift;
+      shift += 7;
+    } while ((val & 0x80) != 0);
+    return result;
+  }
+
+COM:reads a packed unsigned long value from a byte array starting at a specified offset

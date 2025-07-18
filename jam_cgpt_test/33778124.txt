@@ -1,0 +1,18 @@
+TDAT: 	public void start() throws IOException {
+		try {
+			IoHandler handler = new MinaIoHandler<T>(this);
+			acceptor.setHandler(handler);
+			DefaultIoFilterChainBuilder fc = acceptor.getFilterChain();
+			acceptor.setReuseAddress(true);
+			fc.addLast("codec", new ProtocolCodecFilter(
+					getProtocolCodecFactory()));
+			acceptor.bind(new InetSocketAddress(2400));
+			getLog().info(
+					"Starting listener. active: " + acceptor.isActive()
+							+ " h: " + acceptor.getHandler());
+		} catch (Throwable t) {
+			t.printStackTrace();
+		}
+	}
+
+COM:sets up and starts a listener on port 2400 using the MinaIoHandler and ProtocolCodecFilter

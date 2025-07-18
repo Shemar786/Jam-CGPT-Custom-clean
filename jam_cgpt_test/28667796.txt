@@ -1,0 +1,17 @@
+TDAT: 	protected Map getRepositoryProviderMapping() {
+//		System.out.println("TeamSiteAction->getRepositoryProviderMapping");
+		HashMap result = new HashMap();
+		IResource[] resources = getSelectedResources();
+		for (int i = 0; i < resources.length; i++) {
+			RepositoryProvider provider = RepositoryProvider.getProvider(resources[i].getProject());
+			List list = (List) result.get(provider);
+			if (list == null) {
+				list = new ArrayList();
+				result.put(provider, list);
+			}
+			list.add(resources[i]);
+		}
+		return result;
+	}
+
+COM:returns a mapping of repository providers to a list of selected resources associated with the provider

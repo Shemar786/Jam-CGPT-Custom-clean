@@ -1,0 +1,33 @@
+TDAT: 	public float getAngle(int planes, float ap, float bp) {
+		
+		float side = 0, height = 0, distance = 0;
+		
+		switch(planes)
+		{
+		case XY:
+			side = xpos - ap;
+			height = ypos -bp;
+			distance = getDistance(XY,ap,bp);
+			break;
+		case XZ:
+			side = xpos - ap;
+			height = zpos -bp;
+			distance = getDistance(XZ,ap,bp);
+			break;
+		case YZ:
+			side = ypos - ap;
+			height = zpos -bp;
+			distance = getDistance(YZ,ap,bp);
+			break;
+		default:
+			System.err.println("Unknown planes entered");
+			break;
+		}
+		
+		float angle = (float)(Math.asin(side/distance)+Math.PI/2);
+		if (height<0) angle = 2.0f*(float)Math.PI-angle;
+		
+		return angle;
+	}
+
+COM:calculates the angle between two points and a variable plane

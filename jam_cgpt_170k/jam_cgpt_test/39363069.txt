@@ -1,0 +1,16 @@
+TDAT: 	public void setStartIndex(int start) {
+		int newStart = start;
+
+		if (start < 0) {
+			newStart = 0;
+		} else if (start > getSourceLength() - 1) {
+			newStart = getSourceLength() - 1;
+		}
+
+		startIndex = newStart;
+		if (newStart + length > getSourceLength()) {
+			setLength(getSourceLength() - startIndex);
+		}
+	}
+
+COM:sets the starting index of a source and adjusts it if it exceeds the source length, with a maximum value of the source length minus one

@@ -1,0 +1,15 @@
+TDAT: 	public RadiusAttribute getAttribute(int attributeType) throws InvalidParameterException, RadiusException {
+		if ((attributeType < 0) || (attributeType > 256)) {
+			throw new InvalidParameterException("attributeType is out of bounds");
+		}
+		RadiusAttribute tempRa = null;
+		synchronized (attributes) {
+			tempRa = attributes.get(new Integer(attributeType));
+		}
+		if (null == tempRa) {
+			logger.warning("No attribute found for type: ");
+		}
+		return tempRa;
+	}
+
+COM:returns a RadiusAttribute object based on the provided attributeType parameter, while throwing an exception if the parameter is out of bounds and logging a warning message if no attribute is found

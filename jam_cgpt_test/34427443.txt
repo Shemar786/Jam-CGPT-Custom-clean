@@ -1,0 +1,12 @@
+TDAT:     private void updateExpColor(double d, ZString z) {
+        z.app("<font color=");
+        if (d < SWGGuiUtils.statLimits[1] * 1000)
+            z.app(BAD);
+        else if (d < SWGGuiUtils.statLimits[2] * 1000)
+            z.app(FAIR);
+        else
+            z.app("#000000");
+        z.app(">");
+    }
+
+COM:updates the color of a ZString object based on a double value input and predefined limits

@@ -1,0 +1,15 @@
+TDAT: 	protected void handleChokeMessage(ChokeMessage message, Finger remotePeer) {
+		ConnectionState cs = state.getNeighborManager().getConnectionState(
+				remotePeer);
+		if (cs != null) {
+			cs.setPeerChoking(true);
+
+			// clear requested blocks from this peer
+			StorageWrapper sw = state.getStorageWrapper();
+			for (BlockDescriptor block : sw.getRequestedBlocks(remotePeer)) {
+				sw.setBlockRequestCanceled(block, remotePeer);
+			}
+		}
+	}
+
+COM:handles a choke message received from a remote peer by setting the peer's choked state to true and cancelling any requested blocks from that peer

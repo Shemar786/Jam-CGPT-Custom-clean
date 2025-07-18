@@ -1,0 +1,11 @@
+TDAT:   public String getTelephoneNumberOfFirstEmployment() {
+    String telephoneNumber = "";
+
+    if (this.employments != null && this.employments.size() > 0 && this.employments.get(0).getHsaTelephoneNumber() != null) {
+      telephoneNumber = this.employments.get(0).getHsaTelephoneNumber().getPhoneNumber();
+    }
+
+    return telephoneNumber;
+  }
+
+COM:returns the telephone number of the first employment in a list of employments, or an empty string if it does not exist

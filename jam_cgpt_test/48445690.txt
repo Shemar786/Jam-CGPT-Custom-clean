@@ -1,0 +1,17 @@
+TDAT: 	private String loadName(String line) {
+
+		String[] tokens = line.split("=");
+	
+		if (tokens.length == 2) {
+			String traderName = tokens[1].trim();
+			if (traderName.startsWith("\"") && traderName.endsWith("\"")) {
+				// Remove leading and trailing '"';
+				traderName = traderName.substring(1, traderName.length() - 1);		
+			}			
+			trader.getAttributes().putString("name", traderName);
+			return "";
+		}
+		return "Invalid name syntax";
+	}
+
+COM:takes in a string and attempts to parse it into a trader name, storing it in a map if successful

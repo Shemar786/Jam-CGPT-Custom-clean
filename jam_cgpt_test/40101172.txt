@@ -1,0 +1,9 @@
+TDAT:     protected void querySettings(StringBuffer rslt) throws WarlockException {
+        rslt.append("<upload-limit>")
+            .append(simpleFormatSize(muc.getAppContext().getUploadLimit()))
+            .append("</upload-limit>");
+        if (muc.getAppContext().allowXHTML())
+            rslt.append("<xhtml value=\"allowed\" />");
+    }
+
+COM:appends the upload limit and xhtml value to a StringBuffer object, with the possibility of throwing a WarlockException

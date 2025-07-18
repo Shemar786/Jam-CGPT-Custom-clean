@@ -1,0 +1,10 @@
+TDAT:   public void unsetWaitInfo() {
+    if (!SwingUtilities.isEventDispatchThread()) {
+      System.err.println("ERROR: DFootPanel.unsetWaitInfo() calles outside of Eventdispatching Thread");
+    }
+
+    messagePanel.setText(oldMessage, false);
+    waitPanel.setWaiting(false);
+  }
+
+COM:unsets wait information and updates the message panel and wait panel if called in the Eventdispatching Thread

@@ -1,0 +1,12 @@
+TDAT: 	public void testGetRoot() throws Exception {
+		final IRodinFile rf = getRodinFile("P/inexistent.test");
+		final IInternalElement root = rf.getRoot();
+		final NamedElement child = getNamedElement(root, "inexistent");
+		final NamedElement grandChild = getNamedElement(child, "inexistent");
+
+		assertEquals(root, root.getRoot());
+		assertEquals(root, child.getRoot());
+		assertEquals(root, grandChild.getRoot());
+	}
+
+COM:tests for the return value of the "getRoot" method when called on different internal elements

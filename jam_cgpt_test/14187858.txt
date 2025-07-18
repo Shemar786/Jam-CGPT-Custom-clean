@@ -1,0 +1,8 @@
+TDAT:     public long getDataRegionSize() {
+	return ((long)this.volume.getNumberOfSectors() -
+		((long)this.volume.getReservedSectors() +
+		 (long)(this.volume.getFATCopies() * this.volume.getSectorsPerFAT()) +
+		 (long)this.volume.getRootDirSizeInSectors()));
+    }
+
+COM:returns the size of the data region within a volume

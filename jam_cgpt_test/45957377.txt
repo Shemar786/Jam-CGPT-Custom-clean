@@ -1,0 +1,9 @@
+TDAT:   public void add(String givenName, String surname) {
+    Arguments.notNull("givenName", givenName);
+    Arguments.notNull("surname", surname);
+
+    addNameToList(givenName.trim(), surname.trim(), givenNameMap);
+    addNameToList(surname.trim(), givenName.trim(), surnameMap);
+  }
+
+COM:adds a given name and surname to two different lists and trims any whitespace from the input

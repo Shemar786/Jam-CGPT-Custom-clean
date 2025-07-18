@@ -1,0 +1,14 @@
+TDAT:     public void testGetUpComingEventList() {
+        System.out.println("getUpComingEventList");
+        
+        Email_DBImpl instance = new Email_DBImpl();
+        
+        ResultSet expResult = null;
+        ResultSet result = instance.getUpComingEventList();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests whether the expected and actual results of the 'getUpComingEventList' method in the 'Email_DBImpl' class are equal

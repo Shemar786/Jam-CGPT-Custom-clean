@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField46() {
+        if (textField46 == null) {//GEN-END:|635-getter|0|635-preInit
+            // write pre-init user code here
+            textField46 = new TextField("Bono 4:", null, 32, TextField.DECIMAL);//GEN-LINE:|635-getter|1|635-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|635-getter|2|
+        return textField46;
+    }
+
+COM:returns a TextField object with a label "Bono 4", null value, 32 characters length and decimal type

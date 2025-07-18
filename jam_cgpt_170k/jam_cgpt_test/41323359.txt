@@ -1,0 +1,13 @@
+TDAT: 	public void setRectangleShape() {
+		setPathTo(new RoundRectangle2D.Double(0, 0, ITSDefaultWidth,
+				ITSDefaultHeight, 5, 5));
+		// setPathToRectangle(0, 0, ITSDefaultWidth, ITSDefaultHeight);
+		if (itsThumb != null) {
+			itsThumb.setVisible(true);
+			// itsTextNode.setVisible(false);
+		} else {
+			// itsTextNode.setVisible(true);
+		}
+	}
+
+COM:sets the shape of a rectangle with rounded corners and updates the visibility of a thumb and text node

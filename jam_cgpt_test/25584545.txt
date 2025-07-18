@@ -1,0 +1,14 @@
+TDAT:     public void ensureCapacity(int minCapacity) {
+        int oldCapacity = gameObjects.length;
+        if (minCapacity >= oldCapacity) {
+            Object[] oldData = gameObjects;
+            int newCapacity = (oldCapacity * 3) / 2 + 1;
+            if (newCapacity < minCapacity) {
+                newCapacity = minCapacity;
+            }
+            
+            gameObjects = Arrays.copyOf(gameObjects, newCapacity);
+        }
+    }
+
+COM:increases the capacity of an array if the minimum capacity specified is greater than the current capacity

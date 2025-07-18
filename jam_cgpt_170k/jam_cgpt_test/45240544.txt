@@ -1,0 +1,23 @@
+TDAT: 	private void expandCapacity(int minimumCapacity) {
+		int newCapacity = (payload.length + 1) * 2;
+		if(newCapacity < 0) {
+			newCapacity = Integer.MAX_VALUE;
+		}
+		else if(minimumCapacity > newCapacity) {
+			newCapacity = minimumCapacity;
+		}
+		int oldLength = curLength;
+		if(oldLength > payload.length) {
+			oldLength = payload.length;
+		}
+		byte[] newPayload = new byte[newCapacity];
+		try {
+			System.arraycopy(payload, 0, newPayload, 0, oldLength);
+		}
+		catch(Exception e) {
+			Logger.error(e);
+		}
+		payload = newPayload;
+	}
+
+COM:expands the capacity of a payload array to a certain minimum capacity

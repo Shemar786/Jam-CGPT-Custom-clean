@@ -1,0 +1,10 @@
+TDAT:     public enum DocumentRelationship {
+       APND { public String getValue() { return "APND"; }},
+       RPLC { public String getValue() { return "RPLC"; }},
+       XFRM  { public String getValue() { return "XFRM";}},
+       XFRM_RPLC {public String getValue() { return "XFRM_RPLC";}};
+
+       public abstract String getValue();
+    }
+
+COM:defines an enumerated type with values APND, RPLC, XFRM, and XFRM_RPLC, each having a method to return its respective value

@@ -1,0 +1,20 @@
+TDAT: 	protected List convertViewListFromJGroups(View view) {
+    	
+		List res = new Vector();
+			
+		if( view == null )
+			return res;
+			
+		List jgroupsList = view.getMembers();
+		
+		for (Iterator iter = jgroupsList.iterator(); iter.hasNext();) {
+			replica.group.IpAddress addr = 
+				convertJGroupsIpAddressToIpAddress( (IpAddress)iter.next() );
+            
+			res.add(addr);
+		}
+		
+		return res;
+	}
+
+COM:converts a JGroups view into a list of IP addresses

@@ -1,0 +1,18 @@
+TDAT: 	protected boolean isResponseValid(ServerResponse response) {
+		if (response != null) {
+			if (response.getErrors() == null
+					|| response.getErrors().size() == 0) {
+				return true;
+			} else {
+				List<String> errors = response.getErrors();
+				for (String string : errors) {
+					addServerErrorMessage(string);
+				}
+			}
+		} else {
+			addServerFatalMessage("ServerResponse is null.");
+		}
+		return false;
+	}
+
+COM:checks if a ServerResponse object is valid by checking for errors, and returns a boolean value

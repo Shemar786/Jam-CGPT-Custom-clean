@@ -1,0 +1,14 @@
+TDAT:     public void testMatternIntInt() {
+        Mattern m;
+        
+        m = new Mattern(8,3);
+        
+        assertTrue(m.getIdpost() == 3);
+        assertTrue(m.getHour().size() == 8);
+        
+        for (Object val : m.getHour()) {
+            assertTrue( (Integer)val == 0 );
+        }
+    }
+
+COM:This is a test method for the Mattern class, checking that the object created has the correct properties and that all values in the object's hour field are initialized to 0

@@ -1,0 +1,17 @@
+TDAT:     private void convertBoolFunctions( java.util.List<GObject> list ){
+	/* first we must convert AFunctions */
+	convertAFunctions( list );
+	for( java.util.ListIterator<GObject> i = list.listIterator(); i.hasNext(); ){
+	    GObject o = i.next();
+	    if( o instanceof BoolFunction ){
+		i.remove();
+		BoolFunction b = (BoolFunction)o;
+		OObject y = (OObject)i.next();
+		i.remove();
+		OObject x = (OObject)i.previous();
+		i.set( b.function( x, y ) );
+	    }
+	}
+    }
+
+COM:converts AFunctions and applies Boolean functions to a list of GObjects

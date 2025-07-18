@@ -1,0 +1,12 @@
+TDAT:   public void createInterface(Reader introspectdata) throws ParserConfigurationException, SAXException, IOException, DBusException {
+    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    DocumentBuilder builder = factory.newDocumentBuilder();
+    Document document = builder.parse(new InputSource(introspectdata));
+
+    Element root = document.getDocumentElement();
+    checkNode(root, "node");
+    parseRoot(root);
+
+  }
+
+COM:creates an interface by parsing an XML document obtained from a Reader object and throws ParserConfigurationException, SAXException, IOException, and DBusException

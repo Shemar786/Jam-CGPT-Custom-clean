@@ -1,0 +1,8 @@
+TDAT:     public void setBuildTriggerDir(String buildTriggerDir,SandProject proj) {
+        proj.getAntProject().setProperty("buildTriggerDir",buildTriggerDir);
+        SandProject[] downstream=proj.getRequiredBy();
+        for(int i=0;i<downstream.length;i++) {
+            setBuildTriggerDir(buildTriggerDir,downstream[i]); }
+    }
+
+COM:sets a property on a project and recursively sets the property on all projects dependent on it

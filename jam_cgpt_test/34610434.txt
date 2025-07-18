@@ -1,0 +1,10 @@
+TDAT:     public MutableString insert(final int pos, final byte b) {
+        final int l = length();
+        expand(l + 1);
+        System.arraycopy(array, pos, array, pos + 1, l - pos);
+        array[pos] = b;
+        hashLength = hashLength < 0 ? -1 : l + 1;
+        return this;
+    }
+
+COM:inserts a byte into a MutableString object at a specified position, and returns the modified object

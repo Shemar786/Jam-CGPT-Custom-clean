@@ -1,0 +1,17 @@
+TDAT: 	protected void addAssociationTaskUsePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InitialState_associationTaskUse_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InitialState_associationTaskUse_feature", "_UI_InitialState_type"),
+				 ProcessPackagePackage.Literals.INITIAL_STATE__ASSOCIATION_TASK_USE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to the item property descriptors list for the initialization state's association task use feature

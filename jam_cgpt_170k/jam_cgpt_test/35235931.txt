@@ -1,0 +1,10 @@
+TDAT:     public boolean isIndexedmzML() {
+        // ToDo: find better way to check this?
+        // ToDo: maybe change log level in StandardXpathAccess class
+        // this check will log an ERROR if it is not an indexedmzML file, since we
+        // are trying to retrieve an entry that will not be in the XML
+        Iterator iter = index.getXmlStringIterator("/indexedmzML/indexList");
+        return iter.hasNext();
+    }
+
+COM:checks if a given mzML file is indexed by trying to retrieve an entry that will not be in the XML if it is not indexed and logs an error if it is not indexed

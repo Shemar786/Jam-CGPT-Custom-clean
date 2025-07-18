@@ -1,0 +1,10 @@
+TDAT:     private Net3IntData readThreeInt() throws IOException {
+        Net3IntData data = new Net3IntData(in.readInt(), in.readInt(), 
+                in.readInt());
+        if(expectsUserID) {
+            data.setUserID(in.readInt());
+        }
+        return data;
+    }
+
+COM:reads three integers from input and returns them as a new instance of Net3IntData, with an optional userID if specified

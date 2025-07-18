@@ -1,0 +1,10 @@
+TDAT: 	public void setSelected(boolean selected) {
+		if (selected)
+			setBorder(new CompoundBorder(new TitledBorder(null, mTitle, TitledBorder.LEFT, TitledBorder.TOP),
+					new CompoundBorder(new LineBorder(Color.green, 2), new EmptyBorder(1, 1, 1, 1))));
+		else
+			setBorder(new CompoundBorder(new TitledBorder(null, mTitle, TitledBorder.LEFT, TitledBorder.TOP),
+					new EmptyBorder(3, 3, 3, 3)));
+	}
+
+COM:sets the border of an object based on whether or not it is selected

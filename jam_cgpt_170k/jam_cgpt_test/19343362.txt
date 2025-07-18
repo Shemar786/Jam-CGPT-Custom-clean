@@ -1,0 +1,10 @@
+TDAT:     private void writeFollowingText(@SuppressWarnings("rawtypes") AbstractLine line) throws XMLStreamException {
+        int idx = line.getPreferredLayoutIdx();
+        String followingText = toString(line.getField(idx, FOLLOWING_TEXT_INDEX));
+
+        if (! "".equals(followingText)) {
+            writer.writeCharacters(followingText);
+        }
+    }
+
+COM:writes the following text of an abstract line to an XML stream, if present

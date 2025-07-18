@@ -1,0 +1,9 @@
+TDAT:     public void testOrderingAmongTheRoles() {
+        Role[] roles = { Role.PARTICIPANT, Role.VISITOR, Role.MODERATOR };
+    
+        Arrays.sort( roles );
+        
+        assertTrue( Arrays.equals( new Role[] { Role.VISITOR, Role.PARTICIPANT, Role.MODERATOR }, roles ) );
+    }
+
+COM:tests and asserts the correct ordering of roles in an array by sorting them in ascending order

@@ -1,0 +1,11 @@
+TDAT: 	public void addApplicationCounter(String token, String appID, String counterName) throws Exception {
+		AccountManager am = new AccountManager();
+		am.getSession().beginTransaction();
+		Application app = am.checkAppOwnedByAcct(token, appID);
+		ProvisioningManager pm = new ProvisioningManager(am.getSession());
+		pm.addApplicationCounter(app, counterName);
+		am.getSession().getTransaction().commit();
+		am.closeSession();
+	}
+
+COM:adds a counter to a specific application owned by an account, using authentication token and application ID to access the application

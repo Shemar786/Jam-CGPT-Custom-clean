@@ -1,0 +1,13 @@
+TDAT:     private void deleteWorkCopies(Resource[] resources) {
+        System.gc();
+        for (int i = 0; i < resources.length; i++) {
+            File workCopy = getWorkCopy(resources[i]);
+            try {
+                FileUtil.removeFileOrDir(workCopy);
+            } catch (IOException e) {
+                LOGGER.warn("could not remove " + workCopy.getName());
+            }
+        }
+    }
+
+COM:deletes work copies of given resources by iterating through the array, getting the work copy, and attempting to remove it using the FileUtil class while catching and logging any IOExceptions

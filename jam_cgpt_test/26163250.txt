@@ -1,0 +1,11 @@
+TDAT:     protected void dumpErrors() {
+        Collection errors = (Collection) getRequest().getAttribute(
+                Constants.ERRORS);
+        Iterator iterator = errors.iterator();
+        while (iterator.hasNext()) {
+            Exception ex = (Exception) iterator.next();
+            System.out.println(ex.getMessage());  
+        }    
+    }
+
+COM:retrieves and prints error messages stored in a collection

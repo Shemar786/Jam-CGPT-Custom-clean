@@ -1,0 +1,17 @@
+TDAT: 	protected void addSetPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InDataPort_setPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InDataPort_setPort_feature", "_UI_InDataPort_type"),
+				 SaveccmPackage.Literals.IN_DATA_PORT__SET_PORT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:This is a method that adds a setPort property descriptor to an item property descriptor list for an InDataPort object

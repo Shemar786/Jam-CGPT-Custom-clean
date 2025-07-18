@@ -1,0 +1,13 @@
+TDAT:     public void read(Reader r) throws IOException {
+        BufferedReader in;
+        if(r instanceof BufferedReader) in = (BufferedReader) r;
+        else in = new BufferedReader(r);
+        
+        List<Line> newLines = read0(in);
+        synchronized(this) {
+            lines.clear();
+            lines.addAll(newLines);
+        }
+    }
+
+COM:takes a Reader object, either a BufferedReader or a new one created from the input, reads its content, and updates a List of Line objects in a synchronized manner

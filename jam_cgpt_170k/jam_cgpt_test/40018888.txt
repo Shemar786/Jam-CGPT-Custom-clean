@@ -1,0 +1,17 @@
+TDAT:     protected void avoid() {
+        for (Particle p : ((Gui) parent).getPredators()) {
+            if (!p.dead) {
+                setAvoid(p);
+            }
+        }
+        for (Particle p : ((Gui) parent).getTargets()) {
+            if (!p.dead) {
+                setAvoid(p);
+            }
+        }
+        for (Particle p : ((Gui) parent).getObstacles()) {
+            setAvoid(p);
+        }
+    }
+
+COM:avoids obstacles, predators, and targets within a GUI environment

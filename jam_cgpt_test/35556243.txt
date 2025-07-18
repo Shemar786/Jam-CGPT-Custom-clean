@@ -1,0 +1,20 @@
+TDAT: 	public boolean logout(String userName) {
+
+		boolean result = false;
+
+		if (DBManager.getEmsOprType() == DBManager.SINGLE_CONNECTION) {
+			result = serverReceiver.logoutLocal(userName);
+		} else {
+			try {
+				if (serverInterface != null) {
+					result = serverInterface.logout(userName);
+				}
+			} catch (Exception ex) {
+				logger.log(Level.SEVERE, "message transmit error", ex);
+			}
+		}
+
+		return result;
+	}
+
+COM:logs out a user and returns a boolean value indicating the success or failure of the logout process

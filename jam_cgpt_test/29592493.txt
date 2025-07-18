@@ -1,0 +1,14 @@
+TDAT:   public void create() throws java.io.IOException {
+    if (!defineMode)
+      throw new UnsupportedOperationException("not in define mode");
+
+    ncfile = new ucar.netcdf.NetcdfFile( name, true, fill, schema);
+    if (ncfile == null) {    // can this happen ??
+      throw new java.io.IOException("createNetcdfFile failed");
+    }
+    init(ncfile);
+
+    defineMode = false;
+  }
+
+COM:creates a new NetCDF file with the specified parameters and checks if it is in define mode, throwing an exception if it is not

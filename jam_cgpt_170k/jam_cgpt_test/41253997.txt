@@ -1,0 +1,11 @@
+TDAT: 	public IWord getIWordFromLemmaAndPOS(String lemma, POS pos) throws NoSuchIndexWordException {
+		IIndexWord indexWord = dict.getIndexWord(lemma, pos);
+		if (indexWord==null) {
+			throw new NoSuchIndexWordException();
+		} else {
+			IWordID wordID = indexWord.getWordIDs().get(0); // 1st meaning
+			return dict.getWord(wordID);
+		}
+	}
+
+COM:retrieves an IWord object from a given lemma and part of speech, and throws a NoSuchIndexWordException if the index is not found

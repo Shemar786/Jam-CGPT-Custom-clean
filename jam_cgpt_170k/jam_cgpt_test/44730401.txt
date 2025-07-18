@@ -1,0 +1,8 @@
+TDAT: 	protected VelocityContext createContext(Control control) {
+		VelocityContext vCtx = new VelocityContext();
+		vCtx.put("jwic", new JWicTools(control.getSessionContext().getLocale(), control.getSessionContext().getTimeZone()));
+		vCtx.put("escape", new StringEscapeUtils());
+		return vCtx;
+	}
+
+COM:creates a Velocity context with two custom variables, "jwic" and "escape", for a given control

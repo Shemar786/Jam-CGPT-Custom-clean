@@ -1,0 +1,8 @@
+TDAT:     public JbsBaseObject get(int index) {
+        if ((this.isDeprecated()) || (index < this.getStartIndex()) || (index > this.getEndIndex()) || (this.getJbsBaseObjects() == null)) {
+            retrieveList(index);
+        }
+        return this.getJbsBaseObjects().get(completeIndexToPagedIndex(index));
+    }
+
+COM:retrieves a JbsBaseObject from a list based on index, and if certain conditions are met, retrieves the list first

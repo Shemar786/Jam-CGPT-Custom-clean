@@ -1,0 +1,20 @@
+TDAT: 	private String process_br(String line) {
+		line = line.substring(1 + line.lastIndexOf('\r'));
+
+		String line2;
+		do {
+			line2 = line;
+			line = line2.replaceAll("[^\b]\b", "");
+		
+		} while ( !line.equals(line2) ) ;
+
+		// drop out isolated \b 		
+		line = line.replaceAll("\b", "");
+		
+		if ( line.indexOf('\r') >= 0 || line.indexOf('\b') >= 0 )
+			throw new RuntimeException(line);
+		
+		return line;
+	}
+
+COM:takes a string and removes all backspace characters and isolated newline characters, returning the modified string

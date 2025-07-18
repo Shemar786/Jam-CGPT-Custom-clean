@@ -1,0 +1,13 @@
+TDAT: 	protected Label createLabel(Composite parent, String text) {
+		OmniUITrace.trace(this,"createLabel("+parent+", "+text+")","(called)");
+		Label label = new Label(parent, SWT.LEFT);
+		label.setText(text);
+		GridData data = new GridData();
+		data.horizontalSpan = 1;
+		data.horizontalAlignment = GridData.FILL;
+		label.setLayoutData(data);
+		OmniUITrace.trace(this,"createLabel("+parent+", "+text+")","(returned)"+label);
+		return label;
+	}
+
+COM:creates a label widget with provided text and adds it to the given composite, and returns the label widget

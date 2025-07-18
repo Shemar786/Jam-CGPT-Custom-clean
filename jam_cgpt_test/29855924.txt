@@ -1,0 +1,15 @@
+TDAT:   public void executeVoidTrigger(int key) {
+    switch (key) {
+    case CMD_QUIT:
+      close(0);
+      break;
+//     case CMD_TOP:
+//       setURL(Application.getDefaults().getHelpURL() + "index.htm");
+//       break;
+//     case CMD_INDEX:
+//       setURL(Application.getDefaults().getHelpURL() + "Index.htm");
+//       break;
+    }
+  }
+
+COM:executes a void trigger based on a given key, with options for quitting or setting a help URL

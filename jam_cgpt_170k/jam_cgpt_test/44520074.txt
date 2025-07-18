@@ -1,0 +1,11 @@
+TDAT:     public void print2File(){
+	try{
+		PrintWriter fileOut = new PrintWriter(new FileWriter(pdbID+".txt"));
+		fileOut.println("Pdb ID: "+pdbID+", Number of Atoms: "+atoms.size());
+		for (Iterator i = atoms.iterator(); i.hasNext();)
+	    	fileOut.println(i.next().toString());
+		fileOut.close();
+	}catch(IOException e){System.out.println(e);}
+    }
+
+COM:writes the contents of a collection of atoms to a text file along with the corresponding Pdb ID and number of atoms

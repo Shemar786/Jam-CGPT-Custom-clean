@@ -1,0 +1,10 @@
+TDAT:     public Object clone() throws java.lang.CloneNotSupportedException {
+        FontPropertiesInfo cloneFont = new FontPropertiesInfo();
+        cloneFont.setBackground(this.backGround);
+        cloneFont.setForeground(this.foreGround);
+        cloneFont.setFont(this.font);
+        cloneFont.setTabSize(this.tabSize.intValue());
+        return cloneFont;
+    }
+
+COM:creates a clone of a FontPropertiesInfo object

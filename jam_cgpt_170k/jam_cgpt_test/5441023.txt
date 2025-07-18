@@ -1,0 +1,20 @@
+TDAT:     public HttpSessionContext getSessionContext() {
+        checkValidity();
+        return new HttpSessionContext() {
+            /**
+             * Returns null.
+             */
+            public HttpSession getSession(String sessionId) {
+                return null;
+            }
+
+            /**
+             * Returns an empty enumeration.
+             */
+            public Enumeration getIds() {
+                return new Vector().elements();
+            }
+        };
+    }
+
+COM:returns a new HttpSessionContext object with two methods, getSession and getIds, both of which return null or an empty enumeration, respectively

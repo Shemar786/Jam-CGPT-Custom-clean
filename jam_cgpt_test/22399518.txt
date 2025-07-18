@@ -1,0 +1,16 @@
+TDAT:   /*static private void del_from_showcmd(int len) {
+    int	    old_len;
+
+    if (!G.p_sc.getBoolean())
+      return;
+
+    old_len = showcmd_buf.length();
+    if (len > old_len)
+      len = old_len;
+    showcmd_buf.delete(old_len - len, SHOWCMD_COLS);
+
+    if (!GetChar.char_avail())
+      display_showcmd();
+  }*/
+
+COM:deletes a specified number of characters from a buffer used for displaying commands, checks a condition, and calls another method to display the updated buffer if necessary

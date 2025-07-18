@@ -1,0 +1,17 @@
+TDAT: 	public void addSingleHoleGarbage(int hole, int color, int skin, int attribute, int lines) {
+		for(int k = 0; k < lines; k++) {
+			pushUp(1);
+
+			for(int j = 0; j < width; j++) {
+				if(j != hole) {
+					Block blk = new Block();
+					blk.color = color;
+					blk.skin = skin;
+					blk.attribute = attribute;
+					setBlock(j, getHeightWithoutHurryupFloor() - 1, blk);
+				}
+			}
+		}
+	}
+
+COM:adds a single hole garbage block in a specified position with a specified color, skin, attribute and number of lines, while also pushing up the grid

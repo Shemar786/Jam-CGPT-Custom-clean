@@ -1,0 +1,16 @@
+TDAT:   public XSqlcPrettyPrinter getSqlcPrettyPrinter() {
+    int sql_pos = 2;
+
+    // must be at n*8+4 from the beginning of the line.
+    while(((pos + sql_pos) % 8) == 4) {
+    	sql_pos++;	
+    }
+    getSqlcPrettyPrinter(true);
+
+    sql_pp.setPos(sql_pos);
+    p.setPos(pos);
+    sql_pp.setColumn(0);
+    return sql_pp;
+  }
+
+COM:returns an XSqlcPrettyPrinter object after setting various positions and columns

@@ -1,0 +1,12 @@
+TDAT:     public void actionPerformed( java.awt.event.ActionEvent actionEvent ){
+	synchronized( applet ){
+	    if( getApplet().getOn() ){
+		getApplet().setMode( getApplet().getMode() + 1 );
+		getApplet().setShift( false );
+		getApplet().updateDisplay( true, true );
+	    }
+	    getApplet().requestFocusInWindow();
+	}
+    }
+
+COM:handles an action event by updating the mode and display of an applet, as long as the applet's "on" status is true

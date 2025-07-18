@@ -1,0 +1,8 @@
+TDAT: 	public void setAverage(Avg value) {
+		// System.err.println("AVG " + input.getElementName() +
+		// "."+value.getName() + " per " + value.getPer() + " = " +
+		// value.doubleValue());
+		averages.put(value.getPer() + value.getName(), value);
+	}
+
+COM:sets the value of the "average" variable in the "averages" map by using the "value" parameter object

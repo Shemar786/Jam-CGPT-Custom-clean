@@ -1,0 +1,18 @@
+TDAT: 	protected void setProgressStatus(ProgressStatus progressStatus) {
+		
+		ProgressStatus prev = this.progressStatus;
+		this.progressStatus = progressStatus;
+		
+		PropertyChangeListener[] listeners;
+		
+		synchronized(progressListeners){
+			listeners = progressListeners.toArray(new PropertyChangeListener[progressListeners.size()]);
+		}
+		
+		PropertyChangeEvent event = new PropertyChangeEvent(this, "progressStatus", prev, progressStatus);
+		
+		for( PropertyChangeListener listener : listeners )
+			listener.propertyChange(event);
+	}
+
+COM:sets the progress status and notifies all property change listeners when the progress status changes

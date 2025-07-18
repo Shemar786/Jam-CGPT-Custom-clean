@@ -1,0 +1,20 @@
+TDAT: 		private int readPriority() {
+			String priorityValue = configElement.getAttribute("priority");
+			if (priorityValue == null) {
+				UIUtils.log(null,
+						"Missing priority attribute (using default),"
+						+ " for editor page extension " + id);
+				return DEFAULT_PRIORITY;
+			}
+			try {
+				return Integer.parseInt(priorityValue);
+			} catch (NumberFormatException e) {
+				UIUtils.log(e,
+						"Illegal priority " + priorityValue
+						+ ", using default instead,"
+						+ " for editor page extension " + id);
+				return DEFAULT_PRIORITY;
+			}
+		}
+
+COM:reads an attribute "priority" from a configuration element, logs any errors or missing values, and returns an integer value or a default value if necessary

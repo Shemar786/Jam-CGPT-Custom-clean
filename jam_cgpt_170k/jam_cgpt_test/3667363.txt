@@ -1,0 +1,9 @@
+TDAT:     public void test_setValueIsAdjusting() {
+        DefaultLinearRangeModel m = new DefaultLinearRangeModel();
+        m.setValueIsAdjusting(true);
+        assertTrue(m.getValueIsAdjusting());
+        m.setValueIsAdjusting(false);
+        assertTrue(m.getValueIsAdjusting() == false);
+    }
+
+COM:tests the setValueIsAdjusting() method of the DefaultLinearRangeModel class by setting it to true and false and asserting the value of getValueIsAdjusting()

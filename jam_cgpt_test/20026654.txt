@@ -1,0 +1,9 @@
+TDAT: 	public void setTorrentTag(String[] ids, String tag) throws XmlRpcFault, SecurityException, IllegalArgumentException, IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+		for (String id : ids) {
+			TorrentInfo info=new TorrentInfo(id);
+			Process process=ProcessPool.getProcess(info.getProcessId(), user);
+			process.setTag(info,tag);
+		}		
+	}	
+
+COM:sets a tag on one or more torrents using their IDs

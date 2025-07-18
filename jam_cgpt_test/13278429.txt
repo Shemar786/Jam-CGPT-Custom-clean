@@ -1,0 +1,13 @@
+TDAT:     public Object addNode(int typeId, boolean isLeafNode, Element auxiliaryData) {
+        Pair result = new Pair(new Integer(typeId), null);
+        actualSubgraphpart.nodes.add(result);
+        nodeAuxiliaryData.put(result, auxiliaryData);
+
+        if (isLeafNode) {
+            symmetricalTwins.add(result);
+        }
+
+        return result;
+    }
+
+COM:adds a node to a subgraph and associates auxiliary data with it, optionally adding it as a leaf node and returning the resulting object

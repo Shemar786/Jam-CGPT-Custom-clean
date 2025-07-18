@@ -1,0 +1,10 @@
+TDAT:     public void trimLastUpdate() {
+        if(updates==null) {
+            return; }
+        SandUpdateMessage[] sums=updates.getUpdates();
+        SandUpdateMessage[] trimmed=new SandUpdateMessage[sums.length-1];
+        System.arraycopy(sums,0,trimmed,0,sums.length-1);
+        updates.setUpdates(trimmed);
+    }
+
+COM:trims the last update in a SandUpdateMessage array and sets the trimmed array as the new update array

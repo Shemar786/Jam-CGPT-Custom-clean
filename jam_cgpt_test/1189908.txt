@@ -1,0 +1,10 @@
+TDAT:    public void createIndex(String idxname, String tblname, String fldname, Transaction tx) {
+      RecordFile rf = new RecordFile(ti, tx);
+      rf.insert();
+      rf.setString("indexname", idxname);
+      rf.setString("tablename", tblname);
+      rf.setString("fieldname", fldname);
+      rf.close();
+   }
+
+COM:creates an index on a specified table and field name using a given transaction object

@@ -1,0 +1,12 @@
+TDAT:   private void setValuesInternal(final TableListRec tableItem) {
+
+  	  currVal = tableItem;
+
+      if (tableItem != null) {
+           sfTBlId.setText("" + tableItem.getTBlId());
+           sfTblName.setText(tableItem.getTblName());
+           sfDescription.setText(tableItem.getDescription());
+      }
+  }
+
+COM:sets the values of text fields in a UI form with the data from a TableListRec object, if it is not null

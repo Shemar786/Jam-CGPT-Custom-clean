@@ -1,0 +1,9 @@
+TDAT:     protected void moveToIntervalStart(Calendar cal) {
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        cal.clear();
+        cal.set(year, month, day);
+    }
+
+COM:sets a given Calendar object to the start of the interval specified by its year, month, and day of the month

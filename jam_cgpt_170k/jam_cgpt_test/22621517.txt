@@ -1,0 +1,13 @@
+TDAT: 	private Map getCollectionAccessMap(List authorizedSets, Collection users) {
+		// prtln ("getCollectionAccessMap");
+		List collections = getCollections(authorizedSets);
+		Map accessMap = new LinkedHashMap();
+		for (Iterator i = collections.iterator(); i.hasNext(); ) {
+			LabelValueBean cb = (LabelValueBean) i.next();
+			String collection = cb.getValue();
+			accessMap.put(collection, getCollectionRoles(collection, users));
+		}
+		return accessMap;
+	}
+
+COM:returns a map that contains access information for a set of authorized collections and a collection of users

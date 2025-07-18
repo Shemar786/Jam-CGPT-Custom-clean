@@ -1,0 +1,20 @@
+TDAT: 			public Object construct() {
+				MainFrame.db = db;
+				MainFrame mf = null;
+				int cID = -1;
+				try {
+					cID = aggregator.createAggregateTimeSeries("aggregated",collections,
+							progressBar, mf);
+					return new Integer(cID);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+					errors.add(new AssertionFailedError("Aggregation interrupted"));
+				} catch (AggregationException e) {
+					e.printStackTrace();
+					errors.add(new AssertionFailedError("Aggregation failed."));
+				}
+				
+				return new Integer(cID);
+			}
+
+COM:constructs and returns an Integer representing the ID of an aggregated time series, while catching and handling potential exceptions

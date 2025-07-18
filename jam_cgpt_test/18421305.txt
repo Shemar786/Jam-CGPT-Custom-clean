@@ -1,0 +1,14 @@
+TDAT: 	private void dietPlanDurationCheck () {
+		if ((m_Dietplan.getFrom() == null) || (m_Dietplan.getTo() == null)) {
+			GregorianCalendar currDate = new GregorianCalendar();
+			currDate.set(10,0);
+			currDate.set(12,0);
+			currDate.set(13,0);
+			currDate.set(14,0);
+			m_Dietplan.getDaySchedules().clear();
+			m_Dietplan.setFrom(currDate.getTime());
+			m_Dietplan.setTo(currDate.getTime());
+		}		
+	}
+
+COM:checks the duration of a diet plan and sets the start and end dates if they are null

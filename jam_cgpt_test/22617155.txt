@@ -1,0 +1,9 @@
+TDAT: 	    public void onCellClicked(SourcesTableEvents sender, int row, int cell) {
+	        this.getRowFormatter().removeStyleName(selectedRow, selectedStyle);
+	        if ((dataSource.getHeaderRow() == null) || (row > 0)) {
+	            this.getRowFormatter().addStyleName(row, selectedStyle);
+	            selectedRow = row;
+	        }
+	    }
+
+COM:handles a click event on a table cell and highlights the selected row while removing the highlight from the previously selected row

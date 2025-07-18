@@ -1,0 +1,18 @@
+TDAT:    private double parseDoubleToken(String token, Statistics statistic) {
+      final double d = 0;
+
+      if (isDouble(token)) {
+         return Double.parseDouble(token);
+      }
+      else {
+         final Tokens t = Tokens.valueOf(token);
+
+         if (t != null) {
+            return evaluateFunction(t, statistic);
+         }
+
+      }
+      return d;
+   } // parseDoubleToken
+
+COM:parses a string token and either returns its double value or evaluates a function based on the token and a given statistic, and returns 0 if neither option is possible

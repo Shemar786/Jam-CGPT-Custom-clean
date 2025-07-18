@@ -1,0 +1,5 @@
+TDAT:     public void printStatistics(){
+        System.out.println("direct: " + directMatch + " alternate: " + alternateNameMatch + " searchable: " + searchCanMatch + " clean: " + cleanNameMatch + " nomatch: " + noMatch + " homonyms: " + homonymMatch + " addNub: " + addToNub + " alreadyAddedToNub: " + alreadyAddedToNub);
+    }
+
+COM:prints statistics on various types of matches and additions to a nub

@@ -1,0 +1,12 @@
+TDAT: 	public void addLayoutProperty(String name, double value) {
+		// make new GUI objects
+		JLabel PropLabel = new JLabel(name);
+		JTextField PropField = new JTextField(value + "", 3);
+		PropField.setName(name);
+		// add the pair to the Hashmap
+		layoutProperties.put(name, PropField);
+		propComponents.add(PropLabel);
+		propComponents.add(PropField);
+	}
+
+COM:adds a layout property to a hashmap and creates a GUI object consisting of a label and a text field

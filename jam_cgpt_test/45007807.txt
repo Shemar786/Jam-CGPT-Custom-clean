@@ -1,0 +1,9 @@
+TDAT:     public void addPlanet(Planet planet) {
+        if (planet.getId() == -1) {
+            planet.setId(getUnusedPlanetID());
+        }
+        planets.put(new Integer(planet.getId()), planet);
+        planetid.put(planet.getName().toLowerCase(), new Integer(planet.getId()));
+    }
+
+COM:adds a planet object to two hash maps, assigning a new ID to the planet if it does not already have one

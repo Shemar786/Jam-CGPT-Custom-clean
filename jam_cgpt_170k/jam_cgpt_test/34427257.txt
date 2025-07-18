@@ -1,0 +1,14 @@
+TDAT:     private void populateDepletedList(SWGResourceSet known) {
+        depletedResources = mergeDepletedResources(known);
+        SwingUtilities.invokeLater(new Runnable() {
+            @SuppressWarnings("synthetic-access")
+            @Override
+            public void run() {
+                depletedListModel.clear();
+                for (Wrapper wr : depletedResources)
+                    depletedListModel.addElement(wr);
+            }
+        });
+    }
+
+COM:populates a list with depleted resources using the known set of resources and a SwingUtilities method to update the user interface

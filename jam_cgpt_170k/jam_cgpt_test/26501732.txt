@@ -1,0 +1,15 @@
+TDAT:   public void write(ByteBuffer buf){
+    while(buf.hasRemaining()){
+      if(_arrayPos >= _arrayCount){
+        increase(); 
+      }      
+      int len = buf.remaining();
+      int put = _arrays[_arrayPos].put(buf);
+      if(put < len){
+        _arrayPos++;
+      }
+      put = 0;      
+    }    
+  }  
+
+COM:writes data from a ByteBuffer to an array of ByteBuffers, increasing the size of the array if necessary

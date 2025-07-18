@@ -1,0 +1,16 @@
+TDAT:     public void testGetNext () {
+        MP3Playlist  playlist = null;
+        String foo = null;
+        try {
+            playlist = new MP3Playlist ( m_testfile );
+            foo = playlist.getNext();
+        } catch(Exception e) {
+            fail (e.getMessage ());
+        }
+        
+        if ( !(foo instanceof String) ) {
+            fail("getNext() did not return a String!!!");
+        }
+    }
+
+COM:tests whether the getNext() method of the MP3Playlist class returns a String

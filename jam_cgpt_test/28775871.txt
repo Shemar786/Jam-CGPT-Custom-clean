@@ -1,0 +1,15 @@
+TDAT: 	private JButton getEditMatrix() {
+		if (editMatrix == null) {
+			editMatrix = new JButton();
+			editMatrix.setBounds(new Rectangle(15, 75, 136, 16));
+			editMatrix.setText(lang.get("MSG_14"));
+			editMatrix.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+				}
+			});
+		}
+		return editMatrix;
+	}
+
+COM:returns a JButton object called "editMatrix", which initializes the button's appearance and adds an ActionListener to it when called

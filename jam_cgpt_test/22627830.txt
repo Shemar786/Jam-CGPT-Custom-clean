@@ -1,0 +1,15 @@
+TDAT: 	public CompositorGuard getParentCompositorGuard() {
+		prtln("\n getParentCompositorGuard()");
+		if (parentCompositorGuard == null) {
+
+			/*
+			 *  prtln ("\t parentCompositorGuard not found");
+			 *  prtln ("\t compositorGuard element: " + getElement().asXML());
+			 *  / construct parentCompositorGuard - the compositorGuard in the
+			 *  / parentCompositor that manages the instanceList elements.
+			 */
+		}
+		return parentCompositorGuard;
+	}
+
+COM:returns the parent CompositorGuard element, and if it is null, constructs it based on its child elements

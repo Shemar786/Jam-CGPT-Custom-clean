@@ -1,0 +1,14 @@
+TDAT:     public Characters clone(Taxa taxa) {
+        Characters characters = new Characters();
+        try {
+            StringWriter sw = new StringWriter();
+            this.write(sw, taxa);
+            StringReader sr = new StringReader(sw.toString());
+            characters.read(new NexusStreamParser(sr), taxa);
+        } catch (Exception ex) {
+            Basic.caught(ex);
+        }
+        return characters;
+    }
+
+COM:creates and returns a clone of the Characters object, using a StringWriter to write the clone and a StringReader to read the clone, while also catching any exceptions that may occur

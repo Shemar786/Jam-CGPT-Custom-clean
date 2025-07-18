@@ -1,0 +1,19 @@
+TDAT: 	public void testFail01_wrongTypeIDs() throws Exception {
+
+		int j = 0;
+
+		for (int i=0; i<faultyElements.length; i++) {
+
+			try {
+				@SuppressWarnings("unused")
+				Refactory r = new Refactory(faultyElements[i]);
+			} catch (Exception e) {
+				j++;
+				continue;
+			}
+			fail("faulty element type path accepted");
+		}
+		assertEquals("test aborted too early", faultyElements.length, j);
+	}
+
+COM:tests for the handling of exceptions thrown when an incorrect type of element is passed as a parameter to a Refactory object constructor

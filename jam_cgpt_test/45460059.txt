@@ -1,0 +1,9 @@
+TDAT: 	private JComboBox getJComboBoxStatus() {
+		if (jComboBoxStatus == null) {
+			jComboBoxStatus = new JComboBox(new String [] {"1", "2", "3", "4"} );
+			jComboBoxStatus.setBounds(new Rectangle(136, 361, 55, 21));
+		}
+		return jComboBoxStatus;
+	}
+
+COM:returns a JComboBox object with four options (1, 2, 3, 4) and sets the bounds of the object

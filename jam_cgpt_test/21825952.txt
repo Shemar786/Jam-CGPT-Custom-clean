@@ -1,0 +1,13 @@
+TDAT: 	public void remove(String attName) {
+		// NOTE: the containsKey check relates to TM-262
+		if (this.getAttributes().containsKey(attName)) {
+			PAttribute attribute = this.getAttributes().remove(attName);
+			Collection<PAttribute> allAttributes = this.getAttributes().values();
+			for (PAttribute element : allAttributes) {
+				if(element.getIndex() > attribute.getIndex()) 
+					element.setIndex(element.getIndex() - 1);
+			}
+		}
+	}
+
+COM:removes an attribute with the given name from an object, adjusting the index of all remaining attributes accordingly

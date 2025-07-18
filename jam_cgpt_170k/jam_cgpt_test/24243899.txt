@@ -1,0 +1,8 @@
+TDAT:   public float getReading(int i, RangeReadings rr, RangeMap map) {
+    Pose tempPose = new Pose();
+    tempPose.setLocation(pose.getLocation());
+    tempPose.setHeading(pose.getHeading() + rr.getAngle(i));
+    return map.range(tempPose);    
+  }
+
+COM:returns a float value representing the range of a given reading based on the provided parameters

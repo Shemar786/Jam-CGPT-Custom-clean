@@ -1,0 +1,12 @@
+TDAT: 	private String extractName(ONDEXConcept c) {
+		String str = "";
+		if (c.getConceptName() != null)
+			str = c.getConceptName().getName();
+		if (str.trim().length() == 0)
+			str = c.getPID();
+		if (str.trim().length() == 0)
+			str = c.getId() + "";
+		return str;
+	}
+
+COM:extracts the name of an ONDEXConcept object, prioritizing its concept name, followed by its PID and ID if necessary

@@ -1,0 +1,5 @@
+TDAT:     public long addEntities(Table table, String condition, int today, long limit) throws SQLException {
+        return addEntities(table, "T", condition, null, null, null, null, false, today, limit, 0, true);
+    }
+
+COM:adds entities to a table based on a specified condition, with a limit on the number of entities to be added, and returns the number of added entities as a long value

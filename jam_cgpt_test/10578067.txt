@@ -1,0 +1,11 @@
+TDAT:     public boolean columnExistsCaseSensitive(DatabaseMetaData dbMetaData, String tableName, String columnName) throws SQLException {
+        ResultSet rsTables = dbMetaData.getColumns(null, null, tableName, columnName);
+        try {
+            boolean found = rsTables.next();
+            return found;
+        } finally {
+            closeJDBCResultSet(rsTables);
+        }
+    }
+
+COM:checks if a specified column exists in a database table with case-sensitive matching

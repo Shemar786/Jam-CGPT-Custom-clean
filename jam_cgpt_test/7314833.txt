@@ -1,0 +1,11 @@
+TDAT:     public CutSheetInfo cutSheetInfoForPipe(Pipe p){
+   		CutSheetInfo cInfo = new CutSheetInfo();
+   		cInfo.setPipe(p);
+   		PipeFitting end = getAreaBody().getEndFitting(p);
+   		cInfo.setEndFitting(end.getFitting());
+		PipeFitting start = getAreaBody().getStartFitting(p);
+  		cInfo.setStartFitting(start.getFitting());
+  		return cInfo;
+    }
+
+COM:returns a CutSheetInfo object containing information about a given Pipe object's start and end fittings

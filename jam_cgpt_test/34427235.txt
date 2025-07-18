@@ -1,0 +1,7 @@
+TDAT:     private void notesFileWriteResource(ZString z, SWGResource r, String s) {
+        z.app(r.getName()).app(", ").app(r.rc().rcName()).app(", ");
+        if (s != null) z.app(s);
+        z.nl();
+    }
+
+COM:writes resource information and an optional note to a file

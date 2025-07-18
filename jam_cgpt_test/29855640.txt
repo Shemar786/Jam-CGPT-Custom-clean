@@ -1,0 +1,15 @@
+TDAT:   public PrintJob createPrintJob() {
+    try {
+      PdfPrintJob        printJob;
+
+      printJob = new PdfPrintJob(format);
+      printJob.setDocumentType(getDocumentType());
+      return startPrintIntern(printJob);
+    } catch (IOException e) {
+      throw new InconsistencyException(e);
+    } catch (PrintException e) {
+      throw new InconsistencyException(e);
+    }
+  }
+
+COM:creates a print job for a PDF document and returns it, handling any exceptions that may occur

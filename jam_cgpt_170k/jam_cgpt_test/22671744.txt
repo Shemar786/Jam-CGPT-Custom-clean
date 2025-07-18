@@ -1,0 +1,15 @@
+TDAT: 	public void addChildAccount(Account account) {
+		if (account == null) {  
+			throw new IllegalArgumentException("Child account may not be null");  
+		}
+		if (account == this) {
+			throw new IllegalArgumentException("Cannot add account as a child account of itself");
+		}
+		if (account.getParent() != null) {
+			account.getParent().removeChildAccount(account);
+		}
+		account.setParent(this);
+		this.accounts.add(account);
+	}
+
+COM:adds a child account to the parent account, performing certain validations before adding it

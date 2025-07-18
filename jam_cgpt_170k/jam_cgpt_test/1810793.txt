@@ -1,0 +1,7 @@
+TDAT:   public SourceWriter createSourceWriter(PrintWriter printWriter) {
+    return new ClassSourceFileComposer(null, printWriter, getCreatedPackage(),
+      getCreatedClassShortName(), getSuperclassName(), getInterfaceNames(),
+      getImports(), classCategory, classComment);
+  }
+
+COM:creates a new SourceWriter object for generating source code for a class using the provided PrintWriter object and various arguments

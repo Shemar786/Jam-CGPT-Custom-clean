@@ -1,0 +1,12 @@
+TDAT:     public void setDocPath(String path) {
+        setDocPath = true;
+        if (path == null)
+            return;
+        String newDocPath = path + File.separatorChar + PACKAGE_HTML_FILE_NAME;
+        if (!newDocPath.equals(docPath)) {
+            docPath = newDocPath;
+            checkDoc();
+        }
+    }
+
+COM:sets the document path and checks for any changes before updating the document

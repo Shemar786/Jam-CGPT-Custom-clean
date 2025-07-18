@@ -1,0 +1,14 @@
+TDAT: 	public List getItemsToReview() throws InternalException {
+		logger.debug("entering getItemsToReview");
+
+		try {
+			List list = dbAccess.getItemsToReview(sMgr.getCurrentUser().getUserID());
+			logger.debug("exiting getItemsToReview");
+			return list;
+		} catch (AccessException ex) {
+			logger.error("couldn't access the database", ex);
+			throw new InternalException(ex);
+		}
+	}
+
+COM:retrieves a list of items for review from a database, logs debug messages, and throws an InternalException if there is an AccessException

@@ -1,0 +1,15 @@
+TDAT: 	public T addChild(T child) throws IllegalChildException {
+		if (!isValidAssociation(this, child, child.getSystemFile())) {
+			throw new IllegalChildException();
+		}
+		
+		if (children.containsKey(System.identityHashCode(child))) {
+			return null;
+		}
+		
+		children.put(System.identityHashCode(child), child);
+		child.setParent(this);
+		return child;
+	}
+
+COM:adds a child element to a parent element, throwing an exception if the association is invalid, and returning null if the child already exists

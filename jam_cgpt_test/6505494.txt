@@ -1,0 +1,22 @@
+TDAT: 	protected void hookSelectionChangedAction() {
+		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			public void selectionChanged(SelectionChangedEvent event) {
+
+				IStructuredSelection selection = (IStructuredSelection) event.getSelection();
+				if (selection.getFirstElement() instanceof Server) {
+					action2.setEnabled(true);
+					if (!((Server) selection.getFirstElement()).isConnected()) {
+						action4.setEnabled(true);
+					} else {
+						action4.setEnabled(false);
+					}
+					return;
+				} else {
+					action2.setEnabled(false);
+				}
+
+			}
+		});
+	}
+
+COM:adds a selection listener to a viewer that enables certain actions based on the type and properties of the selected element

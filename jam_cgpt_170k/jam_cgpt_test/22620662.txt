@@ -1,0 +1,7 @@
+TDAT: 	public SimpleTypeLabel getSimpleTypeLabel(String xpath, String siblingPath, String indexId) {
+		SimpleTypeLabel labelObj = super.getSimpleTypeLabel(xpath, siblingPath, indexId);
+		labelObj.editMeTag = getEditMeTag(xpath, siblingPath, indexId);
+		return labelObj;
+	}
+
+COM:returns a SimpleTypeLabel object with an added editMeTag based on the provided xpath, siblingPath, and indexId parameters

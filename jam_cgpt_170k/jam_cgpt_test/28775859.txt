@@ -1,0 +1,15 @@
+TDAT: 	private JButton getDeleteMatrix() {
+		if (deleteMatrix == null) {
+			deleteMatrix = new JButton();
+			deleteMatrix.setBounds(new Rectangle(15, 45, 136, 16));
+			deleteMatrix.setText(lang.get("MSG_13"));
+			deleteMatrix.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+				}
+			});
+		}
+		return deleteMatrix;
+	}
+
+COM:returns a JButton with specific properties and an ActionListener that prints a message when clicked

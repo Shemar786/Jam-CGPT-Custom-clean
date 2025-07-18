@@ -1,0 +1,12 @@
+TDAT:   public Variable findVariable(String name) {
+    if (name == null) return null;
+
+    for (int i=0; i<variables.size(); i++) {
+      Variable v = (Variable) variables.get(i);
+      if (name.equals(v.getName()))
+        return v;
+    }
+    return null;
+  }
+
+COM:takes a string input representing a variable name, searches for the variable in a list, and returns the variable object if it exists, otherwise returning null

@@ -1,0 +1,13 @@
+TDAT: 	public Domain getDomain(DomainDefinition domainDefinition){
+		List subDomainDef = domainDefinition.getSubDomainDefinitions();
+		List domainResidues = new ArrayList();
+
+		for( Iterator li = subDomainDef.iterator(); li.hasNext(); ) {
+			SubChain sc = (SubChain)li.next();
+			domainResidues.addAll(getResidues(sc));
+		}
+		
+		return new Domain(domainDefinition.getDomainID(),domainResidues);
+	}
+
+COM:returns a Domain object composed of a list of residues from subchains within a given DomainDefinition

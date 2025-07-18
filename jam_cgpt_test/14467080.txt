@@ -1,0 +1,12 @@
+TDAT:   private void importAction() {
+    try {
+      ModelImporter.importModel(this, this.project);
+    } catch (Exception e) {
+      JOptionPane.showMessageDialog(this,
+                                    this.properties.getString("IO_ERROR_OPEN"),
+                                    this.properties.getString("IO_ERROR"),
+                                    JOptionPane.ERROR_MESSAGE);
+    }
+  }
+
+COM:imports a model using a ModelImporter class and displays an error message if there is an exception

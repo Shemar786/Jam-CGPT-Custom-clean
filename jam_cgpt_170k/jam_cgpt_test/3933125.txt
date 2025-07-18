@@ -1,0 +1,9 @@
+TDAT: 	public void caretUpdate(CaretEvent e) {
+		Element root = editor.getDocument().getDefaultRootElement();
+		int line = root.getElementIndex(e.getDot());
+		int col = e.getDot() - root.getElement(line).getStartOffset();
+
+		positionLabel.setText("Ln " + (line + 1) + " Col " + (col + 1));
+	}
+
+COM:updates a label to display the current line and column of the cursor in a text editor

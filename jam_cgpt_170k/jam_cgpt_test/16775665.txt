@@ -1,0 +1,9 @@
+TDAT:     private String getTimeString(double timeDouble) {
+        long time = Time.mjdToMillies(timeDouble);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeZone(this.timeZone);
+        calendar.setTimeInMillis(time);
+        return this.dateFormat.format(calendar.getTime());
+    }
+
+COM:takes a double representing time, converts it to milliseconds, sets it to a calendar object adjusted to the specified time zone, and returns a string representing the formatted time

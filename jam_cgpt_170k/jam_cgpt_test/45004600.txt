@@ -1,0 +1,14 @@
+TDAT: 	public int getLongID(SHouse h, SPlanet p) {
+	
+		Iterator<LongOperation> i = activeLongOps.values().iterator();
+		while (i.hasNext()) {
+			LongOperation currL = i.next();
+			SHouse attacker = currL.getAttackingHouse();
+			SPlanet planet = currL.getTargetWorld();
+			if (attacker.equals(h) && planet.equals(p))
+				return currL.getID();
+		}
+		return -1;
+	}
+
+COM:retrieves the ID of a LongOperation based on the attacking house and target planet

@@ -1,0 +1,20 @@
+TDAT: 	public void createContents(String message, int heightHint, int widthHint) {
+		GridLayout layout = new GridLayout();
+		layout.marginWidth = 0;
+		setLayout(layout);
+		setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+
+		Label label = new Label(this, SWT.WRAP);
+		label.setText(message);
+		label.setFont(this.getFont());
+
+		
+		// TODO - Remove the filler...
+		new Label(this, SWT.NONE);
+		
+
+		createTreeViewer(heightHint);
+		Dialog.applyDialogFont(this);
+	}
+
+COM:creates the contents of a GUI dialog box with a message label, a tree viewer, and applied dialog font

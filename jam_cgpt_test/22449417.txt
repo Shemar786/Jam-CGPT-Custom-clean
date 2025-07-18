@@ -1,0 +1,13 @@
+TDAT:     private String generateConstraintName(LPConstraint constr) {
+        String result = constr.getName();
+        if (result == null || result.length() == 0) {
+            result = "c" + this.rowUniqueIdSeq++;
+        }
+        else if (!Character.isLetter(result.charAt(0))) {
+            result = "c" + result;
+        }
+        
+        return result;
+    }
+
+COM:generates a constraint name based on the name of the constraint object

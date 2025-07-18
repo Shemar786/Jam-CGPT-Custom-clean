@@ -1,0 +1,10 @@
+TDAT:     public void decodeLine ( String line ) {
+        String key, val;
+        int pos = line.indexOf ( ':' );
+        key = line.substring ( 0, pos ).trim ();
+        val = line.substring ( pos + 1 ).trim ();
+        setHeader ( key, val );
+        if ( key.equals ( cookieHeader ) ) decodeCookie ( val );
+    }
+
+COM:decodes a line of text into a key-value pair, sets it as a header, and if the key matches a specified value, calls another method to decode the cookie

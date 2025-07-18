@@ -1,0 +1,19 @@
+TDAT:     public String fetchSalt() {
+    	String salt="";
+    	if (db==null) { return salt; }
+        try {
+			Cursor c = db.query(true, TABLE_SALT, new String[] {"salt"},
+				null, null, null, null, null,null);
+			if(c.getCount() > 0) {
+			    c.moveToFirst();
+			    salt=c.getString(0);
+			}
+			c.close();
+		} catch (SQLException e)
+		{
+			Log.d(TAG,"SQLite exception: " + e.getLocalizedMessage());
+		}
+		return salt;
+    }
+
+COM:retrieves a salt value from a database table and returns it in the form of a string

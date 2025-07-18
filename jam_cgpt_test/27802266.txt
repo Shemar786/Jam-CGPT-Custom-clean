@@ -1,0 +1,11 @@
+TDAT:   public void drawUnselected() {
+
+	// Remove each handle, but don't remove the associated point.
+	for ( int i = 0; i < handlePointList.size(); i++ ) 
+		removeChild( (PNamedHandle) handleList.get(i) );
+	handleList.removeAllElements();
+    setStrokePaint( Color.black );
+
+  }
+
+COM:removes handles and sets the stroke paint to black for the unselected object

@@ -1,0 +1,10 @@
+TDAT: 	private void addTransitionGuards(UMLBTransition transition, UMLBClass ownerClass) {
+		for (UMLBPredicate p : transition.getGuards()) {
+			Btext_ c=new Btext_(p,ownerClass,false);
+			c.setName(getName()+"."+c.getName());
+			if (p.isTheorem()) c.setTheorem();
+			guards.add(c);
+		}
+	}
+
+COM:adds guard conditions to a transition in UMLB and updates the corresponding Btext_ object

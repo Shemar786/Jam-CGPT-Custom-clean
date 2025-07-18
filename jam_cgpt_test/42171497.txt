@@ -1,0 +1,17 @@
+TDAT:   protected void addQueryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RunQuery_query_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RunQuery_query_feature", "_UI_RunQuery_type"),
+				 ActionStepPackage.eINSTANCE.getRunQuery_Query(),
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a query feature to an item property descriptor list

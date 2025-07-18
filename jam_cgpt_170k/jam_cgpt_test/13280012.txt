@@ -1,0 +1,14 @@
+TDAT:     protected void enableVariableButtons(boolean b) {
+	Variable v;
+	synchronized(gsc.variables) {
+	    Iterator i = gsc.variables.iterator();
+	    while (i.hasNext()) {
+		v = (Variable) i.next();
+                if ((v != null) && (v.graphObject != null)) {
+                    ((NodeGraphics) v.graphObject).activator.setEnabled(b);
+                }
+	    }
+	}
+    }
+
+COM:enables or disables the activator buttons for a collection of variables in a synchronized fashion

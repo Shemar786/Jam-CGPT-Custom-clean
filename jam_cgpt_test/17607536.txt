@@ -1,0 +1,10 @@
+TDAT:     public String transformPath(String target, String substitute) {
+    	if(target.length()<2 || target.lastIndexOf(Constants.DOT) == -1){
+    		return "";
+    	}
+        final String begin = target.substring(0, target.lastIndexOf(Constants.DOT));
+        final String end = target.substring(target.lastIndexOf(Constants.DOT));
+        return begin + substitute + end;
+    }
+
+COM:transforms a file path by replacing the file extension with a provided substitute string

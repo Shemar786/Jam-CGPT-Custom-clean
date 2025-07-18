@@ -1,0 +1,13 @@
+TDAT: 	public void testImageInvariant() throws Exception {
+		final IMachineRoot mch = createMachine("mch");
+		final IInvariant inv = createInvariant(mch, "inv", "TRUE", false);
+		assertImage("Unexpected image descriptor for invariant",
+				IEventBSharedImages.IMG_INVARIANT_PATH, inv);
+
+		inv.setTheorem(true, null);
+		assertImage(
+				"Unexpected image descriptor for invariant with theorem attribute",
+				IEventBSharedImages.IMG_THEOREM_PATH, inv);
+	}
+
+COM:tests the image descriptor of an invariant in different scenarios and throws an exception if any errors occur

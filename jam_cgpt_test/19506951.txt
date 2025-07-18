@@ -1,0 +1,10 @@
+TDAT: 	public void testCopyIntSameParent() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neParent = createNEPositive(rSource, "parent", null);
+		NamedElement neSource = createNEPositive(neParent, "foo", null);
+		
+		copyPositive(neSource, neParent, null, "bar", false);
+	}
+
+COM:creates two named elements and copies one of them to the other's parent with a new name

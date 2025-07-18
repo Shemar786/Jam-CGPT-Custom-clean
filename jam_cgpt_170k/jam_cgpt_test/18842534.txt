@@ -1,0 +1,9 @@
+TDAT:   public Node getFeed(String source) throws Exception {
+    HTTPUtil httpUtil = new HTTPUtil(this.buddy);
+
+    InputSource isource = new InputSource(httpUtil.getURLStream(source));
+    Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(isource);
+    return (Node) doc.getDocumentElement();
+  }
+
+COM:takes a source URL, retrieves an XML feed from it, parses it into a document object, and returns the document's root element node

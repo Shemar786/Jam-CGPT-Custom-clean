@@ -1,0 +1,15 @@
+TDAT:     public void putStringLenEncoded(String s) {
+        if (s == null) {
+            putInt32(-1);
+        } else {
+            byte[] b = s.getBytes();
+
+            ensureCapacity(b.length + 4);
+            putInt32(b.length);
+            System.arraycopy(b, 0, byteBuffer, position, b.length);
+            position += b.length;
+            length += b.length;
+        }
+    }
+
+COM:encodes a string's length and places it in a buffer along with the string's bytes, checking for null values and updating the buffer's position and length accordingly

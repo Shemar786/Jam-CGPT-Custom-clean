@@ -1,0 +1,16 @@
+TDAT: 	public void setHarvesterStatus(String value) {
+		if (value == null)
+			return;
+		try {
+			if (!adminData.oidExists(Keys.HARVESTER_STATUS)) {
+				adminData.put(Keys.HARVESTER_STATUS, value);
+			}
+			else {
+				adminData.update(Keys.HARVESTER_STATUS, value);
+			}
+		} catch (Exception e) {
+			prtlnErr("Error saving serialized HARVESTER_STATUS: " + e);
+		}
+	}
+
+COM:sets the status of a harvester, or returns without action if the value is null

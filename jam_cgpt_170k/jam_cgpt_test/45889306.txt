@@ -1,0 +1,11 @@
+TDAT: 	private void pickItem(Uri baseUri, Cursor c) {
+
+        int indexID = c.getColumnIndex(android.provider.BaseColumns._ID);
+		long itemId = c.getLong(indexID);
+		Uri url = ContentUris.withAppendedId(baseUri, itemId);
+		
+		setResult(RESULT_OK, new Intent(Intent.ACTION_PICK, url));
+		finish();
+	}
+
+COM:picks an item from a cursor associated with a specified base URI and finishes the current activity

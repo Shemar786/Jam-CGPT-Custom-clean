@@ -1,0 +1,14 @@
+TDAT:     public boolean containsAnyNode(Collection nodes) {
+        boolean  found = false;
+        Iterator it = nodes.iterator();
+
+        while (it.hasNext() && ! found) {
+            NodeType n   = (NodeType) it.next();
+            Integer  key = new Integer(n.typeID);
+            found = container.containsKey(n);
+        }
+
+        return found;
+    }
+
+COM:checks if any nodes in the given collection are present in the container and returns a boolean value

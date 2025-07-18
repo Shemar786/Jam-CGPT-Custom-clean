@@ -1,0 +1,11 @@
+TDAT:   public CoordinateAxis findCoordinateAxis(String name) {
+    if (name == null) return null;
+    for (int i=0; i<coordAxes.size(); i++) {
+      CoordinateAxis v = (CoordinateAxis) coordAxes.get(i);
+      if (name.equals(v.getName()))
+        return v;
+    }
+    return null;
+  }
+
+COM:searches for a CoordinateAxis object in an ArrayList by comparing its name to a specified String and returns the first matching object or null if none are found

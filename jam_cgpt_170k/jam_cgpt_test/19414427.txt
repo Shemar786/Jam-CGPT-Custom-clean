@@ -1,0 +1,17 @@
+TDAT: 	public void testCommandOptions1() {
+
+		Options options = new Options();
+
+		Option option = new Option("m", "module-name", true, "The module name for the command.");
+		options.addOption(option);
+
+		CommandLineParser parser = new PosixParser();
+		try {
+			parser.parse(options, new String[]{"-m", "AAA"});
+			assertEquals("AAA", options.getOption("m").getValue());
+		} catch (ParseException e) {
+			fail(e.getMessage());
+		}
+	}
+
+COM:tests and asserts that a command line argument '-m' with a value of 'AAA' is parsed correctly using Apache's command line parsing library

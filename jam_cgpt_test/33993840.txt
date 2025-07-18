@@ -1,0 +1,17 @@
+TDAT: 	protected void addLinkUrlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_linkWidget_linkUrl_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_linkWidget_linkUrl_feature", "_UI_linkWidget_type"),
+				 UiPackage.Literals.LINK_WIDGET__LINK_URL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the link URL feature of a link widget object

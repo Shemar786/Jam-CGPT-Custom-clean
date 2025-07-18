@@ -1,0 +1,16 @@
+TDAT: 	public void addEntry(String[] data) {
+		DBEntry newEntry = new DBEntry();
+		if (data.length == 6) {
+			newEntry.entryId = Long.parseLong(data[0]);
+			Calendar cal = Calendar.getInstance();
+			cal.setTimeInMillis(Long.parseLong(data[1]));
+			newEntry.entryDate = cal.getTime();
+			newEntry.entryAmount = Integer.parseInt(data[2]);
+			newEntry.entryCategory = data[3];
+			newEntry.entryPerson = data[4];
+			newEntry.entryNote = data[5];
+			this.entries.add(newEntry);
+		}
+	}
+
+COM:adds a new entry to a database if the input data contains six elements, with specific values assigned to each element

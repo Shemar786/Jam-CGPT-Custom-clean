@@ -1,0 +1,16 @@
+TDAT:   public ChatClient (String host, int _port, String id) {
+    setTitle("Jscripture Chat Client"); 
+    hostname = host;
+    port = _port;
+    userid = id;
+    setSize (420, 400);
+
+    // used for listening of windowing events
+    addWindowListener (new WindowMonitor());
+
+    buildComponents();
+    chatTextUpdater = new TextUpdater();
+    initialStart = true;
+  }
+
+COM:creates a chat client with a specified hostname, port, and user ID, sets the title and size of the window, adds a window listener, builds the necessary components, and initializes certain variables

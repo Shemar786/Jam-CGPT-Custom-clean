@@ -1,0 +1,9 @@
+TDAT:     public void validate() {
+        Assert.isTrue((kind != null)
+            && (
+                kind.equals(RENAMED) || kind.equals(RENAMED_RESET) || kind.equals(EQUIVALENT) || kind.equals(ALIAS)
+                || kind.equals(BUNDLED)
+            ), "Invalid kind for conflict: " + kind);
+    }
+
+COM:validates if the "kind" parameter is one of the valid options for a conflict, using the Assert.isTrue method to throw an exception if it's not

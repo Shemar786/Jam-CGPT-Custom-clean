@@ -1,0 +1,17 @@
+TDAT:   public void close() throws SQLException {
+    try {
+      traceQuery(Query.TRL_FETCH, "CLOSE", null);
+      if (stmt != null) {
+        rset.close();
+	stmt.close();
+        rset = null;
+        stmt = null;
+        isFetched = false;
+      }
+      traceTimer(Query.TRL_FETCH, "CLOSE");
+    } catch (SQLException exc) {
+      throw conn.convertException(exc);
+    }
+  }
+
+COM:closes the statement and result set objects associated with a database query, and throws a SQLException if an error occurs

@@ -1,0 +1,14 @@
+TDAT:   public Param getParameterFor(String aName) {
+    if (aName == null) {
+      throw new IllegalArgumentException("The name passed in is null");
+    }
+
+    Param aParam = (Param) _theParameters.get(aName);
+    if (aParam == null && _theParent != null) {
+      aParam = _theParent.getParameterFor(aName);
+    }
+
+    return aParam;
+  }
+
+COM:searches for a parameter with a given name and returns it, and if not found, recursively searches the parent parameter for the same name

@@ -1,0 +1,22 @@
+TDAT: 	public void incomingConnectionCompleted(Connection connection) {
+
+		assert incomingConnections.contains(connection);
+		incomingConnections.remove(connection);
+		
+		Message message = connection.getMessage();
+		
+		if (logger.isDebugEnabled()) {
+			StringBuffer sb = new StringBuffer();
+			sb.append("Peer ");
+			sb.append(getNetworkAddress());
+			sb.append(" received a ");
+			sb.append(message.getClass().getSimpleName());
+			sb.append(" from ");
+			sb.append(message.getSourceAddress());
+			logger.debug(sb.toString());
+		}
+		
+		fireMessageReceived(message.getSourceAddress(), message);
+	}
+
+COM:handles completed incoming connections by removing them from a list, retrieving a message, logging debug information, and firing a message received event with the message and source address

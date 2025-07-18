@@ -1,0 +1,13 @@
+TDAT: 	private JMenu getMenuAdministracion() {
+		if (menuAdministracion == null) {
+			menuAdministracion = new JMenu();
+			menuAdministracion.setText(Messages.getString("gui.GUI.57")); //$NON-NLS-1$
+			menuAdministracion.setIcon(new ImageIcon(
+					"data/icons/package_system.png")); //$NON-NLS-1$
+			menuAdministracion.add(getMenuItemAdminUsuarios());
+			menuAdministracion.add(getMenuItemAdminResorces());
+		}
+		return menuAdministracion;
+	}
+
+COM:returns a JMenu object representing a menu option for administration tasks with submenus for managing users and resources

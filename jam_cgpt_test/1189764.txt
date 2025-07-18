@@ -1,0 +1,11 @@
+TDAT:    public int search(Constant searchkey) {
+      Block childblk = findChildBlock(searchkey);
+      while (contents.getFlag() > 0) {
+         contents.close();
+         contents = new BTreePage(childblk, ti, tx);
+         childblk = findChildBlock(searchkey);
+      }
+      return childblk.number();
+   }
+
+COM:searches for a specific key in a BTree structure and returns the block number where the key is located

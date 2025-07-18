@@ -1,0 +1,14 @@
+TDAT: 	protected KXMLElement outputProtocol(Protocol protocol) {
+		KXMLElement node = new KXMLElement();
+		node.setTagName(PROTOCOL);
+		node.addProperty(CAA, protocol.caa);
+		node.addProperty(TIMEOUT, protocol.timeout);
+		node.addProperty(RETRIES, protocol.retries);
+		node.addProperty(POLLING, protocol.polling);
+		node.addProperty(NBTOPOLL, protocol.nbToPoll);
+		node.addProperty(SYNCHRO, protocol.synchro);
+		node.addProperty(GI, protocol.gi);
+		return node;
+	}
+
+COM:takes a Protocol object and returns a KXMLElement with properties set from the Protocol object

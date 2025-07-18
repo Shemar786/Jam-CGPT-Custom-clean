@@ -1,0 +1,8 @@
+TDAT:     public Object setRow(ResultSet rs) throws SQLException {
+        this.setId(rs.getInt("id"));
+        this.setStudentId(rs.getInt("student_id)"));
+        this.setClassId(rs.getString("class_id"));
+        return this;
+    }
+
+COM:sets the values of an object's fields from a ResultSet and returns the object

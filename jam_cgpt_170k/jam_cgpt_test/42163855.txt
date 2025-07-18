@@ -1,0 +1,15 @@
+TDAT:     public ImageData getImageData(String imageKey) {
+      if (imageKey.equals("NotPersisted")) {
+        return getNotPersistedImageData();
+      }
+      if (imageKey.equals("Dirty")) {
+        return getDirtyImageData();
+      }
+      if (imageKey.equals("Synched")) {
+        return getSynchedImageData();
+      }
+
+      return null;
+    }
+
+COM:receives an image key and returns the corresponding image data, or null if the key is not found

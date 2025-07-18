@@ -1,0 +1,11 @@
+TDAT: 	protected void setupSearchList(RepairTask rtask){
+		System.out.println("t> " + getTime() + " Setting up the equipment location search list.");
+		AirBase base = rtask.getAirBase();
+		// simple search in order of the list, this can be varied by sorting, etc
+		mySearchList = base.getEquipmentLocationList();
+		//System.out.println(mySearchList);
+		mySearchListIterator = mySearchList.listIterator();	
+		
+	}
+
+COM:sets up a search list for equipment locations for a given repair task at an air base

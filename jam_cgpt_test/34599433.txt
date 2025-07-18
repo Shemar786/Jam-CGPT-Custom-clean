@@ -1,0 +1,10 @@
+TDAT: 	public void setSigmaRz( double newSigmaRz) throws IllegalArgumentException, DimensionMismatchException {
+		if (this.dimension != 6)
+			throw new DimensionMismatchException(this.dimension + "D-Punkt hat keine Z-Drehung");
+		if (newSigmaRz>0)
+			this.sigmaRz = newSigmaRz;
+		else
+			throw new IllegalArgumentException("Standardabweichung muss groesser Null sein " + newSigmaRz);
+	}	
+
+COM:sets the value of sigmaRz but throws exceptions if the dimension is not 6 or the newSigmaRz value is not greater than zero

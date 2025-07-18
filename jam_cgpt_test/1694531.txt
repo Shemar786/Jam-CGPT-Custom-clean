@@ -1,0 +1,18 @@
+TDAT: 	private String getUserNameFromCookie() throws Exception {
+		String userName = null;
+		// get user name
+		Cookie[] cookies = servletRequest.getCookies();
+		for (int i = 0; i < cookies.length; i++) {
+			Cookie cookie = cookies[i];
+			if (cookie != null && cookie.getName().equals("platform.username")) {
+				String value = cookie.getValue();
+				userName = DesEncrypter.getInstance().decrypt(value);
+				break;
+			}
+		}
+
+		return userName;
+
+	}
+
+COM:retrieves the username from a cookie and decrypts it using a DesEncrypter instance

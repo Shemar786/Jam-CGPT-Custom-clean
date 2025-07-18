@@ -1,0 +1,12 @@
+TDAT: 	public Document getCanonicalNsdlDcItemRecord() throws Exception {
+		Element root = this.getCanonicalNsdlDcDataStream();
+		if (root == null)
+			throw new Exception("canonicalNsdlDcItemRecord not found in " + this.getHandle());
+		try {
+			return DocumentHelper.createDocument(root);
+		} catch (Throwable t) {
+			throw new Exception("could not create canonicalNsdlDcItemRecord for " + this.getHandle() + ": " + t.getMessage());
+		}
+	}
+
+COM:retrieves a canonicalNsdlDcItemRecord as a document, throwing an exception if the record is not found or cannot be created

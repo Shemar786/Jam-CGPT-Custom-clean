@@ -1,0 +1,14 @@
+TDAT:     private JLayeredPane getLayeredPane() {
+        if (layeredPane != null) return layeredPane;
+        Container c = this.getParent();
+        while (c != null) {
+            if (c instanceof RootPaneContainer) {
+                layeredPane = ((RootPaneContainer)c).getLayeredPane();
+                return layeredPane;
+            }
+            c = c.getParent();
+        }
+        return null;
+    }
+
+COM:retrieves the JLayeredPane associated with the parent RootPaneContainer of the current instance, or returns null if none is found

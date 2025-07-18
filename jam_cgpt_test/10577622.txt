@@ -1,0 +1,17 @@
+TDAT:     public char nextChar() throws DecodingException {
+        if (!nextSeen) {
+            int next = -1;
+
+            if (buffer.readable()) {
+                next = buffer.readByte();
+                read++;
+            } else {
+                throw new NotEnoughDataException();
+            }
+            nextSeen = true;
+            nextChar = (char) next;
+        }
+        return nextChar;
+    }
+
+COM:reads the next byte from a buffer and returns the corresponding character, while throwing an exception if there is not enough data available

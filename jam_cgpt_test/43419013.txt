@@ -1,0 +1,15 @@
+TDAT: 	private JTextField getJTextFieldSearch() {
+		if (jTextFieldSearch == null) {
+			jTextFieldSearch = new JTextField();
+			jTextFieldSearch.setPreferredSize(new Dimension(100, 20));
+			jTextFieldSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+				public void keyReleased(java.awt.event.KeyEvent e) {
+					//Calling the table row filter for searching the components
+					tblFilter();
+				}
+			});			
+		}
+		return jTextFieldSearch;
+	}
+
+COM:returns a search text field, with a defined size and a key listener that calls a table row filter

@@ -1,0 +1,14 @@
+TDAT:     protected int getMaximalContingentSize() {
+        int maxVal = 0;
+        for (final Hashtable<Concept<Oc, A>, Integer> contSizes : this.contingentSizes
+                .values()) {
+            for (final Integer curVal : contSizes.values()) {
+                if (curVal.intValue() > maxVal) {
+                    maxVal = curVal.intValue();
+                }
+            }
+        }
+        return maxVal;
+    }
+
+COM:returns the maximum integer value from nested hash tables of contingent sizes

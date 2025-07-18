@@ -1,0 +1,18 @@
+TDAT:     protected BPELProcess getBPELProcess(BexeeMessage message) {
+
+        BPELProcess process = null;
+        String name = message.getService();
+
+        DAOFactory factory = DAOFactory.getInstance();
+        BPELProcessDAO bpelDAO = factory.createBPELProcessDAO();
+
+        try {
+            process = bpelDAO.find(name);
+        } catch (DAOException e) {
+            log.info("Error trying to find process", e);
+        }
+
+        return process;
+    }
+
+COM:returns a BPELProcess object by retrieving it from a DAO factory based on the service name in a BexeeMessage object

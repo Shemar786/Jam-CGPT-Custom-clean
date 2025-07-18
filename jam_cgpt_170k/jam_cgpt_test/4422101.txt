@@ -1,0 +1,14 @@
+TDAT:   public String serializeContextCoordinates(ContextCoordinates co) throws SharkKBException, SharkNotSupportedException {
+
+    // store serialized stsets
+    Hashtable table = new Hashtable();
+
+    for (int dim = 0; dim < ContextSpace.MAXDIMENSIONS; dim++) {
+      String serializedSTSet = this.serializeROSTSet((InternalROSTSet) co.getSTSet(dim));
+      table.put(new Integer(dim), serializedSTSet);
+    }
+
+    return this.encodeSimpleContextCoordinates(table);
+  }
+
+COM:serializes context coordinates by storing serialized stsets in a Hashtable and returning the encoded simple context coordinates

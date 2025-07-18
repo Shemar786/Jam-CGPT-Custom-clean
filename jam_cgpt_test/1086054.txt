@@ -1,0 +1,11 @@
+TDAT:     public void moveEntered(Move m) {
+        if( !userMoveNeeded ) {
+            System.err.println( "Unexpected user move received from BoardPanel");
+	    return;
+        }
+        userMoveNeeded = false; userMoveRequested = false;
+        this.theHumanPlayer.moveEntered( m );
+        statusLabel.setText( "User move sent to server." );
+    }
+
+COM:receives a user move and sends it to the server, unless a user move is not expected, in which case it prints an error message

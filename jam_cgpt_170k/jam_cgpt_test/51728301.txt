@@ -1,0 +1,10 @@
+TDAT:     public IdentifierTyper cloneTyper() {
+        IdentifierTyper ret = new IdentifierTyper();
+        for (int j = 0; j < entries.size(); j++) {
+            Entry e = (Entry)entries.get(j);
+            ret.addEntry(e.start, e.end, e.var, e.type, e.descr);
+        }
+        return ret;
+    }
+
+COM:clones an instance of the IdentifierTyper class by creating a new instance and adding all the entries from the current instance to it

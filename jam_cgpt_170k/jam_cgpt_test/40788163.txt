@@ -1,0 +1,12 @@
+TDAT:     protected XMPPConnection createConnection() {
+        // Create the configuration for this new connection
+        ConnectionConfiguration config = new ConnectionConfiguration(host, port);
+        config.setCompressionEnabled(Boolean.getBoolean("test.compressionEnabled"));
+        config.setSendPresence(sendInitialPresence());
+        if (getSocketFactory() == null) {
+            config.setSocketFactory(getSocketFactory());
+        }
+        return new XMPPConnection(config);
+    }
+
+COM:creates and returns a new XMPPConnection with various configurations set based on input parameters

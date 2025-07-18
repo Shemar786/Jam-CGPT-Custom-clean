@@ -1,0 +1,20 @@
+TDAT: 	public void deleteAllDocuments() throws IOException {
+		logger.debug("entering deleteAllDocuments()");
+		
+		IndexReader reader = null;
+		try {
+			reader = IndexReader.open(Config.getIndexPath());
+			int numDocs = reader.numDocs();
+			for (int i=0; i<numDocs; i++) {
+				reader.deleteDocument(i);
+			}
+			reader.close();
+			logger.debug("leaving deleteAllDocuments()");
+			
+		} catch (IOException ioe) {
+			logger.error ("problem deleting document from Lucene index",ioe);
+			throw ioe;
+		}
+	}	
+
+COM:deletes all documents from a Lucene index, while logging any errors that may occur

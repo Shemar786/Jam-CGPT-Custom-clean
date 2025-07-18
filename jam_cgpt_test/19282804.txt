@@ -1,0 +1,17 @@
+TDAT:     private void initXMLMarshaller() {
+
+        if (iFactory == null) {
+            try {
+                iFactory = XmlPullParserFactory.newInstance(null, null);
+            } catch (XmlPullParserException xppe) {
+                logger.warn(xppe.getMessage(), xppe);
+            }
+        }
+        try {
+            iSerializer = iFactory.newSerializer();
+        } catch (XmlPullParserException xppe) {
+            logger.warn(xppe.getMessage(), xppe);
+        }
+    }
+
+COM:initializes an XML Marshaller by creating a XmlPullParserFactory and a new XmlSerializer

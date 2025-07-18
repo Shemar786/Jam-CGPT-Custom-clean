@@ -1,0 +1,9 @@
+TDAT:   public void projectRefresh(boolean reset){
+    boolean debug = false;
+    Debug.print("Project Refreshed",debug);
+    reqSQL.updateProjectTable(database1, projListQDS, project1, person1, getStatus(ProjStatusjComboBox));
+    submissionTextArea.setText("Projects Refreshed");
+    setProject(reset);
+  }
+
+COM:refreshes a project, updates project data in a SQL database, sets a submission text area message, and sets the project state based on a boolean parameter

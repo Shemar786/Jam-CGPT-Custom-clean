@@ -1,0 +1,20 @@
+TDAT: 	public boolean providesInventory(ItemType type, InventoryCustomerIfc customer) {
+		if (customer == null)
+	        throw new IllegalArgumentException("Invalid argument. InventoryCustomerIfc customer was null.");			
+
+		// check if the desired requirements (inputs) match what this inventory can do
+		if(myItemType != type)
+			return false;
+		
+		if (allowsBackLogging() != customer.permitReplenishmentBackLogging(type))
+			return false;
+		
+		if (allowsPartialFilling() != customer.permitReplenishmentPartialFilling(type))
+			return false;
+		
+		// if we get here all requirements matched
+		
+		return true;
+	}
+
+COM:checks if an inventory provides a specific type of item based on the customer's desired requirements for replenishment

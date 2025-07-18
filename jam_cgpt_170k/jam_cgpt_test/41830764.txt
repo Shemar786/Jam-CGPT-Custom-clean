@@ -1,0 +1,21 @@
+TDAT: 	protected Dialog onCreateDialog(int id) {
+		AlertDialog.Builder b;
+		switch (id) {
+		case CONTEXTMENU:
+			b = new AlertDialog.Builder(this.getContext());
+			b.setTitle(contextMenu.getTitle());
+			b.setItems(contextMenu.getMenuEntries(),
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							dialog.dismiss();
+							ViewWithContextAndDialog.this
+									.onContextMenuItemClicked(contextMenu
+											.getID(which));
+						}
+					});
+			return b.create();
+		}
+		return null;
+	}
+
+COM:creates a dialog box with a title and options to be selected by the user, and returns it

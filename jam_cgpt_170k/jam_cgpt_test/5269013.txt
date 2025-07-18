@@ -1,0 +1,12 @@
+TDAT: 	public void removeTriggers( long botId ) {
+		try {
+			
+			scheduler.deleteJob( Long.toString(botId), "ImportalJobs");
+			log.debug("Removed triggers for Bot [" + botId + "]");
+		
+		} catch (Exception e) {
+			log.error("Failed to remove trigger(s) for Bot [" + botId + "]", e);
+		}
+	}
+
+COM:removes triggers associated with a specific bot ID from the scheduler and logs the action

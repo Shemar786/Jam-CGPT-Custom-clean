@@ -1,0 +1,10 @@
+TDAT:   public void addPhiReturn(BasicBlock bb, SubRoutine s) {
+    if (phis[bb.getIndex()] == null) {
+      // the type is not used, the rigth type of all operands,
+      // will be defined when passing operands to SSA form.
+      QVar variable = new QVar(var, Constants.TYP_REFERENCE);
+      phis[bb.getIndex()] = new QPhiReturn(variable, s);
+    }
+  }
+
+COM:adds a Phi Return instruction to a basic block if there is no other instruction of that type in the block

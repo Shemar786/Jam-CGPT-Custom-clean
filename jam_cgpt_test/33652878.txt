@@ -1,0 +1,13 @@
+TDAT:     private String getOperatingSystem() {
+        String name = System.getProperty("os.name");
+        if (name.startsWith("Linux")) {
+            return "linux";
+        } else if (name.startsWith("Mac OS X")) {
+            return "macosx";
+        } else if (name.startsWith("Windows")) {
+            return "win32";
+        }
+        return "unknown";
+    }
+
+COM:returns a String indicating the type of operating system being used (linux, macosx, win32, or unknown)

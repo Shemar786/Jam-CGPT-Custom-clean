@@ -1,0 +1,12 @@
+TDAT:     private float distortion(Vector[] currCentroids)  {
+        // currently inefficient
+        // cost could be calculated when determining nearest centroids
+        float cost = 0.0f;
+        int[] nearestCentroids = vectorsToNearestCentroid(currCentroids);
+        for (int i = 0; i < vectorCount; ++i) {
+            cost += vectors[i].distance(currCentroids[nearestCentroids[i]]);
+        }
+        return cost;
+    }
+
+COM:calculates the distortion cost of vectors from their nearest centroids

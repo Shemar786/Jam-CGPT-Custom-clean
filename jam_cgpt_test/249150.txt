@@ -1,0 +1,19 @@
+TDAT: 	public void purgeDatastream(Object[] parameters) throws Exception {
+		logger.debug("entering purgeDatastream");
+		/*
+		QName fedoraType = new QName(Config.getProperty("FEDORA_DEF_API"),
+				"PurgeDatastream");
+		Call call = getConfiguredCall(fedoraType);
+		call.invoke(parameters);
+		*/ //GTG
+		initx();
+		APIM.purgeDatastream(
+			(String) parameters[0], 
+			(String) parameters[1], 
+			(String) parameters[2],
+			(String) parameters[3],
+			(String) parameters[4],
+			((Boolean) parameters[5]).booleanValue());
+	}
+
+COM:purges a datastream from a Fedora repository using the Fedora API

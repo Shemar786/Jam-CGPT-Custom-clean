@@ -1,0 +1,10 @@
+TDAT:     public Dimension getPreferredSize() {
+        if(isPreferredSizeSet())
+            return super.getPreferredSize();
+        Dimension pref = super.getPreferredSize();
+        pref.height = Math.max(minSize.height, pref.height);
+        pref.width = Math.max(minSize.width, pref.width);
+        return pref;
+    }
+
+COM:returns the preferred size of a container after potentially modifying its height and width to be at least the values specified in minSize

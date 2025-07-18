@@ -1,0 +1,14 @@
+TDAT: 	private Writer getWriter(String logFileName) throws IOException {
+		File targetDir = new File(baseDirectory, TARGET_DIRECTORY);
+		File logDir = new File(targetDir, LOGS_DIRECTORY);
+		if (!logDir.exists()) {
+			logDir.mkdirs();
+		}
+		File pomLog = new File(logDir, logFileName);
+		if (!pomLog.exists()) {
+			pomLog.createNewFile();
+		}
+		return new FileWriter(pomLog);
+	}
+
+COM:creates and returns a FileWriter object for a given log file name after creating the necessary directory and file if they don't already exist

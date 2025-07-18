@@ -1,0 +1,11 @@
+TDAT:     public void enqueue(int item, double priority){
+        if(!inQueue.get(item)){
+            q.enqueue(item);
+            inQueue.set(item);
+            priorities[item] = priority;
+        }else{
+            priorities[item] = (priority > priorities[item]) ? priority : priorities[item];
+        }
+    }
+
+COM:adds an item to a priority queue or updates its priority if it already exists in the queue

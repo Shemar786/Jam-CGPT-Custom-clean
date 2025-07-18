@@ -1,0 +1,17 @@
+TDAT: 	protected void addTaskUsesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Task_taskUses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Task_taskUses_feature", "_UI_Task_type"),
+				 WorkspacePackage.Literals.TASK__TASK_USES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "taskUses" feature of the "Task" object

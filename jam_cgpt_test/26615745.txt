@@ -1,0 +1,14 @@
+TDAT:     public Vector getCandidates(String toComplete,Vector commandList){
+        
+        Vector matchingCommands = new Vector();
+        String currentCommand;
+        Enumeration enum = commandList.elements();
+        while (enum.hasMoreElements()){
+            currentCommand = (String)enum.nextElement();
+            if (currentCommand.startsWith(toComplete))
+                matchingCommands.add(0, currentCommand);
+        }
+        return matchingCommands;
+    }
+
+COM:returns a Vector of commands that match a given string, based on a provided list of commands

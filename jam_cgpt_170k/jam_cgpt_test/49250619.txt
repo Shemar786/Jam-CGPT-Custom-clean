@@ -1,0 +1,11 @@
+TDAT:     public void setContent(final String articleContent) {
+        if (articleContent == null) {
+            final RuntimeException ex = new RuntimeException("content parameter must not be null"); //$NON-NLS-1$
+            LOGGER.error("Article.setContent(...): " + ex.getMessage(), ex); //$NON-NLS-1$
+            throw ex;
+        }
+
+        content = articleContent;
+    }
+
+COM:sets the content of an article if the provided content is not null, otherwise it throws a RuntimeException

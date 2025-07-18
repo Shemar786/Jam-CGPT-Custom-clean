@@ -1,0 +1,15 @@
+TDAT: 	protected JButton getBrowseButton() {
+		if (browseButton == null) {
+			browseButton = new JButton();
+			browseButton.setText("Browse & Add ...");
+			browseButton.setMnemonic(KeyEvent.VK_B);
+			browseButton.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					showBrowseDialog();
+				}
+			});
+		}
+		return browseButton;
+	}
+
+COM:returns a JButton object that is used to browse and add files, with a button text, mnemonic, and ActionListener

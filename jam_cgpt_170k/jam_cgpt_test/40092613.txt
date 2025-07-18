@@ -1,0 +1,13 @@
+TDAT:   static public void assertEquals(Set actual, Set expected) {
+    if(actual == expected) return;
+
+    if (actual == null || expected == null) {
+      fail("Sets not equal: expected: " + expected + " and actual: " + actual);
+    }
+
+    if (!actual.equals(expected)) {
+      fail("Sets differ: expected " + expected + " but got " + actual);
+    }
+  }
+
+COM:This is a Java method that compares two sets and fails the test if they are not equal

@@ -1,0 +1,13 @@
+TDAT:         public PACKET getOnePacket(){
+           PACKET[] arr = new PACKET[10];
+           if (hdc == null)
+              return null;
+          
+          PACKET p = new PACKET();
+          lib.WTPacketsGet(hdc, 1,p);
+          lib.WTPacketsGet(hdc, 3,arr);//discard 3 packets
+          return p;
+
+        } 
+
+COM:returns one packet from an array of 10 packets, discards three packets, and returns null if hdc is null

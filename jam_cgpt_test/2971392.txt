@@ -1,0 +1,12 @@
+TDAT:   public int changeSampleError(int sampleNo, int error) {
+    for(int i=0;i<sampleArr.size();i++) {
+      FMSample fms = (FMSample)sampleArr.get(i);
+      if (fms.getSampleNo()==sampleNo) {
+        fms.setError(error);
+        return error;
+      }
+    }
+    return 0;
+  }
+
+COM:changes the error value of a sample object within an ArrayList based on a given sample number and returns the updated error value

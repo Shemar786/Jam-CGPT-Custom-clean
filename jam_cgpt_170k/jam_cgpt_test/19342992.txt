@@ -1,0 +1,12 @@
+TDAT:     private void checkSizeError( FieldDetail fld, Object value, String msg) {
+
+        try {
+            setFldValue(fld, value);
+
+            System.out.println("::> " + msg + " " + value + " :: " + getFldValue(fld));
+            throw new AssertionError("Size Error: " + msg + " " + value + " :: " + getFldValue(fld));
+        } catch (RecordException e) {
+        }
+    }
+
+COM:checks if the size of a field is valid, and prints an error message if it is not

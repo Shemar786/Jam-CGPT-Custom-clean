@@ -1,0 +1,17 @@
+TDAT: 	private SmState checkCondApplic(Condition gcond, SmState st) {
+		if (gcond == null) return st;
+		Set gcset = gcond.extractDisjuncs();
+		Set<BasicState> nstset = new HashSet<BasicState>();
+		for (BasicState bst: st.getStates()) {
+			nstset.addAll(checkBSCondApplic(gcset,bst));
+		}
+		if (nstset.isEmpty()) {
+			// gcond is impossible to satisfy
+			return null;
+		}
+		SmState smst = SmState.getState(this,nstset);
+		state_.add(smst);
+		return smst;
+	}
+
+COM:checks the application of a condition to a state and returns the resulting state

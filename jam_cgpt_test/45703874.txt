@@ -1,0 +1,15 @@
+TDAT: 	private JPanel getEindTijdPanel() {
+		if (eindTijdPanel == null) {
+			jLabel2 = new JLabel();
+			jLabel2.setPreferredSize(new Dimension(41, 20));
+			jLabel2.setText("Eindtijd");
+			jLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+			eindTijdPanel = new JPanel();
+			eindTijdPanel.setLayout(new BorderLayout());
+			eindTijdPanel.add(jLabel2, java.awt.BorderLayout.NORTH);
+			eindTijdPanel.add(getEindTijdTextField(), java.awt.BorderLayout.CENTER);
+		}
+		return eindTijdPanel;
+	}
+
+COM:returns a JPanel containing a JLabel and a JTextfield for entering an end time value

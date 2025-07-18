@@ -1,0 +1,15 @@
+TDAT: 		public FeatureHolder filter(FeatureFilter featureFilter, boolean b) {
+			// What the hell is boolean b for? <= Phil's comment....(but i agree)
+
+			DazzleFeatureHolder newHolder = new DazzleFeatureHolder();
+			Iterator it = this.features();
+			while (it.hasNext()) {
+				Feature feature = (Feature) it.next();
+				if (featureFilter.accept(feature)) {
+					newHolder.addFeature(feature);
+				}
+			}
+			return newHolder;
+		}
+
+COM:takes in a FeatureFilter and a boolean, iterates through a set of Features, adds the accepted features to a new DazzleFeatureHolder, and returns that new holder

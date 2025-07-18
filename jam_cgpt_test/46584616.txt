@@ -1,0 +1,14 @@
+TDAT:     public String getFullJavaType(){
+        String result=this.javaType;
+        if (this.manyToOne){
+            result=this.manyToOneLink.getClazz().getFullClassName();
+        } else {
+            if (this.oneToMany){
+                result=this.OneToManyLink.getClazz().getFullClassName();
+            }
+        }
+        return result;
+
+    }
+
+COM:returns a full Java type based on the values of boolean attributes manyToOne and oneToMany

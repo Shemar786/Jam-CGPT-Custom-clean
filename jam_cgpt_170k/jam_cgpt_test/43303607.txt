@@ -1,0 +1,13 @@
+TDAT:     public void iconify(final Frame frame) {
+        Point loc = getIconifyLocation(frame);
+        if (loc != null) {
+            mouseMove(frame, loc.x, loc.y);
+        }
+        invokeLater(frame, new Runnable() {
+            public void run() {
+                frame.setState(Frame.ICONIFIED);
+            }
+        });
+    }
+
+COM:minimizes a frame window to an icon using mouse and invokeLater

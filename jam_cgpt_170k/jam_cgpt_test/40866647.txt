@@ -1,0 +1,10 @@
+TDAT:     public Font getFont() {
+        if (font == null) {//GEN-END:|357-getter|0|357-preInit
+            // write pre-init user code here
+            font = Font.getDefaultFont();//GEN-LINE:|357-getter|1|357-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|357-getter|2|
+        return font;
+    }
+
+COM:returns the font used by the current object, and if it is null, it sets it to the default font

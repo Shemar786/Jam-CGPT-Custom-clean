@@ -1,0 +1,19 @@
+TDAT:   public void updateEdgeView () {
+   
+    targetPoint = targetLocator.locatePoint( targetPoint );
+    targetPoint = target.localToGlobal( targetPoint );
+    sourcePoint = sourceLocator.locatePoint( sourcePoint );
+    sourcePoint = source.localToGlobal( sourcePoint );
+
+    updateTargetPointView();
+    updateSourcePointView();
+
+    if ( !inLargeGraph ) {
+      updateTargetArrow();
+      updateSourceArrow();
+    }
+
+    updateLine();
+  }
+
+COM:updates the view of an edge by locating and updating the points and arrows

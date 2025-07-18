@@ -1,0 +1,9 @@
+TDAT:    public boolean isSelected(TimeSeries ts) {
+      if (!isSelectedLocation(ts.getLocation())) return false;
+      if (!isSelectedSource(ts.getSource())) return false;
+      if (!isSelectedQuantity(ts.getQuantityId())) return false;
+      if (!intersectsWithTimeInterval(ts.getStartTime(), ts.getStopTime())) return false;
+      return true;
+   }
+
+COM:checks if a TimeSeries object meets certain conditions and returns a boolean value

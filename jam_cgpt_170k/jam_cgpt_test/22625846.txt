@@ -1,0 +1,18 @@
+TDAT: 	public String getStartTime() {
+		String t = doc.get("starttime");
+
+		if (t == null)
+			return DEFAULT;
+		
+		long time = -1;
+		try {
+			time = DateFieldTools.stringToTime(t);
+		} catch (ParseException pe) {
+			prtlnErr("Error in getStartTime(): " + pe);
+		}				
+		if (time <= 0)
+			return "Unknown";
+		return new SimpleDateFormat("h:mm:ss a zzz, EEE MMM d, yyyy").format(new Date(time));
+	}
+
+COM:retrieves and formats the start time of a document using a default or specified format

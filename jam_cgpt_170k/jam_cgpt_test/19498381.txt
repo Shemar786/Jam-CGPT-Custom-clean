@@ -1,0 +1,18 @@
+TDAT: 	public void testDeltaMachine() throws Exception {
+		final IMachineRoot mac = createMachine("cnc");
+		final ISCMachineRoot sc = mac.getSCMachineRoot();
+		final IPORoot po = mac.getPORoot();
+
+		addVariables(mac, makeSList("V1"));
+		addInvariants(mac, makeSList("I1"), makeSList("V1∈BOOL"), true);
+		saveRodinFileOf(mac);
+
+		runBuilder();
+
+		mac.getVariables()[0].setComment("foo", null);
+		saveRodinFileOf(mac);
+
+		runBuilderNotChanged(sc, po);
+	}
+
+COM:tests the functionality of a Delta Machine by creating a machine and adding variables, invariants, and a comment to it, then saves and runs the builder to ensure that the machine is not changed

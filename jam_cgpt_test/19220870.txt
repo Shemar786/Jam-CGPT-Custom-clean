@@ -1,0 +1,13 @@
+TDAT:     private int getTabSizeFromDoc() {
+        int size = DEFAULT_TAB_SIZE;
+        Document doc = getDocument();
+        if (doc != null) {
+            Integer i = (Integer) doc.getProperty(PlainDocument.tabSizeAttribute);
+            if (i != null) {
+                size = i.intValue();
+            }
+        }
+        return size;
+    }
+
+COM:retrieves the tab size value from the document or sets the default value if it is not specified

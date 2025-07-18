@@ -1,0 +1,13 @@
+TDAT: 	public CollectionConfig findCollectionByHandle(String handle) {
+		if (handle == null || handle.trim().length() == 0)
+			return null;
+		for (Iterator i = this.collections.values().iterator(); i.hasNext(); ) {
+			CollectionConfig config = (CollectionConfig) i.next();
+			if (handle.equals(config.getMetadataProviderHandle())) {
+				return config;
+			}
+		}
+		return null;
+	}
+
+COM:searches for a CollectionConfig object using a specified metadata provider handle

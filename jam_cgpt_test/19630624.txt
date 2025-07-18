@@ -1,0 +1,17 @@
+TDAT: 	protected void addDiscoveryUrlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentDefinitionReference_discoveryUrl_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentDefinitionReference_discoveryUrl_feature", "_UI_ComponentDefinitionReference_type"),
+				 WorkflowPackage.Literals.COMPONENT_DEFINITION_REFERENCE__DISCOVERY_URL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "discovery URL" feature of a ComponentDefinitionReference object

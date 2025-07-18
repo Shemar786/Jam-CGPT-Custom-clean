@@ -1,0 +1,13 @@
+TDAT:   public void setWaiting(boolean waiting) {
+    if (!SwingUtilities.isEventDispatchThread()) {
+      Thread.dumpStack();
+      System.err.println("ERROR: DWaitPanel.setWaiting(..) calles outside of Eventdispatching Thread");
+    }
+
+    if (waiting != isIndeterminate()) {
+      setIndeterminate(waiting);
+    }
+    setVisible(waiting);
+  }
+
+COM:sets the waiting state of a panel and displays an error message if called outside the event dispatching thread

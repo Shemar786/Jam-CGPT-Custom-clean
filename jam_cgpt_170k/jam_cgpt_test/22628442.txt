@@ -1,0 +1,13 @@
+TDAT: 	protected void insertToList(List list, String s) {
+		if ((list != null) && (s != null)) {
+			for (int i = 0; i < list.size(); i++) {
+				if (s.compareToIgnoreCase((String) list.get(i)) <= 0) {
+					list.add(i, s);
+					return;
+				}
+			}
+			list.add(s);
+		}
+	}
+
+COM:inserts a string into a list in alphabetical order

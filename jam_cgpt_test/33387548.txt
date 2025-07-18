@@ -1,0 +1,11 @@
+TDAT:   public void setTextVisible(boolean isVisible) {
+    this.textVisible = isVisible;
+    if (this.textVisible) {
+      DOM.setStyleAttribute(textElement, "display", "");
+      redraw();
+    } else {
+      DOM.setStyleAttribute(textElement, "display", "none");
+    }
+  }
+
+COM:sets the visibility of a text element based on a boolean input

@@ -1,0 +1,10 @@
+TDAT: 	private void calculateGuards (Collection<IEvent> events, HashMap<IEvent, Collection<IGuard>> guardMap) throws RodinDBException {
+		for (IEvent event : events) {
+			Collection<IGuard> guards = new ArrayList<IGuard>();
+			for (IGuard guard : event.getGuards())
+				guards.add(guard);
+			guardMap.put(event, guards);
+		}
+	}
+
+COM:calculates guards for a collection of events and stores them in a hashmap

@@ -1,0 +1,16 @@
+TDAT: 		public void setLoadingTimeDistribution(DistributionIfc d) {
+			
+			if (d == null)
+				throw new IllegalArgumentException("Loading Time Distribution was null!");
+			
+			myLoadingTimeDistribution = d;
+			
+			if (myLoadingTimeRV == null){// not made yet
+				myLoadingTimeRV = new RandomVariable(this, myLoadingTimeDistribution);
+			} else { // already had been made, and added to model
+				// just change the distribution
+				myLoadingTimeRV.setRandomSource(myLoadingTimeDistribution);
+			}
+		}
+
+COM:sets the loading time distribution based on a given DistributionIfc object, and creates a new RandomVariable object if one has not already been created

@@ -1,0 +1,14 @@
+TDAT:     protected void firePathChanged(TreePath path) {
+        Object node = path.getLastPathComponent();
+        TreePath parentPath = path.getParentPath();
+        
+        if (parentPath == null)
+            fireChildrenChanged(path, null, null);
+        else {
+            Object parent = parentPath.getLastPathComponent();
+            
+            fireChildChanged(parentPath, getIndexOfChild(parent, node), node);
+        }
+    }
+
+COM:updates the tree model by firing events for changes made to a specific tree path

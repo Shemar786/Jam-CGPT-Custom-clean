@@ -1,0 +1,14 @@
+TDAT:   public void setDelimiter(String val) {
+
+      if ((val == null || "".equals(val))
+      && (delimiter == null || "".equals(delimiter))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(delimiter)) || (updateStatus == NULL_INT_VALUE)) {
+           delimiter = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets the delimiter of a given object to the provided value, but only if it is not already set to that value and is not null or an empty string, and updates a status variable accordingly

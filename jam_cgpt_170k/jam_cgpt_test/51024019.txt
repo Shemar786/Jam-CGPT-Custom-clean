@@ -1,0 +1,19 @@
+TDAT: 	private void indexOndexGraph() {
+		try {
+			// index the Ondex graph
+			File file = null;
+			file = new File("index");
+			System.out.println("Building Lucene Index: "
+					+ file.getAbsolutePath());
+			if(!file.exists())
+				lenv = new LuceneEnv(file.getAbsolutePath(), true);
+			else
+				lenv = new LuceneEnv(file.getAbsolutePath(), false);
+			lenv.setONDEXGraph(graph);
+			System.out.println("Lucene Index created");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:indexes an Ondex graph using Lucene indexing, creating a Lucene index at the specified file location

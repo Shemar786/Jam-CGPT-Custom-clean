@@ -1,0 +1,16 @@
+TDAT:     public boolean bindToVariable(VariableRef ref) {
+        String name = ref.getName();
+        Variable var = getDeclaredVariable(name);
+        
+        if (var != null) {
+            ref.setType(null);
+            ref.setVariable(var);
+            mVariableRefs.add(ref);
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+COM:binds a variable reference to a declared variable and returns a boolean indicating success or failure

@@ -1,0 +1,9 @@
+TDAT:     private LocationSubGroupTreeEditPart getChargeLocationGroup() {
+        if(chargeLocationGroup == null) {
+            setChargeLocationGroup((LocationSubGroupTreeEditPart)createChild(new LocationSubGroupDelegate("ChargeLocations")));
+            addChild(getChargeLocationGroup(), -1);
+        }
+        return this.chargeLocationGroup;
+    }
+
+COM:returns the LocationSubGroupTreeEditPart chargeLocationGroup, creating it if it does not already exist

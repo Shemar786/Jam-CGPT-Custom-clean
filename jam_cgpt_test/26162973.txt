@@ -1,0 +1,11 @@
+TDAT:     public Reader retrieve(Reader rd) throws LibraryException {
+        if (rd == null) {
+            String message = resourceBundleMessageSource.getMessage(
+               "error.reader.retrieve", null, Locale.US);
+            logger.error(message);
+            throw new LibraryException( message );
+        }
+        return retrieveById(rd.getId());
+    }
+
+COM:retrieves a Reader object and throws a LibraryException if the parameter is null

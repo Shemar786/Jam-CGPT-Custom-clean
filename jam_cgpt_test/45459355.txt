@@ -1,0 +1,11 @@
+TDAT: 	private JTextField getJTextField1() {
+		if (jTextField1 == null) {
+			jTextField1 = new JTextField();
+			jTextField1.setBounds(new Rectangle(49, 202, 388, 31));
+			jTextField1.setText(defaultProps.getProperty("blastdb"));
+			jTextField1.setText(applicationProps.getProperty("blastdb"));
+		}
+		return jTextField1;
+	}
+
+COM:retrieves a JTextField object, initializing it with default or application-specific properties if necessary

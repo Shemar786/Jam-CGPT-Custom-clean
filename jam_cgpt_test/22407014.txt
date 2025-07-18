@@ -1,0 +1,16 @@
+TDAT:     private void notifyServerStarted() {
+        synchronized (listeners) {
+            Iterator iterator = listeners.iterator();
+
+            while (iterator.hasNext()) {
+                ServerListener listener = (ServerListener) iterator.next();
+                listener.serverStarted(port);
+            }
+        }
+
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.debug("notified all server listeners about start");
+        }
+    }
+
+COM:notifies all ServerListeners in the listeners set that the server has started on a specified port and logs the event

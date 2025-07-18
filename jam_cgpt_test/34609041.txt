@@ -1,0 +1,10 @@
+TDAT:     private void writeObject(final ObjectOutputStream out) throws IOException {
+        out.writeShort(id);
+        out.writeByte((byte) list.size());
+        for (final Iterator it = list.iterator(); it.hasNext();) {
+            GrammaticalProperties gp = (GrammaticalProperties) it.next();
+            out.writeShort(gp.getId());
+        }
+    }
+
+COM:writes the ID and grammatical properties of a list to an ObjectOutputStream

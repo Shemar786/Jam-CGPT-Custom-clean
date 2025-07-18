@@ -1,0 +1,13 @@
+TDAT:     protected Node findFirstChildNode(final Node parent, final String name) {
+        final NodeList list = parent.getChildNodes();
+        for (int i = 0; i < list.getLength(); i++) {
+            final Node currentNode = list.item(i);
+            if (name.equalsIgnoreCase(currentNode.getLocalName())) {
+                return currentNode;
+            }
+        }
+
+        return null;
+    }
+
+COM:finds and returns the first child node of a given parent node that has a specified name

@@ -1,0 +1,9 @@
+TDAT:     public void prepareInitializers(Compiler compiler, Vector classes) throws PositionedError {
+      cunitContext = new CCompilationUnitContext(compiler, environment, export, classes);
+
+      for (int i = 0; i < typeDeclarations.length ; i++) {
+        typeDeclarations[i].prepareInitializers(cunitContext);
+      }
+    }
+
+COM:prepares initializers for a collection of classes using a compiler and environment, and throws positioned errors if there are any

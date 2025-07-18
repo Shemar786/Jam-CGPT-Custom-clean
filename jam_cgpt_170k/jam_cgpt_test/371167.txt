@@ -1,0 +1,11 @@
+TDAT: 	private void initializeDefaults() {
+		IPreferenceStore store = getPreferenceStore();
+		store.setDefault(P_JARNAME, "<project>_fat.jar");
+        store.setDefault(P_MERGEMANIFEST, true);
+        store.setDefault(P_REMOVESIGNERS, true);
+		store.setDefault(P_SCMAUTOCHECKOUT, true);
+		store.setDefault(P_ESCAPEUPPERCASE, false);
+		store.setDefault(P_CONFIGFILE, ".fatjar");
+	}
+
+COM:sets default values for several preferences in the preference store

@@ -1,0 +1,10 @@
+TDAT:     public Command getOkCommand13() {
+        if (okCommand13 == null) {//GEN-END:|536-getter|0|536-preInit
+            // write pre-init user code here
+            okCommand13 = new Command("MEN\u00DA N\u00D3MINAS", Command.OK, 0);//GEN-LINE:|536-getter|1|536-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|536-getter|2|
+        return okCommand13;
+    }
+
+COM:returns a Command object for a menu item, and if it has not been initialized yet, it initializes it with specified values before returning it

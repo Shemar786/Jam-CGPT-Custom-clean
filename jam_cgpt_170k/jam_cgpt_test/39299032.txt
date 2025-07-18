@@ -1,0 +1,9 @@
+TDAT:     public boolean before(TimeInterval other) {
+        if (other == null) {
+            throw new IllegalArgumentException();
+        }
+        return this.getEnd().before(other.getBegin()) ||
+        ( (this.getEnd().equals(other.getBegin())) && ( ! (this.containsEnd() && other.containsBegin()) ) );
+    }
+
+COM:checks if the end time of a given time interval is before the begin time of another time interval

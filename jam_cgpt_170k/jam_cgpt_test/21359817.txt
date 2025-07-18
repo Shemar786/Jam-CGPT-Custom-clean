@@ -1,0 +1,8 @@
+TDAT:     private void createHistory(SMS sms) {
+        History.Record record = new History.Record(sms.getNumber(), sms.getText(),
+                sms.getGateway(), sms.getName(), sms.getSenderNumber(),
+                sms.getSenderName(), null);
+        history.addRecord(record);
+    }
+
+COM:creates a history record for an SMS message and adds it to a list

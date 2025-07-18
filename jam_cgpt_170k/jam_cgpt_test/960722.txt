@@ -1,0 +1,10 @@
+TDAT: 	private void createHttpClient(String hostName, int port) {
+		this.httpClient = new DefaultHttpClient();
+		/* handling sending via a proxy */
+		if (hostName != null) {
+			HttpHost httpHost = new HttpHost(hostName, port);
+			this.httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, httpHost);
+		}
+	}
+
+COM:sets up a new HTTP client and optionally configures it to use a proxy with the given hostname and port

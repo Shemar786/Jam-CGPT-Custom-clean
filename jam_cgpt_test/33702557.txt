@@ -1,0 +1,16 @@
+TDAT:             public void actionPerformed(ActionEvent e) {
+                out.println(dataField.getText());
+                   String response;
+                try {
+                    response = in.readLine();
+                    if (response == null || response.equals("")) {
+                          System.exit(0);
+                      }
+                } catch (IOException ex) {
+                       response = "Error: " + ex;
+                }
+                messageArea.append(response + "\n");
+                dataField.selectAll();
+            }
+
+COM:handles an action event, reads input from a text field, sends it to a server through a socket connection, receives a response, and appends it to a message area

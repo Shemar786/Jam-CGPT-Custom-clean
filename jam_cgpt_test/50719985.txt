@@ -1,0 +1,17 @@
+TDAT: 	private String getToTokens(String to, JComboBox boxen) {
+
+		StringBuffer sb = new StringBuffer();
+		String selected = (String) boxen.getSelectedItem();
+
+		sb.append(selected + '|');
+
+		int c = boxen.getItemCount();
+
+		for (int x = 0; x < c; x++) {
+			if (!selected.equals(boxen.getItemAt(x)))
+				sb.append((String) boxen.getItemAt(x) + '|');
+		}
+		return sb.toString();
+	}
+
+COM:returns a String of all items in a JComboBox except for the currently selected item separated by vertical bars

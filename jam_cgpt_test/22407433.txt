@@ -1,0 +1,19 @@
+TDAT:     protected int checkString(int initialState) {
+        if (ch != '\"') {
+            return -1;
+        }
+
+        readNextChar();
+
+        while (ch != '\"' && ch != '\n' && ch != EOF) {
+            readNextChar();
+        }
+
+        if (ch != EOF) {
+            readNextChar();
+        }
+
+        return BasicStyleMap.STRING;
+    }
+
+COM:checks for a string by iterating through characters until it finds the closing quote and returns a constant value

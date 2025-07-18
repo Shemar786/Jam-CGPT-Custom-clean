@@ -1,0 +1,8 @@
+TDAT: 	private void inicializeUsersAndLeagues(HttpServletRequest req) {
+		List allLeaguesList = BLMSFacadeSingleton.getInstance().getAllLeagues();
+		req.setAttribute("leaguesList", allLeaguesList);
+		List allUsersList = BLMSFacadeSingleton.getInstance().getAllUsers();
+		req.setAttribute("leaguesUsersList", allUsersList);	
+	}
+
+COM:initializes lists of all leagues and all users using the BLMSFacadeSingleton, and sets them as attributes on the HttpServletRequest object

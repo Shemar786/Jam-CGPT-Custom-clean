@@ -1,0 +1,21 @@
+TDAT:     public void groupCurrentSelection() {
+        if (!selection.isEmpty()) {
+
+            Group gr = new Group(new View(Window.sceneGraph.getView()));
+
+            int i = selection.size();
+            while (i-- > 0) {
+                SceneGraph sg = selection.get(i);
+                gr.add(sg);
+            }
+
+            Window.sceneGraph.add(gr);
+
+            selection.clear();
+            selection.add(gr);
+
+            repaintPanel();
+        }
+    }
+
+COM:groups the currently selected SceneGraph objects into a new Group object and adds it to the Window's sceneGraph

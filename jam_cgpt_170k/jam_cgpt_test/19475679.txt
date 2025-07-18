@@ -1,0 +1,17 @@
+TDAT: 	protected void addInheritsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBInheritedAttribute_inherits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBInheritedAttribute_inherits_feature", "_UI_UMLBInheritedAttribute_type"),
+				 UMLBPackage.Literals.UMLB_INHERITED_ATTRIBUTE__INHERITS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for an inherited attribute to its item property descriptors

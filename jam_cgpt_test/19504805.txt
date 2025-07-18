@@ -1,0 +1,15 @@
+TDAT: 	private Clause nextCandidate() {
+		List<Clause> restrictedCandidates = getCandidatesDependingOnGoal();
+		if (restrictedCandidates.isEmpty()) restrictedCandidates = candidates;
+		int depth = -1;
+		Clause currentClause = null;
+		for (Clause clause : restrictedCandidates) {
+			if (depth == -1 || clause.getOrigin().getDepth() < depth) {
+				depth = clause.getOrigin().getDepth();
+				currentClause = clause;
+			}
+		}
+		return currentClause;
+	}
+
+COM:returns the next candidate Clause based on a list of restricted candidates and their origin depth

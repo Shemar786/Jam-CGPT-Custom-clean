@@ -1,0 +1,20 @@
+TDAT: 	private Document getYahooRequest(String name, String postcode, String country) throws Exception {
+		HttpClient httpClient = new HttpClient();
+		
+		String url = yahooWebServiceBaseUrl+"places.q(%27"+
+			URLEncoder.encode(name,"UTF-8")+"+"+postcode+"+"+country
+			+"%27)?appid="+yahooApiKey+"&format=xml";
+		
+		System.out.println(url);
+		GetMethod getMethod = new GetMethod(url);
+		httpClient.executeMethod(getMethod);
+		
+		int statusCode = getMethod.getStatusCode();
+		String responseBody = getMethod.getResponseBodyAsString();
+		System.out.println(responseBody);
+		if(statusCode!=200)
+			return null;
+		return DocumentHelper.parseText(responseBody);
+	}
+
+COM:sends a request to the Yahoo Places API with a specified name, postcode, and country, and returns the response as an XML document

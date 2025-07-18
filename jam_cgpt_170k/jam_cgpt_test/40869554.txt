@@ -1,0 +1,10 @@
+TDAT:     public Command getBackCommand19() {
+        if (backCommand19 == null) {//GEN-END:|518-getter|0|518-preInit
+            // write pre-init user code here
+            backCommand19 = new Command("Back", Command.BACK, 0);//GEN-LINE:|518-getter|1|518-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|518-getter|2|
+        return backCommand19;
+    }
+
+COM:returns a Command object for navigating back in a Java application, creating a new one if it has not already been initialized

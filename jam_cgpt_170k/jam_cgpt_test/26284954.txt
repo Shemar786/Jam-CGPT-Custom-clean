@@ -1,0 +1,12 @@
+TDAT:     public void rgbSpinnerChangedSlot() {
+        if(!allowSignals) return;
+        allowSignals = false;
+        Color newColor = new Color(
+            ((Integer) redSpin.getValue()).intValue(),
+            ((Integer) greenSpin.getValue()).intValue(),
+            ((Integer) blueSpin.getValue()).intValue());
+        selector.setColor(newColor);
+        allowSignals = true;
+    }
+
+COM:sets the color of a selector based on the values of RGB spinners

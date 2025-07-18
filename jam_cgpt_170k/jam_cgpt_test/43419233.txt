@@ -1,0 +1,14 @@
+TDAT: 	public void rebuildLists(){
+		
+		objectysById = new HashMap<String, Physical2DObject>();
+		agents = new Vector<ActiveObject>();
+		obstacles = new Vector<StaticObject>();
+		payloads = new Vector<PassiveObject>();
+		playgrounds = new Vector<PlaygroundObject>();
+		this.objectysById.put(this.environment.getRootPlayground().getId(), this.environment.getRootPlayground());
+		if(this.environment != null){
+			scanObjectsByPlayground(this.environment.getRootPlayground());
+		}
+	}
+
+COM:rebuilds lists of various types of objects within the environment

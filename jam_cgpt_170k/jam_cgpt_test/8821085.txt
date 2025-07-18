@@ -1,0 +1,13 @@
+TDAT: 	public void setGraphLayoutCache(GraphLayoutCache newLayoutCache) {
+		GraphLayoutCache oldLayoutCache = graphLayoutCache;
+		graphLayoutCache = newLayoutCache;
+		clearOffscreen();
+		firePropertyChange(GRAPH_LAYOUT_CACHE_PROPERTY, oldLayoutCache,
+				graphLayoutCache);
+		if (graphLayoutCache != null
+				&& graphLayoutCache.getModel() != getModel())
+			setModel(graphLayoutCache.getModel());
+		invalidate();
+	}
+
+COM:sets the GraphLayoutCache for a Java Graph object, clears the offscreen cache, updates the cache property and model if necessary, and invalidates the current view

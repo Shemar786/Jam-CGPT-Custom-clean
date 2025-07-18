@@ -1,0 +1,18 @@
+TDAT: 	public int addRecord(RecordRec rec) {
+		int ret = -1;
+
+		String s = dbRecordModel.addRecordtoDB(rec);
+		//System.out.println("PnlRecList - Add Record  >> !" + s + "! " + rec.getRecordName());
+
+		if ("".equals(s)) {
+			dbRecord.checkAndUpdate(rec);
+
+			dbRecordModel.fireTableDataChanged();
+
+			ret = dbRecordModel.getRowCount() - 1;
+		}
+
+		return ret;
+	}
+
+COM:adds a record of type RecordRec to a database and returns the index of the newly added record

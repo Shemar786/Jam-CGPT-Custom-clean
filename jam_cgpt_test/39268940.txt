@@ -1,0 +1,18 @@
+TDAT: 	public double getNumber() {
+		double num = -1;
+		try {
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT RAND()");
+			rs.next();
+			num = rs.getDouble(1);
+			System.out.println(num);
+			stmt.close();
+		} catch (SQLException e) {
+			ErrorLogger.writeExceptionToLogAndPrompt(getName(),"SQL Exception testing the random number seeding.");
+			System.err.println("Error in generating single number.");
+			e.printStackTrace();
+		}
+		return num;
+	}
+
+COM:retrieves a random number from a SQL database using a ResultSet and Statement object, with error handling for SQL exceptions

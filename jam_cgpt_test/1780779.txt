@@ -1,0 +1,11 @@
+TDAT:     public String getText() {
+        if (_node.getNodeType() == Node.TEXT_NODE) {
+            return _node.getNodeValue().trim();
+        } else if (_node == null || !_node.hasChildNodes()) {
+            return "";
+        } else {
+            return NodeUtils.asText( _node.getChildNodes() ).trim();
+        }
+    }
+
+COM:returns the text value of a given node by checking if it is a text node and trimming it, or recursively calling itself on child nodes until a text node is found and returning its trimmed value

@@ -1,0 +1,14 @@
+TDAT: 	public void consumeAlarmAction(String actionSource) {
+
+		MainMenuBar mainMenuBar = MainMenuBar.getInstance();
+
+		if (actionSource.equals("CR")) {
+			mainMenuBar.executeCurrentAlarmPanel(DBDataDesc.ALM_CR);
+		} else if (actionSource.equals("MJ")) {
+			mainMenuBar.executeCurrentAlarmPanel(DBDataDesc.ALM_MJ);
+		} else if (actionSource.equals("MN")) {
+			mainMenuBar.executeCurrentAlarmPanel(DBDataDesc.ALM_MN);
+		}
+	}
+
+COM:consumes an alarm action and executes a corresponding alarm panel based on the action source

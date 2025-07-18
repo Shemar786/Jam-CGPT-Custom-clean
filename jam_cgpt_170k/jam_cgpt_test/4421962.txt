@@ -1,0 +1,19 @@
+TDAT: 	final synchronized protected boolean callListener(KEPRequest msg) {
+    Enumeration lenum = listener.elements();
+    boolean handled = false;
+    while (lenum.hasMoreElements()) {
+      KEPHandler l = (KEPHandler) lenum.nextElement();
+      if (l.handleMessage(msg)) {
+        handled = true;
+      }
+    }
+
+    // that it - bye
+    msg.finished();
+
+//    L.d("Having " + this.listener.size() + " listeners.", this);
+
+    return handled;
+	}
+
+COM:calls listener elements to handle a KEPRequest message and returns a boolean indicating whether the message was handled or not

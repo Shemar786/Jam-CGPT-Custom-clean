@@ -1,0 +1,13 @@
+TDAT:   public void setChildNodesVisible(int level) {
+    for (int i = 0; i < getChildCount(); i++) {
+      VReportRow	child = (VReportRow)getChildAt(i);
+
+      child.setVisible(true);
+
+      if (getLevel() > level + 1) {
+	((VGroupRow)child).setChildNodesVisible(level);
+      }
+    }
+  }
+
+COM:sets the visibility of child nodes of a report row in a hierarchical order up to a specified depth level

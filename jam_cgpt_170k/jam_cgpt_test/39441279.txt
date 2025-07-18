@@ -1,0 +1,11 @@
+TDAT: 	public ColorPixel getJpegImageAverage() throws Exception{
+		
+		BufferedImage bufferedImage = JpegImageUtility.loadImage(image);
+		int width = bufferedImage.getWidth();
+		int height = bufferedImage.getHeight();
+		System.out.println("width = " + width + " height = " + height);
+
+		return getAreaAverage(bufferedImage, 0, 0, width, height);//(long)(average/(width*height));
+	}
+
+COM:loads a JPEG image and returns the average color pixel value of the entire image

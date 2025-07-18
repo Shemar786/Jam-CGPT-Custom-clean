@@ -1,0 +1,14 @@
+TDAT:     public int doEndTag() throws JspException {
+       if (processed && footer != null && footer.length() > 0) {
+          String footerMessage = RequestUtils.message(pageContext, bundle,
+                                                         locale, footer);
+          if (footerMessage != null) {
+             // Print the results to our output writer
+             ResponseUtils.write(pageContext, footerMessage);
+          }
+       }
+       // Continue processing this page
+       return (EVAL_PAGE);
+    }
+
+COM:writes a footer message to the output writer if it meets certain conditions and then continues processing the page

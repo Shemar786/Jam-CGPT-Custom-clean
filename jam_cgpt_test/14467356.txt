@@ -1,0 +1,12 @@
+TDAT:   private void sizeNode() {
+    Dimension d = text.getSize();
+    Insets insets = getInsets();
+
+    d.height += insets.bottom + insets.top + url.getHeight();
+    d.width += insets.left + insets.right;
+    setSize( d );
+
+    url.setLocation( d.width -  insets.right - url.getWidth(), d.height - insets.bottom - url.getHeight() );
+  }
+
+COM:resizes a node by calculating its height and width based on text and URL properties, insets, and then setting its size and location accordingly

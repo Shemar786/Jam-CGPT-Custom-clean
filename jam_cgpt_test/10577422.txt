@@ -1,0 +1,15 @@
+TDAT:     protected void setDestination(final String destination) throws ConfigurationException {
+
+        if (!destination.startsWith(FileSystem.FILE_PROTOCOL)) {
+            throw new ConfigurationException("cannot handle destination " + destination);
+        }
+
+        try {
+            m_baseDirectory = fileSystem.getFile(destination);
+        } catch (FileNotFoundException e) {
+            throw new ConfigurationException("Unable to acces destination " + destination, e);
+        }
+
+    }
+
+COM:sets the destination for a file system and throws a configuration exception if it cannot handle the destination or is unable to access it

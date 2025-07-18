@@ -1,0 +1,16 @@
+TDAT: 	protected void add(Service service) {
+		for (Service serv : services) {
+			if (serv.getIdentifier().equals(service.getIdentifier())) {
+				System.out.println("Service with identifier: " + serv.getIdentifier() + " already added.");
+				return;
+			}
+		}
+
+		System.out.println("ServiceContextManager ADDING Service (" + service.getClass().getName() + ")");
+
+		services.add(service);
+
+		fireServicesChanged(service, ServicesChangedEvent.Type.ADDED);
+	}
+
+COM:adds a new service to a list of services, but first checks if it already exists and prints a message if it does

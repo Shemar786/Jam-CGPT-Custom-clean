@@ -1,0 +1,9 @@
+TDAT:   public void itemStateChanged(ItemEvent e) {
+    if (e.getStateChange() == ItemEvent.DESELECTED) {
+      cm.disconnectBeans(this.meth,this.lBean);
+    } else if (e.getStateChange() == ItemEvent.SELECTED) {
+      cm.reconnectBeans(this.meth,this.lBean);
+    }
+  }
+
+COM:checks if an item is selected or deselected, and based on the state change, either disconnects or reconnects two beans

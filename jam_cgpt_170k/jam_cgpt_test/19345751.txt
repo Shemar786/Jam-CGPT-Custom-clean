@@ -1,0 +1,18 @@
+TDAT: 	public String getErrorMsg(String val) {
+		String retVal = "";
+		//System.out.println("correct Int next");
+
+
+		String ss = val.trim().toUpperCase();
+		if (ss.equals("TRUE") || ss.equals("YES")) {
+			ret = true;
+		} else if (ss.equals("TRUE") || ss.equals("YES")) {
+			ret = false;
+		} else {
+			retVal = "Invalid Boolean";
+		}
+
+		return retVal;
+	}
+
+COM:returns an error message if the input string is not a valid boolean value

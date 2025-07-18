@@ -1,0 +1,10 @@
+TDAT:   private void printLabel() throws IOException, JspException {
+    JspWriter out = this.pageContext.getOut();
+    out.print("<label for='");
+    out.print(getName());
+    out.print("'>");
+    out.print(deriveLabel());
+    out.print("</label>");
+  }
+
+COM:prints a label element using the JSP writer, given a name and the derived label text

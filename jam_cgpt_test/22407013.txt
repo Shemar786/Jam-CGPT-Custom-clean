@@ -1,0 +1,16 @@
+TDAT:     private boolean evaluateProtocol(final Message message) throws IOException {
+        int messageId = message.getId();
+
+        boolean bye = Protocol.BYE.hasId(messageId);
+        if (bye) {
+            evaluateBye();
+        } else if (Protocol.PROJECT.hasId(messageId)) {
+            evaluateProject(message);
+        } else if (Protocol.INPUT_TASK.hasId(messageId)) {
+            evaluateInput(message);
+        }
+
+        return bye;
+    }
+
+COM:evaluates a message's protocol and calls the appropriate evaluation method, then returns a boolean indicating whether or not the message is a "BYE" message

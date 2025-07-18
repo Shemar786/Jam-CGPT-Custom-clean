@@ -1,0 +1,16 @@
+TDAT: 	public void removeModelListener(ModelListener listener) {
+		synchronized (modelListeners) {
+			if(dispatchingEvents) {
+				// in order to avoid comodification exceptions when
+				// iterating over the model listeners we store the
+				// new listener in a separate list and add it later
+				log.trace("iteration currently taking place, will remove listener later");
+				listenersToRemove.add(listener);
+			} else {
+				log.trace("removing listener");
+				modelListeners.remove(listener);
+			}
+		}
+	}
+
+COM:removes a given ModelListener from the list of modelListeners and handles it appropriately when it is called during the dispatching of events

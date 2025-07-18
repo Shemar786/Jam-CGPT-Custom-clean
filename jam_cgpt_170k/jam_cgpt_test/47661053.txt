@@ -1,0 +1,17 @@
+TDAT: 	protected void addTargetPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AggregationDisciplineToTask_target_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AggregationDisciplineToTask_target_feature", "_UI_AggregationDisciplineToTask_type"),
+				 WorkspacePackage.Literals.AGGREGATION_DISCIPLINE_TO_TASK__TARGET,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to a list of item property descriptors for a given object

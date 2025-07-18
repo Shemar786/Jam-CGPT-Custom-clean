@@ -1,0 +1,11 @@
+TDAT: 	private void deletePuzzle( int puzzleIndex ) {
+		PuzzleInfo puzzleInfo = puzzleList.getPuzzle( puzzleIndex );
+		if( !Window.confirm( "Really delete " + puzzleInfo.getGenre() + 
+				" puzzle \"" + puzzleInfo.getTitle() + "\"? This action cannot be undone!" ) ) 
+			return;
+		
+		puzzleList.deletePuzzle( puzzleIndex );
+		puzzleList.notifyObservers();
+	}
+
+COM:deletes a puzzle from a list after confirming the deletion with the user

@@ -1,0 +1,14 @@
+TDAT: 	public void consoleHelp() {
+		this.showHead();
+		LOG.info("Usage:");
+		LOG.info("<option> [<tool>] [<technique(s)>]");
+		LOG.info("   - <option>");
+		LOG.info("     create | clean | run");
+		LOG.info("   - <tool> : junit3 | junit3 | testng");
+		LOG.info("     junit3 | junit3 | testng");
+		LOG.info("   - <technique(s)>");
+		LOG
+				.info("     functional | structural | navigation | performance | semiauto");
+	}
+
+COM:displays help information for a console application, including usage options for creating, cleaning, and running tests using different testing tools and techniques

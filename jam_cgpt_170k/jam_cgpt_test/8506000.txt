@@ -1,0 +1,15 @@
+TDAT:     public void appendToPrefix(String str) {
+        if (prefix == null) {
+            prefix = str;
+            currentOptions = getOptions(prefix);
+        } else {
+            prefix += str;
+            if (currentOptions == null) {
+                currentOptions = getOptions(prefix);
+            } else {
+                currentOptions = getCurrentOptions(prefix, currentOptions);
+            }
+        }
+    }
+
+COM:appends a string to a current prefix and updates a current options list based on the new prefix

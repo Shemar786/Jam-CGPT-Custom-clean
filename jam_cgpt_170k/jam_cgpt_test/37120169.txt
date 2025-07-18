@@ -1,0 +1,12 @@
+TDAT:     private void addId(String id, Object target) {
+
+        if ((id != null) && (id.length() > 0)) {
+            if (this.ids.containsKey(id)) {
+                throwConfigurationError("IDs must be unique");
+            } else {
+                this.ids.put(id, target);
+            }
+        }
+    }
+
+COM:adds an ID to a given target object, throwing a configuration error if the ID already exists in a map

@@ -1,0 +1,12 @@
+TDAT: 	public ResultSet getFilmsQueued(int usersID){
+		ResultSet rs = null;
+		try{
+			String query = "SELECT f.* FROM (wishlist w INNER JOIN film f ON w.filmID = f.id) WHERE w.usersID ='" + usersID + "'";
+			rs = DBManager.FillResultSet(query);
+		}catch(Exception e){
+			System.out.println("getFilmsQueued" + e);
+		}
+		return rs;
+	}	
+
+COM:returns a ResultSet containing all films queued by a user identified by their ID

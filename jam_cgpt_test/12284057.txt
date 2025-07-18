@@ -1,0 +1,15 @@
+TDAT: 	public void addResourceForReloading(File iFile, String iEntityName) {
+		synchronized (fileReloadingMapping) {
+			List<String> resources = fileReloadingMapping.get(iFile);
+			if (resources == null) {
+				resources = new ArrayList<String>();
+				fileReloadingMapping.put(iFile, resources);
+
+				// REGISTER DESCRIPTOR FILE TO BE WAKED UP ON RELOADING
+				ObjectContext.getInstance().getComponent(AutoReloadManager.class).addResource(iFile, this);
+			}
+			resources.add(iEntityName);
+		}
+	}
+
+COM:adds a resource for automatic reloading and wakes up the descriptor file when reloaded

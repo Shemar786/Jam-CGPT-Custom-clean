@@ -1,0 +1,17 @@
+TDAT: 	protected void addTypeProviderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBtypedElement_typeProvider_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBtypedElement_typeProvider_feature", "_UI_UMLBtypedElement_type"),
+				 UMLBPackage.Literals.UML_BTYPED_ELEMENT__TYPE_PROVIDER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to an itemPropertyDescriptor list for a certain object, which includes various details such as resource location and literal values for certain UMLBtypedElement features

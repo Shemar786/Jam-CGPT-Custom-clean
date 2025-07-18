@@ -1,0 +1,13 @@
+TDAT:         private String literal(Object obj) {
+            if (obj == null) {
+                return "NULL";
+            } else if (obj instanceof String) {
+                return literal((String) obj);
+            } else if (obj instanceof Number) {
+                return literal((Number) obj);
+            } else {
+                return literal(obj.toString());
+            }
+        }
+
+COM:converts an object to a String representation, handling null, String, and Number types differently

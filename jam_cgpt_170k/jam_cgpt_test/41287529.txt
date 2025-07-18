@@ -1,0 +1,14 @@
+TDAT:     public void play(){
+        if(currentState == SimulatorState.STOPPED){
+            setSimulationTime(0);
+            simItem.initialize();
+            startTimer();
+            setState(SimulatorState.PLAYING);
+        }
+        else if(currentState == SimulatorState.PAUSED){
+            startTimer();
+            setState(SimulatorState.PLAYING);
+        }
+    }
+
+COM:plays the simulation by initializing it and starting the timer if the current state is either STOPPED or PAUSED

@@ -1,0 +1,8 @@
+TDAT:     public void firePropertyChange(String propertyName, Object oldValue, Object newValue) {
+	PropertyChangeEvent event = new PropertyChangeEvent(this, propertyName, oldValue, newValue);
+	// we need to iterate backwards over the list - figures, don't it
+	for (int i = listeners.size() - 1; i >= 0; i--)
+	    ((PropertyChangeListener) listeners.get(i)).propertyChange(event);
+    }
+
+COM:fires a PropertyChangeEvent to all registered PropertyChangeListeners, notifying them of a change in property value

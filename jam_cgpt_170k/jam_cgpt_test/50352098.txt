@@ -1,0 +1,12 @@
+TDAT:     public String formatCount(String user) {
+        int count = savedGames.getSavedGames(user).size();
+        String savedGamesMessage = "";
+        if (count > 0) {
+            String s = count == 1 ? "" : "s";
+            savedGamesMessage = count + " saved game" + s;
+        } else
+            savedGamesMessage = "no saved games";
+        return savedGamesMessage;
+    }
+
+COM:returns a message stating the number of saved games associated with a given user account

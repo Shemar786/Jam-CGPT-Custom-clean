@@ -1,0 +1,20 @@
+TDAT: 	public String getString(String key) {
+		Object o = attributes.get(key);
+		String s = null;
+
+		if (o == null) {
+		} else if (o instanceof String) {
+			s = (String) o;
+		} else if (o instanceof String[]) {
+			String[] sa = (String[]) o;
+			if (sa.length > 0) {
+				s = sa[0];
+			}
+		} else {
+			throw new ClassCastException(key + " is not a String");
+		}
+
+		return s;
+	}
+
+COM:returns a string value associated with a given key in a map, with support for multiple types including array of strings

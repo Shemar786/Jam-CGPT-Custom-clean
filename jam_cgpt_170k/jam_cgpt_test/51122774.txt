@@ -1,0 +1,18 @@
+TDAT:    private Connection getConnectionFromFactory() {
+      Connection con = null;
+
+      try {
+         if (!isFactorySetup) {
+            setupConnectionFactory();
+         }
+
+         con = connectionFactory.getConnection();
+      } catch (Exception se) {
+         logCat.error("::getConnectionFromFactory - cannot retrieve a connection from the connectionFactory",
+                      se);
+      }
+
+      return con;
+   }
+
+COM:attempts to retrieve a connection from a connection factory and returns the connection, or null if an exception occurs

@@ -1,0 +1,13 @@
+TDAT: 		public void run() {
+
+			boolean harvestAll = false;
+			boolean harvestAllIfNoDeletedRecord = true;
+
+			// For scheduled harvests, only harvest all if deletions are not supported:
+			new HarvestThread(shUid, harvestAll, harvestAllIfNoDeletedRecord, false).start();
+
+			//new auto harvest setting which would harvest all records every time.
+			//new HarvestThread(shUid, true, false, false).start();
+		}
+
+COM:initializes and starts two instances of the HarvestThread class with different settings

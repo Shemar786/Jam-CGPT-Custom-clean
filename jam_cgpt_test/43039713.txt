@@ -1,0 +1,11 @@
+TDAT:     private void definePackage(final String name) {
+        int p = name.lastIndexOf('.');
+        if (p < 0)
+            return;
+        final String pack = name.substring(0, p);
+        if (getPackage(pack) != null)
+            return;
+        definePackage(pack, null, null, null, null, null, null, null);
+    }
+
+COM:defines a package and checks if the package already exists before creating it

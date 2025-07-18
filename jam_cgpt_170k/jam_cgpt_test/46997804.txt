@@ -1,0 +1,17 @@
+TDAT:     private void readNextAndNotify() {
+        Thread t = new Thread(new Runnable() {
+            public void run() {
+                try {
+                    if (readNext()) {
+                        lastModificationStamp = new Date();
+                        fireChangeEvent();
+                    }
+                } catch (IOException e) {
+                    // Ignore
+                }
+            }
+        });
+        t.start();
+    }
+
+COM:runs a new thread that reads input, updates a modification time stamp, and triggers a change event if the input has changed

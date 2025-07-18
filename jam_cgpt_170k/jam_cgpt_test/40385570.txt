@@ -1,0 +1,18 @@
+TDAT:     public void correctWind(double windpower) {
+    	if(getFixedposition()==false){
+    		double velocity=this.getHorizontalVelocity();
+    		if (velocity != 0) {
+    				this.setX (this.getX() + velocity);
+    		} else {
+    			velocity = 0;
+    		}
+    		if(this.getOnground() == false) {
+    			velocity += windpower;
+    		}else{
+    			velocity = 0; 
+    			}
+    		this.setHorizontalVelocity(velocity);
+    	}
+    }
+
+COM:calculates and corrects the horizontal velocity of an object based on wind power

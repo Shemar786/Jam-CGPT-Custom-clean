@@ -1,0 +1,22 @@
+TDAT: 	public void go() {
+		float temp;
+		for (int i = 0; i < 4; ++i) {
+			String s;
+			pilot.reset();
+
+			pilot.travel(10f);
+			s = "Distance: " + pilot.getTravelDistance();
+			RConsole.println(s);
+			LCD.drawString(s, 0, 2 * i);
+
+			pilot.rotate(90f);
+			temp = pilot.getAngle();
+			if (temp < 0)
+				temp += 360;
+			s = "Angle: " + temp;
+			RConsole.println(s);
+			LCD.drawString(s, 0, 2 * i + 1);
+		}
+	}
+
+COM:moves a robot four times, measures its distance and rotation, and prints the results to the console and LCD display

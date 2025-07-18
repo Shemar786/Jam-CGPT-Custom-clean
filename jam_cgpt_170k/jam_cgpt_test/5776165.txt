@@ -1,0 +1,11 @@
+TDAT:    public boolean moveCreatures() {
+      boolean ret = false;
+      for(Iterator e = chunks_.values().iterator(); e.hasNext();) {
+         RuntimeChunk chunk = (RuntimeChunk)e.next();
+         boolean b = chunk.moveCreatures(adapter_);
+         if(!ret) ret = b;
+      }
+      return ret;
+   }
+
+COM:iterates through chunks of data and moves the creatures within them, returning a boolean value indicating whether any creatures were successfully moved

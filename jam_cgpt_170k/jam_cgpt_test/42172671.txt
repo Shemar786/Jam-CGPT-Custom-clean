@@ -1,0 +1,17 @@
+TDAT:   protected void addGuideUrlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBDriver_guideUrl_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBDriver_guideUrl_feature", "_UI_DBDriver_type"),
+				 DbPackage.Literals.DB_DRIVER__GUIDE_URL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the guide URL feature of a DBDriver object

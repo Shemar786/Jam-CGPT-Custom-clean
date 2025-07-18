@@ -1,0 +1,11 @@
+TDAT:     public void submitDocuments(Collection<Document> documents, String description, XdsContentCode contentCode) throws DocumentException {
+        //TODO Decide if all valid submits should be done before signalling an error
+        if (documents == null || documents.size() == 0)
+            throw new DocumentException("Invalid document to submit");
+
+        for (IDocumentConsumer consumer: consumers) {
+            consumer.submitDocuments(documents, description, contentCode); 
+        }
+    }
+
+COM:submits a collection of documents to a group of consumers, throwing a DocumentException if the collection is empty or null

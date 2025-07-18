@@ -1,0 +1,17 @@
+TDAT: 	private ModsModsDocument extractMODS() throws PackagerException {
+		ModsModsDocument mods = null;
+		XmlObject xobj[] = fedoramets.selectPath("declare namespace mods='"
+				+ METSProfile.MODS_NS + "'; //mods:mods");
+		if (xobj.length > 0) {
+			try {
+				mods = ModsModsDocument.Factory.parse(xobj[0].getDomNode());
+			} catch (XmlException e) {
+				throw new PackagerException(
+						"Problem parsing MODS document from Fedora "
+								+ e.getMessage());
+			}
+		}
+		return mods;
+	}
+
+COM:extracts the MODS document from a Fedora system and returns it as a ModsModsDocument object, and throws a PackagerException if there is a problem parsing the document

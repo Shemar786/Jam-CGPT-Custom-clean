@@ -1,0 +1,5 @@
+TDAT:     public ColumnBindingInfos addComboBoxColumn(final String label, final String path, String el, Class<?> type, Object subType, Map settings) {
+        return mapping.addComboBoxColumn(label, path, el, type, subType, settings, showStatus);
+    }
+
+COM:adds a combo box column to a mapping with specified label, path, EL, class type, subtype, and settings, and returns the column binding information

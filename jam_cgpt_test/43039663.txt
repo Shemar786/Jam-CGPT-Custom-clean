@@ -1,0 +1,10 @@
+TDAT:     private void addTextField(String attribute, String label, GridBagConstraints c) {
+        c.gridx = 0;
+        add(getMapping().createStatusDependentBinding(attribute, new StatusLabel(label)), c);
+        c.gridx++;
+        final JTextField field = new JTextField(10);
+        field.setMinimumSize(field.getPreferredSize());
+        add(attribute, field, c);
+    }
+
+COM:adds a labeled text field to a grid layout using the provided constraints

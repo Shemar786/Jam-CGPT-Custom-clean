@@ -1,0 +1,20 @@
+TDAT: 	public void add(Picture picture, final boolean background) {
+		int size;
+
+		if (picture.getValid())
+			if (background)
+				synchronized (mPending) {
+					mPending.add(picture);
+					// size = mPending.size ();
+					// if (mThumbelina.mReadyProgress.getMaximum () < size)
+					// mThumbelina.mReadyProgress.setMaximum (size);
+					// mThumbelina.mReadyProgress.setValue (size);
+					mPending.notify();
+				}
+			else
+				place(picture, false);
+		else
+			System.out.println(picture.getIdentity().toString() + " is invalid");
+	}
+
+COM:adds a Picture object to a queue and optionally updates a progress bar if a boolean flag is set

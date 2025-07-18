@@ -1,0 +1,18 @@
+TDAT: 	protected void doInit(String xpath, Element parent, RendererHelper rhelper) throws Exception {
+		init(xpath, parent, rhelper);
+
+		if (schemaNode == null) {
+			typeName = "";
+			typeDef = null;
+			throw new Exception("Renderer can't find schemaNode for " + normalizedXPath);
+		}
+		else {
+			typeDef = schemaNode.getTypeDef();
+			typeName = typeDef.getQualifiedName();
+		}
+		if (schemaNode.isHeadElement())
+			prtln(report() + "\n");
+
+	}
+
+COM:initializes and checks the schemaNode for a specific xpath and throws an exception if the schemaNode is not found

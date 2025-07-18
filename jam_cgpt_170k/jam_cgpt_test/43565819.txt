@@ -1,0 +1,17 @@
+TDAT: 	private void checkLanguages(List languages1, List languages2) {
+		if (languages1 == null && languages2 == null) {
+			return;
+		}
+		if (languages1 == null) {
+			assertEquals("wrong size", 0, languages2.size());
+		} else {
+			assertEquals("wrong size", languages1.size(), languages1.size());
+			Iterator it1 = languages1.iterator();
+			Iterator it2 = languages2.iterator();
+			while (it1.hasNext()) {
+				checkLanguage((Language) it1.next(), (Language) it2.next());
+			}
+		}
+	}
+
+COM:checks two lists of programming languages for equality

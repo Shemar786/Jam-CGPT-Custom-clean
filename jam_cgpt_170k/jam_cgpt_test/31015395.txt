@@ -1,0 +1,11 @@
+TDAT:   public void readMessFrom(LSBReader source,int length,int player) throws IOException {
+    content=new StringBuffer(length);
+    content.setLength(length);
+    for (int j=0;j<length;j++) {
+      char c=(char)(source.readUnsignedByte()-MESSCODE);
+      if (c=='\015') c='\012';
+      content.setCharAt(j,c);
+    }
+  }
+
+COM:reads a message from an LSBReader source and converts the content into a StringBuffer with a specified length and a specific player, while handling potential IO exceptions

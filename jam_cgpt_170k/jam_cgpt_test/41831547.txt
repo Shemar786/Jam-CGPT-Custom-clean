@@ -1,0 +1,14 @@
+TDAT: 	public String getOfferingName(int offeringID) {
+		Cursor c = db.query(Offering_TABLE, new String[] { Offering_name }, ID
+				+ "=" + offeringID, null, null, null, null);
+
+		String ret = null;
+
+		if (c.moveToFirst()) {
+			ret = c.getString(0);
+		}
+		c.close();
+		return ret;
+	}
+
+COM:retrieves the offering name from a database table based on the offering ID provided as a parameter

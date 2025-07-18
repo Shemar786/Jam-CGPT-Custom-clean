@@ -1,0 +1,10 @@
+TDAT:     public void addResourceHeader( String name, String header ) {
+        WebResource resource = (WebResource) _resources.get( asResourceName( name ) );
+        if (resource == null) {
+            resource = new WebResource( "" );
+            _resources.put( asResourceName( name ), resource );
+        }
+        resource.addHeader( header );
+    }
+
+COM:adds a header to a specified WebResource, creating a new WebResource if necessary

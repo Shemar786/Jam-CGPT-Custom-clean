@@ -1,0 +1,12 @@
+TDAT:     public void testRemoveMyEvent() {
+        System.out.println("removeMyEvent");
+        
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.removeMyEvent();
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the removal of an event from a SystemClient_DBImpl instance and generates a default call to fail for the test case

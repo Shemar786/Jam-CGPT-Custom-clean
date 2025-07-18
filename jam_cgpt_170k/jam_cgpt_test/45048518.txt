@@ -1,0 +1,15 @@
+TDAT: 	protected boolean validXML(File document) throws ExecutorException{
+		boolean b = false;
+		try{
+			XMLReader reader = XMLReaderFactory.createXMLReader();
+			reader.parse(document.getAbsolutePath());
+			b=true;
+		} catch (SAXException e) {
+			b=false;
+		} catch (IOException e) {
+			throw new ExecutorException(e,ExecutorErrorCodes.EXECUTOR_READING_ERROR+" "+document.getName());
+		}
+		return b;
+	}
+
+COM:checks if a given XML file is valid, and returns a boolean indicating the validity of the document

@@ -1,0 +1,12 @@
+TDAT: 	protected Element getStaticSimpleValue(String xpath) {
+		prtln("\t getStaticSimpleValue()");
+		Element valueDiv = DocumentHelper.createElement("div")
+			.addAttribute("class", "static-value");
+		Element valueElement = valueDiv.addElement("bean__write")
+			.addAttribute("name", formBeanName)
+			.addAttribute("property", "valueOf(" + xpath + ")")
+			.addAttribute("filter", "false");
+		return valueDiv;
+	}
+
+COM:returns an XML element containing a static simple value retrieved using the provided XPath expression

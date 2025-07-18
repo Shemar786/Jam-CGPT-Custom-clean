@@ -1,0 +1,11 @@
+TDAT:     public void setEmployeeSheet(Sheet sheet) {
+        columnName = new String[5];
+        columnName[0] = "EmployeeID";
+        columnName[1] = "Name";
+        columnName[2] = "Address";
+        columnName[3] = "Phone Number";
+        columnName[4] = "Department ";
+        this.sheet = sheet;
+    }
+
+COM:sets the column names and employee information sheet for employee data

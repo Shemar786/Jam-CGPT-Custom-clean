@@ -1,0 +1,17 @@
+TDAT: 	protected void addEnabledPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AnimationTransition_enabled_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AnimationTransition_enabled_feature", "_UI_AnimationTransition_type"),
+				 AnimationMetamodelPackage.Literals.ANIMATION_TRANSITION__ENABLED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for an animation transition's enabled feature

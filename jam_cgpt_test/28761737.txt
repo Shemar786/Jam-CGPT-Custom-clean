@@ -1,0 +1,15 @@
+TDAT:   private void actionSignature() {
+    Configuration config = Configuration.getConfiguration();
+    try {
+      textNewSection.getDocument().insertString(
+          textNewSection.getCaretPosition(),
+          config.getString(
+              null,
+              ConfigurationValueString.SIGNATURE),
+          null);
+    } catch (BadLocationException e) {
+      //
+    }
+  }
+
+COM:inserts a signature as a string into a specified position in a text document using a configuration value

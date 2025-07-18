@@ -1,0 +1,15 @@
+TDAT:     public Rectangle2D getRanges() {
+        
+        double minX = 0;
+        double maxX = m_N * m_period;
+        double minY = -Math.abs(m_amplitude);
+        double maxY = -minY;
+        
+        return new Rectangle2D.Double(
+            minX, minY,
+            (maxX-minX), (maxY-minY)
+        );
+        
+    }
+
+COM:returns a Rectangle2D object with the specified dimensions based on the values of the input variables

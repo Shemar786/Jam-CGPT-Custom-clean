@@ -1,0 +1,21 @@
+TDAT: 	private File copyArtifact(File file) throws MojoExecutionException {
+		String fileName = file.getName();
+		File copy = new File(libDirectory, fileName);
+		if (!copy.exists()) {
+			try {
+				copy.createNewFile();
+			}
+			catch (IOException e) {
+				throw new MojoExecutionException("Could not create new File " + fileName, e);
+			}
+		}
+		try {
+			copyFile(file, copy);
+		}
+		catch (IOException e) {
+			throw new MojoExecutionException("Error Copying file " + fileName, e);
+		}
+		return copy;
+	}
+
+COM:copies an artifact/file into a specified directory and returns the copied file

@@ -1,0 +1,13 @@
+TDAT:   public void set(Object o){
+    if(o == null){
+      this.value = o;
+    }
+    else if(type.isAssignable(o)){
+      this.value = o;
+    }
+    else{
+      throw new IllegalArgumentException("Invalid value: " + o + " for type: " + type.getName());
+    }
+  }
+
+COM:sets the value of an object as long as it is not null and is assignable to the specified type, otherwise it throws an IllegalArgumentException

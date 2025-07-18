@@ -1,0 +1,13 @@
+TDAT: 	public void testAddCountryWithUUIDGenerator() throws Exception {
+		CountryWithUUID country1 = new CountryWithUUID();
+		country1.setCountryId("KR");
+		country1.setCountryName("대한민국");
+
+		String countryCode = (String) session.save(country1);
+		assertTrue("fail to generate a new countryCode.", countryCode
+				.indexOf("#") != -1);
+		assertNotNull("fail to add a new country with UUID generator.",
+				countryCode);
+	}
+
+COM:tests the adding of a new country with a UUID generator and asserts that the countryCode is successfully generated and the country is added

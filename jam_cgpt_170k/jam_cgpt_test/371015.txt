@@ -1,0 +1,13 @@
+TDAT: 	private Set getPackagesForSelectedResources(JarPackageData jarPackage) {
+		Set packages= new HashSet();
+		int n= fJarPackage.getElements().length;
+		for (int i= 0; i < n; i++) {
+			Object element= fJarPackage.getElements()[i];
+			if (element instanceof ICompilationUnit) {
+				packages.add(((ICompilationUnit) element).getParent());
+			}
+		}
+		return packages;
+	}
+
+COM:returns a Set of package names for selected resources from a JarPackageData object that contain ICompilationUnit elements

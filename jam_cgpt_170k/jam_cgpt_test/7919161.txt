@@ -1,0 +1,20 @@
+TDAT: 	public void startListening() {
+		listening = true;
+		while(listening)
+		{
+		    try {
+		    	DatagramPacket packet = 
+		    		new DatagramPacket(new byte[MAX_PACKET_SIZE], MAX_PACKET_SIZE);
+		    	datagramSocket.receive(packet);
+		    	byte[] data = packet.getData();
+		    	System.out.println(data[0] + " " + data[1] + " " + data[2] + " " + data[3]);
+		    } catch (SocketException e) {
+		    	e.printStackTrace();
+		    } 
+		    catch (IOException e) {
+		    	e.printStackTrace();
+		    }
+		}
+	}
+
+COM:continuously listens for incoming datagrams on a socket and prints the first four bytes of the received data to the console

@@ -1,0 +1,17 @@
+TDAT:   public void mark(int mark){
+    if(mark < _capacity){
+      _markPos = 0;
+      _markOffset = mark; 
+    }
+    else{
+      int pos      = mark/_capacity;
+      int offset   = mark%_capacity;
+      if(pos >= _arrayCount){
+        throw new IndexOutOfBoundsException(""+mark);
+      }
+      _markPos    = pos;
+      _markOffset = offset;
+    }
+  }
+
+COM:sets a "mark" position in an array, either directly or by calculating the position based on a given mark value and the array's capacity

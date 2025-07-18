@@ -1,0 +1,17 @@
+TDAT: 	protected void addNetIPPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveComponent_netIP_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveComponent_netIP_feature", "_UI_EveComponent_type"),
+				 EvesimPackage.Literals.EVE_COMPONENT__NET_IP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_NetworkPropertyCategory"),
+				 null));
+	}
+
+COM:adds a property descriptor for a net IP feature in an Evesim package

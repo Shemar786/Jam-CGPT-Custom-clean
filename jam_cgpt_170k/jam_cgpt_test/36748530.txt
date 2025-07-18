@@ -1,0 +1,14 @@
+TDAT:     public void printScores(String playerName) {
+        try {
+            // Enumerate the records using the comparator and filter
+            // implemented above to sort by game score.
+            RecordEnumeration re = recordStore.enumerateRecords(this, this,
+                    true);
+            printScoresHelper(re);
+        } catch (RecordStoreException rse) {
+            System.out.println(rse);
+            rse.printStackTrace();
+        }
+    }
+
+COM:takes a playerName as input, sorts the game scores of that player using a comparator and filter, and prints the scores

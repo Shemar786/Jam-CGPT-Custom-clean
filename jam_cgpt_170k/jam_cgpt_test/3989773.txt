@@ -1,0 +1,16 @@
+TDAT:     public Data readData(String type, String id) throws DataStoreException {
+        Iterator   iter = this.stores.values().iterator();
+        DataStore  store;
+        Data       data;
+
+        while (iter.hasNext()) {
+            store = (DataStore) iter.next();
+            data = store.readData(type, id);
+            if (data != null) {
+                return data;
+            }
+        }
+        return this.defaultStore.readData(type, id);
+    }
+
+COM:reads data of a given type and ID from multiple data stores and returns the data if found, otherwise retrieves it from the default store

@@ -1,0 +1,7 @@
+TDAT:     private String createTruncateTableStatement(TransactionMessage.TruncateTableStatement truncateTableStatement) {
+        String schemaName = truncateTableStatement.getTableMetadata().getSchemaName();
+        String tableName = truncateTableStatement.getTableMetadata().getTableName();
+        return "TRUNCATE TABLE `"+schemaName+"`.`"+tableName+"`";
+    }
+
+COM:creates a SQL statement to truncate a specified table

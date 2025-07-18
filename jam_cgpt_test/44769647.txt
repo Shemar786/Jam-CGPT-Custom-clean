@@ -1,0 +1,19 @@
+TDAT: 	public void addAssociation(ComponentListener component, ListenableComponent target) {
+		if ( component != null && target != null && component != target)
+		{
+			if (!components.containsNode(component))
+				components.addNode(component);
+			
+			if (!components.containsNode(target))
+				components.addNode(target);
+			
+			DEdge<ComponentListener, ListenableComponent> association = new DEdge<ComponentListener, ListenableComponent>(component, target);
+			if (!components.containsEdge(association))
+			{
+				components.addEdge(association);
+				target.addComponentListener(component);
+			}
+		}
+	}
+
+COM:adds a listener component to a target component, creating a bidirectional association between them, as long as both components are not null and not the same

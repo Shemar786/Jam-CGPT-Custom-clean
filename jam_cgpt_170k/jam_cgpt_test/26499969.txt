@@ -1,0 +1,15 @@
+TDAT:   public String getNamespaceURIFor(String aPrefix) {
+    String aNamespace = null;
+
+    // Get the namespace list for the prefix
+    LinkedList aNamespaceList = (LinkedList) _theNamespaceMapping.get(aPrefix);
+
+    // Get the current namespace URI, if it exists
+    if ((aNamespaceList != null) && !aNamespaceList.isEmpty()) {
+      aNamespace = (String) aNamespaceList.getFirst();
+    }
+
+    return aNamespace;
+  }
+
+COM:returns the namespace URI associated with a given prefix, if it exists

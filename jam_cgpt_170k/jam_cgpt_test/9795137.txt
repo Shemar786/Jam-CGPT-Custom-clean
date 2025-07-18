@@ -1,0 +1,8 @@
+TDAT: public boolean isPageComplete() {
+	if (geologName.getText().equals("")) return false;
+//	else if (abstractModelName.getText().equals("")) return false;
+	else if (interpretButton.getSelection() && locationPathField.getText().equals("")) return false;
+	else 	return true;
+}
+
+COM:checks whether a page is complete based on the input values of certain fields and returns a boolean value

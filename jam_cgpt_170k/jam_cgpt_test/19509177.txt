@@ -1,0 +1,15 @@
+TDAT: 	protected IProofTreeNode getNextReviewedSubgoal(IProofTreeNode node) {
+		if (node.getProofTree() != pt) {
+			node = pt.getRoot();
+		}
+		return node.getNextNode(true, new IProofTreeNodeFilter() {
+			@Override
+			public boolean select(IProofTreeNode n) {
+				int confidence = n.getConfidence();
+				return (confidence > IConfidence.PENDING && confidence <= IConfidence.REVIEWED_MAX);
+			}
+			
+		});
+	}
+
+COM:returns the next reviewed subgoal in the proof tree starting from the given node

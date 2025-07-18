@@ -1,0 +1,10 @@
+TDAT:     public void update(Document doc) {
+      if (doc.getLength() > 0) {
+        wiz.getButtonManager().getAction(wiz.NEXT_OPTION).setEnabled(true);
+      }
+      else {
+        wiz.getButtonManager().getAction(wiz.NEXT_OPTION).setEnabled(false);
+      }
+    }
+
+COM:updates the status of a button based on the length of the document passed as a parameter

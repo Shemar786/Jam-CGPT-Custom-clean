@@ -1,0 +1,14 @@
+TDAT:     public void MoveDown(int vertex, int amount) {
+        if (vertex == -1) {
+            for (int i = 0; i < npoints; i++) {
+                intypoints[i] += amount;
+                ypoints[i] = (int) intypoints[i];
+            }
+        } else if (vertex < npoints) {
+            intypoints[vertex] += amount;
+            ypoints[vertex] = (int) intypoints[vertex];
+        }
+        invalidate();
+    }
+
+COM:moves a vertex in a shape down by a certain amount

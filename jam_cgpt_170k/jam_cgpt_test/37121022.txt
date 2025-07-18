@@ -1,0 +1,15 @@
+TDAT:     protected void processPeerEvent(EventRole role, Object data) {
+
+        if (role == Widget.ENABLED_EVENT_ROLE) {
+            if (hasFocus()) {
+                final boolean disabled = !((Boolean) data).booleanValue();
+                if (disabled && (this.focusGroup != null)) {
+                    this.focusGroup.nextFocus();
+                }
+            }
+        }
+
+        super.processPeerEvent(role, data);
+    }
+
+COM:processes events related to enabling and disabling widgets and handles focus changes

@@ -1,0 +1,15 @@
+TDAT: 	public void GlobalUpdatePheromone( ) {
+	    double   d_tau;
+	    int NumCities = Problem.NumCities;
+//	    TRACE ( printf("global pheromone update\n"); );
+
+	    d_tau = 1.0 / (double) TourLen;
+	    for ( int i = 0 ; i < NumCities ; i++ ) {
+	    	int j = Tour[i];
+	    	int h = Tour[i+1];
+	    	Problem.Pheromone[j][h] += d_tau;
+	    	Problem.Pheromone[h][j] = Problem.Pheromone[j][h];
+	    }
+	}
+
+COM:updates the pheromone levels in a given problem's pheromone matrix based on a specified tour length and tour of cities

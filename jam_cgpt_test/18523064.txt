@@ -1,0 +1,18 @@
+TDAT: 	private ITestStep fromText(Text text) {
+		Element verify = new Element("verifyText");
+		verify.setAttribute("text", text.getText());
+		if (text.isNot())
+		{
+			Element not = new Element("not");
+			not.addContent(verify);
+			not.setAttribute("description", "Checking text NOT present: " + text.getText());
+			return  new TestStep(not);
+		}
+		else
+		{
+			verify.setAttribute("description", "Checking text present: " + text.getText());
+			return  new TestStep(verify);
+		}
+	}
+
+COM:converts a Text object to an ITestStep object that checks whether a certain text is present or not

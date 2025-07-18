@@ -1,0 +1,13 @@
+TDAT: 	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof PermissionsImpl))
+			return false;
+		PermissionsImpl other = (PermissionsImpl) obj;
+		boolean equal = owner == other.getOwner() || (owner != null && owner.equals(other.getOwner()));
+		equal = equal && readersAsSet().equals(other.getReaders());
+		equal = equal && writersAsSet().equals(other.getWriters());
+		return equal;
+	}
+
+COM:checks if two objects of type PermissionsImpl are equal based on their owner, readers, and writers

@@ -1,0 +1,16 @@
+TDAT: 	public IPath findSourcePath(IPluginBase pluginBase, IPath sourceLibraryPath) {
+		if (pluginBase.getId() == null || pluginBase.getVersion() == null) {
+			return null;
+		}
+		IPath relativePath = getRelativePath(pluginBase, sourceLibraryPath);
+		IPath result = searchUserSpecifiedLocations(relativePath);
+		if (result == null) {
+			result = searchBundleManifestLocations(pluginBase);
+			if (result == null) {
+				result = searchExtensionLocations(relativePath);
+			}
+		}
+		return result;
+	}
+
+COM:searches for a specified source library path within a plugin and returns the path to the library if found or null if not found

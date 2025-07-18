@@ -1,0 +1,18 @@
+TDAT: 	public FileView getView(int[] rows) {
+
+	    if (rows == null || rows.length == 0) {
+	        return null;
+	    }
+	    DataStoreStd<AbstractLine> selectedLines
+	    		= new DataStoreStd<AbstractLine>(layout, rows.length);
+
+	    for (int i = 0; i < rows.length; i++) {
+	    	if (rows[i] >= 0) {
+	    		selectedLines.add(this.getLine(rows[i]));
+	    	}
+	    }
+
+        return new FileView(selectedLines, baseFile, columnMapping);
+	}
+
+COM:retrieves a view of selected rows from a file and returns it as a FileView object

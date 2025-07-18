@@ -1,0 +1,14 @@
+TDAT: 	public RubyModule getOrCreateModule(String name) {
+		IRubyObject module = objectClass.getConstantAt(name);
+		if (module == null) {
+			module = defineModule(name);
+		} else if (getSafeLevel() >= 4) {
+			throw newSecurityError("Extending module prohibited.");
+		} else if (!module.isModule()) {
+			throw newTypeError(name + " is not a Module");
+		}
+
+		return (RubyModule) module;
+	}
+
+COM:returns a RubyModule object with the given name, creating it if it doesn't exist or throwing an error if certain conditions aren't met

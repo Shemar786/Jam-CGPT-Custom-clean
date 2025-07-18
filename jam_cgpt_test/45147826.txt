@@ -1,0 +1,12 @@
+TDAT:   public void paintComponent(Graphics g) {
+    super.paintComponent(g);
+    switch (showing) {
+      case Coin.SIDE_HEADS:
+        g.drawImage(heads, 0, 0, this);
+        break;
+      case Coin.SIDE_TAILS:
+        g.drawImage(tails, 0, 0, this);
+    }
+  }
+
+COM:paints an image on a component based on the value of a variable 'showing'

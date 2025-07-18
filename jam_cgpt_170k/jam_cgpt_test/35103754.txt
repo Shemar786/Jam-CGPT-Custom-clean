@@ -1,0 +1,15 @@
+TDAT:   private BilddetailsPanel getPBilddetails() {
+
+    if (pBilddetails == null) {
+
+      pBilddetails = new BilddetailsPanel(this.getTBilddetails(), kern);
+      pBilddetails.addAenderungsListener(new AenderungsListener() {
+        public void valueChanged() {
+          pAlbum.refreshUI();
+        }
+      });
+    }
+    return pBilddetails;
+  }
+
+COM:returns an instance of BilddetailsPanel with an attached AenderungsListener and refreshes the UI when values are changed

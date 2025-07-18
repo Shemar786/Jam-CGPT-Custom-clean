@@ -1,0 +1,7 @@
+TDAT:     public void updateSpamTokens(Connection conn) throws java.sql.SQLException {
+        updateTokens(conn, getSpamTokenCounts(), sqlQueries.getSqlString("insertSpamToken", true), sqlQueries.getSqlString("updateSpamToken", true));
+
+        setMessageCount(conn, sqlQueries.getSqlString("updateSpamMessageCounts", true), getSpamMessageCount());
+    }
+
+COM:updates the spam token and message counts in a given SQL database connection using pre-defined SQL queries

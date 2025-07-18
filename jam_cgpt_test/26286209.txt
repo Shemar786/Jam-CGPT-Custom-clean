@@ -1,0 +1,8 @@
+TDAT:     public void setValue(Number value) {
+        try {
+            model.setValue(value);
+        } catch(IllegalArgumentException e) {}
+        textField.setText(prefix + format.format(model.getValue(), new StringBuffer(), new FieldPosition(0)).toString() + suffix);
+    }
+
+COM:sets a value for a model and updates a textField with a formatted string representation of the value

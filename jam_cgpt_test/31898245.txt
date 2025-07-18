@@ -1,0 +1,14 @@
+TDAT:   public JTextField getLengthField() {
+    /* Returns the lengthField property value. */
+    if (fieldLengthField == null) {
+      try {
+        fieldLengthField = new JTextField();
+      } catch (Throwable exception) {
+        System.err.println("Exception creating lengthField property.");
+      }
+    };
+
+    return fieldLengthField;
+  }
+
+COM:returns the value of the lengthField property, which is a JTextField object, and creates it if it doesn't exist

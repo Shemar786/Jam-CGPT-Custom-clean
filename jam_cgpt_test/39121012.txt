@@ -1,0 +1,17 @@
+TDAT:     private Node expr(Node end) {
+        Node prev = null;
+        for (;;) {
+            Node node = sequence(end);
+            if (prev == null) {
+                prev = node;
+            } else {
+                prev = new Branch(prev, node);
+            }
+            if (peek() != '|') {
+                return prev;
+            }
+            next();
+        }
+    }
+
+COM:creates a sequence of nodes and branches them based on whether there is a "|" symbol present, and returns the final node

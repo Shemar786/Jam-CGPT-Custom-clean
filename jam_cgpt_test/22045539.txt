@@ -1,0 +1,14 @@
+TDAT:     public Complex sin(){
+	double r = real();
+	double i = imaginary();
+	
+	if( i == 0 ){
+	    /* avoid returing negative zero (-0.0) for the imaginary part  */
+	    return new Complex( StrictMath.sin( r ), 0 );
+	} else {
+	    return new Complex( StrictMath.sin( r ) * StrictMath.cosh( i ),
+				StrictMath.cos( r ) * StrictMath.sinh( i ) );
+	}
+    }
+
+COM:computes the sine of a Complex number object, taking into account the real and imaginary parts

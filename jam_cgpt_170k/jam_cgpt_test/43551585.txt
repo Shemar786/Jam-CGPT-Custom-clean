@@ -1,0 +1,10 @@
+TDAT:     public void makePhotoSet(String description, int numberinset) throws Exception {
+        PhotoSetDAO psDAO = (PhotoSetDAO)PhotoSetDAO.getInstance();
+        PhotoSetBO psBO = (PhotoSetBO)psDAO.create();
+        psBO.setNuminSet(numberinset);
+        psBO.setDescription(description);
+        psDAO.save(psBO);
+        
+    }
+
+COM:creates and saves a new PhotoSet object with a given description and number of photos in the set

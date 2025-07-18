@@ -1,0 +1,27 @@
+TDAT: 	public void processFile(String filename) throws InterruptedException, DisplayException{
+		spassFilename = filename;
+		spassFile = new File(filename);
+		//Loops through each dataset and creates each collection.
+			if(progressBar.wasTerminated()){
+				throw new InterruptedException();
+			}
+			try {
+				
+				createNewCollection();
+					readFileAndCreateParticles();
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					throw new DisplayException("message");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					throw new DisplayException("message");
+				}
+				
+			
+				particleNumber++;
+		
+	}
+
+COM:processes a file by creating collections and particles, and handles exceptions related to number format and input/output errors, while throwing InterruptedException and DisplayException

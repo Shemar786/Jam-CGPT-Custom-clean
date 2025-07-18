@@ -1,0 +1,21 @@
+TDAT: 	private String formatInt(int iValue, int minDigits) {
+		String result = String.valueOf(Math.abs(iValue));
+
+		int zeroCount = minDigits - result.length();
+		if (zeroCount > 0) {
+			StringBuffer buf = new StringBuffer(minDigits);
+			if (iValue < 0) {
+				buf.append('-');
+			}
+			for (int i = 0; i < zeroCount; i++) {
+				buf.append('0');
+			}
+			buf.append(result);
+
+			result = buf.toString();
+		}
+
+		return result;
+	}
+
+COM:formats an integer by padding it with zeros up to a specified number of minimum digits

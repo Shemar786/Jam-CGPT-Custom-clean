@@ -1,0 +1,12 @@
+TDAT:   protected void trailRecord(int rec) {
+    // check if trailing needed
+    if (! form.inTransaction() || isRecordTrailed(rec)) {
+      return;
+    }
+
+    // copy record to trail area
+    copyRecord(rec, getBufferSize() + rec, false);
+    setRecordTrailed(rec, true);
+  }
+
+COM:records a trailing entry of a specified record, if it is not already trailed

@@ -1,0 +1,10 @@
+TDAT:     public Command getExitCommand9() {
+        if (exitCommand9 == null) {//GEN-END:|559-getter|0|559-preInit
+            // write pre-init user code here
+            exitCommand9 = new Command("Exit", Command.EXIT, 0);//GEN-LINE:|559-getter|1|559-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|559-getter|2|
+        return exitCommand9;
+    }
+
+COM:returns a Command object for exiting the program and initializes it if necessary

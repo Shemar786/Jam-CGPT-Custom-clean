@@ -1,0 +1,9 @@
+TDAT:   public void setAccess(int value) {
+    assert this != form.getActiveBlock() || activeField == null :
+      "current block: " + form.getActiveBlock() + "; current field: " + activeField;
+    for (int i = 0; i < fields.length; i++) {
+      fields[i].setAccess(value);
+    }
+  }
+
+COM:sets the access value for a group of fields, with an assertion check for current block and field

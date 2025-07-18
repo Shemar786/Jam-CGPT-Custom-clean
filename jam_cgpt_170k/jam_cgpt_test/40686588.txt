@@ -1,0 +1,14 @@
+TDAT:   public void testExtract() throws Exception {
+    System.out.println("extract");
+    
+    File sourceRoot = null;
+    
+    List<ClassNode> expResult = null;
+    List<ClassNode> result = CoreExtractorAST.extract(sourceRoot);
+    assertEquals(expResult, result);
+    
+    // TODO review the generated test code and remove the default call to fail.
+    fail("The test case is a prototype.");
+  }
+
+COM:This is a JUnit test method that calls the CoreExtractorAST.extract method with a null sourceRoot parameter and compares the expected and actual results using assertEquals, while also including a fail statement as a placeholder test case

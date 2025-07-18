@@ -1,0 +1,9 @@
+TDAT:     public void close() throws org.xmldb.api.base.XMLDBException {
+        try {
+            this.stub.close(this.collectionTransport);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e);
+        }
+    }
+
+COM:closes a collection transport and throws an XMLDBException if there is a RemoteException

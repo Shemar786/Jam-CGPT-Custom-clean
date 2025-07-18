@@ -1,0 +1,15 @@
+TDAT: 	public List findByKeyword(String keyword) {
+		log.debug("finding TblProjectActivity instance with keyword: " + keyword);
+		try {
+			String queryString = "from TblProjectActivity as model where lower(model.tblActivity.title) like ?";
+			getHibernateTemplate().setMaxResults(Constants.HIBERNATE_MAX_RESULT);
+			getHibernateTemplate().setFetchSize(Constants.HIBERNATE_FETCH_SIZE);
+			return getHibernateTemplate().find(
+					queryString, new Object[] { keyword });
+		} catch (RuntimeException re) {
+			log.error("find by keyword failed", re);
+			throw re;
+		}
+	}
+
+COM:finds instances of TblProjectActivity where the title of the related tblActivity contains a given keyword using Hibernate

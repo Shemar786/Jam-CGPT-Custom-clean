@@ -1,0 +1,17 @@
+TDAT: 	protected void addSchedulablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TechnicRMLL73_schedulable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TechnicRMLL73_schedulable_feature", "_UI_TechnicRMLL73_type"),
+				 TechnicRMLL73Package.Literals.TECHNIC_RMLL73__SCHEDULABLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a schedulable feature in a TechnicRMLL73 object to an item property descriptor list

@@ -1,0 +1,10 @@
+TDAT:   public void setDestination(Point2D pt) {
+    destPt = pt;
+    srcPt.setLocation(srcBounds.getX()+(srcBounds.getWidth()/2.0),srcBounds.getY()+(srcBounds.getHeight()/2.0));
+	
+    updateSourcePoint();
+    setCoords(srcPt,destPt);
+    repaint();
+  }
+
+COM:sets the destination point for a graphical object and updates its source point before repainting it

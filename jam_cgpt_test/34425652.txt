@@ -1,0 +1,9 @@
+TDAT:     private void docsLink(ZWriter wr, String f, String s) throws Exception {
+        wr.writeExc("<a href=\"");
+        wr.writeExc(f);
+        wr.writeExc("\">");
+        docsWrite(wr, s);
+        wr.writelnExc("</a>");
+    }
+
+COM:writes a hyperlink tag to a ZWriter object with the given file path and display text

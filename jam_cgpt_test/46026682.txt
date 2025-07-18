@@ -1,0 +1,21 @@
+TDAT: 	protected void netPlayerInit(GameEngine engine, int playerID) {
+		netPrevPieceID = Piece.PIECE_NONE;
+		netPrevPieceX = 0;
+		netPrevPieceY = 0;
+		netPrevPieceDir = 0;
+		netPlayerSkin = 0;
+		netReplaySendStatus = 0;
+		netRankingRank = new int[2];
+		netRankingRank[0] = -1;
+		netRankingRank[1] = -1;
+		netIsPB = false;
+		netIsNetRankingDisplayMode = false;
+		netAlwaysSendFieldAttributes = false;
+
+		if(netIsWatch) {
+			engine.isNextVisible = false;
+			engine.isHoldVisible = false;
+		}
+	}
+
+COM:initializes various variables for the network player in the game engine, and updates certain visibility settings depending on whether the player is watching or not

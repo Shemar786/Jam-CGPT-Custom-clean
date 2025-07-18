@@ -1,0 +1,17 @@
+TDAT: 	private boolean setupRightWindowForSynchronization(Collection collection) {
+		Component rightWindow = mainSplitPane.getBottomComponent();
+		
+		if (rightWindow instanceof SyncAnalyzePanel) {
+			SyncAnalyzePanel sap = (SyncAnalyzePanel) rightWindow;
+			
+			if (sap.containsCollection(collection)) { 
+				sap.selectCollection(collection);
+				return false;
+			}
+		}
+		
+		mainSplitPane.setBottomComponent(new SyncAnalyzePanel(this, db, synchronizedPane, collection));
+		return true;
+	}
+
+COM:sets up a synchronization panel in the main split pane for a given collection and returns a boolean indicating whether or not the selection was successful

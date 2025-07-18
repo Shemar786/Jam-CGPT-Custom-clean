@@ -1,0 +1,14 @@
+TDAT: 	protected void testEvent(String message, IEvent evt, String expected) {
+		try {
+			assertNotNull(message + ": The event must not be null", evt);
+			assertEquals(message + ": Incorrect event", expected, evt
+					.getLabel()
+					+ ":" + evt.getConvergence() + ":" + evt.isExtended());
+		} catch (RodinDBException e) {
+			e.printStackTrace();
+			fail("There should be no exception");
+			return;
+		}
+	}
+
+COM:tests an event by checking if it is not null and comparing its label, convergence, and extension against an expected value

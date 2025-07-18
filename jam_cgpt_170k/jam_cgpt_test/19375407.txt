@@ -1,0 +1,15 @@
+TDAT:   public Iterator getFullNameIterator() {
+    ClassFilter filter = new ClassFilter();
+    filter.add(Entity.class);
+    Block node = this;
+    Vector entities = new Vector();
+    
+    while (filter.isOkay(node)) {
+      entities.insertElementAt(node.getValue(),0);
+      node = node.getParent();        
+    }
+    
+    return entities.iterator();
+  }
+
+COM:returns an iterator that iterates through the full names of all entities in a block hierarchy

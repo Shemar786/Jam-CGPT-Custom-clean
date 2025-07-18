@@ -1,0 +1,7 @@
+TDAT:   private CVariant functionRad(Stack stack) throws CExpressionError {
+    int params = getValue(stack, 0).getInt();
+    checkParamCount(params, 1);
+    return new CSoftVariant(Math.toRadians(getValue(stack, 1).getFloat()));
+  }
+
+COM:takes a stack of values, converts the first parameter to an integer, checks that there is only one additional parameter, and then returns a new CSoftVariant with the second parameter converted to radians

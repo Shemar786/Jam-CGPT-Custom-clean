@@ -1,0 +1,21 @@
+TDAT: 	public void updateDublinCore(String itemPID, Map map) throws InternalException {
+		
+		logger.debug("entering updateDublinCore " + itemPID);
+		try {
+			DublinCore dc = new DublinCore();
+			dc.setFields(map);
+			itemMgr.updateDublinCore(itemPID, dc);
+			
+			ItemInfoBean ibean = searchMgr.searchForItem(itemPID);
+			if(ibean != null){
+				searchMgr.indexItem(itemPID);
+			}
+		
+		} catch (Exception e) {
+			logger.error("error updating dublin core", e);
+			throw new InternalException(e);
+		}
+		
+	}
+
+COM:updates the Dublin Core metadata of an item with the specified itemPID using the map parameter and throws an InternalException if there are any errors

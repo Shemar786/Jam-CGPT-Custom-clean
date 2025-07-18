@@ -1,0 +1,18 @@
+TDAT: 	private JMenu createFileMenu() {
+		JMenu fileMenu = new JMenu("File");
+		fileMenu.setMnemonic('f');
+
+		JMenuItem importFile = new JMenuItem("Import File into conference...");
+		importFile.setMnemonic('i');
+		fileMenu.add(importFile);
+
+		JMenuItem saveFile = new JMenuItem("Save current document contents...");
+		saveFile.setMnemonic('s');
+		fileMenu.add(saveFile);
+
+		fileMenu.add(closeAction);
+
+		return fileMenu;
+	}
+
+COM:creates a JMenu object with items for importing, saving, and closing a file

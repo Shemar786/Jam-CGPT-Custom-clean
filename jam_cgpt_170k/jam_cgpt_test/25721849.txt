@@ -1,0 +1,14 @@
+TDAT: 	private void initBuckets(IField[] fields) {
+		buckets.clear(); // BUG #867594
+		try {
+			boolean countStatics = getPrefs().countStaticAttributes();
+			for (IField field : fields) {
+				if (countStatics || ((field.getFlags() & Flags.AccStatic) == 0)) {
+					buckets.put(field.getElementName(), new HashSet<String>());
+				}
+			}
+		} catch (JavaModelException e) {
+		}
+	}
+
+COM:initializes the "buckets" data structure by clearing it and then populating it with new entries based on "fields" input, excluding static attributes if specified in preferences

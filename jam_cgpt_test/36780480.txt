@@ -1,0 +1,11 @@
+TDAT:     private int getQueueWaitTime(String r, int submittime, int qwt){
+	for(int i=0; i<resources.get(r).size(); i=i+3){
+	    if((submittime<=Integer.parseInt(resources.get(r).get(i+1)))&&
+	       (Integer.parseInt(resources.get(r).get(i+1))<=(submittime+qwt))){
+		qwt = qwt + (Integer.parseInt(resources.get(r).get(i+2)) - Integer.parseInt(resources.get(r).get(i+1)));
+	    }//System.out.println("qwt ("+r+"): "+qwt);
+	}
+	return qwt;
+    }
+
+COM:calculates the queue wait time based on the input resource, submission time and current queue wait time

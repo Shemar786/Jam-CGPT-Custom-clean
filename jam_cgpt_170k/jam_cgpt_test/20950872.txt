@@ -1,0 +1,17 @@
+TDAT: 	private void createHeader(LockedFile file) throws SQLIOException {
+		if (file.getSize() > 0) throw new IllegalStateException("file not empty!");
+
+		final byte[] FIRST_FREE_BLOCK = { 0x01, 0x00, 0x00, 0x00 };
+
+		file.setPosition(FREE_BLOCK_PTR_POS);
+		file.write(FIRST_FREE_BLOCK);
+
+		file.setPosition(VERSION_POS);
+		file.write(VERSION);
+
+		// the header is the first block.
+		file.setPosition(BLOCK_SIZE);
+		file.truncate();
+	}
+
+COM:This is a Java method that creates a header for a LockedFile object, which includes checking if the file is empty, setting the first free block and version, and truncating the header to the appropriate size

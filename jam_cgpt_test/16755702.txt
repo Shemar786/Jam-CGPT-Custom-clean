@@ -1,0 +1,17 @@
+TDAT: 	private void addPoint(String ip) {
+		if (!_ip.contains(ip)) {
+			_ip.add(ip);
+			RoutePoint point = getRoutePointForIP(ip);
+			// if point is null (absent of the database), just ignore it
+			if (point != null) {
+				point.setNumber(_route.size());
+				_route.add(point);
+				// notify route point added
+				for (RouteListener listener : _listeners) {
+					listener.routePointAdded(point);
+				}
+			}
+		}
+	}
+
+COM:adds a new point to a route if the IP is not already in the existing list and notifies any listeners of the addition

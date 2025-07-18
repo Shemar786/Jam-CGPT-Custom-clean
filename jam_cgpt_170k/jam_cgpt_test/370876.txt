@@ -1,0 +1,18 @@
+TDAT: 	protected void initializeJarPackage() {
+		IDialogSettings settings= getDialogSettings();
+		if (settings != null) {
+			// Manifest creation
+			fJarPackage.setGenerateManifest(settings.getBoolean(STORE_GENERATE_MANIFEST));
+			fJarPackage.setSaveManifest(settings.getBoolean(STORE_SAVE_MANIFEST));
+			fJarPackage.setReuseManifest(settings.getBoolean(STORE_REUSE_MANIFEST));
+			String pathStr= settings.get(STORE_MANIFEST_LOCATION);
+			if (pathStr == null)
+				pathStr= ""; //$NON-NLS-1$
+			fJarPackage.setManifestLocation(new Path(pathStr));
+
+			// Sealing
+			fJarPackage.setSealJar(settings.getBoolean(STORE_SEAL_JAR));
+		}
+	}
+
+COM:initializes the settings for a JarPackage, including manifest creation and sealing

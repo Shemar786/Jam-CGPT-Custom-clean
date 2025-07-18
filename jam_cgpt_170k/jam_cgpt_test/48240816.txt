@@ -1,0 +1,18 @@
+TDAT: 	public DataItem getFilterItem(FilterData filterData , String itemName){
+		DataItem r = null;
+		if(filterData != null){
+			List<DataItem> filterItems = filterData.getItems();
+			if(filterItems != null){
+				for(DataItem filterItem:filterItems){
+					//does the item exist?
+					if(filterItem.getName().equals(itemName)){
+						r = filterItem;
+						break;
+					}
+				}
+			}
+		}
+		return r;
+	}
+
+COM:retrieves a specific DataItem from a FilterData object based on its itemName

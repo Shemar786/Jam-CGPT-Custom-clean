@@ -1,0 +1,13 @@
+TDAT:   public boolean isAllowed( ObjectClass cls ) {
+    if( this.allowedTypes == null )
+      return true;
+
+    for( int i=0; i<this.allowedTypes.size(); i++ ) {
+      if( cls.isSubClass( (String) this.allowedTypes.get( i ) ) )
+        return true;
+    }
+
+    return false;
+  }
+
+COM:checks if a given object class is allowed by checking its compatibility with a list of allowed types

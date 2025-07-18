@@ -1,0 +1,10 @@
+TDAT:     private void configureTable() {
+        final TableColumnModel cols = table.getColumnModel();
+        for (final JTableBinding<T, List<T>, JTable>.ColumnBinding b : binding.getColumnBindings()) {
+            final ColumnBindingInfos info = bindingInfos.get(b);
+            if (info != null)
+                configureColumn(cols.getColumn(b.getColumn()), info);
+        }
+    }
+
+COM:configures the columns of a JTable based on the bindings in a provided JTableBinding object

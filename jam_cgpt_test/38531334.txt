@@ -1,0 +1,11 @@
+TDAT:     public void testGetResourceType() throws Exception {
+        System.out.println("testGetResourceType");
+        
+        // Add your test code below by replacing the default call to fail.
+        String resourceType = this.resource.getResourceType();
+        assertNotNull("Request for resource type is null",resourceType);
+        
+        assertEquals("Expected resource type of 'XMLResource'","XMLResource", resourceType);
+    }
+
+COM:tests if a resource's type is equal to "XMLResource"

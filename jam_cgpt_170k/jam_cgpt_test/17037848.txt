@@ -1,0 +1,16 @@
+TDAT:     private String getDotNetType(Field field) {
+        if (field.getType().equals("int")) {
+            return "int";
+        } 
+        else if (field.getType().equals("boolean")) {
+            return "bool";
+        } 
+        else if (field.getType().equals("double")) {
+            return "double";
+        } 
+        else {
+            return "string";
+        }
+    }
+
+COM:This is a Java method that retrieves the corresponding .NET type for a given field type

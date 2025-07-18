@@ -1,0 +1,12 @@
+TDAT: 	public void simulate(NormalUseCase usecase) {
+		StateChar schar = usecase.getStateChar();
+		if (schar == null) {
+			MessageDialog.openInformation(this.getShell(),Messages.getString("UCEd.75"), //$NON-NLS-1$
+					Messages.getString("UCEd.133")); //$NON-NLS-1$
+			return;
+		}
+		simulator_.startUseCaseSimulation(currentProject_,schar);
+		
+	}
+
+COM:simulates a use case with a state chart and displays an information message if the state chart is null

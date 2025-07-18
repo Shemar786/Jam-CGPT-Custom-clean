@@ -1,0 +1,12 @@
+TDAT: 	public void testRenameIntSnapshot() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neParent = createNEPositive(rSource, "parent", null);
+		NamedElement neSource = createNEPositive(neParent, "foo", null);
+		rfSource.save(null, false);
+		
+		renameNegative(neSource.getSnapshot(), "bar", false,
+				IRodinDBStatusConstants.READ_ONLY);
+	}
+
+COM:tests the ability to rename an element in a Rodin file snapshot

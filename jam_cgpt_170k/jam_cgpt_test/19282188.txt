@@ -1,0 +1,11 @@
+TDAT: 	public boolean addAll(Collection c) {
+		for (Iterator iterator = c.iterator(); iterator.hasNext();) {
+			Object o = iterator.next();
+			if (! (o instanceof MessageItem)) {
+				throw new IllegalArgumentException("The Collection passed into the MessageQueue.addAll(Object o) method contains objects that are not MessageItems.");
+			}
+		}
+		return messageItems.addAll(c);
+	}
+
+COM:adds all elements from a collection to a message queue only if the elements are instances of MessageItem, otherwise it throws an IllegalArgumentException

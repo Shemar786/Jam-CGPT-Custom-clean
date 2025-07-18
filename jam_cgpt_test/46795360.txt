@@ -1,0 +1,13 @@
+TDAT: 	public void putToGACMap(String key, ITrie itrie) {
+		//compress trie with LZFOutputStream
+		CompressionTool comp = new CompressionTool();
+		ByteArrayOutputStream compressedITrie = comp.compressObject(itrie);
+		if(compressedITrie == null){
+			System.out.println("ERROR: project ITrie not compressable. " + key);
+			return;
+		}
+		this.gacMap.put(key, compressedITrie); //itrie);
+		
+	}	
+
+COM:compresses and stores an ITrie object in a map with a specified key

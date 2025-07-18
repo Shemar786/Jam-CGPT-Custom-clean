@@ -1,0 +1,12 @@
+TDAT: 	public void onCallRinging(Call call, Message resp) {
+		printLog("onCallRinging()", LogLevel.LOW);
+		if (call != this.call && call != callTransfer) {
+			printLog("NOT the current call", LogLevel.LOW);
+			return;
+		}
+		printLog("RINGING", LogLevel.HIGH);
+		if (listener != null)
+			listener.onUaCallRinging(this);
+	}
+
+COM:handles the ringing state of a call and triggers a listener if one is set

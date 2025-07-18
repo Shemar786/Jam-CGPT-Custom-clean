@@ -1,0 +1,12 @@
+TDAT:     protected void registerFile(UniqueID fileID, String fileName) {
+        log.debug("Running BrokerConnection.registerFile(fileID, fileName)..");
+        try {
+            dataBase.registerFile(fileID, fileName, userID);
+            out("OK");
+        } catch (Exception e) {
+            log.warn("Command execution error", e);
+            throw new CommandException(e);
+        }
+    }
+
+COM:registers a file in the database and logs any errors encountered during the process

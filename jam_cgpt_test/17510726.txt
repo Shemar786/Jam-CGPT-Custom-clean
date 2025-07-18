@@ -1,0 +1,13 @@
+TDAT:   public ConfigurationService getConfigurationService() {
+    LOG.debug("Returning the instance of ConfigurationService object.");
+    if (mConfigurationService == null) {
+      synchronized (this) {
+        LOG.debug("ConfigurationService object was't initiated before. " +
+                  "now creating a new instance.");
+        mConfigurationService = new ConfigurationServiceImpl();
+      }
+    }
+    return mConfigurationService;
+  }
+
+COM:returns the instance of the ConfigurationService object and creates a new instance if it doesn't already exist

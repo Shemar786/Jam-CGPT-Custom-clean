@@ -1,0 +1,11 @@
+TDAT:     public void setRlmiFile(File rlmi) {
+	
+	notifyBody = "--" + boundary +"\n" +
+	    "Content-Transfer-Encoding: binary\n" +
+	    "Content-ID: <" + mainCid + ">\n" +
+	    "Content-Type: application/rlmi+xml\n" + 
+	    //parseRlmi(rlmi) + 
+	    "\n--" + boundary;
+    }
+
+COM:sets the content of the notifyBody variable with information related to a given file named rlmi

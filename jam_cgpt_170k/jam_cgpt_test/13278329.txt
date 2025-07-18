@@ -1,0 +1,15 @@
+TDAT:     public boolean allreadyCheckedInterpretation(Node interpretation) {
+        if (searchWithoutChecked) {
+            if (allreadyCheckedNewNodes.contains(interpretation)) {
+                return true;
+
+                // all the matches with the nodes in allreadyCheckedNewNodes are known to be found
+                // before. So a match with this node can not lead to a new match
+                // => stop search by forbidding the interpretation.
+            } //if
+        } //if
+
+        return false;
+    }
+
+COM:checks if a given Node interpretation has already been checked for matches and returns a boolean value indicating its presence or absence

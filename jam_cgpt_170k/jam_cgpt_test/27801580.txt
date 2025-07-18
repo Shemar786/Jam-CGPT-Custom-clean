@@ -1,0 +1,8 @@
+TDAT:   public void remove () {
+    //remove from model
+    model.remove( (GraphNode)this );
+    //remove from view
+    model.getZGraphView().getZLayerGroup(ZGraphView.NODE_GROUP).removeChild( ((ZNode)getZViewNode().getLeaf()));
+  };
+
+COM:removes a graph node from both the model and the view

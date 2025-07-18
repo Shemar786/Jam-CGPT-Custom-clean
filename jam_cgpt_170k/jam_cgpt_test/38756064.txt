@@ -1,0 +1,12 @@
+TDAT:     public void lastAction() {
+        if (current != null && currentAction != current.size() - 1) {
+            for (int i = currentAction; i < current.size() - 1; i++) {
+                if (!nextAction())
+                    break;
+            }
+            currentAction = current.size() - 1;
+            getPortunesController().notifyObservers(Message.ACTION_CHANGED);
+        }
+    }
+
+COM:performs the last action in a series of actions and notifies observers that the action has changed

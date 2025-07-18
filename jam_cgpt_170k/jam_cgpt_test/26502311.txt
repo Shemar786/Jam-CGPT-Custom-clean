@@ -1,0 +1,15 @@
+TDAT:   public void dispatch(Event event) {
+    InterceptorInfo info = (InterceptorInfo) _interceptors.get(event.getClass());
+
+    if (info == null) {
+      return;
+    }
+
+    try {
+      info.method.invoke(info.interceptor, new Object[] { event });
+    } catch (Throwable t) {
+      handleError(t);
+    }
+  }
+
+COM:dispatches an event to the appropriate interceptor method based on the event's class

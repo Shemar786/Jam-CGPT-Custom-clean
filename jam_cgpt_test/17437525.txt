@@ -1,0 +1,13 @@
+TDAT:     public MuCharacterBase getChar(String _name) {
+        for (int i = 0; i < _chars.length; i++) {
+            MuCharacterBase muCharacterBase = _chars[i];
+            if(muCharacterBase!=null)
+            {
+                if(muCharacterBase.getName().compareTo(_name)==0)
+                    return muCharacterBase;
+            }
+        }
+        return null;
+    }
+
+COM:retrieves a MuCharacterBase object by searching for a matching name within an array of MuCharacterBase objects

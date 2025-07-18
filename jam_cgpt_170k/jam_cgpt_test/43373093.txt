@@ -1,0 +1,11 @@
+TDAT:     private void countBase() {
+        for (int i = 0; i < sortedSeq.length(); i++) {
+            char c = sortedSeq.charAt(i);
+            int index = getBaseIndex(c);
+            if (index == -1) continue;
+            baseCount[index]++;
+            scoreCount[index] += sortedScore.charAt(i);
+        }
+    }
+
+COM:counts the frequency of each base in a sorted DNA sequence and calculates the total score of each base

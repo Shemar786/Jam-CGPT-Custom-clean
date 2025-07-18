@@ -1,0 +1,12 @@
+TDAT: 	private JPanel getAboutContentPane() {
+		if (aboutContentPane == null) {
+			aboutContentPane = new JPanel();
+			aboutContentPane.setLayout(new BorderLayout());
+			aboutContentPane.setSize(500,200);
+			aboutContentPane.add(getAboutVersionLabel(), BorderLayout.NORTH);
+			aboutContentPane.add(getJTextArea1(), BorderLayout.EAST);
+		}
+		return aboutContentPane;
+	}
+
+COM:returns a JPanel containing a version label and a JTextArea, with a predefined size and layout

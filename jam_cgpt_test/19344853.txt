@@ -1,0 +1,14 @@
+TDAT:     private void g100_SetFields(int row) {
+
+    	optionCombo.removeActionListener(action);
+
+    	saveProperty();
+    	
+        currentRow = row;
+        descriptionFld.setText(data[row][1]);
+        optionCombo.setModel(comboModels[row]);
+        optionCombo.setSelectedItem(editParams.properties.get(data[row][0]));
+        optionCombo.addActionListener(action);
+    }
+
+COM:sets the fields of an interface based on the selected row and selected item in a combo box, after removing and adding back an action listener, and saving the current property

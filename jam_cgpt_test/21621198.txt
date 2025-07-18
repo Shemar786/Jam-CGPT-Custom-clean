@@ -1,0 +1,18 @@
+TDAT: 	public void addToRequest(byte[] addRequest) {
+		if (addRequest == null || addRequest.length == 0)
+			return;
+	
+		if (request == null || request.length == 0) {
+			setRequest(addRequest);
+			return;
+		}
+	
+		int size = request.length + addRequest.length;
+		byte[] b = new byte[size];
+		System.arraycopy(request, 0, b, 0, request.length);
+		System.arraycopy(addRequest, 0, b, request.length, addRequest.length);
+		request = b;
+		fireChangedEvent();
+	}
+
+COM:adds a byte array to a request, combining it with any existing request if present

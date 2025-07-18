@@ -1,0 +1,6 @@
+TDAT: 	public void writeTenMilliCell(int cellId, int tenMilliCellId, int count, Boolean leftOfDateLine) throws IOException{
+		LatLongBoundingBox llbb = tenMilliToBoundingBox(cellId, tenMilliCellId);
+		writeOutLatLongBoundingBox(llbb, count, leftOfDateLine);
+	}	
+
+COM:writes out a latitude-longitude bounding box for a given ten milli cell identifier along with its count and a boolean value denoting whether it is to the left of the date line or not

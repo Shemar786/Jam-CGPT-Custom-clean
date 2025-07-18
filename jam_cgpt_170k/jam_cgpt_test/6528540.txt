@@ -1,0 +1,12 @@
+TDAT:     public void checkIn(Content content)  throws CMSRuntimeException{
+        try {
+            Node n = JCRUtil.getNodeById(content.getId());
+            n.checkin();
+        } catch (RepositoryException e) {
+            String errorMessage = "Error checking-in node: ";
+            log.error(errorMessage, e);
+            throw new CMSRuntimeException(errorMessage, e);
+        }
+    }
+
+COM:checks in a content node using its ID and throws a CMSRuntimeException if there is an error with the repository

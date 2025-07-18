@@ -1,0 +1,9 @@
+TDAT:     public void testSetBodyContent() {
+        System.out.println("testSetBodyContent");
+        testString = "So this is some long multi-\n";
+        testString += "line String that might appear as documention";
+        tag.setBodyContent( testString );
+        assertEquals( tag.getBodyContent(), testString );
+    }
+
+COM:tests the functionality of setting and getting the body content of an HTML tag

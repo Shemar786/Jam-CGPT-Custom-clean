@@ -1,0 +1,13 @@
+TDAT:   public void showDocumentView(final String shortName, final String key) {
+
+    hideDocumentView();
+
+    documentTabView = new ClientDocumentTabView(
+        WebGnashConstants.getDocDetailViewConstants().documentDetails()
+        + " - " + shortName, key);
+    mainPanel.add(documentTabView);
+    mainPanel.setCellHorizontalAlignment(documentTabView, 
+        HasHorizontalAlignment.ALIGN_LEFT);
+  }
+
+COM:creates and displays a ClientDocumentTabView object with a specified short name and key while aligning it to the left of the main panel

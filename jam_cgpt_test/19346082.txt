@@ -1,0 +1,14 @@
+TDAT: 	public void checkAndUpdate(record val) {
+
+		if (val.isNew()) {
+		    //System.out.println("~~~> inserting ");
+			if  (val.getUpdateStatus() !=  AbsRecord.BLANK_RECORD) {
+				insert(val);
+			}
+		} else if (val.getUpdateStatus() == AbsRecord.UPDATED) {
+		    //System.out.println("~~~> updating ");
+			update(val);
+		}
+	}
+
+COM:checks if a record is new or updated and inserts or updates it accordingly

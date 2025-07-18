@@ -1,0 +1,9 @@
+TDAT: 		public int worldToScreenY(float y) {
+			float f = (float)this.getHeight()/2.0f - (y-look_at.getY()) * pix_per_m;
+			return (int)f;
+			// Note: on screen, y grows downwards, but we do our
+			// calculations using a plane where y grows upwards, so
+			// before we draw we change the sign if needed.
+		}
+
+COM:converts a world coordinate Y value to a screen coordinate Y value, taking into account the current camera position and zoom

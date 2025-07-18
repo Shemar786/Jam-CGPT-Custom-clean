@@ -1,0 +1,17 @@
+TDAT: 	protected void addColorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GroupWidget_color_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GroupWidget_color_feature", "_UI_GroupWidget_type"),
+				 UiPackage.Literals.GROUP_WIDGET__COLOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a color property descriptor to the item property descriptors

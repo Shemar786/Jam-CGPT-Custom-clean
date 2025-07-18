@@ -1,0 +1,10 @@
+TDAT:    private void readFromTerminal() {
+      while (this.username == null || this.username.isEmpty()) {
+         this.username = getString("Username: ");
+      }
+      while (this.password == null || this.password.isEmpty()) {
+         this.password = getString("Password: ");
+      }
+   }
+
+COM:prompts the user to enter a username and password until valid inputs are received

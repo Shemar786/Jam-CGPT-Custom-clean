@@ -1,0 +1,12 @@
+TDAT: 	public void performDefaults() {
+		String defval = null;
+		for (int i = 0; i < fgAllKeys.length; i++) {
+			defval = fgAllKeys[i].getStoredValue(fLookupOrder, true, fManager);
+			fgAllKeys[i].setStoredValue(fLookupOrder[0], defval, fManager);
+		}
+		updateControls();
+		fDirty = true;
+		fRebuildcount = 0;
+	}
+
+COM:sets default values for a list of keys, updates controls accordingly, and flags the system as dirty with a rebuild count of zero

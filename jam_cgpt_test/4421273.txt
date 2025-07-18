@@ -1,0 +1,12 @@
+TDAT:   private boolean vectorContainsTag(Vector v, ROSemanticTag tag) {
+    Enumeration vEnum = v.elements();
+    while(vEnum.hasMoreElements()) {
+      ROSemanticTag vTag = (ROSemanticTag) vEnum.nextElement();
+      if(Util.sameEntity(tag.getSI(), vTag.getSI())) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+COM:checks if a vector contains a certain ROSemanticTag object

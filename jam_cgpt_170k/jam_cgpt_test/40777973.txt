@@ -1,0 +1,16 @@
+TDAT: 	public void saveFieldInputs() throws IOException {
+		basicPeerConfigurationPanel.saveProperties();
+		discoveryServiceSettingsPanel.saveProperties();
+		communePanel.saveFieldInputs();
+		fdPanel.saveFieldInputs();
+		cACertificatePanel.saveFieldInputs();
+		vomsAuthPanel.saveFieldInputs();
+		advancedPeerSettingsPanel.saveProperties();
+		if (logSettingsPanel != null) {
+			logSettingsPanel.saveProperties();
+		}
+		tagsPeerConfigurationPanel.saveProperties();
+    	saveProperties();
+	}
+
+COM:saves input field values from various panels and writes them to a file, and throws an IO exception if there is an error

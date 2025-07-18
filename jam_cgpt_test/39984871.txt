@@ -1,0 +1,9 @@
+TDAT:     public void reloadTasks()
+    {//GEN-END:|87-entry|0|88-preAction
+        // write pre-action user code here
+        doReloadTasks((Project)projects.elementAt(projectList.getSelectedIndex()));
+        switchDisplayable(null, taskList);//GEN-LINE:|87-entry|1|88-postAction
+        // write post-action user code here
+    }//GEN-BEGIN:|87-entry|2|
+
+COM:reloads tasks for a selected project and switches to displaying the task list

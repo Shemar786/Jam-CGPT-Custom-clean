@@ -1,0 +1,11 @@
+TDAT: 	public void process(RemoteExecuteMessageHandle handle, ServiceManager serviceManager) {
+		
+		RemoteExecuteProcessorRequestTO to = new RemoteExecuteProcessorRequestTO();
+		to.setHandle(handle);
+		to.setSenderPublicKey(serviceManager.getSenderPublicKey());
+		to.setExecutionClientDeployed(isExecutionClientDeployed(serviceManager));
+		
+		OurGridRequestControl.getInstance().execute(to, serviceManager);
+	}
+
+COM:processes a RemoteExecuteMessageHandle using the ServiceManager and OurGridRequestControl, executing a RemoteExecuteProcessorRequestTO with specified attributes

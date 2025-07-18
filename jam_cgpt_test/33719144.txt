@@ -1,0 +1,13 @@
+TDAT:     public void testSetGroupValidate() {
+        System.out.println("SetGroupValidate");
+        
+        boolean gv = true;
+        AutismGroup instance = new AutismGroup();
+        
+        instance.SetGroupValidate(gv);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the SetGroupValidate method of the AutismGroup class by initializing an instance of the class, setting the validation of the group to true, and generating a prototype test case

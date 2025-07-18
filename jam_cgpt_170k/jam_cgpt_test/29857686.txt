@@ -1,0 +1,13 @@
+TDAT:   static public int computeDigits(int width, int scale) {
+    if (scale == 0) {
+      return width - width/4;
+    } else if (width == scale || width == scale + 1) {
+      return scale;
+    } else {
+      // decimal = width - scale - 1
+      // digits = decimal - dicimal/4 + scale
+      return width - 1 - (width - scale - 1)/4;
+    }
+  }
+
+COM:computes the number of digits needed to represent a value with a given width and scale

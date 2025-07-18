@@ -1,0 +1,14 @@
+TDAT:   private void treeSelect(TreeSelectionEvent e) {
+
+    wpTreeNode adpNode;
+
+    TreePath treePath;
+    treePath = e.getNewLeadSelectionPath();
+    if (treePath != null) {
+      adpNode = (wpTreeNode) treePath.getLastPathComponent();
+      Node selNode = adpNode.getNode();
+      int index = domEngine.getIndex(selNode.getParentNode(), selNode);
+    }
+  }
+
+COM:handles the selection of a tree node and retrieves its corresponding parent node index

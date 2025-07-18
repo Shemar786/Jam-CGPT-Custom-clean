@@ -1,0 +1,10 @@
+TDAT:     public void invokeSet(XMLContextData data){
+        Object value = data.resolveURL(key);
+        System.out.println("looking up : " +key);
+        System.out.println("result : "+value);
+        if ( value != null){
+            setter.setValue(data, parent, value);
+        }
+    }
+
+COM:takes an XMLContextData object, resolves a URL from it, and sets the value if it is not null

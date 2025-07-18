@@ -1,0 +1,16 @@
+TDAT: 	public boolean acceptable(double old, double nu) {
+		if (nu >= old)
+			return true;
+		else {
+			double ratio = Math.exp(nu - old);
+			double tau;
+			if (calls < 1000)
+				tau = normalQuantile(1.0 - ratio) * stdev();
+			else
+				tau = searchThreshold(ratio);
+//			System.err.println("ratio = "+ratio+"\ttau = "+tau);
+			return (nu - old) > tau;
+		}
+	}
+
+COM:determines whether a new value is acceptable based on the difference between the new value and an old value, using a threshold calculated using either the standard deviation or a search threshold depending on the number of previous calls to the method

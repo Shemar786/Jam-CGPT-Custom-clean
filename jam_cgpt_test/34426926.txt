@@ -1,0 +1,13 @@
+TDAT:     private JMenuItem mailMoveMenuItem() {
+        JMenuItem mv = new JMenuItem("Move mails...");
+        mv.setToolTipText("Move selected mails to another folder");
+        mv.addActionListener(new ActionListener() {
+            @SuppressWarnings("synthetic-access")
+            public void actionPerformed(ActionEvent e) {
+                mailMove();
+            }
+        });
+        return mv;
+    }
+
+COM:returns a JMenuItem that, when clicked, prompts the user to move selected emails to another folder

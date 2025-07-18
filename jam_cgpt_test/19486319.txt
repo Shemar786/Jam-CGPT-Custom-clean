@@ -1,0 +1,24 @@
+TDAT: 	public void testSUBSETEQ2() {
+		String chaine = new PreParser(new StringReader(""))
+				.process("{1,3,4} <: {1,3,4}");
+
+		IParseResult result = FormulaFactory.getDefault()
+				.parsePredicate(chaine,LanguageVersion.LATEST,null);
+
+		assertTrue(!result.hasProblem());
+
+		Predicate predicate = result.getParsedPredicate();
+
+		GlobalIdentTable<IExpression> table = new GlobalIdentTable<IExpression>();
+
+		PredicatBuilder builder = new PredicatBuilder(table);
+
+		assertTrue(predicate.accept(builder));
+
+		IPredicate predC = builder.getPredicate();
+
+		assertEquals(true, predC.isHold());
+
+	}
+
+COM:tests whether one set is a subset of another set using a pre-parser and a predicate builder

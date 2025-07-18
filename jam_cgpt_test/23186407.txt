@@ -1,0 +1,13 @@
+TDAT:     public void addFileHeaderComment(String comment, boolean header) {
+        if (comment == null || comment.length() == 0)
+            return;
+        
+        final Comment c =
+                (header ? new HeaderComment(comment) : new InlineComment(comment));
+        
+        final GenericObject root = getRoot(); // avoid calling recursive methods more than once
+        root.generalComments.add(0, c);
+        root.allWritable.add(0, c);
+    }
+
+COM:adds a file header comment to the root of a generic object, either as a header or inline comment, depending on a boolean input

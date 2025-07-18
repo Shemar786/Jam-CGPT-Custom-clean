@@ -1,0 +1,12 @@
+TDAT:    public Customer findCustomer(int aNumber, int aPin)
+   {  
+      for (int i = 0; i < customers.size(); i++)
+      {  
+         Customer c = (Customer)customers.get(i);
+         if (c.match(aNumber, aPin))
+            return c;
+      }
+      return null;
+   }
+
+COM:searches for a customer in the collection "customers" based on their account number and PIN, and returns the customer object if found or null otherwise

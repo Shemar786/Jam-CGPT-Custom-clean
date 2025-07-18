@@ -1,0 +1,10 @@
+TDAT:   public void addColumnToColumnModel ( BetterTableDimensionUnit column ) {
+    if( column.getLabelValue() == null ) {
+      column.setLabelValue(
+        getTableModel().getColumnName( column.getModelIndex() )
+      );
+    }
+    getColumnModel().addDimensionUnit( column );
+  } // addColumnToColumnModel(..)
+
+COM:adds a column to a column model and sets its label value if it is null

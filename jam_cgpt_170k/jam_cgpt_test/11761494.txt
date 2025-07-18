@@ -1,0 +1,13 @@
+TDAT:     private void bootstrap(){
+        Timer bootstrapTimer= getPeer().getClock().createNewTimer();
+        bootstrapTimer.addTimerListener(new TimerListener(){
+            public void timerExpired(Timer timer){
+                viewManager.setBootstrapPeers(getNeighborManager().getNeighbors());
+                scheduleMeasurements();
+                runActiveState();
+            }
+        });
+        bootstrapTimer.schedule(B);
+    }
+
+COM:initializes a timer that, when expired, sets the bootstrap peers, schedules measurements, and runs the active state

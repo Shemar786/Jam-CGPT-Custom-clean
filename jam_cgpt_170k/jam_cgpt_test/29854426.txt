@@ -1,0 +1,10 @@
+TDAT:   public String format(String format, Locale locale) {
+    GregorianCalendar   cal = new GregorianCalendar();
+
+    cal.set(Calendar.HOUR_OF_DAY, getHours());
+    cal.set(Calendar.MINUTE, getMinutes());
+    cal.set(Calendar.SECOND, getSeconds());
+    return new SimpleDateFormat(format).format(cal.getTime());
+  }
+
+COM:formats a given time in the specified format and locale using a GregorianCalendar object

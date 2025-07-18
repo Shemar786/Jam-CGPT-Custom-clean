@@ -1,0 +1,14 @@
+TDAT: 	public void valueChanged(ListSelectionEvent e) {
+		int[] indices = conceptClassList.getSelectedIndices();
+		if (indices.length > 0) {
+			goButton.setEnabled(true);
+			conceptClassTargets = new ArrayList<ConceptClass>();
+			for (int i : indices) {
+				conceptClassTargets
+						.add(((ConceptClassListModel) conceptClassList
+								.getModel()).getConceptClassAt(i));
+			}
+		}
+	}
+
+COM:sets the selected indices of a concept class list and enables a "go" button

@@ -1,0 +1,11 @@
+TDAT: 	public void connectionErrorOccurred(ConnectionEvent event) {
+		for (int i = 0; i < listeners.size(); i++) { // for each listener
+			Object obj = listeners.elementAt(i); // get next listener
+			ConnectionEventListener cel = (ConnectionEventListener) obj;
+			//cast to something more useful
+			cel.connectionErrorOccurred(event); // notify this listener
+			//cel.connectionClosed (event);				// notify this listener
+		}
+	}
+
+COM:notifies all listeners when a connection error occurs

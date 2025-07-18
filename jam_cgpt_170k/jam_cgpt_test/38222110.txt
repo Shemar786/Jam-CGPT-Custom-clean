@@ -1,0 +1,12 @@
+TDAT:   public void printStackTrace(PrintStream printStream) {
+    synchronized (printStream) {
+      if (rootCause != null) {
+        printStream.print(this.getClass().getName() + ": ");
+        rootCause.printStackTrace(printStream);
+      } else {
+        super.printStackTrace(printStream);
+      }
+    }
+  }
+
+COM:prints the stack trace of an exception to a specified print stream

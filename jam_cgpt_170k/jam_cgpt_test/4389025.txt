@@ -1,0 +1,13 @@
+TDAT: 	private void initThreadPool(){
+		if (this.threadPool != null){
+			this.threadPool.shutdownNow();
+		}
+		this.threadPool = Executors.newFixedThreadPool(threadPoolSize);
+		//this.threadPool = Executors.newSingleThreadExecutor();
+		this.threadFutures = new HashMap<String, Set<Future>>();
+		this.uniqueIds = new HashSet<String>();
+		this.finishedJobs = new HashSet<String>();
+		this.runningJobs = new HashSet<String>();
+	}
+
+COM:initializes a thread pool and various data structures for concurrent execution of tasks, and shuts down any existing thread pool if present

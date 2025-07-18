@@ -1,0 +1,14 @@
+TDAT:     public XmlBuilder openTag(final String name) {
+        checkBody();
+        tagStack.push(name);
+        ident++;
+        if (body.length() > 0) {
+            beautifyNewLine();
+        }
+        body.append('<').append(name);
+        tagIsPendingTermination = true;
+        beautified = false;
+        return this;
+    }
+
+COM:opens an XML tag, adds it to a tag stack, increment an identifier, appends the tag to a body, and returns an XmlBuilder object

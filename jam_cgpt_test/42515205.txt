@@ -1,0 +1,14 @@
+TDAT:     private void changeTreeFont(Container jcomp, Font f){
+        //jcomp.setFont(f);
+        for (Component c : jcomp.getComponents()){
+            c.setFont(f);
+            if (c instanceof Container){
+                changeTreeFont((Container) c,f);
+            }
+            if (c instanceof JMenu){
+                changeTreeFont(((JMenu)c).getPopupMenu(),f);
+            }
+        }
+    }
+
+COM:changes the font of all components within a given Container recursively

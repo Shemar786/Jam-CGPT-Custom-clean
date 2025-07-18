@@ -1,0 +1,12 @@
+TDAT:     protected void done() {
+        try {
+            File tempFile;
+            tempFile = new File("/", moduleName + ".done");
+            tempFile.createNewFile();
+            tempFile.deleteOnExit();
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(Deployer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+COM:creates a new file with the module name and the ".done" extension in the root directory and marks it for deletion upon program exit

@@ -1,0 +1,25 @@
+TDAT: 	public String fixSpaces(String url) {
+		int index;
+		int length;
+		char ch;
+		StringBuffer buffer;
+
+		index = url.indexOf(' ');
+		if (-1 != index) {
+			length = url.length();
+			buffer = new StringBuffer(length * 3);
+			buffer.append(url.substring(0, index));
+			for (int i = index; i < length; i++) {
+				ch = url.charAt(i);
+				if (ch == ' ')
+					buffer.append("%20");
+				else
+					buffer.append(ch);
+			}
+			url = buffer.toString();
+		}
+
+		return (url);
+	}
+
+COM:replaces spaces in a string with "%20"

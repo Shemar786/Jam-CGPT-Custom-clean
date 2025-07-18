@@ -1,0 +1,11 @@
+TDAT: 	public void publishUnknownEventStates() {
+		Collection<EventStatus> st = new ArrayList<EventStatus>();
+		for (IAEvent event : rootMachine.getEvents()) {
+			EventStatus status = new EventStatus(event.getMachineName(), event
+					.getName(), State.Unknown);
+			st.add(status);
+		}
+		fireEventListener(new StateChangedEvent(st, true));
+	}
+
+COM:publishes a collection of event statuses with a "Unknown" state

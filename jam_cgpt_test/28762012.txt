@@ -1,0 +1,10 @@
+TDAT:   protected void addChkAutomaticComment(JPanel panel, GridBagConstraints constraints) {
+    chkAutomaticComment = createChkAutomaticComment(true, this);
+    panel.add(chkAutomaticComment, constraints);
+    constraints.gridx++;
+    textComment = new JTextField(getAutomaticComment(null));
+    constraints.weightx = 1;
+    panel.add(textComment, constraints);
+  }
+
+COM:adds a check box and a text field to a panel with specified constraints

@@ -1,0 +1,11 @@
+TDAT:   public boolean edgeExists ( Node from, Node to ) {
+    if( !coltGraphPerspectiveInitialized ) {
+      throw new IllegalStateException( NOT_INITIALIZED_EXCEPTION_STRING );
+    }
+    if( ( from == null ) || ( to == null ) ) {
+      throw new IllegalArgumentException( "The Node arguments must not be null" );
+    }
+    return edgeExists( getIndex( from ), getIndex( to ) );
+  } // edgeExists( Node, Node )
+
+COM:checks if an edge exists between two nodes in a graph and throws exceptions if the graph has not been initialized or if any of the node arguments are null

@@ -1,0 +1,20 @@
+TDAT:   private List split(String line) {
+    List                result;
+
+    if (line == null) {
+      result = new ArrayList();
+    } else {
+      StringTokenizer     tok;
+
+      tok = new StringTokenizer(line, ",");
+      result = new ArrayList(tok.countTokens());
+
+      while(tok.hasMoreTokens()) {
+        result.add(tok.nextToken());
+      }
+    }
+
+    return result;
+  }
+
+COM:This is a Java method that takes in a String and splits it into a List by using a comma delimiter

@@ -1,0 +1,13 @@
+TDAT:   public void generateAll(Game game) {
+    for (int i=1;i<=engines;i++) {
+      Engine engine=new Engine();
+      try {
+	engine.readFrom(source);
+	game.engine[i]=engine; // hack...
+      } catch (IOException ioe) {
+	crash(11, "Error while reading engspec.dat: "+ioe);
+      }
+    }
+  }
+
+COM:generates all game engines by reading data from a specified source file and stores them in an array within the given game object

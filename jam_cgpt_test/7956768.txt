@@ -1,0 +1,17 @@
+TDAT: 	public void addByte(final int i) {
+		if (ClassEditor.DEBUG) {
+			System.out.println("    " + codeLength + ": " + "byte " + i);
+		}
+
+		// The bytecode array is represented as a linked list of
+		// ByteCells. This method creates a new ByteCell and appends it
+		// to the linked list.
+
+		final ByteCell p = new ByteCell();
+		p.value = (byte) (i & 0xff);
+		p.prev = codeTail;
+		codeTail = p;
+		codeLength++;
+	}
+
+COM:adds a new byte to a linked list representation of a bytecode array, and prints out debugging information if enabled

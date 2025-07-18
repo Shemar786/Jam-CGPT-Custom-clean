@@ -1,0 +1,13 @@
+TDAT:     public int getRating(int prune) {
+        // if leaf node return value
+        if (depth == maxDepth) return getValue();
+        nodes = getAllChildNodes();
+        // alpha or beta ?
+        if ((depth % 2) == 0) {
+            return getAlphaRating(prune);
+        } else {
+            return getBetaRating(prune);
+        }
+    }
+
+COM:returns the rating of a node based on its maximum depth and whether it's an alpha or beta node

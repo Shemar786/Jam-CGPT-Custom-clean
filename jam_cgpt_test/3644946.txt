@@ -1,0 +1,18 @@
+TDAT:     synchronized public boolean hasNext() {
+        //check if there are returned lines
+        if (pending.size() > 0)
+            return true;
+
+        //check if we have already prepared this round and there are lines left in it
+        if (thisRound.size() > 0)
+            return true;
+
+        //we have not prepare the current round, prepare it and check if there is something to give
+        createNextRound();
+        if (thisRound.size() > 0)
+            return true;
+
+        return false;
+    }
+
+COM:This synchronized Java method checks if there are any more lines to be returned

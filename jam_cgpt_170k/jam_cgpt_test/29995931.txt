@@ -1,0 +1,19 @@
+TDAT: 	public void testCompare() {
+		double f = 0.123456789;
+		Arc s1 = base.times(f);
+		Arc s2 = base.times(2.0 * f);
+		Arc s3 = base.times(f);
+		assertTrue(s1.isEQ(s3));
+		assertTrue(s1.isGE(s3));
+		assertTrue(s1.isLE(s3));
+		assertFalse(s1.isEQ(s2));
+		assertTrue(s1.isGE(s2));
+		assertTrue(s2.isLE(s1));
+		assertFalse(s1.isNE(s3));
+		assertFalse(s2.isGT(s1));
+		assertFalse(s2.isGE(s1));
+		assertFalse(s1.isLT(s2));
+		assertFalse(s1.isLE(s2));
+	}
+
+COM:performs comparison tests on three Arc objects generated using a base and a double value, asserting whether they are equal, greater than, less than, or not equal to each other

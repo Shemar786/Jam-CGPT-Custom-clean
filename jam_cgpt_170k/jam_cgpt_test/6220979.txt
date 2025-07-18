@@ -1,0 +1,10 @@
+TDAT:   public ArrayList getAllTs() {
+    ArrayList allTs = new ArrayList();
+    for (int i = 0; i < this.sentences.size(); i++) {
+      Sentence currentSent = (Sentence)this.sentences.get(i);
+      allTs.addAll(currentSent.getTs());
+    } // for i
+    return allTs;
+  } // getAllTs()
+
+COM:returns an ArrayList containing all the "T"s (whatever they may be) from each sentence in a list of "sentences"

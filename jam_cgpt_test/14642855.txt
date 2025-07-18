@@ -1,0 +1,13 @@
+TDAT:     public String getURL() {
+        StringBuffer buffer=new StringBuffer(PROTOCOL);
+        buffer.append("://");
+        buffer.append(this.fGroupPath);
+        if (this.fPeerName.length() > 0) {
+            buffer.append(':');
+            buffer.append(this.fPeerName);
+        }
+
+        return buffer.toString();
+    }
+
+COM:returns a URL string containing the protocol, group path, and optional peer name

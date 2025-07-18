@@ -1,0 +1,13 @@
+TDAT: 	private JTextField getTextFieldName() {
+		if (textFieldName == null) {
+			textFieldName = new JTextField();
+			textFieldName.setText(user.getNombre());
+			textFieldName.setPreferredSize(new Dimension(290, 25));
+			textFieldName.setMinimumSize(new Dimension(200, 25));
+			textFieldName.setHorizontalAlignment(JTextField.CENTER);
+			textFieldName.setColumns(0);
+		}
+		return textFieldName;
+	}
+
+COM:creates and returns a JTextField object with specific properties if it does not already exist, and sets its text to a user's name

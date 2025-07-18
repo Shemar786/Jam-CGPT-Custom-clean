@@ -1,0 +1,13 @@
+TDAT:   protected void initInnings() {
+    if (player1.getRole() == Captain.ROLE_BATTING) {
+      setBatsman(player1.getNewBatsman());
+      setBowler(player2.getNewBowler());
+      player2.setField();
+    } else {
+      setBatsman(player2.getNewBatsman());
+      setBowler(player1.getNewBowler());
+      player1.setField();
+    }
+  }
+
+COM:initializes innings by setting batsman, bowler and field positions based on the players' roles

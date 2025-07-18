@@ -1,0 +1,17 @@
+TDAT: 	public void testAddLine() throws Exception{
+		long oldSequenceNo = 0;
+
+		// User 1 adds a line after the first line
+		oldSequenceNo = service.addLine(documentHash,2,user1ID,"Added2",
+			sequenceNo);
+		TestCase.assertEquals(++sequenceNo, service.getSequenceNo(
+			documentHash,0,8));
+
+		// User 1 adds a line after the first line
+		oldSequenceNo = service.addLine(documentHash,2,user1ID,"Added1",
+			sequenceNo);
+		TestCase.assertEquals(++sequenceNo, service.getSequenceNo(
+			documentHash,1,9));
+	}
+
+COM:tests adding lines to a document by a user, checking the sequence numbers before and after the additions

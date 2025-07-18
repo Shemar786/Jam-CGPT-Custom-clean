@@ -1,0 +1,7 @@
+TDAT:     protected String buildSpatialQueryString(String fullTextQuery, Float latitude, Float longitude, Float radius) {
+        String queryString = "{!spatial circles=" + latitude.toString() + "," + longitude.toString()
+                + "," + radius.toString() + "}" +  fullTextQuery;
+        return queryString;
+    }
+
+COM:builds a spatial query string with a full text query, latitude, longitude, and a radius

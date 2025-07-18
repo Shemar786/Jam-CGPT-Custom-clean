@@ -1,0 +1,14 @@
+TDAT:     public Collection getAllInterpretations() {
+        HashSet             result = new HashSet();
+        MovableSubgraphPart part;
+        Iterator            partIt = allParts.iterator();
+
+        while (partIt.hasNext()) {
+            part = (MovableSubgraphPart) partIt.next();
+            result.addAll(part.getAllInterpretations());
+        } //while
+
+        return result;
+    }
+
+COM:returns a collection of all interpretations obtained from the getAllInterpretations method of each MovableSubgraphPart object in the allParts list

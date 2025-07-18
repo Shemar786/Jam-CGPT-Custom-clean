@@ -1,0 +1,18 @@
+TDAT: 	public void removeListener(ELogRegistryListener listener) {
+		if (listener == null) {
+			throw new IllegalArgumentException(Messages
+					.getString("ELogRegistry.ex.ia.listener-null")); //$NON-NLS-1$
+		}
+
+		if (!listeners.contains(listener)) {
+			throw new IllegalArgumentException(
+					MessageFormat
+							.format(
+									Messages
+											.getString("ELogRegistry.ex.ia-unknown-listener"), listener)); //$NON-NLS-1$
+		}
+
+		listeners.remove(listener);
+	}
+
+COM:removes a listener from an event log registry if it exists, and throws an exception if it does not

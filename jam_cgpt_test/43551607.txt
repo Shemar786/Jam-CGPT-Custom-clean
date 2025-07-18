@@ -1,0 +1,11 @@
+TDAT:     public String printDate(){
+        String date;
+        date = Integer.toString(month);
+        date = date.concat("/");
+        date = date.concat(Integer.toString(day));
+        date = date.concat("/");
+        date = date.concat(Integer.toString(year));
+        return date;
+    }
+
+COM:formats a date as a string in "month/day/year" format and returns the string

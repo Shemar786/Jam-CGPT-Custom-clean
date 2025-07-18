@@ -1,0 +1,12 @@
+TDAT:   public String toString() {
+    // Backslashes and quotes must be escaped
+    String s = value;
+    // replaces \ with \\
+    s = s.replaceAll("\\\\", "\\\\\\\\");
+    // replaces " with \"
+    s = s.replaceAll("\\\"", "\\\\\"");
+    // wrap the result in quotes
+    return "\"" + s + "\"";
+  }
+
+COM:returns a string representation of a value with properly escaped backslashes and quotes, wrapped in quotes

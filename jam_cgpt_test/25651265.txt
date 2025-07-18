@@ -1,0 +1,11 @@
+TDAT:     public void testGetRegisteredComponents() {
+        System.out.println("getRegisteredComponents");
+        
+        Collection<String> result = instance.getRegisteredComponents();
+        
+        assertNotNull(result);
+        
+        assertTrue("JUNIT should be a component as it has been previously added", result.contains("JUNIT"));                
+    }
+
+COM:tests whether the "getRegisteredComponents" method returns a collection of registered components that contains the "JUNIT" component

@@ -1,0 +1,14 @@
+TDAT: 	public void setCustomStat(String name, String value) {
+		for(int i = 0; i < listCustomStats.size(); i++) {
+			String strTemp = listCustomStats.get(i);
+			String[] strArray = strTemp.split(";");
+
+			if(strArray[0].equals(name)) {
+				listCustomStats.set(i, name + ";" + value);
+				return;
+			}
+		}
+		listCustomStats.add(name + ";" + value);
+	}
+
+COM:sets a custom statistic name and value, updating an existing entry or adding a new one if none exists with the given name

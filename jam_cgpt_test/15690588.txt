@@ -1,0 +1,18 @@
+TDAT:     public boolean add(Object o) {
+        // find the index where this item should go
+        // add the item @ the specified index
+        int idx = 0;
+        if(!isEmpty()) {
+            idx = findInsertionPoint(o);
+        }
+
+        try {
+            super.add(idx, o);
+        }
+        catch(IndexOutOfBoundsException e) {
+            return false;
+        }
+        return true;
+    }
+
+COM:adds an item to a list at the specified index while also returning whether or not the operation completed successfully

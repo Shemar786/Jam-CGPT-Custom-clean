@@ -1,0 +1,8 @@
+TDAT:     public void registerChild(final Object oldValue, final Object newValue, final String property) {
+        if (oldValue instanceof StatusInformationInternal)
+            ((StatusInformationInternal) oldValue)._getBeanStatus().unregisterOwner(this);
+        if (newValue instanceof StatusInformationInternal)
+            ((StatusInformationInternal) newValue)._getBeanStatus().registerOwner(this, property);
+    }
+
+COM:registers a child object with a parent object and updates the status information

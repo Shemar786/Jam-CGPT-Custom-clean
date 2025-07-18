@@ -1,0 +1,20 @@
+TDAT:     public String findNextValue(String k, String v) {
+	boolean foundV = false;
+	if (k == null) {
+	    for (int i = nkeys; --i >= 0;)
+		if (keys[i] == null)
+		    if (foundV)
+			return values[i];
+		    else if (values[i] == v)
+			foundV = true;
+	} else
+	    for (int i = nkeys; --i >= 0;)
+		if (k.equalsIgnoreCase(keys[i]))
+		    if (foundV)
+			return values[i];
+		    else if (values[i] == v)
+			foundV = true;
+	return null;
+    }
+
+COM:finds the next value in a collection, given a key-value pair, and returns the value

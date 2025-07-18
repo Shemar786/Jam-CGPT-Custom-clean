@@ -1,0 +1,14 @@
+TDAT:   public long readPackedLong(byte[] source, int offset) {
+    int val = source[offset++];
+    long result = val & 0x3f;
+    boolean sign = (val & 0x40) != 0;
+    int shift = 6;
+    while ((val & 0x80) != 0) {
+      val = source[offset++];
+      result |= (long)(val & 0x7f) << shift;
+      shift += 7;
+    }
+    return sign ? -result : result;
+  }
+
+COM:reads a long value that has been packed into a byte array using a variable-length encoding scheme

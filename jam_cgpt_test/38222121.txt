@@ -1,0 +1,17 @@
+TDAT:   public int getIntValue() {
+    switch (type) {
+      case ModulePropertyType.TYPE_BOOLEAN:
+        return ((Boolean) value).booleanValue() ? 1 : 0;
+      case ModulePropertyType.TYPE_STRING:
+        try {
+          return new Double((String) value).intValue();
+        }
+        catch (Exception e) {
+          return 0;
+        }
+      default:
+        return ((Number) value).intValue();
+    }
+  }
+
+COM:returns an integer value based on the type of the ModuleProperty and the value it holds

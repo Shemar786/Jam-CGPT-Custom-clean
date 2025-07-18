@@ -1,0 +1,16 @@
+TDAT:     public MBeanInfo getMBeanInfo(Class c) {
+        if (c == null) {
+            c = target.getClass();
+        }
+        ExportedInterface exported = (ExportedInterface)interfaceMap.get(c);
+        if (exported != null) {
+            try {
+                return exported.getInfo();
+            } catch (IntrospectionException e) {
+                return null;
+            }
+        }
+        return null;
+    }
+
+COM:returns MBeanInfo for a given class if it is exported, else returns null

@@ -1,0 +1,11 @@
+TDAT:     protected String getTitleForElem(int elemindex) {
+        String retval=webelems[elemindex];
+        retval=retval.substring(retval.indexOf(sandhome)+
+                                sandhome.length());
+        retval=retval.substring(0,retval.lastIndexOf(indexfile));
+        if(retval.equals("")) {
+            retval="sand"; }
+        return retval;
+    }
+
+COM:returns a substring of a given element in an array, containing specific strings, and defaults to "sand" if no substring is found

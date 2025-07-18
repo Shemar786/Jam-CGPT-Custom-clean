@@ -1,0 +1,12 @@
+TDAT: 	public boolean hasContentChanged(IResource resource) {
+	    OmniCoreTrace.trace(this,"hasContentChanged("+resource+")", "(called)");
+	    OmniCoreTrace.trace(this,"hasContentChanged("+resource+")", "Has content changed?: " + resource);
+		boolean change=false;
+		
+		//TODO ADD CODE TO DETECT CHANGE
+		
+		OmniCoreTrace.trace(this,"hasContentChanged("+resource+")", "(returned) " + change);
+		return change;
+	}
+
+COM:checks for changes in the content of a given resource and returns a boolean value indicating whether or not a change has occurred

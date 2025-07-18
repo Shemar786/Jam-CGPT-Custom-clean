@@ -1,0 +1,16 @@
+TDAT:     public ImageIcon getSmallImageIcon() {
+        if (smallImageIcon == null) {
+            try {
+                URL url = classLoader.getResource(getSmallIcon());
+                if (url != null) {
+                    smallImageIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(url));
+                }
+            }
+            catch (Exception e) {
+                //e.printStackTrace();
+            }
+        }
+        return smallImageIcon;
+    }
+
+COM:retrieves a small image icon and returns it

@@ -1,0 +1,12 @@
+TDAT:     public User findUser(String displayName) {
+        User user = (User)activeUserNameToUserMap.get(displayName);
+        if(user == null) {
+            // check if they are in the inactive user list
+            user = (User)inactiveUserNameToUserMap.get(displayName);
+        }
+        
+        // if user is still null here we don't know about the user
+        return user; 
+    }
+
+COM:searches for a user with the given display name in active and inactive user lists and returns the user if found, otherwise returns null

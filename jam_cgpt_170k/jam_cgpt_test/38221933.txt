@@ -1,0 +1,10 @@
+TDAT:   public Object getElement(int index) throws ArrayIndexOutOfBoundsException {
+    if ((type == ARRAY || type == OBJECT_ARRAY) && value != null
+      && ((Object[])value).length > index)
+      return ((Object[]) value)[index];
+    if (index == 0)
+      return value;
+    throw new ArrayIndexOutOfBoundsException();
+  }
+
+COM:retrieves an element from an array at the given index and throws an exception if the index is out of bounds

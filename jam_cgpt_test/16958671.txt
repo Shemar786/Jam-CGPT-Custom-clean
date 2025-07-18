@@ -1,0 +1,24 @@
+TDAT: 	protected boolean getInput() {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		choice = 0;
+
+		// read the username from the command-line; need to use try/catch with
+		// the
+		// readLine() method
+		try {
+			choice = Integer.parseInt(br.readLine());
+			return true;
+		} catch (IOException ioe) {
+			display.scroll("Invalid Command");
+			display.printScreen();
+			return false;
+		}
+		catch(NumberFormatException nfe){
+			display.scroll("Input Invalid");
+			display.printScreen();
+			return false;
+		}
+	}
+
+COM:reads user input from the command-line and returns a boolean indicating whether the input was valid or not

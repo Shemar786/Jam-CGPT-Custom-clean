@@ -1,0 +1,16 @@
+TDAT:     public void part(MWChatClient client, boolean isSignoff) {
+    	String userId = client.getUserId();
+        synchronized (_users) {
+            if (_users.remove(client)) {
+            	// we only send ack if not signing off.
+            	if (_server.getClient(userId) != null) {
+                    client.ackPartRoom(_roomName);
+                }
+
+                notifyPart(userId, isSignoff);
+            }
+        }
+        deop(client);
+    }
+
+COM:removes a client from a chat room and notifies other users in the room, but only sends an acknowledgment message if the client is not signing off

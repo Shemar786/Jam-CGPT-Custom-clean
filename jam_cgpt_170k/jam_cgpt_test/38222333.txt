@@ -1,0 +1,12 @@
+TDAT:   private void assignAbsoluteId(ModuleNodeImpl node) {
+    node.setAbsoluteId(nextAbsoluteId++);
+
+    // Do the same thing with child modules.
+    Iterator children = node.getChildren().iterator();
+    while (children.hasNext()) {
+      ModuleNodeImpl current = (ModuleNodeImpl) children.next();
+      assignAbsoluteId(current);
+    }
+  }
+
+COM:assigns a unique identifier to a module and its children recursively

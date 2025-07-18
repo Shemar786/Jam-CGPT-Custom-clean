@@ -1,0 +1,14 @@
+TDAT:   protected String resolveValue(MagnetContext aContext, String aValue) throws RenderingException {
+    try {
+      if (aValue == null) {
+        return null;
+      } else {
+        TemplateElementIF aTemplate = _theTemplateFactory.parse(aValue);
+        return aTemplate.render(aContext);
+      }
+    } catch (TemplateException te) {
+      throw new RenderingException("Unable to resolve the value " + aValue, te);
+    }
+  }
+
+COM:resolves a string value using a MagnetContext object and a TemplateFactory, while throwing a RenderingException if there is an error

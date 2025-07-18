@@ -1,0 +1,18 @@
+TDAT: 	public boolean showDocument(String document, String target) {
+		try {
+			URL url = new URL(getDocumentBase(), document);
+			if (target != null) {
+				getAppletContext().showDocument(url, target);
+			}
+			else {
+				getAppletContext().showDocument(url);
+			}
+		}
+		catch (Exception e) {
+			System.out.println(e.toString());
+			return false;
+		}
+		return false;
+	}
+
+COM:shows a document located at the specified URL in a web browser window, with an optional target window specified

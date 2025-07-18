@@ -1,0 +1,19 @@
+TDAT:   public boolean equals(Object obj) {
+    
+    boolean isEqual;
+    
+    if (obj != null && obj instanceof Corpus) {
+      
+      Corpus otherCorpus = (Corpus) obj;
+      isEqual = (obj == this) 
+      		|| getSentences().equals(otherCorpus.getSentences())
+      		&& getId().equals(otherCorpus.getId());
+    }
+    else {
+      isEqual = false;
+    }
+    
+    return isEqual;
+  }
+
+COM:is used to check if an object is equal to the current Corpus object based on the equality of its sentences and ID

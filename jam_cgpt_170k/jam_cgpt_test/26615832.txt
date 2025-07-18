@@ -1,0 +1,18 @@
+TDAT:     public void removeOutputCategory() {
+        int index = outputCategories.size() - 1;
+
+        if (index < 1)
+            return;
+
+        outputCategories.remove(index);
+
+        DataElement element;
+
+        for (int i = 0; i < elements.size(); i++) {
+            element = (DataElement) elements.elementAt(i);
+            element.getOutput().remove(index);
+            element.getDesired().remove(index);
+        }
+    }
+
+COM:removes the last category of output data from a collection and updates the output and desired values of all data elements accordingly

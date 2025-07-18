@@ -1,0 +1,11 @@
+TDAT: 	public void visit_jsr(final Instruction inst) {
+		// Push the return address after we add the statement.
+		// This prevents it from being saved to a local variable.
+		// It's illegal to load a return address from a local variable,
+		// so we can't save it.
+		final Subroutine sub = block.graph().labelSub((Label) inst.operand());
+		addStmt(new JsrStmt(sub, next));
+		stack.push(new ReturnAddressExpr(Type.ADDRESS));
+	}
+
+COM:visits a JSR (jump subroutine) instruction, adds a statement and pushes a return address expression onto the stack

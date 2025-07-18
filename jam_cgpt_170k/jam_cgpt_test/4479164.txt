@@ -1,0 +1,8 @@
+TDAT: 	public void testIsEqual() {
+		Knight knight = new Knight(5, 5, board, "White");
+		King king = new King(4,7,board, "Black");
+		assertTrue(knight.isEqual(knight));	//should be equal since they are same pieces.
+		assertFalse(knight.isEqual(king));	//shoulden't be equal since they are different pieces.
+	}
+
+COM:tests whether two pieces (a Knight and a King) are equal or not based on their coordinates, board position, and color

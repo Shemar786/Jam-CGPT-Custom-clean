@@ -1,0 +1,16 @@
+TDAT: 	public void testAcc_13() throws Exception {
+		IMachineRoot con = createMachine("cnc");
+
+		addVariables(con, "v");
+		addInvariants(con, makeSList("I"), makeSList("v∈ℕ"), true);
+		addInitialisation(con);
+		
+		saveRodinFileOf(con);
+		
+		runBuilder();
+		
+		isAccurate(con.getSCMachineRoot());
+		isNotAccurate(con.getSCMachineRoot().getSCEvents()[0]);
+	}
+
+COM:creates a machine, adds variables, invariants, and initialisation to it, saves the Rodin file, and checks its accuracy using specific methods

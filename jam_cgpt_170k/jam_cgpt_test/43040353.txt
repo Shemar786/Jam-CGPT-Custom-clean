@@ -1,0 +1,9 @@
+TDAT:     protected Collection convert(Object src) {
+        if (src instanceof Collection)
+            return (Collection) src;
+        if (src instanceof Object[])
+            return Arrays.asList((Object[]) src);
+        throw new IllegalArgumentException("The source type " + src.getClass().getName() + " is not supported!");
+    }
+
+COM:converts an Object into a Collection or throws an exception if the source type is not supported

@@ -1,0 +1,11 @@
+TDAT:   public void setDomActionDefaultStat() {
+    try {
+      wpMask mask = new wpMask(DOM_ACTIONS, domActionIndices,
+                               domActionDefaultStat);
+      wpMaskEvent event = new wpMaskEvent(this, mask);
+      maskHandler.fireMaskChanged(event);
+    }
+    catch (wpMaskException me) {}
+  }
+
+COM:sets the default status for DOM actions using a wpMask object and fires a wpMaskEvent to notify listeners of the change

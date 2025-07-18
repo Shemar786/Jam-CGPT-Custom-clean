@@ -1,0 +1,20 @@
+TDAT: 	private StringBuffer buildDisplayString() {
+		StringBuffer displayString = new StringBuffer();
+		displayString.append(elementString);
+		if(!signature.equals("")){
+			displayString.append(signature);
+		}		
+		if(!returnStrOfMethod.equals("")){
+			displayString.append(" : ");
+			displayString.append(returnStrOfMethod);
+		}else if(!typeString.equals("")){
+			displayString.append(" : ");
+			displayString.append(typeString);
+		}
+		
+		//displayString.append(" - ");
+		//displayString has to contain valid output
+		return displayString;
+	}
+
+COM:builds a display string for a class element and appends a signature and return type to it if they exist

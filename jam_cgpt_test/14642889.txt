@@ -1,0 +1,12 @@
+TDAT:     public void killAllClientThreads() {
+        synchronized (this.fClientThreads) {
+            Collection clients = Collections.synchronizedCollection(this.fClientThreads.values());
+            for (Iterator iter = clients.iterator(); iter.hasNext();) {
+                AbstractConnectionThread clientConnection = (AbstractConnectionThread) iter.next();
+                clientConnection.interrupt();
+                iter.remove();
+            }
+        }
+    }
+
+COM:kills all client threads and removes them from the synchronized collection

@@ -1,0 +1,23 @@
+TDAT:     public void init() {
+        try {
+            java.awt.EventQueue.invokeAndWait(new Runnable() {
+
+                public void run() {
+                    initComponents();
+                }
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        setSize(W, H);
+        try {
+            idb = DB.load().getIdb();
+            idb.generateImages();
+        } catch (Exception e) {
+        }
+
+        new Run().start();
+
+    }
+
+COM:initializes a graphical user interface, loads a database, generates images, and runs a separate thread

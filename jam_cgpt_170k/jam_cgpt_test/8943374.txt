@@ -1,0 +1,14 @@
+TDAT: 	private Node printElsIfNodes(Node iVisited) {
+		if (iVisited != null && iVisited instanceof IfNode) {
+			IfNode n = (IfNode) iVisited;
+			printNewlineAndIndentation();
+			print("elsif ");
+			visitNode(n.getCondition());
+			visitNodeInIndentation(n.getThenBody());
+			return printElsIfNodes(n.getElseBody());
+		} 
+			
+        return iVisited != null ? iVisited : null;
+	}
+
+COM:prints out "elsif" statements and their associated conditions and bodies

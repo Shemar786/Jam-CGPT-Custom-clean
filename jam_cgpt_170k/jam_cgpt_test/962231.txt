@@ -1,0 +1,11 @@
+TDAT:     public Manager connectManager(String email, String pwd)throws IllegalAuthenticationException{
+        
+        try{
+            return managerDAO.findManagerByEmailPassword(email, pwd);
+        }catch(IllegalAuthenticationException noR){
+            noR.printStackTrace();
+            throw new IllegalAuthenticationException("Aucun utilisateur trouvé!");
+        }
+    }
+
+COM:takes in an email and password as input, attempts to find a manager using those credentials, and throws an exception if no manager is found

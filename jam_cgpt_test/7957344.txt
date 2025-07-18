@@ -1,0 +1,18 @@
+TDAT: 	public void addInstruction(final Instruction inst) {
+		if (this.isDeleted) {
+			final String s = "Cannot change a field once it has been marked "
+					+ "for deletion";
+			throw new IllegalStateException(s);
+		}
+
+		if (ClassEditor.DEBUG) {
+			System.out.println("    " + inst + " to "
+					+ System.identityHashCode(this) + ":"
+					+ System.identityHashCode(this.code));
+		}
+
+		code.add(inst);
+		this.setDirty(true);
+	}
+
+COM:adds an instruction to a code editing object but will throw an exception if the object has been marked for deletion

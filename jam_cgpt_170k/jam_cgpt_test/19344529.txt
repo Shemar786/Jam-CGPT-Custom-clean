@@ -1,0 +1,13 @@
+TDAT:   public void insert(ComboRec value) {
+      //RecordRec val = (RecordRec) value;
+
+      int i = 0;
+      int key = getNextKey();
+
+      value.setComboId(key++);
+      while ((i++ < 10) && (! tryToInsert(value))) {
+          value.setComboId(key++);
+      }
+  }
+
+COM:inserts a ComboRec value into a data structure and generates a unique key for it

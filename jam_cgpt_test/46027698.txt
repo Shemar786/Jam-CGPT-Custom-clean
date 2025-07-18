@@ -1,0 +1,15 @@
+TDAT: 	public String exportStartDate() {
+		try {
+			ByteArrayOutputStream bout = new ByteArrayOutputStream();
+			ObjectOutputStream oos = new ObjectOutputStream(bout);
+			oos.writeObject(startDate);
+			byte[] bTemp = NetUtil.compressByteArray(bout.toByteArray());
+			char[] cTemp = Base64Coder.encode(bTemp);
+			return new String(cTemp);
+		} catch (Exception e) {
+			log.error("Failed to export startDate", e);
+		}
+		return null;
+	}
+
+COM:exports the startDate as a Base64-encoded string after compressing it to a byte array

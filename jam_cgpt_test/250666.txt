@@ -1,0 +1,14 @@
+TDAT: 	public void removeUser(String userID) throws SQLException {
+		logger.debug("entering removeUser");
+
+		String query = "UPDATE user SET isDisabled='1' WHERE userID='" + userID
+				+ "'";
+		try {
+			db.executeUpdate(query);
+		} catch (SQLException ex) {
+			logger.warn("unable to remove user " + ex.getMessage());
+			throw new SQLException("unable to remove user " + userID);
+		}
+	}
+
+COM:removes a user by updating their isDisabled status in the database

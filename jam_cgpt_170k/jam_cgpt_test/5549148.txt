@@ -1,0 +1,12 @@
+TDAT:     public String getSessionId() throws IllegalStateException {
+        String id = (String) runtime.threadSessions.get(
+            new Integer(System.identityHashCode(Thread.currentThread())));
+
+        if (id == null)
+            throw new IllegalStateException("Cannot call 'ActionServlet.getSessionId()'" +
+                                            " from a non-session thread");
+
+        return id;
+    }
+
+COM:returns the ID of the current session or throws an exception if it is called from a non-session thread

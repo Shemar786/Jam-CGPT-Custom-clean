@@ -1,0 +1,15 @@
+TDAT: 	public void connect() {
+		SSLServerSocket secureServerSocket = null;
+		if (description != null && description instanceof SecureConnectionDescription)
+		{
+			SecureConnectionDescription scd = (SecureConnectionDescription) description;
+			// Secure socket factory handles bidirectional certs.
+			SecureSocketFactory sslFactory = new SecureSocketFactory(scd);
+            secureServerSocket = (SSLServerSocket) sslFactory.createServerSocket(description.getPort());
+
+            // TODO Add ATNA logging.
+		}
+		ssocket = secureServerSocket;
+	}
+
+COM:establishes a secure socket connection using SSL/TLS protocol and creates a server socket using the Secure Socket Factory

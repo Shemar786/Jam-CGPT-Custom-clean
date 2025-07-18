@@ -1,0 +1,15 @@
+TDAT: 	public Value evaluate(Value[] values) throws ExternalFunctionException {
+
+		StringBuffer output = new StringBuffer();
+		for (int i = 0; i < values.length; i++) {
+			if (!(values[i] instanceof Literal)) {
+				throw new ExternalFunctionException("Values need to be literals to be concatenated");
+			}
+			String string = this.converter.convertString((Literal) values[i]);
+			output.append(string);
+		}
+		return this.converter.convertString(output.toString());
+		
+	}
+
+COM:takes an array of values, concatenates them into a string and returns the string value represented as a Value object, with the possibility of throwing an ExternalFunctionException if non-literal values are encountered

@@ -1,0 +1,16 @@
+TDAT: 	public void clear() {
+		try {
+			recman.close();
+			File db = new File(pluginDir + DBNAME + ".db");
+			db.delete();
+			db = new File(pluginDir + DBNAME + ".lg");
+			db.delete();
+			logger.info(pluginDir + DBNAME + ".db/.lg" + " deleted....");
+			initRecordManager();
+			metrics.clear();
+		} catch (Throwable e) {
+			logger.log(Level.SEVERE, "Error deleting jdbm database ", e);
+		}
+	}
+
+COM:clears a JDBM database by closing the record manager, deleting the database files, and initializing a new record manager

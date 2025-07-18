@@ -1,0 +1,14 @@
+TDAT: 	private byte sendRequest(byte[] request, int replyLen) throws IOException {
+		byte verify = 0; // default of 0 means success
+		if (verifyCommand)
+			request[0] = DIRECT_COMMAND_REPLY;
+
+		byte[] reply = nxtComm.sendRequest(request,
+				(request[0] == DIRECT_COMMAND_REPLY ? replyLen : 0));
+		if (request[0] == DIRECT_COMMAND_REPLY) {
+			verify = reply[2];
+		}
+		return verify;
+	}
+
+COM:sends a request to a device, receives a reply, verifies the reply and returns a byte value indicating success or failure, while throwing an IOException if applicable

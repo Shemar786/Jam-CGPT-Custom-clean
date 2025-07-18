@@ -1,0 +1,10 @@
+TDAT: 	public void testAssociativeExpression2() {
+		te = mTypeEnvironment("a", "ℙ(S)", "b", "ℙ(S)");
+		assertExpressionSpecialization(te, //
+				"a ∪ b", //
+				mSpec(te,//
+						mList("S", "ℤ"), //
+						mList("a", "ℙ(S)", "c", "ℙ(ℤ)")));
+	}
+
+COM:tests the specialization of an associative expression involving set unions

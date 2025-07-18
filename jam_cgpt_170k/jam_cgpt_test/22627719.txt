@@ -1,0 +1,13 @@
+TDAT: 	protected List getSubstitionGroupMembers(GlobalElement headElement) {
+		List members = new ArrayList();
+		for (Iterator i = headElement.getSubstitutionGroup().iterator(); i.hasNext(); ) {
+			GlobalElement sgm = (GlobalElement) i.next();
+			members.add(new CompositorMember(sgm));
+		}
+		// unless the headElement is abstract, add its name
+		if (!headElement.isAbstract())
+			members.add(new CompositorMember(headElement));
+		return members;
+	}
+
+COM:returns a list of substitution group members for a given global element

@@ -1,0 +1,16 @@
+TDAT: 	private void setEarliestDatestamp(String value) {
+		if (value == null)
+			return;
+		try {
+			if (!adminData.oidExists(Keys.EARLIEST_DATESTAMP)) {
+				adminData.put(Keys.EARLIEST_DATESTAMP, value);
+			}
+			else {
+				adminData.update(Keys.EARLIEST_DATESTAMP, value);
+			}
+		} catch (Exception e) {
+			prtlnErr("Error saving serialized EARLIEST_DATESTAMP: " + e);
+		}
+	}
+
+COM:This private Java method sets the earliest datestamp value in administrative data if the input value is not null

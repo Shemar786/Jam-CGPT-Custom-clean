@@ -1,0 +1,12 @@
+TDAT:     private AbstractLine defMainframeRec() throws Exception {
+        LayoutDetail dtar0020 = ToLayoutDetail.getInstance().getLayout(
+                copybookInt.loadCopyBook(
+                        TstConstants.COBOL_DIRECTORY + copyBookDTAR020 + ".cbl",
+                        CopybookLoader.SPLIT_NONE, 0, "cp037",
+                        Convert.FMT_MAINFRAME, 0, null
+                ));
+        return new Line(dtar0020,
+                		recDtar020);
+    }
+
+COM:returns an AbstractLine object that is created from a LayoutDetail object and a record string

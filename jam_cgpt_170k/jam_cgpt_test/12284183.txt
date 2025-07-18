@@ -1,0 +1,9 @@
+TDAT: 	protected void addResource(File iFile, String iName, String iPackagePrefix, String iStartingPackage) {
+		List<ResourceResolverListener> listeners = Controller.getInstance().getListeners(ResourceResolverListener.class);
+		if (listeners != null)
+			for (ResourceResolverListener l : listeners) {
+				l.addResource(iFile, iName, iPackagePrefix, iStartingPackage);
+			}
+	}
+
+COM:adds a resource by iterating through a list of ResourceResolverListeners and calling their addResource method

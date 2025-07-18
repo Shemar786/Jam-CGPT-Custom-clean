@@ -1,0 +1,9 @@
+TDAT: 	private File translateURI() throws HTTPException {
+		String relURI = getURI().substring(getURI().indexOf('/', 7));
+		if (getURI().indexOf("..", 1) != -1) {
+			throw new HTTPException(HTTP.NOT_FOUND);
+		}
+		return new File(Tornado.getConfig().getDocumentRoot() + relURI);
+	}
+
+COM:translates a Uniform Resource Identifier (URI) into a File object, throwing an HTTPException if the URI contains a ".." substring

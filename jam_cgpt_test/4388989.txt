@@ -1,0 +1,13 @@
+TDAT: 	public EntrySet getEntrySet() throws PsiscoreException {
+		if (inputData.xmlUsed()){
+			return inputData.getXmlEntySet();
+		}else if (inputData.mitabUsed() ){
+			convertedMitab = true;
+			this.inputData.setXmlEntySet(PsiTools.getInstance().getEntrySetFromBinaryInteractions(inputData.getMitabInteractions()));
+			return inputData.getXmlEntySet();
+		}else{
+			throw new PsiscoreException("No valid input detected.", new PsiscoreFault());
+		}
+	}
+
+COM:returns an entry set from input data, which can be in XML or MITAB format, but throws an exception if no valid input is detected

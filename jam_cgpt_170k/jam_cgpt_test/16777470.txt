@@ -1,0 +1,10 @@
+TDAT:    private void buildTimeMap() {
+      this.onTime.clear();
+      for (TimeSeries timeseries : this.set) {
+         for (double time : timeseries.getTimesRef()) {
+            TimeSeriesSet.addToMultiMap(this.onTime, new Double(time), timeseries);
+         }
+      }
+   }
+
+COM:builds a map of time series data by clearing the current map, iterating over a set of time series, and adding each time and corresponding series to the map

@@ -1,0 +1,11 @@
+TDAT:   private void addActorsToGUI(SActor[] actorDefs) {
+    if (actorDefs != null) {
+      for (int i = 0; i < actorDefs.length; i++) {
+        addButton(buttonPanel, actorDefs[i]);
+        menuBar.addItem(actorDefs[i]);
+      }
+    }
+    buttonPanel.add(Box.createGlue());
+  }
+
+COM:adds actors to the GUI via buttons and a menu bar if the array of actor definitions is not null, and adds a glue component to the button panel

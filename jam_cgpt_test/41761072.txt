@@ -1,0 +1,24 @@
+TDAT: 	private TreeNode parseExpressionList() {
+		TreeNode t = parseExpression();
+		TreeNode p = t;
+
+		while (token.getType() != Token.TokenType.RPARENS) {
+			TreeNode q;
+			tryMatch(Token.TokenType.SEP);
+			q = parseExpression();
+			if (q != null) {
+				if (t == null) {
+					t = p = q;
+				} else {
+					p.setSibling(q);
+					p = q;
+				}
+			} else {
+				break;
+			}
+		}
+
+		return t;
+	}
+
+COM:parses a list of expressions and returns a TreeNode representing the parsed expressions

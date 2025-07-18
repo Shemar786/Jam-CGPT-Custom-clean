@@ -1,0 +1,12 @@
+TDAT:     protected void initialize() {
+        super.initialize();
+        // If you have more complex default values which might require
+        // other parts of the module to already be installed, do not
+        // put them here; e.g. make the getter return them as a
+        // default if getProperty returns null. (The class might be
+        // initialized partway through module installation.)
+        // give a default file location
+        setCheckStylePropertyFile( new File("") );
+    }
+
+COM:initializes default values including a default file location for a check style property file

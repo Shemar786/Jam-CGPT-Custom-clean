@@ -1,0 +1,10 @@
+TDAT:     public String transToKey(String transVal) {
+        if(transVal==null) {
+            return ""; }
+        for(int i=0;i<transValues.length;i++) {
+            if(transVal.equals(transValues[i])) {
+                return keyValues[i]; } }
+        return "";
+    }
+
+COM:takes a translation value and returns its corresponding key value, or an empty string if the translation value is null or not found in the array of translations

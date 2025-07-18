@@ -1,0 +1,13 @@
+TDAT: 	private JPanel getConnectionPanel() {
+		if (connectionPanel == null) {
+			connectionRoomLabel = new JLabel();
+			connectionRoomLabel.setText("Playground");
+			connectionPanel = new JPanel();
+			connectionPanel.setLayout(new BoxLayout(getConnectionPanel(), BoxLayout.X_AXIS));
+			connectionPanel.add(getConnectionsButton(), null);
+			connectionPanel.add(connectionRoomLabel, null);
+		}
+		return connectionPanel;
+	}
+
+COM:returns a JPanel that contains a label and a button for connecting to a playground

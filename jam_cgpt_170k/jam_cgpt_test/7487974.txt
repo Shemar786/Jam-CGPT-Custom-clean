@@ -1,0 +1,7 @@
+TDAT: 	public Configuration addClass(Class persistentClass) throws MappingException {
+		String mappingResourceName = persistentClass.getName().replace( '.', '/' ) + ".hbm.xml";
+		log.info( "Reading mappings from resource: " + mappingResourceName );
+		return addResource( mappingResourceName, persistentClass.getClassLoader() );
+	}
+
+COM:adds a persistent class to a configuration object by reading its mapping information from a Hibernate mapping file

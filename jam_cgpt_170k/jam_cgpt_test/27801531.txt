@@ -1,0 +1,12 @@
+TDAT:   public void setEditor ( Class type, BetterTableCellEditor editor ) {
+    if( type == null ) {
+      throw new IllegalArgumentException( "The type must not be null." );
+    }
+    if( editor == null ) {
+      typeEditorMap.remove( type );
+    } else {
+      typeEditorMap.put( type, editor );
+    }
+  } // setEditor( Class, BetterTableCellEditor )
+
+COM:sets a custom editor for a specific type of table cell and throws an exception if the type is null or removes the editor if it is null

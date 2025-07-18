@@ -1,0 +1,7 @@
+TDAT: 		protected void loading(DispatchTask task,double loadingTime){
+		//	System.out.println("t> "+getTime()+" Task in loading: "+task.getId()+" for driver "+task.getDriver());
+			double t = loadingTime;
+			myUnloadingEvent=scheduleEvent(myLoadingListener, t, "Loading", task); 
+		}
+
+COM:schedules a loading event for a dispatch task with a specified loading time

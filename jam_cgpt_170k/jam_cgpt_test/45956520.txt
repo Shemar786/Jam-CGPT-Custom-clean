@@ -1,0 +1,11 @@
+TDAT:   private void setContentType(HttpServletResponse response, String outputFormat) {
+    if ("xml".equals(outputFormat)) {
+      response.setContentType("text/xml");
+    } else if ("text".equals(outputFormat)) {
+      response.setContentType("text/plain");
+    } else {
+      response.setContentType("text/html");
+    }
+  }
+
+COM:sets the content type of a HttpServletResponse based on the provided output format

@@ -1,0 +1,13 @@
+TDAT: 	protected Text createTextField(Composite parent) {
+		OmniUITrace.trace(this,"createTextField("+parent+")","(called)");
+		Text text = new Text(parent, SWT.SINGLE | SWT.BORDER);
+		GridData data = new GridData(GridData.FILL_HORIZONTAL);
+		data.verticalAlignment = GridData.CENTER;
+		data.grabExcessVerticalSpace = false;
+		data.widthHint = IDialogConstants.ENTRY_FIELD_WIDTH;
+		text.setLayoutData(data);
+		OmniUITrace.trace(this,"createTextField("+parent+")","(returned)"+text);
+		return text;
+	}
+
+COM:creates a single-line, bordered text field with horizontal filling in a specified parent composite and returns it

@@ -1,0 +1,13 @@
+TDAT:     public Byte convert(String input, Locale locale) throws ConversionException {
+        Byte value = null;
+        if (input != null && !"".equals(input)) {
+            try {
+                value = Byte.parseByte(input);
+            } catch (NumberFormatException ex) {
+                throw new ConversionException("Could not convert " + input + " into a Byte object", ex.getCause());
+            }
+        }
+        return value;
+    }
+
+COM:converts a String input to a Byte object using the specified Locale and throws a ConversionException if the input cannot be converted

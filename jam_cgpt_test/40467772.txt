@@ -1,0 +1,22 @@
+TDAT: 	protected void calcAlignX(){
+		int areaWidth = width;
+		int imgX = 0;
+		if(useImages){
+			areaWidth -= btnImgWidth;
+			if(imageAlign == GAlign.LEFT)
+				imgX = btnImgWidth;
+		}
+		switch(textAlignHorz){
+		case GAlign.LEFT:
+			alignX = imgX + border+  PADH;
+			break;
+		case GAlign.RIGHT:
+			alignX = imgX + areaWidth - textWidth - border - PADH;
+			break;
+		case GAlign.CENTER:
+			alignX = imgX + border + PADH + (areaWidth - textWidth)/2;
+			break;
+		}
+	}
+
+COM:calculates the horizontal alignment for a button or label that may or may not contain images

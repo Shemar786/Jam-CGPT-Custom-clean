@@ -1,0 +1,17 @@
+TDAT: 	protected void addTotalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBproperty_total_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBproperty_total_feature", "_UI_UMLBproperty_type"),
+				 UMLBPackage.Literals.UML_BPROPERTY__TOTAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a new property descriptor for a "total" feature in UMLB

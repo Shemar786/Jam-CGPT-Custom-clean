@@ -1,0 +1,10 @@
+TDAT: 	public void findTreeMemory(CFNode current, boolean firstPass) {
+		if (firstPass)
+			memory=0;
+		memory+=current.getMemory();
+		for (int i = 0; i < current.getCFs().size(); i++)
+			if(current.getCFs().get(i).child != null)
+				findTreeMemory(current.getCFs().get(i).child,false);
+	}
+
+COM:recursively calculates the memory used by a tree structure represented by a CFNode object

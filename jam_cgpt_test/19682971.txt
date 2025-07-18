@@ -1,0 +1,17 @@
+TDAT: 	public void sleep() {
+		Lib.assertTrue(conditionLock.isHeldByCurrentThread());
+		boolean prevStatus = Machine.interrupt().disable();
+
+		waitQueue.waitForAccess(KThread.currentThread()); // make the current
+		// thread accessible
+		// to a call to
+		// wake()
+
+		conditionLock.release(); // allow wake to be called
+		KThread.sleep();
+		conditionLock.acquire(); // continue from where we were
+
+		Machine.interrupt().restore(prevStatus);
+	}
+
+COM:causes the current thread to sleep until it is woken up by a call to the wake method, while ensuring that the condition lock is held by the current thread

@@ -1,0 +1,11 @@
+TDAT:     public void init(Object context) throws javax.xml.rpc.ServiceException {
+        ServletEndpointContext soapContext = (ServletEndpointContext) context;
+        servletContext = soapContext.getServletContext();
+        database = (Database) servletContext.getAttribute(databaseKey);
+        if (database == null){
+            throw new javax.xml.rpc.ServiceException("Database not found " +
+            "using attribute " + databaseKey );
+        }
+    }
+
+COM:initializes a servlet context and retrieves a database object, throwing an exception if the database is not found

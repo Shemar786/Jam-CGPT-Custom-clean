@@ -1,0 +1,13 @@
+TDAT:     private String toString(Partition partition) {
+        String s = "";
+        for (int i = 1; i <= partition.getNumBlocks(); i++) {
+            s += i;
+            s += ":";
+            s += toString(partition.getBlock(i));
+            if (i < partition.getNumBlocks())
+                s += ",";
+        }
+        return s;
+    }
+
+COM:converts a Partition object to a string representation

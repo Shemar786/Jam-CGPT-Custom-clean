@@ -1,0 +1,10 @@
+TDAT:   public void setLookAndFeel(String laf) {
+    if(currentLookAndFeel != laf) {
+      currentLookAndFeel = laf;
+      if (themesMenu != null)
+        themesMenu.setEnabled(laf.equals(METAL_LAF));
+      ((CAbstractMainForm)getMainForm()).updateLookAndFeel(currentLookAndFeel);
+    }
+  }
+
+COM:sets the look and feel of a user interface and updates the current theme according to the chosen look and feel

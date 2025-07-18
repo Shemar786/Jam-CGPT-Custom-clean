@@ -1,0 +1,19 @@
+TDAT:   private String generateUniqueName(Object object) {
+    String className = Utility.getShortClassName(object.getClass());
+
+    int counter = 1;
+    boolean done = false;
+    String name = "???";
+    while (!done) {
+      name = className + counter;
+      Object otherBean = findBean(name);
+      if (otherBean == null) {
+        done = true;
+      } else {
+        ++counter;
+      }
+    }
+    return name;
+  }
+
+COM:generates a unique name for an object by appending a counter to the short class name and checking if it already exists in a list of beans

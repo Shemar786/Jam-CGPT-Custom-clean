@@ -1,0 +1,15 @@
+TDAT: 	protected void setNodeText(String xpath, String value) {
+		Node node = getNode(xpath);
+		if (node == null) {
+			prtln("setNodeText did not find node at " + xpath + " - creating ...");
+			try {
+				node = docMap.createNewNode(xpath);
+			} catch (Exception e) {
+				prtln("configReader could not find or create node at " + xpath);
+				return;
+			}
+		}
+		node.setText(value);
+	}
+
+COM:sets the text for a specified node identified by XPath, creating a new node if it does not already exist

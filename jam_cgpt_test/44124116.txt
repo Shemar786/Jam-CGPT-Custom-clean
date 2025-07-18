@@ -1,0 +1,11 @@
+TDAT:         public void setAllItems(ListModel _allItems) {
+            if (visItems.size() > 0) {
+                this.fireIntervalRemoved(this, 0, visItems.size()-1);
+            }
+            this.allItems = _allItems;
+            visItems = new ArrayList();
+            visItems.add("bogus item"); // so first equals() comparison against an empty list is false.
+            this.currText = null;
+        }
+
+COM:sets all items in a list model, removes visible items and adds a "bogus item" to the visible list

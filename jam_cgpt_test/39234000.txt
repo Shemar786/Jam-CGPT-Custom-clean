@@ -1,0 +1,20 @@
+TDAT:     public void testDispatchSynchronous() throws Exception {
+
+        // create process context
+        ProcessContext ctx = new ProcessContext();
+
+        // create synchronous BPEL process
+        BPELProcess process = new BPELProcessImpl();
+        process.setSynchronous(true);
+
+        // create mock dispatcher with process context BPEL process
+        MockDispatcher dispatcher = new MockDispatcher(ctx, process);
+
+        // get result
+        Object result = dispatcher.dispatch();
+
+        // check
+        assertEquals(SYNC_RESULT, result);
+    }
+
+COM:tests the dispatching of a synchronous BPEL process using a mock dispatcher and process context

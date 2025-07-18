@@ -1,0 +1,12 @@
+TDAT:     public Lemmatizer getMostAccurateLemmatizer(final Locale locale) throws MorphologyException {
+        if (locale == null) {
+            throw new IllegalArgumentException("The 'loc' argument cannot be null.");
+        }
+        Lemmatizer component = (Lemmatizer) mostAccurateLemmatizers.get(locale);
+        if (component == null) {
+            throw new MorphologyException("Cannot find lemmatizer for locales : " + locale.toString());
+        }
+        return component;
+    }
+
+COM:returns the most accurate lemmatizer for a given locale, throwing exceptions if the input is invalid or if the lemmatizer cannot be found

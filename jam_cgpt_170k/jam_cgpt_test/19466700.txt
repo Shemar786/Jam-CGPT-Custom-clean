@@ -1,0 +1,17 @@
+TDAT: 	protected void addNumberBasePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AddressedDeclaration_numberBase_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AddressedDeclaration_numberBase_feature", "_UI_AddressedDeclaration_type"),
+				 RequiredFormulaPackage.Literals.ADDRESSED_DECLARATION__NUMBER_BASE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "numberBase" feature of an "AddressedDeclaration" object

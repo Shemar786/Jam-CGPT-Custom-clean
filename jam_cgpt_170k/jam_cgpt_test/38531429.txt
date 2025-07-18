@@ -1,0 +1,10 @@
+TDAT:     public void testGetXPathQueryService() throws Exception {
+        System.out.println("testGetService");
+        
+        // Add your test code below by replacing the default call to fail.
+        String version = this.getProp("XPathQueryServiceVersion");
+        String serviceName = "XPathQueryService";
+        ServiceTransport transport = this.getService(serviceName, version);
+    }
+
+COM:tests and retrieves the version and transport of the XPathQueryService

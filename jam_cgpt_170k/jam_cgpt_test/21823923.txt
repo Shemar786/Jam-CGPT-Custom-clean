@@ -1,0 +1,14 @@
+TDAT: 	public boolean validateFieldNotEmpty(PObject obj, String field, String label) {
+		String x = obj.get(field);
+		if(isNullOrEmpty(x)) {
+			String i18n = label;
+			if(i18n == null) {
+				i18n = "error." + obj.getType().getName().toLowerCase() + "." + field + ".notEmpty";
+			}
+			addFieldError(field, getText(i18n));
+			return false;
+		}
+		return true;
+	}
+
+COM:validates that a field in a PObject is not empty and returns a boolean value indicating the success of the validation

@@ -1,0 +1,12 @@
+TDAT:   public DODSStructure findStructureByShortName(String shortName) {
+    if (name == null) return null;
+
+    for (int i=0; i<structures.size(); i++) {
+      DODSStructure v = (DODSStructure) structures.get(i);
+      if (shortName.equals(v.getNameShort()))
+        return v;
+    }
+    return null;
+  }
+
+COM:searches for a DODSStructure object in a collection by its short name and returns it if it exists, otherwise returns null

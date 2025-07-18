@@ -1,0 +1,13 @@
+TDAT:     protected List loadFolders() throws FolderManagerException {
+        try {
+            return DataManager.loadFolders();
+        } catch (UnsupportedEncodingException uee) {
+            throw new FolderManagerException
+            	("Reading folders from disk failed: \n" + uee);
+        } catch (DOMBuilderException dbe) {
+            throw new FolderManagerException
+    			("Reading folders from disk failed: \n" + dbe);
+        }
+    }
+
+COM:loads a list of folders using a DataManager and throws a FolderManagerException if there is an issue with encoding or the DOM builder

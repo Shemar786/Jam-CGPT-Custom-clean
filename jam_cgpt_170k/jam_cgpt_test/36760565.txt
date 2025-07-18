@@ -1,0 +1,19 @@
+TDAT: 	public void releaseExclusiveLock() {
+		this.lock.lock();
+		try {
+			if (readers != 0  || writers != 1 ){
+				this.throwError("There should be no readers("+readers+"), and just one writer ("+writers+")");
+			}
+			writers--;
+			//wake up a writer if it is waiting; if not, wake up all the readers that are waiting, if any 
+			if (writersWaitingCount > 0) {
+				writersWaiting.signal();
+			} else if (readersWaitingCount > 0) {
+				readersWaiting.signalAll();
+			}
+		} finally {
+			this.lock.unlock();
+		}
+	}
+
+COM:releases an exclusive lock, checking that there are no readers and only one writer, and waking up any waiting writers or readers if necessary

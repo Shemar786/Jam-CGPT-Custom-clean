@@ -1,0 +1,13 @@
+TDAT: 	public void setValue(Object value) {
+		if (value instanceof Timestamp) {
+			this.value = new Date(((Timestamp) value).getTime());
+		} else if (value instanceof Date) {
+			this.value = (Date)value;
+		} else if (value == null) {
+			this.value = null;
+		} else {
+			throw new ClassCastException("could not convert to Date: " + value.getClass());
+		}
+	}
+
+COM:sets the value of a date object based on the input type of object, which can be either a timestamp or a date

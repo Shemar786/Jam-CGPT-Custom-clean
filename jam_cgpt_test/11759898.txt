@@ -1,0 +1,12 @@
+TDAT: 	public void markStart(Object tag) {
+		synchronized (pair2startTimeMap) {
+			pair2startTimeMap.put(tag, clock.getCurrentTime());
+			// FIXME it probably makes more sense to run the garbage collection
+			// periodically instead of allocating the timer every time
+			Timer removalTimer = clock.createNewTimer();
+			removalTimer.addTimerListener(new GarbageCollectionTimerListener(tag));
+			removalTimer.schedule(Time.inMilliseconds(maxWait));
+		}
+	}
+
+COM:marks the start of an operation and sets a timer for garbage collection if the operation takes too long to complete

@@ -1,0 +1,11 @@
+TDAT:   public boolean retract(Object obj) {
+    boolean result = kb.retract(obj);
+    conflictSet.removeElementsWith(obj);
+    for (Iterator i = allJoinNodes.iterator(); i.hasNext(); ) {
+      JoinReteNode joinNode = (JoinReteNode) i.next();
+      joinNode.remove(obj);
+    }
+    return result;
+  }
+
+COM:retracts an object from a knowledge base and removes it from conflict sets and various join nodes

@@ -1,0 +1,12 @@
+TDAT:     public SandDeclTreeWrapper removeChild(SandDeclTreeWrapper sdtw) {
+        if(sdtw==null) {
+            return null; }
+        if((children==null)||(children.length==0)) {
+            return null; }
+        for(int i=0;i<children.length;i++) {
+            if(children[i].equals(sdtw)) {
+                return removeChild(i); } }
+        return null;
+    }
+
+COM:removes a specified child from a SandDeclTreeWrapper object

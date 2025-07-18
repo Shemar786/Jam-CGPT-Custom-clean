@@ -1,0 +1,12 @@
+TDAT:   public void draw(GL gl){
+    gl.glColor3f(.01f, .2f, .01f);
+    gl.glPushMatrix();
+    {
+      gl.glTranslated(x,y-bodyHieght+mountradius,0);
+      drawTurret(gl);
+      drawBody(gl);
+    }
+    gl.glPopMatrix();
+  }
+
+COM:draws a turret and body using the specified GL instance, along with a translated position and color

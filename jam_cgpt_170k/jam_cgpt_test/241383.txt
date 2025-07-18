@@ -1,0 +1,19 @@
+TDAT: 	private void getTransactionsFromDB() {
+		if (allTransactions==null) {
+			allTransactions=new Vector<appTransaction>();
+		} else {
+			allTransactions.clear();
+			
+		}
+		
+		
+		List retrievals = DB.getEntityManager().createQuery("SELECT t FROM appTransaction t").getResultList(); //$NON-NLS-1$
+		int currentTransaction = 0;
+		for (Iterator iter = retrievals.iterator(); iter.hasNext();) {
+			appTransaction currentlyRetrieved =  (appTransaction)iter.next();
+			allTransactions.add(currentlyRetrieved);
+			currentTransaction++;
+		}
+	}
+
+COM:This private Java method retrieves all transactions from a database and stores them in a vector

@@ -1,0 +1,10 @@
+TDAT:   public void insertNode(Node n) {
+    n.setHost(this);
+    this.nodes.add(n);
+    setDirty(true);
+    notifyObservers(Model.CONSTITUENT_INSERT,n,null);
+    addUndoableEvent(new UndoableEvent(UndoableEvent.INSERT_CONSTITUENT, n));
+    setUndoMark();
+  }
+
+COM:inserts a node into a data structure, sets its host, adds it to a list, sets a dirty flag, notifies observers, adds an undoable event, and sets an undo mark

@@ -1,0 +1,13 @@
+TDAT:     private void setViewpoint () {
+        getViewingPlatform().setNominalViewingTransform();
+        TransformGroup tg_view = getViewingPlatform().getViewPlatformTransform();
+        Transform3D viewpoint = new Transform3D();
+    	Transform3D translation = new Transform3D();
+		translation.setTranslation(new Vector3d(0d,0d,+2d));
+
+    	tg_view.getTransform(viewpoint);
+    	viewpoint.mul(translation);
+    	tg_view.setTransform(viewpoint);
+    }
+
+COM:sets the viewpoint of the 3D viewing platform to a specific location

@@ -1,0 +1,20 @@
+TDAT:     public boolean openServerSocket(final int serverPort) {
+        try {
+            if (REUSABLE_SERVER_ADDRESS) {
+                openRebindableServerSocket(serverPort);
+            } else {
+                openSimpleServerSocket(serverPort);
+            }
+        } catch (IOException ioe) {
+            LOGGER.error("Could not listen on port: " + serverPort, ioe);
+            serverSocket = null;
+
+            return false;
+        }
+
+        port = serverPort;
+
+        return true;
+    }
+
+COM:opens a server socket on the specified port and returns a boolean indicating whether the operation was successful or not

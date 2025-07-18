@@ -1,0 +1,12 @@
+TDAT: 	public List getInactiveMemberHandles() throws Exception {
+		if (inactiveMemberHandles == null) {
+			FindRequest request = new FindRequest();
+			request.setObjectType(NDRConstants.NDRObjectType.METADATA);
+			request.addCommand("relationship", getChildToParentRelationship(), this.getHandle());
+			request.addStateCmd(NDRConstants.ObjectState.INACTIVE);
+			inactiveMemberHandles = request.getResultHandles();
+		}
+		return inactiveMemberHandles;
+	}
+
+COM:returns a list of handles for inactive members

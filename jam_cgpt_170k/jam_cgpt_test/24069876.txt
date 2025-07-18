@@ -1,0 +1,21 @@
+TDAT: 	public V getValue(K key) {
+		V ret = null;
+		
+		// Search for a value on this object's level
+		for(KeyValue<K,V> kv : parameters) {
+			if(kv.getKey().equals(key)) {
+				ret = kv.getValue();
+			}	
+		}
+		
+		// Search for a value on a level above if no entry was found
+		if(ret == null) {
+			if(topscopeParamaters != null) {
+				ret = topscopeParamaters.getValue(key);
+			}
+		}
+		
+		return ret;
+	}
+
+COM:returns the value associated with a given key by searching for it in a collection of KeyValue pairs at the current level and if not found, searches for it in a collection at a higher scope level

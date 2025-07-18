@@ -1,0 +1,13 @@
+TDAT: 	public void setSelection(int col, int row, boolean scroll) {
+		if (col < columnCount
+				&& col >= m_Model.getFixedColumnCount()
+				&& row < rowCount
+				&& row >= m_Model.getFixedRowCount()) {
+//			focusCell(col, row, 0);
+			if (scroll) {
+				scrollToFocus();
+			}
+		}
+	}
+
+COM:sets the selection of a cell in a table and optionally scrolls to that cell

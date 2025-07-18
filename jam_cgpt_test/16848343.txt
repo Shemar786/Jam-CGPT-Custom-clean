@@ -1,0 +1,15 @@
+TDAT: 	private MyCalendar getJCalendar() {
+		if (jCalendar == null) {
+			jCalendar = new MyCalendar();
+			jCalendar.addChangeDateListener(new ChangeDateListener(){
+				public void dateChanged(ChangeDateEvent e){
+					cargarHoras(e.getValue());
+					SimpleDateFormat df = new SimpleDateFormat("EEEE d 'de' MMMM 'de' yyyy");
+					jLTitulo.setText("Horas invertidas el " + df.format(e.getDate()));
+				}
+			});
+		}
+		return jCalendar;
+	}
+
+COM:returns an instance of MyCalendar and if it is null, it creates one and adds a ChangeDateListener to update the hours worked on the selected date

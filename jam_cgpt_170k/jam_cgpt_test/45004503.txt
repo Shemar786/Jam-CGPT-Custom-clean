@@ -1,0 +1,14 @@
+TDAT: 	public void clearAllDisconnectionTracks(ShortOperation so) {
+		for (String currN : so.getAllPlayerNames()) {
+			String lowerName = currN.toLowerCase();
+			OpsDisconnectionThread discoThread = disconnectionThreads.get(lowerName);
+			if (discoThread != null) {
+				discoThread.playerReturned(false, 0);
+				disconnectionThreads.remove(lowerName);
+			}
+			disconnectionDurations.remove(lowerName);
+			disconnectionTimestamps.remove(lowerName);
+		}//end foreach (Player in game)
+	}//end clearAllDisconnectionTracks
+
+COM:clears all disconnection trackers associated with a given ShortOperation

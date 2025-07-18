@@ -1,0 +1,16 @@
+TDAT:     public int lockup(BufferedImage Img){
+
+        for (int j = 0; j < Img.getHeight(); j++) {
+             for (int i = 0; i < Img.getWidth(); i++) {
+                    if(Img.getRGB(i, j)==-16777216){
+                    if(j==0){
+                      return j;
+                    }
+                    return j-1;
+                }
+            }
+        }
+        return 0;
+    }
+
+COM:searches for a black pixel in a BufferedImage and returns the index of the row directly above it, or 0 if none is found

@@ -1,0 +1,12 @@
+TDAT: 	public boolean equal(InputStream xml1, InputStream xml2) throws SAXException, IOException {
+		DOMParser parser1 = new DOMParser();
+		DOMParser parser2 = new DOMParser();
+		parser1.parse(new InputSource(xml1));
+		parser2.parse(new InputSource(xml2));
+		Document doc1 = parser1.getDocument();
+		Document doc2 = parser2.getDocument();
+
+		return compareNodes(doc1.getDocumentElement(), doc2.getDocumentElement());
+	}
+
+COM:compares two XML input streams and returns a boolean indicating if the XML documents are equal

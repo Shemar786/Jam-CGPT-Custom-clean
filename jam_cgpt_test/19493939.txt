@@ -1,0 +1,11 @@
+TDAT: 	public void testBR5_simple() {
+
+		doTest( "s ≠ t",
+				"¬(s = t)", false, br_te);
+		doTest( "x ≠ 0",
+				"¬(x = 0)", false, br_te);
+		doTest( "x ≠ TRUE",
+				"¬(x = TRUE)", false, br_te);
+	}
+
+COM:calls the "doTest" method with different arguments to test boolean expressions

@@ -1,0 +1,15 @@
+TDAT:   protected void achieveAtLeastOne(Goal[] goals){
+    int result=0;
+    for(int i=0; i<goals.length; i++){
+      try{
+        achieve(goals[i]);
+        result++;
+      }catch(GoalNotAchieved gne){
+        continue;
+      }
+    }
+    if(result == 0)
+      throw new GoalNotAchieved(goals[0]);
+  }
+
+COM:attempts to achieve at least one of the given goals, throwing a GoalNotAchieved exception if none are achieved

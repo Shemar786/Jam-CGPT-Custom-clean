@@ -1,0 +1,14 @@
+TDAT: 	public void reset() throws XFormsException {
+		if (logger.isDebugEnabled()) {
+			logger.debug(this + " perform reset");
+		}
+		// recreate instance document
+		this.instanceDocument = createInstanceDocument();
+		// notify to another elements (UI or DOM) whcih are bounded
+		// with this instance that the instanceDocument to observe
+		// has changed.
+		rootNodeObservable.setRootNode(this.instanceDocument);
+
+	}
+
+COM:resets the instance document and notifies other bounded elements of the change

@@ -1,0 +1,19 @@
+TDAT: 	public ByteBuffer getBytes() {
+		int i = 0;
+		ByteBuffer data = ByteBuffer.allocateDirect(this.length + 4);
+		data.putInt(this.length);
+		for (String entry : this.getEntries()) {
+			try {
+				if (this.getEntries().size() > 0 && i > 0) {
+					entry = entry + ",";
+					data.put(entry.getBytes(this.encoding));
+				}
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+			i++;
+		}
+		return data;
+	}
+
+COM:returns a byte buffer containing the length of entries and the encoded entries separated with commas

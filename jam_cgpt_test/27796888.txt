@@ -1,0 +1,16 @@
+TDAT:     public Object calculateRangeValue(String attrName) {
+        if (attrBundle == null || attrName == null) {
+            return null;
+        }
+        if (points.size() == 0) {
+            return null;
+        }
+        Object attrValue = attrBundle.get(attrName);
+        if (!(attrValue instanceof Number)) {
+            return null;
+        }
+        Object object = getRangeValue((Number) attrValue);
+        return object;
+    }
+
+COM:calculates the range value based on the attribute name input and returns an object

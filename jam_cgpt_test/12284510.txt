@@ -1,0 +1,9 @@
+TDAT:   private void signalToAllListeners(Class<?> cls) {
+    if (Controller.getInstance().getListeners(ClassLoaderListener.class) != null)
+      for (ClassLoaderListener l : Controller.getInstance().getListeners(ClassLoaderListener.class)) {
+        if (l != null)
+          l.onClassLoading(cls);
+      }
+  }
+
+COM:signals all class loader listeners with the given class

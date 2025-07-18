@@ -1,0 +1,13 @@
+TDAT: 	protected void testGuard(String message, IGuard grd, String expected) {
+		try {
+			assertEquals(message + ": Incorrect guard", expected, grd
+					.getLabel()
+					+ ":" + grd.getPredicateString() + ":" + grd.isTheorem());
+		} catch (RodinDBException e) {
+			e.printStackTrace();
+			fail("There should be no exception");
+			return;
+		}
+	}
+
+COM:tests the correctness of an object implementing the IGuard interface by checking if its label, predicate string, and theorem value match the expected values, and throws an exception if there is an error

@@ -1,0 +1,17 @@
+TDAT:    private void loadOptions() {
+
+      restricted.clear();
+		String restrictedProp =
+			ConfigureFactory.getInstance().getProperties(
+				ConfigureFactory.SESSIONS).getProperty("emul.restricted");
+
+      if (restrictedProp != null) {
+         StringTokenizer tokenizer = new StringTokenizer(restrictedProp, ";");
+         while (tokenizer.hasMoreTokens()) {
+            restricted.add(tokenizer.nextToken());
+         }
+      }
+
+   }
+
+COM:loads a list of restricted options from a properties file and stores them in a HashSet

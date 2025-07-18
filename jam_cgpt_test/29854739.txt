@@ -1,0 +1,13 @@
+TDAT:   public void genActorDefinition(String ident, String label, String help) {
+    Element     self;
+
+    self = new Element("actor");
+    self.setAttribute("ident", ident);
+    self.setAttribute("label", label);
+    if (help != null) {
+      self.setAttribute("help", help);
+    }
+    peekNode(null).addContent(self);
+  }
+
+COM:generates an XML actor definition element with attributes ident, label, and optional help and adds it as content to a parent node

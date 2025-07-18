@@ -1,0 +1,15 @@
+TDAT: 	private SMTSortSymbol getBoolSort() {
+		boolean veriTBools = false;
+		for (final Theory theory : getLogic().getTheories()) {
+			if (theory instanceof VeriTBooleansV2_0) {
+				veriTBools = true;
+			}
+		}
+		if (veriTBools) {
+			return VeriTBooleansV2_0.getInstance().getBooleanSort();
+		} else {
+			return TheoryV2_0.Core.getInstance().getBooleanSort();
+		}
+	}
+
+COM:retrieves the Boolean sort from either VeriTBooleansV2_0 or TheoryV2_0.Core depending on whether VeriTBooleansV2_0 is present in the logic

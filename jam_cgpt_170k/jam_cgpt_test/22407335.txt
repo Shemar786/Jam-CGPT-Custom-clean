@@ -1,0 +1,13 @@
+TDAT:     public void propertyChange(PropertyChangeEvent evt) {
+        String eventName = evt.getPropertyName();
+
+        if (AntNodeWizard.PROPERTY_TARGET_MAP.equals(eventName)) {
+            AntTargetMap targetmap = (AntTargetMap) evt.getNewValue();
+            m_targetCombModel.setTargetMap(targetmap);
+
+            AntBuildfile buildfile = m_wizard.getAntBuildfile();
+            m_targetCombModel.setSelectedItem(buildfile.getDefaultTarget());
+        }
+    }
+
+COM:listens for a specific property change event and sets certain properties based on the new value of the event

@@ -1,0 +1,11 @@
+TDAT:     public Document exportGraph(Graph g) {
+		Element e = new Element(GXL);
+		e.addContent(export(g));
+		log.debug("exportGraph(g):"+e);
+        Document doc = new Document (e);
+		log.debug("exportGraph(g):"+(new XMLOutputter()).outputString(e));
+		log.debug("exportGraph(g):"+(new XMLOutputter()).outputString(doc));
+        return doc;
+    }
+
+COM:exports a graph to a GXL format and returns it as a Document

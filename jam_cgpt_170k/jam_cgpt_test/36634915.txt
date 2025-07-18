@@ -1,0 +1,11 @@
+TDAT:     public void addXMLTag(HashMap<String, String> data){
+        if(data == null)    return;
+        if(!data.isEmpty()){
+            for(String key : data.keySet()){
+                addXMLTag(key);
+                addContent(data.get(key));
+            }
+        }
+    }
+
+COM:adds XML tags to content based on a given HashMap of key-value pairs

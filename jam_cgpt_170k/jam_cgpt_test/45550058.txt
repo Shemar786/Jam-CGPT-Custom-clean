@@ -1,0 +1,15 @@
+TDAT:     public String getMetricHelp(String metric) {
+        if (metric.startsWith("JAVA")) {
+            IJavaRule rule = rulesEngine.findRuleByKey(metric);
+            if (null != rule) {
+                return rule.getName();
+            }
+
+            throw new IllegalArgumentException("Could not locate rule for metric: " + metric);
+        }
+        else {
+            return bundle.getString(metric + ".name");
+        }
+    }
+
+COM:takes a metric as input, checks if it starts with "JAVA", and returns the name of the corresponding rule or a string from a bundle file based on the metric passed

@@ -1,0 +1,9 @@
+TDAT:     private String getActionStr(FacesContext context) {
+        String viewId = context.getViewRoot().getViewId();
+        String actionURL =
+              context.getApplication().getViewHandler().
+                    getActionURL(context, viewId);
+        return (context.getExternalContext().encodeActionURL(actionURL));
+    }
+
+COM:returns the encoded Action URL for the current view of the given FacesContext

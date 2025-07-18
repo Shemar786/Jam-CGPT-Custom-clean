@@ -1,0 +1,10 @@
+TDAT: 	private boolean hasCompileErrors(IResource resource) throws CoreException {
+		IMarker[] problemMarkers= resource.findMarkers(IJavaModelMarker.JAVA_MODEL_PROBLEM_MARKER, true, IResource.DEPTH_INFINITE);
+		for (int i= 0; i < problemMarkers.length; i++) {
+			if (problemMarkers[i].getAttribute(IMarker.SEVERITY, -1) == IMarker.SEVERITY_ERROR)
+				return true;
+		}
+		return false;
+	}
+
+COM:checks if a given resource has compile errors by searching for markers with a severity of error

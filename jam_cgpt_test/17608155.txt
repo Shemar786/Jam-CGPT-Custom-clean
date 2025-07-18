@@ -1,0 +1,15 @@
+TDAT:     public void closeConnection() {
+        try {
+            if (this.conn != null && !this.conn.isClosed()) {
+
+                this.conn.close();
+            }
+        } catch (SQLException ex) {
+            LogUtil.logError(conn, ex);
+        }
+        if (ds != null) {
+            ds = null;
+        }
+    }
+
+COM:closes the database connection and logs any SQL exceptions that are thrown, and also sets the "ds" variable to null if it is not null

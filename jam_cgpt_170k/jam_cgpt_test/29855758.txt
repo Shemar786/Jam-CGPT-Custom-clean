@@ -1,0 +1,13 @@
+TDAT:   public void reset(boolean firstLine) {
+    hasText = false;
+    height = 0;
+    lineHeight = 0;
+    lineDescend = 0;
+    this.firstLine = firstLine;
+    currentPhrase = null;
+    commands.setSize(0);
+    commands.addElement(blockStyle = new BlockPainter(null));
+    commands.addElement(translate = new TranslateCommand());
+  }
+
+COM:resets certain variables and sets default values for others while adding elements to a vector

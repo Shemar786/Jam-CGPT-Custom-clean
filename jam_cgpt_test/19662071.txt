@@ -1,0 +1,14 @@
+TDAT: 	protected String getCurrentUserFullName(HttpServletRequest req) {
+		MyAlumniUserContainer sessionObj = null;
+		HttpSession session = req.getSession(false);
+		String fullName = null;
+		if (session != null) {
+			sessionObj = (MyAlumniUserContainer) session
+					.getAttribute(BaseConstants.USER_CONTAINER);
+			fullName = sessionObj.getToken().getFirstName() + " "
+					+ sessionObj.getToken().getLastName();
+		}
+		return fullName;
+	}
+
+COM:returns the full name of the currently logged in user using HttpServletRequest object and session attributes

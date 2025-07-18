@@ -1,0 +1,14 @@
+TDAT:   public float getTotalReflectEnergy() {
+    float reflectEnergy = 0;
+
+    // loop on each spectral component (R,G,B)
+    // and sum its contribution
+    for (int i = 0; i < 3; i++) {
+      //TODO to delete : reflectEnergy += latentRadiosity[i] * reflectionCoeff[i];
+      reflectEnergy += latentRadiosity[i];
+    }
+
+    return reflectEnergy;
+  }
+
+COM:calculates the total reflect energy by summing up the contribution of each spectral component

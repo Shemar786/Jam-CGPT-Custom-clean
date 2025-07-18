@@ -1,0 +1,13 @@
+TDAT:     public boolean isTextPresent(String aTextToFind) {
+        boolean bReturn = false;
+
+        IE theIE = getIe();
+        assertNotNull(theIE);
+        Document theDocument = theIE.getDocument();
+        assertNotNull(theDocument);
+        
+        bReturn = theDocument.isTextInDocument(aTextToFind);
+        return bReturn;
+    }
+
+COM:checks if a given text is present in the current document displayed by Internet Explorer browser

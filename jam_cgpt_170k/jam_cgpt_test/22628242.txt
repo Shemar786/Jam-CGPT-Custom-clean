@@ -1,0 +1,10 @@
+TDAT: 	public String encodeAnyTypeXpath (String xpath) {
+		String leaf = XPathUtils.getLeaf (xpath);
+		String anyType = NamespaceRegistry
+			.makeQualifiedName(this.getSchemaNamespace().getPrefix(), "any");
+		if (leaf.startsWith(anyType))
+			return XPathUtils.getParentXPath(xpath) + "/*" + leaf.substring(anyType.length());
+		return xpath;
+	}
+
+COM:encodes any type of XPath by replacing "any" with a specific namespace prefix

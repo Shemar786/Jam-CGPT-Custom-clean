@@ -1,0 +1,16 @@
+TDAT: 	private void DoEnable(boolean enable) {
+		Iterator references = getSemanticHosts().iterator();
+		while( references.hasNext() ) {
+			WeakReference wr = (WeakReference)references.next();
+			EObject semanticHost = (EObject)wr.get();
+			if (semanticHost != null) {
+				List ceps = CanonicalEditPolicy.getRegisteredEditPolicies(semanticHost);
+				for ( int i = 0; i < ceps.size(); i++ ) {
+					CanonicalEditPolicy cep = (CanonicalEditPolicy)ceps.get(i);
+					cep.enableRefresh(enable); 
+				}
+			}
+		}	
+	}
+
+COM:enables or disables the refresh capability for the registered edit policies of a semantic host

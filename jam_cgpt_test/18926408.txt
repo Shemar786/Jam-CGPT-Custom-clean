@@ -1,0 +1,14 @@
+TDAT:   public void revert(RequestContext context) {
+    super.revert(context);
+    try {
+      clearErrors();
+      context.getConverter().revert(bean, getDocument());
+      dirty = false;
+      haveError = false;
+    } catch (ConvertException e) {
+      logger.error("exception caught", e);
+      throw new SoftException(e);
+    }
+  }
+
+COM:reverts the changes made to a bean by fetching a previous version of the bean from the document using the RequestContext object

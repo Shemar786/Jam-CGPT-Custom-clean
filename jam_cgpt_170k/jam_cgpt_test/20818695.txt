@@ -1,0 +1,10 @@
+TDAT:     public void init() throws ServletException {
+        ActiveRequestReporterFactory factory = new ActiveRequestReporterFactory();
+        threadview = factory
+                .makeReporter(getInitParameter("threadinfo"),
+                        "thread,start,duration,ip,sessionid,method,url,querystring,stacktrace");
+        reporter = factory.makeReporter(getInitParameter("loginfo"),
+                "id,start,duration,ip,thread,uri");
+    }
+
+COM:initializes ActiveRequestReporterFactory and creates two reporters for thread information and log information respectively

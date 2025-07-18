@@ -1,0 +1,10 @@
+TDAT:     public Gauge getProgressBar() {
+        if (progressBar == null) {//GEN-END:|120-getter|0|120-preInit
+            // write pre-init user code here
+            progressBar = new Gauge("Progress", false, 100, 50);//GEN-LINE:|120-getter|1|120-postInit
+        // write post-init user code here
+        }//GEN-BEGIN:|120-getter|2|
+        return progressBar;
+    }
+
+COM:returns a Gauge object, creating a new one if it does not already exist

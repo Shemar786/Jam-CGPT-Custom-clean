@@ -1,0 +1,13 @@
+TDAT:     public void deleteLogFile(){
+        try {
+            //Delete Log RecordStore
+            RecordStore.deleteRecordStore(dbName);
+            System.out.println("Log File deleted");
+        } catch (RecordStoreNotFoundException ex) {
+            System.out.println("Log file not found.");
+        } catch (RecordStoreException ex) {
+            System.out.println("RecordStoreException: " + ex);
+        }
+    }
+
+COM:deletes a log file RecordStore and notifies the user of whether or not it was successful

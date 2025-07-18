@@ -1,0 +1,13 @@
+TDAT:     private boolean checkFormatterClass() {
+        String className = this.jTextFieldFormatter.getText();
+        boolean classWasFound = false;
+        try {
+            Class c = Class.forName(className);
+            classWasFound = true;
+        } catch (java.lang.ClassNotFoundException e) {
+            logger.fine("Class for foramtter not found in classpath: '" + className + "'.");
+        }
+        return classWasFound;
+    }
+
+COM:checks if a given class name exists in the classpath and returns a boolean value indicating the result

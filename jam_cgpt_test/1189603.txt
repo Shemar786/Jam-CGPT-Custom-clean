@@ -1,0 +1,14 @@
+TDAT:    public String equatesWithField(String fldname) {
+      if (lhs.isFieldName() &&
+          lhs.asFieldName().equals(fldname) &&
+          rhs.isFieldName())
+         return rhs.asFieldName();
+      else if (rhs.isFieldName() &&
+               rhs.asFieldName().equals(fldname) &&
+               lhs.isFieldName())
+         return lhs.asFieldName();
+      else
+         return null;
+   }
+
+COM:checks if a given string equals either the left-hand side or the right-hand side field name and returns the corresponding field name or null

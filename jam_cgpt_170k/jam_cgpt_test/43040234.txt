@@ -1,0 +1,12 @@
+TDAT:     private boolean registerSimpleProperty(String property) {
+        if (getters.containsKey(property))
+            return true;
+        final IValueAccessor acc = ValueAccessorManager.getPropertyAccessor(type, property);
+        if (!acc.isReadable())
+            return false;
+        getters.put(property, acc);
+        simpleProperties.add(property);
+        return true;
+    }
+
+COM:registers a simple property if it is readable and not already registered

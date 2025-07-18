@@ -1,0 +1,13 @@
+TDAT: 	public JScrollPane getSparseButtonPane(ArrayList<JRadioButton> buttons) {
+		JPanel pane = new JPanel();
+		pane.setLayout(new BoxLayout(pane, BoxLayout.PAGE_AXIS));
+		ButtonGroup group = new ButtonGroup(); 
+		for (int i = 0; i < buttons.size(); i++) {
+			group.add(buttons.get(i));
+			pane.add(buttons.get(i));
+		}
+		JScrollPane scrollPane = new JScrollPane(pane);
+		return scrollPane;	
+	}
+
+COM:returns a scroll pane containing a vertical list of radio buttons passed as an ArrayList

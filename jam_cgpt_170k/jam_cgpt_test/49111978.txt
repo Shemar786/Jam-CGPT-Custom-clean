@@ -1,0 +1,12 @@
+TDAT:     private String toString(InputStream input) throws IOException {
+        StringBuilder contents = new StringBuilder();
+        InputStreamReader reader = new InputStreamReader(input);
+        char[] buffer = new char[DEFAULT_BUFFER_SIZE];
+        int n = 0;
+        while (-1 != (n = reader.read(buffer))) {
+            contents.append(buffer, 0, n);
+        }
+        return contents.toString();
+    }
+
+COM:converts an InputStream to a String by reading character data from the InputStream and appending it to a StringBuilder

@@ -1,0 +1,8 @@
+TDAT:   protected void fireModelAdded(Model m) {
+    // index does not matter on this projectUpdate call
+    for (int i = 0; i < projectObservers.size(); i++)
+      ((ProjectObserver)projectObservers.get(i)).projectUpdate(
+                                              Project.MODEL_ADDED, this, m, 0);
+  }
+
+COM:notifies all project observers that a model has been added to the project

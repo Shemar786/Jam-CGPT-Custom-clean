@@ -1,0 +1,12 @@
+TDAT:     public TokenIterator getTokensForRange(int start, int length) {
+        if ((-1 == start) || (0 == length)) {
+            return new TokenIterator(null, null);
+        }
+
+        Token firstToken = findToken(start);
+        Token lastToken = findToken(start + length);
+
+        return new TokenIterator(lastToken, firstToken);
+    }
+
+COM:returns a TokenIterator object containing a range of tokens starting at a specified index and of a specified length

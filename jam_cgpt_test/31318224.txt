@@ -1,0 +1,17 @@
+TDAT:     public int getPointerTypeCode(int pointerType) {
+        switch(pointerType) {
+            case ScreenPointer.ARROW :
+                return ARROW_CODE;
+            case ScreenPointer.DELETE_BLOCK :
+                return DELETE_CODE;
+            case ScreenPointer.MOVE_BLOCK :
+                return MOVE_CODE;
+            case ScreenPointer.EDIT_BLOCK :
+                return EDIT_CODE;
+        }
+     
+        assert(false) : "unknown screen pointer type found";
+        return -1;
+    }
+
+COM:returns an integer value representing the type of pointer based on the given pointer type parameter

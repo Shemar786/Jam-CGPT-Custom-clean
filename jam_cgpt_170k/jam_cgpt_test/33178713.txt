@@ -1,0 +1,12 @@
+TDAT:     public String get(String name) {
+        put(privatePrefix + "name", name);
+        for (int i = 0; i < patterns.length; ++i) {
+            String fullName = substituteVariables(substitutedPatterns[i]);
+            String value = super.get(fullName);
+            if (value != null) return value;
+        }
+
+        return null;
+    }
+
+COM:retrieves a value from a map using a name and substitutes any variables in the retrieved value by iterating through a list of patterns

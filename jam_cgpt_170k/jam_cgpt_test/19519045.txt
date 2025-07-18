@@ -1,0 +1,10 @@
+TDAT: 	private void calculateActions (Collection<IEvent> events, HashMap<IEvent, Collection<IAction>> actionMap) throws RodinDBException {
+		for (IEvent event : events) {
+			Collection<IAction> actions = new ArrayList<IAction>();
+			for (IAction action : event.getActions())
+				actions.add(action);
+			actionMap.put(event, actions);
+		}
+	}
+
+COM:takes a collection of events and a hashmap of events and their associated actions, and populates the hashmap with the actions of each event

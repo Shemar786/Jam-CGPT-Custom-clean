@@ -1,0 +1,10 @@
+TDAT:   public void addListener(EventListener listener) {
+    if (listenerClass.isAssignableFrom(listener.getClass())) {
+      getEventTopicDispatcher().addListener(listener);
+    } else {
+      throw new EventBusException(listener.getClass()
+          + " listeners are not assignable from " + eventClass.getName());
+    }
+  }
+
+COM:adds an event listener to the event topic dispatcher, but only if the listener class is assignable from a specified event class; otherwise, it throws an exception

@@ -1,0 +1,15 @@
+TDAT: 	public String getContactToShow(Activity context, String startUpActionSetting) {
+
+		if (startUpActionSetting.equals(context
+				.getString(R.string.preferences_startup_last_contacted))) {
+			// get lookupkey for last contacted person
+			return new ContactLoader().getMostRecentlyContacted(context);
+		} else if (startUpActionSetting.equals(context
+				.getString(R.string.preferences_startup_last_shown))) {
+			return getLastShownContact(context);
+		}
+
+		return null;
+	}
+
+COM:returns the contact to be shown based on the start-up action setting chosen by the user

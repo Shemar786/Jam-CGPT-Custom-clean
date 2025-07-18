@@ -1,0 +1,22 @@
+TDAT: 	private XMLDocReader getXMLDocReader(String id) {
+		RepositoryManager repositoryManager = null;
+		try {
+			repositoryManager = getRepositoryManager();
+		} catch (Exception e) {
+			prtln(e.getMessage());
+			return null;
+		}
+		ResultDoc record = repositoryManager.getRecord(id);
+		if (record == null) {
+			prtln("indexed record not found for id: " + id);
+			return null;
+		}
+		try {
+			return (XMLDocReader) record.getDocReader();
+		} catch (Exception e) {
+			prtln("getDcsDataRecord found unexpected docReader class " + e.getMessage());
+			return null;
+		}
+	}
+
+COM:returns an XMLDocReader object for a given id, retrieved from a repository manager, or returns null if the id is not found or an unexpected docReader class is encountered

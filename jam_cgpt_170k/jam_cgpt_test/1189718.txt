@@ -1,0 +1,10 @@
+TDAT:    public int setString(Buffer buff, int offset, String newval) {
+      String oldval = buff.getString(offset);
+      Block blk = buff.block();
+      if (isTempBlock(blk))
+         return -1;
+      else
+         return new SetStringRecord(txnum, blk, offset, oldval).writeToLog();
+   }
+
+COM:sets a string value within a buffer at a specified offset and returns an integer status code based on whether the buffer block is temporary or not

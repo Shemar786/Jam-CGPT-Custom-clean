@@ -1,0 +1,17 @@
+TDAT: 	protected void addCurrentTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveHistoryTimer_currentTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveHistoryTimer_currentTime_feature", "_UI_EveHistoryTimer_type"),
+				 TimerPackage.Literals.EVE_HISTORY_TIMER__CURRENT_TIME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the current time feature of a timer object in an EVE history

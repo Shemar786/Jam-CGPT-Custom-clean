@@ -1,0 +1,11 @@
+TDAT: 	private JTextField getJTextField7() {
+		if (jTextField7 == null) {
+			jTextField7 = new JTextField("11");
+			jTextField7.setBounds(new Rectangle(148, 227, 108, 32));
+			jTextField7.setText(defaultProps.getProperty("opengap"));
+			jTextField7.setText(applicationProps.getProperty("opengap"));
+		}
+		return jTextField7;
+	}
+
+COM:returns a JTextField object and initializes it with default and application properties

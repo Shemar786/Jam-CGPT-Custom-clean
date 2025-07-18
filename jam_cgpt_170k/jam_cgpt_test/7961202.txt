@@ -1,0 +1,18 @@
+TDAT: 	public void visit_multianewarray(final Instruction inst) {
+		final MultiArrayOperand operand = (MultiArrayOperand) inst.operand();
+
+		final Expr[] dim = new Expr[operand.dimensions()];
+
+		for (int i = dim.length - 1; i >= 0; i--) {
+			dim[i] = stack.pop(Type.INTEGER);
+		}
+
+		final Type type = operand.type();
+
+		final Expr top = new NewMultiArrayExpr(dim, type
+				.elementType(dim.length), type);
+
+		stack.push(top);
+	}
+
+COM:visits a multi-dimensional array and creates a new multi-dimensional expression

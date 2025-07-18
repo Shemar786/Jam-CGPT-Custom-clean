@@ -1,0 +1,9 @@
+TDAT:     public Object eval(CallStack callstack, Interpreter interpreter) throws EvalError {
+        /*
+         * Try to call the simpler signature I don't ilke this, but it's the price we pay for being able to eval() any
+         * simplenode and still limit the signature on those that only need namespace.
+         */
+        return eval(callstack.top());
+    }
+
+COM:attempts to call a simpler signature and returns the result of evaluating the top element in the specified call stack using an interpreter, while handling any potential EvalError exceptions

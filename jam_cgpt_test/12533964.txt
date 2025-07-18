@@ -1,0 +1,30 @@
+TDAT: 	protected void initialize(){
+		super.initialize();
+	//	System.out.println("IN ABSTRACTDISPATCHER initialize()");
+		setInitialValues(); 		 
+		 
+		for(TransportLocationIfc location: myLocations){
+			
+			 getIdleDrivers(location).clear();
+			 getIdleTrucks(location).clear();
+			 getIdleTrailers(location).clear();
+			 
+			List<Driver> drivers = myDriverLocationAssignments.get(location);
+			for (Driver d : drivers){
+					getIdleDrivers(location).add(d);
+				}
+			
+			List<SpatialResource> trucks = myTruckLocationAssignments.get(location);
+			for (SpatialResource t : trucks){
+					getIdleTrucks(location).add(t);
+				}
+						
+		    List<SpatialResource> trailers = myTrailerLocationAssignments.get(location);
+			
+			for (SpatialResource r : trailers){
+					getIdleTrailers(location).add(r);
+				}
+			}
+	}
+
+COM:initializes various lists of resources for each transport location

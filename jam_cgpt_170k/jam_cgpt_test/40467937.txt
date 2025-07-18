@@ -1,0 +1,11 @@
+TDAT: 	public void addDrawHandler(Object obj, String methodName){
+		try{
+			drawHandlerMethod = obj.getClass().getMethod(methodName, new Class[] {GWinApplet.class, GWinData.class } );
+			drawHandlerObject = obj;
+			drawHandlerMethodName = methodName;
+		} catch (Exception e) {
+			GMessenger.message(NONEXISTANT, this, new Object[] {methodName, new Class[] { GWinApplet.class, GWinData.class } } );
+		}
+	}
+
+COM:adds a draw handler method to an object and catches any exceptions that may occur during the process

@@ -1,0 +1,10 @@
+TDAT:     public Command getOkCommandSelectDirection() {
+        if (okCommandSelectDirection == null) {//GEN-END:|53-getter|0|53-preInit
+            // write pre-init user code here
+            okCommandSelectDirection = new Command("Ok", Command.OK, 0);//GEN-LINE:|53-getter|1|53-postInit
+        // write post-init user code here
+        }//GEN-BEGIN:|53-getter|2|
+        return okCommandSelectDirection;
+    }
+
+COM:returns a Command object named "Ok" if it exists, or creates and returns one if it does not

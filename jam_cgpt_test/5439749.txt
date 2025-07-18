@@ -1,0 +1,6 @@
+TDAT:                             public void run() {
+                                final int result = JOptionPane.showConfirmDialog(jComponent, localStrings.getString("wartransferhandler_copy_question"), localStrings.getString("wartransferhandler_copy_title"), JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+                                new Thread(new Deployer(jComponent, file, result), "DragAndDropDeployer").start();
+                            }
+
+COM:shows a confirmation dialog box and starts a new thread for deploying a file based on the user's response

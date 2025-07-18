@@ -1,0 +1,19 @@
+TDAT: 	public void insertOutCommand(int cmdTag, CommandEntity command) {
+
+		// Bug Fix for memeory leakage .. when command is execute such as download, upgrade mgr, opr backup, lpbk
+		if (cmdTag > 200) {
+			removeOutCommand(cmdTag - 200);
+		} else {
+			removeOutCommand((10000 - 200) + cmdTag);
+		}
+
+		Integer iCmdTag = new Integer(cmdTag);
+
+		try {
+			outcommandTable.put(iCmdTag, command);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+
+COM:inserts a command entity into a table and removes a command from the table if its tag is greater than 200 to fix a memory leakage issue

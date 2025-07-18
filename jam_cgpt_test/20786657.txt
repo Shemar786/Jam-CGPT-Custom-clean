@@ -1,0 +1,12 @@
+TDAT:    private void storeProperties() {
+      try {
+         mainModel.getProperties().storeToXML(
+               new FileOutputStream(GestureConstants.PROPERTIES),
+               "iGesture: " + new Date());
+      }
+      catch (Exception e) {
+         LOGGER.log(Level.WARNING, "Failed to store properties.", e);
+      }
+   }
+
+COM:stores system properties as an XML file with a timestamp using the iGesture tool

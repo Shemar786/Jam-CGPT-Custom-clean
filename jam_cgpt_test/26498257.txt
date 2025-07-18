@@ -1,0 +1,11 @@
+TDAT:   public SotoContainer load(File f, Map map) throws Exception {
+    String path = f.getAbsolutePath().trim();
+
+    if(path.charAt(0) == '/') {
+      return include("file:" + f.getAbsolutePath(), map);
+    } else {
+      return include("file:/" + f.getAbsolutePath(), map);
+    }
+  }
+
+COM:loads a SotoContainer from a specified file and map of parameters, throwing an exception if there is an error

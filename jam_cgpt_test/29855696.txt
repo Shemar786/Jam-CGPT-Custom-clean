@@ -1,0 +1,10 @@
+TDAT:   public void addImage(ImageIcon image) {
+    if (image != null) {
+      hasText = true;
+      endChunk();
+      lineHeight = Math.max(lineHeight, maxImageSize(image).height + lineDescend);
+      commands.addElement(new ImageCommand(image, currentPos, -lineDescend));
+    }
+  }
+
+COM:adds an image to a document if the image is not null, updates the line height, and adds an image command to a list of commands

@@ -1,0 +1,13 @@
+TDAT: 	public void setFolder(File folder) {
+		if (folder != null) {
+			removeListeners();
+			
+			DirectoryTreeNode parent = new DirectoryTreeNode(folder, null);
+			((DefaultTreeModel) getTree().getModel()).setRoot(parent);
+			loadDocuments(parent, FILE_SYSTEM_VIEW.getFiles(folder, false));
+		}
+
+		nodeChanged(getRoot());
+	}
+
+COM:sets the root folder for a tree, removes listeners, loads documents, and updates the tree

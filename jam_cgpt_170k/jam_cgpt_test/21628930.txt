@@ -1,0 +1,13 @@
+TDAT:     public void writeComment(Object comment) throws IOException {
+        if (comment == null) {
+            // PENDING i18n
+            throw new NullPointerException(
+                  "Argument Error: One or more parameters are null.");
+        }
+        closeStartIfNecessary();
+        writer.write("<!-- ");
+        writer.write(comment.toString());
+        writer.write(" -->");
+    }
+
+COM:writes a comment in the code, throws an exception if the comment is null, and uses a writer to write the comment to the screen

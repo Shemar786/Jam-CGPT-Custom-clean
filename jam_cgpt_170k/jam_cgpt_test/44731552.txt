@@ -1,0 +1,24 @@
+TDAT: 	public void testActionInvoke() {
+		
+		ControlContainer root = (ControlContainer)control;
+		ActionTestControl atc = new ActionTestControl(root, "atc");
+		
+		sendAction(atc, "test", "");
+		assertTrue(atc.invoked);
+		
+		atc.invoked = false;
+		sendAction(atc, "Test", "");
+		assertTrue(atc.invoked);
+
+		try {
+			atc.invoked = false;
+			sendAction(atc, "TEST", "");
+			fail("No error raised on call of unknown method.");
+			
+		} catch (IllegalArgumentException iae) {
+			// that was expected.
+		}
+		
+	}
+
+COM:tests whether a given action can be invoked correctly, and checks for errors in invoking unknown methods

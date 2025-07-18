@@ -1,0 +1,10 @@
+TDAT:    private void g300_SetBaseType(int row) {
+
+       try {
+           //System.out.println(typeTblModel.getStringValueAt(row, BASE_TYPE_COLUMN));
+           typeName.setSelectedItem(new Integer(typeTblModel.getStringValueAt(row, BASE_TYPE_COLUMN)));
+       } catch (Exception e) {
+       }
+   }
+
+COM:sets the base type for a specific row in a table by selecting an item from a dropdown menu

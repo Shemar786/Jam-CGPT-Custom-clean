@@ -1,0 +1,26 @@
+TDAT: 	public void setSeverityRack(int nodeId, int severity) {
+
+		NetworkElement networkElement = getRackNetworkElement(nodeId);
+
+		if( networkElement == null ) {
+			return;
+		}
+
+		networkElement.setSeverity(severity);
+		
+		//
+		// setSeverity upper subnet ..
+		//
+		while(true) {
+			int parentNodeId = networkElement.getParentNodeId();
+			if( parentNodeId == NetworkElement.ROOT_NODEID )	break;
+			
+			networkElement = getSubnetNetworkElement(parentNodeId);
+
+			if( networkElement == null )	break;
+			
+			networkElement.setSeverity(severity);
+		}
+	}
+
+COM:sets the severity level of a network element and all its parent nodes up to the root node

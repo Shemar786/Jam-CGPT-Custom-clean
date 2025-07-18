@@ -1,0 +1,9 @@
+TDAT:     public long getTimeInMillis() {
+        Calendar zeroCalendar = Calendar.getInstance();
+        zeroCalendar.set(0,0,0,0,0,0);
+        zeroCalendar.set(Calendar.MILLISECOND, 0);
+
+        return _value.getTimeInMillis() - zeroCalendar.getTimeInMillis();
+    }
+
+COM:returns the number of milliseconds between the current time and the beginning of the day, calculated from a given input value

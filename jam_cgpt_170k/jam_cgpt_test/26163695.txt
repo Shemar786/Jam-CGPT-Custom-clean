@@ -1,0 +1,13 @@
+TDAT:     public void setActionServlet(ActionServlet servlet) {
+        if (logger.isDebugEnabled())
+            logger.debug("Entering - servlet = " + servlet);
+        init();
+        if (servlet == null)
+            throw new AssertionFailedError("Cannot set ActionServlet to null");
+        this.actionServlet = servlet;
+        if (logger.isDebugEnabled())
+            logger.debug("Exiting");
+        actionServletIsInitialized = false;
+    }
+
+COM:sets the ActionServlet instance variable and throws an error if it's null, while logging debug messages

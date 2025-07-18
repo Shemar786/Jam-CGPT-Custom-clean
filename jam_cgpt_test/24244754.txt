@@ -1,0 +1,10 @@
+TDAT:     public void boot() throws IOException {
+        byte[] request = {SYSTEM_COMMAND_NOREPLY, BOOT};
+        request = appendString(request, "Let's dance: SAMBA");
+        nxtComm.sendRequest(request, 0);
+        // Connection cannot be used after this command so we close it
+        nxtComm.close();
+        open = false;
+    }
+
+COM:sends a command to boot a system while appending a message and then closes the connection

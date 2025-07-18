@@ -1,0 +1,9 @@
+TDAT:     protected Map toMap() {
+       final Map map = new HashMap();
+        map.put("entityName", entityName);
+        map.put("entityType", getEntityType());
+        map.put("isObjectContext", Boolean.toString(isObjectContext()));
+        return map;
+    }
+
+COM:converts an object's properties into a map of key-value pairs

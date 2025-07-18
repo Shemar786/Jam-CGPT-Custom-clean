@@ -1,0 +1,9 @@
+TDAT: public void addString(String string, float x, float y, org.eclipse.swt.graphics.Font font) {
+	if (isDisposed()) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+	FontRenderContext frc = new FontRenderContext(null, true, true);
+	GlyphVector glyph = font.handle.createGlyphVector(frc, string);
+	LineMetrics lm = font.handle.getLineMetrics(string, frc);
+	handle.append(glyph.getOutline(x, y + lm.getAscent()), true);
+}
+
+COM:adds a specified string at a given position using a specified font and checks if the graphic is disposed

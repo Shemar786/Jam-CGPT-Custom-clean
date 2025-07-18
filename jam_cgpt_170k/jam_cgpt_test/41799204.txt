@@ -1,0 +1,13 @@
+TDAT:     private void initialize() {
+        storedClass = new TestClass("storedHt");
+        storedContainer = new TestContainer(storedClass);
+        objs = new ObjectStore();
+        try {
+            objs.create(STORENAME);
+        } catch (RecordStoreException ex) {
+            ex.printStackTrace();
+        }
+        getDisplay().setCurrent(get_mainForm());
+    }
+
+COM:initializes variables and objects and sets the current display to the main form

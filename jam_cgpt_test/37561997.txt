@@ -1,0 +1,10 @@
+TDAT: protected Object nativeToJava(TransferData transferData){
+  if (!isSupportedType(transferData) || transferData.transferable == null) return null;
+  try {
+    return transferData.transferable.getTransferData(getDataFlavor());
+  } catch(UnsupportedFlavorException e) {
+  } catch(IOException e) {}
+  return null;
+}
+
+COM:converts native data to Java data using the provided TransferData object

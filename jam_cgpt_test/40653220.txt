@@ -1,0 +1,20 @@
+TDAT: 	public boolean addAll(int index, Collection c) {
+		int numNew = c.size();
+		if (numNew==0)
+			return false;
+		modCount++;
+
+		Entry successor = (index==size ? header : entry(index));
+		Entry predecessor = successor.previous;
+		Iterator it = c.iterator();
+		for (int i=0; i<numNew; i++) {
+			Entry e = new Entry(it.next(), successor, predecessor);
+			predecessor.next = e;
+			predecessor = e;
+		}
+		successor.previous = predecessor;
+
+		return true;
+	}
+
+COM:adds all elements of a given collection to a specific index of the list and returns a boolean value indicating success

@@ -1,0 +1,15 @@
+TDAT: 	public boolean canPlaceToVisibleField(int x, int y, int rt, Field fld) {
+		// Bigでは専用処理
+		if(big == true) return canPlaceToVisibleFieldBig(x, y, rt, fld);
+
+		boolean placed = false;
+
+		for(int i = 0; i < getMaxBlock(); i++) {
+			int y2 = y + dataY[rt][i];
+			if(y2 >= 0) placed = true;
+		}
+
+		return placed;
+	}
+
+COM:checks if a block can be placed on a visible game field, given its coordinates, rotation, and the game field

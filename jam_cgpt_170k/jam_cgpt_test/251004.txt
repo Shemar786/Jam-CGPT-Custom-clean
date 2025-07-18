@@ -1,0 +1,14 @@
+TDAT: 	private int contains(List toOperateOn, String newUser) {
+		logger.debug("entering contains");
+		for (int j = 0; j < toOperateOn.size(); j++) {
+			HashMap element = (HashMap) toOperateOn.get(j);
+
+			if (newUser.equals(element.get("USERNAME"))) {
+				return j;
+			}
+		}
+		logger.info("user does not exist in the list!");
+		return -1;
+	}
+
+COM:checks if a specific string is present in a list of HashMaps and returns its index if found, otherwise returns -1 and logs an info message

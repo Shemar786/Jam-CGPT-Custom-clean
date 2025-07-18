@@ -1,0 +1,27 @@
+TDAT: 	public void run() {
+		try {
+			while (running) {
+				synchronized (this) {
+					wait();
+					if (!running)
+						continue;
+				}
+				while (!octets.isEmpty()) {
+					count++;
+					Short octet = check(((Short) octets.dequeue()).shortValue());
+					if (octet != null) {
+						frame.enqueue(octet);
+					}
+					if (valid) {
+						reset();
+						layer.read(frame);
+					}
+				}
+			}
+		} catch (InterruptedException e) {
+			CodeProperties.log("Controller error: " + e);
+		}
+		CodeProperties.log("Exit Controller");
+	}
+
+COM:runs indefinitely, dequeuing octets from a queue and processing them until the program running the method is stopped

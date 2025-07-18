@@ -1,0 +1,15 @@
+TDAT:     public void setVectorOids( int[] vector_oids ) {
+
+        _vector_oids  = new ArrayList();
+
+        if ( vector_oids == null ) {
+            return;
+        }
+
+        for ( int i = 0; i < vector_oids.length; ++i ) {
+            addVectorOid( vector_oids[ i ] );
+        }
+
+    } // setVectorOids( int[] )
+
+COM:sets an ArrayList of integer values based on an input array, and returns nothing

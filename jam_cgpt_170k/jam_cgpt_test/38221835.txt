@@ -1,0 +1,10 @@
+TDAT:   private Point convertParentToOwn(Point point) {
+    if (this.getParent() != null) {
+      point.x -= this.getLocationOnScreen().x
+        - this.getParent().getLocationOnScreen().x;
+      point.y -= this.getLocationOnScreen().y;
+    }
+    return point;
+  }
+
+COM:converts the point given in the coordinate system of the parent to the coordinate system of the current component

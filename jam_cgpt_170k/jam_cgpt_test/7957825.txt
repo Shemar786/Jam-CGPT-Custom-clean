@@ -1,0 +1,14 @@
+TDAT: 	public void print(final PrintWriter out) {
+		final String dateString = java.text.DateFormat.getDateInstance()
+				.format(new Date());
+		out.println("Print " + ++file + " at " + dateString + " "
+				+ method.type() + " " + method.name() + ":");
+
+		visit(new PrintVisitor(out));
+
+		if (FlowGraph.PRINT_GRAPH) {
+			printGraph();
+		}
+	}
+
+COM:takes a PrintWriter object as input and prints a formatted string that includes a date, method type and name, and calls a PrintVisitor to print additional information, and optionally prints a graph

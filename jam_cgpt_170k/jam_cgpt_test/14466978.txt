@@ -1,0 +1,12 @@
+TDAT:   public TableCellRenderer getCellRenderer(int row, int col) {
+    if (this.model.grayXXCell() && row > 0 && col > 0 && row == col)
+      return grayRenderer;
+    Object contents = getValueAt(row, col);
+    if (contents == null) {
+      return transparentRenderer;
+    } else {
+      return ((TableViewConstituent)contents).getCellRenderer();
+    }
+  }
+
+COM:retrieves the appropriate cell renderer for a given row and column in a table view, based on the contents of that cell

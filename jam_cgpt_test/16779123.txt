@@ -1,0 +1,12 @@
+TDAT: 	public void setCurrentValues(IVector[] pars) {
+		this.pCurrent = new IVector[pars.length];
+		this.fCurrent = new double[pars.length];
+		for (int i = 0; i < pars.length; i++) {
+			this.pCurrent[i] = pars[i].clone();
+
+			this.fCurrent[i] = this.f.evaluate(this.pCurrent[i]);
+			this.predCurrent[i] = this.f.getLastPredictions();
+		}
+	}
+
+COM:sets the current values for an array of vectors and calculates their corresponding function values and predictions

@@ -1,0 +1,16 @@
+TDAT: 	public void setElement(int index, String value) throws Exception {
+		if (index != 0) {
+			throw new Exception("INTERNAL ERROR: invalid index " + index
+					+ " sent to AreaMoments:setElement");
+		} else {
+			try {
+				int type = Integer.parseInt(value);
+				setWindowLength(type);
+			} catch (Exception e) {
+				throw new Exception(
+						"Length of Area Method of Moments must be an integer");
+			}
+		}
+	}
+
+COM:sets the window length of an Area Method of Moments for a specific index and throws an exception if the index is invalid or the length is not an integer

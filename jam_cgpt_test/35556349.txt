@@ -1,0 +1,11 @@
+TDAT: 	public void processException(Connection connection, SQLException ex) {
+		if (ex.getMessage().indexOf("Communications link failure") >= 0) {
+			if (DBManager.emsOprType == DBManager.CLIENT_CONNECTION) {
+				JDrawCanvas jDrawCanvas = JDrawCanvas.getInstance();
+				jDrawCanvas.closeConnectionByDataBase();
+			}
+		}
+		return;
+	}
+
+COM:processes a SQLException and if it contains a specific error message, it closes the connection to a database

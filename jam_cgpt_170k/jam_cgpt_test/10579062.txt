@@ -1,0 +1,14 @@
+TDAT:     protected ActiveMQSession getAMQSession(Session session) throws JMSException {
+        ActiveMQSession amqSession;
+
+        if (session instanceof SessionProxy) {
+            // handle Springs CachingConnectionFactory
+            amqSession = (ActiveMQSession) ((SessionProxy) session).getTargetSession();
+        } else {
+            // just cast as we have no other idea
+            amqSession = (ActiveMQSession) session;
+        }
+        return amqSession;
+    }
+
+COM:returns an ActiveMQ session based on the given JMS session argument, handling exceptions and implementing specific functionality for a Spring CachingConnectionFactory

@@ -1,0 +1,11 @@
+TDAT:     public void setExponent(double newExponent) {
+        exponent = newExponent;
+        expIsInteger = exponent == Math.round(exponent);
+        expIsEven = exponent / 2 == Math.round(exponent/2);
+        if ((graphObject != null) && (graphObject instanceof ExponentialConstraintGraphics)) {
+            ((ExponentialConstraintGraphics)graphObject).updateExponent();
+        }
+        updateCosts();
+    }
+
+COM:sets a new exponent value, checks if it is an integer and even, updates a graph object if applicable, and updates costs

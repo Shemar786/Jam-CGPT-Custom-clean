@@ -1,0 +1,11 @@
+TDAT:     public void setMainObject(SpaceFiller mainObject) {
+        Rectangle oldMapRect = getShape().getPolygon().getBounds();
+        Rectangle mainObjRect = mainObject.getShape().getPolygon().getBounds();
+        // the smallest rectangle containing both bounding boxes
+        Rectangle union = oldMapRect.union(mainObjRect);
+        setShape(new Shape(union));
+        this.mainObject = mainObject;
+
+    }
+
+COM:sets the main object and updates the shape of the object based on the union of its current shape and the shape of the main object

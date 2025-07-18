@@ -1,0 +1,10 @@
+TDAT:     public Command getBackCommand16() {
+        if (backCommand16 == null) {//GEN-END:|275-getter|0|275-preInit
+            // write pre-init user code here
+            backCommand16 = new Command("OK", Command.BACK, 0);//GEN-LINE:|275-getter|1|275-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|275-getter|2|
+        return backCommand16;
+    }
+
+COM:returns a Command object for use as a back button with the label "OK"

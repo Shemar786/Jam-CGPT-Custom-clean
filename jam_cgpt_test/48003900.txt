@@ -1,0 +1,11 @@
+TDAT: 	public void printToLog(String string) {
+		JTextArea textArea = rootView.getJTextArea();
+		String DATE_FORMAT_NOW = "yyyy-MM-dd HH:mm:ss";
+		Calendar cal = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT_NOW);
+		String now = sdf.format(cal.getTime()) + ": ";
+
+		textArea.setText(textArea.getText() + "\n" + now + string);
+	}
+
+COM:prints a given string along with the current date and time to a JTextArea object

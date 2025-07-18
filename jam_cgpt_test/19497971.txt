@@ -1,0 +1,11 @@
+TDAT: 	public void testCreateTwoSamePO() throws Exception {
+		createPOFile();
+		runBuilder();
+		final IProofAttempt pa = pc.createProofAttempt(PO1, TEST, null);
+		final IProofAttempt pa2 = pc.createProofAttempt(PO1, OTHER, null);
+		assertNotNull(pa2);
+		assertNotSame(pa, pa2);
+		assertLivePAs(pa, pa2);
+	}
+
+COM:creates two proof attempts using the same proof obligation file and asserts that they are different but both are live

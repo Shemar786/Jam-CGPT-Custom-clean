@@ -1,0 +1,18 @@
+TDAT:   private StringBuilder appendInternal(String s) {
+	  if (s == null)
+		  s = "null";
+	  
+    // Reminder: compact code more important than speed
+    char[] sc = s.characters;
+    int sl = sc.length;
+    
+    int newlen = curLen + sl;
+    this.ensureCapacity(newlen);
+    
+    System.arraycopy (sc, 0, characters, curLen, sl);    
+    curLen = newlen;
+    
+    return this;
+  }
+
+COM:appends a string to a StringBuilder object and returns the modified StringBuilder object

@@ -1,0 +1,9 @@
+TDAT:     public void destroyStatusAsync(long statusId) {
+        getDispatcher().invokeLater(new AsyncTask(DESTROY_STATUS, new TwitterAdapter(), new Long[]{statusId}) {
+            public void invoke(TwitterListener listener, Object[] args) throws TwitterException {
+                listener.destroyedStatus(destroyStatus(((Long) args[0])));
+            }
+        });
+    }
+
+COM:asynchronously destroys a Twitter status using a listener and an AsyncTask

@@ -1,0 +1,15 @@
+TDAT:     public double speed() {
+        double speed = Double.MAX_VALUE;
+        Iterator i = ships().iterator();
+        while (i.hasNext()) {
+            Ship ship = (Ship) i.next();
+            if (ship.maxSpeed() < speed) {
+                speed = ship.maxSpeed();
+            }
+        }
+        if (speed == Double.MAX_VALUE) speed = 0.0;
+
+        return speed;
+    }
+
+COM:calculates and returns the minimum speed among all the ships in a list

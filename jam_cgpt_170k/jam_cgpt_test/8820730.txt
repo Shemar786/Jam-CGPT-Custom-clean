@@ -1,0 +1,13 @@
+TDAT: 	protected void setupOffScreen(int x, int y, int width, int height, Rectangle2D newOffscreenBuffer) {
+		offgraphics = offscreen.getGraphics();
+		offgraphics.setColor(getBackground());
+		offgraphics.setPaintMode();
+		offgraphics.fillRect(0, 0, width, height);
+		((BasicGraphUI)getUI()).drawGraph(offgraphics, null);
+		offscreenBounds = newOffscreenBuffer;
+		offscreenOffset = new Point2D.Double(x, y);
+		// Clear the offscreen, we've just drawn the whole thing
+		clearOffscreenDirty();
+	}
+
+COM:sets up an off-screen buffer and draws a graph onto it

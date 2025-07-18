@@ -1,0 +1,14 @@
+TDAT: 	private void convertBoolean(List list, String column) {
+		logger.debug("entering convertBoolean()");
+
+		for (int i = 0; i < list.size(); i++) {
+			HashMap hm = (HashMap) list.get(i);
+			if ("1".equals(hm.get(column))) {
+				hm.put(column, new Boolean(true));
+			} else {
+				hm.put(column, new Boolean(false));
+			}
+		}
+	}
+
+COM:converts the values of a specified column in a List of HashMaps from String "1" or "0" to Boolean true or false

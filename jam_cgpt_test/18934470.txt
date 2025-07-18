@@ -1,0 +1,16 @@
+TDAT: 	public void addSet(Enumeration e) {
+		if (e instanceof ArrayEnum) {
+			ArrayEnum ae=(ArrayEnum) e;
+			int avail=availableRoom(), sz=ae.available();
+			if (avail<sz) overflow(sz-avail);
+			if ((end>=begin) && (sz+end>entries.length)) {
+				int pass1=entries.length-end;
+				ae.copyInto(entries,end,pass1);
+				end=sz-pass1;
+				ae.copyInto(entries,0,end);
+			} else {
+				ae.copyInto(entries,end,sz);
+				end+=sz;}
+		} else super.addSet(e);}
+
+COM:adds elements from an Enumeration object to an array, checking for available space and handling overflow cases

@@ -1,0 +1,16 @@
+TDAT:     private void startAutoUpdate(int minutes) {
+        if (timer != null)
+            return;
+
+        timer = new Timer(minutes * 60 * 1000, // repeat every N minute
+            new ActionListener() {
+
+                public void actionPerformed(ActionEvent e) {
+                    updateMainGalaxy();
+                }
+            });
+        timer.setInitialDelay(100);
+        timer.start();
+    }
+
+COM:starts an automatic update process at specified intervals using a timer object that repeatedly triggers the updateMainGalaxy() method

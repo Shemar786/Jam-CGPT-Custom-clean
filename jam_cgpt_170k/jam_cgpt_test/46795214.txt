@@ -1,0 +1,12 @@
+TDAT: 	protected String getFieldMetadata(IField field) {
+		StringBuffer retstr = new StringBuffer();
+		retstr.append(" "+MetadataElements.IDotNetElement);
+		retstr.append(field.getElementType());
+		retstr.append(" "+MetadataElements.Flags);
+		retstr.append(field.getFlags());
+		retstr.append(" " +MetadataElements.Type);
+		retstr.append(field.getTypeSignature());
+		return retstr.toString();
+	}
+
+COM:returns a string containing metadata information for a given field, including its element type, flags, and type signature

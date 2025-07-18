@@ -1,0 +1,15 @@
+TDAT:     public void close() {
+        // Notify listeners
+        for (IChatStatusListener l : chatListeners) 
+            l.chatClosed( this );
+        // clean-up now
+        if (service != null) {
+            service.close(); // The chat service will clean-up all us as listeners too
+            service = null;
+        }
+        // Good bye, friends
+        chatListeners.clear();
+        chatListeners = null;
+    }
+
+COM:closes the chat and notifies listeners, cleans up the chat service, and removes all chat listeners

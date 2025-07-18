@@ -1,0 +1,22 @@
+TDAT:    public void close() throws SQLException {
+      synchronized (_conn) {
+         Iterator iter = list.iterator();
+
+         while (iter.hasNext()) {
+            Statement stmt = (Statement) iter.next();
+
+            try {
+               stmt.close();
+            } catch (SQLException e) {
+//               logCat.info("close", e);
+            } catch (Exception e) {
+               logCat.error(e);
+            }
+         }
+
+         list.clear();
+         open = false;
+      }
+   }
+
+COM:closes all statements in a list and clears it, while also setting a boolean flag to false

@@ -1,0 +1,17 @@
+TDAT:   protected void addRowNumPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MoveToRow_rowNum_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MoveToRow_rowNum_feature", "_UI_MoveToRow_type"),
+				 ActionStepPackage.eINSTANCE.getMoveToRow_RowNum(),
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a row number property descriptor to the list of item property descriptors for a MoveToRow action step

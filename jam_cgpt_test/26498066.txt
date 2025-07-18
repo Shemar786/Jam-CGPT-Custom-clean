@@ -1,0 +1,12 @@
+TDAT:   public void testOnCreate() throws Exception{
+    ListType type = new ListType();
+    for(int i = 0; i < 5; i++){
+      type.handleObject("", ""+i);
+    }
+    List list = (List)type.onCreate();
+    for(int i = 0; i < 5; i++){
+      assertEquals(""+i, list.get(i));
+    }    
+  }
+
+COM:tests the creation and handling of a list of objects using a ListType class

@@ -1,0 +1,11 @@
+TDAT:     protected void appendParentValidations() {
+        final Class<?> parent = type.getSuperclass();
+        // object and interfaces have not parents
+        if (parent == null)
+            return;
+        final IValidator val = ValidatorManager.getValidator(parent);
+        if (val.doesSomething() && val instanceof Validator)
+            validator.appendValidatorInformation((Validator) val);
+    }
+
+COM:appends validator information from the parent class to the current validator if the parent class exists and implements a validator interface

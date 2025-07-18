@@ -1,0 +1,20 @@
+TDAT:   public void initUI() {
+    initFrame();
+
+    initMenu();
+    initBowlerInterface();
+    initFieldInterface();
+    initBatsmanInterface();
+    initBallInterface();
+    initCoinInterface();
+    initUmpireInterface();
+    initScoreBoardInterface();
+
+    frame.setVisible(true);
+
+    reader = new Thread(this);
+    reader.setDaemon(true);
+    reader.start();
+  }
+
+COM:initializes the user interface and launches a new thread, setting it as a daemon, to read in user input

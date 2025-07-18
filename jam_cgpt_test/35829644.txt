@@ -1,0 +1,12 @@
+TDAT:     protected void _addBrother(int node, char chr, int newNode) {
+        int brother = factory.getBrother(node);
+        char brotherLabel = factory.getBrotherLabel(node);
+        
+        if (brother < 0 || brotherLabel > chr) {
+            factory.setBrother(newNode, brother, brotherLabel);
+            factory.setBrother(node, newNode, chr);
+        } else
+            _addBrother(brother, chr, newNode);
+    }
+
+COM:adds a new sibling node to a tree data structure

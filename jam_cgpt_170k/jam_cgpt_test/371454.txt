@@ -1,0 +1,19 @@
+TDAT:     public StringTree iterateNext() {
+        StringTree result = null;
+        if (hasChildren()) {
+            result = getChild(1);
+        }
+        if (result == null) {
+            StringTree base = this;
+            while (base != null) {
+                result = base.getNextSibling();
+                if (result != null) {
+                    break;
+                }
+                base = base.getParent();
+            }
+        }
+        return result;
+    }
+
+COM:returns the next element in a tree structure represented by a StringTree object

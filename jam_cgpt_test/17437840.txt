@@ -1,0 +1,12 @@
+TDAT: 	public SSLSocket getSSLSocket() throws IOException, UnknownHostException, KeyStoreException, NoSuchProviderException, CertificateException, NoSuchAlgorithmException, UnrecoverableKeyException, KeyManagementException {
+		SSLSocketFactory socketFactory = getPushSSLSocketFactory();
+		logger.debug( "Returning Push SSLSocket" );
+		
+		if ( proxySet ) {
+			return tunnelThroughProxy( socketFactory );
+		} else {
+			return (SSLSocket) socketFactory.createSocket(appleHost, applePort);
+		}
+	}
+
+COM:returns an SSLSocket, either by tunneling through a proxy or creating a new socket, using a SSL socket factory

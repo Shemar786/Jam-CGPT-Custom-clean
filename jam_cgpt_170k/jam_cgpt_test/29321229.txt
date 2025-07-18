@@ -1,0 +1,13 @@
+TDAT: 	private JButton getJButton() {
+		if (jButton == null) {
+			jButton = new JButton();
+			jButton.setComponentOrientation(java.awt.ComponentOrientation.LEFT_TO_RIGHT);
+			jButton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+			jButton.setSelected(true);
+			jButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+			jButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+		}
+		return jButton;
+	}
+
+COM:returns a JButton instance and initializes its properties if it has not already been initialized

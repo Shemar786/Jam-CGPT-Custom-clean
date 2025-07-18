@@ -1,0 +1,12 @@
+TDAT:     public boolean removeNotificationListener(String mbeanName, NotificationListener listener) throws Exception {
+        if (isConnected()) {
+            ObjectName objectName = new ObjectName(mbeanName);
+            mbsc.removeNotificationListener(objectName, listener, null, null);
+            jmxc.removeConnectionNotificationListener(listener);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+COM:removes a NotificationListener from an MBean if the connection is active, otherwise it returns false

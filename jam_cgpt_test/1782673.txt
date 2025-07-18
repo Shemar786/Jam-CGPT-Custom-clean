@@ -1,0 +1,8 @@
+TDAT:     public DomWindowProxy openNewWindow( String name, String relativeUrl ) throws IOException, SAXException {
+        if (relativeUrl == null || relativeUrl.trim().length() == 0) relativeUrl = "about:";
+        GetMethodWebRequest request = new GetMethodWebRequest( getURL(), relativeUrl, _frame, name );
+        WebResponse response=_window.getResponse( request );
+        return response;
+    }
+
+COM:opens a new web window with the given name and relative URL, and returns a DOM window proxy object

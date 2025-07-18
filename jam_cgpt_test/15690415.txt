@@ -1,0 +1,13 @@
+TDAT:     public Result getMatch(String lookup) {
+        int strLen = lookup.length();
+        char[] chars = new char[strLen + 1];
+        lookup.getChars(0, strLen, chars, 0);
+        chars[strLen] = '\uffff';
+        
+        TinyList resultList = new TinyList();
+        fillMatchResults(chars, 1, resultList);
+
+        return (Result)resultList.mElement;
+    }
+
+COM:takes a string input, converts it to a character array and finds a match using the fillMatchResults method, returning a Result object

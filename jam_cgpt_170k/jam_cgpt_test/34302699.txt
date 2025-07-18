@@ -1,0 +1,13 @@
+TDAT:     public void appendToWhereClause(JpqlSubselect subselect, JpqlWith with) {
+        JpqlWhere where = new JpqlCompiledStatement(subselect).getWhereClause();
+        with.jjtGetParent().jjtRemoveChild(2);
+        Node condition = with.jjtGetChild(0);
+        if (where == null) {
+            where = createWhere(condition);
+            appendChildren(subselect, where);
+        } else {
+            append(where, condition);
+        }
+    }
+
+COM:appends a subselect and a condition to a where clause in a compiled JPQL statement, and removes the second child from a parent node

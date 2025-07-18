@@ -1,0 +1,15 @@
+TDAT:     public boolean removeAll(Collection<Gateway> gateways) {
+        Validate.notNull(gateways);
+        Validate.noNullElements(gateways);
+
+        logger.log(Level.FINE, "Removing {0} gateways: {1}",
+                new Object[]{gateways.size(), gateways});
+        boolean changed = Gateways.gateways.removeAll(gateways);
+
+        if (changed) {
+            valuedSupport.fireEventOccured(Events.REMOVED_GATEWAYS, null);
+        }
+        return changed;
+    }
+
+COM:removes all elements in the provided collection of Gateway objects from a list and returns a boolean indicating if any changes were made

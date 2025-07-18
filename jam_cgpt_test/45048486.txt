@@ -1,0 +1,16 @@
+TDAT: 	public void execute(MultipartRequestParser multipartHandler, HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
+		
+		int code = this.getMaterialCode(request.getParameter("what"));
+		switch(code){
+		case 1: // Test Case
+			this.executeTestCase(multipartHandler, request,response);
+			break;
+		case 4: // Test Profile Version
+			this.executeTestProfile(multipartHandler, request,response);
+			break;
+		default:
+			this.showError(request, response,"error.jsp", ServletMessageCodes.INVALID_MATERIAL_CODE );
+		}
+	}	
+
+COM:executes either a test case or a test profile version based on the material code received from the HTTP request

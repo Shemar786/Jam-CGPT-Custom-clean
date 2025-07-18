@@ -1,0 +1,10 @@
+TDAT:     public void setFactors(int row, float... values) {
+        if (row >= rows) {
+            return;
+        }
+        int length = values.length < columns ? values.length : columns;
+        int start = row * columns;
+        System.arraycopy(values, 0, factors, start, length);
+    }
+
+COM:sets the values of a specified row in a 2D array of floats

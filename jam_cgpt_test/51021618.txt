@@ -1,0 +1,16 @@
+TDAT: 	public void updateMetaData() {
+		edges.clear();
+		vertices.clear();
+
+		// sync existing concept classes/relation types
+		for (ConceptClass cc : graph.getMetaData().getConceptClasses()) {
+			if (graph.getConceptsOfConceptClass(cc).size() > 0)
+				createVertexForConceptClass(cc);
+		}
+		for (RelationType rt : graph.getMetaData().getRelationTypes()) {
+			if (graph.getRelationsOfRelationType(rt).size() > 0)
+				createEdgeForRelationType(rt);
+		}
+	}
+
+COM:updates the metadata of the graph by clearing edges and vertices and synchronizing existing concept classes and relation types

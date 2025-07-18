@@ -1,0 +1,21 @@
+TDAT: 	public int queryAsCount(String sparqlQueryString) {
+		SparqlQuery sq = new SparqlQuery(sparqlQueryString, sparqlEndpoint);
+		ResultSetRewindable rsw = null;
+		if(cache == null) {
+			rsw = sq.send();
+		} else {
+			// get JSON from cache and convert to result set
+			String json = cache.executeSparqlQuery(sq);
+			rsw =  SparqlQuery.convertJSONtoResultSet(json);
+		}
+		int ret = -1;
+		while(rsw.hasNext()){
+			QuerySolution qs = rsw.nextSolution();
+			ret = qs.getLiteral("count").getInt();
+			
+		}
+		return ret;
+		
+	}
+
+COM:executes a SPARQL query and returns the count of results as an integer

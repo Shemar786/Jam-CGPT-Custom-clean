@@ -1,0 +1,13 @@
+TDAT: 	public void unregisterall() {
+		attempts = 0;
+		Message req = MessageFactory.createRegisterRequest(sip_provider,
+				target, target, null);
+		// ContactHeader contact_star=new ContactHeader(); // contact is *
+		// req.setContactHeader(contact_star);
+		req.setExpiresHeader(new ExpiresHeader(String.valueOf(0)));
+		printLog("Unregistering all contacts", LogLevel.HIGH);
+		TransactionClient t = new TransactionClient(sip_provider, req, this);
+		t.request();
+	}
+
+COM:unregisters all contacts associated with a SIP provider

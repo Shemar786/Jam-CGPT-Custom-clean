@@ -1,0 +1,12 @@
+TDAT: 	public boolean propertiesRenovated(int type) {
+		for (int i = 0; i < properties_.size(); i++) {
+			if (properties_.get(i).getTypeInt() == type  
+					&& properties_.get(i).getState().getLevel() != 0) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+
+COM:checks if any properties of a certain type have been renovated

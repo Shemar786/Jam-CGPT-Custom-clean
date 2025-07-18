@@ -1,0 +1,20 @@
+TDAT: 	public void skip(int numToSkip) throws IOException {
+		// REVIEW
+		// This is horribly inefficient, but it ensures that we
+		// properly skip over bytes via the TarBuffer...
+		//
+
+		byte[] skipBuf = new byte[8 * 1024];
+
+		for (int num = numToSkip; num > 0;) {
+			int numRead = this.read(skipBuf, 0,
+					(num > skipBuf.length ? skipBuf.length : num));
+
+			if (numRead == -1)
+				break;
+
+			num -= numRead;
+		}
+	}
+
+COM:skips over a specified number of bytes in a TarBuffer, using an inefficient but effective method of reading chunks of 8 KB at a time

@@ -1,0 +1,16 @@
+TDAT: 	private JSlider getIntervallSizeSlider() {
+		if (intervallSizeSlider == null) {
+			intervallSizeSlider = new JSlider(1, 99, 5);
+			intervallSizeSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+				public void stateChanged(javax.swing.event.ChangeEvent e) {
+
+					NumberFormat formatter = new DecimalFormat("00");
+					intervallActualLabel.setText(formatter.format(intervallSizeSlider.getValue()) + "/m");
+
+				}
+			});
+		}
+		return intervallSizeSlider;
+	}
+
+COM:returns a JSlider object for an interval size with a default value of 5 and a listener that updates a label with the slider's value

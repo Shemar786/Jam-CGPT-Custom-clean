@@ -1,0 +1,7 @@
+TDAT:   private void makeABIbut_actionPerformed(ActionEvent e) {
+        button_makeABI(new JFrame(), database1, selected_plate, editPlateTextArea);
+        button_refresh(database1,plateQDS,projPlateQDS,selected_plate,seqPlateQDS,selected_project);
+//        refresh_plate(plateQDS);
+  }
+
+COM:performs actions when the "makeABIbut" button is clicked, which involves passing parameters to two other methods for button creation and database refreshing

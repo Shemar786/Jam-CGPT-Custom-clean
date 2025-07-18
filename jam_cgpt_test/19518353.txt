@@ -1,0 +1,11 @@
+TDAT:   public void setOverallTimeoutPreference(int aTimeout) {
+    getPreferenceStore().putInt(OVERALL_TIMEOUT_PREFERENCE, aTimeout);
+    try {
+      getPreferenceStore().flush();
+    } catch (BackingStoreException e) {
+      e.printStackTrace();
+    }
+    assert getOverallTimeoutPreference() == aTimeout;
+  }
+
+COM:sets an overall timeout preference using an integer value, updates the preference store accordingly, ensures the update is flushed and asserts that the preference was successfully updated

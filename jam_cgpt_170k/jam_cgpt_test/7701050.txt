@@ -1,0 +1,9 @@
+TDAT:     public void putCompressed(String key, byte[] value) throws IllegalArgumentException {
+        validateKey(key);
+        if(value == null)
+            throw new IllegalArgumentException("null value for key: " + key);
+        //validateValue(value); // done when writing.  TODO: do here?
+        _props.put(key, new NeedsCompression(value));
+    }
+
+COM:puts a compressed byte array value with a specified key in a properties object and throws an IllegalArgumentException if the value is null

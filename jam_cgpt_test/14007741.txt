@@ -1,0 +1,23 @@
+TDAT: 	public String getUserType(){
+		String role = "";
+		try{
+			String query = "SELECT membershipID FROM users WHERE email='" +email+ "'";
+			ResultSet rs = DBManager.FillResultSet(query);
+			if(rs.next()){
+				int type = rs.getInt("membershipID");
+				if(type == 0){
+					role = "admin";
+				}else if(type == 1){
+					role = "gold";
+				}else if(type == 2){
+					role = "platinum";
+				}
+			}
+			DBManager.close(rs);
+		}catch(SQLException e){
+			System.out.println("getUserType: " + e);
+		}
+		return role;
+	}
+
+COM:retrieves the membership type of a user based on their email address by querying a database and returning either "admin", "gold", or "platinum"

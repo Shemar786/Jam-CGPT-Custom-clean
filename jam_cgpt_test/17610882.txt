@@ -1,0 +1,7 @@
+TDAT: 		protected int update(Pet pet) {
+			return this.update(new Object[] {pet.getName(), new java.sql.Date(pet.getBirthDate().getTime()),
+																			 new Integer(pet.getType().getId()), new Integer(pet.getOwner().getId()),
+																			 new Integer(pet.getId())});
+		}
+
+COM:updates a pet object in a database using its attributes

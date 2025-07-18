@@ -1,0 +1,12 @@
+TDAT:     public HarnessBootstrap getHarnessBootstrap() {
+        //Process params
+        java.util.Iterator i = bootParams.iterator();
+        AntBootstrapParam a = null;
+        while (i.hasNext()) {
+            a = (AntBootstrapParam)i.next();
+            harnessBootstrap.addBootstrapParam(a.getName(), a.getValue());
+        }
+        return harnessBootstrap;
+    }
+
+COM:retrieves a HarnessBootstrap object and adds AntBootstrapParam objects to its list of parameters, finally returning the modified HarnessBootstrap object

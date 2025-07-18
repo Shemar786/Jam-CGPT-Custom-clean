@@ -1,0 +1,14 @@
+TDAT: 	public void addBoundingBox(BoundingBox box) {
+		BoundingBox[] set = new BoundingBox[this.BBoxList.length+1];
+		int i = 0;
+		if (this.BBoxList.length != 0){
+			for (i = 0;i<this.BBoxList.length;i++){
+				set[i] = this.BBoxList[i];
+			}
+		}
+		set[i] = new BoundingBox(box);
+		this.BBoxList = set;
+		this.BBoxExists = true;
+	}
+
+COM:adds a BoundingBox object to an array of BoundingBoxes

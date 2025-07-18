@@ -1,0 +1,22 @@
+TDAT: 	private Document getSVGDoc(){
+		Document doc = null;
+		if(masterNode){
+			doc = this.svgDoc;
+		}else{
+			try {
+				EnvironmentProviderSlice mainSlice = (EnvironmentProviderSlice) getSlice(getMasterSlice());
+				doc = mainSlice.getSVGDoc();
+			} catch (ServiceException e) {
+				e.printStackTrace();
+			} catch (IMTPException e) {
+				e.printStackTrace();
+			}
+		}
+		if(doc != null){
+			return (Document) doc.cloneNode(true);
+		}else{
+			return null;
+		}
+	}
+
+COM:retrieves a Document object containing SVG information either from itself or from a main slice, depending on whether it is the master node or not

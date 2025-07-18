@@ -1,0 +1,10 @@
+TDAT:     public AbstractThread () {
+        /** Creates the category for log4j, 
+         * with the current instance class name
+         */
+        m_log = Category.getInstance(this.getClass().getName());
+        
+        m_log.debug ("Instanciated "+this.getClass().getName()+" [AbstractThread].");
+    }
+
+COM:creates a log4j category with the current instance class name and logs the instantiation of the class as a debug message

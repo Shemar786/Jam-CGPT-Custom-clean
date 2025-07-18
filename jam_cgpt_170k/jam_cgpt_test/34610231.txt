@@ -1,0 +1,13 @@
+TDAT:     public MutableString append(final MutableString s) {
+        final int l = s.length();
+        if (l == 0) {
+            return this;
+        }
+        final int newLength = length() + l;
+        expand(newLength);
+        System.arraycopy(s.array, 0, array, newLength - l, l);
+        hashLength = hashLength < 0 ? -1 : newLength;
+        return this;
+    }
+
+COM:appends a MutableString object to another MutableString object and returns the updated MutableString object

@@ -1,0 +1,6 @@
+TDAT: 	protected String getRmiRegistryLine(InetSocketAddress _isa, String _serviceName) {
+		assert (_isa != null) : "getRmiRegistryLine InetSocketAddress _isa is NULL!";
+		return "//" + _isa.getAddress().getHostAddress() + ":" + _isa.getPort() + "/" + _serviceName;
+	}
+
+COM:returns a String that represents an RMI registry line based on the given InetSocketAddress and service name

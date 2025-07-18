@@ -1,0 +1,11 @@
+TDAT:   public void insertExpressionFunc(int pos, String func){
+    if (expressionText.getText().length() == 0
+      || position == expressionText.getText().length()){
+      insertExpressionValue(position, func+"()");
+      setCursorPosition(position-1);
+    } else {
+      insertExpressionValue(position, func);
+    }
+  }
+
+COM:inserts a function string at a specific position within an expression text field, adding parentheses if the position is at the end of the field

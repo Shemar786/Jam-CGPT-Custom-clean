@@ -1,0 +1,17 @@
+TDAT: 	protected void addKindPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBError_kind_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBError_kind_feature", "_UI_UMLBError_type"),
+				 UMLBPackage.Literals.UMLB_ERROR__KIND,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to an item's property descriptor list for a specific UMLBError kind feature

@@ -1,0 +1,12 @@
+TDAT: 	private JButton getJButtonCall() {
+		if (jButtonCall == null) {
+			jButtonCall = new JButton();
+			jButtonCall.setText("CALL");
+			jButtonCall.setSize(new Dimension(80, 30));
+			jButtonCall.setPreferredSize(new Dimension(80, 30));
+			jButtonCall.setLocation(new Point(450, 585));
+		}
+		return jButtonCall;
+	}
+
+COM:returns a JButton with the text "CALL", a size and location set to specific dimensions if the JButton has not been instantiated yet

@@ -1,0 +1,10 @@
+TDAT:     public void updateSize() {
+    	Dimension dm = getMinimumSize();
+	Dimension dp = getPreferredSize();
+	Dimension d = new Dimension(dm.width>dp.width?dm.width:dp.width, 
+				    dm.height>dp.height?dm.height:dp.height);
+	setBounds(x - d.width / 2, y - d.height / 2, d.width, d.height);
+	revalidate();
+    }
+
+COM:updates the size of a component based on its preferred and minimum sizes and centers it on its parent container

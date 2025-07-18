@@ -1,0 +1,13 @@
+TDAT: 	public void testUndoMonsterMove() {
+		Cell emptyCell = getEmptyCell();
+		aMonsterMove = createMove(emptyCell);
+		assertTrue(aMonsterMove.movePossible());
+		Cell original = aMonsterMove.getMonster().getLocation();
+		assertNotSame(original, emptyCell);
+		aMonsterMove.apply();
+		assertEquals(emptyCell, aMonsterMove.getMonster().getLocation());
+		aMonsterMove.undo();
+		assertEquals(original, aMonsterMove.getMonster().getLocation());
+	}
+
+COM:tests the undo functionality of a move made by a monster in a game

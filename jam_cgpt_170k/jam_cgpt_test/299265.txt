@@ -1,0 +1,17 @@
+TDAT: 	public Image getImage(Object element) {
+		// if an image was already created, free it up (so as to not waste mem)
+		MemberPart part = (MemberPart) element;
+		MemberModel model = (MemberModel) part.getModel();
+		Image image = _mapping.get(model.getMember().getHandleIdentifier());
+		
+		if (image != null) {
+			image.dispose();
+		}
+		
+		
+		image = model.getIcon();
+		_mapping.put(model.getMember().getHandleIdentifier(), image);
+		return image;
+	}
+
+COM:retrieves and frees up an image object associated with a member, and stores the image associated with the member for future retrieval

@@ -1,0 +1,13 @@
+TDAT: 	private JTable getStartsTable() {
+		if (startsTable == null) {
+			startsTable = new JTable();
+			startsTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+			startsTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+			startsTable.setShowGrid(true);
+//			Ask to be notified of selection changes.
+			startsTable.getSelectionModel().addListSelectionListener(new TableSelectionListener());
+		}
+		return startsTable;
+	}
+
+COM:returns a JTable object and creates one if it doesn't exist, with specific settings for selection, auto-resizing, showing grid lines and registering a listener for table selection changes

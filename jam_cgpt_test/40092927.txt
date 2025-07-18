@@ -1,0 +1,10 @@
+TDAT:   private boolean messageRegExpMatches(String messageRegExp, Throwable ite) {
+    if (".*".equals(messageRegExp)) {
+      return true;
+    } else {
+      if (ite.getMessage() == null) return false;
+      else return Pattern.matches(messageRegExp, ite.getMessage());
+    }
+  }
+
+COM:checks if the throwable message matches the given regular expression

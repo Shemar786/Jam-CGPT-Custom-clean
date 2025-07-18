@@ -1,0 +1,10 @@
+TDAT:     private void doAdd(String title, String content) {
+        getConnection();
+        //createTable();
+        insertTable(title, content);
+        closeAll();
+        out.println("Add Successful!");
+        out.println("<br><a href=\"./web/control/news.jsp\">News Control</a>");
+    }
+
+COM:adds a new record to a database and outputs a success message with a link to a news control page in HTML format

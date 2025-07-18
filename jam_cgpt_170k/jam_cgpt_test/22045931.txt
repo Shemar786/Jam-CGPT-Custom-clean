@@ -1,0 +1,10 @@
+TDAT:     public OObject and( OObject z ){ 
+	if( (this instanceof Complex) && (z instanceof Complex) ) {
+	    return ((Complex)this).and( (Complex)z );
+	} else if( !((this instanceof Error) || (z instanceof Error)) ){
+	    return new jscicalc.expression.And( this, z );
+	}
+	return new Error( "OObject and( z ) error" );
+    }
+
+COM:performs a logical AND operation between two objects and returns the result as an OObject type

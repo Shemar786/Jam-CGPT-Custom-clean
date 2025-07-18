@@ -1,0 +1,17 @@
+TDAT:     private void toggleServer() {
+        final AntRunner antrunner = AntRunner.getInstance();
+
+        serverControl.setEnabled(false);
+
+        if (antrunner.isLoggerServerRunning()) {
+            antrunner.stopLoggerServer();
+        } else {
+            int port = getPort();
+
+            if (!antrunner.startLoggerServer(port)) {
+                serverControl.setEnabled(true);
+            }
+        }
+    }
+
+COM:toggles the logger server by calling methods from AntRunner and enabling/disabling the server control based on its running status

@@ -1,0 +1,19 @@
+public int add(int a, int b) {
+
+public boolean isEven(int number) {
+
+public String reverse(String input) {
+
+public int factorial(int n) {
+
+public boolean isPalindrome(String str) {
+
+public double average(int[] numbers) {
+
+public void printHelloWorld() {
+
+public boolean containsDigit(String s) {
+
+public int max(int[] array) {
+
+public void swap(int[] arr, int i, int j) {

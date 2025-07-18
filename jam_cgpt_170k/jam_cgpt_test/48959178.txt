@@ -1,0 +1,15 @@
+TDAT:     public char guestCode(int x, int y) {
+        assert invariant();
+        assert withinBorders(x, y);
+        char result;
+        Guest guest = getGuest(x, y);
+        if (guest != null) {
+            result = guest.guestType();
+        } else {
+            result = Guest.EMPTY_TYPE;
+        }
+        assert invariant();
+        return result;
+    }
+
+COM:retrieves the type of guest at the specified coordinates and returns it as a character, or an empty type if no guest exists at those coordinates

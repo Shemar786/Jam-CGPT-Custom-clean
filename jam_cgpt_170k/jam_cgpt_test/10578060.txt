@@ -1,0 +1,5 @@
+TDAT:     public boolean tableExists(DatabaseMetaData dbMetaData, String tableName) throws SQLException {
+        return (tableExistsCaseSensitive(dbMetaData, tableName) || tableExistsCaseSensitive(dbMetaData, tableName.toUpperCase(Locale.US)) || tableExistsCaseSensitive(dbMetaData, tableName.toLowerCase(Locale.US)));
+    }
+
+COM:checks if a table exists in a database using case-sensitive and case-insensitive comparisons

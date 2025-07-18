@@ -1,0 +1,10 @@
+TDAT: 	public void showEntryComponent(String sessionId, IQAEntryComponent entryComponent) {
+		logger.debug("showEntryComponent() -  sessionId[" + sessionId + "]  entering.");
+		
+		IQuizBangViewMode mode = modeMap.get(sessionId);
+		mode.showEntry();
+
+		logger.debug("showEntryComponent() -  sessionId[" + sessionId + "]  exiting.");
+	}
+
+COM:displays an IQAEntryComponent for a given sessionId using a view mode and logs debug messages upon entering and exiting the method

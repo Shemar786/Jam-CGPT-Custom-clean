@@ -1,0 +1,19 @@
+TDAT: 	protected Control createDialogArea(Composite parent) {
+
+		// Local Declarations
+		Composite swtComposite = (Composite) super.createDialogArea(parent);
+		GridLayout layout = (GridLayout) swtComposite.getLayout();
+		Composite comp;
+
+		// Set the column layout to one so that everything will stack
+		layout.numColumns = 1;
+
+		// Create the EntryComposite based on the Entries in the DataComponent
+		for (Entry i : dataComp.retrieveAllEntries()) {
+			entryComposites.add(new EntryComposite(swtComposite, SWT.FLAT, i));
+		}
+
+		return swtComposite;
+	}
+
+COM:creates a dialog area composed of multiple entry composites based on entries retrieved from a data component

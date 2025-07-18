@@ -1,0 +1,16 @@
+TDAT: 	private String getFullName(String userName) {
+		try {
+			UserManager userManager =
+					(UserManager) getServletContext().getAttribute("userManager");
+			User user = userManager.getUser(userName);
+			return user.getFullName();
+		} catch (Throwable t) {}
+
+		if (userName != null && userName.trim().length() > 0) {
+			return userName;
+		} else {
+			return Constants.UNKNOWN_USER;
+		}
+	}
+
+COM:retrieves the full name of a user with a given username, or returns the username itself if the full name cannot be retrieved, or returns "Unknown User" if the username is empty or null

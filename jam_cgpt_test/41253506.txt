@@ -1,0 +1,10 @@
+TDAT:         public void addToLexicon(Lexicon lexicon) {
+                if(getSubcategorizationFrame() != null)
+                        lexicon.addHasSubcatFrame(getSubcategorizationFrame());
+                if(getSemanticPredicate() != null)
+                        lexicon.addHasPredicate(getSemanticPredicate());
+                if(getLexicalEntry() != null)
+                        lexicon.addHasLexicalEntry(getLexicalEntry());
+        }
+
+COM:adds subcategorization frames, semantic predicates, and lexical entries to a given lexicon object

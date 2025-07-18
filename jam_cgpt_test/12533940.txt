@@ -1,0 +1,22 @@
+TDAT: 	protected void backLogInitialDemand(Demand demand){
+		//demand.process();
+		// initial request cannot be filled immediately
+		// set the fill indicator to indicate no successful first fill	
+		setFirstFillFlag(false);
+		
+		// determine how much to give the demand
+		int amt = allocateInventory(demand);
+		if (amt > 0){
+			// fill by the amount supplied
+			decrementOnHand(amt);
+			// give the units to the demand
+			demand.fill(amt);
+		}
+		// ask the backlog policy to backlog the demand
+		myBackLogPolicy.backlog(demand);
+		// check inventory after decrement/backlog
+		checkInventory();	
+		
+	}
+
+COM:allocates inventory for a demand, fills it if inventory is available, sets a fill indicator to false if initial request cannot be filled and backlogs the demand

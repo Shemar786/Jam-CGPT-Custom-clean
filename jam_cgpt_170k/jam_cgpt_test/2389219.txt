@@ -1,0 +1,7 @@
+TDAT:     public Dimension getPreferredScrollableViewportSize(){
+        //return new Dimension(500,500);
+        //return new Dimension(((int) maxSE.getX()) * (BOX_WIDTH_HEIGHT + BOX_SPACING) + PADDING, ((int) maxSE.getY()) * (BOX_WIDTH_HEIGHT + BOX_SPACING) + PADDING);
+        return getPreferredSize();
+    }
+
+COM:returns the preferred size of the JScrollPane's viewport

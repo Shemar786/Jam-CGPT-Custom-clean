@@ -1,0 +1,9 @@
+TDAT:     public String getControlScriptFileName() {
+        String scriptFilename = getString("control_script");
+        if (scriptFilename != null && !new File(scriptFilename).isAbsolute() && !scriptFilename.startsWith(StaticConfiguration.CONTROL_SCRIPTS_DIRECTORY)) {
+        	scriptFilename = StaticConfiguration.CONTROL_SCRIPTS_DIRECTORY + "/" + scriptFilename;
+        }
+        return scriptFilename;
+    }
+
+COM:returns the name of a control script file after checking if it is an absolute file path or if it starts with a controlled scripts directory

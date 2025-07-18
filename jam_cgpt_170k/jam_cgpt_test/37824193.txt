@@ -1,0 +1,9 @@
+TDAT:    protected void setDatabaseState( int dbState ) {
+      log.log(Level.FINEST,"DatabaseAbstr.setDatabaseState("+new Integer(dbState).toString()+")"); 
+      if( m_prDatabaseState != dbState ) {
+         m_prDatabaseState = dbState;
+         notifyListeners();
+      }
+   }
+
+COM:sets the database state and notifies listeners if the state has changed

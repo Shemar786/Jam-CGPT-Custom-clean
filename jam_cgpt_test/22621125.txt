@@ -1,0 +1,17 @@
+TDAT: 	public List pruneSortedGRList(List sorted) {
+		int max = 0;
+		int i = sorted.size() - 1;
+		while (i > 0 && max < 20) {
+			GradeRangeItem item = (GradeRangeItem) sorted.get(i);
+			GradeRangeItem other = (GradeRangeItem) sorted.get(i - 1);
+			if (item.contains(other)) {
+				sorted.remove(item);
+			}
+			i--;
+			max++;
+		}
+		showList(sorted, "pruned");
+		return sorted;
+	}
+
+COM:prunes a sorted list of GradeRangeItems by removing items that are contained within another item in the list, up to a maximum of 20 items removed, and then displays the pruned list

@@ -1,0 +1,17 @@
+TDAT: 	public void setONDEXGraph(ONDEXGraph aog) throws AccessDeniedException {
+
+		GeneralOutputEvent so = new GeneralOutputEvent(
+				"Using Lucene with index dir: " + this.indexdir,
+				"[LuceneEnv - setONDEXGraph]");
+		so.setLog4jLevel(Level.INFO); // todo: fix this - should be configured
+										// externally
+		fireEventOccurred(so);
+
+		// start indexing
+		indexONDEXGraph(aog, create);
+
+		// make the ONDEXGraph immutable
+		og = new LuceneONDEXGraph(aog);
+	}
+
+COM:sets the ONDEXGraph and creates a Lucene index based on it, making the ONDEXGraph immutable

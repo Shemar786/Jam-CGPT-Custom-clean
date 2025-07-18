@@ -1,0 +1,16 @@
+TDAT: 	public void startParser(boolean firstPass) throws SAXException{
+		_firstPass = firstPass;
+		try {
+		    reader.parse(_importer.getXmlFileLocation());
+		}
+		catch (IOException ioe) {
+			ioe.printStackTrace(System.err);
+		}
+		catch (SAXParseException spx){
+			spx.printStackTrace(System.err);
+			System.err.println("Error at line number: "+spx.getLineNumber()+" column number: "+spx.getColumnNumber()+".");
+			System.err.println("Cause: "+spx.getCause());
+		}
+	}
+
+COM:starts a parser for an XML file and handles any exceptions that may occur during the process

@@ -1,0 +1,10 @@
+TDAT:     public String createId() throws org.xmldb.api.base.XMLDBException {
+        try {
+            return this.stub.createId(this.collectionTransport);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e);
+        }
+        
+    }
+
+COM:creates an ID using a remote stub and a collection transport, and throws an XMLDBException if a remote exception occurs

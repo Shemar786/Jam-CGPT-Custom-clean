@@ -1,0 +1,12 @@
+TDAT: 	private JCheckBox getJCheckBoxDonate() {
+		if (jCheckBoxDonate == null) {
+			jCheckBoxDonate = new JCheckBox();
+			jCheckBoxDonate.setBounds(new Rectangle(41, 225, 378, 24));
+			jCheckBoxDonate.setSelected(true);
+			jCheckBoxDonate.setEnabled(false);
+			jCheckBoxDonate.setText("Yes, I want do donate the refund to Chalmers Airline");
+		}
+		return jCheckBoxDonate;
+	}
+
+COM:returns a JCheckBox object with specific properties, including being pre-selected and disabled

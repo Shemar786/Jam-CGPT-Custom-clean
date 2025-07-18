@@ -1,0 +1,13 @@
+TDAT:     public void onTimeout() {
+        if (suspected)
+            fibs.reconnect();
+        fibs.addTimeout(this, timeout);
+        suspected = true;
+        try {
+            fibs.send("time");
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to generate activity to fibs", e);
+        }
+    }
+
+COM:reconnects to a resource if it times out, adds a timeout, sets a flag to indicate a potential issue, sends a message to the resource, and throws an exception if it fails

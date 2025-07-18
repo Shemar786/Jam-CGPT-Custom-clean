@@ -1,0 +1,8 @@
+TDAT: 	private int getHexDigit(char c) {
+		if (c >= '0' && c <= '9') return c - '0';
+		if (c >= 'a' && c <= 'f') return c - 'a' + 10;
+		if (c >= 'A' && c <= 'F') return c - 'A' + 10;
+		return 0;
+	}
+
+COM:takes in a character and returns the corresponding hexadecimal digit as an integer

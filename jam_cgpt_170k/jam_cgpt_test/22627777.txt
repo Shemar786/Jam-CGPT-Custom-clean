@@ -1,0 +1,18 @@
+TDAT: 	public List getAcceptableMembers (Element instanceElement) { 
+		prtln ("\ngetAcceptableMembers with instanceElement:");
+		prtln (instanceElement.asXML());
+		ChoiceGuard guard;
+		try {
+			guard = new ChoiceGuard (this, instanceElement);
+		} catch (Exception e) {
+			prtln ("ChoiceGard init error: " + e.getMessage());
+			return new ArrayList();
+		}
+		prtln ("about to call ChoiceGuard getAcceptableMembers()");
+		List members = guard.getAcceptableMembers();
+		prtln ("acceptable members:");
+		printMemberList (members);
+		return members;
+	}
+
+COM:retrieves a list of acceptable members for a given XML element by creating a ChoiceGuard object and using its getAcceptableMembers method

@@ -1,0 +1,15 @@
+TDAT:     private String toolTipText(long inventoryAmount, SWGKnownResource res) {
+        if (res == null) return null;
+
+        if (inventoryAmount >= 0)
+            return String.format("Units owned: %s",
+                    ZNumber.asText(inventoryAmount, true, true));
+
+        if (res.rc().isSub(SWGCreatureResources.class)
+                && !res.rc().isHarvested())
+            return "Not possible to harvest in the worlds";
+
+        return null;
+    }
+
+COM:returns a tooltip text based on inventory amount and resource type

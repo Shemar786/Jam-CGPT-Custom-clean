@@ -1,0 +1,17 @@
+TDAT: 	protected void addLocalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBEventVariable_local_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBEventVariable_local_feature", "_UI_UMLBEventVariable_type"),
+				 UMLBPackage.Literals.UMLB_EVENT_VARIABLE__LOCAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to a list for a specified object that is related to a UMLBEventVariable object

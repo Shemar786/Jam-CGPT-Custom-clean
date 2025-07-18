@@ -1,0 +1,11 @@
+TDAT:   public void setProjectActionDefaultStat() {
+    try {
+      wpMask mask = new wpMask(PROJECT_ACTIONS, projectActionIndices,
+                               projectActionDefaultStat);
+      wpMaskEvent event = new wpMaskEvent(this, mask);
+      maskHandler.fireMaskChanged(event);
+    }
+    catch (wpMaskException me) {}
+  }
+
+COM:sets the default value of a project action status using a wpMask object and fires an event to notify listeners of the change

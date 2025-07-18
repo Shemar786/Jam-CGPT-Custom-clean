@@ -1,0 +1,12 @@
+TDAT: 		public boolean equals(Object o) {
+			try {
+				RelatedResource rr = (RelatedResource) o;
+				if (rr.getUrl() != null && _url != null && rr.getKind() != null && _kind != null)
+					return (rr.getUrl().equals(_url) && rr.getKind().equals(_kind));
+			} catch (Throwable t) {
+				return false;
+			}
+			return false;
+		}
+
+COM:overrides the equals method to return true if the object being compared has the same URL and kind as the current object

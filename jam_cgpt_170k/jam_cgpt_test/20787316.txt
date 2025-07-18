@@ -1,0 +1,15 @@
+TDAT: 	public void update (TuioContainer3D tcon) {
+		super.update(tcon);
+		x_speed = tcon.getXSpeed();
+		y_speed = tcon.getYSpeed();
+		z_speed = tcon.getZSpeed();
+		motion_speed = tcon.getMotionSpeed();
+		motion_accel= tcon.getMotionAccel();
+		path.addElement(new TuioPoint3D(currentTime,xpos,ypos,zpos));
+		
+		if (motion_accel>0) state = TUIO_ACCELERATING;
+		else if (motion_accel<0) state = TUIO_DECELERATING;
+		else state = TUIO_STOPPED;
+	}
+
+COM:updates various motion-related properties of a TuioContainer3D object and adds its position to a path, determining its state (TUIO_ACCELERATING, TUIO_DECELERATING, or TUIO_STOPPED) based on its motion acceleration

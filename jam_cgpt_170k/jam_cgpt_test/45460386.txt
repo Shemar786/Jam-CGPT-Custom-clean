@@ -1,0 +1,10 @@
+TDAT: 	private JComboBox getJComboBoxSex() {
+		if (jComboBoxSex == null) {
+			jComboBoxSex = new JComboBox(new String [] {
+					"", "female", "male", "hermaphrodite"} );
+			jComboBoxSex.setBounds(new Rectangle(121, 209, 137, 16));
+		}
+		return jComboBoxSex;
+	}
+
+COM:returns a JComboBox object with options for selecting a person's sex/gender

@@ -1,0 +1,9 @@
+TDAT:    public void removeMapping(GestureToActionMapping gm) {
+      mappings.remove(gm.getGestureClass());
+      eventManager.unRegisterEventHandler(gm.getGestureClass().getName());
+      mappingListModel.removeElement(gm);
+      gestureListModel.add(gm.getGestureClass());
+      toBeSaved = true;
+   }// removeMapping
+
+COM:removes a mapping of a gesture to an action and updates related data structures and a boolean flag to indicate that the changes need to be saved

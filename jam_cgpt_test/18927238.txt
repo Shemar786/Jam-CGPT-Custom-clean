@@ -1,0 +1,13 @@
+TDAT:   public void itemClicked(RequestContext context, HierarchyItem item) {
+    // create a selection model
+    MemberSelectionModel selection = new MemberSelectionModel();
+    if (navi.getSlicerExtension() == null)
+      selection.setMode(SelectionModel.NO_SELECTION);
+    else
+      selection.setMode(SelectionModel.SINGLE_SELECTION);
+
+    selection.setOrderedSelection(item.getSlicerSelection());
+    navi.itemClicked(context, item, selection, false);
+  }
+
+COM:creates a selection model based on the clicked hierarchy item and passes it to a navigation component

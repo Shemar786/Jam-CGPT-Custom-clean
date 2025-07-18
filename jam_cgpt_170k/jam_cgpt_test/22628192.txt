@@ -1,0 +1,13 @@
+TDAT: 	public GlobalDef getGlobalDefFromXPath(String xpath) {
+		// use a (normalized) xpath to obtain a typeName
+		// prtln ("getGlobalDefFromXPath()");
+		String normalizedXPath = XPathUtils.normalizeXPath(xpath);
+		SchemaNode schemaNode = (SchemaNode) schemaNodeMap.getValue(normalizedXPath);
+		if (schemaNode == null) {
+			prtln("getGlobalDefFromXPath no schemaNode found for " + normalizedXPath);
+			return null;
+		}
+		return schemaNode.getTypeDef();
+	}
+
+COM:takes a normalized XPath and returns the type definition of the corresponding schema node

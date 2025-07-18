@@ -1,0 +1,12 @@
+TDAT:     protected void sendAscii(String string) {
+
+        try {
+            this.out.write(string.getBytes("US-ASCII"));
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException("ASCII text not supported!");
+        } catch (IOException e) {
+            throw new RuntimeException("output failed!");
+        }
+    }
+
+COM:sends a string in ASCII format over an output stream

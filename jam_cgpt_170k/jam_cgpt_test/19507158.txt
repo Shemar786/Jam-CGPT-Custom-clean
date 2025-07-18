@@ -1,0 +1,11 @@
+TDAT: 	public void testCopyRFWithNullContainer() throws CoreException {
+		IRodinFile rfSource = createRodinFile("/P/X.test");
+		try {
+			rfSource.copy(null, null, null, false, null);
+		} catch (IllegalArgumentException iae) {
+			return;
+		}
+		assertTrue("Should not be able to copy a rf to a null container", false);
+	}
+
+COM:tests whether a Rodin file can be copied to a null container and throws an exception if it is not possible

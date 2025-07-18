@@ -1,0 +1,9 @@
+TDAT:     public ResultSet searchEvents() {
+        event = (Event_DBImpl)session.getAttribute("event");
+        String searchTitle = request.getParameter("title");
+        String searchCity = request.getParameter("city");
+        String searchState = request.getParameter("state");
+        return event.searchEvent(searchTitle, searchCity, searchState);
+    }
+
+COM:searches for events based on title, city, and state parameters and returns a ResultSet

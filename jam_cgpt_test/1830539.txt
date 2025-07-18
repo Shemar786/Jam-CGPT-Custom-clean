@@ -1,0 +1,13 @@
+TDAT:     public EmployeeBO getEmployee() {
+        EmployeeBO ebo = null;
+        try {
+            ebo = EmployeeDAO.getInstance().read(employeeID);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            String message = "Error returning Employee object: " + ex.toString();
+            JOptionPane.showMessageDialog(null, message, "getEmployee() Exception", JOptionPane.ERROR_MESSAGE);
+        }
+        return ebo;
+    }
+
+COM:returns an EmployeeBO object by retrieving it from an EmployeeDAO instance based on the employeeID parameter, and catches and prints any exceptions thrown during the retrieval process

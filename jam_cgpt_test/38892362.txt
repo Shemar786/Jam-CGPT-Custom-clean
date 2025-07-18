@@ -1,0 +1,16 @@
+TDAT: 	private Vector addDNPElements(Vector v, DNPElement[] DNPElements) {
+		if (DNPElements == null) {
+			return v;
+		}
+
+		v.setSize(Math
+				.max(v.size(), DNPElements[DNPElements.length - 1].Id + 1));
+
+		for (int i = 0; i < DNPElements.length; i++) {
+			v.setElementAt(DNPElements[i], DNPElements[i].Id);
+		}
+
+		return v;
+	}
+
+COM:adds DNPElements to a Vector, resizing it if necessary

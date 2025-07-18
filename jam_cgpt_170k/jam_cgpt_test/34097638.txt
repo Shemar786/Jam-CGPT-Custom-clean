@@ -1,0 +1,16 @@
+TDAT: 	private void createAnalysisCache() throws IOException {
+		analysisCache = ClassFactory.instance().createAnalysisCache(classPath, bugReporter);
+
+		// Register the "built-in" analysis engines
+		registerBuiltInAnalysisEngines(analysisCache);
+
+		// Register analysis engines in plugins
+		registerPluginAnalysisEngines(detectorFactoryCollection, analysisCache);
+
+		// Install the DetectorFactoryCollection as a database
+		analysisCache.eagerlyPutDatabase(DetectorFactoryCollection.class, detectorFactoryCollection);
+
+		Global.setAnalysisCacheForCurrentThread(analysisCache);
+	}
+
+COM:creates an analysis cache, registers analysis engines, installs a detector factory collection, and sets the analysis cache for the current thread

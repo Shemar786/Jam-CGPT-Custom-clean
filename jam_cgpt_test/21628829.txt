@@ -1,0 +1,15 @@
+TDAT:     private int getColumnCount(UIComponent component) {
+        int count;
+        Object value = component.getAttributes().get("columns");
+        if ((value != null) && (value instanceof Integer)) {
+            count = (Integer) value;
+        } else {
+            count = 2;
+        }
+        if (count < 1) {
+            count = 1;
+        }
+        return (count);
+    }
+
+COM:retrieves the number of columns for a UI component, and defaults to 2 if not specified

@@ -1,0 +1,12 @@
+TDAT:     private boolean putKeyImpl(String gatewayName, Tuple<String, String> key) {
+        if (gatewayName == null) {
+            throw new IllegalArgumentException("gatewayName");
+        }
+        if (key == null) {
+            throw new IllegalArgumentException("key");
+        }
+        Tuple<String, String> previous = keyring.put(gatewayName, key);
+        return previous == null || !ObjectUtils.equals(previous, key);
+    }
+
+COM:stores a key-value pair in a map, throws an exception if any parameter is null, and returns a boolean indicating whether the previous value was replaced by the new value

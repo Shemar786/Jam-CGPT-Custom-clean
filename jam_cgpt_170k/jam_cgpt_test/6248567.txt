@@ -1,0 +1,14 @@
+TDAT: 	public void createPartControl(Composite parent) {
+		OmniUITrace.trace(this,"createPartControl("+parent+")","(called)");
+		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
+		viewer.setContentProvider(new ViewContentProvider());
+		viewer.setLabelProvider(new ViewLabelProvider());
+		viewer.setSorter(new NameSorter());
+		viewer.setInput(getViewSite());
+		makeActions();
+		hookContextMenu();
+		hookDoubleClickAction();
+		contributeToActionBars();
+	}
+
+COM:creates controls for a view that includes a table viewer, content and label providers, a sorter, and actions

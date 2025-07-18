@@ -1,0 +1,12 @@
+TDAT:     public void sendMapSharingStopRequest() {
+        try {
+            CollaborationAction action = createCollaborationAction(sendToUser,
+                    STOP_MAP_SHARING);
+            String message = marshal(action);
+            sendMessage(sendToUser, action);
+        } catch (Exception e) {
+            freemind.main.Resources.getInstance().logException(e);
+        }
+    }
+
+COM:sends a request to stop sharing a map with a specific user in a collaboration session

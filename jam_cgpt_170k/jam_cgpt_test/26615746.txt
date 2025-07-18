@@ -1,0 +1,21 @@
+TDAT:     private void initConsole() {
+        
+		consoleHub = new DefaultHub();
+        
+        consoleHub.addControllable(projectController);
+
+        TelnetServer telnet = new TelnetServer();
+
+        if (!telnet.isInitialized()) {
+            log.fatal("Can't run telnet server");
+
+            return;
+        }
+
+        consoleHub.addIOHandler(telnet.getIOHandler());
+
+        log.info("Telnet server is starting up");
+        telnet.start();
+    }
+
+COM:initializes a console by setting up a default hub, adding a controllable project controller and a Telnet server, checking if the server is initialized, and then starting the server

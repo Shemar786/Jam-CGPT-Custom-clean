@@ -1,0 +1,9 @@
+TDAT:   public void replaceData(int offset, int count, String arg) {
+    try {
+      XMLParserImpl.replaceData(this.getJsObject(), offset, count, arg);
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_MODIFICATION_ERR, e, this);
+    }
+  }
+
+COM:replaces the data in an XML document at a specified offset with a given string argument

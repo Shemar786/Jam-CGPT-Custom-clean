@@ -1,0 +1,12 @@
+TDAT:   public TableCellEditor getCellEditor(int row, int col) {
+    Object value = getValueAt( row, col );
+
+    if( value instanceof BelEnumerationAttribute ) {
+      this.enumEditor.setData( (BelEnumerationAttribute) value );
+      return new DefaultCellEditor( this.enumEditor );
+    }
+
+    return super.getCellEditor(row, col);
+  }
+
+COM:returns the cell editor for a specific row and column in a table, and if the corresponding value is of a certain type (BelEnumerationAttribute), it sets the data in the editor and returns a DefaultCellEditor

@@ -1,0 +1,15 @@
+TDAT: public void testAssignConfiguration() {
+    System.out.println("testAssignConfiguration");
+    
+    try {
+        Properties p = new Properties();
+        azMgr.assignConfiguration(p);
+        System.out.println("Empty config assigned");
+    } catch (OsidException oe) {
+        fail("OsidException: "+oe.getMessage());
+    }
+    
+    
+}
+
+COM:tests the assignment of an empty configuration to an AzManager object and prints a message indicating success or failure

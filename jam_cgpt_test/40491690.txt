@@ -1,0 +1,12 @@
+TDAT:     public void velocityDrive(int left, int right) {
+        if (create != null) {
+            int x = limit(-MAX_VELOCITY, MAX_VELOCITY, left);
+            int y = limit(-MAX_VELOCITY, MAX_VELOCITY, right);
+            log("Drive:" + x + "\t" + y);
+            create.driveDirect(
+                    x,
+                    y);
+        }
+    }
+
+COM:allows for controlling the velocity of a robot's left and right motors, limited by a maximum velocity, and logs the resulting drive values

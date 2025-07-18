@@ -1,0 +1,17 @@
+TDAT: 	protected void addSimIntervalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveHistoryTimer_simInterval_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveHistoryTimer_simInterval_feature", "_UI_EveHistoryTimer_type"),
+				 TimerPackage.Literals.EVE_HISTORY_TIMER__SIM_INTERVAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the simulation interval feature of an EveHistoryTimer object

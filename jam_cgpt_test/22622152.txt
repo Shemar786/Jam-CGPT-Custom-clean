@@ -1,0 +1,8 @@
+TDAT: 	public void setDisplayState(String key, String state) {
+		// prtln ("setting displayState for " + CollapseUtils.ppKey(key) + " to: " + state);
+		if (key != null && key.trim().length() != 0) {
+			getStateMap().put(key, state);
+		}
+	}
+
+COM:sets the display state of a key-value pair in a map

@@ -1,0 +1,15 @@
+TDAT:   public List fetchInsertStatement(List v, String tableName) {
+    List inserts = new ArrayList();
+
+    for (int i = 0; i < v.size(); i++) {
+      Statement	stmt = (Statement)v.get(i);
+      if (stmt instanceof InsertStatement) {
+	if ((((InsertStatement)stmt).getIdent()).equals(tableName)) {
+	  inserts.add((InsertStatement)stmt);
+	}
+      }
+    }
+    return inserts;
+  }
+
+COM:fetches a list of insert statements that match a specified table name from a given list of statements

@@ -1,0 +1,15 @@
+TDAT:     public void setFilters(IFilter[] existing) {
+        filters.removeAll();
+
+        String[] items = new String[existing.length];
+        for (int x = 0; x < existing.length; x++) {
+            items[x] = existing[x].toString();
+        }
+
+        Arrays.sort(items);
+        for (String item : items) {
+            filters.add(item);
+        }
+    }
+
+COM:sets filters using the provided existing array, sorts them alphabetically, and adds them to a separate filters array

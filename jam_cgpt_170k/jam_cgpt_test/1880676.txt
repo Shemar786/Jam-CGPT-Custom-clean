@@ -1,0 +1,12 @@
+TDAT:     protected int intValue(final String option) {
+        Object value = optionValues.get(option);
+        if (value instanceof Integer) {
+            return (Integer) value;
+        }
+        if (value instanceof String) {
+            return Integer.parseInt(value.toString());
+        }
+        return ((Integer) optionValues.get(option)).intValue();
+    }
+
+COM:returns the integer value associated with the given option key, either by retrieving it from a map or parsing it from a string value

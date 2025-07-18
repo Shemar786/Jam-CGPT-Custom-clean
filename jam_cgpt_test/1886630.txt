@@ -1,0 +1,13 @@
+TDAT:   /*private void loadLevelName(BufferedReader reader) throws IOException {
+    SimpleProperty prop = loadProperty(reader.readLine());
+
+    if (!prop.name.equalsIgnoreCase(PROPERTY_LEVEL_NAME)) {
+      throw new IOException("Could not find level name!");
+    }
+    
+    level.name = prop.value;
+    
+    reader.readLine();
+  }*/
+
+COM:loads the name of a level from a BufferedReader and assigns it to the "level" variable, but throws an IOException if the level name is not found in the input

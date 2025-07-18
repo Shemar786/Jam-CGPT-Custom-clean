@@ -1,0 +1,17 @@
+TDAT:     public void writeProperties() {
+        final IDESettings settings = IDESettings.getInstance();
+        final AntRunner antrunner = AntRunner.getInstance();
+
+        scriptPanel.writeProperties();
+        generalBehaviourPanel.writeProperties();
+        settings.setLocaleEnabled(localeSetting.isSelected());
+        settings.setPort(serverPanel.getPort());
+
+        antrunner.removeLoggerServerListener(this);
+
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.debug("pageide: wrote properties");
+        }
+    }
+
+COM:writes IDE and server properties to the GUI and removes a listener for logging

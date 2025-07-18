@@ -1,0 +1,16 @@
+TDAT: 	public String getBaseObjectAug() {
+		String result = null;
+		ModelContainerEditor mace = getCompositeParent();
+		if (mace == null) {
+			result = _baseObjectId;
+		} else {
+			// The ID of the Composite parent's base object (aug-aware).
+			String aug_base_id = mace.getBaseObjectAug();
+			// The corresponding object.
+			ModelObject aug_base = getObjectWrapperAug(aug_base_id);
+			result = aug_base.getObjectId();
+		}
+		return result;
+	}
+
+COM:returns the ID of the corresponding object's parent's base object (aug-aware)

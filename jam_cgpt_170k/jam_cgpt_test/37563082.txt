@@ -1,0 +1,8 @@
+TDAT: public int getBorderWidth () {
+	checkWidget ();
+  java.awt.Rectangle bounds = handle.getBounds();
+  java.awt.Rectangle cBounds = ((CControl)handle).getClientArea().getBounds();
+  return Math.max((bounds.width - cBounds.width + 1) / 2, (bounds.height - cBounds.height + 1) / 2);
+}
+
+COM:calculates and returns the border width of a widget

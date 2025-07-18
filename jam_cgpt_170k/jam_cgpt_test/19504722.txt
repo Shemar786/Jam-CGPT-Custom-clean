@@ -1,0 +1,20 @@
+TDAT: 	public void prove(long maxSteps) {
+		if (result != null) return;
+		if (context == null) throw new IllegalStateException("Loader must be preliminary invoked");
+		
+		initProver();
+		if (DEBUG) {
+			debug("==== Original clauses ====");
+			for (Clause clause : clauses) {
+				debug(clause.toString());
+			}
+		}
+
+		proofStrategy.setClauses(clauses);
+		proofStrategy.mainLoop(maxSteps);
+		result = proofStrategy.getResult();
+		
+		debugResult();
+	}
+
+COM:initiates a proof strategy, sets clauses and loops through the main strategy for a specified number of maximum steps

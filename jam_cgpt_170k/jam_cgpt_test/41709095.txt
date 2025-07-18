@@ -1,0 +1,15 @@
+TDAT: 	private boolean setupPathFind(int x,int y, int z) {
+		PathNode pn=createPathNode(x,y,z,getHeuristicFunction().defaultDirection(x, y, z));
+		
+		float h=getHeuristicFunction().calcHeuristic(x, y, z);
+		pn.heuristic=h;
+		if (h<=0) {
+			found=pn;
+			return false;
+		}
+		
+		addNode(pn);
+		return true;
+	}
+
+COM:sets up path finding by creating a path node with given coordinates and calculates its heuristic before adding it to the node list

@@ -1,0 +1,9 @@
+TDAT:     public boolean getBoolean() {
+        if (type == VariantTypes.BOOLEAN) {
+            return ((Boolean) value).booleanValue();
+        } else {
+            return "[true][yes][1][y][on]".indexOf("[" + value.toString().toLowerCase() + "]") != -1;
+        }
+    }
+
+COM:returns a boolean value based on whether the variant type is a boolean or if the value corresponds to a string representation of true

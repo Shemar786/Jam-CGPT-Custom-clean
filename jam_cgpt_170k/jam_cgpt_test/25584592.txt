@@ -1,0 +1,12 @@
+TDAT:     public GameObject remove(int index) {
+        GameObject oldValue = gameObjects[index];
+
+        int numMoved = size - index - 1;
+        if (numMoved > 0) {
+            System.arraycopy(gameObjects, index + 1, gameObjects, index, numMoved);
+        }
+        gameObjects[--size] = null; // Let gc do its work
+        return oldValue;
+    }
+
+COM:removes an element from an array of GameObjects at a specified index and returns the removed element

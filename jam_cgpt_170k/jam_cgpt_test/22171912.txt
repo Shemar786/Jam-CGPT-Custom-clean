@@ -1,0 +1,17 @@
+TDAT: 	protected void addStepDurationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveSimulation_stepDuration_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveSimulation_stepDuration_feature", "_UI_EveSimulation_type"),
+				 EvesimPackage.Literals.EVE_SIMULATION__STEP_DURATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the step duration feature in the EveSimulation class

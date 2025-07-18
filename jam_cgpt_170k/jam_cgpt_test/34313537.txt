@@ -1,0 +1,13 @@
+TDAT: 	private String getNextLine(RandomAccessFile _raf) throws IOException {
+		String s = _raf.readLine();
+		if (s==null) return null;
+		s = s.replace('\t', ' ');
+		s=s.trim();
+		s=s.replaceAll("\n\r", "\n");
+		while (s.indexOf("  ")>=0){
+			s = s.replaceAll("  ", " ");
+		}
+		return s;
+	}
+
+COM:reads the next line from a RandomAccessFile, replaces whitespace characters, trims the resulting string, and returns it

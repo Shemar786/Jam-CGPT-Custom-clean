@@ -1,0 +1,13 @@
+TDAT:     public boolean containsKey(String key) {
+        for (int i = messages.size() - 1; i >= 0; i--) {
+            Object messageContainer = messages.get(i);
+            if (messageContainer instanceof Properties && ((Properties) messageContainer).containsKey(key)) 
+                return true;
+            if (messageContainer instanceof ResourceBundle && containsKey((ResourceBundle) messageContainer, key)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+COM:checks if the given key is present in a list of messages, which could be either a Properties object or a ResourceBundle object

@@ -1,0 +1,16 @@
+TDAT: 	public void testAncestor(){
+		Container parent = new Container();
+		Container child = new Container();
+		parent.add(child);
+		Container grandson = new Container();
+		child.add(grandson);
+		
+		assertEquals(child.isAncestorOf(grandson), true);
+		assertEquals(parent.isAncestorOf(child), true);
+		assertEquals(parent.isAncestorOf(grandson), true);
+
+		assertEquals(child.isAncestorOf(parent), false);	
+		assertEquals(child.isAncestorOf(child), false);
+	}
+
+COM:tests if a parent container is an ancestor of its child container and if a child container is not an ancestor of itself or its parent

@@ -1,0 +1,25 @@
+TDAT: 	public boolean remove(Object o) {
+		if (o!=null) {
+			for (Entry e = header.next; e != header; e = e.next) {
+				if (e.element==null) {
+					remove(e);
+					return true;
+				}
+			}
+		} else {
+			for (Entry e = header.next; e != header; e = e.next) {
+				if (o.equals(e.element)) {
+					remove(e);
+					return true;
+				}
+				else if (e == header && o == header)
+				{
+					remove(e);
+					return true;                	
+				}
+			}
+		}
+		return false;
+	}
+
+COM:removes the specified object from a linked list if it exists and returns true, otherwise it returns false

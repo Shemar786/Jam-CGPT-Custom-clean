@@ -1,0 +1,13 @@
+TDAT:   public void update() {
+    if (ball != null) {
+      BallState ballAction = null;
+      if (ball.getStateCategoryType() == BallState.CATEGORY_TYPE_BOWL) {
+        ballAction = getHit();
+        if (ballAction != null) {
+          ball.affect(ballAction);
+        }
+      }
+    }
+  }
+
+COM:updates the state of a ball object based on certain conditions such as whether it is in a bowling category or not

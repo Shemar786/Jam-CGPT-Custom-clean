@@ -1,0 +1,19 @@
+TDAT: 	public void setIcon(boolean b) {
+		if (this.icon == b) {
+			return;
+		}
+		
+		this.icon = b;
+		
+		int w = this.getWidth(), h = this.titleBar.getHeight();
+		if (!this.icon) {
+			h += this.contentPane.getHeight() + this.distance;
+		}
+		
+		this.setSize(w, h);
+		
+		this.titleBar.getIconifiedButton().setToolTipText(
+		        (this.icon) ? "Restore" : "Minimize");
+	}
+
+COM:sets the icon of a component and changes the size of the component accordingly, while also changing the tooltip text of the icon

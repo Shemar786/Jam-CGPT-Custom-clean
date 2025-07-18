@@ -1,0 +1,9 @@
+TDAT: 	public void testBooleanExpressionSpecialization() {
+		te = mTypeEnvironment("S", "ℙ(S)", "x", "ℙ(S)", "y", "ℙ(S)");
+		assertExpressionSpecialization(te, //
+				"bool(x ⊆ y)", //
+				mSpec(te, mList("S", "T"), //
+						mList("x", "ℙ(S)", "z", "ℙ(T)")));
+	}
+
+COM:tests the specialization of a boolean expression using a type environment and assertion statements

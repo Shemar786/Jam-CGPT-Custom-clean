@@ -1,0 +1,7 @@
+TDAT:     protected Activity applyLaw(Influence inf, EnvironmentState env,Collection activities) {
+        SenseBatteryLevelInfluence senseInf = (SenseBatteryLevelInfluence) inf;
+        AGVRobot agv = senseInf.getInfluenceAuthor().getAgvRobot();
+        return new SenseBatteryLevelActivity(new ActivitySubject(agv), getTimeInterval(senseInf), senseInf.getPerceptionResult());
+    }
+
+COM:applies a law by creating a new SenseBatteryLevelActivity for an AGVRobot based on a SenseBatteryLevelInfluence

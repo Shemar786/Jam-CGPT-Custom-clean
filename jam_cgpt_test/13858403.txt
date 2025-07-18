@@ -1,0 +1,25 @@
+TDAT: 	public void run() {
+
+		Callable function = new Callable() {
+			public Object call() throws Exception {
+				return construct();
+			}
+		};
+
+		Runnable doFinished = new Runnable() {
+			public void run() {
+				finished();
+			}
+		};
+
+		/* Convert to TimedCallable if timeout is specified. */
+		long msecs = getTimeout();
+		if (msecs != 0) {
+			function = new TimedCallable(function, msecs);
+		}
+
+		setter(function).run();
+		ToolkitManager.getToolkit().asyncExec(doFinished);
+	}
+
+COM:runs a Callable function and executes a Runnable once the function has finished, with the option to set a timeout

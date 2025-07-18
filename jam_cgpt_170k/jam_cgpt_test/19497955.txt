@@ -1,0 +1,11 @@
+TDAT: 	public void testCreateTwoSameOwner() throws Exception {
+		createPOFile();
+		runBuilder();
+		final IProofAttempt pa = pc.createProofAttempt(PO1, TEST, null);
+		final IProofAttempt pa2 = pc.createProofAttempt(PO2, TEST, null);
+		assertNotNull(pa2);
+		assertNotSame(pa, pa2);
+		assertLivePAs(pa, pa2);
+	}
+
+COM:tests if two ProofAttempt objects can be created with the same owner

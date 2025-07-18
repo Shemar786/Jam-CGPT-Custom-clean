@@ -1,0 +1,12 @@
+TDAT:     public void destroy() {
+        try {
+            Object[] items = getItems();
+
+            for (int i=0; i < items.length; i++)
+                removeItem(((Item)items[i]).getName(), ((Item)items[i]).getCount());
+        } catch (Throwable e) {
+            e.printStackTrace(System.err);   // todo: log?
+        }
+    }
+
+COM:destroys the items in the inventory by calling a removeItem method for each item, and catches any errors that occur in the process

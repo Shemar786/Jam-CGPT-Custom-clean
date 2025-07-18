@@ -1,0 +1,10 @@
+TDAT:   public Map getFactoryClasses(String resourceClass) {
+    String namedFactoryKey = "factories." + resourceClass + ".*.class";
+    Map map = new SequencedHashMap(config.getMap(namedFactoryKey));
+    String defaultFactory =
+      config.get("factories." + resourceClass + ".default-factory");
+    map.put(DEFAULT_FACTORY, defaultFactory);
+    return map;
+  }
+
+COM:retrieves a map of factory classes based on a given resource class and a configuration file

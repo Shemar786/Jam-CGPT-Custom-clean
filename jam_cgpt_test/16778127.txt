@@ -1,0 +1,12 @@
+TDAT:     public double getInverseCDFPoint(double probability) throws ArithmeticException, IllegalArgumentException {
+		double location = getLocation();
+		double scale = getScale();
+
+		if (probability < 0.0 || probability > 1.0) {
+            throw new IllegalArgumentException("Incorrect input");
+        } else {
+            return location + ( scale * ( -Math.log( Math.log( 1.0/ (probability) ) ) ) );
+        }
+    }
+
+COM:calculates the inverse cumulative distribution function point of a given probability using location and scale parameters

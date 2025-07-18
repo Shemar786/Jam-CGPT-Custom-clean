@@ -1,0 +1,10 @@
+TDAT:     public Command getBackCommand26() {
+        if (backCommand26 == null) {//GEN-END:|622-getter|0|622-preInit
+            // write pre-init user code here
+            backCommand26 = new Command("Back", Command.BACK, 0);//GEN-LINE:|622-getter|1|622-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|622-getter|2|
+        return backCommand26;
+    }
+
+COM:returns a Command object for navigating back in the program, which is created if it doesn't already exist

@@ -1,0 +1,10 @@
+TDAT: 	private long compareTime(long currTime, long trackerTime) {
+		// right now we are comparing in seconds, divide by 60 if you want to
+		// compare in minutes
+		long timeDiff = (Math.abs((currTime - trackerTime) / 1000));
+		System.out.println("KeepAliveServiceThread::compareTime():timeDiff: "
+				+ Long.toString(timeDiff));
+		return timeDiff;
+	}// compareTime
+
+COM:compares the difference in time between two long variables, currTime and trackerTime, and returns the absolute time difference in seconds

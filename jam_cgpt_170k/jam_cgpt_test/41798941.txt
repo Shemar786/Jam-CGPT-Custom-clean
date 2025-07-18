@@ -1,0 +1,15 @@
+TDAT:     public void notifyIncomingMessage(MessageConnection messageConnection) {
+        Log.info("[OTAMessagesListener] notifyIncomingMessage invoked");
+        Log.info("[OTAMessagesListener] smsHandling: " + smsHandling);
+        
+        pending++;
+        smsHandling = true;
+        if(!startViaOTA){
+            syncViaSMS = true;
+        }else{
+            startViaOTA = false;
+        }
+        threadPool.startThread(this);
+    }
+
+COM:notifies an incoming message and updates certain variables and flags before starting a new thread

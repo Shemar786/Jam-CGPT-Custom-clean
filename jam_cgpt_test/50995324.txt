@@ -1,0 +1,7 @@
+TDAT:   protected void createCacheFile(Photo photo, File photoCacheFile, PhotoDimension dimension) throws IOException {
+    OutputStream photoOS = new BufferedOutputStream(new FileOutputStream(photoCacheFile));
+    PhotoHelper.getInstance().writeUncachedThumbnail(photo, photoOS);
+    photoOS.close();
+  }
+
+COM:creates a cache file for a photo of a specific dimension and writes an uncached thumbnail of the photo to the file

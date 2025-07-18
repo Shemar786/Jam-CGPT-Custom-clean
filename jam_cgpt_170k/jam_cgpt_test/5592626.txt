@@ -1,0 +1,15 @@
+TDAT:   public void nodeCopy() {
+
+    wpTreeNode adpNode;
+    wpBranch Entry;
+
+    // get the current wpDomToTreeModel node.
+    TreePath path = getSelectionPath();
+    adpNode = (wpTreeNode) (path.getLastPathComponent());
+    if (adpNode != null) {
+      // Create a copy of the selected node.
+      copyNode = adpNode.getNode().cloneNode(true);
+    }
+  } // end nodeCopy
+
+COM:creates a copy of a selected node in a tree model

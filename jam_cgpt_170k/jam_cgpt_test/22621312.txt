@@ -1,0 +1,18 @@
+TDAT: 	public String getSelectedKeywords() {
+		if (selectedKeywords == null) {
+			String[] recordKeywords = getRecordKeywords();
+			String rkws = "";
+			if (recordKeywords != null) {
+				for (int i = 0; i < recordKeywords.length; i++) {
+					rkws += recordKeywords[i];
+					if (i < recordKeywords.length - 1) {
+						rkws += ", ";
+					}
+				}
+				selectedKeywords = rkws;
+			}
+		}
+		return selectedKeywords;
+	}
+
+COM:returns a string of selected keywords with commas separating them, and retrieves them from a record's keywords if they have not yet been selected

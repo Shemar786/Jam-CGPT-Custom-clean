@@ -1,0 +1,12 @@
+TDAT:     public JInternalFrame showWindow(String title, JPanel content) {
+        JInternalFrame frame = new JInternalFrame(title, true, true, true);
+        frame.setLayout(new BorderLayout());
+        frame.add(content, BorderLayout.CENTER);
+        desk.add(frame);
+        frame.pack();
+        frame.setVisible(true);
+        frames.put(content, frame);
+        return frame;
+    }
+
+COM:creates and shows an internal frame with a title and content panel, adds it to a desktop pane, and returns the created frame

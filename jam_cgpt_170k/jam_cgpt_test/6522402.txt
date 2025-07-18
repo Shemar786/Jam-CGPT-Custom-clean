@@ -1,0 +1,15 @@
+TDAT: 	public PortletWindowSession removePortletWindowSession(String windowID) {
+		final String MN = "getPortletWindowSession";
+
+		PortletWindowSession winSession = (PortletWindowSession) this.windowSessions
+				.remove(windowID);
+
+		if (logger.isLogging(Logger.TRACE_HIGH) && winSession != null) {
+			logger.text(Logger.TRACE_HIGH, MN,
+					"removed PortletWindowSession with ID: " + windowID);
+		}
+
+		return winSession;
+	}
+
+COM:removes a PortletWindowSession with a specified windowID and returns it

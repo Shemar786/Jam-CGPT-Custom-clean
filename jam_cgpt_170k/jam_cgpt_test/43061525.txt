@@ -1,0 +1,14 @@
+TDAT:     public MusicNote getNote(int index) {
+
+        // If the index passed in is greater than the size of the list, there's
+        // a problem.
+        if(index > compSize ) {
+            return null;
+        }
+        else {
+            // Return the note at the given index
+            return (MusicNote)myNotes.get(index);
+        }
+    }
+
+COM:gets a MusicNote object at a specified index, checking if the index is valid

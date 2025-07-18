@@ -1,0 +1,15 @@
+TDAT: 	public void activateUser(String userID) throws SQLException {
+		logger.debug("Entering activateUser");
+
+		String query = "UPDATE user SET isDisabled='0' WHERE userID='" + userID
+				+ "'";
+		;
+		try {
+			db.executeUpdate(query);
+		} catch (SQLException ex) {
+			logger.warn("unable to activate user " + ex.getMessage());
+			throw new SQLException("unable to activate user " + userID);
+		}
+	}
+
+COM:activates a user in a database by updating their isDisabled field to 0, and throws a SQLException if it is unable to perform the update

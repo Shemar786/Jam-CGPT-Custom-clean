@@ -1,0 +1,15 @@
+TDAT:     public boolean addAll(Collection<SMS> collection) {
+        Validate.notNull(collection, "collection is null");
+        Validate.noNullElements(collection);
+
+        logger.log(Level.FINE, "Adding {0} new SMS to the queue", collection.size());
+        boolean added = false;
+        for (SMS sms : collection) {
+            if (add(sms)) {
+                added = true;
+            }
+        }
+        return added;
+    }
+
+COM:adds a collection of SMS objects to the queue and returns a boolean value indicating if at least one object was added

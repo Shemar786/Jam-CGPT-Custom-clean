@@ -1,0 +1,11 @@
+TDAT:     public String getStringByXpath(String xPathExpression) throws XPathExpressionException {
+
+        try {
+            XPath xPath = xPathFactory.newXPath();
+            return xPath.evaluate(xPathExpression, document);
+        } catch (Exception ex) {
+            throw new XPathExpressionException("Could not get string by xpath, expression " + xPathExpression + ", msg: " + ex.getMessage());
+        }
+    }
+
+COM:retrieves a string from an XML document using an XPath expression

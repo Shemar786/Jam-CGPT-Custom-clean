@@ -1,0 +1,14 @@
+TDAT:     public void testAddLayoutComponentComponentObject1() {
+        testLayout = new AdvancedLayout(2, 2);
+
+        testLayout.addLayoutComponent(component1, "0,1");
+
+        extractFirstPositionFromList();
+
+        assertEquals(0, resultingHorizontalPosition.getStartSeparation());
+        assertEquals(0, resultingHorizontalPosition.getStopSeparation());
+        assertEquals(1, resultingVerticalPosition.getStartSeparation());
+        assertEquals(1, resultingVerticalPosition.getStopSeparation());
+    }
+
+COM:tests the adding of a layout component to a specific position in the layout

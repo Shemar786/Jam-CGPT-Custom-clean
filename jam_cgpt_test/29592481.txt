@@ -1,0 +1,12 @@
+TDAT:   static public String removeWhitespace( String s) {
+    int len = s.length();
+    StringBuffer b = new StringBuffer( len);
+    for (int i=0; i< len; i++) {
+      char c = s.charAt(i);
+      if (!Character.isWhitespace(c))
+        b.append(c);
+    }
+    return b.toString();
+  }
+
+COM:takes a string as input and returns a new string with all whitespace characters removed

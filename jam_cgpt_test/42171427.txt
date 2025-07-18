@@ -1,0 +1,17 @@
+TDAT:   protected void addScriptScopeFactoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SafletScriptEnvironment_scriptScopeFactory_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SafletScriptEnvironment_scriptScopeFactory_feature", "_UI_SafletScriptEnvironment_type"),
+				 ScriptingPackage.Literals.SAFLET_SCRIPT_ENVIRONMENT__SCRIPT_SCOPE_FACTORY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a script scope factory feature in a SafletScriptEnvironment

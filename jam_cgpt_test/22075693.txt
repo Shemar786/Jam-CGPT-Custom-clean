@@ -1,0 +1,12 @@
+TDAT: 	protected void returnFile(File file, OutputStream out) throws IOException {
+		FileInputStream fin = new FileInputStream(file);
+		byte[] buf = new byte[4 * 1024]; // 4K buffer
+		int bytesRead;
+		while ((bytesRead = fin.read(buf)) != -1) {
+			out.write(buf, 0, bytesRead);
+			out.flush();
+		}
+		fin.close();
+	}
+
+COM:reads a file and writes its contents to an output stream using a buffer of 4K bytes

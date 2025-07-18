@@ -1,0 +1,18 @@
+TDAT:     public Locale getLocale() {
+        String currentLanguage = language.getValue();
+        String currentCountry = country.getValue();
+
+        final Locale defaultLocale = Locale.getDefault();
+
+        if (currentLanguage == null) {
+            currentLanguage = defaultLocale.getLanguage();
+        }
+
+        if (currentCountry == null) {
+            currentCountry = defaultLocale.getCountry();
+        }
+
+        return new Locale(currentLanguage, currentCountry);
+    }
+
+COM:returns a Locale object representing the user's language and country based on values obtained from the language and country variables or the default Locale if these variables are null

@@ -1,0 +1,24 @@
+TDAT: 	protected void resizeTabbox(int height){
+		//resize this 
+		//resize all views
+		currentViewHeight = height-heightOffset;//202 is good
+		View view = null;
+		
+		//resize the views
+		Tabpanels tabpanels;
+		Enumeration<Tabbox> tabs = primaryTabMap.keys();
+		while (tabs.hasMoreElements())
+		{
+			tabpanels = tabs.nextElement().getTabpanels();
+			List<?> tps = tabpanels.getChildren();
+			Tabpanel tabpanel = null;
+			for(int i=0;i<tps.size();i++){
+				tabpanel = (Tabpanel)tps.get(i);
+				view = (View)tabpanel.getChildren().get(0);
+				view.resizeView(currentViewHeight);
+			}
+		}
+		this.invalidate();
+	}
+
+COM:resizes the tabbox and all its views to a specified height

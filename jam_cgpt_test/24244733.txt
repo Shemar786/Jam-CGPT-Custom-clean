@@ -1,0 +1,8 @@
+TDAT: 	public int getBatteryLevel() throws IOException {
+		byte[] request = { DIRECT_COMMAND_REPLY, GET_BATTERY_LEVEL };
+		byte[] reply = nxtComm.sendRequest(request, 5);
+		int batteryLevel = (0xFF & reply[3]) | ((0xFF & reply[4]) << 8);
+		return batteryLevel;
+	}
+
+COM:retrieves the battery level of a device connected via Bluetooth and returns it as an integer value

@@ -1,0 +1,17 @@
+TDAT: 	protected void addResultPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SchedulingResult_result_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SchedulingResult_result_feature", "_UI_SchedulingResult_type"),
+				 ResultPackage.Literals.SCHEDULING_RESULT__RESULT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to an item's list of property descriptors

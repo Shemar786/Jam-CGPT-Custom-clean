@@ -1,0 +1,18 @@
+TDAT: 	public void setTutorialPuzzleKey(String puzzleKey) {
+		if( (puzzleKey == null  && this.puzzleKey != null ) ||
+			!puzzleKey.equals( this.puzzleKey ) || 
+			!tutorial ) {
+			tutorial = true;
+			this.puzzleKey = puzzleKey;
+			puzzleInfo = null;
+			setChanged();
+		
+			if( puzzleKey != null ) {		
+				PuzzleServiceAsync puzzleService = ServiceFactory.getPuzzleService();
+				refreshing = true;
+				puzzleService.loadTutorial( puzzleKey, tutorialInfoCallback  );
+			}
+		}
+	}
+
+COM:sets the tutorial puzzle key, checks if the key has changed, and loads the tutorial if it hasn't been loaded yet

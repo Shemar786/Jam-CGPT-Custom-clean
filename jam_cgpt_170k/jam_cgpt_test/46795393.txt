@@ -1,0 +1,15 @@
+TDAT: 	public void putToTLMap(IProject project, String key, Boolean value) {
+		String projectName = null;
+		if(project != null)
+			projectName = project.getLocation().toPortableString();
+		
+		if(projectName == null || projectName.equals("")){
+			this.gactypeLoadedMap.put(key, value);
+		}else{
+			//put key/value to according hash map
+			((HashMap)this.projecttypeLoadedMap.get(projectName)).put(key, value);
+		}
+				
+	}
+
+COM:puts a Boolean value to a hash map based on a key and the project it belongs to

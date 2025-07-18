@@ -1,0 +1,13 @@
+TDAT: 	public void drawIcon( Point2D s, Point2D t ) {
+
+		source = s;
+		target = t;
+		calcLineLen();
+		calcPositions();
+		float[] xs = new float[] { (float)topX, (float)botX };
+		float[] ys = new float[] { (float)topY, (float)botY };
+
+		setPathToPolyline( xs, ys );
+	}
+
+COM:draws an icon by calculating positions and creating a polyline shape between two points

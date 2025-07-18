@@ -1,0 +1,16 @@
+TDAT:   public RingElement removeCurrent() {
+    if (isEmpty()) return null;
+    RingElement result = current;
+    if (current.prev == current) {
+      head = current = null;
+    } else {
+      current.prev.next = current.next;
+      current.next.prev = current.prev;
+      current = current.next;
+      result.prev = result.next = null;
+    }
+    elements--;
+    return result;
+  }
+
+COM:removes the current ring element from a circular linked list, updates the pointers, and returns the removed element

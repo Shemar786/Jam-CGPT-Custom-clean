@@ -1,0 +1,8 @@
+TDAT: 	public void startTimeOut() {
+		birth=DateFormat.getTimeInstance(DateFormat.FULL).format(new Date());
+		h_birth=(new Integer(birth.substring(0, 2)));
+		m_birth=(new Integer(birth.substring(3, 5)));
+		s_birth=(new Integer(birth.substring(6, 8)));
+	}
+
+COM:sets the birth time for a time out

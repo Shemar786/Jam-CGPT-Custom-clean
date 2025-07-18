@@ -1,0 +1,20 @@
+TDAT: 	public void setEdgeShape(EdgeShape shape) {
+		this.shape = shape;
+		switch (shape) {
+		case QUAD:
+			Config.visual.setProperty(GRAPH_EDGE_SHAPES, KEYQUAD);
+			break;
+		case CUBIC:
+			Config.visual.setProperty(GRAPH_EDGE_SHAPES, KEYCUBIC);
+			break;
+		case BENT:
+			Config.visual.setProperty(GRAPH_EDGE_SHAPES, KEYBENT);
+			break;
+		case LINE:
+			Config.visual.setProperty(GRAPH_EDGE_SHAPES, KEYLINE);
+			break;
+		}
+		Config.saveVisual();
+	}
+
+COM:sets the shape of the edge of a graph, with options for quad, cubic, bent, or line, and saves the visual configuration

@@ -1,0 +1,12 @@
+TDAT: public void setInsertMark (TreeItem item, boolean before) {
+	checkWidget ();
+  Utils.notImplemented();
+//	int hItem = 0;
+//	if (item != null) {
+//		if (item.isDisposed()) error(SWT.ERROR_INVALID_ARGUMENT);
+//		hItem = item.handle;
+//	}
+//	OS.SendMessage (handle, OS.TVM_SETINSERTMARK, (before) ? 0 : 1, hItem);
+}
+
+COM:sets an insert mark on a TreeItem, either before or after the item, but its functionality is not yet implemented

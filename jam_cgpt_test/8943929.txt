@@ -1,0 +1,18 @@
+TDAT:     public boolean isBreakStatement(Node node) {
+        breakLoop: do {
+            if (node == null) return false;
+
+            switch (node.nodeId) {
+            case NEWLINENODE:
+                node = ((NewlineNode) node).getNextNode();
+                continue breakLoop;
+            case BREAKNODE: case NEXTNODE: case REDONODE:
+            case RETRYNODE: case RETURNNODE:
+                return true;
+            default:
+                return false;
+            }
+        } while (true);                    
+    }
+
+COM:checks if a given node is a break statement in a loop

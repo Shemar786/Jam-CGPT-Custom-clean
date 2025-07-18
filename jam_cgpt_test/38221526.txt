@@ -1,0 +1,12 @@
+TDAT:   public void putModuleLater(CModule parent, CModule module, Map params) {
+    CModuleHolder holder = new CModuleHolder(parent, module, params);
+
+    SwingUtilities.invokeLater(new CMainFormRunnable(this, holder) {
+      public void run() {
+        CModuleHolder holder = (CModuleHolder) obj;
+        mainForm.putModule(holder.parent, holder.module, (Map) holder.optional);
+      }
+    });
+  }
+
+COM:puts a module and its parameters on the event queue to be executed later on the Swing thread

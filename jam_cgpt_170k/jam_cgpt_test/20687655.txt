@@ -1,0 +1,12 @@
+TDAT: 	private JPanel getToolOptionsPanel() {
+		if (toolOptionsPanel == null) {
+			toolOptionsPanel = new JPanel();
+			toolOptionsPanel.setLayout(new BoxLayout(getToolOptionsPanel(), BoxLayout.X_AXIS));
+			toolOptionsPanel.add(getThinPenButton(), null);
+			toolOptionsPanel.add(getMediumPenButton(), null);
+			toolOptionsPanel.add(getThickPenButton(), null);
+		}
+		return toolOptionsPanel;
+	}
+
+COM:creates and returns a JPanel containing options for pen thickness

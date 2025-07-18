@@ -1,0 +1,16 @@
+TDAT:     public void addCommands(PDFPage page, AffineTransform extra) {
+	synchronized (commands) {
+            addPush();
+            if (extra!=null) {
+                addXform(extra);
+            }
+            //addXform(page.getInitialTransform());
+            commands.addAll(page.getCommands());
+            addPop();
+        }
+    
+        // notify any outstanding images
+        updateImages();
+    }
+
+COM:adds PDF commands to the current document page while optionally applying an AffineTransform, and updates any outstanding images

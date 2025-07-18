@@ -1,0 +1,15 @@
+TDAT: 	protected String getNewCategory() {
+		InputDialog entryDialog = new InputDialog(PlatformUI.getWorkbench()
+				.getActiveWorkbenchWindow().getShell(), "Add category",
+				"Add category:", getNewInputObject(), null);
+		if (entryDialog.open() == InputDialog.OK) {
+			if(TheoryPrefsUtils.contains(list.getItems(),
+					entryDialog.getValue())){
+				return null;
+			}
+			return entryDialog.getValue();
+		}
+		return null;
+	}
+
+COM:displays an input dialog to add a new category and returns the user's input if it is not already present in the list of items

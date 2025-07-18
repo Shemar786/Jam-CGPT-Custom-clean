@@ -1,0 +1,14 @@
+TDAT:     public void testAddEventToCalendar() {
+        System.out.println("addEventToCalendar");
+        
+        int eventId = 0;
+        int creator = 0;
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.addEventToCalendar(eventId, creator);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a test that adds an event to a calendar through a database implementation and prints a message to the console

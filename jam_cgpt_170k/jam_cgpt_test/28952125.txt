@@ -1,0 +1,13 @@
+TDAT:     public void addObject(ObjectEntry object) {
+        if (object != null) {
+            String mapName = object.getName();
+            if (mapName != null) {
+                if (objects == null) objects = new Hashtable<String, ObjectEntry>();
+                objects.put(mapName, object);
+            } else {
+                LOG.debug("Adding object with no name to connection: " + name);
+            }
+		}
+	}
+
+COM:adds an object to a hashtable if it's not null and has a name, otherwise logs a debug message

@@ -1,0 +1,22 @@
+TDAT: 	private ArrayList attemptToAddOrphans() {
+	    log.trace("attempting to add all orphans to the list");
+	    ArrayList addedOrphans = new ArrayList();
+	    int successfulAdditions;
+	    do {
+	        successfulAdditions = 0;
+	        Iterator orphansIterator = orphanedLineList.iterator();
+	        while(orphansIterator.hasNext()) {
+	            Line orphan = (Line)orphansIterator.next();
+	            if(insertLineIntoList(orphan)) {
+	                log.trace("orphan successfully added: " + orphan);
+	                addedOrphans.add(orphan);
+	                orphansIterator.remove();
+	                successfulAdditions++;
+	            }
+	        }
+	    } while(successfulAdditions != 0);
+	    
+	    return addedOrphans;
+	}
+
+COM:attempts to add all "orphaned" lines to a list by continuously iterating through the orphaned line list and adding any successfully inserted orphans to a new list, until no more successful additions can be made

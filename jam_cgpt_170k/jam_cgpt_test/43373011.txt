@@ -1,0 +1,11 @@
+TDAT:     public boolean filterOut(String name, int start, int end) {
+        if (filterPool.isEmpty()) return true;
+        if (!filterPool.containsKey(name)) return false;
+        List<Period> list = filterPool.get(name);
+        for (Period p : list) {
+            if (p.isOverLapped(start, end)) return true;
+        }
+        return false;
+    }
+
+COM:checks if a given time period overlaps with any existing time periods stored in a filter pool for a specific name

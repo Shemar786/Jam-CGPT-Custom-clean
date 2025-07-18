@@ -1,0 +1,12 @@
+TDAT: 	private JButton getBtnZoomOut() {
+		if (btnZoomOut == null) {
+			btnZoomOut = new JButton();
+			btnZoomOut.setPreferredSize(new Dimension(45, 26));
+			btnZoomOut.setIcon(new ImageIcon(getClass().getResource(PathImage + "ListMinus.png")));
+			btnZoomOut.setToolTipText("Zoom out");
+			btnZoomOut.addActionListener(canvas.new ZoomAction(0.8333333333));
+		}
+		return btnZoomOut;
+	}
+
+COM:returns a JButton with specific properties, including icon, tooltip, and action listener

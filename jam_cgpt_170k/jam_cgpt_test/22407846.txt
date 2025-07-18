@@ -1,0 +1,16 @@
+TDAT:     private void readBye() throws IOException {
+        Message message = (Message) listener.receive();
+
+        if (message == null) {
+            return;
+        }
+
+        if (Protocol.BYE.hasId(message.getId())) {
+            message = new Message(Protocol.BYE);
+            System.err.println("ANT execution interrupted...");
+            listener.send(message);
+            System.exit(0);
+        }
+    }
+
+COM:receives a message, checks if it is a "bye" message, sends a "bye" message to the listener if it is, and exits the program

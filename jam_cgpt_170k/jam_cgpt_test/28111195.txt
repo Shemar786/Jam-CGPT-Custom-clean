@@ -1,0 +1,13 @@
+TDAT:     public File pathToFile(String fileName) throws IOException {
+        File file = new File(fileName);
+
+        // if relative, fix up to bsh.cwd
+        if (!file.isAbsolute()) {
+            String cwd = (String) getu("bsh.cwd");
+            file = new File(cwd + File.separator + fileName);
+        }
+
+        return new File(file.getCanonicalPath());
+    }
+
+COM:takes a file name as input, resolves its absolute path, and returns a File object representing that path

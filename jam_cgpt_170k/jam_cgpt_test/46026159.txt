@@ -1,0 +1,7 @@
+TDAT: 	public int getLineDelay() {
+		if((speed.lineDelay < ruleopt.minLineDelay) && (ruleopt.minLineDelay >= 0)) return ruleopt.minLineDelay;
+		if((speed.lineDelay > ruleopt.maxLineDelay) && (ruleopt.maxLineDelay >= 0)) return ruleopt.maxLineDelay;
+		return speed.lineDelay;
+	}
+
+COM:returns the line delay if it falls within the minimum and maximum values specified in the ruleopt object, otherwise it returns the corresponding limit

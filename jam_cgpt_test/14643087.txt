@@ -1,0 +1,13 @@
+TDAT:     protected String idToName(String id) {
+        String name = (String) this.fPeerNamesById.get(id);
+        if (name == null) {
+            loadPeerName(id);
+            name = (String) this.fPeerNamesById.get(id);
+        }
+        if (name == null) {
+            return "id-unresolvable";
+        }
+        return name;
+    }
+
+COM:takes in an ID and returns the corresponding name if it exists in the "fPeerNamesById" map, otherwise it loads the missing name and returns either the name or "id-unresolvable" if it fails to load

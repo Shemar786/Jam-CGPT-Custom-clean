@@ -1,0 +1,17 @@
+TDAT: 	public void executePasswordFrame() {
+
+		String menuName = labelMenuMgr.getMenu("SCREEN_LOCK");
+
+		MyFrame mf = new MyFrame(menuName);
+		incrementViewId();
+		mf.setViewId(getViewId());
+
+		NetworkFrame networkFrame = NetworkFrame.getInstance();
+
+		PasswordView passwordView = new PasswordView(networkFrame);
+		mainMenuBar.putCommand((Object) passwordView);
+		passwordView.setViewId(getViewId());
+		passwordView.setVisible(true);
+	}
+
+COM:executes a password frame with a specific menu name and network frame instance

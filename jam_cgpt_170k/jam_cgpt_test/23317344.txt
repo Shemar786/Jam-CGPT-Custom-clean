@@ -1,0 +1,13 @@
+TDAT: 	private boolean minExecutionTimeReached(){
+		if(minExecutionTimeShown)return true;
+		long needed = System.currentTimeMillis()- this.runtime;
+		long minMilliSeconds = minExecutionTimeInSeconds *1000 ;
+		if(minMilliSeconds<needed){
+			logger.info("Minimum time ("+minExecutionTimeInSeconds+" seconds) reached, stopping when next solution is found");
+			minExecutionTimeShown=true;
+			return true;}
+		else return false;
+		
+	}
+
+COM:returns true if the minimum execution time has been reached, and false otherwise

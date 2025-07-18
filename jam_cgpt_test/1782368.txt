@@ -1,0 +1,9 @@
+TDAT:     public WebImage getImageWithAltText( String altText ) {
+        WebImage[] images = getImages();
+        for (int i = 0; i < images.length; i++) {
+            if (HttpUnitUtils.matches( altText, images[i].getAltText() )) return images[i];
+        }
+        return null;
+    }
+
+COM:returns a WebImage object that matches a given altText string

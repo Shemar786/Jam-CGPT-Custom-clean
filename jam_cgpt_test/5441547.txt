@@ -1,0 +1,13 @@
+TDAT:     public void setMinHandlerThreads(int min) {
+        if (min < 0) {
+            throw new IllegalArgumentException("minHandlers must be zero or greater.");
+        }
+
+        if (min > getMaxHandlerThreads()) {
+            throw new IllegalArgumentException("maxHandlers must be greater than minHandlers.");
+        }
+
+        minHandlers = min;
+    }
+
+COM:sets the minimum number of handler threads with input validation

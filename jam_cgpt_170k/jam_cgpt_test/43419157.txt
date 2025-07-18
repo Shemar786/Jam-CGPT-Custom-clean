@@ -1,0 +1,12 @@
+TDAT: 	private JTabbedPane getTpSettings() {
+		if (tpSettings == null) {
+			tpSettings = new JTabbedPane();
+			this.environmentSettings = new Physical2DEnvironmentSettingsPanel(this);
+			this.objectSettings = new Physical2DObjectSettingsPanel(this);
+			tpSettings.addTab(Language.translate("Umgebung"), environmentSettings);
+			tpSettings.addTab(Language.translate("Objekt"), objectSettings);
+		}
+		return tpSettings;
+	}
+
+COM:returns a JTabbedPane object with two tabs containing panels for physical 2D environment and object settings

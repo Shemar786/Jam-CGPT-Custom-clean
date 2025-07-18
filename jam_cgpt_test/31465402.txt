@@ -1,0 +1,30 @@
+TDAT:     public String lookupProperty(String path) {
+	int offset = 0;
+	String key;
+	int i;
+	NestableProperties ps = this;
+	Object value;
+	while (true) {
+	    i = path.indexOf(".", offset);
+	    if (i > 0) {
+		key = path.substring(offset, i);
+	    } else {
+		key = path.substring(offset);
+	    }
+	    offset = i + 1;
+	    value = ps.props.get(key);
+	    if (i > 0) {
+		if (value instanceof NestableProperties)
+		    ps = (NestableProperties) value;
+		else
+		    return null;
+	    } else {
+		if (value instanceof String)
+		    return (String) value;
+		else
+		    return null;
+	    }
+	}
+    }
+
+COM:looks up a property value in a nested set of properties using a given path

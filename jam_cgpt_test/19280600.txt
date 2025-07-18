@@ -1,0 +1,13 @@
+TDAT:     private RegistrationQuery getPersistenceObject() throws PridePersistenceException {
+        if (controller == null) {
+            String dbAlias = PropertiesHelper.getDBAlias();
+            if (dbAlias != null) {
+                controller = new OJBController(dbAlias);
+            } else {
+                throw new IllegalStateException("You must specify a jcd-alias to connect as there is no default jcd-alias defined in PRIDE");
+            }
+        }
+        return controller.getRegistrationQuery();
+    }
+
+COM:retrieves a RegistrationQuery persistence object from a database

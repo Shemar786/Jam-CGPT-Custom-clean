@@ -1,0 +1,17 @@
+TDAT: 	private PaletteContainer createEntities1Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(
+				Messages.Entities1Group_title);
+		paletteContainer.add(createPackage1CreationTool());
+		paletteContainer.add(createTask2CreationTool());
+		paletteContainer.add(createRole3CreationTool());
+		paletteContainer.add(createStep4CreationTool());
+		paletteContainer.add(createDiscipline5CreationTool());
+		paletteContainer.add(createProfile6CreationTool());
+		paletteContainer.add(createTransformationRule7CreationTool());
+		paletteContainer.add(createCode8CreationTool());
+		paletteContainer.add(createExtraModel9CreationTool());
+		paletteContainer.add(createUmlModel10CreationTool());
+		return paletteContainer;
+	}
+
+COM:creates a palette container with tools for creating various entities, such as packages, tasks, roles, and transformation rules

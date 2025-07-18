@@ -1,0 +1,10 @@
+TDAT:   public String toString() {
+    StringBuffer aBuffer = new StringBuffer(super.toString());
+    aBuffer.append("[namespacePrefix=").append(_theNamespacePrefix)
+           .append(" name=").append(_theName).append(" value=").append(_theValue)
+           .append("]");
+
+    return aBuffer.toString();
+  }
+
+COM:returns a string representation of an object with added namespace prefix, name, and value information

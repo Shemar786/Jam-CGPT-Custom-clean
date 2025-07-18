@@ -1,0 +1,5 @@
+TDAT:     public CircleSegmentPart createCircleSegment(Position2D positionA, Position2D positionB, Position2D center, RotationDirection direction, Access accesiblePositionA, Access accesiblePositionB) {
+        return new CircleSegmentPart(positionA, positionB, center, direction,accesiblePositionA,accesiblePositionB);
+    }
+
+COM:creates an instance of the CircleSegmentPart class using provided input parameters

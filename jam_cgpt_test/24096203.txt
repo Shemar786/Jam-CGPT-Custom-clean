@@ -1,0 +1,12 @@
+TDAT:       public void run() {
+         try {
+            JAviSynth w = JAviSynth.getInstance();
+            PClip clip = (PClip) w.invoke("Version");
+            PClip clip2 = (PClip) w.invoke("ReduceBy2", clip);
+            new SimpleViewer(clip2);
+         } catch (IOException e) {
+            e.printStackTrace();
+         }
+      }
+
+COM:retrieves and manipulates video clips using the JAviSynth library, and displays the resulting clip using a SimpleViewer object

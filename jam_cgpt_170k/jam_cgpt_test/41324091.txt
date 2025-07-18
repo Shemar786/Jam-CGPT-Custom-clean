@@ -1,0 +1,11 @@
+TDAT: 	public boolean containsValueIn(LOM aLOM, String aString) {
+		LOMValue theValue = getValueIn(aLOM);
+		if (theValue instanceof LOMValueInt) {
+			return theValue.contains(new LOMValueInt(aString, this));
+		} else if (theValue instanceof LOMValueVocabularySet)
+			return theValue.contains(new LOMValueVocabularySet(aString, this));
+		else
+			return theValue.contains(new LOMValueSet(aString, this));
+	}
+
+COM:checks if a given string value is contained within a specified LOM object

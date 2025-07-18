@@ -1,0 +1,15 @@
+TDAT: 	public String getInactiveIntervalRemaining() {
+		String ret = "Unknown";
+		try {
+			long lastAccessTime = session.getLastAccessedTime();
+			long now = new Date().getTime();
+			long lastAccess = now - lastAccessTime;
+			long maxInterval = (long) session.getMaxInactiveInterval() * 1000;
+			ret = Utils.convertMillisecondsToTime(maxInterval - lastAccess);
+		} catch (Throwable t) {
+			// t.printStackTrace();
+		}
+		return ret;
+	}
+
+COM:returns the remaining inactive time interval of a session in a human-readable format

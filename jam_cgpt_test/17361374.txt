@@ -1,0 +1,9 @@
+TDAT: 	public void writeOut(DataOutputStream out) throws IOException {
+		out.write((byte) this.packetType & 0xff);
+		if ((this.packetType >= INT_LOWER) && (packetType <= INT_UPPER))
+			out.writeInt(this.intData);
+		else if (packetType >= STR_LOWER && packetType <= STR_UPPER)
+			out.writeUTF(this.strData);
+	}
+
+COM:writes out packet data to a DataOutputStream object, including the packet type, integer data (if applicable), and string data (if applicable)

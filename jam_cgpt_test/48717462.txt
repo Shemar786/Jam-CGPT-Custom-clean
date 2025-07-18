@@ -1,0 +1,11 @@
+TDAT:     public String getValue(String name) {
+        final boolean supportsContextPath = ServletContextUtils.isAtLeast25(servletContext);
+        if (supportsContextPath) {
+            String contextPath = ServletContextUtils.getContextPathWithoutSlash(servletContext);
+            return System.getProperty(contextPath + "." + name);
+        }
+        
+        return null;
+    }
+
+COM:retrieves the value of a property based on a given name and context path, and returns null if the context path is not supported

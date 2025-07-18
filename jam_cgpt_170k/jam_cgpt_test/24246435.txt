@@ -1,0 +1,14 @@
+TDAT:     public void fire() {
+
+        for (int i = 0; i < listHandler.size(); i++) {
+            try {
+                listHandler.get(i).getAndIncrementPendingFireCount();
+            } catch (Exception e) {
+                System.err.println("erreur : " + e.getMessage());
+            }
+        }
+
+
+    }
+
+COM:iterates through a list of handlers and increments a pending fire count while catching any exceptions and outputting an error message

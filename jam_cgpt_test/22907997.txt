@@ -1,0 +1,14 @@
+TDAT:     private void removeRedundantOperations(OBEXElement file, List<OBEXElement> filesToRemove) {
+        OBEXElement parentFolder = file;
+        log.debug("Removing redundant operations");
+
+        while ((parentFolder = parentFolder.getParent()) != null) {
+
+            if (filesToRemove.contains(parentFolder)) {
+                filesToRemove.remove(file);
+                file = parentFolder;
+            }
+        }
+    }
+
+COM:removes redundant operations from a list of OBEXElement files by traversing up the parent hierarchy and removing any files that have already been marked for removal

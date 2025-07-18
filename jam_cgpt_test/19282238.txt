@@ -1,0 +1,10 @@
+TDAT: 	private Analyzer processAnalyzer(XmlPullParser xpp, int index) throws XmlPullParserException, IOException {
+		Collection analyzerCvParamList = new ArrayList();
+		Collection analyzerUserParamList = new ArrayList();
+
+		this.processParams(xpp, analyzerCvParamList, analyzerUserParamList, "analyzer");
+
+		return new AnalyzerImpl(analyzerCvParamList, analyzerUserParamList, index);
+	}
+
+COM:processes parameters and returns an Analyzer object implementation with corresponding CvParam and UserParam lists

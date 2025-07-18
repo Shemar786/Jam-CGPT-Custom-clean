@@ -1,0 +1,13 @@
+TDAT: 	public Class getScriptClass () {
+    if (this.scriptClass == null) {
+    	try {
+	    	this.scriptClass = Gracelets.getGraceletCompiler().recompile(this);
+	    	this.scriptName = this.scriptClass.getName();
+	    } catch (Exception e) {
+		    throw new RuntimeException("Error compiling script class: " + this.src, e);
+	    }
+    }
+    return this.scriptClass;
+	}
+
+COM:returns the compiled script class, attempting to recompile if it is null

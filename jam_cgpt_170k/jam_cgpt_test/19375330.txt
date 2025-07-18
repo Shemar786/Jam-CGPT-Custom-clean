@@ -1,0 +1,16 @@
+TDAT: 	private Set getObjectsOf(Vector conc) {
+		Set res = new HashSet();
+		for (Iterator i = conc.iterator(); i.hasNext();) {
+			AbstractConcept c = (AbstractConcept) i.next();
+			for (Iterator j = c.getChildren(); j.hasNext();) {
+				Block b = (Block) j.next();
+				if (b instanceof ConceptInstance) {
+					res.add(b);
+					//break;
+				}
+			}
+		}
+		return res;
+	}
+
+COM:returns a set of objects from the given vector that are instances of a certain type of block

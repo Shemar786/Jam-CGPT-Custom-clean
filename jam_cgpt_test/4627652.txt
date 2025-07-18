@@ -1,0 +1,14 @@
+TDAT:     public RoleTO readRole(Long id) {
+        RoleTO roleTO = null;
+
+        try {
+            roleTO = restTemplate.getForObject(
+                    baseURL + "role/read/{roleId}.json",
+                    RoleTO.class, id);
+        } catch (SyncopeClientCompositeErrorException e) {
+            LOG.error("While reading a role", e);
+        }
+        return roleTO;
+    }
+
+COM:reads a RoleTO object with a specific ID using a REST template and returns it

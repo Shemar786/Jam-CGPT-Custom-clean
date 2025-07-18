@@ -1,0 +1,13 @@
+TDAT: 	public int calculateEffectiveAddress(boolean executeNow) {
+		if (executeNow) {
+			return (int) dsp.getUpdate(base, false) + (int) dsp.getUpdate(index, false) * scale + displacement;
+		} else {
+			if ((base == null) && (index == null)) {
+				return displacement;
+			} else {
+				return dsp.getMemAddressStart();
+			}
+		}
+	}
+
+COM:calculates the effective memory address based on the values of the base, index, scale, and displacement variables

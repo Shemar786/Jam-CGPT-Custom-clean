@@ -1,0 +1,12 @@
+TDAT: 	protected int getFieldEnd(final FieldDetail currField, final byte[] record) {
+	        int ret = java.lang.Math.min(currField.getEnd(), record.length);
+	        byte padByte = getPadByte(currField.getFontName());
+
+	        while (ret > 0 && (record[ret - 1] == padByte)) {
+	            ret -= 1;
+	        }
+
+	        return ret;
+	}
+
+COM:calculates the end index of a field in a byte array, taking into account padding and trimming any trailing padding bytes

@@ -1,0 +1,11 @@
+TDAT:     public void repaint() {
+        synchronized (this) {
+            grph.setColor(255, 255, 255);
+            grph.fillRect(0, 0, c.getWidth(), c.getHeight());
+            if (currentRgbMap != null)
+                draw(0, 0, activeWidth, activeHeight);
+        }
+        c.flushGraphics();
+    }
+
+COM:repaints the graphics on the container and sets the color to white, fills the container with white, calls the draw method if the currentRgbMap is not null, and flushes the graphics

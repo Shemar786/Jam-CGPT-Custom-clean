@@ -1,0 +1,22 @@
+TDAT:     public void finish() throws IOException {
+	ensureOpen();
+	if (finished) {
+	    return;
+	}
+	if (entry != null) {
+	    closeEntry();
+	}
+	if (entries.size() < 1) {
+	    throw new ZipException("ZIP file must have at least one entry");
+	}
+	// write central directory
+	long off = written;
+	Enumeration<ZipEntry> e = entries.elements();
+	while (e.hasMoreElements()) {
+	    writeCEN(e.nextElement());
+	}
+	writeEND(off, written - off);
+	finished = true;
+    }
+
+COM:finishes writing a ZIP file, writes the central directory, and throws an exception if the ZIP file does not have any entries

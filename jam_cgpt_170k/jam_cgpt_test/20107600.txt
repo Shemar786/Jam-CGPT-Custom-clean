@@ -1,0 +1,12 @@
+TDAT: 	public KThread nextThread() {
+	    Lib.assertTrue(Machine.interrupt().disabled());
+      if (waitQueue.isEmpty()){
+        associatedThread=null;
+        return null;
+      }
+      associatedThread=waitQueue.peek();
+      getThreadState(associatedThread).acquire(this); //for Q2
+      return waitQueue.poll();  //return next thread
+	}
+
+COM:returns the next thread from the wait queue if it is not empty and sets the associated thread as the first element in the queue

@@ -1,0 +1,10 @@
+TDAT: 	public boolean isDeletable (String byUser) {
+		if (byUser.equals (daid) && signedby.toString().equals("")) {
+			return true;
+		} // end of if (byUser.equals (daid) && signedby.toString().equals(""))
+		else {
+			return false;
+		} // end of if (byUser.equals (daid) && signedby.toString().equals(""))
+	}
+
+COM:checks if a given string "byUser" is deletable based on two conditions and returns a boolean value true or false

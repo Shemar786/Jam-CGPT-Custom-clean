@@ -1,0 +1,12 @@
+TDAT:   public Colour setSampleColour(int sampleNo, Colour c) {
+    for(int i=0;i<sampleArr.size();i++) {
+      FMSample fms = (FMSample)sampleArr.get(i);
+      if (fms.getSampleNo()==sampleNo) {
+        fms.setColour(c);
+        return c;
+      }
+    }
+    return null;
+  }
+
+COM:sets the colour of a specified sample in a list of FMSamples and returns the new colour

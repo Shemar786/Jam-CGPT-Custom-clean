@@ -1,0 +1,9 @@
+TDAT:     public void setLoadIcon(int index){
+        if(index*16 >= 0 && index*16 < colors.length)
+            load.setImage(TextPix.getCutImage(cool[5],
+                    0, index*14, 14, 14), 20, 20);
+        else
+            load.setImage(cool[4], 20, 20);
+    }
+
+COM:sets the image of a loading icon based on the specified index

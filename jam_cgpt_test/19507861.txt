@@ -1,0 +1,24 @@
+TDAT: 	public void testRodinFileRemoveAndAdd() throws CoreException {
+		createRodinProject("P");
+		IFile file = createRodinFile("/P/X.test").getResource();
+		
+		// delete file
+		startDeltas();
+		deleteResource(file);
+		assertDeltas(
+				"Unexpected delta after deleting /P/p/X.test",
+				"P[*]: {CHILDREN}\n" + 
+				"	X.test[-]: {}"
+		);
+		
+		// add file
+		clearDeltas();
+		createRodinFile("/P/X.test");
+		assertDeltas(
+				"Unexpected delta after adding /P/p/X.test",
+				"P[*]: {CHILDREN}\n" + 
+				"	X.test[+]: {}"
+		);
+	}
+
+COM:tests the removal and addition of a Rodin file in a project

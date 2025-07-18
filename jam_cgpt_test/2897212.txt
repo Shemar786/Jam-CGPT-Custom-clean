@@ -1,0 +1,11 @@
+TDAT:     public String getType (String uri, String localName) {
+        int max = length*5;
+        for (int i = 0; i < max; i += 5) {
+            if (data[i].equals(uri) && data[i + 1].equals(localName)) {
+                return  data[i + 3];
+            }
+        }
+        return  null;
+    }
+
+COM:retrieves a type from an array based on the provided uri and localName strings

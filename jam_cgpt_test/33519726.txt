@@ -1,0 +1,8 @@
+TDAT:     public void setBasicAuthentication(String username, String password) throws EncoderException {
+        Base64StringEncoder encoder = new Base64StringEncoder();
+        String login = username + ":" + password;
+        String encoded_login = encoder.encode(login);
+        addRequestHeader(new Header("Authorization", "Basic " + encoded_login));
+    }
+
+COM:sets basic authentication for a request header using a username and password, encoded in Base64

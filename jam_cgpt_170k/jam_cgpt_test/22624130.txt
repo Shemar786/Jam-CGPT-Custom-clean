@@ -1,0 +1,11 @@
+TDAT: 	public List getUrlPaths() {
+		List urlPathTypes = Arrays.asList(new String[]{"url", "uniqueUrl"});
+		List xpaths = new ArrayList();
+		Iterator iterator = getSchemaPathMap().getSchemaPathsByValueTypes(urlPathTypes).iterator();
+		while (iterator.hasNext()) {
+			xpaths.add(((SchemaPath) iterator.next()).xpath);
+		}
+		return xpaths;
+	}
+
+COM:retrieves a list of xpath strings from a schema path map based on specific value types

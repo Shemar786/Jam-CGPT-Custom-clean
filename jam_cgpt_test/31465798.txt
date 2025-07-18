@@ -1,0 +1,9 @@
+TDAT:     public void selectObject(int x, int y) {
+	MapObject oObj = floors[curFloor].getSelectedObject();
+	floors[curFloor].selectObject(x, y);
+	MapObject nObj = floors[curFloor].getSelectedObject();
+	if (oObj != nObj)
+	    firePropertyChange(OBJECT_SELECTION, oObj, nObj);
+    }
+
+COM:selects an object on a floor map and fires a property change event if the selected object is changed

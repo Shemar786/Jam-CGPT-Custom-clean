@@ -1,0 +1,17 @@
+TDAT:   protected void addScriptScopePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ScriptScopeFactory_scriptScope_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScriptScopeFactory_scriptScope_feature", "_UI_ScriptScopeFactory_type"),
+				 ScriptingPackage.Literals.SCRIPT_SCOPE_FACTORY__SCRIPT_SCOPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a script scope property descriptor to an item property descriptor list

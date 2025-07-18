@@ -1,0 +1,14 @@
+TDAT: 	public void evaluatePopulation (IntegerTypePopulation population, Simulation simulation, Object[] object){
+		
+		IntegerTypePopulation intPopulation = (IntegerTypePopulation) population;
+		
+		for (int i = 0; i < intPopulation.getChromossomesSet().size(); i++){
+			
+			intPopulation.getChromossomesSet().get(i).setFitness(this.calculateFitness(simulation.getChromossomesConfiguration(), intPopulation, i));
+			
+		}
+		
+		
+	}
+
+COM:evaluates the fitness of each chromosome in a population using a simulation and updates their fitness values

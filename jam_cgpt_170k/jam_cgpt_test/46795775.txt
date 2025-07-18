@@ -1,0 +1,18 @@
+TDAT: 	public void start(BundleContext context) throws Exception {
+		super.start(context);
+		// initialize default settings of "Debug" preference page
+		DefaultPrefsSetter.initializeDefaults();
+		
+		IExtensionPoint extensionPoint = Platform.getExtensionRegistry()
+		.getExtensionPoint(ID_EXTENSION_POINT_REMOTELAUNCH);
+		if (extensionPoint == null)
+			return;
+		IConfigurationElement[] configs = extensionPoint.getConfigurationElements();
+		int length = configs.length;
+		if (length == 0)
+			return;
+		remoteLaunchProvider =
+			(IRemoteDebug) configs[0].createExecutableExtension("class"); //$NON-NLS-1$
+	}
+
+COM:initializes default settings for a "Debug" preference page and retrieves an extension point for remote launch, creating an executable extension for it if one exists

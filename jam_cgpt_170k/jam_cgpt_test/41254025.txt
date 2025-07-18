@@ -1,0 +1,11 @@
+TDAT: 	private boolean containsOnlyStopWordTokens(Object[] tokens,HashSet h) {
+		boolean notStopwordTokens = true; // assume all tokens are stopwords
+		for (int i = 0; i < tokens.length; i++) {
+			if (!h.contains(tokens[i])) {
+				notStopwordTokens=false; // at least one token is not a stopword
+			}
+		}
+		return notStopwordTokens;
+	}
+
+COM:checks if all the tokens in an array are stopwords or not based on a HashSet

@@ -1,0 +1,21 @@
+TDAT: 	public void setDefaultPrefix() {
+		if ((prefixes == null) || (prefixes.size() == 0)) {
+			if (prefixes == null) {
+				prefixes = new ArrayList();
+			}
+			String artifactId = mavenProject.getArtifactId();
+			String[] segments = artifactId.split("\\.");
+			String prefix;
+			if (segments.length > 1) {
+				prefix = segments[0] + "." + segments[1] + ".";
+			} else {
+				prefix = segments[0];
+			}
+			getLog().info(
+					"Defaulting prefixes to the single prefix '" + prefix
+							+ "'.");
+			prefixes.add(prefix);
+		}
+	}
+
+COM:sets a default prefix based on the artifact ID if no prefixes have been set previously

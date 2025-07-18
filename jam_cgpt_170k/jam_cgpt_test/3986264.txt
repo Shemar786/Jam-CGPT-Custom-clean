@@ -1,0 +1,19 @@
+TDAT: 	public void create(File file) {
+		char[] data = new char[1024];
+		String s = "";
+		int read;
+		try {
+			FileReader fr = new FileReader(file);
+			while ((read = fr.read(data)) != -1) {
+				s += new String(data, 0, read);
+			}
+			fr.close();
+			this.create(s);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:reads data from a file and creates a new object using the read data

@@ -1,0 +1,14 @@
+TDAT:     public int internalWrite(ByteBuffer buffer) throws IOException, BadDescriptorException {
+        checkOpen();
+        
+        WritableByteChannel writeChannel = (WritableByteChannel)channel;
+        
+        if (isSeekable() && originalModes.isAppendable()) {
+            FileChannel fileChannel = (FileChannel)channel;
+            fileChannel.position(fileChannel.size());
+        }
+        
+        return writeChannel.write(buffer);
+    }
+
+COM:writes content from a ByteBuffer to a channel and returns the number of bytes written, with error handling in case the channel is closed or the descriptor is invalid

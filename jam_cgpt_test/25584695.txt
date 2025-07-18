@@ -1,0 +1,13 @@
+TDAT:     public void setDimensions(double width, double height) {
+        this.width = width;
+        this.height = height;
+
+        // I = (1/12)M(a + b)
+        this.momentOfInertiaFactor = (width * width + height * height) / 12.0;
+        
+        // Define the surface factor and bound dimension
+        this.boundDimension = Math.sqrt(height * height + width * width);
+        this.surfaceArea = width * height;
+    }
+
+COM:sets the width and height dimensions of an object, calculates its moment of inertia factor, surface factor, and bound dimension

@@ -1,0 +1,11 @@
+TDAT:     public void setColumnsError( final String msg ) {
+        columnsErrorMsgLabel.setText( msg );
+        jPanel2.remove( columnsScrollPane );
+        jPanel2.add( columnsErrorScrollPane, java.awt.BorderLayout.CENTER );
+        jPanel2.revalidate();
+        columnsErrorMsgLabel.repaint();
+        
+        //okButton.setEnabled(false);
+    }
+
+COM:sets an error message and updates the user interface accordingly

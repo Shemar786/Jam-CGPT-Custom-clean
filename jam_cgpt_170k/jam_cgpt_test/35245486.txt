@@ -1,0 +1,12 @@
+TDAT:     public boolean deleteCopyBook(String CallNumber) throws SQLException {
+        CallableStatement cs = dc.getConnection().prepareCall("{call deleteCopyBook(?)}");
+        cs.setString(1, CallNumber);
+        int result = cs.executeUpdate();
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+COM:deletes a copy of a book with a given call number by calling a stored procedure and returns a boolean indicating if the deletion was successful

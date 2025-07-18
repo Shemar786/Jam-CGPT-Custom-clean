@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField10() {
+        if (textField10 == null) {//GEN-END:|32-getter|0|32-preInit
+            // write pre-init user code here
+            textField10 = new TextField("Bono 2:", null, 32, TextField.DECIMAL);//GEN-LINE:|32-getter|1|32-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|32-getter|2|
+        return textField10;
+    }
+
+COM:retrieves a TextField object named textField10, and if it doesn't exist, it initializes it with certain user code

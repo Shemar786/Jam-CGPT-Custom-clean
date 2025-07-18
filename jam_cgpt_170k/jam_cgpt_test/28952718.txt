@@ -1,0 +1,12 @@
+TDAT: 	public void addPhoneNumber(PhoneNumber phone) {
+    // Get the phone number
+    if (phone == null) return;
+    PhoneType type = phone.getType();
+    // Remove the old entry
+    removePhoneNumber(type);
+    // Add the new entry
+    if (phoneList == null) phoneList = new ArrayList<PhoneNumber>();
+    phoneList.add(phone);
+	}
+
+COM:adds a phone number to a list, replacing any existing entry of the same type

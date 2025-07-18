@@ -1,0 +1,23 @@
+TDAT: 	protected void prepareCursor() {
+
+	    if (isPrepareNeeded(sqlCursor)) {
+	        try {
+	            sqlCursor = connect.getConnection().prepareStatement(
+	                          sSQL
+	                        + sFrom
+	                        + sWhereSQL
+	                  	    + sWhere
+	                  	    + sOrderBy
+	                       );
+	            message = "";
+	        } catch (Exception ex) {
+	        	ex.printStackTrace();
+	            System.out.println("prepare Cursor >> " + (connect == null));
+	            setMessage(ex.getMessage(), ex);
+//	        } finally {
+//	        	connect.free();
+	        }
+	    }
+	}
+
+COM:prepares a SQL cursor for execution using the parameters specified in the SQL statement and generates an error message if there is a problem with the connection

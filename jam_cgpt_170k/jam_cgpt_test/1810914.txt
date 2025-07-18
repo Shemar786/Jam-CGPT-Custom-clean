@@ -1,0 +1,10 @@
+TDAT:   public Text createTextNode(String data) {
+    try {
+      return (Text) NodeImpl.build(XMLParserImpl.createTextNode(this
+        .getJsObject(), data));
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_CHARACTER_ERR, e, this);
+    }
+  }
+
+COM:returns a Text node that contains the specified data

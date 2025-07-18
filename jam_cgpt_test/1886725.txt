@@ -1,0 +1,19 @@
+TDAT:   public void onToggle(ToggleUpgrade upgrade) {
+    
+    // If an upgrade is disabled, turn on the default option.
+    if (!upgrade.isEquipped()) {
+      if (defaultUpgrade != null) {
+        defaultUpgrade.enabled = true;
+      }
+      return;
+    }
+    
+    // If an upgrade is enabled, turn off everything else.
+    for (ToggleUpgrade otherUpgrade : upgrades) {
+      if (otherUpgrade != upgrade) {
+        otherUpgrade.enabled = false;
+      }
+    }
+  }
+
+COM:toggles between upgrades, enabling one and disabling others

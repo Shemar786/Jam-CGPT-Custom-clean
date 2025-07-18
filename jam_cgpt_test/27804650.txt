@@ -1,0 +1,12 @@
+TDAT:   public void setOffset(java.awt.geom.Point2D point) {
+    view.setNodeDoubleProperty( rootGraphIndex,
+                                PGraphView.NODE_X_POSITION,
+                                point.getX() );
+    view.setNodeDoubleProperty( rootGraphIndex,
+                                PGraphView.NODE_Y_POSITION,
+                                point.getY() );
+    super.setOffset(point);
+    // firePropertyChange("Offset", null, this);
+  }
+
+COM:sets the X and Y position of a node on a graph using a given Point2D object and updates the offset property

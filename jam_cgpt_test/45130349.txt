@@ -1,0 +1,16 @@
+TDAT:     public boolean contains(Object o) {
+        if (!(o instanceof RdfBindingRow)) {
+            return false;
+        }
+
+        RdfBindingRow row = (RdfBindingRow) o;
+        for (Iterator i = this.iterator(); i.hasNext();) {
+            if (row.equals(i.next())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+COM:checks if an object is an instance of RdfBindingRow and returns true if the RdfBindingRow is found in the iterator

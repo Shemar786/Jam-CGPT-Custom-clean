@@ -1,0 +1,15 @@
+TDAT: 		public void valueChanged(ListSelectionEvent ev) {
+			if (!ev.getValueIsAdjusting() && delegate != null) {
+				if (list.getSelectedIndices().length == 1) {
+					JdaiPhoto newPhoto =
+						(JdaiPhoto) ((JList) ev.getSource()).getSelectedValue();
+					if (newPhoto != null) {
+						delegate.selectionChanged(newPhoto);
+					}
+				} else {
+					delegate.selectionChanged(null);
+				}
+			}
+		}
+
+COM:handles the event when the selection in a list is changed, and calls a delegate method with the selected photo if only one photo is selected, or with null if multiple photos are selected

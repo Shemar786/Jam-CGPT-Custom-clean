@@ -1,0 +1,15 @@
+TDAT: 	private Concept getSelectedParent(Object parentObject) {
+		Concept parentConcept = null;
+
+		if (parentObject instanceof Concept)
+			parentConcept = (Concept) parentObject;
+		else if (parentObject instanceof String) {
+			String parentName = ((String) parentObject);
+			if (parentName.equalsIgnoreCase("root concept"))
+				// assure parent is null, e.g. concept becomes global
+				parentConcept = null;
+		}
+		return parentConcept;
+	}
+
+COM:gets the selected parent concept object or sets it to null if the parent is the "root concept"

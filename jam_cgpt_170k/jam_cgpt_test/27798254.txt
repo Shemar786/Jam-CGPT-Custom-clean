@@ -1,0 +1,12 @@
+TDAT:     public boolean pluginRegistryContains(String pluginName) {
+        synchronized (registry) {
+            Iterator iter;
+            for (iter = registry.iterator(); iter.hasNext();) {
+                PluginRegistryNode node = (PluginRegistryNode)iter.next();
+                if (node.plugin.getName().equals(pluginName)) return true;
+            }
+        }
+        return false;
+    }
+
+COM:checks if a given plugin is present in a plugin registry using synchronized iteration over nodes in the registry

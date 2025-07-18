@@ -1,0 +1,11 @@
+TDAT:     public int getNumberPageSearchEmployeeByEmployeeID(String SearchContent) throws SQLException {
+        CallableStatement cs = conn.prepareCall("{call getNumberPageSearchEmployeeByEmployeeID(?)}");
+        cs.setString(1, SearchContent);
+        ResultSet rs = cs.executeQuery();
+        if (rs.next()) {
+            return rs.getInt("NumberPage");
+        }
+        return 0;
+    }
+
+COM:retrieves the number of pages in a search result for a specific employee ID using a SQL stored procedure

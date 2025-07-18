@@ -1,0 +1,11 @@
+TDAT:    public Dimension getPreferredSize() {
+      Dimension dimSource = sourcePane.getPreferredSize();
+      Dimension dimSelection = selectionPane.getPreferredSize();
+
+      Dimension dimButtons = buttonPanel.getPreferredSize();
+      int w = dimButtons.width+2*getListPreferredWidth();
+      int h = Math.max(dimButtons.height, Math.max(dimSource.height, dimSelection.height));
+      return new Dimension(w, h);
+   }
+
+COM:returns a dimension object to represent the preferred size of a list, based on the preferred sizes of three other components

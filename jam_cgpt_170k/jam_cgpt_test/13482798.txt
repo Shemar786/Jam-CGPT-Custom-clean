@@ -1,0 +1,14 @@
+TDAT:     public void removePhiAtBlock(Block block) {
+        PhiStmt phi = phis[cfg.preOrderIndex(block)];
+
+        if (phi != null) {
+            if (SSA.DEBUG) {
+                System.out.println("  removing " + phi + " at " + block);
+            }
+
+            phi.cleanup();
+            phis[cfg.preOrderIndex(block)] = null;
+        }
+    }
+
+COM:removes a Phi statement at a specific block if it exists and performs cleanup

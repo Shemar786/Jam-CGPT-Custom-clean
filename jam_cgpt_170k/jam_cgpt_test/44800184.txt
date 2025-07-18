@@ -1,0 +1,16 @@
+TDAT: public void testSupportsDesign() {
+    System.out.println("testSupportsDesign");
+    try {
+        
+        boolean b = azMgr.supportsDesign();
+        if (b) {
+            fail("should NOT supportDesign");
+        } else {
+            System.out.println("Does not support Design");
+        }
+    } catch (Throwable t) {
+        fail("ludicrously fails");
+    }
+}
+
+COM:tests whether a certain functionality (design support) is supported and prints the result

@@ -1,0 +1,13 @@
+TDAT: 	public void testMessages() throws Exception {
+		Set<IRodinProblem> problems = new HashSet<IRodinProblem>(specs.length * 4 / 3 + 1);
+		for (Spec spec : specs) {
+			problems.add(spec.problem);
+		}
+		for (IRodinProblem problem : GraphProblem.values()) {
+			boolean found = problems.contains(problem);
+			assertTrue("No spec for problem " + problem, found);
+		}
+		//assertEquals("wrong number of problems", specs.length, GraphProblem.values().length);
+	}
+
+COM:tests that every problem in a set of specifications is included in the GraphProblem enum

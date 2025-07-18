@@ -1,0 +1,12 @@
+TDAT:     public void noteMorphicity(int morphicity) {
+        Integer r = new Integer(morphicity);
+        Integer count = (Integer) this.morphicity.get(r);
+        if (count == null) {
+            this.morphicity.put(r, new Integer(1));
+
+        } else {
+            this.morphicity.put(r, new Integer(count.intValue() + 1));
+        }
+    }
+
+COM:updates a HashMap to keep count of the occurrences of an integer input

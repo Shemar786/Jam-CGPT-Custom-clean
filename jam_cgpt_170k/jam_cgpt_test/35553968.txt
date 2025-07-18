@@ -1,0 +1,24 @@
+TDAT: 	private void refreshProfileEvent() {
+		
+		MainMenuBar mainMenuBar = MainMenuBar.getInstance();
+		
+		Hashtable<Integer, Object> commandHash = mainMenuBar.getCommandHash();
+
+		Enumeration<Object> e = commandHash.elements();
+		while (e.hasMoreElements()) {
+
+			try {
+				Object profileManagerView = (Object) e.nextElement();
+
+				if (profileManagerView instanceof RefreshDeletionInfoIF) {
+					((RefreshDeletionInfoIF)profileManagerView).refreshDeletionInfo();
+				}
+				
+				
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+	}
+
+COM:refreshes deletion information associated with a user profile in the application's main menu bar

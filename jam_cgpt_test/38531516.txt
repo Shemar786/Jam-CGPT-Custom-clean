@@ -1,0 +1,10 @@
+TDAT:     public String getNamespace(String prefix) throws org.xmldb.api.base.XMLDBException {
+        try {
+            return stub.getNamespace(this.service, prefix);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e);
+        }
+        
+    }
+
+COM:retrieves the namespace associated with a given prefix using a remote procedure call and may throw an XMLDBException if there is a remote error

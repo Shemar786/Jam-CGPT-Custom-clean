@@ -1,0 +1,15 @@
+TDAT: 	private void updateUIFromDOMModel() {
+
+		// 1. Get DOM Document from DOM Model.
+		Document document = model.getDocument();
+
+		// 3. Update SWT Table with DOM list of shapes (rectangle, ellipse)
+		if (shapesTableViewer.getInput() == null)
+			// Input is not initialized, set it
+			shapesTableViewer.setInput(document);
+		else
+			// refresh SWT Table
+			shapesTableViewer.refresh();
+	}
+
+COM:updates an SWT Table with a list of shapes obtained from a DOM Document in a DOM model

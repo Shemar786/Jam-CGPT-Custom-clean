@@ -1,0 +1,8 @@
+TDAT:   public void testGetLocalAddress() throws Exception{
+    String addr = Localhost.getLocalAddress().getHostAddress();
+    super.assertTrue(!addr.equals("localhost"));
+    super.assertTrue(!addr.equals("127.0.0.1"));
+    super.assertTrue(!addr.equals("0.0.0.0"));
+  }
+
+COM:tests whether the local host address is not equal to "localhost", "127.0.0.1", or "0.0.0.0"

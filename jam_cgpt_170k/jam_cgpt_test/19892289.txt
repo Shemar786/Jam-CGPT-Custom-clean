@@ -1,0 +1,12 @@
+TDAT:     public OAuthToken getRequestToken(String callbackURL) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		if (callbackURL != null)
+			map.put("oauth_callback", callbackURL);
+		String reqUrl = server.generateRequestUrl(OAUTH_REQUEST_TOKEN_URL, map);
+		String response = server.doHttpReq(reqUrl);
+		OAuthToken token = new OAuthToken(response);
+//System.out.println("Request token = " + token);
+		return token;
+	}
+
+COM:returns a OAuthToken by sending HTTP request to a server and generating a request URL with specified callback URL

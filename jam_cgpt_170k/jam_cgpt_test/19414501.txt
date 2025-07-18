@@ -1,0 +1,14 @@
+TDAT:   private Module getModuleFromManifest(String moduleName) throws DependencyException {
+    Module module = null;
+    
+    try {
+      module = manifest.getModule(moduleName);
+    }
+    catch (ManifestException e) {
+      throw new DependencyException(DependencyException.MODULE_NOT_IN_MANIFEST, e.getMessageArguments());
+    }
+    
+    return module;
+  }
+
+COM:retrieves a module object from a manifest file based on the specified module name and throws a DependencyException if the module is not found in the manifest

@@ -1,0 +1,18 @@
+TDAT:     public String getContentAsString() throws FileNotFoundException, IOException {
+        
+        BufferedReader br;
+        
+            br = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
+        
+        String line;
+        String content = "";
+
+        while ((line = br.readLine()) != null) { 
+            content = content + line + "\n";
+        }
+        br.close();
+        
+        return content;
+    }
+
+COM:retrieves the contents of a file as a String by reading and concatenating each line of the file

@@ -1,0 +1,14 @@
+TDAT: 	protected void createSealingGroup(Composite parent) {
+		// destination specification group
+		Composite sealingGroup= new Composite(parent, SWT.NONE);
+		GridLayout layout= new GridLayout();
+		layout.numColumns= 3;
+		layout.horizontalSpacing += 3;
+		sealingGroup.setLayout(layout);
+		sealingGroup.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL | GridData.VERTICAL_ALIGN_FILL));
+		createSealJarGroup(sealingGroup);
+		createSealPackagesGroup(sealingGroup);
+		
+	}
+
+COM:creates a composite group for sealing jars and packages within a specified parent composite

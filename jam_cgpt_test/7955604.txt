@@ -1,0 +1,9 @@
+TDAT: 	public void displaySwizzler(final Swizzler indswz) {
+		System.out.println("\nIV: " + indswz.ind_var() + "vn:"
+				+ indswz.ind_var().valueNumber() + " tgt: " + indswz.target()
+				+ "vn:" + indswz.target().valueNumber() + "\narray: "
+				+ indswz.array() + " init: " + indswz.init_val() + " end: "
+				+ indswz.end_val());
+	}
+
+COM:displays information about the variables and values of a given Swizzler object

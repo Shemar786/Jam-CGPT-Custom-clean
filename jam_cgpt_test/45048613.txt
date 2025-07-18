@@ -1,0 +1,13 @@
+TDAT: 	protected String processSpecialChar(String str) {
+		String newStr = str;
+		if (newStr != null) {
+			newStr = newStr.replaceAll("&", "&amp;");
+			newStr = newStr.replaceAll("<", "&lt;");
+			newStr = newStr.replaceAll(">", "&gt;");
+			newStr = newStr.replaceAll("\"", "&quot;");
+			newStr = newStr.replaceAll("\'", "&apos;");
+		}
+		return newStr;
+	}
+
+COM:takes in a string and replaces special characters with their corresponding HTML entities

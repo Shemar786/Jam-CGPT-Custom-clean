@@ -1,0 +1,12 @@
+TDAT:     public void applyStyle(String sStyleName, StyleInfo info) {
+        MasterPage masterPage = ofr.getMasterPage(sStyleName);
+        if (masterPage!=null) {
+            String sDisplayName = masterPage.getDisplayName();
+            if (ofr.isPresentation()) {
+                // Always generates class name
+                info.sClass="masterpage"+styleNames.getExportName(sDisplayName);
+            }
+        }
+    }
+
+COM:applies a style to a document's master page and generates a class name based on the display name of the master page for presentation purposes

@@ -1,0 +1,17 @@
+TDAT: 	public Vector3f getCameraPosition() {
+		if(hasVehicle()) {
+			return getVehicle().getCameraLocation();
+		}
+		
+		if(animation.isDucking()) {
+			return new Vector3f(this.getLocalTranslation().x,
+					this.getLocalTranslation().y  + .7f,
+					this.getLocalTranslation().z);
+		}
+		
+		return new Vector3f(this.getLocalTranslation().x,
+				this.getLocalTranslation().y  + 1.3f,
+				this.getLocalTranslation().z).subtract(Game.getGame().getCamera().getDirection().mult(0.5f));
+	}
+
+COM:returns the location of the camera, taking into account the position of any vehicles or animations currently being used by the player

@@ -1,0 +1,13 @@
+TDAT:     private void connectViaTelnet(){
+    	if(mTelnetServer==null){
+    		mTelnetServer = new TelnetServer(this);
+    		mTelnetServer.connect();
+    	}else{
+    		addMessage("Closing telnet port " + mTelnetServer.port);
+    		mTelnetServer.disconnect();
+    		mTelnetServer = new TelnetServer(this);
+    		mTelnetServer.connect();
+    	}
+    }
+
+COM:connects to a Telnet server and handles any existing connections

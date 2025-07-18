@@ -1,0 +1,11 @@
+TDAT: 	public Array2d transpose() {
+		Array2d transpose = new Array2d(m_nRows, m_nCols);
+		for (int iRow = 1; iRow <= m_nRows; iRow++) {
+			for (int iCol = 1; iCol <= m_nCols; iCol++) {
+				transpose.set(iCol, iRow, at(iRow, iCol));
+			}
+		}
+		return transpose;
+	} // transpose
+
+COM:returns a new 2-dimensional array that is the transpose of the caller object

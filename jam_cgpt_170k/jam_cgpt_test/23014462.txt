@@ -1,0 +1,8 @@
+TDAT:     public void moveForward() {
+        Vector3f fwVec = new Vector3f(getDirection().getX(), getDirection().getY(), getDirection().getZ());
+        fwVec.normalizeTo(speed);
+        getEye().dirtyAdd(fwVec);
+        changed = true;
+    }
+
+COM:moves an object forward based on its current direction and a specified speed

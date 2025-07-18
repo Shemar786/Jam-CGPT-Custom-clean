@@ -1,0 +1,14 @@
+TDAT:     public void folderDelete(String name) {
+        synchronized (folders) {
+            for (SWGMailFolder fld : folders()) {
+                if (name.equals(fld.getName())) {
+                    if (fld.isDefault() || !fld.isEmpty()) return;
+
+                    folders().remove(fld);
+                    break;
+                }
+            }
+        }
+    }
+
+COM:deletes a folder if it exists, is empty, and not a default folder

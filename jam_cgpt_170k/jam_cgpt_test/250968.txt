@@ -1,0 +1,14 @@
+TDAT: 	public List getAllCollectionsForUser(String userID) throws InternalException {
+		logger.debug("getAllCollectionsForUser(" + userID + ")");
+		try {
+			ArrayList collList = (ArrayList) dbAccess.getRootCollectionsForUser(userID);
+			return makeRCObjects(userID, collList);
+		} 
+		catch (AccessException ex) {
+			logger.error("getAllCollectionsForUser(String)error - "
+				+ "couldn't access the Database", ex);
+			throw new InternalException(ex);
+		}
+	}
+
+COM:retrieves all collections belonging to a specific user and returns them in a list, with the possibility of throwing an internal exception

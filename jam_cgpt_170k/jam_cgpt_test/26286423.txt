@@ -1,0 +1,11 @@
+TDAT:     public void insertPage (JComponent page, int index) throws IndexOutOfBoundsException {
+// TODO add JScrollPane around the page before it goes into the cardsPanel.
+        if(index < 0) {
+            addPage(page);
+            return;
+        }
+        getPageOn(index).addPage(page);
+        cardsPanel.add(page, find(page).getUniqueName());
+    }
+
+COM:inserts a JComponent page into a cardsPanel at the specified index, and adds a JScrollPane around the page before insertion, throwing an IndexOutOfBoundsException if index is out of bounds

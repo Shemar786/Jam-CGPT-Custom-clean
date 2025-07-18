@@ -1,0 +1,17 @@
+TDAT: 	private void putConnectionContext(Connection connection) {
+		if (connection != null) {
+			JDBCTransactionResource resource = new JDBCTransactionResource(connection);
+			ITransactionContext transactionContext = ContextLocator.getInstance().getTransactionContext();
+			if (transactionContext != null) {
+				
+				if (transactionContext.hasResource())
+					throw new PersistenceJDBCException("Transaction context contain a invalid resource.");
+				
+				transactionContext.setResource(resource);
+			}
+		} else {
+			log.debug("Connection is null...");
+		}
+	}
+
+COM:puts a database connection into the transaction context as a resource

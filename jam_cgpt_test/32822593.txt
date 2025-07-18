@@ -1,0 +1,19 @@
+TDAT: 	public void testSave() {
+		MusicEditorModel model = new MusicEditorModel();
+		File testFile = new File("test/test.ly");
+		model.openFile(testFile);
+		
+		String previousContents = getFileAsString(testFile);
+
+		model.getTextArea().setText(SAVE_TEST_STRING);
+		model.save();
+		
+		String fileAsString = getFileAsString(testFile);
+		
+		assertEquals(SAVE_TEST_STRING, fileAsString);
+		
+		model.getTextArea().setText(previousContents);
+		model.save();
+	}
+
+COM:tests the save functionality of a MusicEditorModel object by opening a test file, modifying its contents, saving the changes, and then confirming that the file was indeed modified

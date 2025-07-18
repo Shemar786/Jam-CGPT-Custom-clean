@@ -1,0 +1,10 @@
+TDAT:   public ArrayList getAllNTs() {
+    ArrayList allNTs = new ArrayList();
+    for (int i = 0; i < this.sentences.size(); i++) {
+      Sentence currentSent = (Sentence)this.sentences.get(i);
+      allNTs.addAll(currentSent.getNTs());
+    } // for i
+    return allNTs;
+  } // getAllNTs()
+
+COM:returns an ArrayList containing all the non-terminals from each Sentence object in the current instance's "sentences" ArrayList

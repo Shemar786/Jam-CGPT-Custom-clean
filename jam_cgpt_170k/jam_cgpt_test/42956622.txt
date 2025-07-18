@@ -1,0 +1,7 @@
+TDAT: 	private void initButtons() {
+		this.playButton = createButton(BUTTON_FILE_NAME_PREFIX + PLAY_BUTTON_FILE_NAME, PLAY_BUTTON_TOOLTIP);
+		this.pauseButton = createButton(BUTTON_FILE_NAME_PREFIX + PAUSE_BUTTON_FILE_NAME, PAUSE_BUTTON_TOOLTIP);
+		this.exitButton = createButton(BUTTON_FILE_NAME_PREFIX + EXIT_BUTTON_FILE_NAME, EXIT_BUTTON_TOOLTIP);
+	}
+
+COM:initializes three buttons with specific file names and tooltips

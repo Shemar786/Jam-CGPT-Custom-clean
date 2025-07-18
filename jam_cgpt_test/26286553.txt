@@ -1,0 +1,11 @@
+TDAT:     public void openContextMenuSlot(int x, int y) {
+        final JPopupMenu popup = new JPopupMenu("Toolbar Menu");
+        if(toolbarContainer != null) toolbarContainer.addMenuEntries(popup, this);
+        if(popup.getComponentCount() == 0)
+            return;
+
+        popup.pack();
+        popup.show(this, x, y);
+    }
+
+COM:opens a contextual menu at the specified x and y coordinates, with entries added by the toolbarContainer object

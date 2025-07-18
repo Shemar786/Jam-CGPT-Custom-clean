@@ -1,0 +1,14 @@
+TDAT:   private JMenuItem getAboutMenuItem() {
+    if (aboutMenuItem == null) {
+      aboutMenuItem = new JMenuItem();
+      aboutMenuItem.setText("About");
+      aboutMenuItem.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+          new JDialog(Main.this, "About", true).show();
+        }
+      });
+    }
+    return aboutMenuItem;
+  }
+
+COM:returns a JMenuItem object for displaying an "About" dialog box when clicked, but only creates the object if it hasn't already been created

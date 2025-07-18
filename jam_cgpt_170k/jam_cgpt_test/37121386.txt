@@ -1,0 +1,10 @@
+TDAT:     public void setItemAt(int index, String item) {
+        requireValidIndex(index);
+        String oldItem = (String) this.items.elementAt(index);
+        if (oldItem != item) {
+            this.items.setElementAt(item, index);
+            notifyEventListeners(ITEMS_CHANGED_EVENT_ROLE, null);
+        }
+    }
+
+COM:sets a new item at a given index in a collection, and notifies any registered event listeners of the change

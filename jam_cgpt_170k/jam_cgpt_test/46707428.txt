@@ -1,0 +1,11 @@
+TDAT:   public ASN1SequenceOf getDistributionPointNames() {
+    if (distributionPointName.getTag() == 0) {
+      ASN1TaggedType innerNames= ((ASN1TaggedType)distributionPointName.getInnerType());
+      ASN1SequenceOf innerNames1 = ((ASN1SequenceOf)innerNames.getInnerType());
+      return innerNames1;
+    }
+    else // RelativeDistinguishedName not implemented yet!
+      return null; 
+  }
+
+COM:returns a sequence of distribution point names from an ASN1TaggedType object, but returns null if a RelativeDistinguishedName is not implemented

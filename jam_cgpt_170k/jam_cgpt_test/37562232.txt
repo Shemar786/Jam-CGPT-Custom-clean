@@ -1,0 +1,9 @@
+TDAT: public Color getForeground () {
+  checkWidget ();
+  if (!parent.checkData (this, true)) error (SWT.ERROR_WIDGET_DISPOSED);
+  java.awt.Color color = handle.getForeground();
+  if(color == null) return parent.getForeground();
+  return Color.swing_new(display, color);
+}
+
+COM:gets the foreground color of a widget and returns it as a SWT Color object

@@ -1,0 +1,9 @@
+TDAT:     public void testsetCourse() {
+        System.out.println("setCourse");
+        henson.midp.Float course = Float.ONE;
+        org.gps.types.GpsPosition instance = new org.gps.types.GpsPosition();
+        instance.setCourse(course);
+        assertEquals(course, instance.getCourse());
+     }
+
+COM:tests the setCourse and getCourse methods of the GpsPosition class

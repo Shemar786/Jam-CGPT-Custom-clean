@@ -1,0 +1,11 @@
+TDAT: 	private void printRoleElement(String prefix, Role role, PrintWriter pw) {
+		pw.print("<" + prefix + ":");
+		pw.print(PartnerLinkExtension.ROLE_ELEMENT);
+		DOMUtils.printAttribute(PartnerLinkExtension.ROLE_ATTRIBUTE_NAME, role.getName(), pw);
+
+		DOMUtils.printAttribute(PartnerLinkExtension.ROLE_ATTRIBUTE_PORT, role.getPortType(), pw);
+
+		pw.println("/>");
+	}
+
+COM:prints a role element with prefix, name and port type using PrintWriter class

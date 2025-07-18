@@ -1,0 +1,13 @@
+TDAT: 	public String getToolHelp(String s) {
+		FieldInfoReader fieldInfoReader = rhelper.getFieldInfo(s);
+		if (fieldInfoReader != null) {
+			try {
+				return fieldInfoReader.getDefinition();
+			} catch (Exception e) {
+				prtln("getToolHelp: unable to obtain definition for " + s);
+			}
+		}
+		return "${sf:decodePath(" + RendererHelper.jspQuotedString(s) + ")}";
+	}
+
+COM:retrieves the tool help information for a given string and returns the definition or a decoded path as a string

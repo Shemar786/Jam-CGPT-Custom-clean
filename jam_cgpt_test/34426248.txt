@@ -1,0 +1,13 @@
+TDAT:     private void inventoryAdd(SWGKnownResource resource) {
+        SWGCharacter toon = SWGFrame.getSelectedCharacter();
+
+        SWGInventoryWrapper wr =
+                new SWGInventoryWrapper(resource, toon.getName());
+
+        if (selectedGuard != null)
+            wr.setNotes(selectedGuard.getName());
+
+        SWGResourceTab.inventoryTab().dialog().showAndBegin(wr);
+    }
+
+COM:adds a resource to the inventory of the selected character and displays it on the resource tab

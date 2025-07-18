@@ -1,0 +1,15 @@
+TDAT:     private void sampleIntermediateGraph() {
+        //for each edge that has at least one supporting evidence (others have p=0 anyway)
+        for (SetOfTwo<Integer> edge : allEdges) {
+
+            //if uniform random > p(edge) create it otherwise remove it
+            double p = probabilities.get(edge);
+            if (uniform.nextDouble() < p) {
+                intermediateGraph.add(edge);
+            } else {
+                intermediateGraph.remove(edge);
+            }
+        }
+    }
+
+COM:creates or removes edges in a graph based on a probability distribution

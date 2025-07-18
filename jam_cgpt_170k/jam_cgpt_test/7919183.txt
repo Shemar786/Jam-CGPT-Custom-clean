@@ -1,0 +1,12 @@
+TDAT:     public void update(){
+    	ArrayList<Object[]> relays = StateManager.INSTANCE.getRelays();
+    	String relaysString = "";
+    	for(Object[] relay : relays)
+    	{
+    		relaysString+=relay[1] + "\n";
+    	}
+    	jTextArea.setText("In call w/ " + StateManager.INSTANCE.getCalleeArray()[1] + " using Relays: \n" 
+    			+ relaysString);
+    }
+
+COM:updates the state of the program by getting information about relays and setting the text of a JTextArea

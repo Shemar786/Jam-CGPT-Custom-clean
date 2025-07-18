@@ -1,0 +1,10 @@
+TDAT:     private void setPoolToFramework(PowerData framework) {
+        HashSet<String> set = new HashSet<String>();
+        set.add(framework.getDefaultPool());
+        Listener.getInstance().selectPools(set);
+        
+        user_interface.clearPoolButtons();
+        user_interface.setPool(framework.getDefaultPool());
+    }
+
+COM:sets the default pool for a PowerData framework and updates the user interface to reflect the change

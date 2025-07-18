@@ -1,0 +1,14 @@
+TDAT:     public void tableChanged(TableModelEvent e) {
+        if (e.getType() == TableModelEvent.UPDATE) {// setValueAt will fire this event, do nothing to keep current sort
+            fireTableChanged(e);
+            return;
+        }
+        if (e.getType() == TableModelEvent.DELETE)
+            updateDelete(e); // for delete keep current sort
+        else {
+            reallocateIndexes();
+            fireTableChanged(e);
+        }
+    }
+
+COM:handles table change events and either keeps the current sort or updates indexes and fires a table change event based on the type of event received

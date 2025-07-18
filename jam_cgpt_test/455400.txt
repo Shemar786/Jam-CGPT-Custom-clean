@@ -1,0 +1,15 @@
+TDAT: 	private void drawController(){
+		Shape pause = new Shape();
+		pause.defineFillStyle(new Color(255, 50, 50));
+		pause.defineLineStyle(0.5, new Color(50, 50, 50));
+		pause.setRightFillStyle(1);
+		pause.setLineStyle(1);
+		pause.move(-2, -2); // move coords are absolute
+		pause.line(2, -2); // line
+		pause.line(2, 2 );
+		pause.line(-2,2);
+		pause.line(-2, -2 );
+		currentFrame.placeSymbol(pause, 3,3);	
+	}
+
+COM:draws a pause symbol using the Shape class and places it in a specific position in the currentFrame

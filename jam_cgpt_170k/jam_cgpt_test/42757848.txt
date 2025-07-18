@@ -1,0 +1,11 @@
+TDAT: 	public void setPropertyNameValueMap(Map<String, Object> propertyNameValueMap) {
+		if (propertyNameValueMap == null) {
+			this.propertyNameValueMap = null;
+		} else {
+			this.propertyNameValueMap = new HashMap<String, Object>();
+			this.propertyNameValueMap.putAll(propertyNameValueMap);
+			this.propertyNameValueMap.remove(null);
+		}
+	}
+
+COM:sets the property name and value map for an object, with additional null removal functionality

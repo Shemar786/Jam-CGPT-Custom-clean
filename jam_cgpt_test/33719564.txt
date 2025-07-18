@@ -1,0 +1,14 @@
+TDAT:     public void testGetRegDate() {
+        System.out.println("getRegDate");
+        
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        Date expResult = null;
+        Date result = instance.getRegDate();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the functionality of the getRegDate() method in the SystemClient_DBImpl class and generates a failure message if necessary

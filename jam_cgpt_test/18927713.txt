@@ -1,0 +1,16 @@
+TDAT:       public int handleTreeNode(TreeNode node) {
+        int iDim = node.getLevel();
+
+        if (iDim == Quax.this.nDimension)
+          return TreeNodeCallback.BREAK; // bottom reached
+
+        if (node.getChildren().size() == 1) {
+          return TreeNodeCallback.CONTINUE; // continue next level
+        } else {
+          // more than one child - break out
+          Quax.this.qubonMode = false;
+          return TreeNodeCallback.BREAK;
+        }
+      }
+
+COM:handles a tree node by checking its level and the number of its children, and either continues to the next level or breaks out depending on the conditions met

@@ -1,0 +1,10 @@
+TDAT:    public void moveLocation(String fromLocation, String toLocation) {
+      final TimeSeriesSet toModify = getOnLocation(fromLocation);
+      for (TimeSeries timeseries : toModify) {
+         removeFromMultiMap(this.onLocation, fromLocation, timeseries);
+         timeseries.setLocation(toLocation);
+         addToMultiMap(this.onLocation, toLocation, timeseries);
+      }
+   }
+
+COM:moves a set of time series data from one location to another by modifying the location attribute of each time series element

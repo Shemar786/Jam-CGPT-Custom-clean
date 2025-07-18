@@ -1,0 +1,14 @@
+TDAT:     public void testPutAndGet () {
+        
+        try {
+            SimpleConfiguration sc = SimpleConfiguration.getInstance ();
+            sc.put("a","value");
+            String fooValue = sc.get("a");
+            assertEquals("value", fooValue);
+        } catch ( Exception e ) {
+            fail ( e.getMessage () );
+        }
+        
+    }
+
+COM:tests the put and get functionality of a SimpleConfiguration instance by setting a value and getting it back and then checking if it matches the expected value

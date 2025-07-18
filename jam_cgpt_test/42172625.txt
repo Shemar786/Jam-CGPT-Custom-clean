@@ -1,0 +1,17 @@
+TDAT: 	protected void addVisibleSafiServerIPPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TelephonySubsystem_visibleSafiServerIP_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TelephonySubsystem_visibleSafiServerIP_feature", "_UI_TelephonySubsystem_type"),
+				 ConfigPackage.Literals.TELEPHONY_SUBSYSTEM__VISIBLE_SAFI_SERVER_IP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the visible Safi server IP for the TelephonySubsystem class

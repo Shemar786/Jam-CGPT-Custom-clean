@@ -1,0 +1,20 @@
+TDAT:     public void handleLINEMODE() throws IOException {
+      int c = rawread();
+      switch (c) {
+        case LM_MODE:
+          handleLMMode();
+          break;
+        case LM_SLC:
+          handleLMSLC();
+          break;
+        case WONT:
+        case WILL:
+          handleLMForwardMask(c);
+          break;
+        default:
+          //skip to (including) SE
+          skipToSE();
+      }
+    }//handleLINEMODE
+
+COM:handles various commands related to the LINEMODE protocol and throws an IOException if necessary

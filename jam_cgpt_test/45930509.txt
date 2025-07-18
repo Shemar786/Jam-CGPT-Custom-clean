@@ -1,0 +1,10 @@
+TDAT:     private FeatureVector getFeatureVector(int i, int j, FeatureVector[][][] fvs) {
+
+        int small = Math.min(i, j);
+        int large = Math.max(i, j);
+        int dir = i < j ? 0 : 1;
+
+        return fvs[small][large][dir];
+    }
+
+COM:returns a FeatureVector element from a 3-dimensional array based on the values of two integers and the array itself

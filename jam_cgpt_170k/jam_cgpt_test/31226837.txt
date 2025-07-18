@@ -1,0 +1,8 @@
+TDAT:   public void setStrategy (final Strategy strategy) {
+    if (this.strategyController != null) this.strategyController.die ();
+    this.strategy = strategy;
+    this.strategyController = getAgent().getGroup().getAgentLoader().newAgent (strategy);
+    gui.appendStatus ("Setting the strategy to: " + strategy + "\n");
+  }
+
+COM:sets a new strategy for the controller and updates the strategy controller to use the new strategy

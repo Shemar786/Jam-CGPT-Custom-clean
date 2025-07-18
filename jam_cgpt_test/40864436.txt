@@ -1,0 +1,14 @@
+TDAT:     public TextField getTextField3() {
+        if (textField3 == null) {//GEN-END:|25-getter|0|25-preInit
+            // write pre-init user code here
+            textField3 = new TextField("Quincena que Abarca:", "1", 32, TextField.DECIMAL);//GEN-LINE:|25-getter|1|25-postInit
+            // write post-init user code here
+
+
+
+
+        }//GEN-BEGIN:|25-getter|2|
+        return textField3;
+    }
+
+COM:returns a TextField object and creates one if it has not been initialized

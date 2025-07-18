@@ -1,0 +1,16 @@
+TDAT: 	private TreeNode parseTerm() {
+		TreeNode t = parseFactor();
+		while ((token.getType() == Token.TokenType.MULT)) {
+			TreeNode p = SyntaxTree.makeNewNode(token);
+			if (p != null) {
+				p.setChild(0, t);
+				p.setToken(token);
+				t = p;
+				tryMatch(token.getType());
+				p.setChild(1, parseFactor());
+			}
+		}
+		return t;
+	}
+
+COM:parses a mathematical term consisting of one or more factors separated by multiplication operators

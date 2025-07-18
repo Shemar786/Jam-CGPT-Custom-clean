@@ -1,0 +1,14 @@
+TDAT:     public void testGetPhone() {
+        System.out.println("getPhone");
+        
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        String expResult = "";
+        String result = instance.getPhone();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the getPhone() method in the SystemClient_DBImpl class by initializing the class, setting expected and actual results strings, comparing them with assertEquals, and calling fail() to indicate that the test case is a prototype

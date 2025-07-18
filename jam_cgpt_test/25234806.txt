@@ -1,0 +1,13 @@
+TDAT:         private void handleLocation(LocationPoint locationNode, Attributes attributes) {
+            try {
+                double longitude = Double.parseDouble(attributes.getValue(ATTR_LONGITUDE));
+                double latitude = Double.parseDouble(attributes.getValue(ATTR_LATITUDE));
+                
+                locationNode.setLocation(longitude, latitude);
+            } catch (NumberFormatException e) {
+            	System.out.println("Parse Exception!");
+                // wrong data, do nothing.
+            }
+        }
+
+COM:handles the longitude and latitude of a location node

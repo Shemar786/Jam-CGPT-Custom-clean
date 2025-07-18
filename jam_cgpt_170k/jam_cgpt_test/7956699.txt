@@ -1,0 +1,21 @@
+TDAT: 		public void visitStaticFieldExpr(final StaticFieldExpr expr) {
+			if (SSAPRE.NO_ACCESS_PATHS) {
+				return;
+			}
+
+			try {
+				final FieldEditor e = context.editField(expr.field());
+
+				if (!e.isVolatile()) {
+					firstOrder = true;
+				}
+
+				context.release(e.fieldInfo());
+
+			} catch (final NoSuchFieldException e) {
+				// A field wasn't found. Silently assume it's volatile.
+				firstOrder = false;
+			}
+		}
+
+COM:visits a static field expression, sets the 'firstOrder' flag to true if the field is not volatile, and catches and ignores NoSuchFieldExceptions by assuming the field is volatile

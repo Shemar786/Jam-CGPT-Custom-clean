@@ -1,0 +1,26 @@
+TDAT: 	public void union(final int a, final int b) {
+		final Node na = findNode(a);
+		final Node nb = findNode(b);
+
+		if (na == nb) {
+			return;
+		}
+
+		// Link the smaller tree under the larger.
+		if (na.rank > nb.rank) {
+			// Delete nb.
+			nb.child.parent = na.child;
+			na.value = b;
+
+		} else {
+			// Delete na.
+			na.child.parent = nb.child;
+			nb.value = b;
+
+			if (na.rank == nb.rank) {
+				nb.rank++;
+			}
+		}
+	}
+
+COM:performs a union operation on two nodes in a data structure, linking the smaller tree under the larger and updating node ranks

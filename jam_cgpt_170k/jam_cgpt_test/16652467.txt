@@ -1,0 +1,17 @@
+TDAT:   public void close() throws RegainException {
+    if (mExcelApplication != null) {
+      // Excel schlie�en
+      try {
+        mExcelApplication.quit();
+      }
+      catch (Throwable thr) {
+        throw new RegainException("Using COM failed.", thr);
+      }
+      finally {
+        // Alle Ressourcen des COM-Threads freigeben
+        ComThread.Release();
+      }
+    }
+  }
+
+COM:closes an Excel application and releases all associated resources, throwing a RegainException if using COM fails

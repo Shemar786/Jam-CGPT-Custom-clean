@@ -1,0 +1,14 @@
+TDAT:     protected boolean condition(boolean desired) throws JspException {
+        boolean   result   = false;
+        if (getExprValue() != null) {
+            result   =
+                ELMatchSupport.condition(desired, getExprValue(), value,
+                                         location, messages, pageContext);
+        }
+        else {
+            result   = super.condition(desired);
+        }
+        return (result);
+    }
+
+COM:evaluates a boolean condition based on the values of different parameters and returns a boolean result, while also potentially throwing a JspException

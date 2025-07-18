@@ -1,0 +1,16 @@
+TDAT: 	private JToolBar getJToolBar() {
+
+		if (jToolBar == null) {
+			jToolBar = new JToolBar();
+			jToolBar.setFloatable(false);
+			jToolBar
+					.setComponentOrientation(java.awt.ComponentOrientation.RIGHT_TO_LEFT);
+			jToolBar.setBorderPainted(false);
+			jToolBar.setMargin(new java.awt.Insets(4, 0, 0, 0));
+			jToolBar.setPreferredSize(new java.awt.Dimension(20, 30));
+			jToolBar.add(getRefreshButton());
+		}
+		return jToolBar;
+	}
+
+COM:returns a JToolBar object with specific settings and adds a refresh button to it

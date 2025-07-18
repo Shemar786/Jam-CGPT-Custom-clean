@@ -1,0 +1,11 @@
+TDAT:   private void copyMap(Map dest,Map src) throws StrategyException{
+    Iterator iter = src.entrySet().iterator();
+    while (iter.hasNext()){
+      Map.Entry entry = (Map.Entry) iter.next();
+            dest.put(
+            transformWithParent(entry.getKey()),
+            transformWithParent(entry.getValue()) );
+    }
+  }
+
+COM:copies the elements of a source map to a destination map by iterating over the entries and transforming the keys and values using a parent transformation, while also throwing a StrategyException if needed

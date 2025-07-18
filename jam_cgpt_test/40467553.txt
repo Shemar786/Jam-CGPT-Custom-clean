@@ -1,0 +1,12 @@
+TDAT: 	public void setFont(String fontname, int fontsize){
+		int tw = textWidth;
+		int fs = (int) localFont.getFont().getSize();
+		localFont = GFont.getFont(winApp, fontname, fontsize);
+		if(fontsize != fs)
+			height += (fontsize - fs);
+		setText(text);
+		if(textWidth > tw)
+			width += (textWidth - tw);
+	}
+
+COM:sets the font and size of the text, updates the width and height of the text box, and redraws the text

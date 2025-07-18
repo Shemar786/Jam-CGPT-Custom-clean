@@ -1,0 +1,10 @@
+TDAT:     public void updateSchema(String kind, SchemaTO schemaTO) {
+        try {
+            restTemplate.postForObject(baseURL
+                    + "schema/" + kind + "/update", schemaTO, SchemaTO.class);
+        } catch (SyncopeClientCompositeErrorException e) {
+            LOG.error("While updating a user schema", e);
+        }
+    }
+
+COM:updates a schema for a specific kind using the REST template

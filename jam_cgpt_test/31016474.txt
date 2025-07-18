@@ -1,0 +1,11 @@
+TDAT:   public Vcr getVcr(int id1,int id2,boolean isplanet) {
+    for (int i=0;i<vcr.size();i++) {
+      Vcr v=(Vcr)vcr.elementAt(i);
+      if ((v.combatant1.id==id1) && 
+	  (v.combatant2.id==id2) && 
+	  v.isplanet==isplanet) return v;
+    }
+    return null;
+  }
+
+COM:returns a Vcr object from a Vector of Vcr objects based on given parameters

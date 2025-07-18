@@ -1,0 +1,13 @@
+TDAT:     protected void mouseReleased(int mButton) {
+        // Return events for this widget
+        if (listener != null && hasMouseOver())
+            listener.mouseReleased(mButton);
+
+        // Cycle the child widget list and send the mouseReleased event
+        for (int i = 0; i < widgetList.size(); i++) {
+            Widget widget = (Widget) widgetList.elementAt(i);
+            widget.mouseReleased(mButton);
+        }
+    }
+
+COM:releases the mouse button and sends the mouse released event to the widget listener and child widgets

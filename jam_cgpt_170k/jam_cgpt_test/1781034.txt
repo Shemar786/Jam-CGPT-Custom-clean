@@ -1,0 +1,8 @@
+TDAT:     public String getTitle() throws SAXException {
+        NodeList nl = ((Document) getOriginalDOM()).getElementsByTagName( "title" );
+        if (nl.getLength() == 0) return "";
+        if (!nl.item(0).hasChildNodes()) return "";
+        return nl.item(0).getFirstChild().getNodeValue();
+    }
+
+COM:retrieves the title attribute from an XML DOM document and returns it as a string, throwing a SAXException if there is an error

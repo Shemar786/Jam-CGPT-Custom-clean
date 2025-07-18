@@ -1,0 +1,11 @@
+TDAT: 		public String getValidationReport () {
+			String rpt = FindAndReplace.replace (validationReport, "\n", "<br/>", false);
+			String pattern = "NOT VALID:";
+			if (rpt.indexOf(pattern) == 0) {
+				rpt = "<b>" + pattern +"</b>" + rpt.substring(pattern.length());
+				rpt = FindAndReplace.replace (rpt, "Error:", "<br/>Error:", false);
+			}
+			return rpt;
+		}
+
+COM:returns a formatted validation report with line breaks and bold highlighting for errors

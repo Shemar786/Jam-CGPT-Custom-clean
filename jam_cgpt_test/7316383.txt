@@ -1,0 +1,14 @@
+TDAT: 	public void setAuthor(String author) {
+		logger.debug("setAuthor(author=\"" + author + "\"");
+		if ((author != null) && author.trim().equals("")) {
+			this.author = null;
+		} else {
+			try {
+				this.author = URLDecoder.decode(author, "UTF-8").trim();
+			} catch (UnsupportedEncodingException ex) {
+				this.author = "unsupported";
+			}
+		}
+	}
+
+COM:sets the author of a given object, decoding the author name and logging the action

@@ -1,0 +1,9 @@
+TDAT:   protected void checkRowBounds(int row) {
+    int rowSize = getRowCount();
+    if ((row >= rowSize) || (row < 0)) {
+      throw new IndexOutOfBoundsException("Row " + row
+        + " does not exist, row size is " + getRowCount());
+    }
+  }
+
+COM:checks if a given row index is within the valid range of rows in a table, and throws an exception if it is not

@@ -1,0 +1,17 @@
+TDAT: 	protected void addFieldIDPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TableColumn_fieldID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TableColumn_fieldID_feature", "_UI_TableColumn_type"),
+				 UiPackage.Literals.TABLE_COLUMN__FIELD_ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a field ID in a table column

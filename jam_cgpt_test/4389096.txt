@@ -1,0 +1,10 @@
+TDAT:     public boolean sameConfidenceXmlXml(Confidence xmlConfidenceA, Confidence xmlConfidenceB){
+    	if (xmlConfidenceA.getValue().equals(xmlConfidenceB.getValue()) 
+    			&& xmlConfidenceA.getUnit().equals(xmlConfidenceB.getUnit())){
+    		return true;
+    	}else{
+    		return false;
+    	}
+    }
+
+COM:compares the value and unit of two Confidence objects and returns true if they are equal, otherwise false

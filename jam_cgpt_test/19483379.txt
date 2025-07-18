@@ -1,0 +1,18 @@
+TDAT: 	protected String getStyleName(Node node) {
+		assert node != null;
+
+		NamedNodeMap children = node.getAttributes();
+
+		for (int i = 0; i < children.getLength(); i++) {
+			Node child = children.item(i);
+
+			if (child.getNodeName().endsWith("style-name"))
+				return child.getNodeValue();
+		}
+
+		throw new IllegalStateException(
+				"Node must have a style-name attribute, "
+						+ "since only those were selected by the xpath expression!");
+	}
+
+COM:retrieves the name of a style from an XML node's attributes, throwing an exception if the attribute is not present

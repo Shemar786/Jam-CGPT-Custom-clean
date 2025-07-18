@@ -1,0 +1,15 @@
+TDAT:   public String toString() {
+    StringBuffer        buf = new StringBuffer(20000);
+
+    for (Enumeration ids = rules.elements(); ids.hasMoreElements(); ) {
+      RuleSymbol        rs = (RuleSymbol)ids.nextElement();
+
+      if (!rs.id.equals("mnextToken")) {
+	buf.append(rs.getBlock().toString());
+	buf.append("\n\n");
+      }
+    }
+    return buf.toString();
+  }
+
+COM:returns a string representation of the RuleSymbol objects in the rules enumeration, excluding those with the id "mnextToken"

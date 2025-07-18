@@ -1,0 +1,13 @@
+TDAT: 	public void writeData(final DataOutputStream out) throws IOException {
+		out.writeShort(locals.length);
+
+		for (int i = 0; i < locals.length; i++) {
+			out.writeShort(locals[i].startPC());
+			out.writeShort(locals[i].length());
+			out.writeShort(locals[i].nameIndex());
+			out.writeShort(locals[i].typeIndex());
+			out.writeShort(locals[i].index());
+		}
+	}
+
+COM:writes data to a DataOutputStream object in a specific format

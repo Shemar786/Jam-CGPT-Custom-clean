@@ -1,0 +1,15 @@
+TDAT:     public ConnInstanceTO read(final Long connectorInstanceId) {
+        ConnInstanceTO connectorTO = null;
+
+        try {
+            connectorTO = restTemplate.getForObject(
+                    baseURL + "connector/read/" + connectorInstanceId,
+                    ConnInstanceTO.class);
+        } catch (SyncopeClientCompositeErrorException e) {
+            LOG.error("While reading a connector", e);
+        }
+
+        return connectorTO;
+    }
+
+COM:reads a connector instance using a REST template and returns its information as a ConnInstanceTO object

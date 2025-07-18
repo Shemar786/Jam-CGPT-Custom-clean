@@ -1,0 +1,13 @@
+TDAT:     public void registerFormat(int formatId, CellFormat format) throws RecordException {
+        int idx = getFormatIndex(formatId);
+
+        if (idx == INVALID_INDEX) {
+            throw new RecordException("Invalid Index Supplied " + formatId
+                    + " Should be between " + CellFormat.USER_RANGE_START
+                    + " and " + (CellFormat.USER_RANGE_START + userFormatSize));
+        }
+
+        formats[idx] = format;
+    }
+
+COM:registers a CellFormat object to a certain format ID in an array of CellFormats, throwing a RecordException if the index supplied is invalid

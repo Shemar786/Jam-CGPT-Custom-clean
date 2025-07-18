@@ -1,0 +1,11 @@
+TDAT:     public Dimension getPreferredSize(JComponent c) {
+        Dimension d = new Dimension(MINIMUM_SIZE, MINIMUM_SIZE);
+        JScrollBar sb = (JScrollBar)c;
+        if (sb.getOrientation() == JScrollBar.VERTICAL)
+            d.width = getPreferredScreenSize(d.width);
+        else
+            d.height = getPreferredScreenSize(d.height);
+        return d;
+    }
+
+COM:returns the preferred size of a JScrollBar component

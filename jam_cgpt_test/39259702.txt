@@ -1,0 +1,19 @@
+TDAT: 	public boolean renameCollection(Collection collection, String newName) {
+		try {
+			String query = "UPDATE Collections SET Name = ? WHERE CollectionID = ?"; 
+			PreparedStatement stmt = con.prepareStatement(query);
+			stmt.setString(1, newName);
+			stmt.setInt(2, collection.getCollectionID());
+			stmt.executeUpdate();
+			stmt.close();
+			return true;
+			}
+		catch (SQLException ex) {
+			ErrorLogger.writeExceptionToLogAndPrompt(getName(),"Error renaming collection.");
+			System.err.println("Error renaming collection");
+			ex.printStackTrace();
+			return false;			
+		}
+	}	
+
+COM:renames a collection by updating the name in the database and returns true if successful or false if an exception is caught

@@ -1,0 +1,19 @@
+TDAT: 	public void setMDCHostNameKey(String value) {
+
+		if (value == null) { return; }
+
+		value = value.trim();
+
+		if (value.length() == 0) { return; }
+
+		MDC_hostname_key = value;
+
+		// since we can't control the order of attribute calls from the framework, we'll make this
+		// defensive call ... in case setInitializeMDCHostNameValue() was called before this method
+		if (null != MDC_hostname_value)
+		{
+			setInitializeMDCHostNameValue(MDC_hostname_value);
+		}
+	}
+
+COM:sets the hostname key for a logging framework's Mapped Diagnostic Context (MDC) and initializes its value if a previous call to setInitializeMDCHostNameValue() was made

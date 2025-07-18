@@ -1,0 +1,7 @@
+TDAT: 	public void restoreObject(Object source,String objectId, String userId){
+		LibraryObject object = getObjectWrapper(objectId);
+		String targetId = object.getPropertyValue("/Deleted/Source").split(",")[1];//orginal location (could be bugged)
+		restoreObject(source, objectId, targetId, userId);
+	}
+
+COM:restores a LibraryObject from a given source and target ID as well as a user ID

@@ -1,0 +1,12 @@
+TDAT: 	protected boolean usesArcFiles(){
+		boolean arcFiles=false;
+		MetsFileType fls[] = this.getAllFiles();
+		if (fls.length>0 
+				 && (fls[0].isSetUSE() && (fls[0].getUSE().compareTo(HaSMETSWebProfile.ArcFileDecomposition.ARC.toString())==0
+						 || fls[0].getUSE().compareTo(HaSMETSWebProfile.ArcFileDecomposition.ARC_URL_RECORD.toString())==0))){
+			arcFiles=true;
+		}
+		return arcFiles;
+	}
+
+COM:checks if a METS object uses ARC files

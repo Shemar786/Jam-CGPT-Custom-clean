@@ -1,0 +1,10 @@
+TDAT: 	public void testUnaryPredicate() {
+		te = mTypeEnvironment("s", "S");
+		assertPredicateSpecialization(te, //
+				"¬(s ∈ S)", //
+				mSpec(te,//
+						mList("S", "Y"), //
+						mList("s", "S", "y", "Y")));
+	}
+
+COM:tests the specialization of a predicate that involves a negation and checks if it corresponds to the expected result

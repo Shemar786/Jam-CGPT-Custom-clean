@@ -1,0 +1,10 @@
+TDAT:     public StringItem getStringItem() {
+        if (stringItem == null) {//GEN-END:|15-getter|0|15-preInit
+            // write pre-init user code here
+            stringItem = new StringItem("", "Bienvenue sur iQuizz");//GEN-LINE:|15-getter|1|15-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|15-getter|2|
+        return stringItem;
+    }
+
+COM:returns a StringItem object with a default text value of "Bienvenue sur iQuizz" if the object is null, otherwise it returns the existing StringItem object

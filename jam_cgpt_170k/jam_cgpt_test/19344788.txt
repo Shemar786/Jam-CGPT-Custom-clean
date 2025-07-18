@@ -1,0 +1,9 @@
+TDAT:    private void g200_SetScreenFields(int row) {
+       currentRow = row;
+
+       name.setText(typeTblModel.getStringValueAt(row, TYPE_NAME_COLUMN));
+       g300_SetBaseType(row);
+       dateFormat.setText(typeTblModel.getStringValueAt(row, FORMAT_COLUMN));
+   }
+
+COM:sets the values of various fields on a screen based on the input row number

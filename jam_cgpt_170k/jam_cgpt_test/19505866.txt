@@ -1,0 +1,13 @@
+TDAT: 	private InternalElement getDestElement(InternalElement element) {
+		final IInternalElement destParent = 
+			(IInternalElement) getDestinationParent(element);
+		String newName = getNewNameFor(element);
+		if (newName == null) {
+			newName = element.getElementName();
+		}
+		final IInternalElementType<? extends IInternalElement> newType =
+			element.getElementType();
+		return (InternalElement) destParent.getInternalElement(newType, newName);
+	}
+
+COM:retrieves a destination parent element and creates a new internal element with a given name and type, returning the newly created element

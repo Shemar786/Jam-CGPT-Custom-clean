@@ -1,0 +1,12 @@
+TDAT:     public void insert(MutableTreeNode child, int index) {
+        if (!allowsChildren) {
+            throw new IllegalStateException("node does not allow children");
+        }
+        else if (child == null) {
+            throw new IllegalArgumentException("new child is null");
+        }
+        //} else if (isNodeAncestor(newChild)) {
+        //    throw new IllegalArgumentException("new child is an ancestor");
+        //}
+
+COM:inserts a mutable tree node at a specified index, throwing exceptions if the node does not allow children or if the new child is null

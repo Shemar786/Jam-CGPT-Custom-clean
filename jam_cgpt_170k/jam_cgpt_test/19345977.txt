@@ -1,0 +1,22 @@
+TDAT: 	private JMenu buildEditMenu() {
+
+	    for (int i = 0; i < systemActions.length; i++) {
+	        editMenu.add(systemActions[i]);
+	    }
+	    editMenu.addSeparator();
+	    editMenu.add(copyRecords);
+	    editMenu.add(cutRecords);
+	    editMenu.add(pasteRecords);
+	    editMenu.add(pasteRecordsPrior);
+	    editMenu.add(pasteTableInsert);
+	    editMenu.add(pasteTableOver);
+	    editMenu.add(insertRecords);
+	    editMenu.add(deleteRecords);
+
+	    editMenu.addSeparator();
+	    editMenu.add(findAction);
+
+	    return editMenu;
+	}
+
+COM:builds an edit menu by adding various system actions and options such as copy, cut, paste, insert and delete records, and find action

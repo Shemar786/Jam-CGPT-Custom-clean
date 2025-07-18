@@ -1,0 +1,16 @@
+TDAT: 	private void DrawTexturedMap(GL10 gl)
+	{	
+		
+		gl.glBindTexture(GL10.GL_TEXTURE_2D, this.mapTextureId);
+		
+		//Set the vertices
+		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, this.vertexMapBuffer);
+		
+		//Set the texture coordinates
+		gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, this.textureMapBuffer);
+		
+		//Draw the bitmap
+		gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);
+	}
+
+COM:draws a textured map using OpenGL and sets the vertices and texture coordinates before drawing the bitmap

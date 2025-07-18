@@ -1,0 +1,9 @@
+TDAT: public Color getBackground () {
+  checkWidget ();
+  if (!parent.checkData (this, true)) error (SWT.ERROR_WIDGET_DISPOSED);
+  java.awt.Color color = handle.getBackground();
+  if(color == null) return parent.getBackground();
+  return Color.swing_new(display, color);
+}
+
+COM:retrieves the background color of a widget and returns it as a Java AWT color object or the parent widget's background color if it is not set

@@ -1,0 +1,15 @@
+TDAT:   public int getIndex(Object object) {
+    if (fastIndex != -1) {
+      return ((Integer)object).intValue() - fastIndex;
+    }
+
+    for (int i = 0; i < codes.length; i++) {
+      if (((Integer)object).intValue() == codes[i]) {
+	return i;
+      }
+    }
+
+    return -1;
+  }
+
+COM:returns the index of an integer object in an array or -1 if it is not found, using a fast index if available

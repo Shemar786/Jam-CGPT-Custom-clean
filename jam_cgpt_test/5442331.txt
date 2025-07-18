@@ -1,0 +1,16 @@
+TDAT:     public void init() throws ServletException {
+        String para = getServletConfig().getInitParameter("statuscode");
+
+        if (para == null) {
+            throw new ServletException("Missing init argument: statuscode");
+        }
+
+        myStatusCode = Integer.parseInt(para);
+        myLocation = getServletConfig().getInitParameter("location");
+
+        if (myLocation == null) {
+            throw new ServletException("Missing init argument: location");
+        }
+    }
+
+COM:initializes the servlet and retrieves two initialization parameters, throwing an exception if either is missing

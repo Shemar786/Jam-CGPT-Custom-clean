@@ -1,0 +1,15 @@
+TDAT: 	public Vector fileListJSPs(String keyName, Object o) {	
+		Iterator i = fileList();
+		Vector v = new Vector();
+		while (i.hasNext()) {
+			JSPPage p = (JSPPage) i.next();
+			if (p.getName().toLowerCase().endsWith(".jsp")
+			 && p.getExtraData(keyName) != null
+			 && p.getExtraData(keyName).equals(o)) {
+				v.add(p);
+			}
+		}
+		return v;
+	}
+
+COM:takes a key name and object as input, iterates through a list of JSP pages, and returns a vector of all JSP pages whose name ends with ".jsp" and whose extra data matches the input key name and object

@@ -1,0 +1,13 @@
+TDAT:   public String getTitleForTab(wpTab tab) {
+    Iterator it = getIterator();
+    while (it.hasNext()) {
+      java.util.Map.Entry entry = (java.util.Map.Entry) it.next();
+      wpTab runTab = (wpTab) entry.getValue();
+      if (runTab.equals(tab)) {
+        return (String) entry.getKey();
+      }
+    }
+    return null;
+  }
+
+COM:searches for a wpTab object in a HashMap and returns the corresponding key (a String) if found, or null if not

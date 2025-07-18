@@ -1,0 +1,17 @@
+TDAT: 	protected void addRemoteEventPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SynchEvents_remoteEvent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SynchEvents_remoteEvent_feature", "_UI_SynchEvents_type"),
+				 CompositeControlPackage.Literals.SYNCH_EVENTS__REMOTE_EVENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a remote event to an item property descriptor list

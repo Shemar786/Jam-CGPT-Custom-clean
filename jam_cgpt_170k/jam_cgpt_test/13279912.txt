@@ -1,0 +1,17 @@
+TDAT:     private void recalculateBounds() {
+	lowerBound = Double.NEGATIVE_INFINITY;
+	upperBound = Double.POSITIVE_INFINITY;
+
+	RangeConstraint r;
+	synchronized(rangeConstraints) {
+	    Iterator i = rangeConstraints.iterator();
+	    while (i.hasNext()) {
+		r = (RangeConstraint)i.next();
+		restrictRange(r.lowerBound, r.upperBound);
+	    }
+	}
+	integerLowerBound = (long) Math.ceil(lowerBound);
+ 	integerUpperBound = (long) Math.floor(upperBound);
+   }
+
+COM:recalculates the lower and upper bounds based on given range constraints, and then rounds them to the nearest integer values

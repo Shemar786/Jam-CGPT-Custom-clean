@@ -1,0 +1,17 @@
+TDAT:         private void setDocOffset(int offset) {
+            try {
+                col = getColumnNumber(offset);
+                if(offset == 0)
+                    atZero = true;
+                else {
+                    atZero = false;
+                    --offset;
+                }
+                pos = getDoc().createPosition(offset);
+            } catch(BadLocationException ex) {
+                pos = null;
+                return;
+            }
+        }
+
+COM:This is a Java method that sets the document offset, determines the column number, and creates a position for the given offset

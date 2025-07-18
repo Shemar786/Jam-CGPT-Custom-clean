@@ -1,0 +1,12 @@
+TDAT:     public void testHeaderGreaterEqual() throws ServletException,  JspException {
+        GreaterEqualTag ge = new GreaterEqualTag();
+        ge.setPageContext(pageContext);
+        ge.setHeader(HEADER_KEY);
+        ge.setValue(LESSER_VAL);
+
+        assertTrue(
+        	"Header Value (" + GREATER_VAL + ") is greater than or equal to value (" + LESSER_VAL + ")", 
+        	ge.condition());
+    }
+
+COM:tests if a header value is greater than or equal to a given value using the GreaterEqualTag class in a JSP context

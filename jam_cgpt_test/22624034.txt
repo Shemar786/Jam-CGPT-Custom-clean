@@ -1,0 +1,20 @@
+TDAT: 	public void fetchStandardsDocs(List docIds) throws ValidatingServiceException {
+		prtln("fetchStandardsDocs to fetch " + docIds.size() + " docs");
+		
+		if (isProcessing) {
+			prtln("ALERT: isProcessing!");
+			return;
+		}
+		isProcessing = true;
+		this.ignoreCachedValidation = ignoreCachedValidation;
+
+		// Here is where we would obtain lock on records to validate!
+
+		try {
+			new AsnFetchThread(docIds).start();
+		} catch (Throwable t) {
+			prtln("WARNING: validate Records: " + t.getMessage());
+		}
+	}
+
+COM:fetches a list of standard documents and throws an exception if there is a validation error

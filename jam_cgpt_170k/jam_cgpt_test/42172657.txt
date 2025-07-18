@@ -1,0 +1,17 @@
+TDAT:   protected void addExampleUrlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBDriver_exampleUrl_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBDriver_exampleUrl_feature", "_UI_DBDriver_type"),
+				 DbPackage.Literals.DB_DRIVER__EXAMPLE_URL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a DBDriver's example URL

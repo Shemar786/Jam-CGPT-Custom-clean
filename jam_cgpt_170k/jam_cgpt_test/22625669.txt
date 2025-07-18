@@ -1,0 +1,15 @@
+TDAT: 	public void init() {
+		repositoryManager = (RepositoryManager) getAttribute("repositoryManager");
+		xmlConversionService = (XMLConversionService) getAttribute("xmlConversionService");
+		recordDataService = (RecordDataService) getAttribute("recordDataService");
+		if (recordDataService != null)
+			metadataVocab = recordDataService.getVocab();
+		if (repositoryManager != null) {
+			vocabLang = repositoryManager.getMetadataVocabLanguageDefault();
+			vocabAudience = repositoryManager.getMetadataVocabAudienceDefault();
+		}
+
+		initDeDuping();
+	}
+
+COM:initializes various data objects and variables for de-duplication

@@ -1,0 +1,12 @@
+TDAT:     private int headerLen() {
+        int len = 0;
+        
+        len += 4; // int value of the id-length
+        len += this.id.length(); // id itself
+        len += 4; // int value of the package Number length (int = 4 byte)
+        len += 1; // boolean = one byte
+        
+        return len;
+    }
+
+COM:calculates the length of the header of a message in bytes

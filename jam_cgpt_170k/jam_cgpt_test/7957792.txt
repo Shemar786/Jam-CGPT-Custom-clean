@@ -1,0 +1,26 @@
+TDAT: 	private Block copyBlock(final Block block) {
+		final Block copy = newBlock();
+
+		// Copy the stack from the end of the old block.
+		// But don't change it when instructions are added.
+
+		final Tree tree = new Tree(copy, block.tree().stack());
+		copy.setTree(tree);
+
+		// Fill the tree.
+		final Iterator stmts = block.tree().stmts().iterator();
+
+		while (stmts.hasNext()) {
+			final Stmt stmt = (Stmt) stmts.next();
+
+			if (stmt instanceof LabelStmt) {
+				continue;
+			}
+
+			tree.addStmt((Stmt) stmt.clone());
+		}
+
+		return copy;
+	}
+
+COM:creates a copy of a Block object, fills its Tree object with cloned statements, and returns the new Block

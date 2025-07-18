@@ -1,0 +1,12 @@
+TDAT:     public BindResp bind(Bind bindRequest) throws IOException {
+        long timeout = getBindTimeout();
+        BindResp bindResp = (BindResp) sendAndWait(
+                bindRequest, bindCaller, timeout);
+        if (bindResp == null) {
+            throw new ReadTimeoutException();
+        } else {
+            return bindResp;
+        }
+    }
+
+COM:binds a request, waits for a response, and throws a ReadTimeoutException if no response is received within a specified timeout period

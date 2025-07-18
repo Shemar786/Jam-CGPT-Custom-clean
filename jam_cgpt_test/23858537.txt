@@ -1,0 +1,11 @@
+TDAT: 	public void write(byte[] b, int off, int len) throws IOException {
+		if (output_stream != null) {
+			output_stream.write(b, off, len);
+			len = input_stream.read(buff, 0, buff.length);
+			source_line.write(buff, 0, len);
+		} else {
+			source_line.write(b, off, len);
+		}
+	}
+
+COM:writes a specified number of bytes from an input stream to an output stream, and throws an IOException if there is an error

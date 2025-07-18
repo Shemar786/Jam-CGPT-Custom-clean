@@ -1,0 +1,15 @@
+TDAT:     public void sendUpdatesAfter(NetworkTime time) {
+        document.getAccessLock();
+
+        SortedSet elementsAfterTime = document.getElementsUpdatedAfter(time);
+        Iterator elementIter = elementsAfterTime.iterator();
+
+        while (elementIter.hasNext()) {
+            ModelElement element = (ModelElement) elementIter.next();
+            sendElement(element);
+        }
+
+        document.releaseAccessLock();
+    }
+
+COM:sends updates for document elements updated after a certain time

@@ -1,0 +1,12 @@
+TDAT: 	public void invokeAfterActionCallbacks(Object iContent, SchemaElement iAction) {
+		List<UserObjectEventListener> listeners = getListeners(UserObjectEventListener.class);
+		for (UserObjectEventListener listener : listeners) {
+			try {
+				listener.onAfterActionExecution(iContent, iAction);
+			} catch (Throwable t) {
+				log.error("[Controller.invokeAfterActionCallbacks] listener: " + listener, t);
+			}
+		}
+	}
+
+COM:invokes all registered callbacks after an action is executed

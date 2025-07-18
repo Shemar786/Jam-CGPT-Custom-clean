@@ -1,0 +1,11 @@
+TDAT: 	protected Element getRepeatItemLabel(String siblingPath, String indexId) {
+		// label element contains the label for the repeating element
+		// <div class="indexed-element-label">keyword ${index+1}</div>
+		Element labelElement = df.createElement("div")
+				.addAttribute("class", "indexed-element-label");
+		renderLabelDebugInfo(labelElement, "indexed-element-label");
+		labelElement.setText(XPathUtils.getLeafName(siblingPath) + " ${" + indexId + "+1}");
+		return labelElement;
+	}
+
+COM:returns a label element for a repeating element with the specified sibling path and index ID

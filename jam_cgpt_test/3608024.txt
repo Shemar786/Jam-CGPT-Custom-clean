@@ -1,0 +1,15 @@
+TDAT:     public String printGlossary() {
+
+        String printme = "";
+
+        for (Iterator i = keyValues.keySet().iterator(); i.hasNext(); ) {
+            String key = i.next().toString();
+            String value = getString(key);
+            printme = printme + key + " = " + value + "<br>\n";
+
+        }
+
+        return printme;
+    }
+
+COM:prints a glossary by iterating through a key-value map and concatenating the key and value into a string with HTML line breaks

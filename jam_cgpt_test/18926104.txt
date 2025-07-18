@@ -1,0 +1,16 @@
+TDAT:   public Object findBean(String name) {
+    Object bean = request.getAttribute(name);
+    if (bean != null)
+      return bean;
+    HttpSession session = getSession();
+    bean = session.getAttribute(name);
+    if (bean != null)
+      return bean;
+    ServletContext context = getServletContext();
+    bean = context.getAttribute(name);
+    if (bean != null)
+      return bean;
+    return null;
+  }
+
+COM:finds a bean object by name from the request, session, or servlet context attribute

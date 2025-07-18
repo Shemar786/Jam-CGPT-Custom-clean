@@ -1,0 +1,10 @@
+TDAT:     public void draw(int mX, int mY, float mAlpha) {
+        if (currentAnimation > -1 && currentAnimation < animationsList.size()) {
+            GLHotSpotAnimation animation =
+                    (GLHotSpotAnimation) animationsList
+                            .elementAt(currentAnimation);
+            animation.draw(mX - offsetX, mY - offsetY, mAlpha);
+        }
+    }
+
+COM:draws a GLHotSpotAnimation at the specified mouse coordinates with a given alpha value, checking if there is a valid animation to draw from a list

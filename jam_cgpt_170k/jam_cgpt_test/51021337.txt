@@ -1,0 +1,23 @@
+TDAT: 	private void populateComboBox(JComboBox box) {
+		Set<AttributeName> ans = new HashSet<AttributeName>();
+
+		for (ONDEXConcept n : graph.getVertices()) {
+			for (Attribute g : n.getAttributes()) {
+				ans.add(g.getOfType());
+			}
+		}
+
+		box.removeAllItems();
+		box.addItem("None");
+
+		if (ans.size() > 0) {
+			AttributeName[] array = ans.toArray(new AttributeName[0]);
+			Arrays.sort(array);
+			for (AttributeName an : array) {
+				box.addItem(an);
+			}
+			box.revalidate();
+		}
+	}
+
+COM:populates a JComboBox with unique AttributeName values obtained from ONDEXConcepts in a graph

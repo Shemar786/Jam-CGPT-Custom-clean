@@ -1,0 +1,17 @@
+TDAT:     public String getVMArguments() {
+        String result = null;
+        if (launchConfig != null) {
+            try {
+                result = launchConfig.getAttribute(
+                        IJavaLaunchConfigurationConstants.ATTR_VM_ARGUMENTS,
+                        (String) null);
+            } catch (CoreException ignore) {
+            }
+        }
+        if (result == null) {
+            result = "";
+        }
+        return result;
+    }
+
+COM:returns the VM arguments as a string, retrieved from a launch configuration

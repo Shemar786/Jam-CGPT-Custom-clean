@@ -1,0 +1,10 @@
+TDAT: 	protected IContextRoot createContext(String bareName) throws RodinDBException {
+		final String fileName = EventBPlugin.getContextFileName(bareName);
+		IRodinFile file = rodinProject.getRodinFile(fileName);
+		file.create(true, null);
+		IContextRoot result = (IContextRoot) file.getRoot();
+		result.setConfiguration(DEFAULT_CONFIGURATION, null);
+		return result;
+	}
+
+COM:creates a context root using a given bare name and sets a default configuration

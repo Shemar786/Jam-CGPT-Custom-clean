@@ -1,0 +1,12 @@
+TDAT: 	public void testQuantifiedPredicate() {
+		final BoundIdentDecl[] decls = mList(mBoundIdentDecl("x", tS));
+		final BoundIdentifier use = mBoundIdentifier(0, tS);
+		final Predicate pred = mAssociativePredicate(LAND,
+				mRelationalPredicate(IN, use, eS),
+				peT,
+				piU
+		);
+		doTest(mQuantifiedPredicate(EXISTS, decls, pred), tS, tT, tU);
+	}
+
+COM:tests a quantified predicate by creating bound identifier declarations and using them in an associative predicate with a logical AND operator

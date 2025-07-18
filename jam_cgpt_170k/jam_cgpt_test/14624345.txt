@@ -1,0 +1,12 @@
+TDAT:     public void testsetUseStatus() {
+        System.out.println("setUseStatus");
+        int PRN = 0;
+        boolean status = true;
+        org.gps.types.GpsSatelliteArray instance = new org.gps.types.GpsSatelliteArray();
+        instance.setUseStatus(PRN,status);
+        
+        //TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a prototype for testing the setUseStatus() method of the GpsSatelliteArray class, which sets the use status of a GPS satellite based on its PRN number and a boolean status value

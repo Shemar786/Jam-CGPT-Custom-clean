@@ -1,0 +1,12 @@
+TDAT:   public List getModuleBuildOrder(Module module) throws DependencyException {
+    List toBeExamined = new ArrayList();
+    List buildOrder   = new ArrayList();
+   
+    toBeExamined.add(module.getName()); // must be by name because dependencies only contain a name.
+   
+    calculateModuleBuildOrder(toBeExamined, buildOrder, new ArrayList());
+   
+    return Collections.unmodifiableList(buildOrder);
+  }
+
+COM:takes a Module object as input, calculates the module build order based on dependencies, and returns the result as an unmodifiable List

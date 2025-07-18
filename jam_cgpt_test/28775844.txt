@@ -1,0 +1,15 @@
+TDAT: 	private JButton getAddMatrix() {
+		if (addMatrix == null) {
+			addMatrix = new JButton();
+			addMatrix.setBounds(new Rectangle(15, 15, 136, 16));
+			addMatrix.setText(lang.get("MSG_12"));
+			addMatrix.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					new MatrixCreationFrame(SpaceCreationFrame.this);
+				}
+			});			
+		}
+		return addMatrix;
+	}
+
+COM:returns a JButton that creates a new MatrixCreationFrame when clicked, with a given text and bounds

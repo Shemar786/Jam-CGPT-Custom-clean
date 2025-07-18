@@ -1,0 +1,17 @@
+TDAT:     public boolean startsWith(final MutableString prefix) {
+        final int l = prefix.length();
+        if (l > length()) {
+            return false;
+        }
+        int i = l;
+        final byte[] a1 = prefix.array;
+        final byte[] a2 = array;
+        while (i-- != 0) {
+            if (a1[i] != a2[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+COM:checks if a MutableString object starts with a given prefix and returns a boolean value

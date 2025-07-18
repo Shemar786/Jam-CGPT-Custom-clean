@@ -1,0 +1,19 @@
+TDAT: 	public String getFile(String filePath) {
+
+		List<String> list = cache.get(filePath);
+
+		if (list != null && list.size() == size) {
+			Integer index = pos.get(filePath);
+			if (index == null || index == size) {
+				index = 0;
+			}
+
+			String result = list.get(index);
+			pos.put(filePath, index + 1);
+			return result;
+		}
+
+		return null;
+	}
+
+COM:returns a cached file path if it is in the cache and the cache is full, otherwise it returns null

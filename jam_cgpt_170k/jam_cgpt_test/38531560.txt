@@ -1,0 +1,10 @@
+TDAT:     public int getChildCollectionCount() throws org.xmldb.api.base.XMLDBException {
+        try {
+            return this.stub.getChildCollectionCount(this.collectionTransport);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e);
+        }
+        
+    }
+
+COM:returns the number of child collections in a database and throws an exception if an error occurs during the process

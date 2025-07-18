@@ -1,0 +1,12 @@
+TDAT: 	public JLabel getLabel( String label, String tooltipText, boolean enabled ) {
+		JLabel ret = new JLabelAntiAliased( label );
+		ret.setFont( LABEL_FONT );
+		if ( tooltipText != null ) {
+			ret.setToolTipText( Styles.markup( tooltipText ) );
+		}
+		ret.setForeground( LABEL_COLOR );
+		ret.setEnabled( enabled );
+		return ret;
+	}
+
+COM:returns a JLabel with a specified label text, tooltip text (optional), and enabled/disabled state

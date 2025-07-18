@@ -1,0 +1,17 @@
+TDAT: 	public String getCreationDate() {
+		String t = doc.get("creationdate");
+
+		if (t == null)
+			return "";
+
+		try {
+			long modTime = DateFieldTools.stringToTime(t);
+			SimpleDateFormat df = new SimpleDateFormat("MMM' 'dd', 'yyyy");
+			return df.format(new Date(modTime));
+		} catch (Throwable e) {
+			prtlnErr("Error getCreationDate(): " + e);
+			return "";
+		}
+	}
+
+COM:returns the creation date of a document in the format "MMM dd, yyyy"

@@ -1,0 +1,9 @@
+TDAT:     private void getURLWorkflow() throws TavernaException{
+        String uri = JOptionPane.showInputDialog(parent, "Enter URI of the desired workflow", "Workflow URI", 
+                JOptionPane.QUESTION_MESSAGE);
+        System.out.println("uri: "+ uri);
+        Thread t = new WorkflowURISetter(uri);
+        t.start();
+    }
+
+COM:prompts the user to enter the URI of a desired workflow, prints the URI to the console, and creates a new thread to set the URI of the workflow

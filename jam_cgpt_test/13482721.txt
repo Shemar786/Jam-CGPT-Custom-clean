@@ -1,0 +1,12 @@
+TDAT:     public void transform(FlowGraph cfg, SSAConstructionInfo info) {
+        if (DEBUG) {
+            System.out.println("transforming " + info.prototype + " ("
+                    + info.prototype.type() + ")");
+        }
+
+        placePhiFunctions(cfg, info);
+        rename(cfg, info);
+        insertCode(cfg, info);
+    }
+
+COM:applies transformations to a FlowGraph object using SSAConstructionInfo to place phi functions, rename variables and insert code

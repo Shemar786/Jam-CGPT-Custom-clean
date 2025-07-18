@@ -1,0 +1,10 @@
+TDAT:     public void addHours(int hours) {
+        int days=(hours + remainderHours)/hoursPerDay;
+        remainderHours=(hours + remainderHours)%hoursPerDay;
+        for(int i=0;i<days;i++) {
+            skipHolidays();
+            add(DAY_OF_YEAR,1);
+            skipHolidays(); }
+    }
+
+COM:adds a certain number of hours to the current date and time, taking into account holidays and ensuring that the new date falls on a regular work day

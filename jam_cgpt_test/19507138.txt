@@ -1,0 +1,11 @@
+TDAT: 	public void testMoveIntNoop() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neParent = createNEPositive(rSource, "parent", null);
+		NamedElement neSource = createNEPositive(neParent, "foo", null);
+		createNEPositive(neSource, "bar", null);
+
+		moveNoop(neSource, null);
+	}
+
+COM:tests the no-operation movement of a NamedElement within its parent element

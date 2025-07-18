@@ -1,0 +1,17 @@
+TDAT: 	public void testCarrierSets_01_twoCarrierSets() throws Exception {
+		IContextRoot con = createContext("ctx");
+
+		addCarrierSets(con, makeSList("S1", "S2"));
+		
+		saveRodinFileOf(con);
+		
+		runBuilder();
+		
+		ISCContextRoot file = con.getSCContextRoot();
+		
+		containsCarrierSets(file, "S1", "S2");
+		
+		containsMarkers(con, false);
+	}
+
+COM:tests that a context root contains two carrier sets and does not contain any markers

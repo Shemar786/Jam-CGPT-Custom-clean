@@ -1,0 +1,13 @@
+TDAT:     private int getMonthDifference(String dt1, String dt2){
+        int diff = 0;
+        int dt1Month = Integer.parseInt(dt1.substring(5,7));
+        int dt2Month = Integer.parseInt(dt2.substring(5,7));
+        if(dt1Month < dt2Month){
+            diff = ((12 - dt2Month) + dt1Month) * 30;
+        }else{
+            diff = (dt1Month - dt2Month) * 30;
+        }
+        return diff;
+    }
+
+COM:calculates the difference in months between two dates in the format of "yyyy-MM-dd"

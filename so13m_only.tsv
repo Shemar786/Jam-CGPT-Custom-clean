@@ -1,0 +1,12 @@
+Show the status of the city that has hosted the greatest number of competitions.	SELECT T1. every engineer's first name, last name, details and coresponding skill description.
+number of parameters: 353.55M
+Please show the themes of competitions with host cities having populations larger than 1000.	SELECT Country FROM mountain WHERE Height  >  5000
+number of parameters: 353.55M
+Please show the different statuses of cities and the average population of cities with each status.	SELECT Status ,  avg(Points) FROM player GROUP BY Status
+number of parameters: 353.55M
+Please show the different statuses, ordered by the number of cities that have each.	SELECT Country ,  COUNT(*) FROM member GROUP BY Country
+number of parameters: 353.55M
+List the most common type of Status across cities.	SELECT count(*) ,  city FROM employee GROUP BY city
+number of parameters: 353.55M
+List the official names of cities that have not held any competition.	SELECT Name FROM ship WHERE Ship_ID NOT IN (SELECT Ship_ID FROM mission)
+number of parameters: 353.55M

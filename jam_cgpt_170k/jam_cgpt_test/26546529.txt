@@ -1,0 +1,12 @@
+TDAT: 	private Node compositeRelativePath(List<Node> children, Object data) {
+		if(children.size() > 1) {
+			Node child0 = (Node)children.remove(0).accept(this, data);
+			Node child1 = children.remove(0);
+			return createCompositePath(child0, compositeRelativePath(children, data), child1);
+		}
+		else {
+			return (Node)children.remove(0).accept(this, data);
+		}
+	}
+
+COM:recursively creates a composite path of nodes based on the input children and data

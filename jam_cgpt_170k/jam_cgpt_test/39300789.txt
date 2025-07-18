@@ -1,0 +1,13 @@
+TDAT:     public AGVRobot buildAGVRobot() {
+        checkBuilderState();
+        BoundingBox box = buildBoundingBox();
+        AGVRobot theAGVRobot = new AGVRobot(getId(),getPosition(), box);
+        theAGVRobot.setSpeedPerTimeUnit(getSpeedPerTimeUnit());
+        for (Module module : getModules()) {
+            theAGVRobot.addModule(module);
+        }
+        reset();
+        return theAGVRobot;
+    }
+
+COM:builds an AGV robot object with the specified ID, position, bounding box, speed per time unit, and modules

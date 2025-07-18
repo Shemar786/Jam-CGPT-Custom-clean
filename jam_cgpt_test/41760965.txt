@@ -1,0 +1,15 @@
+TDAT: 	public boolean match(Token.TokenType expected) {
+		if (token.getType() == expected) {
+			if (scanner.hasMoreTokens()) {
+				token = scanner.getNextToken();
+			}
+			return true;
+		} else {
+			String errorMsg = syntaxError("Unexpected token -> ")
+					+ token.print();
+			errorArray.add(new ParseError(errorMsg, token.getLineNumber()));
+		}
+		return false;
+	}
+
+COM:checks if the token type matches the expected token type and returns a boolean value

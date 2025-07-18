@@ -1,0 +1,10 @@
+TDAT:   protected URL getRelativePath(String path) throws IOException {
+    URL url = (URL) this.relativePaths.get(path);
+    if (url == null) {
+      url = this.factory.resolveURL(this.src.toURL(), path);
+      this.relativePaths.put(path, url);
+    }
+    return url;
+  }
+
+COM:gets a relative path URL, and if it's not already stored, it resolves the URL and caches it for future use

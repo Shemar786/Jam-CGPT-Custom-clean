@@ -1,0 +1,14 @@
+TDAT: 	private void storeFilterExpressions() {
+		for (Column c: filterTextfieldsPerColumn.keySet()) {
+			String newFilter = ConditionEditor.toMultiLine(filterTextfieldsPerColumn.get(c).getText()).trim();
+			if (newFilter.length() == 0) {
+				newFilter = null;
+			}
+			c.setFilterExpression(newFilter);
+		}
+		getDataModel().version++;
+		parent.extractionModelEditor.refresh(false, false, true, true);
+		parent.extractionModelEditor.markDirty();
+	}
+
+COM:stores filter expressions for each column and updates the data model version, refreshes the extraction model editor and marks it as dirty

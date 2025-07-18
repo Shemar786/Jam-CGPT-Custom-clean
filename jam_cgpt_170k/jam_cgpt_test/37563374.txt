@@ -1,0 +1,10 @@
+TDAT: public Transform (Device device, float m11, float m12, float m21, float m22, float dx, float dy) {
+	if (device == null) device = Device.getDevice();
+	if (device == null) SWT.error(SWT.ERROR_NULL_ARGUMENT);
+	this.device = device;
+	handle = new AffineTransform(m11, m12, m21, m22, dx, dy);
+	if (handle == null) SWT.error(SWT.ERROR_NO_HANDLES);
+	if (device.tracking) device.new_Object(this);
+}
+
+COM:creates a new Transform object with the specified parameters, checks for null arguments and initializes the device and handle

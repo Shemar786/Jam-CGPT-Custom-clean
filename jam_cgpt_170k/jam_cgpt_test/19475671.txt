@@ -1,0 +1,17 @@
+TDAT: 	protected void addInitialPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBabstractState_initial_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBabstractState_initial_feature", "_UI_UMLBabstractState_type"),
+				 UMLBPackage.Literals.UML_BABSTRACT_STATE__INITIAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "initial" feature of a UMLBabstractState object

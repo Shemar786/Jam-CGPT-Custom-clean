@@ -1,0 +1,13 @@
+TDAT: 	public void doSave(IProgressMonitor monitor) {
+		
+		ToFromXML.toXML((Test)graphicalViewer.getContents().getModel(),((IFileEditorInput)getEditorInput()).getFile());
+		getCommandStack().markSaveLocation();
+
+		try{
+			((IFileEditorInput)getEditorInput()).getFile().refreshLocal(1, monitor);
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:saves the Test object as XML and marks the save location while refreshing the editor input file

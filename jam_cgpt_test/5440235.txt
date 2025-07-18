@@ -1,0 +1,15 @@
+TDAT:     public void init(OutputStream out, JoServletResponse response) {
+        if (out == null) {
+            throw new NullPointerException();
+        }
+        this.outputStream = out;
+        this.bufferPos = 0;
+        this.buffer = null;
+        this.dataWasWritten = false;
+        this.bytesWritten = 0;
+        this.response = response;
+        this.headersWritten = false;
+        this.closed = false;
+    }
+
+COM:initializes various variables for a servlet response object and checks for null outputstream

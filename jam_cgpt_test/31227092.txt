@@ -1,0 +1,16 @@
+TDAT: 		public void updateMatrix() {
+			for (int i = 0; i < data.length; i++) {
+				for (int j = 0; j < data[i].length; j++) {
+					StringTokenizer st = new StringTokenizer(data[i][j]," ,;:");
+					int k = 0;
+					while (st.hasMoreTokens()) {
+						int num = Integer.parseInt(st.nextToken());
+						
+						// @TODO fix the missing code below
+						// m[][][];
+					}
+				}
+			}
+		}
+
+COM:updates a three-dimensional integer array based on the values in a two-dimensional string array

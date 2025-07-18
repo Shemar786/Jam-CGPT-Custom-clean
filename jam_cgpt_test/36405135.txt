@@ -1,0 +1,7 @@
+TDAT:     public void applyHardCharFormatting(StyleWithProperties style, BeforeAfter ba) {
+        palette.getI18n().applyLanguage(style,true,false,ba);
+        applyFont(style,true,false,ba,new Context());
+        if (!ba.isEmpty()) { ba.add(" ",""); }
+    }
+
+COM:applies hard character formatting to a given style with properties and BeforeAfter object

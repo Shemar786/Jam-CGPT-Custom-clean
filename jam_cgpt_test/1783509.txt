@@ -1,0 +1,11 @@
+TDAT:     public void testReadDocumentTitle() throws Exception {
+        Element title = createElement( "title" );
+        Text text = _htmlDocument.createTextNode( "something here" );
+        title.appendChild( text );
+
+        _headElement.appendChild( title );
+
+        assertEquals( "title seen by document", "something here", _htmlDocument.getTitle() );
+    }
+
+COM:tests if the title of an HTML document can be successfully read and returns an assertion result

@@ -1,0 +1,11 @@
+TDAT: 	public String getUserIDFromName(String userName) throws AccessException {
+		logger.debug("getUserIDFromName(String userName=" + userName
+				+ ") - entering");
+
+		String returnString = dbAccess.getUserIDForName(userName);
+		logger.debug("getUserIDFromName(String) - exiting - return value="
+				+ returnString);
+		return returnString;
+	}
+
+COM:retrieves the user ID for a given user name and returns it as a string, while also logging the process

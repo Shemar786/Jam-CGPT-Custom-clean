@@ -1,0 +1,11 @@
+TDAT:     private Template handleExceptionByError(Context context, String message, Throwable e) {
+        try {
+            return error(context, message, e);
+        } catch (Throwable ex) {
+            runtime.log.error("[" + context.hashCode() + "] " + "Error ocurred in '" +
+                              getClass().getName() + ".error()'", ex);
+            return null;
+        }
+    }
+
+COM:handles exceptions by returning an error message with context specified and logs the occurrence of the error

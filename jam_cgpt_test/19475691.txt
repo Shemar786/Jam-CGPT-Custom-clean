@@ -1,0 +1,17 @@
+TDAT: 	protected void addInstancesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBclassifier_instances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBclassifier_instances_feature", "_UI_UMLBclassifier_type"),
+				 UMLBPackage.Literals.UML_BCLASSIFIER__INSTANCES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to a list of descriptors for a UMLBclassifier object's instances, using the adapter factory and resource locator provided

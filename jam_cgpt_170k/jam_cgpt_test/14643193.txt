@@ -1,0 +1,8 @@
+TDAT:     public void postInject() throws Exception {
+        if (this.fPostInjectOperation != null && !this.fPostInjectOperation.trim().equals("")) {
+            LOG.debug("Execute postinject operation:" + this.fPostInjectOperation);
+            this.fMBeanServer.invoke(this.fObjectName, this.fPostInjectOperation, null, null);
+        }
+    }
+
+COM:executes a post-injection operation if specified

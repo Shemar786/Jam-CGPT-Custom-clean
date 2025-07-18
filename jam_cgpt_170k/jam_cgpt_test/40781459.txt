@@ -1,0 +1,28 @@
+TDAT: 	private Constant parsePrimitiveValue( String value ) {
+
+		if(value.equalsIgnoreCase("true") || value.equalsIgnoreCase("false")){
+			boolean booleanValue = Boolean.valueOf(value);
+			return Constant.getInstance(booleanValue);
+		}
+		
+		try{
+			Integer intValue = Integer.valueOf(value);
+			return Constant.getInstance(intValue);
+		}catch(Exception e){
+		}
+
+		try{
+			Long longValue = Long.valueOf(value);
+			return Constant.getInstance(longValue);
+		}catch(Exception e){
+		}
+
+		try{
+			Double d = Double.valueOf(value);
+			return Constant.getInstance(d);
+		}catch(Exception e){
+		}
+		return null;
+	}
+
+COM:performs parsing of primitive values from a string input and returns a Constant object

@@ -1,0 +1,5 @@
+TDAT: 	public String addMatchResult(String leagueId, String date, String winner, String loser) throws ParseException, InvalidUserException, InvalidLeagueException, MissingAttributeException, InvalidAtributeException, InvalidSyntaxException, DivisionByZeroException, InvalidPlayerException, UnknownAttributeException, InvalidLeagueMemberException {
+		return matchesManager.addMatchResult(leagueId, date, winner, loser);
+	}
+
+COM:adds a match result to the Matches Manager, and returns the resulting string

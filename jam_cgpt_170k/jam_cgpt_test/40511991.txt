@@ -1,0 +1,9 @@
+TDAT:   public Row getRow(int pos) {
+    for(int i = 0; i < _cache.size(); i++) {
+      Rows rows = (Rows)_cache.get(i);
+      if(rows.inside(pos)) return (Row)rows.getRow(pos - rows.getBegin());
+    }
+    return null;
+  }
+
+COM:retrieves a row object at the given position from a cache of rows

@@ -1,0 +1,15 @@
+TDAT: 	protected void sendTrackerMessage(TrackerRequestMessage.EVENT event, int number) {
+
+		double completed = ((FileSharingPeer)
+				getPeer()).getStorageWrapper().getCompletedFraction();
+		
+		Message m = new TrackerRequestMessage(getPeer().getIdentifier(),
+				event, completed, number);
+		getPeer().sendMessage(trackerAddress, m);
+
+		// reschedule timer
+		sendAliveTimer.cancel();
+		sendAliveTimer.schedule(aliveInterval);
+	}
+
+COM:sends a message to the tracker with information about the current peer, including the completion status and a rescheduled timer

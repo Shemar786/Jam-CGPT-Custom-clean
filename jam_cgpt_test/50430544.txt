@@ -1,0 +1,18 @@
+TDAT: 	public void testAddContacts() throws Exception {
+	    
+	    int initialSize = book.size();
+	    
+	    Vector newContacts = new Vector();
+	    Contact cnt1 = new Contact("Foo", "foo@for.com");
+	    Contact cnt2 = new Contact("Bar", "bar@bar.com");
+	    newContacts.add(cnt1);
+	    newContacts.add(cnt2);
+	    
+	    book.addContacts(newContacts);
+	    
+	    assertTrue(book.size() == initialSize + 2);
+	    assertTrue(cnt1 == book.getContact(book.size() - 2));
+	    assertTrue(cnt2 == book.getContact(book.size() - 1));
+	}
+
+COM:tests the addition of multiple contacts to a contact book and ensures that the contacts were added correctly

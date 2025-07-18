@@ -1,0 +1,10 @@
+TDAT:     public void check(IndexFormatDefinition d) throws TypeException {
+        d.getCfs().accept(this, null);
+        d.getDel().accept(this, null);
+        d.getSeg().accept(this, null);
+        for (CfsFileDefinition cfsfile : d.getCfsfiles()) {
+            cfsfile.accept(this, null);
+        }
+    }
+
+COM:checks various elements within an IndexFormatDefinition object, and throws a TypeException if necessary

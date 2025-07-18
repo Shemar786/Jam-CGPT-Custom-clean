@@ -1,0 +1,12 @@
+TDAT:     public void validateAllProperties() {
+        if (model == null)
+            return;
+        for (Binding b : grp.getBindings()) {
+            // ignore StatusProperies (otherwise you get a StackOverflow...)
+            if (b.getSourceProperty() instanceof StatusProperty)
+                continue;
+            validateProperty0(bindingInfos.get(b).getPath());
+        }
+    }
+
+COM:validates all properties in a model, excluding those that are of type StatusProperty

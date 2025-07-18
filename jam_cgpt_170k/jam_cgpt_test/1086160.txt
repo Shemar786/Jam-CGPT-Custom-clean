@@ -1,0 +1,24 @@
+TDAT: 	private int RandomSimulation(MyNode node) {
+		EnhancedBTBoard board = new EnhancedBTBoard(node.getBoard());
+		
+		int winner = board.getWinner();
+
+		while (board.getWinner() == EnhancedBTBoard.NOBODY) {
+			// generate moves
+						
+			board.move(netPlayer.chooseMove(board));
+
+			winner = board.getWinner();
+
+			if (winner != EnhancedBTBoard.NOBODY) {
+				break;
+			}
+		}
+
+		if (winner == myColor)
+			return 1;
+		else
+			return 0;
+	}
+
+COM:performs a random simulation of a game by generating moves and determining a winner

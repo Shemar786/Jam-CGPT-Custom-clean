@@ -1,0 +1,13 @@
+TDAT:     public void add(Sensor s, boolean start) {
+        if (!m_Sensors.containsKey(s.getId())) {
+            m_Sensors.put(s.getId(), s);
+            m_Logger.debug("Sensor " + s + " added.");
+            if (start) {
+                s.start();
+            }
+        } else {
+            m_Logger.debug("Sensor " + s + " already exists.");
+        }
+    }
+
+COM:adds a Sensor object to a HashMap and starts it if specified, while logging debug messages

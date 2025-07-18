@@ -1,0 +1,12 @@
+TDAT: 	public void changeStatusAllocatedForPeer(DeploymentID remoteWorkerID, PeerComponent peerComponent) {
+//		AcceptanceTestUtil.notifyRecovery(application, workerID);
+		
+	    //Get bound object
+	    WorkerManagementClient workerManagementClient = getWorkerManagementClient();
+	
+	    //Change status of worker
+	    AcceptanceTestUtil.setExecutionContext(peerComponent, getWorkerManagementClientDeployment(), remoteWorkerID);
+	    workerManagementClient.statusChangedAllocatedForPeer(remoteWorkerID == null ? null : remoteWorkerID.getServiceID());
+	}
+
+COM:changes the status of a worker to "allocated for peer" and notifies the system that the worker is recovering

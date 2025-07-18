@@ -1,0 +1,17 @@
+TDAT: 	public Map getLevelMap() {
+		Map levelMap = new HashMap();
+		List standards = getStandards();
+		for (int i = 0; i < standards.size(); i++) {
+			AdnStandard std = (AdnStandard) standards.get(i);
+			Integer levels = new Integer(std.getLevels());
+			List list = new ArrayList();
+			if (levelMap.containsKey(levels)) {
+				list = (List) levelMap.get(levels);
+			}
+			list.add(std);
+			levelMap.put(levels, list);
+		}
+		return levelMap;
+	}
+
+COM:returns a map containing a list of AdnStandards grouped by their levels

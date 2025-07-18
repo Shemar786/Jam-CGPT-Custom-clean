@@ -1,0 +1,14 @@
+TDAT:         public void showSearchField(String text) {
+            if (StringUtils.isEmpty(text)) {
+                remove(searchField);
+            } else {
+                searchField.setText(text);
+                if (searchField.getParent() == null) {
+                    add(searchField);
+                }
+            }
+            searchField.invalidate();
+            validate();
+        }
+
+COM:shows a search field and sets its text to the given input or removes it if the input is empty

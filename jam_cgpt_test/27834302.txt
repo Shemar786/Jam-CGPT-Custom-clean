@@ -1,0 +1,12 @@
+TDAT:   private void showClass() {
+    classPanel.removeAll();
+    try {
+      Class cl = Class.forName(text.getText());
+      LargeBeanView view = new LargeBeanView(context, cl);
+      classPanel.add("Center", view);
+    } catch (Exception err) {
+      classPanel.add("Center", new JLabel(err.toString()));
+    }
+  }
+
+COM:takes a class name as input, and displays the associated LargeBeanView or displays an error message if the input is invalid

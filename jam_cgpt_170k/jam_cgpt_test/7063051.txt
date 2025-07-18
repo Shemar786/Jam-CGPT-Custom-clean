@@ -1,0 +1,27 @@
+TDAT: 	public void removeWSRPChannel(String channelName) {
+		try {
+			Portlet remotePortlet = PortletLocalServiceUtil.
+					getPortletById(CompanyConstants.SYSTEM,
+					channelName);
+
+			if (!remotePortlet.isRemote()) {
+				return;
+			}
+
+			PortletLocalServiceUtil.deletePortlet(remotePortlet);
+			PortletLocalServiceUtil.destroyPortlet(remotePortlet);
+
+			WSRPPersistenceHelper persistenceHelper =
+					WSRPPersistenceHelper.getInstance();
+
+			persistenceHelper.deleteWSRPPortlet(remotePortlet);
+		}
+		catch (WSRPConsumerException wcex) {
+			_log.error(wcex);
+		}
+		catch (SystemException ex) {
+			_log.error(ex);
+		}
+	}
+
+COM:removes a WSRP channel by deleting its associated portlet and using a persistence helper to delete the WSRP portlet

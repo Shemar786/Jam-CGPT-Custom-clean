@@ -1,0 +1,11 @@
+TDAT:     private void enableContainer(Container container, boolean enable) {
+        Component[] compArray = container.getComponents();
+        for(int i = 0; i< compArray.length;i++) {
+            compArray[i].setEnabled(enable);
+            if (compArray[i] instanceof Container) {
+                enableContainer((Container)compArray[i], enable);
+            }
+        }
+    }
+
+COM:recursively enables or disables all components within a given container

@@ -1,0 +1,14 @@
+TDAT:     private void convertContainers( java.util.List<GObject> list ){
+	/* first we convert Numerals */
+	convertNumerals( list );
+	for( java.util.ListIterator<GObject> i = list.listIterator(); i.hasNext(); ){
+	    GObject o = i.next();
+	    if( o instanceof Container ){
+		if( ((Container)o).error() )
+		    throw new RuntimeException( "Stat Error" );
+		i.set( ((Container)o).value() );
+	    }
+	}
+    }
+
+COM:converts Numerals and replaces Containers with their values in a given list of GObject

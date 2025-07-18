@@ -1,0 +1,14 @@
+TDAT: 	public void setStemmingEnabled(boolean stemmingEnabled) {
+		try {
+			if (!adminData.oidExists(Keys.STEMMING_ENABLED)) {
+				adminData.put(Keys.STEMMING_ENABLED, new Boolean(stemmingEnabled));
+			}
+			else {
+				adminData.update(Keys.STEMMING_ENABLED, new Boolean(stemmingEnabled));
+			}
+		} catch (Exception e) {
+			prtlnErr("Error saving serialized STEMMING_ENABLED: " + e);
+		}
+	}
+
+COM:sets a boolean value for stemmingEnabled and saves it to a serialized file

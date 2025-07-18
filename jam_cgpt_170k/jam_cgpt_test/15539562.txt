@@ -1,0 +1,10 @@
+TDAT:   public void setTerminal(String terminalName) throws IOException {
+
+    m_Terminal = TerminalManager.getReference().getTerminal(terminalName);
+    //Terminal is set we init it....
+    initTerminal();
+    //debug message
+    log.debug("Set terminal to " + m_Terminal.toString());
+  }//setTerminal
+
+COM:sets the terminal name, initializes it, and logs a debug message, while throwing an IOException if there is an error

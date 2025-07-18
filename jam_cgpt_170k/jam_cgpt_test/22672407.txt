@@ -1,0 +1,14 @@
+TDAT: 	protected Long modelIdToDb(String stringId) throws DAOException {
+		Long id = DB_NULL_ID;
+		if (stringId != null && !stringId.trim().equals("")) {
+			try {
+				id = Long.parseLong(stringId);
+			} catch (NumberFormatException e) {
+				throw new DAOException(MessageFormat.format(
+						"Could not convert {0} to an int", stringId), e);
+			}
+		}
+		return id;
+	}
+
+COM:converts a string representing a Long data type to its corresponding database id and throws a DAOException if the conversion fails

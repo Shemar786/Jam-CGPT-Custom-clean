@@ -1,0 +1,14 @@
+TDAT:     public void testGetEmail() {
+        System.out.println("getEmail");
+        
+
+        
+        String expResult = "";
+        String result = instance.getEmail();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+      //  fail("The test case is a prototype.");
+    }
+
+COM:is a unit test for the "getEmail" method of a specific instance, which verifies whether the expected email matches the actual email obtained from the instance

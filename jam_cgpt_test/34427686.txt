@@ -1,0 +1,13 @@
+TDAT:     public void stats(int[] values, boolean validate) {
+        SWGResourceStats st = new SWGResourceStats(values);
+
+        if (validate && st.sum() > 0) {
+            String err = SWGResourceClass.validate(st, rc());
+            if (err != null)
+                throw new IllegalArgumentException(err);
+        }
+        // new object is safe
+        super.deserialStats(st);
+    }
+
+COM:takes an integer array and a boolean as input, calculates statistics using the SWGResourceStats class, validates them if the boolean is true, and then deserializes them using the super class

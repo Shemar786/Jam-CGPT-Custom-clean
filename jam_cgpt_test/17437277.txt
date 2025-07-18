@@ -1,0 +1,13 @@
+TDAT:     protected void writeS(String text, int from, int ile) {
+        try {
+            if (text != null) {
+                _bao.write(text.getBytes("ISO-8859-1"), from, ile);
+            }
+        } catch (UnsupportedEncodingException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+COM:writes a portion of a given string in the ISO-8859-1 encoding to a data output stream

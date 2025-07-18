@@ -1,0 +1,18 @@
+TDAT: 	public void loadScriptFromFile(File f) {
+		if (f == null)
+			return;
+
+		try {
+			loadScriptFromFileUnsafe(f);
+			mCurrentScriptModified = false;
+		} catch (FileNotFoundException e) {
+			Log.severe("File not found, or file is a folder");
+		} catch (IOException e) {
+			Log.severe("I/O error");
+		} catch (SecurityException e) {
+			Log.severe("Security manager prevents to read the file");
+		}
+
+	}
+
+COM:loads a script from a file, catching various exceptions and logging errors depending on the type of exception thrown

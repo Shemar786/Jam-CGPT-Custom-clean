@@ -1,0 +1,8 @@
+TDAT:     protected void displayConstraint(ConventionalConstraint constraint) {
+	Dimension d = 
+	    ((NodeGraphics) constraint.graphObject).getPreferredSize();
+	((NodeGraphics) constraint.graphObject).setBounds(((NodeGraphics) constraint.graphObject).x - d.width / 2, ((NodeGraphics) constraint.graphObject).y - d.height / 2, d.width, d.height);
+	cspPanel.add(((NodeGraphics) constraint.graphObject));
+    }
+
+COM:displays a ConventionalConstraint object by determining the preferred size of its NodeGraphics, setting its bounds, and adding it to a cspPanel

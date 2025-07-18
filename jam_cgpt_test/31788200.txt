@@ -1,0 +1,12 @@
+TDAT:     public Messageable getNode(String instanceName) {
+        if((instanceName==null)||(instanceName.equals(""))) {
+            return null; }
+        String key=instanceName.intern();
+        Messageable node=(Messageable)(getDictionary().get(key));
+        if(node!=null) {
+            return node; }
+        node=findNodeForName(key,getHelperNodes());
+        return node;
+    }
+
+COM:returns a Messageable object associated with the given instanceName, or null if the instanceName is empty or not found in a dictionary

@@ -1,0 +1,16 @@
+TDAT: 	public void removeSelection() {
+		SelectionHandler theHandler = getSelectionHandler();
+		if (theHandler != null) {
+			for (Iterator iter = theHandler.getSelection().iterator(); iter
+					.hasNext();) {
+				Object element = (Object) iter.next();
+				if (element instanceof SelectionableNode) {
+					SelectionableNode theSelection = (SelectionableNode) element;
+					theSelection.detach();
+				}
+			}
+			theHandler.unselectAll();
+		}
+	}
+
+COM:removes any selected nodes from the tree and clears the selection

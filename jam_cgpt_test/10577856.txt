@@ -1,0 +1,21 @@
+TDAT:     public void update(long processTime, boolean success) {
+        long fastest = fastestProcessing.get();
+
+        if (fastest > processTime || fastest == -1) {
+            fastestProcessing.set(processTime);
+        }
+
+        if (slowestProcessing.get() < processTime) {
+            slowestProcessing.set(processTime);
+        }
+        if (success) {
+            successCount.incrementAndGet();
+        } else {
+            errorCount.incrementAndGet();
+        }
+
+        lastProcessing.set(processTime);
+
+    }
+
+COM:updates and maintains processing statistics such as success/error counts, processing times, and the last processing time

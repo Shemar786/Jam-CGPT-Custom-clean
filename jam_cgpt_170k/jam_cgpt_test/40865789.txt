@@ -1,0 +1,10 @@
+TDAT:     public Command getItemCommand() {
+        if (itemCommand == null) {//GEN-END:|295-getter|0|295-preInit
+            // write pre-init user code here
+            itemCommand = new Command("NOMINA UNO", Command.OK, 0);//GEN-LINE:|295-getter|1|295-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|295-getter|2|
+        return itemCommand;
+    }
+
+COM:returns a Command object called "NOMINA UNO" with type OK and priority 0, and initializes it if it has not already been initialized

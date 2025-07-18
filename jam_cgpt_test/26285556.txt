@@ -1,0 +1,18 @@
+TDAT:     private void createSampleLayout() {
+        testDimension = new LinearDimension(10);
+
+        testPosition1.setStartSeparation(1);
+        testPosition1.setStopSeparation(1);
+
+        testPosition2.setStartSeparation(3);
+        testPosition2.setStopSeparation(3);
+
+        testPosition3.setStartSeparation(5);
+        testPosition3.setStopSeparation(7);
+
+        testDimension.addPosition(testPosition1);
+        testDimension.addPosition(testPosition2);
+        testDimension.addPosition(testPosition3);
+    }
+
+COM:creates a sample layout by setting positions and dimensions for an object

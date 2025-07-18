@@ -1,0 +1,13 @@
+TDAT:     public int getUniquePeptideCount() throws PridePersistenceException {
+        checkPersistenceBrokerStatus();
+        int uniquePeptideCount = 0;
+        Iterator it = controller.reportQuery(PeptideBean.class, null, new String[]{"iSequence"},true);
+        while (it.hasNext()){
+            uniquePeptideCount++;
+            it.next();
+        }
+        return uniquePeptideCount;
+
+    }
+
+COM:returns the count of unique peptides by querying the PeptideBean class and throwing a PridePersistenceException if there is an issue with the Persistence Broker

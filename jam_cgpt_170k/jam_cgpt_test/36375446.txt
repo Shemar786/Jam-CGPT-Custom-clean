@@ -1,0 +1,9 @@
+TDAT:     private void runSingleThread() {
+        for (int n = in.nMin();  n <= in.nMax(); n += in.nStep()) {
+            for (int k = in.kMin(); k <= in.kMax(); k += in.kStep()) {
+                this.runSingleThreaded(n, k);
+            }
+        }
+    }
+
+COM:iterates through given ranges of n and k and runs a single-threaded method for each combination

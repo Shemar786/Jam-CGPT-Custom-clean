@@ -1,0 +1,15 @@
+TDAT: 	public void startSearch(@SuppressWarnings("rawtypes") final FileView iFile) {
+		file = iFile;
+
+		loadFieldList();
+		layoutList.setSelectedIndex(Math.min(source.getLayoutIndex(), layoutList.getItemCount() - 1));
+
+		this.setVisible(true);
+		this.toFront();
+		if (firstTimeDisplayed) {
+			this.setToMaximum(false);
+			firstTimeDisplayed = false;
+		}
+	}
+
+COM:starts a search by loading a list and setting various GUI elements, then making the window visible and bringing it to the front

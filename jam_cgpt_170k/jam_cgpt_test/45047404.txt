@@ -1,0 +1,7 @@
+TDAT: 	public Integer getNumberOfTRVersions(final String trid, final String trOwner, final HashMap<String, String> filter){
+	    filter.put("ID", trid);
+	    filter.put("owner", trOwner);
+		return (Integer) this.getSqlMapClientTemplate().queryForObject("getTRVersionByTRNb", filter);
+	}
+
+COM:returns the number of versions of a technical report based on the specified ID, owner, and filter conditions

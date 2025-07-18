@@ -1,0 +1,9 @@
+TDAT:     protected String getResultingPath(String element) {
+        final StringBuilder path = new StringBuilder(currentPath);
+        // the first step down shouldn't have a '.' before the name
+        if (path.length() > 0)
+            path.append('.');
+        return path.append(element).toString();
+    }
+
+COM:returns a string representing a path by appending the input element to the current path with a '.' separator

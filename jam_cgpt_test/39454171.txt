@@ -1,0 +1,18 @@
+TDAT:     public int getIndex(final double retentionTime, final double intensity) {
+
+        int index = -1;
+        for (int i = 0;
+             index < 0 && i < processedScans;
+             i++) {
+
+            if (Math.abs(retentionTime - rtValues[i]) < EPSILON &&
+                Math.abs(intensity - intensityValues[i]) < EPSILON) {
+
+                index = i;
+            }
+        }
+
+        return index;
+    }
+
+COM:returns the index of a matching retention time and intensity value in an array, or -1 if no match is found

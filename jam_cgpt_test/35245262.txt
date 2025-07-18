@@ -1,0 +1,9 @@
+TDAT:     public int getNumberSearchUserResults(String searchContent) throws SQLException {
+        CallableStatement cs = dc.getConnection().prepareCall("{call getNumberSearchUserResults(?)}");
+        cs.setString(1, searchContent);
+        ResultSet rs = cs.executeQuery();
+        rs.next();
+        return rs.getInt("NumberResults");
+    }
+
+COM:retrieves the number of search results for a given user search content by calling a stored procedure and returning an integer value

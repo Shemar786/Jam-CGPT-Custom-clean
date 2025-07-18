@@ -1,0 +1,13 @@
+TDAT: 	public void MessageChains() {
+		// Chained methods containing the same object
+		String mm = "FOO".toLowerCase().substring(1).replace('o', 'm');
+		
+		// Chained methods containing different objects
+		boolean no = new BigInteger("1234567890").
+			divideAndRemainder(new BigInteger("123"))[1].toString().equals(mm);
+		
+		// Chained instance variables
+		String foo = new BadClass().brc.bc.bc.s;
+	}
+
+COM:demonstrates the concept of method chaining, involving the use of chained methods containing the same object, different objects, and chained instance variables

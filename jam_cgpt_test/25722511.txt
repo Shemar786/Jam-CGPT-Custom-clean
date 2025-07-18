@@ -1,0 +1,14 @@
+TDAT: 	public void addMetricsProgressListener(IMetricsProgressListener l) {
+		if ((l != null) && (!listeners.contains(l))) {
+			listeners.add(l);
+			synchronized (items) {
+				if (items.size() > 0) {
+					Log.logMessage("Catching up new metrics progress listener with " + items.size() + " items.");
+					// play catch up with l
+					l.queued(items.size());
+				}
+			}
+		}
+	}
+
+COM:adds a listener to a list of metrics progress listeners and catches up the listener if there are already items in the list

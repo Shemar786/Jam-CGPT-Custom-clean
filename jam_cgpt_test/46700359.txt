@@ -1,0 +1,14 @@
+TDAT:     protected String getEmptyString() {
+	if (m_logger.isDebugEnabled()) {
+	    m_logger.debug("getEmptyString() - start");
+	}
+
+	/* Retrieve this DefaultBlock's definition of an empty string. */
+	String returnString = (strEmpty);
+	if (m_logger.isDebugEnabled()) {
+	    m_logger.debug("getEmptyString() - end - return value=" + returnString);
+	}
+	return returnString;
+    }
+
+COM:retrieves the definition of an empty string for a DefaultBlock object and logs debug messages before and after the retrieval

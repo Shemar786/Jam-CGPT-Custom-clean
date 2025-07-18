@@ -1,0 +1,35 @@
+TDAT: 	public String formatInp(String text) {
+		
+		if (text == null) {
+			return "";
+		}
+
+		StringBuffer sbHTML = new StringBuffer("");
+		//boolean newline = true;
+		
+		for(int i=0; i < text.length(); i++)
+		{
+			char c = text.charAt(i);
+			switch (c) {
+				case 34 :
+					sbHTML.append("&quot;");
+					break;
+				case 60 :
+					sbHTML.append("&lt;");
+					break;
+				case 62 :
+					sbHTML.append("&gt;");
+					break;
+				case 38 :
+					sbHTML.append("&amp;");
+					break;
+				default :
+					sbHTML.append(c);
+				}
+
+		}
+		
+		return sbHTML.toString();
+	}
+
+COM:takes in a string of text and returns a new string with certain characters replaced by their corresponding HTML entities

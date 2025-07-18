@@ -1,0 +1,11 @@
+TDAT:   private boolean isTypeMutable() {
+    Class type = getCurrentType();
+    return !(
+        String.class.isAssignableFrom(type) ||
+        Number.class.isAssignableFrom(type) ||
+        Boolean.class.isAssignableFrom(type) ||
+        Color.class.isAssignableFrom(type) ||
+        type.isPrimitive());
+  }
+
+COM:returns a boolean value indicating whether the current type is mutable or not based on a set of predefined criteria

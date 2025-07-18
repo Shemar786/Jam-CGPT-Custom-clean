@@ -1,0 +1,10 @@
+TDAT:   public void resetIgnoreColumns () {
+    if( tableData == null ) {
+      // TODO: Error handling
+      System.err.println( "WARNING: Unable to resetIgnoreColumns because getTableData() is null." );
+      return;
+    }
+    resetIgnoreColumns( TableReader.countTableColumns( tableData ) );
+  } // resetIgnoreColumns()
+
+COM:resets the ignored columns for a table, but prints a warning message and returns if there is no table data available

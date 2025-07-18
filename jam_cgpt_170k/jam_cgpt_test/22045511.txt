@@ -1,0 +1,19 @@
+TDAT:     private double logabs(){
+	double xabs = StrictMath.abs( real() );
+	double yabs = StrictMath.abs( imaginary() );
+	double max, u;
+	
+	if( xabs >= yabs ){
+	    max = xabs;
+	    u = yabs / xabs;
+	} else {
+	    max = yabs;
+	    u = xabs / yabs;
+	}
+	
+	/* Handle underflow when u is close to 0 */
+	
+	return StrictMath.log( max ) + 0.5 * StrictMath.log1p( u * u );
+    }
+
+COM:calculates the logarithm of the absolute value of a complex number

@@ -1,0 +1,17 @@
+TDAT: 	protected IRodinElementDelta getDeltaFor(IRodinElement element, boolean returnFirst) {
+		IRodinElementDelta[] deltas = this.deltaListener.deltas;
+		if (deltas == null) return null;
+		IRodinElementDelta result = null;
+		for (int i = 0; i < deltas.length; i++) {
+			IRodinElementDelta delta = searchForDelta(element, this.deltaListener.deltas[i]);
+			if (delta != null) {
+				if (returnFirst) {
+					return delta;
+				}
+				result = delta;
+			}
+		}
+		return result;
+	}
+
+COM:returns the delta for a given Rodin element, either the first one found or all if specified

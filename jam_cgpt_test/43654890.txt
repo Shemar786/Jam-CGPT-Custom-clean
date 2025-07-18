@@ -1,0 +1,10 @@
+TDAT: 	private String randomWord(int maxLength){
+		String out="";
+		int length=new Double(Math.sqrt(Math.random()*Math.pow((maxLength+1),2)-1)).intValue();
+		for(int i=0;i<length;i++){
+			out+=o.getAlphabet().get(new Double(Math.random()*o.getAlphabet().size()).intValue());
+		}
+		return out;
+	}
+
+COM:generates a random string of characters with a maximum length specified by the input parameter

@@ -1,0 +1,18 @@
+TDAT:   public Database setDatabase(){
+	Login login = new Login();
+	String conn ="jdbc:oracle:thin:@10.143.49.21:1521:ljdb01";
+	db=login.setLogin(db, this
+			, conn,"LOGIN","LOGIN");
+   
+    Debug.print("setDatabase",debug);
+    if(db.isOpen()){
+      db.setAutoCommit(false);
+      return(db);
+    }else{
+      db = setDatabase();
+    }
+    db.setAutoCommit(false);
+    return(db);
+  }
+
+COM:sets up a database connection using the login credentials and connection string provided, and returns the database object

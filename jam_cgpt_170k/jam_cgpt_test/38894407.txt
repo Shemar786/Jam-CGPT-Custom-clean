@@ -1,0 +1,8 @@
+TDAT: 	protected Protocol inputProtocol(KXMLElement node) {
+		return new Protocol(node.getProperty(TIMEOUT, 1), node.getProperty(
+				RETRIES, 1), node.getProperty(CAA, 1), node.getProperty(
+				POLLING, 5), node.getProperty(NBTOPOLL, 1), node.getProperty(
+				SYNCHRO, 0), node.getProperty(GI, 0));
+	}
+
+COM:returns a new Protocol instance with specified properties obtained from the input KXMLElement node

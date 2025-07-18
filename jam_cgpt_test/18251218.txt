@@ -1,0 +1,14 @@
+TDAT: 	private void saveXmlMapping(PrintWriter out) {
+		out.println();
+		out.println(CsvFile.BLOCK_INDICATOR + "xml-mapping");
+		for (Table table: getTables()) {
+			for (Association a: table.associations) {
+				String name = a.getName();
+				String tag = a.getAggregationTagName();
+				String aggregation = a.getAggregationSchema().name();
+				out.println(CsvFile.encodeCell(name) + ";" + CsvFile.encodeCell(tag) + ";" + CsvFile.encodeCell(aggregation));
+			}
+		}
+	}
+
+COM:saves XML mapping information to a PrintWriter using CSV file format

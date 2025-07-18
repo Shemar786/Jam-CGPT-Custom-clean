@@ -1,0 +1,17 @@
+TDAT: 	protected void addColumnsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TableLayoutGroup_columns_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TableLayoutGroup_columns_feature", "_UI_TableLayoutGroup_type"),
+				 UiPackage.Literals.TABLE_LAYOUT_GROUP__COLUMNS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a table layout group's columns

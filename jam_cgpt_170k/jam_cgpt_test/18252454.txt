@@ -1,0 +1,13 @@
+TDAT: 	public boolean isLastRowVisible() {
+		if (getRowCount() == 0) {
+			return false;
+		}
+		Rectangle r = getCellRect(getRowCount() - 1, 1, true);
+		Rectangle visible = getVisibleRect();
+		
+		boolean isVisible = r.y <= visible.y + visible.height;
+		return isVisible;
+//		return visible.y <= r.y && visible.y + visible.height >= r.y + r.height;
+	}
+
+COM:checks if the last row of a table is visible on the screen

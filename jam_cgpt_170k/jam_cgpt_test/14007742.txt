@@ -1,0 +1,15 @@
+TDAT: 	public boolean enqueueFilm(int filmID, int usersID){
+		boolean enqueued = true;
+		try{
+			String query = "INSERT INTO wishlist( filmID, usersID ) VALUES ( " + filmID + ", " + usersID + ")";
+			Statement st = DBManager.GetStatement();
+			st.executeUpdate(query);
+			DBManager.close(st);
+		}catch(SQLException e){
+			enqueued = false;
+			System.out.println("enqueueFilm: " + e);
+		}
+		return enqueued;
+	}
+
+COM:adds a film to the user's wishlist and returns a boolean indicating if the action was successful

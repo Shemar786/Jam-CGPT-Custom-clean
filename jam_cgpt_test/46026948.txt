@@ -1,0 +1,12 @@
+TDAT: 	protected void netDrawPlayerName(GameEngine engine) {
+		if((netPlayerName != null) && (netPlayerName.length() > 0)) {
+			String name = netPlayerName;
+			owner.receiver.drawTTFDirectFont(
+					engine, engine.playerID,
+					owner.receiver.getFieldDisplayPositionX(engine, engine.playerID),
+					owner.receiver.getFieldDisplayPositionY(engine, engine.playerID) - 20,
+					name);
+		}
+	}
+
+COM:draws the name of the player on the game field using a specific font if the player's name is not empty

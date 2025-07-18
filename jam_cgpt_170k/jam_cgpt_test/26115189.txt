@@ -1,0 +1,16 @@
+TDAT: 	protected double getEntropy(int numberOfPostives, int numerberOfNegatives) {
+
+		if (numberOfPostives == 0 || numerberOfNegatives == 0) {
+			return 0;
+		}
+
+		double positives = numberOfPostives;
+		double negatives = numerberOfNegatives;
+
+		double total = positives + negatives;
+
+		return -(positives / total) * (log2(positives / total)) - (negatives / total) * (log2(negatives / total));
+
+	}
+
+COM:calculates the entropy of a set of data based on the number of positives and negatives

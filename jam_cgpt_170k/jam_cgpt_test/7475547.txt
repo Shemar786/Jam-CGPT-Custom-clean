@@ -1,0 +1,12 @@
+TDAT: 	public void open(String url, boolean back, boolean forward, boolean refresh) {
+		Log.d(LOG_TAG, "open: url: " + url + " back: " + back + " forward: " + forward + " refresh: " + refresh);
+		if(!URLUtil.isValidUrl(url)){
+			mOrmmaView.raiseError("Invalid url", "open");
+		}else{
+			mOrmmaView.open(url, back, forward, refresh);
+		}
+		
+
+	}
+
+COM:opens a URL in a specified browser view and checks if the URL is valid before opening it

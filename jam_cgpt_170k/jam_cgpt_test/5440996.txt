@@ -1,0 +1,8 @@
+TDAT:     private void writePageEnd(JavaCodeWriter out) throws IOException {
+        for (int i=0; i<writeCharacterSectionMethods.size(); i++) {
+            WriteCharacterSectionMethod writeCharacterSectionMethod = (WriteCharacterSectionMethod)writeCharacterSectionMethods.get(i);
+            writeCharacterSectionMethod.writeMethod(out);
+        }
+        out.write("}");
+
+COM:writes the end of a page by iterating through a list of write character section methods and invoking their respective write methods, and then writing a closing brace to the output

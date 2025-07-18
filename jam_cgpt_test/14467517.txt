@@ -1,0 +1,11 @@
+TDAT:   public void setSelection( String itemName ) {
+    for( int i=0; i<getItemCount(); i++ ) {
+      ImageIcon icon = (ImageIcon) getItemAt( i );
+      if( itemName.equals( icon.getDescription() ) ) {
+        setSelectedIndex( i );
+        break;
+      }
+    }
+  }
+
+COM:sets the selection of a JComboBox based on the description of an item's ImageIcon

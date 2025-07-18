@@ -1,0 +1,11 @@
+TDAT:   public CoordinateTransform (String name, String authority, TransformType transformType) {
+    this.name = name;
+    this.authority = authority;
+    this.transformType = transformType;
+    //if (transformTypeS != null)
+      //this.transformType = TransformType.getType( transformTypeS);
+    // this.referenceSystem = referenceSystem;
+    this.params = new ArrayList();
+  }
+
+COM:creates a CoordinateTransform object with a specified name, authority, and transform type

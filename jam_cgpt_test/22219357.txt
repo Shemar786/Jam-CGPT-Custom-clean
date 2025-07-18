@@ -1,0 +1,11 @@
+TDAT:     public void setData(byte[] data) {
+        if (data == null) {
+            throw new NullPointerException("data cannot be null");
+        }
+        this.data = new byte[data.length + 7];
+        System.arraycopy(data, 0, this.data, 7, data.length);
+        initHeader(data.length);
+        reset();
+    }
+
+COM:sets the data for an object, performs validation to ensure the data is not null, adds 7 bytes to the length of the data, initializes a header, and resets the object

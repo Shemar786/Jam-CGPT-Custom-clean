@@ -1,0 +1,17 @@
+TDAT: 	protected void addTargetSafletPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ScheduleSaflet_targetSafletPath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScheduleSaflet_targetSafletPath_feature", "_UI_ScheduleSaflet_type"),
+				 Actionpak1Package.Literals.SCHEDULE_SAFLET__TARGET_SAFLET_PATH,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the target Saflet path of a Schedule Saflet object

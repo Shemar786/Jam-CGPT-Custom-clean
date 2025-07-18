@@ -1,0 +1,16 @@
+TDAT: 	protected Object getExecutableExtension() {
+		if (instance == null) {
+			try {
+				instance = configElement.createExecutableExtension("class");
+			} catch (InvalidRegistryObjectException iroe) {
+				// The registry has changed since creation of this tool
+				// description
+				// TODO implement dynamic registry update recovery
+			} catch (CoreException e) {
+				RefactoryManager.log(e, "when loading executable extension " + className);
+			}
+		}
+		return instance;
+	}
+
+COM:returns an executable extension object created from a specified class using a config element, with error handling in case of invalid registry objects or core exceptions

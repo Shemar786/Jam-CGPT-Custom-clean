@@ -1,0 +1,10 @@
+TDAT: 	public InterimFloatPlacement placeFloatsTemporarily(List<FloatAnchor> anchors, double topline, Page metricsPage) {
+		InterimFloatPlacement retval = new InterimFloatPlacement();
+		for (FloatAnchor anchor : anchors) {
+			FloatPlacementData fpd = tempPlaceFloatOnCurrentPage(anchor, null, topline, metricsPage);
+			addToInterimFloatPlacement(anchor, fpd, retval);
+		}
+		return retval;
+	}
+
+COM:temporarily places floats and returns an interim placement object containing data for each anchor

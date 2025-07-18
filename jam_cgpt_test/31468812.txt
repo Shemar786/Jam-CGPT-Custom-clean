@@ -1,0 +1,12 @@
+TDAT:     public String getAttributeNS(String namespaceURI, String localName) {
+
+        if (syncData) {
+            synchronizeData();
+        }
+
+        Attr attr = (Attr)(attributes.getNamedItemNS(namespaceURI, localName));
+        return (attr == null) ? null : attr.getValue();
+
+    } // getAttributeNS(String,String):String
+
+COM:retrieves the value of an attribute with the specified namespace URI and local name

@@ -1,0 +1,9 @@
+TDAT:         public Point translatePoint(Point p, CoordinateOrigin mode){
+            Point newPoint = new Point(p);
+            // get the direction's translation, then run it through the translation mode translator
+            Point translation = mode.getTranslation(getTranslation());
+            newPoint.translate((int)translation.getX(), (int)translation.getY());
+            return newPoint;
+        }
+
+COM:translates a Point object according to a specified CoordinateOrigin mode

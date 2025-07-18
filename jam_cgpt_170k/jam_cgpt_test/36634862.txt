@@ -1,0 +1,14 @@
+TDAT:     public void run() {
+        try{
+            if(current.type == current.OGG)
+                playOGG();
+            else if(current.type == current.MID)
+                playMidi();
+            else if (current.type == current.MP3)
+                playMP3();
+        }catch(Exception e){
+            warn("Error! "+e.toString());
+        }
+    }
+
+COM:plays audio files of different types (OGG, MIDI, MP3) and catches and warns of any exceptions that may occur

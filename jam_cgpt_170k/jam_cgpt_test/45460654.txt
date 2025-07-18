@@ -1,0 +1,9 @@
+TDAT: 	private JComboBox getJComboBoxStatusEST() {
+		if (jComboBoxStatusEST == null) {
+			jComboBoxStatusEST = new JComboBox(new String [] {"New", "Update"} );
+			jComboBoxStatusEST.setBounds(new Rectangle(405, 31, 81, 18));
+		}
+		return jComboBoxStatusEST;
+	}
+
+COM:returns a JComboBox object that contains two options - "New" and "Update" - and sets its bounds if it has not been initialized before

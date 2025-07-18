@@ -1,0 +1,8 @@
+TDAT: 	public void testAssociativePredicate() {
+		doTest(mAssociativePredicate(LAND, peS, peT), tS, tT);
+		doTest(mAssociativePredicate(LAND, piS, piT), tS, tT);
+		doTest(mAssociativePredicate(LAND, peS, peT, peU), tS, tT, tU);
+		doTest(mAssociativePredicate(LAND, piS, piT, piU), tS, tT, tU);
+	}
+
+COM:tests the associative predicate using various inputs

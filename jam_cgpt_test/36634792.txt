@@ -1,0 +1,12 @@
+TDAT:     public void setItemImage(int index, int itemIndex, String imgPath){
+        if(index >= 0 && index < allItems.length){
+            if(item.getIndexExists(itemIndex)){
+                sx = 0;
+                item = allItems[index];
+                imgRef.addImage(item.refPath[itemIndex], imgPath);
+                allItems[index] = item;
+            }
+        }
+    }
+
+COM:sets the image at a specific index of a specific item, given the path to the new image

@@ -1,0 +1,14 @@
+TDAT:     public String getVariableName() {
+        if (variable instanceof AttributeName)
+            return ((AttributeName) variable).getFullname();
+        else if (variable instanceof ConceptClass)
+            return ((ConceptClass) variable).getFullname();
+        else if (variable instanceof RelationType)
+            return ((RelationType) variable).getFullname();
+        else if (variable instanceof String)
+            return (String) variable;
+        else
+            return null;
+    }
+
+COM:returns a string representation of a variable name based on its class type

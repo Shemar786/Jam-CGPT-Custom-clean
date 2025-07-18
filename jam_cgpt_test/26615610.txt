@@ -1,0 +1,18 @@
+TDAT: 	public void setNetwork(Network newnet) {
+		
+		if (newnet==network) return;
+		
+		if (network!=null) {
+			network.removeIterationEventListener(this);
+			network.removeProjectEventListener(this);
+			clear();
+		}
+		if (newnet==null) return;
+		
+		log.info("Attached network ["+newnet.getPartName()+"] to error graph");
+		network=newnet;
+		newnet.addIterationEventListener(this);
+		newnet.addProjectEventListener(this);
+	}
+
+COM:sets a network to be used with an error graph, handles the removal of previous network listeners and clears the graph if necessary, and logs the attachment of the new network

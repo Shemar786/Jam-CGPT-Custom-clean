@@ -1,0 +1,10 @@
+TDAT:     protected CopyAction (ROMUI frame , String name , KeyStroke keystroke , String tooltip) {
+        super(name); // Call super constructor
+        romui = frame;
+        if (tooltip != null) // Add tooltip text
+            putValue(SHORT_DESCRIPTION, tooltip);
+        if (keystroke != null) // Add keystroke
+            putValue(ACCELERATOR_KEY, keystroke);
+    }
+
+COM:creates a protected CopyAction object with a specified frame, name, keystroke, and tooltip

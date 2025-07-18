@@ -1,0 +1,10 @@
+TDAT: 	public void testCommitBroken() throws Exception {
+		final IProofAttempt pa = pc.createProofAttempt(PO1, TEST, null);
+		dischargeTrueGoal(pa);
+		increasePOStamp(PO1);
+		pa.commit(true, null);
+		assertNonEmptyProof(pc.getProofSkeleton(PO1, ff, null));
+		assertStatus(DISCHARGED_MAX, true, true, pc.getStatus(PO1));
+	}
+
+COM:creates a proof attempt, discharges the true goal, increases the PO stamp, commits the proof attempt, and asserts the proof skeleton is non-empty with a discharged status

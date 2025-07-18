@@ -1,0 +1,12 @@
+TDAT: 	protected void addParameter(UserParameter parameter) {
+		// Initialize with default value
+		Object[] values = new Object[dataFiles.length];
+		for (int dataFileIndex = 0; dataFileIndex < dataFiles.length; dataFileIndex++)
+			values[dataFileIndex] = parameter.getValue();
+
+		// Add this newly created parameter to hashtable and reset table
+		parameterValues.put(parameter, values);
+		setupTableModel();
+	}
+
+COM:adds a user-defined parameter to a hashtable along with default values for each data file and sets up a table model

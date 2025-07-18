@@ -1,0 +1,21 @@
+TDAT: 	private File getManifestFile(File manifestDirectory) throws MojoExecutionException {
+		File manifestFile = new File(manifestDirectory, MANIFEST_FILE_NAME);
+		if (manifestFile.exists()) {
+			getLog().info("deleting existing manifest file!");
+			manifestFile.delete();
+		}
+		if (!manifestFile.exists()) {
+			try {
+				manifestFile.createNewFile();
+			}
+			catch (IOException e) {
+				throw new MojoExecutionException("Could not create Manifest File", e);
+			}
+		}
+		else {
+			getLog().warn("PST Mojo Overwriting existing Manifest File");
+		}
+		return manifestFile;
+	}
+
+COM:creates or deletes a manifest file in a specified directory and returns the file object

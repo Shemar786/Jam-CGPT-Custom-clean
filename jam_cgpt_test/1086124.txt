@@ -1,0 +1,8 @@
+TDAT: 	public void randomizeWeights() {
+		for (int layer = 1; layer < structure.length; layer++)
+			for (int unit = 0; unit < structure[layer]; unit++)
+				for (int wt = 0; wt < structure[layer - 1] + 1; wt++)
+					weights[layer][unit][wt] = Math.random() * 0.02 - 0.01;
+	}
+
+COM:randomizes the weights for each unit in the neural network using a specified range

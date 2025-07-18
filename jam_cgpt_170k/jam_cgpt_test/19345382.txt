@@ -1,0 +1,12 @@
+TDAT: 	public Object getTextValueAt(int layoutIdx, int row, int col) {
+	    col = getRealColumn(layoutIdx, col);
+
+		if ((row >= getRowCount())
+		|| (col < 0)
+		|| (col >= layout.getRecord(layoutIdx).getFieldCount())) {
+			return null;
+		}
+		return lines.get(row).getFieldText(layoutIdx, col);
+	}
+
+COM:retrieves the text content at a specified row and column of a table, with consideration for the layout of the table

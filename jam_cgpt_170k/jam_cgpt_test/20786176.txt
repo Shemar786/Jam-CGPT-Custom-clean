@@ -1,0 +1,6 @@
+TDAT:    private void drawLine(Point startPoint, Point endPoint) {
+      graphic.drawLine((int)startPoint.getX(), (int)startPoint.getY(),
+            (int)endPoint.getX(), (int)endPoint.getY());
+   } // drawLine
+
+COM:draws a straight line between two points on a graphics object

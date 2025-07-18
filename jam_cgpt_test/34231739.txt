@@ -1,0 +1,9 @@
+TDAT: 	public void printAllFlows() {
+		System.out.println("\nThe AFL contains the following flows:");
+		for (Iterator iter = protectedList.iterator(); iter.hasNext();) {
+			Flow element = (Flow) iter.next();
+			Debug.print( element.getFlowID().toInt() + " Finish tag: " + element.getFinishTag() );
+		}
+	}
+
+COM:prints out all flows contained within a protectedList, displaying their Flow ID and Finish tag

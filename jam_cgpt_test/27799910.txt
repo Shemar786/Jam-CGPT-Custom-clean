@@ -1,0 +1,7 @@
+TDAT:     public void firePropertyChange(String propertyName, int oldValue, int newValue) {
+        if ((changeSupport != null) && (oldValue != newValue)) {
+            changeSupport.firePropertyChange(propertyName, new Integer(oldValue), new Integer(newValue));
+        }
+    }
+
+COM:fires a property change event with the given property name, old value, and new value, only if the change support is not null and the old value is not equal to the new value

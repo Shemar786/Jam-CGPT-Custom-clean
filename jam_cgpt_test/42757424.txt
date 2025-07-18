@@ -1,0 +1,14 @@
+TDAT: 	public String getAgentId(MBeanServer mBeanServer) {
+		Assert.notNull(mBeanServer, "Parameter mBeanServer must be non null");
+		try {
+			return (String) mBeanServer.getAttribute(new ObjectName(
+					"JMImplementation:type=MBeanServerDelegate"),
+					"MBeanServerId");
+		} catch (Exception exception) {
+			throw new JmxException(
+					"Error occured during trying to get agentId of mBeanServer",
+					exception);
+		}
+	}
+
+COM:retrieves the agent ID of a given MBeanServer object and throws an exception if it encounters an error

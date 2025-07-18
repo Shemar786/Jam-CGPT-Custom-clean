@@ -1,0 +1,9 @@
+TDAT: 	private String getResultReason(KeyBindingType keyBinding) {
+		if (keyBinding == null || keyBinding.getProcessInfo() == null || keyBinding.getProcessInfo().getAny() == null) {
+			return null;
+		}
+
+		return (String) getFromJAXBElementList(keyBinding.getProcessInfo().getAny(), "Reason");
+	}
+
+COM:returns a string result reason obtained from a JAXB element list based on a provided key binding

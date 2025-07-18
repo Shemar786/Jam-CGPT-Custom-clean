@@ -1,0 +1,14 @@
+TDAT: 	public List getMetricsFromChildren(String name) {
+		List metrics = new ArrayList();
+		for (Iterator i = getChildren().iterator(); i.hasNext();) {
+			AbstractMetricSource next = (AbstractMetricSource)i.next();
+			Metric m = (Metric)next.getValue(name);
+			if (m != null) metrics.add(m);
+			else {
+				System.err.println("metric " + name + " not found in " + next.getJavaElement().getElementName());
+			}
+		}
+		return metrics;
+	}
+
+COM:retrieves a list of metrics with a specific name from its child elements

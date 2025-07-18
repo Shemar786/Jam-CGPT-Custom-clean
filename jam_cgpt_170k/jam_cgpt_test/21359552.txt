@@ -1,0 +1,11 @@
+TDAT:     private void updateItems() {
+        MainFrame frame = Context.mainFrame;
+        
+        boolean queuePaused = queue.isPaused();
+        pauseQueueItem.setLabel(queuePaused ? unpauseQueue : pauseQueue);
+        //visible if visible and not iconified
+        boolean visible = frame.isVisible() && (frame.getExtendedState() & JFrame.ICONIFIED) == 0;
+        toggleItem.setLabel(visible ? hideWindow : showWindow);
+    }
+
+COM:updates the labels of two items based on the state of a queue and the visibility of a main frame

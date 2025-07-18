@@ -1,0 +1,20 @@
+TDAT: 	public String getSRSforVisibleLayers(int wmsID) {
+
+		String ret = null;
+
+		Cursor c = db.rawQuery(selectSRSforVisibleLayers, new String[] {
+				"" + wmsID, "" + wmsID });
+
+		if (c.moveToFirst()) {
+			ret = c.getString(0);
+			if (c.moveToNext()) {
+				ret = "";
+			}
+		} else {
+			ret = "";
+		}
+		c.close();
+		return ret;
+	}
+
+COM:retrieves the spatial reference system of the visible layers for a specified WMS ID from a database

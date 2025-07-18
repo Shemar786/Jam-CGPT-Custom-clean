@@ -1,0 +1,12 @@
+TDAT: 	protected ImageIcon createImageIcon(String path) {
+		// java.net.URL imgURL = TabbedPaneDemo.class.getResource(path);
+		// if (imgURL != null) {
+		// return new ImageIcon(imgURL);
+		// } else {
+		// System.err.println("Couldn't find file: " + path);
+		// return null;
+		// }
+		return null;
+	}
+
+COM:creates an ImageIcon object using a specified path, but currently returns null

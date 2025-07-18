@@ -1,0 +1,20 @@
+TDAT: 	public void addAdminEmail(String email) {
+		Hashtable emails = null;
+		try {
+			emails = (Hashtable)adminData.get(Keys.ADMIN_EMAILS);
+		} catch (OIDDoesNotExistException e) {
+			emails = new Hashtable();
+		}
+		emails.put(email, "");
+
+		try {
+			if (adminData.oidExists(Keys.ADMIN_EMAILS))
+				adminData.update(Keys.ADMIN_EMAILS, emails);
+			else
+				adminData.put(Keys.ADMIN_EMAILS, emails);
+		} catch (Exception e) {
+			log("Error serializing adminEmail data: " + e);
+		}
+	}
+
+COM:adds an email address to a Hashtable of admin emails, which is then stored in a data store and can be updated or added if it does not already exist

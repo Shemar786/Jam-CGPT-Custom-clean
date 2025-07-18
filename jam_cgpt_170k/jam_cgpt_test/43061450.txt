@@ -1,0 +1,8 @@
+TDAT:     public void sizeChange(int x, int y, int w, int h) {
+        //resets the bounds of the Jlabel
+        Img.setBounds(x, y, w, h);
+        //Sets up the image with the new scale
+        setUp((ImageIcon)Img.getIcon());
+    }
+
+COM:changes the size of a JLabel and sets up an image with the new scale

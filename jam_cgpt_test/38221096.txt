@@ -1,0 +1,10 @@
+TDAT:   public String getString(String bundleName, String key, String defaultValue) {
+    ResourceBundle bundle = getResourceBundle(bundleName);
+    String value = null;
+    try {
+      if (bundle != null) value = bundle.getString(key);
+    } catch (Exception e) {}
+    return (value != null) ? value : defaultValue;
+  }
+
+COM:retrieves a specified string from a resource bundle or returns a default value if the string is not found

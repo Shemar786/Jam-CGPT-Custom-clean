@@ -1,0 +1,15 @@
+TDAT:     private Component makeClearButton() {
+        JButton clearButton = new JButton("Clear");
+        clearButton.setToolTipText("Clear any selection and the filter fields");
+        clearButton.setMnemonic('C');
+
+        clearButton.addActionListener(new ActionListener() {
+            @SuppressWarnings("synthetic-access")
+            public void actionPerformed(ActionEvent e) {
+                actionResetBottomPanel();
+            }
+        });
+        return clearButton;
+    }
+
+COM:creates a JButton component with the label "Clear", sets its tooltip and mnemonic, adds an ActionListener to it, and returns the clearButton component

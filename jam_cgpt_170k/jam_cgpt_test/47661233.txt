@@ -1,0 +1,17 @@
+TDAT: 	protected void addUmlModelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssociationTransformationUmlModel_umlModel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationTransformationUmlModel_umlModel_feature", "_UI_AssociationTransformationUmlModel_type"),
+				 WorkspacePackage.Literals.ASSOCIATION_TRANSFORMATION_UML_MODEL__UML_MODEL,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a UML model property descriptor to the item property descriptors list

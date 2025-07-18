@@ -1,0 +1,9 @@
+TDAT:   private CVariant functionIif(Stack stack) throws CExpressionError {
+    int params = getValue(stack, 0).getInt();
+    checkParamCount(params, 3);
+    if (getValue(stack, 3).getBoolean())
+      return getValue(stack, 2);
+    return getValue(stack, 1);
+  }
+
+COM:evaluates the "Iif" function, which returns the second parameter if the third parameter is true, otherwise it returns the first parameter

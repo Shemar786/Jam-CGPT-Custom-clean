@@ -1,0 +1,12 @@
+TDAT:     protected void responseJSONStream(HttpServletResponse response, JSONObject jsonObject) {
+        //TODO: proper encoding support
+        response.setContentType("application/json");
+        response.setCharacterEncoding("utf-8");
+        try {
+        	System.out.println("RESPONSE:" + jsonObject.toString());
+            response.getWriter().print(jsonObject.toString());
+        } catch (IOException e) {
+        }
+    }
+
+COM:sends an HTTP response in JSON format containing the given JSONObject to the specified HttpServletResponse

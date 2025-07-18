@@ -1,0 +1,18 @@
+TDAT:    private void compose() {
+
+      // UI components creation
+      _tree = new TaxonProxyTree();
+
+      _tree.addTreeSelectionListener(this);
+
+      _tree.addTreeWillExpandListener(this);
+
+      // addition of elements
+      setLayout(new java.awt.BorderLayout(0, 1));
+
+      add(new JLabel("Taxonomy Tree"), java.awt.BorderLayout.NORTH);
+
+      add(_tree.getContainer());
+   }
+
+COM:composes a UI component by creating a tree, adding selection and expansion listeners, setting the layout, and adding a label and the tree to the layout

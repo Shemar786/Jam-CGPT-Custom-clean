@@ -1,0 +1,14 @@
+TDAT: 	protected String getTypeMetadata(IType type) {
+		StringBuffer retstr = new StringBuffer();
+		retstr.append(" "+MetadataElements.IDotNetElement);
+		retstr.append(type.getElementType());
+		retstr.append(" "+MetadataElements.Flags);
+		retstr.append(type.getFlags());
+		retstr.append(" "+MetadataElements.Superclass);
+		retstr.append(type.getSuperclassName());
+		retstr.append(" " + MetadataElements.Type);
+		retstr.append(type.getElementName());
+		return retstr.toString();
+	}
+
+COM:takes an IType object as input, retrieves various metadata information about the type, concatenates them into a single string, and returns the string

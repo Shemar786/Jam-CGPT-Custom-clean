@@ -1,0 +1,13 @@
+TDAT:   public void update() {
+    boolean isVisible = false;
+
+    if( gvc != null && gvc.getConstituent() != null ) {
+      this.url = (String) gvc.getConstituent().getAttribute( Constituent.URL_KEY );
+      if( !url.equals( "" ) )
+        isVisible = true;
+    }
+
+    setVisible( isVisible );
+  }
+
+COM:updates the visibility of a component based on whether or not it has a non-empty URL attribute

@@ -1,0 +1,12 @@
+TDAT: 	public void testMultiplying() {
+		double f = 1.23456789;
+		Arc s = base.times(f);
+		assertEquals("Multiplication of Arc by a factor.", f, s.amount(base),
+				0.0001);
+		System.out.println(f + "*" + base + "=" + s);
+		s = base.add(Arc.CIRCLE);
+		assertEquals("Add 2*pi.", s.length(), base.length(), 0.0001);
+		System.out.println("2*pi+" + base + "=" + s);
+	}
+
+COM:performs tests on the multiplication and addition of an Arc object with another value or constant

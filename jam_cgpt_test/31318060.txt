@@ -1,0 +1,17 @@
+TDAT:     public void handlePacket(Packet packet) {
+        // update the application clock with this packet
+        document.getAccessLock();
+
+        clock.updateClock(packet.getPacketTime());
+
+        if (packet.getSenderSourceID() == document.getLocalUser().getSourceID()) {
+            log.trace("received packet from self, ignoring");
+        } else {
+            getHandlerForPacket(packet).handlePacket(packet);
+        }
+
+        document.releaseAccessLock();
+
+    }
+
+COM:handles a network packet by updating the application clock, checking if the packet is not from the local user, and passing the packet to its appropriate handler

@@ -1,0 +1,11 @@
+TDAT: 	public Menu createPopupMenu(Point menupos) {
+		menupos.x *= contents.getScale();
+		menupos.y *= contents.getScale();
+		menupos = parent.toDisplay(menupos);
+        Menu menu = new Menu (parent.getShell(), SWT.POP_UP);
+        menu.setLocation(menupos);
+        menu.setVisible (true);
+        return menu;
+	}
+
+COM:creates a pop-up menu at the specified location

@@ -1,0 +1,11 @@
+TDAT: 	private void createLeaf() {
+
+		if (this.allData.size() == 0) {
+			return;
+		}
+		// construct tree node at this place
+		this.children.add(new DecisionLeaf<T, K>(allData, ((double) this.numPositives)
+				/ (this.numPositives + this.numNegatives), this.positiveLabel));
+	}
+
+COM:creates a leaf node in a decision tree based on the given data

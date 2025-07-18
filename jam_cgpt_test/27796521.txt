@@ -1,0 +1,11 @@
+TDAT:     public float calculateNodeFontSize(Node node, CyNetwork network) {
+	String canonicalName = network.getNodeAttributes().getCanonicalName(node);
+	Map attrBundle = network.getNodeAttributes().getAttributes(canonicalName);
+	Object rangeValue = super.getMapping().calculateRangeValue(attrBundle);
+	if (rangeValue != null)
+	    return ((Number) rangeValue).floatValue();
+	else
+	    return -1;
+    }
+
+COM:calculates the font size of a given node in a network based on its attributes and a mapping

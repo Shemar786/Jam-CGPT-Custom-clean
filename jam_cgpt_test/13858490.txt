@@ -1,0 +1,18 @@
+TDAT: 	public void instanceSelected(DbInstance dbi) {
+		if (dbi == null) {
+			log.warn("Selecting null instance ????");
+			return;
+		}
+		int oldState = DbState.NO_INSTANCE_SELECTED_STATE;
+		if (current != null) {
+			current.getInformations().removePropertyChangeListener("state",
+					this);
+			oldState = current.getInformations().getState();
+		}
+
+		current = dbi;
+		current.getInformations().addPropertyChangeListener("state", this);
+		setCommandState(oldState, dbi.getInformations().getState());
+	}
+
+COM:selects a database instance and sets its state to a new value, while logging a warning if the selected instance is null

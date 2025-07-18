@@ -1,0 +1,17 @@
+TDAT: 	private boolean checkVeriTResult() throws IOException {
+		if (sv.equals(V1_2)) {
+			if (veriTResult.contains("(benchmark")) {
+				veriTResult = veriTResult.substring(veriTResult
+						.indexOf("(benchmark"));
+				return true;
+			}
+			return false;
+		} else {
+			if (veriTResult.contains("(set-logic")) {
+				return true;
+			}
+			return false;
+		}
+	}
+
+COM:checks the validity of the VeriTResult and returns a boolean value

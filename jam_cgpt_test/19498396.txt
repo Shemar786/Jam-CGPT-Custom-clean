@@ -1,0 +1,24 @@
+TDAT: 	public void testCvg_01_NoVariantConvergentSetToOrdinary() throws Exception {
+		IMachineRoot mac = createMachine("mac");
+
+		IEvent evt = addEvent(mac, "evt");
+		setOrdinary(evt);
+		IEvent fvt = addEvent(mac, "fvt");
+		setAnticipated(fvt);
+		IEvent gvt = addEvent(mac, "gvt");
+		setConvergent(gvt);
+		saveRodinFileOf(mac);
+
+		runBuilder();
+
+		ISCMachineRoot file = mac.getSCMachineRoot();
+
+		ISCEvent[] events = getSCEvents(file, "evt", "fvt", "gvt");
+		isOrdinary(events[0]);
+		isAnticipated(events[1]);
+		isOrdinary(events[2]);
+
+		hasMarker(gvt);
+	}
+
+COM:tests whether a set of events are convergent or ordinary in a specified state machine

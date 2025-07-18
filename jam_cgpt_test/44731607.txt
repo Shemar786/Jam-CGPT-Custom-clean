@@ -1,0 +1,16 @@
+TDAT: 	public void testAdd() {
+		
+		Button btOpen = new Button(actionBar);
+		Button btSave = new Button(actionBar);
+		Button btExit = new Button(actionBar);
+		
+		assertEquals(3, actionBar.getElements().size());
+		Iterator<?> it = actionBar.getElements().iterator();
+		
+		assertSame(btOpen, it.next());
+		assertSame(btSave, it.next());
+		assertSame(btExit, it.next());
+		
+	}
+
+COM:tests the addition of three buttons to the 'actionBar' and verifies that they have been added correctly using assertions

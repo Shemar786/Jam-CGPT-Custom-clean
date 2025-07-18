@@ -1,0 +1,14 @@
+TDAT:   public Future submitThrottled(Callable aTask) {
+    if (!isRunning()) {
+      throw new IllegalArgumentException("Cannot submit a task - the executor service is not running");
+    }
+    
+    long delayMillis = calculateThrottlingDelayMillis();
+    if (delayMillis > 0) {
+      return _scheduledExecutor.schedule(aTask, delayMillis, TimeUnit.MILLISECONDS);
+    } else {
+      return _scheduledExecutor.submit(aTask);
+    }
+  }
+
+COM:submits a callable task to an executor service, with optional throttling to delay execution based on a calculated delay time

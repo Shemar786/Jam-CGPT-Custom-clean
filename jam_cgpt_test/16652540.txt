@@ -1,0 +1,14 @@
+TDAT:   private String removeBinaryStuff(String text) {
+    StringBuffer newText = new StringBuffer(text.length());
+    
+    for (int j = 0; j < text.length(); j++) {
+      char c = text.charAt(j);
+      if (c >= 32) {
+        newText.append(c);
+      }
+    }
+    
+    return newText.toString();
+  }
+
+COM:removes binary characters from a given string and returns the resulting string

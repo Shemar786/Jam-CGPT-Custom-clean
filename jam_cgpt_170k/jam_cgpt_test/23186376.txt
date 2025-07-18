@@ -1,0 +1,7 @@
+TDAT:     private void error(final String text) {
+        System.out.println(filename + ": " + text); //+" on line "+tokenizer.getLine()+", column "+tokenizer.getColumn());
+        JOptionPane.showMessageDialog(null, text, "Error", JOptionPane.ERROR_MESSAGE);
+        numErrors++;
+    }
+
+COM:prints an error message to the console and displays a message dialog box while incrementing the count of errors

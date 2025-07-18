@@ -1,0 +1,18 @@
+TDAT: 		public void actionPerformed(ActionEvent e) {
+			if (EDIT.equals(e.getActionCommand())) {
+				// The user has clicked the cell, so
+				// button.setBackground(currentColor);
+				colorChooser.setColor(currentColor);
+				colorChooser.setVisible(true);
+
+				// Make the renderer reappear.
+				fireEditingStopped();
+
+			} else { // User pressed dialog's "OK" button.
+				currentColor = colorChooser.getColor();
+				mapper.mapColor(editingValue, currentColor);
+				table.repaint();
+			}
+		}
+
+COM:handles the events that occur when a user clicks on a cell in a table and either opens a color selection dialog or maps the selected color to the cell

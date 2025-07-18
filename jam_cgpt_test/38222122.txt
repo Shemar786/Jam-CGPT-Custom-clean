@@ -1,0 +1,17 @@
+TDAT:   public double getDoubleValue() {
+    switch (type) {
+      case ModulePropertyType.TYPE_BOOLEAN:
+        return ((Boolean) value).booleanValue() ? 1 : 0;
+      case ModulePropertyType.TYPE_STRING:
+        try {
+          return new Double((String) value).doubleValue();
+        }
+        catch (Exception e) {
+          return 0;
+        }
+      default:
+        return ((Number) value).doubleValue();
+    }
+  }
+
+COM:retrieves the double value of a property, checking the type and converting to double if necessary or returning 0 if errors occur

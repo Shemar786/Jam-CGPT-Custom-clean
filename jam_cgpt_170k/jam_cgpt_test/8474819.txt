@@ -1,0 +1,20 @@
+TDAT: 	public void notifyPage(Webpage page, Weblink link) {
+		synchronized(urlToPage) {
+			// register the link
+			synchronized(pageToLinks) {
+				pageToLinks.put(page, new HashSet<Weblink>());
+				if(link != null) {
+					pageToLinks.get(link.from).add(link);
+				}
+			}
+
+			// Set the page and notify anyone who was waiting for it
+			PageLock lock = urlToPage.get(page.url);
+			synchronized(lock) {
+				lock.page = page;
+				lock.notifyAll();
+			}
+		}
+	}
+
+COM:notifies any waiting threads that a specified webpage has been accessed and registers any accompanying weblinks

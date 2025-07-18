@@ -1,0 +1,10 @@
+TDAT: 	public boolean isEmpty() {
+		return (!isWhitespace() // not whitespace
+				&& !isStandAlone() // and not standalone
+				&& (null == super.getValue()) // and no explicit value provided
+		&& ((null == mPage) // and either its not coming from a page
+		// or it is coming from a page and has no value
+		|| ((null != mPage) && (0 > mValueEnd))));
+	}
+
+COM:checks if a specific value is empty based on various conditions

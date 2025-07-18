@@ -1,0 +1,13 @@
+TDAT:     public int activateTeam(int offset) {
+        int newActiveTeamIndex = activeTeamIndex + offset;
+        if (newActiveTeamIndex < 0) {
+            newActiveTeamIndex = 0;
+        } else {
+            if (newActiveTeamIndex >= meetData.teamCount()) {
+                newActiveTeamIndex = meetData.teamCount() - 1;
+            }
+        }
+        return newActiveTeamIndex;
+    }
+
+COM:activates a new team based on an offset, ensuring the new index is within the acceptable range

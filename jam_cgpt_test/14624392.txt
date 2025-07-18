@@ -1,0 +1,13 @@
+TDAT:     public void testsetAvailable() {
+        System.out.println("setAvailable");
+        boolean available = true;
+        org.gps.types.GpsSatellite instance = new org.gps.types.GpsSatellite();
+        instance.setAvailable(available);
+        assertTrue(instance.isAvailable());
+        
+        instance.setAvailable(false);
+        assertTrue(!instance.isAvailable());
+
+    }
+
+COM:tests the setAvailable and isAvailable methods of the GpsSatellite class

@@ -1,0 +1,11 @@
+TDAT:   public String toString() {
+    StringBuffer aBuffer = new StringBuffer(super.toString());
+    aBuffer.append("[type=").append(_theType).
+            append(" classname=").append(_theClassname).
+            append(" classpath=").append(_theClasspath).
+            append("]");
+
+    return aBuffer.toString();
+  }
+
+COM:returns a string representation of an object, including information about its type, classname, and classpath

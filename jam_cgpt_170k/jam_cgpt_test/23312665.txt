@@ -1,0 +1,15 @@
+TDAT: 	public void setIconToggled(boolean toggled) {
+		this.toogled = toggled;
+		if (this.toogled) {
+			advancedButton.setIcon(toggledIcon);
+//			learnerPanel.setPreferredSize(new Dimension(WIDTH, OPTION_HEIGHT));
+//			learnerScroll.setPreferredSize(new Dimension(SCROLL_WIDTH, SCROLL_HEIGHT));
+		}
+		if (!this.toogled) {
+			advancedButton.setIcon(icon);
+//			learnerPanel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+//			learnerScroll.setPreferredSize(new Dimension(SCROLL_WIDTH, SCROLL_HEIGHT));
+		}
+	}
+
+COM:toggles the icon of a button and adjusts the size of related panels based on the toggled state

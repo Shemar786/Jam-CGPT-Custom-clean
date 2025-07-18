@@ -1,0 +1,19 @@
+Show the status of the city that has hosted the greatest number of competitions.	SELECT Competition_type FROM competition GROUP BY Competition_type ORDER BY count(*) DESC LIMIT 1
+Please show the themes of competitions with host cities having populations larger than 1000.	SELECT DISTINCT T2.Name FROM match_season AS T1 JOIN team AS T2 ON T1.Team  =  T2.Team_id WHERE T2.Name  =  "Columbus Crew"
+Please show the different statuses of cities and the average population of cities with each status.	SELECT Status ,  COUNT(*) FROM roller_coaster GROUP BY Status
+Please show the different statuses, ordered by the number of cities that have each.	SELECT Status ,  COUNT(*) FROM roller_coaster GROUP BY Status
+List the most common type of Status across cities.	SELECT TYPE FROM ship GROUP BY TYPE ORDER BY COUNT(*) DESC LIMIT 1
+List the official names of cities that have not held any competition.	SELECT Name FROM ship WHERE Code NOT IN (SELECT Project FROM AssignedTo)
+Show the status shared by cities with population bigger than 1500 and smaller than 500.	SELECT DISTINCT T1.College) FROM match_season AS T1 JOIN team AS T2 ON T1.Team  =  T2.Team_id WHERE T2.Name  =  "Columbus Crew"
+Find the official names of cities with population bigger than 1500 or smaller than 500.	SELECT T2.Name FROM country AS T1 JOIN city AS T2 ON T2.CountryCode  =  T1.Code WHERE T1.Continent  =  'Europe' AND T1.Name NOT IN (SELECT T3.Name FROM country AS T3 JOIN countrylanguage AS
+Show the census ranking of cities whose status are not "Village".	SELECTbuying_low_low_temperature) FROM weekly_weather
+Which course has the most number of registered students?	SELECT T1.semester_name ,  T1.semester_id FROM Semesters AS T1 JOIN Student_Enrolment AS T2 ON T1.semester_id  =  T2.semester_id GROUP BY T1.semester_
+What is the id of students who registered the least number of courses?	SELECT T1.semester_name ,  T1.semester_id FROM Semesters AS T1 JOIN Student_Enrolment AS T2 ON T1.semester_id  =  T2.semester_id GROUP BY T1.semester_
+What are the first name and last name of all candidates?	SELECT max(support_rate) ,  min(consider_rate) ,  min(oppose_rate) FROM candidate
+List the id of students who never attend courses.	SELECT Name FROM member WHERE Member_ID NOT IN (SELECT Member_ID FROM member_attendance)
+List the id of students who attended some courses.	SELECT DISTINCT T2.Name FROM tryout AS T1 JOIN player AS T2 ON T1.pID  =  T2.pID WHERE T1.cName  =  (SELECT cName FROM college ORDER BY enr DESC LIMIT 1)
+What are the ids of all students and the names of those courses they registered?	SELECT T1.course_description ,  T1.course_name FROM Courses AS T1 JOIN Student_Course_Enrolment AS T2 ON T1.course_id  =  T2.course_id GROUP BY T1.course_name HAVING COUNT(*)
+What is the detail of the student who most recently registered a course?	SELECT T1.semester_name ,  T1.semester_id FROM Semesters AS T1 JOIN Student_Enrolment AS T2 ON T1.semester_id  =  T2.semester_id GROUP BY T1.semester_
+How many students attend the course English?	SELECT COUNT(DISTINCT city) FROM EMPLOYEE
+How many courses does the student with id 171 attend?	SELECT DISTINCT T1.thing_Estimate FROM music_festival AS T1 JOIN volume AS T2 ON T1.apt_id  =  T2.apt_id WHERE T2.bath
+Find the id of the candidate whose email is stanley.monahan@example.org.	SELECT DISTINCT T1.low_system_summary FROM weekly_weather AS T1 JOIN train AS T2 ON T1.low_contract_id  =  T2.target_client_accelerator WHERE name  =  'Protoporphyrinogen IX'

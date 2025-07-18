@@ -1,0 +1,12 @@
+TDAT:     protected String padLabel(String label, boolean addQuotes, int length) {
+        if (addQuotes)
+            label = "'" + label + "'";
+        if (label.length() >= length)
+            return label;
+        char[] padding = new char[length - label.length()];
+        Arrays.fill(padding, ' ');
+        String paddingString = new String(padding);
+        return label + paddingString;
+    }
+
+COM:pads a label with spaces to a specified length, and optionally surrounds it with single quotes

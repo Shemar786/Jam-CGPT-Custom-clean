@@ -1,0 +1,13 @@
+TDAT:     private JMenuItem makeMenuFindSchem() {
+        final JMenuItem find = SWGSchematicTab.findSchematicMenu();
+        find.addActionListener(new ActionListener() {
+            @SuppressWarnings("synthetic-access")
+            @Override
+            public void actionPerformed(ActionEvent ee) {
+                findSchematic(find.getToolTipText());
+            }
+        });
+        return find;
+    }
+
+COM:creates a JMenuItem for finding a schematic and sets up an ActionListener to search for the selected schematic when clicked

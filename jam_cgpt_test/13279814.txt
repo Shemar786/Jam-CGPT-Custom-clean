@@ -1,0 +1,17 @@
+TDAT:     public void removeConstraint(Node node, int edgeID, boolean direction) {
+
+	ConnectedNode connectedNode;
+	Iterator it = connectedNodes.iterator();
+	boolean notFound = true;
+
+	while (notFound && it.hasNext()) {
+	    connectedNode = (ConnectedNode) it.next();
+	    notFound = ((connectedNode.node != node) 
+			|| (connectedNode.edgeID != edgeID) 
+			|| (connectedNode.direction != direction)); 
+	}
+	it.remove();
+
+    }
+
+COM:removes a constraint by iterating through a list of connected nodes and removing the node with the specified parameters

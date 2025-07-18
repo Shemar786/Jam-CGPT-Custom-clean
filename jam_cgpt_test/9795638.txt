@@ -1,0 +1,10 @@
+TDAT: protected void addNodes(GenericObjectEditPart tablePart) {
+	Node n = new Node(tablePart);
+	n.width = tablePart.getFigure().getPreferredSize(400, 300).width;
+	n.height = tablePart.getFigure().getPreferredSize(400, 300).height;
+//	n.setPadding(new Insets(10, 8, 10, 12));
+	partToNodesMap.put(tablePart, n);
+	graph.nodes.add(n);
+}
+
+COM:adds a new node to the graph with dimensions based on a GenericObjectEditPart and adds it to a map and the graph

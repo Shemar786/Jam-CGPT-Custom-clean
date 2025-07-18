@@ -1,0 +1,13 @@
+TDAT:     private void resourceClassUpdate(boolean spaceOrRecycled) {
+        isGuiUpdating = true;
+        resourceClassNameList.removeAllItems();
+        if (spaceOrRecycled)
+            for (SWGResourceClass rc : rcSpaceRecycled)
+                resourceClassNameList.addItem(rc);
+        else
+            for (SWGResourceClass rc : rcSpawnable)
+                resourceClassNameList.addItem(rc);
+        isGuiUpdating = false;
+    }
+
+COM:updates a resource class list based on a boolean input and toggles a GUI update flag

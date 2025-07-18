@@ -1,0 +1,9 @@
+TDAT:   protected void removeRow(int row) {
+    int columnCount = getCellCount(row);
+    for (int column = 0; column < columnCount; ++column) {
+      cleanCell(row, column);
+    }
+    DOM.removeChild(bodyElem, DOM.getChild(bodyElem, row));
+  }
+
+COM:removes a row from a table, cleaning all its cells and removing it from the DOM

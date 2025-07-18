@@ -1,0 +1,12 @@
+TDAT: 	public void caseASingleRows(ASingleRows node) {
+		if (node.getRow() != null) {
+			Hashtable m = (Hashtable) matrixStack.pop();
+			int rows = ((Integer) m.get(ROWS)).intValue();
+			m.put(ROWS, new Integer(rows + 1));
+			m.put(COLS, new Integer(0));
+			matrixStack.push(m);
+			node.getRow().apply(this);
+		}
+	}
+
+COM:increments the number of rows in a matrix and sets the number of columns to 0, before applying a function to a single row

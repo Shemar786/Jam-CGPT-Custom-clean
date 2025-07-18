@@ -1,0 +1,18 @@
+TDAT: 	public void setMetaData(TimeSeries other) {
+		this.setSource(other.source);
+		this.setQuantity(other.quantity);
+		this.setUnit(other.unit);
+		this.setLocation(other.location);
+		this.setId(other.id);
+		this.setDescription(other.description);
+		this.setPosition(other.position[0], other.position[1]);
+		this.setHeight(other.height);
+		this.autoId = other.autoId;
+		this.parent = other.parent;
+
+		for (String propertyName : other.properties.keySet()) {
+			this.setProperty(propertyName, other.getProperty(propertyName));
+		}
+	}
+
+COM:sets metadata values for a TimeSeries object based on another TimeSeries object

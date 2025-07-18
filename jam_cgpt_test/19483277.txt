@@ -1,0 +1,17 @@
+TDAT: 	private void processDocumentDelta(IRodinElementDelta delta) {
+
+		int kind = delta.getKind();
+		if (kind == ADDED || kind == REMOVED) {
+			String[] items = getDocumentComboLabels();
+			final ComboBoxCellEditor cellEditor = page.getComboBoxCellEditor();
+			if (cellEditor != null) {
+				cellEditor.setItems(items);
+			}
+		}
+
+		if (kind == REMOVED) {
+			refreshAll = true;
+		}
+	}
+
+COM:processes changes in a Rodin document element, updating a combo box cell editor if the element is added or removed, and setting a refresh flag if the element is removed

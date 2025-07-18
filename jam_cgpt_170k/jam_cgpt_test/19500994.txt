@@ -1,0 +1,13 @@
+TDAT: 	private void verify() {
+		for (Entry<FreeIdentifier, Expression> entry : identSubst.entrySet()) {
+			final FreeIdentifier ident = entry.getKey();
+			final Type newType = ident.getType().specialize(this);
+			final Expression value = entry.getValue();
+			if (!value.getType().equals(newType)) {
+				throw new IllegalArgumentException("Incompatible types for "
+						+ ident);
+			}
+		}
+	}
+
+COM:verifies that the types of the expressions in a map match the types of their corresponding free identifiers

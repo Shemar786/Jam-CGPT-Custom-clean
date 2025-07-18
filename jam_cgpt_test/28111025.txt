@@ -1,0 +1,7 @@
+TDAT:     public Object eval(String statement, NameSpace nameSpace) throws EvalError {
+
+        String s = (statement.endsWith(";") ? statement : statement + ";");
+        return eval(new StringReader(s), nameSpace, "<Inline eval of: " + s + " >");
+    }
+
+COM:evaluates a string statement in a given namespace and returns an object, throwing an EvalError if an error occurs

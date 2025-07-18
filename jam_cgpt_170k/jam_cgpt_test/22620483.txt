@@ -1,0 +1,14 @@
+TDAT: 	public String getLabelText(String xpath, String siblingPath, String indexId) {
+		if (siblingPath != null && indexId != null) {
+			String nodeName =
+				NamespaceRegistry.stripNamespacePrefix(XPathUtils.getNodeName(siblingPath));
+			return (nodeName + " ${" + indexId + "+1}");
+		}
+		else {
+			String nodeName =
+				NamespaceRegistry.stripNamespacePrefix(XPathUtils.getNodeName(normalizedXPath));
+			return nodeName;
+		}
+	}
+
+COM:returns a label text based on XPath and sibling path with an optional index ID

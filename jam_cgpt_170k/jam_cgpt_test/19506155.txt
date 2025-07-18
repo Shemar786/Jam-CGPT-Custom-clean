@@ -1,0 +1,13 @@
+TDAT: 	private void removeAllChildren(IRodinElement element) {
+		if (element instanceof IParent) {
+			ArrayList<IRodinElement> newRootElements = new ArrayList<IRodinElement>();
+			for (IRodinElement currentRoot: rootElements) {
+				if (! element.equals(currentRoot) && ! element.isAncestorOf(currentRoot)) {
+					newRootElements.add(currentRoot);
+				}
+			}
+			rootElements = newRootElements;
+		}
+	}
+
+COM:removes all children of an IRodinElement if it is an IParent

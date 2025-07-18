@@ -1,0 +1,13 @@
+TDAT: 	public void addNewEventAfterCurrent(Event newEvent) {
+		setAsEventContainer(newEvent);
+		if (events.isEmpty()){
+			addNewEvent(newEvent);
+		}else{
+			//INVARIANT: The current event is always the first one, unless the queue is empty
+			events.add(1,newEvent);
+		}
+
+//		System.out.println("Adding event " + newEvent.ID + " after current event"  );
+	}
+
+COM:adds a new event after the current event in a queue of events

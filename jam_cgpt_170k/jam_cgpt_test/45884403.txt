@@ -1,0 +1,13 @@
+TDAT: 	static public long getNotificationTimeoutFromPrefs(Context context) {
+		long notificationTimeout = Long.parseLong(PREFS_NOTIFICATION_TIMEOUT_DEFAULT);
+		try {
+			notificationTimeout = Long.parseLong(PreferenceManager.getDefaultSharedPreferences(context)
+			.getString(PREFS_NOTIFICATION_TIMEOUT, PREFS_NOTIFICATION_TIMEOUT_DEFAULT));
+		} catch (NumberFormatException e) {
+			// Guess somebody messed with the preferences and put a string into this
+			// field. We'll use the default value then.
+		}
+		return notificationTimeout;
+	}
+
+COM:retrieves the notification timeout value from the shared preferences of a given context and returns it as a long, defaulting to a preset value if the retrieved value is not a valid long

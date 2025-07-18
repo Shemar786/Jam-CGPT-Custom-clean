@@ -1,0 +1,19 @@
+TDAT: public void setCapture (boolean capture) {
+	checkWidget ();
+	if (capture) {
+	  Utils.capturedControl = this;
+	} else {
+		if (Utils.capturedControl == this) {
+		  Utils.capturedControl = null;
+		}
+	}
+//	if (capture) {
+//		OS.SetCapture (handle);
+//	} else {
+//		if (OS.GetCapture () == handle) {
+//			OS.ReleaseCapture ();
+//		}
+//	}
+}
+
+COM:sets the capture status of a widget and updates the captured control accordingly

@@ -1,0 +1,10 @@
+TDAT:     public void removeNamespace(String prefix) throws org.xmldb.api.base.XMLDBException {
+        try {
+            stub.removeNamespace(this.service, prefix);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e);
+        }
+        
+    }
+
+COM:removes a namespace with a given prefix using a stub and throws an XMLDBException if an error occurs

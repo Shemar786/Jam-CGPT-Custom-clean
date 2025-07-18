@@ -1,0 +1,21 @@
+TDAT:   public ComboRec fetch(ResultSet results) {
+  ComboRec ret = null;
+
+      try {
+          if (results.next()) {
+             ret = new ComboRec(
+                        results.getInt(1)
+                      , results.getInt(2)
+                      , results.getString(3)
+                      , results.getInt(4)
+                   );
+          }
+          message = "";
+      } catch (Exception ex) {
+           setMessage(ex.getMessage(), ex);
+      }
+
+      return ret;
+  }
+
+COM:fetches data from a ResultSet object and creates a ComboRec object based on the result

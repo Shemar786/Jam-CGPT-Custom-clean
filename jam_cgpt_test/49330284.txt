@@ -1,0 +1,12 @@
+TDAT:     public int debugStackSize ( ) throws UsbException, InvalidFirmwareException, CapabilityException {
+	checkCapability(CAPABILITY_DEBUG);
+	if ( debugStackSize<=0 || debugMsgSize<=0 ) {
+	    byte[] buf = new byte[7];
+	    vendorRequest2(0x28, "Read debug data", 0, 0, buf, 4);
+	    debugStackSize = buf[2] & 255;
+	    debugMsgSize = buf[3] & 255;
+	}
+	return debugStackSize;
+    }
+
+COM:checks for certain capabilities and reads debug data to determine the stack size, and returns it as an integer

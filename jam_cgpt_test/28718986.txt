@@ -1,0 +1,21 @@
+TDAT: 	public Texture2 getTexture(String resourceName) throws IOException {
+		Texture2 tex = (Texture2) table.get(resourceName);
+
+		if (tex != null) {
+			return tex;
+		}
+
+		tex = getTexture(resourceName, GL11.GL_TEXTURE_2D, // target
+
+				GL11.GL_RGBA, // dst pixel format
+
+				GL11.GL_LINEAR, // min filter (unused)
+
+				GL11.GL_LINEAR);
+
+		table.put(resourceName, tex);
+
+		return tex;
+	}
+
+COM:retrieves a texture object associated with a given resource name and adds it to a hashtable for future use if it has not been previously loaded

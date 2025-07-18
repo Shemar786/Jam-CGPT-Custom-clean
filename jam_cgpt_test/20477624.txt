@@ -1,0 +1,24 @@
+TDAT: 	public String receiveAnswer() {
+		String line = null;
+		if( isConnected() ) {
+			try {
+				line = readLine();
+				if(line == null) {
+					disconnect();
+					gui.statusBarInfo("Connection lost (no data received)", true);
+					gui.connected(false);
+				}
+				else {
+					actOnAnswer(line);
+				}
+			} catch (IOException e) {
+				disconnect();
+				gui.statusBarInfo("Connection lost (no data received). IOException", true);
+				gui.connected(false);
+				System.err.println("IOException during socket connection to server");
+			}
+		}
+		return line;
+	}
+
+COM:receives an answer from an established connection and checks if the connection is still active, and disconnects if not

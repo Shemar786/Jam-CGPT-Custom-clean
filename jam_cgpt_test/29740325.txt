@@ -1,0 +1,14 @@
+TDAT: 	public void store(){
+		try {
+			properties.store(new FileOutputStream(this.PROPFILE), null);
+			UTLogger.getInstance().info(this, "property file stored!");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			UTLogger.getInstance().error(this, "property file not found!");
+		} catch (IOException e) {
+			e.printStackTrace();
+			UTLogger.getInstance().error(this, "io exception!");
+		}
+	}
+
+COM:stores properties in a property file, with respective error messages

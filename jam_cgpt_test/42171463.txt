@@ -1,0 +1,17 @@
+TDAT:   protected void addScopeObjectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ScriptScope_scopeObject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScriptScope_scopeObject_feature", "_UI_ScriptScope_type"),
+				 ScriptingPackage.Literals.SCRIPT_SCOPE__SCOPE_OBJECT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to the item property descriptors list for a given object

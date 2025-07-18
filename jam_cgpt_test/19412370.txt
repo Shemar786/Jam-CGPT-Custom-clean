@@ -1,0 +1,10 @@
+TDAT:     public void fileInfoGenerated(FileInfoEvent e) {
+//      FileInfoContainer fileInfo = e.getInfoContainer();
+//        if (fileInfo.getClass().equals(StatusInformation.class)) {
+//          System.err.println("A file status event was received.");
+//          System.err.println("The status information object is: " +
+//                             fileInfo);
+//        }
+    }
+
+COM:prints the status information of a file when a file status event is received

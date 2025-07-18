@@ -1,0 +1,19 @@
+TDAT:     public boolean contains(String[] line) {
+        for (Line l: getLines()) {
+            boolean differenceFound = false;
+            int i = 0;
+            for (String cell: line) {
+                if (cell != null && !cell.equals(l.cells.get(i))) {
+                    differenceFound = true;
+                    break;
+                }
+                ++i;
+            }
+            if (!differenceFound) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+COM:checks if any line in a collection of lines contains a given array of strings in the same order

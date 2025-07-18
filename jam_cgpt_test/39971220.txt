@@ -1,0 +1,13 @@
+TDAT: 	private JRadioButton getJRadioButtonOuverteNon() {
+		if (jRadioButtonOuverteNon == null) {
+			jRadioButtonOuverteNon = new JRadioButton();
+			jRadioButtonOuverteNon.setText("non");
+			jRadioButtonOuverteNon.setSize(new Dimension(46, 24));
+			jRadioButtonOuverteNon.setLocation(new Point(153, 104));
+			jRadioButtonOuverteNon.setBackground(new Color(209, 209, 240));
+			bgroupOuverte.add(jRadioButtonOuverteNon);
+		}
+		return jRadioButtonOuverteNon;
+	}
+
+COM:returns a JRadioButton that is either newly created or already existing, with specific text, size, location, and background color, and added to a ButtonGroup

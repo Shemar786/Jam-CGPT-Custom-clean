@@ -1,0 +1,9 @@
+TDAT:   public void setNodeRenderer(NodeRenderer nodeRenderer) {
+    if (this.nodeRenderer instanceof RequestListener)
+      super.getDispatcher().removeRequestListener((RequestListener) this.nodeRenderer);
+    this.nodeRenderer = nodeRenderer;
+    if (this.nodeRenderer instanceof RequestListener)
+      super.getDispatcher().addRequestListener(null, null, (RequestListener) this.nodeRenderer);
+  }
+
+COM:sets the node renderer and adds or removes a request listener based on the type of the new node renderer

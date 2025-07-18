@@ -1,0 +1,12 @@
+TDAT:     public boolean addDunningTemplate(DunningTemplate dunningTemplate) {
+        if (!dunningLevelExists(dunningTemplate.getDunningLevel())) {
+            if (this.getDunningTemplates()==null)
+                this.setDunningTemplates(new LinkedHashSet<DunningTemplate>());
+            dunningTemplate.setDunningGroup(this);
+            this.getDunningTemplates().add(dunningTemplate);
+            return true;
+        } else
+            return false;
+    }
+
+COM:adds a Dunning Template to a Dunning Group if it has not already been added

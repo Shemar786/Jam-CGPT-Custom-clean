@@ -1,0 +1,14 @@
+TDAT:   public void setRecordName(String val) {
+
+      if ((val == null || "".equals(val))
+      && (recordName == null || "".equals(recordName))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(recordName)) || (updateStatus == NULL_INT_VALUE)) {
+           recordName = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets the name of a record and updates the update status if the new record name differs from the current name or if the update status is null

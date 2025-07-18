@@ -1,0 +1,19 @@
+TDAT:    private SessionGUI getCurrentViewedSession() {
+
+      SessionGUI current = null;
+      Component[] comps = sessionPanel.getComponents();
+      int count = comps.length;
+      // make the current session non visible to keep from over writting the
+      //  session screens.
+      for (int x = 0; x < count; x++) {
+
+         if (comps[x] instanceof SessionGUI) {
+            current = (SessionGUI)comps[x];
+         }
+      }
+
+      return current;
+
+   }
+
+COM:retrieves the current SessionGUI that is being viewed on the sessionPanel

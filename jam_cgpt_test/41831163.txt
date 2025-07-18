@@ -1,0 +1,14 @@
+TDAT: 	public int getContainingLayerCount(int layerID) {
+		Cursor c = db.query(LAYER_TABLE, new String[] { ID }, LAYER_rootLayer
+				+ "=" + layerID, null, null, null, null);
+		int ret = 0;
+		if (c.moveToFirst()) {
+			do {
+				ret += getContainingLayerCount(c.getInt(0)) + 1;
+			} while (c.moveToNext());
+		}
+		c.close();
+		return ret;
+	}
+
+COM:returns the count of layers that are contained within the specified layerID parameter

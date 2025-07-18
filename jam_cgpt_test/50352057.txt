@@ -1,0 +1,6 @@
+TDAT:         public void onEndMatch(String user1, String user2, int length, int points1, int points2) {
+            for (Iterator i = listeners.iterator(); i.hasNext(); )
+                ((Listener)i.next()).onEndMatch(user1, user2, length, points1, points2);
+        }
+
+COM:invokes the onEndMatch method for each listener in the listeners collection, passing in the specified parameters

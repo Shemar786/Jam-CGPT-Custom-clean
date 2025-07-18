@@ -1,0 +1,15 @@
+TDAT:   private void setToggleButton(List<? extends JToggleButton> list, int line, boolean value) {
+    if (list == null) {
+      return;
+    }
+    if ((line < 0) || (line >= list.size())) {
+      return;
+    }
+    JToggleButton chk = list.get(line);
+    if (chk == null) {
+      return;
+    }
+    chk.setSelected(value);
+  }
+
+COM:sets the selected state of a JToggleButton given its position in a list and a boolean value

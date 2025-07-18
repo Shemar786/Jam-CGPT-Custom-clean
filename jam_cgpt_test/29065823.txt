@@ -1,0 +1,13 @@
+TDAT:   public DefaultMutableTreeNode append(String name, DefaultMutableTreeNode parent) {
+  	/*
+    Element elem = document.createElement(name);
+    parent.appendChild(elem);
+    return elem;
+    */
+    DefaultMutableTreeNode elem = new DefaultMutableTreeNode(new RubikCellImpl(name));
+    parent.add(elem);
+    return elem;
+
+  }
+
+COM:appends a new node to a specified parent node with the given name and returns the new node

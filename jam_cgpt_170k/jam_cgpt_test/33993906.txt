@@ -1,0 +1,17 @@
+TDAT: 	protected void addCollapsiblePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortalLayoutGroup_collapsible_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortalLayoutGroup_collapsible_feature", "_UI_PortalLayoutGroup_type"),
+				 UiPackage.Literals.PORTAL_LAYOUT_GROUP__COLLAPSIBLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a collapsible property descriptor to an item property descriptor list

@@ -1,0 +1,15 @@
+TDAT:     private byte getByteData(int index, int value){
+        switch(index){
+            case 0:
+                return (byte)((value & 0xFF000000) >>> 24);
+            case 1:
+                return (byte)((value & 0x00FF0000) >>> 16);
+            case 2:
+                return (byte)((value & 0x0000FF00) >>> 8);
+            case 3:
+                return (byte)((value & 0x000000FF));
+        }
+        return 0;
+    }
+
+COM:retrieves a specific byte of data from an integer value based on the given index

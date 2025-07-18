@@ -1,0 +1,14 @@
+TDAT:         public Object get( String propertyName ) {
+            NamedDelegate delegate = getNamedItem( getForms(), propertyName );
+            if (delegate != null) return delegate;
+
+            delegate = getNamedItem( getLinks(), propertyName );
+            if (delegate != null) return delegate;
+
+            delegate = getNamedItem( getImages(), propertyName );
+            if (delegate != null) return delegate;
+
+            return null;
+        }
+
+COM:retrieves an object based on the property name from three different data structures and returns the object if found, otherwise null

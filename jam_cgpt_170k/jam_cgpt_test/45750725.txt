@@ -1,0 +1,6 @@
+TDAT:     public boolean contains(Range r) {
+        return ((compareTo(r.mMin, false) == 0 || (this.mMin instanceof Range.UnspecifiedBound && r.mMin instanceof Range.UnspecifiedBound))) &&
+                ((compareTo(r.mMax, false) == 0) || (this.mMax instanceof Range.UnspecifiedBound && r.mMax instanceof Range.UnspecifiedBound));
+    }
+
+COM:checks if a given Range object is contained within the current Range object

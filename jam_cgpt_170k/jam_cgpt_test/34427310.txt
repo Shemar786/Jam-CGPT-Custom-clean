@@ -1,0 +1,14 @@
+TDAT:     private void populateUnreportedPlanetList() {
+        unreportedPlanets = mergeUnreportedPlanets();
+        SwingUtilities.invokeLater(new Runnable() {
+            @SuppressWarnings("synthetic-access")
+            @Override
+            public void run() {
+                unreportedListModel.clear();
+                for (Wrapper wr : unreportedPlanets)
+                    unreportedListModel.addElement(wr);
+            }
+        });
+    }
+
+COM:populates a list of unreported planets by merging them and then clearing and updating a Swing list model with the merged data

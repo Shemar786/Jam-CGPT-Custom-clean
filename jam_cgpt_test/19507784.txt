@@ -1,0 +1,18 @@
+TDAT: 	public void testAddTwoRodinProjects() throws CoreException {
+		startDeltas();
+		ResourcesPlugin.getWorkspace().run(
+				new IWorkspaceRunnable() {
+					public void run(IProgressMonitor monitor) throws CoreException {
+						createRodinProject("P1");
+						createRodinProject("P2");
+					}
+				},
+				null);
+		assertEquals(
+				"Unexpected delta", 
+				"P1[+]: {}\n" +
+				"P2[+]: {}", 
+				getSortedByProjectDeltas());
+	}
+
+COM:tests adding two Rodin projects and checks for unexpected deltas

@@ -1,0 +1,14 @@
+TDAT:     public Task getNextTask() {
+        for (Iterator iter = this.fActiveTaskQueues.iterator(); iter.hasNext();) {
+            ITaskQueue taskQueue = (ITaskQueue) iter.next();
+            Task task = taskQueue.getNextTask();
+            if (task != null) {
+                return task;
+            }
+        }
+
+        return null;
+
+    }
+
+COM:returns the next available task from a list of active task queues

@@ -1,0 +1,15 @@
+TDAT:     public void setAdditionalSeqsOids( int[] add_seq_oids ) {
+
+        _add_seq_oids = new ArrayList();
+
+        if ( add_seq_oids == null ) {
+            return;
+        }
+
+        for ( int i = 0; i < add_seq_oids.length; ++i ) {
+            addAdditionalSeqsOid( add_seq_oids[ i ] );
+        }
+
+    } // setAddSegsOids( int[] )
+
+COM:sets additional sequence oids by initializing an ArrayList and adding each integer from the input array using a for loop

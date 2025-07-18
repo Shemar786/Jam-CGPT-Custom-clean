@@ -1,0 +1,13 @@
+TDAT: 	public void initActivityState() {
+		itsActivityState = Box.createHorizontalBox();
+
+		JProgressBar theProgressBar = new JProgressBar();
+		theProgressBar.setIndeterminate(true);
+		itsActivityState.add(theProgressBar);
+		// JLabel theStateLabel = new
+		// JLabel(LessonMapper2.getInstance().getLangComment("activityState"));
+		// theStateLabel.setBackground(Color.WHITE);
+		// itsActivityState.add(theStateLabel);
+	}
+
+COM:initializes a progress bar with indeterminate value and adds it to a horizontal box container

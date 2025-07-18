@@ -1,0 +1,9 @@
+TDAT:     protected DateFormat getDateFormatter() {
+        if (dateFormatter == null) {
+            dateFormatter = new SimpleDateFormat(Entry.getLastModifiedDateFormatter().toPattern(), Locale.US);
+            dateFormatter.setTimeZone(TimeZone.getTimeZone("GMT+0000")); //NOI18N
+        }
+        return dateFormatter;
+    }
+
+COM:returns a DateFormat object for formatting dates, and if the object is not initialized, it initializes it with a specific format and time zone

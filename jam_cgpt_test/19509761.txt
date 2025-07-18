@@ -1,0 +1,8 @@
+TDAT: 	public void testQuantifiedExpression() {
+		final BoundIdentDecl[] decls = mList(mBoundIdentDecl("x", tS));
+		final BoundIdentifier use = mBoundIdentifier(0, tS);
+		doTest(mQuantifiedExpression(CSET, Explicit, decls, peT, use), tS, tT);
+		doTest(mQuantifiedExpression(CSET, Explicit, decls, piT, use), tS, tT);
+	}
+
+COM:tests quantified expressions with different types and declarations

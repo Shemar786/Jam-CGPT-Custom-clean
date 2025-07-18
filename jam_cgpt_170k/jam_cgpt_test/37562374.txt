@@ -1,0 +1,13 @@
+TDAT: public void setValues (int selection, int minimum, int maximum, int thumb, int increment, int pageIncrement) {
+	checkWidget();
+	if (minimum < 0) return;
+	if (maximum < 0) return;
+	if (thumb < 1) return;
+	if (increment < 1) return;
+	if (pageIncrement < 1) return;
+  blockListener = true;
+  handle.setValues(selection, thumb, minimum, maximum);
+  blockListener = false;
+}
+
+COM:sets the values for a handle with certain constraints and returns nothing

@@ -1,0 +1,9 @@
+TDAT:     private boolean isNextMonth(int row, int col) {
+        if (row > 0 && firstColDates[row] + col > model.getDaysInMonth())
+            return true;
+        if (row > 1 && firstColDates[row] < firstColDates[row-1])
+            return true;
+        return false;
+    }
+
+COM:determines whether the given position in the calendar grid represents the next month

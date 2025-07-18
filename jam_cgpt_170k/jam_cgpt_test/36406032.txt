@@ -1,0 +1,11 @@
+TDAT: 	public void copy(String sName, Map<String,String> attributes) {
+    	if (sName!=null && sName.length()>0) {
+			Map<String,String> newAttributes = new HashMap<String,String>();
+			for (String sAttrName : attributes.keySet()) {
+				newAttributes.put(sAttrName, attributes.get(sAttrName));
+			}
+    		put(sName, newAttributes);
+    	}
+	}
+
+COM:copies the attributes of a given string name to a new HashMap if the name is not null or empty

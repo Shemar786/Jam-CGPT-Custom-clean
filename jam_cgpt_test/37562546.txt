@@ -1,0 +1,9 @@
+TDAT: public TableColumn getColumn (int index) {
+	checkWidget ();
+  if (columnList == null) error (SWT.ERROR_INVALID_RANGE);
+  int count = getColumnCount();
+  if (!(0 <= index && index < count)) error (SWT.ERROR_INVALID_RANGE);
+  return (TableColumn)columnList.get(index);
+}
+
+COM:returns a TableColumn at a given index, but throws an error if the index is invalid or the widget is not valid

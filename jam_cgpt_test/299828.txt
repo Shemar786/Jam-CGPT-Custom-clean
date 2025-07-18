@@ -1,0 +1,23 @@
+TDAT: 	public boolean setRelationship(RelationshipModel rModel) {
+		_sourceType = rModel.getSourceType();
+		_declaredTargetType = rModel.getTargetType();
+
+		if (needChooseTypeDialog()) {
+			ChooseTypeWizard wizard = new ChooseTypeWizard(getTargetType());
+			WizardDialog dialog = new WizardDialog(PlugIn.getDefaultShell(),
+					wizard);
+			dialog.setMinimumPageSize(300, 500);
+			dialog.create();
+			int res = dialog.open();
+			
+			if (res == WizardDialog.CANCEL) {
+				return false;
+			}
+			
+			setActualTargetType(wizard.getSelectedType());
+		}
+		
+		return true;
+	}
+
+COM:sets the relationship between source and target types and prompts the user to select a target type if necessary

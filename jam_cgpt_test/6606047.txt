@@ -1,0 +1,17 @@
+TDAT: 	public SocialRequestInterpreter getSocialRequestInterpreterInstance() {
+		if (Validator.isNotNull(getSocialRequestInterpreterClass())) {
+			if (_portletApp.isWARFile()) {
+				PortletBag portletBag = PortletBagPool.get(getRootPortletId());
+
+				return portletBag.getSocialRequestInterpreterInstance();
+			}
+			else {
+				return (SocialRequestInterpreter)InstancePool.get(
+					getSocialRequestInterpreterClass());
+			}
+		}
+
+		return null;
+	}
+
+COM:returns an instance of a SocialRequestInterpreter object based on whether the portlet application is a WAR file or not

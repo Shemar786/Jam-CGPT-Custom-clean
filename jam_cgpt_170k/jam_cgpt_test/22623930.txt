@@ -1,0 +1,15 @@
+TDAT: 	public PageList getPageList() {
+		// prtln ("getPageList() --> " + this.getXmlFormat());
+		VirtualPageConfig vpConfig = VirtualPageConfig.getInstance();
+		if (vpConfig != null) {
+			VirtualPageList formatConfig = vpConfig.getConfig(this.getXmlFormat());
+			if (formatConfig != null) {
+				// prtln ("returning VIRTUAL Page List");
+				return formatConfig;
+			}
+		}
+
+		return configReader.getPageList();
+	}
+
+COM:retrieves a page list, either from a virtual page configuration or from a config reader

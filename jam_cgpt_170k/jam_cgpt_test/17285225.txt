@@ -1,0 +1,8 @@
+TDAT: 	public boolean registerUser(int clientId, String name, String password, String bday, String country, String city , byte[] picture, PublicKeyPair publicKeyPair , Certificate certificate) {
+		User user = new User(name , password, bday , country, city, picture, publicKeyPair, certificate);
+		synchronized (allUsers) {
+			return (allUsers.put(clientId, user)==null);
+		}
+	}
+
+COM:registers a user by creating a new User object with the specified information and adds it to a synchronized HashMap of all registered users, returning true if the registration is successful

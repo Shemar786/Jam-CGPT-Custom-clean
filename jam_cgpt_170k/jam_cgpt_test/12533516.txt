@@ -1,0 +1,16 @@
+TDAT: 		public void setUnloadingTimeDistribution(DistributionIfc d) {
+			
+			if (d == null)
+				throw new IllegalArgumentException("Loading Time Distribution was null!");
+			
+			myUnloadingTimeDistribution = d;
+			
+			if (myUnloadingTimeRV == null){// not made yet
+				myUnloadingTimeRV = new RandomVariable(this, myUnloadingTimeDistribution);
+			} else { // already had been made, and added to model
+				// just change the distribution
+				myUnloadingTimeRV.setRandomSource(myUnloadingTimeDistribution);
+			}
+		}
+
+COM:sets the unloading time distribution for a specified distribution and creates a random variable based on the distribution if it has not already been done

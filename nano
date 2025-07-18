@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+"""
+Convert spider_text_sql.csv  ➜  {train, val}.bin   for Jam-CGPT.
+90-% random rows → train.bin, 10-% → val.bin
+"""
+import pandas as pd, numpy as np, tiktoken, argparse, os, random
+
+enc = tiktoken.get_encoding("gpt2")          # same tokenizer Jam-CGPT uses
+END = "<|endoftext|>"
+
+def encode(example: str):
+    return enc.encode(example, allowed_special={END})
+
+def make_bin(csv_path: str, out_dir: str, train_frac: float = 0.9, seed: int = 42):
+    df = pd.read_csv(csv_path)
+    assert {"question", "query"} <= set(df.columns), "CSV must have question & query columns"
+
+    # deterministic shuffle
+    rng = random.Random(seed)
+    idx = list(df.index)
+    rng.shuffle(idx)
+    df = df.loc[idx].reset_index(drop=True)
+
+    split = int(len(df) * train_frac)
+    splits = {"train": df.iloc[:split], "val": df.iloc[split:]}
+
+    os.makedirs(out_dir, exist_ok=True)
+
+    for name, subset in splits.items():
+        tok_list = []
+        for _, row in subset.iterrows():
+            example = f"ENG:\t{row['question'].strip()}\nSQL:\t{row['query'].strip()}{END}"
+            tok_list.extend(encode(example))
+        np.array(tok_list, dtype=np.uint16).tofile(f"{out_dir}/{name}.bin")
+        print(f"Wrote {name}.bin  ({len(tok_list):,} tokens)")
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--csv", required=True, help="spider_text_sql.csv path")
+    ap.add_argument("--outdir", required=True, help="output dir for .bin files")
+    args = ap.parse_args()
+    make_bin(args.csv, args.outdir)

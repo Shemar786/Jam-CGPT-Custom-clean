@@ -1,0 +1,11 @@
+TDAT:     protected void uninstallListeners() {
+        ListSelectionModel listselectionmodel = pane.getPageSelectionModel();
+        if (listselectionmodel != null) {
+            listselectionmodel.removeListSelectionListener(selectionListener);
+        }
+        pane.removeMouseListener(mouseInputListener);
+        pane.removeMouseMotionListener(mouseInputListener);
+        pane.removePropertyChangeListener(propertyChangeListener);
+    }
+
+COM:removes certain listeners from a "pane" object

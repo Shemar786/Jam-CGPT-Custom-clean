@@ -1,0 +1,12 @@
+TDAT: 	public EnvironmentType getEnvironmentTypeByKey(String key) {
+		
+		for (Iterator<EnvironmentType> it = this.iterator(); it.hasNext();) {
+			EnvironmentType envTyp = it.next();
+			if (envTyp.getInternalKey().equals(key)) {
+				return envTyp;
+			}
+		}
+		return this.get(0); // --- the default value ---
+	}
+
+COM:returns an EnvironmentType object with the specified key, or the first one in the list if none matches

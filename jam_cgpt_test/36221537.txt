@@ -1,0 +1,21 @@
+TDAT: 	private HTree getHashtableForHandle(String handle) {
+		HTree hashtable = metrics.get(handle);
+		if (null == hashtable) {
+			try {
+				long recid = recman.getNamedObject(handle);
+				if (recid != 0) {
+					hashtable = HTree.load(recman, recid);
+				} else {
+					hashtable = HTree.createInstance(recman);
+					recman.setNamedObject(handle, hashtable.getRecid());
+				}
+				metrics.put(handle, hashtable);
+			} catch (Throwable e) {
+				logger.log(Level.SEVERE, "Counld not get cached value for "
+						+ handle, e);
+			}
+		}
+		return hashtable;
+	}
+
+COM:retrieves a HTree from a cache or creates a new one if it doesn't exist, based on a given handle, and returns it

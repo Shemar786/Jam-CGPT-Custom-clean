@@ -1,0 +1,19 @@
+TDAT: 	private void selectFile(APDU apdu, byte[] buffer) {
+		// check P2
+		if (buffer[ISO7816.OFFSET_P2] != (byte) 0x0C)
+			ISOException.throwIt(ISO7816.SW_WRONG_P1P2);
+		// P1 determines the select method
+		switch (buffer[ISO7816.OFFSET_P1]) {
+		case (byte) 0x02:
+			selectByFileIdentifier(apdu, buffer);
+			break;
+		case (byte) 0x08:
+			selectByPath(apdu, buffer);
+			break;
+		default:
+			ISOException.throwIt(ISO7816.SW_INCORRECT_P1P2);
+			break;
+		}
+	}
+
+COM:selects a file based on the input P1 and P2 values in the APDU buffer

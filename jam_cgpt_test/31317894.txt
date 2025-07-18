@@ -1,0 +1,16 @@
+TDAT: 	public void addModelListener(ModelListener listener) {
+		synchronized (modelListeners) {
+			if(dispatchingEvents) {
+				// in order to avoid comodification exceptions when
+				// iterating over the model listeners we store the
+				// new listener in a separate list and add it later
+				log.trace("iteration currently taking place, will add listener later");
+				listenersToAdd.add(listener);
+			} else {
+				log.trace("adding listener");
+				modelListeners.add(listener);
+			}
+		}
+	}
+
+COM:adds a listener to the model only if there is no iteration currently taking place, otherwise it stores the listener in a separate list to be added later in order to avoid comodification exceptions when iterating over the model listeners

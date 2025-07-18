@@ -1,0 +1,15 @@
+TDAT:   public void releaseShips(Map ships) {
+    try {
+      Iterator items = ships.keySet().iterator();
+      while (items.hasNext()) {
+        ModuleNode current = (ModuleNode) items.next();
+        current.getModule().releaseInterface(ships.get(current));
+        items.remove();
+      }
+    }
+    catch (ModuleException me) {
+      getClassLogger().error(me.getMessage());
+    }
+  }
+
+COM:releases interfaces of ships in a map and logs errors if any

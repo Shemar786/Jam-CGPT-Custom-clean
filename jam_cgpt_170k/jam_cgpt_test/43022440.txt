@@ -1,0 +1,19 @@
+TDAT:   private void init() {
+    try {
+      if (createTable()) {
+        rowCount = 0;
+        prepareSQL();
+      }
+      else {
+        prepareSQL();
+        restorePacketStore();
+        countRow();
+      }
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+      //this.context.log("StackMVCdb exception during setUp.", e);
+    }
+  }
+
+COM:initializes the database by creating a table if it does not exist, setting the rowCount to zero, and preparing SQL statements, or restoring the packet store and counting the rows if the table already exists

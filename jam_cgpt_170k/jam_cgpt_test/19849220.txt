@@ -1,0 +1,6 @@
+TDAT:   public String getLex() {
+    if (NamedEntity_Type.featOkTst && ((NamedEntity_Type)jcasType).casFeat_lex == null)
+      jcasType.jcas.throwFeatMissing("lex", "net.lateeye.uima.types.NamedEntity");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((NamedEntity_Type)jcasType).casFeatCode_lex);}
+
+COM:retrieves the lexical form of a NamedEntity object stored in a jcasType instance

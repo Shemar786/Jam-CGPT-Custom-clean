@@ -1,0 +1,5 @@
+How many heads of the departments are older than 56 ?	SELECT DISTINCT T1.ceel_native_mm  >  15
+List the name, born state and age of the heads of departments ordered by age.	SELECT Content FROM TV_Buildings WHEREChar_MiB  =  "German"
+List the creation year, name and budget of each department.	SELECT T1.document_type_name ,  T1.document_type_description ,  T2.Document_date FROM Ref_document_types AS T1 JOIN Documents AS T2 ON T1.document_type_code  =  T2.document_type_code
+What are the maximum and minimum budget of the departments?	SELECT dept_name ,  building FROM department ORDER BY budget DESC LIMIT 1
+What is the average number of employees of the departments whose rank is between 10 and 15?	SELECT first_name ,  last_name FROM employees WHERE department_id IN (SELECT department_id FROM departments WHERE manager_id BETWEEN 100 AND 200)

@@ -1,0 +1,52 @@
+wandb: Currently logged in as: sstewa25 (sstewa25-university-of-notre-dame). Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.21.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /home/ecpuser/Jam-CGPT/wandb/run-20250709_230412-m86a50q2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run sql8k_scratch_1752102246
+wandb: ⭐️ View project at https://wandb.ai/sstewa25-university-of-notre-dame/jam-cgpt
+wandb: 🚀 View run at https://wandb.ai/sstewa25-university-of-notre-dame/jam-cgpt/runs/m86a50q2
+Overriding config with config/finetune_small_sql8k.py:
+# ── Fine-tune a tiny GPT from scratch on 8 k English→SQL prompts ──
+import time
+
+# ---------- where to save ----------
+out_dir       = 'out-sql8k-scratch'
+outfilename   = 'ckpt_sql8k_scratch.pt'
+init_from     = 'scratch'          # start from random weights
+
+# ---------- data ----------
+dataset   = 'sql8k'
+train_bin = '../bins/train.bin'    # path relative to *this* file
+val_bin   = '../bins/val.bin'
+
+# ---------- tiny model ----------
+n_layer = 6
+n_head  = 8
+n_embd  = 512
+block_size = 256
+
+# ---------- training ----------
+batch_size  = 8
+gradient_accumulation_steps = 16
+max_iters   = 25_000
+learning_rate = 5e-4
+decay_lr    = True
+warmup_iters = 200
+
+# ---------- logging ----------
+eval_interval = 200
+eval_iters    = 40
+wandb_log     = True
+wandb_project = 'jam-cgpt'
+wandb_run_name = f'sql8k_scratch_{int(time.time())}'
+
+dtype = 'float16'
+
+total number of tokens per iteration: 262144
+Initializing a new model from scratch
+defaulting to vocab_size of GPT-2 to 50304 (50257 rounded up for efficiency)
+number of parameters: 44.64M
+using fused AdamW: True
+compiling the model... (takes a ~minute)

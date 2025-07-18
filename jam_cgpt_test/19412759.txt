@@ -1,0 +1,17 @@
+TDAT:     public void ensureConnection() throws AuthenticationException {
+        BugLog.getInstance().assertNotNull(getConnection());
+
+        if (getConnection().isOpen()) {
+            return;
+        }
+
+//        getConnection().verify(); //VERIFY DOES THE SAME AS OPEN!!
+        // opening a conection and then closing it and reopening again is wierd.
+        try {
+            getConnection().open();
+        } catch (CommandAbortedException caex) {
+            abort();
+        }
+    }
+
+COM:ensures that a connection is open and authenticated before executing further commands

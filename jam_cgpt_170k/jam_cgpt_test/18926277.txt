@@ -1,0 +1,13 @@
+TDAT:   public Map pushParams(Collection c) {
+    Map memento = new HashMap();
+    for (Iterator it = c.iterator(); it.hasNext();) {
+      SessionParam param = (SessionParam) it.next();
+      SessionParam prev = setParam(param);
+      String name = param.getName();
+      if (!memento.containsKey(name))
+        memento.put(name, prev);
+    }
+    return memento;
+  }
+
+COM:takes a collection of SessionParam objects, sets their values, stores the previous values in a HashMap, and returns the HashMap

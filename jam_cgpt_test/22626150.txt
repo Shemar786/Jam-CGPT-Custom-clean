@@ -1,0 +1,18 @@
+TDAT: 	public Document asDocument() {
+		Element root = this.getRootElement();
+		Element obj = root.addElement(this.objectType.getTag());
+
+		if (this.properties != null) {
+			obj.add(this.properties.asElement());
+		}
+		if (this.relationships != null) {
+			obj.add(this.relationships.asElement());
+		}
+		if (this.data != null) {
+			obj.add(this.data.asElement());
+		}
+
+		return DocumentHelper.createDocument(root);
+	}
+
+COM:converts an object to an XML document by adding its properties, relationships, and data to the root element

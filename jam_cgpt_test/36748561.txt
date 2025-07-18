@@ -1,0 +1,10 @@
+TDAT:     private void save() {
+        if (theCase.isDirty()) {
+            theCase.setTitle(caseTitleTextField.getString());
+            theCase.setEven(isEvenChoiceGroup.isSelected(0));
+            theCase.setMagicword(magicwordTextField.getString());
+            parent.updateAfterEdit(caseTitleTextField.getString());
+        }
+    }
+
+COM:saves the updated information of a case object if it has been modified

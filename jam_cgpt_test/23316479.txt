@@ -1,0 +1,13 @@
+TDAT: 	public void removeTuple(TreeTuple tuple) {
+		relation.remove(tuple);
+		
+		in.get(tuple.getTree2()).remove(tuple.getTree1());
+		if(in.get(tuple.getTree2()).isEmpty())
+			in.remove(tuple.getTree2());
+		
+		out.get(tuple.getTree1()).remove(tuple.getTree2());
+		if(out.get(tuple.getTree1()).isEmpty())
+			out.remove(tuple.getTree1());		
+	}
+
+COM:removes a tuple from a relation and updates two maps by removing the corresponding values for the tuple's second element

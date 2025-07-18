@@ -1,0 +1,16 @@
+TDAT: 	protected void checkAndActOnEnvironmentChanges() {
+		// --- Has the EnvironmentModel changed? ----------------
+		try {
+			SimulationServiceHelper simHelper = (SimulationServiceHelper) getHelper(SimulationService.NAME);
+			EnvironmentModel tmpEnvMode =  simHelper.getEnvironmentModel();
+			if (tmpEnvMode!=null) {
+				if (tmpEnvMode.equals(myEnvironmentModel)==false) {
+					this.onEnvironmentStimulus();	
+				}				
+			}
+		} catch (ServiceException e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:checks if the EnvironmentModel has changed and calls the onEnvironmentStimulus method if it has

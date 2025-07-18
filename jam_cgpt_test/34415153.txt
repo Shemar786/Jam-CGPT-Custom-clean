@@ -1,0 +1,8 @@
+TDAT: 	public void sendDeleteEvent(Object source, String objectId, String userName, Date dateTime){
+		HashMap<String,ArrayList<String>> data = new HashMap<String, ArrayList<String>>(1);
+		data.put(objectId, this.getListOfDescendants(objectId));
+		ViewEvent ve = new ViewEvent(source,"","",userName,dateTime,ViewEvent.DELETE_EVENT, data);
+		this.newViewEvent(ve);
+	}
+
+COM:sends a delete event with information about the deleted object and its descendants to a ViewEvent object

@@ -1,0 +1,11 @@
+TDAT:     private void setData(int index, String fieldKey, Object value) {
+        AlbumObjectDescriptionInfo info = 
+            getAlbumObjectAtUnfilteredIndex(index).getDescriptionInfo();
+        info.setData(fieldKey, value);
+        
+        if(JigsPrefs.getInt(DesqueConstants.SAVE_STYLE) == 
+           DesqueConstants.SAVEALWAYS) info.saveFile();
+        else changesMade = true;
+    }
+
+COM:sets the data for a given field key and value in an album object, and either saves the changes to a file if the save style is set to always, or sets a flag indicating changes have been made

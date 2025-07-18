@@ -1,0 +1,10 @@
+TDAT: 	public void setSigmaZ( double newSigmaZ) throws IllegalArgumentException, DimensionMismatchException {
+		if (this.dimension == 2)
+			throw new DimensionMismatchException(this.dimension + "D-Punkt hat keine Z-Genauigkeit");
+		if (newSigmaZ>0)
+			this.sigmaZ = newSigmaZ;
+		else
+			throw new IllegalArgumentException("Standardabweichung muss groesser Null sein " + newSigmaZ);
+	}
+
+COM:sets the Z standard deviation to a new value, but throws exceptions if the 2D point doesn't have Z accuracy or the new value is less than or equal to zero

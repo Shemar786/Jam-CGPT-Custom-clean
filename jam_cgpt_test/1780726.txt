@@ -1,0 +1,11 @@
+TDAT:     public String getQueryString() {
+        try {
+            URLEncodedString encoder = new URLEncodedString();
+            getParameterHolder().recordPredefinedParameters( encoder );
+            return encoder.getString();
+        } catch (IOException e) {
+            throw new RuntimeException( "Programming error: " + e );   // should never happen
+        }
+    }
+
+COM:returns a string of encoded URL parameters by invoking the getParameterHolder() method and recording the predefined parameters

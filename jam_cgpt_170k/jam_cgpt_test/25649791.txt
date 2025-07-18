@@ -1,0 +1,12 @@
+TDAT:     private void createReport() {
+        CampaignReportManager.getInstance().startReport(currentCampaign.getName());
+        for (CampaignRun run : currentCampaign.getRuns()) {
+            CampaignResult result = new CampaignResult(run.getTestbed());
+            result.setStatus(Status.NOT_EXECUTED);
+            CampaignReportManager.getInstance().putEntry(result);
+        }
+
+        CampaignReportManager.getInstance().refresh();
+    }
+
+COM:creates a report for a current campaign and adds entries for each run in the campaign with a status of "NOT_EXECUTED"

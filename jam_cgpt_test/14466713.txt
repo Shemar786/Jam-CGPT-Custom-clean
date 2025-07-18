@@ -1,0 +1,10 @@
+TDAT:   public void setWindingRule(int rule) {
+    if (rule != PathIterator.WIND_EVEN_ODD && rule != PathIterator.WIND_NON_ZERO) {
+      throw new IllegalArgumentException("winding rule must be "+
+                                         "WIND_EVEN_ODD or "+
+                                         "WIND_NON_ZERO");
+    }
+    windingRule = rule;
+  }
+
+COM:sets the winding rule for a path, but will throw an exception if the rule is not WIND_EVEN_ODD or WIND_NON_ZERO

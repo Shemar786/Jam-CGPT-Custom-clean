@@ -1,0 +1,15 @@
+TDAT: 	public String toString() {
+		StringBuffer ret =
+			new StringBuffer(
+			"\n Repository name: " + repositoryName +
+			"\n setSpec: " + setSpec +
+			"\n baseURL: " + baseURL +
+			"\n metadataPrefix: " + metadataPrefix +
+			"\n enabled status: " + enabledDisabled +
+			"\n harvestingInterval: " + harvestingInterval +
+			"\n intervalGranularity: " + intervalGranularity
+			);
+		return ret.toString();
+	}
+
+COM:returns the values of various repository attributes in a formatted string

@@ -1,0 +1,10 @@
+TDAT: 	public void testMoveRFRename() throws CoreException {
+		IRodinFile rfSource = createRodinFile("/P/X.test");
+		RodinTestRoot root = (RodinTestRoot) rfSource.getRoot();
+		createNEPositive(root, "foo", null);
+		rfSource.save(null, false);
+
+		movePositive(rfSource, getRodinProject("P2"), null, "Y.test", false);
+	}
+
+COM:creates a Rodin test root, adds a positive element to it, saves it to a file, and then performs a move operation on the file

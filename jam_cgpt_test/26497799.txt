@@ -1,0 +1,8 @@
+TDAT:   protected Object doInclude(java.io.InputStream is, Object ctx) throws java.io.IOException ,Exception {
+    Dom4jProcessor proc = new Dom4jProcessor(_env.getObjectFactory());
+    return proc.process(Utils.replaceVars(ctx == null || !(ctx instanceof TemplateContextIF) ? 
+        _ctx : 
+        (TemplateContextIF)ctx, is, getUri()));
+  }
+
+COM:This is a protected Java method that takes an input stream and an object and returns an object after processing the input stream using Dom4jProcessor and replacing variables in the context with the given object, throwing IOException and Exception if they occur

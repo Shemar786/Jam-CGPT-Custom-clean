@@ -1,0 +1,8 @@
+TDAT:    public void registerJobSDescription(JobDescription jd)
+   {  if(idToJobDescMap.containsKey(jd.getId()))
+         throw new Error(String.format("Two jobs have the same id=%s",jd.getId()));
+   
+      idToJobDescMap.put(jd.getId(), jd);
+   }
+
+COM:registers a job description by checking if it already exists in a map, and if not, it adds it to the map

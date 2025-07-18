@@ -1,0 +1,12 @@
+TDAT:     public void enter() {
+        Display display = context.getDisplay();
+        Displayable displayable = getDisplayable();
+        Command[] commands = getCommands();
+        for(int ii = 0; ii < commands.length; ii++)
+            displayable.addCommand(commands[ii]);
+        displayable.setCommandListener(this);
+        displayable.setTitle(getTitle() );
+        display.setCurrent(displayable );
+    }
+
+COM:sets up a displayable interface with commands and a title and sets it as the current display

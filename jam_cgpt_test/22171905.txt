@@ -1,0 +1,17 @@
+TDAT: 	protected void addJettyServerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveNodeServer_jettyServer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveNodeServer_jettyServer_feature", "_UI_EveNodeServer_type"),
+				 EvesimPackage.Literals.EVE_NODE_SERVER__JETTY_SERVER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for Jetty server to a list of item property descriptors

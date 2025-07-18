@@ -1,0 +1,12 @@
+TDAT:   private int getSpaceWidth() {
+    if (spaceWidth < 0) {
+      getGraphics2D();
+      FontRenderContext frc = getFontRenderContext();
+      GlyphVector gv = font.createGlyphVector(frc, " ");
+      GlyphMetrics metrics = gv.getGlyphMetrics(0);
+      spaceWidth = (int) metrics.getAdvanceX();
+    }
+    return spaceWidth;
+  }
+
+COM:returns the width of a space character in the current font

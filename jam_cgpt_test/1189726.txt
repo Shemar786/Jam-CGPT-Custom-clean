@@ -1,0 +1,13 @@
+TDAT:    private void doRollback() {
+      Iterator<LogRecord> iter = new LogRecordIterator();
+      while (iter.hasNext()) {
+         LogRecord rec = iter.next();
+         if (rec.txNumber() == txnum) {
+            if (rec.op() == START)
+               return;
+            rec.undo(txnum);
+         }
+      }
+   }
+
+COM:performs a rollback by iterating through a log of transactions and undoing any with a matching transaction number

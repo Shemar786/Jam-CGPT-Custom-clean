@@ -1,0 +1,12 @@
+TDAT: 	public void camConfiguration(int x, int y) {
+		widthCam = x;
+		heightCam = y;
+		/*p4vj.show("* Cam Configuration. Cam Width: " + widthCam
+				+ " Cam Height: " + heightCam);*/
+		p.println("* Cam Configuration. Cam Width: " + widthCam + " Cam Height: " + heightCam);
+		
+		wFactor = (float) p4vj.widthVisual / (float) widthCam;
+		hFactor = (float) p4vj.heightVisual / (float) heightCam;
+	}
+
+COM:takes two integer parameters and sets the widthCam and heightCam variables to these values, then calculates the wFactor and hFactor using those values

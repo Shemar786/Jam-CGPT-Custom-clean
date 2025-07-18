@@ -1,0 +1,13 @@
+TDAT:   public boolean containsValue(Object value) {
+    for (Iterator iter = map.keySet().iterator(); iter.hasNext(); ) {
+      Object key = iter.next();
+      Object val = map.get(key);
+      if (val.equals(value)) {
+        touch(key);
+        return true;
+      }//if
+    }//for iter
+    return false;
+  }//containsValue
+
+COM:checks if a specified value is present in the map and returns true if found, otherwise false

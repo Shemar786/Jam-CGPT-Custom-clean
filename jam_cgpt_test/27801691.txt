@@ -1,0 +1,14 @@
+TDAT:   public void globalBoundsChanged(ZNodeEvent e) {
+    if (e.getNode() == srcNode) {
+
+      //System.err.println("Global Bounds Changed Event noticed...");
+	    srcBounds = srcNode.getGlobalBounds();
+
+      updateSourcePoint();
+      //srcPt.setLocation(srcBounds.getX(),srcBounds.getY());
+      //setTranslation(srcPt);
+      repaint();	    
+    }
+  }
+
+COM:updates the source point when the global bounds of the node change and repaints it if the node is the source node

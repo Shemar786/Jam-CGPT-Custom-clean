@@ -1,0 +1,11 @@
+TDAT:     private void loadListData(){
+        formatField.setSelectedItem(formatField.getItemAt(wordList.format));
+        formatField.setSelectedIndex(wordList.format);
+        setField.setText(wordList.set);
+        wordField.setText(wordList.word);
+        transField.setText(wordList.trans);
+        
+        updateList();
+    }
+
+COM:loads and sets the data from a word list object into different text fields and updates the list

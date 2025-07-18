@@ -1,0 +1,15 @@
+TDAT:         private void throwError(String message) throws SAXException {
+
+            // TODO - special exception for this - must also be
+            // a checked exception
+
+            if (this.locator != null) {
+                message = message
+                    + " (line=" + this.locator.getLineNumber()
+                    + ",col=" + this.locator.getColumnNumber() + ")";
+            }
+
+            throw new SAXException(message);
+        }
+
+COM:throws a SAXException with a custom message that includes information about the line and column numbers of the SAX parser

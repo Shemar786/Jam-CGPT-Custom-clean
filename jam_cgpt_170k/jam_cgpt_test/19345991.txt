@@ -1,0 +1,14 @@
+TDAT:     private void writeRow(int rowId) throws IOException {
+        int col;
+
+        writer.write("<tr>");
+
+        for (col = firstColumn; col < tblModel.getColumnCount(); col++) {
+            writeText(correctValue(tblModel.getValueAt(rowId, col)), "td", false);
+        }
+
+        writer.write("</tr>");
+        writer.newLine();
+    }
+
+COM:writes a row of data to a table, retrieving values from a table model and writing them as table data cells

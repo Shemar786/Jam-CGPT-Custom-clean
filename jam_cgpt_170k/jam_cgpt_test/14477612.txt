@@ -1,0 +1,18 @@
+TDAT: 	static public Properties loadFromFile(String fileName) throws PropertiesLoaderException {
+
+		Properties properties = new Properties();
+
+		try {
+			properties.load(new FileInputStream(fileName));
+		}
+		catch (FileNotFoundException e1) {
+		   throw new PropertiesLoaderException("fileName: FileNotFoundException: "+e1);
+		}
+		catch (IOException e2) {
+		   throw new PropertiesLoaderException("fileName: IOException: "+e2);
+		}
+
+		return properties;
+	}
+
+COM:loads properties from a file and returns them in a Properties object, while throwing a custom exception if there are errors encountered

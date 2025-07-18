@@ -1,0 +1,9 @@
+TDAT:     protected Move think() {
+        int localPrune = 999999;
+        BoardAlphaBetaNode startNode = new BoardAlphaBetaNode(1, MAX_DEPTH, board, color);
+        int rating = startNode.getRating(localPrune);
+        System.out.println(rating);
+        return possibleMoves[startNode.getBestIndex()];
+    }
+
+COM:initializes an alpha-beta pruning algorithm to evaluate the best move for a given board configuration and returns the chosen move

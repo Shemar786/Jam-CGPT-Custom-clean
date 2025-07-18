@@ -1,0 +1,13 @@
+TDAT: 	public void addPropertySet(PropertySet set) {
+		if (set != null) {
+			String setName = set.getName();
+			if (setName != null) {
+				if (propertySets == null) propertySets = new Hashtable<String, PropertySet>();
+				propertySets.put(setName.toLowerCase(), set);
+			} else {
+				LOG.debug("Adding property set with no name to connection: " + name);
+			}
+		}
+	}
+
+COM:adds a PropertySet to a Hashtable if it is not null and has a valid name

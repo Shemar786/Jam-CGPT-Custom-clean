@@ -1,0 +1,17 @@
+TDAT: 	protected void addLocCityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveComponent_locCity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveComponent_locCity_feature", "_UI_EveComponent_type"),
+				 EvesimPackage.Literals.EVE_COMPONENT__LOC_CITY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_LocationPropertyCategory"),
+				 null));
+	}
+
+COM:adds a property descriptor for the location city of an Eve component, using the ComposeableAdapterFactory and ItemPropertyDescriptor classes

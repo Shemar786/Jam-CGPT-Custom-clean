@@ -1,0 +1,11 @@
+TDAT:     private JPanel makeMetricsPanel() {
+        JPanel metrics = new JPanel(new BorderLayout(0, 10));
+        metrics.setBorder(BorderFactory.createTitledBorder(BorderFactory
+                .createEtchedBorder(), "Metrics"));
+        metrics.add(makeMetricsView(), BorderLayout.CENTER);
+        Box b = makeDatePeriodPanel();
+        metrics.add(b, BorderLayout.PAGE_END);
+        return metrics;
+    }
+
+COM:creates a JPanel containing metrics and a date period panel

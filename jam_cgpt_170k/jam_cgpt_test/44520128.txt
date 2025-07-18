@@ -1,0 +1,19 @@
+TDAT:   private void updateVisibleEdges(Edge e, List visibleEdges){
+      Iterator f;
+      boolean same = false;
+
+      for (f = visibleEdges.iterator();f.hasNext();){
+	  Edge edge = (Edge)f.next();
+	  if (Edge.sameEdge(e, edge)){
+	      same = true;
+	      e = edge;
+	      break;
+	  }
+      }
+      if (same)
+	  visibleEdges.remove(e);
+      else
+	  visibleEdges.add(e);
+  }
+
+COM:updates a list of visible edges by checking if a given edge is already in the list, and either removing it if it is already there or adding it if it is not

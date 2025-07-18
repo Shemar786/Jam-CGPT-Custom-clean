@@ -1,0 +1,16 @@
+TDAT: 	public void setFont(String fontname, int fontsize, boolean resize){
+		int tw = textWidth;
+		int fs = (int) localFont.getFont().getSize();
+		localFont = GFont.getFont(winApp, fontname, fontsize);
+		if(resize){
+			if(fontsize > fs)
+				height += (fontsize - fs);
+			setText(text);
+			if(textWidth > tw)
+				width += (textWidth - tw);
+		}
+		calcAlignX();
+		calcAlignY();
+	}
+
+COM:sets the font for a text object and optionally resizes the object to fit the new font

@@ -1,0 +1,10 @@
+TDAT:   public boolean insert(String name, RegExp definition) {
+    
+    if (Out.DEBUG) 
+      Out.debug("inserting macro "+name+" with definition :"+Out.NL+definition);
+      
+    used.put(name, new Boolean(false));
+    return macros.put(name,definition) == null;    
+  }
+
+COM:inserts a regular expression macro with a given name and definition into a data structure and returns a boolean value indicating if the insertion was successful

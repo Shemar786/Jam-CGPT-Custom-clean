@@ -1,0 +1,19 @@
+TDAT:   public int getIndex(Node parentNode, Node childNode) {
+
+    wpNodeIterator iterator;
+    Node filterNode = null;
+
+    wpNodeIterator it = new wpNodeIterator(parentNode, filter);
+
+    int index = 0;
+    while (it.hasNext()) {
+      filterNode = (Node) it.next();
+      if (childNode == filterNode) {
+        break;
+      }
+      index++;
+    }
+    return index;
+  }
+
+COM:obtains the index of a child node within a specified parent node

@@ -1,0 +1,27 @@
+TDAT:     public void setShift( boolean value ){
+	shift = value;
+	if( shift )
+	    if( stat ) 
+		setCalculatorPanel( SpecialButtonType.SHIFT_STAT );
+	    else	
+		switch( getBase() ){
+		case DECIMAL:
+		    setCalculatorPanel( SpecialButtonType.SHIFT );
+		    break;
+		default:
+		    setCalculatorPanel( SpecialButtonType.SHIFT_HEX );
+		}
+	else
+	    if( stat )
+		setCalculatorPanel( SpecialButtonType.STAT );
+	    else
+		switch( getBase() ){
+		case DECIMAL:
+		    setCalculatorPanel( SpecialButtonType.NONE );
+		    break;
+		default:
+		    setCalculatorPanel( SpecialButtonType.HEX );
+		}
+    }
+
+COM:sets the shift property to a given boolean value and sets the calculator panel based on the shift and base values

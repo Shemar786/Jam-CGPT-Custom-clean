@@ -1,0 +1,18 @@
+TDAT:   public String createStringField(Object object) throws TextFlowException {
+	  String result ;
+	  assert (object instanceof String);
+	  
+	  result = this.createString(object);
+	  if (length!=null || result.length()< length) {
+		  // DEVO FORMATTARE LA STRINGA
+		  if (Alignment.LEFT.equals(align)) {
+			  result = StringUtils.leftPad(result, length, paddingChar);
+		  } else if (Alignment.RIGHT.equals(align)) {
+			  result = StringUtils.rightPad(result, length, paddingChar);
+		  }
+	  }
+	  
+	  return result;
+  }
+
+COM:creates a string field from an object, with the option to format it based on alignment and length

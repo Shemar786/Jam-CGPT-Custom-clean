@@ -1,0 +1,18 @@
+TDAT:     public void setOpacity(float opacity) {
+        float oldOpacity = this.opacity;
+
+        if (opacity < 0.0f) {
+            opacity = 0.0f;
+        } else if (opacity > 1.0f) {
+            opacity = 1.0f;
+        }
+
+        if (oldOpacity != opacity) {
+            this.opacity = opacity;
+            changeSupport.firePropertyChange(OPACITY_CHANGED_PROPERTY,
+                                             oldOpacity,
+                                             this.opacity);
+        }
+    }
+
+COM:sets the opacity of an object, ensuring that it falls within a valid range and notifying any listeners of the change in opacity

@@ -1,0 +1,9 @@
+TDAT: 	private String quantify(String predicate) {
+		String instName=owner.getName();
+		if(owner.getCardType()!=ClassicBComponent.SINGULAR&predicate.indexOf("this" +instName)!=-1)
+			return "!(this" +instName+").(this" +instName+":" +instName+"=>(" +predicate+"))";
+		else
+			return predicate;
+	}
+
+COM:takes a predicate as input, checks if it contains a reference to the name of the owner object, and returns a modified version of the predicate if so, or the original predicate if not

@@ -1,0 +1,9 @@
+TDAT:   public void internalFrameActivated(InternalFrameEvent e) {
+    parentDesktop.activeModule = module;
+    module.activateModule();
+    ((CAbstractMainForm)parentDesktop.getMainForm()).fireModuleChanged(
+      new CModuleEvent(parentDesktop.getMainForm(), null, module,
+      CModuleEvent.ACTIVATED));
+  }
+
+COM:is used to activate an internal frame and trigger an event in the parent desktop to indicate that the corresponding module has been activated

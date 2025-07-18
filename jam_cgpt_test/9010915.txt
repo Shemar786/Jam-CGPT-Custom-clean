@@ -1,0 +1,15 @@
+TDAT:         public void buildConstructorComments() {
+                if (!configuration.nocomment) {
+        			/** TODO tanyuanji add **/
+        			ConstructorDoc doc = 
+                        (ConstructorDoc) constructors.get(currentMethodIndex);
+        			TanUtil.println("In the ConstructorBuilder: " , doc.commentText());
+        			/** TODO tanyuanji add **/
+        			
+        			
+                        writer.writeComments(
+                                (ConstructorDoc) constructors.get(currentMethodIndex));
+                }
+        }
+
+COM:builds constructor comments and writes them to a document if the "nocomment" flag is not set

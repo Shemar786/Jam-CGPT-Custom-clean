@@ -1,0 +1,14 @@
+TDAT:     public String getImagesDirectory() {
+
+        if (ViewConfiguration.imageDirectoryCache == null) {
+            try {
+                ViewConfiguration.imageDirectoryCache = super.getStringProperty(ViewConfiguration.IMAGES_DIRECTORY_KEY);
+            } catch (final PropertiesException rjcepe) {
+                ViewConfiguration.log.error("A PropertiesException has been caught while attempting to read the images directory", rjcepe);
+            }
+        }
+
+        return ViewConfiguration.imageDirectoryCache;
+    }
+
+COM:returns the images directory and caches it for efficiency

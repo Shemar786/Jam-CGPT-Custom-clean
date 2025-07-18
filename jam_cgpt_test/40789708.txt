@@ -1,0 +1,11 @@
+TDAT:     public void terminate(String reason) throws XMPPException {
+        if (isClosed())
+            return;
+        LOGGER.debug("Terminate " + reason);
+        Jingle jout = new Jingle(JingleActionEnum.SESSION_TERMINATE);
+        jout.setType(IQ.Type.SET);
+        sendPacket(jout);
+        triggerSessionClosed(reason);
+    }
+
+COM:terminates an XMPP session by sending a Jingle packet with a given reason, but throws an exception if the session is already closed

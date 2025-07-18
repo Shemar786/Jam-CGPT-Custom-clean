@@ -1,0 +1,11 @@
+TDAT:     private void updateRDW(int length, byte[] word) {
+    	byte[] bytes = (BigInteger.valueOf(length)).toByteArray();
+
+        word[1] = bytes[bytes.length - 1];
+        word[0] = 0;
+        if (bytes.length > 1) {
+            word[0] = bytes[bytes.length - 2];
+        }
+    }
+
+COM:updates a byte array by setting its first two values based on a given length value

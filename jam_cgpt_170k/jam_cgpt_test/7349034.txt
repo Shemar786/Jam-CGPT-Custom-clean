@@ -1,0 +1,7 @@
+TDAT:     public void addLine(final DiagramNode<O, A> from, final DiagramNode<O, A> to) {
+        this.lines.add(new DiagramLine<O, A>(from, to, this));
+        this.coordinateSystemChecked = false;
+        sendChangeEvent();
+    }
+
+COM:adds a new line between two diagram nodes, updates the coordinate system and triggers a change event

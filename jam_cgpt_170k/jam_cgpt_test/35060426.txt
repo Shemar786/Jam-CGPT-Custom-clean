@@ -1,0 +1,11 @@
+TDAT: 	private void removeAllBridges(Island island, Vec2i loc, MoveList moveList) throws Exception {
+		for( int i=0; i<4; ++i ) {
+			Bridge bridge = island.getBridge(i);
+			if( bridge != null ) {
+				Island other = bridge.getOtherIsland( island );
+				removeBridgeNoCheck( bridge, loc, other.getLoc(), moveList );
+			}
+		}
+	}
+
+COM:removes all bridges connected to a given island and updates the move list accordingly

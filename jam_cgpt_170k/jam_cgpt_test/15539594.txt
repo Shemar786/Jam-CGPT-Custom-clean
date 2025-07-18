@@ -1,0 +1,12 @@
+TDAT:   private void setTerminalGeometry(int width, int height) {
+    if (width < SMALLEST_BELIEVABLE_WIDTH) {
+      width = DEFAULT_WIDTH;
+    }
+    if (height < SMALLEST_BELIEVABLE_HEIGHT) {
+      height = DEFAULT_HEIGHT;
+    }
+    //DEBUG: write("[New Window Size " + window_width + "x" + window_height + "]");
+    m_ConnectionData.setTerminalGeometry(width, height);
+  }//setTerminalGeometry
+
+COM:This private Java method sets the terminal geometry (width and height) of a connection data object, with default values assigned if the input values are too small

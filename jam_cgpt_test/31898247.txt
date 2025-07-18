@@ -1,0 +1,14 @@
+TDAT:   public JTextField getNameField() {
+    /* Returns the nameField property value. */
+    if (fieldNameField == null) {
+      try {
+        fieldNameField = new JTextField();
+      } catch (Throwable exception) {
+        System.err.println("Exception creating nameField property.");
+      }
+    };
+
+    return fieldNameField;
+  }
+
+COM:returns a JTextField object called "nameField" and creates it if it does not already exist

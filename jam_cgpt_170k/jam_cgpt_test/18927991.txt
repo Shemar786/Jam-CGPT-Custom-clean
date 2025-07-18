@@ -1,0 +1,11 @@
+TDAT:   public int dimIdx(Dimension dim) {
+    if (hiers == null || hiers.length == 0)
+      return -1; // quax was not initialized yet
+    for (int i = 0; i < hiers.length; i++) {
+      if (hiers[i].getDimension().equals(dim))
+        return i;
+    }
+    return -1;
+  }
+
+COM:returns the index of a specified Dimension within an array called hiers

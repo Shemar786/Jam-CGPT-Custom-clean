@@ -1,0 +1,9 @@
+TDAT: 	public OreResource getAggregatedResource(URI uri) {
+		OreResource ar  = (OreResource) this.getResource(uri.toString(), AggregatedResourceFactory.getInstance());
+		Object a = java.lang.reflect.Array.newInstance(java.lang.Class.class, 1);
+		Array.set(a, 0, String.class);
+		a.getClass();
+		return ar;
+	}
+
+COM:returns an aggregated resource based on a URI input, but also creates and returns an array object of type Class

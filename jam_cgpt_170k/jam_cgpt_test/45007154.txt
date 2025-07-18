@@ -1,0 +1,18 @@
+TDAT: 	public String typeString() {
+		String result = "";
+		if (canProduce(Unit.MEK))
+			result += "Mek ";
+		if (canProduce(Unit.VEHICLE))
+			result += "Vehicle ";
+		if (canProduce(Unit.INFANTRY))
+			result += "Infantry ";
+		if (this.canProduce(Unit.PROTOMEK))
+			result += "ProtoMek ";
+		if (this.canProduce(Unit.BATTLEARMOR))
+			result += "BattleArmor ";
+        if (this.canProduce(Unit.AERO))
+            result += "Aero ";
+		return result;
+	}
+
+COM:returns a string indicating which types of units can be produced

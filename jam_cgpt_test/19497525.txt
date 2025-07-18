@@ -1,0 +1,13 @@
+TDAT: 	public void testVersion_03_contextSC() throws Exception {
+		IContextRoot root = createContext("ctx");
+		root.setConfiguration(ORG_EVENTB_CORE_FWD, null);
+		saveRodinFileOf(root);
+		
+		runBuilder();
+		
+		ISCContextRoot scRoot = root.getSCContextRoot();
+		
+		assertEquals("attribute missing in SC context", ORG_EVENTB_CORE_FWD, scRoot.getConfiguration());
+	}
+
+COM:tests the creation of a context with a specified configuration and ensures that the configuration attribute is present in the SC version of the context

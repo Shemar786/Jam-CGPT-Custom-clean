@@ -1,0 +1,10 @@
+TDAT:     public void initialize(){
+        for(OutputPin pin: outputPins.values()){
+            pin.setValue(LogicState.FLOATING);
+        }
+        for(InputPin pin: inputPins.values()){
+            if(pin.getConnectedTo() == null) pin.setValue(LogicState.FLOATING);
+        }
+    }
+
+COM:initializes pins to a floating logic state

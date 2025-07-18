@@ -1,0 +1,10 @@
+TDAT: 	private void checkPostList(List posts1, int offset1, List posts2, int offset2, int count) {
+		
+		for (int i = 0; i < count; ++i) {
+			Post post1 = (Post) posts1.get(offset1 + i);
+			Post post2 = (Post) posts2.get(offset2 + i);
+			checkPost(post1, post2);
+		}			
+	}
+
+COM:checks the equality of two sets of posts with the given offsets and count

@@ -1,0 +1,18 @@
+TDAT:    public Document String2DOM(String data) {
+      Document doc = null;
+
+      if (!Util.isNull(data)) {
+         // String parsen
+         try {
+            // String parsen
+            InputSource in = new InputSource(new StringReader(data));
+            doc = builder.parse(in);
+         } catch (Exception e) {
+            logCat.error(e.getMessage() + "\n" + data);
+         }
+      }
+
+      return doc;
+   }
+
+COM:converts a string into a DOM (Document Object Model) object

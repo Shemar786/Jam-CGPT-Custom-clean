@@ -1,0 +1,12 @@
+TDAT:     public SWGResourceSet subsetBy(SWGResourceFilter filter, boolean all) {
+        SWGResourceSet result = new SWGResourceSet(size());
+        for (SWGKnownResource kr : storage) {
+            if (filter.isBetter(kr, all))
+                result.storage.add(kr); // surpass our checkpoints
+        }
+        if (result.storage.isEmpty())
+            return EMPTY;
+        return result;
+    }
+
+COM:returns a subset of SWGResourceSet filtered by a given SWGResourceFilter and a boolean indicating whether all resources should be returned or not

@@ -1,0 +1,14 @@
+TDAT: 	private ArrayList getNodeList(List nodes) {
+		ArrayList ret = new ArrayList();
+		for (int i = 0; i < nodes.size(); i++) {
+			DleseStandardsNode addNode = (DleseStandardsNode) nodes.get(i);
+			List sublist = addNode.getSubList();
+			ret.add(addNode);
+			if (sublist.size() > 0) {
+				ret.addAll(getNodeList(sublist));
+			}
+		}
+		return ret;
+	}
+
+COM:recursively returns all nodes from a list of nodes and their sublists

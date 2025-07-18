@@ -1,0 +1,12 @@
+TDAT: 	protected ResultDocList getMyAnnoResultDocs() throws Exception {
+		if (_myAnnoResultDocs == null) {
+			RecordDataService recordDataService = getRecordDataService();
+			if (recordDataService != null) {
+				// Get annotation for this record only. If I am a multi-doc, these (should) include all annos for all records
+				_myAnnoResultDocs = recordDataService.getDleseAnnoResultDocs(_getIds());
+			}
+		}
+		return _myAnnoResultDocs;
+	}
+
+COM:retrieves annotation result documents for a specific record from a record data service

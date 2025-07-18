@@ -1,0 +1,11 @@
+TDAT: 	private String parseAndCleanup(final String in) throws IOException {
+		String output = parse(in);
+		output = output.replace("<p>", "").replace("</p>", ""); // remove
+		// paragraph
+		// tags
+		output = output.replace("\n", ""); // remove new lines
+		output = output.replace(",", ""); // remove any formatting commas
+		return output;
+	}
+
+COM:takes a string input, parses it, removes paragraph tags, new lines, and formatting commas, and then returns the cleaned up string

@@ -1,0 +1,21 @@
+TDAT:     public ArrayList retrieveTasksToBeExecuted() {
+
+	DRCInterval interval = (DRCInterval) currentTimeILE.getElement();
+	DRCTask task;
+
+	ArrayList taskList = new ArrayList(interval.tasks.size());
+
+	Iterator it = interval.tasks.iterator();
+	while (it.hasNext()) {
+	    task = (DRCTask) it.next();
+	    if (task.executionState 
+		== DiscreteResourceConstraint.IN_EXECUTION) {
+		taskList.add(task.operationVar);
+	    }
+	}
+
+	return taskList;
+
+    }
+
+COM:retrieves a list of tasks that need to be executed within a designated time interval

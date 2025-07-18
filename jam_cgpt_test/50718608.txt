@@ -1,0 +1,24 @@
+TDAT:    private void doExport() {
+
+      if (!pagesValid())
+         return;
+
+      workingThread = null;
+
+      if (cvtType.getSelectedIndex() == 0)
+         workingThread = new Thread(new Runnable () {
+            public void run() {
+               cvtToPDF();
+            }
+         });
+      else
+         workingThread = new Thread(new Runnable () {
+            public void run() {
+               cvtToText();
+            }
+         });
+
+      workingThread.start();
+   }
+
+COM:initiates a thread to either convert a document to PDF or text depending on the selected index and the validity of the pages

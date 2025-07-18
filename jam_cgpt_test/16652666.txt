@@ -1,0 +1,16 @@
+TDAT:   public int getParameterAsInt(String name, int defaultValue) throws RegainException {
+    String asString = getParameter(name);
+    if (asString == null) {
+      return defaultValue;
+    } else {
+      try {
+        return Integer.parseInt(asString);
+      }
+      catch (NumberFormatException exc) {
+        throw new RegainException("Parameter '" + name + "' must be a number: "
+            + asString);
+      }
+    }
+  }
+
+COM:returns an integer value for the given parameter name, and if it's not found or cannot be converted to an integer, it returns a default value or throws a RegainException

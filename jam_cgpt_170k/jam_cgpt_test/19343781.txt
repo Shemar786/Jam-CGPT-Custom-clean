@@ -1,0 +1,10 @@
+TDAT: 	private boolean tableChanged_300_isNotEnd(@SuppressWarnings("rawtypes") AbstractLine l) {
+		Object o = l.getField(l.getPreferredLayoutIdx(), 0);
+		String s = "";
+		if (o != null) {
+			s = o.toString();
+		}
+		return ! (l.getLayout().isXml() && s.startsWith("/"));
+	}
+
+COM:determines whether the table has changed by checking if a specified string value is at the start of a field in a specified layout of the abstract line

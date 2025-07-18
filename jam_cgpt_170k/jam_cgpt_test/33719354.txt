@@ -1,0 +1,13 @@
+TDAT:     public void testSetAddr1() {
+        System.out.println("setAddr1");
+        
+        String a1 = "";
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.setAddr1(a1);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:This is a test method for the setAddr1 function in the SystemClient_DBImpl class that sets a variable to an empty string and calls the function, but intentionally fails as it is a prototype test case

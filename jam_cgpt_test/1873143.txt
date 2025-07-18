@@ -1,0 +1,18 @@
+TDAT:   protected int getLineCount() {
+    if (this.cLines == -1) {
+      try {
+        BufferedReader br = this.getFileData();
+        int i = 0;
+        while (br.readLine() != null) {
+          i++;
+        }
+        this.cLines = i;
+        return i;
+      } catch (Exception e) {
+        return -1;
+      }
+    }
+    return this.cLines;
+  }
+
+COM:returns the number of lines in a file, either by counting the lines or using a cached value if already counted

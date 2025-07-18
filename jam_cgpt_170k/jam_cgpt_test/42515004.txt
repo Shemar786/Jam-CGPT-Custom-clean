@@ -1,0 +1,15 @@
+TDAT:     public String restrictionToString(List<PlayerRestriction> lista){
+        if (lista.isEmpty()) return "";
+
+        StringBuilder sb = new StringBuilder(10);
+
+        for (PlayerRestriction restric : lista){
+            sb.append(restric.generateStringRestriction()).append(',');
+        }
+        //remove last ','
+
+        sb.deleteCharAt(sb.lastIndexOf(","));
+        return sb.toString();
+    }
+
+COM:takes in a list of PlayerRestriction objects and returns a concatenated string of their generateStringRestriction values, with commas separating each value, and removes the last comma before returning

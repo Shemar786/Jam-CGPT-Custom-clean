@@ -1,0 +1,19 @@
+TDAT: 	public void setStatus(int status) {
+		cat.debug("setStatus()");
+
+		if (this.statusSet)
+			return;
+
+		OutputStreamWriter osw = new OutputStreamWriter(this.outputStream);
+		try {
+			osw.write("HTTP/1.1 " + String.valueOf(status) + " OK" + '\n');
+			osw.flush();
+			this.statusSet = true;
+		} catch (IOException e) {
+			cat.error("Error setting status in NanoResponse. IO Error.");
+			return;
+		}
+
+	}
+
+COM:sets the HTTP status and writes it to the output stream

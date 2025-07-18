@@ -1,0 +1,18 @@
+TDAT: 	public String getUid (String dn) {
+		// prtln ("getUid from " + dn);
+		String uidPat = FindAndReplace.replace (dnTemplate, "{0}", "(.*?)", false);
+		// prtln ("uidPat: " + uidPat);
+		
+		Pattern p = Pattern.compile(uidPat);
+		Matcher m = p.matcher(dn);
+		if (m.find()) {
+			// prtln (" ... found it");
+			return m.group(1);
+		}
+		else {
+			// prtln (" ... didn't find it");
+			return null;
+		}
+	}
+
+COM:takes a string representing a distinguished name and returns the first occurrence of a username (UID) pattern found in the string

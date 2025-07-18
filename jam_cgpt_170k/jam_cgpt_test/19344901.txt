@@ -1,0 +1,7 @@
+TDAT:     	public void focusLost(FocusEvent e) {
+    	    //System.out.println("@@@ " + currentRow + " " + typeFld.getText());
+            pgmParams.setProperty(model.getCellName(currentRow, col), fld.getText());
+            model.fireTableRowsUpdated(currentRow, currentRow);
+    	}
+
+COM:updates a table model with the contents of a text field when the field loses focus

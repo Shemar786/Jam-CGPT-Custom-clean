@@ -1,0 +1,16 @@
+TDAT: 	public void setDouble(int parameterIndex, double x) throws SQLException {
+
+		if (!this.connection.getAllowNanAndInf()
+				&& (x == Double.POSITIVE_INFINITY
+						|| x == Double.NEGATIVE_INFINITY || Double.isNaN(x))) {
+			throw new SQLException("'" + x
+					+ "' is not a valid numeric or approximate numeric value",
+					SQLError.SQL_STATE_ILLEGAL_ARGUMENT);
+
+		}
+
+		setInternal(parameterIndex, StringUtils.fixDecimalExponent(String
+				.valueOf(x)));
+	}
+
+COM:sets a double type value to a specific parameter in a SQL statement, while also validating that the value is a valid numeric value and not NaN or infinity (unless allowed), and catching any potential SQL exceptions

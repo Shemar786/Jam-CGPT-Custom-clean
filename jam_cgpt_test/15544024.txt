@@ -1,0 +1,14 @@
+TDAT: 	public void Evaporation( ) {
+	    int    i, j;
+	    int NumCities = Problem.NumCities;
+//	    TRACE ( printf("pheromone evaporation\n"); );
+
+	    for ( i = 0 ; i < NumCities ; i++ ) {
+	    	for ( j = 0 ; j <= i ; j++ ) {
+	    		Pheromone[i][j] = (1 - Acotsp.RHO) * Pheromone[i][j];
+	    		Pheromone[j][i] = Pheromone[i][j];
+	    	}
+	    }
+	}
+
+COM:performs pheromone evaporation on a given problem by reducing the pheromone levels on all edges in the graph

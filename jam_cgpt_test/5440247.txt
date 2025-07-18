@@ -1,0 +1,14 @@
+TDAT:     public void write(int c) throws IOException {
+        dataWasWritten = true;
+        if (buffer == null) {
+            if (!headersWritten) writeHeaders();
+            outputStream.write(c);
+            bytesWritten++;
+        } else {
+            if (bufferPos >= buffer.length) flushBuffer();
+            buffer[bufferPos] = (byte)c;
+            bufferPos++;
+        }
+    }
+
+COM:writes a character to an output stream and manages a buffer for more efficient writing

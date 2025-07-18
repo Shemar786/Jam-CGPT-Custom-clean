@@ -1,0 +1,12 @@
+TDAT: 	private JComboBox getJComboBoxPreProcessing() {
+		if (jComboBoxPreProcessing == null) {
+			jComboBoxPreProcessing = new JComboBox();
+			jComboBoxPreProcessing.setBounds(new Rectangle(263, 166, 159, 25));
+			for (Instances base : preprocessing) {
+				jComboBoxPreProcessing.addItem(base.relationName());
+			}
+		}
+		return jComboBoxPreProcessing;
+	}
+
+COM:returns a JComboBox with options based on a list of Instances, creating a new instance if one does not already exist

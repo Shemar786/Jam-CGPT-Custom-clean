@@ -1,0 +1,12 @@
+TDAT:     public File showSaveDialog(Window parent) {
+        if (multipleSelection) {
+            throw new IllegalStateException("Save dialog cannot be shown in multiple selection state");
+        }
+        File[] files = showFileChooser(parent, translate().i18n("Save File"), translate().i18n("&Save"));
+        if (files == null || files.length == 0) {
+            return null;
+        }
+        return files[0];
+    }
+
+COM:displays a save dialog window and returns the selected file

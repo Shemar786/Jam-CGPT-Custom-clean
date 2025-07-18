@@ -1,0 +1,17 @@
+TDAT:     public void focusGained(boolean gained) {
+        if (gained) {
+            if (menuItems == null) {
+                menuItems = new ArrayList<JComponent>();
+
+                menuItems.add(new JPopupMenu.Separator());
+
+                JMenuItem copy = macrosCopyMenuItem();
+                menuItems.add(copy);
+            }
+            frame.editMenuAdd(menuItems);
+        } else {
+            frame.editMenuRemove(menuItems);
+        }
+    }
+
+COM:adds or removes JComponents from a menu depending on whether focus has been gained or lost

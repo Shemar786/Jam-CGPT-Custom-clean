@@ -1,0 +1,16 @@
+TDAT:     public void beginElement(String tag, String attributes) {
+
+        if (out == null)
+            return;
+
+        indent();
+        if (attributes.length() == 0) {
+            out.println("<" + tag + ">");
+
+        } else {
+            out.println("<" + tag + " " + attributes + ">");
+        }
+        tags.push(tag);
+    }
+
+COM:prints the opening tag of an element with optional attributes and adds the tag to a stack

@@ -1,0 +1,11 @@
+TDAT:         public Object get( String propertyName ) {
+            if (propertyName.equalsIgnoreCase( "name" )) {
+                return FormControl.this.getName();
+            } else if (propertyName.equalsIgnoreCase( "type" )) {
+                return FormControl.this.getType();
+            } else {
+                return super.get( propertyName );
+            }
+        }
+
+COM:retrieves the value of a specified property, and returns the value of the "name" or "type" property for the FormControl object or the superclass method for all other property names

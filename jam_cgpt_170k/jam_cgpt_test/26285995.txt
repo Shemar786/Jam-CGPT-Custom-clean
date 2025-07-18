@@ -1,0 +1,10 @@
+TDAT:     private void findPopups(Element root) {
+        popupElements = new HashMap();
+        Iterator menuElements = root.getChildren("Menu").iterator();
+        while(menuElements.hasNext()) {
+            Element entry = (Element) menuElements.next();
+            popupElements.put(entry.getAttributeValue("name", ""), entry);
+        }
+    }
+
+COM:finds and stores menu popups in a HashMap

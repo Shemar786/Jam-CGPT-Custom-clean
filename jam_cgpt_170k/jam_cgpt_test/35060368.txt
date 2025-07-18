@@ -1,0 +1,16 @@
+TDAT: 	private void addIsland( Vec2i loc, int value, MoveList moveList ) throws Exception {
+		
+		Island island = new Island( loc, value );
+		try {
+			removeIsland( loc, moveList );
+		}
+		catch( Exception exception ) {}
+
+		assert !usageMap[loc.x][loc.y];
+		
+		islands.put( loc, island );
+		usageMap[loc.x][loc.y] = true;
+		moveList.addMove( new MoveAddIsland(loc,value) );
+	}
+
+COM:adds an island with a given location and value to a map, removes any existing island at the location, updates usage information of the map, and adds the move to a MoveList object

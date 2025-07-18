@@ -1,0 +1,16 @@
+TDAT: 	public boolean contains(String userId) {
+		long now = System.currentTimeMillis();
+		synchronized (_users) {
+			for (Iterator<UserRecord> i = _users.iterator(); i.hasNext(); ) {
+				UserRecord u = i.next();
+				if (now > u.whenAdded + _seconds * 1000) {
+					i.remove();
+				} else if (u.userId.equalsIgnoreCase(userId)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+COM:checks if a list of user records contains a specific user ID, removing any user records which have been in the list for longer than a specified number of seconds

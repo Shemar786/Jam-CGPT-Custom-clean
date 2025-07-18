@@ -1,0 +1,13 @@
+TDAT:     public boolean isValid(){
+        
+        boolean validPingedWorkId = true;
+        try {
+            Integer.parseInt(pingedWorkId);
+        } catch (NumberFormatException e) {
+            validPingedWorkId = false;
+            this.setInvalidMessage("Pinged resource invalid (Work ID NaN)");
+        } 
+        return (super.isValid() && validPingedWorkId);
+    }
+
+COM:checks if a pinged work ID is valid by attempting to parse it into an integer and returns whether it, along with the super class being valid, is true or false

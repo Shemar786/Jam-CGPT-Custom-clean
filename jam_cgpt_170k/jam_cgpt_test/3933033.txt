@@ -1,0 +1,12 @@
+TDAT: 	public void validateXml() throws SAXParseException, IOException {
+		try {
+			InputSource source = new InputSource(new StringReader(editor.getText(0, editor.getDocument().getLength())));
+			source.setSystemId(document.getDocumentURI());
+
+			DocumentUtilities.readDocument(source, isValidate());
+		} catch (BadLocationException e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:validates an XML document using SAXParseException and InputOutput exceptions

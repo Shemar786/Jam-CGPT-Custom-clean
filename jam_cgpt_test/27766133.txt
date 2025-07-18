@@ -1,0 +1,16 @@
+TDAT:     public void testIterator () {
+        MP3Playlist  playlist = null;
+        Iterator foo = null;
+        try {
+            playlist = new MP3Playlist ( m_testfile );
+            foo = playlist.iterator();
+        } catch(Exception e) {
+            fail (e.getMessage ());
+        }
+        
+        if ( !(foo instanceof java.util.Iterator) ) {
+            fail("iterator() did not return an Iterator!!!");
+        }
+    }
+
+COM:tests if the MP3Playlist object's iterator method returns an instance of the Iterator interface

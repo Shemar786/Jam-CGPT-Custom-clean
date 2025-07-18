@@ -1,0 +1,14 @@
+TDAT:   public InputStream resolveResource(String resName) {
+    InputStream resource = null;
+    if(_resourceBase != null)
+      resource = _resourceBase.getResourceAsStream(resName);
+    else if(_parent != null)
+      resource = _parent.resolveResource(resName);
+    if(resource == null)
+      return Thread.currentThread().getContextClassLoader()
+          .getResourceAsStream(resName);
+
+    return resource;
+  }
+
+COM:resolves and returns an InputStream for a given resource name, searching for it first in a specific resource base, then in a parent resource, and finally in the current thread's context class loader

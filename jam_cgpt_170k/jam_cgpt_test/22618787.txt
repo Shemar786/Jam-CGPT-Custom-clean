@@ -1,0 +1,19 @@
+TDAT: 	protected Element getLabelActionTableFoo(Element label, Element action) {
+		Element table = df.createElement("table")
+				.addAttribute("cellspacing", "1")
+				.addAttribute("cellpadding", "3");
+		Element row = table.addElement("tr")
+				.addAttribute("class", "form-row");
+		Element labelCell = row.addElement("td")
+				.addAttribute("class", "label-box")
+				.addAttribute("nowrap", "1");
+		attachToolHelp(labelCell, xpath);
+		labelCell.add(label);
+
+		Element actionCell = row.addElement("td")
+				.addAttribute("class", "action-box");
+		actionCell.add(action);
+		return table;
+	}
+
+COM:creates a table element with a row containing label and action cells, along with specified attributes

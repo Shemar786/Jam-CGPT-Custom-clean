@@ -1,0 +1,12 @@
+TDAT: 	private void restoreExpansionState() {
+		IDialogSettings settings = PDEPlugin.getDefault().getDialogSettings().getSection(SETTINGS);
+		if (settings != null) {
+			for (int i = 0; i < fExpComps.size(); i++) {
+				((ExpandableComposite) fExpComps.get(i)).setExpanded(settings.getBoolean(Integer.toString(i)));
+			}
+		} else {
+			((ExpandableComposite) fExpComps.get(0)).setExpanded(true);
+		}
+	}
+
+COM:restores the expansion state of ExpandableComposite widgets based on stored settings, or sets the first widget to be expanded if no settings are found

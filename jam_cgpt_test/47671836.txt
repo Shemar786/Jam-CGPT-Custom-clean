@@ -1,0 +1,17 @@
+TDAT: 	protected void addOppositeTargetPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_oppositeTarget_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_oppositeTarget_feature", "_UI_Feature_type"),
+				 FeatureDiagramPackage.Literals.FEATURE__OPPOSITE_TARGET,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the opposite target feature of a feature diagram

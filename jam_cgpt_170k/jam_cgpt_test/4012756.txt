@@ -1,0 +1,12 @@
+TDAT: 	public void incrementPlayerHandicap(String userId, String leagueId, Integer incrementValue) {
+		try {
+			BLMSPlayer player = getUserLeague(userId, leagueId);
+			Integer newValue = player.getCurrentHandicap()+ incrementValue;
+			newValue = newValue < 0 ? 0 : newValue;
+			player.setCurrentHandicap(newValue);
+			ServiceLocator.singleton().getService().update(player);
+		} catch (InvalidPlayerException e) {
+		}
+	}
+
+COM:increments a player's current handicap in a specified league by a given value, updates it in the database, and handles an exception if the player is invalid

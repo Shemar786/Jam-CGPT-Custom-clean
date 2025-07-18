@@ -1,0 +1,17 @@
+TDAT: 	public void testDeltaContext() throws Exception {
+		final IContextRoot root = createContext("ctx");
+		final ISCContextRoot sc = root.getSCContextRoot();
+		final IPORoot po = root.getPORoot();
+		
+		addCarrierSets(root, makeSList("S1"));
+		saveRodinFileOf(root);
+
+		runBuilder();
+
+		root.getCarrierSets()[0].setComment("foo", null);
+		saveRodinFileOf(root);
+
+		runBuilderNotChanged(sc, po);
+	}
+
+COM:tests the delta context functionality by adding a carrier set and then modifying its comment

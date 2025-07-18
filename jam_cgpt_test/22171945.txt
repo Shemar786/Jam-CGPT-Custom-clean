@@ -1,0 +1,17 @@
+TDAT: 	protected void addBetweenessPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveAgent_betweeness_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveAgent_betweeness_feature", "_UI_EveAgent_type"),
+				 EvesimPackage.Literals.EVE_AGENT__BETWEENESS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the betweeness feature of an EveAgent object to a list of item property descriptors

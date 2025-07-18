@@ -1,0 +1,11 @@
+TDAT:     private void createButtons() {
+        eventHandler = new SelectOrderEventHandler(this);
+        buttonSendedOrder = new Button(Constante.BUTTON_SENDED);
+        buttonSendedOrder.addActionListener(eventHandler);
+        buttonNewOrder = new Button(Constante.BUTTON_NEW);
+        buttonNewOrder.addActionListener(eventHandler);
+        buttonCancel = new Button(Constante.BUTTON_CANCEL);
+        buttonCancel.addActionListener(eventHandler);
+    }
+
+COM:creates three buttons and attaches an event handler to them

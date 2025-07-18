@@ -1,0 +1,15 @@
+TDAT:   public boolean contains(DomainName other) {
+    if (_segments.size() >= other.size()) {
+      for (int i = 0; i < other.size(); i++) {
+        if (!other.get(i).equals(get(i))) {
+          return false;
+        }
+      }
+
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+COM:checks if a given domain name is contained within this domain name object by comparing their segments

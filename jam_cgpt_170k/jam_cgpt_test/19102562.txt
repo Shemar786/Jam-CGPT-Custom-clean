@@ -1,0 +1,18 @@
+TDAT: 	protected String rawReadLine() throws IOException {
+		String string = reader.readLine();
+		// at end of file, string == null
+		// skip comment lines and empty lines
+		while (string != null
+				&& (string.equals("") || string.matches("[#;].*"))) {
+			string = reader.readLine();
+		}
+		if (string == null)
+			throw new EOFException("end of file reached");
+		if (string.equals("%"))
+			return null;
+		if (string.equals(" %"))
+			return "";
+		return string;
+	}
+
+COM:reads a non-empty and non-comment line from input, skipping any comment or empty lines, and returns the string or null/empty string if indicated, throwing an end of file exception if there are no more lines to read

@@ -1,0 +1,10 @@
+TDAT:    public void addSignature(BitSet bit) {
+      for (int i = 0; i < grid.getBitStringLength(); i++) {
+         this.signatures.set(grid.getBitStringLength() * numberOfPoints + i, bit
+               .get(i));
+      }
+
+      numberOfPoints++;
+   } // addSignature
+
+COM:adds a signature to a BitSet and updates the number of points

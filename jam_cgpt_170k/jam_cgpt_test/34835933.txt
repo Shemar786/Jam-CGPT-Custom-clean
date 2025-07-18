@@ -1,0 +1,10 @@
+TDAT:     public void endTable() {
+        try{
+            fop.write(("</rowset>\r\n").getBytes());
+            fop.write(( "</dbtable>\r\n").getBytes());
+        } catch(IOException e) {
+            throw new RuntimeException("IOException has occured at endTable!!!!", e);
+        }
+    }
+
+COM:ends a SQL table by writing the closing tags to a file output stream, with error handling

@@ -1,0 +1,10 @@
+TDAT:     public Command getScreenCommand() {
+        if (screenCommand == null) {//GEN-END:|129-getter|0|129-preInit
+            // write pre-init user code here
+            screenCommand = new Command("Screen", Command.SCREEN, 0);//GEN-LINE:|129-getter|1|129-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|129-getter|2|
+        return screenCommand;
+    }
+
+COM:returns a Command object, and initializes it if it has not already been initialized

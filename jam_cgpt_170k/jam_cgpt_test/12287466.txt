@@ -1,0 +1,16 @@
+TDAT:     public void saveProperties() {
+        setModified();
+        int index = 0;
+        for (FileObject f : files) {
+            try {
+                EditorUtils.writeOrderedProperties(props.get(index), File.separator+f.getPath());
+                f.refresh();
+                index++;
+            } catch (IOException ex) {
+                Exceptions.printStackTrace(ex);
+            }
+        }
+        isModified=false;
+    }
+
+COM:saves properties to files in a specific order, refreshes the file objects, and sets a modified flag to false upon completion

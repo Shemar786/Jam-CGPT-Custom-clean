@@ -1,0 +1,21 @@
+TDAT: 	private JButton getOkButton() {
+		if (okButton == null) {
+			okButton = new JButton();
+			okButton.setText("Ok");
+			okButton.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					if (getTableName().length() == 0) {
+						JOptionPane.showMessageDialog(AddEntryDialog.this,
+								"Pleas input a Table Name", "Error",
+								JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+					okPressed = true;
+					setVisible(false);
+				}
+			});
+		}
+		return okButton;
+	}
+
+COM:creates and returns a JButton object with the text "Ok", sets an action listener that checks for a table name input and sets a boolean value to true before hiding the dialog window

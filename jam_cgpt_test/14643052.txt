@@ -1,0 +1,10 @@
+TDAT:     public void testSetInterfaceAddress() throws Exception {
+        this.peerService1.setTcpIntfAddr("192.168.200.55");
+        this.peerService1.setTcpIntfAddr("127.0.0.23");
+
+        this.peerService1.setTcpServerEnable(true);
+        this.peerService1.setRendezvous(true);
+        this.peerService1.startup();
+    }
+
+COM:sets interface addresses and starts up a peer service

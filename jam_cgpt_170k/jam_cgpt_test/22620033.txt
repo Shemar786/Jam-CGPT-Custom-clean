@@ -1,0 +1,14 @@
+TDAT: 	public void harvestNow(Long shUid, boolean harvestAll, boolean harvestAllIfNoDeletedRecord) {
+		Hashtable shs = getScheduledHarvests();
+		ScheduledHarvest sh = (ScheduledHarvest) shs.get(shUid);
+		if (harvestAll == true) {
+			sh.setHarvestAll(true);
+		}
+		else {
+			sh.setHarvestAll(false);
+		}
+
+		new HarvestThread(shUid, harvestAll, harvestAllIfNoDeletedRecord, true).start();
+	}
+
+COM:initiates a harvest of data based on specified parameters, including whether to retrieve all data or only data that has not been deleted

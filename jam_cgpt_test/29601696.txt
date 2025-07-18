@@ -1,0 +1,11 @@
+TDAT:     public Command getCancelCommandDicLoader() {
+        if (cancelCommandDicLoader == null) {//GEN-END:|121-getter|0|121-preInit
+            // write pre-init user code here
+            cancelCommandDicLoader = new Command("Cancel", Command.CANCEL, 0);//GEN-LINE:|121-getter|1|121-postInit
+        
+            // write post-init user code here
+        }//GEN-BEGIN:|121-getter|2|
+        return cancelCommandDicLoader;
+    }
+
+COM:returns a command object for canceling a process, and generates pre-init and post-init user code

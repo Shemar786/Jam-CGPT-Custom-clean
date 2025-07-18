@@ -1,0 +1,18 @@
+TDAT:     public NodeImpl removeChild(Node oldChild) throws DOMException {
+
+        super.removeChild(oldChild);
+
+        // If remove succeeded, un-cache the kid appropriately
+        int type = oldChild.getNodeType();
+        if(type == Node.ELEMENT_NODE) {
+            docElement = null;
+        }
+        else if (type == Node.DOCUMENT_TYPE_NODE) {
+            docType = null;
+        }
+
+        return (NodeImpl)oldChild;
+
+    }   // removeChild(Node):Node
+
+COM:removes a child node from a parent node and updates the document's cache accordingly

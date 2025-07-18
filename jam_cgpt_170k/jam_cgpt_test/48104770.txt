@@ -1,0 +1,14 @@
+TDAT:     public Traits clone(Taxa taxa) {
+        Traits traits = new Traits();
+        try {
+            StringWriter sw = new StringWriter();
+            this.write(sw, taxa);
+            StringReader sr = new StringReader(sw.toString());
+            traits.read(new NexusStreamParser(sr), taxa);
+        } catch (Exception ex) {
+            Basic.caught(ex);
+        }
+        return traits;
+    }
+
+COM:clones a Traits object and reads its data using a NexusStreamParser and a given Taxa object

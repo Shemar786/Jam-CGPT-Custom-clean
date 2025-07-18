@@ -1,0 +1,29 @@
+TDAT:   public ExternalRecord fullClone() {
+
+      ExternalRecord ret;
+
+      try {
+          ret = (ExternalRecord) super.clone();
+      } catch (Exception e) {
+          ret = new ExternalRecord(
+                  recordId
+                  , recordName
+                  , description
+                  , recordType
+                  , system
+                  , listChar
+                  , copyBook
+                  , delimiter
+                  , quote
+                  , posRecInd
+                  , recSepList
+                  , recordSep
+                  , fontName
+                  , recordStyle
+                  , fileStructure
+          );
+      }
+      return ret;
+  }
+
+COM:returns a full clone of an ExternalRecord object, either by using the built-in super.clone() method, or by creating a new instance with the same values as the original object

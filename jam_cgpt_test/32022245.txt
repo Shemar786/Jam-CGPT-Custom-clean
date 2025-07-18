@@ -1,0 +1,8 @@
+TDAT:     private void createTrTagWithBgColor(StringBuffer sb) {
+        if (MathUtil.isEven(rowNumber++))
+            sb.append("<tr style=\"background-color:").append(evenRowBgColor).append("\">");
+        else
+            sb.append("<tr style=\"background-color:").append(oddRowBgColor).append("\">");
+    }
+
+COM:creates a <tr> tag with a background color based on whether the current row number is even or odd

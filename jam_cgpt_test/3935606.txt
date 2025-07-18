@@ -1,0 +1,23 @@
+TDAT: 	public void linkActivated(LinkActivationEvent e) {
+		String s = e.getReferencedURI();
+		if (svgDocument != null) {
+			ParsedURL docURL = new ParsedURL(svgDocument.getURL());
+			ParsedURL url = new ParsedURL(docURL, s);
+			if (!url.sameFile(docURL)) {
+				return;
+			}
+
+			if (s.indexOf("#") != -1) {
+				localHistory.update(s);
+				// application.addVisitedURI(s);
+				backAction.update();
+				forwardAction.update();
+
+				transformHistory = new TransformHistory();
+				previousTransformAction.update();
+				nextTransformAction.update();
+			}
+		}
+	}
+
+COM:processes a link activation event by extracting the referenced URI, checking if it is within the same file as the SVG document, updating the local history and transform history if the URI contains an anchor identifier, and updating the back and forward navigation actions

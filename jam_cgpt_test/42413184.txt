@@ -1,0 +1,11 @@
+TDAT:     private void managePackageName(String juiFile, List<String> juicCommand) {
+        if (derivePackageName != null && derivePackageName.booleanValue()) {
+            String pkgName = getPackageForJuiFile(juiFile);
+            if (pkgName.trim().length() > 0) {
+                juicCommand.add("-p");
+                juicCommand.add(pkgName);
+            }
+        }
+    }
+
+COM:manages the package name for a given juiFile and adds it to a list of juicCommand

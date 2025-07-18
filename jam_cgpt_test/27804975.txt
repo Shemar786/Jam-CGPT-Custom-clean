@@ -1,0 +1,11 @@
+TDAT:   protected void initializeLocations() {
+    for (Iterator iter = graphView.getNodeViewsIterator(); iter.hasNext();) {
+      NodeView v = ( NodeView ) iter.next();
+      
+      if ( !staticNodes.contains( v ) )
+        initializeLocation( v, currentSize);
+      initialize_local_node_view(v);
+    }
+  }
+
+COM:initializes the locations of the node views and updates their positions based on their sizes

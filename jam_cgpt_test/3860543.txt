@@ -1,0 +1,8 @@
+TDAT:     public void testUserWithEmptyUsername() {
+        Pam pam = new Pam();
+        PamReturnValue pamReturnValue = pam.authenticate(user1Name, "");
+        assertTrue(pamReturnValue.equals(PamReturnValue.PAM_PERM_DENIED)
+                || pamReturnValue.equals(PamReturnValue.PAM_AUTH_ERR));
+    }
+
+COM:tests user authentication with an empty username using the Pam library

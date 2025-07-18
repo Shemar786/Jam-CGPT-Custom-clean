@@ -1,0 +1,17 @@
+TDAT: 	protected void addDecisionElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssociationTaskUseDesicionElement_decisionElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationTaskUseDesicionElement_decisionElement_feature", "_UI_AssociationTaskUseDesicionElement_type"),
+				 ProcessPackagePackage.Literals.ASSOCIATION_TASK_USE_DESICION_ELEMENT__DECISION_ELEMENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for an attribute of a class called "AssociationTaskUseDesicionElement"

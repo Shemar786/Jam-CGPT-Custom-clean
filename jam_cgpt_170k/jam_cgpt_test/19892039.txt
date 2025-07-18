@@ -1,0 +1,15 @@
+TDAT:     public void setPolicyUrl(String policyUrl) throws MessageException {
+        try
+        {
+            new URL(policyUrl);
+        } catch (MalformedURLException e)
+        {
+            throw new MessageException("Invalid policy_url: " + policyUrl);
+        }
+
+        if (DEBUG) _log.debug("Setting SReg request policy_url: " + policyUrl);
+
+        _parameters.set(new Parameter("policy_url", policyUrl));
+    }
+
+COM:sets the policy URL for a SReg request and throws a MessageException if the provided URL is invalid

@@ -1,0 +1,13 @@
+TDAT:     public Measure getMeasureValue(String name) {
+        Field field = getField(name);
+        if (field == null)
+            return null;
+        else if (field.getType() != null && field.getType().equalsIgnoreCase("Measure"))
+                return (Measure)field.getValueObject();
+        else {
+            logWrongTypeWarningMessage(field.getName(), "Measure");
+            return null;
+        }
+    }
+
+COM:retrieves the value of a measure field specified by its name and checks if it is of type "Measure"

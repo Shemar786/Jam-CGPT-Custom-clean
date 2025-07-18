@@ -1,0 +1,10 @@
+TDAT: public Point getSelection () {
+	checkWidget ();
+	if ((style & SWT.DROP_DOWN) != 0 && (style & SWT.READ_ONLY) != 0) {
+		return new Point (0, getText().length());
+	}
+  CCombo cCombo = (CCombo)handle;
+	return new Point (cCombo.getEditorSelectionStart(), cCombo.getEditorSelectionEnd());
+}
+
+COM:returns a Point object representing the start and end indices of the current selection in a CCombo widget

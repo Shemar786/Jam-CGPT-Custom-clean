@@ -1,0 +1,20 @@
+TDAT: 	private void handleTaskObjectRemove(TocObject object) {
+		// Remove the item
+		fTocTree.remove(object);
+
+		// Select the appropriate object
+		TocObject tocObject = fRemoveObjectAction.getNextSelection();
+		if (tocObject == null) {
+			tocObject = object.getParent();
+		}
+
+		if (tocObject.equals(object.getParent())) {
+			fTocTree.refresh(object.getParent());
+		}
+
+		if (!fDragFromHere) {
+			fTocTree.setSelection(new StructuredSelection(tocObject), true);
+		}
+	}
+
+COM:handles the removal of a TOC object, updates the TOC tree and selects the appropriate object

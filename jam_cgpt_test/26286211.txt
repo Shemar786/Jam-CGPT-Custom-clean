@@ -1,0 +1,9 @@
+TDAT:     private void widgetClickedSlot(int x, int y) {
+        if(header == null) return;
+        if(getCollapsed())
+            setCollapsed(!getCollapsed());
+        else if(y <= getBorder().getBorderInsets(this).top)
+            setCollapsed(!getCollapsed());
+    }
+
+COM:handles the click event for a widget and toggles its collapsed state

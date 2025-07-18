@@ -1,0 +1,13 @@
+TDAT:     @Test public void testUndo() {
+    	aMove = createMove(getEmptyCell());
+    	MovingGuest mover = aMove.getMovingGuest();
+    	Cell location1 = mover.getLocation();
+    	aMove.apply();
+    	Cell location2 = mover.getLocation();
+    	assertNotSame(location1, location2);
+    	aMove.undo();
+    	Cell location3 = mover.getLocation();
+    	assertEquals(location1, location3);
+    }
+
+COM:tests the undo functionality of a move and checks if the location of the moving guest is restored to its original value after undoing the move

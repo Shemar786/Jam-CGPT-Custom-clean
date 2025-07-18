@@ -1,0 +1,10 @@
+TDAT:     public void service(Mail mail) throws javax.mail.MessagingException {
+        StringBuffer logBuffer = new StringBuffer(160).append("Storing mail ").append(mail.getName()).append(" in ").append(repositoryPath);
+        log(logBuffer.toString());
+        repository.store(mail);
+        if (!passThrough) {
+            mail.setState(Mail.GHOST);
+        }
+    }
+
+COM:stores a mail object in a repository and sets the mail's state to "ghost" if passThrough is false

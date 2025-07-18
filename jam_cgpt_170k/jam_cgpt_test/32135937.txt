@@ -1,0 +1,17 @@
+TDAT: 	public int getMaxScore(Node current, int depth, int alpha, int beta){
+		//found a terminal node go no further
+		if(current.getNextNodeSize() == 0 || depth <= 0)
+			return current.getScore();
+		
+		//loop for the largest score
+		for(Node child: current.getListOfNextNodes()){
+			alpha = Math.max(alpha, getMinScore(child, depth-1, alpha, beta));
+			if(alpha >= beta){
+				return alpha;
+			}			
+		}
+		
+		return alpha;
+	}	
+
+COM:returns the maximum score of the child nodes given a current node and a depth, using alpha beta pruning to optimize the search

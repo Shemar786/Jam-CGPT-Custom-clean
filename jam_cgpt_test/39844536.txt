@@ -1,0 +1,12 @@
+TDAT:     protected String action(FacesContext context, UIComponent component) {
+
+        String treeId = context.getTree().getTreeId();
+        StringBuffer sb = new StringBuffer
+            (context.getExternalContext().getRequestContextPath());
+        sb.append("/faces");
+        sb.append(treeId);
+        return (context.getExternalContext().encodeURL(sb.toString()));
+
+    }
+
+COM:takes in a FacesContext and UIComponent as parameters and returns a URL string with a specific tree ID appended to it

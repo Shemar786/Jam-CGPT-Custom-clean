@@ -1,0 +1,18 @@
+TDAT: 	private Figure buildGraph(CompoundDirectedGraph graph) {
+		scaledPane_ = new ScalableLayeredPane();
+		ToolbarLayout layout=new ToolbarLayout(true);
+		scaledPane_.setLayoutManager(layout);
+		scaledPane_.setScale(this.currentScale_);
+		contents = new Panel();
+		contents.setFont(NFONT);
+		contents.setBackgroundColor(ColorConstants.white);
+		contents.setLayoutManager(new XYLayout());
+		Hashtable<ISCState,Figure> nodefigs = new Hashtable<ISCState,Figure>();
+		contents = buildStateChartGraph(graph, contents, nodefigs);
+		if (contents == null) return null;
+		scaledPane_.add(contents);
+		return scaledPane_;
+//		return contents;
+	}
+
+COM:builds a graph using a compound directed graph and returns a scalable layered pane containing the graph

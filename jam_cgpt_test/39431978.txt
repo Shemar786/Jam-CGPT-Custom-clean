@@ -1,0 +1,12 @@
+TDAT:     public int read() throws IOException {
+        int c = in.read();
+        if (c >= 0) callback.setProgress(++nread);
+        if (callback.getWork().isCanceled()) {
+            InterruptedIOException exc = new InterruptedIOException("progress");
+            exc.bytesTransferred = nread;
+            throw exc;
+        }
+        return c;
+    }
+
+COM:reads a single byte from an input stream, updates progress using a callback function, and throws an exception if the process is cancelled

@@ -1,0 +1,14 @@
+TDAT:     public void testTransformation() throws Exception {
+        Source validXML = XMLTools.documentToDOMSource(loadDocument("valid.xml"));
+        Source style = XMLTools.documentToDOMSource(loadDocument("style.xsl"));
+        
+        String result = xmlUtilities.transformToString(
+                style,
+                validXML);
+        
+        System.err.println("Transformed properties: " + result);
+        
+        assertNotNull(result);
+    }
+
+COM:tests the transformation of an XML document using an XSL stylesheet and outputs the result to the console while ensuring that the result is not null

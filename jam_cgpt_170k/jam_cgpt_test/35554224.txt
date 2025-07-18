@@ -1,0 +1,12 @@
+TDAT: 	private boolean isValidFileName() {
+
+		if (tfFileNameMcu.getText().equals("") || tfFileNameSwu.getText().equals("") || tfFileNamePiu.getText().equals("") || tfFileNameCes.getText().equals("") || tfFileNameOnt.getText().equals("")) {
+			tfFileNamePackage.setText("");
+
+			return false;
+		}
+
+		return true;
+	}
+
+COM:checks if all file names provided in the text fields are not empty and returns true if they are all valid or false if any of them is empty

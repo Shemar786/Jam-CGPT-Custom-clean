@@ -1,0 +1,12 @@
+TDAT:   private void assertRemoveHeadersEquals(String expectedRemoveHeaders) {
+    Map<String, String> handlerConfig = getHandler().getHandlerConfigProperties();
+    assertNotNull(handlerConfig);
+    assertEquals(
+      expectedRemoveHeaders,
+      handlerConfig.get(AbstractAddressingHandler.CONFIG_PROP_REMOVE_HEADERS));
+    assertEquals(
+      new Boolean(expectedRemoveHeaders).booleanValue(),
+      getHandler().isRemoveHeadersEnabled());
+  }
+
+COM:asserts that specific headers have been removed from the handler configuration

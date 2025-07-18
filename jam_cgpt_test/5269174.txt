@@ -1,0 +1,18 @@
+TDAT: 	public boolean isAuthorized( String address ) {
+
+		if ( !getConfiguration().getRestricted() )
+			return true;
+
+		String user = StringUtils.parseBareAddress(address);
+
+		// check the access filters
+		Set<String> accessFilters = getConfiguration().getAccessFilters();
+		for ( String filter : accessFilters ) {
+			if ( Pattern.matches(filter, user) ) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+COM:checks if a given address is authorized to access a configuration based on access filters

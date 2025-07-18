@@ -1,0 +1,18 @@
+TDAT: 		public void run() {
+			try {
+				doValidateRecords(idList);
+			} catch (Throwable e) {
+				e.printStackTrace();
+				// addStatusMessage(e.toString());
+				String errorMsg = "Error validating records: " + e;
+				addStatusMessage(errorMsg);
+				prtln("ERROR validating records: " + e);
+			} finally {
+				prtln ("IN FINALLY CLAUSE");
+				isProcessing = false;
+				sessionBean = null;
+				dcsSetInfo = null;
+			}
+		}
+
+COM:attempts to validate records with a given list of IDs and catches any errors that occur, printing error messages and updating status information, before finally resetting certain variables upon completion

@@ -1,0 +1,10 @@
+TDAT:     private DependencyManagement getDependenciesUsingParser(String manifestPath) throws IOException {
+        InputStream inputStream = getClass().getResourceAsStream(manifestPath);
+        Manifest manifest = new Manifest(inputStream);
+        ManifestParser parser = new ManifestParser(manifest);
+        parser.parse();
+        DependencyManagement management = parser.getDependencyManagement();
+        return management;
+    }
+
+COM:This is a private Java method that takes in a manifest path as an argument, reads the manifest file, parses it using a ManifestParser object, and returns the DependencyManagement object

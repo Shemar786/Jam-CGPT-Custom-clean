@@ -1,0 +1,14 @@
+TDAT: 	public void setState(int state) {
+		nPortId = state;
+		if (state == DBDataDesc.EVENT_OFF) {
+			setText("X");
+		} else if (state == DBDataDesc.EVENT_ON) {
+			setText("O");
+		} else if (state == DBDataDesc.EVENT_DEFAULT) {
+			setText("-");
+		} else if (state == DBDataDesc.EVENT_EMPTY) {
+			setText(" ");
+		}
+	}
+
+COM:sets the state of the nPortId and changes the text displayed based on the state value

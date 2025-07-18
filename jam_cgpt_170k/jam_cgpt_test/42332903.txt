@@ -1,0 +1,15 @@
+TDAT:     public void updateAnalog(long interval) {
+        if (interval <= 0 || interval > Integer.MAX_VALUE) {
+            throw new IllegalArgumentException("Illegal interval");
+        }
+        if ( aau == null ) {
+            aau = new AutoAnalogUpdater((int) interval);
+        } else {
+            if ( interval != aau.getInterval() ) {
+                interruptAutoUpdate();
+                updateAnalog(interval);
+            }
+        }
+    }
+
+COM:updates an analog at a specified interval, throwing an exception if the interval is illegal and creating a new AutoAnalogUpdater object if it does not already exist, or interrupting and updating the interval if it does

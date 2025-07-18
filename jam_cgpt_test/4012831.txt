@@ -1,0 +1,7 @@
+TDAT: 	public String getNumberOfWins(String userId, String leagueId) throws InvalidUserException, InvalidLeagueException {
+		ValidateAttribute.validateUserId(userId);
+		ValidateAttribute.validateLeagueId(leagueId);
+		return (ServiceLocator.singleton().getService().selectObjectsByFields(new BLMSMatch(), "winnerId", "leagueId",  new Integer(userId), new Integer(leagueId)).size()) + "";
+	}
+
+COM:retrieves the number of wins for a particular user in a specified league and throws exceptions if the user ID or league ID is invalid

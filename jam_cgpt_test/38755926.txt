@@ -1,0 +1,13 @@
+TDAT: 	public void removeEdge(Edge edge) {
+		this.edges.remove(edge);
+
+		if (edge.isDelegation()) {
+			edge.getSource().removeDelegatee(edge.getTarget());
+			edge.getTarget().removeOrigin(edge.getSource());
+		} else {
+			edge.getSource().removeChild(edge.getTarget());
+			edge.getTarget().removeParent(edge.getSource());
+		}
+	}
+
+COM:removes an edge from a graph and updates its source and target nodes accordingly depending on whether or not the edge is a delegation

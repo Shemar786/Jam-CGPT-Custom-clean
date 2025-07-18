@@ -1,0 +1,11 @@
+TDAT:   public CoordinateSystem findCoordinateSystem(String name) {
+    if (name == null) return null;
+    for (int i=0; i<coordSys.size(); i++) {
+      CoordinateSystem v = (CoordinateSystem) coordSys.get(i);
+      if (name.equals(v.getName()))
+        return v;
+    }
+    return null;
+  }
+
+COM:finds a CoordinateSystem object based on its name

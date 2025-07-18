@@ -1,0 +1,12 @@
+TDAT:     public void removeSegmentAt(int index) {
+        if (index == 0) {
+            firstSegment = null;
+        } else {
+            RouteSegment prevSeg = getSegmentAt(index-1);
+            RouteSegment thisSeg = prevSeg.getNext();
+            prevSeg.appendNext(thisSeg.getNext());
+        }
+        fireRouteChanged();
+    }
+
+COM:removes a specific segment from a RouteSegment object at the specified index and triggers a route change event

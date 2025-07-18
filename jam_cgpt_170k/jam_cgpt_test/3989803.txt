@@ -1,0 +1,19 @@
+TDAT:     public void activate() throws AdapterException {
+        String  msg;
+
+        if (sqlPing != null) {
+            executeQuery(sqlPing);
+        } else {
+            try {
+                if (con.isClosed()) {
+                    msg = "failed to activate, connection already closed";
+                    throw new AdapterException(msg);
+                }
+            } catch (SQLException e) {
+                msg = "failed to activate: " + e.getMessage();
+                throw new AdapterException(msg);
+            }
+        }
+    }
+
+COM:checks if a SQL connection is already closed and throws an exception if it is, otherwise it executes a ping query

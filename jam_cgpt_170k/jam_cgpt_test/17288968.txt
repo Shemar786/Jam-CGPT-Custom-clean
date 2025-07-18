@@ -1,0 +1,7 @@
+TDAT: 	public void validateIndexValue(Object indexValue) {
+		if (!converter.getItemType().isAssignableFrom(indexValue.getClass())) {
+			throw new IllegalArgumentException("Value " + indexValue + " is not of a valid type. Expected " + converter.getItemType().getSimpleName() + ", found " + indexValue.getClass().getSimpleName());
+		}
+	}
+
+COM:validates if the input index value is of the correct data type, and throws an exception if it is not

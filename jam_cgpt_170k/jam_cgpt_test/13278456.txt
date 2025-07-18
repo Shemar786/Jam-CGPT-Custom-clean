@@ -1,0 +1,9 @@
+TDAT:     private TestGraph getTestGraph(Vector actualTestGraphData, boolean type) {
+        TestGraph testGraph = new TestGraph(actualTestGraphData, type);
+        addTestMainParts(testGraph, actualTestGraphData);
+        addTestApplicationConditions(testGraph, actualTestGraphData);
+
+        return testGraph;
+    }
+
+COM:creates and returns a TestGraph object based on actual test graph data and a boolean type parameter, with additional parts and conditions added to the object

@@ -1,0 +1,24 @@
+TDAT: 	public int getNextID() {
+		try {
+			Statement stmt = con.createStatement();
+			
+			ResultSet rs = stmt.executeQuery("SELECT MAX(AtomID) FROM AtomMembership");
+			
+			int nextID;
+			if(rs.next())
+				nextID = rs.getInt(1) + 1;
+			else
+				nextID = 0;
+			stmt.close();
+			return nextID;
+			
+		} catch (SQLException e) {
+			ErrorLogger.writeExceptionToLogAndPrompt(getName(),"SQL Exception finding the maximum atomID.");
+			System.err.println("Exception finding max atom id.");
+			e.printStackTrace();
+		}
+		
+		return -1;
+	}
+
+COM:returns the next available ID for use in the AtomMembership table by finding the current maximum ID and adding 1 to it

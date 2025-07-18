@@ -1,0 +1,19 @@
+TDAT: 	private Insets determinePadding(String attributeValue) {
+		// If parent row is null, then the comp is floating and has no padding
+		if (getParentRow() == null)
+			return null;
+	
+		// Inherit from row, if not available
+		if (attributeValue == null)
+			attributeValue = getParentRow().getCellPadding();
+		if (attributeValue == null)
+			return null;
+	
+		try {
+			return (Insets) Converter.convert(attributeValue, Insets.class);
+		} catch (ObjectConverterException e) {
+			return null;
+		}
+	}
+
+COM:determines the padding for a component based on the attributes of its parent row

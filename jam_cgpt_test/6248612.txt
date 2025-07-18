@@ -1,0 +1,16 @@
+TDAT: 	protected Group createGroup(Composite parent, String text) {
+	    OmniUITrace.trace(this,"createGroup("+parent+", "+text+")","(called)");
+		Group group = new Group(parent, SWT.NULL);
+		group.setText(text);
+		GridData data = new GridData(GridData.FILL_HORIZONTAL);
+		data.horizontalSpan = 2;
+		
+		group.setLayoutData(data);
+		GridLayout layout = new GridLayout();
+		layout.numColumns = 2;
+		group.setLayout(layout);
+		OmniUITrace.trace(this,"createGroup("+parent+", "+text+")","(returned)"+group);
+		return group;
+	}
+
+COM:creates a group with the provided text and adds it to the specified Composite parent, and returns the created Group

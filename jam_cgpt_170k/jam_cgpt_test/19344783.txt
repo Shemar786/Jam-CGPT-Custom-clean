@@ -1,0 +1,9 @@
+TDAT:    private void g100_SetTblFields() {
+
+       typeTblModel.setValueAt(name.getText(), currentRow, TYPE_NAME_COLUMN);
+       typeTblModel.setValueAt(typeName.getSelectedItem(), currentRow, BASE_TYPE_COLUMN);
+       typeTblModel.setValueAt(dateFormat.getText(), currentRow, FORMAT_COLUMN);
+       typeTblModel.fireTableDataChanged();
+   }
+
+COM:sets values in a table model for a GUI

@@ -1,0 +1,21 @@
+TDAT: 	private void changeCurrentScreenCard(int cardNumber) {
+		contentPaneCardLayout.show(getContentPane(), SCREENCARD_NAMES[cardNumber]);
+		currentScreenCardNumber = cardNumber;
+
+		// Set default button
+		JButton defaultButton = null;
+		switch(cardNumber) {
+		case SCREENCARD_LOGIN:
+			defaultButton = btnLogin;
+			break;
+		case SCREENCARD_LOBBY:
+			defaultButton = btnConsoleCommandExecute;
+			break;
+		}
+
+		if(defaultButton != null) {
+			this.getRootPane().setDefaultButton(defaultButton);
+		}
+	}
+
+COM:changes the current screen card on a content pane and sets the default button based on the card number

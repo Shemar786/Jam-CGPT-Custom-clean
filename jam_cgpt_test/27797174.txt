@@ -1,0 +1,9 @@
+TDAT:   protected void fireEvent(int type) {
+    CyNetworkEvent event = new CyNetworkEvent(this, type);
+    for (Iterator i = listeners.iterator(); i.hasNext(); ) {
+      CyNetworkListener listener = (CyNetworkListener)i.next();
+      listener.onCyNetworkEvent(event);
+    }
+  }
+
+COM:fires a network event to all CyNetworkListeners registered to it

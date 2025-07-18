@@ -1,0 +1,9 @@
+TDAT:     public void setSelectedItem(Object anObject) {
+        if ((this.selectedEntity != null && !selectedEntity.equals(anObject))
+                || selectedEntity == null && anObject != null) {
+            this.selectedEntity = getRealValue(anObject);
+            fireContentsChanged(this, -1, -1);
+        }
+    }
+
+COM:sets the selected item of an object and fires a contents changed event if the selection change is detected

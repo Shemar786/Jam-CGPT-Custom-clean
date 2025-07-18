@@ -1,0 +1,18 @@
+TDAT: 	public void testCopyTopWithInvalidPositioning() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neSource = createNEPositive(rSource, "foo", null);
+		
+		IRodinFile rfDest = createRodinFile("P/Y.test");
+		IInternalElement rootDest = rfDest.getRoot();
+		
+		copyNegative(
+				neSource, 
+				rootDest, 
+				rootDest.getInternalElement(NamedElement.ELEMENT_TYPE, "invalid"), 
+				null, 
+				false, 
+				IRodinDBStatusConstants.INVALID_SIBLING);
+	}
+
+COM:tests the copying of a named element from one test file to another with invalid positioning

@@ -1,0 +1,22 @@
+TDAT: 	public void addFile(String dir, String file) {
+		try {
+			FileInputStream in = new FileInputStream(dir + File.separator + file);
+			ZipEntry ze = new ZipEntry(file);
+			zipStream.putNextEntry(ze);
+			
+			int read = 0;
+			byte[] buf = new byte[4 * 1024];
+			
+			while((read = in.read(buf)) != -1) {
+				zipStream.write(buf, 0, read);
+			}
+
+			zipStream.closeEntry();
+			in.close();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:adds a file to a zip archive located in a specified directory using FileInputStream and ZipEntry

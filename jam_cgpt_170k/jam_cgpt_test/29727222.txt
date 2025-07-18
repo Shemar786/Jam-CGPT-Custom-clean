@@ -1,0 +1,12 @@
+TDAT: 	private void addPenalty(Paragraph p, TextChunk chunk, double weight, String renderString, LayoutingContext context) {
+		if (context.getLayoutSpecialMode()==LayoutingContext.LAYOUT_SPECIALMODE_MAXIMUM_WIDTH) return;
+		if (context.getLayoutSpecialMode()==LayoutingContext.LAYOUT_SPECIALMODE_MINIMAL_WIDTH) weight = Double.NEGATIVE_INFINITY;
+	
+		Penalty penalty = new Penalty (weight, chunk);
+		penalty.setRenderString (renderString);
+		
+		p.add(penalty);
+		
+	}
+
+COM:adds a penalty object to a paragraph based on certain conditions and parameters such as weight and rendering string

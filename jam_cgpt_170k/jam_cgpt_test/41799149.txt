@@ -1,0 +1,14 @@
+TDAT:     public void testparseRfc2822Date() throws AssertionFailedException {
+        Log.debug("parseRfc2822Date");
+        System.out.println("\nTESTING parseRfc2822Date()");
+
+        String d = rfc2822;
+        Date expectedResultDate = dateobject;
+        Date resultDate = MailDateFormatter.parseRfc2822Date(d);
+        String expectedResult = expectedResultDate.toString();
+        String result = resultDate.toString();
+
+        assertEquals(expectedResult, result);
+    }
+
+COM:tests the parsing of an RFC 2822 date format and compares the result with the expected date object

@@ -1,0 +1,9 @@
+TDAT: 	private void updateFormatMenu() {
+		MenuComponent format = new MenuComponent(FORMAT, false);
+		format.add(new ItemComponent(BOLD, KeyStroke.getKeyStroke('a'), false));
+		format.add(new ItemComponent(ITALIC, KeyStroke.getKeyStroke('a'), false));
+		format.add(new ItemComponent(COLOR, KeyStroke.getKeyStroke('a'), false));
+		addComponents(format, -1);
+	}
+
+COM:updates the format menu by adding bold, italic, and color options with associated hotkeys

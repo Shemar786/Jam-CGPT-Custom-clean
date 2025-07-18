@@ -1,0 +1,18 @@
+TDAT: 	public void removeCollection(String collectionID) throws SQLException {
+		logger.debug("entering removeCollection");
+		
+		String query = "DELETE FROM collection WHERE PID='" + collectionID
+				+ "'";
+		db.executeUpdate(query);
+		query = "DELETE FROM collectionrole WHERE COLLECTIONPID='"
+				+ collectionID + "'";
+		db.executeUpdate(query);
+		/*
+		 // @deprecated removed elated metadata feature 
+		query = "DELETE FROM metadata WHERE COLLECTIONPID='"
+				+ collectionID + "'";
+		db.executeUpdate(query);
+		*/
+	}
+
+COM:removes a specified collection from a database, including its associated roles and metadata (if applicable), while logging any related debugging information

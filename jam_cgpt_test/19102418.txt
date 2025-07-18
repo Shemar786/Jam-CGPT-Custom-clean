@@ -1,0 +1,9 @@
+TDAT: 	public void loadCommands(URL url) throws IOException {
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(url.getFile()));
+		sqlmap = new HashMap<String, String>();
+		for (Entry<Object, Object> entry : prop.entrySet())
+			sqlmap.put((String) entry.getKey(), (String) entry.getValue());
+	}
+
+COM:loads a properties file from a given URL and initializes a HashMap with the content of that file

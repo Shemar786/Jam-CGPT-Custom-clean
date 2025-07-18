@@ -1,0 +1,11 @@
+TDAT:   private JPanel getJPanel() {
+    if (jPanel == null) {
+      jPanel = new JPanel();
+      jPanel.setLayout(new GridBagLayout());
+      jPanel.add(getJButton(), new GridBagConstraints());
+      jPanel.add(getJButton1(), new GridBagConstraints());
+    }
+    return jPanel;
+  }
+
+COM:returns a JPanel object with a GridBagLayout and two JButtons added to it, and creates the JPanel if it does not already exist

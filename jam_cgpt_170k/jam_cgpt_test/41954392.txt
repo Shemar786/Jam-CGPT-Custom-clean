@@ -1,0 +1,20 @@
+TDAT: 	public Object insert(A pojo) {
+		Object result = null;
+
+		if (pojo == null)
+			throw new PersistenceHibernateException(
+					"Parameter pojo in insert is null.");
+
+		try {
+			Session session = this.getSession();
+			if (session != null)
+				result = (Object) session.save(pojo);
+		} catch (HibernateException ex) {
+			throw new PersistenceHibernateException("Error on insert pojo "
+					+ pojo.getClass() + ": " + pojo.toString(), ex);
+		}
+
+		return result;
+	}
+
+COM:inserts a POJO object into a database using Hibernate, returning the generated identifier

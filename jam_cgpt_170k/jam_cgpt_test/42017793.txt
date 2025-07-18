@@ -1,0 +1,12 @@
+TDAT: 	public boolean checkScores(){
+		log.info("checkScores");
+		for (Score score : scores){
+			if (score.getStrokes()==null){
+ 				FacesMessages.instance().add("Missing value for hole="+score.getHole().getNumber());
+				this.holeCheck="Missing value for hole="+score.getHole().getNumber();
+				return false;
+			}
+		}return true;
+	}
+
+COM:checks if all scores have valid values and returns a boolean indicating the success of the check

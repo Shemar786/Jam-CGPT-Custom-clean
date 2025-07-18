@@ -1,0 +1,14 @@
+TDAT:     public Object lastKey() throws NoSuchElementException {
+        Entry last = (mReverse) ? mMostRecent : mLeastRecent;
+        if (last != null) {
+            return last.mKey;
+        }
+        else if (mRecentMap.size() == 0) {
+            throw new NoSuchElementException();
+        }
+        else {
+            return null;
+        }
+    }
+
+COM:returns the last key of a map, throwing a NoSuchElementException if the map is empty

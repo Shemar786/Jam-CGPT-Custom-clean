@@ -1,0 +1,18 @@
+TDAT:     public boolean hasPrimitivePeer() {
+        if (mObjectClass == Integer.class ||
+            mObjectClass == Boolean.class ||
+            mObjectClass == Byte.class ||
+            mObjectClass == Character.class ||
+            mObjectClass == Short.class ||
+            mObjectClass == Long.class ||
+            mObjectClass == Float.class ||
+            mObjectClass == Double.class ||
+            mObjectClass == Void.class) {
+            
+            return true;
+        }
+
+        return false;
+    }
+
+COM:checks if the class of an object is a primitive type or not

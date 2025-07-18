@@ -1,0 +1,21 @@
+TDAT: 	public boolean removeBackupFile(String name, boolean delfile) {
+		boolean success = false;
+		try {
+			name = removeReservedCharacters(name);
+			String query = "EXEC sp_dropdevice \'" + name + "\'";
+			if (delfile)
+				query += ", \'DELFILE\'";
+			con.createStatement().execute(query);
+
+			success = true;
+		}
+		catch (SQLException ex) {
+			ErrorLogger.writeExceptionToLogAndPrompt(getName(), "Error removing backup file");
+			System.err.println("Error removing backup file - executing sp_dropdevice");
+			ex.printStackTrace();			
+		}
+
+		return success;		
+	}
+
+COM:takes in a file name and a boolean value indicating whether or not to delete the file, executes an SQL query to remove the backup device identified by the file name, and returns a boolean indicating whether the operation was successful or not

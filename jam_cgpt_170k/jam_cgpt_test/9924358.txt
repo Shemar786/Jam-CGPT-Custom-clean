@@ -1,0 +1,11 @@
+TDAT:  public String parse(String[] whois) {
+  for (int i = 0; i < whois.length; ++i) {
+   /* ARIN, RIPE, LACNIC, APNIC */
+   if (whois[i].startsWith("country:") || whois[i].startsWith("Country:")) {
+    return whois[i].substring(8).trim().toLowerCase();
+   }
+  }
+  return null;
+ }
+
+COM:takes in an array of strings representing WHOIS information and returns the country associated with the record, if available

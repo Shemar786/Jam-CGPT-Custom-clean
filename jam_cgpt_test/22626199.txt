@@ -1,0 +1,16 @@
+TDAT: 	public ServiceDescriptionReader getServiceDescription() {
+		if (serviceDescription == null) {
+			String xpath = "/ndr:NSDLDataRepository/ndr:NDRObject/ndr:data/ndr:serviceDescription";
+			String uriStr = getNodeText(xpath);
+			try {
+				URL url = new URL(uriStr);
+				serviceDescription = new ServiceDescriptionReader(url);
+			} catch (Exception e) {
+				prtln("serviceDescription error: " + e.getMessage());
+				serviceDescription = null;
+			}
+		}
+		return serviceDescription;
+	}
+
+COM:retrieves a service description from a specified URL and returns a reader object for that description

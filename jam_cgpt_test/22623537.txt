@@ -1,0 +1,19 @@
+TDAT: 	public Element asElement() {
+		Element root = getRootElement();
+		
+		for (Iterator pi=props.keySet().iterator();pi.hasNext();) {
+			String prop = (String)pi.next();
+			List values = (List)props.get (prop);
+			for (Iterator vi=values.iterator();vi.hasNext();) {
+				String value = (String)vi.next();
+				if (notEmpty(value)) {
+					Element e = root.addElement ("dc:" + prop);
+					e.setText (value);
+				}
+			}
+		}
+		
+		return root;
+	}
+
+COM:generates an XML element by adding properties and their corresponding values to a root element

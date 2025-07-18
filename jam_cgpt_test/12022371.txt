@@ -1,0 +1,7 @@
+TDAT:     public CalendarDate getRemoteLocalDate() {
+        StringBuffer stringBuffer = new StringBuffer("GMT");
+        stringBuffer.append(offsetToString(_offset));
+        return Gregorian.getGregorianCalendar().getCalendarDate(_utcTime, TimeZone.getTimeZone(stringBuffer.toString()));
+    }
+
+COM:returns the remote local date and time based on the UTC time and offset

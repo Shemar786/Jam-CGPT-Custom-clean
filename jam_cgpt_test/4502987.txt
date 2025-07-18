@@ -1,0 +1,12 @@
+TDAT: 	public void setAdminDetails(Point location, String dispatchServiceLocation) {
+		this.setLocation(location);
+		this.dispatchServiceLocation = dispatchServiceLocation;
+		try {
+			dispatchStub = new AmbulanceDispatchServiceStub(FERSuddiProxy.instance().getServiceAccessPoint(this.dispatchServiceLocation));
+			isInitialized = true;
+		} catch (AxisFault a) {
+			log.error("Couldn't create Ambulance Dispatch Stub");
+		}
+	}
+
+COM:sets the location of an object, assigns a dispatch service location, creates a new object for the ambulance dispatch service, and logs an error if creation is unsuccessful

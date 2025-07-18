@@ -1,0 +1,10 @@
+TDAT:     private String getText(String input) {
+        if (input.startsWith("\"")) {
+            input = input.substring(1, input.length());
+            int index = input.indexOf("\"");
+            input = input.substring(0, index);
+        }
+        return input;
+    }
+
+COM:removes quotes from the beginning and end of a string if they exist, then returns the modified string

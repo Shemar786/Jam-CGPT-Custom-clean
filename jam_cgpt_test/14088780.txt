@@ -1,0 +1,24 @@
+TDAT:     public void init() throws ServletException {
+
+	    // Process our servlet initialization parameters
+	    try {
+	        debug = Integer.parseInt(getServletConfig().getInitParameter(Constants.DEBUG));
+	    } catch (Throwable t) {
+	        debug = 0;
+	    }
+	    if (debug >= 1) {
+	        log("Initializing servlet");
+	    }
+
+	    // Load our database from persistent storage
+	    try {
+	        load();
+	    } catch (Exception e) {
+	        log("Database load exception", e);
+	        throw new UnavailableException
+		    ("Cannot load database '" + Constants.DBNAME + "'");
+	    }
+
+    }    
+
+COM:initializes a servlet by processing initialization parameters and loading a database from persistent storage, and may throw a ServletException or UnavailableException if there are errors

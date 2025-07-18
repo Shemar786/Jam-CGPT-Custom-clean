@@ -1,0 +1,7 @@
+TDAT: 	    public JSONObject getPhoto(String userId, int photoId) {
+			//securityContext.checkIfAuthorized();
+			String url = API_PHOTO_URL.replaceFirst("%s", userId).replaceFirst("%s", String.valueOf(photoId));
+			return (JSONObject) getUserData(url, new HashMap<String, String>());
+		}
+
+COM:retrieves a specific photo for a given user ID and photo ID as a JSON object, using an API URL with placeholders for the user ID and photo ID

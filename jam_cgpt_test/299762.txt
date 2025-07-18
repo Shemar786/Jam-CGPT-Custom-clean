@@ -1,0 +1,19 @@
+TDAT: 	private String recursiveToString(int level) {
+		StringBuffer buf = new StringBuffer();
+		for (int x = 0; x < level; x++) {
+			buf.append("   ");
+		}
+		buf.append(_name);
+
+		if (!_attributes.toString().equals("{}")) {
+			buf.append(" " + _attributes);
+		}
+
+		for (XMLNode child : _children) {
+			buf.append(child.recursiveToString(level + 1));
+		}
+
+		return buf.toString();
+	}
+
+COM:recursively converts an XMLNode object and its children to a string representation, with indentation based on the level

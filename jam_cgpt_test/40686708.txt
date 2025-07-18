@@ -1,0 +1,12 @@
+TDAT:   public void fireIOError(final String message) {
+    DeferredCommand.addCommand(new Command() {
+      public void execute() {
+        for (Iterator it = iterator(); it.hasNext();) {
+          SocketListener listener = (SocketListener) it.next();
+          listener.onIOError(message);
+        }
+      }
+    });
+  }
+
+COM:fires an IO error message to all socket listeners through an asynchronous command

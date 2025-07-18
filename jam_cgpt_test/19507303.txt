@@ -1,0 +1,13 @@
+TDAT: 	public void test_10_InvalidVersion() throws Exception {
+		final String contents = //
+		"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+				+ "<org.rodinp.core.tests.versionFileF "
+				+ "    version=\"not a number\">"
+				+ "</org.rodinp.core.tests.versionFileF>";
+
+		final IRodinFile rf = createRodinProject("P").getRodinFile("ff.tvf");
+		setFileContents(rf, contents);
+		assertRodinDBExceptionRaised(rf, ERROR, INVALID_VERSION_NUMBER);
+	}
+
+COM:tests for an invalid version number in an XML file and expects an exception to be thrown

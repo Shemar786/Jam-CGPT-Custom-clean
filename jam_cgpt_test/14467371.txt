@@ -1,0 +1,11 @@
+TDAT:   public void actionPerformed( ActionEvent e ) {
+    String text = chatInput.getText();
+    if( text.length() > 0 ) {
+      this.chatLog.append( chatInput.getText() + "\n" );
+      this.chatInput.setText( "" );
+
+      getConstituent().setAttribute( "chatLog", this.chatLog.getText(), true );
+    }
+  }
+
+COM:is an event handler that gets the text from an input field, adds it to a chat log, and updates a chat log attribute

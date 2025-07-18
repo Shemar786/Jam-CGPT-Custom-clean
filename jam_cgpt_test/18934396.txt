@@ -1,0 +1,8 @@
+TDAT: 	public void add(Object o, int priority) {
+		try {
+			((GenericQueue) (queues[priority])).add(o);
+		} catch (ArrayIndexOutOfBoundsException bounds) {
+			if ((0 <= priority) && (priority < queues.length)) throw bounds;
+			throw new IndexOutOfBoundsException("Invalid priority "+priority+" (Expected 0-"+(queues.length-1)+')');}}
+
+COM:adds an object to a priority queue based on a specified priority level

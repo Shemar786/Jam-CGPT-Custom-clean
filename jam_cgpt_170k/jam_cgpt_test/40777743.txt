@@ -1,0 +1,16 @@
+TDAT: 	public Priority getPriority(List<IResponseTO> responses,String peerPublicKey) {
+		
+		List<TrustyCommunity> filteredCommunities = 
+						filterByPresence(peerPublicKey, getTrustyCommunities(responses));
+		
+		if(filteredCommunities.isEmpty()) {
+			return Priority.UNKNOWN_PEER;
+		}
+
+		Collections.sort(filteredCommunities);
+		int greatestPriority = filteredCommunities.get(filteredCommunities.size() - 1).getPriority();
+
+		return new Priority(Priority.Range.ALLOC_FOR_TRUST_COMMUNITY, greatestPriority);
+	}
+
+COM:calculates the highest priority of a trusted community based on a list of response TOs and a peer's public key

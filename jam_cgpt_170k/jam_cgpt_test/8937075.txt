@@ -1,0 +1,19 @@
+TDAT:     public int read() throws IOException {
+        int c;
+        
+        if (bufLength >= 0) {
+            c = buf[bufLength--];
+        } else {
+            c = wrappedRead();
+            
+            if (c == -1) return RubyYaccLexer.EOF;
+        }
+        
+        advance(c);
+        
+        if (c == '\n') line++;
+            
+        return c; 
+    }
+
+COM:reads a character from a stream and returns it, while also updating the status of the stream

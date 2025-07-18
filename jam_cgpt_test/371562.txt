@@ -1,0 +1,17 @@
+TDAT:     public String getMainClass() {
+        String result = null;
+        if (launchConfig != null) {
+            try {
+                result = launchConfig.getAttribute(
+                        IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME,
+                        (String) null);
+            } catch (CoreException ignore) {
+            }
+        }
+        if (result == null) {
+            result = "";
+        }
+        return result;
+    }
+
+COM:retrieves the name of the main class from a configuration attribute, or returns an empty string if it is not found

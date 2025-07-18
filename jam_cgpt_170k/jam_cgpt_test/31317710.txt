@@ -1,0 +1,14 @@
+TDAT: 	private JScrollPane createUserList() {
+		userList = new UserList();
+
+		JScrollPane userListScrollPane = new JScrollPane(userList);
+		userListScrollPane.setMaximumSize(new Dimension(185, 200));
+		userListScrollPane.setMinimumSize(new Dimension(185, 100));
+		userListScrollPane.setPreferredSize(new Dimension(185, 150));
+
+		userListScrollPane.setBorder(
+			BorderFactory.createTitledBorder("Users:"));
+		return userListScrollPane;
+	}
+
+COM:creates and returns a scroll pane that contains a user list with a specified size and border

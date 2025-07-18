@@ -1,0 +1,14 @@
+TDAT:   private void ensureCapacityHelper(int minCapacity) {
+    int      oldCapacity = elementData.length;
+    Object[] oldData     = elementData;
+    int      newCapacity = oldCapacity << 1;
+
+    if (newCapacity < minCapacity) {
+      newCapacity = minCapacity;
+    }
+
+    elementData = new Object[newCapacity];
+    System.arraycopy(oldData, 0, elementData, 0, elementCount);
+  }
+
+COM:ensures that the capacity of an array is increased to at least a certain minimum capacity by copying the contents of the original array into a new, larger array

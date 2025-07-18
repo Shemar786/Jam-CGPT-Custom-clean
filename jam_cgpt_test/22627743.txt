@@ -1,0 +1,20 @@
+TDAT: 	public int getMaxInstanceElements() {
+		if (maxInstanceElements == -1) {
+			int max = 0;
+			Iterator members = getMembers().iterator();
+			while (members.hasNext()) {
+				CompositorMember cm = (CompositorMember) members.next();
+				int cmMax = cm.getMaxInstanceElements();
+				if (cmMax == Integer.MAX_VALUE) {
+					max = cmMax;
+					break;
+				}
+				else
+					max = max + cmMax;
+			}
+			maxInstanceElements = max;
+		}
+		return maxInstanceElements;
+	}
+
+COM:returns the maximum number of elements that can be instantiated for a given Compositor, taking into account all of its members

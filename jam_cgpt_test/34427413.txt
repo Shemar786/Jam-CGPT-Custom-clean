@@ -1,0 +1,15 @@
+TDAT:     private void actionFilterSchematics() {
+        filteredSchematics = SWGSchematicsManager.getSchematics(
+                selectedProfession, -1, selectedLevel.intValue());
+
+        isUpdatingGUI = true;
+        schemTreeModel.setSchematics(filteredSchematics);
+
+        schemSelector.setSelectedIndex(-1);
+        schemSelectModel.fireContentChanged();
+
+        isUpdatingGUI = false;
+        actionSchematicSelected(selectedSchematic, traceForward, false);
+    }
+
+COM:filters and sets schematics for a selected profession, level, and schematic selection

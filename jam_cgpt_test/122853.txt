@@ -1,0 +1,16 @@
+TDAT:   public Hashtable getModelParameters() {
+    Hashtable props = new Hashtable(23);
+    if (model != null) {
+      model.clearPropertyListeners();
+      try {
+        props = ParameterUtility.getModelProperties(model);
+      } catch (Exception ex) {
+        SimUtilities.showError("Error retrieving model properties", ex);
+        System.exit(0);
+      }
+    }
+
+    return props;
+  }
+
+COM:returns a Hashtable object containing the properties of a model, or an empty Hashtable if the model is null

@@ -1,0 +1,20 @@
+TDAT:   public Properties getMessageBundle(int languageId) {
+    Properties properties = null;
+
+    switch (languageId) {
+      case 1:
+        // Fall through
+      case 5:
+        properties = this.loadProperties("tdb_messages.properties");
+        break;
+      case 4:
+        properties = this.loadProperties("tdb_messages_de.properties");
+        break;
+      default:
+        properties = this.loadProperties("tdb_messages_en.properties");
+    }
+
+    return properties;
+  }
+
+COM:returns a message bundle Properties object based on the language ID provided as input

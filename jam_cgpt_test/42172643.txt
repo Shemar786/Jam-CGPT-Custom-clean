@@ -1,0 +1,17 @@
+TDAT:   protected void addDriverClassNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBDriver_driverClassName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBDriver_driverClassName_feature", "_UI_DBDriver_type"),
+				 DbPackage.Literals.DB_DRIVER__DRIVER_CLASS_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the DB Driver's driver class name to an item property descriptor list

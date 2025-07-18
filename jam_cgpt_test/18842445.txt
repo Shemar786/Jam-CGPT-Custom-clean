@@ -1,0 +1,13 @@
+TDAT:   private String deduceURLFilename(URL url) throws Exception {
+    if (url == null) {
+      return "";
+    }
+    String filename = url.getFile();
+    int slash = filename.lastIndexOf("/");
+    if ( (slash != -1) && (filename.length() > slash + 1)) {
+      filename = filename.substring(slash + 1, filename.length());
+    }
+    return filename;
+  }
+
+COM:extracts the filename from a given URL

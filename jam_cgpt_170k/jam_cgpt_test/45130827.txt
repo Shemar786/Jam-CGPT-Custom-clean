@@ -1,0 +1,11 @@
+TDAT:     public Value castString(Literal literal) throws IllegalCastException {
+        try {
+            Float.parseFloat(literal.getLabel());
+            return this.factory.createLiteral(literal.getLabel(),
+                    SPARQLConstants.FLOAT_TYPE);
+        } catch (NumberFormatException e) {
+            throw new IllegalCastException("Unable to cast string to float");
+        }
+    }
+
+COM:attempts to cast a string representation of a number to a float value, and creates a new SPARQL literal of float type with the same label. If the cast fails, an IllegalCastException is thrown

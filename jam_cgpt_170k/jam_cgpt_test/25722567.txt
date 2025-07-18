@@ -1,0 +1,12 @@
+TDAT: 		private void enableItem(TableTreeItem item, boolean enable, boolean gray) {
+			item.setChecked(enable);
+			item.setGrayed(gray);
+			TableTreeItem[] children = item.getItems();
+			for (TableTreeItem element2 : children) {
+				element2.setChecked(enable);
+				element2.setGrayed(!enable);
+			}
+			enableDependentMetrics((MetricDescriptor) item.getData("md"), enable);
+		}
+
+COM:enables or disables a TableTreeItem and its dependent metrics based on boolean parameters

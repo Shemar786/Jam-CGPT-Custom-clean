@@ -1,0 +1,11 @@
+TDAT: 	private int getOverlapArea(int x1, int y1, int x2, int y2, DraggableCard exampleCard) {
+		int cardWidth = exampleCard.getOffsetWidth();
+		int cardHeight = exampleCard.getOffsetHeight();
+
+		int xOverlap = getOverlapLength(x1, x2, cardWidth);
+		int yOverlap = getOverlapLength(y1, y2, cardHeight);
+
+		return xOverlap * yOverlap;
+	}
+
+COM:calculates the overlap area between a DraggableCard and a specified coordinate area

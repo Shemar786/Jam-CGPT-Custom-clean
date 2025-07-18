@@ -1,0 +1,17 @@
+TDAT:     public void run(){
+	while(run){
+	    this.oldTimeStamp = this.curTimeStamp;
+	    this.curTimeStamp = System.nanoTime();
+	    this.appLoopSpeed = this.curTimeStamp - this.oldTimeStamp;
+	    long appSpeedDiff = this.prefSpeed - this.appLoopSpeed;
+	    if(appSpeedDiff>0){
+		try {
+		    Thread.sleep(appSpeedDiff/1000000);
+		} catch (InterruptedException e) {
+		    e.printStackTrace();
+		}
+	    }
+	}
+    }
+
+COM:continuously updates time stamps and sleeps the thread to maintain a desired loop speed until interrupted

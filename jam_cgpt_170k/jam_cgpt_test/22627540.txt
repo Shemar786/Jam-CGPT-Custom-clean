@@ -1,0 +1,12 @@
+TDAT: 	public String uriMapToString() {
+		String s = "\nUriMap";
+		for (Iterator i = uriMap.entrySet().iterator(); i.hasNext(); ) {
+			Map.Entry entry = (Map.Entry) i.next();
+			String uri = (String) entry.getKey();
+			Namespace ns = (Namespace) entry.getValue();
+			s += "\n\t" + uri + "(" + this.nsToString(ns) + ")";
+		}
+		return s + "\n";
+	}
+
+COM:converts a map of URIs and namespaces to a string representation

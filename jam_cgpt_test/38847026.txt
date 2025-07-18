@@ -1,0 +1,14 @@
+TDAT:         @Override public Object clone() {
+            ParserState newState = new ParserState();
+            
+            // no need to clone color spaces, since they are immutable
+            newState.fillCS = fillCS;
+            newState.strokeCS = strokeCS;
+            
+            // we do need to clone the textFormat
+            newState.textFormat = (PDFTextFormat) textFormat.clone();
+            
+            return newState;
+        }
+
+COM:creates a clone of a ParserState object, copying some attributes and creating a new reference for others

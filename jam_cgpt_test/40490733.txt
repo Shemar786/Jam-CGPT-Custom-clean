@@ -1,0 +1,10 @@
+TDAT:     public double getVelocity() {
+        try {
+            return (((rate110.getVoltage() - vref.getVoltage()) * MV_PER_VOLT) / MV_PER_DEG_PER_SEC) - zeroV ;
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return -1;//TODO errors
+        }
+    }
+
+COM:calculates velocity based on voltage readings and returns a double value

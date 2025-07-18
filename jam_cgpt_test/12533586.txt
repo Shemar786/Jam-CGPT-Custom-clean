@@ -1,0 +1,12 @@
+TDAT: 	protected void setOriginAndDestination(TransportLocationIfc origin, TransportLocationIfc destination) {
+		if (destination == null)
+			throw new IllegalArgumentException("The Location destination must not be null");
+		if (origin == null)
+			throw new IllegalArgumentException("The Location origin must not be null");
+		if (destination == origin)
+			throw new IllegalArgumentException("The origin and destination must not be the same.");
+		myDestination = destination;
+		myOrigin = origin;
+	}	
+
+COM:sets the origin and destination TransportLocationIfc objects and throws an exception if they are null or the same

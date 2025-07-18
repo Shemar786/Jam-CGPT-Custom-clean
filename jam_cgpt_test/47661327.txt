@@ -1,0 +1,17 @@
+TDAT: 	protected void addGuardPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActivityAssociation_guard_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityAssociation_guard_feature", "_UI_ActivityAssociation_type"),
+				 ProcessPackagePackage.Literals.ACTIVITY_ASSOCIATION__GUARD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a Guard property descriptor to a list of item property descriptors of an Activity Association object

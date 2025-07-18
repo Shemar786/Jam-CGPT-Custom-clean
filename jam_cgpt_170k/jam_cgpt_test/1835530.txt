@@ -1,0 +1,12 @@
+TDAT:     public void run() {
+        try {
+            this.socketIn = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
+            this.socketOut = new PrintWriter(this.socket.getOutputStream(), true);
+            readPolicyRequest();
+        }
+        catch (Exception e) {
+            debug("Exception (run): " + e.getMessage());
+        }
+    }
+
+COM:creates a BufferedReader and PrintWriter for a socket and calls the readPolicyRequest() method

@@ -1,0 +1,5 @@
+TDAT:     private String tableRow(int indent, String content) throws FileNotFoundException, IOException {
+        return PrintUtil.applyTemplate("template" + File.separator + "table_top_line.html", new Object[] { indentSpaces(indent), content, "", "", "", COLOR_KEYWORDS, "" });
+    }
+
+COM:takes an indent and content as input, uses them to apply a given template, and returns the resulting table row as a string

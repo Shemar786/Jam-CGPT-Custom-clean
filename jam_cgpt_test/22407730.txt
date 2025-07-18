@@ -1,0 +1,19 @@
+TDAT:     private String getShortFileName(final String filename) {
+        if ((srcFiles == null) || (filename == null)) {
+            return filename;
+        }
+
+        final Iterator iterator = srcFiles.iterator();
+
+        while (iterator.hasNext()) {
+            final String srcFileName = (String) iterator.next();
+
+            if (filename.startsWith(srcFileName)) {
+                return filename.substring(srcFileName.length() + 1);
+            }
+        }
+
+        return filename;
+    }
+
+COM:returns a shortened version of a file name by removing a specified prefix

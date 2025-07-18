@@ -1,0 +1,15 @@
+TDAT: 	private HorizontalPanel createRatingPanel( String image, int max ) {
+		final HorizontalPanel panel = new HorizontalPanel();
+		final RatingDisplay rating = new RatingDisplay(image);
+		rating.setRating( 0 );
+		rating.setMax( max );
+		rating.updateDisplay();			
+		final Label label = new Label( getRatingLabel( 0, max ) ); 
+				
+				
+		panel.add( rating );
+		panel.add( label );
+		return panel;
+	}
+
+COM:creates a panel with a rating display and label using given image and max values

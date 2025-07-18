@@ -1,0 +1,16 @@
+TDAT: 	private JarPackageData readJarPackage(IFile description) throws CoreException, IOException, SAXException {
+		Assert.isLegal(description.isAccessible());
+		Assert.isNotNull(description.getFileExtension());
+		Assert.isLegal(description.getFileExtension().equals(JarPackagerUtil.DESCRIPTION_EXTENSION));
+		JarPackageData jarPackage= new JarPackageData();
+		try {
+			fReader= jarPackage.createJarDescriptionReader(description.getContents());
+			fReader.read(jarPackage);
+		} finally {
+			if (fReader != null)
+				fReader.close();
+		}
+		return jarPackage;
+	}
+
+COM:reads a Jar package description file from an IFile and returns a JarPackageData object, while performing assertions to ensure the IFile is valid and that the file extension matches

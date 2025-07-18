@@ -1,0 +1,16 @@
+TDAT: 	private void showNotification() {
+		CharSequence text = getText(R.string.sensors_recording_started);
+		Notification notification = new Notification(R.drawable.icon, text,
+				System.currentTimeMillis());
+		PendingIntent intent = PendingIntent.getActivity(this, 0, new Intent(
+				this, SensorRecordFromDeviceActivity.class), 0);
+
+		// Set the info for the views that show in the notification panel.
+		notification.setLatestEventInfo(this,
+				getText(R.string.sensors_record_label), text, intent);
+
+		// Send the notification.
+		mNotificationManager.notify(NOTIFICATION, notification);
+	}
+
+COM:displays a notification with a specific message, icon, and intent for the user

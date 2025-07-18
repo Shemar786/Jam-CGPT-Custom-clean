@@ -1,0 +1,13 @@
+TDAT: 	public void init(Certificate cf){
+		try {
+			_out = new BufferedOutputStream(_sock.getOutputStream()); //initialize output stream
+			byte[] b = SecurityHandler.encrypt(SecurityHandler.getBytes(new Packet(cf)), _key); //encrypt and send the certificate to the other client
+			_out.write(b);
+			_out.flush();
+		} catch (Exception e) {
+			SecurityHandler.catchException("initializing chat sender", e, true);
+			//e.printStackTrace();
+		}
+	}
+
+COM:initializes the output stream, encrypts and sends a security certificate to another client

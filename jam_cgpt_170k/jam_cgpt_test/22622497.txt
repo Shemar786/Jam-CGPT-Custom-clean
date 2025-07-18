@@ -1,0 +1,11 @@
+TDAT: 	public String toString() {
+		String ret = "---";
+		ret += "\n\t" + "fieldName: " + getFieldName();
+		ret += "\n\t" + "paramName: " + getParamName();
+		ret += "\n\t" + "value: " + getValue();
+		ret += "\n\t" + "xpath: " + getXPath();
+		ret += "\n\t" + "normalizedXPath: " + getNormalizedXPath();
+		return ret + "\n";
+	}
+
+COM:returns a formatted string representation of an object's field name, parameter name, value, XPath and normalized XPath

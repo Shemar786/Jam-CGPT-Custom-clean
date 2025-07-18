@@ -1,0 +1,14 @@
+TDAT: 	public Block findBlock(NetworkID blockID) {
+		assert(locked) : "attempt made to modify model when not locked";
+
+		log.trace("request to find block with ID" + blockID);
+		if (blockMap.containsKey(blockID)) {
+			log.trace("found block");
+			return (Block) blockMap.get(blockID);
+		} else {
+			log.trace("block does not exist");
+			return null;
+		}
+	}
+
+COM:finds a Block object in a blockMap based on its NetworkID, or returns null if it doesn't exist

@@ -1,0 +1,11 @@
+TDAT:     public MembershipBO create() throws Exception{
+        String id = GUID.generate();
+        MembershipBO bo = new MembershipBO(id);
+        bo.setMembPwd("password");  //hardcoded the membership password for the first iteration
+        Cache c = Cache.getInstance();
+        c.put(bo.getMembershipID(), bo);
+        
+        return bo;
+    }
+
+COM:generates a unique ID, creates a new MembershipBO object with the generated ID and hardcoded password, adds the object to a cache, and returns the MembershipBO object

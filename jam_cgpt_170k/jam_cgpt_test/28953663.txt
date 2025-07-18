@@ -1,0 +1,11 @@
+TDAT: 	public void nodeAuthenticationFailure(SuccessCode success, IConnectionDescription otherServer) {
+		try {
+			ActiveParticipant otherServerAP = new ActiveParticipant(otherServer);
+			otherServerAP.role = ActiveParticipantIds.Destination;
+			this.securityAlert(success, otherServerAP);
+		} catch (JAXBException e) {
+			LOG.error("Unable to log node authentication.", e);
+		}
+	}
+
+COM:logs a node authentication failure using an ActiveParticipant and a SuccessCode parameter

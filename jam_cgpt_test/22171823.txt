@@ -1,0 +1,17 @@
+TDAT: 	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveConnection_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveConnection_type_feature", "_UI_EveConnection_type"),
+				 EvesimPackage.Literals.EVE_CONNECTION__TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the type attribute of an EveConnection object

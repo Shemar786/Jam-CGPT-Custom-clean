@@ -1,0 +1,8 @@
+TDAT: 		protected void insert(Pet pet) {
+			Object[] objs = new Object[] {null, pet.getName(), new java.sql.Date(pet.getBirthDate().getTime()),
+																		new Integer(pet.getType().getId()), new Integer(pet.getOwner().getId())};
+			super.update(objs);
+			retrieveIdentity(pet);
+		}
+
+COM:inserts a new record into a database table for a Pet object and retrieves its identity value

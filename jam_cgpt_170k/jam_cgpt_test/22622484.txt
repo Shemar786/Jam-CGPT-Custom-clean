@@ -1,0 +1,11 @@
+TDAT: 	public void setValue(String str) {
+		// prtln ("\nsetValue(" + XPathUtils.getLeaf(this.getXPath()) +") in: \"" + str + "\"");
+
+		if (this.im.getPreserveWhiteSpace())
+			value = handleWhiteSpace(str);
+		else
+			value = str.trim();
+		// prtln ("\t out: \"" + value + "\"");
+	}
+
+COM:sets the value of a variable based on a provided string, and handles white space if specified

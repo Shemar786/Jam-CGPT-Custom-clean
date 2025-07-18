@@ -1,0 +1,14 @@
+TDAT: 	private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
+		// Read in size, and any hidden stuff
+		s.defaultReadObject();
+
+		// Read in array length and allocate array
+		int arrayLength = s.readInt();
+		Object[] a = elementData = new Object[arrayLength];
+
+		// Read in all elements in the proper order.
+		for (int i = 0; i < size; i++)
+			a[i] = s.readObject();
+	}
+
+COM:reads in serialized object data, creates an array of the specified length, and populates it with the serialized elements

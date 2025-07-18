@@ -1,0 +1,12 @@
+TDAT: 	public RangeSet union(RangeSet other) {
+		RangeSet result = new RangeSet();
+		for (int ii = 0; ii < ranges.size(); ii++)
+			result.addRange((Range) ranges.elementAt(ii));
+		Vector otherRanges = other.getRanges();
+		for (int ii = 0; ii < otherRanges.size(); ii++)
+			result.addRange((Range) otherRanges.elementAt(ii));
+
+		return result;
+	}
+
+COM:returns a new RangeSet that is a combination of the current RangeSet and another given RangeSet

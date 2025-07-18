@@ -1,0 +1,15 @@
+TDAT:     public void playSound(File currentFile, double volume, double pan, double sampleRate) {
+	//load file
+	soundLoad(currentFile);
+	// Set Volume
+	setVolume(clip, volume);
+	// Set Pan
+	setPan(clip, pan);
+	// Set Pitch
+	setPitch(clip, sampleRate);
+        if (clip == null) return;
+        // Start playing
+        clip.start();
+    }
+
+COM:plays a sound file with adjustable volume, panning, and sample rate

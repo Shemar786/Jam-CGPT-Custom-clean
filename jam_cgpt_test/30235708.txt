@@ -1,0 +1,9 @@
+TDAT:     public void performDriftAction(InputActionEvent evt) {
+        node.drift(evt.getTime());
+        Vector3f loc = node.getLocalTranslation();
+        loc.addLocal(node.getLocalRotation().getRotationColumn(2, tempVa)
+                     .multLocal(node.getVelocity() * evt.getTime()));
+        node.setLocalTranslation(loc);
+    }
+
+COM:performs a drift action by updating the position of a node based on its current velocity and time elapsed since the last update

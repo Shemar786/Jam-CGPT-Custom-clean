@@ -1,0 +1,18 @@
+TDAT: 	public void loadComments(File rootPath) {
+		if (commentFile != null && commentFile.length() != 0) {
+			File file = new File(rootPath, commentFile);
+			if (file.exists()) {
+				try {
+					comment = FilesContentReader.getBodyContent(file);
+				} catch (Exception e) {
+					log.error("Error loading comment", e);
+					comment = "Error loading comment: " + e;
+				}
+			} else {
+				log.warn("commentFile not found: " + file.getAbsolutePath());
+			}
+		}
+
+	}
+
+COM:loads comments from a file located within the specified root path

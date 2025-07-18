@@ -1,0 +1,17 @@
+TDAT: 	private JButton getButtonGuardar() {
+		if (buttonGuardar == null) {
+			buttonGuardar = new JButton();
+			buttonGuardar.setText(Messages
+					.getString("gui.AdministrationUser.22")); //$NON-NLS-1$
+			buttonGuardar.setIcon(new ImageIcon("data/icons/color_line.png"));
+			buttonGuardar
+					.addActionListener(new java.awt.event.ActionListener() {
+						public void actionPerformed(java.awt.event.ActionEvent e) {
+							modificado = false;
+						}
+					});
+		}
+		return buttonGuardar;
+	}
+
+COM:returns a JButton with custom text, icon and an ActionListener that sets a boolean variable to false when clicked

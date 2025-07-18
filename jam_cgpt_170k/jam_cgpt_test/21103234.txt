@@ -1,0 +1,13 @@
+TDAT:     protected Element getFirstChildElement(Element element) {
+        NodeList children = element.getChildNodes();
+        int len = children.getLength();
+        for (int i = 0; i < len; i++) {
+            Node node = children.item(i);
+            if (node instanceof Element) {
+                return (Element)node;
+            }
+        }
+        return null;
+    }
+
+COM:returns the first child element of a given XML element

@@ -1,0 +1,10 @@
+TDAT:   public Component getPanel(String name) {
+    for (int i = 0; i < items.size(); i++) {
+      COutlookBarItem current = (COutlookBarItem) items.get(i);
+      if (current.getButton().getText().equals(name))
+        return current.getComponent();
+    }
+    return null;
+  }
+
+COM:takes in a string name as a parameter and searches a list of COutlookBarItems for an item with a matching button name, and returns the corresponding component or null if not found

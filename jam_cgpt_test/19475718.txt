@@ -1,0 +1,17 @@
+TDAT: 	protected void addTranslationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBabstractStatemachine_translation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBabstractStatemachine_translation_feature", "_UI_UMLBabstractStatemachine_type"),
+				 UMLBPackage.Literals.UML_BABSTRACT_STATEMACHINE__TRANSLATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to the item property descriptor list for a UMLBabstractStatemachine object

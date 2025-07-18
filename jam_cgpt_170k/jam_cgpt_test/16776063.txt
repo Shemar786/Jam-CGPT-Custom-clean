@@ -1,0 +1,13 @@
+TDAT:     public IStochModelInstance getInstance(OutputLevel outputLevel){
+		ArrayList<String> ids = new ArrayList<String>();
+		ArrayList<IStochModelInstance> models = new ArrayList<IStochModelInstance>();
+		for(int i=0;i<this.childIds.size();i++){
+			ids.add(this.childIds.get(i));
+			IStochModelInstance tempInstance = this.children.get(i).getInstance(OutputLevel.Suppress);
+			models.add(tempInstance);
+		}
+		IStochModelInstance result = new SimultaneousGroupStochModelInstance(models,ids);
+		return result;
+    }
+
+COM:returns an instance of a stochastic model

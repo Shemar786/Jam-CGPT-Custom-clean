@@ -1,0 +1,12 @@
+TDAT: 	public boolean isAdminMetadata(String dsID, String label){
+		logger.debug("entering isAdminMetadata(" + dsID + ", " + label + ")");
+		boolean result =(//FedoraInterface.ELATED_DATASTREAM_EXT.equals(dsID)
+				//|| "ExtMetaData".equals(label)
+				//|| 
+				FedoraInterface.RELS_EXT.equals(dsID)
+				|| "DC".equals(dsID));
+		logger.debug("exiting isAdminMetadata :" + result);
+		return result;
+	}
+
+COM:determines if the given dsID and label correspond to admin metadata and returns a Boolean value

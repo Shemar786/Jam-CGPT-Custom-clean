@@ -1,0 +1,20 @@
+TDAT:     public String readLine() {
+        BufferedReader  input;
+        String          str = null;
+
+        if (file == null || line < 0) {
+            return null;
+        }
+        try {
+            input = new BufferedReader(new FileReader(file));
+            for (int i = 0; i < line; i++) {
+                str = input.readLine();
+            }
+            input.close();
+        } catch (IOException e) {
+            return null;
+        }
+        return str;
+    }
+
+COM:reads a line from the specified file and returns it as a String

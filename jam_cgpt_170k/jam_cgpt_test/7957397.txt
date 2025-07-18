@@ -1,0 +1,32 @@
+TDAT: 	public boolean equals(final Object other) {
+		if (!(other instanceof Constant)) {
+			return false;
+		}
+
+		final Constant c = (Constant) other;
+
+		if (tag != c.tag) {
+			return false;
+		}
+
+		switch (tag) {
+		case CLASS:
+		case STRING:
+		case INTEGER:
+		case FLOAT:
+		case LONG:
+		case DOUBLE:
+		case UTF8:
+			return value.equals(c.value);
+		case FIELD_REF:
+		case METHOD_REF:
+		case INTERFACE_METHOD_REF:
+		case NAME_AND_TYPE:
+			return (((int[]) value)[0] == ((int[]) c.value)[0])
+					&& (((int[]) value)[1] == ((int[]) c.value)[1]);
+		}
+
+		return false;
+	}
+
+COM:checks for equality between two objects of the Constant class and returns a boolean indicating whether they are equal or not

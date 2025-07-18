@@ -1,0 +1,16 @@
+TDAT:   public void leave() {
+    // this is the correct thread to calculate the display of the
+    // field NOT later in the event thread
+    final DField      leaveMe = getDisplay();
+
+    if (leaveMe != null) {
+      SwingThreadHandler.start(new Runnable() {
+          public void run() {
+            resetCommands();
+            leaveMe.leave();
+          }
+        });
+    }
+  }
+
+COM:initiates a calculation for the display of a field in a separate thread and resets commands before exiting the current thread

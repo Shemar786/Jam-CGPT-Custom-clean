@@ -1,0 +1,16 @@
+TDAT:     public Enumeration getParameterNames() {
+        parse();
+        return new Enumeration() {
+            private Iterator entries = parameters.entryList().iterator();
+            public boolean hasMoreElements() {
+                return entries.hasNext();
+            }
+
+            public Object nextElement() {
+                if (!entries.hasNext()) throw new NoSuchElementException();
+                return ((Map.Entry)entries.next()).getKey();
+            }
+        };
+    }
+
+COM:returns an enumeration of parameter names parsed from an input source

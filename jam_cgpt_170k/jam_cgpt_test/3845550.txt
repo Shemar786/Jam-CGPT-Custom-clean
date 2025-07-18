@@ -1,0 +1,13 @@
+TDAT:     /*public Table findTable(String schemaName, String tblName) throws SQLException {
+        // find schema
+        System.out.println("Trying to find table " + schemaName + "." + tblName);
+        Schema schema = findSchema(schemaName);
+        if (schema == null) {
+            return null;
+        }
+        // find table
+        Table table = schema.getTable(tblName);
+        return table; // even if it's null
+    }*/
+
+COM:finds and returns a table in a given schema, and returns null if the schema or table cannot be found

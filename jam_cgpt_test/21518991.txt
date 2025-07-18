@@ -1,0 +1,22 @@
+TDAT: 	public void onModuleLoad() {
+		
+		LoginServiceAsync loginService = GWT.create(LoginService.class);
+		loginService.login(GWT.getHostPageBaseURL(), new AsyncCallback<LoginInfo>() {
+			
+			public void onFailure(Throwable caught) {
+				Window.alert("登入失敗");
+			}
+
+			public void onSuccess(LoginInfo result) {
+				loginInfo = result ;
+				MyInfo.set(result);
+				if (loginInfo.isLoggedIn()) {
+					RootPanel.get().add(MainForm.getInstance());
+				} else {
+					loadLogin();
+				}
+			}
+		});
+	}
+
+COM:loads a login service and checks if the user is logged in, displaying the login form if not

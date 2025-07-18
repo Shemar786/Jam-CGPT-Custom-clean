@@ -1,0 +1,11 @@
+TDAT: 	private void setRoleForm(final ActionForm form) throws Exception {
+		
+		List orderBy = new ArrayList();
+		orderBy.add(new Order("role", Globals.ORDER_ASC));
+    	List roles = EntityHelper.getEntities(null, Globals.ENTITY_ROLE, orderBy, 0, 0, principal, dbSession);
+
+		((RoleForm) form).setRoles(roles);
+		
+	}
+
+COM:sets the roles of a given ActionForm object by retrieving a list of entities sorted by "role" field in ascending order

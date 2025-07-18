@@ -1,0 +1,13 @@
+TDAT:     public void transfHulls(int method){
+		if(method==1){
+	    	hullA = transfHull(hullAo,hullAo.getCenter());
+	    	hullB = transfHull(hullBo,hullBo.getCenter());
+		}else{
+		    hullA = transfHull(hullAo);
+	    	hullB = transfHull(hullBo);
+		}
+		//print2File(hullA,"TransA");
+		//print2File(hullB,"TransB");
+    }
+
+COM:transfers a set of hulls based on a given method

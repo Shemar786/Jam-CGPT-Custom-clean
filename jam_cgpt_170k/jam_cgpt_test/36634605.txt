@@ -1,0 +1,14 @@
+TDAT:     private void updatePosition(){
+        if(posx != fposx || posy != fposy){
+            if(speed == 0){
+                posx = fposx;
+                posy = fposy;
+            }
+            if(posx != fposx)
+                posx += (posx < fposx) ? speed : -speed;
+            if(posy != fposy)
+                posy += (posy < fposy) ? speed : -speed;
+        }
+    }
+
+COM:updates the position of an object by moving it towards its final position at a specified speed, as long as the object is not already at its final position

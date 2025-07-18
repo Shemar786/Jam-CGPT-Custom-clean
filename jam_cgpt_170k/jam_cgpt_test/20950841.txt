@@ -1,0 +1,11 @@
+TDAT: 	public void encode(byte[] buffer, int ofs) {
+		// pad with terminator byte; name length must include it.
+		encodeCString(_name, buffer, ofs);
+
+		buffer[ofs + POS_TYPE] = encodeType(getType());
+
+		buffer[ofs + POS_LENGTH] = (byte)getLen();
+		buffer[ofs + POS_DEC_COUNT] = (byte)getLenExtra();
+	}
+
+COM:encodes various attributes into a byte array buffer at the specified offset

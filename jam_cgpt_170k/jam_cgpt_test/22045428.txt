@@ -1,0 +1,10 @@
+TDAT:     private void convertToProduct( java.util.List<GObject> list ){
+	convertBoolFunctions( list );
+	while( list.size() > 1 ){
+	    OObject z = (OObject)(list.get( 0 ));
+	    OObject c = (OObject)(list.remove( 1 ));
+	    list.set( 0, c.multiply( (OObject)(list.get( 0 )) ) );
+	}
+    }
+
+COM:takes a List of GObject objects, converts boolean functions in the list, and then multiplies the first two objects together until only one object remains in the list

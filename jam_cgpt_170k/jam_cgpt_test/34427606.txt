@@ -1,0 +1,12 @@
+TDAT:     private void aConstructorHelper(int[] weights, boolean validateSum) {
+        if (validateSum)
+            validate(weights);
+        if (validateSum && !isValid(sum(weights)))
+            throw new IllegalArgumentException(String.format(
+                    "Invalid sum: %s of %s",
+                    Integer.toString(sum(weights)), Arrays.toString(weights)));
+
+        values = Arrays.copyOf(weights, weights.length);
+    }
+
+COM:This is a private Java constructor helper method that takes in an integer array of weights and a boolean for validation, and throws an exception if the sum of the weights is invalid

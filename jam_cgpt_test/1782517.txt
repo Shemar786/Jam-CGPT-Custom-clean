@@ -1,0 +1,10 @@
+TDAT:     public void removeAttribute( String name ) {
+        if (_invalid) throw new IllegalStateException();
+        if (_values.containsKey( name )) {
+            Object oldValue = _values.get( name );
+            _values.remove( name );
+            _listenerDispatcher.sendAttributeRemoved( this, name, oldValue );
+        }
+    }
+
+COM:removes an attribute from the current object if it exists, and triggers an event notification if successful

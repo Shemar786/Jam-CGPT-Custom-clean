@@ -1,0 +1,11 @@
+TDAT:     public void configure(String goFile, String defFile) {
+        Vector filePath = new Vector();
+        filePath.add(goFile);
+        config = new GOFlatFileAdapter.GOFlatFileConfiguration();
+        config.setReadPaths(filePath);
+        if (defFile != null) {
+            ((GOFlatFileAdapter.GOFlatFileConfiguration) config).setDefFilename(defFile);
+        }
+    }
+
+COM:configures a flat file adapter using the specified input file paths

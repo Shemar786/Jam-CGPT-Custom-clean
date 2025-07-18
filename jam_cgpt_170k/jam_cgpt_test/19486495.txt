@@ -1,0 +1,24 @@
+TDAT: 	public void testNOTSUBSET1() {
+		String chaine = new PreParser(new StringReader(""))
+				.process("{-2, 3} /<<: {1,3,4}");
+
+		IParseResult result = FormulaFactory.getDefault()
+				.parsePredicate(chaine,LanguageVersion.LATEST,null);
+
+		assertTrue(!result.hasProblem());
+
+		Predicate predicate = result.getParsedPredicate();
+
+		GlobalIdentTable<IExpression> table = new GlobalIdentTable<IExpression>();
+
+		PredicatBuilder builder = new PredicatBuilder(table);
+
+		assertTrue(predicate.accept(builder));
+
+		IPredicate predC = builder.getPredicate();
+
+		assertEquals(true, predC.isHold());
+
+	}
+
+COM:tests whether a specified set is not a subset of another specified set using various classes and methods

@@ -1,0 +1,10 @@
+TDAT:     public void launch() {
+        if(theExtServSocketToPass != null) {
+            try {
+               theExtServSockManager = new ExtServerSocketManager(theExtServSocketToPass, this);
+               getTheExtServSockManager().start();
+            }catch(Exception a){a.printStackTrace();}
+        }
+    }
+
+COM:launches an external server socket and starts a thread to manage it

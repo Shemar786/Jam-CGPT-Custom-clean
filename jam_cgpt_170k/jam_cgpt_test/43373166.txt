@@ -1,0 +1,20 @@
+TDAT:     public int getForwardBaseNum(char base) {
+        switch (base) {
+            case 'A':
+            case 'a':
+                return baseCount[0];
+            case 'C':
+            case 'c':
+                return baseCount[1];
+            case 'G':
+            case 'g':
+                return baseCount[2];
+            case 'T':
+            case 't':
+                return baseCount[3];
+            default:
+                return 0;
+        }
+    }
+
+COM:returns the count of a DNA base (A, C, G, T) based on the character input

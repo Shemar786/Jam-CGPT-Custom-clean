@@ -1,0 +1,24 @@
+TDAT: 	protected void sendEvent(Event ev) throws FrameworkException {
+		//if(getState()!=STARTED) 
+		//	throw new IllegalStateException(JIMOMessages.FRAMEWORK_ILLEGALSTATE);
+
+//		if(frameworkEvents==null) {
+//			startupMessages.add(ev);
+//			return;
+//		}
+		
+		synchronized (frameworkEvents) {
+			if(frameworkEvents.size()>EVENTQUEUEMAX)
+				try {
+					frameworkEvents.wait(MAXQUEUE_TIMEOUT);
+				} catch (InterruptedException e) {
+					throw new FrameworkException(e);
+				}
+			if(frameworkEvents.size()>EVENTQUEUEMAX) 
+				throw new FrameworkException(JIMOMessages.FRAMEWORK_EVENTQUEUETIMEOUT);
+			frameworkEvents.add(ev);
+			frameworkEvents.notifyAll();
+		}
+	}
+
+COM:sends an Event and handles exceptions related to event queue size and timeouts

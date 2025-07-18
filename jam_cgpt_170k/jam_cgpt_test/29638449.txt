@@ -1,0 +1,5 @@
+TDAT: 	public void draw(Object objGFX, boolean transparency, int x, int y, int width, int height) {
+		draw(objGFX, transparency, true, true, true, true, x, y, width, height);
+	}
+
+COM:draws an object with optional transparency at specified coordinates and dimensions

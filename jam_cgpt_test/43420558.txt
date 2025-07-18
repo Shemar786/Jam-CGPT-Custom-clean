@@ -1,0 +1,14 @@
+TDAT: 	public void reNumberAgents2Start() {
+		
+		Integer counter = 1;
+		AgentClassElement4SimStart ac4s = null;
+		
+		for (int i=0; i<this.agents2Start.size(); i++) {
+			 ac4s = (AgentClassElement4SimStart) this.agents2Start.getElementAt(i); 
+			 ac4s.setPostionNo(counter);
+			 counter++;
+			 //this.agents2Start.setElementAt(ac4s, i);
+		}
+	}
+
+COM:renumbers agent positions in a simulation starting condition list

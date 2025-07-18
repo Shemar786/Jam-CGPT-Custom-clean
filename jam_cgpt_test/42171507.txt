@@ -1,0 +1,17 @@
+TDAT: 	protected void addOutputParametersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ParameterizedActionstep_outputParameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterizedActionstep_outputParameters_feature", "_UI_ParameterizedActionstep_type"),
+				 ActionStepPackage.eINSTANCE.getParameterizedActionstep_OutputParameters(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds an item property descriptor for an output parameter for a parameterized action step

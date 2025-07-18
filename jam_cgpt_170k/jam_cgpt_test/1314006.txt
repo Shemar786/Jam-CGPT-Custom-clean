@@ -1,0 +1,11 @@
+TDAT: 	protected void copyAttributesToNode(NodeAdapter node) {
+		// reactivate all settings from nodeAttributes:
+        for (Iterator i = nodeAttributes.keySet().iterator(); i.hasNext();) {
+            String key = (String) i.next();
+            //to avoid self reference:
+            setNodeAttribute(key, (String) nodeAttributes.get(key),
+                    node);
+        }
+	}
+
+COM:copies all attributes from one node to another

@@ -1,0 +1,18 @@
+TDAT:     public boolean endsWith(final MutableString suffix) {
+        final int l = suffix.length();
+        int length = length();
+        if (l > length) {
+            return false;
+        }
+        int i = l;
+        final byte[] a1 = suffix.array;
+        final byte[] a2 = array;
+        while (i-- != 0) {
+            if (a1[i] != a2[--length]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+COM:checks if a MutableString object ends with a given suffix and returns a boolean value

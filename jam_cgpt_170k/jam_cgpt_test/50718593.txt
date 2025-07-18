@@ -1,0 +1,11 @@
+TDAT:    private void loadStringAttribute(SpooledFile p, Vector row, int attribute) {
+      try {
+         row.add(p.getStringAttribute(attribute));
+      }
+      catch (Exception ex) {
+//         System.out.println(ex.getMessage());
+         row.add("Attribute Not supported");
+      }
+   }
+
+COM:loads a string attribute from a SpooledFile object and adds it to a Vector, or adds a default message if the attribute is not supported

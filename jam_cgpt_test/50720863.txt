@@ -1,0 +1,15 @@
+TDAT:    private void fireScreenSizeChanged() {
+
+      if (listeners != null) {
+         Vector<ScreenListener> lc = new Vector<ScreenListener>(listeners);
+          //int size = listeners.size();
+         int size = lc.size();
+         for (int i = 0; i < size; i++) {
+            ScreenListener target =
+                  lc.elementAt(i);
+            target.onScreenSizeChanged(numRows,numCols);
+         }
+      }
+   }
+
+COM:fires an event to notify registered listeners when the screen size has changed

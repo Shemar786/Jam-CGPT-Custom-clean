@@ -1,0 +1,25 @@
+TDAT: 	public void testExtendsContext_06_transitive() throws Exception {
+		IContextRoot abs1 = createContext("abs1");
+		addCarrierSets(abs1, makeSList("S1"));
+		saveRodinFileOf(abs1);
+		
+		IContextRoot abs2 = createContext("abs2");
+		addContextExtends(abs2, "abs1");
+		addCarrierSets(abs2, makeSList("S2"));
+		saveRodinFileOf(abs2);
+		
+		IContextRoot con = createContext("ctx");
+		addContextExtends(con, "abs2");
+		saveRodinFileOf(con);
+
+		runBuilder();
+		
+
+		ISCContextRoot file = con.getSCContextRoot();
+		extendsContexts(file, "abs2");
+		containsContexts(file, "abs1", "abs2");
+		
+		containsMarkers(con, false);
+	}
+
+COM:is testing whether a context can extend a context that extends another context, adding carrier sets to each context and verifying the structure of the resulting file

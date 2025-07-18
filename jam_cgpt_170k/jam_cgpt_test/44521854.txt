@@ -1,0 +1,13 @@
+TDAT: 	public Thing getNamedObject(int x, int y, String name) {
+		int i = x + width * y;
+		if ((x < 0) || (y < 0) || (x >= width) || (y >= height))
+			return null;
+		Thing t = objects[i];
+		while (t != null) {
+			if (name.equals(t.get("Name"))) return t;
+			t = t.next;
+		}
+		return null;
+	}
+
+COM:retrieves a named object at a specific position within a grid of objects

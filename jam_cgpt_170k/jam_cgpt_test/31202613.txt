@@ -1,0 +1,12 @@
+TDAT:   public void launchViewer(int plate_oid, Connection connection){
+    try {
+      Sound.drumroll.play();
+      ProjectSeqsFrame frame = new ProjectSeqsFrame(login.username, login.password, Login.ORACLEDRIVER, Login.SEQTRACS_PRODUCTION, plate_oid, this);
+      setUpLaunchViewerFrame(frame);
+    }
+    catch (Exception ex) {
+      Debug.processException(ex,"lauchViewer plate oid");
+    }
+  }
+
+COM:launches a viewer for a specified plate object ID using login credentials and a database connection, with the option for error handling

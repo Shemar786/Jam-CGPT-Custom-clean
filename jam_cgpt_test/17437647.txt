@@ -1,0 +1,12 @@
+TDAT:     public void updateCurrentWorldRegion() {
+        MuMap newRegion = MuWorld.getInstance().getMap(getM());
+        if (!newRegion.equals(_region)) {
+            if (_region != null) {
+                _region.removeObject(this);
+            }
+            newRegion.addObject(this);
+            _region = newRegion;
+        }
+    }
+
+COM:updates the current world region of an object and moves it to a new region if necessary

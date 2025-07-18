@@ -1,0 +1,10 @@
+TDAT:     public PrintOrderBO create() throws Exception{
+        String id = GUID.generate();
+        PrintOrderBO pobo = new PrintOrderBO(id);
+        Cache.getInstance().put(pobo.getID(), pobo);
+        pobo.setRSDescription("Print Order");
+        pobo.setRSType("Printing");
+        return pobo;
+    }
+
+COM:creates a new PrintOrderBO object with a generated ID, sets some properties on it, stores it in a cache, and returns it

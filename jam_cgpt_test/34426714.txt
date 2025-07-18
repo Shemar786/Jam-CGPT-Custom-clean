@@ -1,0 +1,16 @@
+TDAT:     private void actionThumbSelect(ListSelectionEvent e) {
+        if (!e.getValueIsAdjusting()) {
+            int row = thumbNails.getSelectedRow();
+            if (row < 0) return;
+
+            SWGImage i = currentAlbum.get(row);
+            if (i == currentImage) return;
+
+            currentImage = i;
+            imageScaled = true;
+            imageDisplay(currentImage);
+            imagePath.setText(currentImage.getDescription());
+        }
+    }
+
+COM:performs various actions when a thumbnail is selected, such as updating the current image and displaying it

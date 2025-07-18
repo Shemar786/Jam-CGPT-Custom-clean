@@ -1,0 +1,14 @@
+TDAT: 	private int handleHalt() {
+		//need to test that this is the root process
+		if(processID == 0){
+			Machine.halt(); 
+		}else{
+			//System.err.println("non-root process trying to call halt");
+			return -1; //This is not the root process so ignore this one
+		}
+		
+		Lib.assertNotReached("Machine.halt() did not halt machine!");
+		return 0;
+	}
+
+COM:checks if the current process is the root process and halts the machine if it is, otherwise returns -1

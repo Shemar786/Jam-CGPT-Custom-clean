@@ -1,0 +1,15 @@
+TDAT:   public void setResultType(Class type) {
+    if (type == Void.TYPE) {
+      label.setText("(no return value)");
+      isVoid = true;
+    } else {
+      String name = Utility.getShortClassName(type);
+      label.setText("Return value (" + name + "):  ");
+      //value.setFixedType(type);
+      isVoid = false;
+    }
+    invalidate();
+    validate();
+  }
+
+COM:sets the result type based on a given class, updating a label and boolean value accordingly

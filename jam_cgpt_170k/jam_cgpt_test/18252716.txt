@@ -1,0 +1,14 @@
+TDAT:     public Composite getComposite(Table table) {
+        if (componentCache.containsKey(table)) {
+            return componentCache.get(table);
+        }
+        for (Composite composite: composites.values()) {
+            if (composite.mainTable.equals(table) || composite.componentTables.contains(table)) {
+                componentCache.put(table, composite);
+                return composite;
+            }
+        }
+        return null;
+    }
+
+COM:returns a Composite object based on a given Table object, either by retrieving it from a cache or by searching through a collection of Composite objects

@@ -1,0 +1,17 @@
+TDAT:     public int itemCount() throws IOException {
+        if (isZipFile()) {
+            try (ZipFile zip = new ZipFile(relativePath, charset)) {
+                return zip.size();
+            }
+        } else {
+            try (ZipInputStream zin = new ZipInputStream(openStream(), charset)) {
+                int count = 0;
+                while (zin.getNextEntry() != null) {
+                    count++;
+                }
+                return count;
+            }
+        }
+    }
+
+COM:returns the number of items in a zip file or zip input stream, handling IOExceptions

@@ -1,0 +1,12 @@
+TDAT: 	public void testAssociativePredicate() {
+		te = mTypeEnvironment("s", "S", "t", "T");
+		assertPredicateSpecialization(te, //
+				"s ∈ S ∧ t ∈ T", //
+				mSpec(te,//
+						mList("S", "Y", //
+								"T", "Z"), //
+						mList("s", "S", "y", "Y", //
+								"t", "T", "z", "Z")));
+	}
+
+COM:tests the associative predicate for type environments and checks if the specified predicate matches the expected result

@@ -1,0 +1,10 @@
+TDAT:     private void setModified(OBEXElement file) {
+        try {
+            window.getModifiedTextField().setText("-");
+            window.getModifiedTextField().setText(format.format(file.getModified()));
+        } catch (Exception exc) {
+            log.warn("Cannot set the formatted modified date", exc);
+        }
+    }
+
+COM:sets the modified date of an OBEXElement to a specific format and updates a TextField in the program's window, with error handling in case of any issues

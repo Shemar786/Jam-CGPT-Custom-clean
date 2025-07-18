@@ -1,0 +1,31 @@
+TDAT: 	public void setActionOnClose(int action){
+		switch(action){
+		case KEEP_OPEN:
+			removeWindowListener(winAdapt);
+			winAdapt = null;
+			actionOnClose = action;
+			break;
+		case CLOSE_WINDOW:
+		case EXIT_APP:
+			if(winAdapt == null){
+				winAdapt = new WindowAdapter() {
+					public void windowClosing(WindowEvent evt) {
+						switch(actionOnClose){
+						case CLOSE_WINDOW:
+							removeFromG4P();
+							dispose();	// close this frame
+							break;
+						case EXIT_APP:
+							System.exit(0);
+							break;
+							}
+					}
+				};
+				addWindowListener(winAdapt);
+			} // end if
+			actionOnClose = action;
+			break;
+		} // end switch
+	}
+
+COM:sets an action to perform when a window is closed in a Java application, including removing a window listener, closing or exiting the application

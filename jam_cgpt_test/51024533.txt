@@ -1,0 +1,16 @@
+TDAT: 	public void undo() {
+		if (actionStack.size() > 0) {
+			Operation<?> a = actionStack.pop();
+			a.revert();
+			reversionStack.push(a);
+			updateAll();
+			MetaDataEditor.getInstance().setActionEnabled(
+					new String[] { "Edit", "Redo" }, true);
+			if (actionStack.size() == 0) {
+				MetaDataEditor.getInstance().setActionEnabled(
+						new String[] { "Edit", "Undo" }, false);
+			}
+		}
+	}
+
+COM:undoes the last action executed by popping it from a stack, reverting the action, and updating the user interface

@@ -1,0 +1,14 @@
+TDAT: 	public void deleteThumbnail(String pid, String dsID) {
+		logger.debug("entering deleteThumbnail");
+
+		String fname = Config.getCurrentPath() + File.separator
+				+ Config.getProperty("DEFAULT_THUMBNAILS_DIRECTORY")
+				+ File.separator + generateFileName(pid, dsID);
+		File thumbFile = new File(fname);
+		if (thumbFile.canRead()) {
+			thumbFile.delete();
+		}
+		logger.debug("leaving deleteThumbnail");
+	}
+
+COM:deletes a thumbnail file based on a provided PID and DSID

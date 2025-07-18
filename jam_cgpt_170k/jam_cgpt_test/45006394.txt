@@ -1,0 +1,11 @@
+TDAT:     public void setBaseRoll() {
+
+        if (critLocation < 0 || critSlot < 0) {
+            return;
+        }
+        int roll = UnitUtils.getTechRoll(unit, critLocation, critSlot, techType, armor, mwclient.getData().getHouseByName(mwclient.getPlayer().getHouse()).getTechLevel(), salvage);
+
+        baseRollField.setText(Integer.toString(roll));
+    }
+
+COM:sets the base roll by getting the technology roll and displaying it in a text field if the critical location and slot are not negative

@@ -1,0 +1,13 @@
+TDAT: 	private void sendHistory( String recipient, String botletSessionId ) {
+		// latest entries are stored at the end in the history
+		for ( FeedHistoryEntry entry : history ) {
+			try {
+				Set<MessageProperty> properties = getMessageProperties(entry, botletSessionId);
+				BotUtils.sendToContact(getConnection(), recipient, toJSON(entry), properties);
+			} catch ( Throwable t ) {
+				log.error("Could not send feed history to " + recipient, t);
+			}
+		}
+	}
+
+COM:sends the history of feed entries to a recipient using BotUtils, with the latest entries appearing at the end of the history

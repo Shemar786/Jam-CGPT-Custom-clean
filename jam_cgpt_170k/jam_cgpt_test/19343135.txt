@@ -1,0 +1,16 @@
+TDAT:     private void checkRedef(Element element) {
+
+       if (element.hasAttribute(ATTR_NAME))  {
+    	   try {
+    		   int level = getIntAttribute(element, ATTR_LEVEL);
+	    	   if (level > 0
+	    	   &&  level < redefLevel
+	    	   &&  getStringAttribute(element, ATTR_REDEFINED).equals("true")) {
+		           redefLevel = level;
+		       }
+    	   } catch (Exception e) {
+    	   }
+       }
+    }
+
+COM:checks if an element has a certain attribute, and if so, it tries to get integer and string attributes from the element and updates the redefLevel variable if certain conditions are met

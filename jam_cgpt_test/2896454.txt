@@ -1,0 +1,25 @@
+TDAT:   private Action getAction(StateSet set) {
+
+    states.reset(set);
+    
+    Action maxAction = null;
+
+    Out.debug("Determining action of : "+set);
+
+    while ( states.hasMoreElements() ) {
+
+      Action currentAction = action[ states.nextElement() ];
+      
+      if ( currentAction != null ) {
+	      if (maxAction == null) 
+	        maxAction = currentAction;
+	      else
+	        maxAction = maxAction.getHigherPriority(currentAction);
+      }
+
+    }
+
+    return maxAction;
+  }
+
+COM:takes in a StateSet and determines the highest priority Action to be taken based on elements within the StateSet

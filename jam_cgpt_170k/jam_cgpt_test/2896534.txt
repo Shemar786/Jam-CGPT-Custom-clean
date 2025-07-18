@@ -1,0 +1,10 @@
+TDAT:   public void write(char buf[], int off, int len) {
+    if (text != null) {
+      text.append(new String(buf,off,len));
+      if ((col+=len) > 78) println();
+    }
+    else
+      super.write(buf, off, len);
+  }
+
+COM:writes a character array to a specified index with a given length and appends it to a StringBuilder object, printing a new line if the column count is greater than 78, or else it calls the same method from its superclass

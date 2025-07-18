@@ -1,0 +1,10 @@
+TDAT:     private JMenuItem createMenuItem(String name, int shortCut, ActionListener listener) {
+        JMenuItem item = new JMenuItem(translate().getButtonText(name));
+        item.setMnemonic(translate().getMnemonic(name));
+        item.addActionListener(listener);
+        if(shortCut > 0)
+            item.setAccelerator(getShortcutKey(shortCut));
+        return item;
+    }
+
+COM:creates a menu item with a given name, shortcut key, and action listener

@@ -1,0 +1,11 @@
+TDAT:   public Iterator getModulesByParent(CModule parent) {
+    ArrayList array = new ArrayList();
+    for (int i = 0; i < modules.size(); i++) {
+      CModuleHolder holder = (CModuleHolder) modules.get(i);
+      if (holder.parent == parent)
+        array.add(holder.module);
+    }
+    return array.iterator();
+  }
+
+COM:takes a CModule object as a parent and returns an iterator containing all modules that have that object as their parent

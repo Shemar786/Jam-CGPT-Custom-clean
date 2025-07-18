@@ -1,0 +1,17 @@
+TDAT:     protected boolean destroyMainPart(SCIDockingGraph dockingGraph) {
+        int                           numParts = dockingGraph.mainParts.size();
+        int                           partNr = myGSC.random.nextInt(numParts);
+        StructuralConstraintGraphPart part   = (StructuralConstraintGraphPart) dockingGraph.mainParts.elementAt(
+                                                       partNr);
+
+        if (part instanceof NullMainPart) {
+            return false;
+        }
+
+        mySCGraphRepairer.destroyGraphPart(part, 
+                                           repairedInstance.removeNodeProbability);
+
+        return true;
+    }
+
+COM:destroys a random main part from a given SCIDockingGraph using mySCGraphRepairer and returns true if successful or false if it cannot destroy the part

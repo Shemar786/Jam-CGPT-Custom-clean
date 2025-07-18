@@ -1,0 +1,7 @@
+TDAT:   public int locateUnclosedComment(String text, int pos) {
+    int pos1 = locateUnclosedComment(text, pos, "(*", "*)");
+    int pos2 = locateUnclosedComment(text, pos, "{", "}");
+    return (pos1 > pos2) ? pos1 : pos2;
+  }
+
+COM:returns the position of the last unclosed comment occurrence in a text string, using two different comment formats

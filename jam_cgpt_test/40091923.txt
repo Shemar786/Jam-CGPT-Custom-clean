@@ -1,0 +1,11 @@
+TDAT:   private void runInParallelTestMode() {
+    List<Runnable> tasks= Lists.newArrayList(m_testRunners.size());
+    for(TestRunner tr: m_testRunners) {
+      tasks.add(new SuiteWorker(tr));
+    }
+    
+    ThreadUtil.execute(tasks, m_suite.getThreadCount(),
+        m_suite.getTimeOut(XmlTest.DEFAULT_TIMEOUT_MS), false);
+  }
+
+COM:creates a list of Runnable tasks, adds SuiteWorker objects to the list based on the size of m_testRunners, and then executes the tasks in parallel using ThreadUtil

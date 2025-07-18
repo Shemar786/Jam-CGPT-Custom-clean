@@ -1,0 +1,10 @@
+TDAT:     public int addNode(double doubleVal) {
+        Node newNode = this.constructG.addNode();
+        if (this.nodeMap == null) {
+            throw new IllegalParameterException("NodeMap not set");
+        }
+        this.nodeMap.put(newNode, new Double(doubleVal));
+        return this.globNodes.getNodeNumber(newNode);
+    }
+
+COM:adds a new node to a graph and assigns it a double value, returning the node's number in the graph

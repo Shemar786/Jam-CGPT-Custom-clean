@@ -1,0 +1,13 @@
+TDAT:     private String getLocalIPAddress() {
+        InetAddress inet;
+        String localHostIPaddress = null;
+        try {
+            inet = InetAddress.getLocalHost();
+            localHostIPaddress = inet.getHostAddress();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        return localHostIPaddress;
+    }
+
+COM:returns the local IP address of the current machine

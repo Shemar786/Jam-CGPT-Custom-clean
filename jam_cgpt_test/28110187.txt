@@ -1,0 +1,19 @@
+TDAT:     public View (final Object startingObjectParam) throws ViewInitialisationException {
+        // validate parameters and initialize model
+        if (startingObjectParam == null) {
+
+            View.displayUserMessage(View.romUIContainerConfiguration.getStartingObjectNullErrorMessage(), JOptionPane.ERROR_MESSAGE);
+
+        } else {
+
+            this.objectModel = ObjectModel.getInstance();
+            this.objectModel.setRootObject(startingObjectParam);
+
+            // initialize the frame
+            this.initialiseContainer();
+
+            super.setVisible(true);
+        }
+    }
+
+COM:initializes a view with a starting object, and throws an exception if the starting object is null

@@ -1,0 +1,17 @@
+TDAT:     private void storeFile(String dir, String filename, String layout) {
+
+        putLayout(filename, layout);
+
+        fileNames[fileNum] = filename;
+        directory[fileNum] = dir;
+        layouts[fileNum] = layout;
+
+        lastIdx = fileNum;
+        lastFile = correctCase(filename);
+        fileNum += 1;
+        if (fileNum >= FILE_HISTORY) {
+            fileNum = 0;
+        }
+    }
+
+COM:stores a file in a specified directory along with its filename and layout, and keeps track of the last accessed file

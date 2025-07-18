@@ -1,0 +1,11 @@
+TDAT:     public boolean interacts_ConvexHullPair(Domain dom){
+
+	ConvexHullPair calc = new ConvexHullPair("null",this,dom);
+	System.out.println(calc.getIntersectionAtomsA()+"  "+calc.getIntersectionAtomsB());
+	if(calc.getIntersectionAtomsA()>=Threshold.NumberOfResiduePairs||calc.getIntersectionAtomsB()>=Threshold.NumberOfResiduePairs)
+	    return true;
+	else
+	    return false;
+    }
+
+COM:determines if two convex hulls intersect based on the number of their intersection atoms in a given domain

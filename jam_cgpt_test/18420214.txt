@@ -1,0 +1,9 @@
+TDAT:     private void sendToRandom(PastryAntibody a, int amount) {
+        for (int i = 0; i < amount; i++) {
+            Id target = m_NIDFactory.generateNodeId();
+            m_NetworkEndpoint.route(target, a, null);
+            m_Statistics.antibodiesSent++;
+        }
+    }
+
+COM:sends a PastryAntibody object to a randomly generated Id target using the m_NetworkEndpoint route function, and updates the m_Statistics counter for the number of antibodies sent

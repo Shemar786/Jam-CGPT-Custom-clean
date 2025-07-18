@@ -1,0 +1,9 @@
+TDAT: 	private void testIsSnapshot(ISnapshotable mutable) {
+		final ISnapshotable snapshot = mutable.getSnapshot();
+		final ISnapshotable mutable2 = snapshot.getMutableCopy();
+		assertFalse("Mutable should not be a snapshot", mutable.isSnapshot());
+		assertTrue("Snapshot should be a snapshot", snapshot.isSnapshot());
+		assertFalse("Mutable should not be a snapshot", mutable2.isSnapshot());
+	}
+
+COM:tests whether an object is a mutable or a snapshot by creating a snapshot and a mutable copy and checking their properties

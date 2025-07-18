@@ -1,0 +1,14 @@
+TDAT: 	public void scale(double lambda) {
+		for (int i = 0; i < m_values.length; i++) {
+			m_values[i] *= lambda;
+		}
+		/*
+		for (int iRow = 1; iRow <= m_nRows; iRow++) {
+			for (int iCol = 1; iCol <= m_nCols; iCol++) {
+				mul(iRow, iCol,lambda);
+			}
+		}
+		*/
+	}		
+
+COM:scales all values in an array by a given factor

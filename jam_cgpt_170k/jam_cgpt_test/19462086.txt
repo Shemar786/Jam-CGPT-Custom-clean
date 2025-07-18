@@ -1,0 +1,20 @@
+TDAT: 	public void createPackageContents() {
+		if (isCreated) return;
+		isCreated = true;
+
+		// Create classes and their features
+		contextEClass = createEClass(CONTEXT);
+		createEReference(contextEClass, CONTEXT__EXTENDS);
+		createEAttribute(contextEClass, CONTEXT__EXTENDS_NAMES);
+		createEReference(contextEClass, CONTEXT__SETS);
+		createEReference(contextEClass, CONTEXT__CONSTANTS);
+		createEReference(contextEClass, CONTEXT__AXIOMS);
+
+		constantEClass = createEClass(CONSTANT);
+
+		carrierSetEClass = createEClass(CARRIER_SET);
+
+		axiomEClass = createEClass(AXIOM);
+	}
+
+COM:creates classes and their associated features, including references, attributes, constants, and axioms

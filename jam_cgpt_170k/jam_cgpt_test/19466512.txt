@@ -1,0 +1,17 @@
+TDAT: 	protected void addMachineNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Call_machineName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Call_machineName_feature", "_UI_Call_type"),
+				 Il1Package.Literals.CALL__MACHINE_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the machine name feature of the Call class

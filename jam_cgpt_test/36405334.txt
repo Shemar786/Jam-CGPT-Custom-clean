@@ -1,0 +1,9 @@
+TDAT:     public void handleReferenceMarkEnd(Element node, LaTeXDocumentPortion ldp, Context oc) {
+    	// Nothing to do, except to mark that this ends any Zotero/JabRef citation
+    	oc.setInZoteroJabRefText(false);
+    	if (bIncludeOriginalCitations) { // Protect space after comment
+    		ldp.append("{}");
+    	}
+    }
+
+COM:updates the context and appends a curly brace in a LaTeX document

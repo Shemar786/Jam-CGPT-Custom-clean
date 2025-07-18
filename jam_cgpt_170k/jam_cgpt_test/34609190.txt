@@ -1,0 +1,12 @@
+TDAT:     public List getAllLemmatizers(final Locale locale) {
+        if (locale == null) {
+            throw new IllegalArgumentException("The 'locale' argument cannot be null.");
+        }
+        List result = (List) lemmatizers.get(locale);
+        if (result == null) {
+            result = Collections.EMPTY_LIST;
+        }
+        return result;
+    }
+
+COM:returns a list of lemmatizers for a specified locale, or throws an exception if the locale parameter is null

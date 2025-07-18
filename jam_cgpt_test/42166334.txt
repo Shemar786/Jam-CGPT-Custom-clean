@@ -1,0 +1,14 @@
+TDAT: 	protected EClass getSemanticEClass(IAdaptable semanticAdapter) {
+		if (semanticAdapter == null)
+			return null;
+		EObject eObject = (EObject) semanticAdapter.getAdapter(EObject.class);
+		if (eObject != null)
+			return EMFCoreUtil.getProxyClass(eObject);
+		IElementType type = (IElementType) semanticAdapter
+			.getAdapter(IElementType.class);
+		if (type != null)
+			return type.getEClass();
+		return null;
+	}
+
+COM:gets the EClass associated with a given semantic adapter (which can be an EObject or an IElementType) or returns null if the adapter is null

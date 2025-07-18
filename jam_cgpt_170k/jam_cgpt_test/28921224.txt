@@ -1,0 +1,17 @@
+TDAT: 	protected int getIndexOfHighestPrecedenceFreeNode() {
+		int highestPrecedence = -1;
+		int highestPrecedenceTokenIndex = -1;
+		
+		for (int i = 0; i < sequence.size(); i++) {
+			NodeImpl n = sequence.get(i);
+			
+			if (n.getPrecedenceInSequence() > highestPrecedence && (n.isFreeNode())) {
+				highestPrecedence = n.getPrecedenceInSequence();
+				highestPrecedenceTokenIndex = i;
+			}
+		}
+		
+		return highestPrecedenceTokenIndex;
+	}		
+
+COM:finds and returns the index of the node with the highest precedence and marked as a free node in a sequence

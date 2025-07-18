@@ -1,0 +1,19 @@
+TDAT: 	public void setHighDisplayDate(Date highDisplayDate) {
+		// Check for nulls
+		if(highDisplayDate == null) {
+			this.highDisplayDate = null;
+			return;
+		}
+		
+		// Check for bounds
+		if(lowDisplayDate != null && highDisplayDate.compareTo(lowDisplayDate) <= 0)
+			return;
+		
+		if(highDisplayDate.compareTo(startDate) <= 0)
+			return;
+		
+		// Assign the date
+		this.highDisplayDate = highDisplayDate;
+	}
+
+COM:sets the high display date and includes null and bounds checks

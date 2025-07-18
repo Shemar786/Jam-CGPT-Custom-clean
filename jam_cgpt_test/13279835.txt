@@ -1,0 +1,18 @@
+TDAT:     private boolean criterionMatches(ConnectedNode connectedNode) {
+	 boolean ok = true;
+	 if (isCriterionNode && 
+	     (connectedNode.node != criterionNode)) {
+	     ok = false;
+	 }
+	 if (isCriterionEdgeID && 
+	     (connectedNode.edgeID != criterionEdgeID)) {
+	     ok = false;
+	 }
+	 if (isCriterionDirection && 
+	     (connectedNode.direction != criterionDirection)) {
+	     ok = false;
+	 }
+	 return ok;
+    }
+
+COM:checks if a given ConnectedNode matches certain criteria and returns a boolean value indicating if it does

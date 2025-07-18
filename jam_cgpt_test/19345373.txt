@@ -1,0 +1,20 @@
+TDAT:     private int columnSelected_100_getColumnPosition(int col) {
+        int ret = 0;
+        int size = recordDef.columnDtls.size() - 1;
+
+        int column = -1;
+
+        ret = 0;
+
+        if (size > 0) {
+            column = recordDef.columnDtls.get(ret).start;
+            while (ret < size && (col > column)) {
+                ret += 1;
+                column = recordDef.columnDtls.get(ret).start;
+            }
+        }
+
+        return ret;
+    }
+
+COM:returns the position of a selected column within a record definition

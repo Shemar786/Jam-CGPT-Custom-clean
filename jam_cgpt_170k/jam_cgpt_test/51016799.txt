@@ -1,0 +1,16 @@
+TDAT:     private String getPsimiTerm(XrefType xref) {
+        if (xref == null) {
+            return null;
+        } else if (isPSIMIRef(xref.getPrimaryRef())) {
+            return xref.getPrimaryRef().getId();
+        } else {
+            for (DbReferenceType ref : xref.getSecondaryRefList()) {
+                if (isPSIMIRef(ref)) {
+                    return ref.getId();
+                }
+            }
+        }
+        return null;
+    }
+
+COM:returns a PSIMI term ID based on the provided XrefType input

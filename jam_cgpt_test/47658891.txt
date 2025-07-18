@@ -1,0 +1,15 @@
+TDAT: 	private void createContent(String[] list){
+		for (int i=0; i<list.length; i++){
+			Button check = new Button(this, SWT.CHECK);
+			check.setAlignment(SWT.DOWN);
+			check.setText(list[i]);
+			buttons.add(check);
+			super.putOnScreen(check, 16, 16);
+			Label label = new Label(this, SWT.NONE);
+			label.setText(list[i]);
+			label.setAlignment(SWT.DOWN);
+			super.putOnScreen(label, 100, 16);
+		}
+	}
+
+COM:creates a list of buttons with corresponding labels

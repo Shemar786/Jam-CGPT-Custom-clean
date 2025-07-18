@@ -1,0 +1,13 @@
+TDAT:     public StoreBO getStore() {
+        StoreBO sbo = null;
+        try {
+            sbo = StoreDAO.getInstance().read(storeID);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            String message = "Error returning Store object: " + ex.toString();
+            JOptionPane.showMessageDialog(null, message, "getStore() Exception", JOptionPane.ERROR_MESSAGE);
+        }
+        return sbo;
+    }
+
+COM:retrieves a StoreBO object from the StoreDAO based on a provided storeID, and handles any exceptions that arise during the process

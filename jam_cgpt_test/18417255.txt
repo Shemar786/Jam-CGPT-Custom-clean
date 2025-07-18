@@ -1,0 +1,8 @@
+TDAT:     public Patient find(String username, String password) {
+        Query query = getQuery("select p from Patient as p where p.username like :un and p.password like :pw");
+        query.setParameter("un", username, Hibernate.STRING);
+        query.setParameter("pw", password, Hibernate.STRING);
+        return (Patient) query.uniqueResult();
+    }
+
+COM:searches for a specific patient by their username and password values

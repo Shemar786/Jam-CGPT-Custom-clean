@@ -1,0 +1,12 @@
+TDAT: 	private JTextArea getJTextFieldPassengerDetails() {
+		if (jTextFieldPassengerDetails == null) {
+			jTextFieldPassengerDetails = new JTextArea();
+			jTextFieldPassengerDetails.setBounds(new Rectangle(32, 78, 496, 93));
+			jTextFieldPassengerDetails.setBackground(new Color(181, 211, 249));
+			jTextFieldPassengerDetails.setEditable(false);
+			jTextFieldPassengerDetails.setText("passenger details here");
+		}
+		return jTextFieldPassengerDetails;
+	}
+
+COM:returns a JTextArea component with pre-set properties and text, which displays passenger details

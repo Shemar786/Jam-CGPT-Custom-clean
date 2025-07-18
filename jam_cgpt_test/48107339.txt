@@ -1,0 +1,12 @@
+TDAT:     protected void restoreAmbiguityStates() {
+        if (!getFormat().isNucleotideType() || replacedStates == null)
+            return;
+
+        SparseArray.ArrayIterator iter = replacedStates.arrayIterator();
+        while (iter.hasNext()) {
+            iter.getNext();
+            set(iter.i, iter.j, ((String) iter.o).charAt(0));
+        }
+    }
+
+COM:restores ambiguity states if the format is a nucleotide type and there are replaced states available

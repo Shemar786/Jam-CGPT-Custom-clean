@@ -1,0 +1,15 @@
+TDAT:     private void displayChapter(String ch) {
+
+        htmlPane.setContentType("text/html");
+        htmlPane.setText(ch);
+
+        // FIXME get this thing to scroll to the top!
+        Rectangle r = null;
+        try {
+            r = htmlPane.modelToView(0);
+            htmlView.scrollRectToVisible(r);
+        } catch(Throwable ignore) {
+        }
+    }
+
+COM:displays the content of a chapter on an HTML pane and attempts to scroll it to the top

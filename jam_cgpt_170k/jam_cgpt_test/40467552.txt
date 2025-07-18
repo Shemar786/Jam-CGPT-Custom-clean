@@ -1,0 +1,13 @@
+TDAT: 	public void addEventHandler(Object obj, String methodName){
+		try{
+			eventHandlerObject = obj;
+			eventHandlerMethodName = methodName;
+			eventHandlerMethod = obj.getClass().getMethod(methodName, new Class[] { GOption.class, GOption.class } );
+		} catch (Exception e) {
+			GMessenger.message(NONEXISTANT, this, new Object[] {methodName, new Class[] { this.getClass() } } );
+			eventHandlerObject = null;
+			eventHandlerMethodName = "";
+		}
+	}
+
+COM:sets an event handler object and its specified method name and checks if the method exists with a try-catch block

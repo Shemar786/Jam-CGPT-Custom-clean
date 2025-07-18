@@ -1,0 +1,11 @@
+TDAT: 	protected boolean isEqual(int iSite1, int iSite2) {
+		for (int i = 0; i < m_counts.size(); i++) {
+			if (m_counts.get(i).get(iSite1)
+					!= m_counts.get(i).get(iSite2)) {
+				return false;
+			}
+		}
+		return true;
+	} // isEqual
+
+COM:checks if two given sites have the same count values across all elements in the m_counts data structure

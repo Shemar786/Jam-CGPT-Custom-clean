@@ -1,0 +1,13 @@
+TDAT:     public void testSetDob() {
+        System.out.println("setDob");
+        
+        String d = "";
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.setDob(d);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a test method that sets the date of birth and prints a message

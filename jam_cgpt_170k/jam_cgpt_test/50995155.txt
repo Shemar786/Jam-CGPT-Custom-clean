@@ -1,0 +1,11 @@
+TDAT: 	private void savePreferences() {
+		int state = frame.getExtendedState();
+		state = state & ~JFrame.ICONIFIED; // ignore iconified state
+		prefs.putInt(PREF_FRAME_STATE, state);
+		prefs.putInt(PREF_WIDTH, frame.getWidth());
+		prefs.putInt(PREF_HEIGHT, frame.getHeight());
+		prefs.putInt(PREF_XOFF, frame.getX());
+		prefs.putInt(PREF_YOFF, frame.getY());
+	}
+
+COM:saves the preferences of a JFrame object such as its state, width, height, and position

@@ -1,0 +1,13 @@
+TDAT: 	public Array2d copy() {
+		Array2d copy = new Array2d(m_nRows, m_nCols, m_values);
+		/*
+		for (int iRow = 1; iRow <= m_nRows; iRow++) {
+			for (int iCol = 1; iCol <= m_nCols; iCol++) {
+				copy.set(iRow, iCol, at(iRow, iCol));
+			}
+		}
+		*/
+		return copy;
+	} // copy
+
+COM:returns a copy of the current Array2d object

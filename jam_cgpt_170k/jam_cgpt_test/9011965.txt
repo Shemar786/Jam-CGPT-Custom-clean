@@ -1,0 +1,11 @@
+TDAT:     public CharSequence readSource(JavaFileObject filename) {
+        try {
+            inputFiles.add(filename);
+            return filename.getCharContent(false);
+        } catch (IOException e) {
+            log.error("error.reading.file", filename, e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+COM:reads the content of a Java file object and logs an error message if there is an input/output exception

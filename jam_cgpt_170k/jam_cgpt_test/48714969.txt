@@ -1,0 +1,16 @@
+TDAT:     public boolean isAvailable() {
+        
+        if (this.rwl.isWriteLocked()) {
+            if (!this.rwl.isWriteLockedByCurrentThread()) {
+            
+                if (logger.isDebugEnabled()) {
+                    logger.debug("Module is unavailable with hold count of " + rwl.getWriteHoldCount() + " but not held by current thread");
+                }
+                return false;
+            }
+            return true;
+        }
+        return true;
+    }
+
+COM:checks if a module is available for writing

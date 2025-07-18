@@ -1,0 +1,18 @@
+TDAT: 	public void InsertAnnotation(Annotation a)
+	{	
+		int seqno = instance.askForSeqno();
+		String seqnoStr = "" + seqno;
+		
+		a.setID(seqnoStr);
+		ParserDriver.CreateRequestFile(seqnoStr, "insert", a);
+		
+		/**
+		 * 1. Need seqno, therefore ask for seqno
+		 * 2. Got seqno, need to create request file
+		 * 3. 
+		 */
+		instance.broadcastRequestFile(Constants.requestLocation + seqnoStr + ".xml");
+		ParserDriver.DoRequest(Constants.requestLocation + seqnoStr + ".xml");
+	}
+
+COM:inserts an annotation object into a file and broadcasts a request to create and update the file

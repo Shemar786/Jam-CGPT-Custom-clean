@@ -1,0 +1,14 @@
+TDAT:     public void testGetStartTime() {
+        System.out.println("getStartTime");
+        
+        Event_StubImpl instance = new Event_StubImpl();
+        
+        String expResult = "";
+        String result = instance.getStartTime();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the "getStartTime" function of the "Event_StubImpl" class by comparing the expected result to the actual result and failing if they do not match

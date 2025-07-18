@@ -1,0 +1,18 @@
+TDAT: 	public boolean add(GComponent component){
+		if(component == null || children.contains(component)){
+			if(G4P.messages)
+				System.out.println("Either the component doesn't exist or has already been added to this component");
+			return false;
+		} else {
+			component.parent = this;
+			children.add(component);
+			component.setZ(z);
+			winApp.unregisterDraw(component);
+			component.regDraw = false;
+			if(localColor.getAlpha() < 255)
+				component.setAlpha(localColor.getAlpha());
+			return true;
+		}
+	}
+
+COM:adds a GComponent to its parent component and returns true if successful, otherwise prints an error message and returns false

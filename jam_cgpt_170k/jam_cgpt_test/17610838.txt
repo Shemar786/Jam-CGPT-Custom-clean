@@ -1,0 +1,11 @@
+TDAT: 	public ModelAndView ownerHandler(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+		Owner owner = clinic.loadOwner(RequestUtils.getIntParameter(request, "ownerId", 0));
+		if (owner == null) {
+			return new ModelAndView("findOwnersRedirect");
+		}
+		Map model = new HashMap();
+		model.put("owner", owner);
+		return new ModelAndView("ownerView", "model", model);
+	}
+
+COM:loads an owner using the clinic and returns a ModelAndView object with information about that owner

@@ -1,0 +1,13 @@
+TDAT: 	public boolean validatePassword (String passwordHash, int challenge) {
+		TestNetwork.debug("  Attempting to validate: " + passwordHash );
+		HashFunction md5Hash = new HashFunction("MD5");
+		
+		String correctPasswordHash = this.passwordHash;
+		correctPasswordHash = correctPasswordHash + challenge;
+		correctPasswordHash = md5Hash.computeHash(correctPasswordHash);
+		TestNetwork.debug("  Correct Hash:           " +correctPasswordHash);
+
+		return correctPasswordHash.equals(passwordHash);
+	}
+
+COM:validates a hashed password by computing a hash using a challenge and comparing it to the provided hash

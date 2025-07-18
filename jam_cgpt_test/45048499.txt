@@ -1,0 +1,7 @@
+TDAT: 	public void sendJessScriptValidationEmail(String emailAdmin, String from, String fileURL, String userID, String tcID){
+		String message = "The user '"+userID+"' created a new Jess script within the QOD under the ID'"+tcID+
+		"'.\nAwaiting for approval. The script can be found under the following path: "+fileURL;
+		this.sendEmail(emailAdmin, from, "QOD - JESS Script validation request", message);
+	}
+
+COM:sends an email to an administrator requesting approval for a new Jess script created by a user in a QOD under a specific ID

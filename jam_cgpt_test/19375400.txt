@@ -1,0 +1,13 @@
+TDAT:   public String getFullName() {
+    StringBuffer sb = new StringBuffer();
+    Iterator iter = getFullNameIterator();
+    while (iter.hasNext()) {
+      sb.append(iter.next());
+      if (iter.hasNext()) {
+        sb.append(" ");
+      }
+    }   
+    return sb.toString();
+  }
+
+COM:returns a concatenated string of the elements returned by an iterator, separated by spaces

@@ -1,0 +1,11 @@
+TDAT:     public double vCoordinate(double x, double y, double z) {
+	double[] p = new double[3];
+	p[0] = x-(xMin+xRange/2);
+	p[1] = y-(yMin+yRange/2);
+	p[2] = z-(zMin+zRange/2);
+	double numerator = scaprod(p, eta);
+	double denominator = (eyeDistanceAbsolute == Double.POSITIVE_INFINITY ? 1 : 1 - scaprod(p, eyeDirection)/eyeDistanceAbsolute);
+	return numerator/denominator;
+    }
+
+COM:calculates the vertical coordinate of a point in 3D space using x, y, and z coordinates

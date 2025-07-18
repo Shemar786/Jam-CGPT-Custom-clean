@@ -1,0 +1,13 @@
+TDAT:   public String getKey() {
+
+    // get the current time in millis.
+    //String key = "" + System.currentTimeMillis() + "!" + Long.toHexString(random.nextInt());
+    String key = "" + Long.toHexString(random.nextLong());
+      
+    // appending to hexadecimal representation of a random number will give:
+    //  + Long.toHexString(random.nextInt());
+
+    return key;
+  }
+
+COM:generates and returns a random hexadecimal String key

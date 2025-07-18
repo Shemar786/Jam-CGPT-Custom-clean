@@ -1,0 +1,11 @@
+TDAT:   public void flush() throws IOException {
+    //try {
+    m_Out.flush();
+    //} catch (IOException e) {
+    //  if (m_Connection.isActive()) {
+    //    m_ConnectionData.getManager().registerBrokenConnection(m_Connection);
+    //  }
+    //}
+  }//flush
+
+COM:flushes the output stream and throws an IOException if an error occurs

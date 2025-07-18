@@ -1,0 +1,9 @@
+TDAT: 	public void connectToBridge(int direction, Bridge bridge) throws Exception {
+		if( bridge == null ) throw new Exception( "Connecting to null bridge (use disconnectFromBridge instead)" );
+		checkDirection(direction);
+		if( bridges[direction] != null ) throw new Exception( "Bridge already present, cannot connect" );
+		bridge.connectTo( this );		
+		bridges[direction] = bridge;
+	}
+
+COM:connects to a bridge in a specified direction, throws an exception if the bridge is null or already present, and updates the bridges array

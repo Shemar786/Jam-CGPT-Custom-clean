@@ -1,0 +1,15 @@
+TDAT: 	protected ScrolledComposite createScrolledComposite(Composite parent, int columns) {
+		ScrolledComposite scomp = new ScrolledComposite(parent, SWT.H_SCROLL | SWT.V_SCROLL);
+		scomp.setExpandHorizontal(true);
+		scomp.setExpandVertical(true);
+		scomp.setLayout(new GridLayout(1, false));
+		scomp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		scomp.addListener(SWT.Resize, new Listener() {
+			public void handleEvent(Event event) {
+				handleExpand(getScrollingParent(event.widget));
+			}
+		});
+		return scomp;
+	}
+
+COM:creates a scrolled composite widget with horizontal and vertical scrolling capabilities, sets layout parameters, and adds a listener to handle widget resizing

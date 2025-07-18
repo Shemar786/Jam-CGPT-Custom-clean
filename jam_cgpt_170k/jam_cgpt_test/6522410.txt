@@ -1,0 +1,16 @@
+TDAT: 	public void setURLGenerator(URLGenerator urlGenerator) {
+
+		String MN = "setURLGenerator";
+		if (logger.isLogging(Logger.TRACE_HIGH)) {
+			logger.entry(Logger.TRACE_HIGH, MN);
+		}
+
+		this.urlGenerator = urlGenerator;
+
+		if (logger.isLogging(Logger.TRACE_HIGH)) {
+			logger.exit(Logger.TRACE_HIGH, MN);
+		}
+
+	}
+
+COM:sets a URL generator for the current object and logs the activity

@@ -1,0 +1,17 @@
+TDAT: 	protected void addLocPONrPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveComponent_locPONr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveComponent_locPONr_feature", "_UI_EveComponent_type"),
+				 EvesimPackage.Literals.EVE_COMPONENT__LOC_PO_NR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_LocationPropertyCategory"),
+				 null));
+	}
+
+COM:adds a property descriptor for a location purchase order number to an item property descriptor list

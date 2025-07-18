@@ -1,0 +1,13 @@
+TDAT:     private File getModifiedFileHandle() throws MojoExecutionException {
+        File newManifest = new File(outputDirectory, MANIFEST_FILE_NAME);
+        try {
+            if (!newManifest.exists()) {
+                newManifest.createNewFile();
+            }
+        } catch (IOException e) {
+            throw new MojoExecutionException("Failed during updating of manifest file for testing", e);
+        }
+        return newManifest;
+    }
+
+COM:creates a new file handle for a manifest file if it doesn't exist and returns the file

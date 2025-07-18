@@ -1,0 +1,10 @@
+TDAT:     public String getParam(String key) {
+        if(getParameterMap()==null) {
+            return null; }
+        String[] vals=(String[])(getParameterMap().get(key));
+        if((vals==null)||(vals.length<1)) {
+            return null; }
+        return vals[0];
+    }
+
+COM:retrieves the first value of a parameter with a given key from the parameter map, or returns null if the parameter map or values are null or empty

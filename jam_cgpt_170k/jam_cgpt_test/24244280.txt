@@ -1,0 +1,17 @@
+TDAT: 	public void unloadAllServos(){
+		int I2C_Response;
+		byte h_byte;
+		byte l_byte;
+		
+		int channel = 0x00;
+		h_byte = (byte)0xe0; //0xe0 | (0x00 >>(byte)8); //?? 
+		l_byte = (byte)channel;
+	     
+	    //High Byte Write
+		I2C_Response = this.sendData((int)this.SPI_PORT, h_byte);
+
+	    //Low Byte Write
+		I2C_Response = this.sendData((int)this.SPI_PORT, l_byte);		
+	}
+
+COM:unloads all servos by sending data over SPI protocol

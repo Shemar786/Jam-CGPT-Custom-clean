@@ -1,0 +1,15 @@
+TDAT: 	private void setContainsNonTerminal() {
+		_conatinsNonTerminal = false;
+
+		if (_symbol_types != null) {
+			for (int i = 0; i < _symbol_types.length && !_conatinsNonTerminal; i++) {
+				_conatinsNonTerminal = _symbol_types[i].is_nonterminal;
+			}
+		} else {
+			for (int i = 0; i < _symbols.length && !_conatinsNonTerminal; i++) {
+				_conatinsNonTerminal = (_symbols[i] instanceof NonTerminal);
+			}
+		}
+	}
+
+COM:sets a boolean variable to true if a grammar symbol contains a non-terminal symbol

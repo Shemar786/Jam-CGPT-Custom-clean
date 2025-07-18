@@ -1,0 +1,12 @@
+TDAT: 	protected void splitIdentDecls() {
+		final int innerDeclsLength = allDecls.length
+				- indexOfFirstReplacement();
+		final int outerDeclsLength = allDecls.length - innerDeclsLength;
+		outerDecls = new BoundIdentDecl[outerDeclsLength];
+		innerDecls = new BoundIdentDecl[innerDeclsLength];
+		System.arraycopy(allDecls, 0, outerDecls, 0, outerDeclsLength);
+		System.arraycopy(allDecls, outerDeclsLength, innerDecls, 0,
+				innerDeclsLength);
+	}
+
+COM:splits an array of BoundIdentDecl objects into two new arrays based on the index of the first replacement

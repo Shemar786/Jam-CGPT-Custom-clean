@@ -1,0 +1,15 @@
+TDAT:     private NMEAEvent generateRandomNMEASequence(){
+        // Change 2 to the number of different generate*NMEASequence
+        int type = random.nextInt() % 2;
+        switch(type){
+            case 0:
+                return generateGPRMCSequence();
+            case 1:
+                return generateGPGGASequence();
+            default:
+                return generateNullNMEASequence();
+                
+        }
+    }
+
+COM:generates a random NMEA sequence by selecting one of three different methods to generate GPRMC, GPGGA, or null sequences based on a randomly generated integer value

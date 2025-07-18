@@ -1,0 +1,13 @@
+TDAT:     public void insertUseReuse(Inst use, Inst reuse, int dist) {
+      UseReuse current = first1;
+      while (current.dist < dist) {
+        current = current.next;
+      }
+      UseReuse newUseReuse = new UseReuse(use, reuse, dist);
+      current.insertBefore(newUseReuse);
+      if (current == first1) {
+        first1 = newUseReuse;
+      }
+    }
+
+COM:inserts a new UseReuse object with specified values into a linked list in a sorted order based on the distance value, and updates the first1 reference if necessary

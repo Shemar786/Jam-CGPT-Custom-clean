@@ -1,0 +1,24 @@
+TDAT: 	public void testSeesContext_03() throws Exception {
+		IContextRoot con1 = createContext("con1");
+		saveRodinFileOf(con1);
+		
+		IContextRoot con2 = createContext("con2");
+		addContextExtends(con2, "con1");
+		saveRodinFileOf(con2);
+		
+		IMachineRoot abs = createMachine("abs");
+		addMachineSees(abs, "con2");
+		saveRodinFileOf(abs);
+		
+		IMachineRoot mac = createMachine("mac");
+		addMachineRefines(mac, "abs");
+		saveRodinFileOf(mac);
+		
+		runBuilder();
+		
+		ISCMachineRoot file = mac.getSCMachineRoot();
+		seesContexts(file, "con2");
+		containsContexts(file, "con1", "con2");
+	}
+
+COM:tests if a machine context sees other contexts and verifies if it contains those contexts

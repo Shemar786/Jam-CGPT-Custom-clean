@@ -1,0 +1,20 @@
+TDAT:                              public void addWhiteboard(Whiteboard param){
+                                   if (localWhiteboard == null){
+                                   localWhiteboard = new Whiteboard[]{};
+                                   }
+
+                            
+                                 //update the setting tracker
+                                localWhiteboardTracker = true;
+                            
+
+                               java.util.List list =
+                            org.apache.axis2.databinding.utils.ConverterUtil.toList(localWhiteboard);
+                               list.add(param);
+                               this.localWhiteboard =
+                             (Whiteboard[])list.toArray(
+                            new Whiteboard[list.size()]);
+
+                             }
+
+COM:adds a Whiteboard object to a localWhiteboard array and updates a settings tracker

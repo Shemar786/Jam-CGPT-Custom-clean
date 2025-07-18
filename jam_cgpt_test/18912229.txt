@@ -1,0 +1,16 @@
+TDAT: 	public QName getResultState(){
+		if (State.STATE_ENDED.equals(this.currState)){
+			return this.getLastState();
+		}
+		if (false
+				|| State.STATE_COMPLETED.equals(this.currState)
+				|| State.STATE_CLOSING.equals(this.currState)
+				|| State.STATE_COMPENSATING.equals(this.currState)
+				|| State.STATE_FAULTING_COMPENSATING.equals(this.currState)
+			){
+			return State.STATE_COMPLETED;
+		}
+		return State.STATE_ACTIVE;
+	}
+
+COM:returns a QName that represents the current state of the object based on a series of conditionals

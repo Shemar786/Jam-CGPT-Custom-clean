@@ -1,0 +1,12 @@
+TDAT:     public void testCookieGreaterEqual() throws ServletException,  JspException {
+        GreaterEqualTag ge = new GreaterEqualTag();
+        ge.setPageContext(pageContext);
+        ge.setCookie(COOKIE_KEY);
+        ge.setValue(LESSER_VAL);
+
+        assertTrue(
+        	"Cookie Value (" + GREATER_VAL + ") is greater than or equal to value (" + LESSER_VAL + ")", 
+        	ge.condition());
+    }
+
+COM:tests if a given cookie value is greater than or equal to a specified value using a GreaterEqualTag object

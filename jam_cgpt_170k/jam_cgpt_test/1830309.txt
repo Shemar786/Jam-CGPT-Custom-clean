@@ -1,0 +1,10 @@
+TDAT:     public void removeAOI(AreaOfIntBO aoibo){
+        for(int i=0; i<aois.size(); i++){
+            AreaOfIntBO aoiTemp = (AreaOfIntBO) aois.get(i);
+            if(aoiTemp.getID() == aoibo.getID()){
+                aois.remove(i);
+            }
+        }
+    }
+
+COM:removes an instance of the AreaOfIntBO class from an ArrayList if the instance's ID matches the ID of the input AreaOfIntBO object

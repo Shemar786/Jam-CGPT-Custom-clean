@@ -1,0 +1,15 @@
+TDAT:     public String get(String name) {
+        try {
+            queriedNames.put(name, name);
+
+            String value = lookup(name);
+            if (value == null) throw new NameNotFoundException(name);
+            else return substitutions(name, value);
+        }
+        catch (NameNotFoundException x) { throw x; }
+        catch (RuntimeException x) {
+            throw new grace.util.ChainedRuntimeException("name='" + name + "'", x);
+        }
+    }
+
+COM:takes a name as input, stores it in a hashmap, looks up a value associated with that name, handles exceptions if the name is not found or there is a runtime error, and returns the substituted value

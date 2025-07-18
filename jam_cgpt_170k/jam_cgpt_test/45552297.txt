@@ -1,0 +1,12 @@
+TDAT:     public Label createTextBlock(String text) {
+        Label label = new Label(panel, SWT.WRAP);
+        GridData gd = new GridData(SWT.FILL, SWT.DEFAULT, true, false);
+        gd.horizontalSpan = cols;
+        gd.widthHint = GuiConstants.WIDTH * 4;
+        label.setLayoutData(gd);
+        label.setText(text);
+
+        return label;
+    }
+
+COM:creates a text block with the given string as text and returns the label

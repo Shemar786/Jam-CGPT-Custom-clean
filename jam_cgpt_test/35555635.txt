@@ -1,0 +1,25 @@
+TDAT: 	public void buttonPrevious() {
+		removeLinkedList();
+		HistoryData historyData = getLinkedList();
+		currentLogId = historyData.prevLogId;
+		currentPage--;
+		buttonApplyExecute(false);
+
+		// currentPage = historyQueue.size() - 1;
+
+		processPage();
+
+		if (currentPage <= 1) {
+			btnPrev.setEnabled(false);
+		} else {
+			btnPrev.setEnabled(true);
+		}
+
+		if (currentPage >= totalPage) {
+			btnNext.setEnabled(false);
+		} else {
+			btnNext.setEnabled(true);
+		}
+	}
+
+COM:processes the previous page of a linked list and updates the current page and log ID accordingly, as well as enabling/disabling previous and next button functionality

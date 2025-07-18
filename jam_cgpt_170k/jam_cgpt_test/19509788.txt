@@ -1,0 +1,12 @@
+TDAT: 	public void testOtherGenericAtomicExpressions() throws Exception {
+		final Type rSTS = REL(CPROD(ty_S, ty_T), ty_S);
+		doTest(mPrj1(rSTS), rSTS, V2);
+		
+		final Type rSTT = REL(CPROD(ty_S, ty_T), ty_T);
+		doTest(mPrj2(rSTT), rSTT, V2);
+		
+		final Type rSS = REL(ty_S, ty_S);
+		doTest(mId(rSS), rSS, V2);
+	}
+
+COM:tests various generic atomic expressions and their corresponding functions

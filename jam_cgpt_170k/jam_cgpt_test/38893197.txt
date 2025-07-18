@@ -1,0 +1,18 @@
+TDAT:   public void modemEvent(int event) {
+    if (ACTIVE.modem) // Don't care if we don't use a modem
+     {
+      halt(); // Ensure that the pass thru is not already running
+
+      if (event == MODEM_UP) {
+        if (DEBUG) {
+          log("MODEM_UP");
+        }
+
+        start(); // Start the pass thru
+      } else if (DEBUG) {
+        log("MODEM_DOWN");
+      }
+    }
+  }
+
+COM:checks if a modem is active and then starts or stops pass thru depending on the modem event

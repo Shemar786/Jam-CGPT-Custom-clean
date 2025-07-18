@@ -1,0 +1,14 @@
+TDAT: 	 protected String fetchString(int constantEnumeration, int rxLength) {
+		byte [] stringBytes = new byte[rxLength];
+		getData(constantEnumeration, stringBytes, rxLength);
+
+		// Get rid of everything after 0.
+		int zeroPos = 0;
+		for(zeroPos = 0;zeroPos < rxLength;zeroPos++) {
+			if(stringBytes [zeroPos] == 0) break;
+		}
+		String s = new String(stringBytes).substring(0,zeroPos);
+		return s;
+	}
+
+COM:fetches a string using a specified constant enumeration and a given maximum length, and removes any trailing zero values from the resulting byte array

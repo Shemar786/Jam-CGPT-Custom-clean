@@ -1,0 +1,15 @@
+TDAT:     public void close() {
+        active = false;
+
+        if (iBroker != null) {
+            if (logger.isDebugEnabled()) {
+                logger.debug("Closing Persistence Broker...");
+            }
+            iBroker.close();
+            if (logger.isDebugEnabled()) {
+                logger.debug("Persistence Broker closed.");
+            }
+        }
+    }
+
+COM:closes a persistence broker and sets the active state to false

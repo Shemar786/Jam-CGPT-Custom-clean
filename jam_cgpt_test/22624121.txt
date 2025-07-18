@@ -1,0 +1,15 @@
+TDAT: 	public String getUniqueUrlPath() {
+		SchemaPath schemaPath = getNamedSchemaPath("url");
+		if (schemaPath == null) {
+			// prtln("url schemaPath not found ... returning");
+			return null;
+		}
+
+		if (schemaPath.valueType == null || !schemaPath.valueType.equals("uniqueUrl")) {
+			// prtln("framework does not specify uniqueUrl");
+			return null;
+		}
+		return schemaPath.xpath;
+	}
+
+COM:returns the unique URL path from a specified schema, or null if it is not found or not of the correct type

@@ -1,0 +1,15 @@
+TDAT: 	public int getDistanceBetweenTerms(int id1, int id2, int cutoff) {
+		GoTerm term1 = id2go.get(id1);
+		GoTerm term2 = id2go.get(id2);
+		
+		double dist_fwd = trace(term1, term2, 0.0d, cutoff);
+		double dist_bck = trace(term2, term1, 0.0d, cutoff);
+		
+		double dist = Math.min(dist_fwd, dist_bck);
+		if (dist == Double.POSITIVE_INFINITY)
+			return -1;
+		else
+			return (int) dist;
+	}
+
+COM:calculates the distance between two GoTerms using a tracing algorithm, with a cutoff limit for the distance

@@ -1,0 +1,8 @@
+TDAT: 	protected ModelAndView onSubmit(Object command) throws ServletException {
+		Visit visit = (Visit) command;
+		// delegate the insert to the Business layer
+		getClinic().storeVisit(visit);
+		return new ModelAndView(getSuccessView(), "ownerId", Integer.toString(visit.getPet().getOwner().getId()));
+	}
+
+COM:processes form submissions for visit data, stores them in the database using a business layer, and returns a new ModelAndView object

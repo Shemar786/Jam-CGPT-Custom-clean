@@ -1,0 +1,10 @@
+TDAT: 	private void queue_add_entry(final String aKey, final HiStoreEntry_J1 entry) throws AllocationFailure {
+		try {
+			prevayler.executeCommand(new J1_System.EntryStorageCommand(aKey, entry));
+		} catch (Exception e) {
+			// TODO: allocation is overused
+			throw new AllocationFailure(Constants.PREVALENT_REJECTION, e);
+		}
+	}
+
+COM:adds an entry to a queue with a given key, using the Prevayler library and throwing an exception if there is an allocation failure during execution

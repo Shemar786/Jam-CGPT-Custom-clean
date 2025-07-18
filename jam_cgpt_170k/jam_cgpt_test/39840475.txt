@@ -1,0 +1,12 @@
+TDAT:     public void testParameterGreaterThan() throws ServletException,  JspException {
+        GreaterThanTag gt = new GreaterThanTag();
+        gt.setPageContext(pageContext);
+        gt.setParameter(PARAMETER_KEY);
+        gt.setValue(LESSER_VAL);
+
+        assertTrue(
+        	"Parameter Value (" + GREATER_VAL + ") is greater than value (" + LESSER_VAL + ")", 
+        	gt.condition());
+    }
+
+COM:tests if a given parameter value is greater than a specified value by setting up a GreaterThanTag object and checking the condition

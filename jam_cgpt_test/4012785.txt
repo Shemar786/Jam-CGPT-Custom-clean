@@ -1,0 +1,7 @@
+TDAT: 	public String matchup(String firstHandicap, String secondHandicap, String tableHeader) throws MissingAttributeException, InvalidAtributeException {
+		ValidateAttribute.matchupByHandicapEmptyAttributes(firstHandicap, secondHandicap, tableHeader);
+		validateTableHeader(tableHeader);
+		return searchValueByHandicaps(firstHandicap, secondHandicap, tableHeader);
+	}
+
+COM:takes in two handicaps and a table header, validates the attributes, and returns the corresponding search value

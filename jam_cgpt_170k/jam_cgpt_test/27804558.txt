@@ -1,0 +1,11 @@
+TDAT:   public void setUberCommunity () {
+    if( CommunityUtilities.uberCommunity != null ) {
+      if( CommunityUtilities.uberCommunity == this ) {
+        return;
+      }
+      throw new IllegalStateException( "The uberCommunity has already been set to something else." );
+    }
+    CommunityUtilities.uberCommunity = this;
+  } // setUberCommunity;
+
+COM:sets the current object as the "uberCommunity" object if no other object has been set before, otherwise it throws an IllegalStateException

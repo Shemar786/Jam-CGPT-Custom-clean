@@ -1,0 +1,9 @@
+TDAT:     protected boolean shouldAbandon() {
+        if (poolProperties.getAbandonWhenPercentageFull()==0) return true;
+        float used = busy.size();
+        float max  = poolProperties.getMaxActive();
+        float perc = poolProperties.getAbandonWhenPercentageFull();
+        return (used/max*100f)>=perc;
+    }
+
+COM:determines if a connection should be abandoned based on the percentage of connections currently being used compared to the maximum allowed, according to the pool configuration

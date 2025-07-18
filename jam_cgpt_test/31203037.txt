@@ -1,0 +1,12 @@
+TDAT:     public void addToTechnicalComment( final String add_to_technical_comment ) {
+        if ( getTechnicalComment() != null
+        &&   getTechnicalComment().length() > 0 ) {
+            setTechnicalComment( getTechnicalComment()
+                                 + "\n" + add_to_technical_comment );
+        }
+        else {
+            setTechnicalComment( add_to_technical_comment );
+        }
+    }
+
+COM:adds a string to a technical comment, which is stored as a class property

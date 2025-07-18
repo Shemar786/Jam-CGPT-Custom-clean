@@ -1,0 +1,24 @@
+TDAT: 	public void writeData(byte b[]) throws IOException {
+
+	RandomAccessFile raf;
+	int skip_head;
+	
+
+	skip_head=(int)vox_offset;
+
+
+	// can't write random access compressed yet
+	if (ds_datname.endsWith(".gz")) 
+		throw new IOException("Sorry, can't write to compressed image data file: "+ds_datname);
+
+
+	// write data blob
+	raf = new RandomAccessFile(ds_datname, "rwd");
+	raf.seek(skip_head);
+	raf.write(b,0,b.length);
+	raf.close();
+
+	return;
+	}
+
+COM:writes a byte array to a random access file at a specific position, and throws an exception if the file is compressed with a ".gz" extension

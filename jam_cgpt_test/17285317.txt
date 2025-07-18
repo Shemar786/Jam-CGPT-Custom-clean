@@ -1,0 +1,11 @@
+TDAT: 	public void whosOnline(){
+		try {
+			sendEncryptedMessage(new WhosOnlinePacket());		//sends the server a whosonline request
+			UserList users = getUserListReply();				//receive the server's reply (which is a list of the online users)
+			GuiFacade.getInstance().showWhoIsOnline(users);		//shows the online users in a window
+		} catch (Exception e){
+			SecurityHandler.catchException("requesting whos online list", e , true);
+		}
+	}
+
+COM:sends a request to the server for a list of online users and displays it in a GUI window

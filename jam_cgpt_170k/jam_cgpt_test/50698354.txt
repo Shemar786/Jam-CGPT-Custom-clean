@@ -1,0 +1,19 @@
+TDAT:     public void run() {
+        Socket socket1;
+        Socket socket2;
+        try {
+            do {
+                socket1 = serverSocket.accept();
+                System.out.println("Player 1 detected");
+                socket2 = serverSocket.accept();
+                System.out.println("Player 2 detected");
+                new Game(socket1, socket2);
+            } while(false);
+            while (true);
+        }
+        catch(IOException ioexception) {
+            ioexception.printStackTrace();
+        }
+    }
+
+COM:continuously accepts two socket connections and starts a new game for the connected players

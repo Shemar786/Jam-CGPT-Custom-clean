@@ -1,0 +1,16 @@
+TDAT:   public void setVisible( boolean visible ) {
+    this.visible = visible;
+    if ( visible ) {
+      if ( !source.isVisible() ) {
+        source.setVisible(true);
+      }
+      if ( !target.isVisible() ) {
+        target.setVisible(true);
+      }
+      viewEdge.show();
+    } else { 
+      viewEdge.hide();
+    }
+  }
+
+COM:sets the visibility of an object and its related objects based on a boolean value, showing or hiding them accordingly

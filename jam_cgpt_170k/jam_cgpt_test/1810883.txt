@@ -1,0 +1,10 @@
+TDAT:   public Node removeNamedItem(String name) {
+    try {
+      return NodeImpl.build(XMLParserImpl.removeNamedItem(this.getJsObject(),
+        name));
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_MODIFICATION_ERR, e, this);
+    }
+  }
+
+COM:removes a named item from a Node object and returns the updated Node object

@@ -1,0 +1,9 @@
+TDAT:   public String getTimeName(int index) {
+    if ((timeTaxis == null) || (index < 0) || (index >= timeTaxis.getSize()))
+      throw new IllegalArgumentException("getTimeName = "+index);
+
+    NamedAnything name = (NamedAnything) times.get(index);
+    return name.getName();
+  }
+
+COM:takes an integer index and returns the name of the corresponding time from a list of NamedAnything objects, throwing an IllegalArgumentException if the index is out of bounds or the list is null

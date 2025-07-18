@@ -1,0 +1,16 @@
+TDAT:     protected int countQuery(final Query query) throws PersistenceException {
+        if (query != null)
+        {
+            if (pride2Broker != null){
+                return pride2Broker.getCount(query);
+            }
+            else {
+                throw new PersistenceException("Query called on uninitialized PersistenceBroker", null);
+            }
+        }
+        else {
+            throw new PersistenceException("No query specified!", null);
+        }
+    }
+
+COM:counts the number of records that match the specified query, using the Pride2Broker instance, and throws exceptions if the query or broker is invalid or uninitialized

@@ -1,0 +1,14 @@
+TDAT:   public JTextField getScaleField() {
+    /* Returns the scaleField property value. */
+    if (fieldScaleField == null) {
+      try {
+        fieldScaleField = new JTextField();
+      } catch (Throwable exception) {
+        System.err.println("Exception creating scaleField property.");
+      }
+    };
+
+    return fieldScaleField;
+  }
+
+COM:returns the value of the scaleField property, creating it if it does not exist

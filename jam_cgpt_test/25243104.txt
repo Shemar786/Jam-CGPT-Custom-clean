@@ -1,0 +1,14 @@
+TDAT: 	private JPanel getWindowContentPane() {
+		if (windowContentPane == null) {
+			BorderLayout borderLayout = new BorderLayout();
+			borderLayout.setVgap(3);
+			borderLayout.setHgap(3);
+			windowContentPane = new JPanel();
+			windowContentPane.setLayout(borderLayout);
+			windowContentPane.add(getWindowSplitPane(), BorderLayout.CENTER);
+			windowContentPane.add(getToolsPanel(), BorderLayout.NORTH);
+		}
+		return windowContentPane;
+	}
+
+COM:returns a JPanel window content pane with a BorderLayout, containing a split pane and a tools panel if it has not been initialized yet

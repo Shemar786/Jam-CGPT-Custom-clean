@@ -1,0 +1,14 @@
+TDAT: 		public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+			try {
+				URL methodURL = new URL(objectURL + "/" + method.getName());
+				if (method.isAnnotationPresent(Timeout.class)) {
+					return server.getTimeoutInvocator().invoke(methodURL, args, method.getAnnotation(Timeout.class).value());
+				} else {
+					return server.getTimeoutInvocator().invoke(methodURL, args);
+				}
+			} catch (InvocationTargetException e) {
+				throw e.getTargetException();
+			}
+		}
+
+COM:invokes a server method with a specified timeout and returns the result

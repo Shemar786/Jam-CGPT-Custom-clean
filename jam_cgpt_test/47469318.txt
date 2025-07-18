@@ -1,0 +1,16 @@
+TDAT: 	public void dragSetData(DragSourceEvent event) {
+		if (event.doit == false)
+			return;
+		if (ModelDataTransfer.getInstance().isSupportedType(event.dataType)) {
+			event.data = getSelectedModelObjects();
+			fDragData = event.data;
+			return;
+		}
+		if (TextTransfer.getInstance().isSupportedType(event.dataType)) {
+			event.data = createTextualRepresentation((IStructuredSelection) fSelectionProvider.getSelection());
+			fDragData = null;
+			return;
+		}
+	}
+
+COM:checks the type of data being dragged and sets the appropriate format if supported

@@ -1,0 +1,17 @@
+TDAT: 	protected void addPowerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveFunctionTimer_power_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveFunctionTimer_power_feature", "_UI_EveFunctionTimer_type"),
+				 TimerPackage.Literals.EVE_FUNCTION_TIMER__POWER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a power property descriptor to an item property descriptor list for a specific Eve Function Timer object

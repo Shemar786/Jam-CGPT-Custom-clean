@@ -1,0 +1,11 @@
+TDAT: 	public void shutdown() {
+		log.debug("Main shutdown() called");
+		propConfig.setProperty("mainwindow.width", getSize().width);
+		propConfig.setProperty("mainwindow.height", getSize().height);
+		propConfig.setProperty("mainwindow.x", getLocation().x);
+		propConfig.setProperty("mainwindow.y", getLocation().y);
+		saveConfig();
+		System.exit(0);
+	}
+
+COM:saves configuration properties and shuts down the application

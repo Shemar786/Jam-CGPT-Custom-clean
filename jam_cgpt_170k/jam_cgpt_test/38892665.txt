@@ -1,0 +1,23 @@
+TDAT:   public void close() {
+    if (!enabled) {
+      return;
+    }
+
+    if (this.status != STATUS_DATA) {
+      // We are not connected...
+      return;
+    }
+
+    try {
+      sendCommand(ModemCommand.HANG_UP);
+      setStatus(STATUS_READY);
+    } catch (ModemException dle) {
+      if (DEBUG) {
+        log("Hang up failed due to: " + dle);
+      }
+
+      setStatus(STATUS_UNREADY);
+    }
+  }
+
+COM:closes a connection if it is enabled and connected, sending a hang up command and updating the status accordingly

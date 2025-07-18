@@ -1,0 +1,22 @@
+TDAT: 	private void _UpdateBuzz() {
+		Log.i(getClass().getSimpleName(), "Notif!!!");
+		changeTimer(Long.parseLong(config.getString("AndroBuzzUpdateInterval", String.valueOf(UPDATE_INTERVAL/1000)))*1000);
+		 
+		GetNewBuzz();
+		if(nbNewBuzzIds > 0)
+		{
+			if(nbClient == 0)
+			{
+				if(config.getBoolean("NotificationEta", true) == true)
+				{
+					createNotification();
+				}
+			}
+			else
+			{
+				mHandler.sendEmptyMessage(REPORT_MSG);
+			}
+		}
+	}
+
+COM:updates the buzz and checks for new buzz ids, and creates a notification if there are any new buzz ids and the notification ETA is enabled

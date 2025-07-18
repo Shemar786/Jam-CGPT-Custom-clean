@@ -1,0 +1,23 @@
+TDAT:   public void resetAttributes() {
+
+    // Check formatter
+    if (formatter == null) {
+      return;
+    }
+
+    boolean oldState = isInInternalModification;
+    isInInternalModification = true;
+
+    // First remove MediaWiki styles
+    String contents = getText();
+    PageAnalysis pageAnalysis = new PageAnalysis(page, contents);
+    formatter.format(this, pageAnalysis);
+
+    isInInternalModification = oldState;
+
+    if (!isInInternalModification) {
+      undoManager.validateCurrentText();
+    }
+  }
+
+COM:resets the attributes of a text formatter, removes MediaWiki styles from the text contents, and validates the current text

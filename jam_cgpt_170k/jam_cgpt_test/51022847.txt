@@ -1,0 +1,12 @@
+TDAT: 	private ImageIcon scale(Image src, double scale) {
+		int w = (int) (scale * src.getWidth(this));
+		int h = (int) (scale * src.getHeight(this));
+		int type = BufferedImage.TYPE_INT_ARGB;
+		BufferedImage dst = new BufferedImage(w, h, type);
+		Graphics2D g2 = dst.createGraphics();
+		g2.drawImage(src, 0, 0, w, h, this);
+		g2.dispose();
+		return new ImageIcon(dst);
+	}
+
+COM:scales an image using a given scaling factor, creating a new BufferedImage and returning an ImageIcon

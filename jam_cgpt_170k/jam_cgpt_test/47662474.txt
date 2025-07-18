@@ -1,0 +1,17 @@
+TDAT: 	protected void addMethodContentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TaskUse_methodContent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TaskUse_methodContent_feature", "_UI_TaskUse_type"),
+				 ProcessclassdiagramPackage.Literals.TASK_USE__METHOD_CONTENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "method content" feature in a "TaskUse" object

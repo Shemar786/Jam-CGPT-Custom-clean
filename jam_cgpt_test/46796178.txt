@@ -1,0 +1,21 @@
+TDAT: 	private void terminated() {
+		// delete all threads
+		Iterator iter = threadList.values().iterator();
+		while (iter.hasNext()) {
+			EmonicThread thread = (EmonicThread)iter.next();
+			thread.fireTerminateEvent();
+		}
+		threadList = new HashMap();
+		
+		DebugPlugin.getDefault().getBreakpointManager().removeBreakpointListener(this);
+		fireTerminateEvent();
+		DebuggerPlugin.getDefault().returnPort(port);
+		// this terminates the input reader job
+		try {
+			stdin.close();
+		} catch (IOException e) {
+			// ignored
+		}
+	}
+
+COM:terminates all threads, removes breakpoint listeners, closes standard input, and returns a port

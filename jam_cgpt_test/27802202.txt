@@ -1,0 +1,19 @@
+TDAT: 	protected void calcPositions() {
+
+		double x1 = target.getX();
+		double y1 = target.getY();
+
+		double x2 = source.getX();
+		double y2 = source.getY();
+
+		sinTheta = (y1-y2)/lineLen;
+		cosTheta = (x1-x2)/lineLen;
+
+		newY = y1 - sinTheta*diameter;
+		newX = x1 - cosTheta*diameter;
+
+		midY = y1 - sinTheta*diameter/2;
+		midX = x1 - cosTheta*diameter/2;
+	}
+
+COM:calculates the positions of points on a line segment based on the coordinates of its endpoints

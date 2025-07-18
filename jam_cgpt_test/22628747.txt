@@ -1,0 +1,19 @@
+TDAT: 	public ArrayList getIndexedSets() {
+		if (primaryIndex.getLastModifiedCount() > indexedSetsUpdateCount) {
+			indexedSetsUpdateCount = primaryIndex.getLastModifiedCount();
+
+			List cols = primaryIndex.getTerms("collection");
+			indexedSets.clear();
+			if (cols != null) {
+				String col;
+				for (int i = 0; i < cols.size(); i++) {
+					col = (String) cols.get(i);
+					// remove leading '0'
+					indexedSets.add(col.substring(1, col.length()));
+				}
+			}
+		}
+		return indexedSets;
+	}
+
+COM:retrieves a list of indexed sets and their metadata from a primary index if the last modified count is greater than the update count

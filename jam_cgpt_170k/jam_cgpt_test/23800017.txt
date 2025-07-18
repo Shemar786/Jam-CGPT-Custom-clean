@@ -1,0 +1,10 @@
+TDAT:     public Taxon getTaxonByCollectionobject(Collectionobject object) {
+
+        Query query = entityManager.createNamedQuery("Determination.findCurrentByCollectionobjectID");
+        query.setParameter("collectionObjectId", object);
+        query.setParameter("isCurrent", true);
+        Determination determination = (Determination) query.getSingleResult();
+        return (determination == null) ? null : determination.getTaxon();
+    }
+
+COM:retrieves the Taxon associated with a given Collectionobject by querying its Determination

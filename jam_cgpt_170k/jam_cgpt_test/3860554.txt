@@ -1,0 +1,13 @@
+TDAT:     public void testLoginContextBadPassword() throws LoginException {
+        LoginContext loginContext;
+        callbackCredentials = user1BadCredentials;
+        loginContext = new LoginContext("net-sf-jpam", new JpamCallbackHandler());
+        try {
+            loginContext.login();
+            fail();
+        } catch (FailedLoginException e) {
+            //
+        }
+    }
+
+COM:tests the login functionality for a given context using invalid user credentials and expects a failed login exception to be thrown

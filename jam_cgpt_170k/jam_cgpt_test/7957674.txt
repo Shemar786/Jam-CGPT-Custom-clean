@@ -1,0 +1,14 @@
+TDAT: 	public void removeEdge(final GraphNode v, final GraphNode w) {
+		final Block src = (Block) v;
+		final Block dst = (Block) w;
+
+		if (FlowGraph.DEBUG) {
+			System.out.println("    REMOVING EDGE " + src + " -> " + dst);
+		}
+
+		super.removeEdge(src, dst);
+
+		cleanupEdge(src, dst);
+	}
+
+COM:is used to remove an edge between two nodes in a graph and performs cleanup operations

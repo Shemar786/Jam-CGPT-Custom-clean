@@ -1,0 +1,14 @@
+TDAT:     public void addChild(TreeNode child) {
+        if (children == null) {
+            children = child;
+        } else if (children instanceof ObjectTreeNode) {
+            ArrayList tmp = new ArrayList(2);
+            tmp.add(children);
+            tmp.add(child);
+            children = tmp;
+        } else {
+            ((List) children).add(child);
+        }        
+    }
+
+COM:adds a child TreeNode to a parent TreeNode, either as a single child or to an ArrayList of children

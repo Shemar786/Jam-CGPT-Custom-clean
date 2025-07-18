@@ -1,0 +1,13 @@
+TDAT:   public boolean contains(double x, double y) {
+    if (numTypes < 2) {
+      return false;
+    }
+    int cross = Curve.crossingsForPath(getPathIterator(null), x, y);
+    if (windingRule == PathIterator.WIND_NON_ZERO) {
+      return(cross != 0);
+    } else {
+      return((cross & 1) != 0);
+    }
+  }
+
+COM:returns a boolean value indicating whether a point (x,y) is contained within a path

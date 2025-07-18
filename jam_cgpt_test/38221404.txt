@@ -1,0 +1,11 @@
+TDAT:   private void loadServices(Node config) throws Exception {
+    NodeList services = config.getChildNodes();
+    for (int i = 0; i < services.getLength(); i++) {
+      Node current = services.item(i);
+      if (current.getNodeName().equals("service")) {
+        loadService(current);
+      }
+    }
+  }
+
+COM:loads services from a given XML node in a loop and invokes another method to load each service

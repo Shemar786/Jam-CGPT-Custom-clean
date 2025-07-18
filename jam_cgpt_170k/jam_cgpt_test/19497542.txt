@@ -1,0 +1,15 @@
+TDAT: 	public void setSelectedProject(IRodinProject project) {
+		selectedProject = project;
+
+		// expand to and select the specified project
+		List<IRodinElement> itemsToExpand = new ArrayList<IRodinElement>();
+		IRodinElement parent = project.getParent();
+		while (parent != null) {
+			itemsToExpand.add(0, parent);
+			parent = parent.getParent();
+		}
+		treeViewer.setExpandedElements(itemsToExpand.toArray());
+		treeViewer.setSelection(new StructuredSelection(project), true);
+	}
+
+COM:sets and expands the selected project in a tree viewer

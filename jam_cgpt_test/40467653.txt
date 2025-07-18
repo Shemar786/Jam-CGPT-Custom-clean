@@ -1,0 +1,9 @@
+TDAT: 	protected void backspaceChar() {
+		if(startSelect != endSelect) {					// if a bunch of text is selected
+			deleteSubstring(startSelect, endSelect); 	// delete substring function with range of selected text
+		} else if(cursorPos > 0){						// no selection and can't be at the beginning of the text
+			deleteSubstring(cursorPos - 1, cursorPos);	// delete one character to the left of cursor
+		}
+	}
+
+COM:deletes either a selected substring or one character to the left of the cursor

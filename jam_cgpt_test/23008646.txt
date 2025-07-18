@@ -1,0 +1,13 @@
+TDAT: 	private PaletteContainer createTAEditor1Group() {
+		PaletteGroup paletteContainer = new PaletteGroup(
+				se.mdh.mrtc.save.taEditor.diagram.part.Messages.TAEditor1Group_title);
+		paletteContainer
+				.setDescription(se.mdh.mrtc.save.taEditor.diagram.part.Messages.TAEditor1Group_desc);
+		paletteContainer.add(createEntry1Group());
+		paletteContainer.add(createLocation2Group());
+		paletteContainer.add(createExit3CreationTool());
+		paletteContainer.add(createEdge4Group());
+		return paletteContainer;
+	}
+
+COM:creates a palette container with various groups and tools for a TA Editor diagram

@@ -1,0 +1,17 @@
+TDAT:     public void actionPerformed( java.awt.event.ActionEvent actionEvent ){
+	synchronized( applet ){
+	    if( getApplet().getMode() != 0 ){
+		getApplet().setMode( pobject );
+		getApplet().requestFocusInWindow();
+		return;
+	    }
+	    if( !getApplet().getOn() )
+		return;
+	    getApplet().copy();
+	    getApplet().setShift( false );
+	    getApplet().updateDisplay( true, true );
+	    getApplet().requestFocusInWindow();
+	}
+    }
+
+COM:handles an action event and performs various applet-related tasks if certain conditions are met

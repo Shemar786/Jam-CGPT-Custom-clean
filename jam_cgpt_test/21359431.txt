@@ -1,0 +1,14 @@
+TDAT:     public boolean setSelectedContact(String name) {
+        if (name == null || name.length() == 0) {
+            return false;
+        }
+        for (Contact c : contacts.getAll()) {
+            if (c.getName().equals(name)) {
+                contactList.setSelectedValue(c, true);
+                return true;
+            }
+        }
+        return false;
+    }
+
+COM:sets the selected value of a contact in a contact list based on the input name and returns a boolean indicating success or failure

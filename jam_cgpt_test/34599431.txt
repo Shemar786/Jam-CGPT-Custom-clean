@@ -1,0 +1,10 @@
+TDAT: 	public void setSigmaRy( double newSigmaRy) throws IllegalArgumentException, DimensionMismatchException {
+		if (this.dimension != 6)
+			throw new DimensionMismatchException(this.dimension + "D-Punkt hat keine Y-Drehung");
+		if (newSigmaRy>0)
+			this.sigmaRy = newSigmaRy;
+		else
+			throw new IllegalArgumentException("Standardabweichung muss groesser Null sein " + newSigmaRy);
+	}
+
+COM:sets the Y-axis rotation standard deviation value for a 6-dimensional point, throwing exceptions if the point is not 6-dimensional or if the input value is non-positive

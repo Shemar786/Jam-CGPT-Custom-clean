@@ -1,0 +1,17 @@
+TDAT: 	protected void addEventNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EventWrapper_eventName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EventWrapper_eventName_feature", "_UI_EventWrapper_type"),
+				 CompositeControlPackage.Literals.EVENT_WRAPPER__EVENT_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:Adds a property descriptor for the event name feature of the EventWrapper type to the item property descriptors list

@@ -1,0 +1,16 @@
+TDAT:     public void finish() throws IOException {
+        if (finished) {
+            return;
+        }
+        finished = true;
+        flush();
+        out.write('0');
+        if (chunkExtension != null) {
+            out.write(chunkExtensionBytes);
+        }
+        out.write(C_CRLF);
+        trailer.write(out);
+        out.write(C_CRLF);
+    }
+
+COM:finishes writing a chunked HTTP response by writing the final chunk and trailer fields to the output stream

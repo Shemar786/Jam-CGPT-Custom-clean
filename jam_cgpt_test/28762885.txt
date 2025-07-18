@@ -1,0 +1,7 @@
+TDAT:   private void loadSiteInfo(EnumWikipedia wikipedia) throws APIException {
+    ApiQueryMetaSiteInfoResult siteInfoResult = new ApiXmlQueryMetaSiteInfoResult(wikipedia, httpClient, connection);
+    ApiQueryMetaSiteInfoRequest siteInfoRequest = new ApiQueryMetaSiteInfoRequest(siteInfoResult);
+    siteInfoRequest.loadSiteInformation(true, true, true, true, true);
+  }
+
+COM:loads site information for a specific EnumWikipedia object using the MediaWiki API

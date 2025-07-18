@@ -1,0 +1,13 @@
+TDAT: 	public void groupIteration(Game game, Group group) {
+		final int size = group.getGroupSize();
+		
+		for (int i = 0; i < size; i++) {
+			Player p1 = (Player) group.get(i);
+			int j = random.nextInt(size);
+			while (i == j) j = random.nextInt(size);
+			Player p2 = (Player) group.get(j);
+			game.play(p1, p2);
+		}
+	}
+
+COM:iterates through a group of players, randomly selecting two players at a time to play a game

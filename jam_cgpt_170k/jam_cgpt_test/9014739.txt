@@ -1,0 +1,18 @@
+TDAT: 	public void addHistory(String url) {
+		int index;
+		DefaultListModel model;
+
+		mUrlText.setText(url);
+		// chop off the protocol
+		index = url.indexOf("http://");
+		if (-1 != index)
+			url = url.substring(index + 7);
+		else
+			System.out.println("********* " + url + " ************");
+		model = (DefaultListModel) mHistory.getModel();
+		model.addElement(url);
+		// this doesn't friggin work:
+		// mHistory.ensureIndexIsVisible (model.getSize ());
+	}
+
+COM:adds a URL to a list of browsing history, removes the protocol from the URL if it starts with "http://", and updates the UI to display the URL

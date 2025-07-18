@@ -1,0 +1,12 @@
+TDAT:     public void testModifyDocumentTitle() throws Exception {
+        Element title = createElement( "title" );
+        Text text = _htmlDocument.createTextNode( "something here" );
+        title.appendChild( text );
+
+        _headElement.appendChild( title );
+
+        _htmlDocument.setTitle( "new value" );
+        assertEquals( "title seen by document", "new value", _htmlDocument.getTitle() );
+    }
+
+COM:tests the modification of the document title in an HTML file

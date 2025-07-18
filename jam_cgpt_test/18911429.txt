@@ -1,0 +1,11 @@
+TDAT:     public XAConnection getXAConnection (String user, String password) throws SQLException {
+        IdbXAConnection xac = new IdbXAConnection (this, user, password);
+        xac.setTransactionManager(transactionManager);
+        if (databaseId == null) {							// if this is the first connection
+            databaseId = ((ConnectionExtensions)xac.con).getDatabaseId();// save the database id
+        } // if
+        connectionCount++;
+        return xac;
+    }
+
+COM:returns an XAConnection object associated with the provided user and password, while setting the transaction manager and saving the database ID if it is the first connection

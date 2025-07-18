@@ -1,0 +1,25 @@
+TDAT: 	public void testExtendsContext_02_twoCarrierSets() throws Exception {
+		IContextRoot abs = createContext("abs");
+		addCarrierSets(abs, makeSList("S1", "S2"));
+		
+		saveRodinFileOf(abs);
+		
+		runBuilder();
+		
+		IContextRoot con = createContext("ctx");
+		addContextExtends(con, "abs");
+		
+		saveRodinFileOf(con);
+		
+		runBuilder();
+		
+		ISCContextRoot file = con.getSCContextRoot();
+		
+		ISCInternalContext[] contexts = getInternalContexts(file, 1);
+		
+		containsCarrierSets(contexts[0], "S1", "S2");
+		
+		containsMarkers(con, false);
+	}
+
+COM:tests that a new context extends an existing context with specified carrier sets, and checks if the markers are present or not

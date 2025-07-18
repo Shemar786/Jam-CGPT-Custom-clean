@@ -1,0 +1,10 @@
+TDAT: 	public void setCurrentPlayer(int numberInList) {
+		if (currentList.size() > numberInList && currentList.size() != 0) {
+			currentPlayer = currentList.getByView(numberInList);
+			frame.setMessageText("Aktueller Spieler: " + currentPlayer.getName());
+			frame.setListActivitiesEnabled(true);
+			frame.setAllPlayerActivitiesEnabled(true);
+		}
+	}
+
+COM:sets the current player based on their position in a list and enables certain user interface elements

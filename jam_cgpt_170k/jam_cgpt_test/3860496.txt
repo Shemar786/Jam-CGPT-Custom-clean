@@ -1,0 +1,15 @@
+TDAT:     public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PamReturnValue)) {
+            return false;
+        }
+        final PamReturnValue pamReturnValue = (PamReturnValue) o;
+        if (id != pamReturnValue.id) {
+            return false;
+        }
+        return true;
+    }
+
+COM:compares two objects and returns true if they are equal based on their id values

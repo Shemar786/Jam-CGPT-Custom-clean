@@ -1,0 +1,15 @@
+TDAT:   public boolean isLeaf(Object node) {
+    // Return true for any node with no children
+    Node leafNode = ( (wpTreeNode) node).getNode();
+    if (super.getChildCount(leafNode) > 0) {
+      return false;
+    }
+    else {
+      if (leafNode.hasAttributes()) {
+        return false;
+      }
+      return true;
+    }
+  }
+
+COM:checks if a given node in a tree is a leaf node by verifying if it has any children or attributes

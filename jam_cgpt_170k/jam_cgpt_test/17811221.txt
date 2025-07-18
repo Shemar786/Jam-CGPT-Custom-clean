@@ -1,0 +1,18 @@
+TDAT: 	public void addCRS(String crs){
+		if (crs.contains(" ")){
+			this.setCRS(crs);
+		} else {
+			String[] set = new String[this.CRSList.length+1];
+			int i = 0;
+			if (this.CRSList.length != 0){
+				for (i = 0;i<this.CRSList.length;i++){
+					set[i] = this.CRSList[i];
+				}
+			}
+			set[this.CRSList.length] = crs;
+			this.CRSList = set;
+			this.CRSExist = true;
+		}
+	}
+
+COM:adds a CRS string to a list of CRSs, either by setting it as the only CRS or by adding it to the existing list

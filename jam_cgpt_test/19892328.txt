@@ -1,0 +1,23 @@
+TDAT: 	public JSONObject getUser() {
+		checkIfAuthorized();
+		HashMap<String, String> map = new HashMap<String, String>();
+		String reqUrl = server.generateRequestUrl(API_USERINFO_URL, map);
+		String response = server.doHttpReq(reqUrl);
+		
+		JSONParser parser = new JSONParser();
+		Object obj = null;
+		try
+		{
+			obj = parser.parse(response);
+		}
+		catch (ParseException e)
+		{
+			StringWriter sw = new StringWriter();
+			e.printStackTrace(new PrintWriter(sw));
+			throw new MySpaceException(sw.toString(), MySpaceException.REMOTE_ERROR);
+		}
+
+		return (JSONObject) obj;
+	}
+
+COM:retrieves user information from an API using HTTP requests and returns it in JSON format

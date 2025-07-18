@@ -1,0 +1,17 @@
+TDAT: 	protected void addNewCall1PropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CallSource1_newCall1_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CallSource1_newCall1_feature", "_UI_CallSource1_type"),
+				 CallPackage.Literals.CALL_SOURCE1__NEW_CALL1,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a new item property descriptor to the item property descriptor list for a CallSource1 object

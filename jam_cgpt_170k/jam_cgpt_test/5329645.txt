@@ -1,0 +1,13 @@
+TDAT:     public void index(Card card) {
+        try {
+            IndexWriter indexWriter = new IndexWriter(ramDirectory,
+                    new IndexWriterConfig(Version.LUCENE_32, analyzer));
+            addCard(indexWriter, card);
+            indexWriter.optimize();
+            indexWriter.close();
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, null, e);
+        }
+    }
+
+COM:takes a card object as input, creates an index writer using Lucene library, adds the card to the index, optimizes it and then closes it

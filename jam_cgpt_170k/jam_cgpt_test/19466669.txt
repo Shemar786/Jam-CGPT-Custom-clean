@@ -1,0 +1,17 @@
+TDAT: 	protected void addParentEventNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Command_ParentEventName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Command_ParentEventName_feature", "_UI_Command_type"),
+				 Il1Package.Literals.COMMAND__PARENT_EVENT_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the parent event name of a Command object

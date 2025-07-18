@@ -1,0 +1,13 @@
+TDAT: 	private JTable getJTable() {
+		if (jTable == null) {
+			jTable = new JTable();
+			jTable.setToolTipText("In the table, EST id assigned by contact lab (Obligatory field); ");
+			String[] columnNames = {"EST#"};
+			Object[][] data = { };
+			DefaultTableModel model = new DefaultTableModel(data,columnNames);
+			jTable.setModel(model);
+		}
+		return jTable;
+	}
+
+COM:returns a JTable object, initializes it if it does not exist, sets column names and a tooltip, and returns the object

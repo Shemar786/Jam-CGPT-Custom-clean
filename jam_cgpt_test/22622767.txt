@@ -1,0 +1,8 @@
+TDAT: 	protected Object getRequiredContextAttributeValue(String attrName, ActionErrors errors) throws Exception {
+		Object attrValue = servlet.getServletContext().getAttribute(attrName);
+		if (attrValue == null)
+			errors.add("actionSetupError", new ActionError("dcs.action.attribute.error", attrName));
+		return attrValue;
+	}
+
+COM:retrieves the value of a required attribute from the servlet context, and throws an exception if the attribute is not found while adding an error message to a collection

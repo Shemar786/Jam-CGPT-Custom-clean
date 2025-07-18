@@ -1,0 +1,9 @@
+TDAT: 	public void fireBullet(Person person, Vector3f location, Vector3f direction, boolean fromClient) {
+		
+		Weapon.fireBullet(person, location, direction, NewBulletMessage.KNIFE, 2f, 
+				Knife.TOPTHIRD_DAMAGE, Knife.MIDDLETHIRD_DAMAGE, Knife.BOTTOMTHIRD_DAMAGE, 
+				Knife.TOPTHIRD_DAMAGE, Knife.MIDDLETHIRD_DAMAGE, Knife.BOTTOMTHIRD_DAMAGE, 
+				10, false, false);
+	}
+
+COM:fires a bullet from a person at a specified location and direction, using a specific weapon and damage values

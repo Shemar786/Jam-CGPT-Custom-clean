@@ -1,0 +1,26 @@
+TDAT: 	protected void updateIcon(IIconHolder figure){
+		final Image image = model().getIcon();
+		final Image oldImage = figure.getIcon();
+		final IIconHolder figure1 = figure;
+		
+		if (Display.getCurrent() !=null){
+			figure.setIcon(image);
+			if (oldImage !=null){
+				oldImage.dispose();
+			}
+		} else {
+			Display.getDefault().asyncExec(new Runnable(){
+				/**
+				 * @see java.lang.Runnable#run()
+				 */
+				public void run() {
+					figure1.setIcon(image);
+					if (oldImage != null){
+						oldImage.dispose();
+					}
+				}
+			});
+		}
+	}
+
+COM:updates an icon for a given figure in a GUI application, disposing of the old icon image if one exists

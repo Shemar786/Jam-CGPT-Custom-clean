@@ -1,0 +1,21 @@
+TDAT: 	public void refreshTreePanel() {
+
+		root.removeAllChildren();
+
+		root = new DefaultMutableTreeNode("ALL");
+		treeModel = new DefaultTreeModel(root);
+
+		tree.setModel(treeModel);
+		tree.setBounds(new Rectangle(0, 0, 196, 443));
+		tree.setLayout(null);
+		tree.setBackground(Color.white);
+
+		tree.setCellRenderer(new UserIconRenderer());
+
+		addAllUsers();
+
+		TreePath treePath = tree.getPathForRow(0);
+		tree.fireTreeExpanded(treePath);
+	}
+
+COM:refreshes a tree panel by removing all existing children, creating a new root node, setting a new tree model, adding all users to the tree, and expanding the tree

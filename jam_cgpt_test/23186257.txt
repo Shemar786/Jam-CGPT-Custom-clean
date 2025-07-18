@@ -1,0 +1,17 @@
+TDAT:     public GenericList getList(String listname) {
+        for (GenericList list : lists)
+            if (list.getName().equalsIgnoreCase(listname))
+                return list;
+        
+        GenericObject l = getChild(listname);
+        
+        if (l == null)
+            return null;
+        
+        if (l.allWritable.isEmpty()) // which means it could have been an empty list parsed as an object with no children
+            return convertToList(l);
+        
+        return null;
+    }
+
+COM:searches for a specific list by name and returns it if found, otherwise it tries to convert a related object to a list or returns null

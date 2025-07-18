@@ -1,0 +1,27 @@
+TDAT: 	public int getIndexOfChild(Object parent, Object child) {
+		Node node;
+		NodeList list;
+		int count;
+		int ret;
+
+		ret = -1;
+
+		node = (Node) parent;
+		list = node.getChildren();
+		if (null != list) {
+			count = list.size();
+			for (int i = 0; i < count; i++)
+				if (child == list.elementAt(i)) {
+					ret = i;
+					break;
+				}
+		} else
+			throw new IllegalArgumentException("invalid parent for getIndexOfChild()");
+
+		if (0 > ret)
+			throw new IllegalArgumentException("child not found in getIndexOfChild()");
+
+		return (ret);
+	}
+
+COM:returns the index of a child object within a parent object's list of children

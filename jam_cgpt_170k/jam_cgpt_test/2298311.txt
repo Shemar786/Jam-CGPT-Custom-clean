@@ -1,0 +1,10 @@
+TDAT:     public void sendIM(String text) {
+        try {
+            netConnection.writeString(DrawingDataModel.IM_TEXT, currentUserName+":  "+text, -1);
+        } catch(IOException e) {
+            System.err.println("Disconnected sending IM");
+            System.err.println(e);
+        }
+    }
+
+COM:sends an instant message with the input text through a net connection and catches an exception if the connection is lost

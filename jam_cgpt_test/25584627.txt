@@ -1,0 +1,14 @@
+TDAT:     public void setMass(double mass) {
+        if (mass <= 0.0) {
+            throw new IllegalArgumentException("Body.setMass: " + 
+                    "Invalid mass = " + mass);
+        }
+        this.mass = mass;
+        
+        if( mass != Body.INFINITE_MASS )
+            breakingImpulseAssumedBodyMass = mass;
+
+        updateMassAndInertiaValues();
+    }
+
+COM:sets the mass of a body and updates its mass and inertia values, while throwing an exception if an invalid mass value is provided

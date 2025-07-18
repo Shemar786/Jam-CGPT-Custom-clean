@@ -1,0 +1,11 @@
+TDAT:     protected BraceType extractBraceType(final String articleLink) {
+        if (articleLink.startsWith(Braces.INTRO_DEFAULT.getSequence(false))) {
+            return BraceType.DEFAULT;
+        }
+        if (articleLink.startsWith(Braces.INTRO_CURLY.getSequence(false))) {
+            return BraceType.CURLY;
+        }
+        return null;
+    }
+
+COM:extracts the BraceType based on the starting sequence of the given articleLink string

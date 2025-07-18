@@ -1,0 +1,14 @@
+TDAT: 	public String getAttribute(Element el , String tag , int index , String attribute){
+		String val= null;
+		NodeList nl = el.getElementsByTagName(tag);				
+		if(nl!=null && nl.getLength()>0){
+			NamedNodeMap attrs = nl.item(index).getAttributes();
+	        for(int i = 0; i < attrs.getLength(); i++) {  
+	            if( attrs.item(i).getNodeName().equals(attribute))
+	            	val = attrs.item(i).getNodeValue();
+	        }
+		}
+		return val;
+	}
+
+COM:retrieves the value of a specified attribute from an element with a given tag name and index

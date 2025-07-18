@@ -1,0 +1,21 @@
+TDAT: 	public void editIcon(Object source, String id, String newIconPath, String userId){
+		synchronized (containerOpMutex) {
+			String currentIcon = "";
+			IViewable object = this.getObjectWrapper(id);
+			if(object==null){
+				return;
+			}
+			currentIcon = object.getIconPath();
+			//check names, rename if valid
+			if(newIconPath.equals(currentIcon)){
+				return;
+			}
+			else{
+				object.setIcon(newIconPath, userId);
+				sendModifyEvent(source, object.getObjectId(), userId, new Date());
+				return;
+			}
+		}
+	}
+
+COM:edits the icon of an object, provided the object exists and the new icon path is different from the current one

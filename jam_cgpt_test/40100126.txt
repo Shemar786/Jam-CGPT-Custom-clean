@@ -1,0 +1,11 @@
+TDAT:     public String getAbstract() throws MercuryException {
+        // XXX: Provide the first sentence/line from the content?
+        // -- Not any cheaper to do, but meets the requirements.
+        String rslt = getBody();
+        if (rslt != null && rslt.length() > 50)
+            rslt = rslt.substring(0, 50);
+
+        return rslt;
+    }
+
+COM:returns the first 50 characters of the result obtained from the method getBody()

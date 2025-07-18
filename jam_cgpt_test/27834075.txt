@@ -1,0 +1,18 @@
+TDAT:   public void setResultValue(Object object) {
+    try {
+      if (!(isVoid && object == null)) {
+        if (value != null) {
+          remove(value);
+        }
+        value = new SmallBeanView(context, object, true, true, true);
+
+        add("Center", value);
+        invalidate();
+        validate();
+      }
+    } catch (Exception err) {
+      cat.error("An error occurred", err);
+    }
+  }
+
+COM:sets the result value of an object and adds it to a SmallBeanView, invalidating and validating the view afterwards, unless the object is null and/or void

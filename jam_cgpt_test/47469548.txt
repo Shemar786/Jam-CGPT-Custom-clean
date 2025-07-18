@@ -1,0 +1,8 @@
+TDAT: 	private void persistExpansionState() {
+		IDialogSettings settings = PDEPlugin.getDefault().getDialogSettings().addNewSection(SETTINGS);
+		for (int i = 0; i < fExpComps.size(); i++) {
+			settings.put(Integer.toString(i), ((ExpandableComposite) fExpComps.get(i)).isExpanded());
+		}
+	}
+
+COM:persists the expansion state of a set of ExpandableComposite components using the dialog settings of the PDE plugin

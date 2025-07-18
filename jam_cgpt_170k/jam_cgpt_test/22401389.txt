@@ -1,0 +1,12 @@
+TDAT:   static private void adjust_for_sel(CMDARG cap) {
+      if (G.VIsual_active
+          && cap.oap.inclusive
+          && G.p_sel.charAt(0) == 'e'
+          && Misc.gchar_cursor() != '\n')
+       {
+          G.curwin.w_cursor.incColumn();
+          cap.oap.inclusive = false;
+       }
+  }
+
+COM:adjusts selection based on various conditions

@@ -1,0 +1,12 @@
+TDAT:   public void saveAllFile() throws wpException {
+    wpWindow selectedWindow = gui.getDesktop().getSelectedWindow();
+    Iterator it = selectedWindow.getTabs().getIterator();
+    while (it.hasNext()) {
+      wpTab tab = (wpTab) it.next();
+      if (tab.isAltered()) {
+        tab.save(tab.getFile());
+      }
+    }
+  }
+
+COM:saves all altered files in the selected window's tabs using the wpTab.save() method

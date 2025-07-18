@@ -1,0 +1,7 @@
+TDAT: 	public List getRelFeedItems(FeedItem feedItem) {
+		final int feedId = feedItem.getFeed().getFeedId();
+		final String sql = "select * from T_FeedItem where FEED_ID =" + feedId;
+		return getPagedListByNativeSQL(FeedItem.class, sql, " id desc", 1, 20);
+	}
+
+COM:retrieves a list of related feed items based on a given feed item

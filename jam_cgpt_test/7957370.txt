@@ -1,0 +1,16 @@
+TDAT: 	public void addPhi(final Block block) {
+		if (phis[cfg.preOrderIndex(block)] != null) {
+			return;
+		}
+
+		final VarExpr target = (VarExpr) prototype.clone();
+
+		final PhiJoinStmt phi = new PhiJoinStmt(target, block);
+		phis[cfg.preOrderIndex(block)] = phi;
+
+		if (SSA.DEBUG) {
+			System.out.println("  place " + phi + " in " + block);
+		}
+	}
+
+COM:adds a phi statement to a block if it doesn't already exist, with the target variable and block as parameters

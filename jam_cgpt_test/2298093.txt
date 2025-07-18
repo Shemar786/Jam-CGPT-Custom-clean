@@ -1,0 +1,14 @@
+TDAT:     public SessionManager getSession(String id) {
+        if(id == null) {
+            return null;
+        } else {
+            SessionManager session = currentSessions.get(id);
+            if(session == null) {
+                session = new SessionManager(id, this, false);
+                currentSessions.put(id, session);
+            }
+            return session;
+        }
+    }
+
+COM:returns a SessionManager object based on the given ID, creating a new one if it doesn't exist and adding it to a HashMap of current sessions

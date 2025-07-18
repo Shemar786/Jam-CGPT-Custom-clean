@@ -1,0 +1,8 @@
+TDAT:     public void testAddRemoveContainsDifferentDomain() throws DomainListException {
+        domainList.addDomain(DOMAIN_1);
+        domainList.removeDomain(DOMAIN_2);
+        assertEquals(1, domainList.getDomains().length);
+        assertEquals(true, domainList.containsDomain(DOMAIN_1));
+    }
+
+COM:is a unit test that adds a domain to a list, removes another domain from the list, checks that the list contains only one domain, and verifies that the list contains the first added domain

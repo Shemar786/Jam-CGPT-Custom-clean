@@ -1,0 +1,21 @@
+TDAT: 	public void testNormal(){
+		//assert empty 
+		Container parent = new Container();
+		assertEquals(parent.getComponentCount(), 0);
+		
+		//add two child
+		Container child0 = new Container();
+		parent.add(child0);
+		Container child1 = new Container();
+		parent.add(child1);
+		assertEquals(parent.getComponentCount(), 2);
+		assertEquals(parent.getComponent(0), child0);
+		assertEquals(parent.getComponent(1), child1);
+		
+		//remove one child
+		parent.remove(child0);
+		assertEquals(parent.getComponentCount(), 1);
+		assertEquals(parent.getComponent(0), child1);
+	}
+
+COM:tests adding and removing child containers from a parent container

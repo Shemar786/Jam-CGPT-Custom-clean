@@ -1,0 +1,12 @@
+TDAT: 	public String addDisseminator(String itemPID, DStreamBinding binding) throws Exception{
+		logger.debug("entering addDisseminator(" + itemPID + ")");
+		String dissID = MaAPI.addDisseminator(itemPID, binding.getBDefPID(), 
+				binding.getBMechPID(), binding.getLabel(), 
+				binding.getDatastreamBindingMap(), binding.getState(), 
+				"Added via elated");
+		
+		logger.debug("exiting addDisseminator");
+		return dissID;
+	}
+
+COM:adds a disseminator to an item using the parameters provided in the DStreamBinding object and returns the ID of the newly created disseminator

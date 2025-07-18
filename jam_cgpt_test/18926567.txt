@@ -1,0 +1,9 @@
+TDAT:     private void restoreButtonActions(RequestContext context, Object[] state) {
+      setVisible(((Boolean) state[0]).booleanValue());
+      setNextView((String) state[1]);
+      String successAttr = elem.getAttribute("successAttr");
+      if (successAttr.length() > 0)
+        context.getRequest().removeAttribute(successAttr);
+    }
+
+COM:restores button actions, sets visibility and the next view, and removes a specific attribute from the request context if it exists

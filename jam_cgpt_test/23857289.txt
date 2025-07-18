@@ -1,0 +1,12 @@
+TDAT: 	public Header toHeader() {
+		StringBuilder builder = new StringBuilder();
+		for (int i = 0; i < values.size() - 1; i++) {
+			builder.append(values.elementAt(i) + ", ");
+		}
+		if (values.size() > 0) {
+			builder.append(values.elementAt(values.size() - 1));
+		}
+		return new Header(headerType, builder.toString());
+	}
+
+COM:returns a new Header object created from a header type and a concatenated string of the elements of a Vector object

@@ -1,0 +1,20 @@
+TDAT: 	public int compare(Object o1, Object o2) {
+		Node node1;
+		Node node2;
+
+		if (order == DESCENDING) {
+			node1 = (Node) o1;
+			node2 = (Node) o2;
+		}
+		else {
+			node1 = (Node) o2;
+			node2 = (Node) o1;
+		}
+
+		Object oo1 = node1.valueOf(xPath);
+		Object oo2 = node2.valueOf(xPath);
+
+		return oo1.toString().compareTo(oo2.toString());
+	}
+
+COM:compares two objects based on their values in a specified xPath

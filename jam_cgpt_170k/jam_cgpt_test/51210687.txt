@@ -1,0 +1,14 @@
+TDAT: 	private void addToCache(JarInputStream fis, String mnemo) {
+		String text = new String();
+		byte[] buf = new byte[4096];
+		int i = 0;
+		try {
+			while ((i = fis.read(buf)) != -1) {
+				text += new String(buf, 0, i);
+			}
+		} catch (IOException e) {
+		}
+		helpcache.put(mnemo, text);
+	}
+
+COM:reads data from a JarInputStream into a cache HashMap using a given mnemonic key

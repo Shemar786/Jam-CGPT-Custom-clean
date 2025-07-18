@@ -1,0 +1,14 @@
+TDAT:     private void expandNodePath(TreeNode node) {
+        if ((node instanceof Contact) && useGroups) {
+            Contact c = (Contact)node;
+            Protocol p = c.getProtocol();
+            if (null != p) {
+                Group group = p.getGroupById(c.getGroupId());
+                if (null != group) {
+                    group.setExpandFlag(true);
+                }
+            }
+        }
+    }
+
+COM:expands the path of a tree node if it is a Contact and useGroups is enabled, by setting the ExpandFlag of the corresponding Group to true

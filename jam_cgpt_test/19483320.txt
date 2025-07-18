@@ -1,0 +1,28 @@
+TDAT: 	protected Document parseDocument(InputStream inputStream) {
+		assert inputStream != null;
+
+		DocumentBuilder builder = null;
+		try {
+
+			DocumentBuilderFactory fact = DocumentBuilderFactory.newInstance();
+			fact.setNamespaceAware(true);
+			builder = fact.newDocumentBuilder();
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		// Parses the xml file
+		Document document = null;
+		try {
+			document = builder.parse(inputStream);
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return document;
+	}
+
+COM:receives an InputStream containing an XML document, parses it, and returns a Document object

@@ -1,0 +1,13 @@
+TDAT:     public void xmlDeclaration(String encoding) {
+
+        if (out == null)
+            return;
+
+        if (encoding == null) {
+            out.println("<?xml version='1.0'?>");
+        } else {
+            out.println("<?xml version='1.0' encoding='" + encoding + "'?>");
+        }
+    }
+
+COM:writes an XML declaration with an optional encoding parameter to a specified output

@@ -1,0 +1,12 @@
+TDAT:   protected TextFile getTextFile(int index) {
+    JScrollPane scrollPane = (JScrollPane) tabbedPane.getComponentAt(index);
+    JTextComponent textComponent = (JTextComponent) scrollPane.getViewport().getView();
+    final String sourceCode = textComponent.getText();
+
+    final String fileName = getFileName(index);
+
+    TextFile textFile = new TextFile(fileName, sourceCode);
+    return textFile;
+  }
+
+COM:retrieves the text content and file name of a specified index from a tabbed pane and creates a TextFile object with them

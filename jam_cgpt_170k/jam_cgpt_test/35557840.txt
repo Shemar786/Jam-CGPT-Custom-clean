@@ -1,0 +1,17 @@
+TDAT: 	public void changeViewState(ProfileUpdateIF complexIf, String profileName, boolean mFlag, String profileTypeName) {
+		try {
+			this.complexIf = complexIf;
+			this.profileName = profileName;
+			this.mFlag = mFlag;
+			this.profileTypeName = profileTypeName;
+			if (mFlag) {
+				assignmentFromManager();
+			}else{
+				setCellEditable();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:changes the view state based on the given parameters and either performs an assignment from Manager or sets cells as editable

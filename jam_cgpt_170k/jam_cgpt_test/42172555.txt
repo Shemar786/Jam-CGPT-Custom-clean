@@ -1,0 +1,17 @@
+TDAT:   protected void addModifiedByPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ServerResource_modifiedBy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServerResource_modifiedBy_feature", "_UI_ServerResource_type"),
+				 ConfigPackage.Literals.SERVER_RESOURCE__MODIFIED_BY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a "modified by" feature of a server resource

@@ -1,0 +1,12 @@
+TDAT:     private void actionTableMouse(MouseEvent e) {
+        if (!isWorking && e.getButton() == MouseEvent.BUTTON3) {
+            int row = table.rowAtPoint(e.getPoint());
+            if (row >= 0) {
+                table.getSelectionModel().setSelectionInterval(row, row);
+                row = table.convertRowIndexToModel(row);
+            }
+            tablePopup(row, e);
+        }
+    }
+
+COM:handles right-click mouse events on a table and opens a contextual popup menu

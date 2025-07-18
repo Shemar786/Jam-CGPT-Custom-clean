@@ -1,0 +1,13 @@
+TDAT:     public Bindings set(String variable, String value) {
+        if (variable == null) {
+            throw new NullPointerException("The variable name is null.");
+        }
+        if (value == null) {
+            throw new NullPointerException("The value is null.");
+        }
+        unset(variable);
+        varToString.put(variable, value);
+        return this;
+    }
+
+COM:sets the value of a variable in Bindings, throwing a NullPointerException if either the variable or the value is null and returning the Bindings object after setting the value

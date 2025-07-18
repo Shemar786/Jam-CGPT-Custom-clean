@@ -1,0 +1,11 @@
+TDAT:     private boolean sortData(int item){
+        boolean pass = true;
+        int[] temp = getArray(item, DATA);
+        if(!base.equals("DFLT"))
+            pass = sort(temp, DataStorage.BASE, base);
+        if(pass && !type.equals("DFLT"))
+            pass = sort(temp, DataStorage.TYPE, type);
+        return pass;
+    }
+
+COM:sorts an array of data based on given criteria and returns a boolean value indicating if the sorting was successful

@@ -1,0 +1,12 @@
+TDAT: 	public void renameNegative(IRodinElement element, String rename, boolean force, int failureCode) {
+		try {
+			((IElementManipulation)element).rename(rename, force, null);
+		} catch (RodinDBException jme) {
+			assertTrue("Code not correct for RodinDBException: " + jme, jme.getStatus().getCode() == failureCode);
+			return;
+		}
+		assertTrue("The renaming should have failed for: " + element, false);
+		return;
+	}
+
+COM:attempts to rename a given Rodin element to a specified name and throws an exception with a failure code if the renaming fails

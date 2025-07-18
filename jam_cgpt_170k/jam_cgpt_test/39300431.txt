@@ -1,0 +1,7 @@
+TDAT:     protected SenseCarryLoadActivity applyLaw(Influence inf, EnvironmentState env,Collection activities) {
+        SenseCarryLoadInfluence senseInf = (SenseCarryLoadInfluence) inf;
+        AGVRobot agv = senseInf.getInfluenceAuthor().getAgvRobot();
+        return new SenseCarryLoadActivity(new ActivitySubject(agv), getTimeInterval(senseInf), senseInf.getPerceptionResult());
+    }
+
+COM:takes in an Influence, an EnvironmentState, and a Collection of activities and returns a SenseCarryLoadActivity based on the given inputs

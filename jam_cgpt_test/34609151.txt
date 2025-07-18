@@ -1,0 +1,12 @@
+TDAT:     public Stemmer getMostAccurateStemmer(final Locale locale) throws MorphologyException {
+        if (locale == null) {
+            throw new IllegalArgumentException("The 'loc' argument cannot be null.");
+        }
+        Stemmer component = (Stemmer) mostAccurateStemmers.get(locale);
+        if (component == null) {
+            throw new MorphologyException("Cannot find stemmer for locales : " + locale.toString());
+        }
+        return component;
+    }
+
+COM:returns the most accurate stemmer for a given locale, throwing an exception if the stemmer cannot be found or if the locale argument is null

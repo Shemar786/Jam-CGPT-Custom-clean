@@ -1,0 +1,9 @@
+TDAT: 	public void setAlarmPiuPort(int port) {
+		if(slotInfo.unitId == DBDataDesc.R4_UNIT_PI_100M || slotInfo.unitId == DBDataDesc.R4_UNIT_PI_HP){
+			piuPort_100M[port] = DBDataDesc.R4_PIUPORT_ALARM;
+		} else if (slotInfo.unitId == DBDataDesc.R4_UNIT_PI_1G) {
+			piuPort_1G[port] = DBDataDesc.R4_PIUPORT_ALARM;
+		}
+	}
+
+COM:sets the alarm on a specific port of a network device based on the type of unit it belongs to

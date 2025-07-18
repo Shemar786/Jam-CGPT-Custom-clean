@@ -1,0 +1,13 @@
+TDAT:     public void onCallReInviteAccepted( Call call, String sdp, Message resp ) {
+
+    	log.debug( "onCallReInviteAccepted", "Init..." );
+        
+        if ( call != this.call ) {
+        	log.debug( "onCallReInviteAccepted", "NOT the current call." );
+            return;
+        }
+        
+        log.debug( "onCallReInviteAccepted", "RE-INVITE-ACCEPTED/CALL." );
+    }
+
+COM:handles the event of a call's re-invite being accepted

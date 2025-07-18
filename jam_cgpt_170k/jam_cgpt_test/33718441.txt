@@ -1,0 +1,14 @@
+TDAT:     public void testGetAddr2() {
+        System.out.println("getAddr2");
+        
+    
+        
+        String expResult = "";
+        String result = instance.getAddr2();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+COM:tests the "getAddr2" method of a class instance by setting an expected result and comparing it to the actual result

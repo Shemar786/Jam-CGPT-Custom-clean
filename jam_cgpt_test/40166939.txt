@@ -1,0 +1,25 @@
+TDAT: 	public void update() {
+		contents.removeAll();
+		
+		ObjectDisplay objdisplay = model.getObjectDisplay();
+		
+		//if a model is not currently loaded then don't continue
+		if (objdisplay==null) return;
+		
+		if (firstLoaded) {
+			addNavControls();
+			firstLoaded = false;
+		}
+		if (model.getUndosRemaining()>0) undo.setEnabled(true);
+		else undo.setEnabled(false);
+		if (model.getRedosRemaining()>0) redo.setEnabled(true);
+		else redo.setEnabled(false);
+		undo.repaint();
+		redo.repaint();
+		
+		contentDrawer.draw(objdisplay);
+		
+		contents.revalidate();
+	}
+
+COM:updates the contents of a display by removing existing content, checking if a model is loaded, adding navigation controls if it's the first time loading, enabling/disabling undo and redo buttons based on the number of undos/redos available, drawing new content, and validating and redrawing the display

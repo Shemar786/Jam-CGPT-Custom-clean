@@ -1,0 +1,17 @@
+TDAT: 	public boolean validateUMLBabstractState_noincomerstoinitial(UMLBabstractState umlBabstractState, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (umlBabstractState.isInitial() && !umlBabstractState.getIncoming().isEmpty()) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 UMLBValidator.DIAGNOSTIC_SOURCE,
+						 UMLBValidator.UML_BABSTRACT_STATE__NOINCOMERSTOINITIAL,
+						 "There must be no incoming transitions to an initial pseudo-state",
+						 new Object [] { umlBabstractState }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+COM:validates that an abstract state in UML-B has no incoming transitions if it is an initial state

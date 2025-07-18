@@ -1,0 +1,11 @@
+TDAT:     public void exit() {
+        assert invariant();
+        quit();
+        theViewer.dispose();
+        // No need for a hard exit using, e.g., System.exit(0):
+        // we'd like to be able to run a series of pacman's in a single
+        // JUnit test suite.
+        assert invariant();
+    }
+
+COM:exits the program gracefully by disposing of the current viewer without using System.exit(0) for the purpose of allowing multiple tests to run in a JUnit test suite, while also ensuring that the invariant is maintained before and after the exit

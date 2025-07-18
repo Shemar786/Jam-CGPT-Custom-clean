@@ -1,0 +1,14 @@
+TDAT:     public void addWindowListener(WindowListener wl) {
+	if (wl instanceof FrameAdapter) {
+	    FrameAdapter fa = (FrameAdapter)wl;
+	    if (isShowing()) {
+		// Window is already visible, hence the windowOpened() event
+		// will never arrive. Either post a WindowOpenedEvent or raise
+		// framecount by hand:
+		fa.setFrameCount(fa.getFrameCount()+1); // effect of the event
+	    }
+	}
+	super.addWindowListener(wl);
+    }
+
+COM:adds a window listener to a component and handles the case where the listener is a FrameAdapter by incrementing the frame count if the window is already visible

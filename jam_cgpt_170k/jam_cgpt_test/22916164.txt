@@ -1,0 +1,16 @@
+TDAT:     public StringBuffer toStringBuffer(StringBuffer in) {
+        if (in == null) {
+            in = new StringBuffer(48);
+        }
+        else {
+            in.ensureCapacity(in.length() + 48);
+        }
+        in.append("{ Point: latitude = ");
+        in.append(latitude);
+        in.append(", longitude = ");
+        in.append(longitude);
+        in.append(" }");
+        return in;
+    }
+
+COM:appends latitude and longitude values to a StringBuffer object and returns it, ensuring that the StringBuffer has enough capacity to hold the appended values

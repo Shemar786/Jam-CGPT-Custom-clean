@@ -1,0 +1,11 @@
+TDAT: 	private void center() {
+                int x_off = Cytoscape.getDesktop().getX();
+                int y_off = Cytoscape.getDesktop().getY();
+		int wo = Cytoscape.getDesktop().getWidth();
+		int ho = Cytoscape.getDesktop().getHeight();
+		int wi = getWidth();
+		int hi = getHeight();
+		setLocation(((wo - wi) / 2) + x_off, ((ho - hi) / 2) + y_off);
+	}
+
+COM:centers the location of a component within the Cytoscape desktop

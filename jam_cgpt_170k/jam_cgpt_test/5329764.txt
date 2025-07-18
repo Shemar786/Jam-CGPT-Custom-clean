@@ -1,0 +1,12 @@
+TDAT:     public void setLineWrap(boolean lineWrap) {
+        lineWrapping = lineWrap;
+        frontSideTextArea.setLineWrap(lineWrap);
+        reverseSideTextArea.setLineWrap(lineWrap);
+        if (!lineWrap) {
+            reverseSideTextArea.setPreferredSize(null);
+            frontSideTextArea.setPreferredSize(null);
+            setPreferredSize(null);
+        }
+    }
+
+COM:sets the line wrapping boolean value and applies it to two text areas, and resets the preferred size if line wrapping is disabled

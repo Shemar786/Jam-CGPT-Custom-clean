@@ -1,0 +1,14 @@
+TDAT:   public void storeBibleCache() throws IOException {
+    FileOutputStream out = new FileOutputStream(BC_NAME);
+    ObjectOutputStream s = new ObjectOutputStream(out);
+    s.writeObject(BC_NAME);
+    /**
+     * jsconneciton cannot be serialized because new connection
+     * is required!
+     */
+    this.jsconnection = null;
+    s.writeObject(this);
+    s.flush();
+  }
+
+COM:stores a serialized object of the current class instance and its associated Bible cache file

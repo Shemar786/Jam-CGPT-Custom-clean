@@ -1,0 +1,12 @@
+TDAT: 	private void parseSavedSourceLocations(String text, List entries) {
+		text = text.replace(File.pathSeparatorChar, ';');
+		StringTokenizer stok = new StringTokenizer(text, ";"); //$NON-NLS-1$
+		while (stok.hasMoreTokens()) {
+			String token = stok.nextToken();
+			SourceLocation location = parseSourceLocation(token);
+			if (location != null)
+				entries.add(location);
+		}
+	}
+
+COM:parses saved source locations from a given string and adds them to a provided list

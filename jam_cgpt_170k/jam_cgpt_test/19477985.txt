@@ -1,0 +1,17 @@
+TDAT: 	public void process() throws RodinDBException {
+		if (!isValid(element, attrType)) {
+			return;
+		}
+		final String formulaString = element.getAttributeValue(attrType);
+		final IAttributeLocation loc = getInternalLocation(element, attrType);
+		checkCancel();
+		final IParseResult result = parseFormula(formulaString, loc);
+		checkCancel();
+		if (result.hasProblem()) {
+			return;
+		}
+		final Formula<?> formula = getParsedFormula(result);
+		visitAndIndex(formula);
+	}
+
+COM:processes a formula attribute of a given element, parsing it and indexing the resulting formula if it is valid

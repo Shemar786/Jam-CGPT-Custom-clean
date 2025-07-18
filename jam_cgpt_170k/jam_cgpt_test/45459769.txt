@@ -1,0 +1,11 @@
+TDAT: 	private JTextField getJTextField9() {
+		if (jTextField9 == null) {
+			jTextField9 = new JTextField();
+			jTextField9.setBounds(new Rectangle(163, 61, 409, 32));
+			jTextField9.setText(defaultProps.getProperty("output"));
+			jTextField9.setText(applicationProps.getProperty("output"));
+		}
+		return jTextField9;
+	}
+
+COM:returns a JTextField that is either created or already exists, with a specific size and default/assigned text properties

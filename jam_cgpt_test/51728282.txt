@@ -1,0 +1,6 @@
+TDAT:     protected void checkVariable() throws ConstInsteadOfVarException {
+        if (getVariable() instanceof Const)
+            throw new ConstInsteadOfVarException("The symbols " + Lambda.SYMBOL + ", " + Exists.SYMBOL + ", and " + ForAll.SYMBOL + " must be followed by a variable, but '" + getVariable() + "' is a constant.");
+    }
+
+COM:checks if the variable following certain symbols is a constant and throws an exception if it is

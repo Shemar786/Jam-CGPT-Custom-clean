@@ -1,0 +1,12 @@
+TDAT:     public boolean isHoliday() {
+        if(get(DAY_OF_WEEK)==SATURDAY) {
+            return true; }
+        if(get(DAY_OF_WEEK)==SUNDAY) {
+            return true; }
+        for(int j=0;j<holidays.length;j++) {
+            if(holidays[j].getTime()==getTimeInMillis()) {
+                return true; } }
+        return false;
+    }
+
+COM:checks if the current day is a Saturday, Sunday or one of several specified holidays

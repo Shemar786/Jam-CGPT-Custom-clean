@@ -1,0 +1,17 @@
+TDAT: 	protected void addInv_actout_outPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OUT_inv_actout_out_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OUT_inv_actout_out_feature", "_UI_OUT_type"),
+				 Context_FmsCPackage.Literals.OUT__INV_ACTOUT_OUT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for an OUT feature in a certain package with a certain set of attributes

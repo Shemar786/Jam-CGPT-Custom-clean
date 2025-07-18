@@ -1,0 +1,14 @@
+TDAT:     protected String myValue(JTable table, Object val, int row, int col) {
+        String s = myValue(val);
+        if (s != null) return s;
+
+        s = myValue(table, row, col);
+        if (s != null) return s;
+
+        s = myValue();
+        return s != null
+                ? s
+                : "";
+    }
+
+COM:returns a string value based on different parameters passed and returns an empty string if no value is found

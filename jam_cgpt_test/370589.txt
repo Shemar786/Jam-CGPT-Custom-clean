@@ -1,0 +1,12 @@
+TDAT: 	public IPath getAbsoluteJarLocation() {
+		// The workspace root is always local to the file system. 
+		// So getLocation is OK here.
+		IPath workspaceLocation= ResourcesPlugin.getWorkspace().getRoot().getLocation();
+		if (!fJarLocation.isAbsolute() && workspaceLocation != null)
+			// prepend workspace path
+			return workspaceLocation.append(fJarLocation);
+		else
+			return fJarLocation;
+	}
+
+COM:returns the absolute path of a JAR file, which may or may not be located within the workspace root

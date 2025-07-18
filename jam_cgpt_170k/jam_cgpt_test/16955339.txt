@@ -1,0 +1,20 @@
+TDAT:     public void onTearDown() throws Exception {
+        application = null;
+        config = null;
+        externalContext = null;
+        facesContext.release();
+        facesContext = null;
+        lifecycle = null;
+        lifecycleFactory = null;
+        renderKit = null;
+        request = null;
+        response = null;
+        servletContext = null;
+        session = null;
+        FactoryFinder.releaseFactories();
+
+        Thread.currentThread().setContextClassLoader(threadContextClassLoader);
+        threadContextClassLoader = null;
+    }
+
+COM:clears all the variables and releases the factories before setting the thread's context class loader to null

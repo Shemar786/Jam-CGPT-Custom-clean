@@ -1,0 +1,10 @@
+TDAT:   private Element makeElementFromXmlString(String xmlString) throws Exception {
+    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    dbf.setNamespaceAware(true);
+    DocumentBuilder builder = dbf.newDocumentBuilder();
+    ByteArrayInputStream bais = new ByteArrayInputStream(xmlString.getBytes());
+    Document d = builder.parse(bais);
+    return d.getDocumentElement();
+  }
+
+COM:parses an XML string and returns the root element as a DOM Element object

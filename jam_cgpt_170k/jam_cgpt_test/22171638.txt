@@ -1,0 +1,19 @@
+TDAT: 	protected void addAppendPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveFileMessageSink_append_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveFileMessageSink_append_feature", "_UI_EveFileMessageSink_type"),
+				 MsgPackage.Literals.EVE_FILE_MESSAGE_SINK__APPEND,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_FilePropertyCategory"),
+				 new String[] {
+					"file"
+				 }));
+	}
+
+COM:adds an append property descriptor to an item property descriptor for an EveFileMessageSink class object

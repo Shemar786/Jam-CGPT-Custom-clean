@@ -1,0 +1,13 @@
+TDAT:     private void setMaximumIntensity(final double max) {
+        try {
+            display.setIntensityRange(0.0, max);
+        }
+        catch (VisADException e) {
+            LOG.log(Level.WARNING, "Couldn't set intensity range.", e);
+        }
+        catch (RemoteException e) {
+            LOG.log(Level.WARNING, "Couldn't set intensity range.", e);
+        }
+    }
+
+COM:sets the maximum intensity of a display, while handling any VisADExceptions or RemoteExceptions that may arise

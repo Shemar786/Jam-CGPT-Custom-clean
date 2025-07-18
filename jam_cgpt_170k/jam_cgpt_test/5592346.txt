@@ -1,0 +1,17 @@
+TDAT:   public Node getChild(Node parentNode, int index) {
+
+    Node filterNode = null;
+    wpNodeIterator it = new wpNodeIterator(parentNode, filter);
+
+    int i = 0;
+    while (it.hasNext()) {
+      filterNode = (Node) it.next();
+      if (i == index) {
+        break;
+      }
+      i++;
+    }
+    return filterNode;
+  }
+
+COM:returns the child Node of a given parent Node at a specified index

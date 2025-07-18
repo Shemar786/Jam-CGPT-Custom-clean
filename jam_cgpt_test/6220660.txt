@@ -1,0 +1,9 @@
+TDAT:   private void append(Path path, String direction) {
+    Step first = path.getFirstStep();
+    this.suffixNode(first.getNode(), direction);
+    while (path.hasNext()) {
+      (this.steps).add(path.getNextStep());
+    } // while loop
+  } // method append
+
+COM:adds steps to the end of a path in a specified direction

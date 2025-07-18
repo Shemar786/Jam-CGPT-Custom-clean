@@ -1,0 +1,13 @@
+TDAT: 	public void setId(final Integer id) {
+		// If we've just been persisted and hashCode has been
+		// returned then make sure other entities with this
+		// ID return the already returned hash code
+		if ( (this.id == null || this.id == 0) &&
+				(id != null) &&
+				(this.hashCode != null) ) {
+			SAVED_HASHES.put( id, this.hashCode );
+		}
+		this.id = id;
+	}
+
+COM:sets the ID of an entity and stores its hash code in a map if the ID is not already set and a hash code has been returned

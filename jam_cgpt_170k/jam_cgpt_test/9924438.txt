@@ -1,0 +1,18 @@
+TDAT:  public FileField patternAt(long pos) {
+  if (fields == null) {
+   return null;
+  }
+
+  long rest = pos % blockSize;
+
+  long size = 0;
+  for (int i = 0; i < fields.length; ++i) {
+   if (size + fields[i].getSize() > rest) {
+    return fields[i];
+   }
+   size += fields[i].getSize();
+  }
+  return null;
+ }
+
+COM:searches for the FileField object at a specified position within a block of fields

@@ -1,0 +1,8 @@
+TDAT:     private void buildHorizontalPositionFromConstraints(AdvancedConstraints constraint) {
+        horizontalPosition.setStartSeparation(constraint.getLeftColumn());
+        horizontalPosition.setStopSeparation(constraint.getRightColumn());
+        horizontalPosition.setAlignment(constraint.getHorizontalAlignment());
+        horizontalPosition.setSizePolicy(constraint.getHorizontalSizePolicy());
+    }
+
+COM:sets the properties of a horizontal position object based on input constraints

@@ -1,0 +1,16 @@
+TDAT:    public void restoreFromSnapshot(SnapshottableMemory memory) {
+      Validate.notNull(this.snapshotFile, "snapshotFile not set");
+
+      if (!this.snapshotFile.exists()) {
+         return;
+      }
+
+      try {
+         this.basicRestoreFromSnapshot(memory);
+      }
+      catch (Exception exc) {
+         throw new SnapshotException("failed to restore contents of snapshot file " + this.snapshotFile, exc);
+      }
+   }
+
+COM:restores the contents of a snapshottable memory object from a snapshot file, but throws a SnapshotException if the operation fails

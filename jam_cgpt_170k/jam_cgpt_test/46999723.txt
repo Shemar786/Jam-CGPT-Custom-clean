@@ -1,0 +1,7 @@
+TDAT:     private String deriveDivision(String exp, String vari) {
+        return (makeDivision(makeSubtraction(makeProduct(arg2(exp), derive(arg1(exp), vari)),
+                                             makeProduct(arg1(exp), derive(arg2(exp), vari))), makePower(arg2(exp),
+                                                                                                         "2")));
+    }
+
+COM:derives an algebraic expression involving division with respect to a specified variable and returns the resultant expression in string format

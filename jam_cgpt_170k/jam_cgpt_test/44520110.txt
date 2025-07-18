@@ -1,0 +1,32 @@
+TDAT: 	public void setDerivedFields(){
+		distance = 0;
+		distance2 = 0;
+		AtomContact atomContact;
+		interacting_atom_contacts_size = 0;
+		interaction = false;
+		
+		for(Iterator i = atomContacts.iterator(); i.hasNext();){
+			atomContact = (AtomContact)i.next();
+			distance2 += atomContact.getDistance();
+			if(atomContact.isInteracting()){
+				if(atomContact.isPure()){
+					interaction = true;
+					interacting_atom_contacts_size++;
+					distance += atomContact.getDistance();
+				}
+			}
+		}
+		
+		if(isInteracting())
+			distance /= interacting_atom_contacts_size;
+		else{
+			distance2 /= atomContacts.size();
+		}
+		
+		setStrength();
+		setType();
+		setAbsoluteInvolvement();
+		setPercentanceInvolvement();
+	}
+
+COM:sets various derived fields based on the values of distance, distance2, atom contacts, and interactions

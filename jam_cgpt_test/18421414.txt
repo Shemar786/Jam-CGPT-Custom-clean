@@ -1,0 +1,28 @@
+TDAT: 	public void setMealType(Meal meal, MealType type) throws InvalidMealTypeException {
+		
+		DaySchedule day = m_Dietplan.getDaySchedule(meal);
+		
+		if (day == null) {
+			return;
+		}
+		
+		Meal equalMeal = null;
+		for (Meal m : day.getMeals()) {
+			if (m.getMealType() == type) {
+				if (m != meal) {
+					equalMeal = m;
+				}
+				break;
+			}		
+		}		
+
+		if (equalMeal != null) {
+			copyMealItems(day, meal, equalMeal);
+		} else {
+			meal.setMealType(type);
+		}
+		setChanged();
+		notifyObservers();
+	}
+
+COM:sets the meal type for a Meal object, checks if it already exists in the DaySchedule, and updates it accordingly if it exists, throwing an InvalidMealTypeException if an invalid meal type is provided

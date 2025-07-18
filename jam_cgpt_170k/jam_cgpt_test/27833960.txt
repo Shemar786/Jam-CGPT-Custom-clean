@@ -1,0 +1,11 @@
+TDAT:   public void setName(String newName) throws PropertyVetoException {
+    if (!(newName.equals(name))) {
+      checkTransient();
+      String oldName = name;
+      vetoSupport.fireVetoableChange("name", oldName, newName);
+      this.name = newName;
+      propSupport.firePropertyChange("name", oldName, newName);
+    }
+  }
+
+COM:sets the name property to a new value and fires a vetoable change event if the new value is different from the current value

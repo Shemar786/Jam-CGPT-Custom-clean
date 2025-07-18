@@ -1,0 +1,13 @@
+TDAT:     public String getWidth() {
+        if (null != this.width) {
+            return this.width;
+        }
+        ValueExpression _ve = getValueExpression("width");
+        if (_ve != null) {
+            return (java.lang.String) _ve.getValue(getFacesContext().getELContext());
+        } else {
+            return null;
+        }
+    }
+
+COM:returns the string value of the "width" property, either from the local variable or from the value expression if it exists

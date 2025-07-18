@@ -1,0 +1,10 @@
+TDAT:     public RevenueSourceBO create() throws Exception{
+        String id = GUID.generate();
+        ConversionBO bo = new ConversionBO(id);
+        bo.setType("sale");
+        Cache c = Cache.getInstance();
+        c.put(bo.getRevSrcID(), bo);
+        return bo;
+    }
+
+COM:creates a new RevenueSourceBO object with a generated ID, sets its type to "sale", caches the object, and returns it

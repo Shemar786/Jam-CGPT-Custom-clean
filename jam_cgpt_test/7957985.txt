@@ -1,0 +1,22 @@
+TDAT: 	public void visitChildren(final TreeVisitor visitor) {
+		final List list = preOrder();
+
+		if (!visitor.reverse()) {
+			final ListIterator iter = list.listIterator();
+
+			while (iter.hasNext()) {
+				final Block block = (Block) iter.next();
+				block.visit(visitor);
+			}
+
+		} else {
+			final ListIterator iter = list.listIterator(list.size());
+
+			while (iter.hasPrevious()) {
+				final Block block = (Block) iter.previous();
+				block.visit(visitor);
+			}
+		}
+	}
+
+COM:visits the children of a tree in pre-order traversal and invokes the visit operation on each block according to the specified visitor, either forwards or backwards based on the visitor's reverse attribute

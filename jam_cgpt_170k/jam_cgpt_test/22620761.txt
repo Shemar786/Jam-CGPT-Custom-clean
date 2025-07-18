@@ -1,0 +1,13 @@
+TDAT: 	public List myLockedRecords(String sessionId) {
+		List recList = new ArrayList();
+		for (Iterator i = lockedRecords.keySet().iterator(); i.hasNext(); ) {
+			String recId = (String) i.next();
+			String mySessionId = (String) lockedRecords.get(recId);
+			if (sessionId.equals(mySessionId)) {
+				recList.add(recId);
+			}
+		}
+		return recList;
+	}
+
+COM:returns a list of records that are currently locked by the provided session ID

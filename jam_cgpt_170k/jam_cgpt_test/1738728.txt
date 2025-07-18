@@ -1,0 +1,12 @@
+TDAT:     public List findAll () {
+        log.debug("finding all TblGroup instances with property");
+        try {
+            String queryString = "from TblGroup";  
+            return getHibernateTemplate().find(queryString);
+        } catch (RuntimeException re) {
+            log.error("find all instances failed", re);
+            throw re;
+        } 
+    }
+
+COM:returns a list of all TblGroup instances from a database using Hibernate

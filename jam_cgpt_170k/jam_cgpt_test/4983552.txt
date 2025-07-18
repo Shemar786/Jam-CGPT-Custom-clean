@@ -1,0 +1,12 @@
+TDAT:     public void setLangStrings(JbsLangStrings langStrings) {
+        Iterator<JbsLangString> it = langStrings.iterator();
+        while (it.hasNext()) {
+            JbsLangString langString = it.next();
+            JbsLangEntryHelper textField = this.getLangTextField(langString.getLanguage());
+            if (textField != null) {
+                textField.setText(langString.getText());
+            }
+        }
+    }
+
+COM:sets language strings in a JbsLangStrings object by iterating through them and updating corresponding text fields

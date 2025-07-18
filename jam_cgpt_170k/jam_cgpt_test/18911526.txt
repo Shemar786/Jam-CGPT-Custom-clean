@@ -1,0 +1,15 @@
+TDAT:     public void resize(int newSize) {
+        if (newSize <= 0) {
+            return;
+        }
+        List removed = new ArrayList();
+        synchronized (this) {
+            maxSize = newSize;
+            while (cache.size() > maxSize) {
+                removed.add(removeLRU());
+            }
+        }
+        cleanupAll(removed);
+    }
+
+COM:resizes a cache by removing the least recently used items until the cache size is equal to or smaller than the specified newSize

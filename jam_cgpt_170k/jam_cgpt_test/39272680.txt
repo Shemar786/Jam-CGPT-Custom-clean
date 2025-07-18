@@ -1,0 +1,10 @@
+TDAT:     public void setLoggingEventClass(String string) {
+        loggingEventClass = string;
+        try {
+            loggingEventWrapperImplementationClass = Class.forName(loggingEventClass);
+        } catch (ClassNotFoundException cnfe) {
+            this.errorHandler.error("Invalid LoggingEvent class " + string, cnfe, ErrorCode.GENERIC_FAILURE);
+        }
+    }
+
+COM:sets the logging event class and attempts to find and set the corresponding wrapper implementation class, handling any errors that occur along the way

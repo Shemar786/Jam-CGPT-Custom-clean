@@ -1,0 +1,19 @@
+TDAT: 	public void selectItem(NameAndPackage namePackage)
+	{		
+		try
+		{
+			TreeItem item = findTreeItem(namePackage);
+			if(item != null)
+			{
+				tree.setSelection(new TreeItem[] { item });
+				tree.showSelection();
+				notifySelected((IRItem) item.getData());
+			}
+		}
+		catch (TreeException e)
+		{
+			MessageBoxAndLog.show(tree.getShell(), "Project", "Selecting the item "+namePackage+" in the tree got", e);
+        }        
+	}
+
+COM:selects a specific item in a tree view and notifies any listeners that an item has been selected

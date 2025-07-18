@@ -1,0 +1,14 @@
+TDAT: 	public Vector getMechanisms(String bDefPID) throws InternalException{
+		logger.debug("entering getMechanisms(" + bDefPID + ")");
+		try{
+			Map map = fedI.getBMechs(bDefPID);
+			Vector vector = makeVector(map);
+			logger.debug("exiting getMechanisms");
+			return vector;
+		}catch(Exception e){
+			logger.error("error while getting mechanisms", e);
+			throw new InternalException(e);
+		}
+	}
+
+COM:retrieves a Vector of mechanisms for a given bDefPID using fedI.getBMechs and returns it, while logging relevant information and handling exceptions thrown during execution

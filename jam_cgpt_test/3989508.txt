@@ -1,0 +1,13 @@
+TDAT:     private Data find(String name) throws ProcedureException {
+        int  index = findLocal(name);
+
+        if (index >= 0) {
+            return data.getData(index);
+        } else if (parent != null) {
+            return parent.find(name);
+        } else {
+            throw new ProcedureException("no binding for '" + name + "' found");
+        }
+    }
+
+COM:finds the data associated with a given name, either locally or in a parent object, and throws an exception if no data is found

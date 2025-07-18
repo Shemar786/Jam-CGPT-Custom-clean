@@ -1,0 +1,11 @@
+TDAT:     public boolean equals(Geometry other) {
+        return (other != null) 
+                && (this.dimension == other.dimension)
+                && (this.type == other.type)
+                && (this.srid == other.srid) 
+                && (this.haveMeasure == other.haveMeasure) 
+                && other.getClass().equals(this.getClass()) 
+                && this.equalsintern(other);
+    }
+
+COM:checks if the object is equal to another geometry object based on its dimensions, type, SRID, measure, and if it has the same class and if its equalsintern method returns true

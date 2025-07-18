@@ -1,0 +1,8 @@
+TDAT:   public void fireKeyDown(Widget sender, char keyCode, int modifiers) {
+    for (Iterator it = iterator(); it.hasNext();) {
+      KeyboardListener listener = (KeyboardListener) it.next();
+      listener.onKeyDown(sender, keyCode, modifiers);
+    }
+  }
+
+COM:iterates over KeyboardListeners and triggers the onKeyDown event for each listener

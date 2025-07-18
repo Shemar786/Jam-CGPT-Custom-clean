@@ -1,0 +1,14 @@
+TDAT:     public boolean checkPartPACs() {
+        GraphPartFrame frame = createInnerGraphFrame();
+        boolean        valid = true;
+        Iterator       it    = PACs.iterator();
+
+        while (it.hasNext() && valid) {
+            ApplicationCondition ac = (ApplicationCondition) it.next();
+            valid &= ac.testPartAC(frame);
+        }
+
+        return valid;
+    } //checkPartPACs
+
+COM:checks if all specified PACs (Positive Application Conditions) are satisfied in a given graph frame and returns a boolean value indicating the result

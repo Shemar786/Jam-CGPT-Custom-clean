@@ -1,0 +1,13 @@
+TDAT:     private void getConnection() {
+        try {
+            Class.forName("org.hsqldb.jdbcDriver");
+            String url = "jdbc:hsqldb:c:\\lsj\\user";
+            conn = DriverManager.getConnection(url, "sa", "");
+            stmt = conn.createStatement();
+            System.out.println("Connection OK!");
+        } catch (Exception e) {
+            closeAll();
+        }
+    }
+
+COM:establishes a connection to a HSQLDB database and prints a message if the connection is successful

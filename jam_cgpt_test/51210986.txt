@@ -1,0 +1,13 @@
+TDAT: 	public void setDirty(SmallArgument address) {
+		if (Op.matches(address.type, Op.REG)) {
+			for (int i = 0; i < address.size; i++) {
+				reg.setDirty(i + address.address);
+			}
+		} else if (Op.matches(address.type, Op.MEM)) {
+			for (int i = 0; i < address.size; i++) {
+				memory.setDirty(i + address.address);
+			}
+		}
+	}
+
+COM:sets memory or register location as dirty depending on the type of address provided

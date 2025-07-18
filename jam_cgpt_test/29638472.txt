@@ -1,0 +1,9 @@
+TDAT: 	public int getUserData(int index) throws IllegalArgumentException {
+		if ((index < MIN_USER_DATA) || (index > MAX_USER_DATA)) 
+			 throw new IllegalArgumentException("Input parameter [index :: " + index + "] was out of bounds :: " + MIN_USER_DATA + " >= index =< " + MAX_USER_DATA);
+
+		// return User Data
+		return userData[index - 1];
+	}
+
+COM:returns the user data at a specified index, throwing an IllegalArgumentException if the index is out of range

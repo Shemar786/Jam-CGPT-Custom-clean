@@ -1,0 +1,17 @@
+TDAT:     public ReflectClass forName(final String className) {
+    	return withLock(new Closure4<ReflectClass>() {
+			public ReflectClass run() {
+		        ReflectClass clazz = _repository.lookupByName(className);
+		        if(clazz != null){
+		            return clazz;
+		        }
+		        clazz = _delegate.forName(className);
+		        if(clazz != null){
+		            return ensureDelegate(clazz);
+		        }
+		    	return _repository.forName(className);
+			}
+    	});
+    }
+
+COM:returns a ReflectClass object after searching for the class by name, either from a repository or delegate, and ensuring the delegate is valid

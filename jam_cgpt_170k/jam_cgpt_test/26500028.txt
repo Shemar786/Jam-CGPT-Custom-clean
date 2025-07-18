@@ -1,0 +1,13 @@
+TDAT:   public String toString() {
+    if (_useXmlDeclaration) {
+      StringBuffer aBuffer = new StringBuffer();
+      _theScribe.composeXmlDeclaration(_theCharacterEncoding, aBuffer);
+      aBuffer.append(_theBuffer.toString());
+
+      return aBuffer.toString();
+    } else {
+      return _theBuffer.toString();
+    }
+  }
+
+COM:returns a string representation of an object, considering whether to use an XML declaration or not

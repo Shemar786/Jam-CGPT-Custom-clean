@@ -1,0 +1,17 @@
+TDAT: 	protected void addNodeStatusPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveMonitorNode_nodeStatus_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveMonitorNode_nodeStatus_feature", "_UI_EveMonitorNode_type"),
+				 MonitorPackage.Literals.EVE_MONITOR_NODE__NODE_STATUS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the node status feature to the item property descriptors list

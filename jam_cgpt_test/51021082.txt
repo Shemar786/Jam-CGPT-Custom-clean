@@ -1,0 +1,18 @@
+TDAT: 	public void buildGUI() {
+		setEnabled(false);
+
+		setLayout(new SpringLayout());
+
+		add(createOptionsSelectionPanel()); // lsd and mapped probes options
+
+		dataPanel = new MicroarrayDataTablePanel(dataIndex,
+				new HashMap<String, Integer>());
+
+		add(dataPanel);
+
+		SpringUtilities.makeCompactGrid(this, this.getComponentCount(), 1, 0,
+				0, 5, 5);
+		setEnabled(true);
+	}
+
+COM:builds a graphical user interface with various options and a data table panel using SpringLayout, and disables the interface while constructing it

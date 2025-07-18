@@ -1,0 +1,15 @@
+TDAT: 	public void getUser() {
+
+		ClientManager clientMgr = ClientManager.getInstance();
+		User user = User.getInstance();
+
+		CommonIF.RtrvSessionIF[] data = new CommonIF.RtrvSessionIF[1];
+		data[0] = new CommonIF.RtrvSessionIF();
+
+		String cmdStr = new String("");
+
+		clientMgr.cmdRequest(getViewId(), user.getUserId(), neId, shelfId, EmsCode.CMD_RTRV_SESSION, data, cmdStr);
+		btnGet.setEnabled(false);
+	}
+
+COM:retrieves a user session and disables a button

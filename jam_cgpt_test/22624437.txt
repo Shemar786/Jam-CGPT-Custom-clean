@@ -1,0 +1,15 @@
+TDAT: 	protected CollectionInfo getCollectionInfo(String collection) throws Exception {
+
+		List collectionInfos = this.getCollectionInfos();
+		if (collectionInfos == null)
+			throw new Exception("no collection infos found");
+
+		for (Iterator i = collectionInfos.iterator(); i.hasNext(); ) {
+			CollectionInfo cInfo = (CollectionInfo) i.next();
+			if (cInfo.getCollectionKey().equals(collection))
+				return cInfo;
+		}
+		return null;
+	}
+
+COM:returns the CollectionInfo object for a given collection name, after checking if the collection exists or not, from a list of CollectionInfo objects obtained using another method

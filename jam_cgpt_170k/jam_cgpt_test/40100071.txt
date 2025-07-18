@@ -1,0 +1,16 @@
+TDAT:     public int getUnreadCount() throws MercuryException {
+        int rslt = -1;
+
+        // EA: for POP3, getUnreadMessageCount() is effectively the same as
+        // getMessages().length
+        try {
+            ensureOpen(Folder.READ_ONLY);
+            rslt = folder.getUnreadMessageCount();
+        } catch (MessagingException me) {
+            throw new JavaMailException("getUnreadMessageCount() failed", me);
+        }
+
+        return rslt;
+    }
+
+COM:retrieves the number of unread messages in a folder using the JavaMail API, and throws a custom exception if an error occurs

@@ -1,0 +1,19 @@
+TDAT: 	protected T find(final Long id, Class domainClass) {
+		try {
+			EntityManagerUtil.getInstance().beginTransaction();
+
+			D metricTimeRecord = (D) EntityManagerUtil.getInstance().findByPropertyValue(
+					domainClass, "id", id);
+			T dto = (T) ViewManager.getInstance().assemble(metricTimeRecord,
+					domainClass);
+
+			EntityManagerUtil.getInstance().commit();
+			return dto;
+		} catch (Exception e) {
+			Logger.error(e);
+			EntityManagerUtil.getInstance().rollback();
+			throw new RuntimeException(e);
+		}
+	}
+
+COM:finds an object by its unique identifier and returns its corresponding DTO

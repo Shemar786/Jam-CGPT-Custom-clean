@@ -1,0 +1,10 @@
+TDAT:   public void remove() {
+    ((ZGroup)srcAncestor).removeGroupListener(this);
+    ((ZGroup)destAncestor).removeGroupListener(this);
+    ZNode top = getParents()[0].editor().getTop();
+    top.getParent().removeChild(top);
+    srcNode = null;
+    destNode = null;
+  }
+
+COM:removes a group listener from two ancestors, removes a top node from its parent, and sets two node variables to null

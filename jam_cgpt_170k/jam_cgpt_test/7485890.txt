@@ -1,0 +1,11 @@
+TDAT:     public void testLocalErrorCreation() {
+    	XMPPError error = new XMPPError(XMPPError.Condition.item_not_found);
+        error.toXML();
+
+    	assertEquals(error.getCondition(), "item-not-found");
+    	assertEquals(error.getCode(), 404);
+    	assertEquals(error.getType(), XMPPError.Type.CANCEL);
+    	assertNull(error.getMessage());
+    }
+
+COM:creates an XMPP error object with a specific condition, and then tests its various properties using assertion statements

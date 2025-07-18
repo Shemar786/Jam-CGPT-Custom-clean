@@ -1,0 +1,11 @@
+TDAT:     private void nextTurn() {
+        CompoundEdit e = new CompoundEdit(getGame(), true, "Advance to next turn");
+        //Do this if the method is called "strangely"
+        step.setValue(0);
+        
+        if(phase.getValue().intValue() != 0) phase.setValue(0);
+        getGame().getTurnStructure().nextTurn();
+        e.end();
+    }
+
+COM:advances the game to the next turn and creates a CompoundEdit object to encapsulate the changes made during this step

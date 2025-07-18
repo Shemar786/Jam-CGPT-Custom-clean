@@ -1,0 +1,19 @@
+TDAT:     private void imagePopupDialog(MouseEvent e) {
+        JPopupMenu popup = new JPopupMenu();
+
+        popup.add(imageResizeMenu(imageScaled
+                ? "Full size"
+                : "Scaled size"));
+
+        popup.addSeparator();
+
+        popup.add(imageSaveAsMenu(currentImage));
+
+        popup.addSeparator();
+
+        popup.add(imagePropertiesMenu(currentImage));
+
+        popup.show(e.getComponent(), e.getX(), e.getY());
+    }
+
+COM:creates a popup dialog containing options for resizing, saving, and viewing properties of an image

@@ -1,0 +1,12 @@
+TDAT:     public Collection intersections(Collection rectangles) {
+        java.util.Vector intersections = new java.util.Vector();
+        Iterator i = rectangles.iterator();
+        while (i.hasNext()) {
+            Intersection2D x = ((Rectangle2D) i.next()).intersection(this);
+            if (x != null) intersections.add(x);
+        }
+
+        return intersections;
+    }
+
+COM:takes a collection of rectangles and returns a collection of their intersections with a given rectangle

@@ -1,0 +1,17 @@
+TDAT:     public int doEndTag() throws JspException {
+
+        // Prepare the textual content and ending element of this hyperlink
+        StringBuffer results = new StringBuffer();
+        if (text != null)
+            results.append(text);
+        results.append("</a>");
+
+        // Render the remainder to the output stream
+        ResponseUtils.write(pageContext, results.toString());
+
+        // Evaluate the remainder of this page
+        return (EVAL_PAGE);
+
+    }
+
+COM:prepares and writes a hyperlink to the output stream, and returns a code to evaluate the rest of the page

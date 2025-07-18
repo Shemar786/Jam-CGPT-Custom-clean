@@ -1,0 +1,13 @@
+TDAT:     public BeanComparator caseSensitive() {
+        if ((mFlags & 0x04) != 0) {
+            // Already case-sensitive.
+            return this;
+        }
+        BeanComparator bc = new BeanComparator(this);
+        bc.mOrderByName = mOrderByName;
+        bc.mUsingComparator = mUsingComparator;
+        bc.mFlags = mFlags | 0x04;
+        return bc;
+    }
+
+COM:returns a new BeanComparator object with case sensitivity enabled if it is not already enabled, otherwise it returns the original object

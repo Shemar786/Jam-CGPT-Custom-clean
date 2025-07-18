@@ -1,0 +1,12 @@
+TDAT:     private String attrib(String s) {
+        String value = "";
+        if (reader.isStartElement() || reader.getEventType() == XMLStreamConstants.ATTRIBUTE) {
+            value = reader.getAttributeValue(reader.getNamespaceURI(), s);
+            if (value == null) {
+                value = "";
+            }
+        }
+        return value;
+    }
+
+COM:retrieves the value of an attribute in an XML element using an XMLStreamReader

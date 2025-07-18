@@ -1,0 +1,11 @@
+TDAT: 	public IMachineRoot getIncludedMachine() throws RodinDBException {
+		final String bareName = getIncludedMachineName();
+		IRodinProject includedProject = getIncludedProject();
+		if(null==includedProject){
+			includedProject = getRodinProject();
+		}
+		final String scName = EventBPlugin.getMachineFileName(bareName);
+		return (IMachineRoot)includedProject.getRodinFile(scName).getRoot();
+	}
+
+COM:retrieves the root of an included machine in a Rodin project

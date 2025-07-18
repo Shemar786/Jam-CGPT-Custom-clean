@@ -1,0 +1,12 @@
+TDAT:     public void deserialize( DataInputStream in ) throws IOException {
+        objmap.clear();
+        int size = in.readInt();
+        
+        for(int i=0; i<size; i++ ){
+            String key = in.readUTF();
+            Integer val = new Integer(in.readInt());
+            objmap.put(key, val);
+        }
+    }
+
+COM:deserializes data from a DataInputStream and populates a HashMap objmap with the key-value pairs read from the stream

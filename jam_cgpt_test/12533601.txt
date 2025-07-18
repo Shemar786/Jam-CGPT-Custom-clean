@@ -1,0 +1,14 @@
+TDAT: 	public void setLastDestinationProbability(LaneIfc lane){
+		
+		if(!myNetwork.isLane(lane))	
+			new IllegalArgumentException("The supplied lane is not a valid lane.");
+
+		TransportLocationIfc origin = lane.getOrigin();
+		TransportLocationIfc destination = lane.getDestination();
+		int i = myNetwork.getIndexOf(destination);		
+		RandomVariable rv = myODRVs.get(origin);		
+		DEmpirical d = (DEmpirical) rv.getRandomSource();
+		d.addLastProbabilityPoint(i);
+	}
+
+COM:sets the last destination probability for a given lane in a network based on empirical probability

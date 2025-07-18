@@ -1,0 +1,7 @@
+TDAT: public void add (int x, int y, int width, int height) {
+	if (isDisposed()) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+	if (width < 0 || height < 0) SWT.error(SWT.ERROR_INVALID_ARGUMENT);
+  handle.add(new Area(new java.awt.Rectangle(x, y, width, height)));
+}
+
+COM:adds a new Area to the handle with the specified parameters, throwing an error if the graphic is disposed or if the width/height arguments are negative

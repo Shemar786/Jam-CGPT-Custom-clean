@@ -1,0 +1,11 @@
+TDAT:   protected IStatus getErrorStatus(String message) {
+    String statusMessage = message;
+    if (statusMessage == null) {
+      statusMessage = NLS.bind(UndoMessages.AbstractWorkspaceOperation_ErrorInvalidMessage,
+          getLabel());
+    }
+    return new Status(IStatus.ERROR, IDEWorkbenchPlugin.IDE_WORKBENCH,
+        OperationStatus.OPERATION_INVALID, statusMessage, null);
+  }
+
+COM:returns an error status with a message, and if the message is null, it returns a default error message

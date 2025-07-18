@@ -1,0 +1,7 @@
+TDAT:     private void updateModelFromParentObj() {
+        fillRowWithValues(parentObj.getKodper().split(SPLIT_STRING), KOD_PER_ROW);
+        fillRowWithValues(parentObj.getKodeka().split(SPLIT_STRING), KOD_EKA_ROW);
+        fillRowWithValues(parentObj.getKodetr().split(SPLIT_STRING), KOD_ETR_ROW);
+    }
+
+COM:updates the model by filling rows with values obtained from a parent object

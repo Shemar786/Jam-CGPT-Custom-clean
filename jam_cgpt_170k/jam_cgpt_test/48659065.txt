@@ -1,0 +1,5 @@
+TDAT: 	public void record(String token, String appID, String clientID, String description) throws Exception {
+		record(token, appID, Event.EVENT_TYPE_RECORD, clientID, description, -1.0, Event.NOLAT, Event.NOLON, -1.0);
+	}
+
+COM:records an event with a token, application ID, client ID, and description

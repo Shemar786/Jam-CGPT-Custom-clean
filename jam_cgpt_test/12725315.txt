@@ -1,0 +1,16 @@
+TDAT: 	private void applyGain() {
+		try {
+			double[][] samples = processed_audio_samples
+					.getSamplesChannelSegregated();
+			double gain = (new Double(choose_gain_text_field.getText()))
+					.doubleValue();
+			samples = DSPMethods.applyGain(samples, gain);
+			processed_audio_samples.setSamples(samples);
+			updateRecordingInformation();
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR",
+					JOptionPane.ERROR_MESSAGE);
+		}
+	}
+
+COM:applies a gain to processed audio samples and updates the recording information

@@ -1,0 +1,9 @@
+TDAT:   public void createRoles() {
+    rService.createRole("User", "ROLE_USER");
+    rService.createRole("Administrator", "ROLE_ADMINISTRATOR");
+    rService.createRole("Supervisor", "ROLE_SUPERVISOR");
+    rService.createRole("ROOT", "ROLE_ROOT");
+    rService.createRole("Collector", "ROLE_COLLECTOR");
+  }
+
+COM:creates multiple roles using a role service

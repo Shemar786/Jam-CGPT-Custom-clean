@@ -1,0 +1,12 @@
+TDAT:   public int changeSamplePosition(int sampleNo, int samplePosition) {
+    for(int i=0;i<sampleArr.size();i++) {
+      FMSample fms = (FMSample)sampleArr.get(i);
+      if (fms.getSampleNo()==sampleNo) {
+        fms.setPosition(samplePosition);   // does this change the version in sampleArr???
+        return samplePosition;
+      }
+    }
+    return 0;
+  }
+
+COM:changes the position of a specific sample in an ArrayList and returns the new position

@@ -1,0 +1,12 @@
+TDAT:     public void flush() {
+        try {
+            writeToScriptFile(insertStatementBuilder.build(), true);
+            for (StatementBuilder sb: upsertInsertStatementBuilder.values()) {
+                writeToScriptFile(sb.build(), true);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+COM:flushes data to a script file

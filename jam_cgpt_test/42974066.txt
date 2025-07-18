@@ -1,0 +1,12 @@
+TDAT: 	public Date nextWorkDay( Date date ) {
+		date = normalizeToMidnight( date );
+		date = date( year( date ), monthOfYear( date ), dayOfMonth( date ) + 1 );
+
+		while( !isWorkday( date ) ) {
+			date = date( year( date ), monthOfYear( date ), dayOfMonth( date ) + 1 );
+		}
+
+		return date;
+	}
+
+COM:calculates the next workday from a given date by iterating through the days until a workday is found

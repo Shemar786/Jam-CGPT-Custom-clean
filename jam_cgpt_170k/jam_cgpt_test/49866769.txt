@@ -1,0 +1,13 @@
+TDAT:   protected void fillData() {
+    Cursor checklistCursor = mDbHelper.fetchAllChecklists();
+    String[] from = {ChecklistDBAdapter.KEY_NAME};
+    int[] to = {R.id.checklist_name_text};
+    ChecklistAdapter checklists;
+    
+    startManagingCursor(checklistCursor);
+    checklists = new ChecklistAdapter(this, R.layout.checklist_row, checklistCursor,
+        from, to);
+    setListAdapter(checklists);
+  }
+
+COM:retrieves data from a database, maps it to a layout, and displays it in a list

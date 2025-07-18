@@ -1,0 +1,10 @@
+TDAT:     public StringItem getStringItem() {
+        if (stringItem == null) {//GEN-END:|16-getter|0|16-preInit
+            // write pre-init user code here
+            stringItem = new StringItem("Hello", "Hello, World!");//GEN-LINE:|16-getter|1|16-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|16-getter|2|
+        return stringItem;
+    }
+
+COM:returns a StringItem object, creates a new instance if it does not already exist, with the label "Hello" and the text "Hello, World!" as its contents

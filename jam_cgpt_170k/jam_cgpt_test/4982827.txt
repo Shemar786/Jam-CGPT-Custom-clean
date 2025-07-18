@@ -1,0 +1,11 @@
+TDAT:     public void executeNativeUpdate(EntityManager entityManager, String sQuery) throws Exception {
+        logger.debug("Executing native query: "+sQuery);
+        try {
+            Query q = entityManager.createNativeQuery(sQuery);
+            q.executeUpdate();
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
+    }
+
+COM:executes a native SQL query as a parameterized string using the EntityManager and logs any exceptions that may arise during the execution

@@ -1,0 +1,12 @@
+TDAT:   public Path getWorkingDirectory() throws IOException {
+    String name = conf.get(WORKING_DIR_ATTR);
+    if (name != null) {
+      return new Path(name);
+    } else {
+      Path dir = FileSystem.get(conf).getWorkingDirectory();
+      conf.set(WORKING_DIR_ATTR, dir.toString());
+      return dir;
+    }
+  }
+
+COM:returns the current working directory as a Path object, either retrieved from a previously stored attribute or generated from the current file system configuration

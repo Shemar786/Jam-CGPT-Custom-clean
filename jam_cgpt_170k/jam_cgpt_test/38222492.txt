@@ -1,0 +1,15 @@
+TDAT:   private boolean openTempFile(String fileName) {
+    if (file == null) {
+      try {
+        file = new RandomAccessFile(fileName, "r");
+      }
+      catch (Exception e) {
+//        System.out.println("Error while opening "+ fileName + " file.");
+//        e.printStackTrace();
+        return false;
+      }
+    }
+    return true;
+  }
+
+COM:opens a temporary file with the given file name and returns a boolean value indicating whether the file was successfully opened or not

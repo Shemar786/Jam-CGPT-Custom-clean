@@ -1,0 +1,19 @@
+TDAT: 	public void testCompare() {
+		double f = 123456.789;
+		Time t1 = base.times(f);
+		Time t2 = base.times(2.0 * f);
+		Time t3 = base.times(f);
+		assertTrue(t1.isEQ(t3));
+		assertTrue(t1.isGE(t3));
+		assertTrue(t1.isLE(t3));
+		assertFalse(t1.isEQ(t2));
+		assertFalse(t1.isGE(t2));
+		assertFalse(t2.isLE(t1));
+		assertFalse(t1.isNE(t3));
+		assertTrue(t2.isGT(t1));
+		assertTrue(t2.isGE(t1));
+		assertTrue(t1.isLT(t2));
+		assertTrue(t1.isLE(t2));
+	}
+
+COM:tests the comparison operations of the Time class and asserts various true/false conditions

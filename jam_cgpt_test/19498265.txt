@@ -1,0 +1,17 @@
+TDAT: 	public void testAcc_08() throws Exception {
+		IMachineRoot con = createMachine("cnc");
+
+		addInitialisation(con, makeSList());
+		addEvent(con, "evt", makeSList(), 
+				makeSList("G"), makeSList("x∈ℕ"), 
+				makeSList(), makeSList());
+		
+		saveRodinFileOf(con);
+		
+		runBuilder();
+		
+		isAccurate(con.getSCMachineRoot());
+		isNotAccurate(con.getSCMachineRoot().getSCEvents()[1]);
+	}
+
+COM:tests the accuracy of a machine and event, adding initializations and events before checking accuracy and saving the results to a Rodin file

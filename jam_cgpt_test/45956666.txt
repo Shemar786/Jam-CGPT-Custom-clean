@@ -1,0 +1,12 @@
+TDAT:   public String reportError(String dn, String reportText, String detailLink, String captchaChallenge, String captchaResponse, String remoteAddress) {
+    String result = null;
+    if (captchaValidator.validate(captchaChallenge, captchaResponse, remoteAddress)) {
+      errorReportingService.reportError(dn, reportText, detailLink);
+      result = "success";
+    } else {
+      result = "failure";
+    }
+    return result;
+  }
+
+COM:reports an error message along with additional details and a captcha validation

@@ -1,0 +1,10 @@
+TDAT:     public Iterator getStatements(Value subj, URI pred, Value obj) {
+        if (subj instanceof Literal) {
+            throw new UnsupportedOperationException(
+                    "Sesame does not support literal subjects");
+        }
+        return new StatementIteratorAdapter(this.source.getStatements(
+                (Resource) subj, pred, obj));
+    }
+
+COM:returns an iterator of statements that match the given subject, predicate, and object, but throws an exception if the subject is a literal

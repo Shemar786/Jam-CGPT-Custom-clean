@@ -1,0 +1,14 @@
+TDAT: 	public boolean isMarine(float latitude, float longitude){
+		List<SimpleFeature> sfs = marineTree.query(new Envelope(longitude,longitude,latitude, latitude));
+		Coordinate coord = new Coordinate(longitude, latitude);
+		Point point = new Point(coord, new PrecisionModel(), 4326);
+		for(SimpleFeature sf: sfs){
+            Geometry geometry = (Geometry) sf.getDefaultGeometry();
+            if(geometry.contains(point)){
+            	return true;
+            }
+		}
+		return false;
+	}
+
+COM:takes in latitude and longitude coordinates and checks if the given point is in a marine area using a tree and geometry calculations

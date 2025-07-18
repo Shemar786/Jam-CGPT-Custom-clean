@@ -1,0 +1,19 @@
+TDAT: 		public void setValueAt( Object aValue, int row, int column ) {
+			aValue = ( (String) aValue ).trim();
+			if ( column == 0 ) {
+				names.remove( row );
+				names.add( row, aValue );
+			}
+			else {
+				values.remove( row );
+				values.add( row, aValue );
+			}
+			if ( row == names.size() - 1 ) {
+				if ( !hasEmptyRow() ) {
+					addRow( true );
+				}
+			}
+			fireTableCellUpdated( row, column );
+		}
+
+COM:updates the value in a specific row and column of a table model, trimming the input string and adding a new row if necessary

@@ -1,0 +1,12 @@
+TDAT:     public void removeWorker(int id) {
+        Worker tmp = (Worker)workersSet.get(new Integer(id));
+        if (tmp != null) {
+            //cancel the worker's current job
+            if (tmp.getStatus() == Worker.WORKER_BUSY)
+                js.cancelJobBean(tmp.getCurrentJobBeanId());
+            //actually remove the worker
+            workersSet.remove(new Integer(id));
+        }
+    }
+
+COM:removes a worker from a set by their ID, cancels their current job if they are busy, and then removes them from the set

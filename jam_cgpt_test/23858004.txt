@@ -1,0 +1,16 @@
+TDAT: 	private void removeConnection(ConnectionIdentifier conn_id) {
+		if (connections.containsKey(conn_id)) {
+			ConnectedTransport conn = (ConnectedTransport) connections
+					.get(conn_id);
+			conn.halt();
+			connections.remove(conn_id);
+			// DEBUG log:
+			printLog("active connenctions:", LogLevel.LOW);
+			for (Enumeration<ConnectedTransport> e = connections.elements(); e.hasMoreElements();) {
+				ConnectedTransport co = (ConnectedTransport) e.nextElement();
+				printLog("conn " + co.toString(), LogLevel.LOW);
+			}
+		}
+	}
+
+COM:removes a connection identified by its ID from a set of connections, halts the connection, and logs the remaining connected transports

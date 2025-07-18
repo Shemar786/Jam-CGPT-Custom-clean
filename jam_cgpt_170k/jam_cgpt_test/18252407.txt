@@ -1,0 +1,14 @@
+TDAT: 	public void open(Table table) {
+		filterTextfieldsPerColumn.clear();
+		if (!isInitialized) {
+	        int w = 600, h = 400;
+	        setSize(w, h);
+	        setLocation(Math.max(0, parent.getX() + parent.getWidth() / 2 - w / 2),
+	                    Math.max(0, parent.getY() + parent.getHeight() / 2 - h / 2));
+	        isInitialized = true;
+		}
+		refresh(table);
+		setVisible(true);
+	}
+
+COM:opens a table, initializes its size and location attributes, and refreshes its contents

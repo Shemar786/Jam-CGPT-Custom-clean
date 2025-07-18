@@ -1,0 +1,15 @@
+TDAT:   public byte readByte() throws IOException {
+    while (in.available() == 0) {
+      try {
+        Thread.currentThread().sleep(100);
+      } catch (InterruptedException iex) {
+        Thread.currentThread().interrupt();
+        return '\0';
+      }
+    }
+    byte val = (byte) in.read();
+    Logger.logInput((char)val);
+    return val;
+  }
+
+COM:reads a byte from an input stream and logs the input value, and throws an IOException if there is an error in the input stream

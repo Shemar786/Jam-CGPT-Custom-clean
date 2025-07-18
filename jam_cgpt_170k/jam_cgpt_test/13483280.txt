@@ -1,0 +1,9 @@
+TDAT:     public LocalExpr newLocal(Type type) {
+        LocalVariableGen var = block.graph().method().addLocalVariable("",
+                type, null, null);
+        var.setName("newLocalVar" + var.getIndex());
+        // presuming it is bad not to have a name....
+        return new LocalExpr(var.getIndex(), type);
+    }
+
+COM:creates a new local variable with a given type and returns a LocalExpr object containing information about the variable

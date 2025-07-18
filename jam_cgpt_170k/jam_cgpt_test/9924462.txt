@@ -1,0 +1,12 @@
+TDAT:  protected void paintLogo(Graphics g) {
+  if (logo == null) {
+   return;
+  }
+  int width = logo.getWidth(null);
+  int height = logo.getHeight(null);
+  int x = getWidth() - width - (width >> 1);
+  int y = (getHeight() - height) >> 1;
+  g.drawImage(logo, x, y, width, height, null, null);
+ }
+
+COM:paints a logo onto a Graphics object using the logo's dimensions and position within the window

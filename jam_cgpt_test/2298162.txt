@@ -1,0 +1,13 @@
+TDAT:     public boolean setSelectedPaint(Paint newPaint, int mouse) {
+        DrawnObject obj;
+        if(!checkAccess(mouse)) {
+            return false;
+        }
+        for(int i = 0; i < selectedObjects[mouse].size(); i++) {
+            obj = selectedObjects[mouse].get(i);
+            obj.setPaint(newPaint);
+        }
+        return true;
+    }
+
+COM:sets the selected paint for a drawn object based on the mouse parameter passed and returns a boolean indicating success or failure

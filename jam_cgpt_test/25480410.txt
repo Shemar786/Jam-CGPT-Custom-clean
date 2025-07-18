@@ -1,0 +1,10 @@
+TDAT:     public BufferedImage crop(BufferedImage imageToCrop) {
+
+        int y1 = lockup(imageToCrop);
+        int y2 = lockdown(imageToCrop, y1);
+        int x1 = 0;
+        int x2 = imageToCrop.getWidth();
+        return imageToCrop.getSubimage(x1, y1, x2 - x1, y2 - y1);
+    }
+
+COM:crops a BufferedImage by finding the top and bottom limits of the useful area, and returning a new subimage based on those limits

@@ -1,0 +1,15 @@
+TDAT: 	public void setDestinationProbability(LaneIfc lane, double p){
+		
+		if(!myNetwork.isLane(lane))	
+			new IllegalArgumentException("The supplied lane is not a valid lane.");
+
+		TransportLocationIfc origin = lane.getOrigin();
+		TransportLocationIfc destination = lane.getDestination();
+		int i = myNetwork.getIndexOf(destination);
+		RandomVariable rv = myODRVs.get(origin);
+		DEmpirical d = (DEmpirical) rv.getRandomSource();
+		d.addProbabilityPoint(i,p);
+		
+	}
+
+COM:sets the probability of a lane's destination occurring in a network, given a lane and a probability value

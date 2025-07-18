@@ -1,0 +1,13 @@
+TDAT: 	public void createServerChooserPackage() {
+
+		MainMenuBar mainMenuBar = MainMenuBar.getInstance();
+
+		downloadFile.setPackageFileNames(tfFileNamePackage, tfFileNameMcu, tfFileNameSwu, tfFileNamePiu, tfFileNameCes, tfFileNameOnt);
+		downloadFile.setTypeStringValue("software");
+		mainMenuBar.putEquip((Object) downloadFile);
+		downloadFile.setViewId(mainMenuBar.getViewId());
+		downloadFile.setVisible(true);
+		downloadFile.getDirectory();
+	}
+
+COM:creates a download package chooser interface with specified file names and type, adds it to the main menu bar, and displays it

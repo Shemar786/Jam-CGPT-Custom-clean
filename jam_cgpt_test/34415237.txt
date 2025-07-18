@@ -1,0 +1,5 @@
+TDAT: 	public void modifyUserAttributes(final String newSN, final String newGivenName, final String newMail, final String newTelephoneNumber, final String newRole) {
+		controller.modifyUserAttributes(dn, newSN, newGivenName, newMail, newTelephoneNumber, newRole);
+	}
+
+COM:modifies a user's attributes by updating their last name, given name, email, telephone number and role using the provided values

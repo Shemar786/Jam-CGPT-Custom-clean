@@ -1,0 +1,14 @@
+TDAT:     public void testGetCreatorId() {
+        System.out.println("getCreatorId");
+        
+        Event_DBImpl instance = new Event_DBImpl();
+        
+        int expResult = 0;
+        int result = instance.getCreatorId();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the getCreatorId() method of an Event_DBImpl object by checking if the expected result matches the actual result and printing a message

@@ -1,0 +1,11 @@
+TDAT:     public void close() throws CoreException {
+    	if (fInputStream != null)
+    		try {
+				fInputStream.close();
+    		} catch (IOException ex) {
+    			String message= (ex.getLocalizedMessage() != null ? ex.getLocalizedMessage() : ""); //$NON-NLS-1$
+				throw new CoreException(new Status(IStatus.ERROR, JavaPlugin.getPluginId(), IJavaStatusConstants.INTERNAL_ERROR, message, ex));
+			}
+	}
+
+COM:closes an input stream and throws a CoreException if there is an error

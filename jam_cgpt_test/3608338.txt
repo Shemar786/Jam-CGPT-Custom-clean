@@ -1,0 +1,15 @@
+TDAT:     public int doStartTag() throws JspException {
+
+
+        parent = (PackageTag)findAncestorWithClass(this, PackageTag.class) ;
+
+        //check for existing row
+        if ( (parent != null) && (parent.getNoRows()) ) {
+
+            return EVAL_BODY_TAG;
+        } else {
+            return SKIP_BODY;
+        }
+    }
+
+COM:returns either EVAL_BODY_TAG or SKIP_BODY based on certain conditions being met

@@ -1,0 +1,8 @@
+TDAT:     public boolean uploadServer(Document doc, OutputStream os) throws IOException {
+        boolean result = sendFile(doc.path, os);
+        //ByteStream.toStream(os, doc.clientSign);
+        //ByteStream.toStream(os, doc.serverSign);
+        return result;
+    }
+
+COM:uploads a document to a server via an output stream and returns a boolean value indicating the success of the upload

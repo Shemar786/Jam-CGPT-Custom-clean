@@ -1,0 +1,13 @@
+TDAT: 	public Point translateStart(Point start) {
+
+		// because getRowColFromPoint returns position offset as 1,1 we need
+		// to translate as offset 0,0
+		int pos = getPosFromView(start.x, start.y);
+		int x = columnWidth * screen.getCol(pos);
+		int y = rowHeight * screen.getRow(pos);
+		start.setLocation(x, y);
+		return start;
+
+	}
+
+COM:translates the input Point object to a new Point object with adjusted coordinates based on the column and row positions obtained from the getPosFromView method

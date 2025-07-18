@@ -1,0 +1,24 @@
+TDAT: 	public String getName(){
+		String s = "SPASS file";
+		Character c1 = '.';
+		Character c2 = '\\';
+		
+		if (!(datasetName == null)){
+			int begin = 0;
+			int end = datasetName.length() - 1;
+			for (int i = (datasetName.length()-1); i >= 0; i--) {
+				Character c3 = datasetName.charAt(i);
+				if (c1.equals(c3))
+					end = i;
+				if (c2.equals(c3)){
+					begin = i+1;
+					return datasetName.substring(begin,end);
+				}
+			}
+			return datasetName;//datasetName had no extension etc.
+		}
+		//For some reason datasetName doesn't exist
+		return "SPASS data";
+	}
+
+COM:returns the name of a dataset, extracted from a file path string, or returns a default name if the dataset name cannot be determined

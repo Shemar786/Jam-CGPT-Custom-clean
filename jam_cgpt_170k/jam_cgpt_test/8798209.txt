@@ -1,0 +1,14 @@
+TDAT: 	private JPanel getJContentPane() {
+		if (jContentPane == null) {
+			jContentPane = new JPanel();
+			jContentPane.setLayout(null);
+			jContentPane.add(getJButton(), null);
+			jContentPane.add(getJTextField(), null);
+			jContentPane.add(getJList(), null);
+			jContentPane.add(getJList1(), null);
+			jContentPane.add(getJButton1(), null);
+		}
+		return jContentPane;
+	}
+
+COM:returns a JPanel object with various components added to it if it has not yet been initialized

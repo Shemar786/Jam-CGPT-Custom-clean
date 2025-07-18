@@ -1,0 +1,8 @@
+TDAT:   public Element render(RequestContext context, Document factory, Category cat) {
+    Element elem = factory.createElement(elementName);
+    elem.setAttribute("name", cat.getName());
+    elem.setAttribute("icon", cat.getIcon());
+    return elem;
+  }
+
+COM:takes in a request context, document factory, and category object to create and return an element with specified attributes

@@ -1,0 +1,15 @@
+TDAT: 	public void checkOpenDescendants(IProofTreeNode node) {
+		IProofTreeNode[] openDescendants = node.getOpenDescendants();
+		IProofTreeNode firstOpenDescendant = node.getFirstOpenDescendant();
+		if (openDescendants.length == 0) {
+			assertNull(firstOpenDescendant);
+			return;
+		}
+		assertSame(firstOpenDescendant, openDescendants[0]);
+		for (IProofTreeNode openDescendant : openDescendants) {
+			assertNodeOpen(openDescendant);
+			assertAncestor(node, openDescendant);
+		}
+	}
+
+COM:checks if a given proof tree node has any open descendants and asserts various properties about them if it does

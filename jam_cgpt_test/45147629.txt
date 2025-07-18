@@ -1,0 +1,14 @@
+TDAT:   public String getName() {
+    String strName;
+    if (this.name == null) {
+      if (this.getPlayerType() == Player.TYPE_COMPUTER) {
+        strName = "Computer";
+      } else {
+        strName = ui.getName();
+      }
+      this.setName(strName);
+    }
+    return this.name;
+  }
+
+COM:returns the name of a player, either by retrieving it from the user interface or setting it to "Computer" if the player is a computer

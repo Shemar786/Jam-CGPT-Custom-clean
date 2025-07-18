@@ -1,0 +1,12 @@
+TDAT: 	public void testGetFreeIndexLabelGuardExtended() throws Exception {
+		final IEvent con = createRefiningEvent();
+		con.setExtended(true, null);
+
+		final IEvent abs = EventBUtils.getAbstractEvent(con);
+		createGuard(abs, guardLabelPrefix + 1, "");
+
+		assertFreeIndex(con, IGuard.ELEMENT_TYPE, LABEL_ATTRIBUTE,
+				guardLabelPrefix, "2");
+	}
+
+COM:tests for the free index of a label attribute in a guard element of an abstract event obtained from a refining event

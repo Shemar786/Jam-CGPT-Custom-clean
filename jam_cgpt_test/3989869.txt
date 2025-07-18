@@ -1,0 +1,13 @@
+TDAT:     protected boolean hasFlag(String flags, String flag, boolean defaultValue) {
+        if (flags == null || flag == null) {
+            return defaultValue;
+        } else if (flags.indexOf("no-" + flag) >= 0) {
+            return false;
+        } else if (flags.indexOf(flag) >= 0) {
+            return true;
+        } else {
+            return defaultValue;
+        }
+    }
+
+COM:determines if a given flag exists within a list of flags, and returns a default value if the list is null or the flag is not found

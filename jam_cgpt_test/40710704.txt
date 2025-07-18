@@ -1,0 +1,13 @@
+TDAT:     public Token scanNextToken() {
+        int currentChar = tokenizer.readNextChar();
+
+        if(currentChar <=0 || tokenizer.isAtEOF()) {
+            // Either the EOF was reached or some error so don't bother
+            // dispatching... just return the token.
+            return tokenizer.captureToken();
+        } else {
+            return dispatch((char)currentChar);
+        }
+    }
+
+COM:scans the next character and returns either the captured token or a dispatched token based on the current character

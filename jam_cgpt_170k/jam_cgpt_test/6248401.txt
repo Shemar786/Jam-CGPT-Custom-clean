@@ -1,0 +1,10 @@
+TDAT: 	public void deconfigure() throws CoreException {
+	    OmniCoreTrace.trace(this,"deconfigureProject()", "(called)");
+	    OmniCoreTrace.trace(this,"deconfigureProject()", "deconfigure " + getProject());
+	    OmniResourceStateChangeListeners.getListener().projectDeconfigured(getProject());
+		controlledResources.clear();
+		fireStateChanged(getSubtreeMembers(getProject()), true);
+	    OmniCoreTrace.trace(this,"deconfigureProject()", "(returned)");
+	}
+
+COM:deconfigures a project by clearing controlled resources, firing state change events, and notifying listeners, while also tracing the deconfiguration process

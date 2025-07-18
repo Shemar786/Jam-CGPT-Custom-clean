@@ -1,0 +1,19 @@
+TDAT: 		public void actionPerformed(ActionEvent e) {
+			JFileChooser chooser = new JFileChooser();
+			int retval = chooser.showDialog(frame, null);
+			if (retval == JFileChooser.APPROVE_OPTION) {
+				File theFile = chooser.getSelectedFile();
+				if (theFile != null) {
+					String[] pluginsFound = new String[1];
+					pluginsFound[0]
+							 = chooser.getSelectedFile().getPath();
+					doPluginNamingDialog(pluginsFound);
+					dataFileExists = readDataFile();
+					buildManageMenu();
+					setToDefaultPlugin();
+					return;
+				}
+			}
+		}
+
+COM:prompts the user to select a file using a file chooser dialog and then performs several actions if a file is chosen, including reading the data file, building a menu, and setting a default plugin

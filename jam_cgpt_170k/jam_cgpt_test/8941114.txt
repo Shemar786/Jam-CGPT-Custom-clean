@@ -1,0 +1,10 @@
+TDAT:     public void prepareAnnotatedMethod(RubyModule implementationClass, JavaMethod javaMethod, JavaMethodDescriptor desc) {
+        String javaMethodName = desc.name;
+        
+        javaMethod.setArity(Arity.fromAnnotation(desc.anno, desc.actualRequired));
+        javaMethod.setJavaName(javaMethodName);
+        javaMethod.setSingleton(desc.isStatic);
+        javaMethod.setCallConfig(CallConfiguration.getCallConfigByAnno(desc.anno));
+    }
+
+COM:prepares and annotates a specified Java method with information regarding its arity, name, whether it is a singleton, and call configuration

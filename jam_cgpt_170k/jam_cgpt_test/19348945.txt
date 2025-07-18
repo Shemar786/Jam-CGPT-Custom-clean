@@ -1,0 +1,19 @@
+TDAT: 	public void setLowDisplayDate(Date lowDisplayDate) {
+		// Check for nulls
+		if(lowDisplayDate == null) {
+			this.lowDisplayDate = null;
+			return;
+		}
+		
+		// Check for bounds
+		if(highDisplayDate != null && lowDisplayDate.compareTo(highDisplayDate) >= 0)
+			return;
+		
+		if(lowDisplayDate.compareTo(startDate) >= 0)
+			return;
+		
+		// Assign the date
+		this.lowDisplayDate = lowDisplayDate;
+	}
+
+COM:sets a low display date after checking for nulls and bounds

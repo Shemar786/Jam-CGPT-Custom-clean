@@ -1,0 +1,14 @@
+TDAT:     public void setForegroundTask(Task foregroundTask) {
+	final Task oldTask = this.foregroundTask;
+	if (oldTask != null) {
+	    oldTask.removePropertyChangeListener(taskPCL);
+	}
+	this.foregroundTask = foregroundTask;
+	Task newTask = this.foregroundTask;
+	if (newTask != null) {
+	    newTask.addPropertyChangeListener(taskPCL);
+	}
+	firePropertyChange("foregroundTask", oldTask, newTask);
+    }
+
+COM:sets the foreground task and adds/removes property change listeners accordingly

@@ -1,0 +1,15 @@
+TDAT:   public Server newServer(Properties props) throws RemoteException {
+    String servletUrl = props.getProperty(SERVLET_URL_KEY);
+
+    if (servletUrl == null) {
+      throw new RemoteException("'" + SERVLET_URL_KEY + "' not specified");
+    }
+
+    try {
+      return new ServletServer(_addr = new ServletAddress(servletUrl));
+    } catch (UriSyntaxException e) {
+      throw new RemoteException("Could not parse servlet URL property", e);
+    }
+  }
+
+COM:creates a new server based on the given properties, with an identified servlet address, or throws a RemoteException if the servlet URL is not specified or cannot be parsed

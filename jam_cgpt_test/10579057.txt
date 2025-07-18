@@ -1,0 +1,10 @@
+TDAT:     protected void setRecipients(Mail newMail, Collection recipients, Mail originalMail) throws MessagingException {
+        if (recipients != null) {
+            newMail.setRecipients(recipients);
+            if (isDebug) {
+                log("recipients set to: " + arrayToString(recipients.toArray()));
+            }
+        }
+    }
+
+COM:sets the recipients of an email and logs the recipients if debugging is enabled

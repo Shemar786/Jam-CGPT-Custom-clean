@@ -1,0 +1,13 @@
+TDAT:     public BigInteger getHashCode() {
+        String   stringHash = new String("0");
+        Iterator it = mainParts.iterator();
+
+        while (it.hasNext()) {
+            StructuralConstraintGraphPart part = (StructuralConstraintGraphPart) it.next();
+            stringHash = stringHash.concat(part.getHashCodeString());
+        } //while 
+
+        return new BigInteger(stringHash);
+    }
+
+COM:returns a BigInteger that represents the hash code generated from concatenating the hash codes of each part in a main parts collection

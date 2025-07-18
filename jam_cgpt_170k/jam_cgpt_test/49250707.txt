@@ -1,0 +1,17 @@
+TDAT:     public String getExtension(final File file) throws IllegalArgumentException {
+        validateFile(file);
+
+        final StringTokenizer tok = new StringTokenizer(file.getName(), FILENAME_EXTENSION_SEPARATOR);
+        if (tok.countTokens() < 2) {
+            // there is no file name extension
+            return null;
+        }
+
+        String fileNameExtension = null;
+        while (tok.hasMoreTokens()) {
+            fileNameExtension = tok.nextToken();
+        }
+        return fileNameExtension;
+    }
+
+COM:returns the file extension of a given File object

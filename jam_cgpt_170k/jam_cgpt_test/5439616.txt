@@ -1,0 +1,18 @@
+TDAT:     public Principal getPrincipal(String aUsername) {
+        Principal thePrincipal = null;
+
+        try {
+            HashMap thePrincipals = getPrincipals();
+
+            thePrincipal = (Principal)thePrincipals.get(aUsername);
+        }
+        catch (Exception e) {
+            if (Log.isLog(myService.getName())) {
+                Log.getLog(myService.getName()).log(e);
+            }
+        }
+
+        return thePrincipal;
+    }
+
+COM:retrieves a Principal object for a given username from a HashMap of Principals

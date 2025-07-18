@@ -1,0 +1,10 @@
+TDAT:   public String getDocumentPosition() {
+    StringBuffer aBuffer = new StringBuffer();
+    aBuffer.append("Document position: line number=")
+           .append(_theLocator.getLineNumber()).append("  column number=")
+           .append(_theLocator.getColumnNumber());
+
+    return aBuffer.toString();
+  }
+
+COM:returns a string containing the current document position in terms of line number and column number

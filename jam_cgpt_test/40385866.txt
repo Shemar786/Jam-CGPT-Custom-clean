@@ -1,0 +1,16 @@
+TDAT: 	public Texture getTexture(BufferedImage image) {
+		Texture texture = (Texture) this.table.get(image);
+		
+		if (texture == null) {
+			texture = this.getTexture(image, GL11.GL_TEXTURE_2D, // target
+			        GL11.GL_RGBA, // dst pixel format
+			        GL11.GL_LINEAR, // min filter (unused)
+			        GL11.GL_LINEAR);
+			
+			this.table.put(image, texture);
+		}
+		
+		return texture;
+	}
+
+COM:retrieves a texture object associated with a given BufferedImage, creating a new texture object if one does not already exist

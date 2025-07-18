@@ -1,0 +1,8 @@
+TDAT: 	public String getSourceName() {
+		if (this.sourceName == null) {
+			this.sourceName = this.isPageView() ? alias.replaceAll("[^0-9A-Za-z_]", "_") : GraceletContext.getInstance().getCompiler().getUniqueClassName(src, alias);
+		}
+		return this.sourceName; 
+	}
+
+COM:returns the source name of a page view or a unique class name from a compiler based on certain conditions

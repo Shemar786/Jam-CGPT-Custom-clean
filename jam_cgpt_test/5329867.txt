@@ -1,0 +1,13 @@
+TDAT:     public void setCard(Card card) {
+        PaukerFrame.fillTextComponentWithCardSide(card.getFrontSide(),
+                frontSideTextArea, true);
+        PaukerFrame.fillTextComponentWithCardSide(card.getReverseSide(),
+                reverseSideTextArea, true);
+
+        // remove initial undo
+        undoManager.discardAllEdits();
+        undoButton.setEnabled(false);
+        undoListButton.setEnabled(false);
+    }
+
+COM:sets the front and reverse sides of a card and disables undo options

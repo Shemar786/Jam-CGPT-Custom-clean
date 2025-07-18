@@ -1,0 +1,16 @@
+TDAT:     protected void loadMib() {
+        JFileChooser  dialog = new JFileChooser();
+        Loader        loader;
+        File[]        files;
+
+        dialog.setMultiSelectionEnabled(true);
+        dialog.showOpenDialog(this);
+        files = dialog.getSelectedFiles();
+        if (files.length > 0) {
+            descriptionArea.setText("");
+            loader = new Loader(files);
+            loader.start();
+        }
+    }
+
+COM:opens a file chooser dialog allowing the user to select one or more files, then loads the selected files using a Loader object in a separate thread

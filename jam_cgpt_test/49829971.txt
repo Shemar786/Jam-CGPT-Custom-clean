@@ -1,0 +1,14 @@
+TDAT:     private void showSearch() {
+        searchPanel.setVisible( true );
+        searchField.requestFocus();
+        buttonBack.setEnabled( false );
+        buttonNext.setEnabled( false );
+        buttonTrash.setEnabled( false );
+        buttonAdd.setEnabled( false );
+        buttonSave.setEnabled( false );
+        buttonOptions.setEnabled( false );
+        buttonList.setEnabled( false );
+        buttonRename.setVisible( false );
+    }
+
+COM:displays the search panel and disables multiple buttons

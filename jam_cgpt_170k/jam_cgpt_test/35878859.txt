@@ -1,0 +1,26 @@
+TDAT:     public double getSpeed() {
+    
+   		if (transferType == 0) {
+			if (localMonitor != null) {
+	    		speed = localMonitor.getSpeed();
+	    		return speed;
+			}
+			else {
+	    		return -1;
+			}
+   		}
+   		else if (transferType == 1) {
+   			if (remoteMonitor != null) {
+   				speed = remoteMonitor.getSpeed();
+   				return speed;
+   			}
+   			else {
+   				return -1;
+   			}
+   		}
+   		else {
+   			return -1;
+   		}
+    }
+
+COM:returns the transfer speed of the local or remote monitor depending on the transfer type

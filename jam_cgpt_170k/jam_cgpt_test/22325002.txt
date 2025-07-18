@@ -1,0 +1,13 @@
+TDAT:     private void purgeRxQueue() {
+        Enumeration e = rxQueue.keys();
+        while (e.hasMoreElements()) {
+            Object key = e.nextElement();
+            ISORequest r = (ISORequest) rxQueue.get(key);
+            if (r != null && r.isExpired()) {
+                rxQueue.remove(key);
+                cnt[RX_EXPIRED]++;
+            }
+        }
+    }
+
+COM:purges expired ISORequest objects from a rxQueue and increments a counter for each expired object removed

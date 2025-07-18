@@ -1,0 +1,20 @@
+TDAT:    public void actionPerformed( ActionEvent e) {
+
+      Object source = e.getSource();
+
+      if ((source == _searchButton) || (source == _inputField)) {
+         // search button clicked or Enter key pressed in the input field
+
+         String searchExpression = _inputField.getText();
+
+         SearchType searchType = (SearchType) _queryTypes.getSelectedItem();
+
+         _controller.search(searchExpression, searchType);
+      }
+      else {
+         Debug.TRACE("ERROR: Unknown event");
+      }
+
+   } 
+
+COM:checks for a specific user event (button click or key press) and calls a search method with the search expression and type, or outputs an error message if the event is unknown

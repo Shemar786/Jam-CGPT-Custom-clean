@@ -1,0 +1,15 @@
+TDAT:     public WizardPage invokeWizard(WizardHost host) {
+        setWizardTitle(WIZARD_TITLE);
+        addWizardPage(pageSelectBuildfile);
+        addWizardPage(pageSelectExecPath);
+        addWizardPage(pageSelectTargets);
+        addWizardPage(pageSelectDefaultTarget);
+        addWizardPage(pageGeneral);
+        addWizardPage(pageOptions);
+        addWizardPage(globalEnvironment);
+        addWizardPage(localEnvironment);
+
+        return super.invokeWizard(host);
+    }
+
+COM:invokes a wizard by setting various wizard pages and returning the result

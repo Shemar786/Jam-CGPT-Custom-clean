@@ -1,0 +1,14 @@
+TDAT:   public void setErrorHandler(Handler errorHandler) {
+    /* Get the old property value for fire property change event. */
+    Handler oldValue = fieldErrorHandler;
+
+    /* Set the errorHandler property (attribute) to the new value. */
+    fieldErrorHandler = errorHandler;
+
+    /* Fire (signal/notify) the errorHandler property change event. */
+    firePropertyChange("errorHandler", oldValue, errorHandler);
+
+    return;
+  }
+
+COM:sets a new error handler, notifies any listeners of the change, and returns nothing

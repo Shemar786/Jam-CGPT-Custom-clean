@@ -1,0 +1,21 @@
+TDAT: 	private void dispatchEventToListeners(EventNotifier notifier) {
+		synchronized (modelListeners) {
+			dispatchingEvents = true;
+			
+			Iterator listenerIterator = modelListeners.iterator();
+			while (listenerIterator.hasNext()) {
+				ModelListener listener =
+					(ModelListener) listenerIterator.next();
+				log.trace("notifying listener " + listener);
+				notifier.executeEvent(listener);
+			}
+			
+			dispatchingEvents = false;
+			
+			log.trace("finished dispatching, applying pending listener changes");
+			applyListenerChanges();
+			log.trace("finished applying changes");
+		}
+	}
+
+COM:dispatches events to a list of listeners in a synchronized manner, and applies any pending listener changes afterwards

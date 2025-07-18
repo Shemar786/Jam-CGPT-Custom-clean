@@ -1,0 +1,17 @@
+TDAT: 	public void createDays() {
+
+		dietPlanDurationCheck();		
+
+		GregorianCalendar startDate = new GregorianCalendar();		
+		GregorianCalendar endDate = new GregorianCalendar();
+		startDate.setTime(m_Dietplan.getFrom());
+		endDate.setTime(m_Dietplan.getTo());	
+		createDay(startDate.getTime());
+		
+		while (startDate.compareTo(endDate) < 0){
+			startDate.add(5,1);		
+			createDay(startDate.getTime());				
+		};
+	}
+
+COM:creates days for a diet plan based on the start and end dates

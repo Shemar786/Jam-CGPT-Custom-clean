@@ -1,0 +1,9 @@
+TDAT:     public Object constantValue() {
+        Object result = varSymbol.getConstValue();
+        if (result != null && varSymbol.type.tag == TypeTags.BOOLEAN)
+            // javac represents false and true as Integers 0 and 1
+            result = Boolean.valueOf(((Integer)result).intValue() != 0);
+        return result;
+    }
+
+COM:returns the constant value of a variable, which is converted to a Boolean type if it is represented as an Integer

@@ -1,0 +1,22 @@
+TDAT: 	public void configureFilter() {
+		boolean done = false;
+		
+		while(!done){
+			try{
+				String i = javax.swing.JOptionPane.showInputDialog("Enter Link Limit Amount");
+				if(i == null)
+					return;
+				
+				limit = Integer.parseInt(i);
+				
+				if(limit <= 0) throw new NumberFormatException();
+				done=true;				
+			}
+			
+			catch (NumberFormatException e){
+				javax.swing.JOptionPane.showMessageDialog(null, "Please enter a positive number");
+			}
+		}
+	}
+
+COM:configures a filter by prompting the user to enter a link limit amount and validating it for positive integer values

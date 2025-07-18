@@ -1,0 +1,17 @@
+TDAT: 	private void magnify() {
+		CharSequence image = getSpinnerValue(mSpinnerSpecies,
+				SpeciesColumns.IMAGE);
+		String name = String.valueOf(image);
+		if (name.length() != 0) {
+			Uri.Builder builder = AssetProvider.CONTENT_URI.buildUpon();
+			builder.appendQueryParameter(AssetProvider.PARAM_FILE_NAME, name);
+			builder.appendQueryParameter(AssetProvider.PARAM_CONTENT_TYPE,
+					"image/jpeg");
+
+			Uri uri = builder.build();
+			Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+			startActivity(intent);
+		}
+	}
+
+COM:magnifies an image by retrieving the image file from a spinner value and opening it in a new activity using an intent

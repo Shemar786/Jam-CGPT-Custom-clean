@@ -1,0 +1,16 @@
+TDAT:     public int store(Serializable obj) throws RecordStoreException, IOException {
+        ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+        DataOutputStream out = new DataOutputStream(byteStream);
+
+        obj.serialize(out);
+
+        byte[] data = byteStream.toByteArray();
+        int ret = rs.addRecord(data, 0, data.length);
+        obj = null;
+        data = null;
+        byteStream = null;
+        out = null;
+        return ret; 
+    }
+
+COM:stores a Java object that implements the Serializable interface to a record store by converting it to a byte array and adding it to the record store

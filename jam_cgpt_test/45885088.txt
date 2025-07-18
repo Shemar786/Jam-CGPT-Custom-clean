@@ -1,0 +1,13 @@
+TDAT:     public void storeSalt(String salt) {
+		ContentValues args = new ContentValues();
+        try {
+			db.delete(TABLE_SALT, "1=1", null);
+			args.put("salt", salt);
+			db.insert(TABLE_SALT, null, args);
+		} catch (SQLException e)
+		{
+			Log.d(TAG,"SQLite exception: " + e.getLocalizedMessage());
+		}
+    }
+
+COM:stores a salt value in a SQLite database table after deleting any previously stored values

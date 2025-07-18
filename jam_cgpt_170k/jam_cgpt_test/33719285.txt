@@ -1,0 +1,15 @@
+TDAT:     public void testUpdateProfile() {
+        System.out.println("updateProfile");
+        
+        String username = "";
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        boolean expResult = true;
+        boolean result = instance.updateProfile(username);
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a test case for the updateProfile method in the SystemClient_DBImpl class and checks if it returns the expected boolean result when passed an empty username string

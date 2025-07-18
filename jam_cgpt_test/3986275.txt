@@ -1,0 +1,16 @@
+TDAT: 	public void save() {
+		File file = new File(this.getCategory() + ".lm");
+		try {
+			if (file.createNewFile()) {
+				FileOutputStream fos = new FileOutputStream(file);
+				fos.write(this.toString().getBytes());
+				fos.close();
+			}
+		} catch (FileNotFoundException fnfe) {
+			fnfe.printStackTrace();
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}
+	}
+
+COM:creates and saves a file with the object's category name and its contents as a string

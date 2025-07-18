@@ -1,0 +1,20 @@
+TDAT: 	private boolean isPEI(InstructionHandle handle) {
+		Instruction ins = handle.getInstruction();
+
+		if (!(ins instanceof ExceptionThrower))
+			return false;
+
+		if (ins instanceof NEW) return false;
+		// if (ins instanceof ATHROW) return false;
+		if (ins instanceof GETSTATIC) return false;
+		if (ins instanceof PUTSTATIC) return false;
+		if (ins instanceof ReturnInstruction) return false;
+		if (ins instanceof INSTANCEOF) return false;
+		// if (ins instanceof INVOKESTATIC) return false;
+		// if (ins instanceof MONITORENTER) return false;
+		if (ins instanceof MONITOREXIT) return false;
+		return true;
+
+	}
+
+COM:determines if the given instruction is a Potential Exceptional Instruction (PEI)

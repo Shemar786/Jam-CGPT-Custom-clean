@@ -1,0 +1,22 @@
+TDAT: 	public boolean meta() throws SQLException {
+		if(id > 0 && meta.size() == 0) {
+			meta.setNode(this);
+			meta.setData(-1);
+
+			if(Sprout.update(Base.SELECT, meta)) {
+				for(int i = 0; i < meta.size(); i++) {
+					DataBean bean = (DataBean) meta.get(i);
+					Data data = new Data();
+					data.copy(bean);
+					data.done(true);
+					meta.set(i, data);
+				}
+
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+COM:performs metadata operations and returns a boolean indicating whether the metadata was updated successfully or not

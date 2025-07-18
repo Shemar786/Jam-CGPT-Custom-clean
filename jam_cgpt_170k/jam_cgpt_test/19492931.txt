@@ -1,0 +1,17 @@
+TDAT: 	protected void addStrongSequencingPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FlowDiagram_strongSequencing_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FlowDiagram_strongSequencing_feature", "_UI_FlowDiagram_type"),
+				 AtomicitydecompositionPackage.Literals.FLOW_DIAGRAM__STRONG_SEQUENCING,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the strong sequencing feature in a flow diagram, using the ComposeableAdapterFactory and other related properties

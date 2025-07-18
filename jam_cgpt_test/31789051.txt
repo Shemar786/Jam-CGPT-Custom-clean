@@ -1,0 +1,12 @@
+TDAT:     public boolean isEquivalent(SandMessage sm) {
+        if(!(sm instanceof SandAttrVal)) {
+            return false; }
+        SandAttrVal msg=(SandAttrVal)sm;
+        if(!(attr.equals(msg.getAttr()))) {
+            return false; }
+        if(!(val.equals(msg.getVal()))) {
+            return false; }
+        return true;
+    }
+
+COM:checks if a given SandMessage object is equivalent to a SandAttrVal object in terms of its attribute and value

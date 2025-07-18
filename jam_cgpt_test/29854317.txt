@@ -1,0 +1,13 @@
+TDAT:   public void executeUpdate(String sql) throws DBException {
+    try {
+      traceQuery(Query.TRL_QUERY, "UPDATE", sql);
+      if (stmt != null) {
+	stmt.executeUpdate(conn.convertSql(sql));
+      }
+      traceTimer(Query.TRL_TIMER, "UPDATE");
+    } catch (SQLException exc) {
+      throw conn.convertException(sql, exc);
+    }
+  }
+
+COM:executes an SQL UPDATE statement and throws an exception if there is a database error

@@ -1,0 +1,11 @@
+TDAT: 	protected IDotNetElement searchForNamespaceName(String classname) {
+		IDotNetElement[] allRoots = getAllRelevantRoots();
+		IDotNetElement result = null;
+		for (int i = 0; (i < allRoots.length && result == null); i++) {
+			result = recSearchForTypeByName(allRoots[i], classname,
+					IDotNetElement.NAMESPACE);
+		}
+		return result;
+	}
+
+COM:searches for a namespace name given a class name and returns the corresponding IDotNetElement

@@ -1,0 +1,19 @@
+TDAT: 		public int removeAll(String projectHandle) {
+			synchronized (this) {
+				int count = 0;
+				for (Iterator<Command> i = iterator(); i.hasNext();) {
+					Command next = i.next();
+					if (next.getHandleIdentifier().startsWith(projectHandle)) {
+						i.remove();
+						count++;
+					}
+				}
+				int leftOver = size();
+				// Log.logMessage("Removed " + count + ". still queued: " +
+				// leftOver);
+				sem.reset(leftOver);
+				return leftOver;
+			}
+		}
+
+COM:removes all commands from a queue with a given project handle and returns the remaining number of commands in the queue

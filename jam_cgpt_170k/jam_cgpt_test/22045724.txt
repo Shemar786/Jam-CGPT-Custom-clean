@@ -1,0 +1,12 @@
+TDAT:     public void setLocus( OObject oobject ){
+	if( oobject != null && !(oobject instanceof jscicalc.Error) ){
+	    //jscicalc.pobject.Variable x = new jscicalc.pobject.Variable( 'x' );
+	    //jscicalc.expression.Variable v = new jscicalc.expression.Variable( x );
+	    //oobject = new jscicalc.expression.Tan( v, jscicalc.AngleType.RADIANS );
+	    Locus locus = new Locus( oobject, view );
+	    model.reset( locus );
+	    view.repaint();
+	}
+    }
+
+COM:sets a Locus object based on a given OObject, which is then reset and repainted in a model-view architecture

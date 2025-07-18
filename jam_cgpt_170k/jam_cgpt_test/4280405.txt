@@ -1,0 +1,13 @@
+TDAT:     public List getFiles(FileSet fileSet) {
+        List files = new ArrayList();
+        String[] names = fileSet.getDirectoryScanner(project).getIncludedFiles();
+
+        for (int i = 0; i < names.length; i++) {
+            String name = names[i];
+            files.add(new File(fileSet.getDir(project), name));
+        }
+
+        return files;
+    }
+
+COM:retrieves a list of files included in a given file set

@@ -1,0 +1,31 @@
+TDAT: 	public String toString() {
+		StringBuilder res = new StringBuilder();
+		
+		// table definition
+		res.append("TABLE:" + elementType + "\n");
+		
+		// column headers
+		for(String attr : attributes) {
+			res.append("," + attr);
+		}
+		res.append("\n");
+		
+		// values
+		for(Map<String,String> instance : instances) {
+			for(String attr : attributes) {
+				res.append(",");
+				String value = instance.get(attr);
+				
+				if(value == null && attr.startsWith("*"))
+					value = instance.get(attr.substring(1));
+				
+				if(value != null)
+					res.append(value);
+			}
+			res.append("\n");
+		}
+		
+		return res.toString();
+	}
+
+COM:generates a string representation of a table along with its column headers and corresponding values

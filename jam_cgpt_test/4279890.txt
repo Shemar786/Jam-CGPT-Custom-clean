@@ -1,0 +1,7 @@
+TDAT:     public boolean equalsExcludingPaths(RepoOverride other) {
+        return nsEquals(group, other.group) && nsEquals(name, other.name) && nsEquals(type, other.type)
+        && nsEquals(version, other.version) && nsEquals(withVersion, other.withVersion)
+        && nsEquals(withPathSpecs, other.withPathSpecs);
+    }
+
+COM:Compares the specified RepoOverride object with this object while excluding certain path specifications and returns true if they are equal

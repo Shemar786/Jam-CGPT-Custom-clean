@@ -1,0 +1,5 @@
+TDAT: 	public String getMatchByDate(String leagueId, String startDate, String endDate, String index) throws ParseException, InvalidLeagueException, MissingAttributeException, InvalidAtributeException {
+		return matchesManager.getMatchByDate(leagueId, startDate, endDate, index);
+	}
+
+COM:gets a match by date based on a given league, start date, end date, and index

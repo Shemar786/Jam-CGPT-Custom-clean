@@ -1,0 +1,10 @@
+TDAT:     public Command getFinishPairingCommand2() {
+        if (finishPairingCommand2 == null) {//GEN-END:|88-getter|0|88-preInit
+            // write pre-init user code here
+            finishPairingCommand2 = new Command("Ok2", Command.OK, 0);//GEN-LINE:|88-getter|1|88-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|88-getter|2|
+        return finishPairingCommand2;
+    }
+
+COM:returns a Command object called "finishPairingCommand2", which is initiated with an "OK" type and a label of "Ok2", and is only created if it does not already exist

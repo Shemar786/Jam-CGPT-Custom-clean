@@ -1,0 +1,10 @@
+TDAT:     public void load(String resourceName) throws Exception{
+        java.util.Properties props = new java.util.Properties();
+        java.net.URL url = ClassLoader.getSystemResource(resourceName); //"myprops.props"
+        InputStream is;
+        props.load(is = url.openStream());
+        is.close();
+        System.out.println(props);
+    }
+
+COM:loads properties from a resource file using the ClassLoader and prints them to the console

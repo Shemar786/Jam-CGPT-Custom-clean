@@ -1,0 +1,13 @@
+TDAT:     public void sort() {
+    /*
+     * This is the general, please sort me, method. During implementation we can swift between a
+     *  simple sorter and the shuttlesorter.  If this performs poorly; we will have to check if
+     *  the implementation of this method should not forward the sorting request to someone else.
+     */
+        checkModel();
+
+        // qsort(0, indexes.length-1);
+        shuttlesort((int[])indexes.clone(), indexes, 0, indexes.length);
+    }
+
+COM:is a general sorting method that can switch between a simple sorter and a shuttlesorter depending on performance, and checks to see if the sorting request should be forwarded to someone else if necessary

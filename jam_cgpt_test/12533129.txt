@@ -1,0 +1,11 @@
+TDAT: 	public CoordinateIfc getCoordinate(double lat, double lon, double x3) {
+		if (Math.abs(lat) > 90.0)
+			throw new IllegalArgumentException("The latitude must be in range [-90, 90] degrees");
+		if (Math.abs(lon) > 180.0)
+			throw new IllegalArgumentException("The latitude must be in range [-180, 180] degrees");
+		
+		Vector3D v = new Vector3D(lat, lon);
+		return(v);
+	}
+
+COM:returns a CoordinateIfc object that represents a vector with latitude and longitude values provided as arguments after performing some validation checks

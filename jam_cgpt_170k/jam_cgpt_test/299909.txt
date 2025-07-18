@@ -1,0 +1,8 @@
+TDAT:     private float getDistToBaryCenter(int i) {
+        float xDiff = pos[i][0] - baryCenter[0];
+        float yDiff = pos[i][1] - baryCenter[1];
+        float zDiff = pos[i][2] - baryCenter[2];
+        return (float)Math.sqrt(xDiff*xDiff + yDiff*yDiff + zDiff*zDiff);
+    }
+
+COM:calculates the distance from a point represented by its coordinates in the "pos" array to the barycenter using the Pythagorean theorem

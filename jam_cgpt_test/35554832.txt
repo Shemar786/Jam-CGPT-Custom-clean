@@ -1,0 +1,15 @@
+TDAT: 	public DefaultListModel createShelfList(int nodeId) {
+
+		DefaultListModel typeModel = new DefaultListModel();
+		String[] shelfNames = (String[]) dbSupporter.getAllShelfName(nodeId);
+
+		if (shelfNames != null) {
+
+			for (int i = 0; i < shelfNames.length; i++) {
+				typeModel.addElement(shelfNames[i]);
+			}
+		}
+		return typeModel;
+	}
+
+COM:creates a DefaultListModel populated with shelf names obtained from a database for a specified node ID

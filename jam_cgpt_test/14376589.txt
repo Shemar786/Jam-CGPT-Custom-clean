@@ -1,0 +1,14 @@
+TDAT: 	public void createFieldEditors() {
+		FileSearchConfigFiledEditor fileSearchConfigFiledEditor = new FileSearchConfigFiledEditor(PreferenceConstants.FILE_SEARCH_CONFIG, "&File search configuration:", getFieldEditorParent());
+		fileSearchConfigFiledEditor.setValidateStrategy(FileSearchConfigFiledEditor.VALIDATE_ON_KEY_STROKE);
+		addField(
+			fileSearchConfigFiledEditor);
+		addField(
+				new BooleanFieldEditor(
+					PreferenceConstants.AUTOMATIC_UPDATE,
+					"&Automatic updates",
+					getFieldEditorParent()));
+		
+	}
+
+COM:creates two field editors for configuring file search and enabling automatic updates in the application

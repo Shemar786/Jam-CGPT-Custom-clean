@@ -1,0 +1,8 @@
+TDAT: 	public boolean isTooWeak(int nrOfPositiveExamples, int nrOfPosClassifiedPositives, double noise) {
+		if(noise < 0 || noise > 1 || nrOfPosClassifiedPositives <= nrOfPositiveExamples || nrOfPositiveExamples < 1) {
+			throw new IllegalArgumentException();
+		}
+		return (noise * nrOfPositiveExamples) < (nrOfPositiveExamples - nrOfPosClassifiedPositives);
+	}
+
+COM:determines whether a model is too weak based on the number of positive examples, classified positive examples, and level of noise

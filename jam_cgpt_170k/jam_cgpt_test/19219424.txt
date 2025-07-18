@@ -1,0 +1,17 @@
+TDAT:     public void resetElementData() {
+        elementType = null;
+        elementName = elementNameSpace = comments = null;
+        frequency = null;
+        dataType = null;
+        dataRegExp = null;
+        attrManager = null;
+        singleton = contentOptional = checkingLoose = checkingStrict = false;
+        if(charEntNames != null) {
+            charEntNames.clear();
+        }
+        if(charEntRGXs != null) {
+            charEntRGXs.clear();
+        }
+    }
+
+COM:resets all element data fields to their initial values

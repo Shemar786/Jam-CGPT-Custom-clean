@@ -1,0 +1,8 @@
+TDAT: 	public void logSession(Map session){
+		if(sessions.get(session.get("id")) != null)
+			return;
+		sessions.put(session.get("id"), session);
+		activityLog.add(now() + "  Session "+session.get("id")+" to "+session.get("tunnel_peer")+" opened.");
+	}
+
+COM:logs a new session if it does not already exist in a session map and adds it to an activity log

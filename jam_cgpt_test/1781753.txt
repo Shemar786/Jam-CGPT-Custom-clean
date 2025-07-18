@@ -1,0 +1,14 @@
+TDAT:     public boolean handleEvent(String eventName) {
+    	// check whether onclick is activated
+    	if (eventName.toLowerCase().equals("onclick")) {
+    		handleEvent("onmousedown");
+    	}
+      String eventScript = getAttribute( eventName );
+      boolean result=doEventScript(eventScript);
+      if (eventName.toLowerCase().equals("onclick")) {
+    		handleEvent("onmouseup");
+    	}
+      return result;
+    }
+
+COM:handles events and returns a boolean value indicating the success of executing the event script

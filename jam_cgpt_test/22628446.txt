@@ -1,0 +1,15 @@
+TDAT: 	protected void insertToList(List list, Object o) {
+		if ((list != null) && (o != null)) {
+			String s = o.toString();
+			for (int i = 0; i < list.size(); i++) {
+				String c = (list.get(i)).toString();
+				if (s.compareToIgnoreCase(c) <= 0) {
+					list.add(i, o);
+					return;
+				}
+			}
+			list.add(o);
+		}
+	}
+
+COM:inserts an object into a list in alphabetical order

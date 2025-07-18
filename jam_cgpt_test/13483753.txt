@@ -1,0 +1,17 @@
+TDAT:     public boolean equalsExpr(Expr other) {
+        if (!(other instanceof ConstantExpr)) {
+            return false;
+        }
+
+        if (value == null) {
+            return ((ConstantExpr) other).value == null;
+        }
+
+        if (((ConstantExpr) other).value == null) {
+            return false;
+        }
+
+        return ((ConstantExpr) other).value.equals(value);
+    }
+
+COM:checks if two expressions are equal, with special handling for constant expressions

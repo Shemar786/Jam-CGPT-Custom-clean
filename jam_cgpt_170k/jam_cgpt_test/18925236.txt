@@ -1,0 +1,16 @@
+TDAT:   public void revert(RequestContext context) {
+    logger.info("enter");
+    if (fireing)
+      return;
+    fireing = true;
+    try {
+      for (Iterator it = listeners.iterator(); it.hasNext();) {
+        FormListener listener = (FormListener) it.next();
+        listener.revert(context);
+      }
+    } finally {
+      fireing = false;
+    }
+  }
+
+COM:triggers a revert action on all listeners subscribed to the form and prevents firing multiple times simultaneously

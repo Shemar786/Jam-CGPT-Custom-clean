@@ -1,0 +1,14 @@
+TDAT:     public void testGetGroupMemberList() {
+        System.out.println("GetGroupMemberList");
+        
+        AutismGroup instance = new AutismGroup();
+        
+        TreeSet expResult = null;
+        TreeSet result = instance.GetGroupMemberList();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the GetGroupMemberList function in the AutismGroup class and uses the assertEquals method to check if the expected result matches the actual result

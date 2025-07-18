@@ -1,0 +1,11 @@
+TDAT:   public void testCancel() {
+    FormStack forms = new FormStack(new IdFactory());
+    Form f0 = forms.create();
+    Form f1 = forms.create();
+    Form f2 = forms.create();
+    super.assertEquals(f2, forms.peek());        
+    forms.cancel(f1.getId());
+    super.assertEquals(f0, forms.peek());            
+  }
+
+COM:creates three forms, cancels the second one, and verifies that the first form is now at the top of the stack

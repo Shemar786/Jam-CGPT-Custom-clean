@@ -1,0 +1,10 @@
+TDAT: 	public IBinding match(Formula<?> form, Formula<?> pattern, boolean acceptPartialMatch) {
+		IBinding initialBinding = matchingFactory.createBinding(form, pattern,acceptPartialMatch, factory);
+		if (matchingFactory.match(form, pattern, initialBinding)){
+			initialBinding.makeImmutable();
+			return initialBinding;
+		}
+		return null;
+	}
+
+COM:matches a given formula to a given pattern using a matching factory and returns an immutable binding if they match, or null if they don't match

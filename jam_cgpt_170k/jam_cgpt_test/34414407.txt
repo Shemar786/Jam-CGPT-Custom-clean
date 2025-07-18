@@ -1,0 +1,12 @@
+TDAT: 	private boolean editPropertyName(Object source, String objectId, String propName, String newName, String path, String userId){
+		boolean ret = false;
+		LibraryObject object = this.getObjectWrapper(objectId);				
+		if(object!=null){
+			ret = true;
+			object.renameProperty(propName, newName, path, userId);
+			this.sendModifyEvent(source, objectId, userId, new Date());
+		}
+		return ret;
+	}
+
+COM:edits the name of a property for a specified object and sends a modification event, returning a boolean indicating if the edit was successful

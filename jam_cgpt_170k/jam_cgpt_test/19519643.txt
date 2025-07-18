@@ -1,0 +1,9 @@
+TDAT: 	private IPred2 buildPredicate(IPred goal, IPred[] hypothesis, IFactory fact) {
+		IPred2 imp = fact.newImp2(fact.newNot(goal), BFalse.instance);
+		for (int i = hypothesis.length - 1; i > 0; i--) {
+			imp = fact.newImp2(hypothesis[i], imp);
+		}
+		return imp;
+	}
+
+COM:builds and returns a predicate that uses a given goal and array of hypotheses with a specified factory

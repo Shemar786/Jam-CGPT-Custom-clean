@@ -1,0 +1,10 @@
+TDAT:     public BusinessObject create() throws Exception{
+        System.out.println("CREATING PHOTOSET");
+        String id = GUID.generate();
+        BusinessObject bo = new PhotoSetBO(id);
+        Cache c = Cache.getInstance();
+        c.put(bo.getId(), bo);
+        return bo;
+    }
+
+COM:creates a new instance of a BusinessObject called PhotoSetBO, generates a unique ID for it, stores it in a cache, and returns the object

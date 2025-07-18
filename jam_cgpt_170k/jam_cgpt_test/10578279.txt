@@ -1,0 +1,13 @@
+TDAT:     private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+        out.writeObject(sender);
+        out.writeObject(recipients);
+        out.writeObject(state);
+        out.writeObject(errorMessage);
+        out.writeObject(name);
+        out.writeObject(remoteHost);
+        out.writeObject(remoteAddr);
+        out.writeObject(lastUpdated);
+        out.writeObject(attributes);
+    }
+
+COM:writes the sender, recipients, state, error message, name, remote host, remote address, last updated time and attributes objects to an OutputStream

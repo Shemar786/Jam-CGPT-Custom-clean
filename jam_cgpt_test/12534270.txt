@@ -1,0 +1,25 @@
+TDAT: 	protected void generateAction(EventGenerator generator, JSLEvent event){
+
+		if (myInventoryProvider != null){
+			// get the amount of the demand
+			int amt = 0;		
+			if (myAmtRV == null)
+				amt = 1;
+			else
+				amt = (int)myAmtRV.getValue();
+		    
+			InventoryIfc i = myInventoryProvider.getInventory(myItemType, this);
+			
+			if (i != null){
+				
+				Demand d = i.requestInventory(getItemType(), this, amt);
+				
+				if (d != null)
+					i.fillInventory(d);
+				
+			}
+		}
+				
+	}	
+
+COM:generates an action for an event based on inventory availability

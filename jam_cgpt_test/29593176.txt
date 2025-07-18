@@ -1,0 +1,13 @@
+TDAT:   protected int incr() {
+    int digit = rank-1;
+    while (digit >= 0) {
+      current[digit]++;
+      if (current[digit] < shape[digit])
+        break;                        // normal exit
+      current[digit] = 0;               // else, carry
+      digit--;
+    }
+    return currentElement();
+  }
+
+COM:increments the current element by 1, carrying over to the next rank if necessary

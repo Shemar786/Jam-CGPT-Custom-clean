@@ -1,0 +1,13 @@
+TDAT:     public int getIntHeader(String aName) {
+        String theHeader = getHeader(aName);
+        if (theHeader != null) {
+            int idx = theHeader.indexOf(';');
+            if (idx != -1) {
+                theHeader = theHeader.substring(0, idx);
+            }
+            return Integer.parseInt(theHeader);
+        }
+        return -1;
+    }
+
+COM:returns an integer value from the HTTP request header with the given name, or -1 if the header does not exist or cannot be parsed as an integer

@@ -1,0 +1,16 @@
+TDAT: 	private void handleAdd() {
+		AddTargetPluginsWizard wizard = new AddTargetPluginsWizard();
+		WizardDialog dialog = new WizardDialog(fPage.getShell(), wizard);
+		dialog.create();
+		SWTUtil.setDialogSize(dialog, 400, 450);
+		dialog.open();
+
+		File[] dirs = wizard.getDirectories();
+		if (dirs.length == 0) {
+			// no new URLs found/to add
+			return;
+		}
+		addDirectoriesToState(dirs);
+	}
+
+COM:opens a dialog box and retrieves a list of directories selected by the user to add to the state

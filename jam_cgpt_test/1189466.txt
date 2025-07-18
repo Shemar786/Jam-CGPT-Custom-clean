@@ -1,0 +1,8 @@
+TDAT:    public int blocksAccessed() {
+      // create a dummy TableInfo object to calculate record length
+      TableInfo ti = new TableInfo("", srcplan.schema());
+      double rpb = (double) (BLOCK_SIZE / ti.recordLength());
+      return (int) Math.ceil(srcplan.recordsOutput() / rpb);
+   }
+
+COM:calculates the number of blocks accessed based on the size of records and the number of records outputted from a given TableInfo object

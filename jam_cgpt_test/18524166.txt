@@ -1,0 +1,13 @@
+TDAT: 	public void setSelectedOption(String aOptionText) throws JacobieException {
+	    Option theOption = getOptionBasedOnText(aOptionText);
+	    if(theOption != null) {
+	        //set the select to the value of the option found.
+	        setValue(theOption.getValue());
+	    }
+	    else {
+	        throw new JacobieException("Option not found with this text: [" + aOptionText + "]");
+	    }
+	    
+	}
+
+COM:sets the selected option based on the provided option text, throwing an exception if the option is not found

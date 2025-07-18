@@ -1,0 +1,12 @@
+TDAT:    public void setTableName(String tableName) throws Exception {
+      this.tableName = tableName;
+      this.table = getConfig().getTableByName(tableName);
+
+      if (getTable() == null) {
+         throw new Exception("Table " + tableName + " not found in configuration");
+      }
+
+      this.tableId = getTable().getId();
+   }
+
+COM:sets the name of the table being used and throws an exception if the table is not found in the configuration

@@ -1,0 +1,15 @@
+TDAT:     public void saveBuildfile(final File buildfile) throws IOException {
+        final FileWriter filewriter = new FileWriter(buildfile);
+        final XMLWriter writer = new XMLWriter(filewriter);
+
+        try {
+            writer.writeHeader();
+            project.writeXML(writer);
+        } catch (IOException ioe) {
+            LOGGER.error("error writing project", ioe);
+        }
+
+        filewriter.flush();
+    }
+
+COM:saves a build file specified by the input File object as an XML file

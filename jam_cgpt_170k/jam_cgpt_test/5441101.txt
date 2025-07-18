@@ -1,0 +1,15 @@
+TDAT:     public int doStartTag() throws JspTagException {
+        try {
+            if (locale == null) {
+                locale = pageContext.getResponse().getLocale();
+            }
+
+            pageContext.getOut().write(DateFormat.getTimeInstance(style, locale).format(new Date()));
+        } catch (IOException ioe) {
+            throw new JspTagException(ioe.toString());
+        }
+
+        return SKIP_BODY;
+    }
+
+COM:writes the current time formatted based on a specified style and locale to the output of a JSP page and returns a constant value indicating that the body of the tag should be skipped

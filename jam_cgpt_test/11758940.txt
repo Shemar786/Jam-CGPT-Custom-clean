@@ -1,0 +1,13 @@
+TDAT: 	public void freeze(double newRate, BWNode lbNode) {
+		frozen = true;
+		BWNode rbNode = getOtherNode(lbNode);
+		
+		rbNode.removeCon(this); // do not adjust the rate while the relation is in rbCons
+		
+		rate = newRate;
+		OriginalImpl.newRates.put(connection, Bandwidth.inBitPerMillisecond(newRate));
+		
+		rbNode.addRBCon(this);
+	}
+
+COM:sets the rate of a connection to a new value and freezes it, while removing the connection from a specific node and adding it to another

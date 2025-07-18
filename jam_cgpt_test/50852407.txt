@@ -1,0 +1,16 @@
+TDAT: 		public Enumeration getTypes(MultiProperties options) {
+			Enumeration te = options.getValues("scantypes");
+	
+			if (!te.hasMoreElements()) {
+					// see if it's a page in approved known types
+					te = srv.getMultiProperty("OnsiteLinkTypes");
+	
+					if (!te.hasMoreElements()) {
+							// scan all types by default
+							te = srv.getTypes();
+					}
+			}
+			return te;
+		}
+
+COM:retrieves a list of types based on the input MultiProperties object, falling back to a default list if none is provided

@@ -1,0 +1,14 @@
+TDAT: 	private void setNodeText(String xpath, String text) {
+		Node node = getNode(xpath);
+		if (node == null) {
+			Element parent = (Element) getNode(XPathUtils.getParentXPath(xpath));
+			if (parent == null) {
+				prtln("Neither node or parent found for " + xpath);
+				return;
+			}
+			node = parent.addElement(XPathUtils.getLeaf(xpath));
+		}
+		node.setText(text);
+	}
+
+COM:sets the text of a specified element node identified by its XPath, and if the node does not exist, it creates it first

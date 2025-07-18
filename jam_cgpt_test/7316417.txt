@@ -1,0 +1,10 @@
+TDAT: 	public String getPlainPublicationDetails() {
+		logger.debug("getPlainPublicationDetails()");
+		Publication pub = getPublication(publicationKey);
+		if (pub == null) {
+			return "Publication with key=\"" + publicationKey.toString() + "\" not found";
+		}
+		return "DB: " + dbConn.getDatabaseType() + "\n" + pub.toString();
+	}
+
+COM:returns the plain details of a publication by utilizing its key and database connection

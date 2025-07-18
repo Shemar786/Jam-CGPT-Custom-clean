@@ -1,0 +1,11 @@
+TDAT:   protected int insertRow(int beforeRow) {
+    // Specifically allow the row count as an insert position.
+    if (beforeRow != getRowCount()) {
+      checkRowBounds(beforeRow);
+    }
+    Element tr = DOM.createTR();
+    DOM.insertChild(bodyElem, tr, beforeRow);
+    return beforeRow;
+  }
+
+COM:inserts a new row into a designated position in an HTML table

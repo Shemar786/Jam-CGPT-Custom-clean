@@ -1,0 +1,13 @@
+TDAT: 	private JRadioButton getJRadioButtonTouristiqueOui() {
+		if (jRadioButtonTouristiqueOui == null) {
+			jRadioButtonTouristiqueOui = new JRadioButton();
+			jRadioButtonTouristiqueOui.setBounds(new Rectangle(96, 76, 42, 24));
+			jRadioButtonTouristiqueOui.setText("oui");
+			jRadioButtonTouristiqueOui.setBackground(new Color(209, 209, 240));
+			bgroupTouriste.add(jRadioButtonTouristiqueOui);
+			jRadioButtonTouristiqueOui.setSelected(true);
+		}
+		return jRadioButtonTouristiqueOui;
+	}
+
+COM:creates and returns a radio button object with the label "oui", a specific position and color, and is preselected

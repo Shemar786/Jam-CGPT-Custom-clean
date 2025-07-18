@@ -1,0 +1,8 @@
+TDAT:     private void verifyMailAddresses(Collection col) throws MessagingException {
+        MailAddress addresses[] = (MailAddress[])col.toArray(new MailAddress[0]);
+        if (addresses.length != col.size()) {
+            throw new MailetException("The recipient list contains objects other than MailAddress objects");
+        }
+    }
+
+COM:verifies that all the elements in the given Collection are MailAddress objects and throws a MessagingException if any other object type is found

@@ -1,0 +1,16 @@
+TDAT:     public void monitor(final Server server, final InterruptableInputHandler handler) {
+        Thread thread = new Thread("JettyStopMonitor") {
+                public void run() {
+                    try {
+                        listenForStop(handler, server);
+                    } catch (Exception e) {
+                        logger.error("[jetty-monitor] Unable to monitor Jetty for stop requests: " + e.getMessage());
+                    }
+                }
+            };
+
+        thread.setDaemon(true);
+        thread.start();
+    }
+
+COM:creates a new thread to monitor a server for stop requests using an interruptable input handler

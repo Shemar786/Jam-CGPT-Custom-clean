@@ -1,0 +1,19 @@
+TDAT: 	public boolean logoutLocal(String userName) {
+		DBManager dbMgr = DBManager.getInstance();
+
+		DBUserHistoryIF userHistory = new DBUserHistoryIF();
+
+		Date currentTime = new Date();
+		
+		userHistory.userName = new String(userName);
+		userHistory.logoutTime = currentTime.getTime();
+
+		if (dbMgr.updateUserHistory(userHistory) == false) {
+			logger.warning("updateUserHistory is fail");
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+COM:logs out a user locally by updating their logout time in the database and returns true if the update is successful, otherwise it returns false

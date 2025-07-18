@@ -1,0 +1,10 @@
+TDAT: 	private void saveSetting(CustomProperties prop) {
+		prop.setProperty("square.gametype", gametype);
+		prop.setProperty("square.outlinetype", outlinetype);
+		prop.setProperty("square.tspinEnableType", tspinEnableType);
+		prop.setProperty("square.tntAvalanche", tntAvalanche);
+		prop.setProperty("square.grayoutEnable", grayoutEnable);
+		prop.setProperty("square.version", version);
+	}
+
+COM:saves various game settings to a CustomProperties object

@@ -1,0 +1,15 @@
+TDAT: 	protected void doFireOutProcessing(String vehicle) {
+		// signal to the ambulance that the fire is out
+		try {
+			AmbulanceServiceStub amb = new AmbulanceServiceStub(FERSuddiProxy.instance().getServiceAccessPoint(vehicle));
+			amb.notifyFireIsOut();
+		} catch (AxisFault a) {
+			log.error("Caught AXIS_FAULT: " + a.getMessage());
+			a.printStackTrace();
+		} catch (RemoteException e) {
+			log.error("Caught REMOTE_EXCEPTION: " + e.getMessage());
+			e.printStackTrace();
+		}
+	}
+
+COM:signals an ambulance that a fire is out by calling a web service using the given vehicle as a parameter

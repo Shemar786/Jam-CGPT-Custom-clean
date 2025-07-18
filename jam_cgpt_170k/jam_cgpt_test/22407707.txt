@@ -1,0 +1,21 @@
+TDAT:     private String unescape(final String line) {
+        if (line == null) {
+            return null;
+        }
+
+        final StringBuffer buffer = new StringBuffer(line);
+        final int size = line.length();
+
+        for (int i = 0; i < size; ++i) {
+            switch (buffer.charAt(i)) {
+            case '\n':
+            case '\r':
+            case '\t':
+                buffer.setCharAt(i, ' ');
+            }
+        }
+
+        return buffer.toString();
+    }
+
+COM:replaces newline, carriage return, and tab characters with a space character in the given string

@@ -1,0 +1,9 @@
+TDAT: 	/*
+	 * public void init() throws BusinessDelegateException { try {
+	 * this.activityManagerHome = (ActivityManagerHome)
+	 * ServiceLocatorBean.getCurrentInstance().getHome( "ejb/ActivityManager",
+	 * ActivityManagerHome.class); this.activityManager =
+	 * this.activityManagerHome.create(); } catch(Exception e){ throw new
+	 * BusinessDelegateException("create:", e); } } public EJBObject
+
+COM:initializes an EJB object by obtaining its home interface from a Service Locator Bean and creating an instance of the object through the home interface

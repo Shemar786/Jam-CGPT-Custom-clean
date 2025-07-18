@@ -1,0 +1,17 @@
+TDAT: 	protected void addDetailPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveLogMessage_detail_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveLogMessage_detail_feature", "_UI_EveLogMessage_type"),
+				 MsgPackage.Literals.EVE_LOG_MESSAGE__DETAIL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "detail" feature of an "EveLogMessage" object to an item property descriptor list

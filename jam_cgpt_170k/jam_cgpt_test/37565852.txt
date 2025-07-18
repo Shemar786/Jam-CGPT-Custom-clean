@@ -1,0 +1,12 @@
+TDAT: public Point toControl (int x, int y) {
+	checkWidget ();
+  java.awt.Point point = new java.awt.Point(x, y);
+  Container container = handle;
+  if(container instanceof RootPaneContainer) {
+    container = ((RootPaneContainer)container).getContentPane();
+  }
+  SwingUtilities.convertPointFromScreen(point, container);
+  return new Point(point.x, point.y);
+}
+
+COM:converts the coordinates of a point from screen coordinates to container coordinates

@@ -1,0 +1,20 @@
+TDAT: 	public String getCollectionDatatype (int collectionID){
+		String datatype = "";
+		try{
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(
+					"SELECT Datatype \n" +
+					"FROM Collections \n" +
+					"WHERE CollectionID = " + collectionID);
+			rs.next();
+			datatype = rs.getString("Datatype");
+			stmt.close();
+		} catch (SQLException e){
+			ErrorLogger.writeExceptionToLogAndPrompt(getName(), "Error retrieving the collection's datatype for collection " + collectionID);
+			System.err.println("Error retrieving Collection Datatype.");
+			e.printStackTrace();
+		}
+		return datatype;
+	}
+
+COM:retrieves the datatype of a collection given its ID by executing a SQL query on a database and returning the resulting datatype as a string

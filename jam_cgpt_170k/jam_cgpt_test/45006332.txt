@@ -1,0 +1,20 @@
+TDAT:     public boolean isUnitInLockedArmy(int unitID) {
+
+        if (getUnit(unitID) == null) {
+            return false;
+        }
+
+        // check all armies
+        for (SArmy army : getArmies()) {
+            if (!army.isLocked()) {
+                continue;
+            }
+            if (army.getUnit(unitID) != null) {
+                return true;
+            }
+        }
+
+        return false;
+    }// end isUnitInLockedArmy
+
+COM:checks if a unit with the given ID is present in any of the locked armies

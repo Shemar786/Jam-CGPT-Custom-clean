@@ -1,0 +1,14 @@
+TDAT:     public Map getEditorMap() {
+        if (editorMap != null) return editorMap;
+        editorMap = new LinkedHashMap();
+
+        
+        editorMap.put("id", getIdEditor());
+        editorMap.put("name", getNameEditor());
+        editorMap.put("value", getValueEditor());
+        editorMap.put("boat", getBoatEditor());
+        
+        return editorMap;
+    }
+
+COM:returns a Map of editor values including id, name, value, and boat

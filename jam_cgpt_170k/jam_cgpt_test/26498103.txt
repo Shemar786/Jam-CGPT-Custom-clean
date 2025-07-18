@@ -1,0 +1,13 @@
+TDAT:   public Object lookup(String id) throws NotFoundException {
+    //checkStarted();
+    ServiceMetaData service = (ServiceMetaData) _services.get(id);
+
+    if(service == null) {
+      throw new NotFoundException(id);
+    }
+    
+    LifeCycleManager lcm = service.getLifeCycleManager();
+    return lcm.lookupService(id, service.getService());
+  }
+
+COM:takes a string ID as input, checks if a corresponding service is available, and returns the desired service if it exists

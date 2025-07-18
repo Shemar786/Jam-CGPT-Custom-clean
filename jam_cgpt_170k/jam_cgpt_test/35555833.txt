@@ -1,0 +1,12 @@
+TDAT: 	private void updateR3SlotInfo(int nodeId, int shelfId, Object[] data) {
+		if( data != null) {
+			if( data.length != 0 ) {
+				if( dbManager.deleteSlotUnit(nodeId, shelfId) == true ) {
+					dbManager.insertSlotUnit(nodeId, (com.lgnortel.r3.r3rmi.NeOamIF.RtrvSlotIF[]) data);
+				}
+			}
+		}
+		return;
+	}
+
+COM:updates slot information in the database for a particular node and shelf if data is not null or empty

@@ -1,0 +1,12 @@
+TDAT:     private void loadConfig(InputStream input) throws ConfigException {
+        log.debug("Running Config.loadConfig(input)..");
+        try {
+            SAXBuilder builder = new SAXBuilder();
+            Document doc = builder.build(input);
+            buildConfigFromDocument(doc);
+        } catch (Exception e) {
+            throw new ConfigException(e);
+        }
+    }
+
+COM:loads and builds a configuration document from an input stream using SAXBuilder and builds a configuration from the resulting document

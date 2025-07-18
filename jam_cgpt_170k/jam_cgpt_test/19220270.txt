@@ -1,0 +1,9 @@
+TDAT:     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+        String configKey = (String)configKeys.get(rowIndex);
+        configMap.put(configKey, aValue);
+        // fire change pending to activate apply button
+        fireConfigChangeEvent(
+            new JCConfigChangeEvent(JCConfigChangeEvent.CHANGE_PENDING));
+    }
+
+COM:sets a value at a specified row and column index in a config map, and triggers a config change event

@@ -1,0 +1,11 @@
+TDAT: 	public Cursor openCursor(Context context, Uri sourceUri) {
+		
+		String selection = SourcesTable.AUTHORITY + " = ?";
+		String[] selectionArgs = new String[] {
+			sourceUri.getAuthority()	
+		};
+						 
+		return context.getContentResolver().query(mSourcesUri, mProjection, selection, selectionArgs, Sources.SourcesTable.NAME);
+	}
+
+COM:opens a cursor to query the content resolver of a specified context with the selection and selection arguments based on the given source Uri

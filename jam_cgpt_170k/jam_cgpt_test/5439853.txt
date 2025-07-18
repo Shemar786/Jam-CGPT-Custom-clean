@@ -1,0 +1,8 @@
+TDAT:     public void addResourceLoader(Locale aLocale, URL aResourceRoot) {
+        URL[] theURLs = new URL[1];
+        theURLs[0] = aResourceRoot;
+        ClassLoader theResourceLoader = new URLClassLoader(theURLs);
+        this.localizedResourceLoaders.put(aLocale, theResourceLoader);
+    }
+
+COM:adds a resource loader for a specified locale and URL location to the localizedResourceLoaders HashMap

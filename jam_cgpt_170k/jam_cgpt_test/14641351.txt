@@ -1,0 +1,18 @@
+TDAT: 	public void createAgentCronJob(AgentName agentName, String cronExpression) {
+
+		JobDetail job = createAgentJobDetail(agentName, AGENT_CRON_JOB_GROUP_NAME);
+
+		CronTrigger trigger =
+			new CronTrigger(agentName.toString(), AGENT_CRON_JOB_GROUP_NAME);
+
+		try {
+			trigger.setCronExpression(cronExpression);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		QuartzSheduler.getInstance().addSheduleJob(job, trigger);
+
+	}
+
+COM:creates a scheduled job for a specific agent with a given cron expression

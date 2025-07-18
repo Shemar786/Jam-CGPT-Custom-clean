@@ -1,0 +1,14 @@
+TDAT:     private void onNamedSchemaSimpleType(Element schemaSimpleType) {
+        Attribute nameAttr = schemaSimpleType.attribute("name");
+
+        if (nameAttr == null) {
+            return;
+        }
+
+        String name = nameAttr.getText();
+        QName qname = getQName(name);
+        XSDatatype datatype = loadXSDatatypeFromSimpleType(schemaSimpleType);
+        namedTypeResolver.registerSimpleType(qname, datatype);
+    }
+
+COM:registers a named simple type in an XSDatatype object

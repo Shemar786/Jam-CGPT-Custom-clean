@@ -1,0 +1,11 @@
+TDAT:     public Point getScreenPointForNode(Node node) {
+        Point point=(Point)m_nodePositions.get(node);
+        if (point==null) {
+            point=new Point();
+            graphToScreenPoint(new Point2D.Double(node.getX(),node.getY()),point);
+            m_nodePositions.put(node,point);
+        }
+        return point;
+    }
+
+COM:returns the screen coordinates for a given node, either from a cache or by converting from graph coordinates

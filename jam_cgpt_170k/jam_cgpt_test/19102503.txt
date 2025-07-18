@@ -1,0 +1,9 @@
+TDAT: 	private String replaceParams(String expression, Object... params) {
+		assert (params.length < 10);
+		for (int i = 0; i < params.length; i++)
+			expression = expression.replaceAll("#"+(i+1), params[i].toString());
+		Log.log(getClass().getName(), 5, expression);
+		return expression;
+	}
+
+COM:replaces placeholders in a string expression with the corresponding values given in a parameter array and logs the resulting expression

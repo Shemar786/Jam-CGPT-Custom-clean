@@ -1,0 +1,24 @@
+TDAT: 	public void applyToStatusLine(IStatus status, DialogPage page) {
+		String message= status.getMessage();
+		if (message.length() == 0) message= null;
+		switch (status.getSeverity()) {
+			case IStatus.OK:
+				page.setErrorMessage(null);
+				page.setMessage(message);
+				break;
+			case IStatus.WARNING:
+				page.setErrorMessage(null);
+				page.setMessage(message, WizardPage.WARNING);
+				break;				
+			case IStatus.INFO:
+				page.setErrorMessage(null);
+				page.setMessage(message, WizardPage.INFORMATION);
+				break;			
+			default:
+				page.setErrorMessage(message);
+				page.setMessage(null);
+				break;		
+		}
+	}
+
+COM:applies a given status (OK, WARNING, INFO, or ERROR) to a DialogPage by setting the appropriate message and/or error message

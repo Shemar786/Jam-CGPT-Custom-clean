@@ -1,0 +1,16 @@
+TDAT:     public void umlbTools(final UMLBProject umlb, final boolean clean, final IProgressMonitor monitor) {
+		getUmlbTools();
+		for (IUMLBtool element : umlbtools) {
+			try{
+				if (clean){
+					element.clean(umlb,monitor);
+				}else{
+					element.run(umlb,monitor);
+				}
+			} catch (Exception e){
+				Activator.getDefault().logError(e, "failed running umlbTool extender for project "+umlb.getName()+" \"");
+			}
+		}
+    }
+
+COM:executes a set of tools on a UMLBProject with the option to clean it first, and logs any errors encountered during execution

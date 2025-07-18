@@ -1,0 +1,10 @@
+TDAT:     public String getCharacterSet() {
+        if (_characterSet == null) {
+            readContentTypeHeader();
+            if (_characterSet == null) setCharacterSet( getHeaderField( "Charset" ) );
+            if (_characterSet == null) setCharacterSet( HttpUnitOptions.getDefaultCharacterSet() );
+        }
+        return _characterSet;
+    }
+
+COM:returns the character set of a content type header, or the default character set if none is found

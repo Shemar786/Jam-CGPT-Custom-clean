@@ -1,0 +1,9 @@
+TDAT:     public void mC3Header(int typ, int typ2, int s) {
+        _bao.write(0xc3);
+        _bao.write((byte) s);
+        _bao.write((byte) typ);
+        _bao.write((byte) typ2);
+    //System.out.println("mc1headrec done2");
+    }
+
+COM:writes four bytes to a Byte Output Stream, with the first byte being a constant value and the following three bytes being integer inputs

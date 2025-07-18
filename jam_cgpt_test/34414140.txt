@@ -1,0 +1,15 @@
+TDAT: 	public void goToNextStage(){
+		Stage current = stagedSections.get(this.stageIndex);
+		current.setVisible(false);
+		this.stageIndex++;
+		current = stagedSections.get(this.stageIndex);
+		current.setVisible(true);
+		if(this.stageIndex==stagedSections.size()-1){
+			//this is at max index
+			//do finish code ie change the next button to "Finish"
+			nextFinishButton.setLabel("Finish");
+			nextFinishButton.setDisabled(false);
+		}
+	}
+
+COM:switches the visibility of stages and updates the "next" button to "Finish" if the current stage is the last one

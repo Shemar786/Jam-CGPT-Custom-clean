@@ -1,0 +1,25 @@
+TDAT: 	synchronized public String generateHandle() {
+
+		String host = null;
+		try {
+
+			host = InetAddress.getLocalHost().getHostAddress().toString();
+
+		}
+		catch (Exception e) {
+
+			host = Double.toString(new Random(new Random().nextLong())
+					.nextDouble());
+
+		}
+
+		StringBuffer handle = new StringBuffer(host);
+		handle.append("_");
+		handle.append(String.valueOf(System.currentTimeMillis()));
+		handle.append("_");
+		handle.append(Integer.toString(counter++));
+
+		return handle.toString();
+	}
+
+COM:This synchronized Java method generates a unique handle string by combining the current system's host IP address, current time in milliseconds, and a counter value

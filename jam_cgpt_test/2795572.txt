@@ -1,0 +1,13 @@
+TDAT: 	public void pause() {
+		if (state.getStartTime() == null) {
+			LOG.debug(format(Messages
+					.getString("StopWatch.log.sw-paused-useless"))); //$NON-NLS-1$
+		} else {
+			doChangeState(
+					Messages.getString("StopWatch.txt.pause-sw"), getTime(), null); //$NON-NLS-1$
+			LOG.debug(format(
+					Messages.getString("StopWatch.log.sw-paused"), this)); //$NON-NLS-1$
+		}
+	}
+
+COM:pauses a stopwatch by changing its state and logging a message

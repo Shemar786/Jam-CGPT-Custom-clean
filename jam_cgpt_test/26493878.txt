@@ -1,0 +1,11 @@
+TDAT:   public String toString() {
+    StringBuffer aBuffer = new StringBuffer(super.toString());
+    aBuffer.append("[profile=").append(_theProfile).
+            append(" param=").append(_theParameters).
+            append(" parent=").append(_theParent).
+            append("]");
+
+    return aBuffer.toString();
+  }
+
+COM:overrides the default toString() method to include additional information about the object's profile, parameters, and parent

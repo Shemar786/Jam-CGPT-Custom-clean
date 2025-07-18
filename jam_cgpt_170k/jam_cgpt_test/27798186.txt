@@ -1,0 +1,17 @@
+TDAT:   public void initializeMenus() {
+    if (!menusInitialized) {
+      menusInitialized = true;
+      fillMenuBar();
+      fillToolBar();
+      nodesRequiredItemsEnabled = false;
+      saveButton.setEnabled(false);
+      saveSubMenu.setEnabled(false);
+      menuPrintAction.setEnabled(false);
+      menuExportAction.setEnabled(false);
+      displayNWSubMenu.setEnabled(false);
+      setNodesRequiredItemsEnabled();
+      
+    }
+  }
+
+COM:initializes menus and disables certain menu items depending on a boolean value

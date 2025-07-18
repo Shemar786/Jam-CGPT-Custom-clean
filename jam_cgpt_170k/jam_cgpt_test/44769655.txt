@@ -1,0 +1,6 @@
+TDAT: 	public boolean associationExists(ComponentListener component, ListenableComponent target) {
+        return !(component == null || target == null || components.containsNode(component) || components.containsNode(target))
+                && (components.containsEdge(new DEdge<ComponentListener, ListenableComponent>(component, target)));
+    }
+
+COM:checks if an association exists between a ComponentListener and a ListenableComponent, returning a boolean value

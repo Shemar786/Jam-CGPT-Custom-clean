@@ -1,0 +1,18 @@
+TDAT: 	public String encrypt(String value) throws Exception {
+		if (value == null)
+			value = "";
+
+		// Initialize the cryptography algorithm.
+		this.algorithm.init(Cipher.ENCRYPT_MODE, this.key, this.initalVector);
+
+		// Get a UTF-8 byte array from a unicode string.
+		byte[] utf8Value = value.getBytes("UTF8");
+
+		// Encrypt the UTF-8 byte array.
+		byte[] encryptedValue = this.algorithm.doFinal(utf8Value);
+
+		// Return a base64 encoded string of the encrypted byte array.
+		return Base64Util.encode(encryptedValue);
+	}
+
+COM:encrypts a given string using a cryptography algorithm and returns the encrypted string in base64 encoded format

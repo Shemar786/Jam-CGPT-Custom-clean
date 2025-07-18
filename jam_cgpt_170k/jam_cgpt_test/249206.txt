@@ -1,0 +1,10 @@
+TDAT: 	public void modifyDisseminator(String itemPID, DStreamBinding binding) throws Exception{
+		logger.debug("entering modifyDisseminator(" + itemPID + ")");
+		MaAPI.modifyDisseminator(itemPID, binding.getBMechPID(), 
+				binding.getLabel(), binding.getDatastreamBindingMap(), 
+				binding.getState(), "modified via elated");
+		
+		logger.debug("exiting modifyDisseminator");
+	}
+
+COM:modifies a disseminator using information from a DStreamBinding object and logs the process

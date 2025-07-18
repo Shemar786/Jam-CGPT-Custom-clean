@@ -1,0 +1,10 @@
+TDAT:     public void testSecondDomainLevelCookie() throws Exception {
+        Cookie cookie = new Cookie(".sourceforge.net", "name", null, "/", null, false); 
+        cookie.setDomainAttributeSpecified(true);
+        cookie.setPathAttributeSpecified(true);
+
+        CookieSpec cookiespec = new CookieSpecBase();
+        cookiespec.validate("sourceforge.net", 80, "/", false, cookie);
+    }
+
+COM:tests for the presence and validity of a cookie with a second domain level attribute

@@ -1,0 +1,13 @@
+TDAT:     public void bindEffect(Effect effect) {
+        GL gl = GLU.getCurrentGL();
+        if (effect != currentEffect) {
+            OGLEffect oglEffect = (OGLEffect) effect;
+            if (oglEffect.getNumberOfPasses() > 0) {
+                OGLPass first = (OGLPass) oglEffect.getPass(0);
+                gl.glUseProgram(first.getProgramID());
+                currentEffect = effect;
+            }
+        }
+    }
+
+COM:binds an OpenGL effect to the current GL context

@@ -1,0 +1,23 @@
+TDAT:   public void open() throws IOException {
+    switch (status) {
+      case STATUS_UNREADY: // Initialize the modem
+      case STATUS_READY: // Wait for the CONNECT
+
+        try {
+          init();
+        } catch (Exception e) {
+          if (DEBUG) {
+            log("Init failed due to: " + e);
+          }
+
+          throw new IOException();
+        }
+
+        break;
+
+      case STATUS_DATA: // Already open, discard
+        break;
+    }
+  }
+
+COM:initializes a modem if it is not ready, waits for a CONNECT status, and discards if already open; it throws an IOException if initialization fails

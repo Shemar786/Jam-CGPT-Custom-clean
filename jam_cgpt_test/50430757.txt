@@ -1,0 +1,13 @@
+TDAT:     public void addFolder(Object f) throws FolderManagerException {
+        
+        Folder folder = Folder.cast(f);
+        
+        // If there's no such folder yet, add it
+        if(indexOf(folder.getFolderName()) == -1)
+            folders.add(folder);
+        else
+            throw new FolderManagerException
+            	("Duplicate folder name: " + folder.getFolderName()); 
+    }
+
+COM:adds a folder object to a list of folders and throws an exception if the folder already exists in the list

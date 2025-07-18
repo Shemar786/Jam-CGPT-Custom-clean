@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField38() {
+        if (textField38 == null) {//GEN-END:|627-getter|0|627-preInit
+            // write pre-init user code here
+            textField38 = new TextField("Percepciones:", null, 32, TextField.DECIMAL);//GEN-LINE:|627-getter|1|627-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|627-getter|2|
+        return textField38;
+    }
+
+COM:retrieves or creates a new TextField object with the label "Percepciones", a null initial value, a maximum length of 32 characters, and a decimal input mode

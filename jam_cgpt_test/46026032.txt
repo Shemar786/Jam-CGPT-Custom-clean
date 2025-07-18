@@ -1,0 +1,21 @@
+TDAT: 	public void shutdown() {
+		log.debug("GameManager shutdown()");
+
+		try {
+			for(int i = 0; i < engine.length; i++) {
+				engine[i].shutdown();
+				engine[i] = null;
+			}
+			engine = null;
+			mode = null;
+			modeConfig = null;
+			replayProp = null;
+			receiver = null;
+			bgmStatus = null;
+			backgroundStatus = null;
+		} catch (Throwable e) {
+			log.debug("Caught Throwable on shutdown", e);
+		}
+	}
+
+COM:shuts down the GameManager and frees up resources by shutting down game engines and setting related variables to null

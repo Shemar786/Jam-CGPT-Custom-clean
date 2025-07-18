@@ -1,0 +1,11 @@
+TDAT:     public String getFileExtension() {
+        final String dot = "."; //$NON-NLS-1$
+        if (!wikiFileName.contains(dot)) {
+            return null;
+        } else {
+            final int idx = wikiFileName.lastIndexOf(dot);
+            return wikiFileName.substring(idx, wikiFileName.length());
+        }
+    }
+
+COM:returns the file extension of a given file name string

@@ -1,0 +1,12 @@
+TDAT: 	public void setup() {
+		size(Preferences.WIDTH_IN_PIXELS, Preferences.HEIGHT_IN_PIXELS, OPENGL);  //we can go with JAVA2D if we don't like OPENGL
+		//smooth();
+		hint( ENABLE_OPENGL_4X_SMOOTH );
+		frameRate(Preferences.TARGET_FPS);
+		colorMode(RGB, 255);
+		textFont(loadFont("AmericanTypewriter-24.vlw"));
+	 	
+		System.out.println("All set up!");
+	}
+
+COM:sets up the window size, rendering engine, smoothing, frame rate, color mode, font, and prints a message to the console indicating that setup is complete

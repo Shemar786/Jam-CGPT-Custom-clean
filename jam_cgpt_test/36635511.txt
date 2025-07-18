@@ -1,0 +1,15 @@
+TDAT:     private void setPoints(){
+        points = new int[21];
+        for(int i = 0; i < points.length; i++){
+            if(i < 5)
+                points[i] = 10000;
+            else if(i < 9)
+                points[i] = 100;
+            else if(i < 17)
+                points[i] = 1;
+            else
+                points[i] = -1;
+        }
+    }
+
+COM:initializes an array with 21 integer elements, setting the first five elements to 10000, the next four to 100, the next eight to 1, and the last four to -1

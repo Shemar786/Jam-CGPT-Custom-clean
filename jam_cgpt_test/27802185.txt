@@ -1,0 +1,15 @@
+TDAT:   public GraphModel createGraphModel ( List includedNodes ) {
+    num_models++;
+    System.out.println("PGraphModel: creating a new non-super graphmodel: "+num_models);
+
+    GraphModel model =  new PGraphModel( "Phoebe"+num_models, getModelSubSet( includedNodes ) );
+
+    getCommunity().add( model );
+
+    //return new PGraphModel( "Phoebe"+num_models, getModelSubSet( includedNodes ) );
+
+
+    return model;
+  }
+
+COM:creates a new GraphModel object and adds it to a list of community models, returning the object

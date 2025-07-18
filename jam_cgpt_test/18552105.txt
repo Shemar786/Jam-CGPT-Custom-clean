@@ -1,0 +1,18 @@
+TDAT:   private float getFloat( RadFileParser st ) {
+    float number = 0;
+
+    st.getToken();
+
+    verifyWord(st);
+
+    try {
+      number = Float.parseFloat(st.sval);
+    } catch( NumberFormatException exp ) {
+      Log.deb("This : "+st.sval+" is not a float !");
+      parsingError(st);
+    }
+
+    return number;
+  }
+
+COM:parses a float value from a RadFileParser object and returns it as a float variable

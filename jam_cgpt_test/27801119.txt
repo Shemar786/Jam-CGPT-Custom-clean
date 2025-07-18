@@ -1,0 +1,16 @@
+TDAT:   protected boolean isFilterCyclic ( Filter filter ) {
+    if( customizer == null ) {
+      return false;
+    }
+    FilterCustomizer ancestor =
+      customizer.getFilterCustomizerParent();
+    while( ancestor != null ) {
+      if( ancestor.getFilter() == filter ) {
+        return true;
+      }
+      ancestor = ancestor.getFilterCustomizerParent();
+    }
+    return false;
+  } // isFilterCyclic(..)
+
+COM:checks if a given filter is cyclic by tracing its parent customizers and returns a boolean value

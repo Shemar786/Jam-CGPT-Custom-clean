@@ -1,0 +1,8 @@
+TDAT:     public boolean isUserAuthorized(org.osid.shared.Id functionId, org.osid.shared.Id qualifierId) throws org.osid.authorization.AuthorizationException {
+        if (null== mAgentId) {
+            throw new AuthorizationException(AuthorizationException.OPERATION_FAILED);
+        }
+        return isAuthorized(mAgentId, functionId, qualifierId);
+    }
+
+COM:checks if the user is authorized to perform a certain function with a given qualifier ID

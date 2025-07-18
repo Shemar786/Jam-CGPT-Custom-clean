@@ -1,0 +1,13 @@
+TDAT:     public IRubyObject setConstantInCurrent(String internedName, IRubyObject result) {
+        RubyModule module;
+
+        if ((module = getCurrentScope().getStaticScope().getModule()) != null) {
+            module.fastSetConstant(internedName, result);
+            return result;
+        }
+
+        // TODO: wire into new exception handling mechanism
+        throw runtime.newTypeError("no class/module to define constant");
+    }
+
+COM:sets a constant with a given name and value in the current Ruby module or class

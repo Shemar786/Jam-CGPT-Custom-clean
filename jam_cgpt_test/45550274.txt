@@ -1,0 +1,8 @@
+TDAT:     public void read(IPropertyStore store) {
+        includePublic = store.getProperty(property + PROPERTY_PUBLIC, defaultPublic);
+        includePackage = store.getProperty(property + PROPERTY_PACKAGE, defaultPackage);
+        includeProtected = store.getProperty(property + PROPERTY_PROTECTED, defaultProtected);
+        includePrivate = store.getProperty(property + PROPERTY_PRIVATE, defaultPrivate);
+    }
+
+COM:reads properties from an IPropertyStore and assigns them to corresponding variables

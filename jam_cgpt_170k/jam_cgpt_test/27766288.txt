@@ -1,0 +1,11 @@
+TDAT:     public MP3Playlist (String playlist) throws IOException {
+        m_log.debug ("Instanciated MP3Playlist using file: " + playlist);
+        
+        BufferedReader br = new BufferedReader ( new FileReader (playlist) );
+        m_playlist = MP3Playlist.getPlaylist (br);
+        m_itr = m_playlist.iterator ();
+        br.close ();
+        m_log.debug ("done! Playlistsize: " + m_playlist.size ());
+    }
+
+COM:instanciates an MP3Playlist object using a file path, reads the contents of the file into a BufferedReader, gets a playlist from the BufferedReader, sets up an iterator and logs debug information

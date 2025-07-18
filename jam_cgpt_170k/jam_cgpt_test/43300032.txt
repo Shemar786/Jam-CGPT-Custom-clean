@@ -1,0 +1,12 @@
+TDAT: 	public void testPrinting() {
+		testScraper.jumpToThisHTML(sampleHTML);
+		testScraper.printMostActive();
+		testScraper.printMostPopular();
+
+		assertTrue(testScraper.out().getHistory().contains("P1"));
+		assertTrue(testScraper.out().getHistory().contains("P2"));
+		assertTrue(testScraper.out().getHistory().contains("P3"));
+		assertTrue(testScraper.out().getHistory().contains("Download 1"));
+	}
+
+COM:tests the printing functionality of a scraper object on sample HTML data and ensures that specific strings are contained in the output history

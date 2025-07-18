@@ -1,0 +1,9 @@
+TDAT:     public void updateRoom(Room room) {
+        this.room = room;
+        roomIdField.setText(String.valueOf(room.getID()));
+        roomSymbolField.setText(String.valueOf(room.getSymbol()));
+        textColorButton.setBackground(room.getTextColor());
+        backgroundColorButton.setBackground(room.getBackgroundColor());
+    }
+
+COM:updates the UI fields with information from a given Room object

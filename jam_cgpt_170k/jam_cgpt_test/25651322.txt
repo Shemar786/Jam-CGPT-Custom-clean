@@ -1,0 +1,6 @@
+TDAT:     public void printTestAPIComponentLink(ClassDoc classDoc) {
+        String className = classDoc.name();
+        mOut.println("<A HREF=\"components/" + className + ".html\" TARGET=\"detailsFrame\"><I>" + className + "</I></A><BR>");
+    }
+
+COM:prints a link to a specified API component's HTML page

@@ -1,0 +1,19 @@
+TDAT:     public GridCell gridCellOfPoint(Point point){
+	GridCell cell = new GridCell();
+
+	int rp = point.y - gridRect.y;
+	if(rp < 0 || rp > gridRect.height){
+	    return null;
+	}
+	cell.row = (int)Math.floor(rp / side);
+
+	int cp = point.x - gridRect.x;
+	if(cp < 0 || cp > gridRect.width){
+	    return null;
+	}
+	cell.col =  (int)Math.floor(cp / side);
+
+	return cell;
+    }
+
+COM:returns the GridCell associated with a given Point within a Grid

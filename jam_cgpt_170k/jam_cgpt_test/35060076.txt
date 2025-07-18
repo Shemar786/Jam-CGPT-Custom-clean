@@ -1,0 +1,19 @@
+TDAT: 	public void setPuzzleKey(String puzzleKey) {
+		if( (puzzleKey == null  && this.puzzleKey != null) ||
+			!puzzleKey.equals( this.puzzleKey ) || 
+			tutorial ) {
+			tutorial = false;
+			this.puzzleKey = puzzleKey;
+			puzzleInfo = null;
+			historyInfo = null;
+			setChanged();
+		
+			if( puzzleKey != null ) {		
+				PuzzleServiceAsync puzzleService = ServiceFactory.getPuzzleService();
+				refreshing = true;
+				puzzleService.loadPuzzle( puzzleKey, puzzleInfoCallback  );
+			}
+		}
+	}	
+
+COM:sets the puzzle key, and if the key has changed or there is a new key, it loads the puzzle info asynchronously

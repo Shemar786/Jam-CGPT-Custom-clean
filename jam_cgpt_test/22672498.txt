@@ -1,0 +1,9 @@
+TDAT: 	public File findFile(String fileName, File initialDirectory, SearchType searchType) {
+		this.setStatus("Calculating files ...");
+		this.initialDirectory = initialDirectory;
+		this.numberOfFiles = this.getNumberOfFiles(this.initialDirectory);
+		this.setStatus("Searching " + this.numberOfFiles + " folders");
+		return this.searchForFile(fileName, initialDirectory, searchType);
+	}
+
+COM:finds a file with a given name in a specified directory using a specified search type

@@ -1,0 +1,14 @@
+TDAT: 	private IPath searchUserSpecifiedLocations(IPath relativePath) {
+		List userLocations = getUserLocations();
+		for (Iterator iterator = userLocations.iterator(); iterator.hasNext();) {
+			SourceLocation currentLocation = (SourceLocation) iterator.next();
+			IPath fullPath = currentLocation.getPath().append(relativePath);
+			File file = fullPath.toFile();
+			if (file.exists()) {
+				return fullPath;
+			}
+		}
+		return null;
+	}
+
+COM:searches for a specified file path based on user-defined locations and returns the full path if the file exists, otherwise returns null

@@ -1,0 +1,16 @@
+TDAT:     public WaitingPacket dequeue(int timeout) {
+        synchronized (queue) {
+            try {
+                queue.wait(timeout);
+            } catch (InterruptedException e) {
+                log.error("Interrupted while waiting for packet", e);
+            }
+            if(queue.isEmpty()) {
+                return null;
+            } else {
+                return (WaitingPacket) queue.removeFirst();
+            }
+        }
+    }
+
+COM:dequeues a WaitingPacket from a synchronized queue while waiting for a specified amount of time, returning null if the queue is empty

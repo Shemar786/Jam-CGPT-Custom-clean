@@ -1,0 +1,22 @@
+TDAT:     private void updateCapacityVariable(long newCapacity) {
+
+	// Updating capacity variable
+
+	capacity = newCapacity;
+
+	// Updating costs and orderings of interval-related lists
+
+	IntervalListElement currentILE = intervalList.getFirst();
+	DRCInterval interval;
+
+	while (currentILE != null) {
+	    interval = (DRCInterval) currentILE.getElement();
+	    if (!interval.tasks.isEmpty()) {
+		updateIntervalCapacityCosts(currentILE);
+	    }
+	    currentILE = currentILE.getNext();
+	}
+
+    }
+
+COM:updates the value of the capacity variable and also updates costs and orderings of interval-related lists based on the new capacity value

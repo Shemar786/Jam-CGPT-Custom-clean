@@ -1,0 +1,16 @@
+TDAT: 	public void run() {
+		while(true) {
+			System.out.println("Waiting for a chatter... ");
+			try {
+				clientSock = serverSock.accept();
+				System.out.println(clientSock);
+			} catch (IOException e) {
+				e.printStackTrace();	}
+			
+			ChatServerHandler handler = new ChatServerHandler( clientSock, this );
+			chatterList.addChatter( handler );
+			new Thread( handler ).start();
+		}
+	}
+
+COM:continuously waits for incoming chat clients, creates a chat server handler for each client, and adds them to a list of chatters

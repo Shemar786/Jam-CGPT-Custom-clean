@@ -1,0 +1,10 @@
+TDAT: 	public void testChangeEncodingWithReader() throws Exception {
+	    String string = "<?xml version='1.0' encoding='UTF-8'?><html><head><title>foo</title></head>"
+            + "</body></html>";
+
+        XMLInputSource source = new XMLInputSource(null, "myTest", null, new StringReader(string), "ISO8859-1");
+	    HTMLConfiguration parser = new HTMLConfiguration();
+        parser.parse(source);
+    }
+
+COM:tests changing the encoding of an XML input source and parsing it using an HTMLConfiguration parser

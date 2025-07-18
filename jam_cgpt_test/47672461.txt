@@ -1,0 +1,10 @@
+TDAT: 	private void createFileListComposite() {
+		GridData gridData4 = new GridData();
+		gridData4.horizontalAlignment = GridData.FILL;
+		gridData4.grabExcessHorizontalSpace = true;
+		gridData4.verticalAlignment = GridData.CENTER;
+		fileListComposite = new FeatureConfigurationListComposite(this, SWT.BORDER_SOLID, getTaskuse(), getWorkProduct());
+		fileListComposite.setLayoutData(gridData4);
+	}
+
+COM:creates a composite object for displaying a list of features in a graphical user interface

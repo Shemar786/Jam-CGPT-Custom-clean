@@ -1,0 +1,16 @@
+TDAT:     private JTabbedPane getJTabbedPane() {
+
+        if (jTabbedPane == null) {
+            jTabbedPane = new JTabbedPane();
+            jTabbedPane.setTabPlacement(SwingConstants.BOTTOM);
+
+            jTabbedPane.addTab("Descriptor", null, getDeviceDescriptorViewer(),
+                    "Device descriptor information");
+            jTabbedPane.addTab("EEPROM", null, getEEPROMViewer(),
+                    "EEPROM User Area contents");
+
+        }
+        return jTabbedPane;
+    }
+
+COM:returns a JTabbedPane object with two tabs, "Descriptor" and "EEPROM", each containing a different viewer

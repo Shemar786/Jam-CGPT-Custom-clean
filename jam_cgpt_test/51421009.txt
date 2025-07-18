@@ -1,0 +1,15 @@
+TDAT: 	private void ensureState(String name) throws Exception{
+		//ystem.out.println("ensure state "+ getName() + "::" +name);
+		if(parentState!=null){
+			parentRegionManager.ensureState(parentState);
+		}
+		State target=machine.getState(name);
+		
+		if(target==this.machine.getCurrentState()) return;
+		// place for improvement here: just iterate looking for 'target' upwards on
+		State ancestor = computeCommonAncestor(this.machine.getCurrentState(),target);
+		if(ancestor==target) return;
+		setState(name);
+	}
+
+COM:ensures that a specified state is set as the current state within a state machine

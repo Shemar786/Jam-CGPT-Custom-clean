@@ -1,0 +1,10 @@
+TDAT: 	public void setSigmaY( double newSigmaY) throws IllegalArgumentException, DimensionMismatchException {
+		if (this.dimension == 1)
+			throw new DimensionMismatchException(this.dimension + "D-Punkt hat keine Y-Genauigkeit");
+		if (newSigmaY>0)
+			this.sigmaY = newSigmaY;
+		else
+			throw new IllegalArgumentException("Standardabweichung muss groesser Null sein " + newSigmaY);
+	}
+
+COM:sets the value of sigmaY, but throws exceptions if the object is one-dimensional or the input value is not greater than zero

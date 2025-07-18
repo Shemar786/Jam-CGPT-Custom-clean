@@ -1,0 +1,20 @@
+TDAT: 	public int getMinimumTerminationDepth() {
+		// LOG.trace("minTermDeath " + this + "=" + _min_termination_depth);
+
+		if (_min_termination_depth == 0) {
+			_min_termination_depth = Integer.MAX_VALUE;
+
+			int tmp = _min_termination_depth;
+			for (Expression exp : _expressions) {
+				tmp = Math.min(tmp, exp.maxTerminationDepth());
+			}
+
+			// The actual termination depth is 1 greater since we have to count
+			// ourselves
+			_min_termination_depth = tmp + 1;
+		}
+
+		return _min_termination_depth;
+	}
+
+COM:returns the minimum termination depth of an expression

@@ -1,0 +1,14 @@
+TDAT:     public boolean checkCallNumber() {
+        String CallNumbers[] = CallNumber.split("-");
+        String First2AlphabetsOfTitle = title.substring(0, 2);
+        String First2AlphabetsOfAuthor = AuthorName.substring(0, 2);
+        if (!CallNumbers[0].equals(First2AlphabetsOfTitle)) {
+            return false;
+        }
+        if (!CallNumbers[1].equals(First2AlphabetsOfAuthor)) {
+            return false;
+        }
+        return true;
+    }
+
+COM:checks whether the first two characters of the title and author name match the first two characters of the call number

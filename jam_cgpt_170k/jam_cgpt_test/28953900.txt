@@ -1,0 +1,14 @@
+TDAT:     private Object getObjectInstance(Class c) throws Exception {
+        Object ret = null;
+        try {
+            //try new instance first
+            ret = c.newInstance();
+        } catch (InstantiationException e) {
+           //try getInstance() method
+            Method method = c.getMethod("getInstance");
+            ret = method.invoke(null);
+        }
+        return ret;
+    }
+
+COM:returns an instance of a class, either by creating a new instance or using a pre-existing instance method called "getInstance()"

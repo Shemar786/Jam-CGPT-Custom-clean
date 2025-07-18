@@ -1,0 +1,14 @@
+TDAT:   private JButton getJButton() {
+    if (jButton == null) {
+      jButton = new JButton();
+      jButton.setText("Clear Selection");
+      jButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+          manager.leereAuswahl();
+        }
+      });
+    }
+    return jButton;
+  }
+
+COM:returns a JButton with the text "Clear Selection" and an ActionListener that calls the method "leereAuswahl()" on a specified object called "manager" when clicked, but only creates the JButton if it doesn't already exist

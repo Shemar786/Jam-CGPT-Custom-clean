@@ -1,0 +1,14 @@
+TDAT:     private boolean isAutoCloseSnoop() {
+        boolean autoClose = true;
+        try {
+            APIConfig config = APIConfigFactory.getConfig();
+            autoClose = config.getBoolean(APIConfig.LINK_AUTOCLOSE_SNOOP);
+        } catch (PropertyNotFoundException x) {
+            LOG.debug("{} property not found. Using the default of {}",
+                    APIConfig.LINK_AUTOCLOSE_SNOOP, autoClose);
+        }
+
+        return autoClose;
+    }
+
+COM:checks if the auto-close snooping feature is enabled or not, and returns a boolean value accordingly

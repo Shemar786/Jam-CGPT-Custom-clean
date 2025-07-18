@@ -1,0 +1,15 @@
+TDAT:     private void placeVulcanos() {
+
+	Coord[] vulcanoList = board.getVulcanoList();
+	JPanel panel;
+	Component[] comps;
+
+	for (int i = 0; i < vulcanoList.length; i++) {
+	    panel = gfxBoard[vulcanoList[i].getX()][vulcanoList[i].getY()];
+	    comps = panel.getComponents();
+	    ((JLabel) comps[0]).setIcon(generateIcon(Piece.VULCANO, true));
+	    board.putPiece(new Piece(vulcanoList[i]));
+	}
+    }
+
+COM:places vulcanos on a game board using a list of coordinates and updates the GUI accordingly

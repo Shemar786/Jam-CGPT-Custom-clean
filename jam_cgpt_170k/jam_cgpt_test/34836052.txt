@@ -1,0 +1,10 @@
+TDAT:     private String getColumnName(ResultSetMetaData md, int i) throws SQLException {
+        String colName = md.getColumnName(i);
+        String colLabel = md.getColumnLabel(i);
+        if (colLabel != null && !colLabel.equals("")) {
+            return colLabel;
+        }
+        return colName;
+    }
+
+COM:retrieves the name of a column in a ResultSet and returns either the column label or column name

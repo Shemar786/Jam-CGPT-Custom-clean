@@ -1,0 +1,20 @@
+TDAT: 	public void loadCurrentUserInfo(ConnectionLock connectionLock) {
+		UserInfoServiceAsync userService = ServiceFactory.getUserInfoService();
+		userService.loadCurrentUser( new AsyncCallbackLock<UserInfo>(connectionLock){
+			@Override
+			public void onFailure(Throwable caught) {
+				caught.printStackTrace();
+				super.onFailure(caught);
+			}
+			@Override
+			public void onSuccess(UserInfo result) {
+				if( result != null ) {
+					setUserInfo( result );
+					notifyObservers();
+				}
+				super.onSuccess(result);
+			}
+		});
+	}
+
+COM:loads the current user's information using an asynchronous callback and updates the user's info if it is not null

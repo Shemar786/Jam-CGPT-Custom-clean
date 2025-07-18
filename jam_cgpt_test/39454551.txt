@@ -1,0 +1,14 @@
+TDAT:     private JButton createDoneButton() {
+
+        final JButton button = new JButton("Done");
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                setVisible(false);
+            }
+        });
+        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        return button;
+    }
+
+COM:creates a JButton labeled "Done" and sets an ActionListener to hide the component when clicked

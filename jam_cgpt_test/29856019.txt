@@ -1,0 +1,14 @@
+TDAT:   public void unfoldingRow(int row, int column) {
+    if (root.getLevel() > 1) {
+      int		level = displayLevels[reverseOrder[column]];
+      VReportRow	currentRow = visibleRows[row];
+
+      if (currentRow instanceof VGroupRow) {
+	((VGroupRow)currentRow).setChildNodesVisible(level);
+      }
+
+      updateTableModel();
+    }
+  }
+
+COM:updates the visibility of child nodes for a specific row in a table, if the level of the root is greater than 1

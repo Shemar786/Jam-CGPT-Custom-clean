@@ -1,0 +1,12 @@
+TDAT:     public void testParameterLessEqual() throws ServletException,  JspException {
+        LessEqualTag ge = new LessEqualTag();
+        ge.setPageContext(pageContext);
+        ge.setParameter(PARAMETER_KEY);
+        ge.setValue(LESSER_VAL);
+
+        assertTrue(
+        	"Parameter Value (" + GREATER_VAL + ") is less than or equal to value (" + LESSER_VAL + ")", 
+        	ge.condition());
+    }
+
+COM:tests if a specified parameter value is less than or equal to a given lesser value using the LessEqualTag class

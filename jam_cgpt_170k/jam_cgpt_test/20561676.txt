@@ -1,0 +1,23 @@
+TDAT:     protected int authorize(String uri, String method) {
+       
+
+	if (method.equals("PUBLISH")) {
+	    if (uri.equals(notifierURI))
+		return Response.OK;
+	    //Should check if the publish came from any
+	    //of the registered contacts
+	    
+	} else if (method.equals(Request.SUBSCRIBE)) {
+	    //Check auth file
+	    //check uri in authorization file
+	    return  Response.OK;
+
+	} else {
+	    return Response.FORBIDDEN;
+	
+	}
+	
+	return Response.FORBIDDEN;
+    }
+
+COM:authorizes a given URI and method by checking if it is a "PUBLISH" or "SUBSCRIBE" request and returning a corresponding response code

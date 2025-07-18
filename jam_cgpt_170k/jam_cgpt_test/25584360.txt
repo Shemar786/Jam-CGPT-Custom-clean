@@ -1,0 +1,13 @@
+TDAT:     public Asset deepClone() {
+        if (clipURL == null) {
+            throw new IllegalStateException("SoundAsset.deepClone: " +
+                    "Object constructed without clip URL specified. " +
+                    "Deep clone not possible.");
+        }
+        
+        SoundAssetClip clone 
+                = new SoundAssetClip(assetName, clipURL, continuallyPlayClip);
+        return clone;
+    }
+
+COM:makes a deep clone of a SoundAsset object, but throws an exception if the clip URL is not specified

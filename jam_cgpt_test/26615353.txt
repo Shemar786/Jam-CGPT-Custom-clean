@@ -1,0 +1,16 @@
+TDAT:     public void defineButton(String Name,String Tooltip) {
+        AIToolbarButton Button;
+
+        if (Buttons.containsKey(Name)) {
+            Button = (AIToolbarButton) Buttons.get(Name);
+        } else {
+            Button = new AIToolbarButton(Name,Tooltip);
+
+            add(Button);
+        }
+
+        Button.setToolTipText(Tooltip);
+        Buttons.put(Name,Button);
+    }
+
+COM:defines a toolbar button with a given name and tooltip, adding it to the toolbar if it does not already exist

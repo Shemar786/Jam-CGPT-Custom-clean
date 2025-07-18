@@ -1,0 +1,14 @@
+TDAT:   protected void syntaxAnalyze1() throws CParseError {
+    if (!hasMoreTokens())
+      throw new CParseError("Unexpected and of expression.");
+
+    CParseToken token = getToken();
+    if (token.token == NOT) {
+      shiftToken();
+      syntaxAnalyze2();
+      expressionBuffer.add(token);
+    } else
+      syntaxAnalyze2();
+  }
+
+COM:performs syntax analysis on a sequence of tokens in the context of a C-like language, throwing a CParseError exception if an error occurs

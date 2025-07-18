@@ -1,0 +1,17 @@
+TDAT: 	protected void addReturnValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Operation_returnValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Operation_returnValue_feature", "_UI_Operation_type"),
+				 ModelPackage.Literals.OPERATION__RETURN_VALUE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the return value of an operation object

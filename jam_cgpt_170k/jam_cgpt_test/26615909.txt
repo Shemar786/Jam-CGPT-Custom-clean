@@ -1,0 +1,10 @@
+TDAT:     public void setLayerType(int layerType) {
+        if (layerType == Layer.INPUT_LAYER || layerType == Layer.HIDDEN_LAYER || 
+                layerType == Layer.OUTPUT_LAYER) {
+            this.layerType = layerType;
+        } else {
+            db("Received an invalid type for this layer..");
+        }
+    }
+
+COM:sets the layer type for a neural network model, but only accepts certain valid types and prints an error message for any invalid types

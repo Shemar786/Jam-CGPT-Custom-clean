@@ -1,0 +1,9 @@
+TDAT: 	public void updateScore() {
+		if(((RotwGameState)GameStateManager.getInstance().getChild("gameState")).isServer()) {
+			BasicSyncManager syncManager = 
+				((RotwGameState)GameStateManager.getInstance().getChild("gameState")).getSyncManager();
+			((Server)syncManager).updateScore();
+		}
+	}
+
+COM:updates the score if the current game state is controlled by the server

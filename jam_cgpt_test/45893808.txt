@@ -1,0 +1,17 @@
+TDAT:     private void updateFromFile(){
+		
+    	replayData.recordData(mobile.getReadYaw(),mobile.getReadRoll(),mobile.getReadPitch());
+    	
+		if (replayData.playData()) {
+			// Update sliders
+			yawSlider.setValue(replayData.getYaw());  
+			rollSlider.setValue(replayData.getRoll());
+			pitchSlider.setValue(replayData.getPitch());
+		}else{
+			replayPlayback.setText("Playback");
+		}
+		
+    	
+    }
+
+COM:updates the slider values based on recorded mobile sensor data

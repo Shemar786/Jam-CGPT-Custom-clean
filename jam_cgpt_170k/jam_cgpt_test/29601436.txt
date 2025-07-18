@@ -1,0 +1,10 @@
+TDAT:     public Command getBackCommandSelectDirection() {
+        if (backCommandSelectDirection == null) {//GEN-END:|56-getter|0|56-preInit
+            // write pre-init user code here
+            backCommandSelectDirection = new Command("Back", Command.BACK, 0);//GEN-LINE:|56-getter|1|56-postInit
+        // write post-init user code here
+        }//GEN-BEGIN:|56-getter|2|
+        return backCommandSelectDirection;
+    }
+
+COM:returns a Command object for selecting a direction and navigating back

@@ -1,0 +1,8 @@
+TDAT:     public void dirtyCrossProduct(Vector3f toMultiply, Vector3f destination) {
+        float rx = this.y * toMultiply.z - this.z * toMultiply.y;
+        float ry = this.z * toMultiply.x - this.x * toMultiply.z;
+        float rz = this.x * toMultiply.y - this.y * toMultiply.x;
+        destination.setXYZ(rx, ry, rz);
+    }
+
+COM:calculates the cross product of two Vector3f objects and stores the result in a destination Vector3f object

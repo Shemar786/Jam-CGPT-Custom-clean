@@ -1,0 +1,10 @@
+TDAT:     public JpqlPath prepend(Path path, JpqlPath pathNode) {
+        Alias alias = path.getRootAlias();
+        String[] subpathComponents = path.getSubpathComponents();
+        String[] pathComponents = new String[subpathComponents.length + 1];
+        pathComponents[0] = alias.getName();
+        System.arraycopy(subpathComponents, 0, pathComponents, 1, subpathComponents.length);
+        return prepend(pathComponents, pathNode);
+    }
+
+COM:prepends a path and JpqlPath to a JpqlPath object

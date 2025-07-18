@@ -1,0 +1,14 @@
+TDAT: 	private void addEnterActions(UMLBTransition transition, UMLBClass ownerClass) {
+		UMLBabstractStatemachine nestedSm = (UMLBabstractStatemachine) transition.eContainer();
+		if (nestedSm.getTranslation() == translationKind.STATE_SETS)
+			enterSets(transition, ownerClass);
+		else
+			enterFunction(transition, ownerClass);
+		
+		// enter state in nested SM if target state is not final there
+		for (UMLBTransition elabTransition : transition.getIsElaboratedBy())
+			if (!elabTransition.getTarget().isFinal())
+				addEnterActions(elabTransition, ownerClass);
+	}
+
+COM:adds enter actions to a UMLBTransition based on its nested UMLBabstractStatemachine and target state

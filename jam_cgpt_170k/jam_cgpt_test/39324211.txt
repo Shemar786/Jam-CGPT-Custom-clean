@@ -1,0 +1,11 @@
+TDAT:     public void deleteIcon(int iconHandle) {
+        if (iconHandle < windowBlock.getNumberOfIcons() - 1) {
+            // Mark it as deleted instead of removing it
+            Icon icon = windowBlock.getIcon(iconHandle);
+            icon.setIconFlags(icon.getIconFlags() | Icon.DELETED);
+        } else {
+            windowBlock.removeIcon(iconHandle);
+        }
+    }
+
+COM:deletes the specified icon by either marking it as deleted or removing it from a window block

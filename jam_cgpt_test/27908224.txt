@@ -1,0 +1,15 @@
+TDAT: 	private void parseRule(Node actionNode, Decision decision) {
+
+		NodeList ruleList = XMLUtil.selectNodeList(actionNode, "rule");
+		for(int i = 0; i < ruleList.getLength(); i++) {
+			Rule rule = parseRule(ruleList.item(i));
+			if(rule == null)
+				logger.warn("Rule is NULL");
+			int priority = getPriority(
+				XMLUtil.getTextContents("@priority",
+				    ruleList.item(i)));
+			decision.addRule(rule, priority);
+		}
+	}
+
+COM:parses a list of rules from an XML node and adds them with their respective priorities to a decision object

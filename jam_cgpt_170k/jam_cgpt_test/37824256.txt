@@ -1,0 +1,9 @@
+TDAT:    public void shutdownDatabase() {
+      m_prDatabase.shutdownDatabase();
+      dbState = m_prDatabase.getDatabaseState();
+      assertTrue("Testing database is closed after shutdownDatabase().",dbState == Database.DATABASE_CLOSED);
+      
+      assertTrue("Testing state retrieved from listener.",listenerDBState == Database.DATABASE_CLOSED);
+   }
+
+COM:shuts down the database and tests whether it has closed successfully

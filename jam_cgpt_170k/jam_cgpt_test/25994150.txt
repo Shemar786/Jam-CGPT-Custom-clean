@@ -1,0 +1,11 @@
+TDAT: 	public Cursor findBuddiesByName(String profileId) {
+		String sql = "SELECT _id, name, email FROM " + DATABASE_TABLE_BUDDIES + " WHERE profiles_id= '" + profileId + "'";
+		
+		Cursor mCursor = mDb.rawQuery(sql, null);
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+		return mCursor;
+	}
+
+COM:finds buddies by name based on the provided profile ID and returns a cursor object containing their ID, name, and email information

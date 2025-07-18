@@ -1,0 +1,14 @@
+TDAT:     public void testGetGroupList() {
+        System.out.println("getGroupList");
+        
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        Set expResult = null;
+        Set result = instance.getGroupList();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the functionality of the getGroupList() method in the SystemClient_DBImpl class using JUnit testing, and prints out the result while setting an expected and actual result

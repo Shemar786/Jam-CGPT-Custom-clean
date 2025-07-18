@@ -1,0 +1,16 @@
+TDAT: 	public int processStepList(IStepList stepList, File outFile) {
+        try {
+        	FileWriter out = new FileWriter(outFile);
+            out.write((String) stepList.getRootElement());
+            out.close();
+            return 0;
+        }
+        catch (Exception e) {
+			ExceptionHandler.handleException(e, new Shell());
+			return -1;
+		}
+        
+
+	}
+
+COM:writes the root element of a given IStepList to a specified file and returns 0 if successful, otherwise returns -1 and handles any exceptions

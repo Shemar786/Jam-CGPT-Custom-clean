@@ -1,0 +1,23 @@
+TDAT: 	private String loadRow(String line) {
+
+		String[] tokens = line.split("=");
+		if (tokens.length == 2) {
+			try {
+				Integer rowNo = new Integer(tokens[1].trim());
+				row = rowNo;
+			} catch (NumberFormatException e) {
+				return "Row must be a number";
+			}
+			if ((row >= 1) && (row <= area.getRows())) {
+				if (col >= 1) {
+					putTraderOnLocation();
+				}
+				return "";
+			} else {
+				return "Row is out of range";
+			}
+		}
+		return "Invalid row syntax";
+	}
+
+COM:loads a row number from a string and checks if it is within a valid range, returning error messages for invalid input

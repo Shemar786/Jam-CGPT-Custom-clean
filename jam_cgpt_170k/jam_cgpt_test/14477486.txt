@@ -1,0 +1,14 @@
+TDAT:   private void init() {
+    try {
+      //{socket
+      socket = new DatagramSocket();
+      //}socket
+      hostAddress = InetAddress.getByName(hostName);
+      userData = new BufferedReader(new InputStreamReader(System.in));
+    } catch (Exception excptn) {
+      excptn.printStackTrace();
+      System.exit(-1);
+    }
+  }
+
+COM:initializes a DatagramSocket, obtains the InetAddress of a host, and creates a BufferedReader

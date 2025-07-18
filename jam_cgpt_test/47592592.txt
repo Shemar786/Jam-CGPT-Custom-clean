@@ -1,0 +1,17 @@
+TDAT: 	public void propertyChange(PropertyChangeEvent evt) {
+		String prop = evt.getPropertyName();
+		if (UIElementPart.CHILDREN.equals(prop)) {
+			if (evt.getOldValue() instanceof Integer)
+				// new child
+				addChild(createChild(evt.getNewValue()), ((Integer) evt
+						.getOldValue()).intValue());
+			else
+				// remove child
+				removeChild((EditPart) getViewer().getEditPartRegistry().get(
+						evt.getOldValue()));
+		} else {
+			refreshVisuals();
+		}
+	}
+
+COM:This is a Java method that listens for changes in a property and adds or removes child elements accordingly, refreshing the visual appearance of the element

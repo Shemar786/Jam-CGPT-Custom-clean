@@ -1,0 +1,10 @@
+TDAT:     private boolean acceptHelper(SWGKnownResource r, SWGValues g) {
+        if (!acceptNoStats && !g.hasAllValues(r))
+            return false;
+
+        return (isWeighted(g))
+                ? acceptWeighted(r, (SWGWeights) g)
+                : acceptFilter(r, (SWGResourceFilter) g);
+    }
+
+COM:checks if a resource meets certain criteria based on its values and weight, and returns a boolean value indicating whether it is acceptable or not

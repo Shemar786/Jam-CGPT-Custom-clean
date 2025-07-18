@@ -1,0 +1,13 @@
+TDAT:   public BetterTableCellEditor getEditor ( Class type ) {
+    if( type == null ) {
+      return null;
+    }
+    Object editor = typeEditorMap.get( type );
+    if( editor != null ) {
+      return ( BetterTableCellEditor )editor;
+    }
+    // Tail recurse to help the optimizer.
+    return getEditor( type.getSuperclass() );
+  } // getEditor( Class )
+
+COM:returns a BetterTableCellEditor based on the Class type passed as a parameter, recursively searching the superclass if no editor is found

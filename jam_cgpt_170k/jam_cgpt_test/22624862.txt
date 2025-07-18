@@ -1,0 +1,13 @@
+TDAT: 	protected boolean getHasRelatedResource() {
+		try {
+			if (getElements("/itemRecord/relations/relation/idEntry/@entry").size() > 0 ||
+					getElements("/itemRecord/relations/relation/urlEntry/@url").size() > 0) {
+				return true;
+			}
+		} catch (Exception e) {
+			prtln("getHasRelatedResource() " + e);
+		}
+		return false;
+	}
+
+COM:returns a boolean value indicating whether an item record has related resources based on the presence of certain elements in the XML structure

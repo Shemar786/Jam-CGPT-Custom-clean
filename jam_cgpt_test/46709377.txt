@@ -1,0 +1,23 @@
+TDAT:   public void doActivate() {
+    synchronized(stateLock) {
+      if(myAPState == AP_SUSPENDED) {
+	changeStateTo(myBufferedState);
+      }
+    }
+    if(myAPState != AP_SUSPENDED) {
+      switch(myBufferedState) {
+      case AP_ACTIVE:
+	activateAllBehaviours();
+	synchronized(suspendLock) {
+	  myBufferedState = AP_MIN;
+	  suspendLock.notifyAll();
+	}
+	break;
+      case AP_WAITING:
+	doWake();
+	break;
+      }
+    }
+  }
+
+COM:activates a behavior based on the current state of the object, synchronized with two locks

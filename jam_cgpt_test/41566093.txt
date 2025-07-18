@@ -1,0 +1,10 @@
+TDAT: 	protected LWJGLSWTCanvas createCanvas() {
+		HashMap<String, Object> props = new HashMap<String, Object>();
+		props.put(LWJGLSWTConstants.PARENT, this);
+		props.put(LWJGLSWTConstants.STYLE, SWT.NONE);
+		props.put(LWJGLSWTConstants.DEPTH_BITS, 8);
+		return (LWJGLSWTCanvas) DisplaySystem.getDisplaySystem().createCanvas(
+				640, 480, "SWT", props);
+	}
+
+COM:creates a canvas object for use with LWJGL library, using specified parameters and properties

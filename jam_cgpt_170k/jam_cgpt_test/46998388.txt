@@ -1,0 +1,15 @@
+TDAT:     public void actionPerformed(ActionEvent actionevent) {
+        if (!field.isEditValid()) {
+            LookAndFeel lookandfeel = UIManager.getLookAndFeel();
+            lookandfeel.provideErrorFeedback(field);
+            field.selectAll();
+        } else {
+            try {
+                field.commitEdit();
+            } catch (ParseException parseexception) {
+                // Ignore
+            }
+        }
+    }
+
+COM:checks for valid input in a text field and gives error feedback if it is invalid, or commits the edit if it is valid

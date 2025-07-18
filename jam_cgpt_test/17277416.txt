@@ -1,0 +1,11 @@
+TDAT:     public void deleteCurrentSelection() {
+        if (!selection.isEmpty()) {
+            for (Enumeration<SceneGraph> en = selection.elements(); en.hasMoreElements();) {
+                Window.sceneGraph.remove(en.nextElement());
+            }
+            selection.removeAllElements();
+            repaintPanel();
+        }
+    }
+
+COM:deletes the currently selected items from Window.sceneGraph and updates the panel

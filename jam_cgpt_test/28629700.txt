@@ -1,0 +1,15 @@
+TDAT: 	private JButton getButtonCancelar() {
+		if (buttonCancelar == null) {
+			buttonCancelar = new JButton();
+			buttonCancelar.setText(Messages.getString("gui.NombreUsuario.7")); //$NON-NLS-1$
+			buttonCancelar
+					.addActionListener(new java.awt.event.ActionListener() {
+						public void actionPerformed(java.awt.event.ActionEvent e) {
+							dispose();
+						}
+					});
+		}
+		return buttonCancelar;
+	}
+
+COM:returns a JButton object with a text label and an ActionListener that disposes the object when activated, only creating the object if it does not already exist

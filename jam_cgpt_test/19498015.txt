@@ -1,0 +1,10 @@
+TDAT: 	public void testSchedulingRule() throws Exception {
+		final ISchedulingRule rule = pc.getSchedulingRule();
+		assertFalse(rule.contains(mchroot.getSchedulingRule()));
+		assertFalse(rule.contains(scRoot.getSchedulingRule()));
+		assertTrue(rule.contains(poRoot.getSchedulingRule()));
+		assertTrue(rule.contains(prRoot.getSchedulingRule()));
+		assertTrue(rule.contains(psRoot.getSchedulingRule()));
+	}
+
+COM:tests the scheduling rule of a program component and asserts whether or not it contains the appropriate sub-rules

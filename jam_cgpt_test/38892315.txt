@@ -1,0 +1,21 @@
+TDAT:   public void commit() {
+    // XML element from PASSIVE
+    kXMLElement newActiveConf = PASSIVE.outputToXML();
+
+    // stop this session if started
+    if (user.initialized) {
+      user.stopUser();
+    }
+
+    // update ACTIVE from XML element 'newActiveConf'
+    ACTIVE.inputFromXML(newActiveConf);
+
+    if (DEBUG) {
+      System.out.println(ACTIVE.outputToXML());
+    }
+
+    // start this session
+    user.init(ACTIVE);
+  }
+
+COM:updates an active configuration from a passive configuration and starts a user session

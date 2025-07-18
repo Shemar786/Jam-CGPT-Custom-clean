@@ -1,0 +1,10 @@
+TDAT:   public Node setNamedItem(Node arg) {
+    try {
+      return NodeImpl.build(XMLParserImpl.setNamedItem(this.getJsObject(),
+        ((DOMItem) arg).getJsObject()));
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_MODIFICATION_ERR, e, this);
+    }
+  }
+
+COM:sets a named item in the XML document and returns the modified node, while handling errors

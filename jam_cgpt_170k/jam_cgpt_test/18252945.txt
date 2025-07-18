@@ -1,0 +1,13 @@
+TDAT: 	public void resetGraphEditor(boolean full, boolean storeLayout, boolean removeLayout, boolean expandRoot) {
+		if (full) {
+			graphView.close(storeLayout, removeLayout);
+			graphContainer.remove(graphView);
+			graphView = new GraphicalDataModelView(dataModel, this, root, expandRoot, graphView.display.getWidth(), graphView.display.getHeight());
+			graphContainer.add(graphView);
+		} else {
+			graphView.resetExpandedState();
+		}
+		validate();
+	}
+
+COM:resets the graph editor by either creating a new view or resetting the expanded state depending on the boolean parameters provided

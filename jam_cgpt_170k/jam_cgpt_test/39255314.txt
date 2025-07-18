@@ -1,0 +1,20 @@
+TDAT: 	protected void setUp() {
+		try {
+			Database.rebuildDatabase("TestDB");
+		} catch (SQLException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+			JOptionPane.showMessageDialog(null,
+					"Could not rebuild the database." +
+					"  Close any other programs that may be accessing the database and try again.");
+		}
+		db = Database.getDatabase("TestDB");
+		assertTrue(db.openConnection("TestDB"));
+		
+		curRow = 0;
+		deleteFiles = new Vector<String>();
+		table = new AMSTableModel();
+		dataLoaded = false;
+	}
+
+COM:sets up a test environment by rebuilding a database, opening a connection, initializing values, and creating a new table model

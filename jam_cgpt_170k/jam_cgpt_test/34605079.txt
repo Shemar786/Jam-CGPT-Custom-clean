@@ -1,0 +1,21 @@
+TDAT: 	public String makeTypeString(String type) {
+		String result = "";
+		boolean learn = true;
+		for (int i = 0; i < type.length(); i++) {
+			char ch = type.charAt(i);
+			if (Character.isLetter(ch))
+				learn = true;
+			else {
+				if (learn)
+					result += "-";
+				learn = false;
+			}
+			if (learn)
+				result += ch;
+		}
+		if (result.charAt(result.length() - 1) == '-')
+			result = result.substring(0, result.length() - 1);
+		return result.toLowerCase();
+	}
+
+COM:takes in a string representing a type and returns a modified version of it with all non-letter characters replaced by hyphens and all letters made lowercase

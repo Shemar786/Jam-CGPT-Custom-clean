@@ -1,0 +1,12 @@
+TDAT: 	private JPanel getLeftPanel() {
+		if (leftPanel == null) {
+			leftPanel = new JPanel();
+			leftPanel.setLayout(new BorderLayout());
+			leftPanel.setPreferredSize(new Dimension(100, 44));
+			leftPanel.add(getMapPanel(), BorderLayout.NORTH);
+			leftPanel.add(getChatPanel(), BorderLayout.CENTER);
+		}
+		return leftPanel;
+	}
+
+COM:returns a JPanel with a BorderLayout layout, containing a MapPanel and ChatPanel

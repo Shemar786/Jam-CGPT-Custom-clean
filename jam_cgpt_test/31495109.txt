@@ -1,0 +1,14 @@
+TDAT:     public String toString() {
+	if (value == null) return "Not Rated";
+	else{
+	    double val = value.doubleValue();
+	    if (val == 0) return "0 -- Poor";
+	    if (val == 2) return "2 -- Fair";
+	    if (val == 5) return "5 -- Good";
+	    if (val == 7) return "7 -- Better";
+	    if (val == 10) return "10 -- Best";
+	    else return ""+value;
+	}
+    }
+
+COM:returns a string value based on the double value of a provided input

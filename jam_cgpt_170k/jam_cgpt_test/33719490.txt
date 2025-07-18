@@ -1,0 +1,13 @@
+TDAT:     public void testSetCell() {
+        System.out.println("setCell");
+        
+        String cell = "";
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.setCell(cell);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the setCell method of the SystemClient_DBImpl class by setting an empty cell and failing the test case

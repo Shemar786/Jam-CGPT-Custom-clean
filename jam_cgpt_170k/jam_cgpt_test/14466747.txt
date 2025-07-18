@@ -1,0 +1,14 @@
+TDAT:   private Constituent getHypothesisNode(int index) {
+    int currIndex = 0;
+    Constituent currConstituent;
+    for (Iterator iter = model.nodes(); iter.hasNext();) {
+      currConstituent = (Constituent)iter.next();
+      if (currConstituent instanceof HypothesisNode) {
+        if (index == currIndex) return currConstituent;
+        currIndex++;
+      }
+    }
+    return null;
+  }
+
+COM:retrieves a hypothesis node from a collection using an index

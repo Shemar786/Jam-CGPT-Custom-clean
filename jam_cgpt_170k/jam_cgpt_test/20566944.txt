@@ -1,0 +1,11 @@
+TDAT:   public void run(Context context) throws IOException, InterruptedException {
+    setup(context);
+    KEYIN key = context.nextKey(null);
+    while(key != null) {
+      reduce(key, context.getValues(), context);
+      key = context.nextKey(key);
+    }
+    cleanup(context);
+  }
+
+COM:performs the reduce function for MapReduce by iterating through keys and their respective values and executing setup, cleanup, and reduce operations on them with the provided context

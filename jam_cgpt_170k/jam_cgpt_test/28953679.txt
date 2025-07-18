@@ -1,0 +1,17 @@
+TDAT: 	private EndpointReference getUrl() {
+		String host = connection.getHostname();
+		int port = connection.getPort();
+		boolean isSecure = connection.isSecure();
+		String url = "http://";
+		if(isSecure) {
+			url="https://";
+			//TODO: handle protocol multiple invocations
+			Protocol.registerProtocol("https", new Protocol("https", 
+			  new SecureSocketFactory((SecureConnectionDescription)connection), connection.getPort()));
+		}
+		 
+		url+= host + ":" + port + connection.getUrlPath();
+		return new EndpointReference(url);
+	}
+
+COM:retrieves a URL based on the provided connection host, port, and security settings, and returns an endpoint reference object for that URL

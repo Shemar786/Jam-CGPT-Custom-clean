@@ -1,0 +1,14 @@
+TDAT: 	private PaletteContainer createFeatures1Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(
+				FeatureDiagram.diagram.part.Messages.Features1Group_title);
+		paletteContainer.setId("createFeatures1Group"); //$NON-NLS-1$
+		paletteContainer.add(createOptional1CreationTool());
+		paletteContainer.add(createMandatory2CreationTool());
+		paletteContainer.add(createAlternative_OR3CreationTool());
+		paletteContainer.add(createAlternative_XOR4CreationTool());
+		paletteContainer.add(createExternal5CreationTool());
+		paletteContainer.add(createVariationPoint6CreationTool());
+		return paletteContainer;
+	}
+
+COM:creates a palette container for a feature diagram editor, containing various creation tools for different kinds of feature elements

@@ -1,0 +1,13 @@
+TDAT: 	public void testExtendedExpression() throws Exception {
+		final Expression expression = EFF.makeExtendedExpression(barS,
+				Arrays.<Expression> asList(eA, eB),
+				Arrays.<Predicate> asList(pA, pB), null);
+		assertTrace(expression, "");
+		assertTrace(expression, "0");
+		assertTrace(expression, "1");
+		assertTrace(expression, "2");
+		assertTrace(expression, "3");
+		assertSkipChildrenOnce(expression);
+	}
+
+COM:tests an extended expression with specific variables, predicates, and asserts traces

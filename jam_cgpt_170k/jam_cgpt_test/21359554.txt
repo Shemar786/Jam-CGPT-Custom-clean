@@ -1,0 +1,18 @@
+TDAT:     private void updateTrayImage() {
+        int size = queue.size();
+        boolean changed = false;
+
+        if (size > 0) {
+            changed = (trayImageCurrent != trayImageSending);
+            trayImageCurrent = trayImageSending;
+        } else {
+            changed = (trayImageCurrent != trayImageDefault);
+            trayImageCurrent = trayImageDefault;
+        }
+
+        if (trayIcon != null && changed) {
+            trayIcon.setImage(trayImageCurrent);
+        }
+    }
+
+COM:updates the image of a system tray icon based on the size of a queue and different image states

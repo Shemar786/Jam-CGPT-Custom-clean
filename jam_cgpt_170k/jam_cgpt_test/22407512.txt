@@ -1,0 +1,8 @@
+TDAT:     private void onDefaultExecPathClick(ActionEvent e) {
+        Url oldBuildFile = new Url(getBuildfileObject());
+        setExecPath(m_node.getDefaultExecPath());
+        m_lblBuildfile.setText(FileUtils.noramlize(getExecPathUrl()
+                .getRelativePath(oldBuildFile)));
+    }
+
+COM:sets a new default execution path and updates the text of a label with the relative path of the new execution path compared to the old build file URL

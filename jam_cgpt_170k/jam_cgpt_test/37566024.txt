@@ -1,0 +1,12 @@
+TDAT: public int getLineCap() {
+	if (handle == null) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+  switch(getCurrentBasicStroke().getEndCap()) {
+    case BasicStroke.CAP_ROUND:
+      return SWT.CAP_ROUND;
+    case BasicStroke.CAP_SQUARE:
+      return SWT.CAP_SQUARE;
+  }
+  return SWT.CAP_FLAT;
+}
+
+COM:returns the line cap style of the current basic stroke, and throws an error if the graphic is disposed

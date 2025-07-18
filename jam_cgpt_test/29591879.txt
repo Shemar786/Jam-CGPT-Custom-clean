@@ -1,0 +1,11 @@
+TDAT:   public CoordinateAxis addCoordinateAxis( VariableDS v) {
+    if (v == null) return null;
+    variables.remove( v); // remove by name if it exists
+    coordAxes.remove( v);
+    CoordinateAxis ca = (v instanceof CoordinateAxis) ? (CoordinateAxis) v : CoordinateAxis.factory(this, v);
+    variables.add( ca);
+    coordAxes.add( ca);
+    return ca;
+  }
+
+COM:adds a coordinate axis to a NetCDF dataset by removing any existing variables or coordinate axes with the same name, creating a new coordinate axis if necessary, and returning the newly added axis

@@ -1,0 +1,15 @@
+TDAT:   public String toMdx() {
+    String str = "";
+    boolean isFollow = false;
+    for (Iterator iter = names.iterator(); iter.hasNext();) {
+      NamePart np = (NamePart) iter.next();
+      if (isFollow)
+        str += ".";
+      isFollow = true;
+      str += np.name;
+    }
+
+    return str;
+  }
+
+COM:converts a list of name parts into an MDX (Multidimensional Expressions) string by concatenating the names with "." separators

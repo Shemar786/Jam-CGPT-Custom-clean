@@ -1,0 +1,18 @@
+TDAT: 	public void run() {
+		while (!serverSocket.isClosed()) {
+			try {
+				try {
+					new Thread(new ReceiverConnection(this, AccessController.doPrivileged(new SocketAcceptAction(serverSocket)))).start();
+				} catch (PrivilegedActionException e) {
+					throw (IOException) e.getException();
+				}
+			} catch (SocketException e) {
+				continue; // socket closed now so we stop
+			} catch (IOException e) {
+				System.err.println("error receiving message:");
+				e.printStackTrace();
+			}
+		}
+	}
+
+COM:continuously accepts incoming socket connections and creates a new thread to handle each connection

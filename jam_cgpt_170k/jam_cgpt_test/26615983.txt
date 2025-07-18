@@ -1,0 +1,17 @@
+TDAT:     public void setPartName(String partname) {
+        if (partname.equals(this.partname))
+            return;
+
+        if (this.partname.length() == 0) {
+            this.partname = partname;
+
+            return;
+        }
+
+        String oldname = this.partname;
+        ProjectEvent e = new ProjectEvent(this,partname,this.partname);
+        this.partname = partname;
+        fireProjectEvent(e);
+    }
+
+COM:sets the name of a part, creating a ProjectEvent if the name has changed

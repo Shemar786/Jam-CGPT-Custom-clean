@@ -1,0 +1,13 @@
+TDAT: 	private Component createControlPanel() {
+	  cardLayout = new CardLayout();
+    controlPanel = new JPanel(cardLayout);
+    button = new JButton("Run");
+    button.addActionListener(this);
+    controlPanel.add(button, "button");
+    progressBar = new JProgressBar();
+    progressBar.setStringPainted(true);
+    controlPanel.add(progressBar, "progressBar");
+		return controlPanel;
+	}
+
+COM:creates a control panel with a card layout, a run button with an action listener, and a progress bar that is added to the control panel

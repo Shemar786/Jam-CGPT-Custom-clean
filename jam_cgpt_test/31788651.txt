@@ -1,0 +1,10 @@
+TDAT:     protected String makelink(int rootindex,int targindex,String val) {
+        String relroot=getRelSandHome(rootindex);
+        String target=getCoreSpec(targindex);
+        if(!target.equals("")) {
+            target="/" + target; }
+        String linkurl=relroot + target + indexfile;
+        return "<a href=\"" + linkurl + "\">" + val + "</a>";
+    }
+
+COM:creates an HTML hyperlink with a specified URL and display value

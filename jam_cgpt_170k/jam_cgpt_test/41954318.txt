@@ -1,0 +1,28 @@
+TDAT: 	private Session getSessionFromTransactionContext() {
+		ITransactionResource resource = null;
+		HibernateTransactionResource hibernateResource = null;
+
+		Session result = null;
+
+		if (transactionContext == null)
+			throw new PersistenceHibernateException(
+					"Without Transaction Context.");
+
+		if (transactionContext.hasResource()) {
+			resource = transactionContext.getResource();
+
+			if (resource instanceof HibernateTransactionResource) {
+				hibernateResource = (HibernateTransactionResource) resource;
+
+				result = hibernateResource.getSession();
+			} else {
+				throw new PersistenceHibernateException(
+						"Transaction context NOT contain a HibernateTransactionResource resource.");
+			}
+		}
+
+		return result;
+
+	}
+
+COM:returns a Hibernate session from a transaction context

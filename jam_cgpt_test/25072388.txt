@@ -1,0 +1,14 @@
+TDAT:   public String getTaskPropertyId(String aTaskPropertyName){
+	Iterator<String> it = getTaskProperty().keySet().iterator();
+	TaskProperty propertyObject;
+	String propertyId;
+	while (it.hasNext()){
+		propertyId = (String) it.next();
+		propertyObject = (TaskProperty) getTaskProperty().get(propertyId);
+		if (propertyObject.getName().equals(aTaskPropertyName))
+			return propertyId;
+	}
+	return null;
+  }
+
+COM:retrieves the ID of a task property given its name

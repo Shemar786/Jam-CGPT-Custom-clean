@@ -1,0 +1,8 @@
+TDAT:   public String getLocalizedAttribute(String name, Locale locale) {
+    String defaultValue = Converter.convert(this.attributes.get(name));
+    String key = this.name + "." + name;
+    Config config = PolymorphicConfig.getConfig(beanClass, locale);
+    return config.get(key, defaultValue);
+  }
+
+COM:retrieves a localized attribute value for a specified name and locale

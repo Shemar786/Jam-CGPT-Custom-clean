@@ -1,0 +1,20 @@
+TDAT: 	public int userCount(boolean includeDeds) {
+
+		if (includeDeds) {
+			return users.size();
+		}
+
+		// else, no deds. filter the list.
+		synchronized (users) {
+			int toReturn = users.size();
+			for (String client : users.keySet()) {
+				if (client.toLowerCase().indexOf("[dedicated]") >= 0 || client.toLowerCase().startsWith("nobody")) {
+					toReturn--;// decrease count
+				}
+			}
+			return toReturn;
+		}
+
+	}
+
+COM:returns the number of users, with the option to include or exclude users with the label [dedicated] or username "nobody"

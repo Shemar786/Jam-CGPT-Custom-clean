@@ -1,0 +1,13 @@
+TDAT:     public void testGetCause() {
+        
+        Exception aCause = new IOException("the cause");
+        
+        try {
+            throw new HttpException("http exception", aCause);
+        }
+        catch (HttpException e) {
+            assertEquals("Retrieve cause from caught exception", e.getCause(), aCause);
+        }
+    }
+
+COM:tests whether the cause of a HttpException can be retrieved successfully

@@ -1,0 +1,11 @@
+TDAT: public Color getBackground() {
+	if (handle == null) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+  return Color.swing_new(data.device, handle.getBackground());
+//	int color = OS.GetBkColor(handle);
+//	if (color == OS.CLR_INVALID) {
+//		color = OS.GetSysColor(OS.COLOR_WINDOW);
+//	}
+//	return Color.win32_new(data.device, color);
+}
+
+COM:returns the background color of a handle while ensuring that the graphic is not disposed, and creates a new Color object using Swing

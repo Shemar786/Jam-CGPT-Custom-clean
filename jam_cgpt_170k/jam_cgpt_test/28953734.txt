@@ -1,0 +1,10 @@
+TDAT: 	private String getNonWildcardComponent(String value) {
+		if (value == null) return value;
+		if (misysConnectWildcard == null) return value;
+		if (!value.contains(misysConnectWildcard)) return value;
+		// Okay, the string contains the character, take it out
+		// This method is a little stronger than just beginning and ending characters
+		return value.replaceAll("\\Q" + misysConnectWildcard + "\\E", "");
+	}
+
+COM:returns a string with a specific wildcard character removed if it exists in the input string

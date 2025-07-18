@@ -1,0 +1,9 @@
+TDAT:     public void getImageAsJpeg(int id, int width, int height, OutputStream out) throws IOException {
+        Job job = (Job)allJobs.get(new Integer(id));
+        if (job == null)
+            throw new IOException("Illegal Job");
+
+        job.getImageAsJpeg(out, width, height);
+    }
+
+COM:retrieves a specific image from a job and outputs it in JPEG format to a specified output stream, with the option to resize the image dimensions

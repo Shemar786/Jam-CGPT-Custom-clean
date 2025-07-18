@@ -1,0 +1,6 @@
+TDAT:     public void addMappedProperties(Class bean, Class base, boolean includeInherited, boolean override) {
+        for (IMappingHolder h : BeanMapperManager.getMapper(bean).getMappingHolders(base, includeInherited))
+            addAccessorMapping(h.getSourceAccessor().getPath(), bean, h.getDestinationAccessor(), override);
+    }
+
+COM:adds mapped properties from a base class to a bean class while allowing for inheritance and optional property overrides

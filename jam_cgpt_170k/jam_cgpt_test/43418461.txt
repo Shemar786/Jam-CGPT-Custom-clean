@@ -1,0 +1,12 @@
+TDAT: 	private Physical2DObject getPhysical2DObject(Physical2DEnvironment world, String id)	{
+		ArrayList list=(ArrayList) world.getRootPlayground().getChildObjects();
+		for(int i=0;i<list.size();i++) {
+			Physical2DObject playGround =(Physical2DObject) list.get(i);
+			if(playGround.getId().equals(id)) {
+				return playGround;
+			}
+		} 
+		return null;
+	}
+
+COM:searches for a specific Physical2DObject in a Physical2DEnvironment based on its id and returns it

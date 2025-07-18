@@ -1,0 +1,16 @@
+TDAT:     public void logReport(List report) {
+        // Insert the record into the database
+        try {
+            if (DEBUG) {
+                System.err.println("Logging request");
+            }
+            boolean success = queue.offer(report, 50);
+            if (!success && DEBUG) {
+                System.err.println("Timed out offer");
+            }
+        } catch (InterruptedException ie) {
+            // Ignore this
+        }
+    }
+
+COM:logs a report by inserting it into a database and may print out error messages if DEBUG mode is enabled

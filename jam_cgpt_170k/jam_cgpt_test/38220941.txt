@@ -1,0 +1,13 @@
+TDAT:   protected void loadUrl(URL url) {
+    try {
+      loaded = true;
+      htmlText.setPage(url);
+      urlText.setText(url.toString());
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+      CUtilities.printException(context.getMainForm(), e);
+    }
+  }
+
+COM:loads a webpage from a specified URL, sets a flag when it is loaded, and displays the URL in a text field

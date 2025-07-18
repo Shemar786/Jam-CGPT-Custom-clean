@@ -1,0 +1,14 @@
+TDAT:         public int doStartTag() throws JspException {
+            // Check role
+            if (role != null
+                && !((HttpServletRequest) pageContext.getRequest()).isUserInRole(
+                    role)) {
+                return SKIP_BODY;
+            }
+
+            // save current context
+            this.currentContext = getCurrentContext();
+            return EVAL_BODY_INCLUDE;
+        }
+
+COM:checks if a user has a specific role and sets the current context

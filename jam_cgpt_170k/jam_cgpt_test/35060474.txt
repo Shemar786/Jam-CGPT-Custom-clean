@@ -1,0 +1,13 @@
+TDAT: 	private SiteInfo createSiteInfo() {
+
+		if( !checkApplyEnabled() ) return null;
+		
+		SiteInfo siteInfo = new SiteInfo();
+		siteInfo.setSiteName( siteNameField.getEntry() );
+		siteInfo.setSiteDescription( siteDescriptionField.getEntry() );
+		siteInfo.setWelcomeMessage( welcomeMessage.getText() );
+		
+		return siteInfo;
+	}
+
+COM:creates and returns a SiteInfo object with various properties set based on user input fields, but if a certain condition is not met, it returns null

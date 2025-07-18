@@ -1,0 +1,17 @@
+TDAT:   protected void addHoldabilityModePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OpenQuery_holdabilityMode_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OpenQuery_holdabilityMode_feature", "_UI_OpenQuery_type"),
+				 ActionStepPackage.eINSTANCE.getOpenQuery_HoldabilityMode(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a holdability mode property descriptor to an object

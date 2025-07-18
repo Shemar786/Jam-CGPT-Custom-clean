@@ -1,0 +1,11 @@
+TDAT:     public void setProxy(String host, String port){
+            this.proxySet = true;
+            
+            System.setProperty("http.proxyHost", host);
+            System.setProperty("http.proxyPort", port);
+
+            System.setProperty("https.proxyHost", host);
+            System.setProperty("https.proxyPort", port);
+    }
+
+COM:sets the HTTP and HTTPS proxy host and port properties

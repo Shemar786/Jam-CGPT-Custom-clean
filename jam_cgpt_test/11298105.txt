@@ -1,0 +1,7 @@
+TDAT:     public QName prefixQNameNamespace(QName qname) {
+        //Get prefix for the fault QName in the XPointer.
+        NCName prefix = getXmlNamespacePrefix(qname);
+        return new QName(qname.getNamespaceURI(), qname.getLocalPart(), prefix.toString());
+    }
+
+COM:takes a QName as input, retrieves the prefix associated with it, and returns a new QName with the same local name and namespace URI, but with the retrieved prefix

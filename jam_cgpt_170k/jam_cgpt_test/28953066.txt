@@ -1,0 +1,14 @@
+TDAT:     public void setTestPatientId(String patientId) {
+    	for (IDocumentConsumer consumer: consumers) {
+    		if (consumer instanceof XdsDocumentActor) {
+    			((XdsDocumentActor) consumer).setTestPatientId(patientId);
+    		}
+    	}
+    	for (IDocumentSource source: sources) {
+    		if (source instanceof XdsDocumentActor) {
+    			((XdsDocumentActor) source).setTestPatientId(patientId);
+    		}
+    	}
+    }
+
+COM:sets the test patient ID for all XdsDocumentActors in the consumers and sources

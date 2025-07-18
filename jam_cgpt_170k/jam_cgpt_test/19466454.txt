@@ -1,0 +1,17 @@
+TDAT: 	protected void addCaseExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Case_caseExpression_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Case_caseExpression_feature", "_UI_Case_type"),
+				 Il1Package.Literals.CASE__CASE_EXPRESSION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the case expression feature of the Case class

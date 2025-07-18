@@ -1,0 +1,13 @@
+TDAT:     public void testSetGroupName() {
+        System.out.println("SetGroupName");
+        
+        String gn = "Group01";
+        AutismGroup instance = new AutismGroup();
+        
+        instance.SetGroupName(gn);
+        assertEquals(gn,instance.GetGroupName());
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+COM:tests the SetGroupName() and GetGroupName() methods of the AutismGroup class by setting the group name to "Group01" and checking if it matches with the expected group name

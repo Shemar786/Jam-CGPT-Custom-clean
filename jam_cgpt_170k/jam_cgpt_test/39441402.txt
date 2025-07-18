@@ -1,0 +1,11 @@
+TDAT:     private void findClipDir() {
+        FileChooser dc = new FileChooser(new javax.swing.JFrame(), true, System
+                .getProperty("user.dir")
+                + File.separator + "*");
+        //dc.show();
+        dc.setVisible(true);
+        clipDir = dc.getFilePath();
+        System.out.println("clipDir = " + clipDir);
+    }
+
+COM:This is a Java method that opens a file chooser dialog box and assigns the selected file path to "clipDir"

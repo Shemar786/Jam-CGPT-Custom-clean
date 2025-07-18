@@ -1,0 +1,11 @@
+TDAT:   public void setType(String aType) {
+    try {
+      _theType = aType;
+      _theLaunchHandler = HandlerFactory.getInstance().createLaunchHandler(aType);
+      _theLaunchHandler.setType(aType);
+    } catch (ObjectCreationException oce) {
+      throw new IllegalArgumentException("Unable to assign the launcher type - " + oce.getMessage());
+    }
+  }
+
+COM:sets a type for a launch handler and throws an exception if the object creation fails

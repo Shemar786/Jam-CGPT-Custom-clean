@@ -1,0 +1,11 @@
+TDAT:     public int doAfterBody() throws JspException {
+        if (getBodyContent() != null) {
+            String value = getBodyContent().getString().trim();
+            if (value != null) {
+                ((UIOutput) getComponent()).setValue(value);
+            }
+        }
+        return (getDoAfterBodyValue());
+    }
+
+COM:sets the value of a UIOutput component on a JSP page using the body content of the tag

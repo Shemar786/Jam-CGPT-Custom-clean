@@ -1,0 +1,15 @@
+TDAT: 	public void setSelectedAccount(Account selectedAccount) {
+		if (accounts != null) {
+			for (int i = 0; i < accounts.size(); i++) {
+				if (accounts.get(i) == null && selectedAccount == null) {
+					accountCombo.select(i);
+				} else if (
+					accounts.get(i) != null && accounts.get(i).equals(selectedAccount)
+				) {
+					accountCombo.select(i);
+				}
+			}
+		}
+	}
+
+COM:sets the selected account in a combo box if the account is in the list of accounts

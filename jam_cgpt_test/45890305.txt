@@ -1,0 +1,13 @@
+TDAT:     protected String getSdCardFilename(String filename) {
+    	String sdpath = android.os.Environment
+				.getExternalStorageDirectory().getAbsolutePath();
+    	String path;
+    	if (sdpath.substring(sdpath.length() - 1, sdpath.length()).equals("/")) {
+    		path = sdpath + filename;
+    	} else {
+    		path = sdpath + "/" + filename;
+    	}
+	   	return path;
+    }
+
+COM:returns a file path in the phone's SD card with the given filename

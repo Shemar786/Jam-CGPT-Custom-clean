@@ -1,0 +1,17 @@
+TDAT:   private void writeFieldAccessors() {
+    JField[] serializableFields = applyFieldSerializationPolicy();
+    int fieldCount = serializableFields.length;
+
+    for (int fieldIndex = 0; fieldIndex < fieldCount; ++fieldIndex) {
+      JField serializableField = serializableFields[fieldIndex];
+
+      if (!needsAccessorMethods(serializableField)) {
+        continue;
+      }
+
+      writeFieldGet(serializableField);
+      writeFieldSet(serializableField);
+    }
+  }
+
+COM:writes accessor methods for serializable fields

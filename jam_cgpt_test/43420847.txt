@@ -1,0 +1,13 @@
+TDAT: 	private void addFolderToZip(String path, String srcFolder, ZipOutputStream zip) {
+		File folder = new File(srcFolder);
+		String listOfFiles[] = folder.list();
+		try {
+			for (int i = 0; i < listOfFiles.length; i++) {
+				this.addToZip(path + File.separator + folder.getName(), srcFolder + File.separator + listOfFiles[i], zip);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+
+COM:adds a folder and its contents to a ZipOutputStream

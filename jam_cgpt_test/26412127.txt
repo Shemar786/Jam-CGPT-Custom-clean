@@ -1,0 +1,17 @@
+TDAT:     public Object requestObject(String poolname) throws PoolManException {
+        ObjectPool pool = null;
+
+        try {
+            pool = (ObjectPool) pools.get(poolname);
+        } catch (NullPointerException ne) {
+        }
+
+        if (pool != null) {
+            return pool.requestObject();
+        } else {
+            throw new PoolManException(PoolManException.ST_CONFIG,
+                "Pool " + poolname + " not exists");
+        }
+    }
+
+COM:returns an object from a specified object pool or throws an exception if the pool does not exist

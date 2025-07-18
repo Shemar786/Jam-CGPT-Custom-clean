@@ -1,0 +1,16 @@
+TDAT: 	public void mouseClicked(MouseEvent event) {
+		// first, check to see if the layout is ready
+		if (engine != null && engine.getErrorSlices() != null) {
+			currentLayout = engine.getLayoutWindow();
+			// get the slice index
+			int index = getSliceIndexFromTime(coordToTime(event.getX()));
+			// check if it is valid
+			if (index >= 0) {
+				// ask layout to change the slice
+				currentLayout.goToSlice(index);
+			}
+			drawArea.repaint();
+		}
+	}
+
+COM:responds to a mouse click event by checking if the layout is ready, determining the slice index, and changing the slice in the current layout window if it is valid

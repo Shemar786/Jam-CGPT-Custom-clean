@@ -1,0 +1,15 @@
+TDAT:     public void writeText(char text[]) throws IOException {
+        if (text == null) {
+            // PENDING i18n
+            throw new NullPointerException(
+                  "Argument Error: One or more parameters are null.");
+        }
+        closeStartIfNecessary();
+        if (dontEscape) {
+            writer.write(text);
+        } else {
+            Util.writeText(writer, buffer, text);
+        }
+    }
+
+COM:writes text to a writer while checking for null parameters and handling character escaping if necessary

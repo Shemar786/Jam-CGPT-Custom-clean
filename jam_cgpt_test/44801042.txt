@@ -1,0 +1,16 @@
+TDAT:     public void testCreateNode() {
+        
+        System.out.println("testCreateNode");
+        
+        //it is a nuisance that Osid exceptions are not Java exceptions
+        try {
+            test_h1= populateHierarchy();
+        }
+        catch (Throwable t) {
+            fail(t.getMessage());
+        }
+        
+        cleanupHierarchy(test_h1);
+    }
+
+COM:prints a message, populates a hierarchy and cleans it up

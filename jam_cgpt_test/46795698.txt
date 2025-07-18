@@ -1,0 +1,11 @@
+TDAT:     public boolean containsKey(Object k) {
+        String key = asKey(k);
+        if(key == null)
+            return false;
+        
+        int keyLength = length(key);
+        TrieEntry entry = getNearestEntryForKey(key, keyLength);
+        return !entry.isEmpty() && key.equals(entry.key);
+    }
+
+COM:checks if a Trie data structure contains a given key and returns a boolean value accordingly

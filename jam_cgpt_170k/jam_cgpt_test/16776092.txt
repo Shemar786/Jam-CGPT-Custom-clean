@@ -1,0 +1,17 @@
+TDAT:     private void cleanAdmin(){
+       	synchronized (lock1){
+          	for (int iThread=0; iThread<maxThreads; iThread++){
+            	if (allocatedThread[iThread]){
+              		if (allThreads[iThread]!=null){
+                  		if (!allThreads[iThread].isAlive()){
+                    		allocatedThread[iThread] =false;
+                    		allThreads[iThread]      =null;
+					  		numActiveThreads--;
+                  		}
+              		}
+            	}
+        	}
+       	}
+   	}
+
+COM:cleans up inactive admin threads that have been allocated and no longer running

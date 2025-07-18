@@ -1,0 +1,11 @@
+TDAT:     private void startupConfiguration(ComponentArchive componentArchive) throws Exception {
+        Node configurationNode = componentArchive.getMx4jConfigurationNode();
+        if (configurationNode != null) {
+            ConfigurationLoader configurationLoader = new ConfigurationLoader(this);
+            Reader reader = new StringReader(XMLParseUtil.transformNodeToString(configurationNode));
+            configurationLoader.startup(reader);
+            componentArchive.setConfigurationLoader(configurationLoader);
+        }
+    }
+
+COM:loads and sets the configuration of a component archive from a provided MX4J configuration node

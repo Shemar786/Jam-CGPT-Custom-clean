@@ -1,0 +1,15 @@
+TDAT:     public void deleteVariable(Variable variable) {
+        synchronized(variables) {
+            if (!variables.contains(variable)) {
+                throw new Error("The variable \"" + variable +
+                                "\" is not part of the CSP");
+            }
+        }
+        if (variable.connections.number() > 0) {
+                throw new Error("The variable \"" + variable +
+                                "\" is still connected to constraints");
+        }
+        deleteVariable_unsafe(variable);
+    }
+
+COM:deletes a variable from a CSP (Constraint Satisfaction Problem) but only if it is not connected to any constraints

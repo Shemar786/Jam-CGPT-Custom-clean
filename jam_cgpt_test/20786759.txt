@@ -1,0 +1,11 @@
+TDAT:   private void initController() {
+    adminView = new AdminView(this);
+
+    ExplorerTreeModel explorerModel = new ExplorerTreeModel(mainModel.getGestureSetList(), NodeInfoFactory
+        .createAdminNodeInfo(this));
+    explorerTreeController = new ExplorerTreeController(this, adminView, explorerModel);
+
+    addController(explorerTreeController);
+  }
+
+COM:initializes the admin controller by creating and adding a new ExplorerTreeController with relevant parameters

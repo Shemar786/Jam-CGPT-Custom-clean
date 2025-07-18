@@ -1,0 +1,9 @@
+TDAT: 	public void addObject(String name, PpRemote object, Class<? extends PpRemote> iface, String username, String password) {
+		assert name != null;
+		assert object != null;
+		assert iface != null;
+		ObjectEntry entry = new ObjectEntry(name, object, iface, username, password);
+		objects.put(name, entry);
+	}
+
+COM:adds an object entry to a HashMap based on the provided parameters

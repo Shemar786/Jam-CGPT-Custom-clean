@@ -1,0 +1,17 @@
+TDAT: 	public Integer getPatternInstanceCount(String ps, int size) {
+		int res = GraphStorage.indexMan.getPatternCount(ps, size);
+		if (res == -1)
+			return null;
+		else
+			return res;
+		//		try {
+		//			Statement stm = conn.createStatement();
+		//			ResultSet rs = stm.executeQuery("SELECT CNT FROM PATTERN WHERE P = '" + ps + "'");
+
+		//			return rs.getInt(1); 
+		//		} catch (SQLException e) {
+		//			return null;
+		//		}
+	}
+
+COM:retrieves the instance count of a given pattern in a graph storage system, returning a null if the count is not available

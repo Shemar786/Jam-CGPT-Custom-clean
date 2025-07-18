@@ -1,0 +1,24 @@
+TDAT:   public boolean showConstituent( String GUID ) {
+    boolean result = false;
+
+    Constituent c = model.getConstituent( GUID );
+    if( c != null )
+    {
+      model.setSelection( c, null );
+
+      // move selected object into view
+      gvp.makeConstituentVisible( c );
+      /*
+        NOTE: Don't need to do anything with the table view. It already updates
+        based on the selection changed notification.
+
+        tvp.makeConstituentVisible( c );
+      */
+
+      result = true;
+    }
+
+    return result;
+  }
+
+COM:shows a constituent based on its globally unique identifier (GUID) and returns a boolean indicating whether the display was successful

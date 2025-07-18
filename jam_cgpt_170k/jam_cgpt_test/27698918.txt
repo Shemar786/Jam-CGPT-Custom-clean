@@ -1,0 +1,11 @@
+TDAT:     public File getAutoMoveDirectory(File directory) throws IllegalArgumentException {
+        directory=PathNormalizer.normalize(directory);
+        File f = (File)autoMoveDirs.get(directory);
+        if (f==null) {
+                f=new File(directory, DEFAULT_AUTOMOVE_DIRECTORY);
+                setAutoMoveDirectory0(directory, f);
+        }
+        return f;
+    }
+
+COM:returns an auto-move directory file, given a directory file, normalizes the directory path, checks if it exists in the auto-move directory hash map, creates a new directory with a default name if it doesn't exist, and returns the directory file

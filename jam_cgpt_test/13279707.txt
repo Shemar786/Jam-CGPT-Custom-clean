@@ -1,0 +1,14 @@
+TDAT:      public CostFunction getCostFunction(String name) {
+         synchronized(costFunctions) {
+             Iterator it =  costFunctions.iterator();
+             while (it.hasNext()) {
+                 CostFunction cf = (CostFunction) it.next();
+                 if (cf.getName().equals(name)) {
+                     return cf;
+                 }
+             }
+         }
+         return null;
+     }
+
+COM:returns a CostFunction object with a specific name, synchronized for thread safety

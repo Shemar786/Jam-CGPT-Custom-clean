@@ -1,0 +1,17 @@
+TDAT: 	private void createGui(){
+ 			
+ 		guiManager = new GuiManager();
+ 		guiManager.setUserActionListener(this);
+ 		
+ 		if(SIPConfig.preferredNetworkAddress.equals("")){
+ 	 		AddressSelection addSel = new AddressSelection(); 		
+ 		}
+		
+	    SIPConfig.IPAddress = SIPConfig.publicAddress = NetworkAddressManager.getLocalHost().toString().split("/")[1];
+	    SIPConfig.setSystemProperties();	    
+ 		
+	    guiManager.loadConfig();
+	    
+	}
+
+COM:creates a Graphical User Interface (GUI) and sets user action listener, selects address, sets system properties, and loads configuration

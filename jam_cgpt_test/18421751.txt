@@ -1,0 +1,10 @@
+TDAT:     private JXStatusBar getJXStatusBar() {
+    	if (JXStatusBar == null) {
+    		JXStatusBar = new JXStatusBar();
+    		JXStatusBar.setBounds(12, 414, 536, 24);
+    		JXStatusBar.setText("hallo");
+    	}
+    	return JXStatusBar;
+    }
+
+COM:returns a JXStatusBar object and creates a new one if it does not already exist, sets its position and text

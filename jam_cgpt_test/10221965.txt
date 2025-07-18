@@ -1,0 +1,23 @@
+TDAT: 	protected void fillTextareaWithStyleSheetContent(InputStream stream) {
+		try {
+			StringWriter writer = new StringWriter();
+			InputStreamReader streamReader = new InputStreamReader(stream);
+			BufferedReader buffer = new BufferedReader(streamReader);
+			String line = "";
+			boolean b = false;
+			while (null != (line = buffer.readLine())) {
+				if (b)
+					writer.write("\n");
+				writer.write(line);
+				b = true;
+			}
+			buffer.close();
+			streamReader.close();
+			String content = writer.toString();
+			setStyleSheetContent(content);
+		} catch (Exception e) {
+			handleExceptions(e);
+		}
+	}
+
+COM:fills a textarea with the content of a style sheet provided as an InputStream

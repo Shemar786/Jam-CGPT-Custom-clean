@@ -1,0 +1,20 @@
+TDAT: 	private void findMinMax(Collection<Number> c) {
+		if (c.size() == 0) {
+			min = 0.0;
+			max = 1.0;
+		} else {
+			Iterator<? extends Number> it = c.iterator();
+			double n = it.next().doubleValue();
+			min = n;
+			max = n;
+			while (it.hasNext()) {
+				n = it.next().doubleValue();
+				if (n < min)
+					min = n;
+				else if (n > max)
+					max = n;
+			}
+		}
+	}
+
+COM:finds the minimum and maximum values in a collection of numbers

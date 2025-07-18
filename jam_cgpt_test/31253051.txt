@@ -1,0 +1,17 @@
+TDAT: 	public void addGroup(int index, ActionGroup actiongroup) {
+		if (groups.contains(actiongroup))
+			return;
+		UpdatableMenu actionmenu =
+			new UpdatableMenu(source, actiongroup);
+		groups.add(index, actiongroup);
+		menuHash.put(actiongroup, actionmenu);
+		removeAll();
+		for (int j = 0; j < index; j++)
+			add((UpdatableMenu) menuHash.get(groups.get(j)));
+
+		add(actionmenu);
+		for (int k = index + 1; k < groups.size(); k++)
+			add((UpdatableMenu) menuHash.get(groups.get(k)));
+	}
+
+COM:adds an ActionGroup object to a list and a menu, and updates the index of the group accordingly

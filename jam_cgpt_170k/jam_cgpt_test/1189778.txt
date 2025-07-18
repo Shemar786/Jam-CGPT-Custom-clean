@@ -1,0 +1,9 @@
+TDAT:    public void format(Page page) {
+      page.setInt(0, flag);
+      page.setInt(INT_SIZE, 0);  // #records = 0
+      int recsize = ti.recordLength();
+      for (int pos=2*INT_SIZE; pos+recsize<=BLOCK_SIZE; pos += recsize)
+         makeDefaultRecord(page, pos);
+   }
+
+COM:formats a given page by setting the flag and number of records, and then populates the page with default records

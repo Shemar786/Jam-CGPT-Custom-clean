@@ -1,0 +1,8 @@
+TDAT:     protected void addPathMapping(String property, PathMapping mapping) {
+        noDefaultMappingValidation.add(property);
+        final Class<?> lastType = mapping.lastPathType();
+        if (lastType != Object.class)
+            inheritValidators(property, lastType, ELHelper.getLastProperty(mapping.path()));
+    }
+
+COM:adds a path mapping with a specified property and mapping, and validates that there is no default mapping before inheritance of its last type for the same property

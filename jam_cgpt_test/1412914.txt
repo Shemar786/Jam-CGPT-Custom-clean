@@ -1,0 +1,11 @@
+TDAT:     public void extendFilter(String filter_type, HashSet<String> filter_values) {
+        HashSet<String> filter = filters.get(filter_type);
+        for(String s : filter_values) {
+            if(!filter.contains(s))
+                filter.add(s);
+            else
+                filter.remove(s);
+        }
+    }
+
+COM:extends a filter by adding or removing values from a HashSet based on the filter type

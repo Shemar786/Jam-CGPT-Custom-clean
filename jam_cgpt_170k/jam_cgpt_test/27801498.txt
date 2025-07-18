@@ -1,0 +1,12 @@
+TDAT:   public void setBinWidth ( double new_bin_width ) {
+    double old_bin_width = binWidth;
+    binWidth = new_bin_width;
+    pcs.firePropertyChange(
+      "binWidth",
+      new Double( old_bin_width ),
+      new Double( new_bin_width )
+    );
+    repaint();
+  } // setBinWidth( double )
+
+COM:sets the bin width of a graphical element, updates related properties, and repaints the element

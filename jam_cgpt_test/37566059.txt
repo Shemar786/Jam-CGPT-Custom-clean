@@ -1,0 +1,12 @@
+TDAT: public int getLineJoin() {
+	if (handle == null) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+  switch(getCurrentBasicStroke().getLineJoin()) {
+    case BasicStroke.JOIN_BEVEL:
+      return SWT.JOIN_BEVEL;
+    case BasicStroke.JOIN_ROUND:
+      return SWT.JOIN_ROUND;
+  }
+  return SWT.JOIN_MITER;
+}
+
+COM:returns the line join style of the current basic stroke

@@ -1,0 +1,19 @@
+TDAT: 	private Field getFieldByName(A object, String name) throws PersistenceJDBCException {
+		
+		if (object == null || name == null)
+			return null;
+		
+		try {
+			Field[] fields = object.getClass().getDeclaredFields();
+			for (Field field : fields)
+				if (field.getName().equalsIgnoreCase(name))
+					return field;
+		} catch (SecurityException e) {
+			throw new PersistenceJDBCException(
+					"Security exception occurred when retrieving a field by its name", e);
+		}
+		
+		return null;
+	}
+
+COM:retrieves a class field of object A by its name, throwing a PersistenceJDBCException if a security exception occurs

@@ -1,0 +1,5 @@
+TDAT:     public ZtexScanBus1 (int usbVendorId, int usbProductId, boolean scanUnconfigured, boolean quiet, int interfaceVersion, String snString ) {
+	this(usbVendorId, usbProductId, scanUnconfigured, quiet, interfaceVersion, snString, -1,-1,-1,-1 );
+    }
+
+COM:This is a constructor method for the ZtexScanBus1 class that takes in several parameters and calls another constructor method with additional parameters set to default values

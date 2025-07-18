@@ -1,0 +1,16 @@
+TDAT: 	public void inputChanged(Viewer v, Object oldInput, Object newInput) {
+		if (viewer == null)
+			this.viewer = (StructuredViewer) v;
+
+		if (input == null && newInput != null) {
+			input = (IWorkspace) newInput;
+			input.addResourceChangeListener(this,
+					IResourceChangeEvent.POST_CHANGE);
+		}
+		if (newInput == null && input != null) {
+			input.removeResourceChangeListener(this);
+			input = null;
+		}
+	}
+
+COM:handles changes in input for a Viewer in a Java program

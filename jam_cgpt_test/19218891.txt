@@ -1,0 +1,16 @@
+TDAT:     public void removeUpdate(DocumentEvent e) {
+        synchronized(lock) {
+            if(open) {
+                int changeLength = e.getLength();
+                endPosition -= changeLength;
+                if(e.getOffset() < nextChar) {
+                    nextChar -= e.getLength();
+                    if(nextChar < 0) {
+                        nextChar = 0;
+                    }
+                }
+            }
+        }
+    }
+
+COM:removes a specified update from a document and synchronizes the operation

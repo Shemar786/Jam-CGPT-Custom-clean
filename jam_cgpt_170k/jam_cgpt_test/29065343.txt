@@ -1,0 +1,11 @@
+TDAT: 	private boolean canResizeColumn(Point point){
+		JTableHeader th=(JTableHeader)target;
+		TableColumnModel columnModel = th.getColumnModel();
+		int viewColumn = columnModel.getColumnIndexAtX(point.x );
+		Rectangle r=th.getHeaderRect(th.getTable().convertColumnIndexToModel(viewColumn));
+		r.grow(-3, 0); // Los tres ultimos pixels son el margen para redimensionar la columna
+		if(!r.contains(point)) return true;
+		return false;
+	}	
+
+COM:checks if a column in a JTable can be resized by a mouse click at a given point

@@ -1,0 +1,24 @@
+TDAT:     public int waitUntilFreeThread(){
+
+        int threadID=-1;
+        boolean waiting = true;
+
+        while (waiting){
+            synchronized (lock1){
+                if (numActiveThreads<maxThreads){
+                    threadID=allocateNewID();
+					waiting=false;
+                }
+            }
+ 			cleanAdmin();
+
+            /*try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } */
+        }
+    return threadID;
+   }
+
+COM:waits until a free thread is available, and then returns the ID of the allocated thread

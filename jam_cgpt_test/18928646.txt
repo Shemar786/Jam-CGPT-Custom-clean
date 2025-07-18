@@ -1,0 +1,8 @@
+TDAT:   public boolean  getHasDisplayValues() {
+    MondrianModel model = (MondrianModel) getModel();
+    mondrian.olap.Query monQuery = ((MondrianQueryAdapter)model.getQueryAdapter()).getMonQuery();
+    mondrian.olap.Parameter[] monParams = monQuery.getParameters();
+    return (monParams.length > 0);
+  }
+
+COM:returns a boolean value indicating whether the Mondrian query has any display values

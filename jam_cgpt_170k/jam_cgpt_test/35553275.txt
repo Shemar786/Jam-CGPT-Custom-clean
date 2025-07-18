@@ -1,0 +1,16 @@
+TDAT: 	private void raiseAlarm(int currentSeverity, int newSeverity, int recovery, int reason ){
+		
+		if(currentSeverity == 0){
+			//Raise a new alarm
+			raiseRadiusAlarm(newSeverity, DBDataDesc.RECOVERY_NO, reason);
+		} else {
+			if(currentSeverity != newSeverity){
+				//Clear current alarm
+				raiseRadiusAlarm(currentSeverity, DBDataDesc.RECOVERY_YES, reason);
+				//Raise new alarm
+				raiseRadiusAlarm(newSeverity, DBDataDesc.RECOVERY_NO, reason);
+			}			
+		}
+	}
+
+COM:raises an alarm based on the inputs for current severity, new severity, recovery, and reason

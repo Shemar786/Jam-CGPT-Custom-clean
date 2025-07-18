@@ -1,0 +1,12 @@
+TDAT:     private ReadOnlyLDAPUser buildUser(String userDN) throws NamingException {
+        ReadOnlyLDAPUser result;
+
+        Attributes userAttributes = ldapConnection.getLdapContext().getAttributes(userDN);
+        Attribute userName = userAttributes.get(userIdAttribute);
+
+        result = new ReadOnlyLDAPUser(userName.get().toString(), userDN, ldapHost);
+
+        return result;
+    }
+
+COM:builds a read-only LDAP user with the given userDN

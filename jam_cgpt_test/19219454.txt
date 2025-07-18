@@ -1,0 +1,10 @@
+TDAT:     protected BaseElement makeDeepCopy(BaseElement newElement) {
+        TagElement newTagElement = (TagElement)super.makeDeepCopy(newElement);
+        newTagElement.tagName = this.tagName;
+        // copy element content
+        newTagElement.elementContent = elementContent.makeDeepCopy(
+                newTagElement.elementContent);
+        return newTagElement;
+    }
+
+COM:creates a deep copy of a BaseElement object with its content and returns the copied element

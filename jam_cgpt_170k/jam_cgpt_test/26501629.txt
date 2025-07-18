@@ -1,0 +1,12 @@
+TDAT:   public void setAcceptorDaemonThread(int maxThread) {
+    if (maxThread <= 0) {
+      throw new IllegalArgumentException("The size is less than zero");
+    } else if (_theAcceptorDaemons.size() > 0) {
+      throw new IllegalStateException(
+        "Cannot change the number of acceptor daemons on a running server socket");
+    }
+
+    _theAcceptorDaemonThread = maxThread;
+  }
+
+COM:sets the maximum number of acceptor daemon threads for a server socket, but throws exceptions if the input is invalid or if the server socket is already running

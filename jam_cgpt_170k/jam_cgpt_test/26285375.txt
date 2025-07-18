@@ -1,0 +1,12 @@
+TDAT:     private void setColumnSpecs (double column[]) {
+        // Copy columns
+        columnSpec = new double[column.length];
+        System.arraycopy (column, 0, columnSpec, 0, getNumColumns());
+
+        // Make sure columns are valid
+        for (int counter = 0; counter < getNumColumns(); counter++)
+            columnSpec[counter] = ensureCorrectSpecSize(columnSpec[counter]);
+        layoutIsChanged();
+    }
+
+COM:sets column specifications for a layout and ensures that they are valid

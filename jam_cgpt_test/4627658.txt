@@ -1,0 +1,14 @@
+TDAT:     public ResourceTO read(final String name) {
+        ResourceTO resourceTO = null;
+
+        try {
+            resourceTO = restTemplate.getForObject(
+                    baseURL + "resource/read/" + name + ".json",
+                    ResourceTO.class);
+        } catch (SyncopeClientCompositeErrorException e) {
+            LOG.error("While reading a resource", e);
+        }
+        return resourceTO;
+    }
+
+COM:reads a resource by making a RESTful API call with a specified name and returns the corresponding ResourceTO object

@@ -1,0 +1,14 @@
+TDAT: 	public QueryResponse getJob(String serverId, String jobId) throws PsiscoreException, InvalidArgumentException, JobStillRunningException{
+		
+		QueryResponse queryResponse = null;
+		
+		if (!psiscoreServerClients.containsKey(serverId)){
+			throw new InvalidArgumentException("There is no job with this id", new PsiscoreFault());
+		}
+		SimplePsiscoreClient client = psiscoreServerClients.get(serverId);
+		queryResponse = client.getJob(jobId);
+ 
+		return queryResponse;
+	}
+
+COM:retrieves a job from a server using a server ID and job ID and throws exceptions for invalid arguments, still running jobs, and if no job with the given ID exists

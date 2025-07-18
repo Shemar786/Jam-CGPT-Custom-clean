@@ -1,0 +1,11 @@
+TDAT:     public void testIllegalAttributeNodeRemoval() throws Exception {
+        _element.setAttributeNode( _heightAttribute );
+        try {
+            _element.removeAttributeNode( _weightAttribute );
+            fail( "Should have rejected attempt to remove unknown attribute node" );
+        } catch (DOMException e ) {
+            assertEquals( "Reason for failure", DOMException.NOT_FOUND_ERR, e.code );
+        }
+    }
+
+COM:tests for the rejection of an attempt to remove an unknown attribute node from an element

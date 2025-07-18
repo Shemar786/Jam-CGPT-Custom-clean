@@ -1,0 +1,14 @@
+TDAT: 	private boolean wouldMakeEmptyTree() {
+		TreePath path = getSelectionPath();
+		if ( path != null ) {
+			DefaultMutableTreeNode selection = (DefaultMutableTreeNode)
+				path.getLastPathComponent();
+			DefaultMutableTreeNode pNode = (DefaultMutableTreeNode) selection.getParent();
+			if ( pNode.isRoot() && ( pNode.getChildCount() == 1 ) ) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+COM:checks if the current selection in a tree would result in an empty tree when removed

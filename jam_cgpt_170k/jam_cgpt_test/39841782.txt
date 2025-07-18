@@ -1,0 +1,16 @@
+TDAT:     public void testGetSimpleInt() {
+
+        try {
+            Object value = dynaForm.get("intProperty");
+            assertNotNull("Got a value", value);
+            assertTrue("Got correct type", (value instanceof Integer));
+            assertEquals("Got correct value",
+                    ((Integer) value).intValue(),
+                    (int) 123);
+        } catch (Throwable t) {
+            fail("Exception: " + t);
+        }
+
+    }
+
+COM:This is a test method in Java that checks if the value retrieved from a dynamically generated form for an integer property is not null, is of correct type, and has correct value

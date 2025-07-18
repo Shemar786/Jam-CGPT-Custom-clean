@@ -1,0 +1,16 @@
+TDAT: 	public ArrayList getAnnoStatus() {
+		String t = multiDoc.get("itemannostatus");
+		//System.out.println("getAnnoStatus() String: " + t );
+		if (t == null || t.trim().length() == 0) {
+			return null;
+		}
+		else {
+			String[] tmp = t.split("\\s+");
+			ArrayList list = new ArrayList(tmp.length);
+			for (int i = 0; i < tmp.length; i++)
+				list.add(tmp[i].replaceAll("\\+", " "));
+			return list;
+		}
+	}
+
+COM:returns an ArrayList of item annotation statuses after processing and parsing a string

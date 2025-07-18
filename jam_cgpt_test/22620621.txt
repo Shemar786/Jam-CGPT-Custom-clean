@@ -1,0 +1,15 @@
+TDAT: 	public Element getInputHelperElement(String xpath) {
+		Element inputHelper = null;
+		if (!this.isEditMode())
+			return null;
+		String inputHelperPath = this.rhelper.getInputHelperFile(xpath);
+		if (inputHelperPath != null) {
+			String path = "/editor/input_helpers/" + inputHelperPath;
+			inputHelper = DocumentHelper.createElement("div")
+				.addAttribute("class", "input-helper");
+			inputHelper.setText("<%@ include file=\"" + path + "\" %>");
+		}
+		return inputHelper;
+	}
+
+COM:returns an XML element for a specified XPath if the page is in edit mode and the input helper file exists

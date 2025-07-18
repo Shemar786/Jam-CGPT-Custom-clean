@@ -1,0 +1,10 @@
+TDAT:     public boolean connect(){
+        if(defServerURL==null){
+            SystemConsole.println("Server url not defined, first set using setServerURL(...)");
+            return false;
+        }
+        SystemConsole.println("Server:" +defServerURL);
+        return connect(defServerURL, defMbeanName);
+    }
+
+COM:checks if the server URL is defined and if so, prints the server URL and connects to it, otherwise prompts the user to set the server URL and returns false

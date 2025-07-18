@@ -1,0 +1,11 @@
+TDAT:   protected void addChkCloseAfterSend(JPanel panel) {
+    Configuration config = Configuration.getConfiguration();
+    chkCloseAfterSend = Utilities.createJCheckBox(
+        GT._("&Close after sending"),
+        config.getBoolean(
+            null,
+            ConfigurationValueBoolean.CLOSE_FULL));
+    panel.add(chkCloseAfterSend);
+  }
+
+COM:adds a checkbox to a specified JPanel for configuring whether a window should close after sending a message

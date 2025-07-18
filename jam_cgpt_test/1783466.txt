@@ -1,0 +1,10 @@
+TDAT:     public void testFormDetection() throws Exception {
+        _body.insertBefore( _buttonInput, _form );
+        _body.appendChild( _textField );
+        _body.appendChild( _htmlDocument.createElement( "form" ) );
+
+        assertNull( "button should not be part of any form", _buttonInput.getForm() );
+        assertSame( "Form for text field", _form, _textField.getForm() );
+    }
+
+COM:tests form detection by inserting an input button before a form, appending a text field and a new form to a body, asserting that the button is not part of any form and that the form for the text field is the same as a specified form

@@ -1,0 +1,11 @@
+TDAT:   public String getMobileNumberOfFirstEmployment() {
+    String mobileNumber = "";
+
+    if (this.employments != null && this.employments.size() > 0 && this.employments.get(0).getMobileTelephoneNumber() != null) {
+      mobileNumber = this.employments.get(0).getMobileTelephoneNumber().getPhoneNumber();
+    }
+
+    return mobileNumber;
+  }
+
+COM:retrieves the mobile phone number of the first employment record (if available) for an instance of a class

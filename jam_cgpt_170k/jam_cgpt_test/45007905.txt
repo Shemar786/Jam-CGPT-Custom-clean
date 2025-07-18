@@ -1,0 +1,9 @@
+TDAT:     public void encodeMutablePlanets(BinWriter out, Collection<Integer> ids) throws IOException {
+        out.println(ids.size(), "mutableplanetsize");
+        for (Integer id : ids) {
+            out.println(id, "planetid");
+            getPlanet(id).encodeMutableFields(out, this);
+        }
+    }
+
+COM:encodes mutable properties of a collection of planets identified by their respective IDs into a binary format using a provided BinWriter output object

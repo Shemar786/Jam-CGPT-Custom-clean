@@ -1,0 +1,18 @@
+TDAT:     public void stop() {
+
+        if (log.isDebugEnabled())
+            log.debug(sm.getString("hostConfig.stop"));
+
+        if (oname != null) {
+            try {
+                Registry.getRegistry(null, null).unregisterComponent(oname);
+            } catch (Exception e) {
+                log.error(sm.getString("hostConfig.jmx.unregister", oname), e);
+            }
+        }
+        oname = null;
+        configBase = null;
+
+    }
+
+COM:stops the host configuration and unregisters its associated component from the registry if available

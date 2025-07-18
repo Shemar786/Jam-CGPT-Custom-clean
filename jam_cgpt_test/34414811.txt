@@ -1,0 +1,17 @@
+TDAT: 	private void removePermission(String userId){
+		String doc_name = "policy.xml";
+		String prop_name = "User[@id='"+userId+"']";
+		String prop_path = "/Policy/Users";
+		String user_id = "";
+		boolean system = true;
+		DeletePropertyThread dpt = _containerEditor.deleteProperty(prop_name, prop_path, doc_name, user_id, system);
+		dpt.start();
+		try{
+			dpt.join();
+		}
+		catch(InterruptedException ie){
+			ie.printStackTrace(System.err);
+		}
+	}
+
+COM:removes a user's permission from a policy XML file using a DeletePropertyThread

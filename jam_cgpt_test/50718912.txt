@@ -1,0 +1,20 @@
+TDAT:    private void createAboutPanel() {
+
+	   aboutPanel = new JPanel();
+	   
+	   JPanel contenpane = new JPanel();
+	   
+	   TitledBorder tb = BorderFactory.createTitledBorder("About");
+	   tb.setTitleJustification(TitledBorder.CENTER);
+	   
+	   contenpane.add(new JLabel("TN5250j"));
+	   contenpane.add(new JLabel("Version: " + TN5250jConstants.tn5250jRelease + TN5250jConstants.tn5250jVersion + TN5250jConstants.tn5250jSubVer));
+	   
+	   contenpane.setLayout(new BoxLayout(contenpane, BoxLayout.Y_AXIS));
+	   
+	   aboutPanel.add(contenpane);
+	   aboutPanel.setBorder(tb);
+	   
+   }
+
+COM:creates an "About" panel with the title and version of "TN5250j"

@@ -1,0 +1,11 @@
+TDAT:   public Object decode(Object pObject) throws DecoderException {
+    if (pObject instanceof byte[]) {
+      return decode((byte[]) pObject);
+    } else if (pObject instanceof String) {
+      return decode((String) pObject);
+    } else {
+      throw new DecoderException("Parameter supplied to Base64 decode is not a byte[] or a String");
+    }
+  }
+
+COM:decodes a given object, which must be either a byte array or a string, using Base64 encoding and throws an exception if the parameter is not of the required type

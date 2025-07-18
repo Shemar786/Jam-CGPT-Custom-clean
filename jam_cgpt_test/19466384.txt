@@ -1,0 +1,17 @@
+TDAT: 	protected void addPeriodPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PeriodicTaskType_period_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PeriodicTaskType_period_feature", "_UI_PeriodicTaskType_type"),
+				 TaskingPackage.Literals.PERIODIC_TASK_TYPE__PERIOD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "period" feature of a PeriodicTaskType object, using various parameters to create an item property descriptor

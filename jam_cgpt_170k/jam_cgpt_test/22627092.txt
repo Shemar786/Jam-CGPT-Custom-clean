@@ -1,0 +1,11 @@
+TDAT: 	public String getHasChallengingLearningContexts() {
+		ResultDocList annoResults = ( (ItemDocReader)primaryResultDoc.getDocReader() ).getAnnotationResultDocs();
+		for ( int i = 0; i < annoResults.size(); i++ ) {
+			if ( ( (DleseAnnoDocReader)annoResults.get(i).getDocReader() ).getType().equals( "Information on challenging teaching and learning situations" ) ) {
+				return "true";
+			}
+		}
+		return "false";
+	}
+
+COM:retrieves whether there are challenging teaching and learning situations in the result document list

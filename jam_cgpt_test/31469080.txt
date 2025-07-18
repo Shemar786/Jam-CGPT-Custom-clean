@@ -1,0 +1,14 @@
+TDAT:     public Node cloneNode(boolean deep) {
+
+    	DocumentTypeImpl newnode = (DocumentTypeImpl)super.cloneNode(deep);
+
+    	// NamedNodeMaps must be cloned explicitly, to avoid sharing them.
+    	newnode.entities  = entities.cloneMap();
+    	newnode.notations = notations.cloneMap();
+    	newnode.elements  = elements.cloneMap();
+
+    	return newnode;
+
+    } // cloneNode(boolean):Node
+
+COM:clones a node and its child nodes to create a new node object, with an option to perform a deep or shallow copy

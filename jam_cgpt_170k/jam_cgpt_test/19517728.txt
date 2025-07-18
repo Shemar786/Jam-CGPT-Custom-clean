@@ -1,0 +1,16 @@
+TDAT: 	private void configureDebugOptions() {
+		if (isDebugging()) {
+			
+			// Global plugin debug
+			String option = Platform.getDebugOption(GLOBAL_TRACE);
+			if (option != null)
+				PatternUtils.DEBUG = option.equalsIgnoreCase("true"); //$NON-NLS-1$
+
+			// Wizard debug
+			option = Platform.getDebugOption(WIZARD_TRACE);
+			if (option != null)
+				WizardUtils.DEBUG = option.equalsIgnoreCase("true"); //$NON-NLS-1$
+		}
+	}
+
+COM:sets the debugging options for the global plugin and wizard based on whether or not the program is currently in debugging mode

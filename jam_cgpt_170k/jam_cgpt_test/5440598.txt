@@ -1,0 +1,8 @@
+TDAT:     public void addSecurityRoleRef(I_JoSecurityRoleRef securityRoleRef) {
+        this.securityRoleRefs.put(securityRoleRef.getRoleName(), securityRoleRef);
+        if (securityRoleRef.getRoleLink() != null) {
+            this.securityRoleRefsByLink.put(securityRoleRef.getRoleLink(), securityRoleRef);
+        }
+    }
+
+COM:adds security role references and maps them by role name and role link

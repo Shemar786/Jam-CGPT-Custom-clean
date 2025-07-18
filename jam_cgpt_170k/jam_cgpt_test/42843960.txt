@@ -1,0 +1,14 @@
+TDAT: 	private Point getPossibleField(Item item){
+		for (int j = 0; j < invHeight; j++){
+			for (int i = 0; i < invWidth; i++){
+				if (fields[i][j]!=null){
+					if (fields[i][j].getItem().getUid() == item.getUid()) 
+						if (!fields[i][j].isFull()) return new Point(i, j);
+				}
+			}
+		}
+		
+		return getFreeField();
+	}
+
+COM:searches for a possible field to place an item in a two-dimensional array and returns a Point object with the coordinates of the field, or returns a free field if no match is found

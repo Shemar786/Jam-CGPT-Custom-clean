@@ -1,0 +1,16 @@
+TDAT:     public void initializeAndWait() throws XMPPException {
+        this.initialize();
+        try {
+            System.out.print("Initializing...");
+            while (!this.isInitialized()) {
+                System.out.print(".");
+                Thread.sleep(1000);
+            }
+            System.out.print("Resolved\n");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+COM:initializes a process and waits for it to be fully initialized before continuing, throwing an exception if there is an error

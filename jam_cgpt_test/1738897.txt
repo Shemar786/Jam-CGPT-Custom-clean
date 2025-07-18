@@ -1,0 +1,12 @@
+TDAT:     public void setMColumns(List a) {
+        if (a != null) {
+            Iterator it = a.iterator();
+            mColumns = new ArrayList();
+            int index = 0;
+            while (it.hasNext()) {
+                mColumns.add(new ColumnBean(index++, it.next().toString(), this));
+            }
+        }
+    }    
+
+COM:sets the mColumns List with ColumnBeans created from the input List with an index appended to each ColumnBean's string value

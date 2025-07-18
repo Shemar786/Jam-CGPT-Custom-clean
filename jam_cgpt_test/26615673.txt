@@ -1,0 +1,24 @@
+TDAT:     public Object getSeletedInstance() {
+        if (_sl == null)
+            return null;
+
+        Object o = _model.getSelectedItem();
+
+        if (o == null)
+            return null;
+
+        String Name = o.toString();
+        SelectionEntry se = _sl.getEntryFromName(Name);
+
+        if (se == null)
+            return null;
+
+        try {
+            return Class.forName(se.getValue()).newInstance();
+        } catch (Exception e) {
+        }
+
+        return null;
+    }
+
+COM:returns an instance of a selected object based on a specified model and selection entry

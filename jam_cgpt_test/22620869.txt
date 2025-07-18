@@ -1,0 +1,8 @@
+TDAT: 	public boolean isLastInSubList() {
+		if (parent == null || parent.getSubList() == null || parent.getSubList().size() == 0) {
+			return false;
+		}
+		return (parent.getSubList().indexOf(this) == parent.getSubList().size() - 1);
+	}
+
+COM:checks if the current object is the last element in its parent's sublist

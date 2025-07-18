@@ -1,0 +1,9 @@
+TDAT: 	public void getColumn(int iCol, double [] column) {
+		//double [] column = new double [m_nRows + 1];
+		for (int iRow = 1; iRow <= m_nRows; iRow++) {
+			column[iRow] = at(iRow, iCol);
+		}
+		//return column;
+	} // getColumn
+
+COM:retrieves a specified column from a matrix and stores it in a given double array

@@ -1,0 +1,17 @@
+TDAT:   public IndexReader getIndexReader() throws RegainException {
+    if (mIndexReader == null) {
+      if (!mWorkingIndexDir.exists()) {
+        checkForIndexUpdate();
+      }
+
+      try {
+        mIndexReader = IndexReader.open(FSDirectory.open(mWorkingIndexDir));
+      } catch (IOException exc) {
+        throw new RegainException("Creating index reader failed", exc);
+      }
+    }
+
+    return mIndexReader;
+  }
+
+COM:returns an IndexReader object, which, if not already created, is created by opening a directory and is checked for updates before being returned

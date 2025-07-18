@@ -1,0 +1,14 @@
+TDAT: 	protected String getTermStringFromStringArray(String[] vals) {
+		if (vals == null) {
+			return "";
+		}
+		String tmp = "";
+		try {
+			for (int i = 0; i < vals.length; i++) {
+				tmp += " " + vals[i].substring(vals[i].lastIndexOf(":") + 1, vals[i].length());
+			}
+		} catch (Throwable e) {}
+		return tmp.trim();
+	}
+
+COM:takes in an array of Strings and returns a concatenated substring from each String, starting at the last occurrence of the ":" character and removing any leading or trailing white space

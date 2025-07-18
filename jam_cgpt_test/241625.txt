@@ -1,0 +1,13 @@
+TDAT: 	public Date getCompletePeriodStart() {
+		Calendar cal = Calendar.getInstance();
+
+		Date startDate = cal.getTime();
+		for (entry currentEntry : client.getEntries().getJournal(false)) {
+			if (currentEntry.getDate().getTime() < startDate.getTime()) {
+				startDate = currentEntry.getDate();
+			}
+		}
+		return startDate;
+	}
+
+COM:returns the earliest date from a client's journal entries

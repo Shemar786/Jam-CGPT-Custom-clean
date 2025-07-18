@@ -1,0 +1,16 @@
+TDAT: 	public void verifyPredicateSignature(final SMTPredicateSymbol symbol) {
+		for (final SMTPredicateSymbol predSymbol : preds) {
+
+			// Verify if the predicates have the same name
+			if (symbol.getName().equals(predSymbol.getName())) {
+
+				if (verifyRank(symbol.getArgSorts(), predSymbol.getArgSorts())) {
+					return;
+				}
+			}
+		}
+		throw new IllegalArgumentException("Predicate " + symbol
+				+ " is not declared in the signature.");
+	}
+
+COM:verifies if a given predicate symbol matches the predicates in the signature

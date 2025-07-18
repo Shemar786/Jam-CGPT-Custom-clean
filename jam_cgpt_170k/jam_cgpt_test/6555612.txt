@@ -1,0 +1,27 @@
+TDAT: 	public MBBan update(MBBan mbBan, boolean merge) throws SystemException {
+		boolean isNew = mbBan.isNew();
+
+		for (ModelListener listener : listeners) {
+			if (isNew) {
+				listener.onBeforeCreate(mbBan);
+			}
+			else {
+				listener.onBeforeUpdate(mbBan);
+			}
+		}
+
+		mbBan = updateImpl(mbBan, merge);
+
+		for (ModelListener listener : listeners) {
+			if (isNew) {
+				listener.onAfterCreate(mbBan);
+			}
+			else {
+				listener.onAfterUpdate(mbBan);
+			}
+		}
+
+		return mbBan;
+	}
+
+COM:updates an MBBan object while triggering events for listeners before and after creation or update

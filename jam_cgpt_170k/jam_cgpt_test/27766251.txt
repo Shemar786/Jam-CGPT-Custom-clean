@@ -1,0 +1,16 @@
+TDAT:     public Object create(final Configuration conf, final IChannel aChannel) throws JCastException, ConfigurationException {
+
+        if ( null == conf && null == aChannel)
+            throw new IllegalArgumentException( "Parameters can not be null!" );
+        
+        String sourceThreadName = conf.getChild("type").getValue();
+        
+        Object sourceThread = create(sourceThreadName, aChannel);
+
+        ( (Configurable)sourceThread ).configure(conf);
+        
+        return sourceThread;
+        
+    }
+
+COM:creates and configures a configurable object based on a provided configuration and channel, and then returns the object

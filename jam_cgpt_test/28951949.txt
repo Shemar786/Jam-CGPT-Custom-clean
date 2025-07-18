@@ -1,0 +1,12 @@
+TDAT:     public void addPatientId(PatientID patientId, String newId) {
+        // Save the ID using the namespace
+        if (namespaceId != null) {
+            patientId.addId(namespaceId, newId);
+        }
+        // Save the id using the universalId and type
+        if (universalKey != null) {
+            patientId.addId(universalKey, newId);
+        }
+    }
+
+COM:adds a new ID to a patient's ID record, either using a specific namespace or a universal key

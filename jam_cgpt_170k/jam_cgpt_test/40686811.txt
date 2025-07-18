@@ -1,0 +1,16 @@
+TDAT:   public void initSocket() {
+    try {
+      in = new InputStreamReader(socket.getInputStream(), "UTF-8");
+      out = socket.getOutputStream();
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
+    new Thread(new Runnable() {
+      public void run() {
+        reading();
+      }
+    }).start();
+  }
+
+COM:initializes a socket, sets the input and output streams, creates a new thread for reading input, and catches any IOExceptions

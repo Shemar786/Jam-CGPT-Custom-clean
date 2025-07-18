@@ -1,0 +1,25 @@
+TDAT: 	public boolean reviewHandler(Review handlerReview) {
+		try {
+			PersistentSession session = GoodReading3PersistentManager
+			.instance().getSession();
+	PersistentTransaction t = session.beginTransaction();
+			handlerReview.setState(1);
+			boolean flag = handlerReview.save();
+			t.commit();
+			session.clear();
+			return flag;
+		} catch (PersistentException e) {
+			try {
+				serverManager.printToLog("Error: trying to rollback");
+				_transaction.rollback();
+				serverManager.printToLog("rollback succeed");
+
+			} catch (PersistentException e1) {
+				serverManager.printToLog("Error while trying to rollback");
+			}
+		}
+		return _flag;
+
+	}
+
+COM:handles a review by setting its state to 1, saving it, and returning a boolean flag, while also handling potential exceptions

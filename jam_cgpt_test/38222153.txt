@@ -1,0 +1,10 @@
+TDAT:   public void setArray(CVariant[] value) {
+    this.type = ARRAY;
+    if (value != null) {
+      this.value = new CVariant[value.length];
+      System.arraycopy(value, 0, this.value, 0, value.length);
+    } else
+      this.value = null;
+  }
+
+COM:sets the array value of a CVariant object, copying the values from the input array

@@ -1,0 +1,17 @@
+TDAT: 	private void addText(String s, boolean bold){
+		Document d = t.getDocument();
+		StyleContext sc = new StyleContext();
+		NamedStyle ns = sc.new NamedStyle();
+		if (bold)
+			StyleConstants.setBold(ns, true);
+		
+		try {
+			d.insertString(d.getLength(), s, ns);
+			d.insertString(d.getLength(), System.getProperty("line.separator"), ns);
+		} catch (BadLocationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+COM:adds text to a document, with optional bold formatting

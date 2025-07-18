@@ -1,0 +1,10 @@
+TDAT:     private void setAccessed(OBEXElement file) {
+        try {
+            window.getAccessedTextField().setText("-");
+            window.getAccessedTextField().setText(format.format(file.getAccessed()));
+        } catch (Exception exc) {
+            log.warn("Cannot set the formatted last accessed date", exc);
+        }
+    }
+
+COM:sets the last accessed date of a file to a formatted text field, and logs a warning if an exception occurs

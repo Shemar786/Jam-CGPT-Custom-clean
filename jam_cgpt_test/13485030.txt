@@ -1,0 +1,8 @@
+TDAT:     /*
+     * public void visit_aswrange(Instruction inst) { Expr end = (Expr)
+     * stack.pop(Type.INT); Expr start = (Expr) stack.pop(Type.INT); Expr array =
+     * (Expr) stack.pop(new ArrayType(Type.OBJECT,1));
+     * 
+     * addStmt(new SRStmt(array, start, end)); }
+
+COM:visits an array range in an instruction and adds a statement with the array, start, and end parameters

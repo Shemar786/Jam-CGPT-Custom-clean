@@ -1,0 +1,16 @@
+TDAT: 	public int compareTo(Event event, Event e) {
+		int t = event.getTime().compareTo(e.getTime());
+		if (t == 0) {
+			if (event.getPriority() < e.getPriority()) {
+				return 1;
+			} else if (event.getPriority() > e.getPriority()) {
+				return -1;
+			} else {
+				return event.getId().compareTo(e.getId());
+			}
+		} else {
+			return t;
+		}
+	}
+
+COM:compares two events based on their time, priority, and ID

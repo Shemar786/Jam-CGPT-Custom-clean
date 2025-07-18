@@ -1,0 +1,11 @@
+TDAT:     public void mergeKill(Set kill) {
+        grow(kill.size());
+    big_loop:
+        for (Iterator i = kill.iterator(); i.hasNext(); ) {
+            LocalInfo li2 = (LocalInfo) i.next();
+	    if (!containsSlot(li2.getSlot()))
+		add(li2.getLocalInfo());
+        }
+    }
+
+COM:merges the elements in the passed Set and invokes the grow method to adjust the size of the set accordingly

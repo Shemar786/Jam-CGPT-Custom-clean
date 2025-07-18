@@ -1,0 +1,11 @@
+TDAT: //    public void testGetName() throws Exception {
+//        System.out.println("testGetName");
+//        
+//        // Add your test code below by replacing the default call to fail.
+//        String dbName = this.getProp("dbName");
+//        String name = this.dbService.getName();
+//        assertEquals("Returned unexpected db name", dbName, name);
+//        
+//    }
+
+COM:is a test method that checks whether the name returned by a database service matches a property value

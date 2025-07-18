@@ -1,0 +1,9 @@
+TDAT: 	public boolean isConfirmed() {
+		if (!(getParentOrganisation() instanceof Collaboration)) {
+			throw new UnsupportedOperationException("MembershipBean.isConfirmed() has been used inappropriately - this method only has meaning if the parentOrganisation field references a Collaboration object. ");
+		}
+		return (getConfirmedByOwner() != null &&
+				getConfirmedByOwner().getTime() <= new java.util.Date().getTime());
+	}
+
+COM:checks if a membership in a collaboration has been confirmed by its owner

@@ -1,0 +1,21 @@
+TDAT:     public void recordCookie(HttpCookie cookie) {
+	if (!checkIfCookieOK(cookie)) {
+	    return;
+	}
+	synchronized (cookieJar) {
+	    
+	    String domain = cookie.getDomain().toLowerCase();
+
+	    Vector cookieList = (Vector)cookieJar.get(domain);
+	    if (cookieList == null) {
+		cookieList = new Vector();
+	    }
+
+	    addOrReplaceCookie(cookieList, cookie);
+	    cookieJar.put(domain, cookieList);
+	    
+	}
+
+    }
+
+COM:records a HTTP cookie and adds it to a synchronized collection if it passes a check

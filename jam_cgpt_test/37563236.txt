@@ -1,0 +1,12 @@
+TDAT: public void insert (String string) {
+	checkWidget ();
+	if (string == null) error (SWT.ERROR_NULL_ARGUMENT);
+  CText cText = (CText)handle;
+//	if (hooks (SWT.Verify) || filters (SWT.Verify)) {
+//		string = verifyText (string, cText.getSelectionStart(), cText.getSelectionEnd(), null);
+//		if (string == null) return;
+//	}
+  cText.replaceSelection(string);
+}
+
+COM:inserts a given String into a CText field, checking for errors and allowing for text verification

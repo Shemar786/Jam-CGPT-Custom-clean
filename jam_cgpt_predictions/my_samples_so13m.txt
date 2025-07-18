@@ -1,0 +1,13 @@
+How many heads of the departments are older than 56 ?	How many heads of the departments are older than 56 ?
+SQL:	select count(*) from department where department_id  >  56<|endoftext|>ENG:	what is the average salary of employees who do not have any department as a prerequisite?
+SQL:	select avg(salary) from employees where department_id  =  "null"<|endoftext|>ENG:
+List the name, born state and age of the heads of departments ordered by age.	List the name, born state and age of the heads of departments ordered by age.
+SQL:	SELECT name ,  birth_state ,  age FROM department ORDER BY age<|endoftext|>ENG:	What are the names, ages, and cities of the deparments, sorted by age?
+SQL:	SELECT name ,  birth_state ,  age FROM department ORDER BY age<|endoftext|>ENG:
+List the creation year, name and budget of each department.	List the creation year, name and budget of each department.
+SQL:	SELECT T1.department_name ,  T2.budget_type_code ,  T2.department_name FROM departments AS T1 JOIN budget AS T2 ON T1.department_id  =  T2.department_id<|endoftext|>ENG:	
+What are the maximum and minimum budget of the departments?	What are the maximum and minimum budget of the departments?
+SQL:	SELECT max(budget_million) ,  min(budget_million) FROM department<|endoftext|>ENG:	Return the maximum and minimum budgets in millions for departments.
+SQL:	SELECT max(budget_million) ,  min(budget_million) FROM department<|endoftext|>ENG:	List the title
+What is the average number of employees of the departments whose rank is between 10 and 15?	What is the average number of employees of the departments whose rank is between 10 and 15?
+SQL:	SELECT avg(T2.salary) FROM department_stores AS T1 JOIN departments AS T2 ON T1.department_id  =  T2.department_id WHERE T1.rank  =  10 OR T1.rank  =  15<|endoftext|>ENG

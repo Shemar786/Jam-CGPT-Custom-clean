@@ -1,0 +1,8 @@
+TDAT:     private void connect(JRadioButtonMenuItem source, UICToolBar tb, int arg, boolean icons) {
+        new AbstractButtonAction(tb, "setShowText",
+            AbstractButtonAction.createArguments().addStaticArgument(arg)).add(source);
+        new AbstractButtonAction(tb, "setShowIcons",
+            AbstractButtonAction.createArguments().addStaticArgument(icons)).add(source);
+    }
+
+COM:connects a JRadioButtonMenuItem with a UIToolBar and sets its text and icon visibility properties

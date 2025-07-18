@@ -1,0 +1,13 @@
+TDAT: 	public String getDynamicTableName(DynamicTable table, String datatype) {
+		assert (!datatype.equals("root")) : "root isn't a datatype.";
+		
+		if (table == DynamicTable.DataSetInfo) 
+			return datatype + "DataSetInfo";
+		if (table == DynamicTable.AtomInfoDense)
+			return datatype + "AtomInfoDense";
+		if (table == DynamicTable.AtomInfoSparse)
+			return datatype + "AtomInfoSparse";
+		else return null;
+	}
+
+COM:takes in a DynamicTable enum and a datatype String and returns a specific table name based on the input values

@@ -1,0 +1,25 @@
+TDAT: 	private String getCollectionName() {
+		if (collectionName == null) {
+			collectionName = mdp.getCollectionName();
+
+			if (!hasValue(collectionName)) {
+				collectionName = mdp.getProperty("setName");
+			}
+
+			if (!hasValue(collectionName)) {
+				ServiceDescriptionReader sd = mdp.getServiceDescription();
+				if (sd != null) {
+					try {
+						collectionName = sd.getTitle();
+					} catch (Throwable t) {}
+				}
+			}
+
+			if (!hasValue(collectionName)) {
+				collectionName = "Unnamed Collection";
+			}
+		}
+		return collectionName;
+	}
+
+COM:returns the name of a collection, retrieving it from various sources if not already set

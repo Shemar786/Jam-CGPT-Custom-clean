@@ -1,0 +1,14 @@
+TDAT:   public void setSource(String sourceStr) throws RegainException {
+
+    try {
+      _parser.setKind(ASTParser.K_COMPILATION_UNIT);
+      _parser.setSource(sourceStr.toString().toCharArray());
+      _unit = (CompilationUnit) _parser.createAST(null);
+
+    } catch (Exception ex) {
+      throw new RegainException("Error parsing Java file", ex);
+    }
+
+  }
+
+COM:sets the source code for parsing and creates an abstract syntax tree (AST) from it, and throws a RegainException if there is an error in parsing the Java file

@@ -1,0 +1,21 @@
+TDAT: 	public int compareTo(LockInformation other) {
+		if (other == null) {
+			return 1;
+		}
+
+		int diff = (int) Math.signum(lockOrderNumber
+				- other.getLockOrderNumber());
+		if (diff == 0) {
+			CompareToHelper helper = null;
+			SingletonPool pool = SingletonPool.getSharedInstance();
+			try {
+				helper = pool.retrieveSingleton(CompareToHelper.class);
+				return helper.compareTo(lockKey, other.getLockKey());
+			} catch (ReflectionException exception) {
+				throw new RuntimeException(exception);
+			}
+		}
+		return diff;
+	}
+
+COM:compares LockInformation objects based on their lockOrderNumber and lockKey properties

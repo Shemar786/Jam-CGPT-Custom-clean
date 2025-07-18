@@ -1,0 +1,16 @@
+TDAT:     public boolean isPrimaryKey()  {
+        PrimaryKey pk = getTable().getPrimaryKey();
+        if (pk == null) {
+            return false;
+        }
+        Iterator iter = getTable().getPrimaryKey().getColumns().iterator();
+        while (iter.hasNext()) {
+            Column c = (Column)iter.next();
+            if (this.equals(c)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+COM:determines if a given column is part of the primary key for its associated database table

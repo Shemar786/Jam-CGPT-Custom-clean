@@ -1,0 +1,14 @@
+TDAT:     public void addSortedColumn(int column, boolean ascending) {
+        this.ascending = ascending;
+        sortingColumns.addElement(new Integer(column));
+        sort();
+
+        // update the renderer
+        renderer.setPressedColumn(getSortedColumns());
+        renderer.setAscending(this.ascending);
+        tableView.getTableHeader().repaint();
+
+        fireTableChanged(new TableModelEvent(this));
+    }
+
+COM:adds a column to be sorted in ascending or descending order and updates the corresponding table renderer

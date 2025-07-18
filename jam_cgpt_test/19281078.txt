@@ -1,0 +1,13 @@
+TDAT: 	public String toString() {
+		final StringBuffer buf = new StringBuffer();
+		buf.append("    AbstractParamType:")
+				.append(" {Name=").append(iName)
+				.append(", ParamType=").append(iParamType)
+				.append(", OrderIndex=").append(iOrderIndex)
+				.append(", Value=").append(iValue)
+				.append(", IsInternal=").append(isInternal)
+				.append('}');
+		return buf.toString();
+	}
+
+COM:returns a string that consists of a concatenated set of parameter values

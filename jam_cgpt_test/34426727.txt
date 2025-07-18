@@ -1,0 +1,11 @@
+TDAT:     private void imageEnableGUI(boolean enable) {
+        imageProp.setEnabled(enable);
+        imageScale.setEnabled(enable);
+        if (!enable) {
+            frame.saveAsRemoveListener(imageSaveAs);
+            currentImage = null;
+        } else
+            frame.saveAsAddListener(imageSaveAs, saveImageAsTT);
+    }
+
+COM:enables or disables certain GUI components related to images and updates the saveAsListener based on the enable parameter

@@ -1,0 +1,10 @@
+TDAT:   private void executeMethod(Method method) throws Exception {
+    if (method != null) {
+      Object[] params = paramPanel.getValues();
+      cat.debug("Invoking " + method + " on " + bean + " with args " + params);
+      Object returnValue = method.invoke(bean, params);
+      resultPanel.setResultValue(returnValue);
+    }
+  }
+
+COM:This is a private method that accepts a Method object, gets some values from a paramPanel, invokes the Method object on a bean object with the given values, and sets the result value in a resultPanel

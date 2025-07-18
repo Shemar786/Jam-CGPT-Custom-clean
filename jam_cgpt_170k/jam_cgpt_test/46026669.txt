@@ -1,0 +1,9 @@
+TDAT: 	private void loadSetting(CustomProperties prop) {
+		gametype = prop.getProperty("retromarathon.gametype", 0);
+		startlevel = prop.getProperty("retromarathon.startlevel", 0);
+		startheight = prop.getProperty("retromarathon.startheight", 0);
+		big = prop.getProperty("retromarathon.big", false);
+		version = prop.getProperty("retromarathon.version", 0);
+	}
+
+COM:loads values from a custom properties file into the specified variables

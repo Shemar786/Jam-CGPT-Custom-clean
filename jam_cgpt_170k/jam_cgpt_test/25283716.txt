@@ -1,0 +1,25 @@
+TDAT: 	public Object invoke(URL url, Object[] arguments) throws Exception, PpException {
+		InvocationListenerImpl listener = new InvocationListenerImpl();
+		server.invocation(url, arguments, listener);
+		while (true) {
+			try {
+				listener.semaphore.acquire();
+				break;
+			} catch (InterruptedException e) {
+				if (debug) {
+					System.err.println("PadRMI invocation interrupted while waiting for result -- retrying:");
+					e.printStackTrace();
+				}
+			}
+		}
+		switch (listener.state) {
+		case RESULT:
+			return listener.result;
+		case ERROR:
+			throw listener.exception;
+		default:
+			throw new PpLocalException("Unknown state while waiting for invocation result, this should never happen.");
+		}
+	}
+
+COM:invokes a remote method on a server using a URL and waits for a response or error using an invocation listener, then returns the result or throws an exception based on the listener's state

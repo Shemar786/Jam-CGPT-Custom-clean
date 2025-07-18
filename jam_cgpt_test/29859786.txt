@@ -1,0 +1,13 @@
+TDAT:   public void attachTo(AccessorContainer container) {
+    if (container instanceof LineNumberInfo) {
+      if (lineNumbers == null) {
+	lineNumbers = new Vector();
+      }
+      lineNumbers.addElement(new Integer(((LineNumberInfo)container).getLine()));
+    } else {
+      // Declares this instruction to be target of a jump, handler, ...
+      this.isTarget = true;
+    }
+  }
+
+COM:attaches an AccessorContainer to a LineNumberInfo object or declares the instruction as the target of a jump or handler

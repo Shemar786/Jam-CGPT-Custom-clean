@@ -1,0 +1,16 @@
+TDAT:    private void compose() {
+
+      // creation of graphycal elements
+      _resultTable = new TaxonProxyTable();
+
+      _resultTable.getSelectionModel().addListSelectionListener(this);
+
+      // addition of elements
+      setLayout(new BorderLayout(0, 1));
+
+      add(new JLabel("Query Result"), BorderLayout.NORTH);
+
+      add(_resultTable.getContainer());
+   }
+
+COM:composes and adds graphical elements to the container, including a table and a label

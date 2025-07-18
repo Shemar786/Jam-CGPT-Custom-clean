@@ -1,0 +1,10 @@
+TDAT:     public StringItem getStringItem1() {
+        if (stringItem1 == null) {//GEN-END:|444-getter|0|444-preInit
+            // write pre-init user code here
+            stringItem1 = new StringItem("N\u00F3minas a capturar:", null);//GEN-LINE:|444-getter|1|444-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|444-getter|2|
+        return stringItem1;
+    }
+
+COM:returns a StringItem object, and if it doesn't exist yet, it creates a new one with a specified text label

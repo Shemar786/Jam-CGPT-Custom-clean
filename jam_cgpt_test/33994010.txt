@@ -1,0 +1,17 @@
+TDAT: 	protected void addSelectedIndexPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TabsWidget_selectedIndex_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TabsWidget_selectedIndex_feature", "_UI_TabsWidget_type"),
+				 UiPackage.Literals.TABS_WIDGET__SELECTED_INDEX,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the selected index feature in a TabsWidget object

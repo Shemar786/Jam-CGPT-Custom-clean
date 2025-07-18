@@ -1,0 +1,11 @@
+TDAT: 	private void setHighlight(HighlightPanel thisHighlight, Point coords, int highlightColor){
+		//Set the color of the highlight.
+		thisHighlight.setColor(highlightColor);
+		
+		//place our highlighter over this square:
+		thisHighlight.setLocation(coords.x + boardPanel.getX(), coords.y + boardPanel.getY());
+		
+		setComponentZOrder(thisHighlight, (getComponentZOrder(boardPanel) -1));		
+	}
+
+COM:sets the color, location, and order of a highlight panel over a specified square on a board

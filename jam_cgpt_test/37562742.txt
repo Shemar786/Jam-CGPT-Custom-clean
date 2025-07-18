@@ -1,0 +1,10 @@
+TDAT: public void setChecked (boolean checked) {
+	checkWidget();
+  if ((parent.style & SWT.CHECK) == 0) return;
+  handle.setChecked(checked);
+  if ((parent.style & SWT.VIRTUAL) != 0) cached = true;
+  // TODO: is it always 0 if columns are reordered?
+  ((CTable)parent.handle).getModel().fireTableCellUpdated(parent.indexOf(this), 0);
+}
+
+COM:checks a widget and sets the check state of a checkbox if the parent's style is SWT.CHECK, and updates the table cell if the parent's style is SWT.VIRTUAL

@@ -1,0 +1,13 @@
+TDAT:     public void refreshExpiration() {
+        expiredCards.clear();
+        long currentTime = System.currentTimeMillis();
+        for (Card card : cards) {
+            long learnedTime = card.getLearnedTimestamp();
+            long diff = currentTime - learnedTime;
+            if (diff > expirationTime) {
+                expiredCards.add(card);
+            }
+        }
+    }
+
+COM:refreshes the expiration of cards by removing expired cards from a list and adding them to another list based on their learned timestamp and the expiration time

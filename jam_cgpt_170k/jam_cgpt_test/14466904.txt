@@ -1,0 +1,9 @@
+TDAT:   public void setConstituentURL(Constituent c, String newURL, String oldURL) {
+    c.setURL(newURL);
+    setDirty(true);
+    notifyObservers(Model.CONSTITUENT_SET_URL, c, null);
+    addUndoableEvent(new UndoableEvent(UndoableEvent.CHANGE_URL, c, oldURL));
+    setUndoMark();
+  }
+
+COM:sets the URL of a constituent, marks it as modified, notifies the observers, logs the change as an undoable event and sets a undo mark

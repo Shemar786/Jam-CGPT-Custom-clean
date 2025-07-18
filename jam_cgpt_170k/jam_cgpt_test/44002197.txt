@@ -1,0 +1,12 @@
+TDAT:     public XmlBuilder withCDATA(final Object value) {
+        if (!tagIsPendingTermination) {
+            throw new XmlZenException("Call openTag before setting CDATA!");
+        }
+        checkBody();
+        body.append("<![CDATA[");
+        body.append(value);
+        body.append("]]>");
+        return this;
+    }
+
+COM:appends a CDATA section with the given value to the current XML builder's body, throwing an exception if the corresponding tag is not yet closed

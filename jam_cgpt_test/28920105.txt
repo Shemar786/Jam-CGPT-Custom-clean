@@ -1,0 +1,17 @@
+TDAT:     public void drawBoxEdge(int xyz, boolean maxmin1, boolean maxmin2) {
+      switch (xyz) {
+        case X_BOX_EDGE: {
+          drawXBoxEdge(maxmin1, maxmin2);
+        }
+        break;
+        case Y_BOX_EDGE: {
+          drawYBoxEdge(maxmin1, maxmin2);
+        }
+        break;
+        default: {
+          drawZBoxEdge(maxmin1, maxmin2);
+        }
+      }
+    }
+
+COM:draws the edge of a box in the specified direction, either along the x, y, or z axis

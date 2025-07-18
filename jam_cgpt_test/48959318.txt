@@ -1,0 +1,10 @@
+TDAT:     @Before public void setUp() throws GameLoadException {
+        assertNotNull(getTheGame());
+        theEngine = new Engine(getTheGame());
+        theEngine.initialize();
+        assertTrue(theEngine.inStartingState());
+        theObserver = new MyObserver();
+        theEngine.addObserver(theObserver);
+    }
+
+COM:sets up the environment for running the game by initializing the engine and observer, ensuring the game is not null and is in a starting state

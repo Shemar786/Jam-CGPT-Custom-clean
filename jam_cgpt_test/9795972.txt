@@ -1,0 +1,14 @@
+TDAT: 	public boolean isCellSelected(int col, int row) {
+		if (!m_MultiSelectMode) {
+			if (m_RowSelectionMode)
+				return (row == m_FocusRow);
+			return (col == m_FocusCol && row == m_FocusRow);
+		}
+
+		if (m_RowSelectionMode)
+			return (m_Selection.get(new Integer(row)) != null);
+		else
+			return (m_Selection.get(new Point(col, row)) != null);
+	}
+
+COM:checks if a cell in a table is currently selected based on the column and row index provided

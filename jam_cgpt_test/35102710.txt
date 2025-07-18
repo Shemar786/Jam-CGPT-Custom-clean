@@ -1,0 +1,24 @@
+TDAT: 	private void printToFile(org.w3c.dom.Document dom, String file) {
+
+		try {
+			// print
+			OutputFormat format = new OutputFormat(dom);
+			format.setIndenting(true);
+
+			// to generate output to console use this serializer
+			// XMLSerializer serializer = new XMLSerializer(System.out, format);
+
+			// to generate a file output use fileoutputstream instead of
+			// system.out
+			XMLSerializer serializer = new XMLSerializer(new FileOutputStream(
+					new File(file)), format);
+
+			serializer.serialize(dom);
+
+		} catch (IOException ie) {
+			logger.log(Level.WARNING,
+					"Ablumdatei konnte nicht erstellt werden.", ie);
+		}
+	}
+
+COM:writes an XML DOM document to a specified file location

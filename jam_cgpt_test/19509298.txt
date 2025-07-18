@@ -1,0 +1,16 @@
+TDAT: 	private void patchTypeEnvironment() throws CoreException {
+		if (concreteEventInfo.eventIsNew())
+			return;
+		final List<IAbstractEventInfo> infos = concreteEventInfo
+				.getAbstractEventInfos();
+		for (final IAbstractEventInfo info : infos) {
+			for (final FreeIdentifier freeIdentifier : info.getParameters()) {
+				final String name = freeIdentifier.getName();
+				if (identifierSymbolTable.getSymbolInfoFromTop(name) == null) {
+					typeEnvironment.add(freeIdentifier);
+				}
+			}
+		}
+	}
+
+COM:patches the type environment with free identifiers if they are not already present

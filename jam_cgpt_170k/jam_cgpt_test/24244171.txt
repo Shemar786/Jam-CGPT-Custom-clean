@@ -1,0 +1,12 @@
+TDAT: 	public int sendData(int register, byte value) {
+		byte [] txData = {address, (byte) register, value};
+		try {
+			int ret = nxtCommand.LSWrite(this.port, txData, (byte)0);
+            return ret;
+		} catch (IOException ioe) {
+			System.out.println(ioe.getMessage());
+			return -1;
+		}
+	}
+
+COM:sends data to a specified register and returns an integer indicating whether the operation was successful or not

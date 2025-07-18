@@ -1,0 +1,12 @@
+TDAT:   public void setThrowables(Hashtable throwables) {
+    if (throwables != null) {
+      int       count = 0;
+
+      exceptions = new CReferenceType[throwables.size()];
+      for (Enumeration elems = throwables.elements(); elems.hasMoreElements(); ) {
+        exceptions[count++] = ((CThrowableInfo)elems.nextElement()).getThrowable();
+      }
+    }
+  }
+
+COM:sets an array of CReferenceType objects to be the values of a Hashtable of CThrowableInfo objects

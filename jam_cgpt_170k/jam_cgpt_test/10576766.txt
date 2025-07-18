@@ -1,0 +1,20 @@
+TDAT:     public void testHasCorrectArguments() {
+        CmdType cmd;
+        boolean result;
+
+        cmd = CmdType.ADDDOMAIN;
+
+        // Test bogus number
+        result = cmd.hasCorrectArguments(-1);
+        assertEquals(false, result);
+
+        // Test actual number
+        result = cmd.hasCorrectArguments(cmd.getArguments());
+        assertEquals(true, result);
+
+        // Test known bad number
+        result = cmd.hasCorrectArguments(cmd.getArguments() - 1);
+        assertEquals(false, result);
+    }
+
+COM:tests the correctness of the "hasCorrectArguments" method in the "CmdType" class for a specific command

@@ -1,0 +1,13 @@
+TDAT:   public boolean _retrieveDbData( String condi, String order ) {
+    try {
+      setDbDataVector(getDbGenDriver().retrieve( createDbData(), condi, order ));
+
+      return true;
+    } catch ( Exception ex ) {
+      System.out.println( "Retrieve db data error: " + ex.getMessage());
+    }
+
+    return false;
+  }
+
+COM:retrieves data from a database based on provided condition and order criteria, and returns a boolean value indicating whether or not the retrieval was successful

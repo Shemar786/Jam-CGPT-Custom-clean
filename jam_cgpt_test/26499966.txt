@@ -1,0 +1,13 @@
+TDAT:   public void endPrefixMapping(String aPrefix) {
+    // Get the list of URI for the prefix
+    LinkedList aNamespaceList = (LinkedList) _theNamespaceMapping.get(aPrefix);
+
+    if (aNamespaceList != null) {
+      aNamespaceList.removeFirst();
+    } else {
+      throw new IllegalStateException(
+        "The prefix mapping is not found in the map.");
+    }
+  }
+
+COM:removes the first URI associated with a given prefix in a mapping of prefixes to URIs, throwing an exception if the prefix is not found

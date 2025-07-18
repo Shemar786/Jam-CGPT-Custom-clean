@@ -1,0 +1,17 @@
+TDAT:   protected void addMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DebugLog_message_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DebugLog_message_feature", "_UI_DebugLog_type"),
+				 ActionStepPackage.eINSTANCE.getDebugLog_Message(),
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "message" feature of the DebugLog type in a ComposeableAdapterFactory object

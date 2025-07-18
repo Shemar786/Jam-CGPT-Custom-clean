@@ -1,0 +1,12 @@
+TDAT:   protected String constructListPages(Collection<Page> pages) {
+    StringBuilder buffer = new StringBuilder();
+    for (Page page : pages) {
+      if (buffer.length() > 0) {
+        buffer.append("|");
+      }
+      buffer.append(page.getTitle());
+    }
+    return buffer.toString();
+  }
+
+COM:takes a collection of pages and constructs a delimited string of their titles

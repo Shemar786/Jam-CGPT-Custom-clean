@@ -1,0 +1,10 @@
+TDAT: 	public void testUpdate() {
+		LinearMove a = new LinearMove(ORIGIN, Time.ZERO, TARGET, TIME);
+		Time between = TIME.times(0.5);
+		LinearMove b = new LinearMove(a.readSpaceVec(between), between, a
+				.readSpaceVec(TIME), TIME);
+		System.out.println("a=b: " + a + "=" + b);
+		assertEquals("Move", a.readSpaceVec(TIME), b.readSpaceVec(TIME));
+	}
+
+COM:tests the update function of the LinearMove class by creating two linear movements and comparing their final positions

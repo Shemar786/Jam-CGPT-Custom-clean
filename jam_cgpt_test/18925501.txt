@@ -1,0 +1,11 @@
+TDAT:   public void setCurrentPanel(RequestContext context, Element newCurrentPanel) {
+    if (!xmlComponent.validate(context))
+      return;
+    internalSetCurrent(newCurrentPanel);
+    // allow the panel hander to update model values
+    fireChanged(currentPanel);
+    // and now display the updated model values
+    xmlComponent.revert(context);
+  }
+
+COM:sets a new current panel in an XML component, validates it, updates the model values, and reverts the XML component

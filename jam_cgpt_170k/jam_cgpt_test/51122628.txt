@@ -1,0 +1,12 @@
+TDAT: 	public void setFieldAsObject(int row, int i, Object obj) {
+		if (isPointerLegal(row)) {
+			try {
+				Object[] objRow = (Object[]) objectVector.elementAt(row);
+				objRow[i] = obj;
+			} catch (Exception e) {
+				logCat.error("setFieldAsObject", e);
+			}
+		}
+	}
+
+COM:sets a specific object at a given position in a vector of objects stored as an array, given a row and index value

@@ -1,0 +1,14 @@
+TDAT: 	public void modifyRoleInCache(Role role, String orgRolename) {
+		Set users = role.getUsers();
+		for (Iterator iter = users.iterator(); iter.hasNext();) {
+			User user = (User) iter.next();
+			userDetailsInCache(user);
+		}
+
+		for (Iterator iter = role.getRescs().iterator(); iter.hasNext();) {
+			Resource resource = (Resource) iter.next();
+			resourceDetailsInCache(resource);
+		}
+	}
+
+COM:modifies the details of a role in the cache by updating the details of all associated users and resources

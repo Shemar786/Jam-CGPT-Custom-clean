@@ -1,0 +1,14 @@
+TDAT: 	public void testSerialInstance() throws Exception {
+		TestClassTwo testOne = new TestClassTwo();
+		ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(TESTSERIAL_PATH));
+		out.writeObject(testOne);
+		out.flush();
+		out.close();
+		
+		Collection<Object> items = loader.getLoadables("(name=testSerial)");
+		assertEquals(1, items.size());
+		TestClassTwo o1 = (TestClassTwo) items.iterator().next();
+		assertEquals("testSerial",o1.getProperties().get("name"));
+	}
+
+COM:tests the serialization of an object of type TestClassTwo by writing it to a file and then loading it back as a Collection, asserting that it contains only one item with a specific property

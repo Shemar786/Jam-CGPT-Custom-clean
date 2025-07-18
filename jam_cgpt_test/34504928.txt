@@ -1,0 +1,11 @@
+TDAT: 	public void handleEvent(char character, int keyCode, int stateMask) {
+
+		if (fMode == Mode.CMD) {
+			handleCmdKeyEvent(character, keyCode, stateMask);
+		} else if (fMode == Mode.EX) {
+			handleExKeyEvent(character, keyCode, stateMask);
+		}
+
+	}
+
+COM:handles events based on the current mode in a Java program

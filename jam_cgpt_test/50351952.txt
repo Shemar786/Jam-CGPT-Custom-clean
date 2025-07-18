@@ -1,0 +1,12 @@
+TDAT:     public void send(String user) {
+        try {
+            Collection news = db.getNews(user);
+            if (news.isEmpty())
+                return;
+            server.tell(user, news, new TellDoneListener(user, news.size()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+COM:sends news to a user using an external database and a server, and includes error handling

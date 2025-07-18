@@ -1,0 +1,13 @@
+TDAT:     public float getPreferredSpan(int axis) {
+        int extra = 2 * (getBorder() + getSpace(axis));
+        switch (axis) {
+        case View.X_AXIS:
+            return fWidth + extra;
+        case View.Y_AXIS:
+            return fHeight + extra;
+        default:
+            throw new IllegalArgumentException("Invalid axis: " + axis);
+        }
+    }
+
+COM:returns the preferred span of an axis based on the current width and height of the object with added borders and space

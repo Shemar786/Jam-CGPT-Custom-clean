@@ -1,0 +1,10 @@
+TDAT:    public int blocksAccessed() {
+      // this guesses at the # of chunks
+      int avail = SimpleDB.bufferMgr().available();
+      int size = new MaterializePlan(rhs, tx).blocksAccessed();
+      int numchunks = size / avail;
+      return rhs.blocksAccessed() +
+         (lhs.blocksAccessed() * numchunks);
+   }
+
+COM:calculates the number of blocks accessed by a query plan and returns the total number of blocks accessed by the left-hand side and right-hand side of the plan

@@ -1,0 +1,16 @@
+TDAT: 	private void deleteItem (DaySchedule day) {
+		
+		Date date = day.getDate();
+		
+		m_Dietplan.getDaySchedules().remove(day);
+		
+		for (DaySchedule d : m_Dietplan.getDaySchedules()){
+			if (d.getDate().after(date)) {
+				d.setDate(decreaseDate(d.getDate(), 1));
+			}
+		}
+		
+		m_Dietplan.setTo(decreaseDate(m_Dietplan.getTo(), 1));
+	}
+
+COM:deletes a day from a diet plan and updates the date of all subsequent days

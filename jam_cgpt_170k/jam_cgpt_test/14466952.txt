@@ -1,0 +1,9 @@
+TDAT:   public void setSelection(Constituent c, Object data) {
+    if (this.selConstituent!=null && this.selConstituent!=c)
+      this.selConstituent.deselect();
+    this.selConstituent = c;
+    if (this.selConstituent!=null) this.selConstituent.select();
+    notifyObservers(Model.CONSTITUENT_SELECT,c,data);
+  }
+
+COM:sets the selection of a constituent object, deselects the previous selection, and notifies observers of the selection

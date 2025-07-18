@@ -1,0 +1,18 @@
+TDAT:   public void setAxisSelection(Collection selection) {
+    if (selection.equals(axisSelection)) {
+       // Nothing has changed, just return
+       return;
+    }
+    clear();
+    updateHierarchy(selection);
+    if (axisSelection == null)
+      axisSelection = new ArrayList();
+    else
+      axisSelection.clear();
+    axisSelection.addAll(selection);
+    axisSelectionDirty = true;
+    category.setDirty(true);
+    expression = null;
+  }
+
+COM:updates the state of an axis selection and any related objects if the selection has changed

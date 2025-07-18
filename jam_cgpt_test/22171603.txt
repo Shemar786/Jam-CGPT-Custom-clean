@@ -1,0 +1,17 @@
+TDAT: 	protected void addAttributeNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveUpdateMessage_attributeName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveUpdateMessage_attributeName_feature", "_UI_EveUpdateMessage_type"),
+				 MsgPackage.Literals.EVE_UPDATE_MESSAGE__ATTRIBUTE_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the attribute name of an EveUpdateMessage object to an item property descriptor list

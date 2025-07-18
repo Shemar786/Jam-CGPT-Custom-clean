@@ -1,0 +1,16 @@
+TDAT:     public URL findResource(String resourceName) {
+        URL findResource = urlClassLoader.findResource(resourceName);
+
+        if (logger.isTraceEnabled()) {
+            
+            if (findResource != null) {
+                logger.trace("Successfully found URL " + findResource + " from " + this);
+            } else {
+                logger.trace("Unable to find URL for " + resourceName + " from " + this);
+            }
+        }
+        
+        return findResource;
+    }
+
+COM:takes a resource name as input, searches for it using a URLClassLoader, logs the search result, and returns any matching URL it finds

@@ -1,0 +1,13 @@
+TDAT:     public void testSetStartDate() {
+        System.out.println("setStartDate");
+        
+        String startDate = "";
+        Event_StubImpl instance = new Event_StubImpl();
+        
+        instance.setStartDate(startDate);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the setStartDate() method of the Event_StubImpl class by setting a start date and failing the test case

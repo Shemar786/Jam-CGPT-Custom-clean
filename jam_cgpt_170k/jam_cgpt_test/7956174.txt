@@ -1,0 +1,18 @@
+TDAT: 	public String toString() {
+		String x = "";
+
+		if (handlers != null) {
+			for (int i = 0; i < handlers.length; i++) {
+				x += "\n        " + handlers[i];
+			}
+		}
+
+		/*
+		 * for (int i = 0; i < attrs.length; i++) { x += "\n " + attrs[i]; }
+		 */
+
+		return "(code " + maxStack + " " + maxLocals + " " + code.length + x
+				+ ")";
+	}
+
+COM:returns a string representation of an object with code, maximum stack size, maximum local variable size, and an optional list of handlers

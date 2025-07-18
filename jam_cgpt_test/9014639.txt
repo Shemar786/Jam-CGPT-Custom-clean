@@ -1,0 +1,11 @@
+TDAT: 	protected void setCurrentURL(final String url) {
+		String oldValue;
+
+		if (((null != url) && !url.equals(mCurrentURL)) || ((null == url) && (null != mCurrentURL))) {
+			oldValue = mCurrentURL;
+			mCurrentURL = url;
+			mPropertySupport.firePropertyChange(PROP_CURRENT_URL_PROPERTY, oldValue, url);
+		}
+	}
+
+COM:sets the current URL and notifies registered listeners of the change

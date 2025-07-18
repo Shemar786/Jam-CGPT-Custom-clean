@@ -1,0 +1,13 @@
+TDAT:     public int queue(Packet packet, PacketDispatchListener listener) {
+        WaitingPacket waitingPacketInfo = new WaitingPacket(packet, nextPacketID, listener);
+        nextPacketID++;
+        
+        synchronized (queue) {
+            queue.addLast(waitingPacketInfo);
+            queue.notify();
+        }
+        
+        return waitingPacketInfo.getPacketID();
+    }
+
+COM:adds a packet to a queue, assigns a unique ID to it, and notifies a listener that the packet has been dispatched

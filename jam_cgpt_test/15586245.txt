@@ -1,0 +1,14 @@
+TDAT:     public List getSelectedValues() {
+        List list = new ArrayList();
+        Iterator iter = valueMap.keySet().iterator();
+        while (iter.hasNext()) {
+            JCheckBox checkbox = (JCheckBox)iter.next();
+            if (checkbox.isSelected()) {
+                String value = (String)valueMap.get(checkbox);
+                list.add(value);
+            }
+        }
+        return list;
+    }
+
+COM:returns a list of selected values from a map of JCheckBox objects and their corresponding values

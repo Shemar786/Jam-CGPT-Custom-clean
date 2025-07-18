@@ -1,0 +1,20 @@
+TDAT: 	public void setSize(final int nodeSize) {
+		this.shapeFactory = new VertexShapeFactory<ONDEXMetaConcept>(
+				new Transformer<ONDEXMetaConcept, Integer>() {
+
+					@Override
+					public Integer transform(ONDEXMetaConcept input) {
+						return nodeSize;
+					}
+
+				}, new Transformer<ONDEXMetaConcept, Float>() {
+
+					@Override
+					public Float transform(ONDEXMetaConcept input) {
+						return 1.0f;
+					}
+				});
+		updateAll();
+	}
+
+COM:sets the size of a node shape factory and updates all nodes accordingly

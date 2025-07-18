@@ -1,0 +1,13 @@
+TDAT:     public void registerNewNode(Node newNode) {
+        newNodes.add(newNode);
+
+        if (newNode instanceof Variable) {
+            dl.print(5, "\n     " + newNode + " added");
+        }
+
+
+        // add node to allNodes
+        allNodes.add(Registry.getNodeType(newNode), newNode);
+    }
+
+COM:adds a new node to a list and, if it is a variable, prints a message before adding it to a registry

@@ -1,0 +1,12 @@
+TDAT:     private void actionAssigneeMouse(MouseEvent e) {
+        if (e.getButton() == MouseEvent.BUTTON3) {
+            JPopupMenu popup = new JPopupMenu();
+
+            popup.add(schemTab.assigneeMenu());
+            popup.add(makeMenuFilterAll());
+
+            popup.show(assigneeCombo, e.getX(), e.getY());
+        }
+    }
+
+COM:displays a popup menu with options for assigning filters to a JComboBox when the right mouse button is clicked

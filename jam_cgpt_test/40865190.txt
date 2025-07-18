@@ -1,0 +1,10 @@
+TDAT:     public Command getBackCommand1() {
+        if (backCommand1 == null) {//GEN-END:|217-getter|0|217-preInit
+            // write pre-init user code here
+            backCommand1 = new Command("OK", Command.BACK, 0);//GEN-LINE:|217-getter|1|217-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|217-getter|2|
+        return backCommand1;
+    }
+
+COM:returns a Command object named "backCommand1" and initializes it if it is null

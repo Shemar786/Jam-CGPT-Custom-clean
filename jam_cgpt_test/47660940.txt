@@ -1,0 +1,17 @@
+TDAT: 	private PaletteContainer createWorkflow2Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(
+				Messages.Workflow2Group_title);
+		paletteContainer.setId("createWorkflow2Group"); //$NON-NLS-1$
+		paletteContainer.setDescription(Messages.Workflow2Group_desc);
+		paletteContainer.add(createJoinHorizontal1CreationTool());
+		paletteContainer.add(createJoinVertical2CreationTool());
+		paletteContainer.add(createDecision3CreationTool());
+		paletteContainer.add(createMerge4CreationTool());
+		paletteContainer.add(createForkHorizontal5CreationTool());
+		paletteContainer.add(createForkVertical6CreationTool());
+		paletteContainer.add(createInitialState7CreationTool());
+		paletteContainer.add(createFinalState8CreationTool());
+		return paletteContainer;
+	}
+
+COM:creates a palette container that contains various creation tools for workflow elements, such as join, fork, decision, and state

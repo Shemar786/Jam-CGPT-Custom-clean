@@ -1,0 +1,14 @@
+TDAT:     public String createPatternString(String pattern, int length) {
+        if (pattern == null) {
+            return null;
+        }
+
+        int totalLength = pattern.length() * length;
+        StringBuffer sb = new StringBuffer(totalLength);
+        for (int i = 0; i < length; i++) {
+            sb.append(pattern);
+        }
+        return sb.toString();
+    }
+
+COM:takes a pattern string and a length parameter, and returns a string that repeats the pattern string for the specified number of times

@@ -1,0 +1,11 @@
+TDAT: 	public void drawForeground(Object objGfx, int blockLayer) throws IllegalArgumentException {
+		ParameterChecker.checkMinMax(blockLayer, "blockLayer", Block.FOREGROUND1, Block.FOREGROUND3);
+		
+		boolean drawForeground1 = (blockLayer == 1);
+		boolean drawForeground2 = (blockLayer == 2);
+		boolean drawForeground3 = (blockLayer == 3);
+		
+		draw(objGfx, true, false, drawForeground1, drawForeground2, drawForeground3, 0, 0, super.viewWidth, super.viewHeight);
+	}
+
+COM:draws the foreground layer of the game using the specified graphics object and block layer, with parameters such as object validation and specific layer settings

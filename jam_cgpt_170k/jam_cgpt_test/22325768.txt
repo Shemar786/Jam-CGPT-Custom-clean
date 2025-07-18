@@ -1,0 +1,8 @@
+TDAT:     protected void reportTaskDone(UniqueID taskID, String fileName) {
+        log
+                .debug("Running BrokerConnection.reportTaskDone(taskID, fileName)..");
+        UniqueID resultFileID = taskDispenser.taskDone(taskID, userID);
+        registerFile(resultFileID, fileName);
+    }
+
+COM:reports the completion of a task, generates a unique ID for the task, and registers the result file with a specified file name

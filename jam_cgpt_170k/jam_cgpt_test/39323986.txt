@@ -1,0 +1,9 @@
+TDAT:     public void SetExtent(Environment env) {
+        final int[] R = env.getCpu().R;
+        final MemoryMap memoryMap = env.getMemoryMap();
+        final Window window = Window.find(R[0]);
+        final Rectangle extent = env.getMemoryMap().getRectangle(R[1]);
+        setExtent(window, extent);
+    }
+
+COM:sets the extent of a window using information obtained from an environment object

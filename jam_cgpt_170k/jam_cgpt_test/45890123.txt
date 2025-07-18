@@ -1,0 +1,13 @@
+TDAT: 	public int interpolateColorStops(float fraction) {
+		
+		int max_color_index = this.color_stops.length - 1;
+		float high_fractional_value = fraction * max_color_index;
+		int low_index = (int) high_fractional_value;
+		int high_index = (int) Math.ceil(fraction * max_color_index);
+		
+		float partial_fraction = high_fractional_value - low_index;
+		
+		return FlingableMonthView.interpolateColor(this.color_stops[low_index], this.color_stops[high_index], partial_fraction);
+	}
+
+COM:interpolates color values based on the given fraction using the color stops array

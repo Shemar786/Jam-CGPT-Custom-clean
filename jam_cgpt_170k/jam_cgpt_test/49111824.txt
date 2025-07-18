@@ -1,0 +1,13 @@
+TDAT:     public JSONObject getResponseAsJSONObject() throws EngageFailureException {
+        if (jsonObject == null) {
+            try {
+                this.jsonObject = new JSONObject(json);
+            }
+            catch (JSONException e) {
+                throw new EngageFailureException("Unexpected JSON error", json, e);
+            }
+        }
+        return jsonObject;
+    }
+
+COM:returns a JSONObject and throws an EngageFailureException if there is an unexpected JSON error

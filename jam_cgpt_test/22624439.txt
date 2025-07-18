@@ -1,0 +1,14 @@
+TDAT: 	public boolean hasRecord(String id, String xmlFormat) throws DDSServiceErrorResponseException, Exception {
+		DDSServicesResponse ddsServicesResponse = null;
+		try {
+			ddsServicesResponse = getRecord(id, null, xmlFormat, null, false, true);
+		} catch (DDSServiceErrorResponseException de) {
+			if (de.getServiceResponseCode().equals("idDoesNotExist") || de.getServiceResponseCode().equals("cannotDisseminateFormat")) {
+				return false;
+			}
+			throw de;
+		}
+		return true;
+	}
+
+COM:checks if a record with the specified ID and XML format exists in a DDS Services Response, with the possibility of throwing an error

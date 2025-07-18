@@ -1,0 +1,8 @@
+TDAT: public void setDirectoryName(Name dirname) {
+  dirN_ = (Name)dirname.clone();
+  dirN_.setExplicit(true); // this was set to false before, but didn't work within an AuthorityKeyExtension
+  directoryName_.setInnerType(dirN_);
+  setInnerType(directoryName_);
+}
+
+COM:sets the directory name and updates its inner type

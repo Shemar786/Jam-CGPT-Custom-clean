@@ -1,0 +1,11 @@
+TDAT:   public int posnToSampleNo(int posn) {
+    for (int i = 0; i<sampleArr.size();i++) {
+      FMSample fms = (FMSample)sampleArr.get(i);
+      if (fms.getPosition()==posn) {
+        return fms.getSampleNo();
+      }
+    }
+    return 0;  // If we get here we haven't found the sample at the specified position.
+  }
+
+COM:searches for a sample in an ArrayList of FMSample objects based on a given position and returns the corresponding sample number, or 0 if not found

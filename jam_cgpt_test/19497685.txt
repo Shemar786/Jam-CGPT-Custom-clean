@@ -1,0 +1,12 @@
+TDAT: 	public void testDelta_02_initCtxSequent() throws Exception {
+		IContextRoot root = createContext("ctx");
+		addAxioms(root, makeSList("T"), makeSList("ℕ≠∅"), true);
+		saveRodinFileOf(root);
+	
+		runBuilder();
+		
+		hasStamp(root.getPORoot().getSequents()[0], IPOStampedElement.INIT_STAMP);
+		
+	}
+
+COM:creates a context root, adds axioms to it, saves the Rodin file of the context, runs the builder, and checks if the first sequent in the context has an initial stamp

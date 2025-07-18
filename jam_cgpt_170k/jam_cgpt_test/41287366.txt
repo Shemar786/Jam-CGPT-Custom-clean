@@ -1,0 +1,11 @@
+TDAT:     protected Rectangle rotate(Rectangle src){
+        Rectangle retval;
+        AffineTransform rotationTransformation = new AffineTransform();
+        rotationTransformation.rotate(rotation, getOrigin().x + getCentre().x,
+                getOrigin().y+ getCentre().y);
+        retval = rotationTransformation.createTransformedShape(
+                new Rectangle(src)).getBounds();        
+        return retval;
+    }
+
+COM:takes a Rectangle object as input, applies a rotation transformation to it, and returns the rotated Rectangle object

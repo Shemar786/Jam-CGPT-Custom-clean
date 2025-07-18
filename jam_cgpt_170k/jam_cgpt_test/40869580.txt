@@ -1,0 +1,10 @@
+TDAT:     public Command getBackCommand20() {
+        if (backCommand20 == null) {//GEN-END:|520-getter|0|520-preInit
+            // write pre-init user code here
+            backCommand20 = new Command("Back", Command.BACK, 0);//GEN-LINE:|520-getter|1|520-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|520-getter|2|
+        return backCommand20;
+    }
+
+COM:returns a Command object representing a "Back" button with a type of BACK and a priority of 0, creating it if necessary

@@ -1,0 +1,22 @@
+TDAT: 	public Vector getExtensionParts(ExtensionPoint epoint) {
+		Vector vexp = new Vector();
+		for (Iterator i = extend_ucases.iterator(); i.hasNext();) {
+			ExtendRelation rel = (ExtendRelation)i.next();
+			ExtendUseCase euc = rel.getExtendUseCase();
+			Part p = euc.findPart(epoint.getValue());
+			if (p != null) {
+				Vector vexpi = new Vector();
+				Condition extcond = rel.getExtendCondition();
+				if (extcond != null) {
+					vexpi.add(extcond);
+				} else {
+					vexpi.add(NullCondition.getDefault());
+				}
+				vexpi.add(p);
+				vexp.add(vexpi);
+			}
+		}
+		return vexp;
+	}
+
+COM:retrieves the extension parts for a given Extension Point and returns them in a Vector

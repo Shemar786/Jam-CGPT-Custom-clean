@@ -1,0 +1,16 @@
+TDAT:     public  void beginListening() {
+        try {
+            // notify communication observers about the start of the port listening
+            connectionRegistry.notifyCommunicationEventObservers(
+            new CommunicationEvent(CommunicationEvent.CONNECTION_START_LISTENING));
+            serverSocket = new ServerSocket(port);
+            // starts the listening thread
+            this.start();
+
+        } catch (IOException e) {
+            throw new CsccException(e.getMessage());
+        }
+
+    }
+
+COM:starts listening on a specified port and notifies communication observers about the start of the port listening

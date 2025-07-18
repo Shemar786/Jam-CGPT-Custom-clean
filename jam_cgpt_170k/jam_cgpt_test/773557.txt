@@ -1,0 +1,20 @@
+TDAT: 	public void start(BundleContext context) throws Exception {
+		this.context = context;
+		Bundle parserBundle = context.getBundle();
+		try {
+			// check for sax parsers
+			registerSAXParsers(getParserFactoryClassNames(parserBundle
+					.getResource(SAXCLASSFILE)));
+			// check for dom parsers
+			registerDOMParsers(getParserFactoryClassNames(parserBundle
+					.getResource(DOMCLASSFILE)));
+		}
+		catch (IOException ioe) {
+			// if there were any IO errors accessing the resource files
+			// containing the class names
+			ioe.printStackTrace();
+			throw new FactoryConfigurationError(ioe);
+		}
+	}
+
+COM:registers SAX and DOM parsers based on the parser factory class names obtained from resource files in the bundle context, while handling potential IO errors

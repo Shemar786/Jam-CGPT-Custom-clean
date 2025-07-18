@@ -1,0 +1,14 @@
+TDAT:     public Object create(final String listenerThreadName, final IChannel channel, final ISource source) throws ListenerException, ChannelException {
+
+        if ( null == listenerThreadName && null == channel && null == source ) 
+            throw new IllegalArgumentException( "Parameters may not be null!" );
+        
+        m_Product = create(listenerThreadName);
+        
+        ( (IListener)m_Product ).subscribeSource(channel,source);
+        
+        return m_Product;
+        
+    }
+
+COM:creates an object and subscribes it to a channel and source, throwing exceptions if any of the parameters are null

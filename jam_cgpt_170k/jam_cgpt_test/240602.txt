@@ -1,0 +1,11 @@
+TDAT: 	public String getOrderStatusById(String useorder_id) {
+		for (appTransaction current : client.getTransactions().getTransactions()) {
+			if (current.getTypeID()==offer.getType()&&(((offer)current).getOrderID().equalsIgnoreCase(useorder_id))) {
+				return ((offer)current).getStatusString();
+			}
+			
+		}
+		return "";// ID not found //$NON-NLS-1$
+	}
+
+COM:searches for an offer with a specified order ID and returns its status as a string, or an empty string if no such offer is found

@@ -1,0 +1,10 @@
+TDAT:   private void takeReading(float angle, int i) {
+    int rangeByte = (int) range.getRange();
+    float range;
+
+    if (rangeByte > MAX_RELIABLE_RANGE_READING) range = -1f;
+    else range = ((float) rangeByte);
+    readings.setRange(i,angle, range);
+  }
+
+COM:takes in an angle and an integer parameter and sets the range of readings based on a conditional check

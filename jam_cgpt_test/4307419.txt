@@ -1,0 +1,15 @@
+TDAT: 	public HitSet lookupScores(int queryId) throws IOException {
+		// find the block number that the query is in
+		int blockNumber = getBlockNumber(queryId);
+		// 
+		int id = getRelativeQueryId(queryId);
+		if (blockNumber!=cachedBlockNumber) {
+			HitSet[] hitSet = (HitSet[]) IOUtils.loadObject(savedDataPath + 
+					SetupUtils.FS + blockNumber + ".dat");
+			this.cachedBlock = hitSet;
+			this.cachedBlockNumber = blockNumber;
+		}
+		return cachedBlock[id];
+	}
+
+COM:takes an integer as input, finds the block number that the input belongs to, loads the corresponding data from a saved path, and returns a HitSet at the relative query ID of the input

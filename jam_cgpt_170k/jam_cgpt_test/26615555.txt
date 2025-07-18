@@ -1,0 +1,18 @@
+TDAT:         public void valueChanged(TreeSelectionEvent treeSelectionEvent) {
+            TreeNode src = getSelectedNode();
+            Object data;
+
+            if (src instanceof AITreeNode) {
+                data = ((AITreeNode) src).getUserObject();
+
+                AITreeNode nd = (AITreeNode) src;
+
+                String path = getProjectPath(nd);
+                ProjectPart p = AIDesktop.getProjectRoot().getPart(path);
+
+                if (p != null)
+                    AIDesktop.displayProperties(p);
+            }
+        }
+
+COM:responds to a tree selection event by retrieving data from a selected node and displaying its properties if it belongs to a project

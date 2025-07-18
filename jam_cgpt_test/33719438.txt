@@ -1,0 +1,12 @@
+TDAT:     public void testSetNewId() {
+        System.out.println("setNewId");
+        
+        Event_DBImpl instance = new Event_DBImpl();
+        
+        instance.setNewId();
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the functionality of the setNewId() method of the Event_DBImpl class by creating a new instance and calling the method

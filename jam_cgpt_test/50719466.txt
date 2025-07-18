@@ -1,0 +1,17 @@
+TDAT:     public Dimension minimumLayoutSize(Container target) {
+        synchronized (target.getTreeLock()) {
+            Dimension d = new Dimension(0, 0);
+
+            addMinimumSize(d, east);
+            addMinimumSize(d, west);
+            addMinimumSize(d, center);
+
+            Insets insets = target.getInsets();
+            d.width += insets.left + insets.right;
+            d.height += insets.top + insets.bottom;
+
+            return d;
+        }
+    }
+
+COM:calculates the minimum size of a container by adding up the minimum sizes of its sub-components and the container's border insets

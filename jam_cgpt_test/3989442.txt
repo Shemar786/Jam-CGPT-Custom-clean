@@ -1,0 +1,10 @@
+TDAT:     public void addBuiltIn(Procedure proc) throws ProcedureException {
+        if (builtIns.containsKey(proc.getName())) {
+            throw new ProcedureException("a procedure with name '" +
+                                         proc.getName() +
+                                         "' already exists");
+        }
+        builtIns.put(proc.getName(), proc);
+    }
+
+COM:adds a procedure to a collection of built-in procedures, but throws an exception if a procedure with the same name already exists

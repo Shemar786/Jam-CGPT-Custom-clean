@@ -1,0 +1,12 @@
+TDAT:     private void closeFS() {
+        win.remove(p.getVisualComponent());
+        MediaPanel.add(p.getVisualComponent());
+        p.getVisualComponent().setSize(
+                MediaPanel.getWidth(),
+                MediaPanel.getHeight());
+        win.dispose();
+        fullscreen = false;
+        bFullscreen.setEnabled(true);
+    }
+
+COM:closes the full screen mode and adds the visual component to the media panel

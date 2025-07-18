@@ -1,0 +1,13 @@
+TDAT: 	private void addToHistory( FeedHistoryEntry historyEntry ) {
+		if ( history.size() >= entryHistorySize ) {
+			// history is full, so we remove the oldest entry (which is stored at the front)
+			history.removeFirst();
+		}
+		// add the new entry to the end of the history list
+		history.addLast(historyEntry);
+		
+		// sort the entries, so that older entries are listed first
+		Collections.sort(history, new FeedHistoryComparator());
+	}
+
+COM:adds a new item to a history list, removing the oldest item if the list is full, and sorts the list with the oldest item at the top

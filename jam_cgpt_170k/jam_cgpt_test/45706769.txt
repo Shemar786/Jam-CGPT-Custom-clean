@@ -1,0 +1,11 @@
+TDAT: 	private JTextField getJTextFieldHiddenUnits() {
+		if (jTextFieldHiddenUnits == null) {
+			jTextFieldHiddenUnits = new JTextField();
+			jTextFieldHiddenUnits.setBounds(new Rectangle(114, 170, 47, 20));
+			jTextFieldHiddenUnits.setColumns(0);
+			jTextFieldHiddenUnits.setVisible(false);
+		}
+		return jTextFieldHiddenUnits;
+	}
+
+COM:returns a JTextField object with specific properties and is only visible if a certain condition is met

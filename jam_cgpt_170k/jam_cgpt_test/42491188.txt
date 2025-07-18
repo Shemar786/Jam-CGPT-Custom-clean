@@ -1,0 +1,20 @@
+TDAT:     public void removeFromWorld(FoldEntity e) {
+        synchronized (e) {
+            e.cancelAutomations();
+            e.murderChildren();
+
+            synchronized (myAutomator) {
+                removeTopLevelAnchor(e.getAnchor(), e.getAbsoluteDepth());
+
+                FoldEntity parent = e.getParent();
+
+                if (parent != null) {
+                    parent.removeAnchoredEntity(e);
+                }
+
+                e.setIsAlive(false);
+            }
+        }
+    }
+
+COM:removes a FoldEntity object from the world and performs various associated actions, including canceling automations, removing anchors, and setting the entity as not alive

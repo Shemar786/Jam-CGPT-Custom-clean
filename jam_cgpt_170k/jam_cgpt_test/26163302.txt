@@ -1,0 +1,15 @@
+TDAT:     public void testInsertNewSubjectRecord() throws Exception {
+        // truly, tested through testInsert
+        
+        logger.info("insertNewSubjectRecord");
+        
+        Subject subject = new Subject(new Random().toString());
+        
+        SubjectDAOSpringJDBCImpl instance =
+         (SubjectDAOSpringJDBCImpl)context.getBean(  "SubjectDAO",
+         SubjectDAOSpringJDBCImpl.class);
+        
+        instance.insertNewSubjectRecord(subject);
+    }
+
+COM:tests the insertion of a new subject record using a Spring JDBC implementation

@@ -1,0 +1,10 @@
+TDAT:     public OObject combination( OObject x ){
+	if( (this instanceof Complex) && (x instanceof Complex) ) {
+	    return ((Complex)this).combination( (Complex)x );
+	} else if( !((this instanceof Error) || (x instanceof Error)) ){
+	    return new jscicalc.expression.Combination( this, x );
+	}
+	return new Error( "OObject combination( x ) error" );
+    }
+
+COM:takes an object 'x' as input, checks if both 'this' and 'x' are instances of Complex and returns the combination of the two Complex objects, otherwise it returns a new Combination object or a new Error object depending on the instance type

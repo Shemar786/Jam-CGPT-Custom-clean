@@ -1,0 +1,17 @@
+TDAT:     public CallContext findContext(int threadId) {
+        Iterator   iter;
+        Object     obj;
+
+        synchronized (threadContext) {
+            iter = threadContext.keySet().iterator();
+            while (iter.hasNext()) {
+                obj = iter.next();
+                if (obj.hashCode() == threadId) {
+                    return (CallContext) threadContext.get(obj);
+                }
+            }
+        }
+        return null;
+    }
+
+COM:searches for a CallContext object associated with a given thread ID within a synchronized HashMap

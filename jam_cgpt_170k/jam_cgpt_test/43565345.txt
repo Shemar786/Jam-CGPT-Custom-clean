@@ -1,0 +1,11 @@
+TDAT:     public UserSecurity getUserSecurity() throws PersistenceException {
+        Object obj = this.request.getSession().getAttribute(ContextAdapter.SECURITY_SESSION_KEY);
+        if (obj instanceof UserSecurity) {
+            return (UserSecurity) obj;
+        } else {
+            this.setUserSecurity(this.getDefaultUserSecurity());
+            return this.getDefaultUserSecurity();
+        }
+    }
+
+COM:retrieves the user security from the session context object, and if not found, sets and returns the default UserSecurity object

@@ -1,0 +1,14 @@
+TDAT:     public boolean checkAlive(int tries) throws Exception{
+        boolean alive = false;
+        for(int i=0;!alive && i<tries;i++){
+            if (ProtegeProxy.checkAlive()) alive = true;
+            else {
+                try{
+                    Thread.sleep(500);
+                }catch(Exception e){;}
+            }
+        }
+        return alive;
+    }
+
+COM:checks if a ProtegeProxy is alive by attempting to connect to it a specified number of times

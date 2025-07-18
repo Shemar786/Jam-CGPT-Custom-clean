@@ -1,0 +1,20 @@
+TDAT: 	private JButton getConnect() {
+		if (connect == null) {
+			connect = new JButton();
+			connect.addActionListener(new ActionListener() {
+
+				public void actionPerformed(ActionEvent e) {
+					cD.setVisible(true);
+					new AnimationConnection(jTextArea, cD
+							.getAnimationName(), cD.getProjectName(), cD
+							.getModelName(), cD.getHostName(), cD
+							.getPortNumber());
+
+				}
+			});
+			connect.setText("Connect");
+		}
+		return connect;
+	}
+
+COM:returns a JButton that, when pressed, opens a dialog box and initiates a new instance of an AnimationConnection class

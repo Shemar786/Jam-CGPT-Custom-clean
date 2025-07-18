@@ -1,0 +1,17 @@
+TDAT: 	protected void addIsRootPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveHistoryAgent_isRoot_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveHistoryAgent_isRoot_feature", "_UI_EveHistoryAgent_type"),
+				 SocialNetworkAnalysisPackage.Literals.EVE_HISTORY_AGENT__IS_ROOT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "isRoot" attribute of an EveHistoryAgent object

@@ -1,0 +1,10 @@
+TDAT:     protected File getJarFile(File directory, String finalName, String classifier) {
+        if (classifier == null) {
+            classifier = "";
+        } else if ((classifier.trim().length() > 0) && (!classifier.startsWith("-"))) {
+            classifier = "-" + classifier;
+        }
+        return new File(directory, finalName + classifier + ".jar");
+    }
+
+COM:returns a File object representing a JAR file with a specified name and optional classifier in a given directory

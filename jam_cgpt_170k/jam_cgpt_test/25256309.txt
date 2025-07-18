@@ -1,0 +1,19 @@
+TDAT:     private SubjectKeyIdentifier getSubjectKeyIdentifier() {
+        byte[] derValue = certificate.getExtensionValue(X509Extensions.SubjectKeyIdentifier.getId());
+
+        if ((derValue == null) || (derValue.length == 0)) {
+            return null;
+        }
+
+        SubjectKeyIdentifier ski = null;
+
+        try {
+            ski = new SubjectKeyIdentifierStructure(derValue);
+        } catch (IOException e) {
+            return null;
+        }
+
+        return ski;
+    }
+
+COM:retrieves the subject key identifier from a given X.509 certificate

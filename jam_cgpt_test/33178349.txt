@@ -1,0 +1,30 @@
+TDAT:     protected void printBlocking(String format) {
+	boolean inCommand = false;
+	for (int i = 0; i < format.length(); ++i) {
+	    char c = format.charAt(i);
+
+	    if (inCommand) {
+		inCommand = false;
+		switch (c) {
+		    case '%':
+			print(c);
+			break;
+			    
+		    case 'i': // append the indent
+			indent();
+			break;
+			    
+		    default:
+			break;
+		}
+	    }
+	    else if (c == '%') {
+		inCommand = true;
+	    }
+	    else {
+		print(c);
+	    }
+	}
+    }
+
+COM:takes a string as input and parses it for specific commands, then executes the corresponding actions to print a formatted output

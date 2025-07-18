@@ -1,0 +1,9 @@
+TDAT:         public String lexicalize(List<Aggregate> aggregates, Map<String, LexicalEntry> arguments) {
+                AggRulePair arp = selectBestRule(aggregates, arguments.keySet());
+                if (arp == null || arp.agg == null || arp.rule == null) {
+                        return null;
+                }
+                return arp.rule.lexicalize(arp.agg, arguments);
+        }
+
+COM:takes a list of Aggregate objects and a map of LexicalEntry objects as arguments, selects the best rule based on those arguments, and returns the lexicalized form of that rule and the corresponding aggregate and argument values

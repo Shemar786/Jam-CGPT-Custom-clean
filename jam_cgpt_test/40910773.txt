@@ -1,0 +1,13 @@
+TDAT: 	public String getExternalJavadocExpr() throws JspException {
+		ClassDisplay cd = (ClassDisplay) pageContext.
+				getAttribute("classDisplay", PageContext.REQUEST_SCOPE);
+		Admin admin = Admin.getAdminInstance();
+		String expr = admin.getExternalJavadocExpr(cd.getBuildName(),
+				cd.getPackageName());
+		String url = (String) ExpressionUtil.evalNotNull(
+			"UtilTag", "externalJavadoc", expr,
+			String.class, this, pageContext);
+		return url;
+	}
+
+COM:retrieves an external Javadoc URL based on the build name and package name of a class and evaluates it using Expression Language

@@ -1,0 +1,9 @@
+TDAT:     public void dirtyProjectVector(Vector3f toProject){
+        float distance = normal.dotProduct(toProject);
+        float x = toProject.getX() - normal.getX()*distance;
+        float y = toProject.getY() - normal.getY()*distance;
+        float z = toProject.getZ() - normal.getZ()*distance;
+        toProject.setXYZ(x,y,z);
+    }
+
+COM:takes a Vector3f object and projects it onto a plane defined by a normal vector

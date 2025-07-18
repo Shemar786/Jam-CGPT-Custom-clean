@@ -1,0 +1,10 @@
+TDAT:   public void undoableEditHappened(UndoableEditEvent e) {
+    UndoItem undoItem = new UndoItem(this.getCaretPosition(), e.getEdit());
+    for (int i = undoList.size() - 1; i > undoPosition; i--)
+      undoList.remove(i);
+    undoList.add(undoItem);
+    undoPosition++;
+    modified = true;
+  }
+
+COM:adds an undoable edit event to a list and updates the position in the list

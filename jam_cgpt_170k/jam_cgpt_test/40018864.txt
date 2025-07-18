@@ -1,0 +1,11 @@
+TDAT:     protected void setTargetVelocity(int i) {
+        Vector resultV = new Vector(0, 0);
+        Particle p = (Particle) ((Gui) parent).getTargets().get(i);
+        resultV = new Vector(p.loc);
+        resultV.sub(loc);
+        resultV.normalize();
+        vel.add(resultV);
+        vel.normalize();
+    }
+
+COM:sets the target velocity of a particle based on its location and the location of a specified target

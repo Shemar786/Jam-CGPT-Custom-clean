@@ -1,0 +1,18 @@
+TDAT: 	private String getHeaderLine() {
+		
+		StringBuilder sb = new StringBuilder();
+		
+		// --- Add Date / Millisecond - Header ------------
+		sb.append("Time").append(monitorDatasetDelimiter);
+		sb.append("Millis").append(monitorDatasetDelimiter);
+
+		// --- Build complete dataset ---------------------
+		Iterator<String> it = loadContainer2Display.iterator();
+		while (it.hasNext()) {
+			String containerName = it.next();
+			sb.append(monitorDatasetPartsHeader.get(containerName));
+		}
+		return sb.toString();
+	}
+
+COM:generates a header line for a monitoring dataset

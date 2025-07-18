@@ -1,0 +1,7 @@
+TDAT:     public void put(String key, int value) throws IllegalArgumentException {
+        if (value < 0) // int2minLeb doesn't work on negative values
+            throw new IllegalArgumentException("Negative value: " + value + " for key: " + key);
+        put(key, ByteUtils.int2minLeb(value));
+    }
+
+COM:sets a string key and an integer value in a map, but throws an IllegalArgumentException if the value is negative

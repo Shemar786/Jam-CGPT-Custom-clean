@@ -1,0 +1,11 @@
+TDAT:     public boolean covers(GrammaticalProperties properties) {
+        for (final Iterator it = properties.getTags().iterator(); it.hasNext();) {
+            GrammaticalTag tag = (GrammaticalTag) it.next();
+            if (!tags.containsKey(tag.getSymbol())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+COM:checks if the given GrammaticalProperties object's tags are all present in the current object's tags and returns a boolean value indicating if this is the case

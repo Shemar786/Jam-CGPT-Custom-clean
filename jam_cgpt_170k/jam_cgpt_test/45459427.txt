@@ -1,0 +1,11 @@
+TDAT: 	private JTextField getJTextField3() {
+		if (jTextField3 == null) {
+			jTextField3 = new JTextField();
+			jTextField3.setBounds(new Rectangle(31, 91, 435, 29));
+			jTextField3.setText(defaultProps.getProperty("input"));
+			jTextField3.setText(applicationProps.getProperty("input"));
+		}
+		return jTextField3;
+	}
+
+COM:returns a JTextField with default and application properties set, and creates a new one if it doesn't exist

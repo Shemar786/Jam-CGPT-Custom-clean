@@ -1,0 +1,9 @@
+TDAT:   protected void insertCells(int row, int column, int count) {
+    Element tr = DOM.getChild(bodyElem, row);
+    for (int i = column; i < column + count; i++) {
+      Element td = createCell();
+      DOM.insertChild(tr, td, i);
+    }
+  }
+
+COM:inserts a specified number of cells at a specified row and column in a table

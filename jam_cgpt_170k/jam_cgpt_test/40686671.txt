@@ -1,0 +1,20 @@
+TDAT:   private void closeImpl() {
+    System.out.println("Closing connection");
+
+    try {
+      if (in != null)
+        in.close();
+      if (out != null)
+        out.close();
+      if (socket != null) {
+        socket.close();
+        socket = null;
+        manuallyClosed = true;
+      }
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+COM:This is a method for closing a connection that prints a message, closes input/output streams and a socket, and sets a flag indicating it was manually closed

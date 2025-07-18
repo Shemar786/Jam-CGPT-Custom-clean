@@ -1,0 +1,16 @@
+TDAT: 	private void determineNextSelection(TocObject parent, int index) {
+		// Select the next sibling
+		fObjectToSelect = parent.getNextSibling(fTocObjects[index]);
+		if (fObjectToSelect == null) {
+			// No next sibling
+			// Select the previous sibling
+			fObjectToSelect = parent.getPreviousSibling(fTocObjects[index]);
+			if (fObjectToSelect == null) {
+				// No previous sibling
+				// Select the parent
+				fObjectToSelect = parent;
+			}
+		}
+	}
+
+COM:determines the next object to select within a table of contents based on the parent and index provided, prioritizing selecting the next sibling, then the previous sibling, and finally the parent if no siblings are available

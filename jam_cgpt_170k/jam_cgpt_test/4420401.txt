@@ -1,0 +1,11 @@
+TDAT:   protected StreamStub createTCPStreamStub(RequestHandler handler, int port) throws SharkProtocolNotSupportedException {
+    try {
+      return new TCPStreamStub(handler, port);
+    }
+    catch(IOException ioe) {
+      ioe.printStackTrace();
+      throw new SharkProtocolNotSupportedException(ioe.getMessage());
+    }
+  }
+
+COM:creates and returns a StreamStub for TCP protocol with the given RequestHandler and port, throwing a SharkProtocolNotSupportedException if an IOException occurs

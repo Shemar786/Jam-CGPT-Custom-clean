@@ -1,0 +1,18 @@
+TDAT:     public Object getUnselectedItem() {
+        Object item = null;
+        Object currentSelectedItem = getSelectedItem();
+        for(int idx = 0, maxIdx = getSize();
+            idx < maxIdx && item == null; idx++)
+        {
+            item = getElementAt(idx);
+            if(currentSelectedItem != null &&
+               currentSelectedItem.equals(item))
+            {
+                item = null;
+            }
+        }
+
+        return item;
+    }
+
+COM:returns an unselected item from a list of selectable items

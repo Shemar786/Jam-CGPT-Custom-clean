@@ -1,0 +1,14 @@
+TDAT: 	public void userLogin(SuccessCode success, ActiveParticipant user) {
+		try {
+			if (user == null) user = getUser();
+			if (user != null) {
+                user.role = ActiveParticipantIds.Source;
+                user.setRequestor(true);
+                this.userAuthentication(user, AuditTypeCodes.Login, success);
+            }
+		} catch (JAXBException e) {
+			LOG.error("Unable to log user authentication.", e);
+		}
+	}
+
+COM:logs a user authentication and sets their role and requestor status if the user is not null

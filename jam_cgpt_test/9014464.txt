@@ -1,0 +1,14 @@
+TDAT: 	protected void place(final Picture picture, final boolean add) {
+		Point p;
+
+		if (Picture.ORIGIN == picture.getOrigin()) {
+			// never been placed before
+			p = random(picture.getIdentity().toString(), picture.width, picture.height);
+			picture.x = p.x;
+			picture.y = p.y;
+			picture.setOrigin(p);
+		}
+		mThumbelina.getPicturePanel().draw(picture, add);
+	}
+
+COM:places a picture on a panel at a random location if it has not been placed before, or at its previous location if it has

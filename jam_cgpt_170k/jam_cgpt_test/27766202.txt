@@ -1,0 +1,14 @@
+TDAT:     public String getStats() {
+        
+        String returnString =
+        "Processing ["+m_Sources.size()+"] sources. | \n";
+        returnString +=
+        "Serving ["+m_Listeners.size()+"] listeners. | \n";
+        returnString +=
+        "Streamed "+(byteCount/1024)+" Kbytes so far. \n";
+        
+        return returnString;
+        
+    }
+
+COM:returns a string including processing and streaming statistics for the current operation

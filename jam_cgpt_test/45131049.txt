@@ -1,0 +1,11 @@
+TDAT:     private Literal promoteDecimal(Literal numeral) {
+        Long result;
+        try {
+            result = Long.valueOf(numeral.getLabel());
+        } catch (NumberFormatException e) {
+            throw new TypeError("Cannot promote non-numeral to a decimal value");
+        }
+        return this.factory.createLiteral(result.toString(), SPARQLConstants.DECIMAL_TYPE);
+    }
+
+COM:promotes a Literal numeral to a decimal value by converting it to a Long and creating a new Literal with the converted value and the DECIMAL_TYPE

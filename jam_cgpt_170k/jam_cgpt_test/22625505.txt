@@ -1,0 +1,11 @@
+TDAT: 	protected String getReviewProcess() throws Exception {
+		List nodes = getDom4jDoc().selectNodes("/*[local-name()='collectionRecord']/*[local-name()='general']/*[local-name()='reviewProcess']");
+		if (nodes.size() > 1)
+			prtln("More than one review process!");
+		if (nodes.size() == 0)
+			return null;
+		Element element = (Element) nodes.get(0);
+		return element.getText();
+	}
+
+COM:retrieves the text content of the "reviewProcess" element in an XML document using the Dom4j library, and throws an exception if there is an issue with the document or if there is more than one "reviewProcess" element

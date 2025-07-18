@@ -1,0 +1,14 @@
+TDAT: 	public Resource getResourceObjectById(String aResourceId) {
+		Iterator<String> it = getResources().keySet().iterator();
+		Resource ResourceObject;
+		String resourceId;
+		while (it.hasNext()) {
+			resourceId = (String) it.next();
+			ResourceObject = (Resource) getResources().get(resourceId);
+			if (ResourceObject.getId().equals(aResourceId))
+				return ResourceObject;
+		}
+		return null;
+	}
+
+COM:returns a Resource object by searching for a matching resource ID from a collection of resources

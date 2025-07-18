@@ -1,0 +1,12 @@
+TDAT:     public View create(Element elem) {
+        Document doc = elem.getDocument();
+        Object i18nFlag = doc.getProperty("i18n"/*AbstractDocument.I18NProperty*/);
+        if ((i18nFlag != null) && i18nFlag.equals(Boolean.TRUE)) {
+            // build a view that support bidi
+            return createI18N(elem);
+        } else {
+            return new PlainView(elem);
+        }
+    }
+
+COM:creates a view for an XML element and checks if it needs to support bidi based on a document property

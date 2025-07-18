@@ -1,0 +1,13 @@
+TDAT: 	private void dispatchFireEngines(String schoolName) throws RemoteException {
+
+		log.debug("dispatchFireEngines(): Dispatching fire engines to school " + schoolName);
+
+		FireEngineDispatchServiceStub.DispatchVehicle msg = new FireEngineDispatchServiceStub.DispatchVehicle();
+		msg.setSchool(schoolName);
+
+		this.fireDispatchStub.dispatchVehicle(msg);
+
+		log.debug("dispatchFireEngines(): The Fire Dispatch service was called");
+	}
+
+COM:dispatches fire engines to a specified school name using a FireEngineDispatchServiceStub

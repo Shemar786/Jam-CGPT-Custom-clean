@@ -1,0 +1,11 @@
+TDAT:     private LoginEntityFacadeLocal lookupLoginEntityFacade() {
+        try {
+            Context c = new InitialContext();
+            return (LoginEntityFacadeLocal) c.lookup("NewsApp/LoginEntityFacade/local");
+        } catch(NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE,"exception caught" ,ne);
+            throw new RuntimeException(ne);
+        }
+    }
+
+COM:looks up and returns a local entity facade for the "LoginEntityFacade" in a "NewsApp" application

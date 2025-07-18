@@ -1,0 +1,12 @@
+TDAT:     public void update(Set<SetOfTwo<Integer>> edges) {
+        for (SetOfTwo<Integer> e : edges) {
+            Integer count = edgeCounts.get(e);
+            if (count == null) {
+                count = 0;
+            }
+            edgeCounts.put(e,count+1);
+        }
+        numSamples++;
+    }
+
+COM:updates the edge counts of a set of edges represented as sets of two integers and increments the number of samples

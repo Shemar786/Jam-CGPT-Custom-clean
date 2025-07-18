@@ -1,0 +1,15 @@
+TDAT:     public void index(Lesson lesson) {
+        try {
+            IndexWriter indexWriter = new IndexWriter(ramDirectory,
+                    new IndexWriterConfig(Version.LUCENE_32, analyzer));
+            for (Card card : lesson.getCards()) {
+                addCard(indexWriter, card);
+            }
+            indexWriter.optimize();
+            indexWriter.close();
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, null, e);
+        }
+    }
+
+COM:indexes a lesson's cards using Lucene 3.2 and closes the IndexWriter after optimization

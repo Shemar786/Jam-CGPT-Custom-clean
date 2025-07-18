@@ -1,0 +1,18 @@
+TDAT:     private void commitWriteSession() throws SVNException {
+        if ( writeEditor != null ) {
+            try {
+                if ( writeAttempted && writeSuccessful ) {
+                    writeEditor.closeDir();
+                    writeEditor.closeEdit();
+                } else {
+                    writeEditor.abortEdit();
+                }
+            } finally {
+                writeEditor = null;
+                writeOptions = null;
+                addedEntries = null;
+            }
+        }
+    }
+
+COM:commits a write session by either closing or aborting the edit and resetting various class variables, throwing an SVNException if necessary

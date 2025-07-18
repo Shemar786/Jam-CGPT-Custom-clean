@@ -1,0 +1,10 @@
+TDAT:     public void skipPast(String to) {
+        this.myIndex = this.mySource.indexOf(to, this.myIndex);
+        if (this.myIndex < 0) {
+            this.myIndex = this.mySource.length();
+        } else {
+            this.myIndex += to.length();
+        }
+    }
+
+COM:skips past a specified substring in a given source string and updates the current index accordingly

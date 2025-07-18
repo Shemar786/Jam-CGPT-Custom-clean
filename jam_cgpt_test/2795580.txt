@@ -1,0 +1,15 @@
+TDAT: 	public void stop() {
+		if ((state.getStartTime() == null)
+				&& (state.getAccumulatedTime() == 0)) {
+			LOG.debug(format(Messages
+					.getString("StopWatch.txt.sw-stop-useless"), //$NON-NLS-1$
+					this));
+		} else {
+			LOG.debug(format(
+					Messages.getString("StopWatch.log.sw-stop"), this)); //$NON-NLS-1$
+			doChangeState(
+					Messages.getString("StopWatch.txt.stop-sw"), 0, null); //$NON-NLS-1$
+		}
+	}
+
+COM:stops a stopwatch and logs a debug message if the accumulated time is zero

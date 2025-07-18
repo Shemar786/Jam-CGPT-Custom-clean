@@ -1,0 +1,18 @@
+TDAT: 	private void fireEvent(IndexingEvent indexingEvent, String itemIndexerClassName) throws Exception {
+		if (itemIndexers == null)
+			return;
+		
+		if(repositoryManager.getIsReadOnly()){
+			String msg = "Repository is read-only. No action taken.";
+			addIndexingMessage(msg,MSG_TYPE_INFO);
+			return;
+		}
+		synchronized (itemIndexers) {
+			if (itemIndexers.size() == 0)
+				throw new Exception("There are no ItemIndexers configured. Check for initialization errors.");
+		}
+		IndexingEventThread indexingEventThread = new IndexingEventThread(indexingEvent, itemIndexerClassName);
+		indexingEventThread.start();
+	}
+
+COM:This is a Java method that fires an indexing event, but first checks if the itemIndexers array is null or empty and if the repository is read-only, and throws an exception if there are no ItemIndexers configured

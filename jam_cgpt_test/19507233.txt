@@ -1,0 +1,12 @@
+TDAT: 	public void testMoveIntToSnapshot() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neParent = createNEPositive(rSource, "parent", null);
+		NamedElement neSource = createNEPositive(neParent, "foo", null);
+		rfSource.save(null, false);
+		
+		moveNegative(neSource, neParent.getSnapshot(), null, "bar", false,
+				IRodinDBStatusConstants.READ_ONLY);
+	}
+
+COM:tests moving an element from one parent to another in a Rodin file

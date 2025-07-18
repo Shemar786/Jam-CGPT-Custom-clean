@@ -1,0 +1,9 @@
+TDAT:     protected void toJson(Object object) throws Exception {
+        HttpServletResponse response = this.getResponse();
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json;charset=UTF-8");
+        JsonUtils.write(object, response.getWriter(), this.getExcludes(),
+            this.getDatePattern());
+    }
+
+COM:writes a JSON response to the HttpServletResponse object, with specified character encoding and content type, using JsonUtils to serialize an object

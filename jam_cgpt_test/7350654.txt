@@ -1,0 +1,11 @@
+TDAT:     protected Diagram2D getNestedDiagram(final int pos) {
+        if (pos == 0) {
+            // we have only a flat diagram left
+            return getSimpleDiagram(0);
+        }
+        // else created nested diagram recursively
+        return new NestedLineDiagram(getNestedDiagram(pos - 1), this.history
+                .getCurrentDiagram(pos));
+    }
+
+COM:returns a Diagram2D object, either a simple or a nested diagram, based on the integer value passed as the position argument

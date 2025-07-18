@@ -1,0 +1,11 @@
+TDAT: 	private void initialize() {
+		mCellSide = mBoardSide/mNumCellsAcross;	
+		mBackgroundColor = Color.WHITE;
+		mGridLineColor = Color.BLACK;
+		//We add 1 to the board size so that the final gridlines are drawn in the x and y planes.
+		this.setSize(mBoardSide + 1, mBoardSide + 1);
+		this.setLayout(new GridBagLayout());
+		this.setPreferredSize(new Dimension(mBoardSide + 1, mBoardSide + 1));
+	}
+
+COM:initializes the values of mCellSide, mBackgroundColor, mGridLineColor and sets the layout and size of the component

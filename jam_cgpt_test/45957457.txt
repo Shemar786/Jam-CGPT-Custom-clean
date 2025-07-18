@@ -1,0 +1,12 @@
+TDAT:   public void init() {
+    this.codeTables.clear();
+    for (KivwsCodeTableName codeTableName : KivwsCodeTableName.values()) {
+      try {
+        this.populateCodeTablesMap(codeTableName);
+      } catch (KivException e) {
+        throw new RuntimeException(e.getMessage());
+      }
+    }
+  }
+
+COM:initializes the codeTables map by clearing it and populating it with values of KivwsCodeTableName

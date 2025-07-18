@@ -1,0 +1,15 @@
+TDAT:     public Properties getPropertyFileFromClasspath(String location) {
+        InputStream i = getClass().getResourceAsStream(location);
+        Properties props = new Properties();
+        if (i != null) {
+            try {
+                props.load(i);
+                i.close();
+            } catch (IOException ex) {
+                return null;
+            }
+        }
+        return props;
+    }
+
+COM:retrieves a properties file from the classpath and returns a Properties object containing its content

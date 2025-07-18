@@ -1,0 +1,15 @@
+TDAT:     public void createDefaultPdfs(Uncertainties uncertainties) {
+		for (int n = 0; n < uncertainties.variationFunctionCount(); n++) {
+			Variation variationFunction = uncertainties.getVariationFunction(n);
+
+        	//create new UncertainItem.
+            UncertainItem uncertainItem = variationFunction.getUncertainItem().clone();
+
+	    	//create new default pdf.
+	        PDF pdf = new NormalDistribution();
+	        pdf.setUncertainItem(uncertainItem);
+	        uncertainties.addPdf(pdf);
+		}
+    }
+
+COM:creates a default PDF for each variation function in the given Uncertainties object and adds it to the object

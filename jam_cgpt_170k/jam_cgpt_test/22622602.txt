@@ -1,0 +1,15 @@
+TDAT: 	public void displayMultiValueFields() {
+		prtln("** MultiValue Fields **");
+		for (Iterator em = getMultiValueFields().iterator(); em.hasNext(); ) {
+			InputField field = (InputField) em.next();
+			if (schemaHelper.isRequiredBranch(field.getSchemaNode())) {
+				prtln(field.getXPath() + " (required)");
+			} else {
+				prtln(field.getXPath());
+			}
+			prtln("\t" + field.getValue());
+		}
+		prtln("----------\n");
+	}
+
+COM:displays the multi-value fields, including their XPath and value, and indicates which ones are required

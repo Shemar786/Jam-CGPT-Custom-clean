@@ -1,0 +1,9 @@
+TDAT:     private String getTextOfElement() {
+        String text = charBuffer.toString();
+        text = text.replaceAll("[\n\r\t]+", "");
+        text = text.replaceAll("^\\s+", "");
+        charBuffer.delete(0, charBuffer.length());
+        return text;
+    }
+
+COM:retrieves and formats the text content of an HTML element

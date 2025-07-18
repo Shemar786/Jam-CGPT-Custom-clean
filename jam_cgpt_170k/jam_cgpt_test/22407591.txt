@@ -1,0 +1,14 @@
+TDAT:     public void setSelectWithDescription(boolean bSelectWithDescription) {
+        AntTargetMap targetmap = getTargetMap();
+
+        if (bSelectWithDescription) {
+            targetmap.selectWithDescription();
+        } else {
+            targetmap.selectAll();
+        }
+
+        m_targetTableModel.setSelectWithDescription(bSelectWithDescription);
+        m_targetTableModel.setTargetMap(targetmap);
+    }
+
+COM:sets the selection behavior for a target map based on whether or not it should use descriptions and updates the target table model accordingly

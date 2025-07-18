@@ -1,0 +1,15 @@
+TDAT: 	private void buildPath(Vertex from, Vertex to, Map<Vertex, Vertex> p, List<Vertex> result) throws IllegalArgumentException {
+		if (from == to) {
+			result.add(from);
+		} else {
+			Vertex pv = p.get(to);
+			if (pv == null) {
+				throw new IllegalArgumentException("No path found");
+			}
+			// recurse
+			buildPath(from, pv, p, result);
+			result.add(to);
+		}
+	}
+
+COM:builds a path between two vertices using a map of vertex predecessors and adds the result to a list

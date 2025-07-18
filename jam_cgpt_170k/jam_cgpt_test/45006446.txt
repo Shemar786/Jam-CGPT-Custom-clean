@@ -1,0 +1,26 @@
+TDAT: 	public void actionPerformed(ActionEvent event) {
+		
+		String command = event.getActionCommand();
+		
+		if (command.equals(okayCommand)) {
+			
+			int index = possibleUnits.getSelectedIndex();
+			if (index < 0)
+				return;
+			
+			String mms = (String)possibleUnits.getSelectedItem();
+			StringTokenizer st = new StringTokenizer(mms);
+			String id = st.nextToken();
+			
+			this.setUnitID(id);
+			this.setVisible(false);
+			//this.dispose();
+			return;		
+		}
+		
+		//dispose of the dialog
+		this.dispose();
+		
+	}//end actionPerformed
+
+COM:handles the action events and sets the unit ID of a dialog box

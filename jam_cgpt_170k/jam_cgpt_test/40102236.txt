@@ -1,0 +1,7 @@
+TDAT:     public void sendCommentEmail(String emailPrefix, String title, String comment, Map context, String author, Blog blog) {
+        String recipientEmail = blog.getAuthorizedUserEmail(author);
+
+        EmailUtils.notifyBlogAuthor(emailPrefix + title, comment, context, recipientEmail);
+    }
+
+COM:sends an email notification to the author of a blog with the specified email prefix, title, comment, context, and author

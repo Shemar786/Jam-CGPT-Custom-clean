@@ -1,0 +1,14 @@
+TDAT: 	public void selectionChanged(IAction action, ISelection selection) {
+		if (selection instanceof IStructuredSelection) {
+			Object element = ((IStructuredSelection) selection).getFirstElement();
+			if (element instanceof IFile) {
+				editorfile = (IFile) element;
+			} else if (element instanceof IAdaptable) {
+				editorfile = (IFile) ((IAdaptable) element).getAdapter(IFile.class);
+			}
+		}
+		
+		action.setEnabled(editorfile != null);
+	}
+
+COM:handles changes in selection and enables/disables an action based on the selected element being an IFile or an IAdaptable

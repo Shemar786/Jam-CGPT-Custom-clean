@@ -1,0 +1,13 @@
+TDAT: 	public void addLoader(String formVariable, ILoader loader) {
+		ArrayList al = (ArrayList) loaderMap.get(formVariable);
+		if (al == null) {
+			al = new ArrayList(1);
+			loaderMap.put(formVariable, al);
+			log.debug("Loader added for " + formVariable);
+			BeanUtils.addPropertyChangeListener(ctx, formVariable, this);
+		}
+
+		al.add(loader);
+	}
+
+COM:adds a loader to an ArrayList based on the form variable passed in as a parameter

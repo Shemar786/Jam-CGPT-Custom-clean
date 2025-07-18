@@ -1,0 +1,14 @@
+TDAT:     public void testGetAddr1() {
+        System.out.println("getAddr1");
+        
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        String expResult = "";
+        String result = instance.getAddr1();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the "getAddr1" method of the "SystemClient_DBImpl" class by comparing the expected and actual results

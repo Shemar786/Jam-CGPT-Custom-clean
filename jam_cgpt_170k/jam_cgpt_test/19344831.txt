@@ -1,0 +1,7 @@
+TDAT:     private void init_100_LoadJars() {
+    	init_110_LoadJars(CommonCode.SYSTEM_JAR_FILE, true, true);
+    	init_110_LoadJars(CommonCode.SYSTEM_JDBC_JAR_FILE, false, true);
+    	init_110_LoadJars(CommonCode.USER_JAR_FILE, false, false);
+    }
+
+COM:initializes and loads three sets of jars with different parameters

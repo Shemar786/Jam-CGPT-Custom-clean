@@ -1,0 +1,12 @@
+TDAT:     public void calculateGotoItems() {
+        if(sourceItems == null || grammarItem == null) {
+            return; // bail out -- could issue exception here
+        }
+        Iterator iter = sourceItems.iterator();
+        while(iter.hasNext()) {
+            LRGotoItem srceGotoItem = (LRGotoItem)iter.next();
+            closure(srceGotoItem.getNextItem(state));
+        }
+    }
+
+COM:calculates the goto items by iterating through the source items and applying the closure function

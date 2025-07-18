@@ -1,0 +1,16 @@
+TDAT: 	protected void displayDocumenters(final String packagename, final Intent intent) {
+		String[] textarray = AboutUtils.getStringArrayExtraOrMetadata(this, packagename, intent, 
+				AboutIntents.EXTRA_DOCUMENTERS, AboutMetaData.METADATA_DOCUMENTERS);
+		String text = AboutUtils.getTextFromArray(textarray);
+		
+		if (!TextUtils.isEmpty(text)) {
+			mDocumentersText.setText(text);
+			mDocumentersLabel.setVisibility(View.VISIBLE);
+			mDocumentersText.setVisibility(View.VISIBLE);
+		} else {
+			mDocumentersLabel.setVisibility(View.GONE);
+			mDocumentersText.setVisibility(View.GONE);
+		}
+	}
+
+COM:displays documenters information in a view if available, and hides the view if not

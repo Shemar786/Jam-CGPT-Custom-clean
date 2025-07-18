@@ -1,0 +1,17 @@
+TDAT:   protected void addScrollablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RunQuery_scrollable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RunQuery_scrollable_feature", "_UI_RunQuery_type"),
+				 ActionStepPackage.eINSTANCE.getRunQuery_Scrollable(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a scrollable property descriptor to an item property descriptor list

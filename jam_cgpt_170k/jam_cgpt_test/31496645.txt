@@ -1,0 +1,11 @@
+TDAT:     protected void fireObjectVisible(int objectNum, boolean isVisible) {
+	if (isVisible) {
+	    fireEvent(new ObjectModelEvent(this, objectNum, objectNum, 
+					   ObjectModelEvent.INSERT));
+	} else {
+	    fireEvent(new ObjectModelEvent(this, objectNum, objectNum, 
+					   ObjectModelEvent.DELETE)); 
+	}
+    }
+
+COM:fires an ObjectModelEvent indicating whether an object is visible or not

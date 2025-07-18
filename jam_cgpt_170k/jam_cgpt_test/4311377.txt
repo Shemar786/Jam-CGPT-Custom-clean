@@ -1,0 +1,7 @@
+TDAT: 	public Method getMethodInstance(String nsevent) throws SecurityException, NoSuchMethodException, InstantiationException, IllegalAccessException, ClassNotFoundException
+	{		
+		String methodName = nsevent.substring(nsevent.indexOf(Const.DELIMITER)+1);		
+		return get(nsevent).getHandlerClassInstance().getClass().getDeclaredMethod( methodName , new Class[]{ServletContext.class , Query.class , Reply.class } );		
+	}		
+
+COM:retrieves an instance of a method based on its name and throws exceptions if it encounters security issues, inability to find the method, instantiation or access errors, or class not found errors

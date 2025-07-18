@@ -1,0 +1,15 @@
+TDAT: 	private UserInfo createUserInfo() {
+
+		if( !checkApplyEnabled() ) return null;
+		
+		UserInfo userInfo = new UserInfo();
+		userInfo.setEmail( currentUserInfo.getEmail() );
+		userInfo.setNickname( nicknameField.getEntry() );
+		userInfo.setFirstname( firstnameField.getEntry() );
+		userInfo.setLastname( lastnameField.getEntry() );
+		userInfo.setAdministrator( currentUserInfo.isAdministrator() );
+		
+		return userInfo;
+	}
+
+COM:creates a new user info object if a certain condition is met and sets its properties based on input fields and the current user's info

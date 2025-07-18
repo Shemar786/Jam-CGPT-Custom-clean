@@ -1,0 +1,11 @@
+TDAT: 	private void _populateSingleTagPositions(String line, String tagName, int startIndex) throws IOException {
+		if (startIndex < line.length()) {
+			int tagIndex = line.indexOf("<" + tagName, startIndex);
+			if (tagIndex != -1) {
+				_SINGLE_TAG_POSITIONS.add(new Integer(tagIndex));
+				_populateSingleTagPositions(line, tagName, tagIndex + 1);
+			}
+		}
+	}
+
+COM:recursively searches for the position of a single HTML tag in a given line of text and adds it to a list of positions

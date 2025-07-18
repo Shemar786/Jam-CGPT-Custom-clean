@@ -1,0 +1,17 @@
+TDAT:     public void setDuration(long duration) {
+    	long seconds = (long) (duration / 1000);
+    	long minutes = seconds / 60;
+    	seconds = seconds % 60;
+    	long hours = minutes / 60;
+    	minutes = minutes % 60;
+    	long days = hours / 24;
+    	hours = hours % 24;
+
+    	setCurrentDay((int)days);
+    	setCurrentHour((int)hours);
+    	setCurrentMinute((int)minutes);
+    	setCurrentSecond((int)seconds);
+    	
+    }
+
+COM:converts a given duration in milliseconds to days, hours, minutes, and seconds and sets them as the current values

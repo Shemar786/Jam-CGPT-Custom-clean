@@ -1,0 +1,11 @@
+TDAT:     public CardPanel createCardPanel(MagicObject card) {
+        CharacteristicSnapshot s = card.getCharacteristics().get(0).getCharacteristics(
+                new CharacteristicSnapshot());
+        CardTextButton p = new CardTextButton(s);
+        p.addActionListener(cardListener);
+        p.addMouseListener(cardMouseListener);
+        p.setPainter(new DamagePainter());
+        return p;
+    }
+
+COM:creates a CardPanel object with characteristics taken from a MagicObject input, sets various listeners and painters, and returns the resulting panel

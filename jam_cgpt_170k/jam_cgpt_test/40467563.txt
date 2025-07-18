@@ -1,0 +1,12 @@
+TDAT: 	public boolean isOver(int ax, int ay){
+		Point p = new Point(0,0);
+		calcAbsPosition(p);
+		if(ax >= p.x && ax <= p.x + width && ay >= p.y + thumbPos - thumbSize/2 && ay <= p.y + thumbPos + thumbSize/2){
+			offset = ay - (p.y + thumbPos);
+			return true;
+		}
+		else 
+			return false;
+	}
+
+COM:checks if a given point is over a specific area and calculates the offset if it is

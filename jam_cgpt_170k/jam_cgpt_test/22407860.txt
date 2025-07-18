@@ -1,0 +1,20 @@
+TDAT:     private int getFileExtensionPos(final String str) {
+        String lower = str.toLowerCase();
+        final String[] extensions =
+                new String[] {".java", ".xml", ".bat", ".sh"};
+
+        for (int i = 0; i < extensions.length; i++) {
+            int pos = lower.indexOf(extensions[i]);
+
+            if (pos > 0) {
+                fileExtension =
+                        str.substring(pos, pos + extensions[i].length());
+
+                return pos;
+            }
+        }
+
+        return -1;
+    }
+
+COM:finds the position of the file extension in a given string by searching for a set of pre-defined file extensions

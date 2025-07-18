@@ -1,0 +1,13 @@
+TDAT: 	public void testExtendedPredicate() throws Exception {
+		final Predicate predicate = EFF.makeExtendedPredicate(fooS,
+				Arrays.<Expression> asList(eA, eB),
+				Arrays.<Predicate> asList(pA, pB), null);
+		assertTrace(predicate, "");
+		assertTrace(predicate, "0");
+		assertTrace(predicate, "1");
+		assertTrace(predicate, "2");
+		assertTrace(predicate, "3");
+		assertSkipChildrenOnce(predicate);
+	}
+
+COM:tests an extended predicate created with certain inputs and asserts its behavior in different scenarios

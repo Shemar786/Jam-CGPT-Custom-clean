@@ -1,0 +1,16 @@
+TDAT:     protected Document getSqlMap(IntrospectedTable introspectedTable) {
+
+        IbatorPlugin plugins = ibatorContext.getPlugins();
+        
+        Document document = new Document(XmlConstants.SQL_MAP_PUBLIC_ID,
+                XmlConstants.SQL_MAP_SYSTEM_ID);
+        document.setRootElement(getSqlMapElement(introspectedTable));
+
+        if (plugins.sqlMapDocumentGenerated(document, introspectedTable)) {
+            return document;
+        } else {
+            return null;
+        }
+    }
+
+COM:retrieves a SQL map document for a given introspected table, with the option to apply Ibator plugins to the document

@@ -1,0 +1,11 @@
+TDAT:     public void setPollInterval(int pollInterval) {
+        pollInterval = Math.min(pollInterval, MINIMUM_POLL_INTERVAL);
+
+        if (this.pollInterval != pollInterval) {
+            int old = this.pollInterval;
+            this.pollInterval = pollInterval;
+            changeSupport.firePropertyChange(POLL_INTERVAL, old, pollInterval);
+        }
+    }
+
+COM:sets the poll interval and fires a property change event if the new poll interval is different from the old value

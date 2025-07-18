@@ -1,0 +1,18 @@
+TDAT: 	public int addGeoRSS(GeoRSSFeed feed) {
+		int ret = -1;
+		Cursor c = db.query(GEORSS_TABLE, new String[] { ID }, GEORSS_URL
+				+ "='" + feed.url + "'", null, null, null, null);
+
+		if (c.moveToFirst()) {
+			ret = c.getInt(0);
+		} else {
+			db.insert(GEORSS_TABLE, null, getContentValues(feed));
+			c.requery();
+			c.moveToFirst();
+			ret = c.getInt(0);
+		}
+		c.close();
+		return ret;
+	}
+
+COM:adds a GeoRSS feed to a table in a database and returns the ID of the newly added feed

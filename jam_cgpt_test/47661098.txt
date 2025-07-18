@@ -1,0 +1,17 @@
+TDAT: 	protected void addProfilePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssociationTransformationRuleProfile_profile_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationTransformationRuleProfile_profile_feature", "_UI_AssociationTransformationRuleProfile_type"),
+				 WorkspacePackage.Literals.ASSOCIATION_TRANSFORMATION_RULE_PROFILE__PROFILE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a profile property descriptor to a set of item property descriptors

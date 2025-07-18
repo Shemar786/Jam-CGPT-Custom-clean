@@ -1,0 +1,20 @@
+TDAT: 	public Boolean update (final String token, RegisteredUser userData){
+		ExtendedBaseAccountRepository userRepository = new ExtendedBaseAccountRepository();
+		ExtendedBaseAccount user = userRepository.getCurrentUser();
+		CompanyRepository companyRepository = new CompanyRepository();
+		
+		if (user == null)
+			return false;
+		
+		user.setEmailAddress(userData.getEmailAddress());
+		user.setUserLatitude(userData.getUserLatitude());
+		user.setUserLongitude(userData.getUserLongitude());
+		
+		if (!userRepository.update(user))
+			return false;
+		
+		return companyRepository.assignUserToCompany(userData.getCompany());
+		
+	}
+
+COM:updates the email address, latitude, and longitude of the currently logged in user and assigns them to a company

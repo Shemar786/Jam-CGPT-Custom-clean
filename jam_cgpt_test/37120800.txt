@@ -1,0 +1,17 @@
+TDAT:     protected boolean isSatisfiedByRoot(final Resource resource) {
+
+        final boolean satisfied;
+        final String resourceName = resource.getName();
+        final Version resourceVersion = resource.getVersion();
+
+        if (resourceName.equals(this.resourceName)) {
+            satisfied
+                = this.resourceVersionRange.containsVersion(resourceVersion);
+        } else {
+            satisfied = false;
+        }
+
+        return satisfied;
+    }
+
+COM:checks if the given resource meets certain criteria by comparing its name and version to the stored values

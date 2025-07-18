@@ -1,0 +1,16 @@
+TDAT:     public void reset() {
+        files = new Vector<OutputFile>();
+        content = new Vector<ContentEntry>();
+        titlePageFile = null;
+        textFile = null;
+        tocFile = null;
+        lofFile = null;
+        lotFile = null;
+        indexFile = null;
+        bibliographyFile = null;
+        coverImageFile = null;
+        metaData = null;
+        nMasterCount = 0;
+	}
+
+COM:resets all variables to their initial values

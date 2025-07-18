@@ -1,0 +1,5 @@
+TDAT:     public String toString() {
+		return ("("+atomSerialNumber+","+residueSerialNumber+","+chainID+","+name+","+residueSymbol+","+super.x+","+super.y+","+super.z+")");
+    }
+
+COM:returns a string representation of an object's attributes

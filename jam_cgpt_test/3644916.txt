@@ -1,0 +1,10 @@
+TDAT:     public void submitResults(SOAPContext ctx, int id, int results[]) {
+        ServletContext sc = getServletContext(ctx);
+        Object tmp = sc.getAttribute("noagrid.data.js");
+        if (tmp != null) {
+            JobsSet js = (JobsSet)tmp;
+            js.processResults(id, results);
+        }
+    }
+
+COM:submits the results of a job with a given ID, using a SOAP context and an array containing the results, by retrieving the current JobsSet object from the ServletContext and then calling its processResults method

@@ -1,0 +1,12 @@
+TDAT:    public Plan makeJoinPlan(Plan current) {
+      Schema currsch = current.schema();
+      Predicate joinpred = mypred.joinPred(myschema, currsch);
+      if (joinpred == null)
+         return null;
+      Plan p = makeIndexJoin(current, currsch);
+      if (p == null)
+         p = makeProductJoin(current, currsch);
+      return p;
+   }
+
+COM:takes in a Plan object and returns a Plan object that represents a join operation between the input Plan and another Plan using either an index join or a product join

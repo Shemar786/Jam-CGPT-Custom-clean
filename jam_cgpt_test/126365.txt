@@ -1,0 +1,13 @@
+TDAT: 	private int determineAlignment(String attributeValue) {
+		// If the parent row is null, then the comp is forced to stretch
+		// anyway, so the alignment doesn't matter
+		if (getParentRow() == null)
+			return WEST;
+
+		// Inherit from row, if not available
+		if (attributeValue == null)
+			attributeValue = getParentRow().getCellAlign();
+		return SwingUtils.convertStringAlign(attributeValue, WEST);
+	}
+
+COM:determines the alignment of a cell in a row, either inheriting from the parent row or using a default value if the parent row is null

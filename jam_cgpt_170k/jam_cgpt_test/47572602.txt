@@ -1,0 +1,12 @@
+TDAT: 	public void initialiseClientBag() {
+		if(!m_bagInitialised) {
+			String packet = "Bi";
+			for(int i = 0; i < m_bag.getContents().size();i++) {
+				packet = packet + m_bag.getContents().get(i).getIdValue() + m_bag.getContents().get(i).getQuantityValue();
+			}
+			this.getIoSession().write(packet);
+			m_bagInitialised = true;
+		}
+	}
+
+COM:initializes a client bag by sending a packet containing the contents of the bag to the server

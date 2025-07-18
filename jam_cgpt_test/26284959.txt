@@ -1,0 +1,13 @@
+TDAT:     public void htmlColorChangedSlot(String input) {
+        if(!allowSignals) return;
+        allowSignals = false;
+        if(! input.startsWith("#"))
+            input = "#" + input;
+        while(input.length() < 7)
+            input+="0";
+        input = input.substring(0,7);
+        setColor(Color.decode(input));
+        allowSignals = true;
+    }
+
+COM:updates the color of an HTML element based on a string input of hexadecimal color value

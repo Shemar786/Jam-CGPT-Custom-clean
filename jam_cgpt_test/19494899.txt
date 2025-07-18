@@ -1,0 +1,16 @@
+TDAT: 	private void contributeToActionBars() {
+		final IPageSite site = getSite();
+		final IActionBars bars = site.getActionBars();
+
+		// Setup global actions
+		UIUtils.addGlobalActionHandler(site, bars, ActionFactory.NEXT);
+		UIUtils.addGlobalActionHandler(site, bars, ActionFactory.PREVIOUS);
+
+		fillLocalPullDown(bars.getMenuManager());
+		fillLocalToolBar(bars.getToolBarManager());
+
+		// Commit changes
+		bars.updateActionBars();
+	}
+
+COM:contributes global and local actions to the action bars of a page site

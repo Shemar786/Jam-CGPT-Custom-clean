@@ -1,0 +1,15 @@
+TDAT: 	public ArrayList getAnnoFormats() {
+		String t = multiDoc.get("itemannoformats");
+		if (t == null || t.trim().length() == 0) {
+			return null;
+		}
+		else {
+			String[] tmp = t.split("\\s+");
+			ArrayList list = new ArrayList(tmp.length);
+			for (int i = 0; i < tmp.length; i++)
+				list.add(tmp[i].replaceAll("\\+", " "));
+			return list;
+		}
+	}
+
+COM:returns an ArrayList of strings after manipulating the input string by splitting it based on whitespace and replacing '+' symbols with spaces

@@ -1,0 +1,12 @@
+TDAT:   public void setActiveTab(int index) {
+    // check if this is perhaps the last tab.
+    if (index != -1) {
+      String title = getTitleAt(index);
+      wpTab tab = (wpTab) tabTable.get(title);
+      tab.setActive();
+      updateActionStatus();
+      window.updateDomEditor(tab);
+    }
+  }
+
+COM:sets the active tab in a GUI system and updates the editor accordingly

@@ -1,0 +1,14 @@
+TDAT:     public void store(User user) throws DAOException {
+        if (user == null) {
+            throw new DAOException("The parameter User is null !");
+        }
+
+        if (user.getId() == null || user.getId().equals(new Integer(0))) {
+            create(user);
+        } else {
+            update(user);
+        }
+
+    }
+
+COM:stores a user object in a database and either updates it or creates it depending on whether it already exists or not

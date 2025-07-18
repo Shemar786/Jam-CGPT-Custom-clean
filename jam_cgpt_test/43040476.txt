@@ -1,0 +1,9 @@
+TDAT:     protected void addSimpleMapping(String srcProperty, SimpleMapping simple) {
+        noDefaultMappingValidation.add(srcProperty);
+        final Class<?> srcClass = simple.srcClass();
+        final Class<?> type = srcClass != void.class ? srcClass : mappedBaseType;
+        if (type != null)
+            inheritValidators(srcProperty, type, simple.value());
+    }
+
+COM:adds a simple mapping and validates its properties

@@ -1,0 +1,10 @@
+TDAT: 	public void insert(String theItem, int pos) {
+		if(!theItem.trim().equals("")) {
+			int p=pos;
+			if(p<0) { p=0; } else if(p>Items.size()) { p=Items.size(); }
+			Items.insertElementAt(theItem.trim(), p);
+			size=Items.size();
+		}
+	}
+
+COM:inserts a string item at a specified position in a vector, after trimming any leading or trailing whitespace

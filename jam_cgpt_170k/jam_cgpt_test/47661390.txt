@@ -1,0 +1,17 @@
+TDAT: 	protected void addAssociationsTaskUseDecisionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TaskUse_associationsTaskUseDecision_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TaskUse_associationsTaskUseDecision_feature", "_UI_TaskUse_type"),
+				 ProcessPackagePackage.Literals.TASK_USE__ASSOCIATIONS_TASK_USE_DECISION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to the list of item property descriptors for a TaskUse object

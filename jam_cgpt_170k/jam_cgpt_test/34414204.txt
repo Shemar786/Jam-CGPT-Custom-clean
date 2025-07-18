@@ -1,0 +1,24 @@
+TDAT: 		private void doUpload(){
+			files.clear();
+			Iterator<String> itrt = titles.iterator();
+			Iterator<String> itrm = messages.iterator();
+			File tempFile;
+			while(itrt.hasNext()&&itrm.hasNext()){
+				tempFile = uploadFile(itrm.next(), itrt.next());
+				if(tempFile==null){
+					completeMessage.setVisible(false);
+					nextFinishButton.setDisabled(true);
+					return;
+				}
+				else{
+					files.add(tempFile);
+				}
+			}
+			
+			//on complete, set the buttons correctly
+			completeMessage.setVisible(true);
+			nextFinishButton.setDisabled(false);
+			uploadButton.setLabel("Restart Upload...");
+		}
+
+COM:clears a list, iterates through two other lists to upload files, adds successfully uploaded files to the list, and sets button visibility and labels appropriately

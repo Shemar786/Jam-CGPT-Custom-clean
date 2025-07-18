@@ -1,0 +1,15 @@
+TDAT:   public void visitAllNodesAndEdges () {
+
+    Iterator graph_nodes = nodesIterator();
+    while( graph_nodes.hasNext() ) {
+      graph_nodes.next();
+    }
+
+    Iterator graph_edges = edgesIterator();
+    while( graph_edges.hasNext() ) {
+      graph_edges.next();
+    }
+
+  } // visitAllNodesAndEdges()
+
+COM:visits all nodes and edges in a graph and performs no other operation

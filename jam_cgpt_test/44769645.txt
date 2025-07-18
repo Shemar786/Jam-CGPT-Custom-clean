@@ -1,0 +1,20 @@
+TDAT: 	public void removePlugin(ComponentListener component) {
+		ArrayList<DEdge<ComponentListener, ListenableComponent>> c = getAssociations(component);
+		
+		try {
+			//Notify listeners
+			component.shutdown();
+			
+			//Remove associations
+			for (DEdge<ComponentListener, ListenableComponent> e : c)
+			{
+				delAssociation(e.getHead(), e.getTail());
+			}
+			
+			components.delNode(component);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:removes a plugin from a list of associated components and shuts down the plugin's listener

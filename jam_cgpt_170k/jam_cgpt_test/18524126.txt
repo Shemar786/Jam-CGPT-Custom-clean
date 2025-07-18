@@ -1,0 +1,14 @@
+TDAT:     public Option getSelectedOption() {
+        Option theOption = null;
+        ListIterator theListIterator = getOptions().listIterator();
+        while (theListIterator.hasNext()) {
+            Option theCurrentOption = (Option) theListIterator.next();
+            if(theCurrentOption.isSelected()) {
+                theOption = theCurrentOption;
+                break;
+            }
+        }
+        return theOption;
+    }
+
+COM:returns a selected option from a list of options

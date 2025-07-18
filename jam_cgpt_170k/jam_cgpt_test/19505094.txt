@@ -1,0 +1,12 @@
+TDAT: 	public long getHeight() {
+		long i = 0;
+		while (true) {
+			if (level.add(ONE).compareTo(BigInteger.valueOf(Double.valueOf((Math.pow(2, i))).longValue()))>=0
+				&&
+				level.add(ONE).compareTo(BigInteger.valueOf(Double.valueOf((Math.pow(2, i+1))).longValue()))<0)
+				return i;
+			i++;
+		}
+	}
+
+COM:calculates the height of a binary tree using BigInteger and Math functions

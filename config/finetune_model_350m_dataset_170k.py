@@ -31,4 +31,5 @@ max_iters = 272000 + 1150 * 3
 
 # finetune at constant LR
 learning_rate = 3e-5
+dtype = 'float16'
 decay_lr = False

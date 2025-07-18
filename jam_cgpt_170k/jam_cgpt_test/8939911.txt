@@ -1,0 +1,15 @@
+TDAT:     private void close(boolean finalizing) throws IOException, BadDescriptorException {
+        try {
+            flushWrite();
+
+            descriptor.close();
+            buffer = EMPTY_BUFFER;
+
+            if (DEBUG) getLogger("ChannelStream").info("Descriptor for fileno "
+                    + descriptor.getFileno() + " closed by stream");
+        } finally {
+            if (!finalizing) getRuntime().removeInternalFinalizer(this);
+        }
+    }
+
+COM:closes a descriptor and flushes a write buffer, and if not finalizing, removes an internal finalizer associated with the runtime

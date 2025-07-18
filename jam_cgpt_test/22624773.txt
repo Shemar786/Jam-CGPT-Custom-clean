@@ -1,0 +1,12 @@
+TDAT: 	public String toString() {
+		String NT = "\n\t";
+		String s = this.getTitle();
+		s += NT + "localAdoptionDate: " + this.getLocalAdoptionDate();
+		s += NT + "subject: " + this.getSubject();
+		s += NT + "jurisdiction: " + this.getJurisdiction();
+		s += NT + "fileName: " + this.getFileName();
+		s += NT + "acsrId: " + this.getAcsrId();
+		return s;
+	}
+
+COM:returns a String representation of an object with its title, local adoption date, subject, jurisdiction, file name, and ACSR ID

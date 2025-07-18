@@ -1,0 +1,15 @@
+TDAT: 	private Text findDOMTextElement(Element domElement) {
+		for (Node domChild = domElement.getLastChild(); domChild != null;
+				domChild = domChild.getPreviousSibling()) {
+			if (domChild.getNodeType() == Node.TEXT_NODE) {
+				String contents = domChild.getNodeValue();
+				contents = Util.trimSpaceChars(contents);
+				if (contents.length() != 0) {
+					return (Text) domChild;
+				}
+			}
+		}
+		return null;
+	}
+
+COM:finds and returns the last non-empty text node within a DOM element

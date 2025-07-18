@@ -1,0 +1,14 @@
+TDAT:   public void setTblName(String val) {
+
+      if ((val == null || "".equals(val))
+      && (tblName == null || "".equals(tblName))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(tblName)) || (updateStatus == NULL_INT_VALUE)) {
+           tblName = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets a table name value and updates the update status if the input value is not null or different from the current value

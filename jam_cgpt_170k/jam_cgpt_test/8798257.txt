@@ -1,0 +1,12 @@
+TDAT:     public void loadImage(){
+        
+        try {
+            File file = new File("res/BG.png");
+            backImage = ImageIO.read(new URL(file.toURI().toURL().toString()));
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+        
+    }
+
+COM:loads an image from a file path and sets it to a variable named "backImage"

@@ -1,0 +1,12 @@
+TDAT:         public void run() {
+            try {
+                Connection con = get(); //complete this future
+                con.close(); //return to the pool
+            }catch (ExecutionException ex) {
+                //we can ignore this
+            }catch (Exception x) {
+                ConnectionPool.log.error("Unable to cancel ConnectionFuture.",x);
+            }
+        }
+
+COM:attempts to retrieve a connection from the pool, closes the connection, and catches exceptions if necessary

@@ -1,0 +1,20 @@
+TDAT: 	private void createSectionToolbar(Section section, FormToolkit toolkit) {
+		ToolBarManager toolBarManager = new ToolBarManager(SWT.FLAT);
+
+		Composite comp = toolkit.createComposite(section, SWT.WRAP);
+		GridLayout layout = new GridLayout();
+		layout.numColumns = 2;
+		layout.verticalSpacing = 0;
+		layout.marginHeight = 0;
+		layout.marginWidth = 0;
+		comp.setLayout(layout);
+		toolBarManager.createControl(comp);
+		toolBarManager.add(applyAction);
+		applyAction.setEnabled(false);
+		toolBarManager.update(true);
+
+		section.setTextClient(comp);
+
+	}
+
+COM:creates a toolbar for a given section using a provided FormToolkit and adds an applyAction to the toolbar while disabling it and setting it as the section's textClient

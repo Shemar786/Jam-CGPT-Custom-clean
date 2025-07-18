@@ -1,0 +1,14 @@
+TDAT: 	private JPanel getJPBotones() {
+		if (jPBotones == null) {
+			FlowLayout flowLayout = new FlowLayout();
+			flowLayout.setHgap(10);
+			flowLayout.setVgap(5);
+			jPBotones = new JPanel();
+			jPBotones.setLayout(flowLayout);
+			jPBotones.add(getJBGenerar(), null);
+			jPBotones.add(getJBCancelar(), null);
+		}
+		return jPBotones;
+	}
+
+COM:returns a JPanel containing two buttons (generate and cancel) with a FlowLayout and specified horizontal and vertical gaps, initializing the JPanel if it is null

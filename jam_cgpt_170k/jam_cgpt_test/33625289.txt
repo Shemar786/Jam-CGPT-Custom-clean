@@ -1,0 +1,23 @@
+TDAT: 	public void pickup(PickupMethod method){
+		GameData gameData = GameData.getInstance();
+		switch (method) {
+			case fromDeck:
+				//pickup from deck
+				addCard(gameData.getDeck().popTopCard());
+				break;
+			case fromThrown:
+				//pickup from thrown
+				addCard(gameData.getThrownCards().popTopCard());
+				break;
+			case decidePickup:
+				//decide and add
+				if (strategy!=null){
+					addCard(strategy.decidePickUp());
+				}else{
+					addCard(gameData.getDeck().popTopCard());
+				}
+				break;
+		}
+	}
+
+COM:allows the player to pickup a card using one of three methods: from the deck, from the thrown pile, or by deciding based on a strategy

@@ -1,0 +1,10 @@
+TDAT:     public Command getBackCommand28() {
+        if (backCommand28 == null) {//GEN-END:|665-getter|0|665-preInit
+            // write pre-init user code here
+            backCommand28 = new Command("OK", Command.BACK, 0);//GEN-LINE:|665-getter|1|665-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|665-getter|2|
+        return backCommand28;
+    }
+
+COM:returns a Command object called "backCommand28", which is initialized with the label "OK", BACK type, and an integer value of 0

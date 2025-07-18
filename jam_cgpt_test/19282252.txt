@@ -1,0 +1,16 @@
+TDAT:     protected Object objectQuery(final Query query) throws PersistenceException {
+        if (query != null)
+        {
+            if (pride2Broker != null){
+                return pride2Broker.getObjectByQuery(query);
+            }
+            else {
+                throw new PersistenceException("Query called on uninitialized PersistenceBroker", null);
+            }
+        }
+        else {
+            throw new PersistenceException("No query specified!", null);
+        }
+    }
+
+COM:takes a query as input, checks if the persistence broker is initialized, and returns the results of the query if it is, throwing an exception otherwise

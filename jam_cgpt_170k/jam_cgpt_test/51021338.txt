@@ -1,0 +1,14 @@
+TDAT: 	private void addAttributeNamesToList() {
+		for (AttributeName attn : graph.getMetaData().getAttributeNames()) {
+			// should also accept list types now.
+			if (Comparable.class.isAssignableFrom(attn.getDataType())
+					|| Collection.class.isAssignableFrom(attn.getDataType())) {
+				Set<ONDEXConcept> concepts = graph
+						.getConceptsOfAttributeName(attn);
+				if (concepts != null && concepts.size() > 0)
+					anlm.addAttributeName(attn);
+			}
+		}
+	}
+
+COM:adds attribute names to a list that have either comparable or collection data types and are associated with at least one ONDEX concept in a graph

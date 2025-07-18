@@ -1,0 +1,24 @@
+TDAT: 	public void setWindow(int n) throws Exception {
+		if (n <= 1) {
+			throw new Exception(
+					"new value for running average must be greater than one");
+		} else {
+			runningAverage = n;
+			if (fe_ != null) {
+				String tmp = fe_.getFeatureDefinition().name;
+				dependencies = new String[runningAverage];
+				offsets = new int[runningAverage];
+				for (int i = 0; i < runningAverage; ++i) {
+					dependencies[i] = tmp;
+					offsets[i] = 0 - i;
+				}
+			} else {
+				dependencies = null;
+				offsets = null;
+			}
+
+		}
+		super.setWindow(n);
+	}
+
+COM:sets the window for running averages and throws an exception if the input is less than or equal to one

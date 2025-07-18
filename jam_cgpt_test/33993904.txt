@@ -1,0 +1,17 @@
+TDAT: 	protected void addMaximizablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortalLayoutGroup_maximizable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortalLayoutGroup_maximizable_feature", "_UI_PortalLayoutGroup_type"),
+				 UiPackage.Literals.PORTAL_LAYOUT_GROUP__MAXIMIZABLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "maximizable" feature of a PortalLayoutGroup object

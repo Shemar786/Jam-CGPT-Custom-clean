@@ -1,0 +1,14 @@
+TDAT: 	private Contest newContest(long id, long forumId, Limit limit, List languages) {
+		Contest contest = new Contest();
+		contest.setId(id);
+		contest.setDescription("desc" + id);
+		contest.setLimit(limit);
+		contest.setLanguages(languages);
+		contest.setTitle("title" + id);
+		contest.setForumId(forumId);
+		contest.setStartTime(new Date(id * 1000));
+		contest.setEndTime(new Date(id * 2000));
+		return contest;
+	}	
+
+COM:creates a new Contest object with specified properties and returns it

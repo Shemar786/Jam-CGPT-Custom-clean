@@ -1,0 +1,13 @@
+TDAT:     public void appendMenu(String parentid,Vector menuitemlist) {
+        JMenu menu = (JMenu) menus.get(parentid);
+
+        if (menu == null) {
+            log.warn("Tried to append entries to menu [" + parentid + "] but menu not found");
+
+            return;
+        }
+
+        appendMenu(parentid,menu.getComponentCount() - 1,menuitemlist);
+    }
+
+COM:appends menu items to a specified parent menu, logging a warning message if the parent menu is not found

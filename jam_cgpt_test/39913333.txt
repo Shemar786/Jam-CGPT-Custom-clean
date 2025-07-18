@@ -1,0 +1,10 @@
+TDAT: 	private void doInsert(String insertionPattern, int deltaIfEmpty) {
+		int initialSelectionCount = mContentText.getSelectionCount(); 
+		mContentText.insert(String.format(insertionPattern, mContentText.getSelectionText()));
+		
+		if (initialSelectionCount == 0) {
+			mContentText.setSelection(mContentText.getSelection().x - deltaIfEmpty);
+		}
+	}
+
+COM:performs an insert operation on a text field using a given insertion pattern and accounts for the possibility of an empty selection

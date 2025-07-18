@@ -1,0 +1,12 @@
+TDAT:     public void setSingleURIInput(String uri) throws TavernaException {
+        resetInputs();
+        if (uri == null){
+            throw new NullPointerException ("null URI is not allowed");
+        }
+        if (uri.isEmpty()){
+            throw new TavernaException ("Empty URI is not allowed");
+        }
+        this.uri = uri;
+    }
+
+COM:sets a single URI input and throws exceptions if the URI is null or empty

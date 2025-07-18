@@ -1,0 +1,12 @@
+TDAT:   public Map getOrderedMap(String key) {
+    Map map = getMapInConfig(key);
+    if (map.isEmpty()) {
+      map = getParentConfig().getMapWithContext(this.resource, key);
+    }
+    if (map.isEmpty()) {
+      map = this.parentLocale.getMap(key);
+    }
+    return map;
+  }
+
+COM:returns an ordered map obtained from either the configuration's map, the parent configuration's map with context, or the parent locale's map

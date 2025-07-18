@@ -1,0 +1,11 @@
+TDAT:     public void testValidateVersion() throws Exception {
+        CookieSpec cookiespec = new RFC2965Spec();
+        // version attribute is REQUIRED
+        Header header = new Header("Set-Cookie2", "name=value");
+        try {
+            cookieParse(cookiespec, "www.domain.com", 8000, "/", false, header);
+            fail("MalformedCookieException should have been thrown");
+        } catch (MalformedCookieException e) {}
+    }
+
+COM:tests whether a cookie with a missing version attribute will throw an expected exception

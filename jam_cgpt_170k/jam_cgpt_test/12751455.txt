@@ -1,0 +1,9 @@
+TDAT:     public MyRectangle union(MyRectangle r) {
+	int x1 = Math.min(x, r.x);
+	int x2 = Math.max(x + width, r.x + r.width);
+	int y1 = Math.min(y, r.y);
+	int y2 = Math.max(y + height, r.y + r.height);
+	return new MyRectangle(x1, y1, x2 - x1, y2 - y1);
+    }
+
+COM:returns a new MyRectangle that represents the union of two given MyRectangle objects

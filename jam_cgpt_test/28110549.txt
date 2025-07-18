@@ -1,0 +1,14 @@
+TDAT:     protected void getAllNamesAux(Vector vec) {
+        Enumeration varNames = variables.keys();
+        while (varNames.hasMoreElements())
+            vec.addElement(varNames.nextElement());
+
+        Enumeration methodNames = methods.keys();
+        while (methodNames.hasMoreElements())
+            vec.addElement(methodNames.nextElement());
+
+        if (parent != null)
+            parent.getAllNamesAux(vec);
+    }
+
+COM:populates a Vector with all the keys (variable and method names) in the "variables" and "methods" dictionaries, and then recursively calls itself on the "parent" object (if it exists) to append those keys as well

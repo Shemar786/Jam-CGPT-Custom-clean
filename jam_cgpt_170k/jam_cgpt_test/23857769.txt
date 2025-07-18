@@ -1,0 +1,7 @@
+TDAT: 	/*
+	 * public SipParser skipNameAddress() { int begin_url=indexOf("<sip:"); if
+	 * (begin_url<0) begin_url=indexOf("sip:"); if (begin_url<0)
+	 * index=str.length(); else { goTo(uri_separators);
+	 * skipChars(uri_separators); } return this; }
+
+COM:skips over a name or address in a SIP parser object

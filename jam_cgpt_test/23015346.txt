@@ -1,0 +1,13 @@
+TDAT:     public void setProperty(XMLContextData data, Object toSet, String propertyName, Object value) {
+        if (!collection) {
+            FieldSetter setter = getFieldSetter(propertyName);
+            if (setter != null) {
+                setter.setValue(data, toSet, value);
+            }
+        } else {
+            Collection c = (Collection) toSet;
+            c.add(value);
+        }
+    }
+
+COM:sets a property value in an object using XML context data and can handle either a single object or a collection of objects

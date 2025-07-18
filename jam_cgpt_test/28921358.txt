@@ -1,0 +1,17 @@
+TDAT: 	private String serializeASCIIFence(final ComputereseTreeNode rootNode) {
+		NodeImpl nimpl = (NodeImpl) rootNode;
+		
+		final FenceNode openFenceNode = (FenceNode) rootNode;
+		final String openFence = openFenceNode.getAsciiValue();
+		final String closeFence = openFenceNode.getMatchingFence().getAsciiValue();
+		
+		final ComputereseTreeNode[] children = rootNode.getChildren();
+		assert children.length == 1;
+		final String argument = serializeASCII(children[0]);
+				
+		return openFence 
+			+ argument
+			+ closeFence;
+	}
+
+COM:serializes an ASCII fence by getting the open and close fence values, serializing its argument, and returning the concatenated string

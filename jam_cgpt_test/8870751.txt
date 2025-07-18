@@ -1,0 +1,10 @@
+TDAT: 	public void testLongYearNoDay() {
+		buildOccurrenceRecordDates("2000", "2", null);
+		assertEquals(new Integer(2000), or.getYear());
+		assertEquals(new Integer(2), or.getMonth());
+		buildOccurrenceRecordDates("1969", "2", null);
+		assertEquals(new Integer(1969), or.getYear());
+		assertEquals(new Integer(2), or.getMonth());
+	}
+
+COM:tests the buildOccurrenceRecordDates method for year input without a day parameter

@@ -1,0 +1,14 @@
+TDAT:     private Data getEnvironmentData(Environment env) {
+        Data  res;
+
+        if (env != null) {
+            res = new Data();
+            res.set("name", env.getName());
+            res.set("description", env.getDescription());
+            return res;
+        } else {
+            return null;
+        }
+    }
+
+COM:returns environment data such as name and description if the environment object passed as a parameter is not null, otherwise it returns null

@@ -1,0 +1,9 @@
+TDAT:     private void sendRetransmitAdvert(short key, byte mask) {
+        PageChecksum checksum = new PageChecksum(controller.document);
+        PacketHeader header = controller.createPacketHeader(PacketConstants.RETRANSMIT_ADVERT_MESSAGE);
+        
+        RetransmitAdvertMessage advert = new RetransmitAdvertMessage(header, key, mask, controller.lastUpdateTime, checksum);
+        controller.networkInterface.sendPacket(advert);
+    }
+
+COM:sends a Retransmit Advert Message containing a packet header, key, mask, last update time, and checksum over a network interface

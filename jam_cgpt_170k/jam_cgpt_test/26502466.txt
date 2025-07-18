@@ -1,0 +1,10 @@
+TDAT:   public void testDoRegister() throws Exception{
+    JndiNameParser parser = new JndiNameParser(new DefaultNameParser());
+    Name name = parser.parse("stub");
+    RemoteRefStateless ref = new RemoteRefStateless(name, "test");
+    StatelessStubTable.doRegister(ref);
+    super.assertEquals(1, StatelessStubTable.getSiblings("test").size());
+    
+  }
+
+COM:tests the registration of a remote stateless object using a JNDI name parser and asserts that the registration was successful

@@ -1,0 +1,10 @@
+TDAT:     public void handleSequenceLabel(Element node, LaTeXDocumentPortion ldp) {
+        String sRefName = Misc.getAttribute(node,XMLString.TEXT_REF_NAME);
+        if (sRefName!=null && ofr.hasSequenceRefTo(sRefName)) {
+            ldp.append("\\label{seq:")
+               .append(seqrefnames.getExportName(sRefName))
+               .append("}");
+        }
+    }
+
+COM:handles a sequence label by checking for a reference name and appending the label to a LaTeX document portion if it exists

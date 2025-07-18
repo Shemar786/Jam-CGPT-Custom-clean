@@ -1,0 +1,16 @@
+TDAT: 	public void setPort(int data) {
+		initPort();
+
+		if ((data & 1) == 1)
+			chkVlan.setSelected(true);
+		if ((data & 2) == 2)
+			chkMac.setSelected(true);
+		if ((data & (2 * 2)) == 2 * 2)
+			chkQos.setSelected(true);
+		if ((data & (2 * 2 * 2)) == 2 * 2 * 2)
+			chkFilter.setSelected(true);
+
+		return;
+	}
+
+COM:sets the port configuration by checking the corresponding checkboxes based on the integer value passed as an argument

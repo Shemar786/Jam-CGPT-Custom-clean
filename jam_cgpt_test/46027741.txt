@@ -1,0 +1,17 @@
+TDAT: 	public int removeRecord(String strPlayerName) {
+		int count = 0;
+
+		LinkedList<NetSPRecord> list = new LinkedList<NetSPRecord>(listRecord);
+		for(int i = 0; i < list.size(); i++) {
+			NetSPRecord r = list.get(i);
+
+			if(r.strPlayerName.equals(strPlayerName)) {
+				listRecord.remove(i);
+				count++;
+			}
+		}
+
+		return count;
+	}
+
+COM:removes all instances of a specified player name from a linked list and returns the number of records removed

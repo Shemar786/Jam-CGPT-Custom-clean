@@ -1,0 +1,17 @@
+TDAT: 	protected void addRefPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ChildPanel_refPath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPanel_refPath_feature", "_UI_ChildPanel_type"),
+				 UiPackage.Literals.CHILD_PANEL__REF_PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the reference path of a child panel object

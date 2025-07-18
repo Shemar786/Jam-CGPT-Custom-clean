@@ -1,0 +1,9 @@
+TDAT: 	public String getHistogramQuery() {
+		String addCollection = "";
+		if ( collection != null && !collection.equals( "0*" ) ) {
+			addCollection = "ky_" + collection + "_";
+		}
+		return "/library/browse_" + addCollection + vocabNode.getFieldId() + "_" + vocabNode.getId() + ".htm";
+	}
+
+COM:returns a URL path for generating a histogram based on certain conditions and parameters

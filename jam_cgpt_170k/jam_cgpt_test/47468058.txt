@@ -1,0 +1,7 @@
+TDAT: 	protected ComboChoiceOption addComboChoiceOption(String name, String label, String[][] choices, String value, int pageIndex) {
+		ComboChoiceOption option = new ComboChoiceOption(this, name, label, choices);
+		registerOption(option, value, pageIndex);
+		return option;
+	}
+
+COM:adds a combo choice option with a name, label, list of choices, default value, and page index, and registers it to the option list

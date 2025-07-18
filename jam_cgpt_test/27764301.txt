@@ -1,0 +1,15 @@
+TDAT: 	public void setTid(Integer  v) {
+		this.tid = v;
+		try {
+			Context ctx = new InitialContext();
+			Object o = ctx.lookup ("saeed/Task");
+			TaskHome th = (TaskHome)
+				PortableRemoteObject.narrow (o, TaskHome.class);
+			tname = (th.findByPrimaryKey (v)).getTname();
+		} catch (Exception e) {
+			e.printStackTrace ();
+		} // end of try-catch
+		
+	}
+
+COM:sets the tid variable, and then looks up and retrieves the tname associated with that tid from a remote server using JNDI and RMI

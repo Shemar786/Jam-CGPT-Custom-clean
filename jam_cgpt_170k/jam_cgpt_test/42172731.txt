@@ -1,0 +1,17 @@
+TDAT:   protected void addTransactionModePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBConnection_transactionMode_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBConnection_transactionMode_feature", "_UI_DBConnection_type"),
+				 DbPackage.Literals.DB_CONNECTION__TRANSACTION_MODE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the transaction mode feature of a DBConnection object

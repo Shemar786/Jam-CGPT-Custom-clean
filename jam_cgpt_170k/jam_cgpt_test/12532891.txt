@@ -1,0 +1,16 @@
+TDAT: 	protected void removeModelElementsAfterReplication(){
+		List<ModelElement> temp = new ArrayList<ModelElement>();
+		// iterate through all elements to find all that need removal
+		for(ModelElement m: myModelElementMap.values()){
+			if (m.getRemoveFromModelAfterRepFlag())
+				temp.add(m);
+		}
+		// now tell them to remove themselves from the model as well as their children
+		for(ModelElement m: temp){
+			m.removeFromModel();
+		}
+		
+		temp.clear();
+	}
+
+COM:removes specific model elements and their children from the model after replication

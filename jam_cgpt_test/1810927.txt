@@ -1,0 +1,14 @@
+TDAT:   public boolean equals(final Object o) {
+    /*
+     * This method uses the DOM equals method because it happens to work
+     * perfectly for all the browsers we support, and that method is different
+     * for each browser.
+     */
+    if (o instanceof DOMItem) {
+      return DOM.compare(castToElement(this.getJsObject()),
+        castToElement(((DOMItem) o).getJsObject()));
+    }
+    return false;
+  }
+
+COM:checks if the input object is an instance of DOMItem and compares the JavaScript objects of the current object and the input object using the DOM compare method to determine if they are equal

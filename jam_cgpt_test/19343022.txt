@@ -1,0 +1,24 @@
+TDAT:   public ExternalField fullClone() {
+
+      ExternalField ret = null;
+      try {
+          ret =  (ExternalField) super.clone();
+      } catch (Exception e) {
+          ret = new ExternalField(
+                  position
+                  , length
+                  , name
+                  , description
+                  , type
+                  , decimal
+                  , cellFormat
+                  , parameter
+                  , defaultValue
+                  , cobolName
+                  , subKey
+          );
+      }
+      return ret;
+  }
+
+COM:creates a deep copy of an ExternalField object

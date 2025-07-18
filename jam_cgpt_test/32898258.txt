@@ -1,0 +1,15 @@
+TDAT:         protected void setForceHeavyweightPopups(Window w, boolean force) {
+            if (!(w instanceof HeavyweightForcer)) {
+                Window[] owned = w.getOwnedWindows();
+                for (int i = 0; i < owned.length; i++) {
+                    if (owned[i] instanceof HeavyweightForcer) {
+                        owned[i].dispose();
+                    }
+                }
+                if (force) {
+                    new HeavyweightForcer(w);
+                }
+            }
+        }
+
+COM:sets whether popups should be forced to use heavyweight components or not

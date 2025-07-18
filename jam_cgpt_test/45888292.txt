@@ -1,0 +1,14 @@
+TDAT: 	private void quickPost(String eventKey, String eventMessage, Originator originator) {
+		
+		if(pickedContactKey==null) {
+			Toast.makeText(this, "Pick a contact first!", Toast.LENGTH_SHORT).show();
+			return;
+		}
+		
+		EventData eventData = new EventData(eventKey, pickedContactKey, System.currentTimeMillis(), eventMessage, originator);
+		mBridge.quickPost(this, eventData);
+		
+		Toast.makeText(this, "Posted event: "+eventMessage, Toast.LENGTH_SHORT).show();
+	}
+
+COM:posts an event message with the specified event key, originator, and contact key, and displays a toast message indicating the successful posting

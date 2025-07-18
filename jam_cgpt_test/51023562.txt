@@ -1,0 +1,13 @@
+TDAT: 	private void writeNamespaces(XMLStreamWriter xml) throws XMLStreamException {
+		// default name space is GraphML
+		xml.writeDefaultNamespace("http://graphml.graphdrawing.org/xmlns");
+		xml.writeNamespace("xsi", "http://www.w3.org/2001/XMLSchema-instance");
+		// this is a bit strange, but works
+		xml.writeAttribute(
+				"xsi:schemaLocation",
+				"http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd");
+		// proprietary extensions of yFiles
+		xml.writeNamespace("y", "http://www.yworks.com/xml/graphml");
+	}
+
+COM:writes namespaces for XMLStreamWriter used in GraphML with some proprietary extensions of yFiles

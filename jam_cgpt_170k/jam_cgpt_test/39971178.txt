@@ -1,0 +1,10 @@
+TDAT: 	private JTextField getJTextFieldNomVille() {
+		if (jTextFieldNomVille == null) {
+			jTextFieldNomVille = new JTextField();
+			jTextFieldNomVille.setPreferredSize(new Dimension(200, 20));
+			jTextFieldNomVille.setBounds(new Rectangle(97, 19, 118, 21));
+		}
+		return jTextFieldNomVille;
+	}
+
+COM:returns a JTextField object and creates one if it does not already exist, with specific preferred size and bounds

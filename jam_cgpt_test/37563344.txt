@@ -1,0 +1,9 @@
+TDAT: public Point map (Control from, Control to, int x, int y) {
+	checkDevice ();
+	if (from != null && from.isDisposed()) error (SWT.ERROR_INVALID_ARGUMENT);
+	if (to != null && to.isDisposed()) error (SWT.ERROR_INVALID_ARGUMENT);
+  Rectangle r = map(from, to, x, y, 0, 0);
+  return new Point(r.x, r.y);
+}
+
+COM:maps a point from one control to another control and returns the point's new position

@@ -1,0 +1,13 @@
+TDAT: 	public void testEvents_30_createActionWithEmptyLabel() throws Exception {
+		IMachineRoot mac = createMachine("mac");
+		IEvent evt = addEvent(mac, "evt", makeSList(), makeSList(),
+				makeSList(), makeSList(""), makeSList("L1≔1"));
+
+		saveRodinFileOf(mac);
+
+		runBuilder();
+
+		hasMarker(evt.getActions()[0], null, GraphProblem.EmptyLabelError);
+	}
+
+COM:tests for the creation of an action with an empty label and checks for a specific error marker

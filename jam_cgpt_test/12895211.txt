@@ -1,0 +1,14 @@
+TDAT: 	private JMenuItem getAboutMenuItem() {
+		if (aboutMenuItem == null) {
+			aboutMenuItem = new JMenuItem();
+			aboutMenuItem.setText("About");
+			aboutMenuItem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					new JDialog(ClientApp.this, "About", true).setVisible(true);
+				}
+			});
+		}
+		return aboutMenuItem;
+	}
+
+COM:returns a JMenuItem object that displays an "About" dialog when clicked

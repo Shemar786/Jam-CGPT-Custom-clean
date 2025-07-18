@@ -1,0 +1,8 @@
+TDAT: 	public void killedOpponent(String oppName) {
+		super.killedOpponent(oppName);
+		TextCache.getInstance().getTextfield("score").setText("Score: "+getScore());
+		
+		((RotwGameState)GameStateManager.getInstance().getChild("gameState")).addChatMessage("You killed "+oppName);
+	}
+
+COM:updates the score and adds a chat message when an opponent is killed

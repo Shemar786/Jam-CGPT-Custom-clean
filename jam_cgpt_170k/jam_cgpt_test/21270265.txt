@@ -1,0 +1,10 @@
+TDAT:     private void createCombo() {
+        GridData gridData = new org.eclipse.swt.layout.GridData();
+        gridData.grabExcessHorizontalSpace = true;
+        gridData.verticalAlignment = org.eclipse.swt.layout.GridData.CENTER;
+        gridData.horizontalAlignment = org.eclipse.swt.layout.GridData.FILL;
+        connectionCombo = new Combo( this, SWT.NONE );
+        connectionCombo.setLayoutData(gridData);
+    }
+
+COM:creates a combo box with certain layout properties and adds it to a GUI component, with the purpose of selecting a connection option

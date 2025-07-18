@@ -1,0 +1,13 @@
+TDAT:     public int flush() throws InterruptedException{
+        int count = 0;
+        while(this.getReportQueue().size()!=0){
+            Report report = this.getReportQueue().getFirst();
+            if(this.flush(report)){
+                this.getReportQueue().remove(report);
+                count ++;
+            }
+        }
+        return count;
+    }
+
+COM:flushes objects from the report queue and returns the number of objects removed

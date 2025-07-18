@@ -1,0 +1,7 @@
+TDAT:     public void setWordWrap(int row, int column, boolean wrap) {
+      prepareCell(row, column);
+      String wrapValue = wrap ? "" : "nowrap";
+      DOM.setStyleAttribute(getElement(row, column), "whiteSpace", wrapValue);
+    }
+
+COM:sets whether or not word wrap is enabled for a specified cell in an HTML table

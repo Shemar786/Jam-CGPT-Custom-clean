@@ -1,0 +1,19 @@
+TDAT: 	public void setHelp(String keyword) {
+		if ((keyword != null) && !currentHelpkeyWord.equalsIgnoreCase(keyword)) {
+			String help = frame.helpLoader.get(keyword);
+			if (help != null) {
+				helpBrowser.setText(help);
+				currentHelpkeyWord = keyword;
+			} else {
+				helpBrowser.setText("No help found for " + keyword);
+				currentHelpkeyWord = "";
+			}
+		}
+		
+		if (keyword == null) {
+			helpBrowser.setText("No help available for current context.");
+			currentHelpkeyWord = "";
+		}
+	}
+
+COM:sets the help text for a keyword, checking if it exists and displaying an error message if not, and also handles if no keyword is provided

@@ -1,0 +1,32 @@
+TDAT: 	public void save(String serFile) {
+
+		FileOutputStream fos = null;
+		ObjectOutputStream oos = null;
+
+		try {
+
+			fos = new FileOutputStream(serFile);
+			oos = new ObjectOutputStream(fos);
+
+			oos.writeObject(activities);
+
+		} catch (Exception e) {
+			log.error("Error saving activities", e);
+		} finally {
+			if (oos != null)
+				try {
+					oos.close();
+				} catch (IOException z) {
+					log.error("Error closing stream", z);
+				}
+
+			if (fos != null)
+				try {
+					fos.close();
+				} catch (IOException e) {
+					log.error("Error closing stream", e);
+				}
+		}
+	}
+
+COM:saves an object to a file using serialization

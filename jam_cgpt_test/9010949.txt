@@ -1,0 +1,15 @@
+TDAT: 	public void buildFieldComments() {
+		if (!configuration.nocomment) {}
+		
+			/** TODO tanyuanji add **/
+			FieldDoc doc = (FieldDoc) fields.get(currentFieldIndex);
+			TanUtil.println("In the FieldBuilder: " , doc.commentText());
+			
+//			TanUtil.println("In The FieldBuilder: " , doc.getDocumentation());
+			/** TODO tanyuanji add **/
+			
+			writer.writeComments(doc);
+		
+	}
+
+COM:is designed to build field comments, using the input from a FieldDoc object and potentially adding additional comments specified with TODO tags

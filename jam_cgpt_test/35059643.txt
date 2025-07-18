@@ -1,0 +1,18 @@
+TDAT: 	public void modifyUser(final UserInfo userInfo, final AsyncCallback<Integer> callback) {
+		UserInfoServiceAsync userService = ServiceFactory.getUserInfoService();
+		userService.modifyUser( userInfo, new AsyncCallback<Integer>() {
+			@Override
+			public void onFailure(Throwable caught) {
+				callback.onFailure(caught);
+			}
+			@Override
+			public void onSuccess(Integer result) {
+				if( result == UserInfo.ErrorFlags.SUCCESS ) {
+					setUserInfo( userInfo );
+					notifyObservers();
+				}
+				callback.onSuccess(result);
+			} });  
+	}
+
+COM:modifies user information and returns the result to a callback using asynchronous processing

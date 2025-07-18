@@ -1,0 +1,20 @@
+TDAT: 	public void testDelta_09_delCtxPredSet() throws Exception {
+		IContextRoot con = createContext("ctx");
+		addAxioms(con, makeSList("A"), makeSList("ℕ≠∅"), false);
+		saveRodinFileOf(con);
+		
+		runBuilder();
+
+		hasStamp(con.getPORoot(), IPOStampedElement.INIT_STAMP);
+		
+
+		con = createContext("ctx");
+		saveRodinFileOf(con);
+		
+		runBuilder();
+		
+		hasStamp(con.getPORoot(), IPOStampedElement.INIT_STAMP+1);
+		
+	}
+
+COM:tests the Delta 09 feature of deleting a context predicate set

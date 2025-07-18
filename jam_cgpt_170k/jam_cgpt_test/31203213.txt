@@ -1,0 +1,15 @@
+TDAT:     public void setPrimerOids( int[] primer_oids ) {
+
+        _primer_oids  = new ArrayList();
+
+        if ( primer_oids == null ) {
+            return;
+        }
+
+        for ( int i = 0; i < primer_oids.length; ++i ) {
+            addPrimerOid( primer_oids[ i ] );
+        }
+
+    } // setPrimerOids( int[] )
+
+COM:sets an ArrayList of primer OIDs based on an input array of integers, but returns nothing if the input is null

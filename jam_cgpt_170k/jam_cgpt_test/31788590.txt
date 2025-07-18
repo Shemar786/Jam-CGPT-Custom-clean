@@ -1,0 +1,12 @@
+TDAT:         public void initFormManager() {
+            if(formManager==null) {
+                formManager=new StandardFormManager();
+                XHTMLScreenAdaptor xsa=(XHTMLScreenAdaptor)getScreenAdaptor();
+                try {
+                    formManager.initFormAdaptor(xsa.getFormAdaptor());
+                } catch(Exception e) {
+                    debugout("initFormManager failure: " + e);
+                } }
+        }
+
+COM:initializes the form manager if it is null and sets it to a StandardFormManager object, then initializes the form adaptor using the XHTMLScreenAdaptor and catches any exceptions that may occur

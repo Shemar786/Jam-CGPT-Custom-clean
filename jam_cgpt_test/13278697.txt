@@ -1,0 +1,13 @@
+TDAT:     public PartFrameContainer createInterGraphFrames() {
+        PartFrameContainer result = new PartFrameContainer();
+        Iterator           it = mainParts.iterator();
+
+        while (it.hasNext()) {
+            StructuralConstraintGraphPart mp = (StructuralConstraintGraphPart) it.next();
+            result.add(mp.createInterGraphFrame());
+        }
+
+        return result;
+    }
+
+COM:creates and returns a container of inter-graph frames by iterating through a list of main parts and adding their respective frames to the container

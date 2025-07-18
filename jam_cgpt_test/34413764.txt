@@ -1,0 +1,16 @@
+TDAT: 		public boolean checkContainer(String containerId){
+			//if name is blank, disable use default option
+			if(!containerId.equals(parentContainer)){
+				doImport = false;
+				editor.returnContainerLock(OrganiserView.this, _userModule.getUserId());
+				try{
+					Messagebox.show("The import file does not match!", "Error!", Messagebox.OK, Messagebox.ERROR);
+				}
+				catch(InterruptedException ie){
+					ie.printStackTrace(System.err);
+				}
+			}
+			return doImport;
+		}
+
+COM:checks if a container ID matches the parent container and returns a boolean value for importing a file

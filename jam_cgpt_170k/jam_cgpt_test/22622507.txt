@@ -1,0 +1,14 @@
+TDAT: 	public List getEntryList() {
+		if (entryList == null) {
+			entryList = new ArrayList();
+			List entries = doc.selectNodes("/dcsDataRecord/statusEntries/statusEntry");
+			for (Iterator i = entries.iterator(); i.hasNext(); ) {
+				Element entryElement = (Element) i.next();
+				entryList.add(new StatusEntry(entryElement));
+			}
+			Collections.sort(entryList, new SortStatusEntries());
+		}
+		return entryList;
+	}
+
+COM:returns a list of status entries, retrieved by parsing XML data and sorting the entries using a custom comparator

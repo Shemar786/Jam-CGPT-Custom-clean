@@ -1,0 +1,8 @@
+TDAT:     private void setMaxEnergyLevel(ValueWithUnit<? extends EnergyUnit> maxEnergyLevel) {
+        if (maxEnergyLevel.getValue() < 0)
+            throw new IllegalArgumentException("Illegal energy level");
+        this.maxEnergyLevel = new ValueWithUnit<Joule>(UnitConverter.convertUnitToBasicUnit(maxEnergyLevel), 
+                UnitsPool.getEnergyUnitJoule());
+    }
+
+COM:sets the maximum energy level and checks if the value is negative

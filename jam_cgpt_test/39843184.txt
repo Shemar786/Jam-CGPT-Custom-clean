@@ -1,0 +1,12 @@
+TDAT:     protected void doInclude(String page) throws ServletException, IOException {
+      /*
+        TilesUtil.doInclude( page,
+                        (HttpServletRequest)pageContext.getRequest(),
+                        (HttpServletResponse)pageContext.getResponse(),
+                        pageContext.getServletContext());
+      */
+      TilesUtil.doInclude( page, pageContext );
+
+    }
+
+COM:includes a specified page using the TilesUtil library, with possible exceptions thrown for ServletException and IOException

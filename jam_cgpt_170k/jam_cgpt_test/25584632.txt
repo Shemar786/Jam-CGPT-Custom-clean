@@ -1,0 +1,12 @@
+TDAT:     protected void removeRange(int fromIndex, int toIndex) {
+        int numMoved = size - toIndex;
+        System.arraycopy(gameObjects, toIndex, gameObjects, fromIndex, numMoved);
+
+        // Let gc do its work
+        int newSize = size - (toIndex - fromIndex);
+        while (size != newSize) {
+            gameObjects[--size] = null;
+        }
+    }
+
+COM:removes a range of elements from an array, shifting the remaining elements to fill the gap and setting the removed elements to null

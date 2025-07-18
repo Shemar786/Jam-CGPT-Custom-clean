@@ -1,0 +1,7 @@
+TDAT:   public void push(String tagName, String schema, Properties attributes) {
+    XMLUtils.xmlOpen(m_buffer, m_currentIndent, tagName + schema, attributes);
+    m_tagStack.push(new Tag(m_currentIndent, tagName));
+    m_currentIndent += DEFAULT_INDENT_INCREMENT;
+  }
+
+COM:adds a new XML tag, along with its schema and attributes, to a buffer and updates the tag stack and indentation level

@@ -1,0 +1,13 @@
+TDAT:   public void serializeToDisk(String fileName) {
+    try {
+      FileOutputStream fos = new FileOutputStream(fileName);
+      ObjectOutputStream oos = new ObjectOutputStream(fos);
+      oos.writeObject(this);
+      oos.close();
+    }
+    catch (IOException e) {
+      System.out.println(e.toString());
+    }
+  } // serializeToDisk()
+
+COM:serializes the current object and saves it to disk as a file with the given file name

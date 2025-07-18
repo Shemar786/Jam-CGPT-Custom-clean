@@ -1,0 +1,24 @@
+TDAT: 	public String getPortString() {
+		String portString = "";
+
+		for (int i = 0; i < portBtn.length; i++) {
+
+			switch (portBtn[i].getPortId()) {
+			case DBDataDesc.VLAN_TAGGED:
+				portString = portString.concat(firstButtonLabel);
+				break;
+
+			case DBDataDesc.VLAN_UNTAGGED:
+				portString = portString.concat(secondButtonLabel);
+				break;
+
+			case DBDataDesc.VLAN_NOT_USED:
+				portString = portString.concat(lastButtonLabel);
+				break;
+			}
+		}
+
+		return portString;
+	}
+
+COM:returns a concatenated string of labels based on the values of an array of portBtn objects

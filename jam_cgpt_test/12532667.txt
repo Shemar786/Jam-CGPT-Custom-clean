@@ -1,0 +1,11 @@
+TDAT:     public String toString(){
+    	String s = this.getClass().getName();
+    	int k = s.lastIndexOf(".");
+    	if (k != -1)
+    		s = s.substring(k + 1);
+    	
+    	s =  s + " Mean = " + getMean() + " Variance = " + getVariance();
+    	return(s);
+    }
+
+COM:returns a string representing the name of the class followed by the mean and variance values calculated by the getMean() and getVariance() methods

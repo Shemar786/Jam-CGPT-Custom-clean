@@ -1,0 +1,19 @@
+TDAT: 	public void setUpPassword(Connection conn) {
+
+		Statement stmt = null;
+		try {
+			stmt = conn.createStatement();
+			stmt.executeUpdate("UPDATE USER SET PASSWORD=\'root\' ");
+		} catch (SQLException ex) {
+			logger.log(Level.SEVERE, "SQL Error = " + ex.getMessage(), ex);
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+			} catch (SQLException ex) {
+				logger.log(Level.SEVERE, "SQLException", ex);
+			}
+		}
+	}
+
+COM:sets the password for a user in a database to "root"

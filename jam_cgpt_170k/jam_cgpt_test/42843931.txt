@@ -1,0 +1,14 @@
+TDAT: 		public FieldContent put(Item item){
+			FieldContent old_field = this.content;
+			
+			if (item.getUid() == this.content.getItem().getUid()) {
+				if (content.getItem().isStackable()){ 
+					this.content = new InventoryStack(content.getItem(), content.getCount()+1);
+					return null;
+				} else {this.content = new InventoryItem(item); return old_field;}
+			} else {
+				this.content = new InventoryItem(item); return old_field;
+			}
+		}
+
+COM:takes an Item object as input, checks if the item is already in the inventory and either updates its count or replaces the old item with the new one

@@ -1,0 +1,12 @@
+TDAT:         private Identifier reconcileIdentifier(Identifier authority, IConnectionDescription connection) {
+            List<Identifier> identifiers = connection.getAllIdentifiersByType("domain");
+            for (Identifier identifier : identifiers) {
+                if ( identifier.equals(authority) ) {
+                    return identifier;
+                }
+            }
+            //no identifier is found, just return the orinigal authority
+            return authority;
+        }
+
+COM:reconciles an input "authority" Identifier with Identifiers fetched from a "connection" and returns the matching Identifier or the original one in case of no match

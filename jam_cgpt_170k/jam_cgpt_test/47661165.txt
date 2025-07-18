@@ -1,0 +1,17 @@
+TDAT: 	protected void addRolesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RolePackage_roles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RolePackage_roles_feature", "_UI_RolePackage_type"),
+				 WorkspacePackage.Literals.ROLE_PACKAGE__ROLES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "roles" feature of a RolePackage object to the itemPropertyDescriptors list

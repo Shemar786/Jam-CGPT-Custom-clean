@@ -1,0 +1,11 @@
+TDAT:     final public double intersectiont(final Ray ray) {
+        for (int i=0; i<triangles.length; i++) {
+            final double t = triangles[i].intersection(ray);
+            if (t > 0.D && t < Double.MAX_VALUE) {
+                return t;
+            }
+        }
+        return -Double.MAX_VALUE;
+    }
+
+COM:calculates the intersection of a ray with a set of triangles and returns the distance of the closest intersection

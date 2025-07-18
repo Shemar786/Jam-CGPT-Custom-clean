@@ -1,0 +1,10 @@
+TDAT:   public void resetIgnoreRows () {
+    if( tableData == null ) {
+      // TODO: Error handling
+      System.err.println( "WARNING: Unable to resetIgnoreRows because getTableData() is null." );
+      return;
+    }
+    resetIgnoreRows( tableData.size() );
+  } // resetIgnoreRows()
+
+COM:resets the number of ignored rows in a data table to its default value

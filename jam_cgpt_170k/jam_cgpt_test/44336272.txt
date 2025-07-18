@@ -1,0 +1,13 @@
+TDAT:     public int perform(Population generation, Population nextGeneration) {
+        int ret = 0;
+        Individual[] parents = generation.getRandomIndividualPair();
+        Individual[] childs = perform(parents);
+        try {
+            ret = nextGeneration.addIndividuals(childs);
+        } catch( PopulationFullException e) {            
+            ret = -1;
+        } // try
+        return ret;
+    } // perform
+
+COM:takes a generation of individuals and creates the next generation by randomly selecting pairs and creating new individuals, which it then adds to the next generation while handling exceptions

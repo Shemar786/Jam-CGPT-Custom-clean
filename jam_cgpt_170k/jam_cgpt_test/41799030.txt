@@ -1,0 +1,17 @@
+TDAT:     public String getNextString(String sep) {
+        if (isEmpty()) {
+            return null;
+        }
+        String ret = null;
+        int idx = buf.indexOf(sep, start);
+        if (idx == -1 || idx > end) {
+            ret = buf.substring(start, end);
+            start = end;
+        } else {
+            ret = buf.substring(start, idx);
+            start = idx+sep.length();
+        }
+        return ret;
+    }
+
+COM:returns the next string in a buffer separated by a given separator

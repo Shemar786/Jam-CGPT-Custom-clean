@@ -1,0 +1,19 @@
+TDAT:   public TestResult start(Class testCase) {
+    try {
+      Test suite = getTest(testCase);
+
+      if(null != suite) {
+        return doRun(suite);
+      }
+      else {
+        runFailed(testCase, "could not create/run JUnit test suite");
+      }
+    }
+    catch (Exception e) {
+      runFailed(testCase, "could not create/run JUnit test suite: " + e.getMessage());
+    }
+    
+    return null;
+  }
+
+COM:takes in a test case and runs it through a JUnit test suite, returning the result of the test run or a failure message

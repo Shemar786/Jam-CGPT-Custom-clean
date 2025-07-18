@@ -1,0 +1,20 @@
+TDAT:     public void setObject(Object o) throws ClassCastException {
+	inputObj = o;
+	if (o instanceof Icon) {
+	    setIcon((Icon) o);
+	}
+	else if (o instanceof Color) {
+	    setBackground((Color) o);
+	}
+	else if (o instanceof Font) {
+	    Font f = (Font) o;
+	    setFont(f);
+	    setText(f.getFontName());
+	}
+	else { // anything else must be a Double, Integer, or String
+	    setText(o.toString());
+	}
+	//fireItemSelected();
+    }
+
+COM:takes an Object as input and sets various properties of an object based on its instance type, throwing a ClassCastException if the input object cannot be cast to the required type

@@ -1,0 +1,14 @@
+TDAT:   protected int innerProcLineComment(Lexem curr) {
+    while (bufferPos < bufferLen) {
+      char temp = buffer.charAt(bufferPos);
+      curr.token += temp;
+      bufferPos++;
+      if (temp == '\n') {
+        bufferLine++;
+        break;
+      }
+    }
+    return (curr.tokenType = COMMENT);
+  }
+
+COM:reads and appends characters from a buffer until it encounters a newline character, and then returns a token type of COMMENT

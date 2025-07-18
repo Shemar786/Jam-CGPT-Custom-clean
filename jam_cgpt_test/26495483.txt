@@ -1,0 +1,10 @@
+TDAT:   public void setMaxThroughputPerSecond(double aMaxThroughputPerSecond) {
+    _maxThroughputPerSecond = aMaxThroughputPerSecond;
+    if (aMaxThroughputPerSecond > 0) {
+      _minimumTaskDelayMillis = Math.round(1000.0 / aMaxThroughputPerSecond);
+    } else {
+      _minimumTaskDelayMillis = 0;
+    }
+  }
+
+COM:sets the maximum throughput per second and calculates the minimum task delay milliseconds based on the maximum throughput per second input

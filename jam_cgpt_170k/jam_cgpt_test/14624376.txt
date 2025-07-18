@@ -1,0 +1,13 @@
+TDAT:     public void testsetPRN() {
+        System.out.println("setPRN");
+        java.lang.String PRN = "";
+        org.gps.types.GpsSatellite instance = new org.gps.types.GpsSatellite();
+        instance.setPRN(PRN);
+        
+        java.lang.String expectedResult = "";
+        assertEquals(PRN, instance.getPRN());
+        
+    
+    }
+
+COM:tests the functionality of setting and getting the PRN (pseudo-random noise) value of a GPS satellite object

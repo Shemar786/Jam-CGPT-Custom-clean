@@ -1,0 +1,17 @@
+TDAT:     protected void destroyNACs(TestGraph repairedTestGraph) {
+        Iterator it = repairedTestGraph.NACs.iterator();
+
+        while (it.hasNext()) {
+            ApplicationCondition nac = (ApplicationCondition) it.next();
+
+            if (nac.getMinMatchError() > 0) {
+                destroyNAC(nac);
+            }
+
+            if (timeUp()) {
+                return;
+            } // if timeup    
+        } //while
+    }
+
+COM:destroys negative application conditions (NACs) in a repaired test graph if they have a minimum match error greater than 0 and returns if the allotted time has elapsed

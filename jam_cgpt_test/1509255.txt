@@ -1,0 +1,15 @@
+TDAT:     public void load(jEDF.EDF.EDFFile edfFile) {
+        totalDuration = edfFile.getNbRecords() * edfFile.getRecordDuration();
+
+        montage.loadEDFFile(this, edfFile);
+
+        setEpochDuration(edfFile.getRecordDuration());
+
+        getNavigationSlider().setMinimum(0);
+        getNavigationSlider().setValue(0);
+
+        getNavigationSlider().setMaximum(totalDuration - 1);
+
+    }
+
+COM:loads an EDF file, calculates the total duration, sets the epoch duration, and sets the minimum, maximum, and initial value of a navigation slider

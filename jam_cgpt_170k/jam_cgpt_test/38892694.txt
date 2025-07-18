@@ -1,0 +1,14 @@
+TDAT:   public void insertElementAt(Object obj, int index) {
+    int newcount = elementCount + 1;
+
+    if (newcount > elementData.length) {
+      ensureCapacityHelper(newcount);
+    }
+
+    System.arraycopy(
+      elementData, index, elementData, index + 1, elementCount - index);
+    elementData[index] = obj;
+    elementCount++;
+  }
+
+COM:inserts an object at a specified index in an array, and increases the size of the array if necessary

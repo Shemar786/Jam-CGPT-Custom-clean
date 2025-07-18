@@ -1,0 +1,10 @@
+TDAT:     public Command getOkCommandAboutForm() {
+        if (okCommandAboutForm == null) {//GEN-END:|136-getter|0|136-preInit
+            // write pre-init user code here
+            okCommandAboutForm = new Command("Ok", Command.OK, 0);//GEN-LINE:|136-getter|1|136-postInit
+        // write post-init user code here
+        }//GEN-BEGIN:|136-getter|2|
+        return okCommandAboutForm;
+    }
+
+COM:returns a Command object named "Ok" with the OK type and an integer priority, creating the object if it does not exist already

@@ -1,0 +1,15 @@
+TDAT: 	public void update(TuioTime ttime, float xp, float yp, float zp, float xs, float ys, float zs, float ma) {
+		super.update(ttime,xp,yp,zp);
+		x_speed = xs;
+		y_speed = ys;
+		z_speed = zs;
+		motion_speed = (float)Math.sqrt(x_speed*x_speed+y_speed*y_speed+z_speed*z_speed);
+		motion_accel = ma;
+		path.addElement(new TuioPoint3D(currentTime,xpos,ypos,zpos));
+		
+		if (motion_accel>0) state = TUIO_ACCELERATING;
+		else if (motion_accel<0) state = TUIO_DECELERATING;
+		else state = TUIO_STOPPED;
+	}
+
+COM:updates the position and motion attributes of a Tuio object and adds a new point to its path history

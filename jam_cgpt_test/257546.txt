@@ -1,0 +1,25 @@
+TDAT: 	public Object put(Object key, int idx, Object value) {
+		List l;
+		if (super.containsKey(key)) {
+			l = (List) super.get(key);
+		}
+		else {
+			l = (List) internalCreateList();
+			super.put(key, l);
+		}
+		if (idx < 0) {
+			throw new IndexOutOfBoundsException("index " + idx + " is out of bounds");
+		}
+
+		Object oldValue;
+		if (l.size() < idx) {
+			oldValue = null;
+		}
+		else {
+			oldValue = l.remove(idx);
+		}
+		l.set(idx, value);
+		return oldValue;
+	}
+
+COM:puts a value associated with a key into a list, replacing any previous value at the given index and returning the old value

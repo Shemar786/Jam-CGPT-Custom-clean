@@ -1,0 +1,7 @@
+TDAT:     public void setParameter( String parameterName, UploadFileSpec[] files ) {
+        if (!maySelectFile( parameterName )) throw new IllegalNonFileParameterException( parameterName );
+        if (!isMimeEncoded()) throw new MultipartFormRequiredException();
+        _parameterHolder.setParameter( parameterName, files );
+    }
+
+COM:sets a parameter with an array of file specifications and throws exceptions if certain conditions are not met

@@ -1,0 +1,19 @@
+TDAT: 	private AsnStandard makeAsnStandard(Element e) {
+		AsnStatement stmnt = new AsnStatement(e);
+		AsnStandard std = null;
+		if (authorIsColorado()) {
+			std = new ColoradoBenchmark(stmnt, this);
+		}
+		else if (authorIsAAAS()) {
+			std = new AAASBenchmark(stmnt, this);
+		}
+ 		else if (authorIsCommonCore()) {
+			std = new CommonCoreStandard(stmnt, this);
+		}
+		else {
+			std = new AsnStandard(stmnt, this);
+		}
+		return std;
+	}
+
+COM:creates an AsnStandard object based on the input Element object, using different implementations depending on whether the author is from Colorado, AAAS, or Common Core, or a generic AsnStandard implementation

@@ -1,0 +1,15 @@
+TDAT:   public void localize(LocalizationManager manager) {
+    ActorLocalizer      actorLoc;
+    MenuLocalizer       menuLoc;
+    
+    menuLoc = manager.getMenuLocalizer(menuSource, menuIdent);
+    actorLoc = manager.getActorLocalizer(actorSource, actorIdent);
+    
+    menuName = menuLoc.getLabel();
+    menuItem = actorLoc.getLabel();
+    help = actorLoc.getHelp();
+    
+    initAction();
+  }
+
+COM:localizes menu and actor labels using a LocalizationManager and initializes an action

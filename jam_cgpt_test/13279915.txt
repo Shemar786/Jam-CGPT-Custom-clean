@@ -1,0 +1,14 @@
+TDAT:     public RangeConstraint getLowerBoundRangeConstraint() {
+        synchronized(rangeConstraints) {
+	    Iterator it = rangeConstraints.iterator();
+            while (it.hasNext()) {
+                RangeConstraint rc = (RangeConstraint) it.next();
+                if (rc.lowerBound == lowerBound) {
+                    return rc;
+                }        
+            }//while
+        }
+	return null;
+    }
+
+COM:returns the lower bound RangeConstraint synchronized with the rangeConstraints iterator

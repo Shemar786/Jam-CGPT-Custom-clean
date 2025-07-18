@@ -1,0 +1,12 @@
+TDAT:     private boolean isRemitExists(AimsAllianc aimsAllianc){
+    	boolean remitExists = StringUtils.isEmpty(aimsAllianc.getRemitTo())
+						  		 || StringUtils.isEmpty(aimsAllianc.getRemitAddress1())
+						  		 || StringUtils.isEmpty(aimsAllianc.getRemitCountry())
+						  		 || StringUtils.isEmpty(aimsAllianc.getRemitState())
+						  		 || StringUtils.isEmpty(aimsAllianc.getRemitCity())
+						  		 || StringUtils.isEmpty(aimsAllianc.getRemitPostalCode());
+    	
+    	return remitExists;
+    }
+
+COM:checks whether all remit-related information is present in an AimsAllianc object and returns a boolean value of true if any information is missing

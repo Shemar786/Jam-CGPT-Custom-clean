@@ -1,0 +1,15 @@
+TDAT:   public void doWake() {
+    synchronized(stateLock) {
+      if((myAPState == AP_WAITING) || (myAPState == AP_IDLE)) {
+	changeStateTo(AP_ACTIVE);
+      }
+    }
+    if(myAPState == AP_ACTIVE) {
+      activateAllBehaviours();
+      synchronized(msgQueue) {
+        msgQueue.notifyAll(); // Wakes up the embedded thread
+      }
+    }
+  }
+
+COM:wakes up an embedded thread if the current state is either waiting or idle, otherwise it activates all behaviors

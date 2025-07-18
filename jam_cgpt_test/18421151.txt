@@ -1,0 +1,13 @@
+TDAT: 	public int compareTo(Object arg0) {
+
+		MealItemAmount mia = (MealItemAmount) arg0;
+		
+		if (this.getFood() == mia.getFood()) {
+			return 0;
+		} else {
+			return 1;
+		}		
+		//	return (getFood().getName().compareTo(((MealItemAmount)arg0).getFood().getName()));
+	}
+
+COM:compares the food objects of two MealItemAmount instances and returns 0 if they are the same, and 1 if they are different

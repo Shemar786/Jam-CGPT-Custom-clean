@@ -1,0 +1,10 @@
+TDAT:     public void addSelectedNodeIndices ( int[] node_indices ) {
+      if( ( type & NODES_SELECTED_TYPE ) == 0 ) {
+        selectedNodeIndices = node_indices;
+        type |= NODES_SELECTED_TYPE;
+      } else {
+        selectedNodeIndices = node_indices;
+      } 
+    }// addSelectedNodeIndices( int[] )
+
+COM:adds an array of selected node indices to the current selection, updating the selection type if necessary

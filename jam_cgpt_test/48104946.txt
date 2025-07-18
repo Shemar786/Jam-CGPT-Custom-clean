@@ -1,0 +1,14 @@
+TDAT:     public Assumptions clone(Taxa taxa) {
+        Assumptions assumptions = new Assumptions();
+        StringWriter w = new StringWriter();
+        try {
+            write(w, taxa);
+            assumptions.read(new NexusStreamParser(new StringReader(w.toString())), taxa);
+        } catch (Exception ex) {
+            Basic.caught(ex);
+        }
+        return assumptions;
+
+    }
+
+COM:creates a clone of the Assumptions object with the specified Taxa object and reads data from a NexusStreamParser

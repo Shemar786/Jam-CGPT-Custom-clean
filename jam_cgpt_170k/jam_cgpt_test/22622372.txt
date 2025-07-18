@@ -1,0 +1,16 @@
+TDAT: 	public File getCollectionDir(String collection, String xmlFormat) {
+		File formatDir = new File(dcsDataDir, xmlFormat);
+		if (!formatDir.exists()) {
+			prtln("creating formatDir: " + formatDir.toString());
+			formatDir.mkdir();
+		}
+
+		File collectDir = new File(formatDir, collection);
+		if (!collectDir.exists()) {
+			prtln("creating collectDir: " + collectDir.toString());
+			collectDir.mkdir();
+		}
+		return collectDir;
+	}
+
+COM:returns a file object representing a directory path that is specified by two string parameters and creates the directories if they do not exist

@@ -1,0 +1,12 @@
+TDAT:   public void removeConflictSetListener(RuleFireListener l) {
+    conflictSetListeners.remove(l);
+    if (conflictSetListeners.size() == 0) {
+      debug = false;
+      conflictSet.removeInternalConflictSetListener(this);
+      isListener = false;
+    } else {
+      debug = ruleFiringListeners.size() != 0;
+    }
+  }
+
+COM:removes a rule fire listener from the conflict set listeners, and if there are no more conflict set listeners it turns off debugging and removes the internal conflict set listener

@@ -1,0 +1,20 @@
+TDAT: 	public void loadSimModel(FModel rootModel){
+		cntModel = 0; 
+		rootModelName = rootModel.getName();		
+		if (rootModel instanceof FAtomicModel)
+		{
+			allModels = new ArrayList(1);
+			allModels.add(new Tracker(rootModel, 0));
+			cntModel++;
+		}
+		else
+			allModels = getAllModels((FCoupledModel)rootModel);       
+
+		modelColumn = (Tracker[])allModels.toArray(new Tracker[0]);
+
+		//Initialize
+		timeView = new TimeView [cntModel];
+		dataTimeView = new ArrayList(1);
+	}	
+
+COM:loads a simulation model, initializes certain variables, and creates a view for handling time data

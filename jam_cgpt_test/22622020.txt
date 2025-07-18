@@ -1,0 +1,15 @@
+TDAT: 	public List getReadOnlyPaths() {
+		if (this.readOnlyPaths == null) {
+			ArrayList paths = new ArrayList();
+			for (Iterator i = nameMap.values().iterator(); i.hasNext(); ) {
+				SchemaPath schemaPath = (SchemaPath) i.next();
+				if (schemaPath.readOnly)
+					paths.add(schemaPath.xpath);
+			}
+			// prtln (" about to return " + paths.size() + " paths");
+			this.readOnlyPaths = paths;
+		}
+		return this.readOnlyPaths;
+	}
+
+COM:returns a list of read-only paths from a map of schema paths

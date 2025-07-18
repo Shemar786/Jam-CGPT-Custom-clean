@@ -1,0 +1,15 @@
+TDAT:     protected void rejectUserUndefined(MailAddress recipient) throws MessagingException {
+        // Update the flags of the received message
+        if (!isLeaveUserUndefined())
+            setMessageDeleted();
+
+        if (isMarkUserUndefinedSeen())
+            setMessageSeen();
+
+        StringBuilder messageBuffer = new StringBuilder("Rejected mail intended for undefined user: ");
+        messageBuffer.append(recipient);
+        messageBuffer.append('.');
+        logStatusInfo(messageBuffer.toString());
+    }
+
+COM:rejects incoming mails that are intended for undefined users and updates the flags accordingly while logging the status info

@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField22() {
+        if (textField22 == null) {//GEN-END:|425-getter|0|425-preInit
+            // write pre-init user code here
+            textField22 = new TextField("Bono 1:", null, 32, TextField.ANY);//GEN-LINE:|425-getter|1|425-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|425-getter|2|
+        return textField22;
+    }
+
+COM:returns a TextField object and creates a new one with certain specifications if the object hasn't been created yet

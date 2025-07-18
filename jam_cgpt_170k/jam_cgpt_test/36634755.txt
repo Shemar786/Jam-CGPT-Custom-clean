@@ -1,0 +1,13 @@
+TDAT:     public void changePosition(int index, int position){
+        if(index >= 0 && index < allItems.length){
+            for(int i = 0; i < vertPart.size(); i++){
+                if(vertPart.get(i) == index)
+                    vertPos.set(i, position);
+            }
+        }
+        if(position > maxPos)
+            maxPos = position;
+        generate = true;
+    }
+
+COM:changes the position of an item at a specified index, updates the maximum position and sets a flag to indicate generation

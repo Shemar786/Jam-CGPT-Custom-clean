@@ -1,0 +1,11 @@
+TDAT:     protected void setStateIcon(MindMapNode node, boolean enabled) {
+        // icon
+        if (noteIcon == null) {
+            noteIcon = new ImageIcon(mBrowseController
+                    .getResource("images/knotes.png"));
+        }
+        node.setStateIcon(NODE_NOTE_ICON, (enabled) ? noteIcon
+                : null);
+    }
+
+COM:sets the state icon of a MindMapNode to either an ImageIcon or null depending on whether the "enabled" parameter is true or false

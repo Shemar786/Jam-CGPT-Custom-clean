@@ -1,0 +1,11 @@
+TDAT: 	    public void setErrorMessage( String[] errorMessage ) {
+	    	if(errorMessage!=null){
+	    		errorMessageText.setText("");
+		    	for (int i = 0; i < errorMessage.length; i++) {
+		    		errorMessageText.setText(errorMessageText.getText()+ (errorMessage[i] == null ? "" : errorMessage[i]+"\n") );        			        
+				}
+		    	//errorMessageText.getParent().update();		 
+	    	}        
+	    }
+
+COM:sets the error message text for an object if the passed array of error messages is not null

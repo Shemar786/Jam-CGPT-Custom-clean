@@ -1,0 +1,13 @@
+TDAT:     private JMenuItem mailSaveAsMenuItem() {
+        JMenuItem mv = new JMenuItem("Save mail as...");
+        mv.setToolTipText("Save selected mail to another file");
+        mv.addActionListener(new ActionListener() {
+            @SuppressWarnings("synthetic-access")
+            public void actionPerformed(ActionEvent e) {
+                mailSaveAs();
+            }
+        });
+        return mv;
+    }
+
+COM:creates and returns a "Save mail as..." JMenuItem that, when clicked, invokes a mailSaveAs() method

@@ -1,0 +1,12 @@
+TDAT:     public void testSimpleGet() throws Exception {
+        this.server.setHttpService(new FeedbackService());
+        GetMethod get = new GetMethod("/");
+        try {
+            this.client.executeMethod(get);
+            assertEquals(HttpStatus.SC_OK, get.getStatusCode());
+        } finally {
+            get.releaseConnection();
+        }
+    }
+
+COM:tests the simple GET functionality of an HTTP service using the Apache HttpClient library

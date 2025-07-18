@@ -1,0 +1,10 @@
+TDAT:     public void loadFile(String path) {
+        if (System.getProperty("os.name").toLowerCase().startsWith("win")) {
+            path = path.replace('\\', '/');
+        }
+        sendCommand("loadfile " + path + " 0");
+        timer = new Timer();
+        timer.scheduleAtFixedRate(getPercentTask, 0, 1000);
+    }
+
+COM:loads a file, replaces backslashes with forward slashes if the operating system is Windows, sends a command to load the file with a timer to track progress

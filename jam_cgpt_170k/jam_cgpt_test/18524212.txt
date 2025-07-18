@@ -1,0 +1,15 @@
+TDAT: 	public Form findFormByNameOrID(String aNameOrID) {
+		Form theForm = null;
+		ListIterator theListIterator = getForms().listIterator();
+		while (theListIterator.hasNext()) {
+			Form theNextForm = (Form) theListIterator.next();
+			if (theNextForm.getName().equals(aNameOrID)
+					|| theNextForm.getID().equals(aNameOrID)) {
+				theForm = theNextForm;
+				break;
+			}
+		}
+		return theForm;
+	}
+
+COM:searches for a form object in a list by either its name or ID and returns the matching form, or null if no match is found

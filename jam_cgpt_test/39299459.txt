@@ -1,0 +1,6 @@
+TDAT:     public boolean isValidSize(ValueWithUnit<? extends DistanceUnit> width, ValueWithUnit<? extends DistanceUnit> height) {
+        return (width != null) && (height != null) && 
+               (width.getValue() >= 0) && (height.getValue() >= 0);
+    }
+
+COM:checks if the width and height values are valid sizes

@@ -1,0 +1,6 @@
+TDAT:   public void addPeerSemanticTag(PeerAssociatedSemanticTag pst) throws SharkKBException{
+    PeerSemanticTag tag = this.createPeerSemanticTag(pst.getName(), pst.getSI(), pst.getAddresses());
+    Util.copyPropertiesFromPropertyHolderToPropertyHolder(pst, tag);
+  }
+
+COM:adds a semantic tag to a peer by creating a new tag and copying its properties from an existing peer associated semantic tag

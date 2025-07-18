@@ -1,0 +1,14 @@
+TDAT: 	private Configuration getConfiguration() throws IOException {
+		Configuration configuration = new Configuration();
+		File file = null;
+		if (TEMPLATES_PATH.startsWith(Utility.PATH_SEPARATOR_STRING)) {
+			file = new File(TEMPLATES_PATH);
+		} else {
+			file = new File(RomaApplicationContext.getApplicationPath() + "/" + TEMPLATES_PATH);
+		}
+		configuration.setDirectoryForTemplateLoading(file);
+		configuration.setObjectWrapper(new DefaultObjectWrapper());
+		return configuration;
+	}
+
+COM:returns a Configuration object for use in loading templates and wrapping objects

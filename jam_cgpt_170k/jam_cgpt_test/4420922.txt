@@ -1,0 +1,15 @@
+TDAT:     public void close() {
+        try {
+            
+            if(this.is != null){ this.is.close(); }
+            if(this.os != null){ this.os.close(); }
+            
+            if(this.conn != null) { this.conn.close(); }
+
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+
+COM:closes input and output streams and the connection associated with it

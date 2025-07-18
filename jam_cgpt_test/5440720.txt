@@ -1,0 +1,18 @@
+TDAT:     private void enlargeBuf(int len) {
+        char[] tmp;
+
+        if (len <= C_Default_BufferSize) {
+            bufferSize += C_Default_BufferSize;
+            tmp = new char[bufferSize];
+        } else {
+            bufferSize += len;
+            tmp = new char[bufferSize];
+        }
+
+        System.arraycopy(buf, 0, tmp, 0, buf.length);
+
+        buf = null;     // help gc
+        buf = tmp;
+    }
+
+COM:enlarges the buffer if the required length is greater than the default buffer size, and then copies the contents from the old buffer to the new one

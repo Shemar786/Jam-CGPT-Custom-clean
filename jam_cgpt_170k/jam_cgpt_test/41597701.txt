@@ -1,0 +1,10 @@
+TDAT: public Command getOkCommand() {
+    if (okCommand == null) {//GEN-END:|35-getter|0|35-preInit
+            // write pre-init user code here
+        okCommand = new Command("Ok", "Ok", Command.OK, 0);//GEN-LINE:|35-getter|1|35-postInit
+            // write post-init user code here
+    }//GEN-BEGIN:|35-getter|2|
+    return okCommand;
+}
+
+COM:returns a Command object for the button with the label "Ok"

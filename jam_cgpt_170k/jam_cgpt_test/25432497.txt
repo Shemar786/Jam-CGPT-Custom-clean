@@ -1,0 +1,9 @@
+TDAT: 	public void paint(Graphics g) {
+		g.setFont(FontAdjuster.createAdjustedFont(CONTINUE_FONT));
+		
+		FontAdjuster.drawOutlinedString(g, CONTINUE_TEXT, ScreenSize.getWidth() / 2
+				- (int)(g.getFontMetrics().getStringBounds(CONTINUE_TEXT, g).getWidth() / 2),
+				BOUNDARY_DISTANCE, CONTINUE_COLOR);
+	}
+
+COM:paints a specified font and text in the center of the screen with an outlined string using a provided graphics object

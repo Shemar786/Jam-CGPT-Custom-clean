@@ -1,0 +1,15 @@
+TDAT:   public void onResponses(List responses) {
+    Response     resp;
+    ResponseLock lock;
+
+    for (int i = 0; i < responses.size(); i++) {
+      resp   = (Response) responses.get(i);
+      lock   = (ResponseLock) _responses.get(resp.getId());
+
+      if (lock != null) {
+        lock.setResponse(resp.get());
+      }
+    }
+  }
+
+COM:takes in a list of responses, iterates through them, and sets the response value for a corresponding lock object in a map

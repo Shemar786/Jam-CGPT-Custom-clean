@@ -1,0 +1,5 @@
+TDAT: 	public void createPolicy(Vertex vertex, PolicyType type, Vertex identity, Vertex location, List<Vertex> credentials, boolean isLogged, int maintainanceCost, int deploymentCost) {
+		this.policyManager.createPolicy(vertex, type, identity, location, credentials, isLogged, maintainanceCost, deploymentCost);
+	}
+
+COM:creates a policy with the specified parameters using the policyManager object

@@ -1,0 +1,12 @@
+TDAT:     public Asset deepClone() {
+        if (midiURL == null) {
+            throw new IllegalStateException("MidiAsset.deepClone: " +
+                    "Object constructed without midi URL specified. " +
+                    "Deep clone not possible.");
+        }
+        
+        MidiAsset clone = new MidiAsset(assetName, midiURL, continuallyPlay);
+        return clone;
+    }
+
+COM:creates a deep clone of a MidiAsset object, used for MIDI audio files, with the same asset name, URL, and play continuity as the original asset

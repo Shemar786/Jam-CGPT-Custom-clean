@@ -1,0 +1,9 @@
+TDAT: 	private void getRodinElements() throws RodinDBException {
+		final IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
+		final IRodinDB rodinDB = RodinCore.valueOf(workspaceRoot);
+		final IRodinProject rodinProject = rodinDB.getRodinProject(rodinProjectName);
+		rodinFile = rodinProject.getRodinFile(rodinFileName);
+		children = rodinFile.getChildren();
+	}
+
+COM:retrieves Rodin elements from a specified project and file, and assigns them to a variable for further use

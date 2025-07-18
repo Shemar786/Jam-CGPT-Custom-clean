@@ -1,0 +1,19 @@
+TDAT: 	public void testCreateRead() {
+		
+		
+		String clientID = "client1";
+		String appID = "testapp";
+		
+		SessionContainer store = manager.create(clientID, appID);
+		assertNotNull(store);
+		System.out.println("Storage created: " + store.getId());
+		
+		String id = store.getId();
+		store = manager.get(clientID, id);
+		assertNotNull(store);
+		assertEquals(id, store.getId());
+		
+		
+	}
+
+COM:creates and verifies the retrieval of a session container object using specified client and app IDs

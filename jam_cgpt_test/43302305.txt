@@ -1,0 +1,13 @@
+TDAT:     protected boolean isReadyForInput(Component c) {
+        if (eventMode == EM_AWT)
+            return c.isShowing();
+        Window w = AWT.getWindow(c);
+        if (w == null) {
+            throw new ActionFailedException("Component '" + toString(c)
+                                            + "' has no Window ancestor");
+        }
+        return c.isShowing()
+            && tracker.isWindowReady(w);
+    }
+
+COM:returns a boolean value indicating whether a given component is ready for input based on its visibility and the readiness of its window ancestor

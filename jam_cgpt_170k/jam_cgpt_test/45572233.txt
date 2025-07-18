@@ -1,0 +1,24 @@
+TDAT: 	public void onExit() {
+		
+		SessionWriter writer = new SessionWriter(this);
+		writer.write();
+		
+		LinkedList<PlayerList> listsToSave = new LinkedList<PlayerList>();
+		Iterator<PlayerList> iter = allPlayerLists.iterator();
+		
+		while(iter.hasNext()) {
+			PlayerList list = iter.next();
+			if (!list.isSaved()) {
+				listsToSave.add(list);
+			}
+		}
+		
+		if (listsToSave.size() > 0) {
+			new SaveDialog(this, listsToSave, true);
+			
+		} else {
+			System.exit(0);
+		}
+	}
+
+COM:saves unsaved player lists before exiting the program

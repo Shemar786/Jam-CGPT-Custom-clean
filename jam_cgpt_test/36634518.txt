@@ -1,0 +1,10 @@
+TDAT:     public void setColor(int index){
+        index *= 16;
+        resetColor();
+        if(index >= 0 && index < colors.length){
+            addColor(new Color(160, 160, 160), new Color(colors[index+9+3]));
+            addColor(new Color(128, 128, 128), new Color(colors[index+9+4]));
+        }
+    }
+
+COM:sets the color of two objects based on an index value multiplied by 16 and the values stored in an array of colors

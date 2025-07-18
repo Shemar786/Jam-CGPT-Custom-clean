@@ -1,0 +1,14 @@
+TDAT:  	public void handleRegisterRequest(String u, String p, String s){
+ 		
+ 		userName = u;
+ 		password = p;
+ 		server = s;
+ 			
+ 	 		try {
+ 	            sipManager.startRegisterProcess();
+ 	        }catch (CommunicationsException exc) {
+ 	        	System.out.println("ERRO SIP: "+exc.toString());
+ 	        }
+ 	}
+
+COM:handles a registration request by initializing the user name, password, and server, and then starting a SIP registration process

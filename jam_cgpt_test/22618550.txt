@@ -1,0 +1,12 @@
+TDAT: 	public String toString() {
+		StringBuffer buf = new StringBuffer();
+		for (Iterator i = pages.iterator(); i.hasNext(); ) {
+			Page page = (Page) i.next();
+			buf.append("\n" + page.toString());
+		}
+		buf.append("\n\nhomePage: " + getHomePage());
+		buf.append("\nfirstPage: " + getFirstPage());
+		return buf.toString();
+	}
+
+COM:returns a string representation of a collection of pages, including the home page and the first page

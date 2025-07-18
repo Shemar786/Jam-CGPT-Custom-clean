@@ -1,0 +1,9 @@
+TDAT:   public void setProtocol(String protocol) {
+    String p = LOCAL + "|" + PSERVER + "|" + EXT;
+    if (protocol == null || !protocol.toLowerCase().matches(p)) {
+      throw new IllegalArgumentException("Protocol is invalid; should be " + p);
+    }
+    super.setProtocol(protocol.toLowerCase());
+  }
+
+COM:sets the protocol for a Java object, but throws an exception if the provided protocol is invalid

@@ -1,0 +1,15 @@
+TDAT: 		public void actionPerformed(ActionEvent e) {
+			if( is_lobby )
+			{ // we're in lobby room => exit program
+				active = false;
+			}
+			else
+			{ // we're in race => go to lobby room
+				try { ts_server.leaveGame(player_id,game_id); }
+				catch(RemoteException re) { error(re.getMessage()); }
+
+				switchToLobby();
+			}
+		}
+
+COM:handles the action performed by a user either exiting the program or switching to the lobby room during a race

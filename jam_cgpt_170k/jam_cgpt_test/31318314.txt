@@ -1,0 +1,12 @@
+TDAT:     public void changeLocalUserColour(NTEColour newColour) {
+        documentModel.getAccessLock();
+        
+        User localUser = documentModel.getLocalUser();
+        localUser.setColour(newColour);
+        documentModel.userModified(localUser);
+        protocolController.sendUserUpdate();
+        
+        documentModel.releaseAccessLock();
+    }
+
+COM:changes the color of the local user in a document model object and updates the user's information in the protocol controller

@@ -1,0 +1,12 @@
+TDAT:   public void report(String where) {
+    if (!hints[DISABLE_OPENGL_ERROR_REPORT]) {
+      int err = gl.glGetError();
+      if (err != 0) {
+        String errString = glu.gluErrorString(err);
+        String msg = "OpenGL error " + err + " at " + where + ": " + errString;
+        PGraphics.showWarning(msg);
+      }
+    }
+  }
+
+COM:reports any OpenGL errors that occur during runtime, with the error message including the error number and location where the error occurred

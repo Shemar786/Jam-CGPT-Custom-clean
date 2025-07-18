@@ -1,0 +1,16 @@
+TDAT: 	public void setRepositoryName(String value) {
+		if (value == null)
+			return;
+		try {
+			if (!adminData.oidExists(Keys.REPOSITORY_NAME)) {
+				adminData.put(Keys.REPOSITORY_NAME, value);
+			}
+			else {
+				adminData.update(Keys.REPOSITORY_NAME, value);
+			}
+		} catch (Exception e) {
+			prtlnErr("Error saving serialized REPOSITORY_NAME: " + e);
+		}
+	}
+
+COM:sets the name of the repository and saves it in serialized form

@@ -1,0 +1,12 @@
+TDAT:     public boolean addObject(Object obj) {
+      ObjectCounter counter = (ObjectCounter)objectTracker.get(obj);
+      if(counter == null) {
+          objectTracker.put(obj, new ObjectCounter()); // init to 1
+          return true;
+      } else {
+          counter.incrementCount();
+          return false;
+      }
+    }
+
+COM:adds an object to a tracker and returns true if it is new, or false if it already exists

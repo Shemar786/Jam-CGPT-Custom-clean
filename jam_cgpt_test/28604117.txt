@@ -1,0 +1,13 @@
+TDAT:    public void treeWillExpand( TreeExpansionEvent event) {
+
+      TaxonProxyTreeNode node = (TaxonProxyTreeNode) event.getPath().getLastPathComponent();
+
+      Debug.ASSERT(node != null, "Null node will expand!!!");
+
+      // children are incarnated (in case they have not yet been added to
+      // the taxnomy tree) and shown
+      _tree.expandNode(node);
+
+   }
+
+COM:expands a tree node and ensures that the node is not null before expanding it

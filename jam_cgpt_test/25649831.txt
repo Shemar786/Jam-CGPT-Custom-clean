@@ -1,0 +1,11 @@
+TDAT:     public void open() throws SQLException, ClassNotFoundException {
+        logger.info("Using database driver: " + jdbcDriver);
+        Class.forName(jdbcDriver);
+        logger.info("Using database.url: " + jdbcURL);
+        // connect login/pass
+        con = DriverManager.getConnection(jdbcURL, user, password);
+        // Exception will be thrown if something went wrong
+        connected = true;
+    }
+
+COM:connects to a database using the specified driver, URL, username, and password, and throws SQLException and ClassNotFoundException if the connection fails

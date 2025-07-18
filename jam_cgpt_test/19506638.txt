@@ -1,0 +1,12 @@
+TDAT: 	protected void prepareDeltas(IRodinElement sourceElement, IRodinElement destinationElement, boolean isMove) {
+		IRodinProject destProject = destinationElement.getRodinProject();
+		if (isMove) {
+			IRodinProject sourceProject = sourceElement.getRodinProject();
+			getDeltaFor(sourceProject).movedFrom(sourceElement, destinationElement);
+			getDeltaFor(destProject).movedTo(destinationElement, sourceElement);
+		} else {
+			getDeltaFor(destProject).added(destinationElement);
+		}
+	}
+
+COM:prepares and creates delta objects for source and destination elements based on whether they are being moved or added

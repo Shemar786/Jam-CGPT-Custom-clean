@@ -1,0 +1,16 @@
+TDAT: 	public void valueForPathChanged(TreePath path, Object newValue) {
+		TreeModelEvent event;
+		Vector v;
+
+		event = new TreeModelEvent(this, path);
+		synchronized (mTreeListeners) {
+			v = (Vector) mTreeListeners.clone();
+		}
+
+		for (int i = 0; i < v.size(); i++) {
+			TreeModelListener listener = (TreeModelListener) v.elementAt(i);
+			listener.treeStructureChanged(event);
+		}
+	}
+
+COM:is used to notify all the listeners that the value for a specified path in a tree has been changed

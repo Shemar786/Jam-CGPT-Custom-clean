@@ -1,0 +1,12 @@
+TDAT: 	protected void instantiate() {
+		final IUserSupport us = getUserSupport();
+		final String[] inputs = getPredicateText().getResults();
+		final String globalInput = getProverUI().getProofControl().getInput();
+		if (isGoal) {
+			ProverUIUtils.applyInstantiation(null, us, inputs, globalInput);
+			return;
+		}
+		ProverUIUtils.applyInstantiation(pred, us, inputs, globalInput);
+	}
+
+COM:instantiates a predicate with user input and applies it to the ProverUIUtils

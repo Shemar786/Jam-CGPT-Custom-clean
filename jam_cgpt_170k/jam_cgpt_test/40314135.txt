@@ -1,0 +1,15 @@
+TDAT: 	public void listElement(final Element e, final String indent) {
+	    _log.debug(indent + "*Element, name:" + 
+		                     e.getName() + ", text:" + 
+		                     e.getText().trim());
+
+		//List all attributes
+		List<Attribute> as = e.getAttributes();
+		listAttributes(as, indent + " ");
+
+		//List all children
+		List<Element> c = e.getChildren();
+		listElements(c, indent + " ");
+	}
+
+COM:lists the name, text, attributes, and children of an XML element with specified indentation

@@ -1,0 +1,13 @@
+TDAT:     public void setFocus(boolean mFocus) {
+        focus = mFocus;
+
+        if (focus == false) {
+            // Cycle the child widget list and lose focus for all
+            for (int i = 0; i < widgetList.size(); i++) {
+                Widget widget = (Widget) widgetList.elementAt(i);
+                widget.setFocus(false);
+            }
+        }
+    }
+
+COM:sets the focus to a boolean value and, if the focus is false, loses focus for all child widgets in a list

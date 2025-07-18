@@ -1,0 +1,11 @@
+TDAT:   static public void assertEquals(String message, String expected, String actual) {
+    if((expected == null) && (actual == null)) {
+      return;
+    }
+    if((expected != null) && expected.equals(actual)) {
+      return;
+    }
+    throw new AssertionError(format(message, expected, actual));
+  }
+
+COM:checks whether an expected string matches an actual string and throws an AssertionError if they are not equal

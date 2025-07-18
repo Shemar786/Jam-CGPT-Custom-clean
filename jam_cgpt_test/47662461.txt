@@ -1,0 +1,17 @@
+TDAT: 	protected void addProcessPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ProcessPhaseAgregation_process_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ProcessPhaseAgregation_process_feature", "_UI_ProcessPhaseAgregation_type"),
+				 ProcessclassdiagramPackage.Literals.PROCESS_PHASE_AGREGATION__PROCESS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a process in a ProcessPhaseAggregation object

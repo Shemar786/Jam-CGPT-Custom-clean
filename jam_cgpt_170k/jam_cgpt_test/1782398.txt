@@ -1,0 +1,11 @@
+TDAT:         public void setLength( int length ) {
+            if (length < 0) return;
+            Option[] newArray = new Option[ length ];
+            System.arraycopy( _options, 0, newArray, 0, Math.min( length, _options.length ) );
+            for (int i = _options.length; i < length; i++) {
+                newArray[i]  = new Option();
+            }
+            _options = newArray;
+        }
+
+COM:sets the length of an array of Options, creating new Option objects if necessary, and returns void

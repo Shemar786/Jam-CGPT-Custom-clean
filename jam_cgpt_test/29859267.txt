@@ -1,0 +1,14 @@
+TDAT:   public void close() {
+    try {
+      in.close();
+      out.close();
+      connection.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+      System.out.println("Error while closing connection port");
+      System.out.println(e.getMessage());
+    }
+    connection = null;
+  }
+
+COM:is used to close the input and output streams of a connection before setting the connection to null, while catching and printing any potential exceptions

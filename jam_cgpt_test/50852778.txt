@@ -1,0 +1,20 @@
+TDAT:     public void setShade (boolean shade) {
+	if (this.shade == shade)
+	    return;
+	this.shade = shade;
+	
+	if (border || shade) {
+	    textX = 6;
+	    textY = 4;
+	    resize (textW+12, textH+8);	    
+
+	} else if (!border && !shade) {
+	    textX = 0;
+	    textY = 0;
+	    resize (textW, textH);
+	}
+
+	changed ();
+    }
+
+COM:sets the shade boolean value for a graphical element and adjusts its properties accordingly, and then calls a changed() method

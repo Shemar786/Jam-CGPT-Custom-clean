@@ -1,0 +1,13 @@
+TDAT:     public void testSearchEvent() {
+        System.out.println("searchEvent");
+        
+        String searchString = "";
+        Event_DBImpl instance = new Event_DBImpl();
+        
+        instance.searchEvent(searchString);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the searchEvent() method of the Event_DBImpl class by creating a sample instance and passing an empty search string to it

@@ -1,0 +1,19 @@
+TDAT: 	public void load(){
+		int I2C_Response;
+		byte h_byte;
+		byte l_byte;		
+		
+		int channel = 0x00;
+		channel = arrMotorLoad[LSC_position];
+		
+		h_byte = (byte)0xe0; //0xe0 | (0x00 >>(byte)8); //?? 
+		l_byte = (byte)channel;
+	     
+	    //High Byte Write
+		I2C_Response = this.sendData((int)this.SPI_PORT, h_byte);
+
+	    //Low Byte Write
+		I2C_Response = this.sendData((int)this.SPI_PORT, l_byte);		
+	}
+
+COM:sends data through an SPI port using an I2C protocol and loads the motor

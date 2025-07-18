@@ -1,0 +1,25 @@
+TDAT: 	public void addBWRel(BWRel r) {
+
+		assert tmpToFix.isEmpty();
+		assert toFix.isEmpty();
+		assert newRates.isEmpty();
+
+		/*
+		 * calls defreeze on the server and the client of the connection
+		 * which adds them to toFix set and their neighbors to tmpToFix
+		 */
+		r.getClient().add(r);
+		r.getServer().add(r);
+
+		/*
+		 * call management function in order to reallocate
+		 * bandwidth across all network nodes 
+		 */
+		reallocate();
+
+		assert tmpToFix.isEmpty();
+		assert toFix.isEmpty();
+
+	}
+
+COM:adds a BWRel (bandwidth relationship) to the network, reallocating bandwidth across all network nodes

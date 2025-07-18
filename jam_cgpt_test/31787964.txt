@@ -1,0 +1,13 @@
+TDAT:     protected Context getContext() throws MessagerException {
+        try {
+            Hashtable properties = new Hashtable();
+            properties.put(Context.INITIAL_CONTEXT_FACTORY, JNDI_FACTORY_CLASS);
+            properties.put(Context.PROVIDER_URL, JNDI_PROVIDER_URL);
+            Context context = new InitialContext(properties);
+            return context;
+        } catch (NamingException e) {
+            throw new MessagerException("Could not get JNDI Context");
+        }
+    }
+
+COM:returns a JNDI context, which is created by defining properties and initializing a new context

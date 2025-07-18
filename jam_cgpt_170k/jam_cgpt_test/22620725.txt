@@ -1,0 +1,15 @@
+TDAT: 	public List getDups() {
+		prtln("\ngetDups");
+		List dups = new ArrayList();
+
+		dups.addAll(getPrimaryDups());
+		dups.addAll(getMirrorDups());
+		if (dups.size() > 1) {
+			DupSim first = (DupSim) dups.get(0);
+			Collections.sort(dups, first.getComparator());
+		}
+		// prtln ("   ... getDups returning " + dups.size() + " items");
+		return dups;
+	}
+
+COM:returns a list of duplicate elements by combining primary and mirror duplicates and sorting them based on a Comparator

@@ -1,0 +1,11 @@
+TDAT: public void updateSendStatusInUI(int progress, int total) {
+  _boundProperties.firePropertyChange(
+      PropertyList.Send.toString(),
+      Integer.toString(ProgressMonitorUtils.getProgressPercent(progress, total)),
+      ProgressMonitorUtils.generateProgressMessage(ProgressMonitorUtils.Type.Send,
+                                                   getProgressMessage(),
+                                                   progress, total)
+  );
+}
+
+COM:updates the UI with the progress status of a send operation

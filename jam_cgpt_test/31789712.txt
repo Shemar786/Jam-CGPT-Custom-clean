@@ -1,0 +1,10 @@
+TDAT:     protected boolean isScreenSecured(SandUI sandui,Screen screen) {
+        if(screen.getSecurity()==Screen.SECURITY_SECURE) {
+            return true; }
+        if((screen.getSecurity()==Screen.SECURITY_DEFAULT)&&
+           (sandui.getDefaultSecurity()==SandUI.DEFAULTSECURITY_SECURE)) {
+            return true; }
+        return false;
+    }
+
+COM:checks if a screen is secured based on its security level and the default security level set in a SandUI object

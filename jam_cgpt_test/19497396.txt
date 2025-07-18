@@ -1,0 +1,23 @@
+TDAT: 	public void projectSelectionChanged(IRodinProject project) {
+		selectedProject = project;
+
+		if (allowNewProjectName) {
+			if (project == null) {
+				projectNameField.setText("");//$NON-NLS-1$
+			} else {
+				String text = project.getElementName();
+				projectNameField.setText(text);
+				projectNameField.setToolTipText(text);
+			}
+		}
+
+		// fire an event so the parent can update its controls
+		if (listener != null) {
+			Event changeEvent = new Event();
+			changeEvent.type = SWT.Selection;
+			changeEvent.widget = this;
+			listener.handleEvent(changeEvent);
+		}
+	}
+
+COM:updates the selected project, sets the project name field and tooltip, and fires an event for the parent to update its controls

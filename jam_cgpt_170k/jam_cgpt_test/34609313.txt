@@ -1,0 +1,15 @@
+TDAT:     public void testGetForm() {
+        System.out.println("getForm");
+        AnalysisResultImpl instance = new AnalysisResultImpl();
+        String expResult = "";
+        String result = instance.getForm();
+        assertEquals(expResult, result);
+        
+        expResult = "test123";
+        instance = new AnalysisResultImpl(expResult, 0);
+        result = instance.getForm();
+        assertEquals(expResult, result);
+        
+    }
+
+COM:tests the "getForm" method of the AnalysisResultImpl class by initializing an object and comparing the result with the expected outcome

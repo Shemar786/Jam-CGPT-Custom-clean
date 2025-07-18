@@ -1,0 +1,14 @@
+TDAT:     public void print(final PrintWriter out) {
+        String dateString = java.text.DateFormat.getDateInstance().format(
+                new Date());
+        out.println("Print " + ++file + " at " + dateString + " "
+                + method.getReturnType() + " " + method.getName() + ":");
+
+        visit(new PrintVisitor(out));
+
+        if (PRINT_GRAPH) {
+            printGraph();
+        }
+    }
+
+COM:prints the details of a method's return type and name along with the current date, and graph if enabled, using a specified PrintWriter

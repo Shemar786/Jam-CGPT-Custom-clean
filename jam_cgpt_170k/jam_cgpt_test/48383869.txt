@@ -1,0 +1,11 @@
+TDAT: 	public void notifyCompletion(@SuppressWarnings("rawtypes") AJAXRequest request){
+		//Checks if the request is urgent and only if so (thanks laziness!) tries to remove it from the urgent waiting_queue
+		if ( !request.isUrgent() || !queue_urgent.remove(request) ){
+			//If the request is not urgent or it has been added to the urgent waiting_queue, then it must be removed
+			//from the standard queue_started
+			queue_started.remove(request);
+		}
+		sendNextRequestInQueue();
+	}
+
+COM:notifies completion of an AJAXRequest and removes it from either the urgent waiting queue or standard queue depending on its urgency

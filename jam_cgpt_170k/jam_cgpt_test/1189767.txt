@@ -1,0 +1,11 @@
+TDAT:    public void makeNewRoot(DirEntry e) {
+      Constant firstval = contents.getDataVal(0);
+      int level = contents.getFlag();
+      Block newblk = contents.split(0, level); //ie, transfer all the records
+      DirEntry oldroot = new DirEntry(firstval, newblk.number());
+      insertEntry(oldroot);
+      insertEntry(e);
+      contents.setFlag(level+1);
+   }
+
+COM:creates a new root directory entry and updates the directory structure by inserting old and new entries

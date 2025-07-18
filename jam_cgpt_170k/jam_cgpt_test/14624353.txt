@@ -1,0 +1,11 @@
+TDAT:     public void testgetLatitude() {
+        System.out.println("getLatitude");
+        org.gps.types.GpsPosition instance = new org.gps.types.GpsPosition();
+        henson.midp.Float expectedResult = Float.ZERO;
+        henson.midp.Float result = instance.getLatitude();
+        assertEquals(expectedResult, result);
+        
+    
+    }
+
+COM:tests the getLatitude() method of the GpsPosition class and asserts that the expected and actual results are equal

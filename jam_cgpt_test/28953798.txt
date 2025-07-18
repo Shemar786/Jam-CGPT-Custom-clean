@@ -1,0 +1,9 @@
+TDAT: 	private Message createPixQuery(String patientId, Identifier authority) throws DataTypeException, IheConfigurationException {
+		String messageId = "PIX_" + MessageId++;
+		QBP_Q21 message = new QBP_Q21();
+		HL7v25.populateMSH(message.getMSH(), "QBP", "Q23", messageId, connection);
+		populatePixQuery(message, messageId, patientId, authority);
+		return message;
+	}
+
+COM:creates a PIX query message with a specified patient ID and authority and returns the message

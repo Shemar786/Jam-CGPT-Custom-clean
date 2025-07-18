@@ -1,0 +1,16 @@
+TDAT: 	public RSSBuilder (String URLRSS ){
+		try{
+			URL url = new URL( URLRSS );
+			// El metodo parse toma como parametros un objeto de tipo ChannelBuilderIF y una URL
+			ChannelIF channel = FeedParser.parse( new ChannelBuilder(), url );
+			title = channel.getTitle();
+			description = channel.getDescription();
+			date = channel.getPubDate();
+			items = channel.getItems();
+			type = "2.0";
+		} catch (Exception e){
+
+		}
+	}
+
+COM:parses an RSS feed from a given URL and retrieves its title, description, date, items, and type

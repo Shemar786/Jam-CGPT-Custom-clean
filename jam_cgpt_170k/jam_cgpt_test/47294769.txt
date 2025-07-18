@@ -1,0 +1,17 @@
+TDAT: 	protected void setCookies(final URLConnection u, final Map map) {
+		final Iterator i = map.entrySet().iterator();
+		final StringBuilder cookie = new StringBuilder(100);
+		while (i.hasNext()) {
+			final Map.Entry entry = (Map.Entry) i.next();
+			cookie.append(entry.getKey());
+			cookie.append("=");
+			cookie.append(entry.getValue());
+			cookie.append("; ");
+		}
+		u.setRequestProperty("Cookie", cookie.toString());
+
+		// enable gzip compression
+		u.setRequestProperty("Accept-encoding", "gzip");
+	}
+
+COM:sets cookies and enables gzip compression for a URL connection using a provided map of key-value pairs

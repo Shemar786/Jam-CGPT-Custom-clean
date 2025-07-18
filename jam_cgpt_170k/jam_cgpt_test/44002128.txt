@@ -1,0 +1,13 @@
+TDAT: 		  protected UserSession getUserSession(HttpServletRequest request) {
+		    HttpSession session = (HttpSession) request.getSession();
+		    if (session == null) {
+		      throw new RuntimeException("Couldn't get a reference to the Session");
+		    }
+		    UserSession userSession = (UserSession) session.getAttribute(WebGlobals.USER_SESSION_KEY);
+		    if (userSession == null) {
+		      throw new RuntimeException("Couldn't retrieve UserSession attribute from Session");
+		    }
+		    return userSession;
+		  }
+
+COM:retrieves the UserSession object from the HttpSession object of a given HttpServletRequest, and throws a runtime exception if either object cannot be retrieved

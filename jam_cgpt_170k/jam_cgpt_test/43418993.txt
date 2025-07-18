@@ -1,0 +1,10 @@
+TDAT: 	public void refreshNetworkModel() {
+		// --- Network model is updated/refreshed -----
+		this.getGraphGUI().repaintGraph(this.getGraphController().getNetworkModel().getGraph());
+		// --- Rebuilding the component table ---------
+		this.rebuildTblComponents();
+		this.showNumberOfComponents();
+		this.getGraphGUI().clearPickedObjects();
+	}
+
+COM:refreshes the network model, updates the graph, rebuilds the component table, shows the number of components, and clears any picked objects

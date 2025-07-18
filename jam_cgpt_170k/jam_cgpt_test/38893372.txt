@@ -1,0 +1,14 @@
+TDAT:   public void pppEvent(int event) {
+    if (DEBUG) {
+      try {
+        log("Rcv event " + PPP_EVENT_NAME[event]);
+      } catch (ArrayIndexOutOfBoundsException aioobe) {
+        aioobe.printStackTrace();
+      }
+    }
+
+    // Transmit the event to the ppp server
+    ppp.pppEvent(event);
+  }
+
+COM:logs and transmits a PPP network event to a server, but only if the DEBUG variable is true and handles an exception for an invalid event index

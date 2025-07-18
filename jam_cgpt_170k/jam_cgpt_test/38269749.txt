@@ -1,0 +1,19 @@
+TDAT: 	public void test() {
+		try {
+			log.info("Beginning DictionaryTester...");
+			IndexWord w = Dictionary.getInstance().getIndexWord(POS.NOUN, "tank");
+			testIndexWord(w);
+			
+			IndexWord v = Dictionary.getInstance().getIndexWord(POS.VERB, "complete");
+			testVerb(v);
+			
+			
+		} catch (JWNLException e) {
+			e.printStackTrace();
+		}
+		if (failures == 0) {
+			log.info("Testing succeeded with no failures.");
+		}
+	}
+
+COM:tests the functionality of a dictionary by retrieving and testing index words for a noun and a verb, and prints a success message if there are no failures

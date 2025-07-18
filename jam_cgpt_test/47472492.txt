@@ -1,0 +1,10 @@
+TDAT: 	protected void setPathEntry(IFile file) {
+		IPath path = file.getFullPath();
+		if (file.getProject().equals(fTopic.getModel().getUnderlyingResource().getProject())) {
+			fLinkEntry.setValue(path.removeFirstSegments(1).toString());
+		} else {
+			fLinkEntry.setValue(".." + path.toString()); //$NON-NLS-1$
+		}
+	}
+
+COM:sets the path entry of a file and updates it based on whether it belongs to the same project as the model or not

@@ -1,0 +1,13 @@
+TDAT:   private void updateItemToKeyList(CharEntNameItem item, Object key) {
+    if (itemToKeyList == null) {
+      itemToKeyList = new HashMap();
+    }
+    List keysList = (List) itemToKeyList.get(item);
+    if (keysList == null) {
+      keysList = new ArrayList();
+      itemToKeyList.put(item, keysList);
+    }
+    keysList.add(key);
+  }
+
+COM:updates an item to a key list by adding a key to the list associated with the item in a HashMap

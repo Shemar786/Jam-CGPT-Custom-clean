@@ -1,0 +1,13 @@
+TDAT:     public void setPageIndex(int pageIndex) {
+        if (pageIndex < 0) {
+            pageIndex = 0;
+        }
+        if (pageIndex > 0 && pageIndex > totalPages - 1) {
+            pageIndex = totalPages - 1;
+        }
+        this.pageIndex = pageIndex;
+        pageField.setText(Integer.toString(pageIndex + 1));
+        firePageIndexChanged();
+    }
+
+COM:sets the current page index, ensuring it is within the valid range, updates the page field text and fires an event for page index change

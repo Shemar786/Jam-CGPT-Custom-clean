@@ -1,0 +1,13 @@
+TDAT:     public void delete(int row) {
+        if (row == -1) {
+            AIDesktop.getStatusBar().info("Can't delete, no line selected!");
+
+            return;
+        }
+
+        AIDesktop.getStatusBar().info("Deleting line");
+        dataSet.remove(row);
+        this.fireTableRowsDeleted(row,row);
+    }
+
+COM:deletes a row from a dataset corresponding to a specified index, and updates the table to reflect the deletion

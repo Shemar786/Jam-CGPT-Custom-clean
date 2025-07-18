@@ -1,0 +1,16 @@
+TDAT: 	public void updateMove() {
+		SpaceVec[] track = getTrack();
+
+		if (track.length > 1) {
+			SpaceVec[] t = new SpaceVec[track.length - 1];
+			System.arraycopy(track, 1, t, 0, track.length - 1);
+			setTrack(t);
+			setMove(new LinearMove(track[0], currentTime(), track[1],
+					getSpeed()));
+		} else if (track.length == 1) {
+			setTrack(new SpaceVec[0]);
+			setMove(new LinearMove(track[0]));
+		}
+	}
+
+COM:updates the move of an object based on its track and speed

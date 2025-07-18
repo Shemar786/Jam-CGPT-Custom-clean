@@ -1,0 +1,18 @@
+TDAT: 	public void close() {
+		if (recordstore != null){
+			String fileName;
+			try {
+				fileName = recordstore.getName();
+				Logger.logInfo(this,"close","Closing Recordstore [" + fileName+"].");
+				recordstore.closeRecordStore();
+			} catch (RecordStoreNotOpenException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();	
+			} catch (RecordStoreException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+COM:closes a record store and logs information about the operation

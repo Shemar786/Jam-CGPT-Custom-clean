@@ -1,0 +1,14 @@
+TDAT: 	public Command getCommand(Request request) {
+		if (request instanceof ReconnectRequest) {
+			Object view = ((ReconnectRequest) request).getConnectionEditPart()
+					.getModel();
+			if (view instanceof View) {
+				Integer id = new Integer(ModelVisualIDRegistry
+						.getVisualID((View) view));
+				request.getExtendedData().put(VISUAL_ID_KEY, id);
+			}
+		}
+		return super.getCommand(request);
+	}
+
+COM:returns a Command object after checking if the given Request object is an instance of ReconnectRequest and performing additional operations accordingly

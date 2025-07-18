@@ -1,0 +1,12 @@
+TDAT: 	public List getCollaborateCollection(String userID) throws AccessException {
+		logger.debug("entering getCollaborateCollection()");
+		String query = "SELECT collection.PID PID, collection.TITLE TITLE, "
+				+ " collectionrole.ROLE ROLE FROM collectionrole, collection WHERE "
+				+ " collectionrole.USERID = '" + userID + "'"
+				+ " AND collectionrole.COLLECTIONPID = collection.PID"
+				+ " AND collection.ROOT = '1'";
+		List list = buildResult(query);
+		return list;
+	}
+
+COM:retrieves a list of collections in which the given user ID has a collaboration role

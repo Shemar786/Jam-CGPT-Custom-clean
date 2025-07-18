@@ -1,0 +1,16 @@
+TDAT: 	public BigDecimal getTotal(boolean includeChildren) throws DAOException {
+		BigDecimal total = new BigDecimal(0);
+		IPaymentDAO dao = DAOFactory.getCurrentFactory().getPaymentDAO();
+		List<Payment> payments = dao.findByAccount(this);
+		for (Payment payment : payments) {
+			total = total.add(payment.getPaymentAmount(getCurrency()));
+		}
+		if (includeChildren) {
+			for (Account account : getChildren()) {
+				total = total.add(account.getTotal(includeChildren));
+			}
+		}
+		return total;
+	}
+
+COM:calculates the total payment amount for a given account and its child accounts, based on whether or not to include children in the calculation

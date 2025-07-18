@@ -1,0 +1,16 @@
+TDAT:     public boolean equals(Object object) {
+
+        if (!(object instanceof NewsNoteData)) {
+            return false;
+        }
+
+        NewsNoteData content = (NewsNoteData) object;
+        //TODO: The equals method must be revised to check that we are
+        //testing the correct fields.
+
+        return new EqualsBuilder()
+                .append(_title, content._title)
+                .isEquals();
+    }
+
+COM:checks if an object is of type NewsNoteData and then checks if the title field of the object matches the title field of the current object using the Apache Commons EqualsBuilder

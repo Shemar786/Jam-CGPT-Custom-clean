@@ -1,0 +1,18 @@
+TDAT:   public boolean addJar(String path){
+    File file = new File(path);
+    if (!file.exists()){
+      return false;
+    }
+    try {
+      URL jar = new URL("jar:file:" + file.getAbsolutePath() + "!/");
+      addURL(jar);
+    }
+    catch (MalformedURLException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+      return false;
+    }
+    return true;
+  }
+
+COM:adds a JAR file to the classpath

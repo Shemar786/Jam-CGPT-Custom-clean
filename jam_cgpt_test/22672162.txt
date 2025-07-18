@@ -1,0 +1,15 @@
+TDAT: 	public void setSelectedCurrency(Currency selectedCurrency) {
+		if (selectedCurrency == null) {
+			currencyCombo.select(0);
+		} else if (currencies != null) {
+			for (int i = 0; i < currencies.size(); i++) {
+				if ((currencies.get(i) == null && selectedCurrency == null)
+						|| currencies.get(i).equals(selectedCurrency)) {
+					currencyCombo.select(i);
+					return;
+				}
+			}
+		}
+	}
+
+COM:sets the selected currency in a combo box based on the input parameter, and defaults to the first currency in the list if the input is null

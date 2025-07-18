@@ -1,0 +1,16 @@
+TDAT: 	public void selectionChanged(final SelectionChangedEvent event) {
+		BusyIndicator.showWhile(getTable().getShell().getDisplay(), new Runnable() {
+			public void run() {
+				IStructuredSelection selection= (IStructuredSelection) event.getSelection();
+				Object selectedElement= selection.getFirstElement();
+				if (selectedElement == null) {
+					fCurrentTreeSelection= null;
+					fListViewer.setInput(fCurrentTreeSelection);
+					return;
+				}
+				populateListViewer(selectedElement);
+			}
+		});
+	}
+
+COM:responds to changes in selection of a table and populates a list viewer accordingly while showing a busy indicator

@@ -1,0 +1,17 @@
+TDAT: 	protected void addFinalStatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DecisionElementFinalStateAssociation_finalState_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DecisionElementFinalStateAssociation_finalState_feature", "_UI_DecisionElementFinalStateAssociation_type"),
+				 ProcessactivitydiagramPackage.Literals.DECISION_ELEMENT_FINAL_STATE_ASSOCIATION__FINAL_STATE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a final state property descriptor to an item property descriptor list for a decision element final state association

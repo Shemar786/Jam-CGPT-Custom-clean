@@ -1,0 +1,10 @@
+TDAT: 	private void paintRib(Graphics g, int x, int y) {
+		g.setColor(Color.white);
+		g.fillRect(x, y, 2, 2);
+		g.translate(-1, -1);
+		g.setColor(SystemColor.controlShadow);
+		g.fillRect(x, y, 2, 2);
+		g.translate(1, 1);
+	}
+
+COM:paints a small rib shape at the specified x and y coordinates, with alternating white and shaded colors

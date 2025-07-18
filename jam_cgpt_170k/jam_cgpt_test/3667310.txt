@@ -1,0 +1,13 @@
+TDAT:     protected double getLengthDimension() {
+        
+        Insets insets = getInsets();
+        
+        if (m_scrollbar.getOrientation() == ORIENTATION_HORIZONTAL) {
+            return (double)(getWidth() - insets.left - insets.right);
+        } else {
+            return (double)(getHeight() - insets.top - insets.bottom);
+        }
+        
+    }
+
+COM:returns the length dimension of the scrollbar

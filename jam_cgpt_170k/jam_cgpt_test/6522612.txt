@@ -1,0 +1,18 @@
+TDAT: 	public void check(DestroyPortlets request) throws MissingParametersFault {
+		if (isCheckEnabled()) {
+			// check DestroyPortlet request object pointer
+			if (request instanceof DestroyPortlets) {
+
+				// check for registration context
+				check(request.getRegistrationContext(), Constants.NILLABLE_TRUE);
+				check(request.getPortletHandles(), Constants.NILLABLE_FALSE);
+
+			}
+			else {
+
+				throwMissingParametersFault("Input object is not a DestroyPortlets or is null");
+			}
+		}
+	}
+
+COM:checks the DestroyPortlets request object for required parameters and throws a MissingParametersFault if any are missing

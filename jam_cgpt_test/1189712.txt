@@ -1,0 +1,10 @@
+TDAT:    public int setInt(Buffer buff, int offset, int newval) {
+      int oldval = buff.getInt(offset);
+      Block blk = buff.block();
+      if (isTempBlock(blk))
+         return -1;
+      else
+         return new SetIntRecord(txnum, blk, offset, oldval).writeToLog();
+   }
+
+COM:sets a new integer value in a buffer while keeping track of the old value and writing the transaction to a log

@@ -1,0 +1,11 @@
+TDAT: public Point getCursorLocation () {
+	checkDevice ();
+  if(!Compatibility.IS_JAVA_5_OR_GREATER) {
+    java.awt.Point point = Utils.getTrakedMouseLocation();
+    return new Point(point.x, point.y);
+  }
+  java.awt.Point point = MouseInfo.getPointerInfo().getLocation();
+  return new Point(point.x, point.y);
+}
+
+COM:returns the current location of the cursor on the screen

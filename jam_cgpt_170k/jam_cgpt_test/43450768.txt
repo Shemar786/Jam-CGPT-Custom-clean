@@ -1,0 +1,9 @@
+TDAT: 	public void setProperty(String name, Object value) {
+		// OPERATION_STYLE always DOCUMENT for now
+		// ENCODING_STYLE_URI always "" (LITERAL) for now
+		if (!Call.OPERATION_STYLE_PROPERTY.equals(name) && !Call.ENCODING_STYLE_URI_PROPERTY.equals(name)) {
+			super.setProperty(name, value);
+		}
+	}
+
+COM:sets a property based on the input name and value, with some exceptions

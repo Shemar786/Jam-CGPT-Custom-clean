@@ -1,0 +1,20 @@
+TDAT:     protected void cascadingCut( Node y ) {
+        Node z = y.m_parent;
+
+        // if there's a parent...
+        if( z != null ) {
+            // if y is unmarked, set it marked
+            if( !y.m_mark ) {
+                y.m_mark = true;
+            }
+            else {
+                // it's marked, cut it from parent
+                cut( y, z );
+
+                // cut its parent as well
+                cascadingCut( z );
+            }
+        }
+    }
+
+COM:performs cascading cuts on a tree data structure

@@ -1,0 +1,19 @@
+TDAT: 	private JTextField getEindtijdTextField() {
+		if (eindtijdTextField == null) {
+			eindtijdTextField = new JTextField();
+			eindtijdTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+				public void focusLost(java.awt.event.FocusEvent e) {
+					try {
+						CheckTijd(parent.getEindtijdTextField().getText());
+					} catch (TijdException e1) {
+						JOptionPane.showMessageDialog(null,
+								e1.getMessage(),
+								"Validatie", JOptionPane.ERROR_MESSAGE);
+					}
+				}
+			});
+		}
+		return eindtijdTextField;
+	}
+
+COM:returns a text field for the end time, where if it loses focus, it tries to check the input time and display an error message if it is invalid

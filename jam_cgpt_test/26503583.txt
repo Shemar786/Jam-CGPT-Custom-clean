@@ -1,0 +1,11 @@
+TDAT:   public void releaseAll(){
+    for(int i = 0; i < _busyPorts.size(); i++){
+      Integer busy = (Integer)_busyPorts.get(i);
+      if(!_availablePorts.contains(busy)){
+        _availablePorts.add(busy);
+      }
+    }
+    _busyPorts.clear();
+  }
+
+COM:releases all currently busy ports and makes them available for use

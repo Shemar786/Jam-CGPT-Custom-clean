@@ -1,0 +1,12 @@
+TDAT: 	public void changeUserAttribute(String id, String attribute, String attributeValue) throws UnknownAttributeException, MissingAttributeException, InvalidEmailException {
+
+		BLMSUser user = getUser(id);
+		ValidateAttribute.attributeValid(attribute);
+		String attributeInSetFormat = ReflectionUtil.prepareAttributeName(attribute);
+		ReflectionUtil.setAttribute(user, attributeInSetFormat, attributeValue, "user");
+		ValidateAttribute.userEmptyAttributes(user);
+		ValidateAttribute.userUniqueEmail(user);
+		updateUser(user);
+	}
+
+COM:changes a specified user's attribute value and performs validations before updating the user

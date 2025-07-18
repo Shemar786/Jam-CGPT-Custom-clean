@@ -1,0 +1,10 @@
+TDAT:   public Cursor fetchChecklist(long listId) {
+    Cursor cursor = mDb.query(true, CHECKLIST_TBL, new String[] {KEY_ROWID, KEY_NAME},
+        KEY_ROWID + "=" + listId,  null, null, null, null, null);
+    if (cursor != null) {
+      cursor.moveToFirst();
+    }
+    return cursor;
+  }
+
+COM:fetches a single row from a database table named "checklist" using its unique ID and returns it as a cursor object

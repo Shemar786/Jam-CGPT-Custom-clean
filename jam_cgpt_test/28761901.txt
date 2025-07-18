@@ -1,0 +1,12 @@
+TDAT:   private void actionOptionsSystem() {
+    if (Utilities.isDesktopSupported()) {
+      EnumWikipedia wikipedia = getWikipedia();
+      Utilities.browseURL(wikipedia, wikipedia.getConfigurationPage(), true);
+    } else {
+      displayUrlMessage(
+          GT._("You can learn how to configure WikiCleaner at the following URL:"),
+          URL_OTHER_WIKIPEDIA);
+    }
+  }
+
+COM:checks if the desktop is supported and open the configuration page of a specific website or shows a message with a URL if it is not supported

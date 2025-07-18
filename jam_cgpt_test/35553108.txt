@@ -1,0 +1,18 @@
+TDAT: 	public void refreshOspfProtocols(NeL3IF.OspfProtocolsIF[] data, int result) {
+		init_tblProtocols();
+		taData.setText("");
+		String totalData = new String("");
+
+		if (data == null || result == ErrorInspect.NO_DATA) {
+		} else {
+			for (int i = 0; i < data.length; i++) {
+
+				totalData = totalData.concat(data[i].dataStr);
+				totalData = totalData.concat("\n");
+			}
+			taData.setText(totalData);
+		}
+
+	}
+
+COM:refreshes an OSPF protocol with a given data array and result code, initializing a table and updating a text area with the concatenated data

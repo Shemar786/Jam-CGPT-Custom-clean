@@ -1,0 +1,17 @@
+TDAT:     public void	componentResized(ComponentEvent ce) {
+	offScreenImageSet = false;
+	waitForOnScreenPresence();
+
+	int width = getWidth();
+	int height = getHeight();
+
+	clearCompletely();
+	offScreenImage = createVolatileImage(width, height);
+	offScreenImageSet = true;
+	mp.setRenderingArea(0, 0, width, height);
+	mp.setGraphics((Graphics2D) offScreenImage.getGraphics());
+
+	mpp.notifyListenersOfResize();
+    }
+
+COM:is triggered when a component is resized, and it creates a new off-screen image with the updated dimensions and notifies listeners of the resize

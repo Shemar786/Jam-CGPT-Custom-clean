@@ -1,0 +1,19 @@
+TDAT: 		private void consumeUntil (StringBuffer tk, String until) {
+				while (len > 0) {
+						if (consumeEsc (tk)) {
+								
+						} else if (doc.startsWith (until,loc)) {
+								// here's the end-quote.  Stop
+								//System.out.println ("Got lit: ["+until+"] -> ["+tk+"]");
+								return;
+								
+						} else {
+								// consume this char
+								consumeChar (tk);
+						}
+				}
+				
+				//System.out.println ("Walked off string while looking for ["+until+"]");
+		}
+
+COM:consumes characters from a StringBuffer until a specified String is found

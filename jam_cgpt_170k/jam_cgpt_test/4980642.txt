@@ -1,0 +1,10 @@
+TDAT:     public void setPnCurrentModule(String className) {
+        try {
+            PnModule actPanel = (PnModule) Class.forName(className).newInstance();
+            this.setPnCurrentModule(actPanel);
+        } catch (Exception e) {
+            logger.error("Could not set module-panel: " + className,e);
+        }
+    }
+
+COM:sets the current module panel by creating an instance of the specified panel class and catching any exceptions that occur

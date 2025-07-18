@@ -1,0 +1,23 @@
+TDAT: 	public V put(K key, V value) {
+
+		LRUCacheEntry<K, V> entry;
+
+		/* Check whether there's an entry in the cache */
+		entry = cache.getEntry(key);
+		if (entry != null) {
+
+			if (entry.isHard && getCurrentSpace() <= getSpaceLimit()) {
+				updateTimestamp(entry);
+				entry._fValue = value;
+				return value;
+			} else {
+				privateRemoveEntry(entry, false);
+			}
+		}
+		if (makeSpace(1)) {
+			privateAdd(key, value);
+		}
+		return value;
+	}
+
+COM:puts a key-value pair into a cache, and if the cache is full, it removes the least recently used entry to make space

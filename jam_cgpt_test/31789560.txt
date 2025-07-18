@@ -1,0 +1,10 @@
+TDAT:     public String getModePath() {
+        String retval="";
+        for(int i=0;i<modeStack.length;i++) {
+            retval+=modeStackValueToLabel(modeStack[i]);
+            if(i+1<modeStack.length) {
+                retval+="."; } }
+        return retval;
+    }
+
+COM:returns a concatenated string of values from an array, with a period delimiter between each value

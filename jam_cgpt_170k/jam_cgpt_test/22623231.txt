@@ -1,0 +1,15 @@
+TDAT: 	public String getScparams() {
+		if (selectedCollection != null) {
+			return "&sc=" + selectedCollection;
+		}
+		else if (selectedCollections != null && selectedCollections.length > 0) {
+			String sparams = "&scs=" + selectedCollections[0];
+			for (int i = 1; i < selectedCollections.length; i++) {
+				sparams += "&scs=" + selectedCollections[i];
+			}
+			return sparams;
+		}
+		return "";
+	}
+
+COM:returns a string containing selected collection parameters based on certain conditions

@@ -1,0 +1,11 @@
+TDAT: 	public void release() throws IOException {
+		// unmount zip files (as far as possible)
+		try { File.umount(true, false, true, false); } catch (ArchiveBusyException e) { /* ignore */ }
+		// unlock repository
+		fileLock.release();
+		lockedStream.write("unlocked...\n".getBytes());
+		lockedStream.flush();
+		lockedStream.close();
+	}
+
+COM:releases any mounted zip files, unlocks a repository, writes an "unlocked" message to a stream, and closes the stream

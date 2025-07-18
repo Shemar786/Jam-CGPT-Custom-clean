@@ -1,0 +1,20 @@
+TDAT: 	public Composite getButtonBoxControl(Composite parent) {
+		buttonBox = new Composite(parent, SWT.NULL);
+		GridLayout layout = new GridLayout();
+		layout.marginWidth = 0;
+		buttonBox.setLayout(layout);
+		createButtons(buttonBox);
+		buttonBox.addDisposeListener(new DisposeListener() {
+			@Override
+			public void widgetDisposed(DisposeEvent event) {
+				addButton = null;
+				removeButton = null;
+				upButton = null;
+				downButton = null;
+				buttonBox = null;
+			}
+		});
+		return buttonBox;
+	}
+
+COM:creates and returns a composite control containing a set of buttons, with an event listener to dispose of the buttons when the control is disposed

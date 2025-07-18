@@ -1,0 +1,12 @@
+TDAT:     public void testParameterGreaterEqual() throws ServletException,  JspException {
+        GreaterEqualTag ge = new GreaterEqualTag();
+        ge.setPageContext(pageContext);
+        ge.setParameter(PARAMETER_KEY);
+        ge.setValue(LESSER_VAL);
+
+        assertTrue(
+        	"Parameter Value (" + GREATER_VAL + ") is greater than or equal to value (" + LESSER_VAL + ")", 
+        	ge.condition());
+    }
+
+COM:tests if a parameter value is greater than or equal to a specified value using a JSP tag

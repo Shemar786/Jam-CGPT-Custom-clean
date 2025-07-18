@@ -1,0 +1,16 @@
+TDAT:     public boolean hasBody() {
+        if (httpCh.getRequest().method().equals("HEAD")) {
+            return false;
+        }
+        if (status >= 100 && status < 200) {
+            return false;
+        }
+        // what about (status == 205) ?
+        if ((status == 204) 
+                || (status == 304)) {
+            return false;
+        }
+        return true;
+    }
+
+COM:returns a boolean indicating whether or not the HTTP response has a body, based on factors such as the request method and response status code

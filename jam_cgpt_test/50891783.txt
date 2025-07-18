@@ -1,0 +1,9 @@
+TDAT:     public void testSetDescription() {
+        System.out.println("testSetDescription");
+        testString = "This Tag is a great tag. And let me tell you why-\n";
+        testString += "Now Bobby, I need you to be a good kid and be normal n-o-r-m-a-l";
+        tag.setDescription( testString );
+        assertEquals( tag.getDescription(), testString );
+    }
+
+COM:tests the setDescription function for a tag object and prints a message, sets a test string and asserts that it is equal to the description of the tag

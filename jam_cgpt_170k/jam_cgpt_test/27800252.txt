@@ -1,0 +1,11 @@
+TDAT:   public Dimension getMaximumSize ( JComponent component ) {
+    Dimension table_maximum_size =
+      treeTableTool.getTable().getMaximumSize();
+    if( treeTableTool.isHorizontal() ) {
+      return new Dimension( table_maximum_size.width, Integer.MAX_VALUE );
+    } else {
+      return new Dimension( Integer.MAX_VALUE, table_maximum_size.height );
+    }
+  } // getMaximumSize(..)
+
+COM:returns the maximum size of a JComponent based on whether it is horizontal or vertical

@@ -1,0 +1,11 @@
+TDAT:         public void set( String propertyName, Object value ) {
+            if (propertyName.equalsIgnoreCase( "value" )) {
+                setValueAttribute( value.toString() );
+            } else if (propertyName.equalsIgnoreCase( "disabled" )) {
+                setDisabled( value instanceof Boolean && ((Boolean) value).booleanValue() );
+            } else {
+                super.set( propertyName, value );
+            }
+        }
+
+COM:sets a property and updates its value based on the input parameter

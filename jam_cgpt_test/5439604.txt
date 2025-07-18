@@ -1,0 +1,7 @@
+TDAT:     public void setAttribute(String name, Object value) {
+        Object oldValue = this.attributes.put(name, value);
+        if (oldValue == null) listenerSupport.fireServletContextAttributeAdded(servletContext, name, value);
+        else listenerSupport.fireServletContextAttributeReplaced(servletContext, name, oldValue);
+    }
+
+COM:sets a named attribute to a given value in an object, and notifies listeners if the attribute is added or replaced

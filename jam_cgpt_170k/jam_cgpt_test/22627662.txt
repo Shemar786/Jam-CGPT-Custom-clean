@@ -1,0 +1,13 @@
+TDAT: 	public Element getExtensionElement() {
+		if (isDerivedContentModel())
+			return (Element) getElement()
+				.selectSingleNode(NamespaceRegistry.makeQualifiedName(xsdPrefix, "complexContent") + "/" +
+				NamespaceRegistry.makeQualifiedName(xsdPrefix, "extension"));
+		if (isDerivedTextOnlyModel())
+			return (Element) getElement()
+				.selectSingleNode(NamespaceRegistry.makeQualifiedName(xsdPrefix, "simpleContent") + "/" +
+				NamespaceRegistry.makeQualifiedName(xsdPrefix, "extension"));
+		return null;
+	}
+
+COM:retrieves the extension element of a derived content model or derived text-only model

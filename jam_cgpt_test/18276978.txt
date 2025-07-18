@@ -1,0 +1,10 @@
+TDAT:     public String dumpRelationshipAttrs(DataObject rel)
+    {   
+        String [] attrs = rel.getAttrNames();
+        StringBuffer dump = new StringBuffer();
+        for (int i = 0; i < attrs.length; i++)
+            dump.append(attrs[i] + ": " + rel.getAttr(attrs[i]) + "\n");
+        return dump.toString();
+    }
+
+COM:takes a data object and returns a string containing the names and values of its attributes

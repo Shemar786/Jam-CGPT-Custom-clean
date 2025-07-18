@@ -1,0 +1,20 @@
+TDAT: 	public void render(float tpf) {
+		super.render(tpf);
+		
+		Iterator<MenuItem> it = menuItems.values().iterator();
+		while(it.hasNext()) {			
+			DisplaySystem.getDisplaySystem().getRenderer().draw(it.next());
+		}
+
+		it = otherItems.values().iterator();
+		while(it.hasNext()) {			
+			DisplaySystem.getDisplaySystem().getRenderer().draw(it.next());
+		}
+		
+		Iterator<TextItem> i = textItems.values().iterator();
+		while(i.hasNext()) {	
+			DisplaySystem.getDisplaySystem().getRenderer().draw(i.next());
+		}
+	}
+
+COM:renders various items on the display system such as menu items, other items and text items

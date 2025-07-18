@@ -1,0 +1,10 @@
+TDAT: 	private void createSlider(){
+		slider = new GVertSlider(winApp, width - 10, height, 10, maxRows * height);
+		slider.setBorder(1);
+		slider.setVisible(false);
+		slider.setLimits(0, 0, maxRows - 1);
+		slider.addEventHandler(this, "processSliderMotion", new Class[] { GVertSlider.class } );
+		add(slider);
+	}
+
+COM:creates a vertical slider with specific properties and adds it to a container

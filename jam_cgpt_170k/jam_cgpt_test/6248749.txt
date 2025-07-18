@@ -1,0 +1,15 @@
+TDAT: 	public void testLockLine() throws Exception{
+		sequenceNo = 0;
+
+		// User 1 tries to lock an invalid line (should return same sequenceNo)
+		service.lockLine(documentHash,10,user1ID,sequenceNo);
+		TestCase.assertEquals(sequenceNo,
+				service.getSequenceNo(documentHash,sequenceNo,10));
+
+		// User 1 locks the second line (should return same sequenceNo)
+		service.lockLine(documentHash,2,user1ID,sequenceNo);
+		TestCase.assertEquals(sequenceNo, service.getSequenceNo(
+				documentHash,sequenceNo,2));
+	}
+
+COM:is a unit test that checks the functionality of the lockLine() and getSequenceNo() methods in a document management service

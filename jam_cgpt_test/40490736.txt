@@ -1,0 +1,10 @@
+TDAT:     public double getAngle() {
+        double prevV = velocity;
+        double prevTime = time;
+        velocity = getVelocity();
+        time = System.currentTimeMillis();
+        //trapazoid rule: multiply difference in time to the average of current and past reading.
+        return angle += .5 * ((time - prevTime) * S_PER_MS) * (prevV + velocity);
+    }
+
+COM:calculates the angle using the trapezoid rule based on the current and previous velocity and time readings

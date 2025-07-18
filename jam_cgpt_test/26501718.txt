@@ -1,0 +1,14 @@
+TDAT:   public void read(OutputStream out) throws IOException{
+    int read;
+    while(_arrayPos <  _arrayCount){
+      read = _arrays[_arrayPos].get(out);
+      if(read == 0){
+        break;
+      }
+      if(_arrays[_arrayPos]._pos >= _arrays[_arrayPos]._limit){
+        _arrayPos++;
+      }      
+    }
+  }  
+
+COM:reads data from a stream and writes it to an output stream while looping through an array of objects

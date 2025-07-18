@@ -1,0 +1,19 @@
+TDAT: 	protected boolean transportAvailable(DispatchTask task){
+		TransportLocationIfc location = task.getLoadOrigin();
+		Driver driver = getIdleDriver(location);
+		if (driver == null)
+			return false;
+		SpatialResource truck = getIdleTruck(location);
+		if (truck == null)
+			return false;
+		SpatialResource trailer = getIdleTrailer(location);
+		if (trailer == null)
+			return false;
+		// if here, then a driver, truck and trailer has been found
+		task.setDriver(driver);
+		task.setTruck(truck);
+		task.setTrailer(trailer);
+		return true;
+	}
+
+COM:checks for the availability of an idle driver, truck, and trailer at the given transport location and assigns them to a DispatchTask if available

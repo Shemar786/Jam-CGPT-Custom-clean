@@ -1,0 +1,17 @@
+TDAT: 	protected void addComponentDefinitionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Workflow_componentDefinition_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Workflow_componentDefinition_feature", "_UI_Workflow_type"),
+				 WorkflowPackage.Literals.WORKFLOW__COMPONENT_DEFINITION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a component definition property descriptor to the item property descriptors

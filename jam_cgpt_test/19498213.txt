@@ -1,0 +1,18 @@
+TDAT: 	public void testCarrierSets_02_twoCarrierSetsNameConflict() throws Exception {
+		IContextRoot con = createContext("ctx");
+
+		addCarrierSets(con, makeSList("S1", "S1"));
+		
+		saveRodinFileOf(con);
+		
+		runBuilder();
+		
+		ISCContextRoot file = con.getSCContextRoot();
+		
+		containsCarrierSets(file);
+				
+		hasMarker(con.getCarrierSets()[0]);
+		hasMarker(con.getCarrierSets()[1]);
+	}
+
+COM:tests for a name conflict error when adding two carrier sets with the same name to a context root

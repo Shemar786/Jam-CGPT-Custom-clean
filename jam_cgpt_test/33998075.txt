@@ -1,0 +1,20 @@
+TDAT: 	private void checkUpdates() {
+		boolean newUpdates = false;
+		String[] commandLineArgs = Platform.getCommandLineArgs();
+		for (int i = 0; i < commandLineArgs.length; i++) {
+			if (commandLineArgs[i].equalsIgnoreCase("-newUpdates")) { //$NON-NLS-1$
+				newUpdates = true;
+				break;
+			}
+		}
+
+		if (newUpdates) {
+			try {
+				SiteManager.handleNewChanges();
+			} catch (CoreException e) {
+				StatusManager.getManager().handle(e, Application.PLUGIN_ID);
+			}
+		}
+	}
+
+COM:checks if there are any new updates available and if so, handles them through a SiteManager

@@ -1,0 +1,11 @@
+TDAT: 	public void setMonthFont(final Font monthFont) {
+		this.monthFont = monthFont;
+		
+		// Recalculate HEADER_HEIGHT
+		final FontRenderContext context = new FontRenderContext(new AffineTransform(), false,false);
+		final GlyphVector glyphVector = monthFont.createGlyphVector(context, "Month");
+		//int stringWidth = (int)glyphVector.getLogicalBounds().getWidth();
+		HEADER_HEIGHT = (int)glyphVector.getLogicalBounds().getHeight() + 5;
+	}
+
+COM:sets the font for the month and recalculates the header height

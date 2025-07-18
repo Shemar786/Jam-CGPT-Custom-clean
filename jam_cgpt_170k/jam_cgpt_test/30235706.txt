@@ -1,0 +1,9 @@
+TDAT:     public void performBrakeAction(InputActionEvent evt) {
+        node.brake(evt.getTime());
+        Vector3f loc = node.getLocalTranslation();
+        loc.addLocal(node.getLocalRotation().getRotationColumn(2, tempVa)
+                     .multLocal(node.getVelocity() * evt.getTime()));
+        node.setLocalTranslation(loc);
+    }
+
+COM:performs a brake action for a node by adjusting its translation based on the current time and velocity

@@ -1,0 +1,17 @@
+TDAT:   protected void addSkipDaysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DailyOccursModel_skipDays_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DailyOccursModel_skipDays_feature", "_UI_DailyOccursModel_type"),
+				 TimeBasedRoutingPackage.Literals.DAILY_OCCURS_MODEL__SKIP_DAYS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to the item property descriptor list for the skip days feature in the DailyOccursModel with specific settings

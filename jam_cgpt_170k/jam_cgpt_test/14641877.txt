@@ -1,0 +1,10 @@
+TDAT:     public void writeMessage(SocketAddress address, Serializable message) throws IOException {
+        IoSession session = getPooledSession(address);
+        WriteFuture writeFuture = session.write(message);
+        writeFuture.join();
+        if (!writeFuture.isWritten()) {
+            throw new IOException("message could not be sent to '" + address + "'");
+        }
+    }
+
+COM:writes a Serializable message to a specified SocketAddress via a pooled IoSession and throws an IOException if the message could not be sent

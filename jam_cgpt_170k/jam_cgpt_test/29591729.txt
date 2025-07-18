@@ -1,0 +1,11 @@
+TDAT:   public ProjectionCT (String name, String authority, ProjectionImpl proj) {
+    super( name, authority, TransformType.Projection);
+    this.proj = proj;
+
+    List list = proj.getAttributes();
+    for (int i=0; i<list.size(); i++) {
+      addParameter((Attribute) list.get(i));
+    }
+  }
+
+COM:creates a new ProjectionCT object with a specified name, authority, and projection implementation, which in turn retrieves a list of attributes and adds them as parameters to the object

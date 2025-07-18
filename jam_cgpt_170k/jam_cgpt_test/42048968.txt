@@ -1,0 +1,12 @@
+TDAT:     private void foundCode() {
+        try {
+            status = "You coded the " + c.getPages().get(codeFound).getName() + " page!";
+        } catch (Exception e) {
+            //they might give us less than the 6 pages we have hidden.
+            status = "You made more improvements to your website!";
+        }
+        codeFound++;
+        updateHealth(25);
+    }
+
+COM:updates the status, increments a code found counter, and updates a health variable

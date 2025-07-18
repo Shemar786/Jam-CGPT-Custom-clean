@@ -1,0 +1,16 @@
+TDAT: 	public SimpleNode simplify( int msql_type, boolean cond) {
+		first = (SimpleNode)first.simplify( msql_type, cond);
+		for( int i = 0; i < ands.size(); i++) {
+			term t = (term)ands.elementAt(i);
+			t.expr = t.expr.simplify( msql_type, cond);
+		}
+		if( ands.size() == 0)
+			return first;
+		try {
+			return new SimpleNodeValue( value( msql_type, cond));
+		} catch( Exception e) {
+			return this;
+		}
+	}
+
+COM:simplifies a SimpleNode object by recursively simplifying its child nodes and evaluating its value based on given conditions

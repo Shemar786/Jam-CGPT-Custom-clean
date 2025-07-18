@@ -1,0 +1,14 @@
+TDAT: 	private boolean isKeyInfoEvent(String action) {
+		boolean keyInfo = false;
+
+		if ((action.startsWith("ac_updatear_"))
+				|| action.startsWith("ac_deletear_")) {
+			keyInfo = true;
+		}
+
+		// logCat.info("::isKeyInfoEvent - action [" + action + "] is related to
+		// a keyInfo event ? [" + keyInfo + "]");
+		return keyInfo;
+	}
+
+COM:checks if a given string starts with "ac_updatear_" or "ac_deletear_" and returns a boolean value accordingly

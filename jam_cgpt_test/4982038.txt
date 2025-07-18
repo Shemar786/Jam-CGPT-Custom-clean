@@ -1,0 +1,12 @@
+TDAT:     protected boolean paymentExists(Payment payment, Set<Payment> payments) {
+        boolean found = false;
+        Iterator<Payment> it = payments.iterator();
+        while ((!found) && (it.hasNext())) {
+            Payment exPayment = it.next();
+            if (exPayment.getId() == payment.getId())
+                found = true;
+        }
+        return found;
+    }
+
+COM:checks whether a given payment exists in a set of payments, returning true if it does and false if it doesn't

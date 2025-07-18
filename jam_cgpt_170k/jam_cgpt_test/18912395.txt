@@ -1,0 +1,14 @@
+TDAT: 	protected void handleIncomingMessage(final QName messageType, final NotificationType params) throws RemoteException{
+		try{
+			final AbstractStateTransition transition =  this.currState.transistStateByMessage(messageType);
+			System.out.println("Participant Incoming "+messageType+", Transition: "+transition);
+			
+			handleTransition(transition, params);
+		}catch(RemoteException e){
+			throw e;
+		}catch(Exception e){
+			throw Coordinator.INVALID_STATE_SOAP_FAULT() ;
+		}
+	}
+
+COM:handles incoming messages by transitioning the current state based on the message type and parameter, and prints a message indicating the transition while catching and throwing any relevant exceptions

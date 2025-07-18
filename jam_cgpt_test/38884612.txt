@@ -1,0 +1,13 @@
+TDAT:    public boolean epsilonEquals(ITransform3D t1, double epsilon) {
+      double diff;
+
+      for (int i = 0; i < 16; i++) {
+         diff = mat[i] - t1.getMatrix()[i];
+         if ((diff < 0 ? -diff : diff) > epsilon) {
+            return false;
+         }
+      }
+      return true;
+   }
+
+COM:determines if two 3D transformations are equal within a given epsilon tolerance

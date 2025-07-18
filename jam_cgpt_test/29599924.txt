@@ -1,0 +1,16 @@
+TDAT:     public String get_string_tags () {
+        String st="{";
+
+        if(tags.size() > 0) {
+            st += array_tags.get(0);
+        }
+        for (int i=1; i < tags.size(); i++) {
+            st +=",";
+            st += array_tags.get(i);
+        }
+        st += "}";
+
+        return st;
+    }
+
+COM:returns a string representation of a list of tags stored in an array

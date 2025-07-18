@@ -1,0 +1,11 @@
+TDAT: 	private ICustomizationInfo getCustomizationInfo() {
+		ICustomizationInfo customizationInfo = getProduct().getCustomizationInfo();
+		if (customizationInfo == null) {
+			IProductModel productModel = (IProductModel) getPage().getPDEEditor().getAggregateModel();
+			customizationInfo = productModel.getFactory().createCustomizationInfo();
+			productModel.getProduct().setCustomizationInfo(customizationInfo);
+		}
+		return customizationInfo;
+	}
+
+COM:returns an ICustomizationInfo object and creates one if it doesn't already exist

@@ -1,0 +1,14 @@
+TDAT: 	public void shutdown(int graceSecs) {
+		getLog().info("Initiating shutdown");
+		// Would prefer to unbind first then cleanly close active connections,
+		// but mina unbind seems to automatically close the active sessions
+		// so we must close connections then unbind, which does expose us to
+		// a potential race condition.
+		long graceMSecs = graceSecs * 1000;
+		// Close active sessions and handlers
+		closeSessions(graceMSecs);
+		// Unbind listener socket
+		acceptor.unbind();
+	}
+
+COM:initiates a shutdown process, closing active connections, unbinding the listener socket, and exposing the potential for a race condition

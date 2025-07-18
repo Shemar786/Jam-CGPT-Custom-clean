@@ -1,0 +1,12 @@
+TDAT: 	private String getApplicationName() {
+		String name = "?";
+		try {
+			PackageInfo pi = getPackageManager().getPackageInfo(getPackageName(), 0);
+			name = getString(pi.applicationInfo.labelRes);
+		} catch (PackageManager.NameNotFoundException e) {
+			Log.e(TAG, "Package name not found", e);
+		};
+		return name;
+	}
+
+COM:retrieves the name of the current application using the Package Manager

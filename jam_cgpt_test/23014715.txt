@@ -1,0 +1,11 @@
+TDAT:     public Vector3f diff(Vector3f toSubtract) {
+        float rx = getX() - toSubtract.getX();
+        float ry = getY() - toSubtract.getY();
+        float rz = getZ() - toSubtract.getZ();
+        VectorPool vp = VectorPool.getInstance();
+        Vector3f v = vp.getVector();
+        v.setXYZ(rx, ry, rz);
+        return v;
+    }
+
+COM:returns a Vector3f object representing the difference between the current object and a given Vector3f object

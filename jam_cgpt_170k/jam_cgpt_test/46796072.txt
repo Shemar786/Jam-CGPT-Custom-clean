@@ -1,0 +1,9 @@
+TDAT: 	public void testCodeElementICodeElementTypeStringIntInt() {
+		CodeElement ele = generateTestElement();
+		Assert.assertEquals(c,ele.getCodeType());
+		Assert.assertEquals("name",ele.getElementName());
+		Assert.assertEquals(10,ele.getOffset());
+		Assert.assertEquals(15,ele.getLength());
+	}
+
+COM:tests the properties of a CodeElement object such as its code type, element name, offset, and length

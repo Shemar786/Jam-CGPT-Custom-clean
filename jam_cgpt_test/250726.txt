@@ -1,0 +1,16 @@
+TDAT: 	public List getAllUsers() throws AccessException {
+		logger.debug("entering getAllUsers");
+
+		String query = "SELECT user.USERID, user.USERNAME, user.ISADMIN, user.FIRSTNAME, "
+				+ " user.LASTNAME, user.EMAIL, user.ISDISABLED "
+				+ " FROM user"
+				+ " ORDER BY user.USERNAME";
+
+		logger.debug("Executing query : " + query);
+		List list = this.buildResult(query);
+		convertBoolean(list, "ISDISABLED");
+
+		return list;
+	}
+
+COM:retrieves a list of all users from a database and returns it, while also logging debugging information

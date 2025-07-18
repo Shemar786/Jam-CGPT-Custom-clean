@@ -1,0 +1,17 @@
+TDAT: 	public void copy(NetSPRecord s) {
+		strPlayerName = s.strPlayerName;
+		strModeName = s.strModeName;
+		strRuleName = s.strRuleName;
+
+		if(s.stats == null) stats = null;
+		else stats = new Statistics(s.stats);
+
+		listCustomStats = new LinkedList<String>(s.listCustomStats);
+
+		strReplayProp = s.strReplayProp;
+		strTimeStamp = s.strTimeStamp;
+		gameType = s.gameType;
+		style = s.style;
+	}
+
+COM:copies the properties of a NetSPRecord object to the current object

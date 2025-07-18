@@ -1,0 +1,14 @@
+TDAT:   protected BufferedReader getFileData() throws FileNotFoundException {
+    try {
+      if (this.br != null && this.br.ready()) {
+        return this.br;
+      }
+    } catch (IOException e) {
+      this.br = this.loadFile();
+      return this.br;
+    }
+    this.br = this.loadFile();
+    return this.br;
+  }
+
+COM:returns a BufferedReader object with file data and if IOException occurs, it loads the file and returns the BufferedReader object

@@ -1,0 +1,18 @@
+TDAT:   private int getInt( RadFileParser st ) {
+    int number = 0;
+
+    st.getToken();
+
+    verifyWord(st);
+
+    try {
+      number = Integer.parseInt(st.sval);
+    } catch( NumberFormatException exp ) {
+      Log.deb("This : "+st.sval+" is not an integer !");
+      parsingError(st);
+    }
+
+    return number;
+  }
+
+COM:parses an integer value from a file using a RadFileParser object

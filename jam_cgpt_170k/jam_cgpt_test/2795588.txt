@@ -1,0 +1,15 @@
+TDAT: 	public void removeListener(StopWListener listener) {
+		if (listener == null) {
+			throw new IllegalArgumentException(Messages
+					.getString("StopWatch.ex.ia.listener-null")); //$NON-NLS-1$
+		}
+
+		if (!listeners.remove(listener)) {
+			throw new IllegalArgumentException(
+					format(
+							Messages
+									.getString("StopWatch.ex.ia.unknown-listener"), listener)); //$NON-NLS-1$
+		}
+	}
+
+COM:removes a specified listener from the StopWatch object's list of listeners, throwing exceptions if the listener is null or not in the list

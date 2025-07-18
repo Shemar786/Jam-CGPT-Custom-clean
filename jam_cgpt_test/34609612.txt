@@ -1,0 +1,8 @@
+TDAT:     public void getChars(final byte[] a, final int srcBegin, final int srcEnd, final char[] dst, final int dstBegin) {
+        int dstPos = dstBegin;
+        for (int i = srcBegin; i < srcEnd; i++, dstPos++) {
+            dst[dstPos] = this.byte2char[a[i] & TO_BYTE];
+        }
+    }
+
+COM:takes a byte array, extracts a subset of bytes, converts each byte to a char, and stores them in a char array starting at a specific position

@@ -1,0 +1,12 @@
+TDAT:    private Point computeCenterPoint() {
+      final List<Point2D> points = new ArrayList<Point2D>();
+
+      for (final Point ts : locationBuffer) {
+         points.add(new Point2D.Double(ts.getX(), ts.getY()));
+      }
+
+      final Point2D point = Points.getCentre(points);
+      return new Point((int)point.getX(), (int)point.getY());
+   } // computeCenterPoint
+
+COM:computes the center point of a list of 2D points by converting them to Point2D objects, using a pre-existing method to find the center point, and then converting the result back to a Point object

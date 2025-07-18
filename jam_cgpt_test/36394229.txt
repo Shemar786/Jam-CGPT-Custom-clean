@@ -1,0 +1,7 @@
+TDAT:     private String createDropTableStatement(TransactionMessage.DropTableStatement dropTableStatement) {
+        String schemaName = dropTableStatement.getTableMetadata().getSchemaName();
+        String tableName = dropTableStatement.getTableMetadata().getTableName();
+        return "DROP TABLE `"+schemaName+"`.`"+tableName+"`";
+    }
+
+COM:creates a SQL statement for dropping a table in a specified schema

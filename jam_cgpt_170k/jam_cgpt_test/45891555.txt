@@ -1,0 +1,22 @@
+TDAT: 	private boolean renameList(String newName) {
+
+		if (newName.equals("")) {
+			// User has not provided any name
+			Toast.makeText(this, getString(R.string.please_enter_name),
+					Toast.LENGTH_SHORT).show();
+			return false;
+		}
+
+		// Rename currently selected list:
+		ContentValues values = new ContentValues();
+		values.put(Lists.NAME, "" + newName);
+		getContentResolver().update(
+				Uri.withAppendedPath(Lists.CONTENT_URI,
+						mCursorShoppingLists.getString(0)), values, null, null);
+
+		mCursorShoppingLists.requery();
+		updateTitle();
+		return true;
+	}
+
+COM:renames a selected list with the provided newName and returns true, but displays a message and returns false if newName is an empty string

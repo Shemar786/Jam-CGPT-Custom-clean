@@ -1,0 +1,25 @@
+TDAT:     private boolean parseTWO(int[] buf) {
+      switch (buf[0]) {
+        case IAC:
+          //doubled IAC to escape 255 is handled within the
+          //read method.
+          break;
+        case AYT:
+          IamHere();
+          break;
+        case AO:
+        case IP:
+        case EL:
+        case EC:
+        case NOP:
+          break;
+        case BRK:
+          nvtBreak();
+          break;
+        default:
+          return false;
+      }
+      return true;
+    }//parseTWO
+
+COM:accepts an integer array and checks if the first element matches certain cases, returning true or false based on the outcome

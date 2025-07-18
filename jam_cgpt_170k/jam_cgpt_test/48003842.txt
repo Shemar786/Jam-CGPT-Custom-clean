@@ -1,0 +1,11 @@
+TDAT: 	private JButton getJButtonAddNewGenre() {
+		if (jButtonAddNewGenre == null) {
+			jButtonAddNewGenre = new JButton();
+			jButtonAddNewGenre.setBounds(new Rectangle(129, 280, 262, 28));
+			jButtonAddNewGenre.setText("Add a new genre");
+			
+		}
+		return jButtonAddNewGenre;
+	}
+
+COM:creates a JButton and sets its properties if it is not already initialized, and then returns the JButton instance

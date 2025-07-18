@@ -1,0 +1,12 @@
+TDAT: 	private JPanel getToolsPanel() {
+		if (toolsPanel == null) {
+			toolsPanel = new JPanel();
+			toolsPanel.setLayout(new BoxLayout(getToolsPanel(), BoxLayout.X_AXIS));
+			toolsPanel.add(getPenButton(), null);
+			toolsPanel.add(getRubberButton(), null);
+			toolsPanel.add(getLineButton(), null);
+		}
+		return toolsPanel;
+	}
+
+COM:returns a JPanel containing several buttons for different drawing tools

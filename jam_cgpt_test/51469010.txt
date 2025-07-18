@@ -1,0 +1,14 @@
+TDAT:     public String setParameter(ModelParameter param) {
+        String prob = super.setParameter(param);
+        if (prob == null) {
+            // OK so go ahead
+            String pName = param.getName();
+            String args = null;
+            isDirty = true;
+            RFunction rf = new RFunction(this, "set" + pName);
+            rf.call("c" + param.getGluedValue());     
+        }
+        return prob;
+    }
+
+COM:sets a model parameter by calling an R function with the parameter's value

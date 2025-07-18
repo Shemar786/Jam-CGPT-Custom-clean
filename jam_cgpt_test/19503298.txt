@@ -1,0 +1,14 @@
+TDAT: 	private Expression testIdent(RelationalPredicate pred, Expression ident) {
+		final Expression left = pred.getLeft();
+		final Expression right = pred.getRight();
+		if (left.getTag() == FREE_IDENT && left.equals(ident)) {
+			return right;
+		}
+		if (right.getTag() == FREE_IDENT && right.equals(ident)) {
+			return left;
+		}
+		return null;
+
+	}
+
+COM:tests whether a given expression matches with a relational predicate identifier

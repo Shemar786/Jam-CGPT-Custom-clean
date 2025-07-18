@@ -1,0 +1,15 @@
+TDAT: 	public void getFriendsExternal(Profile userProfile) {
+		ArrayList<Profile> updatedList = wsClient.getFriendList(userProfile, lastUpdated);
+		if(updatedList != null) {
+			lastUpdated = Calendar.getInstance().getTime();
+		}												
+		dbAdapter.updateProfile(updatedList); // save the updated friends
+		ArrayList<ExternalData> list = getAllExternalData();
+		try {
+			saveExternalData(cc.getAllStatus(list));
+		} catch (Exception e) {
+			// Log.v(TAG)
+		}
+	}
+
+COM:updates the friend list for a given user profile, saves the updated friends to a database, retrieves external data and saves it, and handles any exceptions that occur during the process

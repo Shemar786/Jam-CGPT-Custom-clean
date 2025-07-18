@@ -1,0 +1,17 @@
+TDAT:   public String toString() {
+    CmdElement   elem;
+    StringBuffer buf = new StringBuffer();
+
+    for (int i = 0; i < _elems.size(); i++) {
+      elem = (CmdElement) _elems.get(i);
+      buf.append(elem.toString());
+
+      if (i < (_elems.size() - 1)) {
+        buf.append(SPACE);
+      }
+    }
+
+    return buf.toString();
+  }
+
+COM:concatenates the string representation of each CmdElement object in a list with a space separator and returns the resulting string

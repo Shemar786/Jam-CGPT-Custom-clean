@@ -1,0 +1,17 @@
+TDAT: 	private JMenuItem getJMenuItem1() {
+		if (jMenuItem1 == null) {
+			jMenuItem1 = new JMenuItem();
+			jMenuItem1.setText("Delete Confirmed Files...");
+			jMenuItem1.setMnemonic('d');
+			jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					getJButton2().doClick();
+				}
+			});
+
+			jMenuItem1.setEnabled(false);
+		}
+		return jMenuItem1;
+	}
+
+COM:returns a JMenuItem object that is initialized with specific text, a mnemonic, an ActionListener that triggers a button click, and is initially disabled

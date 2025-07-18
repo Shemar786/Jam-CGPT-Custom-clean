@@ -1,0 +1,10 @@
+TDAT: 	private JTabbedPane getJTabbedPane() {
+		if (jTabbedPane == null) {
+			jTabbedPane = new JTabbedPane();
+			jTabbedPane.addTab("Peers", null, getJScrollPane1(), null);
+			jTabbedPane.addTab("Output", null, getJScrollPane(), null);
+		}
+		return jTabbedPane;
+	}
+
+COM:initializes and returns a JTabbedPane object with two tabs labeled "Peers" and "Output", each containing a JScrollPane

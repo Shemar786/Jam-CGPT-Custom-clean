@@ -1,0 +1,24 @@
+TDAT:     public void init(String[] args) {
+
+        // parse command line arguments if the parser is available
+
+        Object service = getCommandLineParser();
+
+        if (service != null) {
+
+            try {
+                CommandLineParser parser = (CommandLineParser) service;
+                if (parser != null) {
+                    try {
+                        parser.parseCommandLine(args);
+                    } catch (Exception e) {
+                        handleCommandLineException(e);
+                    }
+                }
+            } catch (Throwable t) {
+                t.printStackTrace();
+            }
+        }
+    }
+
+COM:initializes and parses command line arguments using a parser if available

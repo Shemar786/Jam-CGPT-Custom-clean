@@ -1,0 +1,6 @@
+TDAT: 	public void addHandicapHistory(Integer userId, Integer leagueId, Date changeDate, Integer handicap, String handicapExpression, String changeType) {
+		BLMSHandicapHistory history = new BLMSHandicapHistory(userId, leagueId, changeDate, handicap, handicapExpression, changeType);
+		ServiceLocator.singleton().getService().save(history);
+	}	
+
+COM:adds a new handicap history record to the system for a given user and league

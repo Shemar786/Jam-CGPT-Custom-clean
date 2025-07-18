@@ -1,0 +1,7 @@
+TDAT:     public void setSupportedActions(boolean[] val) { 
+        if((val==null)||(val.length!=ACTION_HELP+1)) {
+            return; }       //bad arg
+        System.arraycopy(val,0,getSupportedActions(),0,ACTION_HELP+1);
+    }
+
+COM:updates the boolean array of supported actions with the values passed as parameter if the size is valid

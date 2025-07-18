@@ -1,0 +1,16 @@
+TDAT:     public void sessionClosed(IoSession session) {
+    	try {
+			super.sessionClosed(session);
+	        thisGame.setIsPlaying(false);
+	        thisGame.setIsConnected(false);
+    		GameClient.setServer("");
+	        GameClient.getStartScreen().getLoginFrame().setVisible(false);
+	        GameClient.getStartScreen().getServerSelector().setVisible(true);
+	        GameClient.getStartScreen().setVisible(true);
+	        thisGame.getUI().setVisible(false);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+
+COM:is executed when a session is closed and it sets various states and values to false or null, hides certain UI elements and logs any exceptions

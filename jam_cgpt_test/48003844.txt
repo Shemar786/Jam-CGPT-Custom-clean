@@ -1,0 +1,10 @@
+TDAT: 	private JButton getJButtonAddNewBook() {
+		if (jButtonAddNewBook == null) {
+			jButtonAddNewBook = new JButton();
+			jButtonAddNewBook.setText("Add a new book");
+			jButtonAddNewBook.setBounds(new Rectangle(129, 360, 262, 28));
+		}
+		return jButtonAddNewBook;
+	}
+
+COM:creates and returns a JButton object with the text "Add a new book" and sets its bounds if it doesn't exist yet

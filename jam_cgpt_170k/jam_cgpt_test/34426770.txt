@@ -1,0 +1,14 @@
+TDAT:     private void setHtml(String url) {
+        URL u = SWGAide.class.getResource(url);
+        if (u != null) {
+            try {
+                ed.setPage(u);
+            } catch (Exception e) {
+                SWGAide.printError("SWGInitialize:setHtml:" + url, e);
+            }
+        } else
+            SWGAide.printError(
+                    "SWGInitialize:setHtml: no " + url, null);
+    }
+
+COM:sets the HTML page of a SWGAide class resource URL, and prints an error if it fails to do so

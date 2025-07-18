@@ -1,0 +1,14 @@
+TDAT: 	private String getMostRecentlyUsedTheme() {
+		String theme = null;
+		Cursor c = getContentResolver().query(
+				Notes.CONTENT_URI, 
+				new String[] {Notes.THEME}, null, null, 
+				Notes.MODIFIED_DATE + " DESC");
+		if (c != null && c.moveToFirst()) {
+			theme = c.getString(0);
+		}
+		c.close();
+		return theme;
+	}
+
+COM:retrieves the most recently used theme from the Notes content provider

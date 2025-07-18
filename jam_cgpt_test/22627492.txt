@@ -1,0 +1,13 @@
+TDAT: 	public void extractDocumentation() {
+		Element docElement = (Element) this.element.selectSingleNode(this.xsdPrefix + ":annotation/" +
+			this.xsdPrefix + ":documentation");
+		if (docElement != null) {
+			String docString = docElement.getTextTrim();
+			if (docString != null && docString.length() > 0)
+				this.documentation = docString;
+			else
+				this.documentation = null;
+		}
+	}
+
+COM:extracts documentation from an XML element and stores it as a string

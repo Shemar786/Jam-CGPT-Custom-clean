@@ -1,0 +1,11 @@
+TDAT: 	public Properties readBeanSetDefinition(ClassLoader classLoader, String definitionString) {
+		Assert.notNull(classLoader);
+		Assert.notNull(definitionString);
+
+		BeanSetMapReader reader = new BeanSetMapReader();
+		final Map<String, Set<String>> definition = reader.readBeanSetDefinition(definitionString);
+
+		return readBeanSetDefinition(classLoader, definition);
+	}
+
+COM:reads a bean set definition using a class loader and a definition string, and returns the properties of the bean set

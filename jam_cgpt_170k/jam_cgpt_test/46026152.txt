@@ -1,0 +1,7 @@
+TDAT: 	public int getARELine() {
+		if((speed.areLine < ruleopt.minARELine) && (ruleopt.minARELine >= 0)) return ruleopt.minARELine;
+		if((speed.areLine > ruleopt.maxARELine) && (ruleopt.maxARELine >= 0)) return ruleopt.maxARELine;
+		return speed.areLine;
+	}
+
+COM:retrieves the appropriate ARE (Automatic Response Equipment) line based on the configured minimum and maximum values and the current speed

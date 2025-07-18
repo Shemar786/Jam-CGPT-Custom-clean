@@ -1,0 +1,17 @@
+TDAT: 	private boolean boundIdentDecsMatch(BoundIdentDecl[] formulaDecs, BoundIdentDecl[] patternDecs){
+		if(formulaDecs.length == patternDecs.length){
+			int index = 0;
+			for(BoundIdentDecl pDec: patternDecs){
+				BoundIdentDecl fDec = formulaDecs[index];
+				if(!ProverUtilities.canUnifyTypes(fDec.getType(), pDec.getType())){
+					return false;
+				}
+				index++;
+			}
+			return true;
+		}
+		else 
+			return false;
+	}
+
+COM:checks if two arrays of bound identifier declarations have matching types

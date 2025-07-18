@@ -1,0 +1,10 @@
+TDAT:     public boolean equals(Object other) {
+        if(other == null) return false;
+        else if(!(other instanceof Position2D)) return false;
+        else {
+            Position2D theOther = (Position2D) other;
+            return getX().equals(theOther.getX()) && getY().equals(theOther.getY());
+        }
+    }
+
+COM:checks if the given object is equal to the current Position2D object by comparing their X and Y values

@@ -1,0 +1,11 @@
+TDAT:   public void setWaitDialog(String message, int maxtime) {
+    Object[]          listeners = modelListener.getListenerList();
+    
+    for (int i = listeners.length-2; i>=0; i-=2) {
+      if (listeners[i]==WaitDialogListener.class) {
+        ((WaitDialogListener)listeners[i+1]).setWaitDialog(message, maxtime);
+      }
+    }
+  }
+
+COM:sets a wait dialog with a specified message and maximum time by iterating through a list of listener objects

@@ -1,0 +1,15 @@
+TDAT:     private boolean determineElementEligible(SDDElement element) {
+        SDDElementType type = element.getElementType();
+        if (type == SDDElementType.TAG_ELEMENT) {
+            return true;
+        }
+        else if (type == SDDElementType.BLOCK_ELEMENT &&
+                 element.getNameSpace() != null) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+COM:checks if an SDDElement is eligible based on its type and namespace

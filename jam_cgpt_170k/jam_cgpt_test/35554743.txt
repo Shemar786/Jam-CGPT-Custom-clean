@@ -1,0 +1,15 @@
+TDAT: 	private void showPort(boolean flag) {
+		int width = this.getX() + this.getWidth();
+		int height = this.getY();
+		if (portView == null) {
+			portView = new Ont33PortView(width, height, tfPortId);
+			portView.setVisible(flag);
+		} else {
+			portView.setVisible(flag);
+		}
+
+		portView.setCid(cbSlot.getSelectedItem().toString());
+		portView.checkPid(tfPortId.getText());
+	}
+
+COM:This private Java method creates or updates a port view object and sets its visibility based on a boolean flag, and then sets its CID and checks the PID of the port

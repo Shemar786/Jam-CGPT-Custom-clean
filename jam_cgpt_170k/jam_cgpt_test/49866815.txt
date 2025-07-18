@@ -1,0 +1,9 @@
+TDAT:   public long createChecklistItem(long listId, String item, boolean isDone) {
+    ContentValues values = new ContentValues();
+    values.put(KEY_LIST_ID, listId);
+    values.put(KEY_IS_DONE, isDone);
+    values.put(KEY_ITEM, item);
+    return mDb.insert(CHECKLIST_ITEM_TBL, null, values);
+  }
+
+COM:creates a new checklist item and inserts it into a database

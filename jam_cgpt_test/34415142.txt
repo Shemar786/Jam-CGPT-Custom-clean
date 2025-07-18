@@ -1,0 +1,8 @@
+TDAT: 	public void sendMoveEvent(Object source, String objectId, String newParentId, String userName, Date dateTime){
+		ArrayList<String> data = new ArrayList<String>(1);
+		data.add(objectId);
+		ViewEvent ve = new ViewEvent(source,"",newParentId,userName,dateTime,ViewEvent.MOVE_EVENT,data);
+		this.newViewEvent(ve);
+	}
+
+COM:sends a move event to update the parent of an object with the provided object ID, new parent ID, username, and date time

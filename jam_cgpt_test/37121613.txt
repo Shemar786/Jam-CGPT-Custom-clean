@@ -1,0 +1,24 @@
+TDAT:     protected Object createServiceInstance(ServiceFactory factory) {
+
+        Object service = factory.createServiceInstance();
+
+        // if the factory created a singleton service, the factory
+        // is removed to ensure no more instances can be created
+
+        if (factory instanceof DefaultServiceFactory) {
+
+            DefaultServiceFactory factory0
+                = (DefaultServiceFactory) factory;
+
+            ServiceMultiplicity multiplicity
+                = getServiceMultiplicity(factory0);
+
+            if (multiplicity == ServiceMultiplicity.SINGLETON) {
+                deinstallServiceFactory(factory);
+            }
+        }
+
+        return service;
+    }
+
+COM:creates and returns a service instance, and removes the factory if the service is a singleton

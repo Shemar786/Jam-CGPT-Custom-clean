@@ -1,0 +1,17 @@
+TDAT:   protected void addDataTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_QueryParameter_dataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_QueryParameter_dataType_feature", "_UI_QueryParameter_type"),
+				 DbPackage.Literals.QUERY_PARAMETER__DATA_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a data type of a query parameter object

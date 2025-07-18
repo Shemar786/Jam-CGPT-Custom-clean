@@ -1,0 +1,19 @@
+TDAT: 	public void deleteDoc(String itemPID) {
+		logger.debug("entering deleteDoc");
+
+		int index = search.getItemIndex(itemPID);
+		if (index != -1) {
+			try {
+				IndexReader reader = IndexReader.open(Config.getIndexPath());
+				reader.deleteDocument(index);
+				reader.close();
+			} catch (Exception e) {
+				logger.warn("error deleting document from lucene index", e);
+			}
+		} else {
+			logger.info("item with pid: " + itemPID + " not found");
+		}
+		logger.debug("leaving deleteDoc");
+	}
+
+COM:deletes a Lucene indexed document with a specified item PID, logging any errors or notifications during the process

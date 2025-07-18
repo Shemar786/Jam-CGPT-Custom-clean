@@ -1,0 +1,24 @@
+TDAT: 	public String deTeXt(InputStream is) throws IOException {
+		// It makes no harm to assume that the stream uses ISO Latin1 - we only consider ASCII characters
+		mouth = new Mouth(new InputStreamReader(is,"ISO8859_1"));
+		token = mouth.getTokenObject();
+		
+		packages = new HashSet<String>();
+		
+		mouth.getToken();
+
+		if (parseHeader() && parsePreamble()) {
+			if (packages.contains("xunicode")) {
+				return "XeLaTeX";
+			}
+			else {
+				return "LaTeX";
+			}
+		}
+
+		// Unknown format
+		return null;
+		
+	}
+
+COM:identifies whether a given input stream contains LaTeX or XeLaTeX code by parsing its header and preamble and checking for the presence of the "xunicode" package

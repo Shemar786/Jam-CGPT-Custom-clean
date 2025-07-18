@@ -1,0 +1,12 @@
+TDAT:   private void initEncyclopedicTalkNamespaces() {
+    if (encyclopedicNamespaces == null) {
+      encyclopedicTalkNamespaces = null;
+      return;
+    }
+    encyclopedicTalkNamespaces = new ArrayList<Integer>(encyclopedicNamespaces.size());
+    for (Integer namespace : encyclopedicNamespaces) {
+      encyclopedicTalkNamespaces.add(Integer.valueOf(namespace.intValue() + 1));
+    }
+  }
+
+COM:initializes a list of talk namespaces for an encyclopedic website

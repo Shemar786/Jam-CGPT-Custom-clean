@@ -1,0 +1,17 @@
+TDAT: 	protected void addTimeStampPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveComponent_timeStamp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveComponent_timeStamp_feature", "_UI_EveComponent_type"),
+				 EvesimPackage.Literals.EVE_COMPONENT__TIME_STAMP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a timestamp property descriptor to an object using the adapter factory and other related properties

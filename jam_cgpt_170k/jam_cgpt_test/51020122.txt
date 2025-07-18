@@ -1,0 +1,15 @@
+TDAT: 	private Response responseIncludingConcepts(Set<ONDEXRelation> relations) {
+
+		// add related concepts
+		Set<ONDEXConcept> concepts = new HashSet<ONDEXConcept>();
+		for (ONDEXRelation r : relations) {
+			concepts.add(r.getFromConcept());
+			concepts.add(r.getToConcept());
+		}
+
+		// create response
+		return OXLResponseBuilder.build(graph.getSID() + "", concepts,
+				relations);
+	}
+
+COM:returns a Response object that includes concepts related to a set of ONDEXRelations

@@ -1,0 +1,21 @@
+TDAT: 	public void getAllResources() throws Exception {
+
+		prtln("getAllResources");
+
+		NDRObject resTemplate = new NDRObjectTemplate(Type.Resource);
+		// resTemplate.addRelationship(Resource.MEMBER_OF, aggregator);
+
+		Results <NDRObjectInfo> resources = this.getFinder().matchObject(resTemplate);
+		int count = 0;
+ 		try {
+			for (NDRObjectInfo res : resources) {
+				// prtln ("\t" + res.handle());
+				count++;
+			}
+		} finally {
+			resources.close();
+		}
+		prtln(count + " resources found");
+	}
+
+COM:retrieves all resources from a system and prints the count of resources found

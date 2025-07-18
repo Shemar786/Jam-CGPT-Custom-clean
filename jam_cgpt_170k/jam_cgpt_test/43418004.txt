@@ -1,0 +1,14 @@
+TDAT: 	public void setSimulationCycleStartTimeStamp() {
+		
+		long cycleTimeNow = System.currentTimeMillis();
+		if (this.cycleTimeStart != 0) {
+			long cycleTime = cycleTimeNow - this.cycleTimeStart;
+			this.cycleTimeVector.addElement(cycleTime);
+			if (this.cycleTimeVector.size() > this.cycleTimeVectorMaxSize) {
+				this.cycleTimeVector.removeElementAt(0);	
+			}
+		}
+		this.cycleTimeStart = cycleTimeNow;
+	}
+
+COM:sets the start time stamp for a simulation cycle and stores the time duration of previous cycles in a vector

@@ -1,0 +1,13 @@
+TDAT:     public Document getDOM() throws SAXException {
+        if (isHTML()) {
+            return (Document) getReceivedPage().getDOM();
+        } else {
+            try {
+                return HttpUnitUtils.parse( new InputSource( new StringReader( getText() ) ) );
+            } catch (IOException e) {
+                throw new SAXException( e );
+            }
+        }
+    }
+
+COM:returns a Document object representing the Document Object Model (DOM) of a web page, either by parsing the web page's text content or by recursively calling the getDOM() method of the received page within a try-catch block

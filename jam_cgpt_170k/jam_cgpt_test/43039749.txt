@@ -1,0 +1,12 @@
+TDAT:         private void setUpListeners() {
+            final Object base = getBase(source);
+            // don't care about inexistent beans
+            if (base == null)
+                return;
+            if (!(base instanceof StatusInformationInternal))
+                throw new IllegalArgumentException("Only classes containing statusinformations are accepted!");
+            beanState = ((StatusInformationInternal) base)._getBeanStatus();
+            beanState.addStatusChangeListener(property, this);
+        }
+
+COM:sets up listeners for changes to a specific property of a status information bean

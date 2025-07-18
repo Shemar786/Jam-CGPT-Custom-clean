@@ -1,0 +1,16 @@
+TDAT:     public ImageIcon getLargeImageIcon() {
+        if (largeImageIcon == null) {
+            try {
+                URL url = classLoader.getResource(getLargeIcon());
+                if (url != null) {
+                    largeImageIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(url));
+                }
+            }
+            catch (Exception e) {
+                //e.printStackTrace();
+            }
+        }
+        return largeImageIcon;
+    }
+
+COM:retrieves a large image icon and returns it as an ImageIcon object, while also handling exceptions if the URL is invalid

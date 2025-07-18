@@ -1,0 +1,10 @@
+TDAT:     private void updateEWAR() {
+        // wraps is empty if wrap == null
+        for (int i = 0; i < wraps.size(); ++i) {
+            SWGExperimentWrapper ew = wraps.get(i);
+            JLabel grp = (JLabel) exps.getComponent(i);
+            grp.setText(updateExp(ew));
+        }
+    }
+
+COM:updates the EWAR (electronic warfare) based on the contents of a list of SWGExperimentWrappers and updates a corresponding JLabel for each one

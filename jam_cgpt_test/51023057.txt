@@ -1,0 +1,14 @@
+TDAT: 	private void initSpecialisationOf() {
+		// get list of available rts
+		Vector<String> relationTypes = new Vector<String>();
+		relationTypes.add("");
+		RelationType[] sorted = aog.getMetaData().getRelationTypes()
+				.toArray(new RelationType[0]);
+		Arrays.sort(sorted, new CaseInsensitiveMetaDataComparator());
+		for (RelationType rt : sorted) {
+			relationTypes.add(rt.getId());
+		}
+		specialisationOf = new JComboBox(relationTypes);
+	}
+
+COM:initializes a JComboBox with a list of available relation types from a metaData object, sorted in a case-insensitive manner

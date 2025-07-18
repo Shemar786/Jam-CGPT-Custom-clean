@@ -1,0 +1,17 @@
+TDAT:     public void resetEzUsb () throws FirmwareUploadException, UsbException, InvalidFirmwareException, DeviceLostException {
+// scan the bus for comparison
+	findOldDevices();
+	
+// reset the EZ-USB
+	EzUsb.reset(handle,true);
+	try {
+	    EzUsb.reset(handle,false);		// error (may caused by re-numeration) can be ignored
+	}
+	catch ( FirmwareUploadException e ) {
+	}
+	
+// find and init new device
+	initNewDevice( "Device lost after resetting the EZ-USB", true );
+    }
+
+COM:resets an EZ-USB device, searches for similar connected devices, identifies new devices, and handles firmware and USB errors

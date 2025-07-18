@@ -1,0 +1,15 @@
+TDAT:   public void ClearProject(){
+      boolean debug = false;
+      projectNameTextField.setEditable(true);
+      statusTextField.setText(SeqProject.statusTENTATIVE);
+      projectNameTextField.setText("");
+      project1.clearProject();
+
+      submissionTextArea.setText("Project Cleared");
+      rxnTab.ClearRxn();
+
+      project1=SeqRxn.setDate(project1, requestDateTextField);
+      projectRefresh(true);
+  }
+
+COM:clears a project and sets default values for certain fields

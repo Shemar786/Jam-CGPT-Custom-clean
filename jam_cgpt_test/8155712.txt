@@ -1,0 +1,21 @@
+TDAT:     public void setAlignment(int align) {
+	this.newAlign = align;
+
+        // this.align is used only for serialization compatibility,
+        // so set it to a value compatible with the 1.1 version
+        // of the class
+
+        switch (align) {
+	case LEADING:
+            this.align = TOP;
+	    break;
+	case TRAILING:
+            this.align = BOTTOM;
+	    break;
+        default:
+            this.align = align;
+	    break;
+        }
+    }
+
+COM:sets the alignment of an object and makes adjustments for serialization compatibility

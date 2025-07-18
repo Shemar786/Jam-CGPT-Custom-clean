@@ -1,0 +1,15 @@
+TDAT:     private void addProperties(String key, BProperties toBeAdded) {
+	Iterator iter = toBeAdded.entrySet().iterator();
+	while(iter.hasNext()){
+	    Map.Entry entry = (Map.Entry)iter.next();
+	    String newKey = key +"."+ entry.getKey();
+	    String valueString = getObjectsString(entry.getValue());
+	    if(this.containsKey(newKey)){
+		log.error("The this BProperty set already contains key " + newKey);
+	    }else{
+		super.setProperty(newKey, valueString);
+	    }
+	}
+    }
+
+COM:This is a Java method that adds properties to a BProperties object, checking for duplicate keys and formatting the values as strings

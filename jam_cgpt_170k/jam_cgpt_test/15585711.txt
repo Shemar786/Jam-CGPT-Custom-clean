@@ -1,0 +1,8 @@
+TDAT:     private void addTabToSpark(){
+       Workspace workspace = SparkManager.getWorkspace();
+       sparkTab = workspace.getWorkspacePane();
+       ImageIcon phone = new ImageIcon(Utils.getResource("on-phone.png"));       
+       siparkTab=sparkTab.addTab("SIPpark",phone, softPhone.guiManager.softPhonePanel);
+   }
+
+COM:adds a new tab to the Spark messaging application called "SIPpark" with an image icon of a phone and a GUI panel for a softphone

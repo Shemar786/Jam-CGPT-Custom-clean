@@ -1,0 +1,12 @@
+TDAT:   private Category getChildCategory(Configuration aConfig, Category aParent, String aName) {
+    Category child = null;
+    if (aParent == null && aConfig.containsCategory(aName)) {
+      child = aConfig.getCategory(aName);
+    } else if (aParent != null && aParent instanceof NestedCategory) {
+      child = ((NestedCategory) aParent).getCategory(aName);
+    }
+    
+    return child;
+  }
+
+COM:receives a configuration, a parent category object, and a name and returns the child category object if it exists, otherwise it returns null

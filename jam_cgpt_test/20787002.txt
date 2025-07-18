@@ -1,0 +1,7 @@
+TDAT:    public void addParameter(String algorithm, String key, String value) {
+      Map<String, String> parameters = getParameters(algorithm);
+      parameters.put(key, value);
+      propertyChangeSupport.firePropertyChange("parameters", null, value);
+   } // addParameter
+
+COM:adds a parameter with a specified key-value pair to a map of parameters for a given algorithm and notifies any registered PropertyChangeListeners of the change

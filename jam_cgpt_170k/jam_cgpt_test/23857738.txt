@@ -1,0 +1,13 @@
+TDAT: 	public int indexOfHeader(String hname) {
+		if (str.startsWith(hname, index))
+			return index;
+		String[] target = { '\n' + hname, '\r' + hname };
+		SipParser par = new SipParser(str, index);
+		// par.goTo(target);
+		par.goToIgnoreCase(target);
+		if (par.hasMore())
+			par.skipChar();
+		return par.getPos();
+	}
+
+COM:returns the index of a header in a string by searching for it and skipping characters until it is found

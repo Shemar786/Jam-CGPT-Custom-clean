@@ -1,0 +1,17 @@
+TDAT: 	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveComponent_description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveComponent_description_feature", "_UI_EveComponent_type"),
+				 EvesimPackage.Literals.EVE_COMPONENT__DESCRIPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_GeneralPropertyCategory"),
+				 null));
+	}
+
+COM:adds a property descriptor for a description feature of an EVE component

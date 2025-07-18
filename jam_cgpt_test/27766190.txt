@@ -1,0 +1,18 @@
+TDAT:     public Object getListener(final String listenerName) {
+        
+        if ( null == listenerName )
+            throw new IllegalArgumentException( "ListenerName can not be null!" );
+        
+        try {
+            
+            // Defensive copy
+            return ( (AbstractListenerThread)m_Listeners.get(listenerName) ).clone();
+            
+        } catch ( final CloneNotSupportedException cnse ) {
+            
+            throw new UnsupportedOperationException( "Clone is not supported! Change-bug occured!" );
+            
+        }
+    }
+
+COM:returns a copy of a listener object based on the listener name provided, throwing an exception if the listener name is null or if cloning is not supported

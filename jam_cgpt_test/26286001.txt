@@ -1,0 +1,10 @@
+TDAT:     private void findToolBars(Element root) {
+        toolbarElements = new HashMap();
+        Iterator elements = root.getChildren("ToolBar").iterator();
+        while(elements.hasNext()) {
+            Element entry = (Element) elements.next();
+            toolbarElements.put(entry.getAttributeValue("name", ""), entry);
+        }
+    }
+
+COM:finds and stores toolbar elements from a given XML root element

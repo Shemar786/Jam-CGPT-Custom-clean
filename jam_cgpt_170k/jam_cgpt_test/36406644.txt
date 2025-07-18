@@ -1,0 +1,16 @@
+TDAT:     public void cancel() {
+    	// Change state to "breaking"
+    	synchronized(this) {
+    		if (m_nState==FILTERPROC_RUNNING) m_nState=FILTERPROC_BREAKING;
+    	}
+
+    	// And wait until state has changed to "stopped"
+    	while (true) {
+    		synchronized(this) {
+    			if (m_nState==FILTERPROC_STOPPED)
+    				break;
+    		}
+    	}
+    }
+
+COM:changes the state of the filter processing to "breaking" and waits until the state is changed to "stopped."

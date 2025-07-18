@@ -1,0 +1,14 @@
+TDAT:     public void repaint() {
+        if (errorGraph == null)
+            return;
+
+        List graphData = errorGraph.getGraphData();
+
+        if (graphData == null)
+            return;
+
+        double x = (double) graphData.size();
+        graphViewer.setGraphBounds(0.0,0.0,x,1.0);
+    }
+
+COM:updates the graph data and resets the graph viewer's bounds if there is no error in the graph

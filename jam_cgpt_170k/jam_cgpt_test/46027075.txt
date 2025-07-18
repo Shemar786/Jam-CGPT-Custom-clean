@@ -1,0 +1,19 @@
+TDAT: 	public void addBottomCopyGarbage(int color, int skin, int attribute, int lines) {
+		for(int k = 0; k < lines; k++) {
+			pushUp(1);
+
+			for(int j = 0; j < width; j++) {
+				boolean empty = getBlockEmpty(j, height - 2);
+
+				if(!empty) {
+					Block blk = new Block();
+					blk.color = color;
+					blk.skin = skin;
+					blk.attribute = attribute;
+					setBlock(j, getHeightWithoutHurryupFloor() - 1, blk);
+				}
+			}
+		}
+	}
+
+COM:adds a block of garbage with specified color, skin, and attribute to the bottom of the game board, repeating the process for a specified number of lines

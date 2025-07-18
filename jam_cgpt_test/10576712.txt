@@ -1,0 +1,11 @@
+TDAT:     public void testInetAddress() throws UnknownHostException {
+
+        // Test name alone (can be IPv4 or IPv6 depending on the OS plaform
+        // configuration).
+        address = InetAddress.getByName("localhost");
+        assertEquals(true, address instanceof InetAddress);
+        assertEquals(true, address.toString().contains("localhost"));
+
+    }
+
+COM:tests if the InetAddress class can successfully resolve the address of "localhost" and confirms that the resulting object is an instance of InetAddress and contains the string "localhost"

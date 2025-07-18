@@ -1,0 +1,13 @@
+TDAT: 	private boolean showTable(Graph graph, Table table) {
+		if (table != null && !tableNodes.containsKey(table)) {
+			Node n = graph.addNode();
+			n.setString("label", table.getName());
+			String tooltip = tableRenderer.getToolTip(table);
+			n.setString("tooltip", tooltip);
+			tableNodes.put(table, n);
+			return true;
+		}
+		return false;
+	}
+
+COM:shows a table in a graph by adding a node with the table name and tooltip, and returns true if the table was successfully added

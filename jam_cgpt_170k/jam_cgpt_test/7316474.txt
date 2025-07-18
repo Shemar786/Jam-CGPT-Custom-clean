@@ -1,0 +1,23 @@
+TDAT: 	public void beginAddingPublications() {
+		logger.debug("beginAddingPublications()");
+		try {
+			conn.setAutoCommit(false);
+			psAddPublicationDetails.clearBatch();
+			psAddAuthorPublication.clearBatch();
+			psAddAuthorPublication2.clearBatch();
+			psAddPages.clearBatch();
+		} catch (SQLException e) {
+			e.printStackTrace();	
+		} finally { 
+			if (stmt != null) { 
+				try { 
+					stmt.close(); 
+				} catch (SQLException sqlEx) { 
+					// ignore 
+				} 
+				stmt = null; 
+			} 
+		}
+	}
+
+COM:sets up the necessary components to begin adding new publications to a database

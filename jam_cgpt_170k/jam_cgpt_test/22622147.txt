@@ -1,0 +1,16 @@
+TDAT: 	public void exposeElement(String xpath) {
+		// prtln ("exposeNode() with " + xpath);
+		String path = xpath;
+
+		// set ancestor paths to OPEN
+		while (path != null && xpath.length() > 0) {
+
+			String encodedXPath = XPathUtils.encodeXPath(path);
+			String id = CollapseUtils.pathToId(encodedXPath);
+
+			openElement(id);
+			path = XPathUtils.getParentXPath(path);
+		}
+	}
+
+COM:takes an XPath string as input and opens all its ancestor elements in the DOM structure

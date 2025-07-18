@@ -1,0 +1,12 @@
+TDAT:     public void setPaused(boolean paused) {
+        this.paused.set(paused);
+        if (paused) {
+            logger.fine("Queue is now paused");
+            valuedSupport.fireEventOccured(Events.QUEUE_PAUSED, null);
+        } else {
+            logger.fine("Queue is now resumed");
+            valuedSupport.fireEventOccured(Events.QUEUE_RESUMED, null);
+        }
+    }
+
+COM:sets the paused status of a queue and logs a message and fires corresponding events depending on the status

@@ -1,0 +1,13 @@
+TDAT: 	/* public String getLastIndexModifiedTimez() {
+		if(index == null)
+			return "";
+		long ut = index.getLastModifiedTime();
+		if ( ut == 0 || getNumRecords() == null ) {
+			return null;
+		}
+		else {
+			return new SimpleDateFormat( "MMM d, yyyy 'at' h:mm:ss a zzz" ).format( new Date( ut ) );
+		}
+	} */
+
+COM:returns the last modified time of an index in a formatted string

@@ -1,0 +1,11 @@
+TDAT: 	private void colorDirtyTokens() {
+		for (int ii = 0; ii < _lastTokens.size(); ++ii) {
+			Token tok = (Token) _lastTokens.get(ii);
+			if (tok.isDirty()) {
+				_doc.setCharacterAttributes(
+						tok.getBeg(), tok.getOffset(), tok.getStyle());
+			}
+		}
+	}
+
+COM:colors any dirty tokens in a document based on their style and position

@@ -1,0 +1,9 @@
+TDAT: 	public String GetCellType(final int row, final int col) {
+		if (!(row >= 0 && row <= GridSize && col >= 0 && col <= GridSize)){
+			throw new IllegalArgumentException("Row: " + row + " Col: " + col
+					+ "are not valid coordinates for this board");
+		}
+		return Board[row][col].getCellType();
+	}
+
+COM:retrieves the cell type at the given coordinates, throwing an exception if the coordinates are invalid

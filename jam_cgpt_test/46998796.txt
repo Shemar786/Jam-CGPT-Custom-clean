@@ -1,0 +1,11 @@
+TDAT:     private String makeE(String op) {
+        if (!isConstant(op) && !isVariable(op) && isLn(op)) {
+            return arg1(op);
+        } else if (isConstant(op) && isZero(op)) {
+            return "1";
+        }
+
+        return list("exp", op);
+    }
+
+COM:takes a string input and returns a formatted expression using the input based on a set of conditions

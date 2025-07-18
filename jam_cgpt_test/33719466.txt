@@ -1,0 +1,13 @@
+TDAT:     public void testSetZip() {
+        System.out.println("setZip");
+        
+        String z = "";
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.setZip(z);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the setZip method of the SystemClient_DBImpl class by setting an empty string as the zip code and then calling the setZip method

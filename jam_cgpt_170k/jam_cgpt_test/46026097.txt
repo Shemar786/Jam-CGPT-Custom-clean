@@ -1,0 +1,14 @@
+TDAT: 	private void addConsoleLog(String str, Color fgcolor) {
+		SimpleAttributeSet sas = null;
+		if(fgcolor != null) {
+			sas = new SimpleAttributeSet();
+			StyleConstants.setForeground(sas, fgcolor);
+		}
+		try {
+			Document doc = txtpaneConsoleLog.getDocument();
+			doc.insertString(doc.getLength(), str + "\n", sas);
+			txtpaneConsoleLog.setCaretPosition(doc.getLength());
+		} catch (Exception e) {}
+	}
+
+COM:adds a console log with a given string and foreground color to a text pane

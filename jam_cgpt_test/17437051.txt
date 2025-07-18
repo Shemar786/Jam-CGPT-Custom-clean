@@ -1,0 +1,10 @@
+TDAT:     public String GetHelpStr(String Com) {
+        System.out.println("try gethelp  for: '" + Com + "'");
+        GsBaseCommand commandToExecute = (GsBaseCommand) _commands.get(Com);
+        if (commandToExecute == null) {
+            return Com + ": Command not exist!!!";
+        }
+        return commandToExecute.getHelpToCommand();
+    }
+
+COM:takes in a string command, checks if it exists in a hashmap of commands and returns the help information for that command if it exists; otherwise, it returns an error message

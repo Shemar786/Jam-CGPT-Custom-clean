@@ -1,0 +1,17 @@
+TDAT: 	public SocialRequestInterpreter getSocialRequestInterpreterInstance() {
+		if (Validator.isNull(getSocialRequestInterpreterClass())) {
+			return null;
+		}
+
+		if (_portletApp.isWARFile()) {
+			PortletBagImpl portletBagImpl = (PortletBagImpl)PortletBagPool.get(
+				getRootPortletId());
+
+			return portletBagImpl.getSocialRequestInterpreterInstance();
+		}
+
+		return (SocialRequestInterpreter)InstancePool.get(
+			getSocialRequestInterpreterClass());
+	}
+
+COM:returns an instance of a SocialRequestInterpreter class, either from a pool or by getting it from a PortletBagImpl instance

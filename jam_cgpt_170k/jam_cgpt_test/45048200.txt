@@ -1,0 +1,18 @@
+TDAT: 	private Document generateDocumentFromTPVersion(TestProfileVersion testProfileVersion) throws Exception{
+		
+		Document doc = null;
+		try{
+			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+	        doc = builder.newDocument();
+	        doc.appendChild(createNDRProfileElement(doc,testProfileVersion));
+		}
+		catch(ParserConfigurationException PCE){
+			throw new Exception(ExchangeErrorCodes.EXPORT_DCMB,PCE);
+		}
+		catch(Exception E){
+			throw new Exception(ExchangeErrorCodes.EXPORT_DCMB,E);
+		}
+		return doc;
+	}
+
+COM:generates an XML document from a given test profile version object

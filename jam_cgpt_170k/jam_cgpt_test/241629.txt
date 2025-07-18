@@ -1,0 +1,12 @@
+TDAT: 	public void updateEntryInJournal(entry currentEntry) {
+		if (currentEntry.getDate().getTime()<firstEntry.getTime()) {
+			firstEntry=currentEntry.getDate();
+		}
+		if (currentEntry.getDate().getTime()>lastEntry.getTime()) {
+			lastEntry=currentEntry.getDate();
+		}
+			
+		journal.put(currentEntry.getID(), currentEntry);
+	}
+
+COM:updates an entry in a journal, and updates the first and last entry dates if necessary

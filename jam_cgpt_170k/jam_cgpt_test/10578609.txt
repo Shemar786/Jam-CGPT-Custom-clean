@@ -1,0 +1,10 @@
+TDAT:     protected void populateMailMimeMessage(Message message, Mail mail) throws MessagingException, JMSException {
+        if (message instanceof ObjectMessage) {
+            mail.setMessage(new MimeMessageCopyOnWriteProxy(new MimeMessageObjectMessageSource((ObjectMessage) message)));
+        } else {
+            throw new MailQueueException("Not supported JMS Message received " + message);
+        }
+
+    }
+
+COM:populates a MailMimeMessage object with data from a Message object, throwing a MailQueueException if the JMS message is not supported

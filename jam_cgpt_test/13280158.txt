@@ -1,0 +1,16 @@
+TDAT:     protected void enableConstraintButtonsEditing() {
+	ConventionalConstraint c;
+	synchronized(gsc.constraints) {
+	    Iterator i = gsc.constraints.iterator();
+	    while (i.hasNext()) {
+		c = (ConventionalConstraint) i.next();
+		if ((c instanceof RangeConstraint) || (c instanceof ExponentialConstraint)||(c instanceof ProportionConstraint)) {
+		    ((NodeGraphics) c.graphObject).activator.setEnabled(true);
+		} else {
+		    ((NodeGraphics) c.graphObject).activator.setEnabled(false);
+		}
+	    }
+	}
+    }
+
+COM:enables editing for certain types of constraints' button activators

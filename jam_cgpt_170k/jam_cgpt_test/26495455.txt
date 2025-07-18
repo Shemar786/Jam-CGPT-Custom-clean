@@ -1,0 +1,12 @@
+TDAT:   public Property getProperty(String name) {
+    for(int i = 0; i < _nodes.size(); i++){
+      Node n = ((NodeWrapper)_nodes.get(i)).node();
+      Property prop = n.getProperty(name);
+      if(!prop.isNull()){
+        return prop;
+      }
+    }
+    return new PropertyImpl(name, null);
+  }
+
+COM:searches through a list of nodes and returns a property matching the given name, or creates a new property with a null value if no matching property is found

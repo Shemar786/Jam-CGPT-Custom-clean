@@ -1,0 +1,17 @@
+TDAT:     public URL getURLFromID(ID iden) throws MalformedURLException {
+
+        String id = iden.id;
+        if (id == null) {
+            return null;
+        }
+        String tmp = null;
+        try {
+            tmp = (String) lookup.get(id);
+            URL back = new URL(tmp);
+            return back;
+        } catch (MissingResourceException e) {
+            return null;
+        }
+    }
+
+COM:takes an ID object as input, looks up its corresponding URL from a lookup table, and returns the URL object, or null if the ID is invalid or not found in the table

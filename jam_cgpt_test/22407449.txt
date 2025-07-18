@@ -1,0 +1,16 @@
+TDAT:     public void setDOMNode(final DOMNode domnode) {
+        current = domnode;
+
+        // If the node changed the contents of the editorpane changes
+        // without a change of its contens. So don't inform the ant node
+        // about changes of the contents.
+        final Document document = editorpane.getDocument();
+        document.removeDocumentListener(documentlistener);
+
+        attributePanel.setDOMNode(domnode);
+        updateEditorPane(domnode);
+        validate();
+        document.addDocumentListener(documentlistener);
+    }
+
+COM:sets the current DOMNode and updates the editor pane and the attribute panel accordingly, while also removing and adding a document listener

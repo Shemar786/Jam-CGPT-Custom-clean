@@ -1,0 +1,17 @@
+TDAT:     public ConnectedNode getConnectedNodePointingFrom(Node n) {
+        if (interpretation1 != null) {
+            if (interpretation1.node == n) {
+                return interpretation2;
+            }
+        }
+
+        if (interpretation2 != null) {
+            if (interpretation2.node == n) {
+                return interpretation1;
+            }
+        }
+
+        return null; //if there was only one interpretation, and none fitted.
+    }
+
+COM:returns the opposite end of a connected node from the given node, if it exists

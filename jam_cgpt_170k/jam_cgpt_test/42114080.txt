@@ -1,0 +1,12 @@
+TDAT: 	public void refillAmmo() {
+		super.refillAmmo();
+		
+		if(Game.getGame().getSettings().isSFX() && (System.currentTimeMillis() - lastAmmo) > 1000) {
+			Sound.getInstance().getAudioTrack("sounds/reload.wav").setWorldPosition(this.getWorldTranslation());
+			Sound.getInstance().getAudioTrack("sounds/reload.wav").play();
+			lastAmmo = System.currentTimeMillis();
+		}
+		updateAmmoText();
+	}
+
+COM:refills the ammo of a game object and plays a reloading sound effect if enabled, then updates the ammo text

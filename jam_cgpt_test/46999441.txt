@@ -1,0 +1,6 @@
+TDAT:     private String deriveAcotan(String exp, String vari) {
+        return (makeDivision(makeProduct("-1", derive(arg1(exp), vari)),
+                             makeSum("1", makePower(arg1(exp), "2"))));
+    }
+
+COM:returns the result of a mathematical formula to derive the arccotangent of a given expression with respect to a given variable

@@ -1,0 +1,13 @@
+TDAT:   public void clearResults() {
+    if (tabFolder.isDisposed())
+      return;
+    synchronized (this) {
+      CTabItem[] tabItems = tabFolder.getItems();
+      for (CTabItem tabItem : tabItems)
+        if (tabItem != messagesTab)
+          closeTab(tabItem);
+      messagesTable.removeAll();
+    }
+  }
+
+COM:clears the results by closing all tabs except for the messages tab and removes all entries from the message table, unless the tab folder is disposed

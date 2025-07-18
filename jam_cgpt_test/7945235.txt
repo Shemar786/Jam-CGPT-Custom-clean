@@ -1,0 +1,13 @@
+TDAT:     public Object getOrCreate(Transaction trans, Object onObject) {
+		if (!alive()) {
+			return null;
+		}
+		Object obj = fieldAccessor().get( _reflectField, onObject);
+		if (_db4oType != null && obj == null) {
+			obj = _db4oType.createDefault(trans);
+			fieldAccessor().set(_reflectField, onObject, obj);
+		}
+		return obj;
+	}
+
+COM:gets an object from a field accessor or creates a default object if it is null, based on a specified transaction and input object

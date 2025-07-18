@@ -1,0 +1,7 @@
+TDAT:     public void testWriteBufferUpdate() throws Exception {
+        _htmlDocument.write( "This is a test" );
+        assertNotNull( "No write buffer was defined for the document", _htmlDocument.getWriteBuffer() );
+        assertEquals( "Result of write buffer", "This is a test", _htmlDocument.getWriteBuffer().toString() );
+    }
+
+COM:tests the updating of the write buffer in an HTML document by writing a test string and checking its equality with the expected result

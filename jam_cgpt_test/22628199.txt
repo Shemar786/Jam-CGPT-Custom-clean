@@ -1,0 +1,13 @@
+TDAT: 	public List getAssetNodes() {
+		List primaryAssetNodes = this.selectNodes("/record/resources/primaryAsset");
+		prtln(primaryAssetNodes.size() + " primaryAssetNodes found");
+		List otherAssetNodes = this.selectNodes("/record/resources/otherAsset");
+		prtln(otherAssetNodes.size() + " otherAssetNodes found");
+
+		List assetNodes = new ArrayList();
+		assetNodes.addAll(primaryAssetNodes);
+		assetNodes.addAll(otherAssetNodes);
+		return assetNodes;
+	}
+
+COM:returns a list of all asset nodes found in the record's resources, both primary and other assets

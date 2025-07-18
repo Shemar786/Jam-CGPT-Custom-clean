@@ -1,0 +1,17 @@
+TDAT:     public void drawBoxEdge(int xyz, double[] eyeDirection) {
+      switch (xyz) {
+        case X_BOX_EDGE: {
+          drawXBoxEdge(eyeDirection);
+        }
+        break;
+        case Y_BOX_EDGE: {
+          drawYBoxEdge(eyeDirection);
+        }
+        break;
+        default: {
+          drawZBoxEdge(eyeDirection);
+        }
+      }
+    }
+
+COM:is used to draw the edge of a box in a specific direction based on the input parameter and eye direction

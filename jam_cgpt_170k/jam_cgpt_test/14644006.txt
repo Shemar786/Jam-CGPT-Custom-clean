@@ -1,0 +1,16 @@
+TDAT: 	public void init() throws ServletException {
+
+		String rootPath = getServletContext().getRealPath("/");
+		xsltDir = new File(rootPath + "/WEB-INF", "xsl");
+
+		xsltTransformer = new XsltTransformer(xsltDir);
+
+		try {
+			WetaNewsService.getInstance().init();
+		} catch (WetaNewsException e) {
+			e.printStackTrace();
+			//throw new ServletException(				"Exception during initialising process of weta-news",				e);
+		}
+	}
+
+COM:initializes a Servlet and sets up a directory for XSL files, while also initializing a WetaNewsService instance

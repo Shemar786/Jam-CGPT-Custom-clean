@@ -1,0 +1,18 @@
+TDAT: 	public A findLinkByID(String aID) {
+		A theA = null;
+
+		Vector theLinksVector = getLinks();
+		ListIterator theListIterator = theLinksVector.listIterator();
+
+		while (theListIterator.hasNext()) {
+			A theCurrentA = (A) theListIterator.next();
+			String theID = theCurrentA.getID();
+			if (theID.equals(aID)) {
+				theA = theCurrentA;
+				break;
+			}
+		}
+		return theA;
+	}
+
+COM:finds and returns an object of type A by searching for its ID within a vector collection

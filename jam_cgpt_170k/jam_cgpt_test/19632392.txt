@@ -1,0 +1,17 @@
+TDAT: 	protected void addConstrainedToOptionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConfigurationProperty_constrainedToOptions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConfigurationProperty_constrainedToOptions_feature", "_UI_ConfigurationProperty_type"),
+				 CanvasPackage.Literals.CONFIGURATION_PROPERTY__CONSTRAINED_TO_OPTIONS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds constraints to a property descriptor for a configuration property

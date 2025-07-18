@@ -1,0 +1,11 @@
+TDAT:     private Complex acos_real( double a ){
+	if( StrictMath.abs( a ) <= 1.0 )
+	    return new Complex( StrictMath.acos( a ), 0 );
+	else
+	    if( a < 0.0 )
+		return new Complex( StrictMath.PI, -acosh_real( -a ) );
+	    else
+		return new Complex( 0, acosh_real( a ) );
+    }
+
+COM:calculates the inverse cosine of a real number and returns a Complex number

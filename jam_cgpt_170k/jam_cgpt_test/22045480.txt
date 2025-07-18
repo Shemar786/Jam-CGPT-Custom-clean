@@ -1,0 +1,27 @@
+TDAT: 	public int length(){
+	    if( NaN )
+		return 3;
+	    if( zero )
+		return 1;
+	    if( infinity )
+		if( negative )
+		    return 2;
+		else
+		    return 1;
+	    int length = digits.size();
+	    for( int i = digits.size() - 1; digits.elementAt( i ) == 0; --i )
+		--length;
+	    if( exponentNegative ){ // ignore trailing zeros
+		// base point
+		length += exponent + 1;
+	    } else {
+		if( length > exponent + 1 ) // base point
+		    ++length; 
+		else
+		    length = exponent + 1;
+	    }
+	    if( negative ) ++length;
+	    return length;
+	}
+
+COM:returns the length of a given number

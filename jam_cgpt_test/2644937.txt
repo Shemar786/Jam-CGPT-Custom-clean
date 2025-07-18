@@ -1,0 +1,14 @@
+TDAT: 	private void sendNextProgramNameChangedEvent(Status status) {
+		synchronized (dreamboxListeners) {	
+			if (dreamboxListeners!=null) {
+				for (Iterator<DreamboxListener> i = dreamboxListeners.iterator();i.hasNext();) {
+					try {
+						i.next().handleNextProgramNameChangedEvent(status);
+					} 
+					catch (Throwable t) {t.printStackTrace();};
+				}
+			}
+		}
+	}
+
+COM:This is a method in Java that sends a notification to all registered DreamboxListeners when the next program name has changed

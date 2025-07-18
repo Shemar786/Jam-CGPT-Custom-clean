@@ -1,0 +1,13 @@
+TDAT: 	public void addStringMap(StringMap stringMap) {
+		if (stringMap != null) {
+			String mapName = stringMap.getName();
+			if (mapName != null) {
+				if (stringMaps == null) stringMaps = new Hashtable<String, StringMap>();
+				stringMaps.put(mapName, stringMap);
+			} else {
+				LOG.debug("Adding string map with no name to connection: " + name);
+			}
+		}
+	}
+
+COM:adds a given string map to a hashtable if it is not null and has a name; otherwise, it logs a debug message

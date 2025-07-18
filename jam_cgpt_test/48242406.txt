@@ -1,0 +1,16 @@
+TDAT:     public FullyQualifiedJavaType calculateAllFieldsClass() {
+        
+        FullyQualifiedJavaType answer;
+        
+        if (generateRecordWithBLOBsClass()) {
+            answer = introspectedTable.getRecordWithBLOBsType();
+        } else if (generateBaseRecordClass()) {
+            answer = introspectedTable.getBaseRecordType();
+        } else {
+            answer = introspectedTable.getPrimaryKeyType();
+        }
+        
+        return answer;
+    }
+
+COM:calculates and returns a FullyQualifiedJavaType object based on the introspectedTable attribute and conditions specified within the method

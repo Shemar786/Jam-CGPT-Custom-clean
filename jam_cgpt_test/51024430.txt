@@ -1,0 +1,20 @@
+TDAT: 	public void save(final File file, final Collection<EdgeMappingDescriptor> descriptors) throws Exception {
+		FileTask task = new FileTask("Save file") {
+			@Override
+			public void processFile() {
+				try {
+					saveInternal(file, descriptors, monitor);
+				} catch (Exception e) {
+					exception = e;
+				}
+			}
+		};
+		
+		TaskManager.executeTask(task, OndexTaskConfig.getInstance());
+		
+		if (task.getException() != null) {
+			throw task.getException();
+		}
+	}
+
+COM:saves a collection of EdgeMappingDescriptor objects to a specified file

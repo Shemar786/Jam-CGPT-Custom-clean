@@ -1,0 +1,25 @@
+TDAT: 	private void installAction() {
+		applyButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				applyButton.setEnabled(false);
+				closeButton.setEnabled(false);
+				controller.buttonApply();
+				applyButton.setEnabled(true);
+				closeButton.setEnabled(true);
+			}
+		});
+
+		closeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				applyButton.setEnabled(false);
+				closeButton.setEnabled(false);
+				controller.buttonCancel();
+				applyButton.setEnabled(true);
+				closeButton.setEnabled(true);
+			}
+		});
+	}
+
+COM:installs action listeners for two buttons that execute certain actions and enable and disable other buttons accordingly

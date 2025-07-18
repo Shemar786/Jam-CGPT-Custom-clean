@@ -1,0 +1,21 @@
+TDAT: 	public void defreeze(BWNode altro) {
+		
+		assert (distance >= 0) : "defreeze() invoked for a node with invalid distance";
+		
+		if (distance == 0) {
+			initialDefreeze(altro);
+		} else if (distance == 1) {
+			defreeze1HOP();
+		} else if (distance == 2) {
+			defreeze2HOP();
+		} else if (distance == 3) {
+			defreeze3HOP();
+		}
+
+		setBWProCapite(calculateBWProCapite());
+		getToFixSet().add(this);
+		getTmpToFixSet().remove(this);
+		reached = true;
+	}
+
+COM:defreezes a node and performs additional actions based on the node's distance from another node

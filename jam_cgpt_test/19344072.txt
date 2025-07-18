@@ -1,0 +1,22 @@
+TDAT: 	public void executeAction(int action, Object o) {
+
+		if (o != null) {
+			switch (action) {
+			case ReActionHandler.EXPORT_VELOCITY:
+				executeSaveAs(SaveAs3.FORMAT_VELOCITY, o.toString());
+				break;
+			case ReActionHandler.EXPORT_XSLT:
+				executeSaveAs(SaveAs3.FORMAT_XSLT, o.toString());
+				break;
+			case ReActionHandler.EXPORT_SCRIPT:
+				executeSaveAs(SaveAs3.FORMAT_SCRIPT, o.toString());
+				break;
+				default:
+					executeAction(action);
+			}
+		} else{
+			executeAction(action);
+		}
+	}
+
+COM:executes an action based on a given integer value, and if an object is not null, it switches between three cases to execute a specific saveAs method, otherwise it executes the given action as default

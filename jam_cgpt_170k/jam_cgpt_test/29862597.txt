@@ -1,0 +1,11 @@
+TDAT:   public void copyRecord(int from, int to, boolean trail) {
+    if (trail) {
+      trailRecord(to);
+    }
+    recordInfo[to] = recordInfo[from];
+    for (int i = 0; i < fields.length; i++) {
+      fields[i].copyRecord(from, to);
+    }
+  }
+
+COM:copies a record from one index position to another, optionally trailing the copied record and copying each field in the record as well

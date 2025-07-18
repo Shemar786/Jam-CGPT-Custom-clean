@@ -1,0 +1,12 @@
+TDAT:     public void init() {
+      this.setTitle("Comedia Tetris");
+      CUtilities.updateStatus(this, " ");
+      super.init();
+      this.setSize(400, 340);
+      CTetrisModule tetris = new CTetrisModule();
+      tetris.setContext(new CDefaultModuleContext(this));
+      this.showModule(tetris);
+      tetris.startNewGame();
+    }
+
+COM:initializes and starts a game of Tetris with the specified title and size

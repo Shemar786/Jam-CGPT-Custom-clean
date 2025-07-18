@@ -1,0 +1,10 @@
+TDAT: 	public void testGetX() {
+		assertTrue(pawn.getX() == 1);
+		assertTrue(pawn1.getX() == 1);
+		assertTrue(pawn2.getX() == 3);
+		assertTrue(pawn3.getX() == 4);
+		assertTrue(pawn4.getX() == 6);
+		assertTrue(pawn5.getX() == 6);
+	}
+
+COM:tests if the getX() method returns the expected value for different instances of the Pawn class

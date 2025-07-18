@@ -1,0 +1,14 @@
+TDAT:   private Properties loadProperties(String resource) {
+    Properties properties = null;
+
+    try {
+      Resource res = new UrlResource(this.getClass().getResource(resource));
+      properties = PropertiesLoaderUtils.loadProperties(res);
+    } catch (IOException e) {
+      this.logger.debug("Unable to read properties file for resource '" + resource + "'");
+    }
+
+    return properties;
+  }
+
+COM:loads a properties file at the given resource location and returns it as a Properties object

@@ -1,0 +1,12 @@
+TDAT:     public void testsetLongitude() {
+        System.out.println("setLongitude");
+        henson.midp.Float longitude = Float.ONE;
+        org.gps.types.GpsPosition instance = new org.gps.types.GpsPosition();
+        instance.setLongitude(longitude);
+        
+        assertEquals(Float.ONE, instance.getLongitude());
+        
+    
+    }
+
+COM:tests if the set and get methods for the longitude property of a GpsPosition object are working correctly

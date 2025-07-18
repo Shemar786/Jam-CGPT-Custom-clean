@@ -1,0 +1,12 @@
+TDAT: 	private void handleAuthentication(SessionContext sc, HttpServletRequest req, HttpServletResponse res) throws NotAuthenticatedException {
+		
+		if (sc.getProperty(SessionContext.PROP_AUTHENTICATION, "false").equals("true")) {
+			if (authenticator == null || !authenticator.isAuthenticated(req)) {
+				// redirect to login page
+				throw new NotAuthenticatedException();
+			} 
+		}
+		
+	}
+
+COM:checks if a user is authenticated and throws a NotAuthenticatedException if they are not

@@ -1,0 +1,12 @@
+TDAT:     public Lemmatizer getFastestLemmatizer(final Locale locale) throws MorphologyException {
+        if (locale == null) {
+            throw new IllegalArgumentException("The 'loc' argument cannot be null.");
+        }
+        Lemmatizer component = (Lemmatizer) fastestLemmatizers.get(locale);
+        if (component == null) {
+            throw new MorphologyException("Cannot find lemmatizer for locales : " + locale.toString());
+        }
+        return component;
+    }
+
+COM:returns the fastest lemmatizer for a specified locale, and throws an exception if the specified locale is null or if the lemmatizer is not found

@@ -1,0 +1,12 @@
+TDAT: 	private void parse() {
+		StringTokenizer listToken =
+			new StringTokenizer(this.sList, getDelimiters());
+		String token = null;
+		while (listToken.hasMoreTokens()) {
+			token = listToken.nextToken();
+			if ((token != null) && (token.length() > 0))
+				oListVector.addElement(new String(token));
+		}
+	} // end public void parse()
+
+COM:parses a string list using delimiters and adds non-null and non-empty tokens to a vector

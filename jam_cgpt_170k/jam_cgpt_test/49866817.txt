@@ -1,0 +1,8 @@
+TDAT:   public boolean updateChecklistItem(long itemId, String item, boolean isDone) {
+    ContentValues values = new ContentValues();
+    values.put(KEY_ITEM, item);
+    values.put(KEY_IS_DONE, isDone);
+    return mDb.update(CHECKLIST_ITEM_TBL, values, KEY_ROWID + "=" + itemId, null) > 0;
+  }
+
+COM:updates a checklist item's name and completion status based on its ID

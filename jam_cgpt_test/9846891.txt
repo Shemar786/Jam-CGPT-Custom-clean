@@ -1,0 +1,14 @@
+TDAT: 	public String getSpecificControlledClass () {
+		if (this.controlledClass == null) {
+			MetaClass mc = InvokerHelper.getMetaClass(this.getObjectClass());
+			MetaProperty mp = mc.getMetaProperty("controls");
+			if (mp != null && Modifier.isStatic( mp.getModifiers() )) {
+				this.controlledClass = (String) mp.getProperty(null);
+			} else {
+      	this.controlledClass = "";
+      }
+		}
+    return this.controlledClass;
+	}
+
+COM:gets the name of the class that is being controlled by a given object

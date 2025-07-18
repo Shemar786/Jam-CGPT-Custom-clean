@@ -1,0 +1,10 @@
+TDAT:   public void resetColumnTypes () {
+    if( tableData == null ) {
+      // TODO: Error handling
+      System.err.println( "WARNING: Unable to resetColumnTypes because getTableData() is null." );
+      return;
+    }
+    resetColumnTypes( TableReader.countTableColumns( tableData ) );
+  } // resetColumnTypes()
+
+COM:resets the column types of a table based on input from a TableReader, but prints a warning message and returns without action if the tableData is null

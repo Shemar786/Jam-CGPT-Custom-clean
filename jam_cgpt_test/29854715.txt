@@ -1,0 +1,10 @@
+TDAT:   public PRBlock getBlock(String name) throws PositionedError {
+    if (!blocks_H.containsKey(name)) {
+      // an unpositioned error would be better
+      throw new CLineError(getTokenReference(), PrintMessages.UNDEFINED_BLOCK, name);
+    }
+
+    return (PRBlock)blocks_H.get(name);
+  }
+
+COM:returns a PRBlock object with the given name if it exists in the blocks_H HashMap, and throws a PositionedError otherwise with a specified error message

@@ -1,0 +1,12 @@
+TDAT:   public void autoPositionFielders() {
+    Position pos = null;
+    for (int i = 0; i < fielders.size(); i++) {
+      // get one of the fielders
+      Fielder fielder = (Fielder) fielders.get(i);
+      pos = createUniqueFieldersPosition(fielder);
+      fielder.setPosition(pos);
+      log.info("Position of fielder " + i + " is " + pos.toString());
+    }
+  }
+
+COM:automatically positions fielders on a unique position and logs the result

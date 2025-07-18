@@ -1,0 +1,13 @@
+TDAT: 	private void readAttributes(final DataInputStream in) throws IOException {
+		final int numAttributes = in.readUnsignedShort();
+
+		attrs = new Attribute[numAttributes];
+
+		for (int i = 0; i < numAttributes; i++) {
+			final int nameIndex = in.readUnsignedShort();
+			final int length = in.readInt();
+			attrs[i] = new GenericAttribute(in, nameIndex, length);
+		}
+	}
+
+COM:reads and initializes attributes from a DataInputStream object

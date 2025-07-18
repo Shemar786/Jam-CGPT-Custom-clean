@@ -1,0 +1,16 @@
+TDAT: 	public boolean deleteRow(long uid) {
+		try {
+			Statement s = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
+			ResultSet dLoc = s.executeQuery("SELECT * FROM tblFacebook WHERE uid = " + uid);
+			dLoc.next();
+			dLoc.deleteRow();
+			dLoc.close();
+			s.close();
+			return true;
+		} catch (SQLException e) {
+			System.err.println("Delete UID Failed: " + uid);
+			return false;
+		}
+	}
+
+COM:deletes a row from a database table based on the provided UID

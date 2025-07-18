@@ -1,0 +1,18 @@
+TDAT:   public URL convertURL(String url) throws WorkloadException {
+    URL result = null;
+
+    url = url.trim();
+    if (url.length() > this.maxURLSize) {
+      throw new WorkloadException("URL size is too big, must be under "
+          + this.maxURLSize + " bytes.");
+    }
+
+    try {
+      result = new URL(url);
+    } catch (MalformedURLException e) {
+      throw new WorkloadException(e);
+    }
+    return result;
+  }
+
+COM:takes a string as input, checks if the length is within a specified maximum limit, and returns a URL object if the input string is a valid URL, else it throws a WorkloadException

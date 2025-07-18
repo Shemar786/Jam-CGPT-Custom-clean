@@ -1,0 +1,17 @@
+TDAT: 	protected void addUPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ProcessorUtilisationNB_u_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ProcessorUtilisationNB_u_feature", "_UI_ProcessorUtilisationNB_type"),
+				 ProcessorUtilizationNBPackage.Literals.PROCESSOR_UTILISATION_NB__U,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a new property descriptor to a list of item property descriptors for a specific object

@@ -1,0 +1,11 @@
+TDAT: 	private JButton getJButtonPlay() {
+		if (jButtonPlay == null) {
+			jButtonPlay = new JButton();
+			jButtonPlay.setPreferredSize(new Dimension(45, 26));
+			jButtonPlay.setIcon(new ImageIcon(getClass().getResource("/agentgui/core/gui/img/MBLoadPlay.png")));
+			
+		}
+		return jButtonPlay;
+	}
+
+COM:returns a JButton object with a specific icon and preferred dimensions, creating it if it hasn't been initialized yet

@@ -1,0 +1,10 @@
+TDAT:      public void createImg(int sizex, int sizey){
+         editSizeX = (sizex < 1) ? 1 : sizex;
+         editSizeY = (sizey < 1) ? 1 : sizey;
+         bimg = new BufferedImage(editSizeX, editSizeY,
+                 BufferedImage.TYPE_INT_ARGB);
+         g = bimg.createGraphics();
+         clearGrid();
+     }
+
+COM:creates a new image with specified dimensions and initializes it with a transparent grid

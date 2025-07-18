@@ -1,0 +1,10 @@
+TDAT:     public void testGetVersion() throws Exception {
+        System.out.println("testGetVersion");
+        
+        // Add your test code below by replacing the default call to fail.
+        String version = this.service.getVersion();
+        assertNotNull("Version returned null",version);
+        assertEquals("Incorrect version number",this.xPathQueryServiceVersion, version);
+    }
+
+COM:tests the getVersion method of a service by checking if the version number returned is not null and matches a specific value

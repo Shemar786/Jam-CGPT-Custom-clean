@@ -1,0 +1,21 @@
+TDAT: 	public void testTwoConcrete() throws Exception {
+		final IMachineRoot abs = createMachine("M1");
+		addInitialisation(abs);
+		saveRodinFileOf(abs);
+
+		final IMachineRoot con1 = createMachine("A1");
+		addMachineRefines(con1, abs.getElementName());
+		addInitialisation(con1);
+		saveRodinFileOf(con1);
+
+		final IMachineRoot con2 = createMachine("A2");
+		addMachineRefines(con2, abs.getElementName());
+		addInitialisation(con2);
+		saveRodinFileOf(con2);
+
+		runBuilder();
+		assertNoMarker(abs.getRodinProject());
+		assertGenerated(abs, con1, con2);
+	}
+
+COM:tests the creation of two concrete machines that both refine an abstract machine and asserts that there are no errors or warnings

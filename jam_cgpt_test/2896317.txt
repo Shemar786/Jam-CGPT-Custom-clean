@@ -1,0 +1,18 @@
+TDAT:   public int getAndRemoveElement() {
+    int i = 0;
+    int o = 0;
+    long m = 1;
+    
+    while (bits[i] == 0) i++;
+    
+    while ( (bits[i] & m) == 0 ) {
+      m<<= 1;
+      o++;
+    }
+    
+    bits[i]&= ~m;
+    
+    return (i << BITS) + o;
+  }
+
+COM:retrieves and removes an element from a bit set and returns its index

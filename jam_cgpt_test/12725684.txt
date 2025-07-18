@@ -1,0 +1,15 @@
+TDAT: 	private JPanel getFeatureControls() {
+		if (FeatureControls == null) {
+			GridBagConstraints gridBagConstraints1 = new GridBagConstraints();
+			gridBagConstraints1.gridx = 0;
+			gridBagConstraints1.gridy = 1;
+			FeatureControls = new JPanel();
+			FeatureControls.setLayout(new GridBagLayout());
+			FeatureControls.setBackground(new Color(192, 218, 255));
+			FeatureControls.add(getAddFeature(), new GridBagConstraints());
+			FeatureControls.add(getRemoveFeature(), gridBagConstraints1);
+		}
+		return FeatureControls;
+	}
+
+COM:returns a JPanel containing feature controls, and creates the panel if it does not exist

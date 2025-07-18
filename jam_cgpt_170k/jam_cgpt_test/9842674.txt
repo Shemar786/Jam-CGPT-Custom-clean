@@ -1,0 +1,11 @@
+TDAT: 	public void associate(GroovyBuilder<T> builder, ObjectFactoryInterceptor<T> ofi, T child, T parent) {
+		if (parent != null) {
+			MetaClass pmc = InvokerHelper.getMetaClass(child.getClass());
+			pmc.invokeMethod(parent, "addChild", new Object[] { parent });
+		}
+		
+		MetaClass cmc = InvokerHelper.getMetaClass(child.getClass());
+		cmc.invokeMethod(child, "setParent", new Object[] { parent });
+	}
+
+COM:associates a child object with a parent object by calling the "addChild" and "setParent" methods on their respective classes through the use of Groovy builders and an object factory interceptor

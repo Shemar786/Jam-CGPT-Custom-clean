@@ -1,0 +1,17 @@
+TDAT:     public void setSaved(boolean saved) {
+		boolean setTitle = false;
+        if(saved) {
+            changesPerformedSinceLastSave = 0;
+            setTitle = true;
+        } else {
+            if(changesPerformedSinceLastSave == 0) {
+                setTitle = true;
+            }
+            ++changesPerformedSinceLastSave;
+        }
+        if (setTitle) {
+            getModeController().getController().setTitle();
+        }        
+    }
+
+COM:sets a boolean value to indicate if changes made to a program have been saved, and updates the program's title accordingly

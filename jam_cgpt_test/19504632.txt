@@ -1,0 +1,15 @@
+TDAT: 	public void translate(Widget widget) {
+		SymbolRegistry registry = SymbolRegistry.getDefault();
+		symbols = registry.getTextSymbols();
+		maxSize = registry.getMaxTextSymbolSize();
+		if (widget instanceof Text) {
+			String text = ((Text) widget).getText();
+			translate((Text) widget, 0, text.length());
+		}
+		if (widget instanceof StyledText) {
+			String text = ((StyledText) widget).getText();
+			translate((StyledText) widget, 0, text.length());
+		}
+	}
+
+COM:translates the text in a specified widget using a default symbol registry and maximum text symbol size

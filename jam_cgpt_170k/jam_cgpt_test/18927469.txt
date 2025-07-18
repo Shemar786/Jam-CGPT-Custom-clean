@@ -1,0 +1,10 @@
+TDAT:   private Object bracesAround(Object oExp) {
+    Object oSet;
+    if (uti.isMember(oExp) || uti.isFunCallTo(oExp, "()"))
+      oSet = uti.createFunCall("{}", new Object[] { oExp }, QuaxUti.FUNTYPE_BRACES);
+    else
+      oSet = oExp;
+    return oSet;
+  }
+
+COM:adds braces around an object if it is a function call or a member, otherwise it returns the object as is

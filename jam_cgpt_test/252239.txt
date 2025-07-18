@@ -1,0 +1,16 @@
+TDAT: 	private void updateHistory(CCombo combo, List history) {
+		String findString = combo.getText();
+		int index= history.indexOf(findString);
+		if (index != 0) {
+			if (index != -1) {
+				history.remove(index);
+			}
+			history.add(0, findString);
+			updateCombo(combo, history);
+			combo.setText(findString);
+			//Set blinking cursor to end of text
+			combo.setSelection(new Point(findString.length(),findString.length()));
+		}
+	}
+
+COM:updates a combo box's history by removing a given string if it exists, adding it to the beginning of the history list, and updating the combo box's contents accordingly

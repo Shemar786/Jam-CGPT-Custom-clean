@@ -1,0 +1,11 @@
+TDAT:   public void setHelpActionDefaultStat() {
+    try {
+      wpMask mask = new wpMask(HELP_ACTIONS, helpActionIndices,
+                               helpActionDefaultStat);
+      wpMaskEvent event = new wpMaskEvent(this, mask);
+      maskHandler.fireMaskChanged(event);
+    }
+    catch (wpMaskException me) {}
+  }
+
+COM:sets the default state for a help action mask and triggers an event when the mask is changed

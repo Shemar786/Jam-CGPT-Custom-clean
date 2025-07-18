@@ -1,0 +1,10 @@
+TDAT: 	private void initMetrics() {
+		sourcemap.put(IMethod.class, MethodMetrics.class);
+		sourcemap.put(IType.class, TypeMetrics.class);
+		sourcemap.put(IPackageFragment.class, PackageFragmentMetrics.class);
+		sourcemap.put(IPackageFragmentRoot.class, PackageFragmentRootMetrics.class);
+		sourcemap.put(ICompilationUnit.class, CompilationUnitMetrics.class);
+		sourcemap.put(IJavaProject.class, ProjectMetrics.class);
+	}
+
+COM:initializes a HashMap with mappings between Java source code elements (e.g. methods, classes, packages) and their corresponding metric classes

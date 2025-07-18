@@ -1,0 +1,14 @@
+TDAT: 	public void init() {
+		if (jbnOnt != null) {
+			for (int i = 0; i < jbnOnt.length; i++) {
+				btnGrpOnt.add(jbnOnt[i]);
+			}
+		}
+		if (jbnPort != null) {
+			for (int i = 0; i < jbnPort.length; i++) {
+				btnGrpOnt.add(jbnPort[i]);
+			}
+		}
+	}
+
+COM:initializes a button group and adds buttons from two arrays to it if they are not null

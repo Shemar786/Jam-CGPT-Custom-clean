@@ -1,0 +1,12 @@
+TDAT: 	public boolean cmdResponse(int viewId, int userId, int nodeId, int cmdCode, Object[] data, int result, String errMessage) {
+
+		logger.fine("cmdResponse viewId: " + viewId);
+		if (null == data || 0 == data.length) {
+
+		} else {
+			pnlVlanVlan.cmdResponse(viewId, userId, nodeId, cmdCode, data, result, errMessage);
+		}
+		return true;
+	}
+
+COM:logs a message, checks if the data is null or has length 0, and if not, calls the cmdResponse method with the given parameters and returns true

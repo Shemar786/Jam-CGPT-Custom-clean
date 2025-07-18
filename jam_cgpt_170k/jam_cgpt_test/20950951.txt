@@ -1,0 +1,10 @@
+TDAT: 	private String encodeField_typeDBT(String text) {
+		/* here we replace all types of single newline (\n or \r) with \r\n,
+		obviously except the one already in format \r\n 
+		1 l0v3 r3g3x!!
+		*/
+		text = text.replaceAll("(\\r(?!\\n))|((?<!\\r)\\n)", "\r\n");
+		return text + TERMINATOR + TERMINATOR;
+	}
+
+COM:replaces all types of single newline characters except those in \r\n format with \r\n and adds two TERMINATOR strings to the end of the modified text

@@ -1,0 +1,13 @@
+TDAT: 	public void update(Observable o, Object arg) {
+		if(arg instanceof String){
+				System.out.println("AI update "+ arg);
+				if(((String) arg).compareTo("NewMap") == 0){
+					this.updateWithNewMap(((Player)o).getMap());
+				}
+				else if (((String) arg).compareTo("EndTurn") == 0){
+					this.endMyTurn((Player)o);
+				}
+		}
+	}
+
+COM:updates an observable object based on a specified argument, performing different actions based on the value of the argument

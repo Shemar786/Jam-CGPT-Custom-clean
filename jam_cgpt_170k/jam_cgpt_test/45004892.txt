@@ -1,0 +1,15 @@
+TDAT:     public void removePossibleDefender(String name, boolean penalize) {
+        String currName = name.toLowerCase();
+        OpsChickenThread currT = chickenThreads.get(currName);
+        if (currT == null) {
+            return;
+        }
+
+        if (penalize) {
+            currT.doPenalty();
+        }
+        currT.stopChicken();
+        chickenThreads.remove(currName);
+    }
+
+COM:removes a possible defender, penalizes them if specified, stops their chicken and removes them from the list of chicken threads

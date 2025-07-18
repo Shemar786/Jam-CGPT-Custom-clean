@@ -1,0 +1,11 @@
+TDAT: 	private Player getPlayer(String playerId) {
+		for (int i = 0; i < this.players.size(); i++) {
+			String thisPlayerId = this.players.elementAt(i).getPlayer().getId();
+			if (thisPlayerId.equals(playerId)) {
+				return this.players.elementAt(i).getPlayer();
+			}
+		}
+		return null;
+	}
+
+COM:searches for a specific player in a collection and returns their information if found

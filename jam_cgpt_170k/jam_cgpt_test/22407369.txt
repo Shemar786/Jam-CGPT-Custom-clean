@@ -1,0 +1,22 @@
+TDAT:     public String toString() {
+        StringBuffer str = new StringBuffer();
+        str.append("AntTargetMap[");
+
+        final AntTargetIterator iterator = targetIterator();
+
+        while (iterator.hasNext()) {
+            AntTarget target = iterator.nextTarget();
+
+            str.append(target.dump());
+
+            if (iterator.hasNext()) {
+                str.append(",");
+            }
+        }
+
+        str.append("]");
+
+        return str.toString();
+    }
+
+COM:returns a string representation of an AntTargetMap object, including a comma-separated list of its AntTarget objects

@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField40() {
+        if (textField40 == null) {//GEN-END:|629-getter|0|629-preInit
+            // write pre-init user code here
+            textField40 = new TextField("Descuento KD REF:", null, 32, TextField.DECIMAL);//GEN-LINE:|629-getter|1|629-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|629-getter|2|
+        return textField40;
+    }
+
+COM:returns a TextField object named "textField40" with a label of "Descuento KD REF:", a maximum length of 32, and a format of decimal

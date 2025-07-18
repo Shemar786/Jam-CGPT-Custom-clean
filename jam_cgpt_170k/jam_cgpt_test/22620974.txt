@@ -1,0 +1,21 @@
+TDAT: 	private String getDisplayText(int level) {
+		String text = getDescription();
+		if (level == 1) {
+			// String pat = "all students should develop";
+			String pat = "all students should develop understanding of";
+			int x = text.indexOf(pat);
+			if (x != -1)
+				return text.substring(0, x + pat.length());
+			else {
+				pat = "all students should develop";
+				x = text.indexOf(pat);
+					if (x != -1)
+						return text.substring(0, x + pat.length());
+					else
+						return "**  pattern not found **";
+			}
+		}
+		return text;
+	}
+
+COM:returns a specific portion of the text description based on the level parameter

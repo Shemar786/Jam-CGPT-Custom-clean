@@ -1,0 +1,18 @@
+TDAT: 	private void destroyVisualizationGUI() {
+		
+		this.netModel = null;
+		if (this.myGraphEnvironmentController!=null) {
+			this.myGraphEnvironmentController.getEnvironmentPanel().setVisible(false);
+		}
+		if (this.useFrame != null) {
+			this.useFrame.dispose();
+			this.useFrame = null;
+		}
+		if (this.usePanel != null) {
+			this.usePanel.removeAll();
+			this.usePanel.repaint();
+			this.usePanel = null;
+		}
+	}
+
+COM:destroys the visualization GUI by setting the net model to null and removing all components and disposing all frames

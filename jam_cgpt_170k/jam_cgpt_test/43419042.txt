@@ -1,0 +1,13 @@
+TDAT: 	private JButton getBtnCancel() {
+		if (jButtonCancel == null) {
+			jButtonCancel = new JButton();
+			jButtonCancel.setText("Cancel");
+			jButtonCancel.setPreferredSize(new Dimension(80, 26));
+			jButtonCancel.setFont(new Font("Dialog", Font.BOLD, 12));
+			jButtonCancel.setForeground(new Color(153, 0, 0));
+			jButtonCancel.addActionListener(this);
+		}
+		return jButtonCancel;
+	}
+
+COM:returns a JButton component with text "Cancel", preferred size 80x26, bold font, red foreground color, and an action listener

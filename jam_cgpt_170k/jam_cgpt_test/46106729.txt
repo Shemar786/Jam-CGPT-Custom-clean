@@ -1,0 +1,11 @@
+TDAT:     public void keyPressed(int mKey, char mChar) {
+        // TODO: In the future only send key events to currently focused widget
+
+        // Send the key pressed event to the window on top
+        if (windowList.size() > 0) {
+            Window window = (Window) windowList.lastElement();
+            window.keyPressed(mKey, mChar);
+        }
+    }
+
+COM:sends key pressed events to the window on top

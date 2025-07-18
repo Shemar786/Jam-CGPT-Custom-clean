@@ -1,0 +1,8 @@
+TDAT:     protected void setEntity(IDObject entity) {
+        if(this.entity != null) throw new IllegalStateException("entity cannot be changed for this communication node");
+        if(entity == null)throw new IllegalArgumentException("entity cannot be null");
+        this.entity = entity;
+        setID(entity.getID());
+    }
+
+COM:sets an ID object as the communication node entity and throws exceptions if the entity cannot be changed or is null

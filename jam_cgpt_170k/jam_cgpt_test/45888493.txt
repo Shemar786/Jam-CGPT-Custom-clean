@@ -1,0 +1,13 @@
+TDAT: 	public void toImageView(Context context, EventSource source, Event event, ImageView iv) {
+		
+		if(source.getIconLoadingStrategy()==IconLoadingStrategy.useSourceIcon || event==null /*|| !source.isInternal()*/) {
+			//source icon is used
+			toImageView(context, source.getIcon(), iv);
+		} else {
+			//event icon is used
+			toImageView(context, event.getCustomIcon(), iv);
+		}
+		
+	}
+
+COM:displays an image onto an ImageView widget based on whether the source or event icon should be used

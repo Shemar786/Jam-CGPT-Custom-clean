@@ -1,0 +1,14 @@
+TDAT:   public void restoreSessionState(Object memento) {
+    // no bookmark state?
+    if (memento == null) {
+      state = Collections.EMPTY_MAP;
+      return;
+    }
+    state = (Map) memento;
+    for (Iterator it = state.keySet().iterator(); it.hasNext();) {
+      String name = (String) it.next();
+      restoreAttributeState(name);
+    }
+  }
+
+COM:restores the state of a session from a memento object, sets the state to an empty map if the memento is null, and iterates through the map's keys to restore attribute states

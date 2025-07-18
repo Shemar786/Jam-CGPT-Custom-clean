@@ -1,0 +1,15 @@
+TDAT:     protected String getPrimaryName(String originalUsername) {
+        String username;
+        try {
+            username = originalUsername;
+            JamesUser user = (JamesUser) localusers.getUserByName(username);
+            if (user.getAliasing()) {
+                username = user.getAlias();
+            }
+        } catch (Exception e) {
+            username = originalUsername;
+        }
+        return username;
+    }
+
+COM:returns the primary username based on the given original username, checking for any aliases in the process

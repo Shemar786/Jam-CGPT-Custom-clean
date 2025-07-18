@@ -1,0 +1,10 @@
+TDAT:   public void removeService(String type) {
+    CService service = (CService) services.get(type);
+    if (service != null) {
+      service.unsetContext();
+      services.remove(type);
+      fireServiceChanged(new CServiceEvent(this, service, CServiceEvent.REMOVED));
+    }
+  }
+
+COM:removes a service of a specified type from a list of services and triggers a corresponding event

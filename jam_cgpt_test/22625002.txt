@@ -1,0 +1,17 @@
+TDAT: 	public void writeDataAsTextFile() {
+		if ( vocabTextFile != null ) {
+			try {
+				FileWriter file = new FileWriter( vocabTextFile );
+				String outStr = getDataAsText();
+				file.write( outStr, 0, outStr.length() );
+				file.flush();
+				file.close();
+			}
+			catch ( Exception e ) {
+				System.out.println( "Problem writing vocab text file: " + e.toString() );
+				e.printStackTrace();
+			}
+		}
+	}
+
+COM:writes data as a text file

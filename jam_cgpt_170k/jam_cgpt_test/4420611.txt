@@ -1,0 +1,21 @@
+TDAT:     public void persist() throws IOException {
+        L.d("persist KB now", this);
+        File storage = new File(pathToKb + File.separator + kbFilename);
+
+        // Remove old file if existing
+        if (storage.exists()) {
+            storage.delete();
+        }
+
+        // Create file
+        storage.createNewFile();
+
+        // Open a stream to write into that file
+        FileOutputStream fos = new FileOutputStream(storage);
+
+        // Store the local kb
+        this.writeToStream(fos);
+
+    }
+
+COM:deletes and recreates a file, opens a stream to write data into it, and stores the local knowledge base

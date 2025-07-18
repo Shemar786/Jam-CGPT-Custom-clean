@@ -1,0 +1,11 @@
+TDAT:     String getRelativePage() {
+        final String url = getRelativeURL();
+        if (HttpUnitUtils.isJavaScriptURL( url )) return url;
+        final int questionMarkIndex = url.indexOf("?");
+        if (questionMarkIndex >= 1 && questionMarkIndex < url.length() - 1) {
+            return url.substring(0, questionMarkIndex);
+        }
+        return url;
+    }
+
+COM:returns a relative URL of a web page without any query parameters

@@ -1,0 +1,13 @@
+TDAT: 	public Aspect string2aspect(final String s) throws ClassNotFoundException {
+		Aspect out = null;
+		final Class<?> c = Class.forName("org.romulus.test.Aspect");
+		final Aspect[] enumConstants = (Aspect[]) c.getEnumConstants();
+		for (int i = 0; i < enumConstants.length; i++) {
+			if (enumConstants[i].toString().equals(s)) {
+				out = enumConstants[i];
+			}
+		}
+		return out;
+	}
+
+COM:converts a string to an aspect enumeration value

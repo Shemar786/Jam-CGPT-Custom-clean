@@ -1,0 +1,14 @@
+TDAT: 	public void print (ResponseWriter writer, Object data) throws IOException {
+		GraceletBuilderContext ctx = GraceletBuilderContext.instance();
+		if (ctx != null && ctx.isBuilding()) {
+			ctx.getPrinter().print(data);
+		} else {
+			if (writer != null) {
+				writer.write(String.valueOf(data));
+			} else {
+				log.warn("Could not find contextual writer for: " + data);
+			}
+		}
+	}
+
+COM:prints data using a ResponseWriter object if available, otherwise logs a warning message

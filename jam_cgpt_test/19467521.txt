@@ -1,0 +1,17 @@
+TDAT: 	protected void addComposesEventsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComposedMachine_composesEvents_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComposedMachine_composesEvents_feature", "_UI_ComposedMachine_type"),
+				 CompositionmodelPackage.eINSTANCE.getComposedMachine_ComposesEvents(),
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to the item property descriptors list for a ComposedMachine's composed events feature

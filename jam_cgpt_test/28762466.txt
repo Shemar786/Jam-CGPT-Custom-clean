@@ -1,0 +1,14 @@
+TDAT:   private void countLink(Page link) {
+    if (link == null) {
+      return;
+    }
+    Integer currentCount = linkCount.get(link.getTitle());
+    if (currentCount == null) {
+      currentCount = Integer.valueOf(1);
+    } else {
+      currentCount = Integer.valueOf(currentCount.intValue() + 1);
+    }
+    linkCount.put(link.getTitle(), currentCount);
+  }
+
+COM:counts the occurrence of a page link

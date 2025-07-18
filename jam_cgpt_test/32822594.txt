@@ -1,0 +1,18 @@
+TDAT: 	public void testSaveAs() {
+		MusicEditorModel model = new MusicEditorModel();
+		File testFile = new File("test/test.ly");
+		model.openFile(testFile);
+		
+		File outputFile = new File("test/save_as_test.ly"); 
+		assertFalse(outputFile.exists());
+		model.saveAs(outputFile);
+		
+		String outputFileAsString = getFileAsString(outputFile);
+		String testFileAsString = getFileAsString(testFile);
+		assertEquals(outputFileAsString, testFileAsString);
+		
+		outputFile.delete();
+		assertFalse(outputFile.exists());
+	}
+
+COM:tests the MusicEditorModel's ability to save a file as a new file and compares the contents of the new file with the original file

@@ -1,0 +1,15 @@
+TDAT: 	public void createAll(final String className, final Technology tech) {
+		MainWizard.getIO().getOutput().println("Generating " + fileType + " file...");
+
+		List<String> classes = null;
+		if (className.equals("*")) {
+			// Gets all the classes contained in the package "domain" !!
+			classes = extractor.getClasses(pckgName + ".domain");
+		} else {
+			classes = new ArrayList<String>();
+			classes.add(className);
+		}
+		processPOJOs(classes, tech);
+	}
+
+COM:generates a specified file type for either all classes in a given package or a single specified class and processes them as Plain Old Java Objects using a specified technology

@@ -1,0 +1,9 @@
+TDAT:   public void show( String ident ) {
+    if( _j < 0 )
+      System.out.println( ident + ": " + getReal( ) + " - j"
+          + Math.abs( getImag( ) ) );
+    else
+      System.out.println( ident + ": " + getReal( ) + " + j" + getImag( ) );
+  } // show
+
+COM:displays the real and imaginary parts of a complex number with an identifier

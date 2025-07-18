@@ -1,0 +1,18 @@
+TDAT: 	private JButton getPreviousPageButton() {
+		if (previousPageButton == null) {
+			previousPageButton = new JButton();
+			previousPageButton.setEnabled(false);
+			previousPageButton.setPreferredSize(new Dimension(24, 24));
+			previousPageButton.setIcon(ImageManager
+					.getImageIconByShortName("action_back.gif"));
+
+			previousPageButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent event) {
+					showPrevious();
+				}
+			});
+		}
+		return previousPageButton;
+	}
+
+COM:creates and returns a JButton with a disabled state, a specific size, an icon, and an action listener to show the previous page

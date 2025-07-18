@@ -1,0 +1,10 @@
+TDAT: 	public void newSearchResult(GUID guid, Collection results) {
+		log.info("Search result received:");
+		for (Iterator it = results.iterator(); it.hasNext();) {
+			DataItem item = (DataItem) it.next();
+			SimpleDataItem myTripComItem = (SimpleDataItem) item;
+			 System.out.println(item.getData().toString());
+		}
+	}
+
+COM:logs and prints the search results received for a given GUID and Collection

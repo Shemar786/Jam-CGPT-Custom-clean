@@ -1,0 +1,17 @@
+TDAT: 	public void expire(Object o) {
+		log.debug(
+			"StandardPoolDataSource:expire expire a connection, remove from the pool");
+		if (o == null)
+			return;
+		try {
+			PooledConnection pooledCon = (PooledConnection) o;
+			pooledCon.close(); // call close() of PooledConnection
+			pooledCon.removeConnectionEventListener(this);
+			log.debug("StandardPoolDataSource:expire close the connection");
+		} catch (java.sql.SQLException e) {
+			log.error(
+				"StandardPoolDataSource:expire Error java.sql.SQLException in StandardPoolDataSource:expire");
+		}
+	}
+
+COM:closes a connection and removes it from the pool of connections, and logs any errors that may occur in the process

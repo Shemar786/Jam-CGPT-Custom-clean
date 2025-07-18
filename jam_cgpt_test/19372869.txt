@@ -1,0 +1,12 @@
+TDAT: 	public boolean hasIncludeRelationTo(String name) {
+		for (Iterator i = getChildren(); i.hasNext();) {
+			UseCaseModelBlock b = (UseCaseModelBlock)i.next();
+			if (b  instanceof IncludeRelation) {
+				IncludeRelation inc = (IncludeRelation)b;
+				if ((inc.getValue()).equalsIgnoreCase(name)) return true;
+			}
+		}		
+		return false;
+	}	
+
+COM:checks if a given name has an IncludeRelation with any of its children in a certain data structure

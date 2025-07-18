@@ -1,0 +1,14 @@
+TDAT:   public Binding getNewBinding () {
+    if( type >= 10 ) {
+      if( newBindings == null ) {
+        return null;
+      } else if( newBindings.length == 1 ) {
+        return newBindings[ 0 ];
+      } else {
+        throw new IllegalStateException( "This BetterNamingEvent has multiple new bindings.  Use getNewBindings() instead." );
+      }
+    }
+    return super.getNewBinding();
+  } // getNewBinding()
+
+COM:returns a new binding, and if the object has multiple new bindings, it throws an exception to suggest using another method to get the new bindings

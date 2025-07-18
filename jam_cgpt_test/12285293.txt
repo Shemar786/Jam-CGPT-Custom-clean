@@ -1,0 +1,12 @@
+TDAT: 	public void test(Aspect aspect, String url) throws Exception {
+		for (Generator g : this.getPlatform().getGenerator()) {
+			if (g.getFixture().getAspect().equals(aspect)
+					&& g.getFixture().getTool().equals(
+							this.getDefaults().getUnit())) {
+				// Test case matched
+				g.generate(FileUtil.class2URL(this.getApplication(), url));
+			}
+		}
+	}
+
+COM:tests if a specific aspect and tool match a test case and then generates a URL for the file associated with the test case

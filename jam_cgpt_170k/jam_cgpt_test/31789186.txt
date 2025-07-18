@@ -1,0 +1,10 @@
+TDAT:     protected boolean nodoc() {
+        SandProject sp=getBuildTrigger();
+        if(sp!=null) {
+            String nodocstr=sp.getAntProject().getProperty("nodoc");
+            if((nodocstr!=null)&&(nodocstr.trim().equalsIgnoreCase("true"))) {
+                return true; } }
+        return false;
+    }
+
+COM:checks if a property named "nodoc" is set to true in the Ant project associated with a given SandProject, returning true if so, and false otherwise

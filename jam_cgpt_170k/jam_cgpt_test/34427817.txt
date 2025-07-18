@@ -1,0 +1,13 @@
+TDAT:     protected void closeDialog(Color selectedColor) {
+        if (selectedColor != null) {
+            // save the selected color only when OK, preserves the old color
+            newColor = selectedColor;
+            if (blackWhite.isSelected())
+                newTextColor = Color.BLACK;
+            else
+                newTextColor = Color.WHITE;
+        }
+        setVisible(false);
+    }
+
+COM:closes a dialog box, saves the selected color, and sets the text color to either black or white depending on a checkbox selection

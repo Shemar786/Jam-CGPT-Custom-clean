@@ -1,0 +1,10 @@
+TDAT:   public boolean removeModel(int index, boolean forward) {
+    if (index < 0 || index >= this.models.size()) return false;
+    Model model = (Model)this.models.remove(index);
+    model.setHost(null);
+    notifyObservers(Project.MODEL_REMOVED, model, null, null, forward);
+    setDirty(true);
+    return true;
+  }
+
+COM:removes a model from a list of models at a specified index, sets the model's host to null, notifies observers of the removal, sets the project to dirty, and returns true if successful

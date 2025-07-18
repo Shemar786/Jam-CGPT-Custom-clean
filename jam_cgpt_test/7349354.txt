@@ -1,0 +1,13 @@
+TDAT:     public int getExtentSize() {
+        if (extentSize < 0) { // not yet calculated
+            extentSize = 0;
+            final Iterator<Concept<O, A>> it = ideal.iterator();
+            while (it.hasNext()) {
+                final Concept<O, A> cur = it.next();
+                extentSize += cur.getObjectContingentSize();
+            }
+        }
+        return extentSize;
+    }
+
+COM:calculates and returns the size of the extent of a concept

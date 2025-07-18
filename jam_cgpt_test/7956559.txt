@@ -1,0 +1,19 @@
+TDAT: 	private int checkCategory(final Set insts) {
+		int category = 0;
+		final Iterator iter = insts.iterator();
+		while (iter.hasNext()) {
+			final Instruction inst = (Instruction) iter.next();
+			if (category == 0) {
+				category = inst.category();
+
+			} else {
+				Assert.isTrue(inst.category() == category,
+						"Category mismatch in instruction set");
+			}
+		}
+
+		Assert.isTrue(category != 0, "No instructions in set");
+		return (category);
+	}
+
+COM:checks the category of a set of instructions and returns the category number, throwing an exception if there is a category mismatch or no instructions in the set

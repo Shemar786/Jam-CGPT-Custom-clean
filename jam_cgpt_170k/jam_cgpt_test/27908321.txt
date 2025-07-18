@@ -1,0 +1,17 @@
+TDAT: 	private void updateContextThingRecursive(Context context, Thing thing) {
+
+		logger.debug("Updating Context - Entering");
+		
+		// Resolve upper things first
+		Enumeration things = thing.things();
+		while(things.hasMoreElements())
+			updateContextThingRecursive(context,
+			    (Thing) things.nextElement());
+
+		// Now, resolve this thing's atoms
+		updateContextThing(context, thing);
+
+		logger.debug("Updated Context - Leaving");
+	}
+
+COM:recursively updates a context with a given thing and its subthings

@@ -1,0 +1,17 @@
+TDAT:     public void endRDF() throws RDFHandlerException {
+        Resource start = startNode;
+        while (start != null) {
+            Resource entryNode = (Resource) entryNodes.get(start);
+
+            SPARQLManifest manifest = new SPARQLManifest();
+
+            manifest.setName(names.get(entryNode).toString());
+            manifest.setManifestFile(manifestFiles.get(entryNode).toString());
+
+            this.manifests.add(manifest);
+
+            start = (Resource) linkedList.get(start);
+        }
+    }
+
+COM:adds SPARQLManifest objects to an ArrayList based on information retrieved from an entryNodes HashMap

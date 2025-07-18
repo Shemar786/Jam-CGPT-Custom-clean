@@ -1,0 +1,15 @@
+TDAT:         public String getName() {
+            if (st == null) {
+                st = new StringTokenizer(myData, "\\\r\n\t\f \"\'=/", true);
+            }
+            if (myName == null) {
+                myName = skipWhiteSpace();
+
+                if (myName.equals("/")) {
+                    myName = skipWhiteSpace();
+                }
+            }
+            return myName;
+        }
+
+COM:returns the name of a string token from a specified input data, after skipping over any white space characters

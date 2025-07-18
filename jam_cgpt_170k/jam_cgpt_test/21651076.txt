@@ -1,0 +1,14 @@
+TDAT: 	private void eraseBinary(APDU apdu, byte[] buffer) {
+		// check if access to this file is allowed
+		if (!fileAccessAllowed(ERASE_BINARY))
+			ISOException.throwIt(ISO7816.SW_SECURITY_STATUS_NOT_SATISFIED);
+		// use P1 and P2 as offset
+		short offset = Util.makeShort(buffer[ISO7816.OFFSET_P1], buffer[ISO7816.OFFSET_P2]);
+		// impossible to start erasing from offset large than size of file
+		short size = ((ElementaryFile) selectedFile).getCurrentSize();
+		if (offset > size)
+			ISOException.throwIt(ISO7816.SW_WRONG_P1P2);
+		((ElementaryFile) selectedFile).eraseData(offset);
+	}
+
+COM:erases data from a selected file at a specified offset, but only if access to the file is allowed and the offset is within the file size

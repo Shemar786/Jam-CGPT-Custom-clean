@@ -1,0 +1,12 @@
+TDAT:   private String buildPlainText(List<Unit> units) {
+    StringBuilder suggestions = new StringBuilder();
+
+    for (Unit u : units) {
+      String description = getUnitDescriptionEncoded(u);
+      suggestions.append(description).append("\t").append(u.getHsaIdentity()).append("\n");
+    }
+
+    return suggestions.toString();
+  }
+
+COM:builds a plain text string by looping through a List of Unit objects, extracting their description and identity, and appending them to the StringBuilder

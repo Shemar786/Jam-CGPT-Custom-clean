@@ -1,0 +1,10 @@
+TDAT: 	public void insertLogin(String host, String username, String password) {
+
+		Log.d(DT, "Saving PW: "+password);
+		
+		db.execSQL("INSERT OR REPLACE INTO " + LOGIN_TABLE + " (" + HOST + ", "
+				+ USERNAME + ", " + PASSWORD + ") VALUES ('" + host + "','"
+				+ username + "','" + password + "')");
+	}
+
+COM:inserts or replaces login information (host, username, password) in a database table and logs the password with debug information

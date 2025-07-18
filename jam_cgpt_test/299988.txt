@@ -1,0 +1,12 @@
+TDAT:     private void enableDISPOptions(boolean b){
+        hideSource.setEnabled(b);
+        blackCircle.setEnabled(b);
+        anim.setEnabled(b);
+        minVert.setEnabled(b);
+        fontSize.setEnabled(b);
+        scale.setEnabled(!b);
+        annot.setEnabled(b);
+        backColor.setEnabled(b);
+    }
+
+COM:enables or disables certain options based on the value of a boolean parameter

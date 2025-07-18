@@ -1,0 +1,17 @@
+TDAT:   protected void addMaxIdleTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBConnection_maxIdleTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBConnection_maxIdleTime_feature", "_UI_DBConnection_type"),
+				 DbPackage.Literals.DB_CONNECTION__MAX_IDLE_TIME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the maximum idle time of a database connection

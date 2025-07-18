@@ -1,0 +1,17 @@
+TDAT: 	protected void addDecisionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssociationInitialStateToDecision_decision_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationInitialStateToDecision_decision_feature", "_UI_AssociationInitialStateToDecision_type"),
+				 ProcessPackagePackage.Literals.ASSOCIATION_INITIAL_STATE_TO_DECISION__DECISION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a decision feature in an AssociationInitialStateToDecision object

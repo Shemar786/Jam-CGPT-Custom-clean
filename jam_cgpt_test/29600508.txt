@@ -1,0 +1,10 @@
+TDAT:          private void copyTo(ServerInformation backupMachine) {
+            backupMachine.setServer(getServer());
+            backupMachine.setPosition(getPosition());
+            backupMachine.setCpuCapacity(getCpuCapacity());
+            backupMachine.setMemoryCapacity(getMemoryCapacity());
+            backupMachine.setResidualCPU(getResidualCPU());
+            backupMachine.setResidualMemory(getResidualMemory());
+        }
+
+COM:copies the server, position, CPU capacity, memory capacity, residual CPU, and residual memory values from one ServerInformation object to another

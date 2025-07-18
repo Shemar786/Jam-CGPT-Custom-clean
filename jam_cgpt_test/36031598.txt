@@ -1,0 +1,10 @@
+TDAT:     public Command getPreviousListCommand() {
+        if (previousListCommand == null) {//GEN-END:|28-getter|0|28-preInit
+            // write pre-init user code here
+            previousListCommand = new Command("Previous Folder", Command.OK, 3);//GEN-LINE:|28-getter|1|28-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|28-getter|2|
+        return previousListCommand;
+    }
+
+COM:returns a Command object that allows the user to navigate to the previous folder or directory

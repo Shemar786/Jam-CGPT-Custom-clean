@@ -1,0 +1,15 @@
+TDAT:     public void jobHasFinished(boolean wasFailure) throws IOException {
+      // Kill the task if it is still running
+      synchronized(this){
+        if (getRunState() == TaskStatus.State.RUNNING ||
+            getRunState() == TaskStatus.State.UNASSIGNED ||
+            getRunState() == TaskStatus.State.COMMIT_PENDING) {
+          kill(wasFailure);
+        }
+      }
+      
+      // Cleanup on the finished task
+      cleanup(true);
+    }
+
+COM:checks if a job is still running and kills it if necessary, then performs cleanup after the job finishes

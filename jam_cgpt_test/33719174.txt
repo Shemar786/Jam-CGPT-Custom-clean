@@ -1,0 +1,14 @@
+TDAT:     public void testGetGroupAdminList() {
+        System.out.println("GetGroupAdminList");
+        
+        AutismGroup instance = new AutismGroup();
+        
+        TreeSet expResult = null;
+        TreeSet result = instance.GetGroupAdminList();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the GetGroupAdminList method in the AutismGroup class and prints a message to the console

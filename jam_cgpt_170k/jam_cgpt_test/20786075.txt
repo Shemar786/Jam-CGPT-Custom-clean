@@ -1,0 +1,13 @@
+TDAT:    public String toString() {
+
+      StringBuilder sb = new StringBuilder();
+      for (Key key : keys) {
+         sb.append(key.toString());
+         sb.append(Constant.PLUS);
+      }
+
+      return sb.length() > 0 ? sb.deleteCharAt(sb.length() - 1).toString() : sb
+            .toString();
+   }// toString
+
+COM:returns a string representation of the concatenation of the "toString" values of all the keys in a list separated by a "+" symbol

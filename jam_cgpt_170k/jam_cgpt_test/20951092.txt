@@ -1,0 +1,19 @@
+TDAT: 	private void linkSelectionFields(TableFieldsMapper fm) throws THSException {
+		for (SelectionField<FieldValue> selField: fields) selField.value.link(fm);
+
+		if (functions != null) {
+			for (SelectionField<IFunctionValue> fx: functions) {
+				fx.value.link(fm);
+			}
+		}
+		if (aggregates != null) {
+			for (SelectionField<Aggregate> aggr: aggregates) {
+				aggr.value.link(fm);
+			}
+		}
+		if (whereValues != null) {
+			for (Value value: whereValues) value.link(fm);
+		}
+	}
+
+COM:This private Java method links various fields, functions, aggregates, and values to a TableFieldsMapper object, and throws a THSException if necessary

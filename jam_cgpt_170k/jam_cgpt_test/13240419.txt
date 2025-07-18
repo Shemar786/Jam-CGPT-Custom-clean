@@ -1,0 +1,13 @@
+TDAT: 	protected void launch(String projectName, String mode) {
+		try { 
+			ILaunchConfiguration config = createConfiguration(projectName);
+			if (config != null) {
+				DebugUITools.saveAndBuildBeforeLaunch();
+				config.launch(mode, null);
+			}			
+		} catch (CoreException e) {
+			JDIDebugUIPlugin.errorDialog(LauncherMessages.JavaApplicationLaunchShortcut_1, e.getStatus()); //$NON-NLS-1$
+		}
+	}
+
+COM:launches a specified project in a specified mode, handling potential exceptions

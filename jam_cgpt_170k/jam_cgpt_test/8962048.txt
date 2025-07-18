@@ -1,0 +1,20 @@
+TDAT:     public void processMsg(MsgDescriptor msg) {
+        try 
+        {
+            //the msg is in emission
+            if(msg.isInEmission())
+            {
+                sendMsgInEmission(msg);
+            } 
+            //the msg is in reception
+            else if(msg.isInReception())
+            {
+                sendMsgInReception(msg);
+            }
+        }
+        catch (IOException e) {
+            LOG4J.error("Can't forward message " + msg + " : " + e);
+        }
+    }
+
+COM:processes a message, either sending it in emission or reception depending on its status, and catches any IOException that may occur while doing so

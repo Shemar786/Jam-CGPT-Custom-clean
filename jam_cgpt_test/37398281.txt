@@ -1,0 +1,9 @@
+TDAT:   public void testGetRawConfig() {
+    Config config = ConfigFactory.getConfig(RawConfigClass.class);
+    Iterator rawKeys = ((RawConfig) config).getRawData().keySet().iterator();
+    assertTrue(rawKeys.hasNext());
+    assertEquals("raw.config", rawKeys.next());
+    assertFalse(rawKeys.hasNext());
+  }
+
+COM:tests the ability to retrieve raw configuration data from a specified class using ConfigFactory, and checks that the expected key is present in the returned set of data

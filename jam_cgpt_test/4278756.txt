@@ -1,0 +1,13 @@
+TDAT:     private void autoRegisterType(String type, String extension) {
+        if (extension == null) {
+            return;
+        }
+
+        try {
+            getFactory().getType(type);
+        } catch (Exception e) {
+            getFactory().registerType(new RepoType(type, "Automatically registered type", extension));
+        }
+    }
+
+COM:automatically registers a type with a given extension if it is not already registered

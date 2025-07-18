@@ -1,0 +1,13 @@
+TDAT:     public void setStampFormat(String stampFormat) {
+        if (!this.stampFormat.toPattern().equals(stampFormat)) {
+            String old = this.stampFormat.toPattern();
+            try {
+                this.stampFormat = new SimpleDateFormat(stampFormat);
+                changeSupport.firePropertyChange(STAMP_FORMAT, old, stampFormat);
+            } catch (IllegalArgumentException e) {
+                // Ignore
+            }
+        }
+    }
+
+COM:sets the format of a date/time stamp and fires a property change event if the format is changed

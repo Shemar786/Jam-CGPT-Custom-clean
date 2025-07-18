@@ -1,0 +1,9 @@
+TDAT: 	protected void applicationActivity(AuditTypeCodes message) throws JAXBException {
+		for (IMessageTransmitter messenger: messengers) {
+			AuditObjectFactory factory = new AuditObjectFactory(messenger);
+			factory.setEventIdType(new EventId(AuditEventIds.ApplicationActivity, message, EventActionCode.Execute, SuccessCode.Success));
+			formatAndLog(messenger, factory, false, ActiveParticipantIds.Application);
+		}
+	}
+
+COM:logs application activity using different messengers

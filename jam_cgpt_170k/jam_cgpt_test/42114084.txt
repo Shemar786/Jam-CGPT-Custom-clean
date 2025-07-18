@@ -1,0 +1,15 @@
+TDAT: 	public boolean increaseHealth() {
+		if(super.increaseHealth()) {
+		
+			if(Game.getGame().getSettings().isSFX()) {
+				Sound.getInstance().getAudioTrack("sounds/harp.wav").setWorldPosition(this.getWorldTranslation());
+				Sound.getInstance().getAudioTrack("sounds/harp.wav").play();
+			}
+			
+			updateHealthText();
+			return true;
+		}
+		return false;
+	}
+
+COM:increases the health of a player object, plays a sound effect, updates the health text, and returns true if successful, otherwise false

@@ -1,0 +1,10 @@
+TDAT:     private void testWriteLogFileAfterRotation() throws Exception  {
+        LogViewer lv = new LogViewer();
+        String[] actualLog = lv.getLogEntries(lv.RMSLOG);
+        RecordStore rs = RecordStore.openRecordStore(RMSAppender.LOGDBNAME, true);
+        assertTrue(rs.getNumRecords()!=0);
+        assertTrue(rs.getNumRecords() == actualLog.length);
+        
+    }
+
+COM:tests for successful writing of log data to a record store after log rotation

@@ -1,0 +1,17 @@
+TDAT: 	public void handleMessageFromServer(Object msg) {
+		
+		/*** Message from ServerManager ***/
+		if (msg instanceof Message) {
+			Message message = (Message) msg;
+			System.out.println("ClientCommunication receive a msg from ServerManager: " + message);
+			setChanged();
+			notifyObservers(msg);
+			clearChanged();
+			return;
+		}
+
+		/*** Message from ServerCommunication ***/
+		System.out.println("ClientCommunication receive a msg from ServerCommunication: " + msg);
+	}
+
+COM:handles incoming messages from either the ServerManager or ServerCommunication and prints them to the console while notifying any observing objects of the received message

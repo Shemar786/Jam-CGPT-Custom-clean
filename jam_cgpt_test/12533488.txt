@@ -1,0 +1,17 @@
+TDAT: 	public void addAction(ScheduledAction action){
+		if (action == null)
+			throw new IllegalArgumentException("The supplied action cannot be null");
+		
+		if (myActions.contains(action))
+			throw new IllegalArgumentException("The supplied action is already part of this schedule.");
+			
+		double d = action.getDuration();
+		if (d + myDurationTotal > myScheduleLength)
+			throw new IllegalArgumentException("The supplied scheduled action has a duration that overflows the time available on the schedule");
+		
+		myActions.add(action);
+		myDurationTotal = myDurationTotal + d;
+		
+	}
+
+COM:adds a ScheduledAction to a schedule as long as it is not null, not already in the schedule, and its duration does not exceed the available time on the schedule

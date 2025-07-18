@@ -1,0 +1,7 @@
+TDAT:     public void testMojoLookup() throws Exception {
+        File pluginXml = new File(getBasedir(), "src/test/resources/pom-modifier-plugin-config.xml");
+        PomModifierMojo mojo = (PomModifierMojo) lookupMojo("update", pluginXml);
+        assertNotNull(mojo);
+    }
+
+COM:tests the lookup of a specific plugin configuration file and asserts that the correct Mojo has been found

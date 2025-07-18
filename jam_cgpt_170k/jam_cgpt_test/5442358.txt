@@ -1,0 +1,7 @@
+TDAT:     public String toHTMLString() {
+        SimpleDateFormat formatter = new SimpleDateFormat("'On' dd.MM.yyyy 'at' HH:mm");
+
+        return formatter.format(myCreationDate) + " <a href='mailto:" + myEmail + "'>" + myName + "</a> wrote:<br>" + myComment;
+    }
+
+COM:returns a String representing a comment written by a person, with their name and email as a link, their creation date and time, and formatted for display in HTML

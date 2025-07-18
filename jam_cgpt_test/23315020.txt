@@ -1,0 +1,11 @@
+TDAT: 	public String toConfString(String componentName) {
+		if (option.getName().equalsIgnoreCase("positiveExamples")) {
+			return option.getValueFormatting(value);
+		} else if (option.getName().equalsIgnoreCase("negativeExamples")) {
+			return option.getValueFormatting(value);
+		} 
+		return componentName.toString() + "." + option.getName() + " = "
+					+ option.getValueFormatting(value);
+	}
+
+COM:returns a formatted string representing a configuration option, using either the option's value formatting or the component name and option details if the option is not for positive or negative examples

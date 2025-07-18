@@ -1,0 +1,14 @@
+TDAT: 	private MyIntegerField getJTFAnalisis() {
+		if (jTFAnalisis == null) {
+			jTFAnalisis = new MyIntegerField();
+			jTFAnalisis.addUpdateIntegerListener(new UpdateIntegerListener(){
+				public void valueUpdated(UpdateIntegerEvent e) {
+					ch.fijaHorasAnalisis(jCalendar.getStringDate(), e.getValue());
+					actualizaHorasTotales(jCalendar.getStringDate());
+				}				
+			});
+		}
+		return jTFAnalisis;
+	}
+
+COM:returns a MyIntegerField object and creates a new instance if it does not exist, and adds an update listener for integer values

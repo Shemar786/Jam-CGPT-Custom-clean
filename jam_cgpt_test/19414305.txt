@@ -1,0 +1,18 @@
+TDAT:   public Manifest loadManifestFromHistory() throws LocationException, ManifestException {
+
+    String contextManifest = workingContext.getContextManifestPreference();
+
+    String manifestId = Preferences.userRoot().get(contextManifest, null);
+    if (manifestId != null) {
+
+      ManifestFactory manifestFactory = new ManifestFactory();
+      ManifestLoader loader = new ManifestLoader(workingContext);
+      Manifest manifest = manifestFactory.create(workingContext, loader.load(manifestId));
+
+      return manifest;
+    }
+
+    return null;
+  }
+
+COM:loads a manifest from the history of the working context and returns it

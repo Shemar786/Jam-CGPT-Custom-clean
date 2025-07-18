@@ -1,0 +1,15 @@
+TDAT: 	private JPanel getJContentPane() {
+		if (jContentPane == null) {
+			current = new JLabel();
+			current.setText("lade...");
+			current.setSize(new Dimension(453, 16));
+			current.setLocation(new Point(29, 13));
+			jContentPane = new JPanel();
+			jContentPane.setLayout(null);
+			jContentPane.add(getProgress(), null);
+			jContentPane.add(current, null);
+		}
+		return jContentPane;
+	}
+
+COM:returns a JPanel object with a label and a progress bar

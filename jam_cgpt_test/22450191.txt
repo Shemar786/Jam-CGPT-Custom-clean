@@ -1,0 +1,9 @@
+TDAT:     public void fillEdgeMap(EdgeMap<Edge, Double> mapToFill, double[] edgeWeights) {
+        mapToFill.init(this.g);
+        for (int i = 0; i < this.globEdges.getNumEdges(); i++) {
+            Edge e = this.globEdges.getEdge(i);
+            mapToFill.put(e, new Double(edgeWeights[i]));
+        }
+    }
+
+COM:fills an EdgeMap with double values by iterating through a list of Edges and assigning each Edge a weight from a corresponding array of weights

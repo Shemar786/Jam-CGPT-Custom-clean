@@ -1,0 +1,14 @@
+TDAT:     public String newGridbean( HttpServletRequest request ) throws Exception{
+
+        //deskryptor jednoznacznie definiujacy typ gridbeana
+        String descriptor = request.getParameter("descriptor");
+        Long id = mappings.getNextID();
+
+        WebJobContainer wjc = new WebJobContainer(new WebGridBean( descriptor ), null);
+
+        mappings.getIdGridbeanHashMap().put( new GridbeanId( id ), wjc );
+
+        return id.toString();
+    }
+
+COM:creates a new grid bean and returns its unique identifier as a string

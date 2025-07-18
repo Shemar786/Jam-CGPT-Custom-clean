@@ -1,0 +1,13 @@
+TDAT: 	private void setForbiddenCells() {
+		// Scan the matrix
+		for(int i = 0; i < 9; i++) {
+			for(int j = 0; j < 9; j++) {
+				// If it's forbidden in the default, set it to the struct too
+				if(_defaultStructure[i][j] == FORBIDDEN) {
+					_struct[i][j] = _defaultStructure[i][j];
+				}
+			}
+		}
+	}
+
+COM:sets the forbidden cells in a matrix

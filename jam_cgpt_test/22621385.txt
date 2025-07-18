@@ -1,0 +1,11 @@
+TDAT: 	public List getUserDisplayNames() {
+		List users = getUsers();
+		List names = new ArrayList();
+		for (Iterator i = users.iterator(); i.hasNext(); ) {
+			User user = (User) i.next();
+			names.add("<b>" + user.getUsername() + "</b> (" + user.getFullName() + ")");
+		}
+		return names;
+	}
+
+COM:returns a list of user display names that are bolded and include the user's username and full name

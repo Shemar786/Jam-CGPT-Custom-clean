@@ -1,0 +1,15 @@
+TDAT: 	protected void setState(int newState) {
+		
+		if( newState != state ){
+			
+			setPreviousState(state);
+			state = newState;
+			
+			if( log.isDebugEnabled() && previousState != UNINITIALIZED_STATE ){
+				String className = this.getClass().getName(); //get the runtime class name
+				log.debug("[" + className + "] state change to [" + getStateAsString() + "]");
+			}
+		}
+	}
+
+COM:sets the state of an object and logs the state change if debugging is enabled

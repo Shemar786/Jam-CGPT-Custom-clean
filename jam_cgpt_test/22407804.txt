@@ -1,0 +1,19 @@
+TDAT:     public void setColumnInLastError(final int col) {
+        final int size = size() - 1;
+
+        for (int i = size; i > 0; i--) {
+            final LineView line = get(i);
+
+            if (line.hasError()) {
+                if (line.getErrorCol() == -1) {
+                    line.setErrorCol(col);
+                    setChanged();
+                    notifyObservers(LAST_ERROR_LINE_CHANGED);
+                }
+
+                return;
+            }
+        }
+    }
+
+COM:sets the column number of the last error in a given LineView object and notifies any observers of this change

@@ -1,0 +1,17 @@
+TDAT: 	protected void addParametersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EventState_parameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EventState_parameters_feature", "_UI_EventState_type"),
+				 ExtcorePackage.Literals.EVENT_STATE__PARAMETERS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the parameters of an event state

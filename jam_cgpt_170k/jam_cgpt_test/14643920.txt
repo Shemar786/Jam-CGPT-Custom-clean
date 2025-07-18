@@ -1,0 +1,15 @@
+TDAT: 	public CategoryDAO getCategory(String name) {
+
+		if (name.indexOf(CATEGORY_NAME_DELIMITER) == -1)
+			return (CategoryDAO) fMainCategories.get(name);
+
+		String displayName = name.substring(0, name.indexOf(CATEGORY_NAME_DELIMITER));
+		name = name.substring(name.indexOf(CATEGORY_NAME_DELIMITER) + 1);
+
+		CategoryDAO category = (CategoryDAO) fMainCategories.get(displayName);
+		category = getSubCategory(category, name);
+
+		return category;
+	}
+
+COM:returns a CategoryDAO object based on a given name string, which may include a delimiter to indicate a subcategory

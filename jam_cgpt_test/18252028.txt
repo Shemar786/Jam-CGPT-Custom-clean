@@ -1,0 +1,22 @@
+TDAT: 	private void setPLAF(String plaf) {
+		try {
+			UIManager.setLookAndFeel(plaf);
+			SwingUtilities.updateComponentTreeUI(this);
+			try {
+				File file = new File(PLAFSETTING);
+				file.delete();
+			} catch (Exception e) {
+			}
+			try {
+				File plafSetting = new File(PLAFSETTING);
+				PrintWriter out = new PrintWriter(plafSetting);
+				out.println(plaf);
+				out.close();
+			} catch (Exception x) {
+			}
+		} catch (Exception e) {
+			UIUtil.showException(this, "Error", e);
+		}
+	}
+
+COM:sets the look and feel of the user interface, updates the UI components, saves the current look and feel setting to a file, and displays an error message if an exception is thrown

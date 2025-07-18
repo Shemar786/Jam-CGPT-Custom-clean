@@ -1,0 +1,14 @@
+TDAT:    public Constant equatesWithConstant(String fldname) {
+      if (lhs.isFieldName() &&
+          lhs.asFieldName().equals(fldname) &&
+          rhs.isConstant())
+         return rhs.asConstant();
+      else if (rhs.isFieldName() &&
+               rhs.asFieldName().equals(fldname) &&
+               lhs.isConstant())
+         return lhs.asConstant();
+      else
+         return null;
+   }
+
+COM:checks if a field name in an equation matches a given field name and returns the corresponding constant value if it does, or null if no match is found

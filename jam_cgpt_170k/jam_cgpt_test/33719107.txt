@@ -1,0 +1,13 @@
+TDAT:     public void testSetEmail() {
+        System.out.println("setEmail");
+        
+        String email = "";
+        Email_DBImpl instance = new Email_DBImpl();
+        
+        instance.setEmail(email);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a test case for the setEmail method in the Email_DBImpl class that sets an empty email and generates a fail message

@@ -1,0 +1,12 @@
+TDAT: 	public void deleteObligation(final Obligation obligation, int basicBlockId) throws ObligationAcquiredOrReleasedInLoopException {
+		Map<ObligationSet, State> updatedStateMap = new HashMap<ObligationSet, State>();
+		for (Iterator<State> i = stateIterator(); i.hasNext(); ) {
+			State state = i.next();
+			checkCircularity(state, obligation, basicBlockId);
+			state.getObligationSet().remove(obligation);
+			updatedStateMap.put(state.getObligationSet(), state);
+		}
+		replaceMap(updatedStateMap);
+	}
+
+COM:deletes an Obligation object within a loop, checks for circularity, removes the object from each State object, updates a HashMap of updated State objects, and replaces the original HashMap with the updated one

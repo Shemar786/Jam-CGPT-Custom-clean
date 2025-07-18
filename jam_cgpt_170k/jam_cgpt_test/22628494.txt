@@ -1,0 +1,9 @@
+TDAT: 		private Component getValueEditor( String name, String value ) {
+			JTextField text = new JTextField();
+			int fontSize = JDataEditor.swingTextSizeOf(
+				(String) UserStateDirectoryBase.getUserSerializedObject( "state/textSize.dat" ) );
+			text.setFont( new Font( "Arial", Font.PLAIN, fontSize ) );
+			return text;
+		}
+
+COM:returns a text field component with a font size based on user preferences

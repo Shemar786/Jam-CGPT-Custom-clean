@@ -1,0 +1,18 @@
+TDAT: 	public RelationshipModel getRelationshipModel(IType source, IType target, String name) {
+		Map<IType, Map<String, RelationshipModel>> targetMap =
+			_models.get(source);
+		if (targetMap == null) {
+			return null;
+		}
+		
+		// find the class map
+		Map<String, RelationshipModel> classMap = targetMap.get(target);
+		if (classMap == null) {
+			return null;
+		}
+		
+		// find the model
+		return classMap.get(name);
+	}
+
+COM:retrieves a RelationshipModel from a Map of RelationshipModels keyed by two IType objects and a String

@@ -1,0 +1,11 @@
+TDAT:     public boolean filterOut(String name, int index) {
+        if (filterPool.isEmpty()) return true;
+        if (!filterPool.containsKey(name)) return false;
+        List<Period> list = filterPool.get(name);
+        for (Period p : list) {
+            if (p.isValid(index) == 0) return true;
+        }
+        return false;
+    }
+
+COM:filters out invalid periods based on a given name and index

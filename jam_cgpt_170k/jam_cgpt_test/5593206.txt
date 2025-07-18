@@ -1,0 +1,11 @@
+TDAT:   public void setTransformActionDefaultStat() {
+    try {
+      wpMask mask = new wpMask(TRANSFORM_ACTIONS, transformActionIndices,
+                               transformActionDefaultStat);
+      wpMaskEvent event = new wpMaskEvent(this, mask);
+      maskHandler.fireMaskChanged(event);
+    }
+    catch (wpMaskException me) {}
+  }
+
+COM:sets the default statistics for a transform action and fires a mask changed event

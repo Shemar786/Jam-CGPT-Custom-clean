@@ -1,0 +1,9 @@
+TDAT:     protected String getSandHome(File baseDir) {
+        String sandhome=baseDir.toString();
+        sandhome=sandhome.substring(0,sandhome.lastIndexOf(File.separator));
+        sandhome=sandhome.substring(0,sandhome.lastIndexOf(File.separator));
+        sandhome=sandhome.substring(0,sandhome.lastIndexOf(File.separator));
+        return sandhome;
+    }
+
+COM:returns the parent directory of a given base directory, up to the third level, as a string

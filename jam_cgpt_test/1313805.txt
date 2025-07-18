@@ -1,0 +1,13 @@
+TDAT:     public ModeController load (URL file) throws FileNotFoundException, IOException, XMLParseException, URISyntaxException {
+	    final ModeController newModeController = getMode().createModeController();
+	    final MapAdapter model = newModel(newModeController);
+		model.load(file);
+		newMap(model);
+//        EventQueue.invokeLater(new Runnable(){
+//      	   public void run() {
+      		 model.setSaved(true);
+//      	   }});
+        return newModeController;
+    }
+
+COM:loads a file via a URL, creates a new mode controller and map adapter, loads the file into the model, sets the model to saved, and returns the new mode controller

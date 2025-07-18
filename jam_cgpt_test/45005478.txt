@@ -1,0 +1,12 @@
+TDAT:     public void updateUnitData(StringTokenizer st) {
+        try {
+            CUnit currUnit = getUnit(TokenReader.readInt(st));
+            currUnit.setData(TokenReader.readString(st));
+            sortHangar();// properties have changes. sort. YARR!
+        } catch (Exception e) {
+            CampaignData.mwlog.errLog(e);
+            return;
+        }
+    }
+
+COM:updates the data for a specific unit object using a StringTokenizer and sorts the hangar

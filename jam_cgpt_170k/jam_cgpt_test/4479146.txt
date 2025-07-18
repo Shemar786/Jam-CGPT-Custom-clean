@@ -1,0 +1,7 @@
+TDAT: 	public void testSetType() {
+		pawn.setType("Green");									//sets the type of pawn to "Green"
+		assertTrue(pawn.getType().equals("Green"));				//checks whether the type of pawn has been changed or not
+		pawn.setType("  Pawn   ");								//sets back the type of the pawn 
+	}
+
+COM:tests the setType() functionality of a pawn object by setting its type to "Green", checking if it has been changed, and then setting it back to its original type

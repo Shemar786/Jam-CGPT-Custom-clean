@@ -1,0 +1,9 @@
+TDAT:   public String getCube() {
+    // remove enclosing brackets, if there
+    if (cube.charAt(0) == '[' && cube.charAt(cube.length() - 1) == ']')
+      return cube.substring(1, cube.length() - 1);
+    else
+      return cube;
+  }
+
+COM:returns a string representing a cube with enclosing brackets removed if present

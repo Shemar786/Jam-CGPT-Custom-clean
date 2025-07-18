@@ -1,0 +1,17 @@
+TDAT: 	private void calculateVictoryBonus() {
+		
+		float[] victories = new float[numberOfPositions];
+		
+		for (int i = 0; i < numberOfPositions; i++) {
+			int psbNumber = numberOfPositions - (i + 1);
+			victories[i] = player.getVictories(i + 1) * (player.getBSB() + (psbNumber * player.getPSB()));
+		}
+		
+		victoryBonus = 0.000f;
+		for (int i = 0; i < victories.length; i++) {
+			victoryBonus += victories[i];
+		}
+
+	}
+
+COM:calculates the victory bonus for a player based on their number of victories and their battle standard bearer (BSB) and battle standard points (PSB)

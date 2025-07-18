@@ -1,0 +1,19 @@
+TDAT: 	public void testRemoveContact() {
+	    int initialSize = book.size();
+	    assertFalse(book.removeContact("no-such@contact.com"));
+	    
+	    assertTrue(book.removeContact("jimmy@snooker.com"));
+	    assertTrue(book.size() == initialSize - 1);
+	    
+	    assertTrue(book.removeContact("davies@snooker.com"));
+	    assertTrue(book.size() == initialSize - 2);
+	    
+	    assertTrue(book.removeContact("ronnie@rocket.com"));
+	    assertTrue(book.size() == initialSize - 3);
+	    
+	    // Remove from empty address book
+	    assertFalse(book.removeContact("ronnie@rocket.com"));
+	    assertTrue(book.size() == initialSize - 3);
+	}
+
+COM:tests removing contacts from an address book, checking that they are successfully removed and updating the size of the book appropriately

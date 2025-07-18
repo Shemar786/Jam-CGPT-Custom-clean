@@ -1,0 +1,13 @@
+TDAT:     public void showFull(){
+    	if(game == null)
+    		game = new SlixGame();
+    	try{ 
+            app = new AppGameContainer(game);
+            app.setDisplayMode( FULL_WIDTH, FULL_HEIGHT, true );
+            app.start();
+        } catch ( SlickException e ) { 
+            System.err.println(e);
+        } 
+    }
+
+COM:creates and displays a new Slick2D game container with full screen resolution

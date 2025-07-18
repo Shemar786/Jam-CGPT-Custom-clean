@@ -1,0 +1,13 @@
+TDAT: 	public boolean isGeoRSSEntryRead(int entryID) {
+		boolean ret = false;
+		Cursor c = db.query(ENTRIES_TABLE, new String[] { ENTRIES_READ }, ID
+				+ "=" + entryID, null, null, null, null);
+		if (c.moveToFirst()) {
+			ret = c.getInt(0) == TRUE;
+		}
+
+		c.close();
+		return ret;
+	}
+
+COM:checks if a GeoRSS entry has been read based on its entryID

@@ -1,0 +1,10 @@
+TDAT:     protected int getNewStartIndex(int index) {
+        int idx = 0;
+        if (index > (this.getRowsPerPage() / 2)) {
+            idx = index - this.getRowsPerPage() / 2;
+        }
+        //logger.debug("getNewStartIndex: "+String.valueOf(idx));
+        return idx;
+    }
+
+COM:returns a new starting index value based on the current index and the number of rows per page, with a debug logging statement commented out

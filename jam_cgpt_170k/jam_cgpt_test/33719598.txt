@@ -1,0 +1,14 @@
+TDAT:     public void testGetDob() {
+        System.out.println("getDob");
+        
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        String expResult = "";
+        String result = instance.getDob();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the "getDob" method from the SystemClient_DBImpl class

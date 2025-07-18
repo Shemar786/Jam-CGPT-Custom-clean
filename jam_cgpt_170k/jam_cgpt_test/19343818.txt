@@ -1,0 +1,14 @@
+TDAT: 	public void init_200_LayoutScreen() {
+		
+		pnl.addLine("Layout", layoutSelection);
+		pnl.addComponent(1, 5, FIELD_TABLE_HEIGHT, BasePanel.GAP2,
+				BasePanel.FULL, BasePanel.FULL,
+				attributeTbl);
+
+		pnl.addLine("", null,  addBtn);
+		
+		this.addMainComponent(pnl);
+		this.setVisible(true);
+	}
+
+COM:initializes a layout screen by adding components to a panel and setting it as the main component

@@ -1,0 +1,18 @@
+TDAT:     public String apply(Vector args) throws CommandLineFormatException {
+        
+        String value = null;
+        
+        if (args.size() > 0) {
+            
+            int n  = this.rules.size();
+            for (int i = 0; i < n; i++) {
+                ParserRule rule = (ParserRule) this.rules.elementAt(i);
+                value = rule.apply(args);
+            }
+
+        }
+        
+        return value;
+    }
+
+COM:takes a Vector of arguments, applies a set of ParserRules to them, and returns a String value

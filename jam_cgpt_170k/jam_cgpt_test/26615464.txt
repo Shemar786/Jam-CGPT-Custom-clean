@@ -1,0 +1,11 @@
+TDAT:     public void addMenu(String menuid,JMenu menu) {
+        log.debug("Adding menu [" + menuid + "]");
+        menus.put(menuid,menu);
+
+        if (getComponentCount() > 2 && menuid != MENU_HELP)
+            this.add(menu,this.getComponentCount() - 2);
+        else
+            add(menu);
+    }
+
+COM:adds a JMenu object to a HashMap and positions it within a GUI window, while also logging the action

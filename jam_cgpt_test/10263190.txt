@@ -1,0 +1,13 @@
+TDAT:     private void remove(int index) {
+        assert(!isLeaf());
+        totalCount -= children[index].totalCount;
+        for (int i = index + 1; i < count; ++i) {
+            entries[i - 1] = entries[i];
+            children[i - 1] = children[i];
+        }
+        entries[count - 1] = null;
+        children[count - 1] = null;
+        --count;
+    }
+
+COM:removes an element at a specified index in a B-tree node and updates the count and total count values accordingly

@@ -1,0 +1,12 @@
+TDAT:     public void setCollapsedHeader(PreviewHeader panel) {
+        if(! (panel instanceof JComponent))
+            throw new IllegalArgumentException ("panel should extend a JComponent");
+        if(headerComponent != null)
+            remove(headerComponent);
+        headerComponent = (JComponent) panel;
+        headerComponent.setVisible(false);
+        header = panel;
+        add(headerComponent);
+    }
+
+COM:sets a collapsed header by adding a specified panel and hiding it, and throws an exception if the panel does not extend from JComponent

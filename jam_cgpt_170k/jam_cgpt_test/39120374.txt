@@ -1,0 +1,14 @@
+TDAT:     private String composeOneStep(String input) {
+	int len = countChars(input, 0, 2);
+        String firstTwoCharacters = input.substring(0, len);
+        String result = Normalizer.compose(firstTwoCharacters, false, 0);
+
+        if (result.equals(firstTwoCharacters))
+            return null;
+        else {
+            String remainder = input.substring(len);
+            return result + remainder;
+        }
+    }
+
+COM:composes the first two characters of a given input string, checks if the composed characters are the same as the original, and returns the new composed string with the remainder of the input

@@ -1,0 +1,12 @@
+TDAT:     public void addContext(String path, SAXContext context) {
+        List list = null;
+        if (!contexts.containsKey(path)) {
+            list = new ArrayList();
+            contexts.put(path, list);
+        } else {
+            list = (List)contexts.get(path);
+        }
+        list.add(context);
+    }
+
+COM:adds a SAXContext object to a list associated with a given path

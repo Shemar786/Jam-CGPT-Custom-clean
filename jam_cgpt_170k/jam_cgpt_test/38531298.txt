@@ -1,0 +1,11 @@
+TDAT: //    public void testGetConformanceLevel() throws Exception {
+//        System.out.println("testGetConformanceLevel");
+//        
+//        // Add your test code below by replacing the default call to fail.
+//        String conformLevel = this.getProp("conformanceLevel");
+//        String level = this.dbService.getConformanceLevel();
+//        assertEquals("Conformance level returned unexpected result", conformLevel, level);
+//        
+//    }
+
+COM:tests the conformance level by comparing the expected and actual results obtained from calling the "getConformanceLevel" method of a database service

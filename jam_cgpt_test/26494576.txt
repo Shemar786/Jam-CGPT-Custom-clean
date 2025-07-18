@@ -1,0 +1,17 @@
+TDAT:   public String input(String msg) throws IOException {
+    prompt();
+    
+    if(msg != null && msg.length() > 0){
+      print(msg + " ");
+    }
+    String input = readLine();
+    if(input != null){
+      _session.buffer(input);
+    }
+    if(_emptyLineAfterInput){
+      println();
+    }
+    return input;
+  }
+
+COM:takes a string input message, displays a prompt, reads user input, buffers it, and returns it as a string

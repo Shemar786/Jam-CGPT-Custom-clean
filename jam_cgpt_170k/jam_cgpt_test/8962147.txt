@@ -1,0 +1,17 @@
+TDAT: 	private String getPathRes(){
+		Properties sys = System.getProperties();
+		String os = sys.getProperty("os.name");
+		String refPath = "";
+		if(os.endsWith("NT") || os.endsWith("2000") || os.endsWith("XP"))
+		{
+			refPath = Config.getString("referencePathWindows");
+		}
+		else
+		{
+			refPath = Config.getString("referencePathLinux");
+		}
+		String pathres = refPath+"res/";
+		return pathres;
+	}
+
+COM:returns the path to the "res" directory based on the operating system

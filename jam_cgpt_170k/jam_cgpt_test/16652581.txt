@@ -1,0 +1,10 @@
+TDAT:   public void printNoHtml(String text) throws RegainException {
+    if (text != null) {
+      text = RegainToolkit.replace(text, "<", "&lt;");
+      text = RegainToolkit.replace(text, ">", "&gt;");
+    }
+    
+    print(text);
+  }
+
+COM:takes in a string of text, replaces HTML entities with their corresponding character codes, and prints the result

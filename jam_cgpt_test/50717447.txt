@@ -1,0 +1,22 @@
+TDAT:    public Graphics2D getDrawingArea() {
+
+      try {
+         synchronized (lock) {
+            // wait until there is something to read
+            while (bi == null)
+               lock.wait();
+
+            // we have the lock and state we're seeking
+            Graphics2D g2;
+
+            g2 = bi.createGraphics();
+            return g2;
+         }
+      }
+      catch (InterruptedException ie) {
+         System.out.println("getDrawingarea : " + ie.getMessage());
+         return null;
+      }
+   }
+
+COM:returns a Graphics2D object used for drawing on a BufferedImage, and waits for the BufferedImage to become available if it is currently null

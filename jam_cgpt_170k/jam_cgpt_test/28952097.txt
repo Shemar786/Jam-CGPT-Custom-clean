@@ -1,0 +1,13 @@
+TDAT: 	public void addEnumMap(EnumMap enumMap) {
+		if (enumMap != null) {
+			Class enumClass = enumMap.getEnumClass();
+			if (enumClass != null) {
+				if (enumMaps == null) enumMaps = new Hashtable<Class, EnumMap>();
+				enumMaps.put(enumClass, enumMap);
+			} else {
+				LOG.debug("Adding enum map with no enum class to connection: " + name);
+			}
+		}
+	}
+
+COM:adds an EnumMap to the Hashtable, with the Enum class as the key

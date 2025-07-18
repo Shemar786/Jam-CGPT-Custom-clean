@@ -1,0 +1,24 @@
+TDAT:     public Color getForegroundColor() {
+        final Color color;
+        final int index = foreground - 30;
+
+        if ((index >= 0) && (index < COLORS.length)) {
+            switch (attribute) {
+            case ATTRIBUTE_BRIGHT:
+                color = BRIGHTENED_COLOR[index];
+                break;
+            case ATTRIBUTE_DIM:
+                color = DIMMED_COLOR[index];
+                break;
+            default:
+                color = COLORS[index];
+                break;
+            }
+        } else {
+            color = Color.black;
+        }
+
+        return color;
+    }
+
+COM:returns the appropriate foreground color based on the set attribute and index value

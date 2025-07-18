@@ -1,0 +1,16 @@
+TDAT:     protected void finish() throws VetoException {
+        Url urlBuildfile = pageSelectBuildfile.getBuildfile();
+
+        if (urlBuildfile == null) {
+            return;
+        }
+
+        try {
+            createAntNode(project);
+        } catch (Exception e) {
+            LOGGER.error("Error creating antnode wizard", e);
+            throw new VetoException(e.getMessage());
+        }
+    }
+
+COM:finishes the operation by creating an Ant node for the given project and throws a VetoException if an error occurs

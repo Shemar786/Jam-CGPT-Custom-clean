@@ -1,0 +1,24 @@
+TDAT: 	private URL makeFileURL(String first, String... parts) {
+		if (first.startsWith("http")) {
+			for (String p : parts) {
+				first += "/" + p;
+			}
+			try {
+				return new URL(first);
+			} catch (MalformedURLException e) {
+				throw new Error(e);
+			}
+		} else {
+			File f = new File(first);
+			for (String p : parts) {
+				f = new File(f, p);
+			}
+			try {
+				return f.toURI().toURL();
+			} catch (MalformedURLException e) {
+				throw new Error(e);
+			}
+		}
+	}
+
+COM:receives a first string parameter and a variable number of string parameters, and returns a URL object based on if the first parameter starts with "http" or not, by concatenating the given parts to the first parameter to create either an HTTP URL or a File URL path

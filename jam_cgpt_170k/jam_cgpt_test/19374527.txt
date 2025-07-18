@@ -1,0 +1,7 @@
+TDAT: 	protected void validateLineNumber(int lineNumber)  throws IllegalArgumentException {
+	   if (!NumberIndex.isWithinLimits(lineNumber,1,numberOfLines())) {
+	      throw new IllegalArgumentException("Cannot handle line number: " + lineNumber + " numberOfLines: " + numberOfLines());  
+	   }
+	}
+
+COM:validates that the input line number is within the range of 1 and the total number of lines and throws an IllegalArgumentException if it is not

@@ -1,0 +1,29 @@
+TDAT: 	public void stopSearch(Integer searchOf) {
+	
+		if (searchOf==null) {
+			csAgents.stopSearch();
+			csOntologies.stopSearch();
+			csBaseService.stopSearch();
+			
+		} else {
+			
+			switch (searchOf) {
+			case RESTART_AGENT_SEARCH:
+				// --- Start search for Agent ---------------------
+				csAgents.stopSearch();
+				break;
+				
+			case RESTART_ONTOLOGY_SEARCH:
+				// --- Start search for Ontology ------------------
+				csOntologies.stopSearch();
+				break;
+				
+			case RESTART_BASESERVICE_SEARCH:
+				// --- Start search for BaseService ---------------
+				csBaseService.stopSearch();
+				break;
+			}
+		}
+	}
+
+COM:stops a search for a specific type of object, such as an agent, ontology, or base service

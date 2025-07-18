@@ -1,0 +1,12 @@
+TDAT:     public boolean logout() throws LoginException {
+        this.radiusSubject.getPrincipals().remove(this.userPrincipal);
+        this.authenticationCommitted = false;
+        this.authenticationSucceeded = false;
+        this.userName = null;
+        this.radiusClient = null;
+        this.userPrincipal = null;
+        this.challengedAttempts = 0;
+        return true;
+    }
+
+COM:logs out the user by removing the user principal and resetting authentication variables

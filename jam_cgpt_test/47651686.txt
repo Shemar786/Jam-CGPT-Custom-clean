@@ -1,0 +1,17 @@
+TDAT: 	protected void addWorkProductPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RoleWorkProductAssociation_workProduct_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RoleWorkProductAssociation_workProduct_feature", "_UI_RoleWorkProductAssociation_type"),
+				 MethodusecasediagramPackage.Literals.ROLE_WORK_PRODUCT_ASSOCIATION__WORK_PRODUCT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a work product property descriptor to an item property descriptor list

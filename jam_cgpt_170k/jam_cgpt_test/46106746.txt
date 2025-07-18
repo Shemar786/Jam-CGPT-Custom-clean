@@ -1,0 +1,13 @@
+TDAT:     public void draw(GLColor mColor) {
+        // Draw only if visible
+        if (!visible)
+            return;
+
+        // font.setZoom(zoom);
+        font.print(text, xPos + parent.getXPos(), yPos + parent.getYPos(),
+                zoom, color);
+
+        // Cycle the widget list and draw all
+    }
+
+COM:draws a widget with a specified color, checking first if it is visible, and then iterates through the widget list to draw all widgets

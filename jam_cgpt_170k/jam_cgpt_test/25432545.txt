@@ -1,0 +1,14 @@
+TDAT: 	private void move(boolean isToTheRight) {
+		isFacingRight = isToTheRight;
+		isMoving = true;
+		
+		final int movement = (int)GameType.getSetting(Mechanics.MOVE_SPEED);
+		
+		if(isFacingRight) {
+			x = (x + movement) % ScreenSize.getWidth();
+		} else {
+			x = (x - movement + ScreenSize.getWidth()) % ScreenSize.getWidth();
+		}
+	}
+
+COM:is used to move an object either to the right or left with a specified speed

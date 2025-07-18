@@ -1,0 +1,15 @@
+TDAT: 	private void addParameterDeletesObligationDatabaseEntry(XMethod xmethod, Obligation obligation, ObligationPolicyDatabaseEntryType entryType) {
+		// Add a policy database entry noting that this method
+		// will delete one instance of the obligation type.
+		ObligationPolicyDatabaseEntry entry = new MatchMethodEntry(
+			xmethod,
+			ObligationPolicyDatabaseActionType.DEL,
+			entryType,
+			obligation);
+		database.addEntry(entry);
+		if (DEBUG_ANNOTATIONS) {
+			System.out.println("Added entry: " + entry);
+		}
+	}
+
+COM:adds a policy database entry when a method deletes an instance of a certain obligation type

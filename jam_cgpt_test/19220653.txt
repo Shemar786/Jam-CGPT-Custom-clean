@@ -1,0 +1,16 @@
+TDAT:     public void setUserObject(Object obj) {
+        if (obj instanceof SDDObject) {
+            SDDObject sddObj = getSDDObject();
+            if (sddObj != null) {
+                sddObj.removeDynamicSDDUpdateListener(this);
+            }
+            userObject = (SDDObject) obj;
+            userObject.addDynamicSDDUpdateListener(this);
+        }
+        else {
+            throw new IllegalArgumentException(
+                    "The passed argument must be of type SDDObject.");
+        }
+    }
+
+COM:sets the user object and adds a dynamic SDD update listener if the object is of type SDDObject, otherwise it throws an IllegalArgumentException

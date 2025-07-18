@@ -1,0 +1,15 @@
+TDAT: 	private void setHostname(String hostname) throws InvalidParameterException {
+		if (hostname == null) {
+			logger.warning("Hostname can not be null!");
+		} else if (hostname.trim().equals("")) {
+			logger.warning("Hostname can not be empty or all blanks!");
+		} else {
+			try {
+				this.hostname = InetAddress.getByName(hostname);
+			} catch (java.net.UnknownHostException uhex) {
+				logger.log(Level.SEVERE, "UnknownHostException", uhex);
+			}
+		}
+	}
+
+COM:sets the InetAddress hostname if it is not null or empty, otherwise throws an InvalidParameterException

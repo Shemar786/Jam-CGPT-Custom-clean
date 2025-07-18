@@ -1,0 +1,15 @@
+TDAT:     public IFixCapability getFixCapabilityFor(String ruleKey) {
+        if (ruleKey.equals(INTERNAL_ERROR_RULE)) {
+            return null;
+        }
+        
+        IJavaRule rule = findRuleByKey(ruleKey);
+
+        if (null == rule) {
+            throw new IllegalArgumentException("Could not locate rule: " + ruleKey);
+        }
+
+        return rule.getFixCapability();
+    }
+
+COM:takes in a rule key and returns the associated fix capability, or throws an exception if the rule is not located or returns null if the rule key equals INTERNAL_ERROR_RULE

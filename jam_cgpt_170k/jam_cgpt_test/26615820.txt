@@ -1,0 +1,13 @@
+TDAT:     public void addOutputCategory(String name) {
+        outputCategories.add(name);
+
+        DataElement element;
+
+        for (int i = 0; i < elements.size(); i++) {
+            element = (DataElement) elements.elementAt(i);
+            element.getOutput().add(new Double(0.0));
+            element.getDesired().add("0.0");
+        }
+    }
+
+COM:adds a new output category to a list and initializes corresponding values for DataElement objects

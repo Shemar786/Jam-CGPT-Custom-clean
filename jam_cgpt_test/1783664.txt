@@ -1,0 +1,9 @@
+TDAT:    public void testUndefined() throws Exception {
+  	 WebConversation wc=doTestJavaScript("if (typeof(xyzDefinitelyNotDefined) == 'undefined') {\n"+
+    			"alert ('blabla');\n"+
+    			"return;\n"+
+    			"}");
+  	 assertEquals( "Alert message", "blabla", wc.popNextAlert() );    	
+   }
+
+COM:tests if a JavaScript variable is undefined and displays an alert message if it is

@@ -1,0 +1,12 @@
+TDAT:   private ModuleExecutable getModuleExecutable() {
+    Iterator executables = context.getRelatedNode().getModuleDef().
+      getExecutables().iterator();
+    while (executables.hasNext()) {
+      ModuleExecutable current = (ModuleExecutable) executables.next();
+      if (current.getExecType() == ExecType.EXEC_JAVA)
+        return current;
+    }
+    return null;
+  }
+
+COM:returns a ModuleExecutable object with the execution type of EXEC_JAVA

@@ -1,0 +1,17 @@
+TDAT:     public void sort(){
+	if(this.def.isAscending()){
+	    java.util.Collections.sort(this.showValues);
+	} else {
+	    //fiddling around to have the empty value at the top but descending order in general
+	    this.showValues.remove("");
+	    java.util.Collections.sort(this.showValues, java.util.Collections.reverseOrder());
+	    ArrayList<String> newVal = new ArrayList<String>();
+	    newVal.add("");
+	    for (String string : this.showValues) {
+		newVal.add(string);
+	    }
+	    this.showValues = newVal;
+	}
+    }
+
+COM:sorts an ArrayList of Strings in ascending or descending order, handling empty strings differently based on the sorting order

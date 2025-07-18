@@ -1,0 +1,17 @@
+TDAT: 	protected void addPlatformIDPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PlatformDisposition_platformID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PlatformDisposition_platformID_feature", "_UI_PlatformDisposition_type"),
+				 CorePackage.Literals.PLATFORM_DISPOSITION__PLATFORM_ID,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "platformID" feature of the PlatformDisposition type

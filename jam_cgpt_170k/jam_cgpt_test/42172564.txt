@@ -1,0 +1,17 @@
+TDAT:   protected void addEnabledPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SafletProject_enabled_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SafletProject_enabled_feature", "_UI_SafletProject_type"),
+				 ConfigPackage.Literals.SAFLET_PROJECT__ENABLED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds an enabled property descriptor for a SafletProject object

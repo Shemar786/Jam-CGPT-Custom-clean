@@ -1,0 +1,12 @@
+TDAT:     public Cell getCell(int x, int y) {
+        assert invariant();
+        assert withinBorders(x, y)
+        : "Cell requested (" + x + "," + y + ") out of borders "
+        + width + " * " + height;
+        Cell result = cellAt[x][y];
+        assert result != null;
+        assert invariant();
+        return result;
+    }
+
+COM:retrieves the cell at the specified x and y coordinates, with error checking to ensure the requested coordinates are within the borders of the grid

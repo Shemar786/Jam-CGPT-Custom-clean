@@ -1,0 +1,16 @@
+TDAT:     public Collection getInstitutions() {
+        Collection toReturn = null;
+        try {
+            toReturn = InstitutionsSingleton.getInstance().getInstitutions();
+        }
+        catch (Exception e) {
+            logger.error("An Exception has been thrown by the RegistrationForm.getInstitutions() method:", e);
+            throw new IllegalStateException();
+        }
+        if (toReturn == null) {
+            toReturn = Collections.EMPTY_LIST;
+        }
+        return toReturn;
+    }
+
+COM:returns a collection of institutions obtained from a singleton instance, and handles any exceptions that may occur during the retrieval process

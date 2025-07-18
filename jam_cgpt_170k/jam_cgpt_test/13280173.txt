@@ -1,0 +1,22 @@
+TDAT:     protected void enableNodeTypeButtons(int typeID) {
+	if (typeID == Registry.VARIABLE) {
+	    enableConstraintButtons(false);
+	    enableVariableButtons(true);
+	} else {
+	    enableVariableButtons(false);
+	    ConventionalConstraint c;
+	    synchronized(gsc.constraints) {
+		Iterator i = gsc.constraints.iterator();
+		while (i.hasNext()) {
+		    c = (ConventionalConstraint) i.next();
+		    if (c.typeID == typeID) {
+			((NodeGraphics) c.graphObject).activator.setEnabled(true);
+		    } else {
+			((NodeGraphics) c.graphObject).activator.setEnabled(false);
+		    }
+		}
+	    }
+	}
+    }
+
+COM:allows for the enabling of various types of node buttons based on a given type ID

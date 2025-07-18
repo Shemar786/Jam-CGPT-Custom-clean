@@ -1,0 +1,11 @@
+TDAT:   private Collection wrapModuleNodeCollection(Collection nodes) {
+    Collection result = new ArrayList();
+    Iterator items = nodes.iterator();
+    while (items.hasNext()) {
+      ModuleNode current = (ModuleNode) items.next();
+      result.add(wrapModuleNode(current));
+    }
+    return Collections.unmodifiableCollection(result);
+  }
+
+COM:takes a collection of ModuleNodes, wraps each node using another method, adds them to a new collection, and returns an unmodifiable collection of the wrapped nodes

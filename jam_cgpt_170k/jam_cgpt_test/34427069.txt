@@ -1,0 +1,8 @@
+TDAT:     private int notesFileShowError(String errorMessage) {
+        String[] options = { "Abort", "Edit now", "Skip and continue" };
+        return JOptionPane.showOptionDialog(submitNotesFileButton,
+                errorMessage, "Input error", JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.ERROR_MESSAGE, null, options, options[1]);
+    }
+
+COM:displays an error message dialog with three options, and returns the index of the option selected by the user

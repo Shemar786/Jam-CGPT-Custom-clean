@@ -1,0 +1,8 @@
+TDAT:     public void testHttpOnlyCookies() throws Exception {
+      CookieJar jar = new CookieJar(
+              new TestSource( new URL( "http://www.meterware.com" ),
+                              new String[] { "myStuff=1234; path=/foo; HttpOnly"} ) );
+      assertEquals( "cookie 'myStuff' value", "1234", jar.getCookieValue( "myStuff" ) );
+    }
+
+COM:tests the use of HttpOnly cookies by creating a CookieJar object with a single HttpOnly cookie and verifying its value

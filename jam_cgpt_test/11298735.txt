@@ -1,0 +1,21 @@
+TDAT: 	public void testNoInterfaces() {
+		DescriptionElement descEl = factory.newDescription();
+		Description descComp = descEl.toComponent();
+	      
+		try {
+			descEl.setTargetNamespace(new URI("http://testnamespace"));
+		} catch(URISyntaxException e) {
+			// Do nothing.
+		}
+	      
+		try {
+			assertion.validate(descComp, wodenContext);
+		} catch(WSDLException e) {
+			fail("Assertion Interface1010 threw WSDLException.");
+		}
+		if(handler.errorMessageHasBeenReported()) {
+			fail("Assertion Interface1010 failed incorrectly with no interfaces specified.");
+		}
+	}
+
+COM:tests for the behavior of an assertion when no interfaces are specified

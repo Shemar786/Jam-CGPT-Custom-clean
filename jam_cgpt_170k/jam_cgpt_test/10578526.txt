@@ -1,0 +1,12 @@
+TDAT:     public void afterPropertiesSet() throws Exception {
+        if (configurationMappings != null) {
+            Iterator<String> it = configurationMappings.keySet().iterator();
+            while (it.hasNext()) {
+                String key = it.next();
+                String value = configurationMappings.get(key);
+                registerConfiguration(key, getConfiguration(value));
+            }
+        }
+    }
+
+COM:sets properties and registers configurations based on specified mappings

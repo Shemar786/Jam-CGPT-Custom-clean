@@ -1,0 +1,11 @@
+TDAT:     public void setDataSet(net.openai.ai.nn.data.DataSet dataSet) {
+        if (dataSet == null)
+            return;
+
+        this.dataSet = dataSet;
+        cinput = dataSet.getInputCategories().size();
+        coutput = dataSet.getOutputCategories().size();
+        this.fireTableStructureChanged();
+    }
+
+COM:sets the dataset for a neural network and updates some variables related to input and output categories

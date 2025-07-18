@@ -1,0 +1,8 @@
+TDAT:     public void testIsChanged() {
+
+      assertFalse("file should be unchanged, it is not ", poFileRep.isChanged());
+      poFileRep.setValueAt(null, 0, 0, 0, "12");
+      assertTrue("file Should be changed, it is not ", poFileRep.isChanged());
+    }
+
+COM:tests if a file has been changed by modifying its value and checking if it is changed

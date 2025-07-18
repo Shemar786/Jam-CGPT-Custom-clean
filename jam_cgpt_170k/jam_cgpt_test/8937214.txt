@@ -1,0 +1,12 @@
+TDAT:     public void integrate(ASTInspector other) {
+        hasBlockArg |= other.hasBlockArg;
+        hasClass |= other.hasClass;
+        hasClosure |= other.hasClosure;
+        hasDef |= other.hasDef;
+        hasFrameAwareMethods |= other.hasFrameAwareMethods;
+        hasOptArgs |= other.hasOptArgs;
+        hasRestArg |= other.hasRestArg;
+        hasScopeAwareMethods |= other.hasScopeAwareMethods;
+    }
+
+COM:integrates the properties of another ASTInspector object into the current object

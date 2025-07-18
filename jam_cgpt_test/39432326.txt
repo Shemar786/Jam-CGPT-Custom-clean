@@ -1,0 +1,14 @@
+TDAT:     protected void makeDirs() {
+        File file = new File(getConfPath());
+        file.mkdirs();
+        file = new File(getLogPath());
+        file.mkdirs();
+        file = new File(getCachePath());
+        file.mkdirs();
+        file = new File(getPluginPath());
+        file.mkdirs();
+        file = new File(getDebugPath());
+        file.mkdirs();
+    }
+
+COM:creates multiple directories specified by corresponding paths

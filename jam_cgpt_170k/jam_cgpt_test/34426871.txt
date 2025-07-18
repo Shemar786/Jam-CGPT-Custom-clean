@@ -1,0 +1,13 @@
+TDAT:     private JMenuItem folderRenameMenuItem() {
+        JMenuItem folderRename = new JMenuItem("Rename folder...");
+        folderRename.setToolTipText("Rename selected folder");
+        folderRename.addActionListener(new ActionListener() {
+            @SuppressWarnings("synthetic-access")
+            public void actionPerformed(ActionEvent e) {
+                folderRename();
+            }
+        });
+        return folderRename;
+    }
+
+COM:creates a JMenuItem with a tooltip and ActionListener to run the folderRename() method when clicked

@@ -1,0 +1,23 @@
+TDAT: 	private Group getNewGroup(String recordName,Character aminoCode1) {
+
+		Group group;
+		if ( recordName.equals("ATOM") ) {
+			if (aminoCode1!=null) {
+
+				AminoAcidImpl aa = new AminoAcidImpl() ;
+				aa.setAminoType(aminoCode1);
+				group = aa ;
+			} else {
+				// it is a nucleotidee
+				NucleotideImpl nu = new NucleotideImpl();
+				group = nu;
+			}
+		}
+		else {
+			group = new HetatomImpl();
+		}
+		//System.out.println("new group type: "+ group.getType() );
+		return  group ;
+	}
+
+COM:returns a new instance of a specific type of molecular group based on the record name and amino code provided

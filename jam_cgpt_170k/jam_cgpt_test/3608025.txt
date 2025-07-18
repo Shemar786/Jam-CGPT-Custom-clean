@@ -1,0 +1,16 @@
+TDAT:     public String printGlossary(String startWithName) {
+        String printme = new String();
+
+        for (Iterator i = keyValues.keySet().iterator(); i.hasNext(); ) {
+            String key = i.next().toString();
+            String value = getString(key);
+
+            if (key.startsWith(startWithName)) {
+                printme = printme + key + " = " + value + "<br>\n";
+            }
+        }
+
+        return printme;
+    }
+
+COM:prints a glossary of key-value pairs starting with a specified string

@@ -1,0 +1,17 @@
+TDAT: 	protected void addNetUrlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveComponent_netUrl_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveComponent_netUrl_feature", "_UI_EveComponent_type"),
+				 EvesimPackage.Literals.EVE_COMPONENT__NET_URL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_NetworkPropertyCategory"),
+				 null));
+	}
+
+COM:adds a property descriptor to a list for a given object, which allows the user to edit the net URL of an Eve component

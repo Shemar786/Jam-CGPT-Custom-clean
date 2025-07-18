@@ -1,0 +1,13 @@
+TDAT: 	public void testEvents_29_createGuardWithEmptyLabel() throws Exception {
+		IMachineRoot mac = createMachine("mac");
+		IEvent evt = addEvent(mac, "evt", makeSList(), makeSList(""),
+				makeSList("1∈ℕ"), makeSList(), makeSList());
+
+		saveRodinFileOf(mac);
+
+		runBuilder();
+
+		hasMarker(evt.getGuards()[0], null, GraphProblem.EmptyLabelError);
+	}
+
+COM:tests whether creating a guard with an empty label in an event produces the expected error message

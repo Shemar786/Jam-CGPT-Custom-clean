@@ -1,0 +1,16 @@
+TDAT:     private void scanForMails(SWGUniverse univ) {
+        if (univ == null) return;
+
+        Collection<SWGStation> stations = univ.stations();
+        for (SWGStation stn : stations) {
+            List<SWGGalaxy> galaxies = stn.galaxies();
+            for (SWGGalaxy gxy : galaxies) {
+                List<SWGCharacter> chars = gxy.characters();
+                for (SWGCharacter ch : chars) {
+                    ch.mailBox().fetch();
+                }
+            }
+        }
+    }
+
+COM:scans for mails in each character's mailbox in a given SWG universe, based on the collection of stations and galaxies associated with the universe

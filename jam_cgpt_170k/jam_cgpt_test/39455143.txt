@@ -1,0 +1,10 @@
+TDAT: 	private void addFragmentInfo(PeakListRow mainRow, PeakListRow fragmentRow) {
+		FragmentIdentity newIdentity = new FragmentIdentity(mainRow);
+		fragmentRow.addPeakIdentity(newIdentity, false);
+		
+		// Notify the GUI about the change in the project
+		MZmineCore.getCurrentProject().notifyObjectChanged(fragmentRow, false);
+		
+	}
+
+COM:adds fragment information to a peak list row and notifies the GUI about the change in the project

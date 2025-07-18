@@ -1,0 +1,11 @@
+TDAT:     public void test_constructor() {
+     
+        MarkerModel m = new MarkerModel();
+        
+        assertEquals(null, m.getText());
+        assertEquals(0.0, m.getTime(), 0.01);
+        assertEquals(false, m.isTextDisplayed());
+        
+    }
+
+COM:tests the default constructor of a MarkerModel object by asserting that its fields are set to their expected values

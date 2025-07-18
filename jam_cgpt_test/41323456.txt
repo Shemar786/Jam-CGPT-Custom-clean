@@ -1,0 +1,12 @@
+TDAT: 	public void initStroke() {
+		float theScaleFactor = 1 / (float) itsCamera.getViewScale();
+		float[] dash = { DASH_WIDTH * theScaleFactor,
+				DASH_WIDTH * theScaleFactor };
+		strokes = new Stroke[NUM_STROKES];
+		for (int i = 0; i < NUM_STROKES; i++) {
+			strokes[i] = new BasicStroke(1 * theScaleFactor,
+					BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 1, dash, i);
+		}
+	}
+
+COM:initializes an array of Stroke objects with different dash patterns and scaling factors

@@ -1,0 +1,15 @@
+TDAT:     private Component makeUpperRow() {
+        JPanel middle = new JPanel();
+        middle.setLayout(new FlowLayout(FlowLayout.LEFT));
+        middle.setBorder(BorderFactory.createEtchedBorder());
+
+        middle.add(makeUnreportedList());
+        middle.add(makeDepletedList());
+
+        makeSubmitUnreportedAndDepletedButton();
+        middle.add(submitUnreportedAndDepletedButton);
+
+        return middle;
+    }
+
+COM:creates a JPanel with a FlowLayout on the left, an etched border, and adds multiple child components to it while also creating and adding a submit button

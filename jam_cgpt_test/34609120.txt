@@ -1,0 +1,12 @@
+TDAT:     public List getAllStemmers(final Locale locale) {
+        if (locale == null) {
+            throw new IllegalArgumentException("The 'locale' argument cannot be null.");
+        }
+        List result = (List) stemmers.get(locale);
+        if (result == null) {
+            result = Collections.EMPTY_LIST;
+        }
+        return result;
+    }
+
+COM:returns a List of stemmers based on a specified Locale, and throws an exception if the Locale argument is null

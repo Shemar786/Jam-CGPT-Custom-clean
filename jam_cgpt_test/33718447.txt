@@ -1,0 +1,14 @@
+TDAT:     public void testGetTitle() {
+        System.out.println("getTitle");
+        
+        Event_StubImpl instance = new Event_StubImpl();
+        
+        String expResult = "";
+        String result = instance.getTitle();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the getTitle() method of the Event_StubImpl class by setting expected and actual results and comparing them using the assertEquals() method

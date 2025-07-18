@@ -1,0 +1,14 @@
+TDAT: 	public boolean removeKnowledgeSource(String url) {
+		Iterator<AbstractKnowledgeSource> it = knowledgeSources.iterator(); 
+		while(it.hasNext()) {
+			AbstractKnowledgeSource source = it.next();
+			if((source instanceof OWLFile && ((OWLFile)source).getURL().toString().equals(url))
+				|| (source instanceof SparqlKnowledgeSource && ((SparqlKnowledgeSource)source).getURL().toString().equals(url)) ) {
+				it.remove();
+				return true;
+			}
+		}
+		return false;
+	}
+
+COM:searches for and removes a specified knowledge source from a list if it is present, and returns true if the removal was successful

@@ -1,0 +1,16 @@
+TDAT: 	public File unmarshall(String destinationPath) {
+		if (!isvalid() || fileContent == null) {
+			throw new EveFlypeerServiceFileContainerException("SBVR2GrailsResult not set.");
+		}
+		File file = new File(destinationPath+"/"+fileName);
+		try {
+			FileOutputStream out = new FileOutputStream(file);
+	        out.write(fileContent);
+	        out.close();
+	    } catch (IOException e) {
+	    	throw new EveFlypeerServiceFileContainerException("Could not write content to "+file+".",e);
+	    }
+		return file;
+	}
+
+COM:writes the file content to a specified destination path and returns the file object

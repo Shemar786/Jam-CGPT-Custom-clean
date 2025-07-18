@@ -1,0 +1,16 @@
+TDAT: 	protected JButton getSearchButton() {
+		if (searchButton == null) {
+			searchButton = new JButton();
+			searchButton.setText("Search");
+			searchButton.setEnabled(false);
+			searchButton.setMnemonic(KeyEvent.VK_S);
+			searchButton.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					doSearch();
+				}
+			});
+		}
+		return searchButton;
+	}
+
+COM:returns a JButton object that is enabled with a mnemonic and an ActionListener to perform a search when clicked

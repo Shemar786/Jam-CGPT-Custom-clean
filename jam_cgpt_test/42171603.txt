@@ -1,0 +1,17 @@
+TDAT:   protected void addJdbcConnectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBConnectionId_jdbcConnection_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBConnectionId_jdbcConnection_feature", "_UI_DBConnectionId_type"),
+				 ActionStepPackage.eINSTANCE.getDBConnectionId_JdbcConnection(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a JDBC connection in a DB connection identifier

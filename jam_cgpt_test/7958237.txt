@@ -1,0 +1,21 @@
+TDAT: 	public void addStmtAfter(final Stmt stmt, final Stmt after) {
+		if (Tree.DEBUG) {
+			System.out.println("insert: " + stmt + " after " + after);
+		}
+
+		final ListIterator iter = stmts.listIterator();
+
+		while (iter.hasNext()) {
+			final Stmt s = (Stmt) iter.next();
+
+			if (s == after) {
+				iter.add(stmt);
+				stmt.setParent(this);
+				return;
+			}
+		}
+
+		throw new RuntimeException(after + " not found");
+	}
+
+COM:adds a statement after another specified statement in a list of statements

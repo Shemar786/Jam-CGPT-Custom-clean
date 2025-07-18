@@ -1,0 +1,14 @@
+TDAT:     public void testGetStatus() {
+        System.out.println("getStatus");
+        
+
+        
+        String expResult = "";
+        String result = instance.getStatus();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+      //  fail("The test case is a prototype.");
+    }
+
+COM:tests and prints the status of an instance, comparing it to an expected result

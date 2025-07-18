@@ -1,0 +1,16 @@
+TDAT:   public void generateAll(Universe u) {
+    int i,id;
+    Ship ship;
+    Vcr vcr;
+    for (i=1;i<=vcrcount;i++) {
+      try {
+	vcr=new Vcr(u);
+	vcr.readFrom(source);
+	u.putVcr(vcr); // universe does the necessary filtering
+      } catch (IOException ioe) {
+	crash(11, "Error while reading shipdata: "+ioe);
+      }
+    }
+  }
+
+COM:generates all ships in a Universe object by reading ship data from a source using a Vcr object and adding it to the Universe object

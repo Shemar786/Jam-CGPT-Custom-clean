@@ -1,0 +1,15 @@
+TDAT:     private void closeOutputStreams(OutputStream headerStream, OutputStream bodyStream) throws IOException {
+        try {
+            // If the header stream is not the same as the body stream,
+            // close the header stream here.
+            if ((headerStream != null) && (headerStream != bodyStream)) {
+                headerStream.close();
+            }
+        } finally {
+            if (bodyStream != null) {
+                bodyStream.close();
+            }
+        }
+    }
+
+COM:closes the header and body output streams, but only closes the header stream if it is not the same as the body stream

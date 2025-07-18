@@ -1,0 +1,12 @@
+TDAT:     public void tableChanged(TableModelEvent e) {
+        if (m_propertyChangeSupport == null) {
+            return;
+        }
+
+        m_propertyChangeSupport.firePropertyChange(PROPERTY_SELECTED_TARGETS,
+                m_oldTargetMap, getTargetMap());
+
+        m_oldTargetMap = (AntTargetMap) getTargetMap().clone();
+    }
+
+COM:updates a property change with selected targets in a table model event

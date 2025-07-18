@@ -1,0 +1,14 @@
+TDAT: 	public void hangup(){
+	    if (interlocutors.size() < 1) {
+	    	System.out.println("ERRO: NO Interlocutors");
+            return;
+        }
+        int selectedRow = 0;   	
+        Interlocutor inter;
+        for(int i=0;i<interlocutors.size();i++){
+        	inter = (Interlocutor) interlocutors.get(selectedRow);
+        	actionHandler.handleHangupRequest(inter);
+        }
+	}
+
+COM:handles a hangup request for interlocutors in a list, and outputs an error message if no interlocutors are present

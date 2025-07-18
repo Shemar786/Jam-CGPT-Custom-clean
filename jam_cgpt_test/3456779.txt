@@ -1,0 +1,17 @@
+TDAT: 	public void	sourceCode(	int msql_type, StringBuffer buffer) throws Exception {
+		if( msql_type == mobisnap.MobisnapConstants.MSQL_ORIGINAL) {
+			super.sourceCode( msql_type, buffer);
+			return;
+		}
+		buffer.append( " ");
+		if( msql_type == MobisnapConstants.MSQL_STABLE_CLIENT)
+			buffer.append( "stable_");
+		buffer.append( s1);
+		if( s2 != null) {
+			buffer.append( ".");
+			buffer.append( s2);
+		}
+		buffer.append( " ");
+	}
+
+COM:takes in an integer and a StringBuffer and appends a series of strings to the buffer based on the value of the integer input

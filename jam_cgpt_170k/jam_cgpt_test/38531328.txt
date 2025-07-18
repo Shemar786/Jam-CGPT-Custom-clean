@@ -1,0 +1,11 @@
+TDAT:     public void testClose() throws Exception {
+        System.out.println("testClose");
+        
+        // Add your test code below by replacing the default call to fail.
+        CollectionTransport transport = this.getCollection();
+        this.dbService.close(transport);
+        
+        assertFalse("collection not closed", this.dbService.isOpen(transport));
+    }
+
+COM:tests if a collection transport is successfully closed using the dbService.close() method and asserts that the collection is indeed closed

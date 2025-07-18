@@ -1,0 +1,13 @@
+TDAT:   public Map getOptionsMap() throws JspException {
+    if (this.options == null) {
+      Object attribute = getPropertyAttribute(BeanFilter.ATTRIBUTE_OPTIONS);
+      if ((attribute == null) || !(attribute instanceof Map)) {
+        throw new TagException(
+          JhtmlMessages.MESSAGE_SELECT_TAG_REQUIRES_OPTIONS);
+      }
+      this.options = (Map) attribute;
+    }
+    return this.options;
+  }
+
+COM:retrieves a map of options, throwing an exception if the map is null or not an instance of Map

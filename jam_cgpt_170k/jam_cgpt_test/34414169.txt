@@ -1,0 +1,20 @@
+TDAT: 		private void onDateChange(){
+			this.setInputStatus(true);
+			ListModelList model = historian.getLogFileModel(datebox.getValue());
+			baseModel = model;
+			if(checkbox.isChecked()){
+				ListModelList tempModel = new ListModelList();
+				Comboitem item = userbox.getSelectedItem();
+				if(item!=null){
+					String userId = (String)item.getAttribute(UserComboRenderer.ID);
+					model = filterBaseModel(userId);
+				}
+				else{
+					model = tempModel;
+				}
+			}
+			logListbox.setModel(model);
+			this.setInputStatus(false);
+		}
+
+COM:performs various operations when the date is changed including updating the list model and input status

@@ -1,0 +1,10 @@
+TDAT:     public Command getCmdRetrieve() {
+        if (cmdRetrieve == null) {//GEN-END:|108-getter|0|108-preInit
+            // write pre-init user code here
+            cmdRetrieve = new Command("Mostra programmazioni", Command.SCREEN, 0);//GEN-LINE:|108-getter|1|108-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|108-getter|2|
+        return cmdRetrieve;
+    }
+
+COM:returns a Command object for displaying program schedules and creates a new one if it is not already initialized

@@ -1,0 +1,10 @@
+TDAT:   private void button_edit(Database db, int selected_plate){
+
+    if(selected_plate < 1){
+      JOptionPane.showMessageDialog(new JFrame(),"Please Choose a Plate to Edit");
+      return;
+    }
+    launchPlateArrayer(db,Plate.getName(db,selected_plate),selected_plate, Plate.canEditPlate(db,selected_plate));
+  }
+
+COM:launches the "PlateArrayer" with parameters based on a selected plate from a database, but displays an error message if no plate is selected or if the selected plate cannot be edited

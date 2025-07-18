@@ -1,0 +1,11 @@
+TDAT:     //    protected void triggerSessionRedirect(String arg) {
+    //        List<JingleListener> listeners = getListenersList();
+    //        for (JingleListener li : listeners) {
+    //            if (li instanceof JingleSessionListener) {
+    //                JingleSessionListener sli = (JingleSessionListener) li;
+    //                sli.sessionRedirected(arg, this);
+    //            }
+    //        }
+    //    }
+
+COM:triggers a session redirect for Jingle session listeners and sends a specified argument and the current object instance to the listeners

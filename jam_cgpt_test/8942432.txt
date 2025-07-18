@@ -1,0 +1,11 @@
+TDAT:     public Node setArgsNode(Node argsNode) {
+        this.argsNode = argsNode;
+        // If we have more than one arg, make sure the array created to contain them is not ObjectSpaced
+        if (argsNode instanceof ArrayNode) {
+            ((ArrayNode)argsNode).setLightweight(true);
+        }
+        
+        return argsNode;
+    }
+
+COM:sets the argument node of a certain type and ensures that if there are more than one arg, the array created to contain them is not of type ObjectSpaced

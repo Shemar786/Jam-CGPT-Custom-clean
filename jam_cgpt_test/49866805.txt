@@ -1,0 +1,7 @@
+TDAT:   public boolean updateChecklist(long listId, String name) {
+    ContentValues values = new ContentValues();
+    values.put(KEY_NAME, name);
+    return mDb.update(CHECKLIST_TBL, values, KEY_ROWID + "=" + listId, null) > 0;
+  }
+
+COM:updates a checklist in a database with a new name and returns a boolean value indicating success or failure

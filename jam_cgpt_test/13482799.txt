@@ -1,0 +1,16 @@
+TDAT:     public void addPhi(Block block) {
+        if (phis[cfg.preOrderIndex(block)] != null) {
+            return;
+        }
+
+        VarExpr target = (VarExpr) prototype.clone();
+
+        PhiJoinStmt phi = new PhiJoinStmt(target, block);
+        phis[cfg.preOrderIndex(block)] = phi;
+
+        if (SSA.DEBUG) {
+            System.out.println("  place " + phi + " in " + block);
+        }
+    }
+
+COM:adds a PhiJoinStmt to a block if one is not already present

@@ -1,0 +1,10 @@
+TDAT: 	private void setNodesMoved2EndPosition() {
+		this.removeAllTemporaryNodes(myGUI.getGraphEnvironmentController().getNetworkModel().getGraph());
+		for (int i = 0; i < this.nodesMoved.size(); i++) {
+			GraphNode node = this.nodesMoved.get(i);
+			vv.getGraphLayout().setLocation(node, node.getPosition());
+		}
+		this.nodesMoved.removeAllElements();
+	}
+
+COM:sets the locations of moved GraphNodes to their end position and removes any temporary nodes

@@ -1,0 +1,14 @@
+TDAT:     public void testGetFname() {
+        System.out.println("getFName");
+        
+  
+        
+        String expResult = "James";
+        String result = instance.getFname();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+COM:tests the functionality of the getFname() method by comparing its result to an expected value and printing a message to the console

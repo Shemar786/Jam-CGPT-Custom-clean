@@ -1,0 +1,9 @@
+TDAT: 	protected String getMasterJspHeader() {
+		String header = "<%@ include file=\"/lib/includes.jspf\" %>\n\n";
+		header += "<%@ page import=\"org.dlese.dpc.schemedit.display.CollapseBean\" %>\n\n";
+		header +=
+			"<bean:define id=\"collapseBean\" name=\"" + formBeanName + "\" property=\"collapseBean\" type=\"CollapseBean\" />\n\n";
+		return header;
+	}
+
+COM:returns a string comprising multiple lines of code to create a JSP header, including importing classes and defining a bean

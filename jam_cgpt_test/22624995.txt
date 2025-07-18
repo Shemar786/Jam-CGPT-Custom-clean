@@ -1,0 +1,21 @@
+TDAT: 	private void setHighestId( String metadataFieldSystemId, String newHighest ) {
+		try {
+			stmt = con.createStatement();
+			stmt.executeQuery( "UPDATE vocab_fields SET highestValueId = '" + newHighest
+				 + "' WHERE metadataFieldId = '" + metadataFieldSystemId + "'" );
+		}
+		catch ( Exception e ) {
+			vocab.reportError( "SQL error" );
+			e.printStackTrace();
+		}
+		finally {
+			if ( stmt != null ) {
+				try {
+					stmt.close();
+				}
+				catch ( Exception e ) {}
+			}
+		}
+	}
+
+COM:This is a private Java method that updates the highestValueId for a specified metadataFieldId in the vocab_fields table using SQL

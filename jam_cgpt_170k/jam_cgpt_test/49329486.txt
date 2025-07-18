@@ -1,0 +1,11 @@
+TDAT:     public void eepromRead ( int addr, byte[] buf, int length ) throws UsbException, InvalidFirmwareException, CapabilityException {
+	checkCapability(CAPABILITY_EEPROM);
+	vendorRequest2( 0x38, "EEPROM Read", addr, 0, buf, length );		// sometimes a little bit slow
+    	try {
+    	    Thread.sleep( 10 );
+    	}
+	catch ( InterruptedException e) {
+        } 
+    }
+
+COM:performs an EEPROM read, taking in an address, buffer, and length, while throwing three possible exceptions and including a brief sleep time

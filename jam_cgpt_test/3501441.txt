@@ -1,0 +1,9 @@
+TDAT:     public boolean gettingLock(Object lockObj) {
+        Thread t = Thread.currentThread();
+        StackTraceElement ste = new Throwable().fillInStackTrace().getStackTrace()[1];
+        logger.logp(Level.FINEST, ste.getClassName(), ste.getMethodName(),
+            t+" attempting to aquire lock on \"{0}\"", lockObj);
+        return true;
+    }
+
+COM:logs an attempt to acquire a lock on an object and returns true

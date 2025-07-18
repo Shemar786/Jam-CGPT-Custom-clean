@@ -1,0 +1,11 @@
+TDAT: 	private JTextField getJTextField8() {
+		if (jTextField8 == null) {
+			jTextField8 = new JTextField();
+			jTextField8.setBounds(new Rectangle(148, 269, 108, 32));
+			jTextField8.setText(defaultProps.getProperty("extendgap"));
+			jTextField8.setText(applicationProps.getProperty("extendgap"));
+		}
+		return jTextField8;
+	}
+
+COM:returns a JTextField object that is either newly created or already exists with specific properties and text values read from properties files

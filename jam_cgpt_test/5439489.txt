@@ -1,0 +1,11 @@
+TDAT:     public PrintWriter getWriter() throws IOException {
+        if (gotOutputStream) throw new IllegalStateException(localStrings.getString("illegal_getwriter_call"));
+        if (!gotWriter) {
+            this.writer = new JoWriter(getInternalOutputStream(), getCharacterEncoding());
+            servletOutputStream.setBufferSize(bufferSize);
+            gotWriter = true;
+        }
+        return this.writer;
+    }
+
+COM:returns a PrintWriter object for writing character output and throws an IOException if an error occurs

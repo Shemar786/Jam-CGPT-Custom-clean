@@ -1,0 +1,6 @@
+TDAT: 	public String getNumberOfMatches(String leagueId) throws InvalidLeagueException {
+		ValidateAttribute.validateLeagueId(leagueId);
+		return (ServiceLocator.singleton().getService().selectObjectsByField(new BLMSMatch(),"leagueId", new Integer(leagueId),"date" , "id").size()) + "";		
+	}
+
+COM:retrieves the number of matches in a given league and throws an exception if the league ID provided is invalid

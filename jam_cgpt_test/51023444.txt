@@ -1,0 +1,13 @@
+TDAT: 	public void addConceptClass(ConceptClass cc) {
+		conceptClasses.add(cc);
+		Collections.sort(conceptClasses, new Comparator<ConceptClass>() {
+
+			@Override
+			public int compare(ConceptClass o1, ConceptClass o2) {
+				return o1.getId().compareToIgnoreCase(o2.getId());
+			}
+		});
+		fireContentsChanged(this, 0, conceptClasses.size());
+	}
+
+COM:adds a ConceptClass object to a list, sorts the list by the ConceptClass ID using a comparator, and notifies listeners of a change in the contents of the list

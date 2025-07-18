@@ -1,0 +1,10 @@
+TDAT: 	public void drawGrid(double xTickJump, double yTickJump) {
+		double xMin = this.mathPainter.getXMin();
+		double xRange = this.mathPainter.getXRange();
+		double yMin = this.mathPainter.getYMin();
+		double yRange = this.mathPainter.getYRange();
+		drawGrid(xMin, yMin, xRange, yRange, xTickJump, yTickJump, ROUNDED,
+				ROUNDED);
+	}
+
+COM:draws a grid on a graph using specified parameters

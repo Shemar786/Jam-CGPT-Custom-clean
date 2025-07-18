@@ -1,0 +1,15 @@
+TDAT: 	protected TilesContainer createTilesContainer() throws TilesException {
+		ServletContextAdapter adaptedContext = new ServletContextAdapter(
+				new DelegatingServletConfig());
+		TilesApplicationContext preliminaryContext = new ServletTilesApplicationContext(
+				adaptedContext);
+		AbstractTilesApplicationContextFactory contextFactory = AbstractTilesApplicationContextFactory
+				.createFactory(preliminaryContext);
+		this.tilesContext = contextFactory
+				.createApplicationContext(adaptedContext);
+		AbstractTilesContainerFactory factory = AbstractTilesContainerFactory
+				.getTilesContainerFactory(this.tilesContext);
+		return factory.createContainer(this.tilesContext);
+	}
+
+COM:creates and returns a TilesContainer object by initializing and configuring various components using a given ServletContextAdapter

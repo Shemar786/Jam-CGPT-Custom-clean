@@ -1,0 +1,9 @@
+TDAT: 	public Rectangle getRectangle(int id) {
+		for(int i=0;i<4;i++) buf[i] = 0;
+		getData(0x44 + (id * 5), buf, 4);
+		return new Rectangle(buf[0] & 0xFF, buf[1] & 0xFF,
+				(buf[2] & 0xFF) - (buf[0] & 0xFF),
+				(buf[3] & 0xFF) - (buf[1] & 0xFF));
+	}
+
+COM:retrieves data from a buffer and creates a new Rectangle object with the specified attributes

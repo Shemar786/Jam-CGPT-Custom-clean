@@ -1,0 +1,15 @@
+TDAT:     private void changeRecord(int inc) {
+
+        int newIdx = recordIdx + inc;
+
+        //System.out.println("~~> " + newIdx + " " + recordIdx);
+
+        if (newIdx >= 0 && newIdx < editList.getRowCount()) {
+            saveRecord();
+            recordIdx = newIdx;
+
+            pnlRecord.setValues(getRecord());
+        }
+    }
+
+COM:changes the index of the record and displays the updated values if the new index is within a certain range

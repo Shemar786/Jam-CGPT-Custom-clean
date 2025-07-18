@@ -1,0 +1,15 @@
+TDAT:     private int bufferedRead() throws IOException {
+        int result;
+        if (bufferPosition > 0) {
+            bufferPosition--;
+            result = buffer[bufferPosition];
+        } else {
+            result = telnetIo.read();
+        }
+        if (trace.isDebugEnabled()) {
+            trace.debug("n original read:     " + result);
+        }
+        return result;
+    }
+
+COM:performs a buffered read from a Telnet I/O stream, returning either a character from the buffer or reading from the stream if the buffer is empty

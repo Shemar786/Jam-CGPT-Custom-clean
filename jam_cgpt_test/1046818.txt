@@ -1,0 +1,18 @@
+TDAT: 	public void testDeleteClobDataType() {
+		// 1. insert init data
+		insertClobDataType();
+
+		// 2. select a clobDataType data
+		ClobDataType clobDataType = (ClobDataType) session.get(
+				ClobDataType.class, new Integer(4491));
+
+		// 3. remove data
+		session.delete(clobDataType);
+
+		// 4. check if deletion is successful
+		clobDataType = (ClobDataType) session.get(ClobDataType.class,
+				new Integer(4491));
+		assertNull(clobDataType);
+	}
+
+COM:tests the deletion of a ClobDataType object from a session in Hibernate

@@ -1,0 +1,17 @@
+TDAT: 	private void tableChanged_400_Update(int start) {
+		LineNode node = findNode4LineNumber(root, start);
+
+		if (node == null) {
+			node = root;
+		}
+
+		while (node != null && node.getLineNumber() < start) {
+			node = (LineNode) node.getNextNode();
+		}
+
+//		System.out.print("Update:: >> " + start + " << ");
+
+		rebuildNode(getParent(node, start + 1));
+	}
+
+COM:updates a table with new data starting at a given line number

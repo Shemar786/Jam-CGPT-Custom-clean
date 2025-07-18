@@ -1,0 +1,13 @@
+TDAT:     public void testSetGroupDescription() {
+        System.out.println("SetGroupDescription");
+        
+        String gd = "";
+        AutismGroup instance = new AutismGroup();
+        
+        instance.SetGroupDescription(gd);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the "SetGroupDescription" method of the "AutismGroup" class by creating an instance of the class and setting the group description to an empty string

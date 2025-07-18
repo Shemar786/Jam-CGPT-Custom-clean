@@ -1,0 +1,9 @@
+TDAT:     public void testFindLink1() {
+        IE theIE = getIe();
+        Document theDocument = theIE.getDocument();
+        A theA = theDocument.findLink("INPUT Test 1");
+        assertNotNull(theA);
+        assertEquals("INPUT Test 1", theA.getInnerText().trim());
+    }
+
+COM:tests the ability to find a specific link within a document using Internet Explorer and asserts that it is not null and has the correct inner text

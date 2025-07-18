@@ -1,0 +1,13 @@
+TDAT: 	private JMenuItem makeMenuItem(String key, String actionCommand) {
+		String value = Config.language.getProperty(key);
+		if (value == null) {
+			throw new RuntimeException("Key \"" + key
+					+ "\" is missing from the language file");
+		}
+		JMenuItem item = new JMenuItem(value);
+		item.setActionCommand(actionCommand);
+		item.addActionListener(desktop);
+		return item;
+	}
+
+COM:creates a JMenuItem object with a label retrieved from a language file and sets its action command and action listener

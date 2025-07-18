@@ -1,0 +1,15 @@
+TDAT: 	public boolean dequeueFilm(int filmID, int usersID){
+		boolean dequeued = true;
+		try{
+			String query = "DELETE FROM wishlist WHERE filmID='" + filmID + "' AND usersID='" + usersID + "'";
+			Statement st = DBManager.GetStatement();
+			st.executeUpdate(query);
+			DBManager.close(st);
+		}catch(SQLException e){
+			dequeued = false;
+			System.out.println("enqueueFilm: " + e);
+		}
+		return dequeued;
+	}
+
+COM:dequeues a film from a user's wishlist by deleting the corresponding wishlist entry from the database

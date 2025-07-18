@@ -1,0 +1,14 @@
+TDAT:     public InfluenceLaw getApplicableLaw(Influence inf) {
+        if (inf == null) {
+            throw new IllegalArgumentException();
+        }
+        for (Iterator iter = influenceLaws.iterator(); iter.hasNext();) {
+            InfluenceLaw infLaw = (InfluenceLaw) iter.next();
+            if(infLaw.isApplicableTo(inf)) {
+                return infLaw;
+            }
+        }
+        return null;
+    }
+
+COM:returns an applicable InfluenceLaw object based on given Influence object, or null if not applicable

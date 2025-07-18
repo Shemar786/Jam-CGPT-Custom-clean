@@ -1,0 +1,6 @@
+TDAT: 	public String getMatchWinner(String matchId) throws InvalidMatchException{
+		ValidateAttribute.validateMatch(matchId);
+		return ((BLMSMatch)(ServiceLocator.singleton().getService().selectObjectsByField(new BLMSMatch(), "id", new Integer(matchId),"date" , "id").get(0))).getWinnerId().toString();
+	}
+
+COM:takes a match ID as input, validates it, and returns the winner of the match by querying a database

@@ -1,0 +1,23 @@
+TDAT: 	private boolean sendReply(ACLMessage msg, Concept agentAction) {
+		
+		// --- Define a new action ------------------------
+		Action act = new Action();
+		act.setActor(getAID());
+		act.setAction(agentAction);
+		
+		try {
+			// --- ... send -------------------------------
+			getContentManager().fillContent(msg, act);
+			send(msg);			
+			return true;
+		} catch (CodecException e) {
+			e.printStackTrace();
+			return false;
+		} catch (OntologyException e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
+
+COM:sends a reply message with a specified concept as an action to a specified ACLMessage

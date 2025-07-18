@@ -1,0 +1,11 @@
+TDAT:     private void setTransportConfigForm(final ActionForm form) throws Exception {
+    	
+    	// Also, get stuff for all lists on the form
+    	List transportTypes = EntityHelper.getEntities(null, Globals.ENTITY_TRANSPORT_TYPE, null, 0, 0, principal, dbSession);
+    	
+		//add all destinations to the form
+		((TransportConfigForm) form).setTransportTypes(transportTypes);
+		
+    }
+
+COM:sets the transport configuration form with a list of transport types obtained from a database and adds them to the form

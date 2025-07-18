@@ -1,0 +1,17 @@
+TDAT: 	private HtmlAnchor findFirstPhoto(HtmlPage photoPage) {
+		/*
+		 * Search any photo
+		 */
+		Node divPhoto = JDOMXMLUtil.findNodeWithAttribute(photoPage, "div", "class", "photo");
+
+		if (divPhoto != null) {
+			/*
+			 * Return the photo link
+			 */
+			return (HtmlAnchor) JDOMXMLUtil.findNode(divPhoto, "a");
+		}
+
+		return null;
+	}
+
+COM:finds the first photo link on an HTML page with the "div" class attribute set to "photo"

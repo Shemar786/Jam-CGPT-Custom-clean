@@ -1,0 +1,13 @@
+TDAT: 	protected String getNCSCollectionNativeFormat() {
+		try {
+			Element mdpColconfig = this.getNCSCollectionConfig();
+			if (mdpColconfig == null)
+				throw new Exception("WARNING - mdpColconfig not found for " + collectionMetadataProvider);
+			return mdpColconfig.selectSingleNode("xmlFormat").getText();
+		} catch (Throwable t) {
+			this.prtlnErr("getNCSCollectionNativeFormat: " + t.getMessage());
+		}
+		return null;
+	}
+
+COM:returns the native format of a collection given a configuration element, or null if there is an error

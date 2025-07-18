@@ -1,0 +1,11 @@
+TDAT: 	// public void publishEventState(IAEvent event, ExecutionResult result) {
+	// assert event != null && rootMachine.getEvents().contains(event);
+	//
+	// State state = getEventState(result);
+	// EventStatus status = new EventStatus(event.getMachineName(), event
+	// .getName(), state);
+	// StateChangedEvent chevt = new StateChangedEvent(status, false);
+	// fireEventListener(chevt);
+	// }
+
+COM:publishes the state of an event, creates a new EventStatus object, creates a new StateChangedEvent object, and calls the fireEventListener method

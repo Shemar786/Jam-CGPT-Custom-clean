@@ -1,0 +1,15 @@
+TDAT: 	private void selectRow(int row) {
+		// When a row (other than the first one, which is used as a header) is
+		// selected, display its associated MailItem.
+		int elementIndex = startIndex + row;
+	
+		styleRow(selectedRow, false);
+		if( row != -1 && elementIndex < getListCount() ) {
+			styleRow(row, true);
+			selectedRow = row;
+		}
+		else
+			selectedRow = -1;
+	}
+
+COM:selects a row and displays its associated MailItem if it is not the header row

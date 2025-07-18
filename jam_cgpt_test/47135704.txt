@@ -1,0 +1,11 @@
+TDAT:     private void stopMedia() {
+        p.stop();
+        t.stop();
+        p.setMediaTime(new Time(0.0));
+        lPos.setText(toTime(0)+":"+toTime(totTime));
+        sTimeline.setValue(0);
+        bStop.setEnabled(false);
+        bPlay.setText("Play");
+    }
+
+COM:stops the media player, resets the playback position, updates the display, and disables the stop button while changing the text on the play button to "Play"

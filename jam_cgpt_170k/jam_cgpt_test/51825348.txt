@@ -1,0 +1,16 @@
+TDAT: 	public void load(String dbase) throws DbrcLoadException {
+		String homePath = "";
+		String dbrcFilePath = "";
+		
+		//get the "HOME" environoment variable 
+		homePath = System.getProperty("user.home");
+		
+		dbrcFilePath = homePath + "/" + DBRC_FILE_NAME;
+		try {
+			loadHelper(dbase, dbrcFilePath);
+		} catch (DbrcLoadException e) {
+			throw new DbrcLoadException(e.getMessage(), e.dbase, e.dbrcFilePath, e);
+		}
+	}
+
+COM:loads a database based on a specified database file path, and throws a custom exception if there is an error

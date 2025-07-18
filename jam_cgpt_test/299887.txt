@@ -1,0 +1,23 @@
+TDAT: 	protected Assignment createAssignment(String name, Expression value) {
+		Assignment assignment = getAST().newAssignment();
+		Expression lhs;
+		
+		SimpleName field = getAST().newSimpleName(name);
+		
+		if (getParameterDeclarations().contains(name)) {
+			FieldAccess exp = getAST().newFieldAccess();
+			ThisExpression thisExp = getAST().newThisExpression();
+			exp.setExpression(thisExp);
+			exp.setName(field);
+			lhs = exp;
+		} else {
+			lhs = field;
+		}
+		
+		assignment.setLeftHandSide(lhs);
+		assignment.setRightHandSide(value);
+		
+		return assignment;
+	}
+
+COM:creates an assignment expression with a specified name and value and returns it

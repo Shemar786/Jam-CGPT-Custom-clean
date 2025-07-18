@@ -1,0 +1,18 @@
+TDAT: 	private void activateKey(APDU apdu, byte[] buffer) {
+		// check P1
+		if (buffer[ISO7816.OFFSET_P1] != (byte) 0x00)
+			ISOException.throwIt(ISO7816.SW_WRONG_P1P2);
+		switch (buffer[ISO7816.OFFSET_P2]) {
+		case AUTHENTICATION:
+			// activate key: key always active, do nothing
+			break;
+		case NON_REPUDIATION:
+			// activate key: key always active, do nothing
+			break;
+		default:
+			ISOException.throwIt(SW_REFERENCE_DATA_NOT_FOUND);
+			break;
+		}
+	}
+
+COM:takes in an APDU and a buffer, checks the P1 value in the buffer, and either activates a key or throws an exception based on the P2 value

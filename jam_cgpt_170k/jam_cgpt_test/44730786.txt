@@ -1,0 +1,14 @@
+TDAT: 	public void setMonitor(IProgressMonitor monitor) {
+		if (this.monitor != null) {
+			this.monitor.removeValueChangedListener(changeListener);	
+		}
+		this.monitor = monitor;
+		// remove to prevent double registration when a monitor is set twice.
+		if (monitor != null) {
+			monitor.removeValueChangedListener(changeListener); 
+			monitor.addValueChangedListener(changeListener);
+		}
+		requireRedraw();
+	}
+
+COM:sets a progress monitor and adds a value changed listener to it, while removing the previous listener if present

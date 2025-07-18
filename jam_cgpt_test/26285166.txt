@@ -1,0 +1,12 @@
+TDAT:     private void acceptFileSlot(String text) {
+        if(! (fileName.getSelectedItem() instanceof File &&
+                ((File) fileName.getSelectedItem()).toString().equals(text)))
+            fileName.setSelectedItem(text);
+        if (fileName.isPopupVisible()) {
+            fileName.setPopupVisible(false);
+            return;
+        }
+        acceptFileSlot();
+    }
+
+COM:sets the selected item in a dropdown menu and closes the menu if it is open

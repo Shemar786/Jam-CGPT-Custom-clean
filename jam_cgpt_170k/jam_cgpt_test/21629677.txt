@@ -1,0 +1,13 @@
+TDAT:     public String getOrientation() {
+        if (null != this.orientation) {
+            return this.orientation;
+        }
+        ValueExpression _ve = getValueExpression("orientation");
+        if (_ve != null) {
+            return (java.lang.String) _ve.getValue(getFacesContext().getELContext());
+        } else {
+            return null;
+        }
+    }
+
+COM:gets the orientation of a component

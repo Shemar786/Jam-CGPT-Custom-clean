@@ -1,0 +1,9 @@
+TDAT: 	public void registerComponent(AbstractComponent component) {
+		components.add(component);
+		Map<ConfigOption<?>, Object> emptyMap = new HashMap<ConfigOption<?>, Object>();
+		lastValidConfigValue.put(component, emptyMap);
+		configEntryHistory.put(component, new LinkedList<ConfigEntry<?>>());
+		logger.debug("Component instance " + component + " added to component pool.");
+	}
+
+COM:registers an abstract component by adding it to a list of components, initializing some data structures for it, and logging the addition

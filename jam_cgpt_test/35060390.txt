@@ -1,0 +1,20 @@
+TDAT: 	public void loadSiteInfo(final ConnectionLock connectionLock ) {
+		SettingsServiceAsync settingsService = ServiceFactory.getSettingsService();
+		settingsService.loadSiteInfo( new AsyncCallbackLock<SiteInfo>(connectionLock){
+			@Override
+			public void onFailure(Throwable caught) {
+				caught.printStackTrace();
+				super.onFailure(caught);
+			}
+			@Override
+			public void onSuccess(SiteInfo result) {
+				if( result != null ) {
+					setSiteInfo( result );
+					notifyObservers();
+				}
+				super.onSuccess(result);
+			}
+		});
+	}
+
+COM:loads site information asynchronously using a connection lock and notifies observers if successful

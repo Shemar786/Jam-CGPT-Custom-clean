@@ -1,0 +1,10 @@
+TDAT:     public void setVersionInfo() {
+        final AntRunner antrunner = AntRunner.getInstance();
+
+        setProperty(PROP_VERSION, PROP_MAJOR_VERSION,
+                    Integer.toString(antrunner.getMajorVersionNumber()));
+        setProperty(PROP_VERSION, PROP_MINOR_VERSION,
+                    Integer.toString(antrunner.getMinorVersionNumber()));
+    }
+
+COM:sets the version information of the AntRunner instance as properties

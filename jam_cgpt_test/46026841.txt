@@ -1,0 +1,14 @@
+TDAT: 	protected void gameOverCheck(GameEngine engine, int playerID) {
+		if (engine.field == null)
+			return;
+		if (big[playerID])
+		{
+			if (!engine.field.getBlockEmpty(1, 0))
+				engine.stat = GameEngine.STAT_GAMEOVER;
+		}
+		else if (!engine.field.getBlockEmpty(2, 0) ||
+				(dangerColumnDouble[playerID] && !engine.field.getBlockEmpty(3, 0)))
+			engine.stat = GameEngine.STAT_GAMEOVER;
+	}
+
+COM:checks if the game is over in a specific game engine and player ID, based on certain conditions such as non-empty game blocks

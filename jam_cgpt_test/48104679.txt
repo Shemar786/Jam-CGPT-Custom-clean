@@ -1,0 +1,11 @@
+TDAT:     public DefaultMutableTreeNode getDataTree(Taxa taxa) {
+        Writer w = new StringWriter();
+        try {
+            write(w, taxa);
+        } catch (IOException e) {
+            return new DefaultMutableTreeNode(NAME + "<output error>");
+        }
+        return new DefaultMutableTreeNode(w.toString());
+    }
+
+COM:returns a DefaultMutableTreeNode object that contains data from a Taxa object, converted to a string format using a Writer object

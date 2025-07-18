@@ -1,0 +1,7 @@
+TDAT: 	public void setValueAt(JFrame parentFrame, int layoutIdx, int row, int col, Object val) {
+		if (row < getRowCount()) {
+			setValueAt(parentFrame, layoutIdx, getLine(row), row, col, val);
+		}
+	}
+
+COM:sets a value in a specific row and column of a table in a JFrame object

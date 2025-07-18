@@ -1,0 +1,9 @@
+TDAT:     public void resetStats() {
+        ConcurrentHashMap<String,QueryStats> queries = perPoolStats.get(poolName);
+        if (queries!=null) {
+            Iterator<String> it = queries.keySet().iterator();
+            while (it.hasNext()) it.remove();
+        }
+    }
+
+COM:resets the statistics for a ConcurrentHashMap of query stats for a given pool

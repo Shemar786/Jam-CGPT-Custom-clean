@@ -1,0 +1,14 @@
+TDAT: 	private boolean isValidType(Class type) {
+		return 	(type.isPrimitive() || 
+				(String.class == type) ||
+				(Boolean.class == type) ||
+				(Integer.class == type) ||
+				(Double.class == type) ||
+				(Byte.class == type) ||
+				(Short.class == type) ||
+				(Long.class == type) ||
+				(Float.class == type) ||
+				(Character.class == type));
+	}
+
+COM:checks if a given type is a primitive or one of several wrapper classes

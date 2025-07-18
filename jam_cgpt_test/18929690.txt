@@ -1,0 +1,14 @@
+TDAT:   public Object getBookmarkState(int levelOfDetail) {
+    if (this.result == null)
+      return null;
+    try {
+      if (levelOfDetail == Bookmarkable.EXTENSIONAL)
+        return getExtensionalBookmarkState();
+      return getIntensionalBookmarkState();
+    } catch (OlapException e) {
+      logger.error(null, e);
+      throw new RuntimeException(e);
+    }
+  }
+
+COM:returns the bookmark state at a specified level of detail, either extensional or intensional, by checking the result and catching any OlapExceptions that occur

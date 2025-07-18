@@ -1,0 +1,14 @@
+TDAT: 	private void initialize() {
+		GridBagConstraints gridBagConstraints1 = new GridBagConstraints();
+		gridBagConstraints1.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints1.gridy = 3;
+		gridBagConstraints1.weightx = 1.0;
+		gridBagConstraints1.weighty = 1.0;
+		gridBagConstraints1.gridx = 0;
+		this.setLayout(new GridBagLayout());
+		this.setSize(670, 684);
+		this.setSize(new java.awt.Dimension(564,684));
+		this.add(getMasterDataTabbedPane(), gridBagConstraints1);
+	}
+
+COM:initializes a panel's layout and adds a tabbed pane component to it in a specific position and layout using GridBagLayout

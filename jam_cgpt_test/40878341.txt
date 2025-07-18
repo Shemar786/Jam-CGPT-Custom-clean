@@ -1,0 +1,10 @@
+TDAT:     public Command getBackCommand32() {
+        if (backCommand32 == null) {//GEN-END:|701-getter|0|701-preInit
+            // write pre-init user code here
+            backCommand32 = new Command("OK", Command.BACK, 0);//GEN-LINE:|701-getter|1|701-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|701-getter|2|
+        return backCommand32;
+    }
+
+COM:returns a Command object called backCommand32, creating it if it has not been initialized

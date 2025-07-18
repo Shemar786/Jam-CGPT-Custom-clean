@@ -1,0 +1,10 @@
+TDAT: 	public void testGetSide() {
+		assertTrue(bishop.getSide() == "White");
+		assertTrue(bishop1.getSide() == "White");
+		assertTrue(bishop2.getSide() == "Black");
+		assertTrue(bishop3.getSide() == "White");
+		assertTrue(bishop4.getSide() == "Black");
+		assertTrue(bishop5.getSide() == "Black");
+	}
+
+COM:tests the getSide function of a bishop object to ensure that it returns the correct side (white or black)

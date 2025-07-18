@@ -1,0 +1,11 @@
+TDAT: 	private void scheduleNextRun(){
+		Intent intent=new Intent();
+		intent.setClass(getApplicationContext(), DataService.class);
+		PendingIntent pendingIntent=PendingIntent.getService(getApplicationContext(), 1, intent, PendingIntent.FLAG_ONE_SHOT);
+		AlarmManager alarmManager=(AlarmManager)getSystemService(ALARM_SERVICE);
+		long now= System.currentTimeMillis();
+		//start after 1.5 minutes/ 90 seconds
+		alarmManager.set(AlarmManager.RTC_WAKEUP, (now+ 9000), pendingIntent);
+	}
+
+COM:schedules the next run of a data service in 1.5 minutes using an alarm manager and a pending intent

@@ -1,0 +1,16 @@
+TDAT: 	public void search(String keyword) {
+		if(!isSearchOptionSelected()){
+			Events.instance().raiseEvent(Constants.ADD_ERROR_EVENT, Constants.SEARCH_NO_OPTIONS_ERROR);
+			return;
+		}
+		Iterator<ISearchOption> it = options.iterator();
+		selectedKeyword = keyword.trim();
+		while (it.hasNext()) {
+			ISearchOption option = it.next();
+			if (option.getSelected()) {
+				option.search(searchAction,selectedKeyword , seachInMyAlbums, searchInShared);
+			}
+		}
+	}
+
+COM:searches for a specified keyword across selected search options and returns an error if no options are selected

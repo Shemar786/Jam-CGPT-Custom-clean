@@ -1,0 +1,14 @@
+TDAT:    private Schema schema() {
+      Schema sch = new Schema();
+      sch.addIntField("block");
+      sch.addIntField("id");
+      if (ti.schema().type(fldname) == INTEGER)
+         sch.addIntField("dataval");
+      else {
+         int fldlen = ti.schema().length(fldname);
+         sch.addStringField("dataval", fldlen);
+      }
+      return sch;
+   }
+
+COM:creates a Schema object with different types of Int or String fields depending on the type of a given field name

@@ -1,0 +1,16 @@
+TDAT: public void testAssignOsidContext() {
+    System.out.println("testAssignOsidContext");
+    
+    // TODO add your test code below by replacing the default call to fail.
+    try {
+        OsidContext oc = new OsidContext();
+        azMgr.assignOsidContext(oc);
+        System.out.println("Empty context assigned");
+    } catch (OsidException oe) {
+        fail("OsidException: "+oe.getMessage());
+    }
+    
+    
+}
+
+COM:tests the assignment of an OsidContext object to an azMgr instance and prints appropriate messages based on the success or failure of the assignment

@@ -1,0 +1,11 @@
+TDAT:     private String makeTan(String a) {
+        if (!isVariable(a) && !isConstant(a) && isAtan(a)) {
+            return arg1(a);
+        } else if (!isVariable(a) && !isConstant(a) && isAcotan(a)) {
+            return makeDivision("1", arg1(a));
+        }
+
+        return list("tan", a);
+    }
+
+COM:returns the appropriate mathematical function for the given input string, either "tan", "arctan(arg1(a))", or "1/arcotan(arg1(a))"

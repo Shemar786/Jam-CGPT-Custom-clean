@@ -1,0 +1,10 @@
+TDAT:     private void registerProcessorMBean(String baseObjectName, String processorName) throws MalformedObjectNameException, JMException {
+        String processorMBeanName = baseObjectName + "processor=" + processorName;
+
+        MailProcessorManagement processorDetail = new MailProcessorManagement(processorName);
+        registerMBean(processorMBeanName, processorDetail);
+        mMap.put(mList.getProcessor(processorName), processorDetail);
+
+    }
+
+COM:registers a MailProcessorManagement object as an MBean, with a specific name derived from the inputs provided, while also adding it to a HashMap for later retrieval

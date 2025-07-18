@@ -1,0 +1,11 @@
+TDAT: 	public void testRenameIntForce() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neParent = createNEPositive(rSource, "parent", null);
+		NamedElement neSource = createNEPositive(neParent, "foo", null);
+		NamedElement neDest = createNEPositive(neParent, "bar", null);
+		
+		renamePositive(neSource, neDest.getElementName(), true);
+	}
+
+COM:tests renaming an element within a Rodin file by creating a parent element and two child elements, and then renaming one of the child elements to the name of the other child element with force option enabled

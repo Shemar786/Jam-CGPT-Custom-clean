@@ -1,0 +1,11 @@
+TDAT:     private int sizeData(int index){
+        int length = 0;
+        int[] temp = getArray(index, DATA);
+        if(!sort(temp, DataStorage.BASE, ""))
+            length++;
+        if(!sort(temp, DataStorage.TYPE, ""))
+            length++;
+        return length;
+    }
+
+COM:returns the size of data at a specific index after sorting it according to certain criteria

@@ -1,0 +1,20 @@
+TDAT: 	public boolean validateState_hasValidName(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		String name = state.getName();
+		if (name == null || !name.trim().matches("\\w+")) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "State must have a valid name", getObjectLabel(state, context) },
+						 new Object[] { state },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+COM:takes a State object, a DiagnosticChain object, and a Map object as inputs, and checks if the state name is valid by using regular expression, and returns a boolean value indicating the validity of the state name

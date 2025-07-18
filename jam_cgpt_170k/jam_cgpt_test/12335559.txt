@@ -1,0 +1,18 @@
+TDAT: 	public Properties localServicePort(String s ) {
+		try {
+			Properties p = new Properties();
+			int localPort = Integer.parseInt(s);
+			p.setProperty(PGridP2P.PROP_LOCAL_PORT, String.valueOf(localPort));
+			return p;
+		} catch (IndexOutOfBoundsException e) {
+			System.err.println("Invalid number of arguments");
+			printUsage();
+			throw new RuntimeException(e);
+		} catch (NumberFormatException e) {
+			System.err.println("Could not determine local port number");
+			printUsage();
+			throw new RuntimeException(e);
+		}
+	}
+
+COM:takes a string argument and sets it as the value of the local port property for a PGridP2P object

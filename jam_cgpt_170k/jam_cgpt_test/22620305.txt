@@ -1,0 +1,16 @@
+TDAT: 	public String getDisplayText() {
+
+		String s = "";
+		List aList = getAncestors();
+		for (int i = 0; i < aList.size(); i++) {
+			AsnStandard std = (AsnStandard) aList.get(i);
+			s += std.getDescription();
+			s += ": ";
+		}
+		s += this.getDescription();
+
+		s = FindAndReplace.replace(s, "<br>", "\n", true);
+		return removeEntityRefs(s);
+	}
+
+COM:returns the display text of an AsnStandard object with line breaks and entity references removed

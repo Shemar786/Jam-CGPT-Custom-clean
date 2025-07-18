@@ -1,0 +1,16 @@
+TDAT: 	public void displayAttributeFields() {
+		prtln("** Attribute Fields **");
+		for (Iterator ai = getAttributeFields().iterator(); ai.hasNext(); ) {
+			InputField field = (InputField) ai.next();
+			if (schemaHelper.isRequiredAttribute(field.getSchemaNode())) {
+				// field.isRequired())
+				prtln(field.getXPath() + " (required)");
+			} else {
+				prtln(field.getXPath());
+			}
+			prtln("\t" + field.getValue());
+		}
+		prtln("----------\n");
+	}
+
+COM:displays the attribute fields along with their values and checks if they are required or not

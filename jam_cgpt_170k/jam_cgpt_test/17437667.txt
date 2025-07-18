@@ -1,0 +1,8 @@
+TDAT:     private void displayHitMessage(MuCharacter target, int dmg, int f) {
+        System.out.println("Hit :dmg[" + dmg + "] on id[" + target.getObjectId() + "] who has live[" + target.getCurentHp());
+        SDMgOnScreen dmg1 = new SDMgOnScreen(getObjectId(), dmg, SDMgOnScreen._DMG_NORM);
+        target.sendPacket(dmg1);
+
+    }
+
+COM:displays a message indicating a hit on a specified target, as well as sends a packet to the target with information about the hit

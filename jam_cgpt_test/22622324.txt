@@ -1,0 +1,15 @@
+TDAT: 	public List getPrompts() {
+		if (prompts == null) {
+			prompts = new ArrayList();
+			List nodes = doc.selectNodes("/metadataFieldInfo/field/prompts/prompt");
+			if (nodes != null) {
+				for (Iterator i = nodes.iterator(); i.hasNext(); ) {
+					Element promptEl = (Element) i.next();
+					prompts.add(promptEl.getTextTrim());
+				}
+			}
+		}
+		return prompts;
+	}
+
+COM:retrieves a list of prompts from an XML document and initializes the list if it is null

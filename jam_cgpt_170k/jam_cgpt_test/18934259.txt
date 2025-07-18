@@ -1,0 +1,16 @@
+TDAT: 	public int read(byte[] buf, int off, int len) throws IOException {
+		long tm=System.currentTimeMillis();
+		len=in.read(buf,off,len);
+		if (len <= 0) return len;
+		tm+=Math.round(nSpB*len)-System.currentTimeMillis();
+		int ns=(int) (tm % nsPms);
+		tm/=nsPms;
+		try {
+			if (tm>0) Thread.sleep(tm,ns);
+		} catch (InterruptedException ie) {
+			InterruptedIOException iie=new InterruptedIOException();
+			iie.bytesTransferred=len;
+			throw iie;}
+		return len;}
+
+COM:reads a specified number of bytes from an input stream into a buffer, sleeps for a certain amount of time, and returns the number of bytes read

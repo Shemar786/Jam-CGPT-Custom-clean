@@ -1,0 +1,7 @@
+TDAT:     public float calculateDistance(Vector3f v,float radius ){
+        return (v.getX()-origin.getX())*normal.getX()+
+                (v.getY()-origin.getY())*normal.getY()+
+                (v.getZ()-origin.getZ())*normal.getZ();
+    }
+
+COM:calculates the distance between a vector and a radius using a three-dimensional coordinate system

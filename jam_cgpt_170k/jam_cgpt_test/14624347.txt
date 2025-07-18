@@ -1,0 +1,11 @@
+TDAT:     public void testsetUseStatusAll() {
+        System.out.println("setUseStatusAll");
+        boolean status = true;
+        org.gps.types.GpsSatelliteArray instance = new org.gps.types.GpsSatelliteArray();
+        instance.setUseStatusAll(status);
+        
+        //TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:sets the use status of all GPS satellites to true and prints a message to indicate the change

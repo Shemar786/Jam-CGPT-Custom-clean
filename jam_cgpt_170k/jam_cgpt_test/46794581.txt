@@ -1,0 +1,8 @@
+TDAT: 	private boolean sessionExists(String wordToComplete, int documentOffset, int previousDocumentOffset){
+		return ((wordToComplete.endsWith(".") ||
+				(wordToComplete.length() >= MIN_SIZE)) &&
+				 ((documentOffset + 1 == previousDocumentOffset) ||
+				  (documentOffset - 1 == previousDocumentOffset)));
+	}
+
+COM:checks if a session exists based on the input parameters

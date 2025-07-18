@@ -1,0 +1,10 @@
+TDAT:     public TaskDescription getTaskDescription() {
+        TaskDescription taskDescription = new TaskDescription(taskID, jarID,
+                resultDataID);
+        for (int i = 0; i < dataID.length; i++) {
+            taskDescription.addDataID(dataID[i]);
+        }
+        return taskDescription;
+    }
+
+COM:returns a TaskDescription object containing taskID, jarID, resultDataID, and an array of dataIDs

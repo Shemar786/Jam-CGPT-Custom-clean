@@ -1,0 +1,16 @@
+TDAT: 	private HashMap getMapFromList(String userName, List sourceList) {
+		logger.debug("entering getUserMapFromList");
+		for (int i = 0; i < sourceList.size(); i++) {
+			HashMap element = (HashMap) sourceList.get(i);
+
+			if (userName.equals(element.get("USERNAME"))) {
+
+				logger.debug("Matching map is : " + element);
+				return element;
+			}
+		}
+		logger.info("user not found, returning null");
+		return null;
+	}
+
+COM:retrieves a single HashMap object from a List based on a matching username key/value pair and returns it, otherwise returns null

@@ -1,0 +1,11 @@
+TDAT: public void setMaximized (boolean maximized) {
+	checkWidget ();
+  CShell cShell = (CShell)handle;
+  if(maximized) {
+    cShell.setExtendedState(CShell.MAXIMIZED_BOTH);
+  } else {
+    cShell.setExtendedState(cShell.getExtendedState() & ~CShell.MAXIMIZED_BOTH);
+  }
+}
+
+COM:sets the state of a CShell object to either maximized or not maximized

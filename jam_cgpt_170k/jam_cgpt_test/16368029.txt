@@ -1,0 +1,13 @@
+TDAT:   public void selectionChanged(SelectionChangedEvent event) {
+    if (event.getSelection().isEmpty()) {
+      deleteMarkerAction.setEnabled(false);
+      doubleClickAction.setEnabled(false);
+      deleteAllMarkersAction.setEnabled(false);
+    } else {
+      deleteMarkerAction.setEnabled(true);
+      doubleClickAction.setEnabled(true);
+      deleteAllMarkersAction.setEnabled(true);
+    }
+  }
+
+COM:handles the event of a selection being changed and enables or disables certain actions based on whether there are any selected markers

@@ -1,0 +1,11 @@
+TDAT:     private void doInit() {
+        getConnection();
+        dropTable();
+        createTable();
+        closeAll();
+        out.println("Init Successful!");
+        out.println("<br><a href=\"./web/control/user.jsp\">User Control</a>");
+        
+    }
+
+COM:performs a series of tasks, including getting a connection, dropping a table, creating a table, and closing all connections, and prints a success message along with a link to a web page

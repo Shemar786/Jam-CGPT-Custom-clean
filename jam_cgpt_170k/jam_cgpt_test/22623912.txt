@@ -1,0 +1,13 @@
+TDAT: 	public List getDups(String url, String collection) {
+		DupSimUrlChecker urlChecker = null;
+		List dups = new ArrayList();
+		try {
+			urlChecker = new DupSimUrlChecker(url, collection, servletContext);
+			dups = urlChecker.getDups();
+		} catch (Exception e) {
+			prtlnErr("DupSimUrlChecker error: " + e.getMessage());
+		}
+		return dups;
+	}
+
+COM:takes two String parameters, creates a DupSimUrlChecker object, and returns a List of duplicates found

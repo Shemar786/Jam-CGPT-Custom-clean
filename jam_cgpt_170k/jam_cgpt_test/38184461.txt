@@ -1,0 +1,15 @@
+TDAT: 	private Wind parseEditString() {
+		//TODO implement error checking
+		Wind w = new Wind();
+		// extract direction
+		String text = edit.getText();
+		String directionStr = text.substring(0,text.indexOf('/'));
+		String speedStr = text.substring(text.indexOf('/')+1);
+		double direction = Double.parseDouble(directionStr);
+		double speed = Double.parseDouble(speedStr);
+		w.setDirection(new Angle(Math.toRadians(direction)));
+		w.setVelocity(new Speed(speed,SpeedUnit.KNOTS));
+		return w;
+	}
+
+COM:parses a string containing wind direction and speed values and returns a Wind object

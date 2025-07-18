@@ -1,0 +1,11 @@
+TDAT:   public UserOnline findUserOnlineByUserName(String userName) {
+    List l = this.getHibernateTemplate().find(LOAD_BY_USERNAME, userName);
+    if (l == null || l.isEmpty()) {
+      return null;
+    }
+    else {
+      return (UserOnline) l.get(0);
+    }
+  }
+
+COM:searches for an online user by their username and returns their UserOnline object if found, otherwise it returns null

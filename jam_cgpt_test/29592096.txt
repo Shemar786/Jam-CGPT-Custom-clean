@@ -1,0 +1,11 @@
+TDAT:   protected void findCoordinateVariables(NetcdfDataset ds) {
+    Iterator vars = ds.getVariables().iterator(); // uses copy
+    while (vars.hasNext()) {
+      VariableDS ncvar = (VariableDS) vars.next();
+      if (ncvar.isCoordinateVariable() && !(ncvar instanceof CoordinateAxis)) {
+        ds.addCoordinateAxis( ncvar);
+      }
+    }
+  }
+
+COM:finds all coordinate variables in a NetcdfDataset and adds them as coordinate axes if they are not already axis variables

@@ -1,0 +1,13 @@
+TDAT:     public void setValue(double newValue) {
+        double value = newValue;
+        if (value < m_min)
+            value = m_min;
+        if ((value + m_extent) > m_max)
+            value = m_max - m_extent;
+        setRangeProperties(
+            value, m_extent, m_min, m_max, m_adjusting, 
+            LinearRangeModelEvent.VALUE_ADJUSTMENT
+        );
+    }
+
+COM:sets the value of a range model instance, ensuring it falls within specified minimum and maximum bounds

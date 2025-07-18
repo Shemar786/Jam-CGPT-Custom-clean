@@ -1,0 +1,14 @@
+TDAT: 	protected String getValueAtPath(Node baseElement, String relativePath) throws Exception {
+		Node node = baseElement.selectSingleNode(relativePath);
+		if (node == null) {
+			throw new Exception("node not found at relative path: " + relativePath);
+		}
+		String ret = node.getText();
+		if (ret == null) {
+			prtln("WARNING: text not found for node at relative path: " + relativePath);
+			return ret;
+		}
+		return ret.trim();
+	}
+
+COM:gets the value of a specific node from an XML document based on a relative path

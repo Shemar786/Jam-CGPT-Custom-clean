@@ -1,0 +1,16 @@
+TDAT: 	protected void instantiateThreadPool() {
+		/* The number of threads created is equal to the lesser of the 
+		 * following two numbers: 
+		 *  1) the number of available processor cores
+		 *  2) the number of index shards
+		 */
+		this.threadCount = Math.min(
+				Runtime.getRuntime().availableProcessors(), 
+				this.shards.length);
+		// Create a thread pool that keeps idle threads alive
+		this.threadPool = new ThreadPoolExecutor(threadCount, threadCount,
+				Long.MAX_VALUE, TimeUnit.MILLISECONDS,
+				new LinkedBlockingQueue<Runnable>());
+	}
+
+COM:creates a thread pool with a number of threads based on the available processor cores or number of index shards, whichever is lesser

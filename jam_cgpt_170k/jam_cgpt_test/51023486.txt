@@ -1,0 +1,20 @@
+TDAT: 	private void scaleViewer(float scaleResolution) {
+		// save old size
+		width = visviewer.getWidth();
+		height = visviewer.getHeight();
+
+		// only scale when required
+		if (scaleResolution != 1) {
+
+			// this is for image scaling
+			int newWidth = Math.round(width * scaleResolution);
+			int newHeight = Math.round(height * scaleResolution);
+
+			// set new size
+			visviewer.setSize(newWidth, newHeight);
+			visviewer.setDoubleBuffered(false);
+			center();
+		}
+	}
+
+COM:scales a viewer's dimensions based on a given scale resolution, saving the old size and setting the new size if necessary

@@ -1,0 +1,13 @@
+TDAT:     private void textAreaKeyTyped() {
+        if (validateText()) {
+            syntaxCheckLabel.setText("Syntax OK");
+            syntaxCheckLabel.setForeground(COLOR_SYNTAX_OK);
+        } else {
+            syntaxCheckLabel.setText("Syntax invalid");
+            syntaxCheckLabel.setForeground(COLOR_SYNTAX_NOTOK);
+        }
+        syntaxCheckLabel.setToolTipText(getUnmatchedBracketText());
+        highlightInvalidLines();
+    }
+
+COM:performs syntax validation for a text area and updates the syntax check label accordingly while also highlighting invalid lines

@@ -1,0 +1,19 @@
+TDAT: 	public void removeAssociations(Object[] associations) {
+		if (associations == null)
+			throw new IllegalArgumentException(ExceptionMessages.NULL_ARGUMENT);
+		if (!ElementManager.isElementArrayOfType(associations,
+				IAssociation.ELEMENT_TYPE))
+			throw new IllegalArgumentException(
+					ExceptionMessages.WRONG_ARGUMENT_TYPE);
+
+		for (Object o : associations) {
+			IAssociation association = (IAssociation) o;
+			try {
+				association.getRequirement().removeAssociation(association);
+			} catch (CoreException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+COM:takes an array of associations, checks if it is of the correct type, and then iterates through each association to remove it from its associated requirement

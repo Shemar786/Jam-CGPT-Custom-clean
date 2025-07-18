@@ -1,0 +1,16 @@
+TDAT:   public Object visit(SimpleNode node, Object data) {
+		ListIterator<Node> i = node.getChildIterator();
+		while(i.hasNext()) {
+			Node child = i.next();
+			Node newChild = (Node)child.accept(this, data);
+			if(newChild == null) {
+				i.remove();
+			}
+			else if(newChild != child) {
+				i.set(newChild);
+			}
+		}
+		return node;
+	}
+
+COM:recursively visits each node in a tree structure, applies a function to each node, and returns the modified tree

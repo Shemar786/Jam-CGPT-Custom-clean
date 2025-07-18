@@ -1,0 +1,19 @@
+TDAT: 	protected URL getCustomResource(String name) {
+		try {
+			for (int i = 0; i < locations.length; i++) {
+				File file = new File(locations[i], name);
+				if (file.exists()) {
+					URL url = file.toURI().toURL();
+					return url;
+				}
+			}
+
+		}
+		catch (IOException e) {
+			logger.error("IOException attempting to load resource " + name + " from location(s) " + Arrays
+					.toString(locations));
+		}
+		return null;
+	}
+
+COM:retrieves a custom resource by searching for it in a set of locations and returning a URL to its location

@@ -1,0 +1,14 @@
+TDAT:     public void write(ProcessingInstruction node) throws IOException {
+        // indent
+        indentIt();
+        write("<?");
+        write(node.getNodeName());
+        write(' ');
+        write(node.getNodeValue());
+        write("?>");
+        if (indent) {
+            writeln();
+        }
+    }
+
+COM:writes a processing instruction with its node name and value and can also indent the output

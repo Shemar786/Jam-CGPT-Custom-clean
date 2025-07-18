@@ -1,0 +1,17 @@
+TDAT:     public void updateRecordSepList(int dbIdx) {
+
+        try {
+           // System.out.println(updateRecordSep);
+            Connection con = Common.getDBConnection(dbIdx);
+            Statement statement = con.createStatement();
+
+            statement.executeUpdate(updateRecordSep);
+            statement.close();
+        } catch (Exception e) {
+            Common.getLogger().logException(AbsSSLogger.ERROR, e);
+
+            e.printStackTrace();
+        }
+    }
+
+COM:updates a record separator list in a database using the provided index

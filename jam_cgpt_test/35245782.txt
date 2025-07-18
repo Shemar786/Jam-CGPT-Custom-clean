@@ -1,0 +1,11 @@
+TDAT:     public int getLateFee() {
+        if (isCheckedOut()) {
+            int latedays = subtractDays(new java.util.Date(), new java.util.Date(order.getDueDate().getTime()));
+            if (latedays > 0) {
+                return order.getFeeRate() * latedays;
+            }
+        }
+        return 0;
+    }
+
+COM:calculates and returns the late fee for an order if it is checked out and overdue, based on a fee rate and the number of days that the order is overdue

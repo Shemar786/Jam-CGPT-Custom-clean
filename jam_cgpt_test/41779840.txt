@@ -1,0 +1,10 @@
+TDAT:     public Command getCmdLogin() {
+        if (cmdLogin == null) {//GEN-END:|113-getter|0|113-preInit
+            // write pre-init user code here
+            cmdLogin = new Command("Login", Command.SCREEN, 0);//GEN-LINE:|113-getter|1|113-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|113-getter|2|
+        return cmdLogin;
+    }
+
+COM:returns a Command object for logging in with the option to customize pre and post initialization code

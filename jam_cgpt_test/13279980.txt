@@ -1,0 +1,7 @@
+TDAT:     protected void displayVariable(Variable v) {
+	Dimension d = ((NodeGraphics) v.graphObject).getPreferredSize();
+	((NodeGraphics) v.graphObject).setBounds(((NodeGraphics) v.graphObject).x - d.width / 2, ((NodeGraphics) v.graphObject).y - d.height / 2, d.width, d.height);
+	cspPanel.add(((NodeGraphics) v.graphObject));
+    }
+
+COM:displays a variable by setting its bounds and adding it to a panel

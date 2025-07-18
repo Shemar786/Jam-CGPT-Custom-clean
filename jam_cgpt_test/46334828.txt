@@ -1,0 +1,26 @@
+TDAT:     private Concern getConernIdParameter(String concernIdParameter) {
+
+
+        long concernId = -1;
+
+
+        try {
+            concernId = Long.parseLong(concernIdParameter);
+        } catch (NumberFormatException ex) {
+            ErrorUtil.showInvalidIdError();
+            return null;
+        }
+
+
+
+        Concern temp = null;
+        for (Concern con : project.getConcerns()) {
+            if (con.getId().equals(concernId)) {
+                temp = con;
+                break;
+            }
+        }
+        return temp;
+    }
+
+COM:attempts to convert a given concernIdParameter to a long integer, then searches for a matching Concern object in a project's list of concerns and returns it if found

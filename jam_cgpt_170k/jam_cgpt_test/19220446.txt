@@ -1,0 +1,13 @@
+TDAT:     public TreeNode getChildAt(int childIndex) {
+        if (children == null) {
+            throw new ArrayIndexOutOfBoundsException("node has no children");
+        }
+        //if(childIndex < children.size()) {
+            return (TreeNode) children.get(childIndex);
+        //}
+        //else {
+        //    return new SDDElementTreeNode();
+        //}
+    }
+
+COM:returns the child node at a specified index in a tree node's children list, or throws an exception if the node has no children

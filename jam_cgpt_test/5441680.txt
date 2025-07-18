@@ -1,0 +1,9 @@
+TDAT:     public UnSyncStringBuffer deleteCharAt(int index) {
+        if ((index < 0) || (index >= count))
+            throw new StringIndexOutOfBoundsException();
+        System.arraycopy(value, index + 1, value, index, count - index - 1);
+        count--;
+        return this;
+    }
+
+COM:deletes the character at the specified index in an unsynchronized string buffer

@@ -1,0 +1,11 @@
+TDAT: 	public String toString(){
+		StringBuffer str = new StringBuffer();
+		str.append("PDB ID: "+pdbID+"\tDomain Origin: "+domainOrigin+"\tDomain ID: "+domainID+"\n");
+		for(Iterator i = subDomainDefinitions.iterator(); i.hasNext();){
+			str.append( ((SubChain)i.next()).toString()+"\n" ); 
+		}
+		
+		return str.toString();
+	}
+
+COM:returns a string representation of an object, including information about a PDB ID, domain origin, domain ID, and sub domain definitions

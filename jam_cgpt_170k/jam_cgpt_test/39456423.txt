@@ -1,0 +1,26 @@
+TDAT:     public void closeDialog(ExitCode exitCode) {
+	if (exitCode == ExitCode.OK) {
+	    // commit the changes to the parameter set
+	    updateParameterSetFromComponents();
+
+	    ArrayList<String> messages = new ArrayList<String>();
+	    boolean allParametersOK = parameterSet
+		    .checkUserParameterValues(messages);
+
+	    if (!allParametersOK) {
+		StringBuilder message = new StringBuilder(
+			"Please check the parameter settings:\n\n");
+		for (String m : messages) {
+		    message.append(m);
+		    message.append("\n");
+		}
+		MZmineCore.getDesktop().displayMessage(message.toString());
+		return;
+	    }
+	}
+	this.exitCode = exitCode;
+	dispose();
+
+    }
+
+COM:closes a dialog window and performs certain updates and checks based on the exit code passed as a parameter

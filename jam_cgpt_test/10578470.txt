@@ -1,0 +1,7 @@
+TDAT:     protected MailetException loadFailed(String name, String type, Exception e) {
+        final StringBuilder builder = new StringBuilder(128).append("Could not load ").append(type).append(" (").append(name).append(")");
+        final MailetException mailetException = new MailetException(builder.toString(), e);
+        return mailetException;
+    }
+
+COM:creates and returns a MailetException with a message indicating that a certain type of object could not be loaded due to an exception

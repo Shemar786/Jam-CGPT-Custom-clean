@@ -1,0 +1,8 @@
+TDAT:   public void fireScroll(Widget sender, int scrollLeft, int scrollTop) {
+    for (Iterator it = iterator(); it.hasNext();) {
+      ScrollListener listener = (ScrollListener) it.next();
+      listener.onScroll(sender, scrollLeft, scrollTop);
+    }
+  }
+
+COM:fires a scroll event and invokes the onScroll method of each registered ScrollListener

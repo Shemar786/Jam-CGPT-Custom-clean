@@ -1,0 +1,12 @@
+TDAT: 	public boolean isVisible(int sosID) {
+		Cursor c = db.query(SOS_TABLE, new String[] { SOS_visible }, ID + "="
+				+ sosID, null, null, null, null);
+		boolean ret = false;
+		if (c.moveToFirst()) {
+			ret = c.getInt(0) == TRUE;
+		}
+		c.close();
+		return ret;
+	}
+
+COM:checks if an SOS with a specific ID is visible or not in a database

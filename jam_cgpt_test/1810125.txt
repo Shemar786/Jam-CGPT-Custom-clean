@@ -1,0 +1,13 @@
+TDAT:   public void removeItem(TreeItem item) {
+    if (!children.contains(item))
+      return;
+
+    item.setTree(null);
+    item.setParentItem(null);
+    children.remove(item);
+    DOM.removeChild(childSpanElem, item.getElement());
+    if (children.size() == 0)
+      updateState();
+  }
+
+COM:removes a given TreeItem from the list of children, and updates the state if there are no more children

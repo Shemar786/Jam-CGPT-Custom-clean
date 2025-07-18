@@ -1,0 +1,10 @@
+TDAT: 	public void testBinaryExpressionBoth() {
+		te = mTypeEnvironment("a", "S", "b", "T");
+		assertExpressionSpecialization(te, //
+				"a ↦ b", //
+				mSpec(te, mList("S", "U", "T", "V"),//
+						mList("a", "S", "c", "U",//
+								"b", "T", "d", "V")));
+	}
+
+COM:tests binary expressions with both operands

@@ -1,0 +1,22 @@
+TDAT: 	public void testSeesContext_02() throws Exception {
+		IContextRoot con = createContext("ctx");
+		saveRodinFileOf(con);
+		
+		IMachineRoot abs = createMachine("abs");
+		addMachineSees(abs, "ctx");
+		saveRodinFileOf(abs);
+		
+		IMachineRoot mac = createMachine("mac");
+		addMachineRefines(mac, "abs");
+		saveRodinFileOf(mac);
+		
+		runBuilder();
+		
+		ISCMachineRoot file = mac.getSCMachineRoot();
+		seesContexts(file, "ctx");
+		containsContexts(file, "ctx");
+		
+		hasMarker(mac.getRefinesClauses()[0]);
+	}
+
+COM:sets up a test scenario where it creates three Rodin files (a context, an abstract machine, and a concrete machine) and runs the Rodin builder to verify that the concrete machine refines the abstract machine and that both machines see the context, with an additional check for a marker on the abstract machine's refines clause

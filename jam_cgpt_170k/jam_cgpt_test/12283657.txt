@@ -1,0 +1,14 @@
+TDAT: 	private void list() throws IOException {
+		final InputStream confFile = FileUtilSingleton.getInstance().loadFile(
+				"scaffolding/etc/config.properties", this.getClass());
+		final Properties config = new Properties();
+		config.load(confFile);
+		for (final Object key : config.keySet()) {
+			getIO().getOutput().print(
+					SPACE + key.toString() + " = "
+							+ config.getProperty(key.toString()));
+		}
+		getIO().getOutput().println();
+	}
+
+COM:loads a configuration file, lists its properties, and prints them to the output

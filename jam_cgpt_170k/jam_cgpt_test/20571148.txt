@@ -1,0 +1,11 @@
+TDAT:   public int getReclaimTimeLimit(String queue) {
+    int reclaimTimeLimit = rmConf.getInt(toFullPropertyName(queue, "reclaim-time-limit"), 
+        defaultReclaimTime);
+    if(reclaimTimeLimit <= 0) {
+      throw new IllegalArgumentException("Invalid reclaim time limit : " 
+          + reclaimTimeLimit + " for queue : " + queue);
+    }
+    return reclaimTimeLimit;
+  }
+
+COM:retrieves a reclaim time limit value for a given queue and throws an exception if the value is invalid

@@ -1,0 +1,18 @@
+TDAT: 	public void addRateSegment(double duration, double rate){
+
+		int k = myRateSegments.size();
+		RateSegmentIfc prev = myRateSegments.get(k-1);
+	
+		ConstantRateSegment next = new ConstantRateSegment(prev.getUpperTimeLimit(), duration, rate, prev.getCumulativeRateUpperLimit());
+		
+		myRateSegments.add(next);
+		
+		if (rate > myMaxRate)
+			myMaxRate = rate;
+		
+		if (rate < myMinRate)
+			myMinRate = rate;
+
+	}
+
+COM:adds a new constant rate segment to a list of rate segments and updates the maximum and minimum rates

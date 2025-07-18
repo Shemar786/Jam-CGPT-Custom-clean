@@ -1,0 +1,13 @@
+TDAT:     public void testSetPassword() {
+        System.out.println("setPassword");
+        
+        String password = "";
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.setPassword(password);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the setPassword method of the SystemClient_DBImpl class by setting an empty password and failing the test case

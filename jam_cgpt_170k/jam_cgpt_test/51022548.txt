@@ -1,0 +1,14 @@
+TDAT: 	public ONDEXConcept clone(ONDEXConcept oldC, ConceptClass newCC) {
+
+		// first clone concept with new ConceptClass
+		ONDEXConcept newC = graph.createConcept(oldC.getPID(),
+				oldC.getAnnotation(), oldC.getDescription(),
+				oldC.getElementOf(), newCC, oldC.getEvidence());
+
+		// copies everything else
+		copyEverythingElse(oldC, newC);
+
+		return newC;
+	}
+
+COM:creates a clone of an ONDEXConcept object with a new ConceptClass and copies all other attributes and properties of the original concept to the new one

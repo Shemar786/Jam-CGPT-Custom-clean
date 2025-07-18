@@ -1,0 +1,9 @@
+TDAT: 	public boolean validateXMLSchema(Object doc) throws UtilException {
+		if(debugMode) System.out.println("Entering gov.nist.qod.util.Validator.validateXMLDocument");
+		errorDescription = "";
+		errorDescription = validateXML(doc,fullResourcesFolderPath+UtilResourcesPaths.EXECUTOR_XMLSCHEMA);
+		if(!errorDescription.equals("")) return false;
+		return true;
+	}
+
+COM:validates an XML document against an XML schema and returns a boolean value based on validation success or failure

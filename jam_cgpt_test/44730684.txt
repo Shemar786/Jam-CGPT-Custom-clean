@@ -1,0 +1,5 @@
+TDAT: 	public void notifyMessage(String message, String cssClazz, double duration, double delay) {
+		queueScriptCall("JWic.ui.Notify.display('" + StringEscapeUtils.escapeJavaScript(message) + "', '" + cssClazz + "', " + duration + ", " + delay + ");");
+	}
+
+COM:displays a notification message with customized CSS class, duration, and delay using the JWic framework

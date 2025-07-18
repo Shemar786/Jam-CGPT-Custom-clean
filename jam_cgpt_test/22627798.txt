@@ -1,0 +1,12 @@
+TDAT: 	public boolean isRepeatingElement(String encodedXPath) {
+		String schemaPath = toSchemaPath(encodedXPath);
+		// prtln ("isRepeatingElement with schemaPath: " + schemaPath);
+		SchemaNode schemaNode = getSchemaNode(schemaPath);
+		if (schemaNode == null) {
+			prtln("isRepeatingElement() could not find a schemaNode for " + schemaPath);
+			return false;
+		}
+		return (isRepeatingElement(schemaNode));
+	}
+
+COM:checks if a given XPath element is a repeating element in a schema

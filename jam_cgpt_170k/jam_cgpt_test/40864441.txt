@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField4() {
+        if (textField4 == null) {//GEN-END:|26-getter|0|26-preInit
+            // write pre-init user code here
+            textField4 = new TextField("Percepciones:", null, 32, TextField.DECIMAL);//GEN-LINE:|26-getter|1|26-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|26-getter|2|
+        return textField4;
+    }
+
+COM:returns a TextField object, and if the object is null (has not been initialized), it creates a new TextField object with the specified label, initial text value, maximum length, and input constraints

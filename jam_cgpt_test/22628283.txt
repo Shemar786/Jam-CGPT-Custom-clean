@@ -1,0 +1,17 @@
+TDAT: 	public boolean init() {
+		initErrorMsg = "";
+		isValid = true;
+		try {
+			xmlRecord = new XMLRecord(xmlFile);
+			map = new HashMap();
+		} catch (Throwable t) {
+			//System.err.println( this.getClass() + " threw exception with message: " + t.getMessage() );
+			//t.printStackTrace();
+			initErrorMsg = "Error initializing DleseXMLReader. " + t.toString();
+			isValid = false;
+		} 
+		return isValid;
+	
+	}
+
+COM:initializes a DleseXMLReader object and returns a boolean indicating whether the initialization was successful

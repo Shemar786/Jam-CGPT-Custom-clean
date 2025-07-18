@@ -1,0 +1,16 @@
+TDAT: 	private String getTypeParameterString(AST c) {
+		AST typeparam = c.getFirstChild();
+		StringBuilder sb = new StringBuilder();
+		sb.append("<");
+		sb.append(typeparam.getFirstChild().getText());
+		typeparam = typeparam.getNextSibling();
+		while(typeparam != null) {
+			sb.append(", ");
+			sb.append(typeparam.getFirstChild().getText());
+			typeparam = typeparam.getNextSibling();
+		}
+		sb.append(">");
+		return sb.toString();
+	}
+
+COM:returns a string of type parameters, given an AST node

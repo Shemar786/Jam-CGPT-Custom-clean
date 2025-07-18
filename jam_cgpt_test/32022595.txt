@@ -1,0 +1,16 @@
+TDAT:     public List find(String query) throws HibernateException {
+        List retList = null;
+        Session session = null;
+        try {
+            session = getSession();
+            retList = session.createQuery(query).list();
+        } catch (HibernateException e) {
+            log.warn(e, e);
+            throw new HibernateException(e);
+        } finally {
+            close(session);
+        }
+        return retList;
+    }
+
+COM:retrieves a list of objects from a database using a Hibernate query and returns it, while handling any potential Hibernate exceptions

@@ -1,0 +1,17 @@
+TDAT: 	private JButton getStartButton() {
+		if (startButton == null) {
+			startButton = new JButton();
+			startButton.setText("Start");
+			startButton.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					TimeRun.getTimeRun().setIntervall(intervallSizeSlider.getValue() * (1000 * 60));
+					TimeRun.getTimeRun().startNewIntervall();
+					setupFrame.setVisible(false);
+
+				}
+			});
+		}
+		return startButton;
+	}
+
+COM:returns a JButton object that, when clicked, sets a time interval, starts a new interval, and hides a setup frame

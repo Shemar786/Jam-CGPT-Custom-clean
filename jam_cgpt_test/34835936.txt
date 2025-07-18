@@ -1,0 +1,13 @@
+TDAT:     public void endExport() {
+        try{
+            fop.write(("</dbexport>\r\n").getBytes());
+            //flush the entire object.
+            fop.flush();
+            //Object is closing here.
+            fop.close();
+        } catch(IOException e) {
+            throw new RuntimeException("IO Exception has occured at endExport!!!!", e);
+        }
+    }
+
+COM:ends an export process by writing a closing XML tag, flushing the object, and closing the file output stream

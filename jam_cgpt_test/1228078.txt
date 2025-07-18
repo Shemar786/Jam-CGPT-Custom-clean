@@ -1,0 +1,17 @@
+TDAT:     public void sendMessage(SimpleMailMessage msg, String templateName, Map model) {
+        String result = null;
+
+        try {
+            result =
+                VelocityEngineUtils.mergeTemplateIntoString(velocityEngine,
+                                                            templateName, model);
+        } catch (VelocityException e) {
+            e.printStackTrace();
+            log.error(e.getMessage());
+        }
+
+        msg.setText(result);
+        send(msg);
+    }
+
+COM:sends a message using a template and a map of values, after merging the template and values using the VelocityEngine

@@ -1,0 +1,15 @@
+TDAT: 	public boolean deleteVillage(int posX, int posY) throws RemoteException {
+		if(posX>=this.size || posX<0 || posY>=this.size || posY<0) {
+			return false;
+		} else {
+			if(this.platform[posX][posY] instanceof Village) {
+				this.nbVillages -= 1;
+				this.platform[posX][posY] = new Field(posX, posY);
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+
+COM:deletes a village object located at the specified coordinates on a grid, reduces the total number of villages on the grid by 1, and returns true if successful, false otherwise

@@ -1,0 +1,1507 @@
+35714220		initializes the server by creating a new instance of the ServerSetup class, setting the smtp manager, starting the server, and creating a user account on the server.
+
+This method initializes the server by creating a new instance of the
+19345643		changes the record index by incrementing it and then calling the changeRecord method.
+
+This method changes the record index by incrementing it and then calling the changeRecord method.
+SUMMARY
+This method is used to change the
+39971220		returns a JPanel that contains a JLabel with the text "non" and a JRadioButton with the text "non".
+
+This method creates a new JPanel if it does not exist, sets its layout to a GridB
+22171689		adds a property descriptor for the isExponential feature of the EveFunctionTimer class.
+
+This method returns a list of property descriptors for the given object.
+
+This method adds a property descriptor for the isExponential feature of
+24665658		draws values on a graphics context, including the color and font of the value and the text of the potential value.
+
+This method draws the values of a point on the graphics context, using the specified color and font.
+
+This
+21826505		tests the functionality of replacing an attribute in a repository by creating a type, adding an attribute to it, and then replacing the attribute with the new value.
+
+This method tests the functionality of replacing an attribute in a repository by creating a type
+23800126		takes a catalog number as input and returns a new catalog number with a prefix of "1" followed by the number incremented by 1.
+
+This method takes a catalog number as input and returns a new catalog number with a prefix of
+24041795		attempts to migrate a database connection to a new database, returning true if successful and false if an exception is thrown.
+
+This method attempts to migrate a database connection to a new database, returning true if successful and false if an exception
+41799278		serializes the object to a DataOutputStream.
+This method serializes the object to a DataOutputStream.
+This method serializes the object to a DataOutputStream.
+This method serializes the object to a DataOutputStream.
+10578066		resets data by deleting SQL statements for various data types, including SQL queries for data types, SQL queries for data types, SQL queries for data types, and SQL queries for data types.
+
+This method deletes data from the database using
+19348945		sets the low display date for the object, ensuring that the date is not null and not before the start date.
+
+This method sets the low display date for the object, ensuring that the date is not null and not before the end date
+31318161		updates the parent block of a line, applying necessary changes to the parent block if necessary.
+
+This method updates the parent block of a line, applying necessary changes to the parent block if necessary.
+SUMMARY
+This method
+38894424		creates a KXMLElement object representing the output protocol, including its attributes and child elements.
+
+This method creates a KXMLElement object representing the output protocol, including its attributes and child elements.
+
+This method creates a
+19344352		sets the table details for the JTable.
+
+This method sets the table details for the JTable.
+
+This method sets the table details for the JTable.
+
+This method sets the table details for the JTable.
+
+51014970		sets the value of the "of_type_fk" field to the value of the "of_type_fk" parameter, but throws a NullPointerException if the parameter is null or empty.
+
+This method sets
+41985621		prints the current position in the form of a string with the specified number of positions.
+
+This method prints the current position in the form of a string with the specified number of positions.
+
+This method prints the current position in the form
+14466801		returns a HashMap containing the attributes of the current object.
+This method returns a HashMap containing the attributes of the current object.
+This method returns a HashMap containing the attributes of the current object.
+This method returns a Hash
+34099744		adds a source line to the class context, using the specified method and instruction handle.
+
+This method adds a source line to the class context, using the specified method and instruction handle.
+
+This method adds a source line to the
+46795453		returns a linked list of the signature parameters of a document offset method.
+
+This method returns a linked list of the signature parameters of a document offset method.
+SUMMARY
+This method is used to return a linked list of
+40865150		returns the exit command, creating it if it does not exist.
+This method returns the exit command2, creating it if it does not exist.
+SUMMARY
+This method is used to create the exit command2 command if
+14642620		tests the DescriptorFilter class by creating a list of files, filtering the files, and asserting that the filtered files match the expected values.
+
+This method tests the DescriptorFilter class by creating a list of files, filtering the
+22075693		takes a file and an output stream as input and returns the file as a string.
+
+This method takes a file and an output stream as input and returns the file as a string.
+
+This method takes a file and an output
+40102085		sends feedback email to a blog with the specified title, trackback, author, and blog.
+
+This method sends a trackback email to a blog with the specified title, trackback, context, author, and blog.
+S
+31227092		updates the matrix by iterating through the rows and columns of the matrix and updating the matrix with the values from the data array.
+
+This method updates the matrix by iterating through the rows and columns of the matrix and updating the matrix
+1873139		returns a BufferedReader object that reads the contents of a file. If the file is not found, it loads the file and returns it.
+
+This method returns a BufferedReader object that reads the contents of a file. If
+46797721		This method returns the next element in the Trie, which is the next element in the Trie, which is the leftmost element in the Trie, which is the rightmost element in the Trie, and the leftmost element in
+3449549		sets the user form for the current instance by setting the principal and order by fields.
+
+This method sets the user form for the current instance by setting the principal and order by fields.
+
+This method sets the user form for the current
+35059757		deletes a puzzle from the puzzle list at the specified index.
+
+This method deletes a puzzle from the puzzle list at the specified index.
+SUMMARY
+This method is used to confirm the deletion of a puzzle from the
+19374288		returns a set of resume states for the current state.
+This method returns a set of resume states for the current state.
+SUMMARY
+This method is used to get a set of resume states for the current state.
+
+
+27796518		calculates the size of a node in a CyNetwork by first retrieving its canonical name, then retrieving the attribute bundle, and finally calculating the node size using the attribute bundle.
+
+This method calculates the node size using the superclass's
+42170937		adds a property descriptor for the "by index" feature of the MonthlyOccursModel class.
+
+This method overrides the default behavior of the superclass to add a property descriptor for the "by index" feature of the MonthlyOcc
+45005018		authenticates a user with a given password and returns an Auth object.
+
+This method authenticates a user with a given password and returns an Auth object.
+
+This method authenticates a user with a given password and returns an Auth object
+17669281		sets the progress status of the progress bar and notifies any registered listeners of the change.
+
+This method sets the progress status of the progress bar and notifies any registered listeners of the change.
+SUMMARY
+This method is
+3501107		tests the close functionality of the Conduit by closing the input and output streams and checking that the streams are closed correctly.
+
+This method tests the close functionality of the Conduit by closing the input and output streams and checking that the streams are
+49866820		creates a checklist item if the list row ID is not null, otherwise it logs an error.
+This method checks if the list row ID is null, and if so, logs an error.
+This method checks if the list row ID
+25432545		moves the object to the right if it is facing right.
+This method moves the object to the right if it is facing right.
+This method moves the object to the right if it is facing right.
+This method moves the object
+17176380		returns a string representation of the date in the format "yyyy-MM-dd HH:mm:ss".
+
+This method returns a string representation of the date in the format "yyyy-MM-dd HH:mm:
+33719445		This method tests the getState method of the SystemClient_DBImpl class.
+This method tests the getState method of the SystemClient_DBImpl class.
+This method tests the getState method of the SystemClient
+40783146		logs in a user with the specified broker public key using the AccountingAggregator object.
+
+This method authenticates a user with the specified broker public key using the XMPP accounting service.
+
+This method authenticates a
+18925452		renders an element with attributes based on the provided request context, document factory, and category.
+
+This method renders an element with attributes based on the provided request context, document factory, and category.
+
+This method renders an element with
+47628860		sets the searchable property of the object and fires a property change event if the property change event is not null.
+
+This method sets the searchable property of the object and fires a property change event if the property change event is not null
+26163595		clears the request parameters, including the redirect header if it's there.
+
+This method clears the request parameters, including the redirect header if it's there.
+SUMMARY
+This method is used to clear the request parameters,
+8870538		checks if a given latitude and longitude is a Marine coordinate.
+
+This method checks if a given latitude is a Marine coordinate.
+
+This method checks if a given longitude is a Marine coordinate.
+
+This method
+19510052		tests the specialization of boolean expressions in the type environment. It creates a type environment, sets its name to "S", and then creates a type environment with the name "x", sets its name to "y", and then creates a type
+43040383		adds mapped properties to a bean by iterating through the mapping holders and adding mapped properties to the bean's accessor mappings.
+
+This method adds mapped properties to a bean by iterating through the mapping holders and adding mapped properties to
+1212944		logs a personal note to the client, including the result and the opponent's name.
+
+This method sets the result text to the result string and updates the opponent's color.
+
+This method sets the opponent's color to the result
+22045656		creates a copy of the current Sum object, including its complex and expression lists.
+
+This method clones the current Sum object, including its complex and expression lists.
+
+This method clones the current Sum object, including its expression lists.
+26495530		submits a task to the executor service, but only if the executor service is not running.
+
+This method submits a task to the executor service, but only if the executor service is not running.
+SUM
+29601593		generates a monomial expression from a string input. It first creates a new monomial expression with the input string and then creates a new monomial expression with the input string and the rest of the string input. It then creates a new mon
+22407318		initializes the layout of the GUI by setting the layout of the panel to a GridBagLayout and adding the environment panel to the center of the layout.
+
+This method initializes the layout of the GUI by setting the layout of the
+1313748		sets the saved state of the object and updates the title of the mode controller based on the saved state.
+
+This method sets the title of the object and updates the title of the mode controller based on the title of the object.
+
+
+22622159		returns a list of all the formats that are not supported by the object.
+
+This method returns a list of all the formats that are supported by the object.
+
+This method returns a list of all the formats that are supported by
+36405658		applies properties to a style with a list of properties, including background, table, and other properties.
+
+This method applies properties to a style with a list of properties, including background, table, and other properties.
+
+This method
+43022440		initializes the database by creating a table, preparing SQL, and initializing the row count.
+
+This method initializes the database by creating a table, preparing SQL, and initializing the row count.
+
+This method initializes the
+40844755		finds the index of the first occurrence of a specified element in an array.
+
+This method finds the index of the first occurrence of a specified element in an array.
+
+This method finds the index of the first occurrence of a specified
+454713		retrieves movie settings by iterating through the block list and checking if any of the block's header matches the movie settings. If a match is found, it returns the movie settings. Otherwise, it returns null.
+SUMMARY
+44521073		calculates the distance between two nodes in a network by iteratively dividing the distances of each node by the number of nodes in the network.
+
+This method calculates the distance between two nodes in a network by iteratively dividing the distances of
+11761872		handles the cancellation of a message by removing the corresponding block descriptor from the connection state.
+
+This method handles the cancellation of a message by removing the corresponding block descriptor from the connection state.
+SUMMARY
+This method is used
+26494576		prompts the user for input, reads the input, and returns it as a string.
+This method prompts the user for input, reads the input, and returns it as a string.
+This method prompts the user for input, reads
+48004597		removes the last view from the list of views.
+
+This method sets the last view to the specified view.
+
+This method sets the last view to the specified view.
+
+This method sets the last view to the specified view
+19511321		creates a composite with a grid layout and adds labels for "Available" and "Selected" to it.
+
+This method creates a label for the "Available" and adds it to the composite.
+
+This method creates a label
+19102562		reads a line of text from the input stream and returns it as a string. If the end of the file is reached, it returns null. Otherwise, it skips comments and returns the line as a string.
+SUMMARY
+
+2971444		retrieves the selected test from the results list, or returns -1 if no test is selected.
+
+This method returns the ID of the selected test, or -1 if no test is selected.
+SUMMARY
+This
+13279656		triggers the stateChanged event for all registered ChangeListeners, passing the changedObject as an argument.
+
+This method fires a ChangeEvent with the given changedObject as an argument.
+SUMMARY
+This method is used
+22408401		returns a map of the local environment properties.
+This method returns a map of the local environment properties.
+SUMMARY
+This method is used to get a map of the local environment properties.
+
+
+36221537		retrieves a hashtable for a given handle, creating a new one if necessary.
+This method retrieves a hashtable for a given handle, creating a new one if necessary.
+This method retrieves a hashtable for a given
+33719676		This method tests the getMyEvents method of the SystemClient_DBImpl class by creating a new instance of the class and calling the getMyEvents method on it.
+
+This method tests the getMyEvents method of the System
+12751347		parses a string representation of a color from a color table and returns a Color object.
+
+This method parses a string representation of a color from a color table and returns a Color object.
+
+This method parses a string
+34427053		saves the action listener and tool tip for the save menu item.
+
+This method saves the action listener and tool tip for the save menu item.
+SUMMARY
+This method is used to save the action listener and tool tip
+26199069		initializes the activity manager by creating an instance of the ActivityManagerHome and calling its create method.
+
+This method initializes the activity manager by creating an instance of the ActivityManagerHome and calling its create method.
+SUMMARY
+24244305		retrieves a rectangle from the data array based on the provided ID.
+
+This method returns the rectangle with the specified ID.
+
+This method returns the rectangle with the specified ID.
+
+This method returns the rectangle with the specified
+26163877		verifies the input forward by calling the init method and then calling the verifyForwardPath method.
+SUMMARY
+This method is used to verify the input forward by calling the init method and then calling the verifyForwardPath method.
+
+
+43419905		returns a JTextField object that is used as the text for the class name. If the JTextField object has not been created yet, it is created with the specified properties and added to the JPanel.
+
+This method returns
+47661261		adds a property descriptor for the tasks feature of the TaskPackage class.
+
+This method overrides the default behavior of the getPropertyDescriptors method and adds additional property descriptors to the list of property descriptors for the given object
+22620829		diagnoses the standard and its children, printing the ID of the standard and its children.
+
+This method prints the ID of the standard and its children, and then iterates through the children, printing each one.
+
+This method prints
+22627464		retrieves the import paths from an XML document.
+
+This method returns an ArrayList of the paths in the document.
+
+This method returns an ArrayList of the paths in the document.
+SUMMARY
+This method
+38893338		reads bytes from the input stream into a byte array, starting at the specified offset and for the specified length.
+
+This method reads a single byte from the input stream and returns it as an integer.
+
+This method reads a byte from
+35060572		checks if a user can edit a puzzle by verifying if the user is a tutorial, the puzzle is not a private puzzle, and the user has the necessary permissions to edit the puzzle.
+
+This method checks if a user can edit a puzzle
+47429540		sends a file to a specified path using an OutputStream. It handles exceptions and prints the stack trace if an exception occurs.
+
+This method sends a file to a specified path using an OutputStream. It handles exceptions and prints the stack
+38531653		tests the getResourceAsDocument method of the handler by asserting that the returned document is not null and has the expected node name "document".
+
+This method tests the getResourceAsDocument method of the handler by asserting that the returned document is
+1312929		saves the XML representation of the object to a file. It writes the XML header, including the XML representation of the object, the XML representation of the object, the XML representation of the object, the XML representation of the object, the XML
+126375		returns the minimum size of the component, taking into account the minimum size of its child components.
+
+This method returns the minimum size of the component, taking into account the minimum size of its child components.
+
+This method returns the
+38531533		returns the document ID of the resource transport, or throws an exception if there is a remote exception.
+
+This method returns the document ID of the resource transport, or throws an exception if there is a remote exception.
+SUMM
+7316417		returns a string containing the details of a publication, including its ID, title, publication details, and publication date.
+
+This method returns a string containing the details of a publication, including its ID, title, publication details, and publication
+31318315		changes the typeface of a block and sends a block update to the document model.
+
+This method changes the typeface of a block and sends a block update to the document model.
+SUMMARY
+This method is used to
+28761880		waits for a retry to be reached within a specified delay.
+
+This method waits for a retry to be reached within a specified delay.
+
+This method waits for a retry to be reached within a specified delay.
+
+47661297		adds a property descriptor for the decision element feature of an AssociationTaskUseDesicionElement object.
+
+This method adds a property descriptor for the decision element of an AssociationTaskUseDesicionElement object.
+SUMMARY
+This
+5440508		returns the small image icon for the component, if it has not been created yet, it creates it by loading the small icon from the class loader and then loading the image from the specified URL.
+
+This method returns the small image icon
+31468831		adds an identifier to the element, either synchronously or asynchronously depending on the boolean value of the boolean parameter.
+
+This method adds an identifier to the element, either synchronously or asynchronously depending on the boolean value of
+370895		handles the selection change event for a table viewer and updates the selection accordingly.
+
+This method updates the selection in the table viewer based on the selected element.
+
+This method updates the selection in the table viewer based on the selected element
+29318952		checks if the port type of the given endpoint reference matches the expected port type.
+
+This method checks if the port type of the given endpoint reference matches the expected port type.
+
+This method checks if the port type of the given endpoint
+1213163		sets the hover state of a bin by iterating through the bin's bin list and setting the hover state to true if the bin is within the specified coordinates.
+
+This method sets the hover state of a counter by iterating through the counter
+5269013		removes triggers for a specified bot ID from the scheduler.
+
+This method removes triggers for a specified bot ID from the scheduler.
+SUMMARY
+This method is used to remove triggers for a specified bot ID from the
+18252350		joins the table rendering of an association between two tables.
+
+This method returns the display name of the association.
+
+This method returns the association name of the association.
+
+This method returns the association type of the association.
+
+6221215		serializes the object to disk by writing the object's data to a file.
+
+This method serializes the object to disk by writing the object's data to a file.
+SUMMARY
+This method is used to serialize
+3989803		activates the adapter and throws an AdapterException if the SQL ping is null or if the connection is already closed.
+
+This method activates the adapter and throws an AdapterException if the SQL ping is null or if the connection is already closed.
+51123002		takes a Document object as input and converts it into a string representation.
+
+This method converts a DOM2Document object into a string.
+
+This method converts a DOM2Document object into a string.
+
+This method converts a
+42172615		adds a property descriptor for the SafiServer feature to the list of property descriptors for the given object.
+
+This method adds a property descriptor for the port property to the list of property descriptors for the given object.
+
+
+19630714		registers a problem with the result type of a given item type, adding it to the list of result types with the appropriate type.
+
+This method registers a problem with the result type of a given item type, adding it to the list
+19521449		returns the extended record, resolving any proxies if necessary.
+This method resolves a proxy object to a record extension.
+This method resolves a proxy object to a record extension.
+This method resolves a proxy object to a record extension.
+
+19282804		initializes the XML marshaller by creating a new instance of the XmlMarshaller class, initializing it, and setting the serializer.
+
+This method initializes the XML marshaller by creating a new instance of the
+1189466		calculates the number of blocks accessed by the source plan.
+
+This method calculates the number of blocks accessed by the source plan.
+
+This method calculates the number of blocks accessed by the source plan.
+
+This method calculates the
+13278699		returns the hash code of the string representation of the object.
+This method returns the hash code of the string representation of the object.
+This method returns the hash code of the string representation of the object.
+This method returns the hash
+46106794		updates the position of the object based on the mouse movement and the mouse button pressed.
+
+This method updates the position of the object based on the mouse movement and the mouse button pressed.
+
+This method updates the position of the object
+22626628		returns a string representation of the object, including the format and directory of the object.
+
+This method returns a string representation of the object, including the format and directory of the object.
+
+This method returns a string representation of the
+20085539		sleeps for a specified interval and then attempts to reconnect to a slave. If the reconnection is successful, it sets the status to reconnected. If the reconnection fails, it sets the status to failed.
+
+This method sleeps for
+41761118		parses a factor expression and returns a TreeNode representing the expression.
+
+This method parses a factor expression and returns a TreeNode representing the expression.
+
+This method parses a factor expression and returns a TreeNode representing the
+12284510		signals the class loading of all listeners for the specified class.
+
+This method signals the class loading of all listeners for the specified class.
+SUMMARY
+This method is used to signal the class loading of all listeners for the
+14624389		tests the isAvailable() method of the GpsSatellite class by creating a new instance of the class and asserting that the isAvailable() method returns false for all possible combinations of true and false.
+
+This method tests the isAvailable()
+35235931		checks if the index is indexedmzML file.
+This method returns a boolean value indicating whether the index is indexedmzML file.
+SUMMARY
+This method is used to check if the index is indexedmzML
+9924462		paints the logo of the component if it is not null.
+This method paints the component's background and foreground.
+This method paints the component's border.
+This method paints the component's background and foreground.
+This method paints the
+39937954		adds a property descriptor for the atomic feature of the SubTask class.
+
+This method overrides the default behavior of the getPropertyDescriptors method to add additional property descriptors for the object.
+
+This method adds a property
+6248756		tests the updateLine method by calling it with different parameters and asserting that the sequence number is incremented by one.
+
+This method tests the updateLine method by calling it with different parameters and asserting that the sequence number is incremented by one
+41799151		tests the parseUTCDate method of the MailDateFormatter class by comparing the expected and actual results of parsing a date string.
+
+This method tests the parseUTCDate method of the DateFormat class by comparing the expected and actual
+20566944		runs a loop that runs a loop that runs a loop that runs a loop that runs a loop that runs a loop that runs a loop that runs a loop that runs a loop that runs a loop that runs a loop that runs a loop that runs
+28920121		draws a box edge based on the specified eye direction.
+
+This method draws a box edge based on the specified eye direction.
+SUMMARY
+This method is used to draw a box edge based on the specified eye direction.
+51024346		creates a JComboBox component for selecting the namespace of the object. If the JComboBox is empty, it creates a new JComboBox component with the namespaces of the object. Otherwise, it sets the JCom
+251041		checks if a collection can be viewed by checking if it is private and if it can be added to the collection.
+
+This method checks if a collection can be viewed by checking if it is private and if it can be added to the collection
+28761737		inserts a signature into the text area at the current caret position.
+
+This method inserts a signature into the text area at the current caret position.
+
+This method inserts a signature into the text area at the current caret
+19463762		refreshes the form if it is not null and is not active and needsUpdate is true.
+This method refreshes the form if it is not null and is not active and needsUpdate is true.
+SUMMARY
+This
+46708800		notifies the restarted behavior of a given behaviour and removes it from the pending timers map.
+
+This method removes the root behaviour from the ready queue if it is not null.
+
+This method removes the root behaviour from the scheduler
+45147826		paints the component with the specified graphics object, including the heads image if the component is showing heads or tails image.
+
+This method paints the component with the specified graphics object, including the heads image if the component is showing heads or tails
+51016859		recursively traverses a tree of PathNodes and adds any parents that are not in the default bit set to the relationDefaultBitSet.
+
+This method recursively traverses a tree of PathNodes and adds any parents
+38755898		performs partial attack on a graph by finding the partial attack for the specified edge manager, vertex manager, and selected list of edges. It then runs the partial attack with the specified parameters.
+
+This method runs the partial attack for the specified
+27799066		resets the ignore columns for the table data if the table data is not null.
+
+This method checks if the table data is null and if so, prints a warning message.
+
+This method checks if the table data is not null
+33993860		adds an icon property descriptor to the list of property descriptors for the given object.
+
+This method overrides the default behavior of the superclass to add an icon property descriptor to the list of property descriptors for the given object.
+19471246		validates that a UMLBabstractState is not transitive from final and not transitive from final. It checks if the transitions from the final state are not transitive from final and if the transitions from the final state are not trans
+1782958		returns a WebResource object based on the method type provided. If the method type is "GET", it returns the getResponse method. If the method type is "PUT", it returns the putResponse method. If the method type is "
+23312109		enables components if the reasoner and algorithm are possible.
+
+This method enables components if the reasoner and algorithm are possible.
+
+This method enables components if the reasoner and algorithm are possible.
+
+This method enables components if
+45931054		calculates the logarithm base weight of an OCPartition object, taking into account the probability of the log-likelihood of the partition.
+
+This method calculates the log-likelihood of an OCPartition
+10577222		handles the sending of a mail by setting the state to ERROR, setting the error message, and logging the status of the mail.
+
+This method handles the sending of a mail by setting the state to ERROR, setting the error message,
+9015182		takes a URL and returns a string with any spaces replaced by "%20" or "%20" replaced with "%20" or "%20" replaced with "%20" or "%20" or "%20" replaced with "%20" or "%
+40101955		retrieves the value of a specified tag from the document.
+
+This method returns the value of the specified tag as a string.
+
+This method returns the value of the specified tag as a string.
+
+This method returns the
+51022594		displays or hides edge labels in the visualization viewer based on the value of the show parameter.
+
+This method updates the visualization viewer's meta graph panel and repaints it.
+
+This method updates the visualization viewer's meta graph panel and
+45240314		reads an integer from the data stream by reading four bytes from the data stream and combining them into a single integer.
+
+This method reads a single integer from the data stream by reading four bytes from the data stream and combining them into a single
+19507083		tests the ability to copy a top element with an invalid renaming by creating a Rodin file, adding a named element to the file, and then copying the top element to the file.
+
+This method tests the ability to copy a top
+26323719		searches for a project file with the specified name in the project path and returns the file if found, otherwise throws an exception.
+
+This method searches for a project file with the specified name in the project path and returns the file if
+40467765		sets the image alignment of a button based on the specified alignment value.
+
+This method sets the image alignment of a button based on the specified alignment value.
+
+This method sets the image alignment of a button based on the specified alignment value
+45550307		reads properties from a property store and adds them to a list of enabled rules.
+
+This method reads properties from a property store and adds them to a list of disabled rules.
+SUMMARY
+This method is used to read properties
+45130788		casts a string to a boolean value, throwing an exception if the string is not a boolean value.
+
+This method casts a string to a boolean value, throwing an exception if the string is not a boolean value.
+SUMMARY
+22449867		concatenates the rows of a LPModelRows object into a single LPModelRows object, maintaining the order of the rows.
+
+This method adds a new LPModelRows object to the list of rows.
+
+
+29851560		parses command line arguments and sets the options for the program. It checks for valid options and sets the program accordingly. It also checks for invalid arguments and sets the program accordingly.
+
+This method parses command line arguments and sets the
+26412118		handles connection errors by logging the event and checking if the connection is in the pool. If the connection is in the pool, it checks if the connection is in the removeOnException flag. If the connection is in the removeOnException flag
+29591835		initializes the object with the specified name, authority, and transform type.
+
+This method initializes the object with the specified name, authority, and transform type.
+
+This method initializes the object with the specified name, authority,
+34417612		returns the title of the column at the specified index, or "None" if the index is 0 or 1.
+
+This method returns the title of the column at the specified index, or "None" if the index is 0 or
+19497741		tests the delta of a machine by creating a machine with a single invariant and a single proof, and then running the delta.
+
+This method tests the delta of a machine by creating a machine with a single invariant and a single proof
+43136064		checks if a given move is valid by verifying that it is not null, has a valid move, and contains the move.
+
+This method tests the validity of a move by checking if it is valid, has a valid move, and contains
+25650933		retrieves the value of the manifest attribute with the specified name, returning "undefined" if the attribute is not found or an IllegalArgumentException if the attribute is not found.
+
+This method returns the value of the manifest attribute
+43419370		saves the configuration file by calling the save method of the superclass.
+
+This method saves the configuration file by calling the save method of the superclass.
+SUMMARY
+This method is used to save the configuration file by
+1810914		creates a text node with the given data.
+
+This method creates a text node with the given data.
+
+This method creates a text node with the given data.
+
+This method creates a text node with the given data.
+6526359		checks if a category belongs to another category by recursively checking its children.
+
+This method checks if a category belongs to another category by recursively checking its children.
+
+This method checks if a category belongs to another category by
+51024258		returns a JFileChooser object that allows the user to select a file to save. If the file is not already created, it creates a new JFileChooser object and sets its file filter to ".tsv" and its description
+29856135		returns the value at the specified row and column in the table, or null if the value is not visible.
+
+This method returns the value at the specified row and column in the table, or null if the value is not visible.
+33519719		retrieves the content of a file as a string.
+
+This method returns the content of a file as a string.
+
+This method returns the content of a file as a string.
+
+This method returns the content of a
+42172644		adds a property descriptor for the default value of a variable to the list of property descriptors.
+
+This method adds a property descriptor for the default value of a variable to the list of property descriptors.
+SUMMARY
+
+40101478		returns a formatted date string based on a specified format string.
+
+This method returns a string representation of the trackback date.
+
+This method returns a string representation of the date.
+
+This method returns a string representation of the
+1505340		deletes a row from the table Facebook by uid.
+This method deletes a row from the table Facebook by uid.
+This method deletes a row from the table Facebook by uid.
+This method deletes a row
+26615217		constructs a Java code string that includes the class name and the destination host and port.
+
+This method constructs a Java code string that includes the class name and the destination host and port.
+
+This method constructs a Java code string that
+26285485		overrides the default implementation of getListCellRendererComponent and sets the text and icon of the list cell renderer component based on the value of the cell.
+
+This method overrides the default implementation of getListCellR
+29601685		returns the progress bar, creating it if it does not exist.
+This method returns the progress bar, creating it if it does not exist.
+SUMMARY
+This method is used to create the progress bar if it does not
+14467533		checks if an object class is allowed based on the allowed types of its subclasses.
+
+This method checks if an object class is allowed based on the allowed types of its superclasses.
+
+This method checks if an object class is allowed
+42171512		adds a property descriptor for the resultSet feature of the RunQuery class.
+
+This method adds a property descriptor for the resultSet feature of the RunQuery class.
+SUMMARY
+This method is used to add a property
+6248754		tests the insertion of text into a database and verifies that the sequence number is updated accordingly.
+
+This method tests the insertion of text into a database and verifies that the sequence number is updated accordingly.
+
+This method tests the insertion
+19487367		returns the boolean sort for the current theory, which is either the boolean sort of the current theory or the boolean sort of the current theory if the current theory is not a verbose theory.
+SUMMARY
+This method is used
+11950091		This method tests the setNumeroBus method of the Cronograma class by setting the numeroBus attribute to an empty string and then calling the testSetNumeroBus method.
+
+This method tests the setNumeroBus method of
+40788945		returns the best remote candidate for the current transport candidate, or null if no candidate is found.
+
+This method returns the best remote candidate for the current transport candidate, or null if no candidate is found.
+SUMMARY
+
+26284706		paints an icon on a component at a specified location, or the default icon if the icon is null.
+
+This method paints an icon on a component at a specified location, or the default icon if the icon is null.
+S
+3667213		sets the text displayed property of the object and fires a property change event if the new value is different from the old value.
+
+This method sets the text displayed property of the object and fires a property change event if the new value is different
+6505315		refreshes the operations of the MBean by retrieving the operations from the MBeanInfo and adding them to a HashMap.
+
+This method creates a new HashMap and populates it with the operations from the MBean
+24330772		receives feedback from the GUI and logs the feedback. If the GUI is in preview mode, it shows the preview panel. Otherwise, it logs no feedback.
+SUMMARY
+This method is used to display the preview panel if
+7700652		publishes an object to a distributed hash table using a specified key and value.
+
+This method publishes an object to a distributed hash table using a specified key and value.
+
+This method publishes an object to a distributed hash table using a
+22626215		retrieves an item record from the native data stream and creates a new document if the record is not found.
+
+This method returns the item record as a Document object.
+
+This method returns the item record as a Document object.
+51793350		checks if a given key is present in the hash table.
+This method checks if a given key is present in the hash table.
+This method checks if a given key is present in the hash table.
+This method checks if a given
+18842534		retrieves a feed from a given source using an HTTP request.
+
+This method retrieves a feed from a given source using an HTTP request.
+
+This method retrieves a feed from a given source using an HTTP request.
+
+22829817		stops listening for incoming connections and notifies the server that the connection has stopped listening.
+
+This method stops listening for incoming connections and notifies the server that the connection has stopped listening.
+SUMMARY
+This method is used
+23794972		retrieves a determination by its taxon and collection code.
+
+This method returns a DataWrapper object containing the determination information.
+
+This method returns a DataWrapper object containing the determination information.
+
+This method returns a
+29860153		adds a phi return to the basic block at the specified index.
+
+This method adds a phi return to the basic block at the specified index.
+SUMMARY
+This method is used to add a phi return
+5440169		creates a clone of the current object, including its parent class loader, URLs, and parent class loader.
+
+This method clones the ServletClassLoader object, including its parent class loader, URLs, and parent class loader.
+27834496		checks if the current type is mutable.
+This method checks if the current type is mutable.
+This method checks if the current type is mutable.
+This method checks if the current type is mutable.
+This method checks
+48659115		adds an application counter to the session.
+This method adds an application counter to the session.
+This method adds an application counter to the session.
+This method adds an application counter to the session.
+This method adds an application counter
+19507725		tests the creation of two contexts and verifies that the data in the context is correct.
+This method tests the creation of two contexts and verifies that the data in the context is correct.
+This method tests the creation of two contexts and
+38221499		returns an iterator over the modules in the list of modules that have a parent module.
+
+This method returns an iterator over the modules in the list of modules that have a parent module.
+SUMMARY
+This method is used
+1782388		returns the character set of the HTTP response, if it has not been set, it reads the content type header and sets the character set accordingly.
+
+This method returns the character set of the HTTP response, if it has not been set
+18912425		sends a message to a participant proxy, canceling the operation if the message is canceled, or throwing an exception if the message is not recognized.
+
+This method sends a message to a participant proxy, canceling the operation if the message
+34093651		writes a collection of filters to a properties file, removing obsolete keys from the properties file.
+
+This method writes a collection of filters to a properties file, removing obsolete keys from the properties file.
+SUMMARY
+This method
+33178892		returns a collection of intersections between the current rectangle and the specified rectangle.
+
+This method returns a collection of intersections between the current rectangle and the specified rectangle.
+
+This method returns a collection of intersections between the current rectangle and the specified
+40864476		returns the TextField object named "textField10" if it is not null, otherwise it creates a new TextField object with the label "Bono 2:", sets its initial value to null, and adds two commands to it.
+41799291		deserializes data from a DataInputStream and populates a map with key-value pairs.
+
+This method deserializes a DataInputStream and populates a map with key-value pairs.
+
+This method deserializes
+36634605		updates the position of an object based on its current position and the speed of the object.
+
+This method updates the position of an object based on its current position and the speed of the object.
+SUMMARY
+This method
+22623917		retrieves a list of simulated URLs from a specified URL and collection.
+
+This method returns a list of simulated URLs from a specified URL and collection.
+
+This method returns a list of simulated URLs from a specified URL and collection.
+51021275		recursively retrieves all the nodes in a graph that are connected to a given concept. It iterates through the nodes and checks if they are atomics, and if so, adds them to a list. If atomics are not empty
+10576888		retrieves the last updated date of a node from the JCR repository.
+
+This method returns the last updated date of a node.
+
+This method returns the last modified date of a node.
+
+This method returns the last
+19483434		modifies the name of an element in a document, throwing an exception if the element is null or if the element is not an instance of IDocument or Item.
+
+This method modifies the name of an element in a document, throwing
+35554743		shows or hides the port view based on the value of the flag parameter.
+
+This method sets the visibility of the port view based on the value of the flag parameter.
+
+This method sets the visibility of the port view based on the
+22407447		checks if a character is a symbol (either '<', '>', '>', '!', or '\"') and returns true if it is, and false otherwise.
+
+This method checks if a character is a symbol (either
+27834302		displays the class associated with the selected item in the classPanel.
+This method displays the class associated with the selected item in the classPanel.
+SUMMARY
+This method is used to display the class associated with the selected item
+43418004		sets the simulation cycle start time stamp and updates the cycle time vector if the cycle time vector exceeds the maximum size.
+
+This method sets the simulation cycle start time stamp and updates the cycle time vector if the cycle time vector is not empty.
+40092613		compares two sets and asserts that they are equal, throwing an exception if they are not.
+
+This method tests the equality of two sets by comparing their elements and comparing their elements.
+
+This method tests the equality of two sets by
+8939914		returns a string representation of the Java mode, with the option to include the Java home directory if the Java home directory is not set.
+
+This method returns a string representation of the Java mode, with the option to include the Java home
+14624341		tests the setVelocity method of the GpsPosition class by setting the velocity to a Float value of one and asserting that the new value is equal to the expected value.
+
+This method tests the setVelocity method of the Gps
+9015729		displays the rightmost child JFrame within the parent JFrame.
+
+This method displays the down right child JFrame within the parent JFrame.
+SUMMARY
+This method is used to display the down right child JFrame
+20537348		is used to load the module and add a widget to the root panel.
+
+This method is called when the widget is loaded and it loads the module.
+
+This method is called when the widget is loaded and it loads the module.
+12725476		sets the window of the object to the specified value, throwing an exception if the value is less than 1.
+
+This method sets the window of the object to the specified value, throwing an exception if the value is greater than 1.
+
+3935606		checks if a link activation event has been triggered and if so, it checks if the referenced URI is not null and if the referenced URI is not null. If both conditions are met, it checks if the referenced URI is not null and if the
+50430847		searches for a contact with a given email in a list of contacts and returns its index if found, otherwise returns -1.
+SUMMARY
+This method is used to find the index of a contact in a list of contacts
+44520117		takes two lists of triangles and returns a list of triangles that are connected to each other.
+
+This method takes two lists of triangles and returns a list of triangles that are connected to each other.
+
+This method takes two lists of
+28953873		adds an attribute to the root element, with the specified name, value, and required status, and throws an exception if the attribute is required.
+
+This method adds an attribute to the root element, with the specified name, value,
+27808131		adds an array of edge indices to the selected edge indices of the object. If the object is an extension, it adds the array to the collection of selected edges. Otherwise, it adds the array to the collection of selected edges.
+S
+12533698		returns the transport location with the highest idle trailers for a given lane.
+
+This method returns the transport location with the highest idle trailers for a given lane.
+SUMMARY
+This method is used to find the transport location with
+38531597		returns the number of resources in the collection transport.
+
+This method returns the number of resources in the collection transport.
+
+This method returns the number of resources in the collection transport.
+
+This method returns the number of resources in
+22622374		retrieves the enumeration values for the "dcsStatusType" schema helper.
+This method retrieves the enumeration values for the "dcsStatusType" schema helper.
+This method retrieves the enumeration values for the
+29855758		resets the object's state to its default values.
+
+This method resets the object's state to its default values.
+
+This method resets the object's state to its default values.
+
+This method resets the object
+11940274		This method initializes the action for the remapWsdlAction field.
+This method sets the remapAction field to a new Action object that calls the remap() method.
+SUMMARY
+This method is used to
+34096854		adds a missing class vertex to the graph and reports the missing class.
+
+This method adds a missing class vertex to the graph and reports the missing class.
+SUMMARY
+This method is used to add a missing class vertex
+22407512		updates the default executable path when the default executable path is clicked.
+
+This method sets the default executable path for the node.
+
+This method sets the default executable path for the node.
+SUMMARY
+This method is
+28953673		writes an HL7 message to a file, including the message ID, sender, and recipient addresses. It also logs the message ID and sender, and writes out the message to the file.
+
+This method writes an HL7 message to
+19282551		configures the logger and parses the OBO file.
+This method configures the parser and sets the ontology definition.
+This method configures the parser and sets the ontology definition.
+This method configures the parser and sets
+18251253		takes an integer representing the number of spaces to indent and returns a string with the number of spaces indented.
+
+This method takes an integer representing the number of spaces to indent and returns a string with the number of spaces indented.
+2897190		returns the index of the first occurrence of a specified namespace URI and local name within an array of names.
+
+This method returns the index of the first occurrence of a specified namespace URI and local name within an array of names.
+
+
+18934259		reads bytes from an input stream into a buffer, starting at the specified offset and for the specified length, and returns the number of bytes read.
+
+This method reads a single byte from the input stream and returns it as an integer.
+
+9015260		opens a file dialog to allow the user to select a file to open. If a file is selected, it opens the file and sets the title to the selected file's absolute path.
+
+This method opens a file dialog to allow the user
+29600928		updates the admission control by calculating the measured load and updating the admission control.
+
+This method updates the admission control by calculating the measured load and updating the admission control.
+
+This method updates the admission control by calculating the measured load and
+19808241		deletes a selected file from the main table, if the file is not a directory it calls the delete method.
+
+This method deletes the selected file from the main table, if the file is a directory it calls the delete method.
+39233176		sets the baud rate for the device, ensuring that the baud rate is within the valid range.
+
+This method sets the baud rate for the device, ensuring that the baud rate is within the valid range.
+
+This
+18252518		checks if a given string is contained within any of the lines in the list of lines.
+
+This method checks if a given string is contained within any of the lines in the list of lines.
+
+This method checks if a given string
+31015292		generates all ships by reading from a source file and iterating through each ship in the universe. It then creates a new universe and iterates through all ships in the universe, generating each ship and adding it to the universe. Finally, it
+36405216		applies a change case to a given style with properties, including inherit text, inherit inline text, and inherit inline text.
+
+This method applies a change case to a given style with properties, including inherit text, inherit inline text, and
+31470890		returns the first child element of a given node index.
+
+This method returns the first child element of a given node index.
+
+This method returns the first child element of a given node index.
+
+This method returns the first
+4452562		shuts down all tasks in the task list except for the specified stopOnThis task.
+
+This method removes the specified stopOnThis task from the task list.
+SUMMARY
+This method is used to shut down all tasks
+47572602		initializes the client bag by sending a "Bi" packet to the client.
+This method initializes the client bag by sending a "B" packet to the client.
+SUMMARY
+This method is used to initialize the client
+20067936		retrieves the ID of a user from the database by querying the `users` table with the username `username` and returning the result.
+
+This method returns the ID of the user if it exists, otherwise it returns 0.
+38222492		attempts to open a temporary file and returns true if successful, or false if an exception occurs.
+
+This method attempts to open a temporary file and returns true if successful, or false if an exception occurs.
+
+This method attempts
+31016474		returns a Vcr object from a list of Vcr objects based on the provided id1, id2, and isplanet flag.
+
+This method returns a Vcr object from a list of Vcr objects based on the provided id
+33718801		checks if a given group ID is present in the list of groups.
+
+This method checks if a given group ID is present in the list of groups.
+
+This method checks if a given group ID is present in the list of groups
+22336108		creates a composite with a grid layout and adds two buttons to it.
+
+This method creates a composite with a grid layout and adds two buttons to it.
+
+This method creates a composite with a grid layout and adds two buttons to
+13278697		creates a PartFrameContainer by iterating through a list of StructuralConstraintGraphPart objects and adding them to the container.
+
+This method creates a PartFrameContainer by iterating through a list of StructuralConstraint
+34414169	<s> none </s>
+26615673		retrieves the selected instance of an object from a model, if the model is not null, it returns the instance. If the model is null, it returns null.
+
+This method returns the value of the selected item in a list
+8490226		returns the maximum value in a map.
+This method returns the maximum value in a map.
+This method returns the maximum value in a map.
+This method returns the maximum value in a map.
+This method returns the maximum value
+49250848		checks if the email link is invalid by verifying if the text link contains the email separator and if the wiki file name contains the email separator.
+
+This method checks if the email link is valid by verifying if the text link contains the
+47470980		returns the IPluginModelBase associated with the current form editor.
+
+This method returns the IPluginModelBase associated with the current form editor.
+SUMMARY
+This method is used to retrieve the IPluginModelBase associated
+6248599		creates a label with the specified text and adds it to the specified composite.
+
+This method creates a label with the specified text and adds it to the specified composite.
+
+This method creates a label with the specified text and adds it
+47662609		adds a property descriptor for the referTo feature of the TransformationCallsTransformationRuleAssociation class.
+
+This method overrides the default behavior of the getPropertyDescriptors method and adds additional property descriptors to the list of
+34425470		returns the content of the object as a string, or null if the object does not exist.
+
+This method returns the content of the object as a string, or null if the object does not exist.
+
+This method returns the
+17285317	<s> none </s>
+47478359		parses the saved source locations from a given text string and adds them to a list of SourceLocation objects.
+
+This method parses the saved source locations from a given text string and adds them to a list of SourceLocation objects.
+34092770		compares two BugCollection objects based on their source lines. If either object is null, it returns 0. If both objects are instances of BugCollection, it compares their source lines. If they are not, it compares their class names. If
+45550275		writes the properties of a class to a property store.
+This method writes the properties of a class to a property store.
+This method writes the properties of a class to a property store.
+This method writes the properties of a class
+39840558		tests the parameter value greater than or equal to comparison by setting the parameter value to LESSER_VAL and asserting that the condition is true.
+
+This method tests the parameter value greater than or equal to comparison by setting the parameter value to
+40101739		updates the user's blog entry by removing the old entry, adding the new entry, and flushing the cache.
+
+This method updates the user's blog entry by removing the old entry, adding the new entry, and flushing the
+38221864		takes a stack as input and returns a CVariant object. It first checks the stack for the correct number of parameters and the correct number of values. If the stack contains the correct number of parameters, it checks if the value at the
+19463544	<s> none </s>
+4982774		clears the IDs of all JbsClearableId objects in the given list.
+
+This method clears the IDs of all JbsClearableId objects in the given list.
+SUMMARY
+This method is used to clear
+14376159		returns a JPanel that contains a search button.
+This method creates a new JPanel if it does not exist, sets its layout to a BoxLayout with the Y-axis orientation, and adds the search button to the panel.
+
+33719024		searches for events based on search criteria and returns a ResultSet containing the results.
+
+This method searches for events based on search criteria and returns a ResultSet containing the results.
+SUMMARY
+This method is used to
+42172564		adds a property descriptor for the "enabled" feature of the SafletProject class.
+
+This method overrides the default behavior of the superclass to add a property descriptor for the "enabled" feature of the SafletProject class.
+19515965		adds a property descriptor for the "inv_actout" feature of the "OUT" type.
+
+This method adds a property descriptor for the "inv_actout" feature of the "OUT" type.
+SUMM
+17607645		searches for keywords in a list of options and adds them to the list if they are not already selected.
+
+This method adds an error event to the event list if the search option is not selected.
+
+This method adds an
+27764268		checks if a user is deletable by comparing their user ID and signed user ID. If the user is deleted, it returns true. Otherwise, it returns false.
+SUMMARY
+This method is used to determine if a user is
+45459439		returns a JPanel object that contains the text fields for the output of the application.
+This method initializes the JTextField4 object if it is null.
+This method returns the JTextField4 object.
+SUMM
+9924358	<s> none </s>
+51728301		creates a clone of the current IdentifierTyper object.
+
+This method clones the current IdentifierTyper object.
+
+This method clones the current IdentifierTyper object.
+
+This method clones the current IdentifierTy
+41831019		checks if a GeoRSSE entry is read by querying the database for the entry's ID and returning true if it is found.
+
+This method checks if a GeoRSSE entry is read by querying the database for the entry's
+40867891		returns the TextField object named "textField22" if it is not null, otherwise it creates a new TextField object with the label "Bono 1:" and sets its initial value to null. It then returns the TextField object
+2896279		returns a string representation of the object, including the type, content, and any regular expressions.
+
+This method prints the type of the object to the specified print writer.
+
+This method prints the type of the object to the specified
+39300381		takes an influence, environment state, and a collection of activities as input and applies a law to the environment state.
+
+This method applies a law to the environment state.
+
+This method applies a law to the environment state.
+49250619		sets the content of an article to the specified string, throwing an exception if the string is null.
+
+This method sets the content of an article to the specified string, throwing an exception if the string is null.
+SUMMARY
+44800050		checks if the current user is active by comparing their current time to the expiration date of the user.
+
+This method checks if the current user is active by comparing their current time to the expiration date of the user.
+
+This method checks
+25809664		sends an OSC packet over a network interface. It creates a new socket and sends the packet through the socket. It then reads the packet from the socket and processes it. If the packet is an OSC packet, it processes it.
+33483443		returns the IP location of the given byte array, or creates a new one if it does not exist.
+This method returns the IP location of the given byte array, or creates a new one if it does not exist.
+This method
+19466112		adds a property descriptor for the local event of the object.
+
+This method adds a property descriptor for the object's name.
+
+This method adds a property descriptor for the object's type.
+
+This method adds a property descriptor
+27807361		checks if an edge exists between two nodes in a graph. If the edge does not exist, it throws an exception.
+
+This method checks if an edge exists between two nodes in a graph. If the edge does not exist, it throws
+5592554		loads a document into the GUI, sets the document's title, loads the document's header, sets the document's model, sets the document's divider location, sets the document's view, and adds a DOModelListener to the document
+48707757		disconnects from the database by closing the statement and connection, and setting the connectedToDatabase flag to false.
+
+This method disconnects from the database by closing the statement and connection, and setting the connectedToDatabase flag to false.
+19466552		adds a property descriptor for the related event feature of an If object.
+
+This method adds a property descriptor for the related event to the list of property descriptors.
+SUMMARY
+This method is used to add a property
+25283769		invokes a method on a proxy object with the specified arguments, handling different types of exceptions and returning the result.
+
+This method invokes a method on a proxy object with the specified arguments, handling different types of exceptions and returning the result
+40877023		returns the exit command, creating it if it does not exist.
+This method returns the exit command, creating it if it does not exist.
+SUMMARY
+This method is used to create the exit command if it does not
+13279914		returns the upper bound constraint of the range constraint.
+This method returns the lower bound constraint of the range constraint.
+SUMMARY
+This method is used to retrieve the upper bound constraint of the range constraint.
+
+
+8868216		tests the paging functionality of the Store class by counting the number of pages and asserting that the number of pages is greater than 10.
+
+This method tests the paging functionality of the Store class by counting the number of pages and asserting that
+7370321		copies lines from a BufferedReader to a BufferedWriter, excluding comments and newlines.
+
+This method copies lines from a BufferedReader to a BufferedWriter, excluding comments and newlines.
+
+This method copies lines
+22171823		adds a property descriptor for the type of an EveConnection object to the list of property descriptors.
+
+This method overrides the default behavior of the getPropertyDescriptors method to add custom property descriptors for the object.
+
+22993381		adds a property descriptor for the bind feature of the BindPort class.
+
+This method adds a property descriptor for the bind type of the BindPort class.
+
+This method adds a property descriptor for the bind port of the BindPort
+46971001		expands the values array by creating a new array with the specified minimum size and expanding the values array to the specified minimum size.
+
+This method expands the values array by creating a new array with the specified minimum size and expanding the values array
+38221935		sets the expression for the parser and throws a CParseError if there are more tokens.
+
+This method parses a string expression and throws a CParseError if there are any errors.
+
+This method parses a string
+18354808		runs the RMIRegistry and logs the start and end of the operation.
+
+This method runs the RMIRegistry and logs the start and end of the operation.
+
+This method runs the RMIRegistry and logs the
+47479268		returns a collection of source locations for the plugin.
+This method returns a collection of source locations for the plugin.
+SUMMARY
+This method is used to get a collection of source locations for the plugin.
+
+
+42172713		adds a property descriptor for the URL feature of a DBConnection object.
+
+This method overrides the default behavior of the superclass to add additional property descriptors to the list of property descriptors for the object.
+
+45131203		retrieves the value of a variable from the RDF binding set.
+
+This method returns the value of a variable from the RDF binding set.
+
+This method returns the value of a variable from the RDF binding set.
+19632347		adds a property descriptor for the port feature of the IterationStrategyPortNode class.
+
+This method overrides the default behavior of the getPropertyDescriptors method and adds additional property descriptors to the list of property descriptors
+33593459		executes a request context and returns an Event object.
+This method executes a request context and returns an Event object.
+This method executes a request context and returns an Event object.
+This method executes a request context and returns an Event object
+48003648		generates a random receipt number and attempts to create a new payment method. If successful, it returns true. Otherwise, it returns false.
+SUMMARY
+This method is used to create a new payment method for a recipe.
+
+
+34425645		copies files from a source directory to a target directory, excluding HTML, PNG, or TLD files. It iterates through a list of files, checking if they are directories and their names are valid. If they are, it checks if
+14467078		handles action events for various menu items, including "File", "Edit", "View", "Edit Model", "View Properties", "New Project", and "Exit".
+
+This method handles action events for various menu items, including "
+19413001		processes a message event, extracting the message and extracting the directory name, then calls the superclass's messageSent method.
+
+This method processes a message event, extracting the message and extracting the directory name, then calls the superclass's
+19507431		renames an element in the Rodin database, with the specified rename and force flag, and returns the renamed element.
+
+This method tests the renaming of an element in the Rodin database, ensuring that the renaming is successful and
+2971379		takes a position number and returns the corresponding sample number from a list of sample objects.
+
+This method returns the sample number associated with the given position number.
+
+This method returns the sample number associated with the given position number.
+
+19506951		tests the ability to copy an element from one parent to another. It creates two Rodin files, one with a parent and one with a child, and then copies the element from the parent to the other. It then asserts that the copied element
+40869081		returns the "Back" command, creating it if it does not exist.
+This method returns the "OK" command, creating it if it does not exist.
+This method returns the "Cancel" command, creating it if it
+49866805		updates a checklist with the provided name.
+This method updates a checklist with the provided name.
+SUMMARY
+This method is used to update a checklist with the provided name.
+
+
+15585629		handles the registration request by setting the user name, password, and server, and then calling the handleRegisterRequest method.
+
+This method sets the server and port for the SIP server.
+
+This method sets the user name and
+14346123	<s> none </s>
+8474987	<s> none </s>
+22624445	<s> none </s>
+4420401	<s> none </s>
+7486706	<s> none </s>
+45703874	<s> none </s>
+29856301	<s> none </s>
+27804558	<s> none </s>
+35059632	<s> none </s>
+34426071	<s> none </s>
+11950127		This method tests the toString method of the Cronograma class by creating an instance of it and comparing its toString() method to an expected result.
+
+This method tests the toString method of the Cronograma class by creating an
+22449404		generates a unique variable name for a given LPVariable object. It checks if the variable name already exists in the current variable list and if not, it generates a new one. If the variable already exists, it returns the existing variable name.
+23010194		adds a property descriptor for the location name of an abstract node to the list of property descriptors.
+
+This method overrides the default behavior of the superclass to add a property descriptor for the location name of an abstract node to the
+4453280		This method fires a property change event with the specified property name and old and new values, but only if the old and new values are not null and are not equal.
+
+This method fires a property change event with the specified property name and
+4980509		compiles a JasperReport using a template and a byte array. It returns the compiled report as a JasperReport object.
+
+This method compiles a JasperReport using a template and a byte array. It returns the compiled report as a Jasper
+39455740		returns the text of the element by removing all whitespace and replacing newlines with empty strings.
+
+This method returns the text of the element by removing all whitespace and replacing newlines with empty strings.
+
+This method returns the
+3675937		skips over a specified number of bytes in a file by reading bytes from the file until the desired number of bytes have been skipped or the end of the file is reached.
+
+This method skips over a specified number of bytes in a
+19503813		checks the normal replay of a reasoner application by applying a proof rule and asserting that the result is the same as the original rule.
+
+This method checks the normal replay of a reasoner application by applying a proof rule and asserting that the
+27802039		returns the target handle point of the current handle point, or the point opposite to the target point if there are no points in the list.
+
+This method returns the target handle point of the current handle point, or the point opposite to
+22627785		checks if an element is a built-in type by examining its namespace prefix and attribute value.
+
+This method checks if an element is a built-in type by examining its namespace prefix and attribute value.
+
+This method checks if an
+25796617		handles the login process by logging in the user, setting the game to the main game, and adding the main panel to the client.
+
+This method handles the login process by logging in the user, setting the game to the main game
+22624437		retrieves a collection info object from the collection information collection based on the provided collection name.
+
+This method returns the collection info object associated with the provided collection name.
+SUMMARY
+This method is used to retrieve a collection
+34415646		returns the base object ID of the Composite parent's base object.
+
+This method returns the base object ID of the Composite parent's base object.
+
+This method returns the base object ID of the Composite parent's base object.
+
+28951865		establishes a secure server socket on a specified port.
+
+This method initializes a secure server socket on a specified port.
+
+This method initializes a secure server socket on a specified port.
+
+This method initializes a
+27698939		sets the time-based filter to the specified boolean value.
+
+This method sets the time-based filter to the specified value.
+
+This method sets the time-based filter to the specified value.
+
+This method sets the time
+22620792		initializes the document by setting the root node, author, topic, title, and id fields.
+
+This method initializes the document by setting the author, topic, and id fields.
+
+This method initializes the document by setting
+41709139		returns a string representation of the object, including its size, the hexadecimal representation of each byte, and the hexadecimal representation of each byte itself.
+
+This method returns a string representation of the object, including its
+25722214		clears a project by deleting its keys and recreating it with the project name.
+
+This method clears the project by deleting its keys and recreating it with the project name.
+
+This method clears the project by deleting its keys and
+36645770		returns the next value in a sequence, or creates a new sequence if one does not exist.
+
+This method returns the next value in a sequence, or creates a new sequence if one does not exist.
+
+This method returns the
+39363011		establishes a connection to a database using the HSQLDB JDBC driver and establishes a statement object.
+
+This method attempts to establish a connection to a database using the HSQLDB JDBC driver and establishes a statement object.
+
+5440247		writes a single byte to the output stream, flushing the buffer if necessary.
+
+This method writes a single byte to the output stream, flushing the buffer if necessary.
+
+This method writes a single byte to the output stream
+29593176		increments the current element in the array by one, and if the current element is less than the last element, it increments the current element by one.
+
+This method increments the current element by one, and if the current element is less
+51022573		displays or hides the node labels in the visualization viewer based on the value of the show parameter.
+
+This method updates the visualization viewer's meta graph panel and repaints it.
+
+This method updates the visualization viewer's meta graph panel
+27804295		sets the handles for the object, removing any existing handles and adding new ones based on the provided list of bend points.
+
+This method sets the handles for the object, removing any existing handles and adding new ones based on the provided list of
+19487239		tests the predicate "ran" by comparing the expected and actual results of the predicate "ran" with the actual results of the predicate "ran" with different input values.
+
+This method tests the predicate "ran" by comparing the expected and
+50101772		stores the BibleCache object to a file.
+This method stores the BibleCache object to a file.
+SUMMARY
+This method is used to store the BibleCache object to a file.
+
+
+6647204		returns a set of all portlet modes in the portlet modes map.
+
+This method returns a set of all portlet modes in the portlet modes map.
+SUMMARY
+This method is used to get a set
+39936499		creates the contents of the package if it has not been created yet.
+This method creates the contents of the package if it has not been created yet.
+This method creates the contents of the package if it has not been created yet.
+7957985		visits the children of a tree node, calling the visitor's visitChildren method on each child.
+
+This method visits the children of a tree node, calling the visitor's visitChildren method on each child.
+
+This method visits the
+1744187		retrieves a list of friends from a profile, updates the profile, and saves the updated friends.
+
+This method updates the profile with the latest update time.
+
+This method updates the profile with the latest update time.
+
+
+47694334		opens a file, checks if it is null, and if not, opens a file using the SVF object associated with the file. If the file is not null, it sets the file and opens the file. If the file is null,
+13482724		prints the classes of an object, including interfaces, superclasses, and interfaces.
+
+This method prints the classes of an object, including interfaces, superclasses, and interfaces.
+
+This method prints the classes of an object, including interfaces
+18523034		converts a file to a specified output folder using a list of URLs and a base URL. It creates a test file and converts it to XML format.
+
+This method converts a file to a specified output folder using a list of URLs and
+47639277		retrieves a command from a request, and if the request is a ReconnectRequest, it adds the visual ID of the view to the extended data of the request.
+
+This method overrides the superclass's getCommand method and
+11758969		adds a node to the fix set, calculates the distance to fix, and adds it to the set of nodes that are not reachable from the other node.
+
+This method adds a node to the fix set, calculates the distance to
+22218597		notifies all registered observers of an event by calling their update method with the given session and event.
+
+This method notifies all registered observers of an event by calling their update method with the given session and event.
+SUMMARY
+21811643		performs a series of operations on the server, including receiving initialization packets, calculating the preferred key exchange configuration, and sending client initialization packets.
+
+This method initializes the server by reading initialization packets, calculating the preferred key exchange configuration, and
+16775665		converts a double value representing a time into a string representation in the format "hh:mm:ss".
+
+This method converts a double value representing a time into a string representation in the format "hh:mm:ss".
+
+
+19376190		sets up the actor model by creating a new actor model, adding actors to it, and returning the new actor model.
+
+This method sets up the actor model by creating a new actor model, adding actors to it, and returning the new
+13483753		checks if the given expression is equal to the current expression by comparing their values.
+
+This method checks if the given expression is equal to the current expression by comparing their values.
+
+This method checks if the given expression is equal to the
+12725466		sets the element at the specified index to the specified string value, throwing an exception if the index is not 0.
+
+This method sets the element at the specified index to the specified string value, throwing an exception if the index is not 0
+18123215		creates the contents of the dialog window, including a label, a tree viewer, and a button.
+
+This method creates the contents of the dialog window, including a label, a tree viewer, and a button.
+
+This method
+36634933		generates a menu for a given change in the vertical part of the vertical part. It iterates through the vertices and sets the item position and draw accordingly.
+
+This method generates a menu for a given change in the vertical part of
+35998902		reads messages from the server and adds them to a list of messages. It also clears the list and adds in the new set of messages.
+SUMMARY
+This method is used to add a message to a list of messages after clearing
+18920164		creates a designer for an activity by setting its activity and returning the designer.
+
+This method creates a designer for an activity by setting its activity and returning the designer.
+SUMMARY
+This method is used to create a designer
+9308839		sets the plugin to the default plugin if the data file exists and the plugin name is not empty.
+
+This method sets the plugin to the default plugin if the data file exists and the plugin name is not empty.
+SUMMARY
+28110203		returns the image directory for the ViewConfiguration.IMAGES_DIRECTORY_KEY, if it is null, it attempts to retrieve the image directory from the superclass. If the image directory is not found, it attempts to retrieve the
+19516064		adds a property descriptor for the inv_detinp_inp feature of the INP class.
+
+This method returns a list of property descriptors for the given object.
+
+This method adds a property descriptor for the inv
+41252553		returns a string representation of the object, including its label, properties, and URI.
+
+This method returns a string representation of the object, including its label, properties, and URI.
+
+This method returns a string representation of the
+19892963	<s> none </s>
+26503583		releases all busy ports by iterating through the list of busy ports and releasing all ports that are not already in the list.
+
+This method releases all busy ports by iterating through the list of busy ports and releasing all ports that are
+22171943		adds a property descriptor for the local service pool feature of an EveAgent object.
+
+This method adds a property descriptor for the local service pool feature of an EveAgent object.
+SUMMARY
+This method is used to add
+29855930		recursively builds dependencies for a given domain and its parent domain.
+
+This method recursively builds dependencies for a given domain and its parent domain.
+
+This method recursively builds dependencies for a given domain and its parent domain
+20107093		checks if two objects are equal by comparing their IDs.
+
+This method compares two objects by comparing their IDs.
+
+This method compares two objects by comparing their IDs.
+
+This method compares two objects by comparing their IDs.
+
+
+19275953		returns the setter method for the specified field. If the setter method is null, it creates a new setter method with the specified name and type.
+
+This method returns the getter method for the specified field. If the
+22618774		returns an Element that represents the input element, which is the input element that is used to render the input element. If the schemaNode is simple or complex content, it checks if the parent exists before creating the inputElement. If the schema
+4012725		adds a handicap history to the database with the specified user ID, league ID, change date, handicap, and change type.
+
+This method adds a handicap history to the database with the specified user ID, league ID,
+43040077		refreshes the list by calling the refresh method of the DataManager class, then sorts the list using the comparator if it is not null.
+
+This method refreshes the list by calling the refresh method of the DataManager class,
+17510726		returns the instance of ConfigurationService object, creating it if it does not exist.
+This method initializes the ConfigurationService object if it is null.
+This method returns the instance of ConfigurationService object.
+SUMMARY
+This
+16755702		adds a point to the route if it is not already in the list and not already in the list.
+This method adds a route point to the list of route points.
+This method adds a route point to the list of route points
+33719148		This method tests the setGroupCreator method of theAutomation class by setting the group creator to 0 and calling the testSetGroupCreator method.
+
+This method tests the setGroupCreator method of theAutomation class by setting
+22407858		sends a message to a specified output stream if the output stream is not null and the detected input flag is set.
+
+This method logs a message to the AntRunner if the output stream is not null and the detected input flag is set
+19495211		determines if an expression is a simple pattern by checking if it has a bound index and if the expression is a simple pattern.
+
+This method checks if an expression is a simple pattern by checking if it has a bound index and if
+39924474		ends the animation by setting the animation layer to null, hiding the glass pane, setting the animation layer to visible, and setting the transition target to null.
+
+This method sets the animation layer to null, hides the glass pane, and sets
+31898171		sets the value of the "done" property to the specified boolean value and fires a property change event.
+
+This method sets the value of the "done" property to the specified boolean value and fires a property change event.
+
+This
+b 
+
+299406		updates the font of the name label based on the font preference of the model.
+
+This method updates the font of the name label based on the font preference of the model.
+SUMMARY
+This method is used to update
+18354698		disconnects the client from the server by creating a new SASL client, setting the client's SASL mechanism, and logging the disconnection.
+
+This method disconnects the client from the server by creating a new SASL client,
+29853713		takes a list of statements and returns a Hashtable containing the table definitions.
+
+This method fetches the table definition from the database using the provided list of statements.
+
+This method fetches the table definition from the database using the
+26615505		returns a vector of selected neurons from a GUI layer.
+
+This method returns a vector of selected neurons from a GUI layer.
+SUMMARY
+This method is used to retrieve a vector of selected neurons from a GUI layer.
+45550058		returns a string containing the help message for a given metric, or an error message if the metric is not found.
+
+This method returns a string containing the help message for a given metric, or an error message if the metric is not
+37398281		tests the ability to retrieve raw data from a configuration object and asserts that the retrieved data contains the expected values.
+
+This method tests the ability to retrieve raw data from a configuration object and asserts that the retrieved data contains the expected values.
+
+19892924		retrieves a photo from the Flickr using the provided user ID and photo ID.
+
+This method retrieves a photo from the Flickr using the provided user ID and photo ID.
+SUMMARY
+This method is used to retrieve
+34413818		initializes the application by creating a new Tabpanel, View, and List. It then iterates through the Tabpanels in the primaryTabMap, calling onCreate on each Tabpanel.
+SUMMARY
+This method is used
+
+
+
+

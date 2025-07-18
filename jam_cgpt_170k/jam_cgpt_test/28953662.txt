@@ -1,0 +1,17 @@
+TDAT: 	public ResponseType getResponseType(OMElement response) {
+		// Extract the SOAPBody, if we can
+		if (response == null) return ResponseType.INVALID_RESPONSE;
+		// See if its empty
+		if (!response.isComplete()) return ResponseType.INCOMPLETE_RESPONSE;
+		
+		if(response.getLocalName().equals("RegistryResponse")) {
+            return ResponseType.REGISTRY_RESPONSE;
+		}
+		if(response.getLocalName().equals("RetrieveDocumentSetResponse")) {
+			return ResponseType.RETRIEVE_DOCUMENT_SET_RESPONSE;
+		}
+        // Not a registry response
+		return ResponseType.UNEXPECTED_RESPONSE;
+	}
+
+COM:retrieves the type of response received (RegistryResponse, RetrieveDocumentSetResponse, or unexpected) based on the content of an OMElement SOAP response

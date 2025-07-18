@@ -1,0 +1,19 @@
+TDAT: 	private void endIoOperation() {
+		statistics.numberOfCompletedIOOperations++;
+		Process p = io.getActiveProcess();
+		p.leftIo(clock);
+		cpu.addProcess(p);
+		p.enterCpuQueue(clock);
+		
+		if(cpu.isCpuIdle()){
+			switchProcess();
+		}
+		p = io.startProcess();
+		
+		if(p != null){
+			p.enterIo(clock);
+			eventQueue.insertEvent(new Event(END_IO, clock + io.getIoTime()));	
+		}
+	}
+
+COM:performs the necessary actions for ending an IO operation, including updating statistics, transitioning a process from IO to the CPU queue, and scheduling the next IO operation if necessary

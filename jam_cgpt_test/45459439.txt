@@ -1,0 +1,11 @@
+TDAT: 	private JTextField getJTextField4() {
+		if (jTextField4 == null) {
+			jTextField4 = new JTextField();
+			jTextField4.setBounds(new Rectangle(31, 229, 435, 32));
+			jTextField4.setText(defaultProps.getProperty("output"));
+			jTextField4.setText(applicationProps.getProperty("output"));
+		}
+		return jTextField4;
+	}
+
+COM:retrieves a JTextField instance, setting its bounds and text values if it is null

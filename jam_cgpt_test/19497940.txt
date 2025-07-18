@@ -1,0 +1,20 @@
+TDAT: 	public void testThirdThenFirstChild() throws CoreException {
+		setCurrentPO("PO1");
+		assertOpen(mList(), G);
+		
+		final ITactic tac = Tactics.doCase(P1.toString());
+		userSupport.applyTactic(tac, false, null);
+		assertOpen(mList(), btrue);
+		
+		gotoNextSibling();
+		assertOpen(mList(P1), G);
+
+		gotoNextSibling();
+		assertOpen(mList(nP1), G);
+
+		final ITactic tac2 = Tactics.review(REVIEWED_MAX);
+		userSupport.applyTactic(tac2, false, null);
+		assertOpen(mList(), btrue);
+	}
+
+COM:tests the functionality of navigating between siblings and applying tactics while asserting certain conditions

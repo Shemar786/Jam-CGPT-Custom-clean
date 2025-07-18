@@ -1,0 +1,17 @@
+TDAT:    public void actionPerformed(ResultSet resultSet) {
+      try {
+         if ((command != null) && (!command.isEmpty())) {
+
+            if (SystemTool.isWindowsPlatform()) {
+               Runtime.getRuntime().exec(WIN_CONSOLE + command);
+            }
+
+         }
+      }
+      catch (IOException ioe) {
+         ioe.printStackTrace();
+      }
+
+   } // run
+
+COM:executes a command on Windows platform if the command is not null or empty using the provided ResultSet parameter

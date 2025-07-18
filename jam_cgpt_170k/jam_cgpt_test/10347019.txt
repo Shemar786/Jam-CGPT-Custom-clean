@@ -1,0 +1,18 @@
+TDAT: 	protected void insertContent(Element element, Component component, Method method) {
+		
+		ResourceManager resourceManager = this.usiXMLInterfaceRenderer.resourceRetriever;
+		String resourceContent = resourceManager.getStringResourceContent(element);
+		
+		try {
+			method.invoke(component, resourceContent);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+COM:inserts content from an Element into a Component using a specified Method, after retrieving the content from a resource manager

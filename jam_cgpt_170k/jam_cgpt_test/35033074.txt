@@ -1,0 +1,10 @@
+TDAT:     private void validateFile(byte[] data) throws DecryptionFailedException {
+        int minSize = OFFSET_HEADER + 32 + LENGTH_EOF + LENGTH_HMAC;
+        if (data.length < minSize || (data.length - 8) % 16 != 0
+                || !"PWS3".equals(tag(data))) {
+            throw new DecryptionFailedException("The data is not a valid "
+                    + "PasswordSafe v3 database");
+        }
+    }
+
+COM:validates if a byte array contains a valid PasswordSafe v3 database by checking its length and the presence of certain tags

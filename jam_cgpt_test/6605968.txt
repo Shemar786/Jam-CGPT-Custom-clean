@@ -1,0 +1,17 @@
+TDAT: 	public SocialActivityInterpreter getSocialActivityInterpreterInstance() {
+		if (Validator.isNotNull(getSocialActivityInterpreterClass())) {
+			if (_portletApp.isWARFile()) {
+				PortletBag portletBag = PortletBagPool.get(getRootPortletId());
+
+				return portletBag.getSocialActivityInterpreterInstance();
+			}
+			else {
+				return (SocialActivityInterpreter)InstancePool.get(
+					getSocialActivityInterpreterClass());
+			}
+		}
+
+		return null;
+	}
+
+COM:returns a SocialActivityInterpreter instance either from a PortletBag or from an InstancePool based on the social activity interpreter class

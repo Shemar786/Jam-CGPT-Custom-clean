@@ -1,0 +1,19 @@
+TDAT:   private RecordStore openRS() {
+    if (DEBUG) {
+      log("Open RecordStore");
+    }
+
+    if (rms == null) {
+      try {
+        rms = RecordStore.openRecordStore(RECORD_STORE_NAME, true);
+      } catch (RecordStoreException e) {
+        if (DEBUG) {
+          log(e);
+        }
+      }
+    }
+
+    return rms;
+  }
+
+COM:opens a record store and returns the instance of it, while logging any errors if debugging mode is enabled

@@ -1,0 +1,14 @@
+TDAT: 	public String getAcceptsNewSubstitionGroupMember(String encodedPath) {
+		String xpath = XPathUtils.decodeXPath(encodedPath);
+		SchemaNode schemaNode = schemaHelper.getSchemaNode(xpath);
+		if (schemaNode == null) {
+			prtlnErr("WARNING: getAcceptsNewSubstitionGroupMember did not find schemaNode for " + xpath);
+			return FALSE;
+		}
+		boolean accepts =
+			getSubstitutionGroupMemberCountOf(encodedPath) < schemaNode.getMaxOccurs();
+		// prln ("  .. accepts ? " + accepts);
+		return accepts ? TRUE : FALSE;
+	}
+
+COM:retrieves whether or not a certain schema node can accept a new substitution group member

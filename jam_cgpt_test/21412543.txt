@@ -1,0 +1,11 @@
+TDAT:     public String getQueueByPlayerId(String playerId) {
+    	for (int i = 0; i < this.players.size(); i++) {
+    		String currentPid = this.players.elementAt(i).getPlayer().getId();
+    		if (currentPid.equals(playerId)) {
+    			return this.players.elementAt(i).getQueue();
+    		}
+		}
+    	return null;
+    }
+
+COM:searches for a player ID in a list of players and returns their associated queue

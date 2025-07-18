@@ -1,0 +1,13 @@
+TDAT:     public boolean contains(short value) {
+        Entry tab[] = table;
+        for (int i = tab.length; i-- > 0;) {
+            for (Entry e = tab[i]; e != null; e = e.next) {
+                if (e.value==value) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+COM:checks if a short value is in the hashtable and returns a boolean value

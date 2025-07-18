@@ -1,0 +1,14 @@
+TDAT:     public void setValue(ASN1Type nval) throws java.security.cert.CertificateEncodingException {
+	ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+	try {
+            nval.encode(new DEREncoder(baos));
+            extnValue.setByteArray(baos.toByteArray());
+	}
+	catch (Exception e) {
+            throw new java.security.cert.CertificateEncodingException(e.getMessage());
+	}
+	
+    }  
+
+COM:sets the value of an ASN1Type object and encodes it using a DEREncoder before storing it in a byte array, throwing a CertificateEncodingException if an exception occurs

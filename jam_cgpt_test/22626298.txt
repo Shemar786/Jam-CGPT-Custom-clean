@@ -1,0 +1,12 @@
+TDAT: 	public List getPropertyValues(String name) {
+		String path = "/ndr:NSDLDataRepository/ndr:NDRObject/ndr:properties/" + qname(name);
+		List nodes = getNodes(path);
+		List values = new ArrayList();
+		for (Iterator i = nodes.iterator(); i.hasNext(); ) {
+			Element e = (Element) i.next();
+			values.add(e.getText());
+		}
+		return values;
+	}
+
+COM:retrieves a list of property values from a specified path in an XML file

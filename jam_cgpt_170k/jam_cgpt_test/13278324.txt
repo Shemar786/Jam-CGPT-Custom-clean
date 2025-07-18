@@ -1,0 +1,16 @@
+TDAT:     public Collection getUnconnectedParts() {
+        Vector   result = new Vector();
+        Iterator it = allParts.iterator();
+
+        while (it.hasNext()) {
+            MovableSubgraphPart g = (MovableSubgraphPart) it.next();
+
+            if (! g.hasInnerGraphLinks() && ! g.hasInterGraphLinks()) {
+                result.add(g);
+            }
+        }
+
+        return result;
+    }
+
+COM:returns a collection of MovableSubgraphPart objects that do not have any inner or inter graph links

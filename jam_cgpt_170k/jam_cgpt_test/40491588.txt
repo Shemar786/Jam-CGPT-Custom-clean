@@ -1,0 +1,18 @@
+TDAT: 	protected void setState(int key, double value) {
+		if (data.length <= key) {
+			// increase length of data by making it a copy of itself with
+			// increased length
+			// data = Arrays.copy(data, 0, key + 1, 0, data.length)
+			// System.a
+			data = new double[key + 1];
+		}
+		// notify self on state change
+		if (value != data[key]) {
+			sensorStateChanged(key, data[key], value);
+		}
+		// save new data
+		data[key] = value;
+
+	}
+
+COM:sets a new state for a sensor and calls a sensorStateChanged method if the value has changed

@@ -1,0 +1,13 @@
+TDAT:     public boolean closeConfigDialog() {
+        int value = JOptionPane.YES_OPTION;
+        if(getChangesPending()) {
+            value = JCSwingUtilities.showCenteredConfirmDlg(this,
+                SDVConstants.UM_APPLY_CHANGES,
+                SDVConstants.DGT_CHANGES_PENDING,
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+        }
+        return value == JOptionPane.YES_OPTION;
+    }
+
+COM:is used to close a configuration dialog after checking for any changes and prompting the user to apply them

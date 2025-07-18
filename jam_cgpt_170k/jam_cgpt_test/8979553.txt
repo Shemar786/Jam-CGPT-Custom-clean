@@ -1,0 +1,20 @@
+TDAT: 	public void scalar(final String value) throws YamlException {
+
+		if (value.length() > 0) {
+
+			out.append("\"");
+
+			int i = 0;
+
+			for (int q = 0; (q = value.indexOf('"', i)) != -1; i = q + 1) {
+
+				out.append(value.substring(i, q)).append("\\\"");
+			}
+
+			out.append(value.substring(i));
+
+			out.append("\"");
+		}
+	}
+
+COM:takes a String value as input, escapes any quotation marks within the String, and appends the escaped String between double quotation marks to an out StringBuilder object

@@ -1,0 +1,10 @@
+TDAT: 	public void flushObjectsOfClass(String iEntityClassName) {
+		Collection<SessionInfo> sessions = ObjectContext.getInstance().getComponent(SessionAspect.class).getSessionInfos();
+		for (SessionInfo sess : sessions) {
+			ControllerContext ctx = (ControllerContext) ObjectContext.getInstance().getComponent(SessionAspect.class).getProperty(
+					sess.getSystemSession(), CONTEXT_ATTR);
+			ctx.removeObject(iEntityClassName);
+		}
+	}
+
+COM:flushes all objects of a specified class from the session context in the current system session

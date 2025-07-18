@@ -1,0 +1,12 @@
+TDAT:     public void paintComponent(Graphics g) {
+	if (map == null) {
+	    g.setColor(getBackground());
+	    Dimension area = getSize();
+	    g.fillRect(0, 0, area.width, area.height);
+	} else {
+	    Rectangle bounds = g.getClipBounds();
+	    map.drawMap(g.create(bounds.x, bounds.y, bounds.width, bounds.height), bounds);
+	}
+    }
+
+COM:paints a map onto a graphical component using Graphics g, either filling the background with its color or drawing the map within the bounds of the component

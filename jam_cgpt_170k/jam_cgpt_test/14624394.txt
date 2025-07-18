@@ -1,0 +1,13 @@
+TDAT:     public void testsetInUse() {
+        System.out.println("setInUse");
+        boolean inUse = true;
+        org.gps.types.GpsSatellite instance = new org.gps.types.GpsSatellite();
+        instance.setInUse(inUse);
+        assertTrue(instance.isInUse());
+        
+        instance.setInUse(false);
+        assertTrue(!instance.isInUse());
+
+    }
+
+COM:tests the functionality of the "setInUse" and "isInUse" methods for a GPS satellite object

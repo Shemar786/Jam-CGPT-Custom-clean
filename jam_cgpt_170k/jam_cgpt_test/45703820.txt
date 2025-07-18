@@ -1,0 +1,15 @@
+TDAT: 	private JPanel getProgrammaPanel() {
+		if (programmaPanel == null) {
+			jLabel = new JLabel();
+			jLabel.setText("Programma");
+			FlowLayout flowLayout = new FlowLayout();
+			flowLayout.setAlignment(FlowLayout.LEFT);
+			programmaPanel = new JPanel();
+			programmaPanel.setLayout(flowLayout);
+			programmaPanel.add(jLabel, null);
+			programmaPanel.add(getProgrammaComboBox(), null);
+		}
+		return programmaPanel;
+	}
+
+COM:creates and returns a JPanel containing a JLabel with the text "Programma" and a JComboBox

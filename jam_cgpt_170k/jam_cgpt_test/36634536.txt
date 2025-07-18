@@ -1,0 +1,14 @@
+TDAT:     public void updatePosition(){
+        if(posx != fposx || posy != fposy){
+            if(speed == 0){
+                posx = fposx;
+                posy = fposy;
+            }
+            if(posx != fposx)
+                posx += (posx < fposx) ? speed : -speed;
+            if(posy != fposy)
+                posy += (posy < fposy) ? speed : -speed;
+        }
+    }
+
+COM:updates the position of an object based on its current position, target position, and speed

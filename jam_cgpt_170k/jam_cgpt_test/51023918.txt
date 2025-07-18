@@ -1,0 +1,8 @@
+TDAT: 	public void addFunctionMethodByName(Class<?> owner, String name, String functionName)throws Exception{
+		if(functionName == null)functionName = name;
+		Method method = getMethodByName(owner, name);
+		if(method != null)functionMethods.add(new ValueTupleInternal<String, Method>(functionName, method));
+
+	}
+
+COM:adds a function method to a list based on its name, owner class, and optional alias

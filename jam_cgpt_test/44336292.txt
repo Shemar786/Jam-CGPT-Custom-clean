@@ -1,0 +1,15 @@
+TDAT: 	protected void paintBackground(Graphics g) {
+		Rectangle pageBounds = graph.getBounds();
+                
+		if (getTspGraph().getBackgroundImage() != null) {
+			// Use clip and pageBounds
+			double s = graph.getScale();
+			Graphics2D g2 = (Graphics2D) g;
+			AffineTransform tmp = g2.getTransform();
+			g2.scale(s, s);
+			g.drawImage(getTspGraph().getBackgroundImage(), 0, 0, graph);
+			g2.setTransform(tmp);
+		}
+	}
+
+COM:paints the background of a graph using an image if one is available

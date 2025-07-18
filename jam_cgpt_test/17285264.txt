@@ -1,0 +1,20 @@
+TDAT: 	public void logout(){
+		try {
+			sendEncryptedMessage(new LogoutPacket()); 		//sends logout request to the server
+			getMessage();
+		} catch (Exception e){
+			SecurityHandler.catchException("logging out", e , true);
+			//e.printStackTrace();
+		}
+		try{
+			//disconnects from the server
+			disconnect();
+		} catch (IOException e) {
+			GuiFacade.getInstance().showErrorMessage("Some error occured while logging out");
+		}
+		_currUser = null;
+		//shows the login screen
+		GuiFacade.getInstance().showLogin();
+	}
+
+COM:logs the current user out of the server and displays the login screen

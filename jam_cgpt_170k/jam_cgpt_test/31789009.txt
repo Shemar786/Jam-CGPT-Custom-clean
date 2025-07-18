@@ -1,0 +1,9 @@
+TDAT:     public void setBuildRoot(SandProject newRoot) { 
+        if((buildRoot==null)&&(newRoot!=null)&&(getBuildTrigger()==null)) {
+            setBuildTrigger(newRoot); }
+        //System.out.println("SandBuildDriver.setBuildRoot set to " +
+        //                   newRoot.getName());
+        buildRoot=newRoot;
+    }
+
+COM:sets the build root for a SandProject and sets the build trigger if specific conditions are met

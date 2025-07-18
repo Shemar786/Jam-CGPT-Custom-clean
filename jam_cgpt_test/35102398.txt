@@ -1,0 +1,17 @@
+TDAT:     private void init() {
+        popupCanceled = false;
+        
+        this.addPopupMenuListener(new PopupMenuListener() {
+            public void popupMenuCanceled(PopupMenuEvent e) {
+                canceled();
+            }
+            public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
+                invisible();
+            }
+            public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
+                visible();
+            }
+        });
+    }
+
+COM:initializes a popup menu and adds listeners for when it is canceled, becomes invisible, or becomes visible

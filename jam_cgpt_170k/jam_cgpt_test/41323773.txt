@@ -1,0 +1,14 @@
+TDAT: 	private Set<LOM> updateRestrictionFor(LOM aLOM) {
+		Set<LOM> theListOfUpdates = new LinkedHashSet<LOM>();
+		for (LOMAttribute aAttribute : LOMAttribute.getRegisteredAttribute()) {
+			Set<LOM> theUpdates = updateRestrictionFor(aLOM, aAttribute, false);
+			if (theUpdates != null)
+				theListOfUpdates.addAll(theUpdates);
+		}
+		return theListOfUpdates;
+	}
+
+	/**
+	 * 
+
+COM:updates restrictions for a given LOM object and returns a set of updated LOMs

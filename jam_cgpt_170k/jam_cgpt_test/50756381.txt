@@ -1,0 +1,13 @@
+TDAT:     public QuestionPK ejbCreate(int questionType) throws CreateException {
+        if ( (questionType < SurveyElementFactory.QUESTION) || (questionType > SurveyElementFactory.NOMINALQUESTION)) {
+            throw new CreateException("(" + questionType + ") is a unknown question type.");
+        }
+
+        setQuestionType(questionType);
+        String newKey = GUID.generateGUID();
+        setQuestionId(newKey);
+
+        return null;
+    }
+
+COM:creates a new Question object with the specified question type and sets its ID and type, generating a new key using a GUID generator

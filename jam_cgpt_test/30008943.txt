@@ -1,0 +1,14 @@
+TDAT:     protected void chars() {
+        fInCharacters = false;
+        if (fStringBuffer.length == 0) {
+            return;
+        }
+        doCharactersAugs();
+        out.print('"');
+        print(fStringBuffer.toString());
+        out.println();
+        out.flush();
+        fStringBuffer.clear();
+    } // chars()
+
+COM:prints characters with augmented information to an output and clears the character buffer

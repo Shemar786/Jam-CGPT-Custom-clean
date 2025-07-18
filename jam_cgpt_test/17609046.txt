@@ -1,0 +1,17 @@
+TDAT:     private void loadTree() {
+
+        try {
+            if (!isUserMenuCreated()) {
+                menuList = serviceAppMenu
+                        .getApplicationMenuByProgram(getProgram());
+                createUserMenu(menuList);
+            } else {
+                menuList = getUserMenu();
+            }
+        } catch (ServiceException e) {
+            addError("Error on getApplicationMenuByProgram " + e.getMessage());
+        }
+
+    }
+
+COM:loads a menu tree by calling a service to retrieve application menus, creates a user menu if it does not exist, and catches any service exceptions

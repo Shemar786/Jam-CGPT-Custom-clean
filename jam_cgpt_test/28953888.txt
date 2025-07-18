@@ -1,0 +1,9 @@
+TDAT:     public void addDescription(String comment, boolean isRequired) throws XdsRimException, SOAPException {
+        if (comment != null) {
+            addRimDescriptionElement(root, comment, rimNameSpace);
+        } else if (isRequired) {
+            throw new XdsRimException("Required Description not supplied.");
+        }
+    }
+
+COM:adds a description element to the root element if a comment is provided, or throws an exception if no comment is provided and is required

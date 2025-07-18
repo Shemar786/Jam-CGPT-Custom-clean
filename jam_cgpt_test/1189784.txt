@@ -1,0 +1,14 @@
+TDAT:    public void insert(Constant dataval, RID datarid) {
+      beforeFirst(dataval);
+      DirEntry e = leaf.insert(datarid);
+      leaf.close();
+      if (e == null)
+         return;
+      BTreeDir root = new BTreeDir(rootblk, dirTi, tx);
+      DirEntry e2 = root.insert(e);
+      if (e2 != null)
+         root.makeNewRoot(e2);
+      root.close();
+   }
+
+COM:inserts data into a BTree directory and creates a new root node if necessary

@@ -1,0 +1,10 @@
+TDAT:   public void startDocument() throws SAXException {
+    super.startDocument();
+    moduleNodes = null;
+    Map map = new HashMap();
+    map.put("%Type%", "RootModule");
+    map.put("Modules", new ArrayList());
+    parseStack.push(map);
+  }
+
+COM:initializes variables and pushes a new HashMap onto a parseStack for XML parsing

@@ -1,0 +1,8 @@
+TDAT:     public void testDeleteCalendar() throws Exception {
+        WebConversation     conversation = new WebConversation();
+				conversation.setAuthorization("admin", "admin");
+        WebRequest request = new GetMethodWebRequest( "http://localhost:8000/CALSCalendar/CalendarRegistry/deleteTestCalendars" );
+        WebResponse response = conversation.getResponse( request );
+    }
+
+COM:tests the deletion of test calendars by making a web request to a specific URL using a WebConversation object with admin authorization

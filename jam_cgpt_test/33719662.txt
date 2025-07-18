@@ -1,0 +1,13 @@
+TDAT:     public void testSetEvent() {
+        System.out.println("setEvent");
+        
+        Event_DBImpl event = null;
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.setEvent(event);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a test method that prints "setEvent", initializes an event variable as null, creates an instance of the SystemClient_DBImpl class, sets the event variable to the instance using the setEvent method, and then fails the test with a message that the test case is a prototype

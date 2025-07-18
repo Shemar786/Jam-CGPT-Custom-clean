@@ -1,0 +1,14 @@
+TDAT: public DoubleMatrix2D viewRowFlip() {
+	if (rows==0) return this;
+	DoubleMatrix2D view = new WrapperDoubleMatrix2D(this) {
+		public double getQuick(int row, int column) {
+			return content.get(rows-1-row,column);
+		}
+		public void setQuick(int row, int column, double value) {
+			content.set(rows-1-row,column,value); 
+		}
+	};
+	return view;
+}
+
+COM:returns a flipped view of a two-dimensional matrix by reversing the order of its rows

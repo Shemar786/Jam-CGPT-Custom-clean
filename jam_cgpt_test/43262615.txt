@@ -1,0 +1,19 @@
+TDAT:         private Properties loadProperties(final File file) {
+            final Properties p = new Properties();
+            try {
+                FileInputStream fis = new FileInputStream(file);
+                try {
+                    p.load(fis);
+                } finally {
+                    if (null != fis) {
+                        fis.close();
+                    }
+                }
+            } catch (IOException e) {
+                throw new AntdepoException("failed loading property file: "
+                        + e.getMessage(), e);
+            }
+            return p;
+        }
+
+COM:loads properties from a file and returns them as a Properties object

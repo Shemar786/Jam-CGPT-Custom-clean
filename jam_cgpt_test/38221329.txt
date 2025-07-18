@@ -1,0 +1,11 @@
+TDAT:   public CToolBarElement createHelpToolBar() {
+    if (helpToolbar != null) return helpToolbar;
+
+    helpToolbar = new CToolBarElement(1000);
+    helpToolbar.add(createButton("HelpTopics", "buttons/general/Help" + iconSize
+      + ".gif", getString("topics", "Help topics")));
+//    helpToolbar.addSeparator();
+    return helpToolbar;
+  }
+
+COM:creates a help toolbar with a button and returns the toolbar

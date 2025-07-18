@@ -1,0 +1,12 @@
+TDAT: 	private Boolean isValueIn(String[][] theCategory) {
+		for (int i = 0; i < theCategory.length; i++) {
+			for (int j = 0; j < theCategory[i].length; j++) {
+				if (!theCategory[i][j].isEmpty()) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+COM:checks whether any value is present in a two-dimensional array of strings

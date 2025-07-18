@@ -1,0 +1,8 @@
+TDAT:     public void dumpDependencyGraph(SandProject proj,String indent) {
+        log(indent + proj.getName());
+        SandProject[] downstream=proj.getRequiredBy();
+        for(int i=0;i<downstream.length;i++) {
+            dumpDependencyGraph(downstream[i],indent + "    "); }
+    }
+
+COM:recursively prints a dependency graph of a SandProject and its dependencies with indentation

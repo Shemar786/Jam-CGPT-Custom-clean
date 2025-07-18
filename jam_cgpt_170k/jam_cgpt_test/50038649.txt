@@ -1,0 +1,12 @@
+TDAT:     private void setStatsImplementation(StatisticsImplementor statsImpl) {
+        Field sessionImplementor;
+        try {
+            sessionImplementor = SessionFactoryImpl.class.getDeclaredField("statistics");
+            sessionImplementor.setAccessible(true);
+            sessionImplementor.set(sessionFactory, statsImpl);
+        } catch (Exception e) {
+            log.error("Could not set the stats implementor", e);
+        }
+    }
+
+COM:sets the implementation of the statistics for a given SessionFactoryImpl instance

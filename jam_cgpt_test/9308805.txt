@@ -1,0 +1,18 @@
+TDAT: protected void openfile(){
+  Date date = new Date();
+  String filenamenew = name.replaceFirst("%g",sdf.format(date));
+  if (!filenamenew.equals(filename)){
+    try {
+      if (writer!=null){
+        writer.close();
+      }
+      writer = new FileWriter(
+         filenamenew,append);
+      filename = filenamenew;
+    } catch (IOException e) {
+      e.printStackTrace(System.err);
+    }  
+  }
+}
+
+COM:opens a file, replaces a placeholder in the file name with the current date and time, and checks if the new file name is different from the old file name before closing the writer and creating a new file writer object

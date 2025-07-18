@@ -1,0 +1,15 @@
+TDAT: 	public String getSimpleContentType() {
+		if (!hasSimpleContent()) {
+			return null;
+		}
+		Element e = getElement();
+		Node node = e.selectSingleNode(NamespaceRegistry.makeQualifiedName(xsdPrefix, "simpleContent") + "/" +
+			NamespaceRegistry.makeQualifiedName(xsdPrefix, "extension"));
+		if (node == null) {
+			prtln("extension node not found for " + getName());
+			return null;
+		}
+		return ((Element) node).attributeValue("base");
+	}
+
+COM:retrieves the base attribute value of an extension node from the simple content of an XML element, and returns null if there is no such node

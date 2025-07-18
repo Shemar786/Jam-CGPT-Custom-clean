@@ -1,0 +1,10 @@
+TDAT:     public Command getCmdRADIO() {
+        if (cmdRADIO == null) {//GEN-END:|104-getter|0|104-preInit
+            // write pre-init user code here
+            cmdRADIO = new Command("Radio", Command.OK, 0);//GEN-LINE:|104-getter|1|104-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|104-getter|2|
+        return cmdRADIO;
+    }
+
+COM:returns a Command object named "cmdRADIO" which is initialized with a label "Radio", a style of Command.OK, and a priority of 0 if it is null, either pre- or post-initialization user code may be executed

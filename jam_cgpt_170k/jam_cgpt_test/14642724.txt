@@ -1,0 +1,9 @@
+TDAT:     public void startup() throws SecurityException, IOException {
+        IMessageQueue messageQueue = this.fICommunication.getMessageQueue();
+        MessageProcessorRegistry processorRegistry = messageQueue.getProcessorRegistry();
+        processorRegistry.addMessageHandler(MESSAGE_TYPE, this);
+        loadSecureResources();
+        this.fCredential = createNewCredential();
+    }
+
+COM:initializes communication and security resources, creates a new credential, and adds a message handler to the processor registry

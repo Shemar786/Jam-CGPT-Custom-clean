@@ -1,0 +1,13 @@
+TDAT:     public void startApp() {
+        // TextBox t = new TextBox("Note", "", 2000, 0);
+        
+        t.addCommand(newLineCommand);
+        t.addCommand(exitCommand);
+        t.addCommand(saveCommand);
+        t.addCommand(loadCommand);
+        t.setCommandListener(this);
+        
+        display.setCurrent(t);
+    }
+
+COM:creates a text box for taking notes and adds several commands to it before displaying it

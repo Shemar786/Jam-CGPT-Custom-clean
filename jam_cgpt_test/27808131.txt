@@ -1,0 +1,10 @@
+TDAT:     public void addSelectedEdgeIndices ( int[] edge_indices ) {
+      if( ( type & EDGES_SELECTED_TYPE ) == 0 ) {
+        selectedEdgeIndices = edge_indices;
+        type |= EDGES_SELECTED_TYPE;
+      } else {
+        selectedEdgeIndices = edge_indices;
+      } // End if this is an extension to an existing collection of selected edges.
+    } // addSelectedEdgeIndices( int[] )
+
+COM:adds an array of selected edge indices to the current collection of selected edges

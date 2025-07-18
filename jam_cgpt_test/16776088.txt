@@ -1,0 +1,14 @@
+TDAT:     private int allocateNewID(){
+       int threadID=-1;
+
+       for (int iThread=0; iThread<maxThreads; iThread++){
+          if (! allocatedThread[iThread]){
+             allocatedThread[iThread]=true;
+             numActiveThreads++;
+			 return iThread;
+          }
+       }
+       throw new RuntimeException("Cannot find an non-allocated thread. This is a programming error");
+   }
+
+COM:allocates a new thread ID from a pool of available IDs and throws an exception if none are available

@@ -1,0 +1,8 @@
+TDAT:    public void registerParameter(Parameter param)
+   {  if(idToJobParameterMap.containsKey(param.getId()))
+         throw new Error(String.format("Job has same parameter twice (%s)",param.getId()));
+   
+      idToJobParameterMap.put(param.getId(), param);
+   }
+
+COM:registers a parameter for a job and throws an error if the parameter ID already exists in the map

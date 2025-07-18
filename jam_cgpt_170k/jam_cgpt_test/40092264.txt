@@ -1,0 +1,11 @@
+TDAT:   public void setStatus(T node, Status status) {
+    removeNode(node);
+    switch(status) {
+      case READY: m_nodesReady.add(node); break;
+      case RUNNING: m_nodesRunning.add(node); break;
+      case FINISHED: m_nodesFinished.add(node); break;
+      default: throw new IllegalArgumentException();
+    }
+  }
+
+COM:sets the status of a node to either READY, RUNNING, or FINISHED

@@ -1,0 +1,6 @@
+TDAT:     private void assertState(BeanStatusFlag bean, BeanStatusFlag structure, IBeanStatus status) {
+        assertSame("Not expected bean state for " + status.getOwner(), bean, status.getStatus().getFlag());
+        assertSame("Not expected structure state for " + status.getOwner(), structure, status.getStructureStatus().getFlag());
+    }
+
+COM:performs assertions to check if the current state of a bean matches the expected state based on its status and structure status flag values

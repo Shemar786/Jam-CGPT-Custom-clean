@@ -1,0 +1,16 @@
+TDAT: 	public void showReachability(Table table) {
+		try {
+	    	LayoutStorage.enabled = false;
+        	refresh(false, true, false, true);
+	        resetGraphEditor(true, false, true, false);
+        } finally {
+	    	LayoutStorage.enabled = true;
+        }
+        graphView.expandAll(false, table);
+		expandPathsToVisibleTables();
+        if (graphView.isTableVisible(table)) {
+        	graphView.selectTable(table);
+        }
+	}
+
+COM:shows the reachability of a table in a graph view and performs layout modifications to display it

@@ -1,0 +1,21 @@
+TDAT: 	public void close() {
+		log.info("Closing Berkeley db at '" + path2enviroment + "' enviroment");
+		if (store != null) {
+			try {
+				store.close();
+			} catch (DatabaseException dbe) {
+				log.error("Error closing store '" + storeName + "'", dbe);
+			}
+		}
+
+		if (myEnv != null) {
+			try {
+				// Finally, close environment.
+				myEnv.close();
+			} catch (DatabaseException dbe) {
+				log.error("Error closing '" + path2enviroment + "'", dbe);
+			}
+		}
+	}
+
+COM:closes a Berkeley db by logging and closing the store and the environment associated with it

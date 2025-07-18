@@ -1,0 +1,10 @@
+TDAT:     private String setKey() {
+
+        key = getRole() + "+" + getContextDepot() + "+" + getContextType() + "+" + getContextName() + "+" +
+                getModule() + "+" + getCommand() + "+" + getTimeanddayExp().toString();
+
+        return key;
+
+    }
+
+COM:sets a string key using various properties and returns it

@@ -1,0 +1,15 @@
+TDAT:     public Date getServiceEndTime() {
+        String end = selectPath("ns:documentationOf/ns:serviceEvent/ns:effectiveTime/ns:high/@value");
+        Date date = null;
+
+        if (StringUtil.goodString(end)) {
+            try {
+                date = BaseBuildingComponent.dfLong.parse(end);
+            } catch (ParseException e) {
+                log.error(e);
+            }
+        }
+        return date;
+    }
+
+COM:retrieves the end time of a service event from a specified XML path and returns it as a Date object

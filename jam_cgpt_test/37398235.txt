@@ -1,0 +1,15 @@
+TDAT:   public Object findAttribute(String name) {
+    Object result = getAttribute(name);
+    if (result == null) {
+      result = getRequest().getAttribute(name);
+    }
+    if (result == null) {
+      result = getSession().getAttribute(name);
+    }
+    if (result == null) {
+      result = getServletContext().getAttribute(name);
+    }
+    return result;
+  }
+
+COM:searches for an attribute in various scopes and returns the attribute value if found

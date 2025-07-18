@@ -1,0 +1,14 @@
+TDAT:     public String buildURL(String termAccession, String url) {
+        if (termAccession != null) {
+            try {
+                return MessageFormat.format(url, new String[]{termAccession});
+            } catch (Exception e) {
+                logger.error(e.getMessage(), e);
+                return null;
+            }
+        } else {
+            return null;
+        }
+    }
+
+COM:builds a URL using the provided term accession and URL template, returning the formatted URL or null if an error occurs or the term accession is null

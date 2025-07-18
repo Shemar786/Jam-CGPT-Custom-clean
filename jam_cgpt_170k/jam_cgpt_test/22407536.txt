@@ -1,0 +1,10 @@
+TDAT:     private void jbInit() throws Exception {
+        setLayout(new GridBagLayout());
+        add(optionspanel,
+            new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0,
+                                   GridBagConstraints.CENTER,
+                                   GridBagConstraints.BOTH,
+                                   new Insets(0, 0, 0, 0), 0, 0));
+    }
+
+COM:initializes a graphical user interface (GUI) by setting the layout and adding a panel with specific constraints

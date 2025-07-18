@@ -1,0 +1,11 @@
+TDAT:     private void addZoomControls(FrameLayout frame) {
+        // Get the zoom controls and add them to the bottom of the map
+        View zoomControls = mMapView.getZoomControls();
+
+        FrameLayout.LayoutParams p = 
+            new FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+                LayoutParams.WRAP_CONTENT, Gravity.BOTTOM + Gravity.CENTER_HORIZONTAL);
+        frame.addView(zoomControls, p);
+    }
+
+COM:adds zoom controls to a FrameLayout at the bottom of a map

@@ -1,0 +1,8 @@
+TDAT:    public void insertLeaf(int slot, Constant val, RID rid) {
+      insert(slot);
+      setVal(slot, "dataval", val);
+      setInt(slot, "block", rid.blockNumber());
+      setInt(slot, "id", rid.id());
+   }
+
+COM:inserts a leaf node with specified values into a database using its corresponding slot and record identifier

@@ -1,0 +1,16 @@
+TDAT: 	public void showAllRelations() {
+		StateEdit edit = new StateEdit(new VisibilityUndo(
+				this.getONDEXJUNGGraph()),
+				Config.language.getProperty("Undo.ShowAllRelations"));
+		undoManager.addEdit(edit);
+		OVTK2Desktop.getInstance().getOVTK2Menu().updateUndoRedo(this);
+
+		for (ONDEXConcept ondexNode : graph.getVertices()) {
+			for (ONDEXRelation r : graph.getRelationsOfConcept(ondexNode)) {
+				graph.setVisibility(r, true);
+			}
+		}
+		edit.end();
+	}
+
+COM:shows all relations for every node in a graph

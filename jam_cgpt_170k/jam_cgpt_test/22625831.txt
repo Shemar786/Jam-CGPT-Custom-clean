@@ -1,0 +1,17 @@
+TDAT: 	public String getLastModifiedAsUTC() {
+		String t = doc.get("modtime");
+
+		if (t == null)
+			return DEFAULT;
+
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+		df.setTimeZone(new SimpleTimeZone(SimpleTimeZone.UTC_TIME, "UTC"));
+		try {
+			return df.format(DateFieldTools.stringToDate(t));
+		} catch (ParseException pe) {
+			prtlnErr("Error in getLastModifiedAsUTC(): " + pe);
+			return df.format(new Date(0));
+		}			
+	}
+
+COM:formats a date/time value in UTC format and returns it as a string

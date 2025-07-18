@@ -1,0 +1,12 @@
+TDAT: 	public void setPuzzleView( SGViewImpl puzzleView ) throws Exception {
+		if( this.puzzleView != null ) 
+			throw new Exception( "Puzzle widget can only be set once" );
+		
+		this.puzzleView = puzzleView;
+		puzzlePanel.add( puzzleView );
+		resizePuzzleView( new Vec2i( puzzlePanel.getOffsetWidth(), puzzlePanel.getOffsetHeight()) );
+		puzzleModel = puzzleView.getPuzzleModel();
+		puzzleModel.addObserver(this);
+	}
+
+COM:sets the puzzle view, throws an exception if it is already set, adds it to a panel, resizes it, assigns a puzzle model, and adds an observer

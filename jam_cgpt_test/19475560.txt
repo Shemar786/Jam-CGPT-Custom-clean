@@ -1,0 +1,17 @@
+TDAT: 	protected void addElaboratesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBTransition_elaborates_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBTransition_elaborates_feature", "_UI_UMLBTransition_type"),
+				 UMLBPackage.Literals.UMLB_TRANSITION__ELABORATES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "elaborates" feature of a UMLBTransition object

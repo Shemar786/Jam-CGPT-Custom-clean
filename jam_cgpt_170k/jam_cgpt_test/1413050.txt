@@ -1,0 +1,14 @@
+TDAT:     public void updateLanguage(Node xml_power) {
+        for(PowerListItem item : gui_elements) {
+            xml = xml_power;
+            
+            attributes = xml_power.getAttributes();
+            name = attributes.getNamedItem("name").getNodeValue();
+            item.setName(name);
+            
+            //force effects to be reloaded on next use
+            effects = null;
+        }
+    }
+
+COM:updates the name attribute of each PowerListItem element in a collection by extracting the value from the "name" attribute of a given XML Node object, and sets the effects variable to null

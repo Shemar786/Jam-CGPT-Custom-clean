@@ -1,0 +1,17 @@
+TDAT: 	protected void addPredicatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConfigurationProperty_predicate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConfigurationProperty_predicate_feature", "_UI_ConfigurationProperty_type"),
+				 CanvasPackage.Literals.CONFIGURATION_PROPERTY__PREDICATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a predicate property descriptor to a given object

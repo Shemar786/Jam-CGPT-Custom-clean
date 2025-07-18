@@ -1,0 +1,23 @@
+TDAT: 	public void loadFromFile(String filename) throws ConfigurationException {
+		InputStream propertiesStream = null;
+		try {
+			propertiesStream = new FileInputStream(filename);
+			Properties properties = new Properties();
+			properties.load(propertiesStream);
+			loadFromProperties(properties);
+		} catch (ConfigurationException e) {
+			throw e;
+		} catch (Exception e) {
+			throw new ConfigurationException(e);
+		} finally {
+			if (propertiesStream != null) {
+				try {
+					propertiesStream.close();
+				} catch (IOException e) {
+					throw new ConfigurationException(e);
+				}
+			}
+		}
+	}
+
+COM:loads configuration properties from a file with the given filename and passes them to another method, while catching and throwing any exceptions that may occur

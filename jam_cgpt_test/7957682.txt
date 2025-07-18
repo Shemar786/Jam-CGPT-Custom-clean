@@ -1,0 +1,20 @@
+TDAT: 	private void cleanupEdge(final Block src, final Block dst) {
+		dst.visit(new TreeVisitor() {
+			public void visitPhiJoinStmt(final PhiJoinStmt stmt) {
+				final Expr operand = stmt.operandAt(src);
+
+				if (operand != null) {
+					operand.cleanup();
+
+					// Remove the operand associated with src
+					// from a PhiJoinStmt
+					stmt.setOperandAt(src, null);
+				}
+			}
+
+			public void visitStmt(final Stmt stmt) {
+			}
+		});
+	}
+
+COM:cleans up a specific edge between two blocks by removing the operand associated with the first block from PhiJoinStmt in the second block

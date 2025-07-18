@@ -1,0 +1,22 @@
+TDAT: 	public void addStmtBefore(final Stmt stmt, final Stmt before) {
+		if (Tree.DEBUG) {
+			System.out.println("insert: " + stmt + " before " + before);
+		}
+
+		final ListIterator iter = stmts.listIterator();
+
+		while (iter.hasNext()) {
+			final Stmt s = (Stmt) iter.next();
+
+			if (s == before) {
+				iter.previous();
+				iter.add(stmt);
+				stmt.setParent(this);
+				return;
+			}
+		}
+
+		throw new RuntimeException(before + " not found");
+	}
+
+COM:inserts a given statement before another given statement in a list of statements, or throws an exception if the second statement is not found in the list

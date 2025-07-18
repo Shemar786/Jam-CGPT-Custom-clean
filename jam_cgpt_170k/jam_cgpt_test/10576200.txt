@@ -1,0 +1,13 @@
+TDAT:     protected void cleanup(ChannelHandlerContext ctx) {
+        // Make sure we dispose everything on exit on session close
+        SMTPSession smtpSession = (SMTPSession) ctx.getAttachment();
+
+        if (smtpSession != null) {
+            LifecycleUtil.dispose(smtpSession.getState().get(SMTPConstants.MAIL));
+            LifecycleUtil.dispose(smtpSession.getState().get(SMTPConstants.DATA_MIMEMESSAGE_STREAMSOURCE));
+        }
+
+        super.cleanup(ctx);
+    }
+
+COM:cleans up the SMTP session by disposing certain resources when the session is closed

@@ -1,0 +1,10 @@
+TDAT:     private void initializeComponents() {
+        String stacktrace =  getStackTrace( throwable );
+        textArea = new TextArea(stacktrace, 10, 28);
+        Font f = new Font("Courier New", Font.BOLD, 12);
+        textArea.setFont(f);
+        okButton = new Button( "OK" );
+        okAction = new ExceptionOkAction();
+    }
+
+COM:initializes components such as a TextArea, Font, Button and an ExceptionOkAction, using a stacktrace

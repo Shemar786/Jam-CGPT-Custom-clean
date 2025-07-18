@@ -1,0 +1,21 @@
+TDAT: 	public void registerSystray() throws FeatureNotSupportedException {
+		
+		try {
+
+			SystemTray tray = SystemTray.getSystemTray();
+
+			this.trayIcon = new TrayIcon(this.trayImage, this.tooltip, this.popupMenu);
+			this.trayIcon.setImageAutoSize(true);
+			this.trayIcon.addActionListener(this.onDoubleClick);
+			
+			tray.add(trayIcon);
+			
+	        
+	    } catch (AWTException ex) {
+	        
+	    	throw new FeatureNotSupportedException(ERROR_NOT_ADDED);
+	    }
+		
+	}
+
+COM:registers a system tray icon with a specified image, tooltip, popup menu, and double-click action, throwing a FeatureNotSupportedException if it fails

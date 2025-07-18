@@ -1,0 +1,17 @@
+TDAT:     private void beautifyNewLine() {
+        if (!beautiful) {
+            return;
+        }
+        if (ident > 0) {
+            if (beautified) {
+                body.append(TAB);
+            } else {
+                body.append('\n');
+                for (int i = 0; i < ident - 1; i++) {
+                    body.append(TAB);
+                }
+            }
+        }
+    }
+
+COM:adds tab indentation to a new line if the "beautiful" boolean is true and the "beautified" boolean is not already true

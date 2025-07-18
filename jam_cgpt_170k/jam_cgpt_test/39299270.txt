@@ -1,0 +1,10 @@
+TDAT:     public void turnAngleTowards(Angle angleGoal, double nbDegrees) {
+        Angle newAngle = new Angle(degrees - angleGoal.getDegrees(), false);
+        if (newAngle.getDegrees() > 180.0) {
+            setDegrees(getDegrees() + nbDegrees);
+        } else {
+            setDegrees(getDegrees() - nbDegrees);
+        }
+    }
+
+COM:rotates an object towards a specified angle by a given number of degrees

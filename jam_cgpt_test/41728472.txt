@@ -1,0 +1,10 @@
+TDAT:     public void unbindFcNotification(String clientItfName) throws NoSuchInterfaceException, IllegalBindingException, IllegalLifeCycleException {
+
+        Logger.println(LogReflex.info, "ReflexBindingMixin.unbindFcNotification " + clientItfName);
+        Logger.println(LogReflex.debug, myName());
+        
+        // calls the overriden unbindFc method
+        super.unbindFc(clientItfName);
+    }
+
+COM:unbinds a specified client interface and logs the action

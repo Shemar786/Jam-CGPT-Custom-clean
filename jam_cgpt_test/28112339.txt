@@ -1,0 +1,5 @@
+TDAT:     protected void genHeader(String fileName) {
+        println("/* $ANTLR " + Tool.version + ": " + "\"" + Tool.fileMinusPath(tool.grammarFile) + "\"" + " -> " + "\"" + fileName + "\"$ */");
+    }
+
+COM:generates a header comment containing ANTLR version, grammar file name, and output file name

@@ -1,0 +1,9 @@
+TDAT:     public void caretUpdate(javax.swing.event.CaretEvent caretEvent) {
+        if (currentFile == null)
+            AIDesktop.getStatusBar().info("#NEW FILE#","Line " + editpane.getCaretLine());
+        else
+            AIDesktop.getStatusBar()
+                     .info(currentFile.getName(),"Line " + (editpane.getCaretLine() + 1));
+    }
+
+COM:updates the status bar with information about the current file and the current caret position

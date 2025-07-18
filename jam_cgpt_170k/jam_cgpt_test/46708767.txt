@@ -1,0 +1,13 @@
+TDAT:   public void doTimeOut(Timer t) {
+    Behaviour b = pendingTimers.getPeer(t);
+    if(b != null) {
+      b.restart();
+    }
+    //#MIDP_EXCLUDE_BEGIN
+    else {
+    	System.out.println("Warning: No mapping found for expired timer "+t.expirationTime());
+    }
+    //#MIDP_EXCLUDE_END
+  }
+
+COM:restarts a specified behavior if it exists, and prints a warning message if no mapping is found for an expired timer

@@ -1,0 +1,10 @@
+TDAT:     public Value castLiteral(Literal literal) throws IllegalCastException {
+        try {
+            new DateTime(literal.getLabel());
+            return this.factory.createLiteral(literal.getLabel(), SPARQLConstants.DATE_TYPE);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalCastException("Unable to cast string to dateTime");
+        }
+    }
+
+COM:casts a literal string to a dateTime and returns a new dateTime object while catching and throwing an illegal cast exception if necessary

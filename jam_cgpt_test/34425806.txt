@@ -1,0 +1,9 @@
+TDAT:     private void editPrepareResource(SWGMutableResource mr) {
+        String planets = planetsToString(mr.availability(), true);
+        singlePlanetInput.setText(planets);
+        singleResourceNameInput.setText(mr.getName());
+        singleResourceStatsTextField.setText(mr.stats().toString(false));
+        singleResourceClassInput.setText(mr.rc().rcName());
+    }
+
+COM:prepares a user interface for editing a given resource, populating several text fields with relevant information

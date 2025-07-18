@@ -1,0 +1,12 @@
+TDAT: 	public Element getSubNode(Element parent,String tagName, boolean throwException) {
+  	NodeList subNodes=parent.getElementsByTagName(tagName);
+	  if (subNodes.getLength()!=1) {
+	  	if (throwException)
+	  		throw new RuntimeException("getSubNode failed for "+parent+" expected 1 child with tag name '"+tagName+"' but got "+subNodes.getLength());
+	  	else
+	  		return null;
+	  }
+	  return (Element)subNodes.item(0);
+	}
+
+COM:returns the first sub-node of a given parent node with a specific tag name, and can optionally throw an exception if there is not exactly one matching sub-node

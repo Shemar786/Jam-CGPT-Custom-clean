@@ -1,0 +1,15 @@
+TDAT:     public Object invoke(Method method, Object object, Object[] parameters) {
+        try {
+            return method.invoke(object, parameters);
+        } catch (InvocationTargetException e) {
+            if (e.getTargetException() instanceof RuntimeException) {
+                throw (RuntimeException)e.getTargetException();
+            }
+
+            throw new BuildException(e.getTargetException());
+        } catch (Exception e) {
+            throw new BuildException(e);
+        }
+    }
+
+COM:invokes a given method on a specified object with the provided parameters and handles exceptions that may occur

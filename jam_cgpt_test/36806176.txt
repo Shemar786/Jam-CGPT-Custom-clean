@@ -1,0 +1,23 @@
+TDAT: 	public void run()
+	{		
+		if(isCoord(instance.getMode()))
+		{
+			System.out.println("Coord mode");
+			// TODO create new contact.xml ?
+			// I don't think we need to create contact.xml
+			// because we know it only has it self at this point
+			listenForRequest();
+		}
+		else
+		{
+			System.out.println("Client mode");
+			connectToCoord();
+			contactList = ParserDriver.ReadContacts(Constants.contactXML);
+			
+			// TODO Call parser to read contact.xml and update contactList
+			connectToAll();
+			listenForRequest();
+		}
+	}
+
+COM:runs either in coord mode or client mode, connects to other nodes, and listens for requests based on the current mode

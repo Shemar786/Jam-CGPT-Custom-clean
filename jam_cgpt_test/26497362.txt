@@ -1,0 +1,9 @@
+TDAT:   protected void assertState(int anExpectedState, String anErrorDescription) throws IllegalStateException {
+    if (_state != anExpectedState) {
+      String message =  anErrorDescription + " - expected state is " + STATES[anExpectedState] + " but was " + STATES[_state];
+      Log.error(MODULE_NAME, message);
+      throw new IllegalStateException(message);
+    }
+  }
+
+COM:checks if a given expected state matches an actual state and throws an IllegalStateException with an error message if they do not match

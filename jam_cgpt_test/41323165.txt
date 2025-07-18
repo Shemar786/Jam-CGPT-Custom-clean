@@ -1,0 +1,10 @@
+TDAT: 	public void initMainCanvas() {
+		itsMainCanvas = new PCanvasWithHelper(LessonMapper2.getInstance()
+				.getLangComment("mainCanvas"));
+		itsMainCanvas.setBackground(ITSDarkSandColor);
+		itsMainCanvas.setBorder(new LineBorder(Color.black));
+		itsMainCanvas.setPreferredSize(new Dimension(700, 700));
+		itsMainCanvas.setDropTarget(new ExternalDropManager(itsMainCanvas));
+	}
+
+COM:initializes a main canvas with a helper and sets its background color, border, preferred size, and drop target

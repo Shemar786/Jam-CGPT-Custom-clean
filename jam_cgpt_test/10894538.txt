@@ -1,0 +1,13 @@
+TDAT:     public void handleQueryParameters() {
+        if( queryMB.length() == 0) {
+            return;
+        }
+        
+        decodedQuery.recycle();
+        decodedQuery.append(getMsgBytes().query());
+        // TODO: option 'useBodyEncodingForUri' - versus UTF or ASCII
+        String queryStringEncoding = getEncoding();
+        processParameters( decodedQuery, queryStringEncoding );
+    }
+
+COM:handles query parameters by decoding them and processing them with specified encoding

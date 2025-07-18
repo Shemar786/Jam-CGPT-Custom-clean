@@ -1,0 +1,16 @@
+TDAT:     public boolean isHotZone() {
+        int maxflu = 0;
+        int secondmaxflu = 0;
+        Iterator<Integer> e = influences.values().iterator();
+        while (e.hasNext()) {
+            int flu = e.next();
+            if (maxflu < flu) {
+                secondmaxflu = maxflu;
+                maxflu = flu;
+            } else if (secondmaxflu < flu)
+                secondmaxflu = flu;
+        }
+        return (maxflu - secondmaxflu) < 20;
+    }
+
+COM:determines if a location is a "hot zone" by comparing the two highest values in a map of influences and returns a boolean value based on the difference between these values

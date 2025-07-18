@@ -1,0 +1,13 @@
+TDAT: public void shutdownAll() {
+  for (AbstractTask task : _taskList) {
+    task.shutdown();
+    _fireTaskListChange(new TaskListChangeEvent(TaskListChangeEvent.Type.Shutdown, task));
+  }
+
+  _removeStoppedTasksFromList();
+
+  // remove all soft TaskListChangeListeners from the TaskManager...
+  pruneSoftListeners();
+}
+
+COM:shuts down all tasks in the task list, removes the stopped tasks from the list, and prunes soft listeners from the TaskManager

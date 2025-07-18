@@ -1,0 +1,11 @@
+TDAT:   public ArrayList getRelationButtonDescriptors() {
+    ArrayList al = new ArrayList();
+    ButtonDescriptor bd =
+      new ButtonDescriptor("belvedere.model.concept.ConceptualRelation",
+                           properties.getString("CONCEPT_RELATION_IMAGE"),
+                           properties.getString("ADD_RELATIONS"));
+    al.add(bd);
+    return al;
+  }
+
+COM:returns an ArrayList of ButtonDescriptors for representing conceptual relations

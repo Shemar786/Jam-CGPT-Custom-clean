@@ -1,0 +1,18 @@
+TDAT:   public boolean equals(Object obj) {
+	  boolean isEqual;
+	  
+	  if (obj != null && obj instanceof Sentence) {
+		  Sentence otherSentence = (Sentence) obj;
+		  
+		  isEqual = (this == obj)
+		  	|| getId().equals(otherSentence.getId())
+		  	&& getVROOT().equals((Object) otherSentence.getVROOT())
+		  	&& getAllGraphNodes().equals(otherSentence.getAllGraphNodes());
+	  }
+	  else {
+		  isEqual = false;
+	  }
+	  return isEqual;
+  }
+
+COM:checks if an object is equal to a Sentence object by comparing its id, VROOT, and all graph nodes

@@ -1,0 +1,14 @@
+TDAT:   public void setName(String val) {
+
+      if ((val == null || "".equals(val))
+      && (name == null || "".equals(name))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(name)) || (updateStatus == NULL_INT_VALUE)) {
+           name = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets the name of an object and updates its status if the name is not empty and different from the current name

@@ -1,0 +1,9 @@
+TDAT:     private JPanel createButtonPanel() {
+        final JPanel p = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        final SaveAction save = new SaveAction();
+        getMapping().createStatusDependentBinding(IBeanStatus.BEAN_STRUCTURE_STATUS, save);
+        p.add(new JButton(save));
+        return p;
+    }
+
+COM:creates a panel with a button that triggers a "SaveAction" and binds it to a particular bean status

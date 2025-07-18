@@ -1,0 +1,12 @@
+TDAT: 	public void addBeforeDeferredParagraphs (Paragraph p, CLineData ld) {
+		if (hasDeferredParagraphs()) {
+			CDeferredParagraphStruct first = deferredParagraphs.get(0);
+			if (first.paragraph.equals(p)) 
+				first.startWithNotch = ld.startNotch;
+			else
+				deferredParagraphs.add(0, new CDeferredParagraphStruct(p, ld.startNotch));
+		} else
+			deferredParagraphs.add(0, new CDeferredParagraphStruct(p, ld.startNotch));
+	}
+
+COM:adds a deferred paragraph before a specified paragraph and updates the start notch if the first deferred paragraph is the specified paragraph

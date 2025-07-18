@@ -1,0 +1,19 @@
+TDAT:   public void characters(char[] c, int start, int length) {
+    String str = "";
+
+    if (length > 0) {
+      if (last_element.length() > 0)
+        str += ">";
+      last_element = "";
+
+      for (int i = start; i < (start + length); i++)
+        str += c[i];
+
+      if (reading_e)
+        content_e += str;
+      else
+        out.print(str);
+    }
+  }
+
+COM:converts a character array into a string and writes it to an output, with some conditional logic based on the length and content of the array

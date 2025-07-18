@@ -1,0 +1,13 @@
+TDAT:     public boolean sendFile(String path, OutputStream os) {
+        boolean result = false;
+        try {
+            ByteStream.toStream(os, new File(path));
+            result = true;
+        } catch (java.lang.Exception exc) {
+            System.out.println(exc);
+            result = false;
+        }
+        return result;
+    }
+
+COM:sends a file located at the specified path to an output stream and returns a boolean indicating whether the operation was successful or not

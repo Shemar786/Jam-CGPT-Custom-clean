@@ -1,0 +1,14 @@
+TDAT:         public InetAddress getMulticastIP(){
+            String multicastIP = prefs.getProperty("MulticastIP");
+            if(multicastIP != null){
+                try{
+                    return InetAddress.getByName(multicastIP);
+                }catch(UnknownHostException e){
+                    System.out.println(e);
+                    return null;
+                }
+            }
+            else return null;
+        }
+
+COM:retrieves an InetAddress for a multicast IP address stored in a preferences object

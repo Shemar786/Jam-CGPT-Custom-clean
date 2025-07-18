@@ -1,0 +1,20 @@
+TDAT: 	private void getIdDirect(String collection) {
+		String qs = "verb=" + verb;
+		qs += "&collection=" + collection;
+		URL url;
+		Document doc;
+		try {
+			url = new URL(baseUrl + "?" + qs);
+			doc = Dom4jUtils.getXmlDocument(url);
+		} catch (MalformedURLException mue) {
+			prtln("URL error: " + mue.getCause());
+			return;
+		} catch (org.dom4j.DocumentException de) {
+			prtln(de.getMessage());
+			return;
+		}
+
+		prtln(Dom4jUtils.prettyPrint(doc));
+	}
+
+COM:sends a URL request to retrieve an XML document from a specific collection and uses Dom4jUtils to format and print the document

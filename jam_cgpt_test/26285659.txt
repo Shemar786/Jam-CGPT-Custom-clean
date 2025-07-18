@@ -1,0 +1,15 @@
+TDAT:     public void testGetPreferredSize() {
+        assertEquals(testPosition.getPreferredSize(), 0);
+
+        int newValue = 9872;
+
+        testPosition.setPreferredSize(newValue);
+        assertEquals(testPosition.getPreferredSize(), newValue);
+
+        int invalidValue = -1;
+
+        testPosition.setPreferredSize(invalidValue);
+        assertEquals(testPosition.getPreferredSize(), 0);
+    }
+
+COM:tests the preferred size functionality of a position object, checking if setting a valid preferred size returns the correct value, setting an invalid preferred size returns 0, and that the initial preferred size is 0

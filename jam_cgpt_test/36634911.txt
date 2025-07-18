@@ -1,0 +1,11 @@
+TDAT:     public void addXMLTag(String tagText){
+        if(open)    closeXMLTag();
+
+        for(int i = 0; i < curTag.size(); i++)
+            data += "\t";
+        data += "<"+tagText;
+        curTag.add(0, tagText);
+        open = true;
+    }
+
+COM:adds an XML tag to a string, including proper indentation and keeping track of the current open tag

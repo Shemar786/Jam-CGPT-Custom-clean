@@ -1,0 +1,14 @@
+TDAT:     public void setRulePriority(String ruleKey, int priority) {
+        switch (priority) {
+        case IMarker.SEVERITY_ERROR:
+        case IMarker.SEVERITY_WARNING:
+        case IMarker.SEVERITY_INFO:
+            store.setProperty(ruleKey + "_priority", priority);
+            break;
+
+        default:
+            throw new IllegalArgumentException("Invalid priority " + priority + " for rule " + ruleKey);
+        }
+    }
+
+COM:sets the priority of a rule based on a given key, and throws an exception if an invalid priority is provided

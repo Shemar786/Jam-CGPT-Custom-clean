@@ -1,0 +1,13 @@
+TDAT:   public void loadConfig(Element config) throws Exception {
+    NodeList toolbars = config.getChildNodes();
+
+    for (int i = 0; i < toolbars.getLength(); i++) {
+      Node current = toolbars.item(i);
+      if (current.getNodeName().equals("toolbar-panel")) {
+        JToolBar toolbar = loadToolBar((Element) current);
+        if (toolbar != null) add(toolbar);
+      }
+    }
+  }
+
+COM:loads and adds JToolBars based on XML configuration

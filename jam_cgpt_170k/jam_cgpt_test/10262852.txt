@@ -1,0 +1,17 @@
+TDAT:     private boolean vectorsToNearestCentroid() {
+        boolean converged = true;
+        for (int i = 0; i < vectors.size(); ++i) {
+            // Find centroid closest to current vector.
+            int nearest = vectors.get(i).nearest(centroids);
+
+            // If there was a change then there is no convergence.
+            if (nearest != nearestCentroid[i]) {
+                converged = false;
+            }
+            nearestCentroid[i] = nearest;
+        }
+        updateNearestNeighbours();
+        return converged;
+    }
+
+COM:calculates the closest centroid for each vector and returns whether all vectors have converged to their nearest centroid

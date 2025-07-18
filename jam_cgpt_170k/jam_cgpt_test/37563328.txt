@@ -1,0 +1,15 @@
+TDAT: public TextLayout (Device device) {
+	if (device == null) device = Device.getDevice();
+	if (device == null) SWT.error(SWT.ERROR_NULL_ARGUMENT);
+	this.device = device;
+	wrapWidth = ascent = descent = -1;
+	lineSpacing = 0;
+	orientation = SWT.LEFT_TO_RIGHT;
+	styles = new StyleItem[2];
+	styles[0] = new StyleItem();
+	styles[1] = new StyleItem();
+	text = ""; //$NON-NLS-1$
+	if (device.tracking) device.new_Object(this);
+}
+
+COM:creates a new TextLayout object with specified device and initializes various properties of the object

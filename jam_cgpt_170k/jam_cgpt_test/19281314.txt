@@ -1,0 +1,10 @@
+TDAT: 	public void setParty(Party party) {
+		// Check that the constraint that only Person or Collaboration objects can be given
+		// permission to view an experiment has been met.
+		if (! (party instanceof Person || party instanceof Collaboration)) {
+			throw new IllegalArgumentException("Only Parties that implement the Person or Party interface can be given permission to view an Experiment as embodied in this ExperimentReadPermissionBean object.");
+		}
+		this.party = party;
+	}
+
+COM:sets the party that has permission to view an experiment, but throws an exception if the given party is not an instance of Person or Collaboration

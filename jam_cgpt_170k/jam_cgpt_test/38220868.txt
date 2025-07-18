@@ -1,0 +1,10 @@
+TDAT:   public void actionPerformed(ActionEvent e) {
+    String cmd = e.getActionCommand();
+    if (cmd.equals("About") || cmd.equals("ModuleAbout"))
+      showAboutDialog();
+    else if (cmd.equals("ModuleProperties"))
+      showPropertyDialog();
+    else System.out.println("Unsupported action: " + cmd);
+  }
+
+COM:handles different action events and displays corresponding dialogs or prints a message if the action is unsupported

@@ -1,0 +1,17 @@
+TDAT: 	protected void addDesiredDepthPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IterationStrategyPortNode_desiredDepth_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IterationStrategyPortNode_desiredDepth_feature", "_UI_IterationStrategyPortNode_type"),
+				 CanvasPackage.Literals.ITERATION_STRATEGY_PORT_NODE__DESIRED_DEPTH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the desired depth feature of an IterationStrategyPortNode object

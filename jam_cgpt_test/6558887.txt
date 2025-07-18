@@ -1,0 +1,15 @@
+TDAT: 	public MessageListener getPopMessageListenerInstance() {
+		if (Validator.isNull(getPopMessageListenerClass())) {
+			return null;
+		}
+
+		if (_portletApp.isWARFile()) {
+			PortletBag portletBag = PortletBagPool.get(getRootPortletId());
+
+			return portletBag.getPopMessageListenerInstance();
+		}
+
+		return (MessageListener)InstancePool.get(getPopMessageListenerClass());
+	}
+
+COM:returns a MessageListener instance either from PortletBag or from InstancePool based on the condition

@@ -1,0 +1,7 @@
+TDAT:     public void screenToGraphPoint(Point point,Point2D graphPoint) {
+        graphPoint.setLocation(point.x-getWidth()/2,point.y-getHeight()/2);
+        if (m_lens!=null)
+            m_lens.undoLens(this, graphPoint);
+    }
+
+COM:takes a point on the screen and converts it to a point on a graph, and optionally undos a lens effect if there is one

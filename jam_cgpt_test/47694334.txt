@@ -1,0 +1,18 @@
+TDAT:     protected boolean openFileInternal(File file) throws Exception {
+        if (file == null) {
+            newFile();
+            return false;
+        }
+
+        SVF svf = getInfo().getProjectManager().getSVF(file);
+        if (svf == null) {
+            panel.setSVF(new SVF());
+            return false;
+        }
+
+        panel.setSVF(svf);
+        setContentChanged(false);
+        return true;
+    }
+
+COM:opens a file, sets its contents in a panel, and returns a boolean indicating success or failure

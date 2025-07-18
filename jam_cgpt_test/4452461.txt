@@ -1,0 +1,15 @@
+TDAT: protected void _assertNoSwingWorkerCurrentlyActive() throws TaskException {
+  Future worker = getSwingWorker();
+
+  if (worker == null || worker.isDone() || worker.isCancelled()) {
+    getUIHook().resetCancelFlag();
+  }
+  else {
+    throw TaskException.newConcurrentSwingWorkerCreationAttempt(
+        "This task already has one underlying SwingWorker executing. It can't have more than one active concurrently.",
+        this);
+  }
+
+}
+
+COM:checks if there is no currently active SwingWorker and throws a TaskException if there is already one executing

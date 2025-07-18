@@ -1,0 +1,12 @@
+TDAT:     public void removePin(Pin local){
+        Point p = local.getGlobalLocation();
+        GridObject go = grid.get(p);
+        if(go instanceof ConnectionPoint){
+            ((ConnectionPoint) go).removeConnection(local);
+            if(!((ConnectionPoint) go).isConnected()){
+                grid.remove(p);
+            }
+        } 
+    }
+
+COM:removes a Pin object from a GridObject and its associated ConnectionPoint, removing the ConnectionPoint if it is no longer connected to any remaining Pins

@@ -1,0 +1,17 @@
+TDAT: 	protected void addAssociationTaskToTaskTargetPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TaskUse_associationTaskToTaskTarget_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TaskUse_associationTaskToTaskTarget_feature", "_UI_TaskUse_type"),
+				 ProcessPackagePackage.Literals.TASK_USE__ASSOCIATION_TASK_TO_TASK_TARGET,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to a list for a TaskUse object that represents an association task to a task target

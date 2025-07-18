@@ -1,0 +1,14 @@
+TDAT: 	public String getText(int start, int end) throws IllegalArgumentException {
+		String ret;
+
+		try {
+			ret = mSource.getString(start, end - start);
+		} catch (IOException ioe) {
+			throw new IllegalArgumentException("can't get the " + (end - start) + "characters at position " + start
+					+ " - " + ioe.getMessage());
+		}
+
+		return (ret);
+	}
+
+COM:returns a string containing the characters between the specified start and end positions, and throws an exception if it cannot retrieve the characters

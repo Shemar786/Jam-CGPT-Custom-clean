@@ -1,0 +1,12 @@
+TDAT:     public boolean isHTML() {
+    	boolean result=false;
+    	// check the different content types
+    	for (int i=0;i<validContentTypes.length;i++) {
+    		result=getContentType().equalsIgnoreCase(validContentTypes[i]);
+    		if (result)
+    			break;
+    	} // for
+    	return result;
+    }
+
+COM:determines if the current content type is HTML by checking against a predefined list of valid content types

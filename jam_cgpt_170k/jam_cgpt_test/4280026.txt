@@ -1,0 +1,11 @@
+TDAT:     private boolean checkCombineLines(String line) {
+        int bsCount = 0;
+
+        for (int idx = line.length() - 1; (idx >= 0) && (line.charAt(idx) == '\\'); idx--) {
+            bsCount++;
+        }
+
+        return (bsCount % 2) == 1;
+    }
+
+COM:checks if the number of backslashes at the end of a string is odd

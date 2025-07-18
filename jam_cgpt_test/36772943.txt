@@ -1,0 +1,14 @@
+TDAT:     public Object getBean() {
+        Object result = null;
+
+        Class[] returnTypes = new Class[] { getClass(this.returnType) };
+        Object[] response = getBean(this.serviceName, returnTypes);
+
+        if (response != null && response.length > 0) {
+            result = response[0];
+        }
+
+        return result;
+    }
+
+COM:retrieves a bean object from a service based on the service name and return type

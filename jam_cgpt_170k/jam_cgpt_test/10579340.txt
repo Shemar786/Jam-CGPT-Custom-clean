@@ -1,0 +1,10 @@
+TDAT:     protected String getMessageHeaders(MimeMessage message) throws MessagingException {
+        Enumeration heads = message.getAllHeaderLines();
+        StringBuffer headBuffer = new StringBuffer(1024);
+        while (heads.hasMoreElements()) {
+            headBuffer.append(heads.nextElement().toString()).append("\r\n");
+        }
+        return headBuffer.toString();
+    }
+
+COM:retrieves and returns all message headers of a given MimeMessage object as a single String

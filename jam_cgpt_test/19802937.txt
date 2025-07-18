@@ -1,0 +1,13 @@
+TDAT:   public boolean checkValidLink(String url, String id) {
+    /*
+     * try { WebConversation wc = new WebConversation(); wc.getResponse(url); } catch (Exception
+     * error) { return false; }
+     */
+
+    // map the URL to the ID
+    uniqueIdsAndUrls.put(id, url);
+
+    return true;
+  }
+
+COM:checks if a given URL is valid and maps it to a unique ID in a hashmap

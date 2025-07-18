@@ -1,0 +1,9 @@
+TDAT:     public void mouseScroll(int mx, int my){
+        if(itemMin > 0 && my > posy && my < posy+spacingY)
+            moveUp();
+        if(itemMin+maxItems <= maxPos && my > posy+(spacingY*(maxItems+1)) &&
+                my < posy+(spacingY*(maxItems+1))+spacingY)
+            moveDown();
+    }
+
+COM:checks if the mouse is scrolled up or down and moves the items accordingly

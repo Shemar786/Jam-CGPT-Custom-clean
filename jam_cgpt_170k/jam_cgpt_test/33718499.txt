@@ -1,0 +1,14 @@
+TDAT:     public void testGetEndTime() {
+        System.out.println("getEndTime");
+        
+        Event_StubImpl instance = new Event_StubImpl();
+        
+        String expResult = "";
+        String result = instance.getEndTime();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the getEndTime() method of the Event_StubImpl class and prints the result to the console, while expecting an empty string

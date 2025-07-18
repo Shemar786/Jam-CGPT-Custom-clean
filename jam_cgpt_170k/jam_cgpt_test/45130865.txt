@@ -1,0 +1,7 @@
+TDAT: 	public ConstraintLogic getOptionalConstraintLogic(OptionalConstraintData data, SPARQLValueFactory valueFactory) {
+		return new DefaultOptionalConstraintLogic(data, new IndexedSetIntersectLogic(), new DefaultIntersectOrderLogic(
+				new IndexedSetIntersectLogic()), new IndexedSetJoinLogic(getValueConversionLogic(valueFactory),
+				getEffectiveBooleanLogic(valueFactory)));
+	}
+
+COM:returns a new instance of DefaultOptionalConstraintLogic with the given OptionalConstraintData and SPARQLValueFactory

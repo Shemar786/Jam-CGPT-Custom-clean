@@ -1,0 +1,12 @@
+TDAT:   public void removeParam(Param aParam) {
+    if (aParam == null) {
+      throw new IllegalArgumentException("The parameter passed in is null");
+    } else if (aParam.getName() == null) {
+      throw new IllegalArgumentException("The name of the parameter passed in is null");
+    }
+
+    _theParams.remove(aParam);
+    _theParamsByName.remove(aParam.getName());
+  }
+
+COM:removes a parameter object from two collections (a list and a map) by checking for null input and then performing the removal

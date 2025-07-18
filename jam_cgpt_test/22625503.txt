@@ -1,0 +1,11 @@
+TDAT: 	protected String getReviewProcessUrl() throws Exception {
+		List nodes = getDom4jDoc().selectNodes("/*[local-name()='collectionRecord']/*[local-name()='general']/*[local-name()='reviewProcess']/@url");
+		if (nodes.size() > 1)
+			prtln("More than one review process URL!");
+		if (nodes.size() == 0)
+			return null;
+		Attribute attrib = (Attribute) nodes.get(0);
+		return attrib.getValue();
+	}
+
+COM:retrieves a review process URL from an XML document using XPath and returns it as a String, or null if no URL is found

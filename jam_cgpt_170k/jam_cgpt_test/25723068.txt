@@ -1,0 +1,17 @@
+TDAT: 	private int calculateDCD(CallData callData, List<Integer> methodsToEval) {
+		int dcd = 0;
+		ConnectivityMatrix directMatrix =
+			callData.getBadriDirectlyConnectedMatrix(methodsToEval);
+		int size = directMatrix.matrix.length;
+
+		for (int i = 0; i < size; i++) {
+			for (int j = i + 1; j < size; j++) {
+				if (directMatrix.matrix[i][j] == ConnectivityMatrix.CONNECTED) {
+					dcd++;
+				}
+			}
+		}
+		return dcd;
+	}
+
+COM:calculates the degree of connectivity between methods based on the input CallData and List of methods to evaluate

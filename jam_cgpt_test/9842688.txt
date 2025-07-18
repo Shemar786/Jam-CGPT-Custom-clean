@@ -1,0 +1,7 @@
+TDAT: 	public void applyAttributes(GroovyBuilder<T> builder, ObjectFactoryInterceptor<T> ofi, String nodeName, T instance, Map<Object, Object> attributes) {
+		MethodDescriptor apply = this.getAttributeApplicator(instance.getClass());
+		if (apply != null) this.invoke(apply, instance, attributes);
+		else super.applyAttributes(builder, ofi, nodeName, instance, attributes);
+	}
+
+COM:applies attributes to a GroovyBuilder instance based on the specified node name and object instance, invoking the appropriate attribute applicator method if available

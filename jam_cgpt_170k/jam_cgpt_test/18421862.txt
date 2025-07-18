@@ -1,0 +1,14 @@
+TDAT:     public void set(int index, String value) {
+        int arrayIdx[] = { 0 };
+        int stringIdx[] = { 0 };
+
+        // Determine the index
+        if (!getIndex(index, arrayIdx, stringIdx)) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        // Set the string
+        m_Array[arrayIdx[0]][stringIdx[0]] = value;
+    }
+
+COM:sets a value at a specified index in a two-dimensional string array

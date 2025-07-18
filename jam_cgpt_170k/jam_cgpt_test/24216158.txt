@@ -1,0 +1,6 @@
+TDAT:     public List search(String query, Map parameters, int maxResults) throws SwizzleException, ConfluenceException {
+        Object[] vector = (Object[]) call("search", query, parameters, new Integer(maxResults));
+        return toList(vector, SearchResult.class);
+    }
+
+COM:searches a Confluence instance based on a given query, set of parameters, and maximum result limit, and returns the results as a list of SearchResult objects

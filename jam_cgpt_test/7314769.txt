@@ -1,0 +1,12 @@
+TDAT:     public Diameter getBranchDiameter(final int count){
+    	if(count < 1){
+    		throw new IllegalArgumentException("Non positive count " + count);
+    	}
+    	Diameter ret = getBranchDiameter().get(count);
+    	if(ret == null){
+     		ret = headcount.get(headcount.headMap(count).lastKey());
+    	}
+    	return ret;
+    }
+
+COM:returns the diameter of a branch given its count, throwing an exception if the count is not positive

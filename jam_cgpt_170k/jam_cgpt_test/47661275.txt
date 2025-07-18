@@ -1,0 +1,17 @@
+TDAT: 	protected void addClientPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MethodContent_Client_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MethodContent_Client_feature", "_UI_MethodContent_type"),
+				 WorkspacePackage.Literals.METHOD_CONTENT__CLIENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to the item property descriptors list for a client object feature in the method content type

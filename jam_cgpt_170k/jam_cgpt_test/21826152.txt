@@ -1,0 +1,12 @@
+TDAT: 	public void testUnwrapEmptyPassthrough() {
+		List nakedList = (List) tested.unwrapIfNeeded(Collections.EMPTY_LIST);		
+		assertSame("same list", Collections.EMPTY_LIST, nakedList);
+		
+		Map nakedMap = (Map) tested.unwrapIfNeeded(Collections.EMPTY_MAP);
+		assertSame("same map", Collections.EMPTY_MAP, nakedMap);
+
+		Set nakedSet = (Set) tested.unwrapIfNeeded(Collections.EMPTY_SET);
+		assertSame("same set", Collections.EMPTY_SET, nakedSet);
+}
+
+COM:tests if the unwrapIfNeeded method returns the same empty collection object when given Collections.EMPTY_LIST, Collections.EMPTY_MAP, and Collections.EMPTY_SET as input

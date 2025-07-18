@@ -1,0 +1,12 @@
+TDAT:     private void jbInit() throws Exception {
+        setLayout(new BorderLayout());
+        tab.setTabPlacement(JTabbedPane.BOTTOM);
+        tab.addTab("ANT", outputPanel);
+        tab.addTab("Compiler", compilerPanel);
+
+        add(controlPanel, BorderLayout.WEST);
+        add(tab, BorderLayout.CENTER);
+        add(compileStatusPanel, BorderLayout.SOUTH);
+    }
+
+COM:initializes the layout and adds tabs and panels to the main panel in a Java GUI

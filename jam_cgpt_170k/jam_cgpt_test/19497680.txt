@@ -1,0 +1,13 @@
+TDAT: 	public void testDelta_01_initCtxPredSet() throws Exception {
+		IContextRoot root = createContext("ctx");
+		addAxioms(root, makeSList("A"), makeSList("ℕ≠∅"), false);
+		saveRodinFileOf(root);
+		
+		runBuilder();
+		
+		hasStamp(root.getPORoot().getPredicateSets()[0], IPOStampedElement.INIT_STAMP);
+		hasStamp(root.getPORoot().getPredicateSets()[1], IPOStampedElement.INIT_STAMP);
+		
+	}
+
+COM:initializes a context and adds axioms to it, saves the context as a Rodin file, runs a builder, and checks if two predicate sets have an initial stamp

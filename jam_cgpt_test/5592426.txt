@@ -1,0 +1,18 @@
+TDAT:   public int getChildCount(Object node) {
+
+    Node parentNode = ( (wpTreeNode) node).getNode();
+
+    int count = 0;
+    if (parentNode.hasChildNodes()) {
+      count = super.getChildCount(parentNode);
+    }
+    else {
+      if (parentNode.hasAttributes()) {
+        NamedNodeMap nodeMap = parentNode.getAttributes();
+        count = nodeMap.getLength();
+      }
+    }
+    return count;
+  }
+
+COM:returns the number of child nodes of a given parent node

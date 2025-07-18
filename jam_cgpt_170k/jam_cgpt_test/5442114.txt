@@ -1,0 +1,18 @@
+TDAT:     public Object build() throws BuildException {
+        MetaServer theService = null;
+
+        try {
+            Properties theProperties = loadProperties(new URL(getURL(), "metaserver.properties"));
+
+            theService = buildService(null, getName(), theProperties, getURL());
+
+            buildListeners(new URL(getURL(), "metalistener.properties"), theService);
+        }
+        catch (Throwable t) {
+            throw new BuildException(t);
+        }
+
+        return theService;
+    }
+
+COM:builds a MetaServer object with properties read from a file and returns it, while also catching and throwing any errors encountered during the build process

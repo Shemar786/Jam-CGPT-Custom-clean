@@ -1,0 +1,17 @@
+TDAT: 	public boolean canViewCollection(String collectionPID) {
+		logger.debug("entering canViewCollection: " + collectionPID);
+		
+		try{
+			RepositoryCollection collection = dbAccess.getCollection(collectionPID);
+			boolean result = (!collection.isPrivate() 
+					|| canAddItemToCollection(collectionPID));
+			logger.debug("exiting canViewCollection :" + result);
+			return result;
+		}
+		catch(AccessException ex){
+			logger.error("error accessing ", ex);
+			return false;
+		}
+	}
+
+COM:determines whether a collection with the given PID can be viewed by checking if it's private and if the user has permission to add items to the collection

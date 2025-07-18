@@ -1,0 +1,13 @@
+TDAT:     public void setSubjectString(String inString) {
+        StringTokenizer st = new StringTokenizer(inString,"\n");
+        if (!st.hasMoreElements()) return;
+        subjects = null;
+        subjects = new ArrayList();
+        
+        while (st.hasMoreElements()) {
+            Subject su = new Subject(st.nextToken());
+            subjects.add(su);
+        }
+    }
+
+COM:sets a string of subjects by creating an ArrayList and using StringTokenizer to split the input string by newline character, and then adds each individual subject to the ArrayList

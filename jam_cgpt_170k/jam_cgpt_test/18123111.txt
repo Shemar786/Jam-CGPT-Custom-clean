@@ -1,0 +1,20 @@
+TDAT: 	public void setLOLRuntime(LOLRuntime runtime) {
+		ifExpression.setLOLRuntime(runtime);
+		
+		super.setLOLRuntime(runtime);
+		for(LOLRuntimeExpression maybeVal : maybeExpressions) {
+			maybeVal.setLOLRuntime(runtime);
+			for(RuntimeAction action : maybeActions.get(maybeVal)) {
+				action.setLOLRuntime(runtime);
+			}
+		}
+		for(RuntimeAction action : trueActions) {
+			action.setLOLRuntime(runtime);
+		}
+		for(RuntimeAction action : falseActions) {
+			action.setLOLRuntime(runtime);
+		}
+		
+	}
+
+COM:sets the runtime for the LOLExpression and its associated actions

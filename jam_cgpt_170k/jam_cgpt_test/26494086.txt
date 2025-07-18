@@ -1,0 +1,13 @@
+TDAT:   public void removeScript(Script aScript) {
+    if (aScript == null) {
+      throw new IllegalArgumentException("The script passed in is null");
+    }
+
+    if (aScript.getProfile() == null) {
+      _theScriptsByProfile.remove(_theNullProfile);
+    } else {
+      _theScriptsByProfile.remove(aScript.getProfile());
+    }
+  }
+
+COM:removes a script object from a collection of scripts stored in a map, by checking if the script's profile is null and removing it accordingly

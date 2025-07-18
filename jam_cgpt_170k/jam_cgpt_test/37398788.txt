@@ -1,0 +1,13 @@
+TDAT:   public String get(String key) throws ConfigurationException {
+    String value = getRawValue(key);
+    if (value != null) {
+      return value;
+    } else {
+      Object[] arguments = { this.localizedResource, key };
+      throw new ConfigurationException(
+        ConfigurationException.MESSAGE_PROPERTY_NOT_FOUND,
+        arguments);
+    }
+  }
+
+COM:gets the value associated with a given key and throws an exception if the key is not found

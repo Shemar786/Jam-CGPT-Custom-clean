@@ -1,0 +1,26 @@
+TDAT: 	private void doAction(Bundle data) {
+
+		String actionData = data.getString(OrmmaView.ACTION_KEY);
+				
+		if(actionData == null)
+			return;
+		
+		OrmmaView.ACTION actionType = OrmmaView.ACTION.valueOf(actionData); 
+		
+		switch (actionType) {
+		case PLAY_AUDIO: {
+			OrmmaPlayer player = initPlayer(data,actionType);			
+			player.playAudio();
+		}
+			break;
+		case PLAY_VIDEO: {
+			OrmmaPlayer player = initPlayer(data,actionType);
+			player.playVideo();
+		}
+			break;
+		default:
+			break;
+		}
+	}
+
+COM:takes a data bundle as input, retrieves a specified action from the data bundle, and based on the action type, either initializes and plays an audio or video player, or does nothing

@@ -1,0 +1,12 @@
+TDAT:     private void addStore(MemExpr target, Expr expr) {
+        // Stmt last = lastStmt();
+
+        if (saveValue) {
+            stack.push(new StoreExpr(target, expr, expr.type()));
+
+        } else {
+            addStmt(new ExprStmt(new StoreExpr(target, expr, expr.type())));
+        }
+    }
+
+COM:adds a StoreExpr to a stack or a statement depending on a Boolean value

@@ -1,0 +1,10 @@
+TDAT: 	public void destroyStatus(long id) throws TwitterException {
+		String page = post(TWITTER_URL+"/statuses/destroy/" + id
+				+ ".json", null, true);
+		// Note: Sends two HTTP requests to Twitter rather than one: Twitter appears
+		// not to make deletions visible until the user's status page is requested.
+		flush();
+		assert page != null;
+	}
+
+COM:destroys a Twitter status given its ID and ensures its deletion is visible by sending two HTTP requests

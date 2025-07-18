@@ -1,0 +1,17 @@
+TDAT: 	public void kill ( ) {
+		try {
+			if ( _s != null ) {
+				if ( ! _s.isClosed() ) {
+					_s.close();
+				}
+				_s = null;
+			}
+		} catch ( IOException io ) {
+			io.printStackTrace(); // TODO: remove
+			RemoteManagementServer.debug.println( "IOException occured while client " + _id + " tried to disconnect" );
+		}
+		me.interrupt();
+		RemoteManagementServer.debug.println( "Client " + _id + " killed" );
+	}
+
+COM:closes the input stream and sets it to null, then interrupts the thread and prints a message to indicate that a client has been terminated

@@ -1,0 +1,15 @@
+TDAT: 	public List getEntityErrorFields() {
+		if (entityErrorFields == null) {
+			entityErrorFields = new ArrayList();
+			for (Iterator i = this.getInputFields().iterator(); i.hasNext(); ) {
+				InputField field = (InputField) i.next();
+				if (field.hasEntityErrors()) {
+					entityErrorFields.add(field);
+				}
+			}
+			Collections.sort(entityErrorFields, new SortInputFieldAscending());
+		}
+		return entityErrorFields;
+	}
+
+COM:returns a list of input fields that have entity errors

@@ -1,0 +1,7 @@
+TDAT:     public boolean hasEdge(GraphNode v, GraphNode w) {
+        Assert.isTrue(nodes.containsValue(v), "Graph does not contain " + v);
+        Assert.isTrue(nodes.containsValue(w), "Graph does not contain " + w);
+        return succs(v).contains(w);
+    }
+
+COM:checks if there is an edge between two GraphNodes and returns a boolean value

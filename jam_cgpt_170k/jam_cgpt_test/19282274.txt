@@ -1,0 +1,16 @@
+TDAT:     protected Collection collectionQuery(final Query query) throws PersistenceException {
+        if (query != null)
+        {
+            if (pride2Broker != null){
+                return pride2Broker.getCollectionByQuery(query);
+            }
+            else {
+                throw new PersistenceException("Query called on uninitialized PersistenceBroker", null);
+            }
+        }
+        else {
+            throw new PersistenceException("No query specified!", null);
+        }
+    }
+
+COM:executes a query on a collection and returns the result as a Collection, while throwing exceptions for various error cases

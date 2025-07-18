@@ -1,0 +1,15 @@
+TDAT:     public int getNextInt() throws ParseException {
+	lastPosition = position;
+	String token = null;
+
+	try { token = getMatch(new RE("\\d+")); }
+	catch (REException e) {}
+	
+	if (token == null) {
+	    throw new java.text.ParseException(
+		"can't find an int", position);
+	}
+	else return Integer.parseInt(token);
+    }
+
+COM:gets the next integer from a string, and throws a ParseException if it can't find one

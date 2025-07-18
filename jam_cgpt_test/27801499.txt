@@ -1,0 +1,13 @@
+TDAT:   public BetterTableCellRenderer getRenderer ( Class type ) {
+    if( type == null ) {
+      return null;
+    }
+    Object renderer = typeRendererMap.get( type );
+    if( renderer != null ) {
+      return ( BetterTableCellRenderer )renderer;
+    }
+    // Tail recurse to help the optimizer.
+    return getRenderer( type.getSuperclass() );
+  } // getRenderer( Class )
+
+COM:returns a BetterTableCellRenderer based on the provided Class type or its superclass if no renderer is found for the type

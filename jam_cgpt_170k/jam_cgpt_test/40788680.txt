@@ -1,0 +1,17 @@
+TDAT:     public boolean isFullyEstablished() {
+        boolean result = true;
+
+        MediaNegotiator mediaNeg = getMediaNegotiator();
+        if ((mediaNeg == null) || (!mediaNeg.isFullyEstablished())) {
+            result = false;
+        }
+
+        TransportNegotiator transNeg = getTransportNegotiator();
+        if ((transNeg == null) || (!transNeg.isFullyEstablished())) {
+            result = false;
+        }
+
+        return result;
+    }
+
+COM:checks if both the MediaNegotiator and TransportNegotiator are fully established and returns a boolean value indicating the result

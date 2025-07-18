@@ -1,0 +1,9 @@
+TDAT: 	private void createUpdateAndShowPanel() {
+		this.addTab("Show", this.showPolicyPanel);
+		this.addTab("Add", this.addPolicyPanel);
+		this.addTab("Edit", this.editPolicyPanel);
+		this.setEnabledAt(1, false);
+		this.setEnabledAt(2, false);
+	}
+
+COM:creates a tabbed panel with "Show", "Add", and "Edit" tabs and disables the "Add" and "Edit" tabs

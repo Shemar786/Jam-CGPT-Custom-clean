@@ -1,0 +1,12 @@
+TDAT:     protected VATSum getVatSum(ArticleVAT vat) {
+        VATSum result = null;
+        Iterator<VATSum> it = this.iterator();
+        while ((result==null) && (it.hasNext())) {
+            VATSum vatSum = it.next();
+            if (vatSum.getVat().getId()==vat.getId())
+                result = vatSum;
+        }
+        return result;
+    }
+
+COM:searches for a VATSum object in an iterator by comparing its VAT ID with a given ArticleVAT object and returns it if found, otherwise returns null

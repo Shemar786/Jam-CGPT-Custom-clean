@@ -1,0 +1,24 @@
+TDAT: 	protected Container _getNodeContainer(Node n, Object o) {
+		Container container = (Container) o;
+		
+		assert container == null;
+		
+		container = new JPanel();
+		
+		if ( container instanceof JPanel ) {
+			JPanel jpanel = (JPanel) container;
+			_setLayout(jpanel, "left");
+			_setLabel(jpanel, n);
+			//_setBorder(jpanel, n);
+		}
+		
+		if ( container instanceof JComponent ) {
+			((JComponent) container).setAlignmentX(0);
+		}
+		
+		_setTip((JComponent) container, n);
+		_setBorder(container, n);
+		return container;
+	}
+
+COM:returns a container (such as a JPanel) with specific properties set based on its input parameters (a Node and an Object)

@@ -1,0 +1,11 @@
+TDAT:   public void addLineNumberInfo(Vector lineNumberInfo) {
+    if (lineNumbers != null) {
+      for (Enumeration elems = lineNumbers.elements(); elems.hasMoreElements(); ) {
+	int	line = ((Integer)elems.nextElement()).intValue();
+
+	lineNumberInfo.addElement(new LineNumberInfo((short)line, this));
+      }
+    }
+  }
+
+COM:adds line number information to a vector if there are existing line numbers

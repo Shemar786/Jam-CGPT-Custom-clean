@@ -1,0 +1,19 @@
+TDAT:     public void run() {
+
+        ServiceContext context = getServiceContext();
+
+        if (context == null) {
+            throw new RuntimeException("can't run without a service context!");
+        } else {
+
+            Log log = (Log) context.getService(Log.class);
+
+            if (log == null) {
+                throw new RuntimeException("can't run without a Log service!");
+            } else {
+                log.appendEntry("Hello World (Basic)");
+            }
+        }
+    }
+
+COM:retrieves a service context and a log service, and throws a runtime exception if either is null, then appends a greeting message to the log

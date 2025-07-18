@@ -1,0 +1,9 @@
+TDAT:   protected TreeHandler findTreeHandler(FormComponent fc) throws JaxenException {
+    DOMXPath dx = new DOMXPath("//xtree");
+    Element elem = (Element) dx.selectSingleNode(fc.getDocument());
+    if (elem == null)
+      return null;
+    return (TreeHandler) fc.getHandler(elem);
+  }
+
+COM:finds the TreeHandler for a given FormComponent by searching for an XML element with the tag name "xtree" within the FormComponent's document

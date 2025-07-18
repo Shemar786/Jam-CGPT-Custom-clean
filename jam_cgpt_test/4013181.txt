@@ -1,0 +1,16 @@
+TDAT: 	public void add(int position, Disc movie) {
+		if(discs.contains(movie)){
+			discs.remove(movie);
+		}
+		if (position >= 1 && position <= this.discs.size()) {
+			discs.add(position - 1, movie);
+		} else if (position < 1 ) {
+			FlurryAgent.onError("outOfBounds",
+					"Add: The provided Position was too low", "NetFlixQueue");
+		} else if ( position == 500){
+			//;eddie was lazy, moze to the end.(for new move to bootom feature)
+			discs.add(movie);
+		}
+	}
+
+COM:adds a Disc movie object to a list at a specified position, but if the movie already exists in the list it is removed, and if the specified position is invalid an error message is sent to the Flurry data analytics service

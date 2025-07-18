@@ -1,0 +1,11 @@
+TDAT:     public void setTabSize(int size) {
+        Document doc = getDocument();
+        if (doc != null) {
+            int old = getTabSizeFromDoc();
+            tabSize = size;
+            doc.putProperty(PlainDocument.tabSizeAttribute, new Integer(size));
+            firePropertyChange("tabSize", old, tabSize);
+        }
+    }
+
+COM:sets the tab size of the current document while also providing some error handling and property change notifications

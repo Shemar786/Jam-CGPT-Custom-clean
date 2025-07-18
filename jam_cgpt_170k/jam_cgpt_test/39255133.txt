@@ -1,0 +1,17 @@
+TDAT: 	public boolean sameContents(CFNode nodeToCompare) {
+		boolean same = true;
+		int i = 0;
+		for (i = 0; i < cfs.size(); i++) {
+			if(nodeToCompare.getCFs().size()<=i || !nodeToCompare.getCFs().get(i).isEqual((cfs.get(i)))) {
+				same = false;
+				break;
+			}
+		}
+		if(i > nodeToCompare.getCFs().size())
+		{
+			same = false;
+		}
+		return same;
+	}
+
+COM:compares the content of two nodes, returning true if they are equal and false if they are not

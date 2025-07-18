@@ -1,0 +1,13 @@
+TDAT: 	public User show(String screenName) throws TwitterException {
+		Map vars = newMap("screen_name", screenName);
+		String json = http.getPage(TWITTER_URL+"/users/show.json", vars, http.canAuthenticate());
+		User user;
+		try {
+			user = new User(new JSONObject(json), null);
+		} catch (JSONException e) {
+			throw new TwitterException(e);
+		}
+		return user;
+	}
+
+COM:retrieves and returns a User object from Twitter's API based on a screen name input

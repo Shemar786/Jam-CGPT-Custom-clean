@@ -1,0 +1,13 @@
+TDAT:         private double newError(List<AlignStructMol> data) throws Exception {
+
+                double numT = 1;
+                for (int i = 0; i < data.size(); i++) {
+                        if (data.get(i).ransacAlsoInLiers || data.get(i).ransacMaybeInLiers) {
+                                numT++;
+                        }
+                }
+                return 1 / numT;
+
+        }
+
+COM:takes in a list of AlignStructMol objects, counts the number of objects with certain properties, and returns a calculation based on that count

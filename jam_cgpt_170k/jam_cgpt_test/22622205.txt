@@ -1,0 +1,13 @@
+TDAT: 	public List getHits(int start, int length) {
+		// prtln ("\n ** getHits () start: " + start + " , length: " + length);
+		List hits = new ArrayList();
+		for (int i = start; i < (start + length) && i < this.size(); i++) {
+			String id = getRecId(i);
+			if (id != null) {
+				hits.add(getResultDoc(id));
+			}
+		}
+		return hits;
+	}
+
+COM:retrieves a list of hits from a specific starting point and length within an ArrayList and adds them to a new ArrayList

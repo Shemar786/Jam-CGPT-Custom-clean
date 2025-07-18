@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField9() {
+        if (textField9 == null) {//GEN-END:|31-getter|0|31-preInit
+            // write pre-init user code here
+            textField9 = new TextField("Bono 1:", null, 32, TextField.DECIMAL);//GEN-LINE:|31-getter|1|31-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|31-getter|2|
+        return textField9;
+    }
+
+COM:returns a TextField object named textField9 that displays "Bono 1:" and can hold decimal values up to 32 characters long

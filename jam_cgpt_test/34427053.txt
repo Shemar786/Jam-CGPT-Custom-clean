@@ -1,0 +1,11 @@
+TDAT:     public void saveAddListener(ActionListener listener, String toolTip) {
+        ActionListener[] lsts = saveMenuItem.getActionListeners();
+        for (ActionListener al : lsts) {
+            saveMenuItem.removeActionListener(al);
+        }
+        saveMenuItem.addActionListener(listener);
+        saveMenuItem.setToolTipText(toolTip);
+        saveMenuItem.setEnabled(true);
+    }
+
+COM:sets an action listener for a save menu item, removes any previous action listeners, sets its tool tip text, and enables it

@@ -1,0 +1,13 @@
+TDAT: 	public boolean hasProjectSpecificSettings(IProject project) {
+		if (project != null) {
+			IScopeContext projectContext = new ProjectScope(project);
+			for (int i = 0; i < fgAllKeys.length; i++) {
+				if (fgAllKeys[i].getStoredValue(projectContext, fManager) != null) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+COM:checks if a project has specific settings by iterating through a list of keys and their stored values in the project's scope

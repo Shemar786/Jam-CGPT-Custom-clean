@@ -1,0 +1,17 @@
+TDAT: 	protected void addFullInitialisationExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FullyTranslatedDecl_fullInitialisationExpression_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FullyTranslatedDecl_fullInitialisationExpression_feature", "_UI_FullyTranslatedDecl_type"),
+				 Il1Package.Literals.FULLY_TRANSLATED_DECL__FULL_INITIALISATION_EXPRESSION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "fullInitialisationExpression" feature of a "FullyTranslatedDecl" object

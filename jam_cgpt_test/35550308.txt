@@ -1,0 +1,14 @@
+TDAT: 	public void setPort(int[] port) {
+		if (port.length < portBtn.length) {
+			for (int i = 0; i < port.length; i++) {
+				portBtn[i].setState(port[i], true);
+				portBtn[i].setSelected(false);
+			}
+		} else {
+			for (int i = 0; i < portBtn.length; i++) {
+				portBtn[i].setState(port[i], true);
+			}
+		}
+	}
+
+COM:takes an array of integers and uses it to set the state of corresponding buttons, checking if the length of the input array is shorter than the number of buttons

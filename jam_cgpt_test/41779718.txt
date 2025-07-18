@@ -1,0 +1,10 @@
+TDAT:     public Command getCmdTV() {
+        if (cmdTV == null) {//GEN-END:|101-getter|0|101-preInit
+            // write pre-init user code here
+            cmdTV = new Command("TV", Command.OK, 0);//GEN-LINE:|101-getter|1|101-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|101-getter|2|
+        return cmdTV;
+    }
+
+COM:returns a Command object named "cmdTV", and if the object is null it creates it with the label "TV" and sets its type as OK with a priority of 0

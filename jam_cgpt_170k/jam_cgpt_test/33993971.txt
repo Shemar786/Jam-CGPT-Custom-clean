@@ -1,0 +1,17 @@
+TDAT: 	protected void addSplittablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BorderLayoutGroup_splittable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BorderLayoutGroup_splittable_feature", "_UI_BorderLayoutGroup_type"),
+				 UiPackage.Literals.BORDER_LAYOUT_GROUP__SPLITTABLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a boolean "splittable" feature to an item property descriptor list for a BorderLayoutGroup object

@@ -1,0 +1,10 @@
+TDAT:     public Command getOkCommand15() {
+        if (okCommand15 == null) {//GEN-END:|567-getter|0|567-preInit
+            // write pre-init user code here
+            okCommand15 = new Command("Ok", Command.OK, 0);//GEN-LINE:|567-getter|1|567-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|567-getter|2|
+        return okCommand15;
+    }
+
+COM:returns an instance of the Command class with the label "Ok", a type of Command.OK, and a priority of 0, and initializes it if it has not yet been initialized

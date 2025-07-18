@@ -1,0 +1,15 @@
+TDAT: 	private void addServerTabFolder(Shell shell) {
+		tabs = new TabFolder(shell, SWT.TOP|SWT.NO_REDRAW_RESIZE);
+	    tabs.setSize(650, 300);
+	    tabs.setLocation(30,80);
+	    tabs.addListener(100, new Listener(){
+
+			public void handleEvent(Event e) {
+				for(int i =0; i < tabs.getItemCount(); i++ ){
+					tabs.getItem(i).notifyListeners(100, e);
+				}
+			}
+	    });
+	}
+
+COM:adds a tab folder to a specified shell with specific size and location, and includes a listener that triggers events for each tab in the folder

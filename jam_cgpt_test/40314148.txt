@@ -1,0 +1,9 @@
+TDAT: 	public void addNcIsoMetadata(final Element groupElem) {
+        // Add date stamp for metadata creation
+		Date dateStamp = Calendar.getInstance().getTime();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String metadata_creation_date = sdf.format(dateStamp);
+        addElem(groupElem,"metadata_creation", metadata_creation_date);      
+	}
+
+COM:adds a metadata creation date element to a given XML element

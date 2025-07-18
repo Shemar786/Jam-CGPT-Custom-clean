@@ -1,0 +1,17 @@
+TDAT:   protected void addGlobalScriptScopePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ScriptScopeFactory_globalScriptScope_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScriptScopeFactory_globalScriptScope_feature", "_UI_ScriptScopeFactory_type"),
+				 ScriptingPackage.Literals.SCRIPT_SCOPE_FACTORY__GLOBAL_SCRIPT_SCOPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the global script scope of a ScriptScopeFactory class

@@ -1,0 +1,8 @@
+TDAT:     public void testAmmine13() throws Exception {
+        Object[][] smiles = new Object[][] {
+            {"c1cccc(N)c1c2c(N)cccc2","MR2",new Double(2.98),"MR3",new Double(0.1),"MR6",new Double(0.1)},
+            };
+        amineGroupSubstituent(smiles);
+    }
+
+COM:calls the "amineGroupSubstituent" method with a specific set of parameters

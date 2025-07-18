@@ -1,0 +1,18 @@
+TDAT:         public Jingle eventInitiate(Jingle jin) throws XMPPException {
+            // Parse the Jingle and get any proposed transport candidates
+            //addRemoteCandidates(obtainCandidatesList(jin));
+
+            // Start offering candidates
+            sendTransportCandidatesOffer();
+
+            // All these candidates will be checked asyncronously. Wait for some
+            // time and check if we have a valid candidate to use...
+            delayedCheckBestCandidate(session, jin);
+
+            // Set the next state
+            setState(pending);
+
+            return super.eventInitiate(jin);
+        }
+
+COM:initiates a Jingle event by parsing and proposing transport candidates, offering candidates, checking for a valid candidate asynchronously, setting the next state, and returning the event

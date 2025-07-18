@@ -1,0 +1,13 @@
+TDAT: 	public void setPreClustered() {
+		preClustered = true;
+		// this is a bit of a hack...
+		// if we're preclustered, we don't want to make another collection
+		// to hold the results in--jtbigwoo
+		if (preClustered) {
+			db.removeEmptyCollection(db.getCollection(newHostID));
+			newHostID = collectionID;
+			db.renameCollection(db.getCollection(newHostID), "Hierarchical, Clusters Ward\'s" + folderName);
+		}
+	}
+
+COM:sets a boolean value to true and renames a collection if a certain condition is met

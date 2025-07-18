@@ -1,0 +1,11 @@
+TDAT: 	public float geQueryCoverageSequence() {
+    	int tempLengthQuery = lengthOfQuerySequence;
+    	if(querySeqType != targetSeqType){
+    	    if(querySeqType.equals(SequenceType.AA) && targetSeqType.equals(SequenceType.NA)){
+    	    	tempLengthQuery = tempLengthQuery*3; //make it NA size.
+    	    } 
+    	}
+    	return (float) overlapingLength / (float) tempLengthQuery; 
+	}
+
+COM:calculates the query coverage sequence based on certain conditions and returns it as a float value

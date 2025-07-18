@@ -1,0 +1,11 @@
+TDAT:   private void saveIndexLastUpdate() {
+    try {
+      String lastUpdate = RegainToolkit.lastModifiedToString(new Date());
+      RegainToolkit.writeToFile(lastUpdate, LASTUPDATE_FILE);
+    }
+    catch (RegainException exc) {
+      mLog.error("Writing last update file failed", exc);
+    }
+  }
+
+COM:saves the last update time to a file using the RegainToolkit library and logs an error if the write fails

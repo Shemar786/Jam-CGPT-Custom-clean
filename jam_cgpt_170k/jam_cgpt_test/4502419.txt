@@ -1,0 +1,12 @@
+TDAT: 	public Object getValueAt(int pRow, int pCol) {
+		int row = Configuration.getInstance().getTopLeft().y + pRow;
+		int col = Configuration.getInstance().getTopLeft().x + pCol;
+		Point p = new Point(col, row);
+		if (mStaticLocatables.containsKey(p))
+			return mStaticLocatables.get(p);
+		else if (mMobileLocatables.containsKey(p))
+			return mMobileLocatables.get(p);
+		return null;
+	}
+
+COM:returns a value at a specified row and column by checking if the location at that point contains a static or mobile object and returning it

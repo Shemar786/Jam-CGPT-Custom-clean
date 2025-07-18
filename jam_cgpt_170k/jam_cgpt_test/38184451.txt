@@ -1,0 +1,18 @@
+TDAT: 	public void actionPerformed(ActionEvent e) {
+		if (EDIT.equals(e.getActionCommand())) {
+			//The user has clicked the cell, so
+			//bring up the dialog.
+			wpListDlg.setVisible(true);
+
+			//Make the renderer reappear.
+			fireEditingStopped();
+		}
+		else if (wpListDlg.isOkEvent(e)) {
+			stopCellEditing();
+		}
+		else if (wpListDlg.isCancelEvent(e)) {
+			cancelCellEditing();
+		}
+	}
+
+COM:handles events related to editing a cell in a table by displaying a dialog box and stopping or canceling editing based on the user's actions

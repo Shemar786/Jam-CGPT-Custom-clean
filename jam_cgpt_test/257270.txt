@@ -1,0 +1,13 @@
+TDAT: 	public boolean equals(Object other) {
+		if (other == this) {
+			return true;
+		}
+		if (other instanceof AbstractAttributeValue) {
+			final AbstractAttributeValue otherAttributeValue = (AbstractAttributeValue) other;
+			return new EqualsBuilder().append(getId(), otherAttributeValue.getId())
+					.append(getValue(), otherAttributeValue.getValue()).isEquals();
+		}
+		return false;
+	}
+
+COM:compares two objects for equality based on their id and value attributes

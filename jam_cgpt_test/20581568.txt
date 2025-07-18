@@ -1,0 +1,16 @@
+TDAT: 	public void startDB(String url, String user, String pass){
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(url, user, pass);
+			Statement use = conn.createStatement();
+			use.execute("USE crm;");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+COM:connects to a MySQL database using the specified URL, username, and password, and selects a specific database

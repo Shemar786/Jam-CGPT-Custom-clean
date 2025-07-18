@@ -1,0 +1,15 @@
+TDAT:     public void createNew() {
+        DataSet ts = new DataSet();
+
+        DataSet current = ttmodel.getDataSet();
+        Project p = current.getParentProject();
+        current.removeProjectEventListener(this);
+        ts.setPartName(current.getPartName());
+        ts.addProjectEventListener(this);
+        p.putPart(ts);
+
+        adoptNetworkStructure();
+        ts.addElement();
+    }
+
+COM:creates a new DataSet, removes event listeners from the current DataSet, sets the name of the new DataSet to the current DataSet's name, adds event listeners to the new DataSet, and adds the new DataSet to its parent project while adopting the network structure and adding a new element to the new DataSet

@@ -1,0 +1,9 @@
+TDAT:     /*
+     * public VectorPattern getFullScanVectorPattern(int i) { if
+     * (!isActionVector(i)) return null; validateIfNeeded();
+     * 
+     * SVFActionVector actionVector = (SVFActionVector)getCommand(i);
+     *  // Concat header + pattern + trailer return
+     * actionVector.getFullScanVectorPattern(); }
+
+COM:returns a full scan vector pattern from an SVFActionVector object, which is concatenated with the header and trailer

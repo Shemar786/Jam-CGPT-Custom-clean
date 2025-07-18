@@ -1,0 +1,13 @@
+TDAT: 	public void seedRandom(int seed) {
+		try {
+			Statement stmt = con.createStatement();
+			stmt.executeQuery("SELECT RAND(" + seed + ")\n");
+			stmt.close();
+		} catch (SQLException e) {
+			ErrorLogger.writeExceptionToLogAndPrompt(getName(),"SQL Exception seeding the random number generator.");
+			System.err.println("Error in seeding random number generator.");		
+			e.printStackTrace();
+		}
+	}
+
+COM:seeds the random number generator with a given seed value by executing a MySQL query

@@ -1,0 +1,18 @@
+TDAT: 	private void init_300_BuildScreen() {
+	    JPanel topPanel = new JPanel();
+	    JPanel fullPanel = new JPanel();
+
+	    //buildMenubar(menuBar);
+	    //buildToolbar(toolBar);
+
+	    topPanel.setLayout(new BorderLayout());
+	    topPanel.add("North", menuBar);
+	    topPanel.add("South", toolBar);
+
+	    fullPanel.setLayout(new BorderLayout());
+	    fullPanel.add("North", topPanel);
+	    fullPanel.add("Center", desktop);
+	    setContentPane(fullPanel);
+    }
+
+COM:initializes and builds a screen with a menu bar, toolbar, and desktop pane

@@ -1,0 +1,13 @@
+TDAT:     public void setSelectedFile(File selectedFile) {
+        if(fileSelectionMode == FILES_ONLY && selectedFile.isDirectory()) {
+            // only file selection allowed..
+            return;
+        }
+        if(selectedFile.isDirectory()) {
+            fileName.setSelectedItem(selectedFile.getAbsolutePath());
+        } else {
+        fileName.setSelectedItem(selectedFile.getName());
+    }
+    }
+
+COM:sets the selected file or directory and checks if the selection is allowed based on the file selection mode

@@ -1,0 +1,10 @@
+TDAT: 	private JComboBox getJComboBoxEST() {
+		if (jComboBoxEST == null) {
+			jComboBoxEST = new JComboBox(new String [] {"EST"} );
+			jComboBoxEST.setBounds(new Rectangle(134, 32, 79, 18));
+			jComboBoxEST.setEnabled(true);
+		}
+		return jComboBoxEST;
+	}
+
+COM:returns a JComboBox object that shows the time zone "EST" and is initially enabled

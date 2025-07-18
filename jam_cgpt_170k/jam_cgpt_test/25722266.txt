@@ -1,0 +1,8 @@
+TDAT: 	public void setMaximum(Max value) {
+		// System.err.println("MAX " + input.getElementName() +
+		// "."+value.getName() + " per " + value.getPer() + " = " +
+		// value.doubleValue());
+		maxima.put(value.getPer() + value.getName(), value);
+	}
+
+COM:sets the maximum value for a specified input and stores it in a maxima object

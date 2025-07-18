@@ -1,0 +1,7 @@
+TDAT: 	private void initializeKeywords() {
+		this.keywords = new HashSet<String>(Arrays.asList(new String[] {
+				"select", "from", "where", "order", "by", "and", "or", "group",
+				"left", "on", "right", "in","outer" }));
+	}
+
+COM:initializes a set of SQL keywords

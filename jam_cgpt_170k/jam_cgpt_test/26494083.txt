@@ -1,0 +1,13 @@
+TDAT:   public void addScript(Script aScript) {
+    if (aScript == null) {
+      throw new IllegalArgumentException("The script passed in is null");
+    }
+
+    if (aScript.getProfile() == null) {
+      _theScriptsByProfile.put(_theNullProfile, aScript);
+    } else {
+      _theScriptsByProfile.put(aScript.getProfile(), aScript);
+    }
+  }
+
+COM:adds a given Script object to a Map based on its profile, or to a default profile if the Script does not have a profile

@@ -1,0 +1,15 @@
+TDAT: 	public String getKeywordsTruncated() {
+		String ret = getQ();
+		if ( ret.length() > 30 ) {
+			int ind = ret.indexOf( " ", 30 );
+			if ( ( ind > -1 ) && ( ind < 40 ) ) {
+				ret = ret.substring( 0, ind ) + "...";
+			}
+			else if ( ret.length() > 34 ) {
+				ret = ret.substring( 0, 30 ) + "...";
+			}
+		}
+		return ret.trim();
+	}
+
+COM:returns a truncated version of a string, if the string exceeds a certain length, by adding "..." at the end and removing any extra white space

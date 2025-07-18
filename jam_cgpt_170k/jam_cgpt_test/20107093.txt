@@ -1,0 +1,12 @@
+TDAT:   public boolean equals(Object o) {
+    if (this == o)
+      return true;
+
+    if (o == null || !o.getClass().equals(this.getClass())
+        || this.getId() == null)
+      return false;
+
+    return this.getId().equals(((BaseModelObject) o).getId());
+  }
+
+COM:This is a Java method that checks if two objects are equal based on their IDs, returning true if they are and false if they are not or if the passed object is null

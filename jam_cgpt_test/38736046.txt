@@ -1,0 +1,10 @@
+TDAT:     public void signOut(User user) throws RemoteException {
+        //update user in the group list
+        if(user==null) return;
+        connectedClients.remove(user.getId());
+        connectedClientsIPs.remove(user.getId());
+        user.setStatus_id(IConstant.SIGN_OUT);
+        updateUserStatus(user);
+    }
+
+COM:signs out a user, removes their connection information, updates their status, and sends the updated user information to other clients in the group

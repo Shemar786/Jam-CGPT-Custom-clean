@@ -1,0 +1,7 @@
+TDAT:     public void testSize() {
+        assertEquals("Size of raw", 10, raw.size());
+        assertEquals("Size of subset1", 5, subset1.size());
+        assertEquals("Size of subset2", 3, subset2.size());
+    }
+
+COM:tests the size of three different arrays using the assertEquals method

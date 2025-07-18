@@ -1,0 +1,12 @@
+TDAT:   private void addNameToList(String key, String value, Map<String, List<String>> map) {
+    List<String> list = map.get(key);
+    if (list == null) {
+      list = new ArrayList<String>();
+      map.put(key, list);
+    }
+    if (!list.contains(value)) {
+      list.add(value);
+    }
+  }
+
+COM:adds a name to a list within a map, creating a new list if necessary and avoiding duplicates

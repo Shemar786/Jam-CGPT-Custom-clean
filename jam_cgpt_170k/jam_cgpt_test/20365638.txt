@@ -1,0 +1,15 @@
+TDAT:     public Complex calculate( CalculationContext context ) {
+        if ( context == null ) {
+            throw new IllegalArgumentException( "context is null" );
+        }
+        Deque<Complex> stack = new ArrayDeque<Complex>( maxDataStackSize );
+        for ( ExpressionComponent component : components ) {
+            component.calculate( stack, context );
+        }
+        if ( stack.size() != 1 ) {
+            throw new AssertionError( stack );
+        }
+        return stack.pop();
+    }
+
+COM:calculates a complex value based on a calculation context and a stack of expression components

@@ -1,0 +1,16 @@
+TDAT: 	private JPanel getToppanel() {
+		if (toppanel == null) {
+			FlowLayout flowLayout = new FlowLayout();
+			flowLayout.setAlignment(java.awt.FlowLayout.LEFT);
+			flowLayout.setVgap(3);
+			flowLayout.setHgap(2);
+			toppanel = new JPanel();
+			toppanel.setLayout(flowLayout);
+			toppanel.add(getJButton(), null);
+			toppanel.add(getJButton1(), null);
+			toppanel.add(getJButton2(), null);
+		}
+		return toppanel;
+	}
+
+COM:This is a Java method that returns a JPanel with a FlowLayout and three JButtons added to it

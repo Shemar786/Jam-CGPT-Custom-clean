@@ -1,0 +1,18 @@
+TDAT:   public JButton createRemoveDataSetButton ( final DataSetPanel panel ) {
+    return new JButton (
+      new AbstractAction( "Remove" ) {
+          public void actionPerformed ( ActionEvent evt ) {
+            // Do this in the GUI Event Dispatch thread...
+            SwingUtilities.invokeLater(
+              new Runnable() {
+                public void run() {
+                  removeDataSet( panel );
+                }
+              }
+            );
+          }
+      }
+   );
+  } // createRemoveDataSetButton
+
+COM:returns a JButton object with an action listener that removes a data set from the GUI when clicked

@@ -1,0 +1,15 @@
+TDAT:     public void testGetIndexedArguments() {
+
+        try {
+            dynaForm.get("intArray", -1);
+            fail("Should throw IndexOutOfBoundsException");
+        } catch (IndexOutOfBoundsException e) {
+            ; // Expected response
+        } catch (Throwable t) {
+            fail("Threw " + t + " instead of IndexOutOfBoundsException");
+        }
+
+
+    }
+
+COM:tests if the get method of a dynaForm object throws an IndexOutOfBoundsException

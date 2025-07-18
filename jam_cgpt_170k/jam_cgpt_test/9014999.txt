@@ -1,0 +1,36 @@
+TDAT: 	public String toText(TextNode node) {
+		int startpos;
+		int endpos;
+		String s;
+		char c;
+		StringBuffer ret;
+
+		startpos = node.getStartPosition();
+		endpos = node.getEndPosition();
+		ret = new StringBuffer(endpos - startpos + 20);
+		s = node.toHtml();
+		for (int i = 0; i < s.length(); i++) {
+			c = s.charAt(i);
+			switch (c) {
+			case '\t':
+				ret.append("\\t");
+				break;
+			case '\n':
+				ret.append("\\n");
+				break;
+			case '\r':
+				ret.append("\\r");
+				break;
+			default:
+				ret.append(c);
+			}
+			if (77 <= ret.length()) {
+				ret.append("...");
+				break;
+			}
+		}
+
+		return (ret.toString());
+	}
+
+COM:converts a TextNode into a String representation, replacing certain characters with their escape sequences and truncating the String if it is longer than 77 characters

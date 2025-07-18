@@ -1,0 +1,10 @@
+TDAT:     public OObject or( OObject z ){ 
+	if( (this instanceof Complex) && (z instanceof Complex) ) {
+	    return ((Complex)this).or( (Complex)z );
+	} else if( !((this instanceof Error) || (z instanceof Error)) ){
+	    return new jscicalc.expression.Or( this, z );
+	}
+	return new Error( "OObject or( z ) error" );
+    }
+
+COM:returns a new object obtained by performing the logical OR operation on the current object and the given object, and handles errors appropriately

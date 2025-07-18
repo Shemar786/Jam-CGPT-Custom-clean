@@ -1,0 +1,11 @@
+TDAT: 	public void sendSMS(String recipient, String body) {
+		Log.d(LOG_TAG, "sendSMS: recipient: " + recipient + " body: " + body);
+		Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+		sendIntent.putExtra("address", recipient);
+		sendIntent.putExtra("sms_body", body);
+		sendIntent.setType("vnd.android-dir/mms-sms");
+		sendIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		mContext.startActivity(sendIntent);
+	}
+
+COM:sends an SMS message to a specified recipient with a given body and logs the action

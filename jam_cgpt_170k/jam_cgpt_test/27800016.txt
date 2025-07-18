@@ -1,0 +1,10 @@
+TDAT:     protected void setValueIsAdjusting ( boolean new_adjusting ) {
+      table.getRowModel().getSelectionModel().setValueIsAdjusting(
+        new_adjusting
+      );
+      table.getColumnModel().getSelectionModel().setValueIsAdjusting(
+        new_adjusting
+      );
+    } // setValueIsAdjusting(..)
+
+COM:sets the value of the adjusting property for both row and column selection models in a table

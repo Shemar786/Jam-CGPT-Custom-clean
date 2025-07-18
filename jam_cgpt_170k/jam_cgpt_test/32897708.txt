@@ -1,0 +1,17 @@
+TDAT:     private String getVar(String var) {
+	if (var.compareTo("${application.root}") == 0) {
+	    File rootFile = Installation.getInstallDirectory(this.getClass());
+	    return rootFile.getAbsolutePath();
+	}
+	if (var.compareTo("${application.global}") == 0) {
+	    return this.get("globalpath");
+	} 
+	if (var.compareTo("${user.home}") == 0) {
+	    return System.getProperty("user.home");
+	}
+	else
+	    return null;
+
+    }
+
+COM:accepts a string variable, compares it with certain values, and returns corresponding absolute paths or null

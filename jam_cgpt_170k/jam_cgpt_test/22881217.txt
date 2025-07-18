@@ -1,0 +1,18 @@
+TDAT: 	public boolean isSignaling() {
+		if(model.getPopState()[0][1] > 0.99) {
+			if(model.getPopState()[1][2] > 0.99) {
+				return true;
+			}
+			return false;
+		}
+		if(model.getPopState()[0][2] > 0.99) {
+			if(model.getPopState()[1][1] > 0.99) {
+				return true;
+			}
+			return false;
+		}
+		return false;
+		
+	}
+
+COM:checks if a signaling condition is met based on certain values in a two-dimensional array

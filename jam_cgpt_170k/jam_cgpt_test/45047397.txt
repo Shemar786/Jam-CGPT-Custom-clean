@@ -1,0 +1,7 @@
+TDAT: 	public Integer getNumberOfTPVersions(final String tpid, final String tpOwner, final HashMap<String, String> filter){
+		filter.put("ID", tpid);
+	    filter.put("owner", tpOwner);
+		return (Integer) this.getSqlMapClientTemplate().queryForObject("getTPVersionByTPNb", filter);
+	}
+
+COM:gets the number of test plan versions based on the test plan ID, owner, and filter criteria

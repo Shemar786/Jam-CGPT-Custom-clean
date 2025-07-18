@@ -1,0 +1,24 @@
+TDAT:     private void installConnectionListeners(final XMPPConnection connection) {
+        if (connection != null) {
+            connection.addConnectionListener(new ConnectionListener() {
+                public void connectionClosed() {
+                    unregisterInstanceFor(connection);
+                }
+
+                public void connectionClosedOnError(java.lang.Exception e) {
+                    unregisterInstanceFor(connection);
+                }
+
+                public void reconnectingIn(int i) {
+                }
+
+                public void reconnectionSuccessful() {
+                }
+
+                public void reconnectionFailed(Exception exception) {
+                }
+            });
+        }
+    }
+
+COM:installs connection listeners on a given XMPPConnection object to handle events such as connection closed and errors

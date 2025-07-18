@@ -1,0 +1,13 @@
+TDAT: 	private void actuallyAddHandle ( int insertIndex , Point2D pt ) {
+
+		if ( edgeView.isSelected() ) {
+			PNamedHandle h = createHandle(pt);
+			h.addInputEventListener( edgeView.getEdgeHandler() ); 
+			edgeView.addChild(h);
+			handleList.insertElementAt(h, insertIndex);
+		}
+		handlePointList.insertElementAt(pt, insertIndex);
+		edgeView.updateEdgeView();
+	}
+
+COM:adds a handle to a specific index in a handle list and updates the edge view if the edge is selected

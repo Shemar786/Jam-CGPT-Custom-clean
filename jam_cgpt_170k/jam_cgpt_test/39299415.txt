@@ -1,0 +1,12 @@
+TDAT: 	public boolean containsPoint(Position pos) {
+		if(liesOnLine(pos.getX().getValue(), pos.getY().getValue())){
+			if(liesBetween(x1, x2, pos.getX().getValue())
+					 && liesBetween(y1, y2, pos.getY().getValue()))
+						return true;
+		}
+		
+		return false;
+
+	}
+
+COM:checks if a given position lies on a line that is defined by two other positions

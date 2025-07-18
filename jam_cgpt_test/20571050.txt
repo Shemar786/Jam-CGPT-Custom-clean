@@ -1,0 +1,13 @@
+TDAT:   public void rollbackTransaction() {
+    if(this.openTrasactionCalls < 1) {
+      return;
+    }
+    this.openTrasactionCalls = 0;
+    if(currentTransaction.isActive() && transactionStatus != TXN_STATUS.ROLLBACK) {
+      transactionStatus = TXN_STATUS.ROLLBACK;
+       // could already be rolled back
+      currentTransaction.rollback();
+    }
+  }
+
+COM:rolls back a transaction if it is currently active and has not already been rolled back, otherwise it returns without doing anything

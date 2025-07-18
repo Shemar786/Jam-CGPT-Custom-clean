@@ -1,0 +1,18 @@
+TDAT: 	public void testDeleteBlobDataType() {
+		// 1. insert init data
+		insertBlobDataType();
+
+		// 2. select a blobDataType data
+		BlobDataType blobDataType = (BlobDataType) session.get(
+				BlobDataType.class, new Integer(4491));
+
+		// 3. remove data
+		session.delete(blobDataType);
+
+		// 4. check if deletion is successful
+		blobDataType = (BlobDataType) session.get(BlobDataType.class,
+				new Integer(4491));
+		assertNull(blobDataType);
+	}
+
+COM:tests the deletion of a specific data type (BlobDataType) by inserting data, selecting it, removing it, and checking if the deletion was successful

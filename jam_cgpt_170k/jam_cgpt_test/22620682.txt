@@ -1,0 +1,11 @@
+TDAT: 	public Element missingValueTest(String xpath) {
+		// test to see if child node (the multiSelect) is empty
+		Element test = DocumentHelper.createElement("logic__equal")
+			.addAttribute("name", formBeanName)
+			.addAttribute("property", "nodeIsMissingValue(" + xpath + ")")
+			.addAttribute("value", "true");
+
+		return test;
+	}
+
+COM:creates an XML element that tests if a child node specified by XPath is empty

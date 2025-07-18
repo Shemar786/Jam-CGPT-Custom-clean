@@ -1,0 +1,17 @@
+TDAT: 	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssociationRoleWorkproduct_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationRoleWorkproduct_type_feature", "_UI_AssociationRoleWorkproduct_type"),
+				 WorkspacePackage.Literals.ASSOCIATION_ROLE_WORKPRODUCT__TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for an association role work product type

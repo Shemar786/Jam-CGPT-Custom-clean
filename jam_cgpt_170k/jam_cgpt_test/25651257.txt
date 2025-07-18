@@ -1,0 +1,13 @@
+TDAT:     public void testGetInstance() {
+        System.out.println("getInstance");        
+        ComponentsLoader result = ComponentsLoader.getInstance();                
+        assertNotNull("instance cannot be null", result);        
+        
+        ComponentsLoader result2 = ComponentsLoader.getInstance();
+        
+        assertNotNull(result2);
+        
+        assertEquals("should get the same instance", result, result2);
+    }
+
+COM:tests the getInstance() method of the ComponentsLoader class to ensure that it returns a non-null instance and that subsequent calls to getInstance() return the same instance

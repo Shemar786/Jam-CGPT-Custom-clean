@@ -1,0 +1,14 @@
+TDAT: 		public void handleStatement(GraphStatement statement) throws RDFHandlerException {
+			try {
+				if (context != null) {
+					this.store.addStatement((URI) context, statement.getSubject(), statement.getPredicate(), statement
+							.getObject());
+				} else {
+					this.store.addStatement(statement.getSubject(), statement.getPredicate(), statement.getObject());
+				}
+			} catch (RdfStoreException e) {
+				throw new RDFHandlerException("Problem adding statement to store", e);
+			}
+		}
+
+COM:handles a statement by adding it to a store, with an optional context

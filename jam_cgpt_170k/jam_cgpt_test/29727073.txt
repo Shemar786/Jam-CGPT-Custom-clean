@@ -1,0 +1,13 @@
+TDAT:     public ColumnClusterSnapshot prepareSnapshot () {
+    	if (!cachedSnapshotDirty) {
+    		return cachedSnapshot;
+    	}
+		ColumnClusterSnapshot snapshot = new ColumnClusterSnapshot();
+        snapshot.columnSnapshots = new LinkedList <Column.CColumnLayoutSnapshot> ();
+        for (Column c:columns) snapshot.columnSnapshots.add(c.createLayoutSnapshot());
+        cachedSnapshot = snapshot;
+        cachedSnapshotDirty = false;
+        return snapshot;
+    }
+
+COM:prepares and returns a snapshot of the ColumnCluster with cached snapshots

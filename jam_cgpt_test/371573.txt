@@ -1,0 +1,18 @@
+TDAT:     public String getArguments() {
+        String result = null;
+        if (launchConfig != null) {
+            try {
+                result = launchConfig
+                        .getAttribute(
+                                IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS,
+                                (String) null);
+            } catch (CoreException ignore) {
+            }
+        }
+        if (result == null) {
+            result = "";
+        }
+        return result;
+    }
+
+COM:retrieves the program arguments from a launch configuration, returning an empty string if there are none

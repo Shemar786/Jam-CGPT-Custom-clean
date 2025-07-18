@@ -1,0 +1,20 @@
+TDAT: 	protected RodinElementDelta find(IRodinElement e) {
+		if (this.equalsAndSameParent(this.changedElement, e)) { // handle case
+																// of two jars
+																// that can be
+																// equals but
+																// not in the
+																// same project
+			return this;
+		} else {
+			for (int i = 0; i < fAffectedChildren.length; i++) {
+				RodinElementDelta delta = fAffectedChildren[i].find(e);
+				if (delta != null) {
+					return delta;
+				}
+			}
+		}
+		return null;
+	}
+
+COM:searches for a RodinElementDelta that corresponds to a given IRodinElement

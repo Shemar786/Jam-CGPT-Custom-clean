@@ -1,0 +1,10 @@
+TDAT: 	public void resetMainCanvas() {
+		for (int i = 0; i < itsMainCanvas.getCamera().getLayerCount(); i++) {
+			itsMainCanvas.getCamera().removeLayer(i);
+		}
+		if (LessonMapper2.getInstance().getActiveProject() != null)
+			itsMainCanvas.getCamera().addLayer(
+					LessonMapper2.getInstance().getUpperActivity());
+	}
+
+COM:resets the main canvas by removing all layers from the camera and adding the upper activity layer if there is an active project in the LessonMapper2 instance

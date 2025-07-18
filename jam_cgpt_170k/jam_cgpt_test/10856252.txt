@@ -1,0 +1,10 @@
+TDAT:     private File createTempTestFile() throws IOException {
+        File file = File.createTempFile("FilePartTest", ".txt");
+        PrintWriter out = new PrintWriter(new FileWriter(file));
+        out.println(PART_DATA);
+        out.flush();
+        out.close();
+        return file;
+    }
+
+COM:creates a temporary file with the name "FilePartTest" with the extension ".txt", writes some data to it and returns the file

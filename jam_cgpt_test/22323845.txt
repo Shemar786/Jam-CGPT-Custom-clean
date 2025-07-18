@@ -1,0 +1,17 @@
+TDAT:     public String getString (int fldno) {
+        String s = null;
+        if (hasField (fldno)) {
+            try {
+                Object obj = getValue(fldno);
+                if (obj instanceof String)
+                    s = (String) obj;
+                else if (obj instanceof byte[])
+                    s = ISOUtil.hexString ((byte[]) obj);
+            } catch (ISOException e) {
+                // ignore ISOException - return null
+            }
+        }
+        return s;
+    }
+
+COM:returns a string value for a specific field number, converting it from a byte array if necessary

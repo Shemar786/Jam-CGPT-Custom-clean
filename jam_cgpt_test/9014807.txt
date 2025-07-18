@@ -1,0 +1,26 @@
+TDAT: 	public String toTagHtml() {
+		int length;
+		int size;
+		Vector attributes;
+		Attribute attribute;
+		StringBuffer ret;
+
+		length = 2;
+		attributes = getAttributesEx();
+		size = attributes.size();
+		for (int i = 0; i < size; i++) {
+			attribute = (Attribute) attributes.elementAt(i);
+			length += attribute.getLength();
+		}
+		ret = new StringBuffer(length);
+		ret.append("<");
+		for (int i = 0; i < size; i++) {
+			attribute = (Attribute) attributes.elementAt(i);
+			attribute.toString(ret);
+		}
+		ret.append(">");
+
+		return (ret.toString());
+	}
+
+COM:takes the attributes of an XML tag and converts them into HTML format for display

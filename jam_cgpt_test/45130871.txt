@@ -1,0 +1,11 @@
+TDAT:     public Value castString(Literal literal) throws IllegalCastException {
+        try {
+            Double.parseDouble(literal.getLabel());
+            return this.factory.createLiteral(literal.getLabel(),
+                    SPARQLConstants.DOUBLE_TYPE);
+        } catch (NumberFormatException e) {
+            throw new IllegalCastException("Unable to cast string to integer");
+        }
+    }
+
+COM:takes in a Literal object and tries to parse it as a Double, returning a new Literal with a Double type if successful, and throwing an IllegalCastException if unable to cast the string to an integer

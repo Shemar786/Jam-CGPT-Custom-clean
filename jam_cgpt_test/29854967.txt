@@ -1,0 +1,9 @@
+TDAT:   public String getString() {
+    if (value instanceof String) {
+      return (String)value;
+    }
+    // !!! check somewhere else but not in gen code !!!throw new PositionedError(getTokenReference(), "vk-not-string", getLabel(), value);
+    throw new InconsistencyException();
+  }
+
+COM:returns a String value if the given value is an instance of String, otherwise it throws an exception

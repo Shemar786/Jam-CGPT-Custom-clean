@@ -1,0 +1,8 @@
+TDAT:     public List findAll(String startLetters) {
+        
+        Query query = getSession().createQuery("select f from " + NutEntry.REF + " as f where f.name like :pattern order by f.name");
+        query.setParameter("pattern", startLetters + "%", Hibernate.STRING);
+        return query.list();
+    }
+
+COM:finds all entries in a list that begin with a specific set of letters

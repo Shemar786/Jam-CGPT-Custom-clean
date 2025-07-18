@@ -1,0 +1,23 @@
+TDAT:     public boolean isAvailable() {
+
+        StructuredSelection sel = (StructuredSelection) _treeViewer.getSelection();
+
+        if (sel.size() == 0) {
+            return false;
+        }
+        
+        Iterator it = sel.iterator();
+        
+        while (it.hasNext()) {
+            
+            Object o = it.next();
+            if (o instanceof ISQLAlias) {
+                return true;
+            }
+            
+        }        
+
+        return false;
+    }
+
+COM:checks if an item from a tree viewer is available based on if it is an instance of a certain type

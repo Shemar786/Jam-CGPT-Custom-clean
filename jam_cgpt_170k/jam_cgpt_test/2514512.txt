@@ -1,0 +1,16 @@
+TDAT: 	public int getGroupIdOfTag(int id){
+		int group_id = -1;
+		try{
+			String query_clause = "SELECT DISTINCT group_id FROM "+DataDefinitions.getRelTagsTableName()
+			              		+" WHERE id = "+id;
+			ResultSet res = query(query_clause);
+			if (res != null){
+				res.next();
+				group_id = res.getInt("group_id");
+			}			
+			res.close();
+		} catch (Exception e){ DataDefinitions.logger.addLogLine(e.getMessage(),2); }
+		return group_id;
+	}
+
+COM:retrieves the group ID associated with a tag given its ID

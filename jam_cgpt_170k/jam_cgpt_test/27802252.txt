@@ -1,0 +1,13 @@
+TDAT:   public void drawSelected () {
+
+	// For each point in handlePointList, add a handle.
+	for ( int i = 0; i < handlePointList.size(); i++ ) {
+		PNamedHandle h = createHandle( (Point2D)handlePointList.get(i) );
+		addChild( h );
+		handleList.add( h );
+	}
+    setStrokePaint( Color.red );
+
+  }
+
+COM:adds handles to selected points and sets the stroke paint to red

@@ -1,0 +1,9 @@
+TDAT:   public boolean checkDescendantO(Member aMember, Object oMember) {
+    mondrian.olap.Member monMember = ((MondrianMember) aMember).getMonMember();
+    mondrian.olap.Member monDesc = toMember(oMember);
+    if (monDesc.isCalculatedInQuery() || monDesc.equals(monMember))
+      return false;
+    return monDesc.isChildOrEqualTo(monMember);
+  }
+
+COM:checks if a given object is a descendant of a given member in a Mondrian OLAP cube

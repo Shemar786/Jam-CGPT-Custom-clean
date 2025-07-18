@@ -1,0 +1,8 @@
+TDAT:      public void setSCInstance(final SCInstance scInstance) {
+         this.parentSCInstance = scInstance;
+         _threadFactory = (ThreadFactory) this.parentSCInstance.getRootContext().get("threadFactory");
+         _stateMachine = (SCXMLStateMachine) this.parentSCInstance.getRootContext().get("superContext");
+
+     }
+
+COM:sets the parent SCInstance and initializes _threadFactory and _stateMachine with values from the parent SCInstance's root context

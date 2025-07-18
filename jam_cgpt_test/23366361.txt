@@ -1,0 +1,29 @@
+TDAT: 	public void update() {
+
+		super.update();
+
+		if (((DemonstrationParameters) getParam()).getBGroup().getSelection()
+				.getActionCommand().equals("Debug")) {
+
+			BufferedReader bri = new BufferedReader(new InputStreamReader(
+					System.in));
+			System.out.println("Press Enter to continue : ");
+			try {
+				char y = (char) (bri.read());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		else
+		// demonstration mode
+		{
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+			}
+		}
+
+	}
+
+COM:updates based on certain conditionals and allows for debugging or demonstration depending on the input

@@ -1,0 +1,9 @@
+TDAT:     protected void handleBouncing(Mail mail) throws MessagingException {
+        mail.setState(Mail.ERROR);
+        setMessageDeleted();
+
+        mail.setErrorMessage("This mail from FetchMail task " + getFetchTaskName() + " seems to be bouncing!");
+        logStatusError("Message is bouncing! Deleted from message store and moved to the Error repository.");
+    }
+
+COM:handles bouncing mail by updating the state of the mail, setting a deletion message, setting an error message, and logging the error status

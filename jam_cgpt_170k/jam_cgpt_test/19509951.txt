@@ -1,0 +1,10 @@
+TDAT: 	public void testAssociativePredicate2() {
+		te = mTypeEnvironment("T", "ℙ(T)");
+		assertPredicateSpecialization(te, //
+				"card(t)>0 ∧ t ⊆ T ∧ t ≠ ∅", //
+				mSpec(te,//
+						mList("T", "ℤ"), //
+						mList("t", "ℙ(T)", "{1}", "ℙ(ℤ)")));
+	}
+
+COM:tests the functionality and accuracy of a predicate specialization by passing in a type environment and a specification containing specific conditionals and arguments

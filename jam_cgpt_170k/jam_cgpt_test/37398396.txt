@@ -1,0 +1,9 @@
+TDAT:   private void encodeNext(StringBuffer buffer, Iterator i) {
+    String key = i.next().toString();
+    String value = Converter.convert(parameters.get(key));
+    buffer.append(ServletUtils.encode(key));
+    buffer.append("=");
+    buffer.append(ServletUtils.encode(value));
+  }
+
+COM:encodes the next key-value pair from an iterator and appends it to a StringBuffer

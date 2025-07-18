@@ -1,0 +1,24 @@
+TDAT: 	public String parse(byte[] file) {
+		logger.debug("entering MSPPTParser.parse");
+		InputStream is = new ByteArrayInputStream(file);
+		POIFSReader reader = new POIFSReader();
+		reader.registerListener(this);
+
+		try {
+			reader.read(is);
+			is.close();
+
+			// String version of the powerpoint document is held by str
+			String str = new String(writer.toByteArray());
+
+			// filters the result for unwanted characters
+			String actualReturn = filterResult(str);
+			writer.close();
+			return actualReturn;
+		} catch (IOException ex) {
+			logger.error("error parsing powerpoint document", ex);
+			return "";
+		}
+	}
+
+COM:parses a byte array input representing a PowerPoint document, extracts the String version of the document, filters unwanted characters, and returns the filtered String

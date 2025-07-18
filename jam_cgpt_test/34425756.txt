@@ -1,0 +1,11 @@
+TDAT:     private void createNewGuardInit() {
+        cleanFields();
+        alarm.setSelected(true);
+        allowZero.setSelected(true);
+        guardName.setText(null);
+        notesField.setText(null);
+        if (resourceClass != null)
+            resourceClassNameList.setSelectedItem(resourceClass.rcName());
+    }
+
+COM:initializes and sets default values for a new Guard object

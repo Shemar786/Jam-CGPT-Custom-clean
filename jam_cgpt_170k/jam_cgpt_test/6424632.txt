@@ -1,0 +1,12 @@
+TDAT:     protected Manifest createManifest(String pluginClass) {
+        Manifest manifest = new Manifest();
+        if (pluginClass != null) {
+            Attributes attr = manifest.getMainAttributes();
+            Attributes.Name attrName = new Attributes.Name(PLUGIN_CLASS_ATTR);
+            attr.put(attrName, pluginClass);
+        }
+
+        return manifest;
+    }
+
+COM:creates a manifest object with the specified plugin class attribute if passed a plugin class name, otherwise it creates an empty manifest

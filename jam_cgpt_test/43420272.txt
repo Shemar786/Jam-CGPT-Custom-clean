@@ -1,0 +1,14 @@
+TDAT: 	private JButton getJButtonOK() {
+		if (jButtonOK == null) {
+			jButtonOK = new JButton();
+			jButtonOK.setPreferredSize(new Dimension(120, 26));
+			jButtonOK.setFont(new Font("Dialog", Font.BOLD, 12));
+			jButtonOK.setForeground(new Color(0, 153, 0));
+			jButtonOK.setText("OK");
+			jButtonOK.setText(Language.translate(jButtonOK.getText()));
+			jButtonOK.addActionListener(this);
+		}
+		return jButtonOK;
+	}
+
+COM:returns a JButton object with specific properties and an action listener attached, creating a new instance if it hasn't already been created

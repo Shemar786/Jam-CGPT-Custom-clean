@@ -1,0 +1,17 @@
+TDAT:     private Component makeCenter() {
+        imageCanvas = new JPanel();
+        imageCanvas.addMouseListener(new MouseAdapter() {
+            @SuppressWarnings("synthetic-access")
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                actionImageMouse(e);
+            }
+        });
+
+        imageCanvas.add(new JLabel(new ImageIcon(
+                SWGFrame.class.getResource("images/swg.png"))));
+
+        return new JScrollPane(imageCanvas);
+    }
+
+COM:creates a scrollable JPanel with a mouse listener and an image label

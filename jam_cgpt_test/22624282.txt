@@ -1,0 +1,16 @@
+TDAT: 	private boolean isAuthorized(HttpServletRequest request, String securityRole) {
+		prtln ("ip of requester: " + request.getRemoteAddr());
+		if (securityRole.equals("trustedIp")) {
+			String[] trustedIps = repositoryManager.getTrustedWsIpsArray();
+			if (trustedIps == null)
+				return false;
+
+			String IP = request.getRemoteAddr();
+			for (int i = 0; i < trustedIps.length; i++)
+				if (IP.matches(trustedIps[i]))
+					return true;
+		}
+		return false;
+	}
+
+COM:checks if the requester is authorized based on their IP address and a specified security role

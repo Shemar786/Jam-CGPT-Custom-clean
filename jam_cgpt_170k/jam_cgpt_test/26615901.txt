@@ -1,0 +1,25 @@
+TDAT:     public void addLayer() {
+        // create the layer
+        Layer layer = new Layer(lLID);
+
+        layer.setNetwork(this);
+
+
+        // increment the id
+        lLID++;
+
+
+        // add the layer to our list
+        layers.add(layer);
+
+
+        // send off a layer added event
+        fireLayerEvent(layer,LayerEvent.ADD);
+
+
+        // Delete the current learning order (rebuilds when the
+        // network iterates)
+        learningOrder = new Vector();
+    }
+
+COM:adds a new layer to a neural network and sends a notification event while also deleting the current learning order

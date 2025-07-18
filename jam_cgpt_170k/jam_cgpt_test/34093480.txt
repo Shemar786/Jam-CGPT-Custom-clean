@@ -1,0 +1,22 @@
+TDAT: 	private URL getResource(String name) {
+		URL url = null;
+
+		if (classLoader instanceof URLClassLoader) {
+			URLClassLoader urlClassLoader = (URLClassLoader) classLoader;
+			url = urlClassLoader.findResource(name);
+			if (url == null)
+				url = urlClassLoader.findResource("/" + name);
+		}
+
+		if (url == null) {
+			url = classLoader.getResource(name);
+			if (url == null)
+				url = classLoader.getResource("/" + name);
+		}
+
+		if (url != null)
+			return url;		
+		return null;
+	}
+
+COM:returns the URL of a resource based on its name, searching in both the classloader and its subclass URLClassLoader

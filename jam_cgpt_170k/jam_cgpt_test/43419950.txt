@@ -1,0 +1,11 @@
+TDAT: 	public JTabbedPane getJTabbedPane() {
+		if (jTabbedPaneIntern == null) {
+			jTabbedPaneIntern = new JTabbedPane();
+			jTabbedPaneIntern.setFont(new Font("Dialog", Font.BOLD, 12));
+			jTabbedPaneIntern.addMouseListener(currProject.projectWindow.getTabMouseListener());
+			jTabbedPaneIntern.addChangeListener(currProject.projectWindow.getTabSelectionListener());
+		}
+		return jTabbedPaneIntern;
+	}
+
+COM:returns a JTabbedPane and creates a new instance with specific settings if one does not already exist

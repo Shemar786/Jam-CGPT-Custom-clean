@@ -1,0 +1,13 @@
+TDAT: 	protected Demand createDemand(int replenishmentQty){
+		// create the demand
+		Demand demand = new Demand(getItemType(), replenishmentQty);
+		//JSL.out.println(getTime() + " > Demand: " + demand.getId() + " requesting replenishment inventory: " + replenishmentQty);
+		//JSL.out.println(this);
+		incrementAmountPending(replenishmentQty);
+		// set the requirements of the demand
+		demand.setAllowBackLoggingFlag(mayRequestBackLoggingOfDemands());
+		demand.setAllowPartialFillingFlag(mayRequestPartialFilling());
+		return(demand);
+	}
+
+COM:creates a demand object with a specified replenishment quantity and sets its requirements before returning it

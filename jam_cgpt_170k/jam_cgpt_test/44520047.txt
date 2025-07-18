@@ -1,0 +1,20 @@
+TDAT: 	public List getGeneName(Superfamily sf){
+		List results = new ArrayList();
+		String query = "select gene from cache where cache.sf='"+sf.getID()+"'";
+		try {
+			Statement s = con.createStatement();
+			ResultSet rs = s.executeQuery(query);
+			while(rs.next()){
+				results.add(rs.getString(1));
+			}
+			return results;
+		}catch (SQLException e) {
+			System.out.println(e.getErrorCode());
+			System.out.println(e.getSQLState());
+			System.out.println(e.getMessage());
+			System.out.println(e);
+			return null;
+		}
+	}
+
+COM:takes in a Superfamily object and returns a list of gene names retrieved from a database using a SQL query

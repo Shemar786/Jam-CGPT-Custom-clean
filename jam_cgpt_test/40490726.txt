@@ -1,0 +1,17 @@
+TDAT:     public void calibrate(){
+//        zeroV = getVelocity();
+        
+        //Find the average velocity over NUM_POLLS x POLL_TIME ms.
+        final int NUM_POLLS = 100;
+        final int POLL_TIME = 50;
+        double sum = 0;
+        for(int i = 0; i < NUM_POLLS; i++) {
+            sum += getVelocity();
+            Util.sleep(POLL_TIME);
+        }
+        sum /= NUM_POLLS;
+        zeroV = sum;
+        
+    }
+
+COM:calibrates the velocity of an object by taking the average velocity over a specified interval of time

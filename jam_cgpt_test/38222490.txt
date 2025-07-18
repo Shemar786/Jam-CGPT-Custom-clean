@@ -1,0 +1,16 @@
+TDAT:   private boolean openResourceFile(String fileName) {
+    if (file == null) {
+      try {
+        URL fileUrl = getClass().getResource(fileName);
+        file = new RandomAccessFile(fileUrl.getFile(), "r");
+      }
+      catch (Exception e) {
+//        System.out.println("Error while opening "+ fileName + " file.");
+//        e.printStackTrace();
+        return false;
+      }
+    }
+    return true;
+  }
+
+COM:attempts to open a resource file specified by fileName and returns a boolean value indicating whether the operation was successful

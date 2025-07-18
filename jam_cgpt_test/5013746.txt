@@ -1,0 +1,15 @@
+TDAT:     {
+        int ixout, jzin, jic;
+
+        for (ixout = 0; ixout
+                < nxout; ixout++) {
+            jzin = kzin[ixout];
+            jic =
+                    kic[ixout];
+            zout[ixout + offset_zout] = table[icmax * 256 + (int) zin[jzin + offset_zin] - jic];
+            zout[ixout + offset_zout] += table[(int) zin[jzin + 1 + offset_zin] + jic];
+        }
+
+    }
+
+COM:takes in arrays and performs calculations to modify the values in the output array zout

@@ -1,0 +1,13 @@
+TDAT:         public void setValue(Object value) {
+            try {
+                if (format instanceof MessageFormat) {
+                    subject.setValue(((Object[])format.parseObject((String) value))[0]);
+                } else {
+                    subject.setValue(format.parseObject((String) value));
+                }
+            } catch (ParseException e) {
+                // Do not change the subject value
+            }
+        }
+
+COM:sets a value for a subject depending on the format type

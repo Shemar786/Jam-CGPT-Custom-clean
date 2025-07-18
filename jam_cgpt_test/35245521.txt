@@ -1,0 +1,10 @@
+TDAT:     public int getTotalCopyBooks() throws SQLException {
+        CallableStatement cs = dc.getConnection().prepareCall("{call getTotalCopyBooks()}");
+        ResultSet rs = cs.executeQuery();
+        if (rs.next()) {
+            return rs.getInt("NumberCopies");
+        }
+        return 0;
+    }
+
+COM:returns the total number of copies of books in a database using a SQL stored procedure

@@ -1,0 +1,17 @@
+TDAT: 	public String getColumnNameLine(List<String> names, String delim, String quote) {
+		StringBuilder buf = new StringBuilder();
+		String currDelim = "";
+		
+		for (int i = 0; i < names.size(); i++) {
+	           buf.append(currDelim)
+               .append(quote)
+               .append(names.get(i))
+               .append(quote);
+            currDelim = delim;
+
+		}
+		
+		return buf.toString();
+	}
+
+COM:returns a single string consisting of a comma-separated list of names, each enclosed in a specified quote character

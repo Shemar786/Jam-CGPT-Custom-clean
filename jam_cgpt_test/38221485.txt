@@ -1,0 +1,11 @@
+TDAT:     public void run() {
+      byte buf[] = new byte[512];
+      int r;
+      try {
+        while ((r = in.read(buf, 0, 512)) > -1)
+          print(new String(buf, 0, r));
+      }
+      catch (Exception e) {}
+    }
+
+COM:reads input from a byte stream in 512-byte chunks and prints it as a string until there is no more input or an exception occurs

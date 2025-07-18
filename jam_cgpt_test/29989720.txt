@@ -1,0 +1,8 @@
+TDAT:     private void intialize() {
+
+        _formattedTime = _dateFormatter.format(new Date(_time));
+        _searchableString = (_rawSQLString + " " + _sessionName + " " + _formattedTime).toLowerCase();
+        _singleLineText = TextUtil.removeLineBreaks(_rawSQLString);
+    }
+
+COM:initializes and sets values for three variables related to time, SQL string, and text format

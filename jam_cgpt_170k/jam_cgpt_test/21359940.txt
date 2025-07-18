@@ -1,0 +1,13 @@
+TDAT:     public void setSMSSent(SMS sms) {
+        Validate.notNull(sms);
+
+        logger.log(Level.FINE, "Marking sms as successfully sent: {0}", sms);
+        sms.setStatus(SMS.Status.SENT);
+        valuedSupport.fireEventOccured(Events.SMS_SENT, sms);
+
+        updateGatewayDelay(sms.getGateway());
+        remove(sms); //remove it from the queue
+        timer.start();
+    }
+
+COM:sets the status of an SMS object to "sent", logs the sent message, fires an event indicating the message was sent, updates the gateway delay, removes the message from the queue, and starts a timer

@@ -1,0 +1,21 @@
+TDAT: 	private void checkForCollapsed(Graph g, java.util.Collection<Table> toCheck) {
+		for (Table t: toCheck) {
+			if (expandedTables.contains(t)) {
+				boolean isExpanded = true;
+				for (Association a: t.associations) {
+					if (!isVisualizable(a)) {
+						continue;
+					}
+					if (!renderedAssociations.containsKey(a) && !renderedAssociations.containsKey(a.reversalAssociation)) {
+						isExpanded = false;
+						break;
+					}
+				}
+				if (!isExpanded) {
+					expandedTables.remove(t);
+				}
+			}
+		}
+	}
+
+COM:checks if a table in a graph is collapsed and removes it from a collection if it is not expanded and all its associated elements are not visualizable

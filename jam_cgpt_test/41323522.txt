@@ -1,0 +1,17 @@
+TDAT: 	public void goUpperLayer() {
+		if (!itsPreviousActiveLayers.isEmpty()) {
+			ContainerNode theContainerNode = itsActiveLayer;
+			itsActiveLayer.setActive(false);
+			itsActiveLayer = itsPreviousActiveLayers.pop();
+			updateActiveLayer();
+			LessonMapper2.getInstance().getSelectionHandler().unselectAll();
+			LessonMapper2.getInstance().getSelectionHandler().select(theContainerNode);
+			
+		}
+		// if theActiveLayer is not a container node it means that it reached
+		// the upperlevel is activeLayer
+		else
+			return;
+	}
+
+COM:moves the active layer of a container node up one level and selects it

@@ -1,0 +1,16 @@
+TDAT:     public Document getXML() throws XSpaceException {
+    	if (!type.equals(TYPE_XML)) {
+	    throw new XSpaceException("Value is not XML type");
+	}
+        if (value == null) {
+	    throw new XSpaceException("Value is null");
+	}
+	try {
+	    Document doc = XMLUtil.parse(value);
+	    return doc;
+	} catch (Throwable t) {
+	    throw new XSpaceException("Failed to parse XML");
+	}
+    }
+
+COM:returns an XML Document and throws exceptions if the value is not of XML type or if it fails to parse the XML

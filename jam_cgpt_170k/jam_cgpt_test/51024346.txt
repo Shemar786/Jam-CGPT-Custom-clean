@@ -1,0 +1,20 @@
+TDAT: 	private Component makeNamespaceField() {
+
+		ScanForKeysTask t = new ScanForKeysTask();
+		TaskManager.executeTask(t, OndexTaskConfig.getInstance());
+		List<String> keys = t.waitForKeys();
+
+		if (keys.size() <= 0) {
+			// FIXME no idea... Panic!!
+		}
+
+		List<String> elements = new ArrayList<String>();
+		elements.add("Namespace");
+		elements.addAll(keys);
+
+		namespace = new JComboBox(elements.toArray());
+
+		return namespace;
+	}
+
+COM:creates a JComboBox containing a selection of namespace options based on keys retrieved through a ScanaForKeysTask

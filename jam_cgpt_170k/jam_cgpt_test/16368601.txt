@@ -1,0 +1,6 @@
+TDAT:   private void reportError(Exception x) {
+    ErrorDialog.openError(getShell(), Messages.getString("eclipse.dialogtitle"), //$NON-NLS-1$
+                          Messages.getString("eclipse.projecterror"), null); //$NON-NLS-1$
+  }
+
+COM:displays an error dialog with a specified title and message

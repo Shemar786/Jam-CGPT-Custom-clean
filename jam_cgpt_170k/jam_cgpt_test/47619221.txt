@@ -1,0 +1,6 @@
+TDAT:     private void _init() throws Exception {
+        planDataProviderMisPlanes.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.planRowSetMisPlanes}"));
+        notificacionDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.notificacionRowSet}"));
+    }
+
+COM:This private Java method initializes plan and notification data providers using cached row sets obtained from a session bean

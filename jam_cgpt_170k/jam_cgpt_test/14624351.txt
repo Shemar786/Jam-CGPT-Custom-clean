@@ -1,0 +1,11 @@
+TDAT:     public void testsetHorizontalDilution() {
+        System.out.println("setHorizontalDilution");
+        int horizontalDilution = 0;
+        org.gps.types.GpsPosition instance = new org.gps.types.GpsPosition();
+        instance.setHorizontalDilution(horizontalDilution);
+        
+        assertEquals(instance.getHorizontalDilution(), horizontalDilution);
+    
+    }
+
+COM:tests the set and get functions of the "horizontalDilution" variable in the GpsPosition class

@@ -1,0 +1,13 @@
+TDAT: 	protected void appendSlotValue(StringBuffer result, Slot slot){
+		for (Iterator values = slot.getValues().iterator(); values.hasNext();){
+			ValueSpecification next = (ValueSpecification)values.next();
+			String nextDisplayValue = getSlotValue(next);
+			if (!isEmpty(nextDisplayValue)){
+				result.append(" = ").append(nextDisplayValue);
+				//FIXME: for now stop on first success
+				break;
+			}
+		}
+	}
+
+COM:appends the display value of the first non-empty value in a given Slot to a StringBuffer

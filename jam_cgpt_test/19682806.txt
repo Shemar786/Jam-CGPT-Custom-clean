@@ -1,0 +1,17 @@
+TDAT: 	public void initRegisters() {
+		Processor processor = Machine.processor();
+
+		// by default, everything's 0
+		for (int i = 0; i < Processor.numUserRegisters; i++)
+			processor.writeRegister(i, 0);
+
+		// initialize PC and SP according
+		processor.writeRegister(Processor.regPC, savedPC);
+		processor.writeRegister(Processor.regSP, savedSP);
+
+		// initialize the first two argument registers to argc and argv
+		processor.writeRegister(Processor.regA0, argc);
+		processor.writeRegister(Processor.regA1, argv);
+	}
+
+COM:initializes registers for a processor by setting them to default values, initializing the PC and SP, and setting the first two argument registers to specific values

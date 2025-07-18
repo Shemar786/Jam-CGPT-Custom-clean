@@ -1,0 +1,11 @@
+TDAT:   public int getMaxError() {
+    int maxError = 0;
+    calculateResults();
+    for (int i=0;i<sampleArr.size();i++) {
+      FMSample fms = (FMSample) sampleArr.get(i);
+      if (maxError<fms.getError()) maxError = fms.getError();
+    }
+    return maxError;
+  }
+
+COM:calculates and returns the maximum error from a list of results

@@ -1,0 +1,15 @@
+TDAT: 	private JPanel getJPanelDummy() {
+		if (jPanelDummy == null) {
+			GridBagConstraints gridBagConstraints4 = new GridBagConstraints();
+			gridBagConstraints4.fill = GridBagConstraints.VERTICAL;
+			gridBagConstraints4.gridy = 0;
+			gridBagConstraints4.weightx = 1.0;
+			gridBagConstraints4.gridx = 0;
+			jPanelDummy = new JPanel();
+			jPanelDummy.setLayout(new GridBagLayout());
+			jPanelDummy.setPreferredSize(new Dimension(45, 20));
+		}
+		return jPanelDummy;
+	}
+
+COM:returns a JPanel object with pre-defined constraints and dimensions, creating a new one if it doesn't exist yet

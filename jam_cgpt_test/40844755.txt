@@ -1,0 +1,20 @@
+TDAT:     private int findAndUpdate(int[] array, int target) {
+
+      if(array==null)
+          return -1;
+      
+      lastReturn = array[0];
+      if (lastReturn >= target)
+        return 1;
+
+      for (int i = 1; i < current_size; i++) {
+        lastReturn += array[i];
+
+        if (lastReturn >= target)
+          return (i + 1) % BATCH_SIZE;
+      }
+      return -1;
+
+    }
+
+COM:finds and updates a specified target in an array

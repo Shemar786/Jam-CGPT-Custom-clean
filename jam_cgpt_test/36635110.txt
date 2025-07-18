@@ -1,0 +1,12 @@
+TDAT:     private int checkData(){
+        if(locItems != null){
+            for(int i = 0; i < locItems.length; i++){
+                if(Arrays.equals(locItems[i].getData(), tempKey.getData()))
+                    return i;
+            }
+        }
+        locItems = addData(locItems, tempKey);
+        return locItems.length-1;
+    }
+
+COM:checks if a specific data exists in an array, and if not, adds it and returns its index

@@ -1,0 +1,13 @@
+TDAT:     public void addException(AuditEvent auditEvent, Throwable throwable) {
+        try { 
+            outputWriter.println("Error occurred audit - " +
+                             auditEvent.toString() + " - exception - " +
+                             throwable, listener);
+        } catch (java.io.IOException ioe) {  
+                        outputWriter.println("Error occurred audit - " +
+                             auditEvent.toString() + " - exception - " +
+                             throwable);
+        }
+    }
+
+COM:adds an exception to an audit event and writes it to a specified output or logs it as an error if an IO exception occurs

@@ -1,0 +1,12 @@
+TDAT:     public void addCurveData(CurveData curveData) {
+        if (current != null) {
+            current.removeTableModelListener(this);
+        }
+        current = curveData;
+        data.add(new PlotAdapter(curveData));
+        tblCurveData.setModel(curveData);
+        curveData.addTableModelListener(this);
+        updateGraph();
+    }
+
+COM:adds the provided curve data to a collection and updates the table model and graph accordingly while also removing any previous event listeners

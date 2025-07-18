@@ -1,0 +1,10 @@
+TDAT:   public int hashCode() {
+    // Note: The hashCode "required" for Map.Entry objects by the Java API
+    // specification is defined to be symmetric, which is not a good idea.
+    // It is better to violate the Java API specification here.
+    return Objects.hashCode(first) ^
+      Objects.rotateLeft(Objects.hashCode(second), 17) ^
+      "ImmutablePair".hashCode();
+  }
+
+COM:generates a hash code for the object by applying bitwise XOR operations with Objects.hashCode and a static string value

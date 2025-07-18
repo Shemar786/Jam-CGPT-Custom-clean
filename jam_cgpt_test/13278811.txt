@@ -1,0 +1,13 @@
+TDAT:     protected void setAllEdgesAdded(RepairPlan plan) {
+        if (plan != null) {
+            for (int eNr = 0; eNr < plan.getNumEdgesInEmbedding(); eNr++) {
+                Object edge = plan.getEdgeAt(eNr);
+
+                if (edge instanceof EdgeData) {
+                    setEdgeAdded((EdgeData) edge);
+                }
+            }
+        }
+    }
+
+COM:sets all edges in a repair plan to be added if they are not already present

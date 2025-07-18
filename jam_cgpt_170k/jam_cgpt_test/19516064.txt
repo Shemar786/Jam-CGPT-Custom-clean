@@ -1,0 +1,17 @@
+TDAT: 	protected void addInv_detinp_inpPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_INP_inv_detinp_inp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_INP_inv_detinp_inp_feature", "_UI_INP_type"),
+				 Context_FmsCPackage.Literals.INP__INV_DETINP_INP,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a specific feature of an INP object

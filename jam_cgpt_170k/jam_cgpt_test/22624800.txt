@@ -1,0 +1,17 @@
+TDAT: 	public String getDisplayText() {
+
+		String s = "";
+		List aList = getAncestors();
+		for (int i = 0; i < aList.size(); i++) {
+			AsnStatement std = (AsnStatement) aList.get(i);
+			s += std.getDescription();
+			s += ": ";
+		}
+		s += this.getTarget().getDescription();
+
+		s = FindAndReplace.replace(s, "<br>", "\n", true);
+		// return removeEntityRefs (s);
+		return s;
+	}
+
+COM:returns a formatted display text that concatenates the descriptions of the ancestors and the target

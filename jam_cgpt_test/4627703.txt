@@ -1,0 +1,11 @@
+TDAT:     public void updateDerivedSchema(String kind, DerivedSchemaTO schemaTO) {
+        try {
+            restTemplate.postForObject(baseURL
+                    + "derivedSchema/" + kind + "/update", schemaTO,
+                    DerivedSchemaTO.class);
+        } catch (SyncopeClientCompositeErrorException e) {
+            LOG.error("While updating a derived user schema", e);
+        }
+    }
+
+COM:updates a derived schema for a specific kind of object using RestTemplate and logs an error if there is a Syncope client composite error

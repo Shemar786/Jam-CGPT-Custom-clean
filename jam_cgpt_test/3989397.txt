@@ -1,0 +1,15 @@
+TDAT:     public AdapterConnection reserveConnection() throws AdapterException {
+        if (pool == null) {
+            return adapter.createConnection(params);
+        } else {
+            try {
+                return (AdapterConnection) pool.borrowObject();
+            } catch (AdapterException e) {
+                throw e;
+            } catch (Exception e) {
+                throw new AdapterException(e.getMessage());
+            }
+        }
+    }
+
+COM:reserves a connection from a pool, or creates a new connection if the pool is null, and throws an AdapterException if there is an error

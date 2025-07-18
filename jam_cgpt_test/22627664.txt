@@ -1,0 +1,13 @@
+TDAT: 	public Element getRestrictionElement() {
+		if (isDerivedContentModel())
+			return (Element) getElement()
+				.selectSingleNode(NamespaceRegistry.makeQualifiedName(xsdPrefix, "complexContent") +
+				"/" + NamespaceRegistry.makeQualifiedName(xsdPrefix, "restriction"));
+		if (isDerivedTextOnlyModel())
+			return (Element) getElement()
+				.selectSingleNode(NamespaceRegistry.makeQualifiedName(xsdPrefix, "simpleContent") +
+				"/" + NamespaceRegistry.makeQualifiedName(xsdPrefix, "restriction"));
+		return null;
+	}
+
+COM:returns the restriction element of an XML schema element if it exists, based on the specified conditions

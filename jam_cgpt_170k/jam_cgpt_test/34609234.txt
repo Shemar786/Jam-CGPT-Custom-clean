@@ -1,0 +1,9 @@
+TDAT: 	public void write(java.io.Writer out, String encoding) throws java.io.IOException {
+		out.write("<?xml version='1.0'");	// NOI18N
+		if (encoding != null)
+			out.write(" encoding='"+encoding+"'");	// NOI18N
+		out.write(" ?>\n");	// NOI18N
+		writeNode(out, "tagset", "");	// NOI18N
+	}
+
+COM:writes an XML declaration with optional encoding and a node named "tagset" to a character stream

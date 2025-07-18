@@ -1,0 +1,12 @@
+TDAT: 	private String getSurfSpecies() {
+		ArrayList<String> potentialSpecies = new ArrayList<String>();
+		do {
+			for (String surfspecies : m_nightPokemonChances.keySet()) {
+				if (random.nextInt(101) < m_nightPokemonChances.get(surfspecies))
+					potentialSpecies.add(surfspecies);
+			}
+		} while (potentialSpecies.size() <= 0);
+		return potentialSpecies.get(random.nextInt(potentialSpecies.size()));
+	}
+
+COM:generates a random surf species from a list of potential species based on night Pokemon chances

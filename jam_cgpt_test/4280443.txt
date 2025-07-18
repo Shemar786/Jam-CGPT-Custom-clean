@@ -1,0 +1,16 @@
+TDAT:     public void initialise() {
+        projectProperties = PropertiesUtil.getProperties(resources.getProject());
+
+        if (resources.getPrefix() != null) {
+            properties = createProperties(resources.getPrefix() + ".");
+        }
+
+        globalProperties = createProperties("q.project.");
+
+        typedProjectProperties = new TypedProperties("", projectProperties, resources.getProject());
+
+        logger = resources.getLogger();
+        utils = new AntUtils(getProject());
+    }
+
+COM:initializes various properties including projectProperties, properties, globalProperties, typedProjectProperties, logger and utils

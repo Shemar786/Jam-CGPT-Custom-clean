@@ -1,0 +1,9 @@
+TDAT: 	public void setConfigDirectory(File configDir, File persistanceDir) throws Exception {
+		if (configDir == null)
+			throw new Exception("The configDir is null");
+		this.configFile = new File(configDir, "org.dlese.dpc.dds.ndr.NDRIndexer.NDR_indexer_collections.xml");
+		myPersistanceDir = new File(persistanceDir, "NDRIndexer");
+		myPersistanceDir.mkdirs();
+	}
+
+COM:sets up the configuration and persistence directory for the NDRIndexer

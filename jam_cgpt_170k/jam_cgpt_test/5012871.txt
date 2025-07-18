@@ -1,0 +1,11 @@
+TDAT:     private void setText(String text) {
+        try {
+            // remove all text and insert the completed string
+            super.remove(0, getLength());
+            super.insertString(0, text, null);
+        } catch (BadLocationException e) {
+            throw new RuntimeException(e.toString());
+        }
+    }
+
+COM:removes all text and inserts a new string at the beginning of the document

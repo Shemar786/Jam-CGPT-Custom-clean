@@ -1,0 +1,11 @@
+TDAT:   public void setTabActionDefaultStat() {
+    try {
+      wpMask mask = new wpMask(TAB_ACTIONS, tabActionIndices,
+                               tabActionDefaultStat);
+      wpMaskEvent event = new wpMaskEvent(this, mask);
+      maskHandler.fireMaskChanged(event);
+    }
+    catch (wpMaskException me) {}
+  }
+
+COM:sets the default status for a tab action using a wpMask object and fires a mask event

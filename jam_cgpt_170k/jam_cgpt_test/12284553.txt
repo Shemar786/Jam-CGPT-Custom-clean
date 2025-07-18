@@ -1,0 +1,13 @@
+TDAT: 	public DynaBean getFieldFeatures(Object iUserObject, String iAspectName, String iFieldName) throws ConfigurationNotFoundException {
+		SchemaObject obj = getSchemaObject(iUserObject);
+		if (obj == null)
+			return null;
+
+		SchemaField field = obj.getField(iFieldName);
+		if (field != null)
+			return field.getFeatures(iAspectName);
+
+		return null;
+	}
+
+COM:retrieves the field features of a given field name and aspect name from a dynamic bean (DynaBean) object associated with a user object

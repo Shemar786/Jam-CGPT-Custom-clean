@@ -1,0 +1,17 @@
+TDAT: 	public PAttribute putAttribute(String attName, Class<? extends PValue> valueClass) throws TypeMismatchException {
+		PAttribute result;
+		if (this.hasAttribute(attName)) {
+			result = this.getAttribute(attName);
+			if (valueClass != result.getValueClass()) {
+				throw new TypeMismatchException(this, attName, valueClass, result.getValueClass());
+			}
+		}
+		else {
+			result = new PAttribute(attName, this, valueClass);
+			result.setIndex(attributes.size());
+			this.add(result);
+		}
+		return result;
+	}
+
+COM:puts a new attribute into an object and checks if the given value class matches the class of the existing attribute

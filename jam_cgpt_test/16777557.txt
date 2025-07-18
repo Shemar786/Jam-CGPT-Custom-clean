@@ -1,0 +1,18 @@
+TDAT: 	private IPrevExchangeItem findItem(IPrevExchangeItem[] exchangeItems, String id){
+		IPrevExchangeItem result = null;
+		for(IPrevExchangeItem item : exchangeItems){
+			if(item.getId().equalsIgnoreCase(id)){
+				result = item;
+			}
+		}
+		if(result==null){
+			System.out.println("Id was not found: "+id);
+			System.out.println("Available id's are:");
+			for(IPrevExchangeItem item : exchangeItems){
+				System.out.println("   id="+item.getId());
+			}			
+		}
+		return result;
+	}
+
+COM:finds a specific item in an array of exchange items by its ID and returns it, or it prints a list of available IDs and returns null if the ID is not found

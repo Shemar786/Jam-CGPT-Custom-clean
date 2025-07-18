@@ -1,0 +1,16 @@
+TDAT:         private void sortExprs(List list) {
+            Collections.sort(list, new Comparator() {
+                public int compare(Object a, Object b) {
+                    if (a == b) {
+                        return 0;
+                    }
+
+                    int ka = ((Expr) a).key();
+                    int kb = ((Expr) b).key();
+
+                    return ka - kb;
+                }
+            });
+        }
+
+COM:sorts a given list of expressions using a custom comparator based on the key values of each expression

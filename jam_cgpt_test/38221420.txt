@@ -1,0 +1,6 @@
+TDAT:   private Point countPoint(double radius, double min) {
+    return new Point((int)(-radius * Math.sin(-3.14f/30 * min)) + center.x,
+      (int)(-radius * Math.cos(3.14f/30 * min)) + center.y);
+  }
+
+COM:calculates the coordinates of a point on a circle with a given radius and angle, relative to a specified center

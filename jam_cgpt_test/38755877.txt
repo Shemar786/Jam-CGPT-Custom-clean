@@ -1,0 +1,17 @@
+TDAT:     public boolean containsTerm(Term target) {
+	for (Iterator iter = getSubformulas().iterator(); iter.hasNext(); ) {
+	    if (((Formula) iter.next()).containsTerm(target)) {
+		return true;
+	    }
+	}
+
+	for (Iterator iter = getTopLevelTerms().iterator(); iter.hasNext(); ) {
+	    if (((Term) iter.next()).containsTerm(target)) {
+		return true;
+	    }
+	}
+
+	return false;
+    }
+
+COM:checks if a given Term is contained within the current Formula object

@@ -1,0 +1,10 @@
+TDAT:   private void checkAddress(EndpointReferenceType request) throws RemoteException {
+    AttributedURI address = request.getAddress();
+    if (address == null) {
+      throw new RemoteException("Expected address: " + ADDRESS);
+    } else if (!address.toString().equals(ADDRESS)) {
+      throw new RemoteException("Expected: " + ADDRESS + " but was: " + address);
+    }
+  }
+
+COM:checks if the given endpoint reference type request has the expected address and throws a RemoteException if not

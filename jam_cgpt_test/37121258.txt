@@ -1,0 +1,12 @@
+TDAT:     public void setText(String text) {
+        if (text == null) {
+            throw new IllegalArgumentException("null text not allowed");
+        }
+        setPosition(0);
+        if (!text.equals(this.text)) {
+            this.text = text;
+            notifyEventListeners(TEXT_EVENT_ROLE, text);
+        }
+    }
+
+COM:sets the text of a component and notifies any event listeners if the text has changed

@@ -1,0 +1,19 @@
+TDAT: 	public void selectTable(Table table) {
+		Association toS = null;
+		for (Association a: table.associations) {
+			if (renderedAssociations.containsKey(a) || renderedAssociations.containsKey(a.reversalAssociation)) {
+				toS = a.reversalAssociation;
+				break;
+			}
+		}
+		if (toS == null) {
+			GraphicalDataModelView.this.modelEditor.select(table);
+		} else {
+			GraphicalDataModelView.this.modelEditor.select(toS);
+		}
+		Association sa = selectedAssociation;
+		setSelection(null);
+		setSelection(sa);
+	}
+
+COM:selects a table or its associated table based on its corresponding associations and updates the graphical view accordingly

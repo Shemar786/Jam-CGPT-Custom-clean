@@ -1,0 +1,10 @@
+TDAT:   public Iterator getAllModules() {
+    ArrayList array = new ArrayList();
+    for (int i = 0; i < modules.size(); i++) {
+      CModuleHolder holder = (CModuleHolder) modules.get(i);
+      array.add(holder.module);
+    }
+    return array.iterator();
+  }
+
+COM:retrieves all modules and returns an iterator for them

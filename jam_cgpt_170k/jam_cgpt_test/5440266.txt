@@ -1,0 +1,10 @@
+TDAT:     public Enumeration getParameterNames() {
+        if (modelMatch != null) {
+            Collection names = new ArrayList(modelMatch.getUri().getParameterNamesSet());
+            names.addAll(super.getParameterMap().keySet());
+            return Collections.enumeration(names);
+        }
+        return super.getParameterNames();
+    }
+
+COM:returns an enumeration of parameter names, combining the parameter names from modelMatch and the parent class if modelMatch is not null

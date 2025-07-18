@@ -1,0 +1,10 @@
+TDAT:     public void stop() {
+        Log.d(LOG_TAG, String.format("stopping; ticker != null: %s", (ticker != null))); //$NON-NLS-1$
+        if (ticker != null) {
+            ticker.purge();
+            ticker.cancel();
+            running = false;
+        }
+    }
+
+COM:stops a ticker and sets the status to "not running"

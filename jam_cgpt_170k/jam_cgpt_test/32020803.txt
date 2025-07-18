@@ -1,0 +1,8 @@
+TDAT:     public void setGroupMailInfo(List<SimpleMail> mails, List<String> attachments, List<File> fileList) {
+        bGroupMail = true;
+        this.mails = mails;
+        this.attachments = (attachments != null) ? attachments : new ArrayList<String>();
+        this.fileList = (fileList != null) ? fileList : new ArrayList<File>();
+    }
+
+COM:sets the group mail information by assigning values to the boolean variable bGroupMail and to the lists mails, attachments, and fileList

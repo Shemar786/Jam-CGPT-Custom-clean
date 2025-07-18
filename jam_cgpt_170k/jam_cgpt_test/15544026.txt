@@ -1,0 +1,16 @@
+TDAT: 	public void EvaporationNeighbours( ) {
+	 
+	    int    i, j, help_city;
+	    int NumCities = Problem.NumCities;
+//	    int NearestNeighbours = instance.NearestNeighbours;
+//	    TRACE ( printf("pheromone evaporation nn_list\n"); );
+	    
+	    for ( i = 0 ; i < NumCities ; i++ ) {
+	    	for ( j = 0 ; j < NearestNeighbours ; j++ ) {
+	    		help_city = getNeighbour(i,j);
+	    		Pheromone[i][help_city] = (1 - Acotsp.RHO) * Pheromone[i][help_city];
+	    	}
+	    }
+	}
+
+COM:evaporates pheromone from the connections between a city and its nearest neighbors in a traveling salesman problem

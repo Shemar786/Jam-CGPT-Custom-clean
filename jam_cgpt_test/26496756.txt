@@ -1,0 +1,9 @@
+TDAT:   public void testParse() {
+    String scopes = "scope";
+    super.assertEquals("scope", ScopeParser.parse(scopes)[0]);
+    scopes = "scope1, scope2";
+    super.assertEquals("scope1", ScopeParser.parse(scopes)[0]);
+    super.assertEquals("scope2", ScopeParser.parse(scopes)[1]);
+  }
+
+COM:tests the parsing functionality of the ScopeParser class with different inputs and expected outputs

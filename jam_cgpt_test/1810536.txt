@@ -1,0 +1,14 @@
+TDAT:   protected void prepareCell(int row, int column) {
+    prepareRow(row);
+    if (column < 0) {
+      throw new IndexOutOfBoundsException(
+        "Cannot create a column with a negative index: " + column);
+    }
+
+    // Ensure that the requested column exists.
+    int cellCount = getCellCount(row);
+    for (int i = cellCount; i <= column; ++i)
+      addCell(row);
+  }
+
+COM:prepares a cell by checking if the requested column exists, adding new cells if necessary, and throwing an exception if the column index is negative

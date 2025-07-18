@@ -1,0 +1,16 @@
+TDAT:     public int size() {
+        int ret = 0;
+        try {
+            if(rs != null) {
+                ret = rs.getNumRecords();
+            } else {
+                return -1;
+            }
+        } catch (RecordStoreNotOpenException ex) {
+            Log.error("Can't get size of ObjectStore: recordstore not open.");
+            ret = -1; 
+        }
+        return ret;
+    }
+
+COM:returns the number of records in a RecordStore object, or -1 if the object is not open

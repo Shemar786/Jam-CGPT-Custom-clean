@@ -1,0 +1,9 @@
+TDAT:     public InternalROSTSet findWay(ROSemanticTag to, ROSemanticTag from, FragmentationParameter fp){
+      try {
+        return (InternalROSTSet) this.findWay((AssociatedSemanticTag) to, (AssociatedSemanticTag) from, fp, null, null);
+      } catch (SharkKBException ex) {
+        throw new RuntimeException(ex.getMessage());
+      }
+    }
+
+COM:finds a route from one semantic tag to another using fragmentation parameters and returns an InternalROSTSet object

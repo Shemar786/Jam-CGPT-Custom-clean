@@ -1,0 +1,9 @@
+TDAT: 	public void onMouseMove(Widget source, int x, int y) {
+		int scrollY = JSNI.getScrollY();
+		int scrollX = JSNI.getScrollX();
+		int xTooltipPosition = x + source.getAbsoluteLeft() + scrollX + xTooltipOffset;
+		int yTooltipPosition = y + source.getAbsoluteTop() + scrollY + yTooltipOffset;
+		Cardpanda.canvas.setWidgetPosition(tip, xTooltipPosition, yTooltipPosition);
+	}
+
+COM:updates the position of a tooltip widget based on the mouse coordinates and the position of the source widget

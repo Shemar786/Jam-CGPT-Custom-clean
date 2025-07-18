@@ -1,0 +1,16 @@
+TDAT: 	private void setPaused(boolean paused) {
+		if (Development.DEBUG_ENABLED) System.out.println( Development.DEBUG_LABEL +  "GameScreen.setPaused() " + paused);
+		
+		this.playPauseButtonSpace.removeAll();
+		
+		this.isPaused = paused;
+		
+		if (paused) {
+			playPauseButtonSpace.add(this.playButton);
+		} else {
+			playPauseButtonSpace.add(this.pauseButton);
+		}
+		
+	}
+
+COM:sets whether the game is paused and updates the play/pause button accordingly

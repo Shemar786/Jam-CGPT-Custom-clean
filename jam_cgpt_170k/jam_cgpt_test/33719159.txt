@@ -1,0 +1,13 @@
+TDAT:     public void testSetGroupEventList() {
+        System.out.println("SetGroupEventList");
+        
+        TreeSet gel = null;
+        AutismGroup instance = new AutismGroup();
+        
+        instance.SetGroupEventList(gel);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a test case for the SetGroupEventList method in the AutismGroup class, which sets the group's event list to a given TreeSet

@@ -1,0 +1,10 @@
+TDAT:   public void printStackTrace(PrintStream stream) {
+    super.printStackTrace(stream);
+
+    if ((mCause != null) && (! superClassPrintsCause())) {
+      stream.println("Caused by: " + mCause.getMessage() + ":");
+      mCause.printStackTrace(stream);
+    }
+  }
+
+COM:prints a stack trace to the specified PrintStream, including any exception's cause if it exists and has not already been printed

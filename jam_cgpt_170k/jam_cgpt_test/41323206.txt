@@ -1,0 +1,13 @@
+TDAT: 	public void valueChanged(TreeSelectionEvent aE) {
+		itsSelectedAttributes.clear();
+		for (int i = 0; i < itsTree.getSelectionPaths().length; i++) {
+			TreePath thePath = itsTree.getSelectionPaths()[i];
+			Object theComponent = thePath.getLastPathComponent();
+			if (theComponent instanceof AttributeTreeNode)
+				itsSelectedAttributes.add(((AttributeTreeNode) theComponent)
+						.getAttribute());
+		}
+		updateAttributePanel();
+	}
+
+COM:updates a list of selected attributes based on the user's selection in a tree view and then updates an attribute panel

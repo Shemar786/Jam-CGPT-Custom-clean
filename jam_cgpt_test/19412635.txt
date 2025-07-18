@@ -1,0 +1,11 @@
+TDAT:     public void setLocalPath(String localPath) {
+        // remove trailing (back-) slash
+        localPath = localPath.replace('\\', '/');
+        while (localPath.endsWith("/")) { // NOI18N
+            localPath = localPath.substring(0, localPath.length() - 1);
+        }
+
+        this.localPath = localPath;
+    }
+
+COM:sets the local path by replacing backslashes with slashes and removing any trailing slashes

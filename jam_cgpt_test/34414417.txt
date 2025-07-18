@@ -1,0 +1,12 @@
+TDAT: 	private boolean editProperty(Object source, String objectId, String propName, String newValue, String path,String userId){
+		boolean ret = false;
+		LibraryObject object = this.getObjectWrapper(objectId);				
+		if(object!=null){
+			ret = true;
+			object.editPropertyValue(propName, newValue, path, userId);
+			this.sendModifyEvent(source, objectId, userId, new Date());
+		}
+		return ret;
+	}
+
+COM:edits a property of a specified object and sends a modify event if successful

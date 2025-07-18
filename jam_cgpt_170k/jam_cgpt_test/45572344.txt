@@ -1,0 +1,10 @@
+TDAT: 	public void addTab(PlayerList list) {
+		PlayerTable newTable = new PlayerTable(manager);
+		JScrollPane pane = new JScrollPane(newTable);
+		allPlayerTables.add(newTable);
+		tpPanel.addTab(list.getName(), pane);
+		tpPanel.setTabComponentAt(tpPanel.getTabCount() - 1, new ButtonTabComponent(tpPanel, manager));
+
+	}
+
+COM:adds a new tab to a tabbed pane containing a player table, along with a button component and a scroll pane

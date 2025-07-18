@@ -1,0 +1,9 @@
+TDAT:   public void testDoEnd() throws Exception {
+    messageTag.setName("message1");
+    messageTag.setResource("test.org.chwf.taglib.ji18n.MessageTagTest");
+    messageTag.doEnd();
+    MockJspWriter writer = (MockJspWriter) this.getPageContext().getOut();
+    assertEquals("Message 1", writer.getString());
+  }
+
+COM:tests the doEnd() method of a custom MessageTag class by setting its name and resource, calling doEnd(), and asserting that the output matches a specific string

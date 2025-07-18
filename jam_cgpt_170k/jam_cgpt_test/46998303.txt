@@ -1,0 +1,12 @@
+TDAT:     protected void installListeners() {
+        installMouseListeners();
+        selectionListener = createSelectionListener();
+        propertyChangeListener = createPropertyChangeListener();
+        ListSelectionModel listselectionmodel = pane.getPageSelectionModel();
+        if (listselectionmodel != null) {
+            listselectionmodel.addListSelectionListener(selectionListener);
+        }
+        pane.addPropertyChangeListener(propertyChangeListener);
+    }
+
+COM:installs mouse listeners, selection listeners, and property change listeners on a page selection model

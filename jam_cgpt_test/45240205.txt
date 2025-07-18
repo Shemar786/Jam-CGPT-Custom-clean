@@ -1,0 +1,12 @@
+TDAT: 	public void delayedRemoveObject(final GameObject object, final int delay) {
+		delayedEventHandler.add(new SingleEvent(null, delay) {
+      			public void action() {
+      				ActiveTile tile = getTile(object.getLocation());
+				if(tile.hasGameObject() && tile.getGameObject().equals(object)) {
+					unregisterGameObject(object);
+				}
+      			}
+      		});
+	}
+
+COM:adds a delayed event handler that removes a specified game object from the active tile after a certain delay period

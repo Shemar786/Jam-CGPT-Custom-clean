@@ -1,0 +1,25 @@
+TDAT:   public String getListener(String listenerIP) {
+    Enumeration myEnum = this.elements();
+    String foo = null;
+    String returnFoo = null;
+    boolean found = false;
+    while(myEnum.hasMoreElements()) {
+      foo = (String)myEnum.nextElement();
+      if(foo.equals(listenerIP)) {
+        found = true;
+        returnFoo = foo;
+
+      }
+
+    }
+
+    if(found) {
+      return returnFoo;
+
+    } else {
+      return null;
+    }
+
+  }
+
+COM:retrieves a listener's IP address and returns it as a String, or null if the listener is not found

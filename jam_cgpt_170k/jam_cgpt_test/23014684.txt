@@ -1,0 +1,15 @@
+TDAT:     public void setAsIdentityMatrix() {
+        if (rows == columns) {
+            for (int column = 0; column < columns; column++) {
+                for (int row = 0; row < rows; row++) {
+                    if (column == row) {
+                        setFactor(row, column, 1f);
+                    } else {
+                        setFactor(row, column, 0f);
+                    }
+                }
+            }
+        }
+    }
+
+COM:sets a matrix to an identity matrix if the number of rows and columns are equal

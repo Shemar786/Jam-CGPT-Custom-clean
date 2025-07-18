@@ -1,0 +1,10 @@
+TDAT: 	protected EObject getSemanticElement(IAdaptable semanticAdapter) {
+		if (semanticAdapter == null)// TODO which MEditingDomain to use?
+			return null;
+		EObject eObject = (EObject) semanticAdapter.getAdapter(EObject.class);
+		if (eObject != null)
+			return EMFCoreUtil.resolve(TransactionUtil.getEditingDomain(eObject), eObject);
+		return null;
+	}
+
+COM:returns the semantic element of an adapter if it exists, otherwise it returns null

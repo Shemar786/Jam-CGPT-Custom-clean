@@ -1,0 +1,13 @@
+TDAT:     protected void initialize( DocumentImpl owner, String namespaceURI, String qualifiedName ) {
+        initialize( owner );
+        _tagName = qualifiedName;
+        _namespaceUri = namespaceURI;
+        if (qualifiedName.indexOf(':') < 0) {
+            _localName = qualifiedName;
+        } else {
+            _localName = qualifiedName.substring( qualifiedName.indexOf(':') + 1 );
+        }
+        setParentScope(owner); 
+    }
+
+COM:initializes the properties of a DOM element object, such as its tag name, namespace URI, and parent scope

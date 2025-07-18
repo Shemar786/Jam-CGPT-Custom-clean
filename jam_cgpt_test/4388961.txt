@@ -1,0 +1,15 @@
+TDAT:     private String getUniqueId(){
+		Random random = new Random();
+    	String token = Long.toString(Math.abs(random.nextLong()), 36);
+    	if (uniqueIds == null){
+    		 uniqueIds= new HashSet<String>();
+    	}
+    	if (uniqueIds.contains(token)){
+    		return getUniqueId();
+    	}else{
+    		uniqueIds.add(token);
+    		return token;
+    	}
+	}
+
+COM:generates a unique alphanumeric string using a random number generator and ensures that it is not already in a set of previously generated IDs before returning it

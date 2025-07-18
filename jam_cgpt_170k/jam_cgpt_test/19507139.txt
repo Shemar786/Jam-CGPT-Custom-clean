@@ -1,0 +1,11 @@
+TDAT: 	public void testIntSnapshotParent() {
+		final IRodinFile rf = getRodinFile("P/X.test");
+		final RodinTestRoot root = (RodinTestRoot) rf.getRoot();
+		final NamedElement e1 = getNamedElement(root, "foo");
+		final NamedElement e11 = getNamedElement(e1, "bar"); 
+		assertDiffers("Parents of mutable and snapshot internal should differ",
+				e11.getParent(), e11.getSnapshot().getParent()
+		);
+	}
+
+COM:tests that the parents of a mutable and snapshot internal element are different

@@ -1,0 +1,11 @@
+TDAT: 	public void testRenameIntNoop() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neParent = createNEPositive(rSource, "parent", null);
+		NamedElement neSource = createNEPositive(neParent, "foo", null);
+		createNEPositive(neSource, "bar", null);
+
+		renameNoop(neSource);
+	}
+
+COM:creates elements in a Rodin file and renames one of the elements without performing any actual changes

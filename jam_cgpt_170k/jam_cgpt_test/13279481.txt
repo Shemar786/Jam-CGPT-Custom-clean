@@ -1,0 +1,15 @@
+TDAT:     public String toString() {
+
+	String desc = null;
+	switch (executionState) {
+	case DiscreteResourceConstraint.PENDING: desc = new String("Pending");
+	    break;
+	case DiscreteResourceConstraint.IN_EXECUTION: desc = new String("InExecution");
+	    break;
+	case DiscreteResourceConstraint.DONE: desc = new String("Done");
+	}
+
+	return desc + ":" + begin + ".." + end + ":(" + capacityCosts +")";
+    }
+
+COM:returns a string representation of the object, including the execution state, begin and end times, and capacity costs

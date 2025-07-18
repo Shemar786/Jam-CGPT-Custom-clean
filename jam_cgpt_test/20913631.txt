@@ -1,0 +1,15 @@
+TDAT:     public int getDBCalls() {
+        if (!contextClosed) {
+            throw new RuntimeException("Context must be closed!");
+        }
+
+        /*
+         * Here the assumption is that if you take a connection from the pool,
+         * then you will use it to do some DB operation.
+         */
+        int calls = connectionActivity.size() / 2;
+
+        return calls;
+    }
+
+COM:returns the number of database calls made by the application using a connection pool and throws an exception if the context is not closed

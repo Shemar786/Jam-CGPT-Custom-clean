@@ -1,0 +1,15 @@
+TDAT:     public boolean isActiveNow() throws AuthorizationException {
+        
+        long now = System.currentTimeMillis();
+        long start = mAuth.getEffectiveDate().getTime();
+        long end = mAuth.getExpirationDate().getTime();
+                
+        if (start<=now && end >= now) { 
+            return true;
+        }
+        else {
+            return false;
+        }
+    } 
+
+COM:checks if the authentication is active at the current time by comparing it with the effective and expiration dates provided

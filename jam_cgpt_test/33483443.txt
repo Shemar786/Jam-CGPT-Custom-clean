@@ -1,0 +1,17 @@
+TDAT: 	private IPLocation getIPLocation(byte[] ip) {
+		IPLocation info = null;
+		long offset = locateIP(ip);
+		if (offset != -1) {
+			info = getIPLocation(offset);
+		}
+		if (info == null) {
+			info = new IPLocation();
+			// info.country = LumaQQ.getString("unknown.country");
+			// info.area = LumaQQ.getString("unknown.area");
+			info.country = "";
+			info.area = "";
+		}
+		return info;
+	}
+
+COM:returns the location information of a given IP address by calling other methods to locate and retrieve the information, and if no information is found it returns a default empty location object

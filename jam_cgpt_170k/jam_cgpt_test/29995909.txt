@@ -1,0 +1,11 @@
+TDAT: 	private void createSpeedTable(Simulation sim) {
+		System.out.println("=== Create Tables ========================");
+		ConditionTree table = new ConditionTree("airtraffic.speed");
+		table.addLine(new Object[] { new Float(700) });
+		table.addLine(new String[] { "DA-4567" },
+				new Float[] { new Float(800) });
+		System.out.println("\n" + table);
+		sim.tables().add(table);
+	}
+
+COM:creates a speed table for air traffic in a simulation and adds it to the simulation's tables collection

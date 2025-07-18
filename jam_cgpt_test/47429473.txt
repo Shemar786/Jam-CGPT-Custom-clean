@@ -1,0 +1,9 @@
+TDAT:     protected void createDB() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
+        Class.forName("org.sqlite.JDBC");
+        Connection conn = DriverManager.getConnection("jdbc:sqlite:" + path);
+        Statement stat = conn.createStatement();
+        stat.executeUpdate(db_table_document);
+        conn.close();
+    }
+
+COM:creates a database using SQLite JDBC driver and a specified path, and creates a table within it

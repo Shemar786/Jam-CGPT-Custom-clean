@@ -1,0 +1,26 @@
+TDAT: 	public void run() {
+	
+		try {
+			
+			//if the file already exists, delete it
+			client.setPassive();
+			client.setLocalActive();
+			if (client.exists(remoteFileName)) {
+				System.out.println("deleting the file");
+				client.deleteFile(remoteFileName);				
+				}
+				
+				client.setPassive();
+				client.setLocalActive();
+				client.extendedPut(remoteFileName, source, null);
+				//client.put(localFile, remoteFileName, false);
+				complete = true;	
+		}
+		
+		catch (Exception e) {
+			System.out.println(e);
+			e.printStackTrace();
+		}	
+	}
+
+COM:attempts to delete a file if it already exists, and then transfers a file from a source to a remote location using a client

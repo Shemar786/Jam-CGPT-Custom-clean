@@ -1,0 +1,12 @@
+TDAT:         private byte getAlpha(Window w) {
+            if (w instanceof RootPaneContainer) {
+                JRootPane root = ((RootPaneContainer)w).getRootPane();
+                Byte b = (Byte)root.getClientProperty(TRANSPARENT_ALPHA);
+                if (b != null) {
+                    return b.byteValue();
+                }
+            }
+            return (byte)0xFF;
+        }
+
+COM:returns the alpha value for a given Window, and if the Window is a RootPaneContainer, it checks for a transparent alpha property and returns it if it exists

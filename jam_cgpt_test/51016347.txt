@@ -1,0 +1,15 @@
+TDAT:     private void initErrorRates() {
+
+        //init map
+        errorRates = new HashMap<Network,ErrorRates>();
+
+        //assign random beta(1,1) value.
+        for (Network eviGraph : experiments) {
+            double fpr = beta.nextDouble(fpOffset,tnOffset);
+            double fnr = beta.nextDouble(fnOffset,tpOffset);
+            errorRates.put(eviGraph, new ErrorRates(fpr, fnr));
+        }
+
+    }
+
+COM:initializes error rates for a map of networks, assigning random beta(1,1) values to each network

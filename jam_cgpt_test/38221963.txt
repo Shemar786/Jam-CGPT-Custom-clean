@@ -1,0 +1,7 @@
+TDAT:   private CVariant functionDeg(Stack stack) throws CExpressionError {
+    int params = getValue(stack, 0).getInt();
+    checkParamCount(params, 1);
+    return new CSoftVariant(Math.toDegrees(getValue(stack, 1).getFloat()));
+  }
+
+COM:takes in a stack, retrieves a float value from the stack, converts it to degrees, and returns it as a CSoftVariant object

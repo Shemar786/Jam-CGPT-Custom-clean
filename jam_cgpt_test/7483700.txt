@@ -1,0 +1,12 @@
+TDAT:     public String getBody(String language) {
+        language = parseXMLLang(language);
+        for (Body body : bodies) {
+            if ((body.langauge == null && language == null)
+                    || (body != null && body.langauge.equals(language))) {
+                return body.message;
+            }
+        }
+        return null;
+    }
+
+COM:returns the message body corresponding to the specified language from a list of Body objects, after checking for a match or returning null if there is no match

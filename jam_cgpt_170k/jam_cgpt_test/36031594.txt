@@ -1,0 +1,10 @@
+TDAT:     public Command getStopCommand() {
+        if (stopCommand == null) {//GEN-END:|22-getter|0|22-preInit
+            // write pre-init user code here
+            stopCommand = new Command("Stop Playback", Command.OK, 1);//GEN-LINE:|22-getter|1|22-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|22-getter|2|
+        return stopCommand;
+    }
+
+COM:returns a Command object named "Stop Playback" with the OK type and priority 1 if it is not already initialized

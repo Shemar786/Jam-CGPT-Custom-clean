@@ -1,0 +1,12 @@
+TDAT:   public void add(SitemapEntry entry, EntryType entryType) {
+    Arguments.notNull("entry", entry);
+    Arguments.notNull("entryType", entryType);
+
+    List<SitemapEntry> entries = getEntryList(entryType);
+
+    if (!entries.contains(entry)) {
+      entries.add(entry);
+    }
+  }
+
+COM:adds a SitemapEntry object to a list of entries of a specific type and ensures that there are no duplicates

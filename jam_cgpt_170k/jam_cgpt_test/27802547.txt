@@ -1,0 +1,9 @@
+TDAT:   public List allElementsList () {
+    IntArrayList rowList = new IntArrayList(matrix.cardinality());
+    IntArrayList columnList = new IntArrayList(matrix.cardinality());
+    ObjectArrayList valueList = new ObjectArrayList(matrix.cardinality());
+    matrix.getNonZeros(rowList, columnList, valueList);
+    return valueList.toList();
+  }
+
+COM:returns a list of all non-zero elements in a matrix

@@ -1,0 +1,19 @@
+TDAT: 	public void mainLoop(long nofSteps) {
+		if (DEBUG) debug("=== ClauseDispatcher. Starting ===");
+		addOriginalClauses();
+		if (DEBUG) dumpOriginalClauses();
+		
+		boolean force = false;
+		while (!terminated) {
+			cancellation.check();
+			if (!updateCounterAndCheckTermination(nofSteps)) {
+				// first phase, treat non dispatched clauses
+				if (!treatNondispatchedClausesAndCheckContradiction()) {
+					// second phase, all clauses have been treated
+					force = getNextClauseFromProvers(force);
+				}
+			}
+		}
+	}
+
+COM:runs a main loop that checks for termination conditions and updates the state of the program based on a certain number of steps, treating clauses in two phases

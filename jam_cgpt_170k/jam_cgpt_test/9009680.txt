@@ -1,0 +1,13 @@
+TDAT: 	public void ensureCapacity(int minCapacity) {
+		modCount++;
+		int oldCapacity = elementData.length;
+		if (minCapacity > oldCapacity) {
+			int newCapacity = (oldCapacity * 3) / 2 + 1;
+			if (newCapacity < minCapacity)
+				newCapacity = minCapacity;
+			// minCapacity is usually close to size, so this is a win:
+			elementData = Arrays.copyOf(elementData, newCapacity);
+		}
+	}
+
+COM:increases the capacity of an array if the minimum capacity provided is greater than the current capacity

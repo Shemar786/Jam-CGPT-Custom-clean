@@ -1,0 +1,17 @@
+TDAT: 	protected void addStartedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveAgentSNA_started_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveAgentSNA_started_feature", "_UI_EveAgentSNA_type"),
+				 SocialNetworkAnalysisPackage.Literals.EVE_AGENT_SNA__STARTED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "started" feature of an EVE Agent SNA object to the item property descriptor list

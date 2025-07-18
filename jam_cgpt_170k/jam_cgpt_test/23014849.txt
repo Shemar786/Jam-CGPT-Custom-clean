@@ -1,0 +1,13 @@
+TDAT:     public void objectPopped(Object o) {
+        if (o instanceof TargetElement) {
+            TargetElement te = (TargetElement) o;
+            if (te.isIdValid()) {
+                TargetElementWrapper tew = wrapperStack.pop();
+                if (tew.getTargetElement() != o) {
+                    System.out.println("Something very wrong here!");
+                }
+            }
+        }
+    }
+
+COM:checks if a popped object is an instance of TargetElement, and if its ID is valid, it then pops a TargetElementWrapper and verifies that it matches the popped object

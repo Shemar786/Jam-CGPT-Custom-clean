@@ -1,0 +1,18 @@
+TDAT: 	public void addEdgebyLabel(String from, String to, int len) {
+	from = from.trim();
+	to = to.trim();
+	Node fromNode = findNodebyLabel(from,true);
+	// loops are not added
+	if (!from.equals(to)){
+		Node toNode = findNodebyLabel(to,true);
+		Edge e = new Edge();
+		e.from = fromNode;
+		e.to = toNode;
+		e.len = len;
+		fromNode.adjEdges.add(e);
+		toNode.adjEdges.add(e);
+		edges[nedges++] = e;
+	}
+	}
+
+COM:adds an edge between two nodes labeled 'from' and 'to' with a given length, creating new nodes if necessary

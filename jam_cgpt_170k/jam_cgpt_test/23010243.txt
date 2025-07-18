@@ -1,0 +1,17 @@
+TDAT: 	protected void addToPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractEdge_to_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractEdge_to_feature", "_UI_AbstractEdge_type"),
+				 TaEditorPackage.Literals.ABSTRACT_EDGE__TO,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a new property descriptor to a list

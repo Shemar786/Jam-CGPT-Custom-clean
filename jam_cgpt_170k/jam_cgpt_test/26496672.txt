@@ -1,0 +1,14 @@
+TDAT:   public Form currentForm(int formId) throws IllegalFormException{
+    Call call = _calls.peek();
+    if(call == null){
+      return null;
+    }
+    Form form = call.getForms().peek();
+    if(form == null) return null;
+    if(form.getId() != formId){
+      throw new IllegalFormException(""+formId);
+    }
+    return form;
+  }
+
+COM:returns the current form for a given form ID, while throwing an exception if the ID is invalid or no form is found

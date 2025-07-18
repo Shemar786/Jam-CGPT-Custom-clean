@@ -1,0 +1,15 @@
+TDAT:   public void stopTaskTracker(int id) {
+    taskTrackerList.get(id).shutdown();
+
+    taskTrackerThreadList.get(id).interrupt();
+    
+    try {
+      taskTrackerThreadList.get(id).join();
+      // This will break the wait until idle loop
+      taskTrackerList.get(id).isDead = true;
+    } catch (InterruptedException ex) {
+      LOG.error("Problem waiting for task tracker to finish", ex);
+    }
+  }
+
+COM:stops a specific task tracker by shutting down its functionality, interrupting its thread, joining its thread, and setting its state to "dead"

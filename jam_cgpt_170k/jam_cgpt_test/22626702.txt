@@ -1,0 +1,12 @@
+TDAT: 	public String getIndexingDaysOfWeek() {
+		if (indexingDaysOfWeek == null)
+			return "all days";
+		else {
+			String daysOfWeekMsg = "";
+			for (int i = 0; i < indexingDaysOfWeek.length; i++)
+				daysOfWeekMsg += Utils.getDayOfWeekString(indexingDaysOfWeek[i]) + (i == indexingDaysOfWeek.length - 1 ? "s" : "s, ");
+			return daysOfWeekMsg;
+		}
+	}
+
+COM:returns a string message indicating which days of the week are selected for indexing, or "all days" if no selection is made

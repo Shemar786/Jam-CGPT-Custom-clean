@@ -1,0 +1,20 @@
+TDAT: 	public void saveAsSon(String fileName) {
+		File outfile = new File(fileName);
+		// make new outputstream
+		FileWriter outWriter;
+		try {
+			outWriter = new FileWriter(outfile);
+			// make new printwrinter
+			PrintWriter outPrinter = new PrintWriter(new BufferedWriter(
+					outWriter), true);
+			outPrinter.print(currentNet);
+			outPrinter.flush();
+			outPrinter.close();
+		} catch (IOException e) {
+			error("unable to write .son file " + outfile.getAbsolutePath()
+					+ ":" + e.getMessage());
+		}
+		status("Saved file as " + outfile.getAbsolutePath());
+	}
+
+COM:saves a file with the given name as a .son file format

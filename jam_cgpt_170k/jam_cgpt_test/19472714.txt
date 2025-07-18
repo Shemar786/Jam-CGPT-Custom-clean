@@ -1,0 +1,13 @@
+TDAT: 	protected String getLabelText(){
+		String label = "<unknown feature>";
+		if (getFeature() instanceof EStructuralFeature){
+			label= getFeature().getName();
+			if (label.startsWith("UMLB")) label=label.substring(4);
+			label=label.substring(0,1).toUpperCase()+label.substring(1);
+			if (label.equals("TypeProvider")) label = "Type";
+			if (owner instanceof UMLBTypeExpression && label.equals("Name")) label = "Expression";
+		}
+		return label;
+	}
+
+COM:returns the label text based on the type and name of a given feature

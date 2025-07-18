@@ -1,0 +1,11 @@
+TDAT:     public Iterator getDefaultStatements(Value subj, URI pred, Value obj) {
+        if (subj instanceof Literal) {
+            throw new UnsupportedOperationException(
+                    "Sesame does not support literal subjects");
+        }
+        return new StatementIteratorAdapter(
+                this.source.getNullContextStatements((Resource) subj, pred,
+                        obj));
+    }
+
+COM:returns an iterator for the default statements based on the subject, predicate, and object values but throws an exception if the subject is a literal

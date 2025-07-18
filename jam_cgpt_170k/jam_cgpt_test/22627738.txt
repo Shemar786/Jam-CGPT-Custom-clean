@@ -1,0 +1,8 @@
+TDAT: 	private Namespace popNS() {
+		Namespace ns = nsStack.pop();
+		prtln("  ... stack (" + nsStack.size() + ") POPPED namespace: " + ns.getPrefix() + ": " + ns.getURI(), 1);
+		prtln("  ..... currentNS is now (" + getCurrentNamespace().getPrefix() + ": " + getCurrentNamespace().getURI(), 1);
+		return ns;
+	}
+
+COM:pops a Namespace object from a stack and returns it, while also printing information about the popped and current namespace

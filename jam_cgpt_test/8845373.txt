@@ -1,0 +1,16 @@
+TDAT: 	public JTextPane getHistoryText() {
+		if (mHistoryText == null) {
+			mHistoryText = new JTextPane();
+			mHistoryText.setEditable(false);
+			mHistoryText.setBackground(Color.LIGHT_GRAY);
+			mHistoryText.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
+			Log.addLogListener(new LogListener() {
+				public void messageLoggedEvent(String msg) {
+					mHistoryText.setText(mHistoryText.getText() + "\n" + msg);
+				}
+			});
+		}
+		return mHistoryText;
+	}
+
+COM:returns a JTextPane object used for displaying log messages with a specific font, background color and editability

@@ -1,0 +1,11 @@
+TDAT:     public void testsetSNR() {
+        System.out.println("setSNR");
+        int SNR = 0;
+        org.gps.types.GpsSatellite instance = new org.gps.types.GpsSatellite();
+        instance.setSNR(SNR);
+        int expectedResult = instance.getSNR();
+
+        assertEquals(SNR, expectedResult);
+    }
+
+COM:tests the setSNR method of the GpsSatellite class by setting a signal-to-noise ratio (SNR) value, retrieving it, and asserting that the retrieved value is equal to the set value

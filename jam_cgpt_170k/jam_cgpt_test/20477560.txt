@@ -1,0 +1,12 @@
+TDAT: 	public void setWord(String word) {
+		wordLabelL.setText("Word: (" + word.length() + " letters)");
+
+		String tempWord = "";
+		for(int i=0; i < word.length(); i++) {
+			tempWord += word.charAt(i) + " ";
+		}
+		this.word = tempWord;
+		wordL.setText(tempWord);
+	}
+
+COM:sets a label and updates the value of a word by manipulating its characters

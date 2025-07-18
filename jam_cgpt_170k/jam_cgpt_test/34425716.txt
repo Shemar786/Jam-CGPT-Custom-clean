@@ -1,0 +1,14 @@
+TDAT:     private void actionLoadNotes() {
+        enableUserActions(false);
+
+        // set focus, otherwise it gives focus to "clear" >> scary/not wanted
+        multiSubmitButton.requestFocusInWindow();
+
+        resetSingleTextFields();
+        multipleGUIList.clearSelection();
+        multipleResources = loadNotesFile();
+        updateMultiList();
+        enableUserActions(true);
+    }
+
+COM:loads notes from a file, updates a multi-list GUI, and enables/disables user actions accordingly

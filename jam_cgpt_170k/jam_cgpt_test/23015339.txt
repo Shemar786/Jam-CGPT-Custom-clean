@@ -1,0 +1,10 @@
+TDAT:     public void increaseCurrentIndex(Object[] array) {
+        Integer index = this.currentIndices.get(array);
+        if (index == null) {
+            this.currentIndices.put(array, Integer.valueOf(1));
+        } else {
+            currentIndices.put(array, Integer.valueOf(index.intValue() + 1));
+        }
+    }
+
+COM:increases the value associated with an object array key in a HashMap by 1, or initializes it to 1 if the key is not present

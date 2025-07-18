@@ -1,0 +1,11 @@
+TDAT:   private boolean isIndexOf(String content, String expected, int pos) {
+    if (content.length() < pos + expected.length()) {
+      // The expected String doesn't match here
+      return false;
+    }
+
+    String substring = content.substring(pos, pos + expected.length());
+    return expected.equalsIgnoreCase(substring);
+  }
+
+COM:checks if a given substring is present at a specific position within a longer string

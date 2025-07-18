@@ -1,0 +1,14 @@
+TDAT:     private boolean saveProject(Project p) {
+        Collection<String> errors = new ArrayList<String>();
+        try{
+            p.save(errors);
+            return true;
+        }catch(Exception e) {e.printStackTrace();}
+        if (errors !=null) {
+            handleErrors(errors);
+            return false;
+        }
+        return false;
+    }
+
+COM:attempts to save a project object and returns a boolean indicating whether the save was successful, while also handling any errors that might occur during the process

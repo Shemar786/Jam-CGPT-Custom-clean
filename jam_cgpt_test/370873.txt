@@ -1,0 +1,16 @@
+TDAT: 	protected void grayCheckHierarchy(Object treeElement) {
+
+		// if this tree element is already gray then its ancestors all are as well
+		if (fCheckedStateStore.containsKey(treeElement))
+			return; // no need to proceed upwards from here
+
+		fCheckedStateStore.put(treeElement, new ArrayList());
+		if (determineShouldBeWhiteChecked(treeElement)) {
+			setWhiteChecked(treeElement, true);
+		}
+		Object parent= fTreeContentProvider.getParent(treeElement);
+		if (parent != null)
+			grayCheckHierarchy(parent);
+	}
+
+COM:checks the hierarchy of an object tree and sets its state to gray if not already set, updating its ancestors accordingly

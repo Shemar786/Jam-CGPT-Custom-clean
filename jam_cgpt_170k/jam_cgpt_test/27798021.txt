@@ -1,0 +1,11 @@
+TDAT: public void registerCommandLinePlugins() {
+    JarLoaderCommandLineParser parser = new JarLoaderCommandLineParser(this);
+    parser.parseArgs(config.getArgs());
+    logger.info(parser.getMessages());
+    PluginLoader pluginLoader = new PluginLoader(this);
+    pluginLoader.load(config.getProperties());
+    logger.info(pluginLoader.getMessages());
+
+}
+
+COM:registers command line plugins, parses arguments, loads properties, and logs messages

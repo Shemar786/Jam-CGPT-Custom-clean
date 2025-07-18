@@ -1,0 +1,12 @@
+TDAT: 	private List getCollectionRoles(String collection, Collection users) {
+		List list = new ArrayList();
+		for (Iterator i = users.iterator(); i.hasNext(); ) {
+			User user = (User) i.next();
+			Roles.Role role = user.getRole(collection);
+			list.add(new UserRoleBean(user, Roles.toString(role)));
+		}
+		Collections.sort(list, new UserRoleBeanComparator());
+		return list;
+	}
+
+COM:retrieves the roles of users for a given collection and returns a sorted list of user role beans

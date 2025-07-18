@@ -1,0 +1,15 @@
+TDAT:     private void setDefaultMessage() {
+
+        clearParent();
+
+        // add message
+        String message = Messages.getString("SQLResultsView.NoResults");
+        Label label = new Label(_parent, SWT.FILL);
+        label.setText(message);
+        label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false));
+
+        _parent.layout();
+        _parent.redraw();
+    }
+
+COM:sets a default message in a label and updates the parent container's layout and visualization

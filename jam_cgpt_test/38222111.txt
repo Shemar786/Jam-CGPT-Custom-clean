@@ -1,0 +1,12 @@
+TDAT:   public void printStackTrace(PrintWriter printWriter) {
+    synchronized (printWriter) {
+      if (rootCause != null) {
+        printWriter.print(this.getClass().getName() + ": ");
+        rootCause.printStackTrace(printWriter);
+      } else {
+        super.printStackTrace(printWriter);
+      }
+    }
+  }
+
+COM:prints the stack trace of an exception, including the root cause, to the specified PrintWriter object in a synchronized manner

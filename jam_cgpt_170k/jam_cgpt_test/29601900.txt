@@ -1,0 +1,10 @@
+TDAT:     public Spacer getSpacer1() {
+        if (spacer1 == null) {//GEN-END:|151-getter|0|151-preInit
+            // write pre-init user code here
+            spacer1 = new Spacer(16, 1);//GEN-LINE:|151-getter|1|151-postInit
+        // write post-init user code here
+        }//GEN-BEGIN:|151-getter|2|
+        return spacer1;
+    }
+
+COM:returns an object of type Spacer, which is initialized with width 16 and height 1 if it is null

@@ -1,0 +1,12 @@
+TDAT:     public void setSelectedGroupBy(int SelectedGroupBy) throws SQLException {
+        this.SelectedGroupBy = SelectedGroupBy;
+        if (SelectedGroupBy == 5) {
+            this.OrderBy = "NumberOfLoan";
+        } else {
+            this.OrderBy = "";
+        }
+        refreshList();
+        setSelectedGroupName(0);
+    }
+
+COM:sets the selected group by a given parameter, updates the order by parameter based on the selected group by, refreshes a list, and sets the selected group name to 0

@@ -1,0 +1,8 @@
+TDAT: 	public void testBug3489973() {
+		doTest("prj2(r(a ↦ b)) ∈ T", //
+				"∃aa·(∀a1,b1·a ↦ b ↦ (a1 ↦ b1) ∈ r  ⇒  b1 = aa) ∧ aa ∈ T", //
+				true, //
+				mTypeEnvironment("r", "ℤ×ℤ ↔ ℤ×ℤ"));
+	}
+
+COM:tests whether a certain logical expression satisfies a given condition using a type environment and returns a boolean value

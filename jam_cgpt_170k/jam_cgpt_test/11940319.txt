@@ -1,0 +1,22 @@
+TDAT: 	public void traverseGlobalNodes() {
+		Node currentGlobalNode = root.getFirstChild();
+
+		while (currentGlobalNode != null) {
+			// logic of processing here
+
+			// traverse
+			XmlItem globalItem = traverseNode(currentGlobalNode);
+			if (globalItem != null)
+				this.globalItems.add(globalItem);
+			// process next
+			currentGlobalNode = currentGlobalNode.getNextSibling();
+		}
+		try {
+			this.is.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+COM:traverses the global nodes of an XML file and processes each node while storing certain items in a list, and then closes the input stream

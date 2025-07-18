@@ -1,0 +1,20 @@
+TDAT: 	public UMLBtype basicGetType() {
+		if (getTranslation()==translationKind.STATE_SETS){
+			if (eContainer() instanceof UMLBClass){
+				return ((UMLBtype) eContainer()).getType();
+			}else{
+				UMLBProject p = (UMLBProject) this.getContaining(UMLBPackage.eINSTANCE.getUMLBProject());
+				for (UMLBTypeExpression te : p.getTypeExpressions()){
+					if (te.getName().equals("BOOL")){
+						return te;
+					}
+				}
+				UMLBTypeExpression te = UMLBFactory.eINSTANCE.createUMLBTypeExpression();
+				te.setName("BOOL");
+				return te;
+			}
+		}else
+			return this;
+	}
+
+COM:returns the UMLBtype of the current object, and if it is a state set, it will return the UMLBTypeExpression for "BOOL" if it exists, or create a new one if it doesn't

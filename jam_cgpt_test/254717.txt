@@ -1,0 +1,12 @@
+TDAT:   public void addSibling(AST node) {
+    if(node == null) return;
+    TNode next = (TNode)right;
+    right = (TNode)node;
+    ((TNode)node).left = this;
+    TNode nodeLastSib = ((TNode)node).getLastSibling();
+    nodeLastSib.right = next;
+    if(next != null)
+      next.left = nodeLastSib;
+  }
+
+COM:adds a node as a sibling to the current node in a tree data structure

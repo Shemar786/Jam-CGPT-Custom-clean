@@ -1,0 +1,17 @@
+TDAT:     public void sleep() {
+        synchronized (mQueueItemList) {
+            if (logger.isDebugEnabled()) {
+                if (mQueueItemList.size() > 0) {
+                    //logger.debug("Sleeping with queue size = " + qc + "?");
+                    return;
+                }
+            }
+            try {
+                mQueueItemList.wait();
+            } catch (InterruptedException e) {
+                // Eat.
+            }
+        }
+    }
+
+COM:puts the current thread to sleep until a notification is received from another thread and checks if the queue is empty before sleeping

@@ -1,0 +1,15 @@
+TDAT: 	public Requirement parse(final Reader reader) throws IOException{
+		final BufferedReader reqReader = new BufferedReader(reader);
+		final CompositeRequirement req = new CompositeRequirement();
+		String line = reqReader.readLine();
+		while(line != null){
+			line = line.replaceAll(COMMENT, EMPTY).trim();
+			if(line.trim().length() > 0){
+				req.addRequirement(buildRequirement(line));
+			}
+			line = reqReader.readLine();
+		}
+		return req;
+	}
+
+COM:takes in a Reader object, parses the input string into requirements, adds them to a CompositeRequirement object, and returns it

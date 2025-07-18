@@ -1,0 +1,13 @@
+TDAT:     private int estimatePointArray(Point[] geom) {
+        // number of points
+        int result = 4;
+
+        // And the amount of the points itsself, in consistent geometries
+        // all points have equal size.
+        if (geom.length > 0) {
+            result += geom.length * estimatePoint(geom[0]);
+        }
+        return result;
+    }
+
+COM:estimates the total number of points in a geometrical array by adding a constant value of 4 and the product of the length of the array and the estimated size of each point

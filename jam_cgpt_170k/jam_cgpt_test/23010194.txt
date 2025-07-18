@@ -1,0 +1,17 @@
+TDAT: 	protected void addLocationNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractNode_LocationName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractNode_LocationName_feature", "_UI_AbstractNode_type"),
+				 TaEditorPackage.Literals.ABSTRACT_NODE__LOCATION_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a location name property descriptor to an object's item property descriptors

@@ -1,0 +1,10 @@
+TDAT:     public void unpack(byte[] buf, int offset) throws ISOException {
+        ByteBuffer buffer=ByteBuffer.wrap(buf,offset,buf.length-offset);
+        TLVMsg currentNode;
+        while (hasNext(buffer)) {    
+            currentNode = getTLVMsg(buffer);
+            append(currentNode);
+        }
+    }
+
+COM:takes a byte array and an offset, creates a ByteBuffer from a subset of the array, and iteratively extracts TLV (Tag-Length-Value) messages from the buffer to append to a list

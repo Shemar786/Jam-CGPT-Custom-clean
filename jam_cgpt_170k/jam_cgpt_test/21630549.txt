@@ -1,0 +1,20 @@
+TDAT: 	private IPlaceParking garerVehicule(IVehicule vehicule) throws FullParkingException, VehiculeAlreadyInParkingException {
+		if (listeVehiculesPresents.contains(vehicule))
+			throw new VehiculeAlreadyInParkingException();
+		IPlaceParking retValue = null;
+		synchronized (mutexAccesRessourcesParking) {
+			for (final PlaceParking place : placesParking) {
+				if (place.isFree()) {
+					retValue = place;
+					place.attribuerVehicule(vehicule);
+					listeVehiculesPresents.add(vehicule);
+					break ;
+				}
+			}
+		}
+		if (retValue == null)
+			throw new FullParkingException();
+		return retValue;
+	}
+
+COM:parks a vehicle in an available parking spot and returns the spot, but throws exceptions if the parking lot is full or the vehicle is already parked there

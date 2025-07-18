@@ -1,0 +1,13 @@
+TDAT: 	public void setPortState(int[] portState) {
+		if (null == portState) {
+			for (int i = 0, n = cells.length; i < n; i++) {
+				cells[i].setState(DBDataDesc.VLAN_NOT_USED);
+			}
+		} else {
+			for (int i = 0, n = cells.length; i < n; i++) {
+				cells[i].setState(portState[i]);
+			}
+		}
+	}
+
+COM:sets the state of each cell based on an array of port states, or sets all cell states to "VLAN_NOT_USED" if the input array is null

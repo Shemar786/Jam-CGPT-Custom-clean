@@ -1,0 +1,16 @@
+TDAT: 	private boolean getEmbeddedType(Type iType) {
+		if (iType instanceof Class<?>) {
+			Class cls = (Class<?>) iType;
+			if (cls.isArray())
+				setEmbeddedType(cls.getComponentType());
+		}
+
+		Class<?> embClass = SchemaHelper.getGenericClass(iType);
+		if (embClass != null) {
+			setEmbeddedType(embClass);
+		}
+
+		return embClass != null;
+	}
+
+COM:determines whether an object has an embedded type and returns a boolean value indicating the result

@@ -1,0 +1,21 @@
+TDAT: 	public void commit() throws PersistenceHibernateException {
+		log.debug("Hibernate commit invoked...");
+		Session session = getSession(false);
+		if (session != null) {
+			Transaction tx = getTransaction();
+			try {
+				if (tx != null && !tx.wasCommitted() && !tx.wasRolledBack()) {
+					tx.commit();
+					log.debug("Hibernate transaction commited - OK!");
+				}
+			} catch (HibernateException e) {
+				rollback();
+				throw new PersistenceHibernateException(
+						"Error on hibernate commit database.", e);
+			} finally {
+				closeSession();
+			}
+		}
+	}
+
+COM:commits a transaction in Hibernate, throwing an exception if there is an error, and logging debug information along the way

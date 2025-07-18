@@ -1,0 +1,12 @@
+TDAT:     public void loadImage(String imagename, String image, int width, int height) {
+        if (imagename.equals("")) {
+            return;
+        }
+        try {
+            images.put(image, new ImageIcon(new ImageIcon(imagename).getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT)));
+        } catch (Exception ex) {
+            CampaignData.mwlog.errLog(ex);
+        }
+    }
+
+COM:loads and resizes an image with a given name and dimensions

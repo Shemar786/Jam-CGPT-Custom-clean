@@ -1,0 +1,10 @@
+TDAT:     public void draw(int mX, int mY, float mZoom, GLColor mColor) {
+        if (!dead) {
+            if ((currentTime = Utils.getTime()) - birthTime > timeToLive)
+                dead = true;
+
+            font.print(text, mX, mY, mZoom, mColor);
+        }
+    }
+
+COM:draws text onscreen with specified position, color, and font scaling, but only if the object is not marked as "dead" and has not exceeded its time limit

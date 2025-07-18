@@ -1,0 +1,12 @@
+TDAT: 	public MethodDescriptor getMethodDescriptor(@SlashedClassName String className, String name, String signature, boolean isStatic) {
+		if (className == null) throw new NullPointerException("className must be nonnull");
+		MethodDescriptor methodDescriptor = new MethodDescriptor(className, name, signature, isStatic);
+		MethodDescriptor existing = methodDescriptorMap.get(methodDescriptor);
+		if (existing == null) {
+			methodDescriptorMap.put(methodDescriptor, methodDescriptor);
+			existing = methodDescriptor;
+		}
+		return existing;
+	}
+
+COM:retrieves a MethodDescriptor object based on the specified class name, method name, method signature, and whether it is static, and caches the result for future use

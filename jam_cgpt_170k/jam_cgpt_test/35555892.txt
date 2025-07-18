@@ -1,0 +1,26 @@
+TDAT: 	public NetworkElement searchSelectedNodeNetworkElement(MouseEvent ev) {
+		
+		NetworkElement searchedNode;
+		
+		//
+		// search NE element.
+		//			
+		searchedNode = searchSelectedNeNetworkElement(ev);
+		if( searchedNode != null )	return searchedNode;
+		
+		//
+		// search Subnet element.
+		//
+		searchedNode = searchSelectedSubnetNetworkElement(ev);
+		if( searchedNode != null )	return searchedNode;	
+
+		//
+		// search Rack element.
+		//
+		searchedNode = searchSelectedRackNetworkElement(ev);
+		if( searchedNode != null )	return searchedNode;	
+		
+		return null;
+	}
+
+COM:searches for a network element, subnet, and rack element based on a mouse event and returns the found element or null if none were found

@@ -1,0 +1,24 @@
+TDAT: 	private void populateSelectingMenu(JMenu selecting) {
+
+		// make sure selecting menu action is handled
+		SelectingMenuAction listener = new SelectingMenuAction();
+		desktop.addActionListener(listener);
+
+		JMenuItem allnodes = makeMenuItem("Menu.Selecting.SelectAllNodes",
+				"allnodes");
+		selecting.add(allnodes);
+
+		JMenuItem alledges = makeMenuItem("Menu.Selecting.SelectAllEdges",
+				"alledges");
+		selecting.add(alledges);
+
+		JMenuItem inversenodes = makeMenuItem(
+				"Menu.Selecting.InvertSelectionNodes", "inversenodes");
+		selecting.add(inversenodes);
+
+		JMenuItem inverseedges = makeMenuItem(
+				"Menu.Selecting.InvertSelectionEdges", "inverseedges");
+		selecting.add(inverseedges);
+	}
+
+COM:populates a selecting menu with various menu items related to selecting nodes and edges in an application

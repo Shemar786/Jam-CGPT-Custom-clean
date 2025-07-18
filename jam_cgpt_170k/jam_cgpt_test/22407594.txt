@@ -1,0 +1,17 @@
+TDAT:     public void setCurrentTarget(final String target) {
+        if (target == null) {
+            return;
+        }
+
+        String strCurrentTarget = getCurrentTarget();
+
+        if (target.equals(strCurrentTarget)) {
+            return;
+        }
+
+        currentTarget.setValue(this, target);
+
+        firePropertyChange(CURRENT_TARGET, strCurrentTarget, target);
+    }
+
+COM:sets the current target value, and triggers a property change event if the new value is different from the old value

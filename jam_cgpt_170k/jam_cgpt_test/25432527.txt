@@ -1,0 +1,15 @@
+TDAT: 	public void reset(int playerX, int playerY) {
+		width = (int)(DEFAULT_WIDTH * ScreenSize.getXScale());
+		height = (int)(DEFAULT_HEIGHT * ScreenSize.getYScale());
+		velocity = GameType.getSetting(Mechanics.GRAVITY);
+		
+		x = playerX - width / 2;
+		y = playerY;
+		
+		isAlive = true;
+		isMoving = false;
+		isAirborne = false;
+		isFacingRight = true;
+	}
+
+COM:resets a game object's attributes and sets its position and status based on the player's coordinates

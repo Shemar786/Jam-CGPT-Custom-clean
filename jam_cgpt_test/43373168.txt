@@ -1,0 +1,20 @@
+TDAT:     public int getReverseBaseNum(char base) {
+        switch (base) {
+            case 'A':
+            case 'a':
+                return baseCount[4];
+            case 'C':
+            case 'c':
+                return baseCount[5];
+            case 'G':
+            case 'g':
+                return baseCount[6];
+            case 'T':
+            case 't':
+                return baseCount[7];
+            default:
+                return 0;
+        }
+    }
+
+COM:returns the count of a given DNA base type in reverse order

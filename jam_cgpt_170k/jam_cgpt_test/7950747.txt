@@ -1,0 +1,9 @@
+TDAT:     private void assertWrapperArray(Byte[] wrapperArray) {
+        for (int i = 0; i < data.length; i++) {
+            assertAreEqual(new Byte(data[i]), wrapperArray[i]);
+        }
+        // FIXME: Arrays should also get a null Bitmap to fix.
+        // Assert.isNull(wrapperArray[wrapperArray.length - 1]);
+    }
+
+COM:asserts equality between the elements of a Byte array and a corresponding Byte wrapper array

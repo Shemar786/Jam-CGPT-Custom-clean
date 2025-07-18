@@ -1,0 +1,12 @@
+TDAT:     public String constructClause(String resourceName, String propertyName, String value){
+        StringBuffer clause = new StringBuffer("(");
+        clause.append(propertyName);
+        clause.append(" ");
+        clause.append(resourceName);
+        clause.append(" ");
+        clause.append(value);
+        clause.append(")");
+        return clause.toString();
+    }
+
+COM:constructs a String clause using the provided resource name, property name, and value

@@ -1,0 +1,17 @@
+TDAT: 	protected void addEighthornPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBabstractState_eighthorn_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBabstractState_eighthorn_feature", "_UI_UMLBabstractState_type"),
+				 UMLBPackage.Literals.UML_BABSTRACT_STATE__EIGHTHORN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds an item property descriptor for the eighthorn feature of a UMLBabstractState object

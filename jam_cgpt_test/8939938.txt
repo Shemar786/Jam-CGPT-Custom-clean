@@ -1,0 +1,11 @@
+TDAT:     public ChannelDescriptor dup2(int fileno) {
+        synchronized (refCounter) {
+            refCounter.incrementAndGet();
+
+            if (DEBUG) getLogger("ChannelDescriptor").info("Reopen fileno " + fileno + ", refs now: " + refCounter.get());
+
+            return new ChannelDescriptor(channel, fileno, originalModes, fileDescriptor, refCounter, canBeSeekable);
+        }
+    }
+
+COM:creates a duplicate of the ChannelDescriptor object with a new file descriptor and increments the reference counter in a thread-safe manner

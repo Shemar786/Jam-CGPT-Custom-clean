@@ -1,0 +1,9 @@
+TDAT:     protected double getLogWeight(OCPartition p) throws HierarchyException {
+        if (p.ghost) {
+            System.err.println("AbstractOC.getLogWeight - ghost - should not happen!!!!!!!!!!!!");
+        }
+//        return partition.restLogEmpProb - partition.restLogPriorProbDenom;
+        return p.resLogPseuEmpProb - p.restLogPriorProbDenom;
+    }
+
+COM:returns the logarithm of the weight of an OCPartition object, while also throwing a HierarchyException if necessary

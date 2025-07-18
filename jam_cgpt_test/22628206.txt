@@ -1,0 +1,10 @@
+TDAT: 	public void setUrl(String newValue) {
+		Element general = (Element) selectSingleNode("/record/general");
+		if (general.element("urlOfRecord") == null) {
+			QName qname = DocumentHelper.createQName("urlOfRecord", general.getNamespace());
+			general.elements().add(2, DocumentHelper.createElement(qname));
+		}
+		this.setTextAtPath(url_path, newValue);
+	}
+
+COM:sets the URL value in a specific path of an XML document

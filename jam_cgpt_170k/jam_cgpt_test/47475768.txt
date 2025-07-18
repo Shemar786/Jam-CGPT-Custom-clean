@@ -1,0 +1,7 @@
+TDAT: 	private void createImportChoicesGroup(Composite container) {
+		Group importChoices = SWTFactory.createGroup(container, PDEUIMessages.ImportWizard_FirstPage_importGroup, 1, 1, GridData.FILL_HORIZONTAL);
+		scanButton = SWTFactory.createRadioButton(importChoices, PDEUIMessages.ImportWizard_FirstPage_scanAll);
+		importButton = SWTFactory.createRadioButton(importChoices, PDEUIMessages.ImportWizard_FirstPage_importPrereqs);
+	}
+
+COM:creates a group of radio buttons for import choices within a given container using SWT

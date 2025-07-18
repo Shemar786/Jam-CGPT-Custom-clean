@@ -1,0 +1,19 @@
+TDAT:     public void selectNeurons(Drawable r) {
+        clearSelection();
+
+        Vector neurons = getAllNeurons();
+        GUINeuron gNeuron;
+        Iterator iNeurons = neurons.iterator();
+
+        while (iNeurons.hasNext()) {
+            gNeuron = (GUINeuron) (iNeurons.next());
+
+            java.awt.Point scalePos = gNeuron.getScalePosition();
+
+            if (r.contains(scalePos.getX(),scalePos.getY())) {
+                gNeuron.setSelected(true);
+            }
+        }
+    }
+
+COM:selects neurons within a specified Drawable area

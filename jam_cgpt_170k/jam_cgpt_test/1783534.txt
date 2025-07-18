@@ -1,0 +1,11 @@
+TDAT:     public void testNoChildrenForTextNodes() throws Exception {
+        Element orphan = _document.createElement( "baz" );
+        try {
+            _text.appendChild( orphan );
+            fail( "Should not have permitted addition of a child to a text node" );
+        } catch (DOMException e) {
+            assertEquals( "Reason for exception", DOMException.HIERARCHY_REQUEST_ERR, e.code );
+        }
+    }
+
+COM:tests whether a text node can have children and throws a DOMException if a child is added to the text node

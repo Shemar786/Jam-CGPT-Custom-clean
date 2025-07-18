@@ -1,0 +1,16 @@
+TDAT:    public void disconnect() throws IOException {
+      cat.debug("==> disconnect()");
+      connected = false;
+      client = Sasl.createSaslClient(
+         mechanisms, id, service, serverName, properties, cbh);
+
+      if (client == null)
+         throw new RuntimeException("Unable to create SASL client");
+
+      mechanism = client.getMechanismName();
+      cat.info("Chosen mechanism: "+mechanism);
+
+      cat.debug("<== disconnect()");
+   }
+
+COM:disconnects from a server using the SASL authentication protocol and logs relevant information

@@ -1,0 +1,10 @@
+TDAT:     protected int noOfDifferentConnections() {
+        LinkedList<SelectableComponent> found = new LinkedList<SelectableComponent>();
+        for(Pin p: connections){
+            if(!found.contains(p.getParent())){
+                found.add(p.getParent());
+            }
+        } return found.size();
+    }
+
+COM:returns the number of unique SelectableComponents that are connected to Pins within a specified LinkedList

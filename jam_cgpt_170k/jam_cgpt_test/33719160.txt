@@ -1,0 +1,13 @@
+TDAT:     public void testRemoveEvent() {
+        System.out.println("removeEvent");
+        
+        int id = 0;
+        Event_DBImpl instance = new Event_DBImpl();
+        
+        //instance.removeEvent(id);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a test method for the removeEvent() function of the Event_DBImpl class, which currently fails

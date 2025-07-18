@@ -1,0 +1,11 @@
+TDAT:    public DirEntry insert(DirEntry e) {
+      if (contents.getFlag() == 0)
+         return insertEntry(e);
+      Block childblk = findChildBlock(e.dataVal());
+      BTreeDir child = new BTreeDir(childblk, ti, tx);
+      DirEntry myentry = child.insert(e);
+      child.close();
+      return (myentry != null) ? insertEntry(myentry) : null;
+   }
+
+COM:inserts a directory entry into a B-tree and returns the inserted entry or null if the entry already exists in the tree

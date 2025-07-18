@@ -1,0 +1,12 @@
+TDAT:   public boolean isDirty() {
+      //check the project dirty first
+      if (this.dirty) return true;
+      //now check the models for a dirty one
+      for (int i=0; i < models.size(); i++)
+          if (((Model)models.get(i)).isDirty())              
+              return true;
+      // none of the models were dirty, so return false
+      return false;
+  }
+
+COM:checks if a project or any of its models have been modified and returns a boolean value accordingly

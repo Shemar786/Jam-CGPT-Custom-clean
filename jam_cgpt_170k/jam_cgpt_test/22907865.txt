@@ -1,0 +1,13 @@
+TDAT:     public void testConnection() {
+        try {
+            Configuration config = getConfiguration();
+
+            log.info("Trying to connect to the device");
+            connectCommand.setConfiguration(config);
+            queue.append(connectCommand);
+        } catch (Exception exc) {
+            log.warn("Error while executing the connection test command", exc);
+        }
+    }
+
+COM:attempts to connect to a device using a configuration and logs any errors encountered during the process

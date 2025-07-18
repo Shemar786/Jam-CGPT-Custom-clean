@@ -1,0 +1,15 @@
+TDAT: 	private OntologyInstanceViewer getOntologyInstanceViewer() {
+		if(oiv==null) {
+			if (currAgentReference!=null && oiv==null) {
+				oiv = new OntologyInstanceViewer(currProject, currAgentReference);
+				oiv.setAllowViewEnlargement(false);
+			}
+			if (ontologyClassReference!=null && oiv==null) {
+				oiv = new OntologyInstanceViewer(currProject, ontologyClassReference);
+				oiv.setAllowViewEnlargement(false);
+			}	
+		}
+		return oiv;
+	}
+
+COM:returns an OntologyInstanceViewer object based on either a currAgentReference or ontologyClassReference, with the option to set viewing enlargement to false

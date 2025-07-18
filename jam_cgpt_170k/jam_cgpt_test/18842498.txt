@@ -1,0 +1,8 @@
+TDAT:   public String renderExampleChart(Object request) throws Exception {
+    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+    dataset.addValue(new Long(15256), "Hits", "Catalog");
+    dataset.addValue(new Long(4568), "Hits", "Checkout");
+    return this.renderChart(request, null, "", dataset, 500, 300, false, "white", "vertical");
+  }
+
+COM:creates a default category dataset for an example chart and returns the output of a method that renders the chart with specific parameters

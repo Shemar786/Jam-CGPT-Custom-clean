@@ -1,0 +1,8 @@
+TDAT: 	public void meetingScheduled(Range timeRange, String title) {
+		System.out.println("Meeting scheduled "+ timeRange+ title);
+		Date startDate = new Date(timeRange.getLeft());
+		Date endDate = new Date(timeRange.getRight());
+		currentScreen.switchScreen(new MeetingScheduledScreen(this,startDate,endDate,title));
+	}
+
+COM:schedules a meeting, prints a message with the time range and title, and switches to a screen displaying the scheduled meeting information

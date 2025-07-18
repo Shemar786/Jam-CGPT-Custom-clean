@@ -1,0 +1,13 @@
+TDAT:     private void initializeListGetraenkeKarteItem() {
+        java.awt.List listGetraenkeKarte = orderFramePanel.getListGetraenkeKarte();
+
+        Vector b = model.getGetkar().getGetraenkeKarte();
+        Enumeration e = b.elements();
+
+        while (e.hasMoreElements()) {
+            Drink d = (Drink) e.nextElement();
+            listGetraenkeKarte.add(d.getName());
+        }
+    }
+
+COM:initializes a list of drink items by retrieving the list from the order frame panel, getting a vector of drinks from the model, and adding the names of each drink to the list

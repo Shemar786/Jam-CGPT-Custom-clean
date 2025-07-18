@@ -1,0 +1,11 @@
+TDAT:     private void focusSubPanels(boolean isFocus) {
+        controller.focusGained(isFocus);
+        currentResourcesTab.focusGained(isFocus);
+        inventoryTab().focusGained(isFocus);
+        harvestingTab.focusGained(isFocus);
+        submitResourcesTab.focusGained(isFocus);
+        resourceClassInfoTab.focusGained(isFocus);
+        depletedTab.focusGained(isFocus);
+    }
+
+COM:This private Java method sets the focus of several subpanels based on a boolean parameter

@@ -1,0 +1,11 @@
+TDAT:   private void fixChildBlockVariablePositions(int increment) throws UnpositionedError {
+    if (childBlocks != null) {
+      for (int i = 0; i < childBlocks.size(); i++) {
+        CBlockContext        child = (CBlockContext)childBlocks.get(i);
+        
+        child.fixVariablePositions(increment);
+      }
+    }
+  }
+
+COM:fixes the positions of the block variables in child blocks, with an increment provided as a parameter and throwing an exception if any block is unpositioned

@@ -1,0 +1,18 @@
+TDAT: 	private void copyEverythingElse(ONDEXConcept oldC, ONDEXConcept newC) {
+		// copies context and references across
+		copyContext(oldC, newC);
+
+		// transfer all accessions from old to new
+		copyAccessions(oldC, newC);
+
+		// transfer all names from old to new
+		copyNames(oldC, newC);
+
+		// transfer all Attribute from old to new
+		copyGDS(oldC, newC);
+
+		// transfer all relations from old to new
+		transferRelations(oldC, newC);
+	}
+
+COM:copies various attributes and relations from an old ONDEXConcept object to a new one

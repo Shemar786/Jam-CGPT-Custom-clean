@@ -1,0 +1,16 @@
+TDAT:     public int doStartTag() throws JspException {
+        PackageTag parent =
+	    (PackageTag)findAncestorWithClass(this, PackageTag.class) ;
+
+        if( !parent.getAction().equals("") ) {
+            parent.execute();
+            return(EVAL_BODY_INCLUDE) ;
+        }else {
+            parent.printMessage("No packageTag Action name exist " +
+				parent.getAction() );
+            return(SKIP_BODY) ;
+        }
+
+    }
+
+COM:is responsible for executing a JSP tag if a certain condition is met, otherwise it will skip the code body and print an error message

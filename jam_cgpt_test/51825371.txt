@@ -1,0 +1,11 @@
+TDAT: 	public String toString() {
+        
+        String str = (host == null) ? "<null>" : host;
+        str += " " + ((user == null) ? "<null>" : user);
+        str += " " + ((pwd == null) ? "<null>" : pwd);
+        str += " " + ((db == null) ? "<null>" : db);
+        
+		return str;
+	}
+
+COM:returns a string representation of the current object, which concatenates the values of its host, user, password, and database fields, or "<null>" if any of these fields are null

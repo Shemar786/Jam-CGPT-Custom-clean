@@ -1,0 +1,12 @@
+TDAT:     public void testGetContentAsSAX() throws Exception {
+        System.out.println("testGetContentAsSAX");
+        try {
+            resource.getContentAsSAX(null);
+            fail("excpetion expected");
+        } catch (XMLDBException expected){
+            assertEquals("expected not implemented",ErrorCodes.NOT_IMPLEMENTED,expected.errorCode);
+            
+        }
+   }
+
+COM:tests the functionality of the getContentAsSAX method by attempting to use it with a null parameter and expecting an XMLDBException with an error code of NOT_IMPLEMENTED

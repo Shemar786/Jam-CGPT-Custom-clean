@@ -1,0 +1,11 @@
+TDAT:     private int matchData(int index){
+        int score = 0;
+        int[] temp = getArray(index, DATA);
+        if(!base.equals("DFLT") && sort(temp, DataStorage.BASE, base))
+            score += points[1];
+        if(!type.equals("DFLT") && sort(temp, DataStorage.TYPE, type))
+            score += points[2];
+        return score;
+    }
+
+COM:returns an integer score based on the comparison of two given strings with specified conditions

@@ -1,0 +1,14 @@
+TDAT: 	public AsnStandardsDocument getStandardsDocument() {
+		if (this.standardsDocument == null) {
+			prtln("getStandardsDocument: this.standardsDocument is null, obtaining from StandardsRegistry");
+			try {
+				this.standardsDocument =
+					StandardsRegistry.getInstance().getStandardsDocument(this.getDefaultDoc());
+			} catch (Throwable t) {
+				prtlnErr("could not instantiate AsnStandardsDocument: " + t.getMessage());
+			}
+		}
+		return this.standardsDocument;
+	}
+
+COM:returns an AsnStandardsDocument object by first checking if it already exists and obtaining it from the StandardsRegistry if not

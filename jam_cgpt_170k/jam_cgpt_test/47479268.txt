@@ -1,0 +1,12 @@
+TDAT: 	public Collection getSourceLocations() {
+		Collection result = new ArrayList(fPluginToSourceBundle.values().size());
+		for (Iterator iterator = fPluginToSourceBundle.values().iterator(); iterator.hasNext();) {
+			IPluginModelBase currentBundle = (IPluginModelBase) iterator.next();
+			SourceLocation currentLocation = new SourceLocation(new Path(currentBundle.getInstallLocation()));
+			currentLocation.setUserDefined(false);
+			result.add(currentLocation);
+		}
+		return result;
+	}
+
+COM:retrieves the source locations of all bundles associated with the plugin in the current context

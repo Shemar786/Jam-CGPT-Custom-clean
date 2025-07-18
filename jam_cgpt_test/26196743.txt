@@ -1,0 +1,7 @@
+TDAT: 	/**
+	 * jsr 268 - commented out public OrganizationBean getOrganization() { try {
+	 * if (this.organizationVO == null) this.organizationVO =
+	 * this.getOrganization(this.getOrganizationID()); } catch(Exception e) {
+	 * log.error(".getOrganizationID():", e); } return this.organizationVO; }
+
+COM:attempts to retrieve an OrganizationBean object using an organization ID, but has been commented out

@@ -1,0 +1,14 @@
+TDAT:     public InputSource resolveEntity(String publicId, String systemId) {
+        URL url = (URL)table.get(publicId);
+        if (url != null) {
+            try {
+                return new InputSource(url.openConnection().getInputStream());
+            }
+            catch (IOException ioe) {
+                new RuntimeException(ioe.toString());
+            }
+        }
+        return null;
+    }
+
+COM:resolves an entity by retrieving its URL from a table and returning an InputSource containing its InputStream

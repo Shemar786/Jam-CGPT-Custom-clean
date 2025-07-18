@@ -1,0 +1,10 @@
+TDAT:     protected InputStream getInputStream(final String key) throws IOException {
+        // This was changed to SharedFileInputStream but reverted to
+        // fix JAMES-559. Usign SharedFileInputStream should be a good
+        // performance improvement, but more checks have to be done
+        // on the repository side to avoid concurrency in reading and
+        // writing the same file.
+        return new FileInputStream(encode(key));
+    }
+
+COM:returns an InputStream for the encoded key parameter, but was previously changed to SharedFileInputStream before being reverted due to possible concurrency issues in the repository

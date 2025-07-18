@@ -1,0 +1,15 @@
+TDAT:     public void setRawSeqOids( int[] raw_seq_oids ) {
+
+        _raw_seq_oids = new ArrayList();
+
+        if ( raw_seq_oids == null ) {
+            return;
+        }
+
+        for ( int i = 0; i < raw_seq_oids.length; ++i ) {
+            addRawSeqOid( raw_seq_oids[ i ] );
+        }
+
+    } // setBioSeqOids( int[] )
+
+COM:sets the value of the private field _raw_seq_oids with the integer array passed as a parameter, and if the parameter is null, the method simply returns

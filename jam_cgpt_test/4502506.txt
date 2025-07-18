@@ -1,0 +1,17 @@
+TDAT: 	public void setAdminDetails() {
+		AmbulanceServiceStub.Point point = new AmbulanceServiceStub.Point();
+		point.setX(mLocation.x);
+		point.setY(mLocation.y);
+
+		SetAdminDetails adminDetails = new SetAdminDetails();
+		adminDetails.setHomeBase(point);
+		adminDetails.setDispatchService(mDispatchService);
+
+		try {
+			mStub.setAdminDetails(adminDetails);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:sets the home base and dispatch service for an ambulance service's administrative details using a remote stub

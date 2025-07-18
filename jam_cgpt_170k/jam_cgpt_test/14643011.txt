@@ -1,0 +1,12 @@
+TDAT:     public void sendMessage(Message message, String url) throws IOException {
+        try {
+            sendMessage(message, url, false);
+        } catch (InterruptedException e) {
+            // should not happen
+            if (fLogger.isErrorEnabled()) {
+                fLogger.error("unexpected interrupt");
+            }
+        }
+    }
+
+COM:sends a message to a specific URL and catches any interrupted exception

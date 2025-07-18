@@ -1,0 +1,10 @@
+TDAT:     public boolean isMultiFileEnabled() {
+        OmniCoreTrace.trace(this,"isMultiFileEnabled()","(called)");
+        // read from plugin xml config
+        boolean result = Boolean.valueOf(
+                this.configElement.getAttribute(ATTRIB_MULTIFILE)).booleanValue();
+        OmniCoreTrace.trace(this,"isMultiFileEnabled()","(returned) "+result);
+        return result;
+    }
+
+COM:returns a boolean indicating whether multi-file processing is enabled based on a value obtained from the plugin xml config

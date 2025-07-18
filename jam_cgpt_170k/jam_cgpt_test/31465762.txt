@@ -1,0 +1,8 @@
+TDAT:     public Dimension getPhysicalMapSize() {
+	if (set.getType() == TileSet.HEX_TILE) {
+	    return new Dimension(set.getWidth() * width + set.getXOffset(), set.getYOffset() * (height - 1) + set.getHeight());
+	} else
+	    return new Dimension(set.getWidth() * width, set.getHeight() * height);
+    }
+
+COM:returns the physical size of a map based on the type of tile set used and the map's dimensions

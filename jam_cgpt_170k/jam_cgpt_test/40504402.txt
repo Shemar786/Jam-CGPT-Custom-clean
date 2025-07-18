@@ -1,0 +1,8 @@
+TDAT:   private File findDefaultsFile() {
+    String defaultsPath = "/defaults/users.defaults.xml";
+    String xmlDir = server.getServerProperties().get(XML_DIR_KEY);
+    return (xmlDir == null) ? new File(System.getProperty("user.dir") + "/xml" + defaultsPath)
+        : new File(xmlDir + defaultsPath);
+  }
+
+COM:returns a File object that represents the path to a default XML file for a user, either from a specified XML directory or a default directory

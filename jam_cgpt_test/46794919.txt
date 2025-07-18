@@ -1,0 +1,15 @@
+TDAT: 	public void doSaveAs() {
+		//IEditorPart editor = getEditor(0);
+		
+		// Sync with page 0
+//		symbolEditorPage.updateManipulator();
+//		if (buildMani.isDocumentSyncronisator()){
+//			   IDocument content = buildMani.getAsDocument();
+//			   this.textEditorPage.getDocumentProvider().getDocument(textEditorPage).set(content.get());
+//	    }
+		textEditorPage.doSaveAs();
+		setPageText(1, textEditorPage.getTitle());
+		setInput(textEditorPage.getEditorInput());
+	}
+
+COM:saves the contents of a text editor page as a new file and updates relevant information about the page

@@ -1,0 +1,13 @@
+TDAT:     public void enableTestConnectionComponents(boolean b) {
+        String state = b ? "Enabling" : "Disabling";
+        log.debug(state + " the connection components");
+
+        for (Component comp : window.getObexFTPPanel().getComponents()) {
+            comp.setEnabled(b);
+        }
+
+        window.getConnectionProgressLabel().setEnabled(true);
+        window.getConnectionProgressLabel().setVisible(!b);
+    }
+
+COM:enables or disables connection components and updates the connection progress label accordingly

@@ -1,0 +1,24 @@
+TDAT: 	protected void initializeFromRef(Reference ref) throws SQLException {
+		int numPropertiesToSet = PROPERTY_LIST.size();
+
+		for (int i = 0; i < numPropertiesToSet; i++) {
+			java.lang.reflect.Field propertyField = (java.lang.reflect.Field) PROPERTY_LIST
+					.get(i);
+
+			try {
+				ConnectionProperty propToSet = (ConnectionProperty) propertyField
+						.get(this);
+
+				if (ref != null) {
+					propToSet.initializeFrom(ref);
+				}
+			} catch (IllegalAccessException iae) {
+				throw new SQLException("Internal properties failure",
+						SQLError.SQL_STATE_GENERAL_ERROR);
+			}
+		}
+
+		postInitialization();
+	}
+
+COM:initializes the fields in a connection property object from a reference object, using reflection

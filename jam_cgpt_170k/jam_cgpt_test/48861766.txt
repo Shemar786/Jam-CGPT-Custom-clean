@@ -1,0 +1,8 @@
+TDAT: 	private void addRelativeHeaders(Response response, int timeInSeconds) {
+		response.setHeader(CACHE_CONTROL_HEADER, String.format("max-age=%d", timeInSeconds));
+		Calendar expires = Calendar.getInstance();
+		expires.add(Calendar.SECOND, timeInSeconds);
+		response.setHeader("Expires", DATE_FORMAT.format(expires));
+	}
+
+COM:adds cache control and expiration headers to a response object

@@ -1,0 +1,8 @@
+TDAT:     public MenuPath get() {
+        final MenuPathSegment[] res = new MenuPathSegment[stackPointer];
+        for (int i = 0; i < res.length; i++)
+            res[i] = menus[i].toSegment();
+        return new MenuPath(res, menus[stackPointer].group, menus[stackPointer].groupOrder);
+    }
+
+COM:retrieves and transforms menu data into a MenuPath object

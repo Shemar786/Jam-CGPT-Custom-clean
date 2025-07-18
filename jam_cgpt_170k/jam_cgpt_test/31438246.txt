@@ -1,0 +1,18 @@
+TDAT:     public boolean equals(Object object){
+        if (object == null){
+            return false;
+        }
+        if (this == object){
+            return true;
+        }
+        if (!(object instanceof RadiusPrincipal)){
+            return false;
+        }
+        RadiusPrincipal that = (RadiusPrincipal)object;
+        if (this.getName().equals(that.getName())){
+            return true;
+        }
+        return true;
+    }
+
+COM:tests if an object is equal to the current object based on their name

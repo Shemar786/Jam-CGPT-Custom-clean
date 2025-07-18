@@ -1,0 +1,13 @@
+TDAT:     public void service(ServletRequest request, ServletResponse response) throws IOException, ServletException {
+        if (!isPrecompile((HttpServletRequest)request)) {
+            super.service(request, response);
+        } else {
+            try {
+                preload();
+            } catch (FactoryException fe) {
+                throw new ServletException(fe);
+            }
+        }
+    }
+
+COM:services a ServletRequest and ServletResponse, checking if it is precompiled before either calling its parent's service method or preloading if it is precompiled

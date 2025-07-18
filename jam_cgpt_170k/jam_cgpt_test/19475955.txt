@@ -1,0 +1,14 @@
+TDAT: 	public void deleteMarker() throws RodinDBException {
+		try {
+			for (final IRodinElement rodinElement : children) {
+				UMLBelement umlbElement = UMLBSourceAttribute.getUMLBSourceElement((IInternalElement) rodinElement);
+				umlbElement.deleteAllErrors(); // only sc errors !
+				umlbElement.eResource().save(null);
+			}
+		} catch (Exception e) {
+			// TODO error handling
+			e.printStackTrace();
+		}
+	}
+
+COM:deletes all errors associated with a marker element and saves the changes made to the resource

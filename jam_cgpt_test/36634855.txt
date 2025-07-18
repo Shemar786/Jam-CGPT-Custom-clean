@@ -1,0 +1,19 @@
+TDAT:     public void stop(){
+        if(listener.isPlaying()){
+            loop = false;
+            player.close();
+        }
+        if(oggClip != null){
+            oggClip.stop();
+            oggClip.close();
+        }
+        if(midiPlayer != null){
+            if(midiPlayer.isOpen()){
+                midiPlayer.stop();
+                midiPlayer.close();
+            }
+        }
+        ready = true;
+    }
+
+COM:stops any currently playing audio or MIDI files and sets the "ready" variable to true

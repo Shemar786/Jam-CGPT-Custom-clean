@@ -1,0 +1,10 @@
+TDAT:   public Dimension addDimension(String dimName, int size) {
+    if (!defineMode)
+      throw new UnsupportedOperationException("not in define mode");
+
+    if (size < 0)
+      return new Dimension( new ucar.netcdf.UnlimitedDimension( dimName));
+    return new Dimension( new ucar.netcdf.Dimension( dimName, size));
+  }
+
+COM:adds a new dimension to a netCDF dataset with a given name and size, throwing an exception if not in define mode and creating an unlimited dimension if the size is negative

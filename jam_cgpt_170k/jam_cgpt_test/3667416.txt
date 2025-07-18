@@ -1,0 +1,14 @@
+TDAT:     protected void updateScale() {
+        
+        double min = m_model.getValue();
+        double max = min + m_model.getExtent();
+        
+        if (m_orientation == ORIENTATION_VERTICAL) {
+            m_scale.setScaleValues(max, min);
+        } else {
+            m_scale.setScaleValues(min, max);
+        }
+        
+    }
+
+COM:updates the scaling values based on the current state of the model and orientation

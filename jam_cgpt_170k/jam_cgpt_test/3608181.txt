@@ -1,0 +1,14 @@
+TDAT: 	public void setCurrentActivity(String activity) {
+
+		int junkStart = activity.indexOf("   ");
+		if (junkStart != -1) {
+			this.currentActivity = activity.substring(0, junkStart);
+		} else if (activity.length() > 250) {
+			this.currentActivity = activity.substring(0, 250);
+		} else {
+			this.currentActivity = activity;
+		}
+
+	}
+
+COM:sets the current activity, but if there are any extra whitespace characters at the start of the activity name, it removes them, and if the activity name is longer than 250 characters, it truncates it

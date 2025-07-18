@@ -1,0 +1,12 @@
+TDAT:     public URL getToolsURL() {
+        File toolsjarFile=new File(getToolsJarName());
+        URL toolsjarURL=null;
+        try {
+            toolsjarURL=toolsjarFile.toURI().toURL();
+        } catch(java.net.MalformedURLException e) {
+            throw new BuildException("bad url: " + e);
+        }
+        return toolsjarURL;
+    }
+
+COM:returns a URL object for the file specified by the getToolsJarName() method, handling any potential MalformedURLException

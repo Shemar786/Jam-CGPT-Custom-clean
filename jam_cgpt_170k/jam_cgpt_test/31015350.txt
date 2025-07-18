@@ -1,0 +1,12 @@
+TDAT:   public int readInt() throws IOException {
+    int one,two,three,four;
+    one=is.read(); // simulates unsigned byte behavior
+    two=is.read();
+    three=is.read();
+    four=is.read();
+    pos+=4;
+    // add, then return (casting not necessary).
+    return (four<<24)+(three<<16)+(two<<8)+one;
+  }
+
+COM:reads four bytes from an input stream, combines them into an integer, and returns the integer value

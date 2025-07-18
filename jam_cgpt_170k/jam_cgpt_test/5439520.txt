@@ -1,0 +1,11 @@
+TDAT:     public void setLocale(Locale locale) {
+        if (locale != null) {
+            this.locale = locale;
+            String language = this.locale.getLanguage();
+            if (language.length() > 0) header.setHeader(C_HTTP_ContentLanguage, language);
+            String encoding = peer.getEncoding(this.locale);
+            if (encoding != null) setCharacterEncoding(encoding);
+        }
+    }
+
+COM:sets the locale and corresponding language and character encoding for a specific object if a non-null locale is provided

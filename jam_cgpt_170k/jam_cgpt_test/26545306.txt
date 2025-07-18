@@ -1,0 +1,12 @@
+TDAT:   public Matrix4x4 mul(Matrix4x4 m) {
+    float[] v = new float[16];
+    int c = 0;
+    for (int column = 0; column < 4; column++) {
+      for (int row = 0; row < 4; row++) {
+        v[c++] = getRow(row).dot(m.getColumn(column));
+      }
+    }
+    return new Matrix4x4(v);
+  }
+
+COM:performs matrix multiplication between two 4x4 matrices

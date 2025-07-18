@@ -1,0 +1,10 @@
+TDAT:   public void bind(int port) throws Exception{
+    SessionInterceptor interceptor = new SessionInterceptor(_reg);
+    System.out.println("Binding server to port: " + port);
+    Hub.serverRuntime.addInterceptor(ServerPreInvokeEvent.class, interceptor);
+    Hub.serverRuntime.addInterceptor(ServerPostInvokeEvent.class, interceptor);
+    _stub = Hub.exportObject(_reg, port);
+    publish(System.getProperties());
+  }
+
+COM:binds the server to a specified port, sets session interceptors, exports objects, and publishes system properties

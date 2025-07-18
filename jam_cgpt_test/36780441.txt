@@ -1,0 +1,12 @@
+TDAT:     private double faultTolerant(int m, List<Integer> genList){
+	if(m == 1){
+	    return nthQueueWaitTime(1,genList.get(0)) 
+		+ jobRuntimeOnNthQueue(1,genList.get(0));
+	}else{
+	    return max(faultTolerant(m-1,genList),
+		       nthQueueWaitTime(m,genList.get(m-1)))
+		+jobRuntimeOnNthQueue(m,genList.get(m-1));
+	}
+    }
+
+COM:calculates the fault-tolerant wait time for a job in a queue system with multiple queues

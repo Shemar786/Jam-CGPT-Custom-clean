@@ -1,0 +1,13 @@
+TDAT:     public void copy(LinearPosition otherPosition) {
+        alignment = otherPosition.alignment;
+        maximumSize = otherPosition.maximumSize;
+        minimumSize = otherPosition.minimumSize;
+        preferredSize = otherPosition.preferredSize;
+        resultingSize = otherPosition.resultingSize;
+        resultingStartPixel = otherPosition.resultingStartPixel;
+        sizePolicy = otherPosition.sizePolicy;
+        startSeparation = otherPosition.startSeparation;
+        stopSeparation = otherPosition.stopSeparation;
+    }
+
+COM:copies the values of several properties from another LinearPosition object to the current object

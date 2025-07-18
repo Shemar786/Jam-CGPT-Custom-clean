@@ -1,0 +1,20 @@
+TDAT: 	public void animate(boolean isConfirmed, int alarmCount) {
+
+		if (isConfirmed) {
+			if (aThread != null)
+				return;
+			aThread = new Animator();
+			if (DBManager.getEmsOprType() != DBManager.SERVER_CONNECTION) {
+				aThread.start();
+			}
+		} else {
+			aThread = null;
+			if (alarmCount == 0) {
+				toggle(AlarmButton.ButtonOFF);
+			} else {
+				toggle(AlarmButton.ButtonON);
+			}
+		}
+	}
+
+COM:is used to animate an alarm button based on received parameters, including whether the alarm has been confirmed and the number of alarms triggered

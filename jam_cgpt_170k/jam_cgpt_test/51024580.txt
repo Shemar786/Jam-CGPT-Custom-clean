@@ -1,0 +1,16 @@
+TDAT: 	public void redo() {
+		if (reversionStack.size() > 0) {
+			Operation<?> a = reversionStack.pop();
+			a.perform();
+			actionStack.push(a);
+			updateAll();
+			MetaDataEditor.getInstance().setActionEnabled(
+					new String[] { "Edit", "Undo" }, true);
+			if (reversionStack.size() == 0) {
+				MetaDataEditor.getInstance().setActionEnabled(
+						new String[] { "Edit", "Redo" }, false);
+			}
+		}
+	}
+
+COM:allows the user to redo an operation previously undone by pushing the last undone operation from a stack onto a separate stack and performing the operation, updating the user interface accordingly

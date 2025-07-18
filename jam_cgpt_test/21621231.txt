@@ -1,0 +1,19 @@
+TDAT: 	public void addResendRequest(Request request, ResendHTTPRequest resendReq) {
+		if (request == null || resendReq == null)
+			return;
+		
+		List<ResendHTTPRequest> list = null;
+		try {
+			list = resendMap.get(request);
+		} catch (Exception e) {
+			// ignore
+		}
+		
+		if (list == null) {
+			list = new ArrayList<ResendHTTPRequest>();
+			resendMap.put(request, list);
+		}
+		list.add(resendReq);
+	}
+
+COM:adds a resend request to a list of resend HTTP requests for a given request, if both the request and the resend request are not null

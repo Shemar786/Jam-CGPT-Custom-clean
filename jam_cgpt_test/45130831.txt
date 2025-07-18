@@ -1,0 +1,11 @@
+TDAT: 	public ConstraintLogic getTripleConstraintLogic(TripleConstraintData data) {
+		if (data.getPredicateExpression() instanceof URI) {
+			if (this.predicateMap.containsKey(data.getPredicateExpression())) {
+				return new FunctionalPredicateLogic((FunctionalPredicate) this.predicateMap.get(data
+						.getPredicateExpression()), data);
+			}
+		}
+		return new StreamedTripleConstraintLogic(data);
+	}
+
+COM:retrieves a ConstraintLogic object based on the TripleConstraintData, and creates either a FunctionalPredicateLogic or StreamedTripleConstraintLogic depending on whether the PredicateExpression is a URI in the predicateMap

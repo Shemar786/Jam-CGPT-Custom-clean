@@ -1,0 +1,18 @@
+TDAT: 	public void testMoveTopWithInvalidPositioning() throws CoreException {
+		IRodinFile rfSource = createRodinFile("P/X.test");
+		IInternalElement rSource = rfSource.getRoot();
+		NamedElement neSource = createNEPositive(rSource, "foo", null);
+		
+		IRodinFile rfDest = createRodinFile("P/Y.test");
+		IInternalElement rootDest = rfDest.getRoot();
+		
+		moveNegative(
+				neSource, 
+				rootDest, 
+				rootDest.getInternalElement(NamedElement.ELEMENT_TYPE, "invalid"), 
+				null, 
+				false, 
+				IRodinDBStatusConstants.INVALID_SIBLING);
+	}
+
+COM:tests for invalid positioning when moving a NamedElement from one Rodin file to another

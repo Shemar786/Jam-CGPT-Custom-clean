@@ -1,0 +1,11 @@
+TDAT:     public List getBrowserList() {
+        List browsers = new ArrayList();
+        // add Default if not present
+        if (!soylatteBrowsers.containsKey(IBrowserLaunching.BROWSER_DEFAULT)) {
+            browsers.add(IBrowserLaunching.BROWSER_DEFAULT);
+        }
+        browsers.addAll(soylatteBrowsers.keySet());
+        return browsers;
+    }
+
+COM:returns a list of available browsers, including the default one

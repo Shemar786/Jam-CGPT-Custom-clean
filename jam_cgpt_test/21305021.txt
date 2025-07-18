@@ -1,0 +1,12 @@
+TDAT: 	protected String getTaggedResource(String id, String mediaType) {
+		// throw new InvalidMediaTypeException();
+		logger.info("Get ID: " + makeIdentifier(id, mediaType));
+		if ( store.hasResource(id, mediaType) ) {
+			String t = store.getText(id, mediaType);
+			logger.finer("	text = " + t);
+			return t;
+		}
+		return null;
+	}
+
+COM:retrieves a tagged resource based on a given ID and media type, and returns null if the resource is not found in the store

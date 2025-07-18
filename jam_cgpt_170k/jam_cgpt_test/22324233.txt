@@ -1,0 +1,12 @@
+TDAT:     public void unpack(byte[] buf) throws ISOException {
+        ByteBuffer buffer=ByteBuffer.wrap(buf);
+        TLVMsg currentNode;
+        while (hasNext(buffer)) {    
+            currentNode = getTLVMsg(buffer);    // null is returned if no tag found (trailing padding)
+            if (currentNode != null) {
+                append(currentNode);
+            }
+        }
+    }
+
+COM:unpacks a byte array representing a TLV message and appends valid tags to a list

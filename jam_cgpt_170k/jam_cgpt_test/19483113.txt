@@ -1,0 +1,21 @@
+TDAT: 	public void log(IProblem problem) {
+		if (problem == null)
+			throw new IllegalArgumentException(ExceptionMessages.NULL_ARGUMENT);
+
+		String message = problem.getMessage();
+		String category = problem.getCategory();
+
+		switch (problem.getSeverity()) {
+		case ERROR:
+			MessageDialog.openError(shell, category, message);
+			break;
+		case WARNING:
+			MessageDialog.openWarning(shell, category, message);
+			break;
+		case INFORMATION:
+			MessageDialog.openInformation(shell, category, message);
+			break;
+		}
+	}
+
+COM:logs an error or warning message depending on the severity of the problem passed as an argument

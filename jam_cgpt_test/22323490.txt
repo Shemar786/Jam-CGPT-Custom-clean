@@ -1,0 +1,15 @@
+TDAT:     private String makeExceptionMessage(ISOComponent c, String operation) {
+        Object fieldKey = "unknown";
+        if (c != null)
+        {
+            try
+            {
+                fieldKey = c.getKey();
+            } catch (Exception ignore)
+            {
+            }
+        }
+        return getClass().getName() + ": Problem " + operation + " field " + fieldKey;
+    }
+
+COM:creates an exception message for a given ISO component and operation

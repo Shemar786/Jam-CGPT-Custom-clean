@@ -1,0 +1,11 @@
+TDAT:     public void testgetHorizontalDilution() {
+        System.out.println("getHorizontalDilution");
+        org.gps.types.GpsPosition instance = new org.gps.types.GpsPosition();
+        int expectedResult = 0;
+        int result = instance.getHorizontalDilution();
+        assertEquals(expectedResult, result);
+        
+    
+    }
+
+COM:tests the "getHorizontalDilution" method of the "GpsPosition" class and prints the result

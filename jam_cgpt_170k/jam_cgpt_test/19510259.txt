@@ -1,0 +1,12 @@
+TDAT: 	public void testPowerSetTypeToProductTypeSpecialization() {
+		try {
+			final ProductType prodType = ff.makeProductType(S, T);
+			spec.put(S, prodType);
+			final Type specializedS = POWER_S.specialize(spec);
+			assertEquals(ff.makePowerSetType(prodType), specializedS);
+		} catch (IllegalArgumentException e) {
+			fail("Should not have raised an exception");
+		}
+	}
+
+COM:tests the specialization of a power set type to a product type specialization

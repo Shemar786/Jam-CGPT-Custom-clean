@@ -1,0 +1,12 @@
+TDAT: 	public int sendData(int register, byte [] buf, int len) {
+        int ret = port.i2cStart(address, register, 1, buf, len, 1);
+		if (ret != 0) return ret;
+		
+		while (port.i2cBusy() != 0) {
+			Thread.yield();
+		}
+		
+		return port.i2cComplete(null, 0);
+	}
+
+COM:sends data through I2C by calling a lower-level method and waits until the transmission is complete

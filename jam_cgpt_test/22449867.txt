@@ -1,0 +1,12 @@
+TDAT:     public void concatenateRows(LPModelRows newComponent) {
+        int offset = this.totalNumColumns;
+        this.totalNumColumns += newComponent.getNumColumns();
+        this.mapColToSubComponent.put(new Integer(offset), newComponent);
+        
+        if (this.highestComponent == null ||
+                this.highestComponent.getNumRows() < newComponent.getNumRows()) {
+            this.highestComponent = newComponent;
+        }
+    }
+
+COM:concatenates rows from a LPModelRows object to another object and updates the total number of columns, map of column to sub components, and the highest component

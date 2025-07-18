@@ -1,0 +1,11 @@
+TDAT:     public void removeIndexInterval(int index0, int index1) {
+        setAnchorSelectionIndex(index0);
+        setLeadSelectionIndex(index1);
+        int max = Math.max(index0, index1);
+        for (int index = Math.min(index0, index1); index <= max; index++) {
+            selectedIndices.remove(new Integer(index));
+        }
+        fireValueChanged(index0, index1);
+    }
+
+COM:removes a range of indices from the "selectedIndices" list and fires a value changed event

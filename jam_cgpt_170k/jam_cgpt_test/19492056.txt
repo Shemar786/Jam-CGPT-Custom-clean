@@ -1,0 +1,16 @@
+TDAT: 		public void updateFace() {
+			AnimationTransition transition = (AnimationTransition) ((View) AnimationTransitionEditPart.this
+					.getModel()).getElement();
+
+			// set line width and colour depending on enablement of underlying operation
+			int lineWidth = 1;
+			Color color = THIS_FORE;
+			if (transition.isEnabled()) {
+				lineWidth = 2;
+				color = THIS_FORE_ENABLED;
+			}
+			this.setLineWidth(lineWidth);
+			this.setForegroundColor(color);
+		}
+
+COM:updates the appearance of a face animation by determining the line width and color based on the enablement of the operation

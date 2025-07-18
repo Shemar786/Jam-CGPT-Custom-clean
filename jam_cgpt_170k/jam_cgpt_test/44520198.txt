@@ -1,0 +1,14 @@
+TDAT: 	private void setTaskComputationSize(int n, ArrayList listParameters){
+		long taskSize = 0;
+		int nd, index;
+		
+		for(Iterator i = listParameters.iterator();i.hasNext();){
+			index = pdbIdList.indexOf((String)i.next());
+			nd = Integer.parseInt((String)pdbNoDom.get(index));
+			taskSize += nd*(nd-1)*Long.parseLong((String)pdbSizeList.get(index));
+		}
+		
+		taskComputationSize[n] = ((double)taskSize/(double)totalComputationSize);
+	}
+
+COM:sets the computation size for a task based on a list of parameters

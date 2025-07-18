@@ -1,0 +1,19 @@
+TDAT:     public void setCallback(String callback) {
+	String[] elems = callback.split("#", 2);
+	if (elems.length == 2) {
+	    try {
+		Class clz = Class.forName(elems[0]);
+
+		// May throw a security exception in an Applet
+		// context.
+		Object obj = clz.newInstance();
+
+		registerCallback(obj, elems[1]);
+	    } catch (Exception ex) {
+		System.out.println("ERROR: setCallback(" + callback
+				   + ") - " + ex.getMessage());
+	    }
+	}
+    }
+
+COM:sets a callback for a given object and method by splitting the input string and using reflection to register the callback

@@ -1,0 +1,10 @@
+TDAT:   public Text splitText(int offset) {
+    try {
+      return (Text) NodeImpl.build(XMLParserImpl.splitText(this.getJsObject(),
+        offset));
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_MODIFICATION_ERR, e, this);
+    }
+  }
+
+COM:splits a Text node at the specified offset and returns a new Text node containing the remaining text after the split

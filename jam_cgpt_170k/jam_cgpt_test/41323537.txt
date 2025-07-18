@@ -1,0 +1,14 @@
+TDAT: 	public void setArchivePath(String aArchivePath) {
+		if (!itsArchivePath.equals(aArchivePath))
+			itsOldArchivePath = itsArchivePath;
+		itsArchivePath = aArchivePath;
+		// launch checking of material and thumb location
+		isArchivePathChanging = true;
+		if (itsUpperActivity != null)
+			itsUpperActivity.setLMProject(this);
+		isArchivePathChanging = false;
+		isDefaultArchivePath=false;
+		itsOldArchivePath = null;
+	}
+
+COM:sets the archive path and updates related variables and launches a check when the path is changing

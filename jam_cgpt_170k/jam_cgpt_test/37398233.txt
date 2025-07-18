@@ -1,0 +1,9 @@
+TDAT:   public void testWhetherClassAndTestNameMatches() {
+    if (testedClass != null) {
+      String testName = this.getClass().getName();
+      String className = this.testedClass.getName();
+      assertEquals("test." + className + "Test", testName);
+    }
+  }
+
+COM:checks whether the class name and test name match and throws an assertion error if they don't

@@ -1,0 +1,7 @@
+TDAT: public Rectangle getBounds() {
+	if (isDisposed()) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+  java.awt.Rectangle bounds = handle.getBounds();
+  return new Rectangle((int)bounds.getX(), (int)bounds.getY(), (int)bounds.getWidth(), (int)bounds.getHeight());
+}
+
+COM:returns the bounds of a Rectangle object with its x, y, width, and height values

@@ -1,0 +1,16 @@
+TDAT:     private void notifyServerStopped() {
+        synchronized (listeners) {
+            Iterator iterator = listeners.iterator();
+
+            while (iterator.hasNext()) {
+                ServerListener listener = (ServerListener) iterator.next();
+                listener.serverStopped();
+            }
+        }
+
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.debug("notified all server listeners about stop");
+        }
+    }
+
+COM:notifies all registered server listeners that the server has been stopped and logs the event if debug logging is enabled

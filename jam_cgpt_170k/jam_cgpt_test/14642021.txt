@@ -1,0 +1,13 @@
+TDAT:     public IWorker getPendingWorker() {
+        if (this.fPendingWorker.isEmpty()) {
+            return null;
+        }
+
+        IWorker worker = (IWorker) this.fPendingWorker.remove(0);
+        if ((worker.getWorkerData().getNeededTasks() - 1) > 0) {
+            this.fPendingWorker.add(worker);
+        }
+        return worker;
+    }
+
+COM:returns an instance of IWorker that represents a pending worker, and removes it from the list of pending workers

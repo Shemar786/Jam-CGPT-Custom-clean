@@ -1,0 +1,14 @@
+TDAT:     public Short getAverage() {
+        if (time == 0 && last == null) {
+            /* no data */
+            return null;
+        } else if (time == 0) {
+            /* only one point */
+            return last.getCadence();
+        } else {
+            /* many points */
+            return (short) Math.round(sum / time);
+        }
+    }
+
+COM:calculates and returns the average value of data points in a given time period

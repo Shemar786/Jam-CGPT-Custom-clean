@@ -1,0 +1,17 @@
+TDAT: 	protected void addConnectedComponentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EveConnection_connectedComponent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EveConnection_connectedComponent_feature", "_UI_EveConnection_type"),
+				 EvesimPackage.Literals.EVE_CONNECTION__CONNECTED_COMPONENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a connected component feature to an EveConnection object

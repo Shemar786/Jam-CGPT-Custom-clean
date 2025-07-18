@@ -1,0 +1,13 @@
+TDAT:     public String getType() {
+        if (null != this.type) {
+            return this.type;
+        }
+        ValueExpression _ve = getValueExpression("type");
+        if (_ve != null) {
+            return (java.lang.String) _ve.getValue(getFacesContext().getELContext());
+        } else {
+            return null;
+        }
+    }
+
+COM:returns the type property of an object either by returning this.type or by getting it from a value expression if present

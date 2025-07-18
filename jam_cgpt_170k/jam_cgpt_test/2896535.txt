@@ -1,0 +1,12 @@
+TDAT:   public void write(String s, int off, int len) {
+    if (text != null) {
+      text.append(s.substring(off,off+len));
+      if ((col+=len) > 78) println();
+    }
+    else {
+      super.write(s,off,len); 
+      flush();
+    }
+  }
+
+COM:writes a portion of a string to a text output stream

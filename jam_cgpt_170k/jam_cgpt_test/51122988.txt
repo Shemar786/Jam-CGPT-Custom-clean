@@ -1,0 +1,13 @@
+TDAT:    public String getFilesystemName(String name) {
+      try {
+         //#changed by joe peer
+         //UploadedFile file = (UploadedFile)files.get(name);
+         FileHolder filePart = (FileHolder) files.get(name);
+
+         return filePart.getFileName(); // may be null
+      } catch (Exception e) {
+         return null;
+      }
+   }
+
+COM:takes a file name as input, retrieves the corresponding FileHolder object from a map, and returns the file name of that object (or null if an exception is thrown)

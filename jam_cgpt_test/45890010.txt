@@ -1,0 +1,13 @@
+TDAT:     public void displayImportPolicy() {
+    	int importPolicy = getValidatedImportPolicy();
+    	
+    	String[] policyStrings = getResources().getStringArray(R.array.import_policy_detail);
+
+    	TextView policyView = ((TextView) findViewById(R.id.import_policy_detail));
+    	
+    	if (policyView != null) {
+    		policyView.setText(policyStrings[importPolicy]);
+    	}
+    }
+
+COM:displays the import policy selected by retrieving it from a string array resource and setting it as the text of a TextView

@@ -1,0 +1,9 @@
+TDAT:     public boolean addAccessorMapping(String key, Class type, IValueAccessor accessor, boolean override) {
+        final Object pk = buildKey(key, type);
+        if (!override && properties.containsKey(pk))
+            return false;
+        properties.put(pk, accessor);
+        return true;
+    }
+
+COM:adds an accessor mapping to a properties map based on the provided key, class type, value accessor, and override flag

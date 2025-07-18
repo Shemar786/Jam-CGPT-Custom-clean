@@ -1,0 +1,11 @@
+TDAT:   private void popupEditorShow(MouseEvent e) {
+
+    if (e.isPopupTrigger()) {
+      if(tab.getType() != tab.HTML_FILE){
+        // @todo Something with editor type.
+      }
+      popupMenu.show(e.getComponent(), e.getX(), e.getY());
+    }
+  }
+
+COM:displays a popup menu at the location of a mouse event if it is a popup trigger and the tab type is not HTML file

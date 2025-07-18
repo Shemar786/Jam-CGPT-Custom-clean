@@ -1,0 +1,13 @@
+TDAT:     protected void clearListIds(List list) {
+        if (list != null) {
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                Object o = it.next();
+                if (o instanceof JbsClearableId) {
+                    ((JbsClearableId) o).clearIds();
+                }
+            }
+        }
+    }
+
+COM:This is a Java method that clears all IDs from a list of objects that implement the JbsClearableId interface

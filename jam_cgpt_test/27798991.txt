@@ -1,0 +1,14 @@
+TDAT:   public Binding getOldBinding () {
+    if( type >= 10 ) {
+      if( oldBindings == null ) {
+        return null;
+      } else if( oldBindings.length == 1 ) {
+        return oldBindings[ 0 ];
+      } else {
+        throw new IllegalStateException( "This BetterNamingEvent has multiple old bindings.  Use getOldBindings() instead." );
+      }
+    }
+    return super.getOldBinding();
+  } // getOldBinding()
+
+COM:returns the old binding if the type is greater than or equal to 10, or throws an exception if there are multiple old bindings and returns the super old binding otherwise

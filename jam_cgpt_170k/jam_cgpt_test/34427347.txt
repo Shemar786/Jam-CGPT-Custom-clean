@@ -1,0 +1,10 @@
+TDAT:     private void actionAssigneeDefine() {
+        String an = assigneeDefine.getText();
+        if (an == null || an.trim().isEmpty()) return;
+
+        ((SWGSchematicTab)parent).assigneeAdd(new SWGSchematicAssignee(an));
+        updateAssignees();
+        assigneeDefine.setText(null);
+    }
+
+COM:defines an action to add a new assignee to a SWGSchematicTab object

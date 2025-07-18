@@ -1,0 +1,16 @@
+TDAT: 	public void expandAll(String nodeID) {
+		// expand all its parents
+		String parentID = null;
+		for (Enumeration<?> en = new StringTokenizer(nodeID, "-"); en.hasMoreElements();) {
+			String token = (String)en.nextElement();
+			if (parentID != null) {
+				parentID += "-" + token;
+			} else {
+				parentID = token;
+			}
+			// expand parent
+			expand(parentID);
+		}
+	}
+
+COM:expands all parents of a given node by identifying each parent and expanding it using another method

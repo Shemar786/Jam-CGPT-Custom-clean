@@ -1,0 +1,11 @@
+TDAT:   private void fireLabelEvent(final LabelProviderChangedEvent event) {
+    // We need to get the thread of execution to fire the label provider
+    // changed event , else WSWB complains of thread exception.
+    PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
+      public void run() {
+        fireLabelProviderChanged(event);
+      }
+    });
+  }
+
+COM:fires a label provider changed event on a separate thread to avoid a thread exception

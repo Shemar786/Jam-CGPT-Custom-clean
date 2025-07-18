@@ -1,0 +1,12 @@
+TDAT: 	public void onTransportTerminated(Transport transport, Exception error) {
+		printLog("transport " + transport + " terminated", LogLevel.MEDIUM);
+		if (transport.getProtocol().equals(Protocol.TCP.informalName)) {
+			ConnectionIdentifier conn_id = new ConnectionIdentifier(
+					(ConnectedTransport) transport);
+			removeConnection(conn_id);
+		}
+		if (error != null)
+			printException(error, LogLevel.HIGH);
+	}
+
+COM:handles the termination of a transport and removes the connection if it was a TCP transport, and prints any errors that occurred

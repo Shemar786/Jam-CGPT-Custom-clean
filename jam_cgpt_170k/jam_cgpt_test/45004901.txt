@@ -1,0 +1,14 @@
+TDAT:     public String getInfo(boolean complete, boolean mod) {
+
+        if (currentStatus == STATUS_WAITING) {
+            return getWaitingInfo(complete);
+        } else if (currentStatus == STATUS_INPROGRESS || currentStatus == STATUS_REPORTING) {
+            return getInProgressInfo(complete, mod);
+        } else if (currentStatus == STATUS_FINISHED) {
+            return getFinishedInfo(complete, mod);
+        } else {
+            return "";
+        }
+    }
+
+COM:returns information based on the current status and boolean parameters passed in

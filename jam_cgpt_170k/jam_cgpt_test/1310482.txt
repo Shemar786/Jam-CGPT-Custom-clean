@@ -1,0 +1,15 @@
+TDAT: 	private void addComponents(JButton button, LanguageTerm languageTerm, boolean separator) {
+		button.setMargin(margins);
+		button.setName(languageTerm.getLocalized());
+		button.setAction(actions.getAction(languageTerm.getLocalized()));
+		button.setIcon(guiProperties.getIcon(languageTerm.getEnglish()));
+		button.setBorderPainted(false);
+		button.setToolTipText(languageTerm.getLocalized());
+		button.setText("");
+		this.add(button);
+		if (separator) {
+			this.addSeparator();
+		}
+	}
+
+COM:adds components such as buttons with specific properties, icons, tooltips, and actions to a container and adds separators between them if specified

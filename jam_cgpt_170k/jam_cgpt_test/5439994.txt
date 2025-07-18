@@ -1,0 +1,11 @@
+TDAT:     public I_JoSession newSession() throws FactoryException {
+        int theMaxSessions = peer.getMaxSessions();
+        if (sessions.size() > theMaxSessions && theMaxSessions >= 0) {
+            return null;
+        }
+        I_JoSession theSession = (I_JoSession) factory.get(C_FactoryKey_Session);
+        theSession.setSessionContext(this);
+        return theSession;
+    }
+
+COM:creates a new session and sets its context, but returns null if there are already too many sessions

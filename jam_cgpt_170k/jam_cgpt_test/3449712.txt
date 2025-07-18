@@ -1,0 +1,16 @@
+TDAT: 	private void setInstancesForm(final Integer sessionId, final ActivityTimeForm form) throws Exception {
+		
+		//get time slots
+		List timeSlots = ActivityTimeSlotHelper.getValidTimeSlots(globalSettings, principal, dbSession);
+
+		//get session
+		Session session = SessionHelper.getSession(sessionId, principal, dbSession);
+		
+		//ensure that session has all activity time slots filled.
+		SessionHelper.populateEmptySessionActivityTimes(session, timeSlots, principal, dbSession);
+		
+    	form.setSession(session);
+
+	}	
+
+COM:sets the activity time for a session by retrieving available time slots, getting the session, and populating empty time slots as necessary

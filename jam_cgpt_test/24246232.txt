@@ -1,0 +1,10 @@
+TDAT: 	public Satellite getSatellite(int index){
+		// Must be synchronized so that all 3-4 GSV sentences are read before it tries to give out data.
+		// TODO: Make sure all 4 of 4 sentences are read. Do quick check here. Otherwise array is temporarily filled with 0s, causes output to flicker.
+		// TODO: GPS notifier should only call on LAST of GSV sentences received. Ignore others in sequence until data is present.
+		checkRefresh();
+		
+		return ns[index];
+	}
+
+COM:This synchronized Java method retrieves a specific Satellite object from an array while also performing necessary checks and updates

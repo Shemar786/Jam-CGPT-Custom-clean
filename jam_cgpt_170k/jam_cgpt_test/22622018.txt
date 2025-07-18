@@ -1,0 +1,17 @@
+TDAT: 	public List getStatusLabels() {
+		List labels = new ArrayList();
+		Map statusMap = getStatusMap();
+		if (statusMap != null) {
+			for (Iterator i = statusMap.values().iterator(); i.hasNext(); ) {
+				StatusFlag statusFlag = (StatusFlag) i.next();
+				String label = statusFlag.getLabel();
+				if (label.trim().length() > 0) {
+					labels.add(label);
+				}
+			}
+			Collections.sort(labels);
+		}
+		return labels;
+	}
+
+COM:returns a sorted list of all non-empty labels associated with StatusFlags in a given statusMap

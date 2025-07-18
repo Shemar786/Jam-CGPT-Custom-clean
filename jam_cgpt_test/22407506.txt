@@ -1,0 +1,21 @@
+TDAT:     public Collection getlistener() {
+        Vector enteredListeners = new Vector();
+
+        Iterator iterator = listener.iterator();
+
+        if (addedAntRunnerListener) {
+            iterator.next();
+
+        } while (iterator.hasNext()) {
+            String currentListener = (String) iterator.next();
+            currentListener = currentListener.trim();
+
+            if (!"".equals(currentListener)) {
+                enteredListeners.add(currentListener);
+            }
+        }
+
+        return enteredListeners;
+    }
+
+COM:returns a Collection of entered listeners after trimming and filtering out any empty or blank strings

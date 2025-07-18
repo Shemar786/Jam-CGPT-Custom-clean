@@ -1,0 +1,21 @@
+TDAT: 	protected void indexRepositories() {
+		for (Repository repository:repositories)
+		{
+			for (Artifact artifact:repository.getArtifacts())
+			{
+				if (artifact instanceof JarArtifact)
+				{
+					String md5 = ArtifactUtils.extractMd5(((JarArtifact)artifact).getMd5());
+					List<SearchResult> artifacts = md5Map.get(md5);
+					if (artifacts == null)
+					{
+						artifacts = new LinkedList<SearchResult>();
+						md5Map.put(md5, artifacts);
+					}
+					artifacts.add(new DefaultSearchResult(artifact, repository.getRepositoryDefinition()));
+				}
+			}
+		}
+	}
+
+COM:indexes Jar artifacts in repositories based on their MD5 checksums

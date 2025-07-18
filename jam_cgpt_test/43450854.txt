@@ -1,0 +1,10 @@
+TDAT: 	public Object invoke() throws SOAPException {
+		prepareInvocation(); // sets newMessageIdNeeded to false
+		Object result = super.invoke();
+		// if the call succeeds without exception, generate a new message id for the next call
+		// if an exception is thrown, the flags stays false so that the message id can be reused for a retry
+		newMessageIdNeeded = true; 
+		return result;
+	}
+
+COM:invokes a SOAP request, sets a flag to generate a new message ID if the call succeeds, and returns the result

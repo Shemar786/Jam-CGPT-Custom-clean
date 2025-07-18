@@ -1,0 +1,13 @@
+TDAT: 	public boolean saveNewPonuka(Ponuka ponuka, byte[] binaryData) {
+		List<Ponuka> withSameAlias = getDao().findPonukaByAlias(ponuka.getAlias());
+		if (!withSameAlias.isEmpty()) return false;
+		
+		BinaryObject bObject = new BinaryObject();
+		bObject.setData(binaryData);
+		getBinaryObjectDao().save(bObject);
+		ponuka.setForm(bObject);
+		getDao().save(ponuka);
+		return true;
+	}
+
+COM:saves new data if no existing data exists with the same alias

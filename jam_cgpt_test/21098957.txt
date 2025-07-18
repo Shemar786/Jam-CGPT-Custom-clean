@@ -1,0 +1,16 @@
+TDAT: 	private Date setDate(String value, HttpServletRequest request) throws ParseException {
+		Date member = null;
+
+		// look first for a parameter than for a attribute
+		if (request.getParameter(value) != null) {
+			member = TextUtil.stringToDate(request.getParameter(value));
+		} else {
+			if (request.getAttribute(value) != null) {
+				System.out.println("value " + request.getAttribute(value));
+				member = (Date) request.getAttribute(value);
+			}
+		}
+		return member;
+	}
+
+COM:takes in a string value and a HTTP servlet request, converts the string to a date format, and returns it either from a parameter or attribute of the request

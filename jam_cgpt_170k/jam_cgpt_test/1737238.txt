@@ -1,0 +1,12 @@
+TDAT:     public List findAll() {
+        log.debug("finding all TblAuditor instances");
+        try {
+            String queryString = "from TblAuditor ";
+            return getHibernateTemplate().find(queryString);
+        } catch (RuntimeException re) {
+            log.error("find all instances failed", re);
+            throw re;
+        }
+    }
+
+COM:finds and returns all instances of TblAuditor using Hibernate

@@ -1,0 +1,9 @@
+TDAT:     public void unregisterCharset() {
+        DynamicCharsetProvider.unregisterCharset(this);
+        // we should call these to clear the fast cache of the buggy Charset implementation
+        Charset.forName("US-ASCII");
+        Charset.forName("ISO-8859-1");
+        Charset.forName("UTF-8");
+    }
+
+COM:unregisters a charset and clears the fast cache of the buggy Charset implementation

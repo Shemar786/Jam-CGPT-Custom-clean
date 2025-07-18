@@ -1,0 +1,12 @@
+TDAT:     protected void inspectMappingValidation(String property, AnnotatedElement el) {
+        if (ignoreInheritedMappingValidation(property, el))
+            return;
+        final PathMapping path = el.getAnnotation(PathMapping.class);
+        if (path != null)
+            addPathMapping(property, path);
+        final SimpleMapping simple = el.getAnnotation(SimpleMapping.class);
+        if (simple != null)
+            addSimpleMapping(property, simple);
+    }
+
+COM:inspects and validates the mapping annotations of a given annotated element and adds them to the appropriate mapping if they pass validation

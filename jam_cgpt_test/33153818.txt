@@ -1,0 +1,8 @@
+TDAT:     public void testRodo996() throws Exception {
+        Object[][] smiles = new Object[][] {
+            {"CC1=CC3=C(C=C1(N))NC=2C=CC=CC=23","MR3",new Double(0.1),"MR5",new Double(0.54),"MR6",new Double(0.1)},
+            };
+        amineGroupSubstituent(smiles);
+    }
+
+COM:calls the amineGroupSubstituent method with a specific input array of objects related to molecular structures

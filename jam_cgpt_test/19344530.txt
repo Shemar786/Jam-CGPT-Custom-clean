@@ -1,0 +1,14 @@
+TDAT:   public void setCombo_Code(String val) {
+
+      if ((val == null || "".equals(val))
+      && (Combo_Code == null || "".equals(Combo_Code))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(Combo_Code)) || (updateStatus == NULL_INT_VALUE)) {
+           Combo_Code = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets the Combo_Code field to a new value only if the new value is not equal to the current value and updates the status accordingly

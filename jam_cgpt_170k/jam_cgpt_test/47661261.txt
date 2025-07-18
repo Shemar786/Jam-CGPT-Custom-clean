@@ -1,0 +1,17 @@
+TDAT: 	protected void addTasksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TaskPackage_tasks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TaskPackage_tasks_feature", "_UI_TaskPackage_type"),
+				 WorkspacePackage.Literals.TASK_PACKAGE__TASKS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for tasks to an item property descriptor list

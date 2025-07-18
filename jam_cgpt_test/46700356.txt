@@ -1,0 +1,14 @@
+TDAT:     protected Logger getLoggingMechanism() {
+	if (m_logger.isDebugEnabled()) {
+	    m_logger.debug("getLoggingMechanism() - start");
+	}
+
+	/* Retrieve the Logger of this DefaultBlock. */
+	Logger returnLogger = (m_logger);
+	if (m_logger.isDebugEnabled()) {
+	    m_logger.debug("getLoggingMechanism() - end - return value=" + returnLogger);
+	}
+	return returnLogger;
+    }
+
+COM:retrieves and returns the Logger of a DefaultBlock with logging debug information

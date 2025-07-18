@@ -1,0 +1,13 @@
+TDAT:   private Cards cardsLeft() {
+    final Cards cards = new Cards();
+    final Hand hand = currentHand ();
+    cards.add (hand);
+    cards.remove (hand.get (this.commodityForCorner));
+    final Iterator iter = this.bidsHash.values ().iterator ();
+    while ( iter.hasNext() ) {
+      cards.remove ( (Cards) iter.next () );
+    }
+    return cards;
+  }
+
+COM:returns a Cards object that represents the remaining cards after removing the current hand and cards from the bidsHash

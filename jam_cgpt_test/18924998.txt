@@ -1,0 +1,13 @@
+TDAT:   public PopUp getPopUp0() {
+    PopUp p = new PopUp();
+    p.setLabel("popup 0");
+    List items = new ArrayList();
+    addItems(items);
+    for (Iterator it = items.iterator(); it.hasNext();) {
+      Item item = (Item) it.next();
+      p.addItem(item);
+    }
+    return p;
+  }
+
+COM:creates a PopUp object, sets its label and items, and returns it

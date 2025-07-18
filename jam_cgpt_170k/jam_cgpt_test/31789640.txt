@@ -1,0 +1,10 @@
+TDAT:     public void addTag(Tag tag) {
+        String key=tag.name().intern();
+        ArrayList al=(ArrayList)getTagMap().get(key);
+        if(al==null) {
+            al=new ArrayList(); 
+            getTagMap().put(key,al); }
+        al.add(tag);
+    }
+
+COM:adds a tag object to an array list based on the tag name

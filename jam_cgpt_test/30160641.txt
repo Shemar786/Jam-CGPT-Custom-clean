@@ -1,0 +1,12 @@
+TDAT:     public void testSteensBug() throws Exception {
+        Document document = getDocument("/xml/schema/personal.xsd");
+
+        String xpath = "/xs:schema/xs:element[@name='person']";
+        assertNotNull("element is null", document.selectSingleNode(xpath));
+
+        Element root = document.getRootElement();
+
+        assertNotNull("element is null", root.selectSingleNode(xpath));
+    }
+
+COM:tests whether a given element exists in an XML document and throws an exception if it does not

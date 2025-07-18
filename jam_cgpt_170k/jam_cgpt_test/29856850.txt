@@ -1,0 +1,11 @@
+TDAT:   public void setModelText(String s) {
+    scanedtext = new StringBuffer(s);
+    if (s == null || s.length() == 0) {
+      super.setModelText(""); // Ready to read 
+    } else {
+      super.setModelText(PROGRESS_BAR.substring(0,1)); // Reading
+    }
+    progress = 0;
+  }
+
+COM:sets the text of a progress bar model and initializes its progress value

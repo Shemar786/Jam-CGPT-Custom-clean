@@ -1,0 +1,14 @@
+TDAT:   public boolean next() throws DBException {
+    checkCursorIsOpened();
+    try {
+      traceQuery(Query.TRL_FETCH, "FETCH", null);
+      isFetched = rset.next();
+      traceTimer(Query.TRL_FETCH, "FETCH");
+
+      return isFetched;
+    } catch (SQLException exc) {
+      throw conn.convertException(exc);
+    }
+  }
+
+COM:moves the cursor to the next row in the ResultSet and returns a boolean value indicating whether there are more rows, while also handling potential SQLExceptions and throwing a DBException

@@ -1,0 +1,17 @@
+TDAT: 	protected void insertHtmlComment(Element e, String s) {
+		prtln("\ninsertHtmlComment()");
+		Element comment = DocumentHelper.createElement("st__htmlComment");
+		comment.setText(s);
+		Element parent = e.getParent();
+
+		if (parent != null) {
+			List children = parent.elements();
+			int index = children.indexOf(e);
+			children.add(index, comment);
+		}
+		else {
+			// prtlnErr("PARENT NOT FOUND");
+		}
+	}
+
+COM:inserts an HTML comment element into the parent of a specified element with the given text

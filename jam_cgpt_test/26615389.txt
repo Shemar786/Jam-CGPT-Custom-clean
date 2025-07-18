@@ -1,0 +1,24 @@
+TDAT:     public void delete(int [] rows) {
+        if (rows.length == 0)
+            return;
+
+        int minindex = rows[0];
+        int offset = 0;
+        int index;
+        Vector v;
+
+        for (int i = 0; i < rows.length; i++) {
+            index = rows[i];
+
+            if (index < minindex) {
+                minindex = index;
+                delete(index);
+            } else {
+                delete(index - offset);
+            }
+
+            offset++;
+        }
+    }
+
+COM:deletes rows in a vector based on their index, and adjusts the index of subsequent rows accordingly

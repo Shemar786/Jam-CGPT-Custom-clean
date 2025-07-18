@@ -1,0 +1,11 @@
+TDAT:     public void macEepromRead ( int addr, byte[] buf, int length ) throws UsbException, InvalidFirmwareException, CapabilityException {
+	checkCapability(CAPABILITY_MAC_EEPROM);
+	vendorRequest2( 0x3B, "MAC EEPROM Read", addr, 0, buf, length );
+    	try {
+    	    Thread.sleep( 10 );
+    	}
+	catch ( InterruptedException e) {
+        } 
+    }
+
+COM:reads a specified length of data from the MAC EEPROM memory and throws exceptions if there are errors in the USB connection, firmware, or capability

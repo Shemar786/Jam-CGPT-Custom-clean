@@ -1,0 +1,19 @@
+TDAT: 		private boolean isEnabled(String id, IPackageFragmentRoot folder) {
+			boolean mEnabled = isEnabled(id);
+			if (!mEnabled) {
+				return false;
+			}
+			String handle = folder.getHandleIdentifier();
+			try {
+				String val = project.getPersistentProperty(new QualifiedName(Constants.PLUGIN_ID, id + "_" + handle + ".enabled"));
+				if (val == null) {
+					return true;
+				}
+				return val.equals("true");
+			} catch (CoreException e) {
+				return true;
+			}
+
+		}
+
+COM:checks whether a certain feature is enabled for a specific package fragment root in a project

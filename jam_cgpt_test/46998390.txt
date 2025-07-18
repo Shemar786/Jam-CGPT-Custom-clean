@@ -1,0 +1,11 @@
+TDAT:     public void actionPerformed(ActionEvent actionevent) {
+        JPrintPreviewPane printPreviewPane = previewDialog.getPrintPreviewPane();
+        Pageable pageable = printPreviewPane.getPageable();
+        int i = pageable.getNumberOfPages();
+        int currentPageIndex = previewDialog.getCurrentPageIndex();
+        if (currentPageIndex < i - 1) {
+            previewDialog.setCurrentPageIndex(currentPageIndex + 1);
+        }
+    }
+
+COM:handles the actionPerformed event by getting the number of pages in the print preview pane and changing the current page index if it is less than the total number of pages minus one

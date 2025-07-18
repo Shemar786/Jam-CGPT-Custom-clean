@@ -1,0 +1,17 @@
+TDAT: 	protected void addOrderNumberPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Parameter_orderNumber_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Parameter_orderNumber_feature", "_UI_Parameter_type"),
+				 Il1Package.Literals.PARAMETER__ORDER_NUMBER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the order number feature of a Parameter object

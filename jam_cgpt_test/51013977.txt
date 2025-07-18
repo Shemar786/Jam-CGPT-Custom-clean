@@ -1,0 +1,19 @@
+TDAT: 	private void writeNotes(XMLStreamWriter2 xmlw) throws XMLStreamException {
+
+		xmlw.writeStartElement("notes");
+
+		xmlw.writeStartElement("body");
+		xmlw.writeDefaultNamespace(W3_NS);
+		xmlw.writeAttribute("lang", "en");
+
+		// some provenance info here
+		xmlw.writeStartElement("p");
+		xmlw
+				.writeCharacters("Written as part of an ONDEX (url http://ondex.org/) export");
+
+		xmlw.writeEndElement();// p
+		xmlw.writeEndElement();// body
+		xmlw.writeEndElement();// notes
+	}
+
+COM:writes XML elements for notes with some provenance information

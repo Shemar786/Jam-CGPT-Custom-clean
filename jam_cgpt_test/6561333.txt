@@ -1,0 +1,21 @@
+TDAT: 	public String getContextPath() {
+		String virtualPath = getVirtualPath();
+
+		if (Validator.isNotNull(virtualPath)) {
+			return virtualPath;
+		}
+
+		if (_portletApp.isWARFile()) {
+			StringBuilder sb = new StringBuilder();
+
+			sb.append(StringPool.SLASH);
+			sb.append(_portletApp.getServletContextName());
+
+			return sb.toString();
+		}
+		else {
+			return PortalUtil.getPathContext();
+		}
+	}
+
+COM:returns the context path of a web application

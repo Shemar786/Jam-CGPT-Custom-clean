@@ -1,0 +1,18 @@
+TDAT: 	private void initialize() {
+		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+		this.setBounds(new Rectangle(300, 200, 400, 150));
+		this.setName("StartFrame");
+		this.setResizable(false);
+		this.setContentPane(new Pan());
+		this.setTitle("MODANS GUI");
+		this.setVisible(true);
+		try{
+			image=ImageIO.read(new File("./modans/gui/images/logo.jpg"));
+			this.getContentPane().getGraphics().drawImage(image,0,0,400,150,this);
+		}
+		catch (IOException ex){
+			ex.printStackTrace();
+		}
+	}
+
+COM:initializes the GUI frame with specific attributes such as size, title, name, and content pane, and tries to read and display an image file

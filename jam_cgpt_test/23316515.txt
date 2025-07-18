@@ -1,0 +1,15 @@
+TDAT: 	protected void addNodeToLevel(ELDescriptionNode node, int level) {
+		nodes.add(node);
+		if (level <= maxLevel) {
+			levelNodeMapping.get(level).add(node);
+		} else if (level == maxLevel + 1) {
+			Set<ELDescriptionNode> set = new HashSet<ELDescriptionNode>();
+			set.add(node);
+			levelNodeMapping.put(level, set);
+			maxLevel++;
+		} else {
+			throw new RuntimeException("Inconsistent EL description tree structure.");
+		}
+	}
+
+COM:adds a given node to a specified level in a tree structure and updates the mapping of nodes to levels

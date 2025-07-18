@@ -1,0 +1,14 @@
+TDAT:     public void testGetStartDate() {
+        System.out.println("getStartDate");
+        
+        Event_StubImpl instance = new Event_StubImpl();
+        
+        String expResult = "";
+        String result = instance.getStartDate();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:is a unit test that tests the getStartDate() method of the Event_StubImpl class and asserts that the expected result is equal to the actual result

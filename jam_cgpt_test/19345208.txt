@@ -1,0 +1,19 @@
+TDAT:     private ZDateTableRender getDateDisplay(FieldDetail fld) {
+        String s = dateFormat;
+        ZDateTableRender ret = null;
+
+        if (s == null) {
+            s = fld.getParamater();
+        }
+
+        try {
+            ret = new ZDateTableRender(useDateFormat, s);
+        } catch (Exception e) {
+            System.out.println("@@ format > " + s);
+            e.printStackTrace();
+        }
+
+        return ret;
+    }
+
+COM:returns a ZDateTableRender object based on a FieldDetail input and a specified date format

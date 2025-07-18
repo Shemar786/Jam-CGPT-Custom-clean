@@ -1,0 +1,11 @@
+TDAT: 	public void showConfig() {
+		prtln("config");
+		String property = "ndr.client.repository.baseURL";
+		prtln("\t" + property + ": " + config.getProperty(property));
+		property = "ndr.client.authentication.agentHandle";
+		prtln("\t" + property + ": " + config.getProperty(property));
+		property = "ndr.client.authentication.privateKey";
+		prtln("\t" + property + ": " + config.getProperty(property));
+	}
+
+COM:prints out certain properties from a configuration file

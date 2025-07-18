@@ -1,0 +1,29 @@
+TDAT: 	public void setRelevant(IRequirement requirement, boolean relevant) {
+		if (requirement == null)
+			throw new IllegalArgumentException(ExceptionMessages.NULL_ARGUMENT);
+
+		if (!relevant) {
+			int nr_assocs;
+			String reqname;
+			try {
+				nr_assocs = requirement.getAssociations().length;
+				reqname = requirement.getIdentifierAsString();
+			} catch (RodinDBException e) {
+				e.printStackTrace();
+				nr_assocs = 0;
+				reqname = "";
+			}
+
+			if (nr_assocs > 0) {
+				logger.log(IRRELEVANT_WITH_ASSOCS(reqname));
+				return;
+			}
+		}
+		try {
+			requirement.setRelevant(relevant, null);
+		} catch (RodinDBException e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:sets a given requirement to be relevant or irrelevant, logging a warning message if the requirement is irrelevant and has associations

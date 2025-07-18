@@ -1,0 +1,14 @@
+TDAT:     private void globalSearchForCycles() {
+        Iterator<Node> itAllNodes = this.globNodes.getAllNodesIterator();
+        while (itAllNodes.hasNext()) {
+            Node currNode = itAllNodes.next();
+            if (!this.visited.contains(currNode)) {
+                searchForCyclesFrom(currNode);
+                if (cycleFound()) {
+                    break;
+                }
+            }
+        }
+    }
+
+COM:conducts a global search for cycles within a set of nodes

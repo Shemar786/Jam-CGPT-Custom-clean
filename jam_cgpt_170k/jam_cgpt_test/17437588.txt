@@ -1,0 +1,11 @@
+TDAT:     public void removeAllKnownObjects() {
+        MuObject[] notifyList = _knownObjects.values().toArray(new MuObject[_knownObjects.size()]);
+        // clear our own list
+        _knownObjects.clear();
+
+        for (int i = 0; i < notifyList.length; i++) {
+            notifyList[i].removeKnownObject(this, RemKnow_NoRelasion);
+        }
+    }
+
+COM:removes all known objects from a collection, clears its own list, and removes this object from the notify list of each known object

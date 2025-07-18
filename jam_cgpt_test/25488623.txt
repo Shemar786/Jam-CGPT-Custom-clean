@@ -1,0 +1,10 @@
+TDAT:     protected BeanDefinition registerBeanDefinition(ParserContext parserContext, BeanDefinitionBuilder builder){
+        BeanDefinitionRegistry registry = parserContext.getRegistry();
+
+        BeanDefinition def = builder.getBeanDefinition();
+        String name = parserContext.getReaderContext().generateBeanName(def);
+        registry.registerBeanDefinition(name, def);
+        return def;
+    }
+
+COM:registers a BeanDefinition with a BeanDefinitionRegistry using a ParserContext and returns the created definition

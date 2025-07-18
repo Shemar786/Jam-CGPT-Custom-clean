@@ -1,0 +1,7 @@
+TDAT:     private void checkForSynonym(String name, RankType rank, String kingdom, String genus, int max) throws SearchResultException{
+       //search on name field with name and empty kingdom and genus
+       //search on the alternative names field with name and empty kingdom and genus
+       //if we get a match that is a synonym verify match against IRMNG
+    }
+
+COM:checks for a synonym by searching on name and alternative name fields with empty kingdom and genus, and verifies the match against IRMNG if found

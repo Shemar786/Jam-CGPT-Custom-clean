@@ -1,0 +1,16 @@
+TDAT: 	public String addFilmPerson(String filmID, String personID) {
+		String msg = "";
+		try {
+			String prID = this.getPRID(personID);
+			String query = "INSERT INTO pr_film( prID, filmID ) VALUES ( " + prID + ", " + filmID + " )";
+			Statement st = DBManager.GetStatement();
+			st.executeUpdate(query);
+			DBManager.close(st);
+			msg = "SUCCESS: Film-Performer/Director assigned";
+		}catch(SQLException e){
+			msg = "ERROR: Assigning film-performer/director failed";
+		}
+		return msg;
+	}
+
+COM:assigns a performer or director to a film, and returns a success or error message

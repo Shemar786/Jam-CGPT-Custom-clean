@@ -1,0 +1,18 @@
+TDAT: 	public void start() {
+		if (DEBUG)
+			System.out.println("Splash.start()");
+
+		SwingUtilities.invokeLater(new SplashRunner(this) {
+			public void run() {
+				Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+
+				int width = getSplash().getSize().width;
+				int height = getSplash().getSize().height;
+
+				getSplash().setLocation((d.width - width) / 2, (d.height - height) / 2);
+				getSplash().setVisible(true);
+			}
+		});
+	}
+
+COM:displays a splash screen on the center of the screen, using SwingUtilities to invoke a new thread

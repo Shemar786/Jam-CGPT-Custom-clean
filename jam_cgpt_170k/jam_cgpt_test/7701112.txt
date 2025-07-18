@@ -1,0 +1,10 @@
+TDAT:     public int getInt(String key) throws BadGGEPPropertyException {
+        byte[] bytes=getBytes(key);
+        if (bytes.length<1)
+            throw new BadGGEPPropertyException("No bytes");
+        if (bytes.length>4)
+            throw new BadGGEPPropertyException("Integer too big");
+        return ByteUtils.leb2int(bytes, 0, bytes.length);
+    }
+
+COM:returns an integer value from a byte array associated with a given key, throwing a BadGGEPPropertyException if the byte array is empty or the resulting integer is too large

@@ -1,0 +1,12 @@
+TDAT: 	public void test_02_RenameAttribute() throws Exception {
+		
+		IRodinProject project = fetchProject("V02");
+		
+		convertProjectWithSuccess(project, 1);
+		
+		IInternalElement[] elements = getElements(project, "ff.tvb", IVersionEA.ELEMENT_TYPE, 1);
+		
+		assertAttribute(elements[0], VersionAttributes.StringAttr, "Hello");
+	}
+
+COM:tests the renaming of an attribute in a project and asserts that the attribute has been renamed successfully

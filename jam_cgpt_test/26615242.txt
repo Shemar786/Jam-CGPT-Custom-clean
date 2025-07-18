@@ -1,0 +1,11 @@
+TDAT: 	public void xmlTrainingDataTest(){
+		db("*****************************************");
+		db("Marshalling training set . . .");
+		db("TR(original)\n "+network.getDataSet().toString());
+		Persistence.store(network.getDataSet(),"tr_data");
+
+		DataSet trs = (DataSet) Persistence.retrieve("tr_data",DataSet.class);
+		db("TR(from XML)\n "+trs.toString());
+	}
+
+COM:marshals a training set into an XML file, stores it, retrieves it, and outputs the original and retrieved sets

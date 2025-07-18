@@ -1,0 +1,15 @@
+TDAT:     public Point2D nearest(Point2D[] positions) {
+        Point2D closest = null;
+        double closestDistance = Double.MAX_VALUE;
+        for (int i = 0; i < positions.length; ++i) {
+            double distance = this.distanceTo(positions[i]);
+            if (closest == null || distance < closestDistance) {
+                closest = positions[i];
+                closestDistance = distance;
+            }
+        }
+
+        return closest;
+    }
+
+COM:returns the Point2D object with the shortest distance from a given array of Point2D objects relative to the current Point2D object

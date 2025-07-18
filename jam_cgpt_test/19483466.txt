@@ -1,0 +1,23 @@
+TDAT: 	public String getColumnText(Object element, int columnIndex) {
+		if (element == null)
+			throw new IllegalArgumentException(ExceptionMessages.NULL_ARGUMENT);
+
+		if (!(element instanceof IDocumentParser))
+			throw new IllegalArgumentException(
+					ExceptionMessages.WRONG_ARGUMENT_TYPE);
+
+		IDocumentParser parser = (IDocumentParser) element;
+
+		switch (columnIndex) {
+		case 0:
+			return parser.getName();
+		case 1:
+			return parser.getDescription();
+		case 2:
+			return parser.getId();
+		}
+
+		return "";
+	}
+
+COM:returns the text in a specific column of a table for a given IDocumentParser element

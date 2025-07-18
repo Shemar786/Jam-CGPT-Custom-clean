@@ -1,0 +1,12 @@
+TDAT:     private void actionClear() {
+        isWorking = true;
+        checkOnlyNewCustomers.setSelected(false);
+        checkSinceLastTime.setSelected(false);
+        minCredits.setText("");
+        minVisits.setText("");
+        maxDays.setText("");
+        isWorking = false;
+        actionFilterView();
+    }
+
+COM:clears input fields and sets flags for filtering view

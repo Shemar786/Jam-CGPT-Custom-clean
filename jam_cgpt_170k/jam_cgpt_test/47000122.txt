@@ -1,0 +1,23 @@
+TDAT:     private int match(String exp, int index) {
+        int i = index;
+        int count = 0;
+
+        while (i < exp.length()) {
+
+            if (exp.charAt(i) == '(') {
+                count++;
+            } else if (exp.charAt(i) == ')') {
+                count--;
+            }
+
+            if (count == 0) {
+                return i;
+            }
+
+            i++;
+        }
+
+        return index;
+    }
+
+COM:returns the index of the closing parenthesis that matches the opening parenthesis at the specified index in the input string

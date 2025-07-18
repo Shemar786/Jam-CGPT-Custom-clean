@@ -1,0 +1,10 @@
+TDAT:     public IVector getRealizations(){
+    	//TODO : Now assumes Gaussian distribution implicitly
+    	IVector mean = this.values[this.valueInd];
+    	IVector std = this.values[this.stdInd];
+    	IStochVector sv = new StochVector(mean,std);
+    	IVector result = sv.createRealization();
+    	return result;
+    }
+
+COM:returns a stochastic vector realization using a Gaussian distribution given the mean and standard deviation

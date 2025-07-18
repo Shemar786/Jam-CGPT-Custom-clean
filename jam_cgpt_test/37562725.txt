@@ -1,0 +1,9 @@
+TDAT: public String getText (int index) {
+	checkWidget();
+	if (!parent.checkData (this, true)) error (SWT.ERROR_WIDGET_DISPOSED);
+  int count = Math.max (1, parent.getColumnCount ());
+  if (0 > index || index > count - 1) return "";
+  return handle.getTableItemObject(index).getText();
+}
+
+COM:returns the text of a specific index in a table item object, after ensuring that the widget is valid and checking the data

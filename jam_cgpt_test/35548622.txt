@@ -1,0 +1,9 @@
+TDAT: 	public void setPortId(int portId) {
+		if (DBDataDesc.DONTCARE == portId) {
+			tfPortId.setText(PortNumber.getPortName(DBDataDesc.SYSTYPE_ONT, DBDataDesc.PORT_ONT1));
+		} else {
+			tfPortId.setText(PortNumber.getPortName(DBDataDesc.SYSTYPE_ONT, portId));
+		}
+	}
+
+COM:sets the text for a certain port based on the given port ID, and if the ID is "DONTCARE", it sets it to a default value

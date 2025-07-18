@@ -1,0 +1,12 @@
+TDAT: 	private void addPropertyFor(MethodDeclaration m) {
+		final String name = m.getName().getFullyQualifiedName();
+		if (name.length() < 4)
+			return;
+		final int argCnt = m.parameters().size();
+		final boolean get = name.startsWith("get");
+		final boolean is = name.startsWith("is");
+		if (argCnt == 0 && (get || is) || argCnt == 1 && name.startsWith("set"))
+			buildProperty(Introspector.decapitalize(name.substring(is ? 2 : 3)), m, get | is);
+	}
+
+COM:adds a property to a class based on the given MethodDeclaration object

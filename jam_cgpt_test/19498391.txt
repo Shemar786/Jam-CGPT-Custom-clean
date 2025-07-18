@@ -1,0 +1,20 @@
+TDAT: 	public void testExtendsContext_07_redundant() throws Exception {
+		IContextRoot cab = createContext("cab");
+		
+		saveRodinFileOf(cab);
+		
+		IContextRoot cco = createContext("cco");
+		addContextExtends(cco, "cab");
+		IContextRoot con = createContext("ctx");
+		addContextExtends(con, "cco");
+		addContextExtends(con, "cab");
+
+		saveRodinFileOf(cco);
+		saveRodinFileOf(con);
+		
+		runBuilder();
+		
+		hasMarker(con.getExtendsClauses()[1]);
+	}
+
+COM:creates three context roots (cab, cco, and con) with specified extensions, saves them as Rodin files, runs a builder, and checks for a marker on a specific extended clause of con

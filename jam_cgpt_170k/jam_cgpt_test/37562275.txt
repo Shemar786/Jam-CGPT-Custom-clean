@@ -1,0 +1,16 @@
+TDAT: public void remove (int start, int end) {
+	checkWidget ();
+	if (start > end) return;
+  int count = getItemCount();
+	if (!(0 <= start && start <= end && end < count)) {
+		error (SWT.ERROR_INVALID_RANGE);
+	}
+  isAdjustingSelection = true;
+  CCombo cCombo = (CCombo)handle;
+  for (int i=start; i<=end; i++) {
+    cCombo.removeItemAt(i);
+  }
+  isAdjustingSelection = false;
+}
+
+COM:removes a range of items from a CCombo widget while checking for invalid input and avoiding selection adjustments during the removal process

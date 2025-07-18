@@ -1,0 +1,21 @@
+TDAT: 	public void run() {
+		Logger.print("GameEngine now running");
+		eventHandler.add(new DelayedEvent(null, 900000) { // 15mins
+			public void run() {
+				for(Player p : world.getPlayers()) {
+					p.save();
+				}
+				world.getServer().getLoginConnector().getActionSender().saveProfiles();
+			}
+		});
+		while (running) {
+			try { Thread.sleep(50); } catch(InterruptedException ie) {}
+			processLoginServer();
+			processIncomingPackets();
+			processEvents();
+			processClients();
+		}
+		
+	}
+
+COM:runs the game engine and periodically saves player data while processing various game events

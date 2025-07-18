@@ -1,0 +1,19 @@
+TDAT:   public boolean isValid() throws TypeOracleException {
+    TreeLogger logger = rootLogger.branch(TreeLogger.SPAM,
+      "Validating service interface '" + serviceIntf.getQualifiedSourceName()
+        + "'", null);
+
+    typeToFinalInstanceFieldCache.clear();
+
+    if (!validServiceInterface(logger)) {
+      return false;
+    }
+
+    if (!validAsyncServiceInterface(logger)) {
+      return false;
+    }
+
+    return true;
+  }
+
+COM:validates a service interface and its asynchronous counterpart, returning a boolean indicating whether or not they are valid, while throwing a TypeOracleException if an issue is encountered

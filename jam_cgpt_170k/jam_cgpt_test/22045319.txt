@@ -1,0 +1,12 @@
+TDAT:     public double function( double x, double y ){
+	if(  x < 0 || Math.round( x ) - x != 0 )
+	    throw new ArithmeticException( "Combination error" );
+	if(  y < 0 || y > x || Math.round( y ) - y != 0 )
+	    throw new ArithmeticException( "Combination error" );
+	if( y == 0 )
+	    return 1;
+	else
+	    return x  / y * function( x - 1, y - 1 );
+    }
+
+COM:calculates a combinatorial function and throws an exception if input is invalid

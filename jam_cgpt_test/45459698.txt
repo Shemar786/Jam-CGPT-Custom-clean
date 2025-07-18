@@ -1,0 +1,9 @@
+TDAT: 	private JComboBox getJComboBox2() {
+		if (jComboBox2 == null) {
+			jComboBox2 = new JComboBox(new String[] {"BLOSUM62", "BLOSUM45", "BLOSUM80","PAM30", "PAM70"});
+			jComboBox2.setBounds(new Rectangle(149, 181, 107, 30));
+		}
+		return jComboBox2;
+	}
+
+COM:creates and returns a JComboBox object with pre-defined string values and a specific size and location if it has not been previously initialized

@@ -1,0 +1,16 @@
+TDAT: 	private JPanel getStatusPanel() {
+		if (statusPanel == null) {
+			versionLabel = new JLabel();
+			showVersion();
+			statusLabel = new JLabel();
+			statusLabel.setText("m2-repoindex");
+			statusPanel = new JPanel();
+			statusPanel.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
+			statusPanel.setLayout(new BorderLayout());
+			statusPanel.add(statusLabel, BorderLayout.WEST);
+			statusPanel.add(getUpdatePanel(), BorderLayout.EAST);
+		}
+		return statusPanel;
+	}
+
+COM:returns a JPanel that displays a version label, a status label, and an update panel

@@ -1,0 +1,16 @@
+TDAT: 	public void createChildren() {
+		//go over all possible moves (!) in a specific order
+		//and for each move generate a board, create a node around it and
+		//add it to the list of children of this node		
+		Vector<BTMove> moves = this.getBoard().GenerateMoves();
+		
+		for (BTMove move : moves) {
+			EnhancedBTBoard board = new EnhancedBTBoard(this.getBoard());
+			board.move(move);			
+			MyNode node = new MyNode(board);
+			node.setMove(move);
+			this.add(node);			
+		}
+	}
+
+COM:creates child nodes for a given node by generating all possible moves for the current board and creating a new node for each move

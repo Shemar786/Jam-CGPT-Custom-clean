@@ -1,0 +1,34 @@
+TDAT: 	private boolean checklock(){
+		try{
+			final File f = new File("musicdaze.lock");
+			if (f.exists()){
+				f.delete();
+			}
+			final FileChannel ch = new RandomAccessFile(f, "rw").getChannel();
+			final FileLock lock = ch.tryLock();
+			if (lock==null){
+				ch.close();
+				return false;
+			}
+			Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+				@Override
+				public void run() {
+					try {
+						lock.release();
+						ch.close();
+						f.delete();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}));
+			return true;
+		}
+		catch (IOException io){
+			io.printStackTrace();
+			return false;
+		}
+	}
+
+COM:checks for a lock file, creates it if it doesn't exist, and returns true if it is able to obtain a lock on the file

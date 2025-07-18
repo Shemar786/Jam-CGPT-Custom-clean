@@ -1,0 +1,13 @@
+TDAT: 	public boolean canHaveDiscreteValues() {
+		Iterator iter = this.getChildren();
+    	while(iter.hasNext()) {
+      		Block child = (Block)iter.next();
+      		if (child instanceof PossibleValueSet) {
+        		PossibleValueSet pvs = (PossibleValueSet)child;
+        		return !pvs.isEmpty(); 
+      		}  
+   		 }		
+		return false;
+	}
+
+COM:checks if a block can have discrete values by iterating through children blocks and checking if any of them contain a non-empty set of possible values

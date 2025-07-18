@@ -1,0 +1,13 @@
+TDAT:     public void checkOutById(String id) {
+
+        try {
+            Node n = JCRUtil.getNodeById(id);
+            checkoutNode(n);
+        } catch (Exception e) {
+            String errorMessage = "Error finding node[" + id + "]: ";
+            log.error(errorMessage, e);
+            throw new CMSRuntimeException(errorMessage, e);
+        }
+    }
+
+COM:checks out a node with a given ID using JCRUtil, and throws an error if the node cannot be found

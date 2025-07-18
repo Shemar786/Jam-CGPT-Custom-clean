@@ -1,0 +1,9 @@
+TDAT:         protected NodeDescList asNodeDescs(final String[] nodes) {
+            final NodeDescList out = new NodeDescList();
+            for (int i = 0; i < nodes.length; i++) {
+                out.add(NodeDesc.create(nodes[i],framework.getFrameworkNodeName()));
+            }
+            return out;
+        }
+
+COM:creates a list of NodeDesc objects based on an array of node names and returns the list

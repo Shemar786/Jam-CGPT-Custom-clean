@@ -1,0 +1,10 @@
+TDAT:   public boolean isEquivalentTo(DatabaseColumn other, int check) {
+    if (! ((other instanceof DatabaseByteColumn)
+           ||(((check & TYPE_CHECK_NARROWING) > 0) && (other instanceof DatabaseCardinalColumn)))) {
+      return false;
+    } else {
+      return super.isEquivalentTo(other, check);
+    }
+  }
+
+COM:checks if a DatabaseColumn object is equivalent to another object of the same class or a subclass with certain restrictions

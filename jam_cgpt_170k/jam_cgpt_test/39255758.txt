@@ -1,0 +1,21 @@
+TDAT: 	public void paintComponent(Graphics g) {
+		Graphics2D g2d = (Graphics2D)g.create();
+
+		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		
+		// remember not to put any drawing before drawing the Background.
+		drawBackground((Graphics2D) g2d.create());
+		updateAxes();
+		drawAxes((Graphics2D) g2d.create());
+		drawTickLabels((Graphics2D) g2d.create());
+		drawAxisTitles((Graphics2D) g2d.create());
+		
+		Graphics2D dataG = (Graphics2D) g2d.create();
+		dataG.clip(getDataAreaBounds());
+		drawData(dataG);
+		drawTitle((Graphics2D) g2d.create());
+		
+		g2d.dispose();
+	}
+
+COM:paints a graphics object with antialiasing and multiple components including background, axes, tick labels, axis titles, data, and a title

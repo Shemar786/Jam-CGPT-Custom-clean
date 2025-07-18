@@ -1,0 +1,14 @@
+TDAT:     public void setModel(T model) {
+        // unregister old model
+        if (this.model != null) {
+            for (Listener l : properties)
+                l.unsetModel(this.model);
+        }
+        this.model = model;
+        // register new model
+        if (this.model != null)
+            for (Listener l : properties)
+                l.setModel(this.model);
+    }
+
+COM:sets a new model and unregister and register listeners based on the old and new models

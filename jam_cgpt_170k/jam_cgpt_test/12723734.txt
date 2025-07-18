@@ -1,0 +1,18 @@
+TDAT: public double zSum() {
+	double sum = 0;
+	final double[] elems = this.elements;
+	if (elems==null) throw new InternalError();
+	int index = index(0,0);
+	int cs = this.columnStride;
+	int rs = this.rowStride;
+	for (int row=rows; --row >= 0; ) {
+		for (int i=index, column=columns; --column >= 0; ) {
+			sum += elems[i];
+			i += cs;
+		}
+		index += rs;
+	}
+	return sum;
+}
+
+COM:calculates the sum of all elements in a 2-dimensional array and returns it as a double

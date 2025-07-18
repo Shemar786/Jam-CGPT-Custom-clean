@@ -1,0 +1,15 @@
+TDAT: 	public void changeToSliceNum(int num) {
+		if (num > layoutSlices.size() - 1) {
+			control.showError("There is no slice number " + num);
+			// or gray out button
+		} else if (num < 0) {
+			control.showError("There is no slice number " + num);
+			// should beep or something
+			// or gray out button
+		} else {
+			currentSlice = num;
+			repaintDisplays();
+		}
+	}
+
+COM:changes the current slice number and updates displays if the input number is within the range of available slices

@@ -1,0 +1,11 @@
+TDAT:     private void populateVertexDependencies(Vertex vertex) {
+        
+        Assert.notNull(vertex, "vertex cannot be null");
+        
+        final ModuleDefinition moduleDefinition = vertex.getModuleDefinition();
+        
+        populateDependencies(vertex, moduleDefinition, false);
+        populateDependencies(vertex, moduleDefinition, true);
+    }
+
+COM:populates the dependencies for a given vertex by calling two other methods

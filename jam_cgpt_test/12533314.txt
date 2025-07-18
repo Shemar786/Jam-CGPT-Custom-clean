@@ -1,0 +1,10 @@
+TDAT:     protected void warmUp(){
+        super.warmUp();
+        // make it think that it changed at the warmup time to the same value
+        myTimeOfChange = getTime();
+		// this is so at least two changes are recorded on the variable
+		// to properly account for variables that have zero area throughout the replication
+        setValue(getValue());
+    }
+
+COM:warms up a variable by setting its time of change to the current time and ensuring a minimum of two changes are recorded for accurate replication

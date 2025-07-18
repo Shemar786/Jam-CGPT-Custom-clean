@@ -1,0 +1,11 @@
+TDAT:   private void saveFileAs() {
+    if (JFileChooser.APPROVE_OPTION == fileChooser.showSaveDialog(this)) {
+      try {
+        text.write(new FileWriter(fileChooser.getSelectedFile().getPath()));
+        setFileName(fileChooser.getSelectedFile().getPath());
+      }
+      catch (Exception e) {}
+    }
+  }
+
+COM:saves a text file selected by the user using a file chooser

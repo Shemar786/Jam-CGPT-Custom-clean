@@ -1,0 +1,10 @@
+TDAT: 	public void testGetAllCountries() throws Exception {
+		List countries = persistence.getAllCountries();
+		assertTrue("wrong size", countries.size() > 0);
+		for (Iterator it = countries.iterator(); it.hasNext();) {
+			Country country = (Country) it.next();
+			assertNotNull("wrong name", country.getName());						
+		}				
+	}
+
+COM:tests if the getAllCountries method of the persistence object returns a non-empty list of Country objects with non-null names

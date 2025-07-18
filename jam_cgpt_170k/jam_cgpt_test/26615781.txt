@@ -1,0 +1,9 @@
+TDAT:     public String toString() {
+        String element = "\nDataElement:: Input:" + input.toString() + ", ";
+        element += "Desired: " + desired.toString() + ", ";
+        element += "Output: " + output.toString() + "";
+
+        return element;
+    }
+
+COM:returns a string representation of an object that includes input, desired, and output values

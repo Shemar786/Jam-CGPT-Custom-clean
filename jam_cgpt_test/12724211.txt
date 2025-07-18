@@ -1,0 +1,16 @@
+TDAT: public DoubleMatrix2D getR() {
+	DoubleMatrix2D R = QR.like(n,n);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (i < j) 
+				R.setQuick(i,j, QR.getQuick(i,j));
+			else if (i == j) 
+				R.setQuick(i,j, Rdiag.getQuick(i));
+			else 
+				R.setQuick(i,j, 0);
+		}
+	}
+	return R;
+}
+
+COM:returns a DoubleMatrix2D containing the upper triangular matrix R from a QR decomposition, where QR is a matrix that has been previously computed and stored along with a diagonal matrix Rdiag

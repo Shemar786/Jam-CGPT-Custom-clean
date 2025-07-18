@@ -1,0 +1,16 @@
+TDAT:     public String getDateAsFormat(String format) {
+        if (format == null) {
+            return null;
+        }
+
+        SimpleDateFormat sdf = null;
+        Date trackbackDate = new Date(_trackbackDateLong);
+        try {
+            sdf = new SimpleDateFormat(format);
+            return sdf.format(trackbackDate);
+        } catch (IllegalArgumentException e) {
+            return trackbackDate.toString();
+        }
+    }
+
+COM:takes a format string and returns the date in that format, or the original date string if the format is invalid

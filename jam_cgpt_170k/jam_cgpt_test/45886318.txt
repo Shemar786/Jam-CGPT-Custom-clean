@@ -1,0 +1,16 @@
+TDAT: 	private ContentValues getImportantDataFromTheInternet(){
+		ContentValues cv= new ContentValues();
+		//get us three random numbers to create a customer
+		int r1=(int)Math.floor((Math.random() *8));
+		int r2=(int)Math.floor((Math.random() *4));
+		int r3=(int)Math.floor((Math.random() *4));
+		String name=FIRST_NAMES[r1]+" "+LAST_NAMES[2];
+		String email=name+DOMAINS[r3];
+		
+		cv.put(Customers.NAME,name);
+		cv.put(Customers.EMAIL,email);
+		
+		return cv;
+	}
+
+COM:generates random customer data and returns it in a ContentValues object

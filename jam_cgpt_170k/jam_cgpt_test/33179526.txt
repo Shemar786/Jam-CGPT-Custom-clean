@@ -1,0 +1,11 @@
+TDAT:     public String whence(String name) {
+        for (int i = 0; i < sources.size(); ++i) {
+            SourceProxy proxy = (SourceProxy) sources.elementAt(i);
+            String value = proxy.get(name);
+            if (value != null) return (String) sourceNames.get(i) + "[" + i + "]";
+        }
+
+        throw new NameNotFoundException(name);
+    }
+
+COM:takes a name as input and searches through a list of source proxies to find the corresponding value, returning the source name and index if found or throwing a NameNotFoundException if the name was not found

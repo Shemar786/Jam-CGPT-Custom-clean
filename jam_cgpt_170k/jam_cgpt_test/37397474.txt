@@ -1,0 +1,9 @@
+TDAT:   public void testDoEnd() throws Exception {
+    includeTag.setName("test.url");
+    includeTag.setResource("test.org.chwf.taglib.ji18n.IncludeTagTest");
+    includeTag.doEnd();
+    MockRequestDispatcher dispatcher = getRequest().getMockRequestDispatcher();
+    assertEquals("/url.jsp", dispatcher.getURI());
+  }
+
+COM:tests if a URL is correctly set for an include tag and if a mock request dispatcher returns the expected URI

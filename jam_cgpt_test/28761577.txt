@@ -1,0 +1,9 @@
+TDAT:   private void constructEmbeddedIn(List<Page> pages) throws APIException {
+    if (pageNames != null) {
+      List<Page> tmpPages = constructInternalPageList();
+      MediaWiki mw = MediaWiki.getMediaWikiAccess(this);
+      pages.addAll(mw.retrieveAllEmbeddedIn(getWikipedia(), tmpPages));
+    }
+  }
+
+COM:constructs a list of pages that embed a specific page and adds them to an existing list of pages, using information retrieved through the MediaWiki API

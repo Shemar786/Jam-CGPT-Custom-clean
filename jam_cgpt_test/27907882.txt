@@ -1,0 +1,19 @@
+TDAT: 	public Object put(Object key, Object value, int priority) {
+		
+		resetEnumerator();
+		
+		if(key == null)
+		        logger.debug("key is null");
+		if(value == null)
+			logger.debug("value is null");
+		
+		// Go on about putting and bagging business
+		Object ret = super.put(key, value);
+		
+		bags[priority - MIN_PRIORITY].put(key, value);
+		
+		objects++;
+		return ret;
+	}
+
+COM:adds a key-value pair to a data structure with a specified priority level and logs debug messages if the key or value is null

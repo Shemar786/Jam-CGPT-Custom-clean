@@ -1,0 +1,14 @@
+TDAT:     public boolean delete(BaseDataObject dataObject){
+	try {
+	    Statement stmt = ConnectionJDBC.getConnection().getConn().createStatement();
+	    String SQL = SQLDefinition.SQLDELETE + " " + SQLDefinition.SQLFROM + " " + dataObject.getSourceTable();
+	    SQL += " " + SQLDefinition.SQLWHERE + " " + "ID=" + dataObject.getId();
+	    stmt.execute(SQL);
+	    return true;
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	    return false;
+	}
+    }
+
+COM:deletes a record from a specified database table by ID

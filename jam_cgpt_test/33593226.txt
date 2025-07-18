@@ -1,0 +1,14 @@
+TDAT: 	public String selectCustomer() {
+		myLogger.info("customer selected with id " + selectedCustomerId);
+
+		currentCustomer = (Customer) em.createQuery(
+				"select o from Customer o where o.id =:customerId")
+				.setParameter("customerId", selectedCustomerId)
+				.getSingleResult();
+
+		// no configuration in faces-config.xml required as the String defaults
+		// (and redirects) to customerDetail.xhtml
+		return NavigationConstants.CUSTOMER_DETAIL;
+	}
+
+COM:selects a customer by their ID, logs the selection, and returns the navigation constant for the customer detail page

@@ -1,0 +1,7 @@
+TDAT: 	public String getMatchScore(String matchId) throws InvalidMatchException {
+		ValidateAttribute.validateMatch(matchId);
+		Integer matchScore = ((BLMSMatch)(ServiceLocator.singleton().getService().selectObjectsByField(new BLMSMatch(), "id", new Integer(matchId),"date" , "id").get(0))).getScore();
+		return matchScore == null ? "" : matchScore.toString();
+	}
+
+COM:returns the score of a match with the given ID, after validating the ID and checking for null values

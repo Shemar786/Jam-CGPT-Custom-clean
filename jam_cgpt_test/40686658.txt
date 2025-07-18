@@ -1,0 +1,13 @@
+TDAT:   public String read() {
+    if (inputBuffer == null)
+      return "E1" + E_INPUT_BUFF_NULL;
+    else if (inputBuffer.size() == 0)
+      return "E2" + "There are no strings terminated by zero in the input buffer";
+    else {
+      String result = (String) inputBuffer.get(0);
+      inputBuffer.remove(0);
+      return "0" + result;
+    }
+  }
+
+COM:reads a string from an input buffer and returns an error message if the buffer is null or empty

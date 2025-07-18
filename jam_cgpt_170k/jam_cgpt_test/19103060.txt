@@ -1,0 +1,15 @@
+TDAT: 	private void setupIndexTable() throws SQLException {
+		// create index table if it does not yet exist
+		try {
+			URL sqlFile = getClass().getResource("sql_init_index_table.sql");
+			executeFile(sqlFile);
+		} catch (SQLException e) {
+			if (e.toString().contains("Table already exists")) 
+				// the table already exists (this is normal and o.k.)
+				return;
+			// some other SQL error occurred.
+			throw e;
+		}
+	}
+
+COM:sets up an index table by executing an SQL file, and throws an exception if there is an SQL error while creating the table

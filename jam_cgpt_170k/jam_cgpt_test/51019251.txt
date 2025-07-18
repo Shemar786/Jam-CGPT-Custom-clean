@@ -1,0 +1,11 @@
+TDAT:     public double fScore(ONDEXConcept x, ONDEXConcept y) {
+        double recall = recall(x, y);
+        double precision = precision(x, y);
+        double score = 0;
+        if (recall + precision != 0) {
+            score = (2d * recall * precision) / (recall + precision);
+        }
+        return score;
+    }
+
+COM:calculates the F-score for two ONDEXConcept objects based on their recall and precision values

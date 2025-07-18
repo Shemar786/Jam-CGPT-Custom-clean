@@ -1,0 +1,16 @@
+TDAT: 	private double trace(GoTerm term, GoTerm search_term, double d, int cutoff) {
+		if (term.equals(search_term))
+			return d;
+		
+		if (d == cutoff || term.getParents().size() == 0)
+			return Double.POSITIVE_INFINITY;
+		
+		double min = Double.POSITIVE_INFINITY;
+		for (GoTerm p : term.getParents()) {
+			double tmp = trace(p, search_term, d + 1.0d, cutoff);
+			if (tmp < min) min = tmp;
+		}
+		return min;
+	}
+
+COM:recursively traces a path from a given GoTerm to a specified search_term, determining the distance between the two, with a specified cutoff value for path length

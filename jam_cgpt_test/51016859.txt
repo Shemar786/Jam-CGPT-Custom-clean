@@ -1,0 +1,11 @@
+TDAT:     private void traceBack(PathNode n) {
+        if (n.getParent() != null) {
+            relationDefaultBitSet.add(n.getRid());
+            if (!conceptDefaultBitSet.contains(n.getParent().getCid())) {
+                conceptDefaultBitSet.add(n.getParent().getCid());
+                traceBack(n.getParent());
+            }
+        }
+    }
+
+COM:traces back through a set of linked PathNodes and adds their IDs to BitSets, while also recursively adding the IDs of the parent nodes to another BitSet

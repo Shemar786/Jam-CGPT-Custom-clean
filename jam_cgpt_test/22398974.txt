@@ -1,0 +1,10 @@
+TDAT:         public int getColumn() {
+            checkMarkUsable();
+            if (this.pos == INVALID_MARK_LINE)
+                return 0;
+            MySegment seg = getLineSegment(getLine());
+            int len = seg.length() - 1;
+            return seg.length() <= 0 ? 0 : Math.min(col, len);
+        }
+
+COM:returns the column position of a mark or 0 if invalid, limited by the length of the current line segment

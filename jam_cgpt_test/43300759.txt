@@ -1,0 +1,14 @@
+TDAT:     public void delay(int ms) {
+        if (eventMode == EM_ROBOT) {
+            while (ms > MAX_DELAY) {
+                robot.delay(MAX_DELAY);
+                ms -= MAX_DELAY;
+            }
+            robot.delay(ms);
+        }
+        else {
+            try { Thread.sleep(ms); } catch(InterruptedException ie) { }
+        }
+    }
+
+COM:delays code execution by the specified amount of time in milliseconds, using either the robot delay function or thread sleep depending on the event mode

@@ -1,0 +1,26 @@
+TDAT: 	public void append(final URL url) {
+		String href;
+		boolean found;
+		URL u;
+		int oldsize;
+
+		href = url.toString();
+		found = false;
+		oldsize = -1;
+		synchronized (mUrls) {
+			for (int i = 0; !found && (i < mUrls.size()); i++) {
+				u = mUrls.get(i);
+				if (href.equals(u.toString()))
+					found = true;
+			}
+			if (!found) {
+				oldsize = mUrls.size();
+				mUrls.add(url);
+				mUrls.notify();
+			}
+		}
+		if (-1 != oldsize)
+			updateQueueSize(oldsize, mUrls.size());
+	}
+
+COM:appends a URL to a list and notifies any waiting threads if the URL is not already in the list

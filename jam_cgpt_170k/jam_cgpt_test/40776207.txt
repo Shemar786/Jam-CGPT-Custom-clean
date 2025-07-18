@@ -1,0 +1,11 @@
+TDAT: 	public void process(WorkerIsReadyMessageHandle handle, ServiceManager serviceManager) {
+		WorkerIsReadyProcessorRequestTO to = new WorkerIsReadyProcessorRequestTO();
+		ServiceID workerID = serviceManager.getSenderServiceID();
+		
+		to.setWorkerAddress(workerID.toString());
+		to.setWorkerContainerID(workerID.getContainerID().toString());
+		
+		OurGridRequestControl.getInstance().execute(to, serviceManager);
+	}
+
+COM:processes a worker is ready message handle and executes a request using OurGridRequestControl based on the worker information provided by a service manager

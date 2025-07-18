@@ -1,0 +1,15 @@
+TDAT: 	private void removeSelection(List set, String idToRemove) {
+		if (set != null) {
+			int idx = 0;
+			for (Iterator it = set.iterator(); it.hasNext();) {
+				SelectItem item = (SelectItem) it.next();
+				if (item.getValue().toString().equals(idToRemove)) {
+					set.remove(idx);
+					return;
+				}
+				idx++;
+			}
+		}// end if
+	}
+
+COM:removes a SelectItem object with the specified ID from a List

@@ -1,0 +1,15 @@
+TDAT:   public void insertAfter(Node newNode, Node refNode) {
+
+    Node parentNode;
+    parentNode = refNode.getParentNode();
+
+    Node nextNode = refNode.getNextSibling();
+    if (nextNode != null) {
+      parentNode.insertBefore(newNode, nextNode);
+    }
+    else {
+      parentNode.appendChild(newNode);
+    }
+  }
+
+COM:inserts a new node after a specified reference node in a tree structure

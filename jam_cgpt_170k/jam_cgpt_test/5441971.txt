@@ -1,0 +1,11 @@
+TDAT:     public UnSyncStringBuffer reverse() {
+        int n = count - 1;
+        for (int j = (n - 1) >> 1; j >= 0; --j) {
+            char temp = value[j];
+            value[j] = value[n - j];
+            value[n - j] = temp;
+        }
+        return this;
+    }
+
+COM:reverses the characters in a string buffer and returns the modified buffer

@@ -1,0 +1,12 @@
+TDAT: 	private JPanel getJContentPane() {
+		if (jContentPane == null) {
+			jContentPane = new JPanel();
+			jContentPane.setLayout(new BorderLayout());
+			jContentPane.add(getActiveAggList(), BorderLayout.WEST);
+			jContentPane.add(getAggList(), BorderLayout.EAST);
+			jContentPane.add(getAggButtonPanel(), BorderLayout.CENTER);
+		}
+		return jContentPane;
+	}
+
+COM:returns a JPanel containing three other components arranged in a BorderLayout

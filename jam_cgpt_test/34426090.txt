@@ -1,0 +1,14 @@
+TDAT:     private String singleSubmitValidatedName() {
+        String name = singleResourceNameDisplay.getText();
+        if (name.length() >= 3)
+            return ZString.tac(name);
+
+        if (name.isEmpty())
+            errorLabel.setText("No name");
+        else
+            errorLabel.setText('\"' + name + "\" is not a valid name");
+
+        return null;
+    }
+
+COM:validates and returns a single resource name, while also setting an error message if the name is not valid

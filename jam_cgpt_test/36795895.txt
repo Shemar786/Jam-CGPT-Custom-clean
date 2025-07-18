@@ -1,0 +1,9 @@
+TDAT:     public MemoryInstruction getMemoryInstruction(RegisterFile rFile) {
+        int address = rFile.getValueForRegister(registerAddress);
+        byte[] toStore = intToByteArray(rFile.getValueForRegister(registerContent));
+        MemoryInstruction store = MemoryInstruction.Store(address, toStore);
+        store.setSubType(SubTypes.UpdateStore);
+        return store;
+    }
+
+COM:returns a MemoryInstruction object with a Store subtype and updated content, based on the input RegisterFile object

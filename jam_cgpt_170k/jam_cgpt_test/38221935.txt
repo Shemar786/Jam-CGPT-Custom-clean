@@ -1,0 +1,11 @@
+TDAT:   public void setExpression(String expression) throws CParseError {
+    this.expression = expression;
+    parsedBuffer.clear();
+    expressionBuffer.clear();
+    lexicalAnalyze();
+    syntaxAnalyze();
+    if (hasMoreTokens())
+      throw new CParseError("Syntax error at line " + getToken().lineNo);
+  }
+
+COM:sets a string expression, clears two buffers, performs lexical and syntax analysis, and throws a CParseError if there is a syntax error at a particular line

@@ -1,0 +1,11 @@
+TDAT: 	public double getPDFPoint(double x) throws ArithmeticException {
+		double shape = this.getShape();
+
+		if (x < 0) {
+            throw new IllegalArgumentException("The pdf is undefined for x < 0.");
+        } else {
+            return Math.exp( (shape/2.0 - 1.0) * Math.log(x/2.0) - x/2.0 - Mathematics.logGamma(shape/2.0) ) / 2.0;
+        }
+	}
+
+COM:calculates the probability density function value for a given input value using the gamma distribution equation

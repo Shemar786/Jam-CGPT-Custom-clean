@@ -1,0 +1,19 @@
+TDAT: 	public void rollback() throws PersistenceHibernateException {
+		log.debug("Hibernate rollback invoked...");
+		if (getSession(false) != null) {
+			Transaction tx = getTransaction();
+			try {
+				if (tx != null && !tx.wasCommitted() && !tx.wasRolledBack()) {
+					tx.rollback();
+					log.debug("Hibernate rollback - OK!");
+				}
+			} catch (HibernateException e) {
+				throw new PersistenceHibernateException(
+						"Error on hibernate rollback.", e);
+			} finally {
+				closeSession();
+			}
+		}
+	}
+
+COM:rolls back a Hibernate transaction and logs any errors encountered during the rollback process

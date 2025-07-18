@@ -1,0 +1,16 @@
+TDAT: 	public List getSims() {
+		prtln("getSims ...");
+		List sims = new ArrayList();
+
+		sims.addAll(getPrimarySims());
+		sims.addAll(getMirrorSims());
+
+		if (sims.size() > 1) {
+			DupSim first = (DupSim) sims.get(0);
+			Collections.sort(sims, first.getComparator());
+		}
+		prtln(" ... returning " + sims.size() + " sims");
+		return sims;
+	}
+
+COM:returns a List of objects that are a combination of primary and mirror duplicity simulations, sorted by a comparator if the List contains more than one element

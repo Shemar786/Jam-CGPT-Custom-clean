@@ -1,0 +1,19 @@
+TDAT: 	public void onCallTimeout(Call call) {
+		printLog("onCallTimeout()", LogLevel.LOW);
+		if (call != this.call) {
+			printLog("NOT the current call", LogLevel.LOW);
+			return;
+		}
+		printLog("NOT FOUND/TIMEOUT", LogLevel.HIGH);
+		changeStatus(UA_IDLE);
+		if (call == callTransfer) {
+			int code = 408;
+			String reason = "Request Timeout";
+			this.call.notify(code, reason);
+			callTransfer = null;
+		}
+		if (listener != null)
+			listener.onUaCallFailed(this);
+	}
+
+COM:handles what happens when a call times out

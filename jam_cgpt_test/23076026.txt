@@ -1,0 +1,15 @@
+TDAT: 	public void testEquals() {
+		System.out.println("equals");
+
+		assertFalse(instance1.equals(null));
+		/* object of other class */
+		assertFalse(instance1.equals(new Vector())); 
+		/* list with other hash value  */
+		assertFalse(instance1.equals(instance2)); 
+		/* list with the same hash value */
+		assertTrue(instance1.equals(instance1Empty)); 
+		/* the same instance */
+		assertTrue(instance1.equals(instance1)); 
+	}
+
+COM:tests the 'equals' method implementation for a class instance by checking its behavior against null, objects of other classes, and instances of the same class with different hash values

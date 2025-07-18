@@ -1,0 +1,18 @@
+TDAT: 	protected void initializeLibraries () {
+		if (this.libraries == null) {
+			synchronized (this) {
+				this.libraries = new DynamicCompositeTagLibrary();
+		    for (URL url : libSources) this.compileLibrary(url);
+		    for (Class clazz : libClasses) {
+		    	try {
+		        URL url = new URL("http://library/" + clazz.getName());
+		        this.compileLibrary(url, clazz);
+	        } catch (MalformedURLException e) {
+		        log.error("Could not create component library for clazz: " + clazz, e);
+	        }
+		    }
+			}
+		}
+	}
+
+COM:initializes a DynamicCompositeTagLibrary by compiling libraries from designated URLs and classes

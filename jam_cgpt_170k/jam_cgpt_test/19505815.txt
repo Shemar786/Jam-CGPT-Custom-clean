@@ -1,0 +1,15 @@
+TDAT: 	public RodinProject getRodinProject(IResource resource) {
+		switch (resource.getType()) {
+		case IResource.FOLDER:
+			return new RodinProject(((IFolder) resource).getProject(), this);
+		case IResource.FILE:
+			return new RodinProject(((IFile) resource).getProject(), this);
+		case IResource.PROJECT:
+			return new RodinProject((IProject) resource, this);
+		default:
+			throw new IllegalArgumentException(
+					Messages.element_invalidResourceForProject);
+		}
+	}
+
+COM:returns a RodinProject object based on the type of input resource passed to it, such as a folder, file, or project

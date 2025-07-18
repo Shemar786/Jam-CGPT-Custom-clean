@@ -1,0 +1,17 @@
+TDAT: 	protected void loadStoredRelations() throws IOException, ParseException, CrappyDBMSException {
+		BufferedReader inputStream = new BufferedReader(new FileReader(this.getDataDictionaryFile()));
+		//inputStream.readLine();
+		int currentLine = 0;
+		DataDictionaryParser dataDictionaryParser = DataDictionaryParser.newDataDictionaryParser(this);
+		
+		//currentLine = 1;
+		boolean ok = true;
+		while (ok) {
+			ok = dataDictionaryParser.parseStoredRelation(inputStream, currentLine);
+			currentLine += 3;
+		}
+		inputStream.close();
+
+	}
+
+COM:loads stored relations from a data dictionary file using a parser and throws exceptions for IO errors, parse errors, and issues with the database management system

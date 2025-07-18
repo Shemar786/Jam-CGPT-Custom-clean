@@ -1,0 +1,10 @@
+TDAT:     public void makePluginsMenu(JMenu menu){
+        int i;
+        Plugger plug = (Plugger) ServiceSetter.getServiceSetter().getServiceByName(Plugger.class.getName());
+        List<Plugin> list = plug.getPlugins();
+        for (Plugin pl : list){
+            checkPluginMenu(pl.getMenuPath(), menu, pl);
+        }
+    }
+
+COM:iterates through a list of plugins and adds them to a given JMenu object

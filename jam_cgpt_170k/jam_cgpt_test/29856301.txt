@@ -1,0 +1,11 @@
+TDAT:   public void executeVoidTrigger(final int VKT_Type) throws VException {
+    if (VKT_Type == Constants.CMD_GOTO_SHORTCUTS) {
+      try {
+        Application.getMenu().gotoShortcuts();
+      } catch (NullPointerException npe) {
+        throw new VExecFailedException(VlibProperties.getString("shortcuts-not-available"));
+      }
+    }
+  }
+
+COM:executes a void trigger and checks if the VKT Type is CMD_GOTO_SHORTCUTS and throws a VExecFailedException if the shortcuts are not available

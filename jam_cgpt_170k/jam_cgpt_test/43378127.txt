@@ -1,0 +1,20 @@
+TDAT: 	private void doDelete(URI resource) throws Exception {
+		// does the resource even exist?
+		ClosableIterator<Triple> iter = null;
+		try {
+			// HAQQ! - cannot read and delete from same store concurrently!
+			Set<Triple> statements = new HashSet<Triple>();
+			iter = helper.getResource(resource, this.data);
+			while (iter.hasNext()) {
+				statements.add(iter.next());
+			}
+			this.data.remove(statements.iterator());
+
+			// iter = helper.getResource(resource, this.data);
+			// this.data.remove(iter);
+		} finally {
+			iter.close();
+		}
+	}
+
+COM:This is a Java method that deletes a specified resource from a store while also handling concurrency issues

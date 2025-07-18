@@ -1,0 +1,10 @@
+TDAT:     public BigDecimal getRideResultWithPenalties(int rideNum) {
+        BigDecimal sum = new BigDecimal(0);
+        Ride ride = getRideByNum(rideNum);
+        if (ride != null && ride.getResult().floatValue() > 0) {
+            sum = sum.add(ride.getResult()).add(getRidePenaltySum(rideNum));
+        }
+        return sum;
+    }
+
+COM:calculates the total ride result with penalties for a given ride number

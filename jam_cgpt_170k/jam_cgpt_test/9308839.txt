@@ -1,0 +1,20 @@
+TDAT: 	public void setToDefaultPlugin() {
+
+		if (dataFileExists) {
+			String thePath = getPluginData(0, "path");
+			String backupPath = getPluginData(0, "backupPath");
+			String theName = getPluginData(0, "plugins");
+			if (thePath.trim().length() > 0) {
+				setPluginData(thePath, backupPath, theName);
+			}
+			managemenu.setVisible(true);
+			setIsRunning();
+		} else {
+			managemenu.setVisible(false);
+			onOrOff.setIcon(null);
+			pluginName.setText("");
+		}
+
+	}
+
+COM:sets a plugin to default if the data file exists, otherwise it hides the management menu and resets certain UI components

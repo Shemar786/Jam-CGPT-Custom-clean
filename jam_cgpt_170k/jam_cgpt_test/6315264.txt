@@ -1,0 +1,15 @@
+TDAT:     private TreeItem findNodeWithIdRecursive(TreeItem[] arrItem, String id)
+    {    	
+        for(TreeItem current: arrItem)
+        {
+        	String idInNode = (String) current.getData(); 
+            if(idInNode.equals(id))
+                return current;
+            TreeItem itemInside = findNodeWithIdRecursive(current.getItems(), id);
+            if(itemInside != null)
+            	return itemInside;            	
+        }
+        return null;
+    }
+
+COM:recursively searches for a TreeItem with a specified ID within an array of TreeItems

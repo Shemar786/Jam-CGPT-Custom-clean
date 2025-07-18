@@ -1,0 +1,13 @@
+TDAT:     private int u() {
+        int n = 0;
+        for (int i = 0; i < 4; i++) {
+            int ch = read();
+            if (!ASCII.isHexDigit(ch)) {
+                error("Illegal Unicode escape sequence");
+            }
+            n = n * 16 + ASCII.toDigit(ch);
+        }
+        return n;
+    }
+
+COM:reads in a Unicode escape sequence and returns its corresponding decimal integer representation

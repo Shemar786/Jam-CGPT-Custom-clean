@@ -1,0 +1,13 @@
+TDAT:     public String getRecentFileName(int idx) {
+    	String ret = "";
+    	if (idx >= 0 && idx < prevFiles.length && prevFiles[idx] >= 0) {
+    		String s = fileNames[prevFiles[idx]];
+    		if (s != null) {
+    			ret = s;
+     		}
+
+    	}
+    	return ret;
+    }
+
+COM:takes an index as input and returns the corresponding recent file name if it exists in the previous file list

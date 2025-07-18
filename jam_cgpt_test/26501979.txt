@@ -1,0 +1,15 @@
+TDAT:   public String toString() {
+    StringBuffer s = new StringBuffer(_segments.size() * 8);
+
+    for (int i = 0; i < _segments.size(); i++) {
+      s.append((String) _segments.get(i));
+
+      if (i < (_segments.size() - 1)) {
+        s.append(DELIM);
+      }
+    }
+
+    return s.toString();
+  }
+
+COM:returns a string representation of an object by concatenating all the segments with a delimiter

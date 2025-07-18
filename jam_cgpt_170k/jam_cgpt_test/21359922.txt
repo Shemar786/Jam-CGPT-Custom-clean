@@ -1,0 +1,8 @@
+TDAT:     public void putKey(String gatewayName, Tuple<String, String> key) {
+        if (putKeyImpl(gatewayName, key)) {
+            logger.finer("New keyring key added: [gatewayName=" + gatewayName + "]");
+            actionSupport.fireActionPerformed(ACTION_ADD_KEY, null);
+        }
+    }
+
+COM:adds a key to a keyring and logs the action if successful

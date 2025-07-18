@@ -1,0 +1,7 @@
+TDAT:   private void checkImapList(List<String> errorList, String[] imaplist, Localizer localizer) {
+    for (int i = 0; i < imaplist.length; i++) {
+        checkValidUrl(errorList, imaplist[i], imaplist[i], localizer.msg("checkIMAP1", "'"), localizer.msg("checkIMAP2", "' is not a valid IMAP URL"));
+    }
+  }
+
+COM:checks a list of IMAP URLs for validity and adds any errors to an error list

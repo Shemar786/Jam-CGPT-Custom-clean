@@ -1,0 +1,24 @@
+TDAT:     public void setNetworkAlgorithms() {
+
+	// set the architecture type for the network
+	network.setArchitecture(new FeedForwardArchitecture());
+
+	// set the error type
+	network.setErrorType(new MeanSquareErrorType());
+
+	// set the learning flag
+	network.setLearning(true);
+
+	// set the training data
+	network.loadTrainingData("./xor.in", "./xor.out");
+
+	// connect the network
+	try {
+	    network.connect();
+	} catch (Exception e) {
+	    db("Could not connect network.");
+	    e.printStackTrace();
+	} 
+    } 
+
+COM:sets the architecture type, error type, learning flag, and training data for a network and connects it

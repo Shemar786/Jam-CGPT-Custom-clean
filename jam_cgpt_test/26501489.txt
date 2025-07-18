@@ -1,0 +1,8 @@
+TDAT:   public void dispatch(String type, Object data) throws IOException {
+    if(Log.isDebug()){
+      Log.debug(getClass(), "Sending event " + type + " - " + data);
+    }
+    _broadcast.dispatch(_consumer.getDomainName().toString(), type, data);
+  }
+
+COM:dispatches an event with a specified type and data, and logs the event if debugging is enabled

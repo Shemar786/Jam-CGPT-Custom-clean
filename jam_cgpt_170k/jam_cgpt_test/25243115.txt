@@ -1,0 +1,12 @@
+TDAT: 	private JPanel getToolsPanel() {
+		if (toolsPanel == null) {
+			toolsPanel = new JPanel();
+			toolsPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+			toolsPanel.add(getDrivesComboBox(), null);
+			toolsPanel.add(getIconSizeComboBox(), null);
+			toolsPanel.add(getRefreshButton(), null);
+		}
+		return toolsPanel;
+	}
+
+COM:returns a JPanel containing a combo box for drives, a combo box for icon size, and a refresh button

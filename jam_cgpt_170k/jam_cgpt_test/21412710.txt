@@ -1,0 +1,13 @@
+TDAT: 	public void print() {
+		System.out.println("  0123456789");
+		for (int y = 0; y < this.board.length; y++) {
+			System.out.print(y + " ");
+			for (int x = 0; x < this.board.length; x++) {
+				System.out.print(this.board[x][y]);
+			}
+			System.out.println(" " + y);
+		}
+		System.out.println("  0123456789");
+	}
+
+COM:prints the contents of a two-dimensional array as a rectangular grid with labeled rows and columns

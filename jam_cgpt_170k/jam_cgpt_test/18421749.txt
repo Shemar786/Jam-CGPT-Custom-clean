@@ -1,0 +1,10 @@
+TDAT:     private JXTitledPanel getJXTitledPanel() {
+    	if (JXTitledPanel == null) {
+    		JXTitledPanel = new JXTitledPanel();
+    		JXTitledPanel.setBounds(13, 14, 294, 104);
+    		JXTitledPanel.setTitle("Endlich gefunden.");
+    	}
+    	return JXTitledPanel;
+    }
+
+COM:returns a JXTitledPanel object, creating one if it does not already exist and setting its bounds and title

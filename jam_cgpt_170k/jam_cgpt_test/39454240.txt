@@ -1,0 +1,20 @@
+TDAT: 	private void load2DStructure(URL url) {
+
+		JComponent newComponent;
+		try {
+			String structure2D = InetUtils.retrieveData(url);
+			if (structure2D.length() < 10) {
+				loading2Dlabel.setText("2D structure not available");
+				return;
+			}
+			newComponent = new Structure2DComponent(structure2D);
+		} catch (Exception e) {
+			String errorMessage = "Could not load 2D structure\n"
+					+ "Exception: " + ExceptionUtils.exceptionToString(e);
+			newComponent = new MultiLineLabel(errorMessage);
+		}
+		splitPane.setLeftComponent(newComponent);
+		splitPane.setDividerLocation(500);
+	}
+
+COM:loads a 2D structure from a given URL and displays it in a JComponent; if the structure is not available or there was an error loading it, an error message is displayed instead

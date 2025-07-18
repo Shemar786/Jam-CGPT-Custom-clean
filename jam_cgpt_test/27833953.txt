@@ -1,0 +1,11 @@
+TDAT:   public void setSelected(boolean newSelected) throws PropertyVetoException {
+    if (newSelected != selected) {
+      checkTransient();
+      boolean oldSelected = selected;
+      vetoSupport.fireVetoableChange("selected", new Boolean(oldSelected), new Boolean(newSelected));
+      this.selected = newSelected;
+      propSupport.firePropertyChange("selected", new Boolean(oldSelected), new Boolean(newSelected));
+    }
+  }
+
+COM:sets the selected boolean value and fires a vetoable change event if the new value is different from the old value

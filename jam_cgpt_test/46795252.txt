@@ -1,0 +1,11 @@
+TDAT: 	protected void getDirOfDir(File dir, HashSet setToAdd) {
+		if (dir.isDirectory()) {
+			String[] children = dir.list();
+			for (int i = 0; i < children.length; i++) {
+				getDirOfDir(new File(dir, children[i]), setToAdd);
+				setToAdd.add(dir.getAbsolutePath().toString());
+			}
+		} 
+	}
+
+COM:recursively adds all directories within a given directory to a HashSet

@@ -1,0 +1,8 @@
+TDAT:   public void checkWithDomain(Domain d,UseCaseModel ucm) throws IncorrectElementException {
+	resetAspectRelations();
+  	if (redirectStep_.getStep() == null) {
+  		throw new IncorrectElementException(" Redirect " + this.getLabel() + " redirection to <" + getValue() + "> does not refer to a Step");
+  	}
+  }
+
+COM:checks for a valid domain and use case model, resets aspect relations, and throws an exception if a redirection to a step is not found

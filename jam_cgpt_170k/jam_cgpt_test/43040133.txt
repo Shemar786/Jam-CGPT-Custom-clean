@@ -1,0 +1,11 @@
+TDAT:     public boolean removeColumnBinding(final int col) {
+        if (model != null)
+            throw new IllegalStateException("Can't remove a column if the table is already bound");
+        if (col >= table.getColumnCount())
+            return false;
+        final JTableBinding<T, List<T>, JTable>.ColumnBinding bn = binding.removeColumnBinding(col);
+        bindingInfos.remove(bn);
+        return true;
+    }
+
+COM:removes a column binding from a JTableBinding object and returns a boolean indicating if the operation was successful

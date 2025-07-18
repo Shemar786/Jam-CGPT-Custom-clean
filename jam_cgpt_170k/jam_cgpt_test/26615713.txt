@@ -1,0 +1,24 @@
+TDAT:     public Object getValue(Object clientObject) {
+        Object back;
+
+        if (clientObject == null || bFailure)
+            return FAILURE;
+
+        if (descriptor == null)
+            initDescriptor(clientObject.getClass());
+
+        if (bFailure)
+            return FAILURE;
+
+        try {
+            back = descriptor.getReadMethod().invoke(clientObject,null);
+        } catch (Exception e) {
+            bFailure = true;
+
+            return FAILURE;
+        }
+
+        return back;
+    }
+
+COM:returns the value of a specified client object or returns a failure if the object is null or if an error occurs during the retrieval process

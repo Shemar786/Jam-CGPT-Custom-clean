@@ -1,0 +1,11 @@
+TDAT: 	public void setExpanded(Filter[] filters, boolean expanded, boolean recursive) {
+		SubFilterList list;
+
+		for (int i = 0; i < filters.length; i++) {
+			if (recursive && (null != (list = getEnclosed(filters[i]))))
+				setExpanded(list.getFilters(), expanded, recursive);
+			filters[i].setExpanded(expanded);
+		}
+	}
+
+COM:sets the "expanded" property of a filter and its enclosed sub-filters, recursively if specified

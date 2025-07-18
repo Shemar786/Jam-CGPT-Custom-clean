@@ -1,0 +1,5 @@
+TDAT:     public CapabilityException ( Ztex1 ztex, String cap) {
+	super( "bus=" + ztex.dev().dev().getBus().getDirname() + "  device=" + ztex.dev().dev().getFilename() + ": " + cap + " not supported" );
+    }
+
+COM:creates a new exception with a message that includes information about the device and capability that is not supported

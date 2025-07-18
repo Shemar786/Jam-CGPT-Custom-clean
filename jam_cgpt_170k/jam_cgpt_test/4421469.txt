@@ -1,0 +1,8 @@
+TDAT:     public PeerSemanticTag createAnyPeerSemanticTag() {
+        if (this.anyPeer == null) {
+            this.anyPeer = new InMemoPeerAssociatedSemanticTag("-1", ContextSpace.ANY, ContextSpace.ANYSI, new String[]{});
+        }
+        return this.anyPeer;
+    }
+
+COM:creates a PeerSemanticTag object if it does not already exist and returns it

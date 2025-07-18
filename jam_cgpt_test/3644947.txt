@@ -1,0 +1,17 @@
+TDAT:     synchronized public Object next() {
+        //check if there are returned lines
+        if (pending.size() > 0)
+            return (Integer)pending.remove(0);
+
+        //check if we need to create the current round
+        if (thisRound.size() == 0)
+            createNextRound();
+
+        //if there is still nothing to give, the entire job is done
+        if (thisRound.size() == 0)
+            return null;
+
+        return (Integer)thisRound.remove(0);
+    }
+
+COM:This synchronized Java method returns the next integer in a sequence from either a list of pending integers or a newly created round

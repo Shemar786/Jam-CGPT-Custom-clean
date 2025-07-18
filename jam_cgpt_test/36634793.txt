@@ -1,0 +1,13 @@
+TDAT:     public void moveDown(){
+        track++;
+        if(track >= curList.size())
+            track = 0;
+        for(int i = 0; i < vertPart.size(); i++){
+            if(vertPos.get(i) == curList.get(track)){
+                select = allItems[vertPart.get(i)].select;
+                return;
+            }
+        }
+    }
+
+COM:increments the track variable and selects an item based on its position in a list

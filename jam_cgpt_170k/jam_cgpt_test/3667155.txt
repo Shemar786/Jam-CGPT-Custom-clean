@@ -1,0 +1,18 @@
+TDAT:     public void setFont(Font font) {
+        
+        // fetch the old font
+        Font oldFont = getFont();
+        
+        // set the JPanel font
+        super.setFont(font);
+        
+        // if the font has changed, calculate font-specific parameters and
+        //  redraw
+        if (!(font.equals(oldFont))) {
+            calculateDrawingParams();
+            repaint();
+        }
+        
+    }
+
+COM:sets the font of a JPanel, calculates font-specific parameters, and then performs a redraw if the new font is different from the old font

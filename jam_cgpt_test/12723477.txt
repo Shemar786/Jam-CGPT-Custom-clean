@@ -1,0 +1,8 @@
+TDAT: public double getQuick(int row, int column) {
+	//if (debug) if (column<0 || column>=columns || row<0 || row>=rows) throw new IndexOutOfBoundsException("row:"+row+", column:"+column);
+	//return elements[index(row,column)];
+	//manually inlined:
+	return elements[offset + rowOffsets[rowZero + row*rowStride] + columnOffsets[columnZero + column*columnStride]];
+}
+
+COM:retrieves a specific element from a matrix, using the given row and column numbers

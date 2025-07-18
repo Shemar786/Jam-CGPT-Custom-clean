@@ -1,0 +1,14 @@
+TDAT: 	public void setTextAlign(int align){
+		int ha = align & GAlign.H_ALIGN;
+		int va = align & GAlign.V_ALIGN;
+		if(ha == GAlign.LEFT || ha == GAlign.CENTER || ha == GAlign.RIGHT){
+			textAlignHorz = ha;
+			calcAlignX();
+		}
+		if(va == GAlign.TOP || va == GAlign.MIDDLE || va == GAlign.BOTTOM){
+			textAlignVert = va;
+			calcAlignY();
+		}
+	}
+
+COM:sets the horizontal and vertical alignment of a text

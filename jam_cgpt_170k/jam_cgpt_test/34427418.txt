@@ -1,0 +1,14 @@
+TDAT:     private void remSfromA(SWGSchematic s) {
+        SWGSchematicAssignee a = (SWGSchematicAssignee)
+                assigneeList.getSelectedValue();
+
+        if (s == null || a == null) {
+            alertSelectBoth();
+        } else {
+            a.removeFavorite(s);
+            actionAssigneeSelected(a);
+            ((SWGSchematicTab)parent).notifyAssigneeUsers();
+        }
+    }
+
+COM:removes a specific schematic from a list of favorites for a selected assignee

@@ -1,0 +1,15 @@
+TDAT: 	public void renderHeader(H headerModel) {
+		if (isHeaderRendering()) {
+			defferedSetHeaderModelCallback = new DefferedSetHeaderModelCallback(headerModel);
+			cancelRendering(headerRenderer);
+		} else {
+			this.headerModel = headerModel;
+			headerTableRenderingListeners.fireOnStart(headerModel, headerRenderer);
+			isHeaderRendering = render(headerRenderer, headerModel, headerDeferredRendererCallback, isHeaderRendering);
+			if (!isHeaderRendering) {
+				headerTableRenderingListeners.fireOnStop(headerModel, headerRenderer);
+			}
+		}
+	}
+
+COM:uses headerModel to render a header and fires onStart and onStop events

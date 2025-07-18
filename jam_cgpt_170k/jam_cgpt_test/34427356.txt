@@ -1,0 +1,14 @@
+TDAT:     private void addStoA(SWGSchematic s) {
+        SWGSchematicAssignee a = (SWGSchematicAssignee)
+                assigneeList.getSelectedValue();
+
+        if (s == null || a == null) {
+            alertSelectBoth();
+        } else {
+            a.addFavorite(s);
+            actionAssigneeSelected(a);
+            ((SWGSchematicTab)parent).notifyAssigneeUsers();
+        }
+    }
+
+COM:adds a favorite schematic to a selected assignee in a SWG application

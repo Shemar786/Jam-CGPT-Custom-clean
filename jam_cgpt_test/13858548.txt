@@ -1,0 +1,15 @@
+TDAT:     public boolean isAutologEnabled(DbInstance dbi) {
+        boolean ret = false;
+        try {
+            DBM dbm = dbi.getPlainDbmConnection();
+            String aLog = dbm.cmd("autolog_show");
+            dbm.release();
+            if (aLog.endsWith("ON")) {
+                ret = true;
+            }
+        } catch (Exception e) {
+        }
+        return ret;
+    }
+
+COM:checks if autologging is enabled for a given database instance

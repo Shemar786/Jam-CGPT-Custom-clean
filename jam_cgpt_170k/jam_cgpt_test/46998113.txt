@@ -1,0 +1,17 @@
+TDAT:     public void setOperator(Operator operator) {
+        if (errorMessage != null) {
+            return;
+        }
+        if (inputActive && currentOperator != null && currentOperator.getArgumentCount() == 2) {
+            evaluate(false);
+        }
+        currentOperator = operator;
+        if (operator.getArgumentCount() == 1) {
+            evaluate(false);
+        } else {
+            storedValue = currentValue;
+        }
+        inputActive = false;
+    }
+
+COM:sets the operator for a calculator, evaluates the expression if necessary, and sets the input active flag to false

@@ -1,0 +1,15 @@
+TDAT: 	private void handleHandshakeMessage(HandshakeMessage message) {
+		NetworkAddress remoteAddress = message.getSourceAddress();
+		Message response = null;
+		if (neighborManager.incomingConnectionAllowed()) {
+			response = new AcceptHandshakeMessage(getPeer().getIdentifier());
+			Finger pendingNeighbor = new Finger(
+					message.getSourceAddress(), message.getPeerId());
+			addPendingNeighbor(pendingNeighbor);
+		} else {
+			response = new RejectHandshakeMessage(getPeer().getIdentifier());
+		}
+		getPeer().sendMessage(remoteAddress, response);
+	}
+
+COM:handles a handshake message, checks if an incoming connection is allowed, and sends an appropriate response message

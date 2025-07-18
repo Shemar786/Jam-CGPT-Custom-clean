@@ -1,0 +1,15 @@
+TDAT: public DoubleArrayList quantileElements(DoubleArrayList phis) {
+	this.sort();
+	return cern.jet.stat.Descriptive.quantiles(this.buffer, phis);
+	/*
+	int bufferSize = (int) this.size();
+	double[] quantileElements = new double[phis.size()];
+	for (int i=phis.size(); --i >=0;) {
+		int rank=(int)Utils.epsilonCeiling(phis.get(i)*bufferSize) -1;
+		quantileElements[i]=buffer.get(rank);
+	}
+	return new DoubleArrayList(quantileElements);
+	*/
+}
+
+COM:returns a DoubleArrayList containing quantile elements of a sorted list based on a given set of percentiles

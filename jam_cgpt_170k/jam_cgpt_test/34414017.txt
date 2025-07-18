@@ -1,0 +1,15 @@
+TDAT: 	private void addSelectedGroup(String ou){
+		//to prevent the place holder item from provoking a response in the interface
+		if(!ou.equals("0")){
+			LdapGroup movedGroup = (LdapGroup)availableGroups.remove(ou);
+			if(selectedGroups.containsKey("0")){
+				selectedGroups.remove("0");
+			}
+			selectedGroups.put(ou,movedGroup);
+			if(availableGroups.isEmpty()){
+				availableGroups.put(controller.getEmptyAvailableGroup().getOU(),controller.getEmptyAvailableGroup());
+			}
+		}
+	}
+
+COM:adds a selected LDAP group to the list of selected groups and removes it from the available groups list

@@ -1,0 +1,19 @@
+TDAT:   public void init() {
+    authenticationProtocol   = PPP_PAP;
+    characterMap             = 0;
+    compressAddress          = false;
+    compressProtocol         = false;
+    ioFailed                 = false;
+    ipUp                     = false;
+    lcpUp                    = false;
+    magicNumber              = RandomUtils.random().nextInt();
+    packetID                 = 1;
+    papUp                    = false;
+    password                 = null;
+    rxOff                    = 0;
+    tempOff                  = 0;
+    txOff                    = 0;
+    username                 = null;
+  }
+
+COM:initializes a set of variables used in the authentication and communication protocol for PPP

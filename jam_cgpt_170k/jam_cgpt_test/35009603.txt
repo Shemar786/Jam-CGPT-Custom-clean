@@ -1,0 +1,27 @@
+TDAT: 	public RecordIterator listRecords() throws FileNotFoundException, Exception {
+		List<Record> listRecords = null;
+		boolean writeToDisk = true;
+		RecordIterator rec;
+		
+		if(useHarvestFromFile)
+			writeToDisk = false;	
+		
+		if(writeToDisk) {
+			listRecords = listRecords("",null,null,null);
+			writeOnDisk(listRecords);
+			while(true) {
+				if(hasResumptionToken) {
+					listRecords = listRecords(this.resumptionToken,null,null,null);
+				}
+				else
+				{
+					writeOnDisk(listRecords);
+					break;
+				}
+			}
+		}
+		rec = new RecordIterator(getMD5Filename(baseUrl));
+		return rec;
+	}
+
+COM:lists records and returns an iterator, while optionally writing them to disk

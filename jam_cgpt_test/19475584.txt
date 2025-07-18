@@ -1,0 +1,17 @@
+TDAT: 	protected void addDisjunctByPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLBTransition_disjunctBy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLBTransition_disjunctBy_feature", "_UI_UMLBTransition_type"),
+				 UMLBPackage.Literals.UMLB_TRANSITION__DISJUNCT_BY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a disjunct property descriptor to the item property descriptors list for a UMLBTransition object

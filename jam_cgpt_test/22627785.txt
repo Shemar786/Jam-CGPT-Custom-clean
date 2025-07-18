@@ -1,0 +1,20 @@
+TDAT: 	private boolean isBuiltInType(Element e) {
+		String prefix = e.getNamespacePrefix();
+		String type = e.attributeValue("type", null);
+		if (type == null) {
+			type = e.attributeValue("ref", null);
+		}
+		if (type == null) {
+			return false;
+		}
+
+		String typePrefix = NamespaceRegistry.getNamespacePrefix(type);
+		if (prefix != null && (prefix.equals(typePrefix) || typePrefix.equals("xml"))) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+COM:checks if an XML element is a built-in type or not

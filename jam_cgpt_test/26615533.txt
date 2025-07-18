@@ -1,0 +1,19 @@
+TDAT:     public void reconnect() {
+        // reconnect the neurons
+        GUINeuron gNeuron;
+        Iterator iNeurons = iterator();
+        Iterator i;
+        GUIConnection gConn;
+
+        while (iNeurons.hasNext()) {
+            gNeuron = (GUINeuron) iNeurons.next();
+            i = gNeuron.getConnections().iterator();
+
+            while (i.hasNext()) {
+                gConn = (GUIConnection) (i.next());
+                gConn.reconnect();
+            }
+        }
+    }
+
+COM:reconnects the neurons in a GUI interface by iterating through the connections and calling the reconnect method on each connection

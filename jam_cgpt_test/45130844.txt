@@ -1,0 +1,16 @@
+TDAT: 	public Value evaluate(RdfBindingRow bindings) {
+
+		try {
+			Value value = this.function.evaluate((ExpressionLogic[]) this.data.getArguments().toArray(
+					new ExpressionLogic[0]), bindings);
+
+			// Convert the return value to an evaluable Value
+			return this.factory.createValue(value);
+		} catch (ExternalFunctionException e) {
+			// TODO Should be some exception?
+			return null;
+		}
+
+	}
+
+COM:evaluates an RDF binding row using a specified function and returns an evaluable value

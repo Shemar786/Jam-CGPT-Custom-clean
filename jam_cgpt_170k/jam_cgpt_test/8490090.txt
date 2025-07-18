@@ -1,0 +1,14 @@
+TDAT:   public void addToIndex(String word, List<String> kgrams) {
+    for(String kgram : kgrams) {
+      List<String> wordList = invertedIndex.get(kgram);
+      if(wordList != null) {
+        wordList.add(word);
+      } else {
+        List<String> newWordList = new ArrayList<String>();
+        newWordList.add(word);
+        invertedIndex.put(kgram, newWordList);
+      }
+    }
+  }
+
+COM:updates an inverted index by adding a word along with its k-grams to the corresponding lists in the index

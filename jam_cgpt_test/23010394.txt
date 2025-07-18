@@ -1,0 +1,10 @@
+TDAT: 	private JScrollPane getJScrollPaneOutputPort() {
+		if (jScrollPaneOutputPort == null) {
+			jScrollPaneOutputPort = new JScrollPane();
+			jScrollPaneOutputPort.setBounds(new Rectangle(15, 336, 307, 133));
+			jScrollPaneOutputPort.setViewportView(getTxtOutputPort());
+		}
+		return jScrollPaneOutputPort;
+	}
+
+COM:returns a JScrollPane object that contains a JTextArea object and sets its bounds

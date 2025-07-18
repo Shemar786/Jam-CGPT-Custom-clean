@@ -1,0 +1,19 @@
+TDAT: 	public void disableSet(String setUid) {
+
+		try {
+			ArrayList setInfos = getSetInfos();
+			int index = getIndexOfSetInfo(setUid, setInfos);
+			//prtln("disabling set: " + index);
+			((SetInfo) setInfos.get(index)).setEnabled("false");
+
+			synchronized (setInfosLock) {
+				adminData.update(Keys.SET_INFOS, setInfos);
+				resetSetsData();
+			}
+
+		} catch (Throwable e) {
+			return;
+		}
+	}
+
+COM:disables a specific set by updating its "enabled" attribute to false in a list of set information, updates the admin data with the new set information, and resets the sets data

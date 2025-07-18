@@ -1,0 +1,25 @@
+TDAT:     protected double getRelativeRank(Double[] values, ComparisonMethod method) {
+        double result;
+
+        if (modulusValues) {
+            modulusArray(values);
+        }
+
+        switch (method) {
+            case INTEPENENTPROBABLITIES:
+                result = product(values);
+                break;
+            case MEAN:
+                result = mean(values);
+                break;
+            case SUM:
+                result = sum(values);
+                break;
+            default:
+                throw new RuntimeException("Unknown Comparison Method");
+        }
+
+        return result;
+    }
+
+COM:calculates the relative rank of a Double array based on a selected ComparisonMethod

@@ -1,0 +1,18 @@
+TDAT:   public VKTypeDefinition getFieldTypeDef(String name) {
+    Object	obj = types.get(name);
+
+    if (obj != null) {
+      return (VKTypeDefinition)obj;
+    } else {
+      for (int i = inserts.length - 1; i >= 0 && inserts[i] != null; i--) {
+	obj = inserts[i].getFieldTypeDef(name);
+	if (obj != null) {
+	  types.put(name, obj);
+	  return (VKTypeDefinition)obj;
+	}
+      }
+      return null;
+    }
+  }
+
+COM:returns the type definition for a given field name, searching through a hierarchy of inserts if necessary

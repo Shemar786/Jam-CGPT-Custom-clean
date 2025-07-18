@@ -1,0 +1,12 @@
+TDAT:     public Object clone() {
+        GLHotSpotAnimation animation = new GLHotSpotAnimation();
+
+        for (int index = 0; index < frames.size(); index++) {
+            GLHotSpotFrame frame = (GLHotSpotFrame) frames.elementAt(index);
+            animation.addFrame((GLHotSpotFrame) frame.clone());
+        }
+
+        return animation;
+    }
+
+COM:creates a clone of a GLHotSpotAnimation object with its frames also cloned

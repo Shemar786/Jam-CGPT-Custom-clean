@@ -1,0 +1,7 @@
+TDAT: 	public void insertItem(int uid,int category,String description,String start, String end, double minBid, String name){
+		String query = "INSERT INTO item " +
+		"VALUES (Null,'"+description+"','"+uid+"','"+start+"','"+end+"','"+minBid+"','"+category+"','"+name+"')";
+		db.execute(query);
+	}
+
+COM:inserts a new item into the database with the given attributes such as user ID, category, description, start/end dates, minimum bid, and name

@@ -1,0 +1,19 @@
+TDAT: 	private void makeActions() {
+		groupActionSet = new ProjectExplorerActionGroup4Composition(this);
+
+		// Double click to link with editor
+		doubleClickAction = new Action() {
+			@Override
+			public void run() {
+				ISelection selection = viewer.getSelection();
+				Object obj = ((IStructuredSelection) selection)
+						.getFirstElement();
+
+				if (!(obj instanceof IRodinProject)) {
+					UIUtils4Composition.linkToEventBEditor(obj);
+				}
+			}
+		};
+	}
+
+COM:creates an action group and a double click action to link with an editor

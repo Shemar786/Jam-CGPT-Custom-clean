@@ -1,0 +1,16 @@
+TDAT: 	protected void displayArtists(final String packagename, final Intent intent) {
+		String[] textarray = AboutUtils.getStringArrayExtraOrMetadata(this, packagename, intent, AboutIntents.EXTRA_ARTISTS, AboutMetaData.METADATA_ARTISTS);
+
+		String text = AboutUtils.getTextFromArray(textarray);
+		
+		if (!TextUtils.isEmpty(text)) {
+			mArtistsText.setText(text);
+			mArtistsLabel.setVisibility(View.VISIBLE);
+			mArtistsText.setVisibility(View.VISIBLE);
+		} else {
+			mArtistsLabel.setVisibility(View.GONE);
+			mArtistsText.setVisibility(View.GONE);
+		}
+	}
+
+COM:displays a list of artists in a TextView if it is not empty, otherwise hides the TextView

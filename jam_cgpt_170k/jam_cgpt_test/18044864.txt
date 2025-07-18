@@ -1,0 +1,18 @@
+TDAT: 	private void paintBlock(int type, Graphics g){
+		//Clear Background
+		g.setColor(Color.BLACK);
+		g.fillRect(0,0,4*cellSize, 4*cellSize);
+		
+		Piece p = new Piece();
+		p.setType(type);
+		
+		g.setColor(blockColor[type]);
+		
+		//draw the block's components
+		for(int c = 0; c < 4; c++){
+			Point location = p.getComponent(c);
+			g.fillRect(location.x*cellSize, location.y*cellSize, cellSize, cellSize);
+		}
+	}
+
+COM:paints a block of a specified type on a graphics object using a predefined piece object and a set of component points

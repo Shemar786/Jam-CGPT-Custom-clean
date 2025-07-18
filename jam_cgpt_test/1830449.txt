@@ -1,0 +1,11 @@
+TDAT:     public String getCustAddress(boolean all) {
+        String fullAddress = "";
+        if (all == false){
+            return custAddress;
+        }else{
+            fullAddress = getCustAddress() + "\n" + getCustCity() + ", " + getCustState() + " " + getCustZip().toString();
+        }
+        return fullAddress;
+    }
+
+COM:returns either the customer's address or the full address (including city, state, and zip) based on a boolean parameter

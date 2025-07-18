@@ -1,0 +1,14 @@
+TDAT:     private void setHeaders(HttpURLConnection connection, boolean authenticated) {
+        if (authenticated) {
+            if (basic == null) {
+                throw new IllegalStateException(
+                        "user ID/password combination not supplied");
+            }
+            connection.addRequestProperty("Authorization", this.basic);
+        }
+        for (String key : requestHeaders.keySet()) {
+            connection.addRequestProperty(key, requestHeaders.get(key));
+        }
+    }
+
+COM:sets request headers, including authentication for basic authentication

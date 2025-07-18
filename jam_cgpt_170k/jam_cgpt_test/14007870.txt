@@ -1,0 +1,16 @@
+TDAT: 	private String getLastPersonID() {
+		String result = "";
+		try{
+			String query = "SELECT * FROM PERSON ORDER BY ID DESC";
+			// SELECT ROLE.NAME FROM PERSON,PERSON_ROLE,ROLE WHERE PERSON.ID=0 AND PERSON.ID=PERSON_ROLE.ID AND PERSON_ROLE.ID = ROLE.ID";
+			ResultSet rs = DBManager.FillResultSet(query);
+			if ( rs.next() ) {
+				result = rs.getString("ID");
+			}
+		}catch(SQLException e){
+			System.out.println("" + e);
+		}
+		return result;
+	}
+
+COM:retrieves the ID of the most recent person in the PERSON table of a database using a SQL SELECT statement

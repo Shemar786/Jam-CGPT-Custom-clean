@@ -1,0 +1,17 @@
+TDAT: 	protected void addSrcPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageWidget_src_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageWidget_src_feature", "_UI_ImageWidget_type"),
+				 UiPackage.Literals.IMAGE_WIDGET__SRC,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the 'src' feature of an ImageWidget object

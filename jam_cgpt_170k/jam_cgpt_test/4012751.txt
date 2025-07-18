@@ -1,0 +1,6 @@
+TDAT: 	public String getPlayerHandicap(String id, String leagueId) throws UnknownAttributeException, InvalidUserException, InvalidLeagueException, InvalidLeagueMemberException, MissingAttributeException, InvalidPlayerException {
+		ValidateAttribute.handicapEmptyAttributes(id, leagueId);
+		return getUserLeagueAttribute(id, leagueId, "currentHandicap");
+	}
+
+COM:retrieves a player's current handicap from a specified league, while handling various exceptions

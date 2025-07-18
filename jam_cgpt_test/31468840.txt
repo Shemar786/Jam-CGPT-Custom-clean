@@ -1,0 +1,13 @@
+TDAT:     public String getValue() {
+
+    	StringBuffer value = new StringBuffer();
+    	NodeImpl node = (NodeImpl)getFirstChild();
+    	while (node != null) {
+    		value.append(node.getNodeValue());
+    		node = node.nextSibling;
+    	}
+    	return value.toString();
+
+    } // getValue():String
+
+COM:returns a concatenated string value of the node values of all child nodes of the current node in a StringBuffer format

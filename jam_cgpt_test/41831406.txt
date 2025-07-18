@@ -1,0 +1,14 @@
+TDAT: 	public void deleteSOS(int sosID) {
+		Cursor c = db.query(Offering_TABLE, new String[] { ID }, Offering_sos
+				+ "=" + sosID, null, null, null, null);
+		if (c.moveToFirst()) {
+			do {
+				deleteOffering(c.getInt(0));
+			} while (c.moveToNext());
+		}
+		c.close();
+
+		db.delete(SOS_TABLE, ID + "=" + sosID, null);
+	}
+
+COM:deletes a record with a specific ID from a table and also deletes all related records from another table

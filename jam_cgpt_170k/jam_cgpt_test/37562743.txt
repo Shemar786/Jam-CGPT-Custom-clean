@@ -1,0 +1,8 @@
+TDAT: public TreeItem getTopItem () {
+	checkWidget ();
+  int index = ((CTree)handle).getTopIndex();
+  if(index < 0) return null;
+  return ((CTreeItem)((CTree)handle).getPathForRow(index).getLastPathComponent()).getTreeItem();
+}
+
+COM:returns the top TreeItem in a CTree widget

@@ -1,0 +1,9 @@
+TDAT:   public void insertData(int offset, String arg) {
+    try {
+      XMLParserImpl.insertData(this.getJsObject(), offset, arg);
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_MODIFICATION_ERR, e, this);
+    }
+  }
+
+COM:inserts data into an XML document at a specified offset using the JavaScript XMLParserImpl library and throws an exception if the modification is invalid

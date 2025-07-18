@@ -1,0 +1,16 @@
+TDAT: 	public Thing find(String name, int x1, int y1, int x2, int y2) {
+		for (int y = y1; y <= y2; y++) {
+			for (int x = x1; x <= x2; x++) {
+				Thing tracker = objects[x+y*width];
+				while (tracker != null) {
+					if (tracker.name().equals(name)) {
+						return tracker;
+					}
+					tracker = tracker.next;
+				}
+			}
+		}
+		return null;
+	}
+
+COM:searches for a Thing object with a specific name within a specified rectangular area

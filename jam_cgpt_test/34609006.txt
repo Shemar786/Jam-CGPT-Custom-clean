@@ -1,0 +1,12 @@
+TDAT:     public String toString() {
+        StringBuffer res = new StringBuffer();
+        for (final Iterator it = list.iterator(); it.hasNext();) {
+            if (res.length() > 0) {
+                res.append(MARK_SEPARATOR);
+            }
+            res.append(it.next().toString());
+        }
+        return res.toString();
+    }
+
+COM:returns a string representation of the contents of a list

@@ -1,0 +1,11 @@
+TDAT:     public void setTracePosition(String position){
+      position = Pattern.compile("[^\\d]").matcher(position).replaceAll("");
+      if(position.length() < 1){
+        JOptionPane.showMessageDialog(new JFrame(), "That is not a number.");
+        return;
+      }
+      int pos = Integer.parseInt(position);
+      setTracePosition(pos);
+    }
+
+COM:sets the trace position to a given number after removing any non-digit characters from the input

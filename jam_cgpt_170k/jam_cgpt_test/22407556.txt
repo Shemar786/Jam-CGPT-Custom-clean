@@ -1,0 +1,15 @@
+TDAT:     public void writeProperties() {
+        if (m_node == null) {
+            return;
+        }
+
+        m_node.setSaveOnAnt(generalpanel.isSaveOnAnt());
+        m_node.setKeepTarget(generalpanel.isKeepTarget());
+        m_node.setSelectWithDescription(generalpanel.isSelectWithDescription());
+
+        if (logger.isDebugEnabled()) {
+            logger.debug("AntNodePP: properties written");
+        }
+    }
+
+COM:writes properties to a node if it is not null, updates certain properties based on the values of generalpanel, and logs a debug message if applicable

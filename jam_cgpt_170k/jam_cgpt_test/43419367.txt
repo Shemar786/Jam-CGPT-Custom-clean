@@ -1,0 +1,10 @@
+TDAT: 	private void setDefaultComment() {
+
+		String defaultComment = "";		
+		defaultComment = defaultComment + " Configuration of " + global.getApplicationTitle() + " (Version: " + version.getFullVersionInfo(false, " ") + ")\n"; 
+		defaultComment = defaultComment + " by Christian Derksen - DAWIS - ICB - University Duisburg-Essen\n";
+		defaultComment = defaultComment + " Email: christian.derksen@icb.uni-due.de\n";
+		configFileDefaultComment = defaultComment;
+	}
+
+COM:sets a default comment for a configuration file, including information about the application title, version, author, and contact information

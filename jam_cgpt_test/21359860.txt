@@ -1,0 +1,8 @@
+TDAT:     public void fireActionPerformed(int id, String command) {
+        ActionEvent event = new ActionEvent(source, id, command);
+        for (ListIterator<ActionListener> it = listeners.listIterator(listeners.size()); it.hasPrevious(); ) {
+            it.previous().actionPerformed(event);
+        }
+    }
+
+COM:fires an ActionEvent for all registered listeners with the given ID and command

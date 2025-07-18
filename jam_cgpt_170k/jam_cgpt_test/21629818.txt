@@ -1,0 +1,13 @@
+TDAT:     public String getYlabel() {
+        if (null != this.ylabel) {
+            return this.ylabel;
+        }
+        ValueExpression _ve = getValueExpression("ylabel");
+        if (_ve != null) {
+            return (java.lang.String) _ve.getValue(getFacesContext().getELContext());
+        } else {
+            return null;
+        }
+    }
+
+COM:returns the value of the "ylabel" property, either from a local variable or from an external source if available

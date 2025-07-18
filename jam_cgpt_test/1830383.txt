@@ -1,0 +1,10 @@
+TDAT:     public SaleBO create() throws Exception{
+        String id = GUID.generate();
+        SaleBO sabo = new SaleBO(id);
+        Cache.getInstance().put(sabo.getID(), sabo);
+        sabo.setRSDescription("Media Conversion");
+        sabo.setRSType("Conversion");
+        return sabo;
+    }
+
+COM:creates a new SaleBO object with a generated ID, adds it to a cache, sets its description and type, and returns it

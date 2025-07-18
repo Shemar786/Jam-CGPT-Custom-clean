@@ -1,0 +1,17 @@
+TDAT: 	public void reportLockResult(LockException result) {
+		if (result.BlockerId == null)
+		{
+			showMessageBox(result.getMessage(), "Warning", Messagebox.OK, Messagebox.EXCLAMATION);
+		}
+		else
+		{
+			if (Messagebox.YES == showMessageBox(result.getMessage() + "\nShow the locked object?", "Warning", Messagebox.YES | Messagebox.NO, Messagebox.EXCLAMATION))
+			{
+				ArrayList<String> blocker = new ArrayList<String>();
+				blocker.add(result.BlockerId);
+				this.navigateTo(blocker, true);
+			}
+		}
+	}
+
+COM:reports on whether a lock has been successfully obtained and displays relevant messages and options based on the result

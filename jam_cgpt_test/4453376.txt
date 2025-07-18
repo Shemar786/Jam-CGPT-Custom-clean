@@ -1,0 +1,14 @@
+TDAT:     public void setFrame(JFrame frame) {
+	if (frame == null) {
+	    throw new IllegalArgumentException("null JFrame");
+	}
+	if (this.frame != null) {
+		logger.warning( "main frame is already set. operation will be ignored!");
+	    //throw new IllegalStateException("frame already set");
+		return;
+	}
+	this.frame = frame;
+	firePropertyChange("frame", null, this.frame);
+    }
+
+COM:sets the main frame of the application and throws an exception if the frame is null or if it has already been set

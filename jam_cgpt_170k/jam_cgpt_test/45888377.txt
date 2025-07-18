@@ -1,0 +1,15 @@
+TDAT: 	private void onContactSelected(Contact selected) {
+
+		InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+		imm.hideSoftInputFromWindow(mEditSearch.getWindowToken(), 0);
+
+		String contactLookupKey = String.valueOf(selected.getLookupKey());
+
+		Intent intent = new Intent();
+		intent.setAction(Actions.ACTION_SHOW_TIMELINE);
+		intent.putExtra(Actions.EXTRA_CONTACT_LOOKUP_KEY, contactLookupKey);
+		
+		startActivity(intent);
+	}
+
+COM:hides the soft keyboard, retrieves the lookup key for a selected contact, creates an intent to display the contact's timeline, and starts the intent

@@ -1,0 +1,21 @@
+TDAT: 	public void addInstance(Map<String,String> instance) {
+		
+		// check if all attributes of this instance are already
+		// in attribute list
+		for(String attrName : instance.keySet()) {			
+			if(!attributes.contains(attrName))
+				attributes.add(attrName);
+			else {
+				if(attrName.startsWith("*")) {
+					int index = attributes.indexOf(attrName.substring(1));
+					if(index != -1)
+						attributes.remove(index);
+				}
+			}		
+		}
+		
+		// add instance to instance list
+		instances.add(instance);
+	}
+
+COM:adds a new instance to a list of instances and updates the attribute list if necessary

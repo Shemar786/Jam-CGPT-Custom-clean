@@ -1,0 +1,16 @@
+TDAT: 	private void registerWaterSprinkler() {
+		SchoolProfileServiceStub.AddWaterSprinkler msg = new SchoolProfileServiceStub.AddWaterSprinkler();
+		msg.setSensor(WaterSprinkler.name);
+
+		try {
+			log.debug("registerWaterSprinkler(): Adding sprinkler "
+					+ WaterSprinkler.name + " to school "
+					+ this.SCHOOL_PROFILE_SERVICE_ADDRESS);
+
+			this.schoolProfileService.addWaterSprinkler(msg);
+		} catch (RemoteException e) {
+			log.error(e.getMessage(), e);
+		}
+	}
+
+COM:registers a water sprinkler by adding it to the school's profile service

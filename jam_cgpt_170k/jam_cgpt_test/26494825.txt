@@ -1,0 +1,16 @@
+TDAT:   public List resolve(Map defs) throws ConfigurationException {
+    if(_id == null) {
+      throw new ConfigurationException(
+          "'id' attribute not set on advice group reference");
+    }
+
+    Group group = (Group) defs.get(_id);
+
+    if(group == null) {
+      throw new ConfigurationException("No advice group matches ID: " + _id);
+    }
+
+    return group.getAdvices();
+  }
+
+COM:resolves a list of advice groups by searching for a specific ID within a Map, and returns the list of advices associated with that group

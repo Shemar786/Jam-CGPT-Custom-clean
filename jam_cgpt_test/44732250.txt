@@ -1,0 +1,21 @@
+TDAT: 	protected void updateOrder() {
+		
+		if (!inAddMode) {
+			StringTokenizer stk = new StringTokenizer(fldOrder.getValue(), ";");
+			int idx = 0;
+			while (stk.hasMoreTokens()) {
+				Integer id = Integer.parseInt(stk.nextToken());
+				ColumnStub col = idColumnMap.get(id);
+				if (col != null) {
+					col.setSortIndex(idx);
+				}
+				idx++;
+			}
+			
+			Collections.sort(columns);
+			fireEvent(EventType.COLUMN_UPDATED, new ColumnSelectorEvent(this));
+		}
+		
+	}
+
+COM:updates the order of a list of columns by parsing a string of IDs and setting their sort index, then sorts the columns and fires an event to update the UI

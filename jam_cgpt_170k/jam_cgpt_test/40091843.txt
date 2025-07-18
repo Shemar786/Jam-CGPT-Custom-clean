@@ -1,0 +1,8 @@
+TDAT:   private void startResultSummaryTable(String style) {
+    tableStart(style);
+    m_out.println("<tr><th>Class</th>"
+            + "<th>Method</th><th># of<br/>Scenarios</th><th>Time<br/>(Msecs)</th></tr>");
+    m_row = 0;
+  }
+
+COM:starts a summary table for displaying results with a specified style and four columns: class, method, number of scenarios, and time in milliseconds

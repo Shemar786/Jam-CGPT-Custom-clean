@@ -1,0 +1,14 @@
+TDAT: 	static public PuzzleListFilter canEditPuzzleFilter( UserInfo userInfo ) throws Exception {
+		PuzzleListFilter filter = new PuzzleListFilterBasic();
+		filter.setType( Type.PUZZLE_ONLY );
+		filter.addStatus( Status.PRIVATE );
+		if( userInfo == null ) 
+			throw new Exception( "Invalid user" );
+		if( userInfo.isAdministrator() ) 
+			return filter;
+		filter.setAuthorEmail( userInfo.getEmail() );
+
+		return filter;
+	}
+
+COM:returns a PuzzleListFilter based on a user's information for editing puzzles

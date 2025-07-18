@@ -1,0 +1,12 @@
+TDAT: 	private ITestStep fromFormInput(FormInput fi) {
+		if (fi instanceof ButtonInput || fi instanceof SubmitInput) {
+			return null;
+		}
+		String name = fi.getElement().getName();
+		String setInputField = "setFormElementWithLabel(\"" +name + "\",\"" +
+			fi.getValue() +"\");\n";
+		
+		return new TestStep(setInputField);
+	}
+
+COM:converts a FormInput object into a TestStep object that can be used for testing purposes, excluding objects of ButtonInput or SubmitInput types

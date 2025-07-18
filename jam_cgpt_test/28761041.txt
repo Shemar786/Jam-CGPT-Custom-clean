@@ -1,0 +1,13 @@
+TDAT:   private void actionSortDelete() {
+    int selected = listSort.getSelectedIndex();
+    if (selected != -1) {
+      modelSort.remove(selected);
+      if (selected < modelSort.size()) {
+        listSort.setSelectedIndex(selected);
+      } else if (selected > 0) {
+        listSort.setSelectedIndex(selected - 1);
+      }
+    }
+  }
+
+COM:removes a selected item from a list and selects the next item if it exists, or the previous item if the selected item was the last one

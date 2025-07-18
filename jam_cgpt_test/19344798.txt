@@ -1,0 +1,12 @@
+TDAT:     private boolean isAvailableLookAndFeel(String laf) {
+
+        try {
+            //Class lnfClass = Class.forName(laf);
+            LookAndFeel newLAF = (LookAndFeel) ((Class.forName(laf)).newInstance());
+            return newLAF.isSupportedLookAndFeel();
+        } catch (Exception e) { // If ANYTHING weird happens, return false
+            return false;
+        }
+    }
+
+COM:checks whether a specific LookAndFeel is available and supported by returning a boolean value

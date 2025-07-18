@@ -1,0 +1,18 @@
+TDAT:    public void snapshot() {
+      if (this.snapshotter == null) {
+         throw new IllegalStateException("no Snapshotter defined for this memory");
+      }
+
+      this.checkLocked();
+      this.lock();
+
+      try {
+         this.snapshotter.takeSnapshot(this.memory);
+         this.logFile.reset();
+      }
+      finally {
+         this.unlock();
+      }
+   }
+
+COM:takes a snapshot of the memory and logs it, throwing an exception if no snapshotter is defined

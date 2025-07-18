@@ -1,0 +1,17 @@
+TDAT:   protected void addUseCachePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OpenQuery_useCache_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OpenQuery_useCache_feature", "_UI_OpenQuery_type"),
+				 ActionStepPackage.eINSTANCE.getOpenQuery_UseCache(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "use cache" feature of an OpenQuery object

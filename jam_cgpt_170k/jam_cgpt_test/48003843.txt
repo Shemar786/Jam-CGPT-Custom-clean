@@ -1,0 +1,10 @@
+TDAT: 	private JButton getJButtonAddNewSubject() {
+		if (jButtonAddNewSubject == null) {
+			jButtonAddNewSubject = new JButton();
+			jButtonAddNewSubject.setBounds(new Rectangle(129, 320, 262, 28));
+			jButtonAddNewSubject.setText("Add a new subject");
+		}
+		return jButtonAddNewSubject;
+	}
+
+COM:returns a JButton which, if not already initialized, creates a new JButton with specified bounds and text

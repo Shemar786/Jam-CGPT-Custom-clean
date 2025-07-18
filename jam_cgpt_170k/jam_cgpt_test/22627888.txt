@@ -1,0 +1,15 @@
+TDAT: 	private Map getUrisFromNR() {
+		Map uris = new HashMap();
+		for (Iterator i = namespaces.getPrefixMap().keySet().iterator(); i.hasNext(); ) {
+			String prefix = (String) i.next();
+			Namespace ns = namespaces.getNSforPrefix(prefix);
+			/*
+			 *  if (prefix.trim().length() > 0)
+			 *  uris.put(prefix, ns.getURI());
+			 */
+			uris.put(prefix, ns.getURI());
+		}
+		return uris;
+	}
+
+COM:returns a Map of namespace prefixes and their corresponding URIs

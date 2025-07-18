@@ -1,0 +1,11 @@
+TDAT:     private void appendToOutput(String s){
+        synchronized(lock){
+            DefaultStyledDocument doc = (DefaultStyledDocument) output.getDocument();
+            try{
+                doc.insertString(doc.getEndPosition().getOffset()-1, s, null);
+                output.setCaretPosition(doc.getLength());
+            }catch(Exception ee){ee.printStackTrace();}
+        }
+    }
+
+COM:appends a string s to a document while ensuring that concurrent access to the document is synchronized using a lock

@@ -1,0 +1,23 @@
+TDAT: 	private void deleteItem (MealItemAmount mealitem) {
+
+		Iterator<MealItemAmount> iter;
+		MealItemAmount mia;
+		
+		for (DaySchedule day : m_Dietplan.getDaySchedules()) {
+		
+			for (Meal meal : day.getMeals()) {
+			
+				iter = meal.getMealItems().iterator();
+				
+				while (iter.hasNext()) {
+					mia = iter.next();
+					
+					if (mia == mealitem) {
+						iter.remove();
+					}
+				}
+			}			
+		}		
+	}
+
+COM:deletes a specified meal item from all meals in a diet plan

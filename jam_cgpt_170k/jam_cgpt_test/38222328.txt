@@ -1,0 +1,8 @@
+TDAT:   public InputSource resolveEntity(String publicId, String systemId) {
+    if (systemId.equals("http://comedia.sourceforge.net/dtd/cmaa_basic_config_10.dtd"))
+      return new InputSource(XmlLibraryLoader.class.getResourceAsStream(
+        "/resources/global/module/xml/cmaa_basic_config_10.dtd"));
+    return null;
+  }
+
+COM:resolves the entity by returning an InputSource object containing the InputStream for a specific DTD file if the system ID matches, otherwise it returns null

@@ -1,0 +1,7 @@
+TDAT: 	protected IParser createAssocationRoleParser(boolean sourceNotTarget) {
+		LookupSuite lookupSuite = getAssociationLookupSuite();
+		return new SemanticParserAdapter(new AssociationEndParser(lookupSuite), new AssociationEndApplyStrategy(sourceNotTarget), new AssociationEndToString.ROLE_VIEW(sourceNotTarget),
+				new AssociationEndToString.EDIT(sourceNotTarget));
+	}
+
+COM:creates and returns a parser for association roles, using a given lookup suite and boolean parameter to determine whether the source or target role is being parsed

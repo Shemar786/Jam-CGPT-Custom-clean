@@ -1,0 +1,18 @@
+TDAT: 	public void testSerialization() {
+		final Formula<?> foo = pred;
+		final List<String> strings = new ArrayList<String>();
+
+		// Serialize predicate
+		assert foo.isTypeChecked();
+		strings.add(foo.toStringWithTypes());
+
+		// Serialize type environment
+		for (FreeIdentifier i : foo.getFreeIdentifiers()) {
+			strings.add(i.getName());
+			strings.add(i.getType().toString());
+		}
+
+		assertEquals(serialized, strings);
+	}
+
+COM:tests the serialization of a predicate and its type environment

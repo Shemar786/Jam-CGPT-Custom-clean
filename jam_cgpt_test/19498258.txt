@@ -1,0 +1,23 @@
+TDAT: 	public void testAcc_07() throws Exception {
+		IMachineRoot abs = createMachine("abs");
+		addInitialisation(abs);
+		
+		addInvariants(abs, makeSList("T"), makeSList("x∈ℕ"), true);
+		
+		saveRodinFileOf(abs);
+		
+		IMachineRoot con = createMachine("cnc");
+		addMachineRefines(con, "abs");
+		addInitialisation(con);
+		
+		addInvariants(con, makeSList("X"), makeSList("1<0"), true);
+		
+		saveRodinFileOf(con);
+		
+		runBuilder();
+		
+		containsMarkers(con, false);
+		isNotAccurate(con.getSCMachineRoot());
+	}
+
+COM:creates two Rodin machines with specific properties, saves the files, runs the builder, and tests for the absence of error markers and accuracy in one of the machines

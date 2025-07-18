@@ -1,0 +1,10 @@
+TDAT: 	public void testGetX() {
+		assertTrue(bishop.getX() == 2);
+		assertTrue(bishop1.getX() == 5);
+		assertTrue(bishop2.getX() == 2);
+		assertTrue(bishop3.getX() == 5);
+		assertTrue(bishop4.getX() == 2);
+		assertTrue(bishop5.getX() == 5);
+	}
+
+COM:tests the getX() method for six instances of the bishop object and verifies that their x-coordinate values are correct

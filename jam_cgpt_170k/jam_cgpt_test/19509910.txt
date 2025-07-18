@@ -1,0 +1,16 @@
+TDAT: 	public void testAssignmentSpecialization() {
+		try {
+			final Assignment assign = parseAssignment("a ≔ a + 1");
+			final FreeIdentifier a = mFreeIdentifier("a", ff.makeIntegerType());
+			te.add(a);
+			assign.typeCheck(te);
+			assertTrue(assign.isTypeChecked());
+			spec.put(a, mFreeIdentifier("b", a.getType()));
+			assign.specialize(spec);
+			fail("Should have thrown an unsupported operation error");
+		} catch (UnsupportedOperationException e) {
+			// pass
+		}
+	}
+
+COM:tests the specialization of a parsed assignment expression, checking that it throws an unsupported operation error when certain conditions are met

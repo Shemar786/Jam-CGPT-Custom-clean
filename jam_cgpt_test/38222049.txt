@@ -1,0 +1,10 @@
+TDAT:   private void swapValues(Stack stack) throws CExpressionError {
+    Object first = stack.pop();
+    Object second = stack.pop();
+    if (first == null || second == null)
+      throw new CExpressionError("Stack is empty.");
+    stack.push(first);
+    stack.push(second);
+  }
+
+COM:swaps the positions of the first and second elements in a given Stack, throwing a CExpressionError if either element is null

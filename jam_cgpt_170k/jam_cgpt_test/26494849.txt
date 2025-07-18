@@ -1,0 +1,10 @@
+TDAT:   public void setImplements(String interfaces) {
+    String[] interfacePatterns = Utils.split(interfaces, ',', true);
+    _interfaces = new Pattern[interfacePatterns.length];
+
+    for(int i = 0; i < interfacePatterns.length; i++) {
+      _interfaces[i] = PathPattern.parse(interfacePatterns[i], '.', false);
+    }
+  }
+
+COM:sets an array of Pattern objects from a list of interfaces passed as a string and parsed with a PathPattern object

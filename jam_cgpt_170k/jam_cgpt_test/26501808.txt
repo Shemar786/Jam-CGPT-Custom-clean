@@ -1,0 +1,15 @@
+TDAT:   public boolean remove(Object o) {
+    Ref[]   refs    = (Ref[]) _refs.values().toArray(new Ref[_refs.size()]);
+    boolean removed = false;
+
+    for (int i = 0; i < refs.length; i++) {
+      if (refs[i]._obj.equals(o)) {
+        _refs.remove(refs[i]._oid);
+        removed = true;
+      }
+    }
+
+    return removed;
+  }
+
+COM:removes an object from a collection of objects and returns a boolean value indicating whether the removal was successful

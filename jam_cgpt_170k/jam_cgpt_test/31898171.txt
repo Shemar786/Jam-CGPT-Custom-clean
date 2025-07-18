@@ -1,0 +1,14 @@
+TDAT:   public void setDone(boolean done) {
+    /* Get the old property value for fire property change event. */
+    boolean oldValue = fieldDone;
+
+    /* Set the done property (attribute) to the new value. */
+    fieldDone = done;
+
+    /* Fire (signal/notify) the done property change event. */
+    firePropertyChange("done", null, new Boolean(done));
+
+    return;
+  }
+
+COM:sets the value of a boolean property called "done", fires a property change event with the new value, and returns nothing

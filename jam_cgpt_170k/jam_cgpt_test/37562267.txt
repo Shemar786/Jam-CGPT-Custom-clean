@@ -1,0 +1,11 @@
+TDAT: public void remove (int index) {
+	checkWidget ();
+  int count = getItemCount();
+  if (!(0 <= index && index < count)) error (SWT.ERROR_ITEM_NOT_REMOVED);
+  isAdjustingSelection = true;
+  ((CCombo)handle).removeItemAt(index);
+  isAdjustingSelection = false;
+  sendEvent (SWT.Modify);
+}
+
+COM:removes an item at the specified index in a CCombo widget, throwing an error if the index is out of bounds, and sending a Modify event after the removal

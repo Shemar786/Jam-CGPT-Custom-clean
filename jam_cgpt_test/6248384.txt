@@ -1,0 +1,10 @@
+TDAT: 	public boolean isIgnored (IResource resource) {
+		OmniCoreTrace.trace(this,"isIgnored("+resource+")", "(called)");
+		OmniCoreTrace.trace(this,"isIgnored("+resource+")", "Is ignored: "+resource);
+		if (resource.isDerived()) {
+				return true;
+		}
+		return false;
+	}
+
+COM:checks if a resource is ignored by returning true if it is derived and false otherwise, and logs a trace of the method call

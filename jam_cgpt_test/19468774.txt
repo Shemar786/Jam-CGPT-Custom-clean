@@ -1,0 +1,21 @@
+TDAT: 	protected void internalSaveWidgetValues() {
+		// update directory names history
+		IDialogSettings settings = getDialogSettings();
+		if (settings != null) {
+			String[] directoryNames = settings
+					.getArray(STORE_DESTINATION_NAMES_ID);
+			if (directoryNames == null) {
+				directoryNames = new String[0];
+			}
+
+			directoryNames = addToHistory(directoryNames, getDestinationValue());
+			settings.put(STORE_DESTINATION_NAMES_ID, directoryNames);
+
+			// options
+			settings.put(STORE_OVERWRITE_EXISTING_FILES_ID,
+					overwriteExistingFilesCheckbox.getSelection());
+
+		}
+	}
+
+COM:updates the directory names history and saves options for a user interface widget

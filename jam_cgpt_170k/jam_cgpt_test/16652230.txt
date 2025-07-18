@@ -1,0 +1,11 @@
+TDAT:   public void setShouldPause(boolean shouldPause) {
+    // NOTE: We get a local copy of the crawler for the case that is should
+    //       change in the meantime
+    Crawler crawler = mCrawler;
+    if (crawler != null) {
+      crawler.setShouldPause(shouldPause);
+      TrayIconHandler.getInstance().setIndexUpdateRunning(! shouldPause);
+    }
+  }
+
+COM:sets a boolean value for whether the crawler should pause, and also updates the TrayIconHandler accordingly

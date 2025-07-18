@@ -1,0 +1,15 @@
+TDAT:     private boolean checkPACs(Set deletedNodes, Set reducedNodes) {
+        Iterator pacIt = this.PACs.iterator();
+
+        while (pacIt.hasNext()) {
+            InstanceDockingPAC pac = (InstanceDockingPAC) pacIt.next();
+
+            if (! pac.checkAC(deletedNodes, reducedNodes)) {
+                return false;
+            }
+        } // while pacIt
+
+        return true;
+    } //checkPACs()
+
+COM:checks the validity of PACs given two sets of deleted nodes and reduced nodes by iterating through a collection of InstanceDockingPAC objects and returning false if any of the PACs fail the check

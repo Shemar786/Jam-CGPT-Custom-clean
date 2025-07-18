@@ -1,0 +1,14 @@
+TDAT:     public void testGetCodigo() {
+        System.out.println("getCodigo");
+        
+        Cronograma instance = null;
+        
+        String expResult = "";
+        String result = instance.getCodigo();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the "getCodigo" method of the "Cronograma" class by initializing an instance, calling the method and checking if the expected result matches with the actual result

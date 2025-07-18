@@ -1,0 +1,9 @@
+TDAT: 	private void checkNormalReplay(ReasonerApplication app, IProofRule rule) {
+		final IProverSequent sequent = makeSequent(app, rule, false);
+		final IReasonerInput input = app.getInput();
+		final IProofRule newRule = applyAndCheckChildren(new SuccessfullReasonerApplication(
+				sequent, input, rule.apply(sequent)));
+		assertTrue(ProverLib.deepEquals(rule, newRule));
+	}
+
+COM:checks if a proof rule and its children are applied correctly given an application and its sequent

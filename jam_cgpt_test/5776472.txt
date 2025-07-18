@@ -1,0 +1,16 @@
+TDAT: 	public void draw(int offset_x, int offset_y) {
+		// prevent infinite loops
+		if(isDrawn()) return;
+
+		setDrawn(true);
+
+		// first draw everything this shape covers
+		for(Iterator e = getCoveredPositions(); e.hasNext();) {
+			((Position)e.next()).draw(offset_x, offset_y);
+		}
+		
+		// draw the shape at this position
+		getShape().draw(this, offset_x, offset_y);
+	}
+
+COM:draws a shape at a specific position with a given offset, while preventing infinite loops and accounting for covered positions

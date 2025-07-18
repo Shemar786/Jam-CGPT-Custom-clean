@@ -1,0 +1,8 @@
+TDAT: 	public FieldPoint getSpeed(MobileObject mObj) {
+		int time = this.getTimeStamp() - mObj.getTimeStamp();
+		FieldPoint speedVector = new FieldPoint((mObj.getPosition().getX() - this.getPosition().getX()) / time,
+				(mObj.getPosition().getY() - this.getPosition().getY()) / time);
+		return speedVector;
+	}
+
+COM:returns the speed vector between two mobile objects based on their coordinates and timestamps

@@ -1,0 +1,9 @@
+TDAT:     protected void copyFile(File sourceFile, File destinationFile) throws IOException {
+        FileInputStream sourceStream = new FileInputStream(sourceFile);
+        FileOutputStream destinationStream = new FileOutputStream(destinationFile);
+        IOUtil.copy(sourceStream, destinationStream);
+        IOUtil.close(sourceStream);
+        IOUtil.close(destinationStream);
+    }
+
+COM:copies a file from a sourceFile path to a destinationFile path using input and output file streams, and then closes the streams

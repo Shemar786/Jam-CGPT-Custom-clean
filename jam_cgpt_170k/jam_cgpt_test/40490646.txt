@@ -1,0 +1,12 @@
+TDAT:     protected void executeCommand(Command c) {
+        CommandArray ca = (CommandArray) c;
+        if (!(c instanceof CommandArray)) {
+            System.err.println("Send ");
+            return;
+        }
+//        led.setOn(ca.getValue(POWER) == ON);
+        led.setRGB((int) ca.getValue(RED), (int) ca.getValue(GREEN), (int) ca.getValue(BLUE));
+
+    }
+
+COM:takes in a Command object, checks if it is of type CommandArray, and sets the RGB values of an LED based on the values in the CommandArray object

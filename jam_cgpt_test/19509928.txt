@@ -1,0 +1,10 @@
+TDAT: 	public void testQuantifiers() {
+		final ITypeEnvironment env = mTypeEnvironment("f", REL(S, S));
+		assertWDLemma(env,//
+				"∀x·x ∈ dom(f) ⇒ (∃y · f(x) = f(y)) ",//
+				"∀x·x∈dom(f) ⇒" //
+						+ "(∀y·x∈dom(f) ∧ f∈S ⇸ S ∧ y∈dom(f) ∧ f∈S ⇸ S)",//
+				"∀x·x∈dom(f) ⇒ (∀y·f∈S ⇸ S∧y∈dom(f))");
+	}
+
+COM:tests a quantifier lemma related to a domain and codomain of a mathematical relation

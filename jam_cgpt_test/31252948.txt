@@ -1,0 +1,21 @@
+TDAT: 	private void showMessage(String newMessage, Icon icon) {
+		// Any change?
+		if (message.equals(newMessage) && messageImage == icon)
+			return;
+
+		message = "<html>" + newMessage + "</html>";
+		if (message == null)
+			message = ""; //$NON-NLS-1$
+		messageImage = icon;
+
+		if (!showingError) {
+			// we are not showing an error
+			messageLabel.setText(message);
+			messageImageLabel.setIcon(icon);
+			messageImageLabel.setVisible(messageImage != null);
+			messageLabel.setToolTipText(message);
+		}
+		this.getRootPane().revalidate();
+	}
+
+COM:displays a message and an icon, updating them only if they have changed, and sets the text, icon, and tooltip for a message label

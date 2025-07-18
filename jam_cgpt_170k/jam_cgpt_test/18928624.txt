@@ -1,0 +1,13 @@
+TDAT:   public Object createMemberSet(List mList) {
+    if (mList.size() == 0)
+      return null;
+    else if (mList.size() == 1)
+      return mList.get(0);
+    else {
+      Exp[] remExps = (Exp[]) mList.toArray(new Exp[0]);
+      return new UnresolvedFunCall("{}", Syntax.Braces, remExps);
+    }
+
+  }
+
+COM:creates a member set from a given list by either returning null for an empty list, returning the only element for a list with one element, or creating an unresolved function call with the remaining elements for a list with more than one element

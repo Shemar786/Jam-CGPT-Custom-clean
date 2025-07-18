@@ -1,0 +1,11 @@
+TDAT:     public Date getParsedFirmwareDate() {
+        Date date = null;
+        try {
+            date = obexDateFormatter.parse(firmwareDate);
+        } catch (ParseException ex) {
+            Logger.getLogger(DevInfo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return date;
+    }
+
+COM:returns a parsed firmware date as a Date object

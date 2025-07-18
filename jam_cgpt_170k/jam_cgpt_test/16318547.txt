@@ -1,0 +1,11 @@
+TDAT:     private String getValueStringOfObjectProp(Resource root, Property prop){
+
+        Statement x = root.getProperty(prop);// <dc:title>
+        if(x==null){
+            return null;
+        }       
+        Resource innerNode = (Resource)x.getObject(); // <rdf:Description>
+        return innerNode.getProperty(valueString).getString(); //<dcrdf:valueString>abc
+    }
+
+COM:retrieves the value of a property of a resource object as a string

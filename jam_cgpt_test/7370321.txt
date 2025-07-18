@@ -1,0 +1,13 @@
+TDAT: 	private void copy(BufferedReader reader, BufferedWriter writer) throws IOException {
+        String line = null;
+        while ((line=reader.readLine()) != null) {
+        	// if line is not a comment, copy line to writer
+        	if (!(line.startsWith("<?"))){
+        		writer.write(line);
+        		writer.newLine(); 
+        	}
+        }
+
+	}
+
+COM:copies lines from a BufferedReader to a BufferedWriter while ignoring lines that start with "<?" (comment lines)

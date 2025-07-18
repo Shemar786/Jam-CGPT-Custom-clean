@@ -1,0 +1,12 @@
+TDAT: 	private void changeChildCloudIterativeLevels(int deltaLevel) {
+		for (ListIterator e = childrenUnfolded(); e.hasNext(); ) {
+			NodeAdapter childNode = (NodeAdapter)e.next();
+			MindMapCloud childCloud = childNode.getCloud();
+			if (childCloud != null) {
+				childCloud.changeIterativeLevel(deltaLevel);
+			}
+			childNode.changeChildCloudIterativeLevels(deltaLevel);
+		}
+	}
+
+COM:is used to change the iterative levels of child nodes in a Mind Map Cloud recursively

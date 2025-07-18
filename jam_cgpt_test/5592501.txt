@@ -1,0 +1,10 @@
+TDAT:   public void renameTab(File newFile, wpTab tab) throws wpException {
+
+    int index = indexOfTab(tab.getFile().getName());
+    if (index != -1) {
+      tab.setFile(newFile);
+      this.setTitleAt(index, newFile.getName());
+    }
+  }
+
+COM:renames a tab associated with a file by updating its file name and title

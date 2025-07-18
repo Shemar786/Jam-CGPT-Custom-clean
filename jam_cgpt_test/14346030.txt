@@ -1,0 +1,8 @@
+TDAT:     public void applyLens(JGraphPane theJGraphPane, Point2D point) {
+        for (int i=0;i<m_lenses.size();i++) {
+            Lens lens=(Lens)m_lenses.get(i);
+            lens.applyLens(theJGraphPane, point);
+        }
+    }
+
+COM:applies a list of lenses to a point on a JGraphPane

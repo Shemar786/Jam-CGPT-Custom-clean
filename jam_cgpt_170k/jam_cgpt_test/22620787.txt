@@ -1,0 +1,9 @@
+TDAT: 	public StandardsManager getStandardsManager() {
+		if (this.getActionForm() == null)
+			prtlnErr("getStandardsManager: actionForm is unavailable");
+		else if (this.getActionForm().getFramework() == null)
+			prtlnErr("getStandardsManager: framework is unavailable");
+		return this.getActionForm().getFramework().getStandardsManager();
+	}
+
+COM:returns the standards manager associated with the action form's framework

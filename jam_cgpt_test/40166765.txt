@@ -1,0 +1,17 @@
+TDAT: 	public void buildGraph(URL modelURL, URL instanceURL) throws ModelToGraphException, GraphToModelException {
+		graph = modeltograph.buildGraph(modelURL, instanceURL);
+		graphTransformer.setGraph(graph);
+		origGraph = new ListGraph(graph);
+
+		//if system is in debug mode, output graph as dot file
+		if (debugmode) try {
+			outputdot(graph, graph);
+		} catch(IOException e) {
+			throw new GraphToModelException(e.getMessage());
+		}
+
+		//Construct the object diagram representation of the new graph
+		objectdisplay = graphtomodel.generateDisplayObjects(graph);
+	}
+
+COM:builds a graph from a model and instance URL, sets the graph as the transformed graph, creates a copy of the original graph, outputs the graph as a dot file if debug mode is enabled, and generates a display object representation of the graph

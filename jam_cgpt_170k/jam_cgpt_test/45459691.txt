@@ -1,0 +1,11 @@
+TDAT: 	private JTextField getJTextField6() {
+		if (jTextField6 == null) {
+			jTextField6 = new JTextField("0.00001");
+			jTextField6.setBounds(new Rectangle(147, 136, 110, 29));
+			jTextField6.setText(defaultProps.getProperty("e-value"));
+			jTextField6.setText(applicationProps.getProperty("e-value"));
+		}
+		return jTextField6;
+	}
+
+COM:returns a JTextField with default and application properties set for displaying an e-value in a graphical user interface

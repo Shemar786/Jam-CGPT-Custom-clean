@@ -1,0 +1,10 @@
+TDAT: 	public void print (Object o) {
+		if (this.getCurrent() instanceof ItextParentObject) {
+			this.push(new OutputText(((ItextParentObject)this.getCurrent()), String.valueOf(o), false));
+			this.pop();
+		} else {
+			throw new IllegalArgumentException("Cannot print() on this object: " + this.getCurrent());
+		}
+	}
+
+COM:prints the output text of the current object or throws an exception if it cannot be printed

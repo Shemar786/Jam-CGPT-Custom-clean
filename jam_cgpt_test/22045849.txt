@@ -1,0 +1,15 @@
+TDAT:     protected void createKeyMap(){
+	for( CalculatorButton o : buttons ){
+	    if( o.shortcut() == 0 ) continue;
+	    if( keyMap.containsKey( o.shortcut() ) ){
+		System.out.print( "Repeat of " );
+		System.out.print( o.shortcut() );
+		System.out.print( " in " );
+		System.out.println( o.tooltip() );
+	    }
+	    keyMap.put( o.shortcut(), o );
+	}
+	
+    }
+
+COM:creates a key map for calculator buttons with shortcuts and handles any duplicate shortcuts

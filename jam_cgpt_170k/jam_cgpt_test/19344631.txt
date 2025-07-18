@@ -1,0 +1,14 @@
+TDAT:   public void setDetails(String val) {
+
+      if ((val == null || "".equals(val))
+      && (details == null || "".equals(details))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(details)) || (updateStatus == NULL_INT_VALUE)) {
+           details = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets the "details" attribute to the provided value if it is not already set to that value, and sets the "updateStatus" attribute to "UPDATED"

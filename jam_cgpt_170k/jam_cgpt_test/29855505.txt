@@ -1,0 +1,19 @@
+TDAT:   public boolean isUnfolded(int level) {
+    for (int i = 0; i < getChildCount(); i++) {
+      VReportRow child = (VReportRow)getChildAt(i);
+
+      if (child.getLevel() > level) {
+	if (((VGroupRow)child).isUnfolded(level)) {
+	  return true;
+	}
+      } else {
+	if (child.isVisible()) {
+	  return true;
+	}
+      }
+    }
+
+    return false;
+  }
+
+COM:checks if a report row is unfolded for a given level by iterating through its child elements

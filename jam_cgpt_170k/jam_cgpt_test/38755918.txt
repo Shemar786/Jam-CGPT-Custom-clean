@@ -1,0 +1,12 @@
+TDAT:     public Edge createEdge(Vertex source, Vertex target, EdgeType type, int iteration, HashMap<Vertex, Set<Edge>> preconditions) {
+		if (type == EdgeType.CONTAINS) {
+            source.addChild(target);
+            target.addParent(source);
+        } else {
+            target.addOrigin(source);
+            source.addDelegatee(target);
+        }
+        return this.edges.store(source, target, type, iteration, preconditions);
+    }
+
+COM:creates an edge between two vertices based on the edge type and stores it while updating preconditions

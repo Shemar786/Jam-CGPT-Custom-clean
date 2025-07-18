@@ -1,0 +1,11 @@
+TDAT:     public void setMinimum(double newMinimum) {
+        double newMax = Math.max(newMinimum, m_max);
+        double newValue = Math.max(newMinimum, m_value);
+        double newExtent = Math.min(newMax - newValue, m_extent);
+        setRangeProperties(
+            newValue, newExtent, newMinimum, newMax, m_adjusting,
+            LinearRangeModelEvent.GENERAL_ADJUSTMENT
+        );
+    }
+
+COM:sets the minimum value of a range model and adjusts the range properties accordingly

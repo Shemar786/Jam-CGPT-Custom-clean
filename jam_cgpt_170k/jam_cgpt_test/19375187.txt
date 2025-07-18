@@ -1,0 +1,12 @@
+TDAT:    public Block outdentAsBrother(Block block) {
+ 
+   		if (getParent().canAddChild(block)) return block;
+
+   		AbstractDomainBlock newblock = (AbstractDomainBlock) Domain.createConceptNamed(block.getValue());
+   		if (block instanceof AbstractConcept || block instanceof Aggregation) {
+   			newblock.addChildrenOf(block);
+   		}
+   		return newblock;
+   }  
+
+COM:takes a Block object as input, checks if it can be added to its parent, creates a new block if necessary and returns it

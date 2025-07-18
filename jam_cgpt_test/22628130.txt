@@ -1,0 +1,18 @@
+TDAT: 	public boolean removeComment(String identifier) {
+		ArrayList result = new ArrayList();
+		//List list = element.getMixedContent();
+		List list = element.getContent();
+		for (int i=(list.size()-1); i>=0; i--) {
+			Object obj = list.get(i);
+			if (obj instanceof Comment) {
+				String str = ((Comment)obj).getText();
+				if (str.indexOf(identifier) >= 0) {
+					list.remove(i);
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+COM:removes a comment within an element based on a provided identifier

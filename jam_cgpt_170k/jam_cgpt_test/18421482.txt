@@ -1,0 +1,14 @@
+TDAT: 	private void generateRecipeMetadata (Recipe re) {
+		
+		re.setCreateDate(new Date());
+		re.setCreateBy((Dietician) m_UserHandler.getUser());
+		re.setNutrients(re.getNutrients());
+		
+		for (IngredientAmount f : re.getIngredients()) {
+			if (f.getFood() instanceof Recipe) {
+				generateRecipeMetadata((Recipe) f.getFood());
+			}
+		}
+	}
+
+COM:generates metadata for a recipe object and its ingredients by setting creation date, author, and nutrients, and recursively calling itself for any nested recipe ingredients

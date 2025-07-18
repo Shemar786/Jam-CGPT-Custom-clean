@@ -1,0 +1,10 @@
+TDAT: 	protected Document toDocument(String value) throws Exception {
+		org.apache.xerces.parsers.DOMParser parser = new org.apache.xerces.parsers.DOMParser();
+		parser.setFeature("http://xml.org/sax/features/namespaces", true);
+		StringReader reader = new StringReader(value);
+		parser.parse(new InputSource(reader));
+		reader.close();
+		return parser.getDocument();
+	}
+
+COM:takes in a String value, parses it using Xerces DOMParser with namespaces feature enabled, and returns the resulting Document object

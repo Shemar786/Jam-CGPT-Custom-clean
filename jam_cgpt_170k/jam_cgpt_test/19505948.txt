@@ -1,0 +1,17 @@
+TDAT: 	public T createInstance(String elementName, IRodinElement parent) {
+		if (constructor == null) {
+			computeConstructor();
+		}
+		if (constructor == null) {
+			return null;
+		}
+		try {
+			return constructor.newInstance(elementName, parent);
+		} catch (Exception e) {
+			String message = "Can't create an element of type " + getId();
+			Util.log(null, message);
+			throw new IllegalStateException(message, e);
+		}
+	}
+
+COM:creates an instance of a generic type T with a given element name and parent element, using a constructor method that is computed dynamically

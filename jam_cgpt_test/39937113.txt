@@ -1,0 +1,17 @@
+TDAT: 	protected void addNb_TasksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BoundRMLL73_nb_Tasks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BoundRMLL73_nb_Tasks_feature", "_UI_BoundRMLL73_type"),
+				 BoundRMLL73Package.Literals.BOUND_RMLL73__NB_TASKS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to a list for an item that belongs to the BoundRMLL73 class

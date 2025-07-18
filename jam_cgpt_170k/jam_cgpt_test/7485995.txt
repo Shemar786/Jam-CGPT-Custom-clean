@@ -1,0 +1,12 @@
+TDAT:     protected void tearDown() throws Exception {
+        super.tearDown();
+        XMPPConnection setupConnection = createConnection();
+        setupConnection.connect();
+        setupConnection.login("user0", "user0");
+        // Delete the created account for the test
+        setupConnection.getAccountManager().deleteAccount();
+        // Close the setupConnection
+        setupConnection.disconnect();
+    }
+
+COM:tears down a created XMPP connection and deletes the account created for testing purposes

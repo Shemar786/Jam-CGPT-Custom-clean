@@ -1,0 +1,12 @@
+TDAT: 	private JPanel createSwapPanel(String cmd_base) {
+		JPanel p = new JPanel();
+		p.setLayout(new GridLayout(2, 1));
+		JButton fwd = createButton("stats/arrow", cmd_base + "_fwd");
+		JButton bck = createButton("stats/arrow_back", cmd_base + "_bck");
+		p.add(fwd);
+		p.add(bck);
+		p.setMaximumSize(new Dimension(53,32));
+		return p;
+	}
+
+COM:creates a JPanel with two buttons and sets its maximum size to 53x32

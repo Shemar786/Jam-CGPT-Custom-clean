@@ -1,0 +1,11 @@
+TDAT:     protected void initializeAccessRules() {
+        Set<String> rules = new HashSet<String>();
+        for (Class<?> annotatedClass: getPersistenceMapping().getSecureClasses()) {
+            rules.addAll(parseAllowedRoles(annotatedClass));
+            rules.addAll(parsePermissions(annotatedClass));
+        }
+        rules.remove(null);
+        compileRules(rules);
+    }
+
+COM:initializes and compiles a set of access rules for secure classes based on allowed roles and permissions

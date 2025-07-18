@@ -1,0 +1,15 @@
+TDAT:     public SWGResourceSet subsetBy(Comparable<SWGKnownResource> comparable) {
+        if (comparable == null)
+            throw new NullPointerException("Argument is null");
+
+        SWGResourceSet result = new SWGResourceSet(size());
+        for (SWGKnownResource kr : storage)
+            if (comparable.compareTo(kr) == 0)
+                result.storage.add(kr);
+
+        if (result.storage.isEmpty())
+            return EMPTY;
+        return result;
+    }
+
+COM:returns a new SWGResourceSet containing a subset of elements that are Comparable to a specified SWGKnownResource

@@ -1,0 +1,13 @@
+TDAT: 	public void printImplements(final PrintWriter out, int indent) {
+		// There are multiple roots to the implements graph.
+		indent += 2;
+		final Iterator roots = this.implementsGraph.roots().iterator();
+		while (roots.hasNext()) {
+			final TypeNode iNode = (TypeNode) roots.next();
+			indent(out, indent);
+			out.println(iNode.type);
+			printImplementors(iNode.type, out, true, indent + 2);
+		}
+	}
+
+COM:prints information on all interfaces (implements graph) implemented by a type node to a PrintWriter with a given indentation level

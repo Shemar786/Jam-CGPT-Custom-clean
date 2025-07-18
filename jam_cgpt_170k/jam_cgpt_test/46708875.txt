@@ -1,0 +1,9 @@
+TDAT:     public int write(byte[] b, int off) {
+    int nBytes = super.write(b, off);
+    nBytes += writeLEInt(b, off + nBytes, SHAPE_TYPE_POINT);
+    nBytes += writeLEDouble(b, off + nBytes, x);
+    nBytes += writeLEDouble(b, off + nBytes, y);
+    return nBytes;
+    }
+
+COM:writes a point shape type, and its corresponding X and Y coordinates, to a byte array

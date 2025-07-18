@@ -1,0 +1,23 @@
+TDAT:         public boolean canInsert(Block block) {
+            int blockIndex = cfg.preOrderIndex(block);
+
+            Def def = operands[blockIndex];
+
+            if (def == null) {
+                return true;
+            }
+
+            if (!hasRealUse[blockIndex]) {
+                if (def instanceof Phi) {
+                    Phi phi = (Phi) def;
+
+                    if (!phi.willBeAvail()) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+COM:checks if a block can be inserted based on its operands and real use

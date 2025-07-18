@@ -1,0 +1,12 @@
+TDAT:         private Path makeFollowPath(int steps) {
+        	
+        	// TODO Use order-2 beziers instead
+            Path p = new Path();
+            p.moveTo(0, 0);
+            for (int i = 0; i < steps; i++) {
+                p.lineTo(i/(float) steps, 0.2f * (float) Math.pow(-1, i));
+            }
+            return p;
+        }
+
+COM:creates a Path consisting of line segments with a given number of steps, starting at the origin and with alternating y-values

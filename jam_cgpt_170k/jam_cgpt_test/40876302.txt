@@ -1,0 +1,10 @@
+TDAT:     public TextField getTextField41() {
+        if (textField41 == null) {//GEN-END:|630-getter|0|630-preInit
+            // write pre-init user code here
+            textField41 = new TextField("Descuento KD No REF:", null, 32, TextField.DECIMAL);//GEN-LINE:|630-getter|1|630-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|630-getter|2|
+        return textField41;
+    }
+
+COM:returns a TextField object with a label and decimal input type, and initializes it if it hasn't been previously

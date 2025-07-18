@@ -1,0 +1,21 @@
+TDAT: 	private void refresh() {
+		if (form == null)
+			return;
+		if (form.getContent().isDisposed())
+			return;
+		if (isActive() && needsUpdate) {
+			// We are switching to this page - refresh it
+			// if needed.
+			final Display display = this.getEditorSite().getShell()
+					.getDisplay();
+			display.syncExec(new Runnable() {
+				public void run() {
+					// Reset the content string of the form text
+					setFormText(new NullProgressMonitor());
+				}
+			});
+			needsUpdate = false;
+		}
+	}
+
+COM:refreshes the content of a form if it needs updating and the current page is active

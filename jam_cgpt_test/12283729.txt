@@ -1,0 +1,11 @@
+TDAT: 	public void processPOJOs(final List<String> classNames, final Technology tech) {
+		for (String className : classNames) {
+			MainWizard.getIO().getOutput().println(
+					"[roma] Generating " + className + extension + " -> " + destination);
+			Map<String, Object> root = extractor.extract(pckgName + ".domain." + className);
+			root.put("package", pckgName);
+			processPOJO(className, tech, root);
+		}
+	}
+
+COM:takes a list of class names and a technology, generates code based on those classes, and outputs the result to a specified destination

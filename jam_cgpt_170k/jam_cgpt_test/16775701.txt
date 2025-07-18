@@ -1,0 +1,12 @@
+TDAT:     private void writeTimeValuePair(PrintWriter writer, double time, double value) {
+        double timeInTimeUnits = EfdcUtils.getRelativeTimeInTimeUnits(Time.mjdToMillies(time),
+                this.referenceTime, this.secondsPerTimeUnit);
+
+        writer.print("  ");
+        writer.print(timeInTimeUnits);
+        writer.print(" ");
+        writer.print(value);
+        writer.println();
+    }
+
+COM:writes a time-value pair to a writer, with the time converted to relative time units using a reference time and seconds per time unit

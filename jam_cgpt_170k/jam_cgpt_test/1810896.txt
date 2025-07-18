@@ -1,0 +1,10 @@
+TDAT:   public Comment createComment(String data) {
+    try {
+      return (Comment) NodeImpl.build(XMLParserImpl.createComment(this
+        .getJsObject(), data));
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_CHARACTER_ERR, e, this);
+    }
+  }
+
+COM:creates a comment node using the given data string, and throws an exception if there is an invalid character

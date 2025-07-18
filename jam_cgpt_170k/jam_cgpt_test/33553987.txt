@@ -1,0 +1,14 @@
+TDAT: 		static ApiResult getPublic(Integer offset, Integer count) {
+			Uri.Builder b = new Uri.Builder()
+			.path(base)
+			.appendPath("getPublic" + FORMAT)
+			.appendQueryParameter("apiKey", apiKey);
+			if (offset != null)
+				b.appendQueryParameter("offset", offset.toString());
+			if (count != null)
+				b.appendQueryParameter("count", count.toString());
+
+			return fetchGet(signGet(b));
+		}
+
+COM:returns an API result object using a specified API key, offset, and count parameters through a GET request

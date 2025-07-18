@@ -1,0 +1,16 @@
+TDAT:     private void updateInfoLabel() {
+        boolean wasVisible = restartLabel.isVisible();
+        restartLabel.setVisible(!restartRequests.isEmpty());
+
+        if (!fullyInicialized) {
+            return;
+        }
+        if (!wasVisible && restartLabel.isVisible()) {
+            this.validate();
+            if (MiscUtils.isCropped(closeButton)) {
+                this.pack();
+            }
+        }
+    }
+
+COM:updates the visibility of a label based on the presence of restart requests, and executes additional code if certain conditions are met

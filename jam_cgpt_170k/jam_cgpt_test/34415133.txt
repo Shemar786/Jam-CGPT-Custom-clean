@@ -1,0 +1,23 @@
+TDAT:     public boolean clearObjectLock(String oid, String username)
+    {	
+    	boolean result = false;
+    	synchronized (lockingMutex) {
+			String locker = lockedMap.get(oid);
+			if(locker==null){
+				if(lockedMap.containsKey(oid)){
+					lockedMap.remove(oid);
+					result = true;
+				}
+			}
+			else if(locker.equals(username)){
+				lockedMap.remove(oid);
+				this.editObjectLock(oid, "", null);
+				result = true;
+			}
+			
+		}
+    	//System.out.println("Unlocking: result is: "+result);
+    	return result;
+    }
+
+COM:clears the lock on a specific object based on the object ID and username provided

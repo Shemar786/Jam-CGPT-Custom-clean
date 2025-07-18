@@ -1,0 +1,10 @@
+TDAT:     public void testtoString() {
+        System.out.println("toString");
+        org.gps.types.NMEAEvent instance = new NMEAEvent("test");
+        java.lang.String expectedResult = "test";
+        java.lang.String result = instance.toString();
+        assertEquals(expectedResult, result);
+
+    }
+
+COM:tests the toString() method of the NMEAEvent class and compares the expected result with the actual result using the assertEquals method

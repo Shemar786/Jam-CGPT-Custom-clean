@@ -1,0 +1,15 @@
+TDAT: 	public void sortPopulation(RealTypePopulation population, boolean sign){
+		Double[] fitness = new Double[population.getChromossomesSet().size()];
+		
+		for (int i = 0; i < population.getChromossomesSet().size(); i++){
+			fitness[i] = population.getChromossomesSet().get(i).getFitness();
+		}
+		
+	    RealQuickSort qs = new RealQuickSort();
+		qs.sort(population.getChromossomesSet(), sign);
+
+ 
+		
+	}
+
+COM:sorts the fitness values of a population using the RealQuickSort algorithm

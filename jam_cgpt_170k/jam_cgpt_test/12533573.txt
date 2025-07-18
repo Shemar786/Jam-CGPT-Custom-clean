@@ -1,0 +1,14 @@
+TDAT: 	public int getNumberOfIncomingLanes(TransportLocationIfc destination){
+		if (destination == null)
+			throw new IllegalArgumentException("The supplied location was null.");
+		
+		if (!myTransportLocations.contains(destination))
+			throw new IllegalArgumentException("The supplied location is not in the network.");
+		
+		if (myIncomingLanes.get(destination)==null)
+			throw new IllegalArgumentException("The incoming lane list was null for:"+destination.getName()+"!");
+		
+		return(myIncomingLanes.get(destination).size());
+	}
+
+COM:returns the number of incoming lanes at a specified transportation location, and throws exceptions if the destination is null or not in the network

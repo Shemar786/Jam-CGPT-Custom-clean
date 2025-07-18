@@ -1,0 +1,9 @@
+TDAT:     public void addSession(I_JoRemoteSession aSession) throws RemoteException {
+        if (Log.getLog(getName()).isLog(C_Log.METHOD)) {
+            Log.getLog(getName()).log("Added a session. Now " + mySessions.size() + " are active.", C_Log.METHOD);
+        }
+
+        mySessions.put(aSession.getId(), aSession);
+    }
+
+COM:adds a remote session object to a HashMap and logs the addition of the session

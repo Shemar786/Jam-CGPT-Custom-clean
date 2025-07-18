@@ -1,0 +1,16 @@
+TDAT: 	public ArrayList getAnnoPathways() {
+		String t = multiDoc.get("itemannopathways");
+		//System.out.println("getAnnoPathways() String: " + t );
+		if (t == null || t.length() == 0) {
+			return null;
+		}
+		else {
+			String[] tmp = t.split("\\s+");
+			ArrayList list = new ArrayList(tmp.length);
+			for (int i = 0; i < tmp.length; i++)
+				list.add(tmp[i].replaceAll("\\+", " "));
+			return list;
+		}
+	}
+
+COM:retrieves a list of annotated pathways as an ArrayList from a multi-document object

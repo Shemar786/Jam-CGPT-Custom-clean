@@ -1,0 +1,10 @@
+TDAT:     public Command getExitCommand8() {
+        if (exitCommand8 == null) {//GEN-END:|544-getter|0|544-preInit
+            // write pre-init user code here
+            exitCommand8 = new Command("SALIR", Command.EXIT, 0);//GEN-LINE:|544-getter|1|544-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|544-getter|2|
+        return exitCommand8;
+    }
+
+COM:returns an exit command object, and creates it if it has not already been initialized

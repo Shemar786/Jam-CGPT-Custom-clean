@@ -1,0 +1,23 @@
+TDAT: 	public RecordList batchDeleteRecords(RecordList records) throws Exception {
+
+		prtln("\nbatchDeleteRecords()");
+
+		RecordList failures = new RecordList(getRepositoryManager().getIndex());
+		if (records.isEmpty()) {
+			prtln("batchDeleteRecords no records to delete");
+		}
+		else {
+			for (Iterator i = records.iterator(); i.hasNext(); ) {
+				String id = (String) i.next();
+				try {
+					deleteRecord(id);
+				} catch (Exception e) {
+					prtlnErr("batchDeleteRecords failed to delete " + id);
+					failures.add(id);
+				}
+			}
+		}
+		return failures;
+	}
+
+COM:takes in a list of records, attempts to delete each one, and returns a list of any records that were not successfully deleted

@@ -1,0 +1,17 @@
+TDAT:     public String getString(final String key, final String def) {
+        String value;
+
+        try {
+            value = bundle.getString(key);
+        } catch (MissingResourceException mre) {
+            if (LOGGER.isDebugEnabled()) {
+                LOGGER.debug("Error getting resource for key '" + key + "'");
+                LOGGER.debug("using default: '" + def + "'");
+            }
+            value = def;
+        }
+
+        return value;
+    }
+
+COM:The method takes in a key and a default value, tries to retrieve the corresponding string resource and returns the value if found, else returns the default value

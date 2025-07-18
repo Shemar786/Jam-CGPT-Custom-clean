@@ -1,0 +1,11 @@
+TDAT:     public void addToBaseline(String resource, JavaProblem[] problems) {
+        if ((null == problems) || (0 == problems.length)) {
+            data.remove(resource);
+        }
+        else {
+            BaselineProblem[] baseline = createBaseline(problems);
+            data.put(resource, baseline);
+        }
+    }
+
+COM:adds a baseline of problems for a given resource, or removes the baseline if there are no problems

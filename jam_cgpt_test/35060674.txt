@@ -1,0 +1,19 @@
+TDAT: 	private void setValue(int markerPosX) {
+		if( markerPosX < 0 || markerPosX >= barWidth )
+			return;
+
+		float ratio = (float)markerPosX / barWidth;
+		float newValue = ratio * (maxValue - minValue) + minValue;
+		if( newValue == value ) 
+			return;
+		value = newValue;
+		changeMarkerLocation();
+		try {
+			observable.setFloatValue( value );
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		observable.notifyObservers();
+	}	
+
+COM:sets a new value based on a given marker position and notifies observers of the change

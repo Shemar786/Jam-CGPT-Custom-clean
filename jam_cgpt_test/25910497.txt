@@ -1,0 +1,19 @@
+TDAT: 	private boolean startEmailActivity(Intent intent) {
+		PackageManager pm = getPackageManager();
+		int flags = PackageManager.MATCH_DEFAULT_ONLY;
+		List<ResolveInfo> matches = pm.queryIntentActivities(intent, flags);
+		for (ResolveInfo info : matches) {
+			if (info.activityInfo.enabled) {
+				String packageName = info.activityInfo.packageName;
+				String className = info.activityInfo.name;
+				if (packageName.equals(PACKAGE_NAME_GMAIL)) {
+					intent.setClassName(packageName, className);
+					startActivity(intent);
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+COM:checks if the device has a Gmail app installed and initiates an email activity using that app

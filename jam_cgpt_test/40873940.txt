@@ -1,0 +1,11 @@
+TDAT:     public Command getOkCommand16() {
+        if (okCommand16 == null) {//GEN-END:|592-getter|0|592-preInit
+           if(nomina == 2)
+               okCommand16 = new Command("LIQUIDEZ", Command.OK, 0);//GEN-LINE:|592-getter|1|592-postInit
+           else
+            okCommand16 = new Command("NOMINA 3", Command.OK, 0);
+        }//GEN-BEGIN:|592-getter|2|
+        return okCommand16;
+    }
+
+COM:returns a Command object, with a label and type based on a condition, stored in the okCommand16 variable if it has been previously initialized or initializes it and then returns it

@@ -1,0 +1,14 @@
+TDAT:     public String substituteVariables(final String name, String value) {
+        //
+        // Now iteratively substitute the values of the referenced
+        // variables.
+        //
+        return substituteReferenceFunctionResult(name, value, variableRe, 2, 1,
+            new ReferenceFunction() {
+                public String value(String originalName, String reference) {
+                    return new VariableReference(Parameters.this, name, reference).value();
+                }
+            });
+    }
+
+COM:iteratively substitutes the values of referenced variables by invoking a reference function

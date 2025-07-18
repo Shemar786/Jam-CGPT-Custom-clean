@@ -1,0 +1,29 @@
+TDAT: 	private void refreshCombo() {
+		try {
+			accounts = DAOFactory.getCurrentFactory().getAccountDAO().findAll();
+
+			if (allowNull) {
+				accounts.add(0, null);
+			}
+			
+			accountCombo.removeAll();
+			for (Account account : accounts) {
+				if (account == null) {
+					accountCombo.add("*** EMPTY ***");
+				} else {
+					accountCombo.add(
+						MessageFormat.format(
+							"{0}",
+							account.toString()
+						)
+					);
+				}
+			}
+		} catch (DAOException e) {
+			accounts = null;
+			accountCombo.setEnabled(false);
+			logger.error("Could not populate account combo", e);
+		}
+	}
+
+COM:populates a JComboBox with a list of accounts retrieved from a database and adds a "null" option at the beginning of the list if specified

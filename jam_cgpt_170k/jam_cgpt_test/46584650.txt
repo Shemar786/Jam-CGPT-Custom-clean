@@ -1,0 +1,9 @@
+TDAT:     private String maybeExpandFactory(PropertyObj property) {
+        String result="";
+        if (!property.getManyToOneLink().getClazz().getClassPackage().equalsIgnoreCase(property.getClazz().getClassPackage())){
+            result=property.getManyToOneLink().getClazz().getDataPoolFactory()+".";
+        } 
+        return result;
+    }
+
+COM:conditionally expands a factory name based on the package of a property object's many-to-one link entity

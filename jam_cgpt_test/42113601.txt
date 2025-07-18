@@ -1,0 +1,17 @@
+TDAT: 	public Quad createHUDQuad(String name, String texture, float width, float height, Vector3f location) {
+		Quad quad = new Quad(name, width, height);
+		quad.setRenderQueueMode(Renderer.QUEUE_ORTHO);
+		
+		quad.setLocalTranslation(location);
+		
+		quad.setRenderState(TextureCache.getInstance().getTexture(texture));
+		
+		quad.setRenderState(bs);
+		
+		quad.setLightCombineMode(Spatial.LightCombineMode.Off);
+		quad.updateRenderState();
+		
+		return quad;
+	}
+
+COM:creates a 2D Quad object with a texture and position for use in a heads-up display (HUD) in a 3D scene

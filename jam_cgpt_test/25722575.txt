@@ -1,0 +1,15 @@
+TDAT: 		private boolean allowEnable(TableTreeItem item) {
+			MetricDescriptor md = (MetricDescriptor) item.getData("md");
+			String[] requires = md.getRequiredMetricIds();
+			if (requires != null && requires.length > 0) {
+				for (String require : requires) {
+					TableTreeItem reqItem = rowLookup.get(require);
+					if (!reqItem.getChecked()) {
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+
+COM:checks if a TableTreeItem can be enabled based on whether its required metrics are checked

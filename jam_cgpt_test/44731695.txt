@@ -1,0 +1,14 @@
+TDAT: 	public void addColumn(TableColumn column, int index) {
+
+		columns.add(index, column);
+		column.setIndex(index);
+	
+//RPF: This IF causes trouble, when adding columns to the model after others with indexes before the end
+//Then the tableviewer column resize does not work properly. a reindexcolumns is always necessary!
+//		if (index == columns.size() - 1) {
+			reindexColumns();
+//		}
+		
+	}
+
+COM:adds a TableColumn to a list at a specified index and sets the column's index, but also includes an IF statement that may cause issues with column resizing and recommends reindexing columns to avoid said issues

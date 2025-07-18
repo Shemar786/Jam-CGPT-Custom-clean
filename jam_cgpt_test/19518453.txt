@@ -1,0 +1,19 @@
+TDAT: 		public Node extractMax() {
+			assert isHeap;
+			if (contents.isEmpty()) {
+				return null;
+			} else {
+				Node lMaxNode = contents.get(0);
+				lMaxNode.heapPos = -1;
+				Node last = contents.get(contents.size() - 1);
+				contents.remove(contents.size() - 1);
+				if (contents.size() > 0) {
+					contents.set(0, last);
+					last.heapPos = 0;
+					sink(last);
+				}
+				return lMaxNode;
+			}
+		}
+
+COM:extracts the maximum value node from a heap data structure and updates the heap accordingly

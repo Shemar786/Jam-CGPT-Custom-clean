@@ -1,0 +1,16 @@
+TDAT:     private int compareValues(Object o1, Object o2) throws ClassCastException {
+        Comparable  c1 = (Comparable) o1;
+        Comparable  c2 = (Comparable) o2;
+
+        if (c1 == null && c2 == null) {
+            return 0;
+        } else if (c1 == null) {
+            return -1;
+        } else if (c2 == null) {
+            return 1;
+        } else {
+            return c1.compareTo(c2);
+        }
+    }
+
+COM:compares two objects and returns an integer value based on the comparison result

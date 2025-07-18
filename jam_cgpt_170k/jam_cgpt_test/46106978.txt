@@ -1,0 +1,10 @@
+TDAT:     public void draw(int mX, int mY, float mAlpha) {
+        image.setWidth(width);
+        image.setHeight(height);
+        image.draw(mX - hotSpot.getX(), mY - hotSpot.getY(), mAlpha);
+
+        // Draw hotspot
+        // Engine.drawDot(mX, mY, 5, GLColor.RED);
+    }
+
+COM:draws an image with given location, transparency, and hotspot in a Java application

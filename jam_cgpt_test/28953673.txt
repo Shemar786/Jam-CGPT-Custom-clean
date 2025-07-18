@@ -1,0 +1,16 @@
+TDAT: 	public void writeHL7Message(Message message) {
+		if (log.isInfoEnabled()) {
+			if (message != null) {
+				// Write out the message
+				try {
+					log.info(PipeParser.encode(message, new EncodingCharacters('|', "^~\\&")));
+				} catch (HL7Exception e) {
+					log.info("Invalid HL7 message", e);
+				}
+			} else {
+				log.info("NULL");
+			}
+		}
+	}
+
+COM:writes a given HL7 message as a formatted string, with error handling in case of invalid input

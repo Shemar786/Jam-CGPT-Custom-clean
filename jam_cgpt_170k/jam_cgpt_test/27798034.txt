@@ -1,0 +1,16 @@
+TDAT:     public void testLegalArgs0() throws Exception {
+        AllTests.standardOut ("testLegalArgs0");
+
+        String geometryFilename = "../data/galFiltered.gml";
+        String interactionsFilename = "../data/tideker0/yeastSmall.intr";
+
+        String[] args = {"-g", geometryFilename,
+                         "-i", interactionsFilename};
+
+        CytoscapeConfig config = new CytoscapeConfig(args);
+
+        assertTrue(config.inputsError());
+
+    } // testLegalArgs0
+
+COM:tests the configuration of arguments for a CytoscapeConfig object with specific input files, and asserts that there are no errors in the configuration

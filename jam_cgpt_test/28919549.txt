@@ -1,0 +1,19 @@
+TDAT:     protected MathPainter getMathPainter() {
+	if (offScreenImageSet) {
+	    return mp;
+	} else {	
+	    waitForOnScreenPresence();
+
+	    int width = getWidth();
+	    int height = getHeight();
+
+	    offScreenImage = createVolatileImage(width, height);
+	    offScreenImageSet = true;
+	    mp.setRenderingArea(0, 0, width, height);
+	    mp.setGraphics((Graphics2D) offScreenImage.getGraphics());
+	    
+	    return mp;
+	}
+    }
+
+COM:returns a MathPainter object, and creates a new one if there is no off-screen image available or waits for its on-screen presence

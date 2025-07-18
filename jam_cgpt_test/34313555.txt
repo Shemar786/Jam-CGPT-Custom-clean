@@ -1,0 +1,9 @@
+TDAT:     private void loadMethods(Class<? extends Object> cls) throws Exception {
+        Method [] methods = cls.getMethods();
+        for (int i = 0; i < methods.length; i++) {
+            Method method = methods[i];
+            nameToMethodMap.put(method.getName(), method);
+        }
+    }
+
+COM:loads all the public methods of a given class and creates a map of method names to their respective Method objects

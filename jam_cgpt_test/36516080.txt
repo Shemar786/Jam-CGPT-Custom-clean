@@ -1,0 +1,15 @@
+TDAT:     public void actionPerformed(ActionEvent evt) {
+        JMenuItem source = (JMenuItem) evt.getSource();
+        FileObject fo = (FileObject) source.getClientProperty(FO_PROP);
+        if (fo != null) {
+        
+            try {
+                DataObject.find(fo).getCookie(OpenCookie.class).open();
+            } catch (Exception ex)
+            {
+                // do nothing...
+            }
+        }
+    }
+
+COM:handles the action event of a JMenuItem by getting a FileObject associated with it and opening it if it exists

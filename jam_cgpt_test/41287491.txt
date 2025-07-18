@@ -1,0 +1,20 @@
+TDAT:     public void setSimulatorSpeed(int value) {
+        if(value >= 0 && value <= 10){
+            if(timerRunning){
+                stopTimer();
+                simulatorSpeed = value;
+                startTimer();
+            }
+            else{
+                simulatorSpeed = value;
+            }
+            /**
+             * Finally update the listeners to let them know that the speed has changed.
+             */
+            for(SimulatorStateListener stateListener : stateListeners) {
+                stateListener.SimulationRateChanged(value);
+            }
+        }
+    }
+
+COM:sets the speed of a simulator and notifies listeners if the speed has changed within a certain range

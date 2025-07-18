@@ -1,0 +1,14 @@
+TDAT: 	public Space readMinimumDistance(SpaceVec r) {
+		if (r.equals(readStart())) {
+			return Space.ORIGIN;
+		}
+
+		SpaceVec delta = r.minus(readSpaceVec(readStartTime()));
+		Space alpha = delta.abs().times(delta.direction().dot(readDirection()));
+		double d = delta.abs().amount(Space.M);
+		double a = alpha.amount(Space.M);
+
+		return Space.M.times(Math.sqrt((d * d) - (a * a)));
+	}
+
+COM:calculates the minimum distance between a given point in space and a predefined reference point and direction

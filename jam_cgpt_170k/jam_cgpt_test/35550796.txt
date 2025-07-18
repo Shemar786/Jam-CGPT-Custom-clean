@@ -1,0 +1,31 @@
+TDAT: 	public String getCommand() {
+		String command = "";
+
+		if (chkVlan.isSelected()) {
+			command = command + "VLAN=ACT,";
+		} else {
+			command = command + "VLAN=DEACT,";
+		}
+
+		if (chkMac.isSelected()) {
+			command = command + "MAC=ACT,";
+		} else {
+			command = command + "MAC=DEACT,";
+		}
+
+		if (chkQos.isSelected()) {
+			command = command + "QOS=ACT,";
+		} else {
+			command = command + "QOS=DEACT,";
+		}
+
+		if (chkFilter.isSelected()) {
+			command = command + "FILTER=ACT;";
+		} else {
+			command = command + "FILTER=DEACT;";
+		}
+
+		return command;
+	}
+
+COM:returns a concatenated string containing the values of checkboxes named chkVlan, chkMac, chkQos, and chkFilter

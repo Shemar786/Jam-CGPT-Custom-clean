@@ -1,0 +1,15 @@
+TDAT: 	public void fireVariableListener(VariableChangedEvent e) {
+		assert e != null;
+		// put them in a temporary array to avoid concurrent access
+		IVariableListener[] copy = variableListeners
+				.toArray(new IVariableListener[variableListeners.size()]);
+		for (IVariableListener listener : copy) {
+			try {
+				listener.variableChanged(e);
+			} catch (Throwable t) {
+				logger.log(Level.SEVERE, "Error notifying listeners", t);
+			}
+		}
+	}
+
+COM:fires a VariableChangedEvent to all registered IVariableListeners while also handling any potential errors

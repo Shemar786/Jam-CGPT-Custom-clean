@@ -1,0 +1,9 @@
+TDAT:   public void registerLifeCycleManager(String name, LifeCycleManager manager){
+    if(_lifeCycleManagers.get(name) != null){
+      throw new IllegalArgumentException("LifeCycleManager already registered for: " + name);
+    }
+    _lifeCycleManagers.put(name, manager);
+    manager.init(toEnv());
+  }
+
+COM:registers a LifeCycleManager instance with a specific name, but throws an exception if a LifeCycleManager with the same name has already been registered, and then initializes the LifeCycleManager with a given environment

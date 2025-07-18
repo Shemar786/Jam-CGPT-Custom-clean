@@ -1,0 +1,16 @@
+TDAT:     public void paintGrid(Graphics2D g, Grid grid){
+	if(matrix != null){
+	    origTrans = ((Graphics2D)g).getTransform();
+	    g.translate(grid.gridRect.x, grid.gridRect.y);
+	    drawMatrix(g, grid);
+	    if(drawGrid){
+		drawGridLines(g, grid);
+	    }
+	    g.translate(-grid.gridRect.x, -grid.gridRect.y);
+	    ((Graphics2D)g).setTransform(origTrans);
+	}else{
+	    log.warn("Can't paint null matrix.");
+	}
+    }
+
+COM:paints a grid on a graphics object using the provided Grid object and handles a null matrix case

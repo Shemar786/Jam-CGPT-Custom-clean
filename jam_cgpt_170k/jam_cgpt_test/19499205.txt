@@ -1,0 +1,12 @@
+TDAT: 	protected Element addEventElement(Element parent, String eventLabel) {
+		assert parent.getType() == IMachineRoot.ELEMENT_TYPE;
+		final Element result = new Element(IEvent.ELEMENT_TYPE);
+		result.addAttribute(LABEL_ATTRIBUTE.makeValue(eventLabel));
+		result.addAttribute(EXTENDED_ATTRIBUTE.makeValue(false));
+		final int ordinary = ORDINARY.getCode();
+		result.addAttribute(CONVERGENCE_ATTRIBUTE.makeValue(ordinary));
+		parent.addChild(result, null);
+		return result;
+	}
+
+COM:adds an element to a parent element with a specified event label

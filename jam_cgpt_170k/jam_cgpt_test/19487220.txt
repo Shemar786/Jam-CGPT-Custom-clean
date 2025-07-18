@@ -1,0 +1,9 @@
+TDAT: 	public void testKDOM() {
+
+		testPredicates(new String[] { "dom({1|->2, 2|->3}) = {1,2}",
+				"3/: dom({1|->2, 2|->3})", "1: dom({1|->2, 2|->3})" },
+				new boolean[] { true, true, true });
+
+	}
+
+COM:tests predicates related to the domain of a given map

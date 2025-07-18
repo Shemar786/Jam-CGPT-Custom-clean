@@ -1,0 +1,22 @@
+TDAT: 	public String getATOFMSFileName(int atomID){
+		String fileName = "";
+		Statement stmt;
+		try {
+			stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT OrigFilename FROM ATOFMSAtomInfoDense"
+					+ " WHERE AtomID = " + atomID);
+			rs.next();
+			fileName = rs.getString(1);
+			//System.out.println("FILENAME " + fileName);		//DEBUGGING
+			stmt.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.err.println("Could not retrieve filename");
+			e.printStackTrace();
+		}
+
+				
+		return fileName;
+	}
+
+COM:retrieves the original filename associated with a given Atom ID from a database table called "ATOFMSAtomInfoDense"

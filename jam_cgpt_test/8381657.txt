@@ -1,0 +1,9 @@
+TDAT: 	public boolean insert(WeaveBasicObject o) throws DatabaseException {
+		log.debug("Perform inserting weave object with id '" + o.getId() + "'");
+		boolean result = weaveById.putNoOverwrite(o);
+		if(!result)log.warn(" Already exists weave object with id '" + o.getId() + "'");
+		return result; 
+
+	}
+
+COM:inserts a WeaveBasicObject into a database and returns a boolean indicating whether the operation was successful

@@ -1,0 +1,10 @@
+TDAT:     public void addPKColumn(String aPKColName) throws IllegalArgumentException {
+        Column col = (Column) colMap.get(aPKColName);
+        if (col == null) {
+            throw new IllegalArgumentException ("The column |" + aPKColName
+                    + "| does not belong to the table |" + name + "|");
+        }
+        pkColumns.add(col);
+    }
+
+COM:adds a primary key column to a table's list of primary key columns, but throws an exception if the specified column name isn't valid

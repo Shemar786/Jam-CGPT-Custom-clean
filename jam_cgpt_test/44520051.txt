@@ -1,0 +1,16 @@
+TDAT: 	public boolean setGeneName(String geneName){
+		String query = "INSERT INTO `cache` ( `sf` , `evalue` ,`gene` ) VALUES ('', '', '"+geneName+"');";
+		try {
+			Statement s = con.createStatement();
+			s.executeUpdate(query);
+			return true;
+		}catch (SQLException e) {
+			System.out.println(e.getErrorCode());
+			System.out.println(e.getSQLState());
+			System.out.println(e.getMessage());
+			System.out.println(e);
+			return false;
+		}
+	}
+
+COM:sets the gene name by inserting it into the cache table of a database, and returns true if successful or false if an SQL exception occurs

@@ -1,0 +1,10 @@
+TDAT:     public void notes(String note) {
+        String n = (note == null || (n = note.trim()).isEmpty())
+                ? null
+                : n;
+        this.notes = n != null && n.length() > MAX_NOTES_LENGTH
+                ? n.substring(0, MAX_NOTES_LENGTH)
+                : n;
+    }
+
+COM:sets the notes field to a truncated version of the given note string if it exceeds a maximum length, or to the original string if it is within the limit

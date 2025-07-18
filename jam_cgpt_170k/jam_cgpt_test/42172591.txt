@@ -1,0 +1,17 @@
+TDAT: 	protected void addSubsystemIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Saflet_subsystemId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Saflet_subsystemId_feature", "_UI_Saflet_type"),
+				 ConfigPackage.Literals.SAFLET__SUBSYSTEM_ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the subsystem ID of a Saflet object to the item property descriptors list

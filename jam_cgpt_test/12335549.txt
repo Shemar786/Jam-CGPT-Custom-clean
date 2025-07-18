@@ -1,0 +1,17 @@
+TDAT: 	public InetAddress getAddress(String s) {
+		
+		try {
+			return InetAddress.getByName(s);
+		} catch (IndexOutOfBoundsException e) {
+			System.err.println("Invalid number of arguments");
+			// printUsage();
+		//	throw new RuntimeException(e);
+		} catch (UnknownHostException e) {
+			System.err.println("Address is not valid");
+		//	printUsage();
+		//	throw new RuntimeException(e);
+		}
+		return null;
+	}
+
+COM:takes a string representation of an IP address or hostname and returns an InetAddress object corresponding to the input string

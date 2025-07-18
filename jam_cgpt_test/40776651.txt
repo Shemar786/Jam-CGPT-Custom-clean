@@ -1,0 +1,14 @@
+TDAT: 	private void writeWorkerInTextArea( WorkerSpec workerSpec ) {
+			String expression = workerSpec.getExpression();
+			if(expression != null){
+				try {
+					propertiesArea.setText( new JobAd( expression ).toString( true, true ) );
+				} catch ( Exception e ) {
+					propertiesArea.setText( "Error parsing JobAd: " + e.getMessage() );
+				}
+			}else{
+				propertiesArea.setText( formatMap( workerSpec.getAttributes() ) );
+			}
+	}
+
+COM:writes either a parsed JobAd expression or a formatted WorkerSpec attribute map to a propertiesArea text area

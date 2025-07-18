@@ -1,0 +1,10 @@
+TDAT:     public void addDataListener(IDataListener l, Class type) {
+        CopyOnWriteArrayList<IDataListener> listeners = concrete.get(type);
+        if (listeners == null) {
+            concrete.putIfAbsent(type, new CopyOnWriteArrayList<IDataListener>());
+            listeners = concrete.get(type);
+        }
+        listeners.addIfAbsent(l);
+    }
+
+COM:adds a listener to a CopyOnWriteArrayList based on the listener's specified type

@@ -1,0 +1,10 @@
+TDAT:     private void updateGain() {
+      int pos=getValue();
+      int value = (int) (127 * (double) (pos / 100.0));
+      MidiChannel[] cs = synthesizer.getChannels();
+      for(int i=0;i<cs.length;i++) {
+	cs[i].controlChange(7,value);
+      }
+    }
+
+COM:updates the gain on all MidiChannels of a synthesizer based on the current value of a control using MIDI control change messages

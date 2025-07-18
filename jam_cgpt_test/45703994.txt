@@ -1,0 +1,13 @@
+TDAT: 	private JPanel getSelectDialogContentPane() {
+		if (selectDialogContentPane == null) {
+			selectDialogContentPane = new JPanel();
+			selectDialogContentPane.setLayout(new BorderLayout());
+			selectDialogContentPane.add(getSelectDialogScrollPane(), BorderLayout.CENTER);
+			selectDialogContentPane.add(getSelectionText(), BorderLayout.NORTH);
+			selectDialogContentPane.add(getSelectButton(), BorderLayout.SOUTH);
+			selectDialogContentPane.setPreferredSize(new Dimension(160,200));
+		}
+		return selectDialogContentPane;
+	}
+
+COM:returns a JPanel object that contains a scroll pane, text, and a button, with a preferred size of 160x200

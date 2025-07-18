@@ -1,0 +1,15 @@
+TDAT:   public Vector retrieve(org.dbgen.support.Data data, String condition, String order) throws SQLException {
+
+    Vector vec = new Vector();
+    ResultSet rs = query(data, condition, order);
+    Object obj;
+
+    while ((obj = getNextRecord(data, rs)) != null)
+    {
+      vec.addElement(obj);
+    }
+
+    return vec.size() > 0 ? vec : null;
+  }
+
+COM:retrieves data from a database and returns them in a Vector object based on the specified condition and order, throwing a SQLException if an error occurs

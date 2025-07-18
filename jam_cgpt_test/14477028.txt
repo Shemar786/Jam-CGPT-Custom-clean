@@ -1,0 +1,8 @@
+TDAT:   private String id() {
+    return "" + System.identityHashCode(this) + ", PK = " + 
+      (String) ((ctx == null) ? "nullctx" 
+                 : ((ctx.getPrimaryKey() == null ?
+                   "null" : ctx.getPrimaryKey().toString())));
+  }
+
+COM:returns a String that consists of the identity hash code of the object and a primary key value if available

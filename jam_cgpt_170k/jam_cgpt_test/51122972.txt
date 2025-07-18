@@ -1,0 +1,13 @@
+TDAT:    public InputStream getFileInputStream(String name) {
+      try {
+         //#changed by joe peer
+         //UploadedFile file = (UploadedFile)files.get(name);
+         FileHolder filePart = (FileHolder) files.get(name);
+
+         return filePart.getInputStreamFromBuffer(); // may be null
+      } catch (Exception e) {
+         return null;
+      }
+   }
+
+COM:retrieves an input stream for a specified file name from a collection of files, with a null return if the input stream cannot be retrieved or an exception is encountered

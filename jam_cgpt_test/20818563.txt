@@ -1,0 +1,11 @@
+TDAT:     public void testSlowRequest() throws Exception {
+        RequestInspector adi = new StackTimerInspector(100);
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        adi.beforeRequest(request);
+        Thread.sleep(200);
+        adi.afterRequest(request);
+        assertNotNull(request.getAttribute(Constants._WATCHER_STACKTIMERTRACE));
+        // System.out.println(request.getAttribute(Constants._WATCHER_STACKTIMERTRACE));
+    }
+
+COM:tests the performance of a slow request by using a StackTimerInspector to time the request and asserting that the request attribute Constants._WATCHER_STACKTIMERTRACE is not null

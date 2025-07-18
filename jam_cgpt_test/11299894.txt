@@ -1,0 +1,16 @@
+TDAT:     public void setURIResolver(URIResolver resolver) {
+       
+        if(resolver == null) {
+            String msg = fWsdlContext.errorReporter.getFormattedMessage(
+                    "WSDL026", new Object[] {"resolver"});
+            throw new NullPointerException(msg);
+        }
+        
+        fWsdlContext = new WSDLContext(
+                fWsdlContext.wsdlFactory,
+                fWsdlContext.errorReporter,
+                fWsdlContext.extensionRegistry,
+                resolver);
+    }
+
+COM:sets a URI resolver in the WSDL context and throws a NullPointerException if the resolver is null

@@ -1,0 +1,14 @@
+TDAT: 	public List getUnloadedFrameworks() {
+		// return this.unloadedFrameworks;
+		List unloaded = new ArrayList();
+		List loaded = this.getAllFormats();
+		File[] configs = this.getConfigFiles();
+		for (int i = 0; i < configs.length; i++) {
+			String xmlFormat = getFormatForConfigFile(configs[i]);
+			if (!loaded.contains(xmlFormat))
+				unloaded.add(xmlFormat);
+		}
+		return unloaded;
+	}
+
+COM:returns a list of unloaded frameworks by comparing the loaded formats with the configuration files' formats

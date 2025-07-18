@@ -1,0 +1,15 @@
+TDAT:     public int getNbOfApplicableLaws(Influence inf) {
+        if (inf == null) {
+            throw new IllegalArgumentException();
+        }
+        int result = 0;
+        for (Iterator iter = influenceLaws.iterator(); iter.hasNext();) {
+            InfluenceLaw infLaw = (InfluenceLaw) iter.next();
+            if(infLaw.isApplicableTo(inf)) {
+                result++;
+            }
+        }
+        return result;
+    }
+
+COM:takes an Influence object as input, checks if it's null, and returns the number of applicable laws based on an InfluenceLaw object iterator

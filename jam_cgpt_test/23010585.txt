@@ -1,0 +1,14 @@
+TDAT: 	private JButton getBtnSearch() {
+		if (btnSearch == null) {
+			btnSearch = new JButton();
+			btnSearch.setBounds(new Rectangle(67, 535, 84, 24));
+			btnSearch.setText("Search");
+			btnSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+				public void mouseClicked(java.awt.event.MouseEvent e) {					
+				}
+			});
+		}
+		return btnSearch;
+	}
+
+COM:returns a JButton object that is initialized and configured with a text label, size, and MouseAdapter event listener for a search function

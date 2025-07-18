@@ -1,0 +1,13 @@
+TDAT: 	public User show(long userId) {
+		Map<String, String> vars = asMap("user_id", ""+userId);
+		String json = http.getPage(TWITTER_URL+"/users/show.json", vars, http.canAuthenticate());
+		User user;
+		try {
+			user = new User(new JSONObject(json), null);
+		} catch (JSONException e) {
+			throw new TwitterException(e);
+		}
+		return user;
+	}
+
+COM:retrieves a user from Twitter's API using their user ID and returns a User object

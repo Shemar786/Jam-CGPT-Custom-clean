@@ -1,0 +1,11 @@
+TDAT:   public String wrapString(String s) {
+    String result = "\'";
+    for (int p = 0; p < s.length(); p++) {
+      result += s.charAt(p);
+      if (s.charAt(p) == '\'')
+        result += s.charAt(p);
+    }
+    return result + "\'";
+  }
+
+COM:takes a string input, wraps each character of the string in single quotes, and doubles up any existing single quotes

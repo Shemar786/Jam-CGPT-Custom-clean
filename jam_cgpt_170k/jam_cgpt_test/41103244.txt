@@ -1,0 +1,12 @@
+TDAT: 	private boolean checkModuleName(String _name, Object _module) throws RegistryException {
+		if (getRegCont(_name) == null) {
+			String errMessage = "Module name " + _name + " doesn't exist.";
+			throw new RegistryException(errMessage);
+		}
+
+		boolean ret = (getRegCont(_name).getModule() == _module);
+		getRegCont(_name).releaseModule();
+		return ret;
+	}
+
+COM:checks if a given module name exists in the registry and whether it corresponds to a specific module object

@@ -1,0 +1,10 @@
+TDAT: 		public void itemStateChanged(ItemEvent e) {
+			if(is_master && e.getStateChange()==ItemEvent.SELECTED)
+			{
+				String track_name = (String)e.getItem();
+				try { ts_server.changeTrack(game_id,track_name); }
+				catch(RemoteException re) { error(re.getMessage()); }
+			}
+		}
+
+COM:listens for changes in an item's state and, if it is the master, changes the track in a game server based on the selected item

@@ -1,0 +1,13 @@
+TDAT:     private int x() {
+        int n = read();
+        if (ASCII.isHexDigit(n)) {
+            int m = read();
+            if (ASCII.isHexDigit(m)) {
+                return ASCII.toDigit(n) * 16 + ASCII.toDigit(m);
+            }
+        }
+        error("Illegal hexadecimal escape sequence");
+        return -1;
+    }
+
+COM:converts a two-character hexadecimal escape sequence into an integer value, or returns -1 if the sequence is invalid

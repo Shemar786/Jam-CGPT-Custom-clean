@@ -1,0 +1,16 @@
+TDAT:     public Collection getStringArray(final String key) {
+        ArrayList values = new ArrayList();
+
+        int index = 0;
+        String value = getString(key + "." + index, null);
+        while (value != null) {
+            values.add(value);
+
+            index++;
+            value = getString(key + "." + index, null);
+        }
+
+        return values;
+    }
+
+COM:takes a String key, retrieves a series of related values from the system, and returns a Collection of those values as an ArrayList

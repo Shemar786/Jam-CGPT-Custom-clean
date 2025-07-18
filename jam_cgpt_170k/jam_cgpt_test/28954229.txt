@@ -1,0 +1,7 @@
+TDAT:     public String getSourcePatientId() {
+        //concat($patID/@extension,"^^^&", $patID/@root, "&ISO")
+        return selectPath("ns:recordTarget/ns:patientRole/ns:id/@extension") + "^^^&" +
+               selectPath("ns:recordTarget/ns:patientRole/ns:id/@root") + "&ISO";
+    }
+
+COM:returns a concatenated string of the extension and root attributes of patient IDs

@@ -1,0 +1,13 @@
+TDAT: 	public void testSimilarInt() {
+		final IRodinFile rf1 = getRodinFile("P/X.test");
+		final RodinTestRoot r1 = (RodinTestRoot) rf1.getRoot();
+		final NamedElement ie1 = getNamedElement(r1, "foo");
+
+		final IRodinFile rf2 = getRodinFile("P/Y.test");
+		final RodinTestRoot r2 = (RodinTestRoot) rf2.getRoot();
+		final NamedElement ie2 = getNamedElement(r2, ie1.getElementName());
+		assertEquals(ie1, ie1.getSimilarElement(rf1));
+		assertEquals(ie2, ie1.getSimilarElement(rf2));
+	}
+
+COM:tests whether two named elements from separate Rodin test files with the same name are similar

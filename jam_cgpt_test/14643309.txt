@@ -1,0 +1,12 @@
+TDAT: 	private void collectFileLinksRecursive(File file, ArrayList fileLinks) {
+		fileLinks.add(new FileLink(file.isDirectory(), file.getName(), file
+				.toURI(), file.lastModified(), file.length()));
+		if (file.isDirectory()) {
+			File[] files = file.listFiles();
+			for (int i = 0; i < files.length; i++) {
+				collectFileLinksRecursive(files[i], fileLinks);
+			}
+		}
+	}
+
+COM:recursively collects file links and adds them to an ArrayList

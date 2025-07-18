@@ -1,0 +1,12 @@
+TDAT:     public void removePredicate(String type, AssociatedSemanticTag concept) {
+        if(this.assocs == null) return;
+
+        Vector/*<InMemoNetConcept>*/ v = (Vector/*<InMemoNetConcept>*/) this.assocs.get(type);
+
+        if(v == null) return;
+
+        v.remove(concept);
+        this.notifyPredicateRemoved(this, type, concept);
+    }
+
+COM:removes an AssociatedSemanticTag concept from a Vector of InMemoNetConcepts stored under a specified type in a class's HashMap, and notifies observers of the removal

@@ -1,0 +1,15 @@
+TDAT:     public Complex cos(){
+	double r = real();
+	double i = imaginary();
+	
+	if( i == 0 ){
+	    /* avoid returing negative zero (-0.0) for the imaginary part  */
+	    return new Complex( StrictMath.cos( r ), 0 );
+	} else {
+	    return new Complex( StrictMath.cos( r ) * StrictMath.cosh( i ),
+				StrictMath.sin( r ) * StrictMath.sinh( -i ) );
+	}
+	
+    }
+
+COM:calculates the cosine of a complex number

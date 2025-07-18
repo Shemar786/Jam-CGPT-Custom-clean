@@ -1,0 +1,9 @@
+TDAT: 	public String getTestCaseXMLResult(String execTime, String tcId,int skipErrorNumber, int maxErrorNumber, boolean isPublic) throws Exception{
+		
+		if(isPublic)
+			return xmlPublicDao.getTCResult(execTime, tcId, skipErrorNumber, maxErrorNumber);
+		else
+			return xmlPrivateDao.getTCResult(execTime, tcId, skipErrorNumber, maxErrorNumber);
+	}
+
+COM:retrieves the XML result of a test case, with options to skip and limit error numbers, based on whether it is a public or private test case

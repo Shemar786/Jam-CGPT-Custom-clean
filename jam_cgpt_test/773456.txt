@@ -1,0 +1,15 @@
+TDAT: 	protected void importNode(Element node, Document storage) {
+		String nodeName = node.getNodeName();
+		NodeList elements = storage.getElementsByTagName(nodeName);
+		Element importRoot = (Element) elements.item(0);
+		NodeList childNodes = node.getChildNodes();
+		for (int i = 0; i < childNodes.getLength(); i++) {
+			Node childNode = childNodes.item(i);
+			if(node.getNodeType()!=Node.ELEMENT_NODE)
+				continue;
+			Node newNode = storage.importNode(childNode, true);
+			importRoot.appendChild(newNode);
+		}
+	}
+
+COM:imports child nodes of a given element into a specified document, under the first element with the same tag name

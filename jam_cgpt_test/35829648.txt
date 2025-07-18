@@ -1,0 +1,13 @@
+TDAT:     protected int _lookingSubNode(int node, char chr) {
+        int firstSubNode = factory.getFirstSubNode(node);
+        char firstSubNodeLabel = factory.getFirstSubNodeLabel(node);
+        
+        if (firstSubNode >= 0 && firstSubNodeLabel <= chr) {
+            if (firstSubNodeLabel == chr)
+                return firstSubNode;
+            return _lookingBrother(firstSubNode, chr);
+        }
+        return -1;
+    }
+
+COM:searches for a sub-node within a specified node using a given character

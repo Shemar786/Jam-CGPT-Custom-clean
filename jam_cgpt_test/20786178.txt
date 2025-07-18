@@ -1,0 +1,8 @@
+TDAT:    private void drawPoint(Point point, int radius) {
+      graphic.setColor(Color.RED);
+      graphic.fillOval((int)point.getX() - radius / 2, (int)point.getY()
+            - radius / 2, radius, radius);
+      graphic.setColor(Color.BLACK);
+   } // drawPoint
+
+COM:draws a point with a specified radius at a specified position on a graphics object using a red color, and then changes the color to black

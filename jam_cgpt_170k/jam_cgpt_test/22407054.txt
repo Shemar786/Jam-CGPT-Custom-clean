@@ -1,0 +1,14 @@
+TDAT:     private void keymapChanged() {
+        final Keymap keymap = EditorManager.getKeymap();
+
+        if (keymap == null) {
+            return;
+        }
+
+        bindAction(keymap, startaction,
+                   KeyStroke.getKeyStroke(KeyEvent.VK_F10, Event.CTRL_MASK));
+        bindAction(keymap, stopaction,
+                   KeyStroke.getKeyStroke(KeyEvent.VK_F11, Event.CTRL_MASK));
+    }
+
+COM:binds certain actions to specific key strokes if a valid keymap exists

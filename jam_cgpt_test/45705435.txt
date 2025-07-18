@@ -1,0 +1,13 @@
+TDAT: 	private JPanel getOkCancelPanel() {
+		if (okCancelPanel == null) {
+			GridBagConstraints gridBagConstraints57 = new GridBagConstraints();
+			gridBagConstraints57.insets = new Insets(5, 5, 5, 5);
+			okCancelPanel = new JPanel();
+			okCancelPanel.setLayout(new GridBagLayout());
+			okCancelPanel.add(getOkButton(), gridBagConstraints57);
+			okCancelPanel.add(getCancelButton(), new GridBagConstraints());
+		}
+		return okCancelPanel;
+	}
+
+COM:returns a JPanel that contains an "Ok" button and a "Cancel" button, and creates the panel if it doesn't already exist

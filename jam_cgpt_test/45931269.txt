@@ -1,0 +1,15 @@
+TDAT:     private SimpleHClass getIntersectDisj(SimpleHClass c1, SimpleHClass c2) throws HierarchyException {
+
+        if (superclassOf(c1.getID(), c2.getID())) {
+            return c2;
+        } else {
+            if (superclassOf(c2.getID(), c1.getID())) {
+                return c1;
+            } else {
+                return null;
+            }
+        }
+
+    }
+
+COM:takes in two SimpleHClass objects and returns the one that is a superclass of the other, or null if there is no intersection

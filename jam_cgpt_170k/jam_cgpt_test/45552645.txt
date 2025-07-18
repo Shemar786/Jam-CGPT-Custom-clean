@@ -1,0 +1,7 @@
+TDAT:     public void testConcatenateList() {
+        Collection<String> c = Arrays.asList("one", "two", "three");
+        String val = StringUtils.concatenate(c, ';');
+        assertEquals("Wrong concatenation", "one;two;three", val);
+    }
+
+COM:tests the concatenation of a Collection of Strings with a delimiter using the StringUtils class

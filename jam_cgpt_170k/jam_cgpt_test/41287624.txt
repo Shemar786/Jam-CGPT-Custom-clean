@@ -1,0 +1,13 @@
+TDAT:     public void saveAs(String filename) {
+        setFilename(filename);
+        FileCreator.write(this, drawnComponents);
+        CircuitFrame frame = getParentFrame();
+        frame.setTitle(filename);
+        cmdHist.setIsDirty(false);
+        
+        if(isSubcircuit()){
+            subcircuitParent.updateSubcircuits(this);
+        }
+    }
+
+COM:saves the current state of a circuit diagram to a file with a specified filename and updates the UI accordingly, including the circuit history

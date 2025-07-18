@@ -1,0 +1,14 @@
+TDAT: 	public int nameToId(String name) throws NoSuchElementException {
+		if (name == null){
+			throw new NoSuchElementException();
+		}
+		
+		for (int i = 0; i < this.fieldAr.length; i++) {			
+			if (name.equals(this.fieldAr[i])) {
+				return i;
+			}
+		}
+		throw new NoSuchElementException("No field with name " + name + ".");
+	}
+
+COM:returns the index of a field with a specified name, or throws a NoSuchElementException if the name is not found or is null

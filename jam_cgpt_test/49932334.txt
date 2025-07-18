@@ -1,0 +1,13 @@
+TDAT:     private boolean backupOneValue(Request req) {
+        Record record = getRecord(req);
+        if (record != null && record.isActive() && req.version < record.getVersion()) {
+            return false;
+        }
+        doBackup(req);
+        if (record != null) {
+            record.setVersion(req.version);
+        }
+        return true;
+    }
+
+COM:checks if a record exists, is active, and has a lower version than the request before performing a backup and updating the record version

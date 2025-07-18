@@ -1,0 +1,15 @@
+TDAT:     public void refreshUI() {
+	if (this.calcPanel != null) {
+	    this.calcContainer.remove(this.calcPanel);
+        }
+	if (this.currentCalculator != null) {
+	    this.calcPanel = this.currentCalculator.getUI(this.mainUIDialog, VMM.getNetwork());
+	    this.calcContainer.add(this.calcPanel);
+	} else {
+	    this.calcPanel = null;
+        }
+	validate();
+	repaint();
+    }
+
+COM:refreshes the user interface by removing and adding a panel based on the current calculator, and validating and repainting the container

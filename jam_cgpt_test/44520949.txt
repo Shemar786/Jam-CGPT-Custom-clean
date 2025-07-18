@@ -1,0 +1,13 @@
+TDAT:     public void add(String reason, Modifier mod) {
+        Modifier[] mods = (Modifier[]) get(reason);
+        if (mods == null) {
+            set(reason, new Modifier[]{mod});
+            return;
+        }
+        Modifier[] nmods = new Modifier[mods.length + 1];
+        System.arraycopy(mods, 0, nmods, 0, mods.length);
+        nmods[mods.length] = mod;
+        set(reason, nmods);
+    }
+
+COM:adds a Modifier object to a Reason object array

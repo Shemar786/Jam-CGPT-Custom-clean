@@ -1,0 +1,8 @@
+TDAT: 	public RFIDReader addReader(String name, SpatialElementIfc po){
+		RFIDReader r = new RFIDReader(name,this, mySpatialModel,po); //TODO how is mySpatialModel set???
+		System.out.println(r.getX1() + ", " + r.getX2());
+		myReaderList.add(r);
+		return(r);
+	}
+
+COM:creates and adds a new RFIDReader object to a list, with specified name and SpatialElementIfc parameter, and returns the newly created object

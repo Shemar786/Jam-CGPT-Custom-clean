@@ -1,0 +1,17 @@
+TDAT:     public void configure(final Configuration configuration) throws ConfigurationException {
+        
+        if ( null == configuration )
+            throw new IllegalArgumentException( "Configuration can not be null!" );
+
+        m_log.debug("Starting configuration of ListenerThreadFactory");
+        
+        //
+        // ToDo:
+        // Right now there is no special configuation for the ChannelFactory, but
+        // this may change...
+        //
+        
+        m_log.debug("Finished configuration of ListenerThreadFactory");
+    }
+
+COM:configures the ListenerThreadFactory by checking if the configuration is null and logging debug messages

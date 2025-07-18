@@ -1,0 +1,11 @@
+TDAT: 	public Diff getDiff( java.util.Date pFrom, java.util.Date pTo ) {
+		if ( pFrom.after( pTo ) ) {
+            java.util.Date pTemp = pTo;
+            pTo = pFrom;
+            pFrom = pTemp;
+            log.debug("fromDate " + pFrom + " is after toDate " + pTo + ", inversing");
+        }
+        return getDiff2(pFrom, pTo);
+	}
+
+COM:calculates the difference between two dates and returns it in a Diff object, and swaps the dates if they are in the wrong order

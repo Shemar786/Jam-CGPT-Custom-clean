@@ -1,0 +1,13 @@
+TDAT:     private IParticipant findModerator() {
+        IParticipant[] all = getChatRoomModel().getParticipants();
+        
+        for (int i = 0; i < all.length; i++) {
+            IParticipant p = all[i];
+            if (Role.MODERATOR.equals( p.getRole() ))
+                return p;
+        }
+        
+        return null;
+    }
+
+COM:finds the moderator role in a chat room among the given participants and returns it

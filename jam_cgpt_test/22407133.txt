@@ -1,0 +1,8 @@
+TDAT:     private void centerFrame(final JFrame frame) {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        Dimension frameSize = frame.getSize();
+        frame.setLocation((screenSize.width / 2) - (frameSize.width / 2),
+                          (screenSize.height / 2) - (frameSize.height / 2));
+    }
+
+COM:centers a JFrame window on the screen

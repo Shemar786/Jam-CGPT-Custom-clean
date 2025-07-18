@@ -1,0 +1,12 @@
+TDAT:     public void setBufferSize(int bufferSize) {
+        if (bufferSize <= 0) {
+            bufferSize = DEFAULT_BUFFER_SIZE;
+        }
+        if (this.bufferSize != bufferSize) {
+            int old = this.bufferSize;
+            this.bufferSize = bufferSize;
+            changeSupport.firePropertyChange(BUFFER_SIZE, old, bufferSize);
+        }
+    }
+
+COM:sets the buffer size and fires a property change event if the buffer size has changed

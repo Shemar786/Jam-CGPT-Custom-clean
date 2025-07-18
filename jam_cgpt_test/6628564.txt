@@ -1,0 +1,29 @@
+TDAT: 	public void setDtStart(Calendar start) {
+		int oldStart;
+
+		if (dtStart != null) {
+			oldStart = dtStart.getFirstDayOfWeek();
+		}
+		else {
+			oldStart = Calendar.MONDAY;
+		}
+
+		if (start == null) {
+			dtStart = CalendarFactoryUtil.getCalendar(
+				TimeZone.getTimeZone("GMT"));
+
+			dtStart.setTime(new Date(0L));
+		}
+		else {
+			dtStart = (Calendar)start.clone();
+
+			dtStart.clear(Calendar.ZONE_OFFSET);
+			dtStart.clear(Calendar.DST_OFFSET);
+			dtStart.setTimeZone(TimeZone.getTimeZone("GMT"));
+		}
+
+		dtStart.setMinimalDaysInFirstWeek(4);
+		dtStart.setFirstDayOfWeek(oldStart);
+	}
+
+COM:sets the start date for a calendar object and handles the case where the start date is null, resetting it to the epoch time in GMT

@@ -1,0 +1,9 @@
+TDAT:     public FormControl getControl()  {
+    	FormControl[] controls=getControls();
+    	if (controls.length!=1) {
+    		throw new RuntimeException("getControl can only be called if the number of controls is 1 but it is "+controls.length+" you might want to use getControls instead");
+    	}
+    	return controls[0];
+    }
+
+COM:returns a single form control, but throws an exception if there is more than one control

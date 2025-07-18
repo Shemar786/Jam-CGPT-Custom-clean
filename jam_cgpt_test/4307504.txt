@@ -1,0 +1,15 @@
+TDAT:     protected void openFile() throws IOException {
+		if (this.file == null) {
+			file = new File(indexDir + 
+					System.getProperty("file.separator") + filename);
+			if (!file.exists()) {
+				throw new FileNotFoundException("Index file \"" + 
+						file.getCanonicalPath() + " \" was not found.");
+		    }
+		}
+		if (this.handle == null) {
+			this.handle = new RandomAccessFile(this.file, "r");
+		}
+    }
+
+COM:opens a file for reading and throws an IOException if the file is not found or cannot be opened

@@ -1,0 +1,13 @@
+TDAT:   public void setSession(Session session) {
+    if (session == this.session)
+      return;
+
+    // If we already have a session and we're changing to a different one, close the
+    // current one
+    if (getSession() != null && session != this.session)
+      this.session.close();
+    this.session = session;
+    _logger.severe("Session set to " + session);
+  }
+
+COM:sets a new session and closes the old one if a different session is provided

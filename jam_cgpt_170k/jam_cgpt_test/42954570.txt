@@ -1,0 +1,13 @@
+TDAT: 	public Village getVillage(int posX, int posY) throws RemoteException{
+		if(posX>=this.size || posX<0 || posY>=this.size || posY<0) {
+			return null;
+		} else {
+			if(this.platform[posX][posY] instanceof Village) {
+				return (Village)this.platform[posX][posY];
+			} else {
+				return null;
+			}
+		}
+	}
+
+COM:retrieves a Village object from a two-dimensional array based on given x and y coordinates, and returns null if the coordinates are invalid or the array element is not a Village object

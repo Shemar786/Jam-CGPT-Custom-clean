@@ -1,0 +1,13 @@
+TDAT: 	private JMenu getMenuArchivo() {
+		if (menuArchivo == null) {
+			menuArchivo = new JMenu();
+			menuArchivo.setText(Messages.getString("gui.GUI.47")); //$NON-NLS-1$
+			menuArchivo.setIcon(new ImageIcon("data/icons/fileimport.png")); //$NON-NLS-1$
+			menuArchivo.add(getMenuItemCargar());
+			menuArchivo.add(getMenuItemGuardar());
+			menuArchivo.add(getMenuItemSalir());
+		}
+		return menuArchivo;
+	}
+
+COM:returns a JMenu object with three menu items, "Cargar", "Guardar", and "Salir," that can be accessed through a "Archivo" menu

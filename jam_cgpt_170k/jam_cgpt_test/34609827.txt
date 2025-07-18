@@ -1,0 +1,17 @@
+TDAT:     public boolean equals(final Object o) {
+        if (o == this) {
+            return true;
+        } else if (o == null) {
+            return false;
+        } else if (o instanceof MutableString) {
+            return equals((MutableString) o);
+        } else if (o instanceof String) {
+            return equals((String) o);
+        } else if (o instanceof CharSequence) {
+            return equals((CharSequence) o);
+        } else {
+            return false;
+        }
+    }
+
+COM:checks if two objects are equal and can handle cases where the objects are MutableString, String, or CharSequence types

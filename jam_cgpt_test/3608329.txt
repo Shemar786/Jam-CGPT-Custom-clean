@@ -1,0 +1,11 @@
+TDAT:     public int doStartTag() {
+        parent = (PackageTag)findAncestorWithClass(this, PackageTag.class) ;
+        //check for null, existing row with condition to eval only 1 time
+        if ( (parent != null) && (!parent.getNoRows()) ) {
+	    return EVAL_BODY_TAG;
+        } else {
+            return SKIP_BODY;
+        }
+    }
+
+COM:checks for the existence of a parent tag and if a certain condition is met, it evaluates the body tag, otherwise it skips it

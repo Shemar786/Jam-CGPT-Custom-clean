@@ -1,0 +1,18 @@
+TDAT:     protected void setInBuiltLogHandler(boolean useParentHandlers) {
+
+        try {
+            _logger.setLevel(Level.ALL);
+            _logger.setUseParentHandlers(useParentHandlers);
+
+            FileHandler fileHandler = new FileHandler("%t/wbemlib%g.log", 0, 1, true);
+            fileHandler.setFormatter(new SimpleFormatter());
+            _logger.addHandler(fileHandler);
+
+        } catch (IOException e) {
+            e.printStackTrace();  
+        }
+
+
+    }
+
+COM:sets a file log handler with a specific format for the specified logger

@@ -1,0 +1,24 @@
+TDAT: 	public void endAddingPublications() {
+		logger.debug("endAddingPublications()");
+		try {
+			commitBatchTransactions();
+			if (conn.getAutoCommit() == false) {
+				conn.commit();
+			}
+			conn.setAutoCommit(true);
+		} catch (SQLException e) {
+			e.printStackTrace();	
+		} finally { 
+			if (stmt != null) { 
+				try { 
+					stmt.close(); 
+				} catch (SQLException sqlEx) { 
+					// ignore 
+				} 
+				stmt = null; 
+			} 
+		}
+		
+	}
+
+COM:ends the process of adding publications, commits any batch transactions, sets the connection to auto-commit mode, and closes any open statements

@@ -1,0 +1,11 @@
+TDAT:     private ImageDescriptor loadAndRegisterIconImage( String symbolicName ) {
+        Bundle bundle = Platform.getBundle( ID );
+
+        URL url = bundle.getResource( ICON_PATH + symbolicName + ICON_FILES_EXT );
+        ImageDescriptor descr = ImageDescriptor.createFromURL( url );
+        getImageRegistry().put( symbolicName, descr );
+
+        return descr;
+    }
+
+COM:loads and registers an icon image specified by the symbolic name, using the platform bundle and image descriptor

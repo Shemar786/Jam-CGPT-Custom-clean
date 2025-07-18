@@ -1,0 +1,14 @@
+TDAT:     public void testGetGroupDescription() {
+        System.out.println("GetGroupDescription");
+        
+        AutismGroup instance = new AutismGroup();
+        
+        String expResult = "";
+        String result = instance.GetGroupDescription();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the GetGroupDescription() method in the AutismGroup class and prints "GetGroupDescription" to the console, while also comparing the expected and actual results and failing the test case as a prototype

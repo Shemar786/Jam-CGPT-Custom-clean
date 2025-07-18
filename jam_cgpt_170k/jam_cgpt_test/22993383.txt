@@ -1,0 +1,17 @@
+TDAT: 	protected void addArgumentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BindPort_argument_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BindPort_argument_feature", "_UI_BindPort_type"),
+				 SaveccmPackage.Literals.BIND_PORT__ARGUMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a bind port argument object

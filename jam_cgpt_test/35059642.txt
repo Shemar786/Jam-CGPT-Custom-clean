@@ -1,0 +1,18 @@
+TDAT: 	private PuzzleInfo loadPuzzleForced(String puzzleInfoKey) {
+		final PersistenceManager pm = PMF.get().getPersistenceManager();
+	    PuzzleInfo puzzleInfo = null;
+	    PuzzleInfoJdo jdo = null;
+	    try {
+	    	jdo = pm.getObjectById(PuzzleInfoJdo.class, puzzleInfoKey);
+		    puzzleInfo = new PuzzleInfo();
+	    	jdo.to( puzzleInfo, true );
+	    } catch( Exception exception ) {
+			exception.printStackTrace();
+			return null;
+	    } finally {
+	        pm.close();
+	    }
+		return puzzleInfo;
+	}
+
+COM:loads a puzzle using a given key by retrieving data from a persistence manager and converting it into a PuzzleInfo object

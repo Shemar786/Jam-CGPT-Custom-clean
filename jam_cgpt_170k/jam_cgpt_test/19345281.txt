@@ -1,0 +1,14 @@
+TDAT:     private SimpleDateFormat getDateFormater(FieldDetail field) {
+
+        if (df == null) {
+            String s = field.getParamater();
+            if (s == null || "".equals(s)) {
+                s = "yyMMdd";
+            }
+            //System.out.print("~~ " + s + "  ");
+            return new SimpleDateFormat(s);
+        }
+        return df;
+    }
+
+COM:returns a SimpleDateFormat object based on a FieldDetail object, using a default format if no parameter is provided

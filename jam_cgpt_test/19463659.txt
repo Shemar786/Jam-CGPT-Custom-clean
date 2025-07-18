@@ -1,0 +1,15 @@
+TDAT: 	public void setIPSStatus(IPSStatus status) {
+		internal_status = status;
+		try {
+			int confidence = status.getConfidence();
+			discharged = (status.getConfidence() > IConfidence.REVIEWED_MAX)
+					&& !status.isBroken();
+			reviewed = (confidence > IConfidence.PENDING && confidence <= IConfidence.REVIEWED_MAX);
+			broken = status.isBroken();
+			manual = status.getHasManualProof();
+		} catch (RodinDBException e) {
+			UIUtils.log(e, "when acessing " +status);
+		}
+	}
+
+COM:sets the status of an IPS (Integrated Prover Support) and updates several boolean variables based on the status

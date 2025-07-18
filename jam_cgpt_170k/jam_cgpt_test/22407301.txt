@@ -1,0 +1,14 @@
+TDAT:     public String getDescription() {
+        final NodeList children = project.getChildNodes();
+
+        for (int i = 0; i < children.getLength(); i++) {
+            final Node child = children.item(i);
+            if ("description".equals(child.getNodeName())) {
+                return getText((DOMNode)child);
+            }
+        }
+
+        return null;
+    }
+
+COM:retrieves the "description" attribute of an XML node

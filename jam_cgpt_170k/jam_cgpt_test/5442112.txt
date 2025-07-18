@@ -1,0 +1,15 @@
+TDAT:     protected void stopAllServices() throws ServerException {
+        Enumeration e = myServices.elements();
+
+        while (e.hasMoreElements()) {
+            I_BasicService aService = (I_BasicService)e.nextElement();
+
+            if (aService != this && aService.isAlive()) {
+                aService.stop();
+            }
+        }
+
+        myServices.clear();
+    }
+
+COM:stops all services except the current one and clears the list of services

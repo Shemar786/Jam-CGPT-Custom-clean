@@ -1,0 +1,20 @@
+TDAT: 	public void testConv_11_mustNotRenameFileElementTypeId() throws Exception {
+		
+		IConfigurationElement[] vElements =
+			makeFileElementVersions(
+					new FileElementVersion(PLUGIN_ID, FILEA_TYPE, "1")
+			);
+		
+		IConfigurationElement[] cElements =
+			makeConversions(
+					new SimpleConversion(PLUGIN_ID, FILEA_TYPE, "1",
+							new Element(
+									"/" + FILEA_TYPE, 
+									new RenameElement(FILEB_TYPE))
+						)
+				);
+			
+		faultyConversions(vElements, cElements, cElements);
+	}
+
+COM:tests that a file element type ID is not renamed during a conversion process

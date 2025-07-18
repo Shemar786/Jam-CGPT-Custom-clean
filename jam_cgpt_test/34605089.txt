@@ -1,0 +1,15 @@
+TDAT: 	public String authentificate() {
+		UserService service = ServiceLocator.getInstance().getUserService();
+		setUser(
+				service.authetificateUser(getUsername(), getPassword())
+				);
+		
+		if (getUser()==null) {
+			LOG.info("User authentification for "+getUsername()+" with pwd "+ getPassword() +" failed.");
+			return "failed";
+		}
+		LOG.info("User "+getUser().getLogin()+" authentificated.");
+		return "ok";
+	}
+
+COM:authenticates a user by calling a UserService, providing a username and password, and logging whether authentication was successful or not

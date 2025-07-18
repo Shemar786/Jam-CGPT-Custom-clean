@@ -1,0 +1,10 @@
+TDAT: 	public ColumnCell getColumn(String columnName, Class<?> columnType) {
+		for (int index = 0; index < columns.size(); index++) {
+			if (columnName.equals(columns.get(index).getHeader().getName())) {
+				return getColumn(index, columnType);
+			}
+		}
+		return null;
+	}
+
+COM:searches for a specific column in a table and returns the corresponding cell

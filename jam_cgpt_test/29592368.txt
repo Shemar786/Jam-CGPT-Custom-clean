@@ -1,0 +1,8 @@
+TDAT:   public Array read(int [] origin, int [] shape) throws IOException, InvalidRangeException  {
+     ucar.multiarray.MultiArray ma = ncvar.copyout(origin, shape);
+     Object storage = ma.getStorage();
+     ArrayAbstract aa = ArrayAbstract.factory( ma.getComponentType(), ma.getLengths(), storage);
+     return aa;
+  }
+
+COM:reads data from a netCDF variable using the specified origin and shape, and returns an array containing the data

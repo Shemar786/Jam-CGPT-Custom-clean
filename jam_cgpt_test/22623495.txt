@@ -1,0 +1,8 @@
+TDAT: 	public SyncReport writeCollectionInfo(DcsSetInfo setInfo) throws Exception {
+		DcsDataRecord dcsDataRecord = dcsDataManager.getDcsDataRecord(setInfo.getId(), rm);
+		prtln("\nwriteCollectionInfo() setInfo.getId: " + setInfo.getId());
+		MetadataProviderWriter writer = new MetadataProviderWriter(servletContext);
+		return writer.write(setInfo.getId(), collectionConfig, dcsDataRecord);
+	}
+
+COM:takes a DcsSetInfo object, retrieves a DcsDataRecord object, creates a MetadataProviderWriter object, and returns a SyncReport object

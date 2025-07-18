@@ -1,0 +1,12 @@
+TDAT:   public void add(Unit unit) {
+    Arguments.notNull("unit", unit);
+
+    if (!this.units.contains(unit)) {
+      this.units.add(unit);
+      if (unit.getDn() != null) {
+        this.unitsByDn.put(unit.getDn().toString(), unit);
+      }
+    }
+  }
+
+COM:adds a unit to a collection if it does not already exist, and also adds it to a map if it has a non-null DN

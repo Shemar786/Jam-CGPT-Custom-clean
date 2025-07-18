@@ -1,0 +1,22 @@
+TDAT: 	public void done() {
+
+		setGap(BasePanel.GAP1);
+		addFileName(this);
+		setGap(BasePanel.GAP2);
+
+		addLayoutSelection();
+
+		addMessage(new JScrollPane(message));
+		setHeight(BasePanel.NORMAL_HEIGHT * 4);
+
+
+		//editOptCombo.addActionListener(this);
+		//go.addActionListener(this);
+
+		super.done();
+
+		setBounds(getY(), getX(), FRAME_WIDTH, getHeight());
+		frameSize = this.getBounds();
+	}
+
+COM:completes the execution of a process by setting gaps, adding file name, layout selection and messages, and setting the height and bounds of the panel

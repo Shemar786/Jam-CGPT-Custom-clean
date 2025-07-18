@@ -1,0 +1,13 @@
+TDAT: 	private RegionManager createSubRegion(String name) throws Exception{
+		RegionManager dm;
+		if(regionManagers.containsKey(name)) {
+			dm = regionManagers.get(name);
+			dm.setParentRegionManager(current.getName(),current.getStateMachine().getRegionManager());
+		}else {
+			dm = new RegionManager(name,current.getName(),current.getStateMachine().getRegionManager());
+			regionManagers.put(name,dm);
+		}
+		return dm;
+	}
+
+COM:creates a sub-region and adds it to a list of region managers, or sets its parent region manager if it already exists

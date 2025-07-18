@@ -1,0 +1,20 @@
+TDAT: 	public void rotate() {
+		
+		int w = blocks[0].getWidth();
+		int h = blocks[0].getHeight();
+		
+		float offsetX = 0;
+		float offsetY = 0;
+		
+		int index = orientation % relativeCoordinates.length;
+
+		offsetX =  this.rotationOffsets[index][0] * w;
+		offsetY =  this.rotationOffsets[index][1] * h;
+		
+		orientation++;
+		
+		setX(offsetX + blocks[0].getX());
+		setY(offsetY + blocks[0].getY());
+	}
+
+COM:rotates an object by changing its position based on the current orientation

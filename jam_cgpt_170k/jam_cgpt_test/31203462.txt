@@ -1,0 +1,17 @@
+TDAT:     private void refreshSequenceRenderer(){
+      try{
+        multi.clearRenderers();
+        multi.addRenderer( trace_renderer );
+//        multi.removeRenderer(ruler);
+//        multi.removeRenderer(seqRenderer);
+        seqRenderer = new MySymbolSequenceRenderer(lowerCaseSequence);
+        multi.addRenderer( seqRenderer );
+        ruler = new RulerRenderer();
+        multi.addRenderer( ruler );
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+
+COM:refreshes the sequence renderer by clearing existing renderers, adding a new sequence renderer, adding a ruler renderer, and catching any exceptions

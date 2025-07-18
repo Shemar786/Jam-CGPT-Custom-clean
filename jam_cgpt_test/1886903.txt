@@ -1,0 +1,19 @@
+TDAT:   public void testUpdate_withDelayTrigger_withDelay() {
+    priorSwarm.triggered = true;
+    
+    swarm.triggerType = Swarm.TRIGGER_AFTER_DELAY;
+    swarm.triggerDelay = 100;
+    
+    assertFalse(swarm.triggered);
+    
+    swarm.update(0);
+    assertFalse(swarm.triggered);
+    
+    swarm.update(50);
+    assertFalse(swarm.triggered);
+    
+    swarm.update(60);
+    assertTrue(swarm.triggered);
+  }
+
+COM:tests whether a delayed trigger for a swarm object is correctly updated and triggered

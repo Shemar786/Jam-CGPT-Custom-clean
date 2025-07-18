@@ -1,0 +1,15 @@
+TDAT:   public T manufacture() throws ManufacturingException {
+    T object = null;
+    try {
+      object = factoryClass.newInstance();
+
+    } catch (InstantiationException e) {
+      throw new ManufacturingException("Unable to instantiate object", e);
+    } catch (IllegalAccessException e) {
+      throw new ManufacturingException("Unable to access object", e);
+    }
+
+    return object;
+  }
+
+COM:manufactures and returns an object of type T using a factory class, and it throws a ManufacturingException in case of errors related to instantiating or accessing the object

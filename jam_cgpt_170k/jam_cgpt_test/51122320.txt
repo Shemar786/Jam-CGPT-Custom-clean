@@ -1,0 +1,16 @@
+TDAT: 	protected String getFieldValue() {
+		ResultSetVector rsv = getParentForm().getResultSetVector();
+		String res = null;
+
+		if ((getField() != null) && (rsv != null)) {
+			String[] s = rsv.getCurrentRow();
+
+			if (s != null) {
+				res = rsv.getCurrentRow()[getField().getId()];
+			}
+		}
+
+		return res;
+	}
+
+COM:retrieves the value of a field in a parent form's result set vector

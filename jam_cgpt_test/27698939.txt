@@ -1,0 +1,11 @@
+TDAT:     public void setTimeBased(boolean v) {
+        if (v) {
+            if (filter != null && isTimeBased()) return;
+            this.filter=new TimeFilter(originalFilter);
+        } else {
+            if ( filter != null && ! isTimeBased()) return;
+            this.filter=originalFilter;
+        }
+    }
+
+COM:sets a boolean value that determines whether or not a time filter is used in data filtering

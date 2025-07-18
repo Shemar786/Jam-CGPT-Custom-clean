@@ -1,0 +1,8 @@
+TDAT: 	public void testMoveFromRoot() throws CoreException {
+		moveNegative(rSource, rDest, null, null, false, ROOT_ELEMENT);
+		moveNegative(rSource, rDest, null, null, true, ROOT_ELEMENT);
+		moveNegative(rSource, rfSource, null, null, false, ROOT_ELEMENT);
+		moveNegative(rSource, rfSource, null, null, true, ROOT_ELEMENT);
+	}
+
+COM:tests the movement of elements from the root element to other elements using the moveNegative method

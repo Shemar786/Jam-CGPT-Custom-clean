@@ -1,0 +1,7 @@
+TDAT:     public void macRead ( byte[] buf ) throws UsbException, InvalidFirmwareException, CapabilityException, IndexOutOfBoundsException {
+	if ( buf.length < 6 ) 
+        throw new IndexOutOfBoundsException( "macRead: Buffer smaller than 6 Bytes" );
+    	macEepromRead(250, buf, 6);
+    }
+
+COM:reads 6 bytes from a specified memory location and throws exceptions if there are issues with USB, firmware, or capability, or if the buffer is too small

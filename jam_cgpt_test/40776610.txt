@@ -1,0 +1,11 @@
+TDAT: 	public void cancelJobActionPerformed( int jobId ) {
+
+		int option = JOptionPane.showConfirmDialog( this, "Really Cancel Job " + jobId + "?", "Confirm Cancel Job",
+			JOptionPane.YES_NO_OPTION );
+		System.out.println("Cancel job Action");
+		if ( option == JOptionPane.YES_OPTION ) {
+			new Thread( new UIManagerCancelJobContacter( jobId ) ).start();
+		}
+	}
+
+COM:prompts the user to confirm canceling a specified job and spawns a new thread to handle the cancellation if confirmed

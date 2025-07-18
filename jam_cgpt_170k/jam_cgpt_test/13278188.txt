@@ -1,0 +1,12 @@
+TDAT:     public int compare(Object a, Object b) {
+        StructuralConstraintGraphPart ga = (StructuralConstraintGraphPart) a;
+        StructuralConstraintGraphPart gb = (StructuralConstraintGraphPart) b;
+
+        if (ascending) {
+            return ga.numberOfConnectedParts() - gb.numberOfConnectedParts();
+        } else {
+            return gb.numberOfConnectedParts() - ga.numberOfConnectedParts();
+        }
+    }
+
+COM:compares the number of connected parts of two StructuralConstraintGraphPart objects and returns the difference, depending on whether the comparison is in ascending or descending order

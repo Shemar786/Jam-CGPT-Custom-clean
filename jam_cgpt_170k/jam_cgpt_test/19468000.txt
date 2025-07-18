@@ -1,0 +1,19 @@
+TDAT: 	public void createClient(Section section, FormToolkit toolkit) {
+		section.setText(SECTION_TITLE);
+		section.setDescription(SECTION_DESCRIPTION);
+		Composite comp = toolkit.createComposite(section);
+		GridLayout layout = new GridLayout();
+		layout.numColumns = 2;
+		layout.verticalSpacing = 5;
+		comp.setLayout(layout);
+
+	
+
+		Label label = toolkit.createLabel(comp, "Abstract machine: ");
+		label.setLayoutData(new GridData());
+
+		toolkit.paintBordersFor(comp);
+		section.setClient(comp);
+	}
+
+COM:creates a client with a layout, title, description, and label using the given Section and FormToolkit

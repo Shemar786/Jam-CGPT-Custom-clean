@@ -1,0 +1,12 @@
+TDAT:     public void setLevel(int aLevel) {
+        myLogLevel = aLevel;
+        Iterator it = myListener.iterator();
+
+        while (it.hasNext()) {
+            I_LogEventListener theListener = (I_LogEventListener)it.next();
+            if (theListener instanceof I_LogControlEventListener)
+                ((I_LogControlEventListener)theListener).handleLogControlEvent(new LogControlEvent(this));
+        }
+    }
+
+COM:sets the logging level and triggers a log control event for all registered listeners

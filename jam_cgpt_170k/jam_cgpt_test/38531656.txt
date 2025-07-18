@@ -1,0 +1,10 @@
+TDAT:     public void testGetUrl() {
+        System.out.println("testGetUrl");
+        
+        // TODO add your test code below by replacing the default call to fail.
+        URL url = this.handler.getUrl();
+        assertNotNull("a url was expected",url);
+        assertEquals("unexpected url",testUrl,url);
+    }
+
+COM:is a test method that checks if the URL retrieved by a handler matches the expected URL

@@ -1,0 +1,8 @@
+TDAT:     public void OpenFile(Environment env) {
+        final int[] R = env.getCpu().R;
+        final MemoryMap memoryMap = env.getMemoryMap();
+        final int handle = openFile(memoryMap.getString0(R[1])).getHandle();
+        memoryMap.storeWord(R[0], handle);
+    }
+
+COM:opens a file and stores its handle in memory using the input environment

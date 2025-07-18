@@ -1,0 +1,11 @@
+TDAT:     public void testNewEncoder() {
+        final DynamicCharset cs = new DynamicCharset("testNewEncoder", new String[0]);
+        cs.registerCharset();
+        cs.encode("abc");
+        cs.setChangable(false);
+        CharsetEncoder encoder = cs.newEncoder();
+        assertNotNull(encoder);
+        assertEquals(cs, encoder.charset());
+    }
+
+COM:tests the functionality of creating a new CharsetEncoder object from a DynamicCharset object, ensuring its validity and verifying that it is associated with the expected charset

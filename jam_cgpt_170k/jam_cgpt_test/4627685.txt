@@ -1,0 +1,10 @@
+TDAT:     public void deleteSchema(String kind, String name) {
+        try {
+            restTemplate.delete(baseURL
+                    + "schema/" + kind + "/delete/" + name + ".json");
+        } catch (SyncopeClientCompositeErrorException e) {
+            LOG.error("While deleting a user schema", e);
+        }
+    }
+
+COM:deletes a schema by sending a RESTful API DELETE request to a Syncope server using the provided base URL, schema kind, and schema name

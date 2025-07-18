@@ -1,0 +1,7 @@
+TDAT: 	private void copySubstring(int start, int end) {
+		int s = Math.min(start, end); 		//make sure start is less than end
+		int e = Math.max(start, end); 		// make sure end is greater than start
+		GClip.copy(text.substring(s, e)); 	// copy selected text to clipboard
+	}
+
+COM:copies a selected substring of a text to the clipboard

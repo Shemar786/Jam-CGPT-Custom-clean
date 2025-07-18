@@ -1,0 +1,15 @@
+TDAT: 	private void checkEULA() {
+		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+		boolean accepted = sp.getBoolean(EulaActivity.PREFERENCES_EULA_ACCEPTED, false);
+		
+		if (accepted) {
+			if (debug) Log.i(_TAG, "Eula has been accepted.");
+		} else {
+			if (debug) Log.i(_TAG, "Eula has not been accepted yet.");
+			Intent i = new Intent(this, EulaActivity.class);
+			startActivity(i);
+			finish();
+		}
+	}
+
+COM:checks if the end-user license agreement has been accepted, and if not, launches the EulaActivity to prompt acceptance

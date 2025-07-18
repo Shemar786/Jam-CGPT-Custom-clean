@@ -1,0 +1,13 @@
+TDAT:     private void finishedSending(SMS sms, boolean success) {
+        logger.log(Level.FINE, "Finished sending SMS: {0}", sms.toDebugString());
+        workers.remove(sms.getGateway());
+        if (success) {
+            queue.setSMSSent(sms);
+        } else {
+            queue.setSMSFailed(sms);
+        }
+        //look for another sms to send
+        sendNew(sms.getGateway());
+    }
+
+COM:marks the completion of sending an SMS, removes the SMS worker, updates the SMS status in the queue, and initiates a new SMS sending process

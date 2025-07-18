@@ -1,0 +1,11 @@
+TDAT:     private DirChooser getDirChooser(){
+        SecurityManager backup = System.getSecurityManager();
+        System.setSecurityManager( null );
+        DirChooser dc = new DirChooser();
+        dc.setFileSelectionMode(dc.DIRECTORIES_ONLY);
+        System.setSecurityManager( backup );
+        dc.setDialogTitle("Select DIRECTORY to save into");
+        return(dc);
+    }
+
+COM:returns a directory chooser, setting the selection mode to directores only and a custom dialog title

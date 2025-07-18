@@ -1,0 +1,17 @@
+TDAT: 	public Image getImage() {
+		String fileName = getFilename();
+		File imageFile = new File(fileName);
+		if (!imageFile.exists()) {
+			return null;
+		}
+		FileInputStream fis = null;
+		try {
+			fis = new FileInputStream(imageFile);
+		} catch (FileNotFoundException e) {
+			// Can't happen as this was just checked
+			e.printStackTrace();
+		}
+		return new Image(Display.getCurrent(), fis);
+	}
+
+COM:returns an Image object based on the filename retrieved from getFilename() method

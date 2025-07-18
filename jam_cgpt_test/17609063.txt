@@ -1,0 +1,17 @@
+TDAT:     public UIPanel createPanelGroup(String nameId) {
+
+        Application application = ControllerManager.getContext()
+                .getApplication();
+
+        UIPanel component = (UIPanel) application
+                .createComponent(HtmlPanelGroup.COMPONENT_TYPE);
+        component.setRendererType("javax.faces.Group");
+
+        if (nameId != null && !nameId.trim().isEmpty()) {
+            component.setId(nameId);
+        }
+
+        return component;
+    }
+
+COM:creates a panel group component with a given name ID

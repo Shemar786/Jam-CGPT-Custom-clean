@@ -1,0 +1,15 @@
+TDAT: 	public boolean isRoomAreaValid(Recti roomArea) throws Exception {
+		if( !isValidRect(roomArea) )
+			throw new Exception( "Invalid room area" );
+		
+		for (Iterator<Room> iterator = rooms.iterator(); iterator.hasNext();) {
+			Room room = iterator.next();
+			if( room.getRoomArea().overlap(roomArea) ) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+
+COM:checks if a given rectangle is a valid room area and if it overlaps with any existing rooms, returning true if it does not overlap and false otherwise

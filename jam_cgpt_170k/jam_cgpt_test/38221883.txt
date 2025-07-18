@@ -1,0 +1,20 @@
+TDAT:     public int checkMap() {
+      int row = 1;
+      int result = 0;
+
+      do {
+        int column = 0;
+        while (column < xCellNum) {
+          if (cells[row][column] == DEFAULT_BACK_COLOR)
+            break;
+          column++;
+        }
+        if (column == xCellNum) {
+          removeRow(row);
+          result++;
+        }
+      } while (++row < yCellNum);
+      return result;
+    }
+
+COM:checks a two-dimensional array for complete rows and removes them while keeping count of the number of removed rows

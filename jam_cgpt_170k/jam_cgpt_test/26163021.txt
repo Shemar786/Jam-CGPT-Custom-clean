@@ -1,0 +1,13 @@
+TDAT:     public String stripIsbnDashesBlanks(String isbn) {
+        
+        StringBuffer buf = new StringBuffer();
+        
+        for( int i=0; i <= isbn.length() -1; i++) {
+            if (isbn.charAt(i) != '-' && isbn.charAt(i) != ' ' ) {
+                buf.append(isbn.charAt(i));
+            }
+        }
+        return buf.toString();
+    }
+
+COM:removes dashes and blanks from an input ISBN string and returns the result as a string

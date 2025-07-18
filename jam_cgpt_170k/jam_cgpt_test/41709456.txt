@@ -1,0 +1,9 @@
+TDAT: 	public Text deleteRange(int start, int end) {
+		if (start>=end) return this;
+		if ((start<=0)&&(end>=count)) return Text.EMPTY_TEXT;
+		if (start<=0) return subText(end,count);
+		if (end>=count) return subText(0,start);
+		return concat(subText(0,start),subText(end,count));
+	}
+
+COM:deletes a range of characters from a given Text object and returns the resulting object

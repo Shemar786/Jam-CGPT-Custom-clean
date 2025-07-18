@@ -1,0 +1,13 @@
+TDAT: 	private void initCloseButton() {
+		logger.debug("initCloseButton()"); //$NON-NLS-1$
+		closeButton = new JButton(Messages.getString("General.ButtonClose")); //$NON-NLS-1$
+		closeButton.setMnemonic(Tools.getMnemonicFromString(
+				Messages.getString("General.CloseButtonMnemonic"))); //$NON-NLS-1$
+		closeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();    
+			}
+		});
+	}
+
+COM:initializes a close button in a graphical user interface, sets a mnemonic shortcut key for it, and defines an action to dispose of the current window upon clicking

@@ -1,0 +1,10 @@
+TDAT:   protected void initImplementation(int id) {
+    String appletName = "javaApp_" + id;
+
+    javaTag = new HTML();
+    javaTag.setHTML(TAG.replaceAll("[{][0][}]", appletName).replaceAll("[{][1][}]", String.valueOf(id)));
+
+    RootPanel.get().add(javaTag);
+  }
+
+COM:initializes an HTML applet with a specific ID and adds it to the root panel of the current web page

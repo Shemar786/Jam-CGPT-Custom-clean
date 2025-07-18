@@ -1,0 +1,12 @@
+TDAT:   public void addItem(Long itemId) throws Exception {
+    if (isNew()) {
+      throw new IllegalStateException("Cannot add line items to unsaved order.");
+    }
+    LineItem lineItem = new LineItem(this.orderId, itemId, 1);
+    lineItem.save();
+    if (lineItems != null) {
+      lineItems.add(lineItem);
+    }
+  }
+
+COM:adds a new item to the order if it is saved, otherwise it throws an exception

@@ -1,0 +1,11 @@
+TDAT:    public TimeSeriesSet intersectsWithTimeInterval(double t_start, double t_stop) {
+      Set<TimeSeries> result = new HashSet<TimeSeries>();
+      for (TimeSeries ts : this) {
+         if (ts.intersectsWithTimeInterval(t_start, t_stop)) {
+            result.add(ts);
+         }
+      }
+      return new TimeSeriesSet(result);
+   }
+
+COM:returns a subset of a TimeSeriesSet that intersects with a specified time interval

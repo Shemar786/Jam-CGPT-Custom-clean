@@ -1,0 +1,13 @@
+TDAT: 	public boolean equalsWithDifferentVariables(S literal, HashMap<SimpleTerm, SimpleTerm> map) {
+		if (terms.size() != literal.terms.size()) return false;
+		else {
+			for (int i = 0; i < terms.size(); i++) {
+				T term1 = terms.get(i);
+				Term term2 = literal.terms.get(i);
+				if (!term1.equalsWithDifferentVariables(term2, map)) return false;
+			}
+			return true;
+		}
+	}
+
+COM:checks if two literals are equal with different variables based on a HashMap provided

@@ -1,0 +1,11 @@
+TDAT:     private Literal promoteFloat(Literal numeral) {
+        Float result;
+        try {
+            result = Float.valueOf(numeral.getLabel());
+        } catch (NumberFormatException e) {
+            throw new TypeError("Cannot promote non-numeral to a float value");
+        }
+        return this.factory.createLiteral(result.toString(), SPARQLConstants.FLOAT_TYPE);
+    }
+
+COM:promotes a given numeral to a float value and returns it as a Literal

@@ -1,0 +1,20 @@
+TDAT:     public boolean checkInterpretations() {
+        boolean  result = true;
+        Set      keys = interpretation2node.keySet();
+        Node     n;
+        SCNode   scn;
+        Iterator it   = keys.iterator();
+
+        while (it.hasNext() && result) {
+            n   = (Node) it.next();
+            scn = (SCNode) interpretation2node.get(n);
+
+            if (! scn.checkInterpretation(n)) {
+                return false;
+            }
+        } //while
+
+        return true;
+    } //checkInterpretations()
+
+COM:checks if all interpretations of the nodes in a set are valid

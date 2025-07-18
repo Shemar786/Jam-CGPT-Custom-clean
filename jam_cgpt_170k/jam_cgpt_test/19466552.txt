@@ -1,0 +1,17 @@
+TDAT: 	protected void addRelatedEventPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_If_relatedEvent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_If_relatedEvent_feature", "_UI_If_type"),
+				 Il1Package.Literals.IF__RELATED_EVENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for a related event in an "If" object

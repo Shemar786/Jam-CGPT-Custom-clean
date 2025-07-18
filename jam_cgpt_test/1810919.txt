@@ -1,0 +1,10 @@
+TDAT:   public Node importNode(Node importedNode, boolean deep) {
+    try {
+      return NodeImpl.build(XMLParserImpl.importNode(this.getJsObject(),
+        ((DOMItem) importedNode).getJsObject(), deep));
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_STATE_ERR, e, this);
+    }
+  }
+
+COM:imports a node and creates a new object representing the node in the current document

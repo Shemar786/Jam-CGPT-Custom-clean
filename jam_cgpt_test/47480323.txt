@@ -1,0 +1,16 @@
+TDAT: 	public void setDescription(String description) {
+		IDocumentElementNode node = getChildNode(CtxHelpDescription.class);
+		if (node instanceof CtxHelpDescription) {
+			if (description == null) {
+				removeChildNode(node, true);
+			} else {
+				((CtxHelpDescription) node).setDescription(description);
+			}
+		} else if (description != null) {
+			CtxHelpDescription newDescription = getModel().getFactory().createDescription();
+			newDescription.setDescription(description);
+			addChildNode(newDescription, 0, true);
+		}
+	}
+
+COM:sets the description of a document element node in a Java program, creating a new description node if one is not already present

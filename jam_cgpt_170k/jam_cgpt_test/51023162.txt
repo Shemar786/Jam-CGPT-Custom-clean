@@ -1,0 +1,14 @@
+TDAT: 	private void initSpecialisationOf() {
+		// get list of available ccs
+		Vector<String> ccs = new Vector<String>();
+		ccs.add("");
+		ConceptClass[] sorted = aog.getMetaData().getConceptClasses()
+				.toArray(new ConceptClass[0]);
+		Arrays.sort(sorted, new CaseInsensitiveMetaDataComparator());
+		for (ConceptClass cc : sorted) {
+			ccs.add(cc.getId());
+		}
+		specialisationOf = new JComboBox(ccs);
+	}
+
+COM:initializes a JComboBox of available concept classes sorted in case-insensitive order

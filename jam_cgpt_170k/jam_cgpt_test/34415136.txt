@@ -1,0 +1,6 @@
+TDAT: 	public void sendAddEvent(Object source, ArrayList<String> objectIds, String parentId, String userName, Date dateTime){
+		ViewEvent ve = new ViewEvent(source,"",parentId,userName,dateTime,ViewEvent.ADD_EVENT, objectIds);
+		this.newViewEvent(ve);
+	}
+
+COM:sends an "add event" ViewEvent object with specified parameters to the newViewEvent method

@@ -1,0 +1,17 @@
+TDAT: 	public void syncWithWebshop() {
+		try {
+			table.removeAll();
+			browser.setText(""); //$NON-NLS-1$
+			new ProgressMonitorDialog(getShell()).run(true, true,
+					webshopimporter);
+			webshopimporter.fillTableWithOrderInformation(table);
+			browser.setText(webshopimporter.getRunResult());
+		} catch (InvocationTargetException ite) {
+			ite.printStackTrace();
+		} catch (InterruptedException ie) {
+			ie.printStackTrace();
+		}
+
+	}
+
+COM:synchronizes data with a webshop by first removing all data from a table, then importing order information using a ProgressMonitorDialog, filling the table with the imported information, and displaying the import result in a browser

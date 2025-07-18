@@ -1,0 +1,14 @@
+TDAT: 	public void actionPerformed(ActionEvent event) {
+		if(event.getSource() == DoneButton){
+			if((controller.activeAgg_.getAggregator() !=null)&&(controller.activeAgg_.getAggregator().length>0)){
+				controller.dm_.aggregators = controller.activeAgg_.getAggregator();
+				this.setVisible(false);
+			}else{
+				controller.dm_.aggregators = new Aggregator[]{new Mean()};
+			}
+		}else if(event.getSource() == Abort){
+			this.setVisible(false);
+		}
+	}
+
+COM:handles action events and sets the active aggregators for a data management system

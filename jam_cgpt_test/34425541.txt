@@ -1,0 +1,12 @@
+TDAT:     public int line(String str, int begin) {
+        if (exists()) {
+            synchronized (content) {
+                contentRepopulate();
+                for (int i = begin; i < content.size(); ++i)
+                    if (content.get(i).indexOf(str) >= 0) return i;
+            }
+        }
+        return -1;
+    }
+
+COM:searches for a specified string in a list starting from a specified index and returns the index of the first occurrence

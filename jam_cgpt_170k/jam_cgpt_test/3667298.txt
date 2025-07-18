@@ -1,0 +1,10 @@
+TDAT:     protected void updateXIncrement() {
+        Component components[] = m_channelPanel.getComponents();
+        for (int i=0; i < components.length; i++) {
+            JStripChartChannel channel = (JStripChartChannel)components[i];
+            JChartPlane chartPlane = channel.getChartPlane();
+            chartPlane.setXIncrement(m_hScaleBar.getTickIncrement());
+        }
+    }
+
+COM:updates the X increment value for all the channels in a strip chart

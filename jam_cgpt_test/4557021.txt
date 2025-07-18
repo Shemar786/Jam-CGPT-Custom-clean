@@ -1,0 +1,20 @@
+TDAT:     @Override
+	public void mouseClicked(MouseEvent event) {		
+		
+		if (landform==null) return;
+
+		if (event.getSource()==listHistory) {
+			int index = listHistory.locationToIndex(event.getPoint());
+			Landform l = null;
+			if(historyData[index] != null)
+				l = historyData[index].clone();
+			if (l!=null) {
+				//Debug.pl("history changed");
+				landform = l;
+				updateAllViews();
+			}
+		}
+
+	}
+
+COM:handles mouse clicks, specifically for changing the history of a landform

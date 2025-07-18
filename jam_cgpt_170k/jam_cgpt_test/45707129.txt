@@ -1,0 +1,12 @@
+TDAT: 	private JComboBox getJComboBox11() {
+		if (jComboBox11 == null) {
+			jComboBox11 = new JComboBox();
+			jComboBox11.setBounds(new Rectangle(184, 281, 246, 25));
+			jComboBox11.setEnabled(false);
+			jComboBox11.addItem(UiConstants.COMBO_ALGORITHM_NO_SELECTION);
+			jComboBox11.addItem(UiConstants.COMBO_ALGORITHM_BACKPROP);
+		}
+		return jComboBox11;
+	}
+
+COM:creates a JComboBox object with specific properties and adds two items to it, and then returns the object

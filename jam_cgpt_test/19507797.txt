@@ -1,0 +1,15 @@
+TDAT: 	public void testIsRoot() throws Exception {
+		final IRodinDB db = getRodinDB();
+		final IRodinProject prj = getRodinProject("INEXISTENT");
+		final IRodinFile rf = getRodinFile("P/inexistent.test");
+		final IInternalElement root = rf.getRoot();
+		final NamedElement ne = getNamedElement(root, "inexistent");
+
+		assertFalse(db.isRoot());
+		assertFalse(prj.isRoot());
+		assertFalse(rf.isRoot());
+		assertTrue(root.isRoot());
+		assertFalse(ne.isRoot());
+	}
+
+COM:tests whether certain elements in the Rodin database hierarchy are root elements or not

@@ -1,0 +1,7 @@
+TDAT:     private void registerTaskFile(String taskName, UniqueID fileID) {
+        log.debug("Running Client.registerTaskFile(taskName, fileID)..");         
+        RemoteTask remoteTask = new RemoteTask(fileID, connection, config);
+        tasks.put(taskName, remoteTask);
+    }
+
+COM:registers a remote task file using a task name and file ID, logs the action, creates a remote task object and adds it to a map of tasks

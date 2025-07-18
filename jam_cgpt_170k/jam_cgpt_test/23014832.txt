@@ -1,0 +1,11 @@
+TDAT:     public void addElement(IdElement element) {
+        if (element.isIdValid()) {
+            TargetElementWrapper parent = wrapperStack.peek();
+            TargetElementWrapper tew = new TargetElementWrapper(element.getId(), element, parent);
+            parent.addChild(tew);
+            ids.put(element.getId(), tew);
+            wrapperStack.add(tew);
+        }
+    }
+
+COM:adds a new element to a stack and associates it with an ID if the ID is valid

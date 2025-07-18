@@ -1,0 +1,19 @@
+TDAT: public void setControl (Control control) {
+	checkWidget ();
+	if (control != null) {
+		if (control.isDisposed()) error (SWT.ERROR_INVALID_ARGUMENT);
+		if (control.parent != parent) error (SWT.ERROR_INVALID_PARENT);
+	}
+  if(this.control != null) {
+    handle.removeAll();
+  }
+  this.control = control;
+  if(control != null) {
+    handle.add(control.handle);
+  }
+  handle.invalidate();
+  handle.validate();
+  handle.repaint();
+}
+
+COM:sets a control in a widget and performs validation checks before adding it to the handle

@@ -1,0 +1,11 @@
+TDAT:   private void removeOutdatedUnits(SikSearchResultList<Unit> units) {
+    Date now = TimeUtil.asDate();
+    for (Iterator<Unit> iterator = units.iterator(); iterator.hasNext();) {
+      Unit unit = iterator.next();
+      if (unit.getHsaEndDate() != null && now.after(unit.getHsaEndDate())) {
+        iterator.remove();
+      }
+    }
+  }
+
+COM:removes any outdated units from a given list of units based on their HSA end date

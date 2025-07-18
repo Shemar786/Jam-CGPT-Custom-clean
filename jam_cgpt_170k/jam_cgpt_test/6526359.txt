@@ -1,0 +1,16 @@
+TDAT:    public boolean belongsToCategory(Category aCategory) {
+       boolean result = false;
+       if (this.categories.contains(aCategory)) {
+           result =  true;
+       } else {
+           Iterator it = aCategory.getChildren().iterator();
+           while (it.hasNext()) {
+               if (this.belongsToCategory((Category) it.next())) {
+                   result = true;
+               }
+           }
+       }
+       return result;
+   }
+
+COM:checks if a given category belongs to a specific category or any of its children

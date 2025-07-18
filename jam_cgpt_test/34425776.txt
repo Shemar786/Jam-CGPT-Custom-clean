@@ -1,0 +1,12 @@
+TDAT:     private String getResourceName() {
+        String item = (String) resourceNameList.getSelectedItem();
+        if (item != null) {
+            item = ZString.tac(item);
+            int i = item.indexOf(" : ");
+            if (i > 0)
+                item = item.substring(0, i);
+        }
+        return item;
+    }
+
+COM:retrieves and processes the selected resource name from a GUI component, and returns it as a String

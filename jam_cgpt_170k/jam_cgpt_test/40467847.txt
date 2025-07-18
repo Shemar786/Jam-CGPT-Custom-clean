@@ -1,0 +1,16 @@
+TDAT: 	private void createOptions(String[] optTexts){
+		optGroup = new GOptionGroup();
+		GOption option;
+		for(int i = 0; i < optTexts.length; i++){
+			option = makeOption(optTexts[i]);
+			if(option != null){
+				optGroup.addOption(option);
+				add(option);
+			}
+		}
+		optGroup.setSelected(0);
+		text = optGroup.selectedText();
+		nbrRowsToShow = Math.min(optTexts.length, maxRows);
+	}
+
+COM:creates and adds a group of options from an array of option texts, sets the first option as selected, and determines the number of rows to show based on the maximum number of rows allowed

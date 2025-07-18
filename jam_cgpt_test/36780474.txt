@@ -1,0 +1,11 @@
+TDAT:     private int getJobSubmissionTime(String r, int submittime){
+	for(int i=0; i<resources.get(r).size(); i=i+3){
+	    if((Integer.parseInt(resources.get(r).get(i+1))<=submittime)&&
+	       (submittime<=Integer.parseInt(resources.get(r).get(i+2)))){
+		submittime = Integer.parseInt(resources.get(r).get(i+2));
+	    }//System.out.println("submit time ("+r+"): "+submittime);
+	}
+	return submittime;
+    }
+
+COM:retrieves the job submission time based on a resource and a submission time

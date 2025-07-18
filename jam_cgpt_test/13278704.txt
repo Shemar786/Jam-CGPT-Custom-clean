@@ -1,0 +1,17 @@
+TDAT:     private void addMissingMainPart(final Vector queue, Iterator mainIt) {
+        if (queue.isEmpty()) {
+            boolean nextMainAdded = false;
+
+            while (mainIt.hasNext() && ! nextMainAdded) {
+                StructuralConstraintGraphPart nextMain = 
+                        (StructuralConstraintGraphPart) mainIt.next();
+
+                if (! allreadyCheckedPart(nextMain)) {
+                    queue.add(nextMain);
+                    nextMainAdded = true;
+                }
+            }
+        } //if queue empty
+    }
+
+COM:adds missing main parts to a queue if the queue is empty based on an iterator of main parts

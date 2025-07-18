@@ -1,0 +1,18 @@
+TDAT:     public String readStatement() throws IOException {
+        // Null comment
+        this.comment = new String();
+
+        while (statements.empty()) {
+            // Read line
+            readSignificantLine();
+            if (isEOF())
+                return null;
+            this.comment += super.getComment();
+            // Split line into statements
+            parseStatements(getLine());
+        }
+
+        return statements.pop();
+    }
+
+COM:reads a statement from an input stream and returns it as a string, while handling any errors that may occur during the process

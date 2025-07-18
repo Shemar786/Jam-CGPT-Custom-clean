@@ -1,0 +1,8 @@
+TDAT:     private SOAPElement newLoginChild(SOAPBodyElement sbe) throws Exception {
+        SOAPElement lse = newElement("Login", sbe);
+        addChildElement("userid", itos(getUserID()), sbe, lse);
+        addChildElement("md5pass", getEncryptedPassword(), sbe, lse);
+        return lse;
+    }
+
+COM:creates a new SOAP element for login, adds two child elements (user ID and encrypted password), and returns the completed element

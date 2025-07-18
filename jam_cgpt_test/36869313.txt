@@ -1,0 +1,18 @@
+TDAT: 	private void handleCheckBoxClick(int which, int checked){
+		switch (which) 
+    	{	
+		case R.id.minimap_multi_check:
+			Log.i("MultiSelectScene", "Minimap checkbox handler called");
+			Preferences.Get().multiShowMinimap = (checked != 0);
+			break;
+		case R.id.powerups_multi_check:
+			Log.i("MultiSelectScene", "Power-ups checkbox handler called");
+			Preferences.Get().multiPowerups = (checked != 0);
+			break;
+    	default:
+			Log.e("MultiSelectScene", "No handler options for that message!!");
+			break;		
+    	}
+	}
+
+COM:handles the click event for checkboxes and assigns the appropriate value to the corresponding preference setting

@@ -1,0 +1,20 @@
+TDAT: 	public boolean fill(int depth, int start, int limit) throws SQLException {
+		boolean link = link(start, limit);
+		boolean meta = meta();
+
+		if(depth > 0) {
+			Iterator it = this.link.iterator();
+
+			while(it.hasNext()) {
+				Node node = (Node) it.next();
+
+				// TODO: Cache
+
+				link = node.fill(--depth, start, limit);
+			}
+		}
+
+		return link && meta;
+	}
+
+COM:fills a node's data and metadata within a given depth limit, while throwing an SQL exception if necessary

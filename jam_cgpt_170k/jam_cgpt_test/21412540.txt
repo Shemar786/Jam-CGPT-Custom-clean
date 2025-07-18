@@ -1,0 +1,11 @@
+TDAT:     public Player getPlayerByQueue(String queueName) {
+    	for (int i = 0; i < this.players.size(); i++) {
+    		String currentQueue = this.players.elementAt(i).getQueue();
+    		if (currentQueue.equals(queueName)) {
+    			return this.players.elementAt(i).getPlayer();
+    		}
+		}
+    	return null;
+    }
+
+COM:searches for a player object that matches a specified queue name and returns that player object if it exists

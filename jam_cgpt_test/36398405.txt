@@ -1,0 +1,13 @@
+TDAT:     public void putInt32(int i) {
+        ensureCapacity(4);
+
+        byte[] b = byteBuffer;
+        b[position++] = (byte) (i >>> 24);
+        b[position++] = (byte) (i >>> 16);
+        b[position++] = (byte) (i >>> 8);
+        b[position++] = (byte) (i & 0xff);
+
+        length += 4;
+    }
+
+COM:inserts a 32-bit integer into a byte buffer while ensuring the necessary capacity

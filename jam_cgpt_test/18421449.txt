@@ -1,0 +1,15 @@
+TDAT: 	private void nutrientValueInitialization () {
+		
+		Nutrients.descriptionMapReloadCheck();
+		
+		if (m_NutrientValues.size() == 0) {
+			for (NutrientNameI nuname : m_sNutrientDescriptions.values()) {
+				if (!m_NutrientValues.containsKey(nuname.getShortcode())) {
+					m_NutrientValues.put(nuname.getShortcode(), new NutrientValue((NutrientName) nuname, 0));
+				}
+			}
+		}
+		
+	}
+
+COM:initializes nutrient values using a map and a loop, checking for reload before adding new values

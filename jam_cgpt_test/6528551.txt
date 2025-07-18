@@ -1,0 +1,12 @@
+TDAT:     public void checkOut(Content content) throws CMSRuntimeException{
+        try {
+            Node n = JCRUtil.getNodeById(content.getId());
+            checkoutNode(n);
+        } catch (RepositoryException e) {
+            String errorMessage = "Error finding node["+content.getId()+"]: ";
+            log.error(errorMessage, e);
+            throw new CMSRuntimeException(errorMessage, e);
+        }
+    }
+
+COM:checks out a content node in a CMS system using the JCRUtil library

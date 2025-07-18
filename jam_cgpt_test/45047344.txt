@@ -1,0 +1,9 @@
+TDAT: 	public void openConnection() throws Exception {
+			this.database = (Database)Class.forName(this.driverClassName).newInstance();
+			DatabaseManager.registerDatabase(this.database);
+			this.collection = DatabaseManager.getCollection(url + "/" +dbName+ "/" + collectionName,username,password);
+			if(this.collection == null)
+				throw new Exception("Unable to retrieve the target collection from the XMLDB.");
+	}
+
+COM:opens a connection to a database, registers the database manager, and retrieves a specific collection within the database

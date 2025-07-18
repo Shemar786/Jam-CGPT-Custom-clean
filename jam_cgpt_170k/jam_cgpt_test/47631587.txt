@@ -1,0 +1,11 @@
+TDAT:     public void tableChanged(TableModelEvent e) {
+        // JW: make Selection deaf ... super doesn't know about row
+        // mapping and sets rowSelection in model coordinates
+        // causing complete confusion.
+        getSelection().lock();
+        super.tableChanged(e);
+        updateSelectionAndRowModel(e);
+        use(filters);
+    }
+
+COM:updates the table selection and row model based on the given table model event and applies filters to it

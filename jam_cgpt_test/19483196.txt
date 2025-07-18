@@ -1,0 +1,28 @@
+TDAT: 	public void removeDocument(Object document) {
+		if (document == null)
+			throw new IllegalArgumentException(ExceptionMessages.NULL_ARGUMENT);
+
+		if (!(document instanceof IDocument))
+			throw new IllegalArgumentException(
+					ExceptionMessages.WRONG_ARGUMENT_TYPE);
+
+		IDocument doc = (IDocument) document;
+
+		try {
+			String message = Messages.bind(
+					Messages.doccontroller_remove_document, doc.getName());
+			boolean confirm = page.getHelpers().showConfirmationDialog(
+					"Remove document", message);
+			if (!confirm)
+				return;
+
+			doc.getRequirementsMap().removeDocument(doc);
+
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+
+		page.getViewer().refresh();
+	}
+
+COM:is used to remove a document from a page's viewer, and it checks if the document is null and of the appropriate type before doing so

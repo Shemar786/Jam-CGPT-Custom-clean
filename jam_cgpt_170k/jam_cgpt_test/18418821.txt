@@ -1,0 +1,15 @@
+TDAT:     public void contentChanged() {
+     
+        m_Content = "";
+        printHead(m_DayItem.getDate());
+        
+        Iterator itType = MealTypeDAO.getAll().iterator();
+        while (itType.hasNext()) {
+            MealType type = (MealType) itType.next();
+            printMealType(type);
+        }
+
+        printFooter(); 
+    }   
+
+COM:updates the content of an object and then prints out information related to meal types and dates

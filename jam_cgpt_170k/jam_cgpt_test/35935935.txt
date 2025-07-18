@@ -1,0 +1,13 @@
+TDAT:     public Configurator execute() {
+        for(Entry<String, Runnable> e:configurators.entrySet()) {
+            log.debug("Execute " + e.getKey());
+            try {
+                e.getValue().run();
+            } catch(Exception ex) {
+                log.warn("While running configurator " + e.getKey(), ex);
+            }
+        }
+        return this;
+    }
+
+COM:executes all the configurators in the configurators map and logs any exceptions encountered

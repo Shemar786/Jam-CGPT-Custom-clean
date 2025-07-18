@@ -1,0 +1,11 @@
+TDAT:     public String toString() {
+        StringBuffer sb = new StringBuffer(200);
+        for (int i = 0; i < size(); i++) {
+            Message message = (Message) messagesList.get(i);
+            sb.append(message.toString());
+            sb.append("\n");
+        }
+        return (String) sb.toString();
+    }
+
+COM:returns a string concatenation of all the message elements in a list

@@ -1,0 +1,11 @@
+TDAT:     public void register(String comboId, Object[][] comboItems) {
+
+    	AbsRowList list = new AbsRowList(0, 1, false, false);
+
+    	list.loadData(comboItems);
+
+    	//System.out.println("== >" + comboId + "<");
+    	map.put(comboId.toUpperCase(), list);
+    }
+
+COM:registers a combo box with a unique ID and its associated items, and adds it to a map

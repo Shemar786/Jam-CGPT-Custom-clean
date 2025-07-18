@@ -1,0 +1,9 @@
+TDAT:     public void editMenuRemove(JMenuItem menuItem) {
+        if (menuItem == null || menuItem.getText().equals("-=-"))
+            return;
+        editMenu.remove(menuItem);
+        if (editMenu.getMenuComponents().length == 0)
+            editMenu.setEnabled(false);
+    }
+
+COM:removes a given JMenuItem from a menu and disables the menu if it no longer contains any components

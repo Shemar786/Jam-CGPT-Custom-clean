@@ -1,0 +1,13 @@
+TDAT: 	private JPanel getJPanel() {
+		if (jPanel == null) {
+			jPanel = new JPanel();
+			jPanel.setLayout(new FlowLayout());
+			jPanel.setName("ButtonBarPanel");
+			jPanel.add(getStart(), null);
+			jPanel.add(getStep(), null);
+			jPanel.add(getStop(), null);
+		}
+		return jPanel;
+	}
+
+COM:returns a JPanel with a horizontal flow layout containing three buttons: start, step, and stop

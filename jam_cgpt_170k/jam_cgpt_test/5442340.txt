@@ -1,0 +1,14 @@
+TDAT:     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+        // set MIME type to "text/html"
+        res.setContentType("text/html");
+
+        PrintWriter out = res.getWriter();
+
+        printHeader(out);
+        printForm(out, req);
+        printEntries(out, req);
+        printFooter(out);
+    }
+
+COM:sets the MIME type to "text/html" and prints out the header, form, entries, and footer of a web page using the PrintWriter object

@@ -1,0 +1,18 @@
+TDAT:   public FilterRepresentative getFilterRepForName(String aName) {
+    FilterRepresentative result = null;
+    Class<? extends FilterRepresentative> lClass = filterReps.get(aName);
+    if (lClass != null) {
+      try {
+        result = lClass.newInstance();
+        result.setDefault();
+      } catch (InstantiationException e) {
+        // Ignore
+      } catch (IllegalAccessException e) {
+        // Ignore
+      }
+    }
+
+    return result;
+  }
+
+COM:returns a FilterRepresentative object based on the provided input name, using a HashMap to retrieve the appropriate class and initializing a new object from that class with default values

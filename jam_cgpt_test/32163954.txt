@@ -1,0 +1,15 @@
+TDAT: 	private byte checkMove(int x, int y) {
+		try {
+			// If everything is ok, return the coordinate
+			if(_cells[y][x].getPlayer() == null) {
+				return _cells[y][x].getCoord();
+			}
+		} catch(IndexOutOfBoundsException ex) {
+			// We do nothing, because we don't care
+		} catch(NullPointerException ex) {
+			// We do nothing, because we don't care
+		}
+		return 0;
+	}
+
+COM:checks if a move is valid by returning a byte value of a cell's coordinate if it is empty and catching any IndexOutOfBoundsException and NullPointerException exceptions

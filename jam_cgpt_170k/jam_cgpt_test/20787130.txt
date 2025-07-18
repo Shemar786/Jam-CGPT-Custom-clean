@@ -1,0 +1,15 @@
+TDAT:    public void add(Gesture<?> sample) {
+      if (sample == null) {
+         return;
+      }
+
+      TestClass testClass = getTestClass(sample.getName());
+      if (testClass == null) {
+         testClass = new TestClass(sample.getName());
+         addTestClass(testClass);
+
+      }
+      testClass.add(sample);
+   } // add
+
+COM:adds a gesture object to a test class, creating a new test class if one with the specified name does not already exist

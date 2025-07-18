@@ -1,0 +1,10 @@
+TDAT:     public boolean isOpen() {
+        if (ch == null) {
+            return false;
+        }
+        return ch.isOpen() && ch.channel != null && 
+            ch.channel.isOpen() && !getIn().isAppendClosed() &&
+            !getOut().isAppendClosed();
+    }
+
+COM:checks whether a file channel is open and whether the input and output streams are not closed

@@ -1,0 +1,10 @@
+TDAT: 	public void testGetY() {
+		assertTrue(pawn.getY() == 2);
+		assertTrue(pawn1.getY() == 4);
+		assertTrue(pawn2.getY() == 2);
+		assertTrue(pawn3.getY() == 4);
+		assertTrue(pawn4.getY() == 1);
+		assertTrue(pawn5.getY() == 6);
+	}
+
+COM:tests and asserts the Y coordinates of multiple pawn objects

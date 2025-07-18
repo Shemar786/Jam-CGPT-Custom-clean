@@ -1,0 +1,13 @@
+TDAT: 	protected LocalDate getEasterSunday(int year, ChronologyType ct) {
+		LocalDate easterSunday;
+		if (ct == ChronologyType.JULIAN) {
+			easterSunday = CalendarUtil.getJulianEasterSunday(year);
+		} else if (ct == ChronologyType.GREGORIAN) {
+			easterSunday = CalendarUtil.getGregorianEasterSunday(year);
+		} else {
+			easterSunday = CalendarUtil.getEasterSunday(year);
+		}
+		return easterSunday;
+	}
+
+COM:returns the date of Easter Sunday for a given year in either the Julian or Gregorian chronology type

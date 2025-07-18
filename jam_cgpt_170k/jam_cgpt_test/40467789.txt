@@ -1,0 +1,11 @@
+TDAT: 	protected void createEventHandler(Object obj, String methodName){
+		try{
+			this.eventHandler = obj.getClass().getMethod(methodName, new Class[0] );
+			eventHandlerObject = obj;
+		} catch (Exception e) {
+			eventHandlerObject = null;
+			System.out.println("The class " + obj.getClass().getSimpleName() + " does not have a method called " + methodName);
+		}
+	}
+
+COM:sets the event handler object and its corresponding method based on the input object and method name, or outputs an error message if they cannot be found

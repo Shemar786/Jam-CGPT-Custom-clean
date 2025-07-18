@@ -1,0 +1,8 @@
+TDAT: 	public void draw(Object objGFX, boolean transparency, int x, int y, int width, int height) {
+		for (int i = 0; i < layerViewer.length; i++) {
+			if (layerViewer[i] != null)
+				layerViewer[i].draw(objGFX, transparency, x, y, width, height);
+		}
+	}
+
+COM:draws an object using graphics in multiple layers with transparency, given their position and dimensions

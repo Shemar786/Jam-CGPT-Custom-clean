@@ -1,0 +1,15 @@
+TDAT:   public void incrMarker(int length) {
+    if (length > size) {
+      throw new ArrayIndexOutOfBoundsException(
+        "[Buffer] ERROR : incrMarker too large");
+    }
+
+    if (length > (size - length())) {
+      throw new ArrayIndexOutOfBoundsException(
+        "[Buffer] ERROR : incrMarker -> marker overflow");
+    }
+
+    marker = (marker + length) % size;
+  }
+
+COM:increments the marker of a Buffer object by a specified length, but throws an exception if the increment exceeds the buffer size or causes a marker overflow

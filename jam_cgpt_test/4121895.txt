@@ -1,0 +1,13 @@
+TDAT: 	 public void init() throws ServletException {
+		baseDir=getInitParameter("baseDir");
+		debug=(new Boolean(getInitParameter("debug"))).booleanValue();
+		if(baseDir==null)
+			baseDir="/UserFiles/";
+		String realBaseDir=getServletContext().getRealPath(baseDir);
+		File baseFile=new File(realBaseDir);
+		if(!baseFile.exists()){
+			baseFile.mkdir();
+		}
+	}
+
+COM:initializes the servlet by setting the base directory parameter and creating the base directory if it does not exist

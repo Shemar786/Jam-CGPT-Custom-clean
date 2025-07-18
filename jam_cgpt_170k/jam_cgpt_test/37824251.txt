@@ -1,0 +1,10 @@
+TDAT:    public void quickStop() {
+      // Test the quick shutdown the database.
+      m_prDatabase.quickShutdown();
+      dbState = m_prDatabase.getDatabaseState();
+      assertTrue("Testing database is closed after quickStop.",dbState == Database.DATABASE_CLOSED);
+      
+      assertTrue("Testing state retrieved from listener.",listenerDBState == Database.DATABASE_CLOSED);
+   }
+
+COM:tests the quick shutdown of a database and asserts that it is closed, along with verifying the state retrieved from a listener

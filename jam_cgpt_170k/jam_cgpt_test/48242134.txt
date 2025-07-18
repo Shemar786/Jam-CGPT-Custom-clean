@@ -1,0 +1,17 @@
+TDAT: 	public ColumnOverride getColumnOverride(String columnName) {
+        for (ColumnOverride co : columnOverrides) {
+            if (co.isColumnNameDelimited()) {
+                if (columnName.equals(co.getColumnName())) {
+                    return co;
+                }
+            } else {
+                if (columnName.equalsIgnoreCase(co.getColumnName())) {
+                    return co;
+                }
+            }
+        }
+        
+        return null;
+	}
+
+COM:returns a ColumnOverride object that matches the specified column name by iterating through a collection of ColumnOverride objects

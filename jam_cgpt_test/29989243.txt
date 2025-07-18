@@ -1,0 +1,11 @@
+TDAT:     public void run() {
+
+        SQLAlias alias = (SQLAlias) _selectedNodes[0].getSession().getAlias();
+        alias.setNameFilterExpression("");
+        alias.setFolderFilterExpression("");
+        alias.setSchemaFilterExpression("");
+        
+        _view.refreshSessionTrees(_selectedNodes[0].getSession().toString());
+    }
+
+COM:updates the name, folder and schema filter expressions of a specific SQL Alias object and refreshes the session trees in the view

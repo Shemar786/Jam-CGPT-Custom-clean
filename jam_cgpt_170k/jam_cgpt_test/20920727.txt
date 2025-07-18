@@ -1,0 +1,14 @@
+TDAT: 	public boolean isPullOutComplete(){
+		final boolean isPullOutComplete;
+		if(isCurrentWeaponAmmunitionCountDisplayable())
+		    {final Node primaryWeaponNode=primaryHandWeaponContainer.getNode(weaponInUse);
+		     final double pullOutYEnd=PULLED_OUT_WEAPON_ORDINATE;
+		     //checks if the operation has completed
+			 isPullOutComplete=primaryWeaponNode.getTranslation().getY()==pullOutYEnd;
+		    }
+		else
+			isPullOutComplete=true;
+		return(isPullOutComplete);
+	}
+
+COM:checks if the pulling out operation of a primary weapon has completed

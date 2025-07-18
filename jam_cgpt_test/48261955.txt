@@ -1,0 +1,19 @@
+TDAT: 	public Node child(int link, short meta, String value) throws SQLException {
+		Iterator it = this.link.iterator();
+
+		while(it.hasNext()) {
+			Node node = (Node) it.next();
+
+			if(node.getType() == link) {
+				node.meta();
+
+				if(node.meta(meta).getString().equals(value)) {
+					return node;
+				}
+			}
+		}
+
+		return null;
+	}
+
+COM:searches for a child node with a specific link, meta, and value within a collection of nodes, and returns the matching node or null if not found

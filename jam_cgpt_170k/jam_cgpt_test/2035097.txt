@@ -1,0 +1,15 @@
+TDAT: 	private void printProperties(StringBuffer sb) {
+		// Initializing the directed acyclic graph
+		MgaDAG dag = new MgaDAG(propEles, propConns);
+		List<DAGVertex> orderedPropList = dag.getOrderedList();
+		for (DAGVertex prop : orderedPropList) {
+			if (prop instanceof MgaVertex) {
+				MgaVertex propModel = (MgaVertex) prop;
+				sb.append("<property ");
+				printAttributes(sb, propModel.getModel());
+				sb.append("/>\r\n");
+			}
+		}
+	}
+
+COM:This private Java method prints the properties of a directed acyclic graph in a specified format using a StringBuffer

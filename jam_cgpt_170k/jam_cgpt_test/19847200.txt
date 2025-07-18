@@ -1,0 +1,13 @@
+TDAT: 	protected void dispatchEvent(WiiEvent e) {
+		for (ListIterator<WiiRemoteListener> it = listeners.listIterator(); it.hasNext();) {
+			WiiRemoteListener listener = it.next();
+			if (e instanceof WiiButtonEvent)
+				listener.wiiButtonChange((WiiButtonEvent)e);
+			if (e instanceof WiiIREvent)
+				listener.wiiIRInput((WiiIREvent)e);
+			if (e instanceof WiiAccelEvent)
+				listener.wiiAccelInput((WiiAccelEvent)e);
+		}
+	}
+
+COM:dispatches a WiiEvent to all registered listeners and invokes methods based on the type of the event

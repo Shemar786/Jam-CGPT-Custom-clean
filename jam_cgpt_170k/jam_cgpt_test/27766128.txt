@@ -1,0 +1,16 @@
+TDAT:     public void testGetPlaylist () {
+        MP3Playlist  playlist = null;
+        ArrayList foo = null;
+        try {
+            playlist = new MP3Playlist ( m_testfile );
+            foo = playlist.getPlaylist();
+        } catch(Exception e) {
+            fail (e.getMessage ());
+        }
+        
+        if ( !(foo instanceof java.util.ArrayList) ) {
+            fail("getPlaylist() did not return an ArrayList!!!");
+        }
+    }
+
+COM:tests if the getPlaylist() method of the MP3Playlist class returns an instance of ArrayList

@@ -1,0 +1,11 @@
+TDAT:   public void visitShortType(ShortType self, Integer min, Integer max) {
+    print("SHORT");
+    if (min != null) {
+      print(" MIN " + min.intValue());
+    }
+    if (max != null) {
+      print(" MAX " + max.intValue());
+    }
+  }
+
+COM:visits a ShortType object and prints its value along with optional minimum and maximum values

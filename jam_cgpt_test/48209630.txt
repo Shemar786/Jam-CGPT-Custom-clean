@@ -1,0 +1,12 @@
+TDAT: 	public void setCurrentDiscount(double currentCourseDiscount, double currentWineDiscount) {
+		if(currentCourseDiscount > 0 && currentWineDiscount > 0) {
+			// Exception invalid values
+		} else {
+			this.currentCourseDiscount = currentCourseDiscount;
+			this.currentWineDiscount = currentWineDiscount;
+			DataObjectSaver.saveDiscountSettings(this.currentCourseDiscount, this.currentWineDiscount);
+		}
+		
+	}
+
+COM:sets and saves current discounts for a course and wine, but throws an exception if invalid values are inputted

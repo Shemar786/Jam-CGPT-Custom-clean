@@ -1,0 +1,5 @@
+TDAT: 	protected void addErrorNotExist(TaskElement taskElement, String elementName, Token token){
+		error_description.put(new ErrorLocation(token.beginLine, token.beginColumn), Messages.bind(Messages.user_taskElement_does_not_exist,taskElement.getDescription(), elementName)); //$NON-NLS-1$
+	}
+
+COM:adds an error message to a hashmap if a specified task element does not exist

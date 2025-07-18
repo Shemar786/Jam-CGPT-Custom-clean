@@ -1,0 +1,16 @@
+TDAT:     public void start() {
+        assert(packetHandler != null) : "packet handler not set yet";
+        
+        if (!running) {
+            running = true;
+            incomingPacketListenerThread = new Thread(incomingPacketListener,
+                    "networkListenerThread");
+            incomingPacketListenerThread.start();
+
+            outgoingPacketSenderThread = new Thread(outgoingPacketSender,
+                    "networkSenderThread");
+            outgoingPacketSenderThread.start();
+        }
+    }
+
+COM:starts two threads for handling incoming and outgoing packets only if they have not already started

@@ -1,0 +1,15 @@
+TDAT: 	private void write(){
+		StringBuffer buffer = new StringBuffer();
+		synchronized (buffer) {
+			loopWrite(document, 0, buffer);
+		}
+		ByteArrayInputStream st = new  ByteArrayInputStream(buffer.toString().getBytes());
+		try {
+			file.setContents(st, true, false, new NullProgressMonitor());
+			//System.out.println("XML to be written:: " + s);
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:writes the contents of a document to a file

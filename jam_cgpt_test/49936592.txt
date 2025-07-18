@@ -1,0 +1,10 @@
+TDAT:     public Enumeration getAttributeNames() {
+        if (!isValidInternal())
+            throw new IllegalStateException
+                (sm.getString("standardSession.getAttributeNames.ise"));
+        Set keySet = attributes.keySet();
+    	keySet.remove(SESSION_MARK);
+        return (new Enumerator(keySet, true));
+    }
+
+COM:returns an enumeration of all the attribute names in the current session, after ensuring it is valid and removing the session identifier

@@ -1,0 +1,8 @@
+TDAT:     private void fillRowWithValues(String[] values, int row) {
+        for (int col = 0; col < values.length; col++) {
+            jTable1.getModel().setValueAt(values[col], row, col + 1);//We ignore column 0 because it contains labels
+        }
+
+    }
+
+COM:fills a specified row in a jTable with values stored in a given String array

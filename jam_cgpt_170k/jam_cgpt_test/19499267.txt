@@ -1,0 +1,14 @@
+TDAT: 	public void testImageGuard() throws Exception {
+		final IMachineRoot mch = createMachine("mch");
+		final IEvent evt = createEvent(mch, "evt");
+		final IGuard grd = createGuard(evt, "grd", "TRUE");
+		assertImage("Unexpected image descriptor for guard",
+				IEventBSharedImages.IMG_GUARD_PATH, grd);
+
+		grd.setTheorem(true, null);
+		assertImage(
+				"Unexpected image descriptor for guard with theorem attribute",
+				IEventBSharedImages.IMG_THEOREM_PATH, grd);
+	}
+
+COM:tests the image descriptors for a guard and a theorem attribute using the Assert method

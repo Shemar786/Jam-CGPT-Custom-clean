@@ -1,0 +1,13 @@
+TDAT: //    private Jingle createAcceptMessage() {
+//        Jingle jout = null;
+//
+//        // If we have a common best codec, send an accept right now...
+//        jout = new Jingle(JingleActionEnum.CONTENT_ACCEPT);
+//        JingleContent content = new JingleContent(parentNegotiator.getCreator(), parentNegotiator.getName());
+//        content.setDescription(new JingleDescription.Audio(bestCommonAudioPt));
+//        jout.addContent(content);
+//
+//        return jout;
+//    }
+
+COM:This private Java method creates and returns a Jingle message with an audio content that has been accepted based on the previously negotiated best codec

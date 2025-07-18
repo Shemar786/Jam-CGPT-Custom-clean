@@ -1,0 +1,7 @@
+TDAT:     public Integer getNearestPixel(double lon, double lat) throws IOException {
+        int[] nearestIndices = this.getNearestIndices(lon, lat);
+        if (nearestIndices == null) return null;
+        return this.image.getPixel(nearestIndices[0], nearestIndices[1]);
+    }
+
+COM:returns the pixel value of the nearest point in an image based on a given longitude and latitude, and throws an IOException if there are any errors

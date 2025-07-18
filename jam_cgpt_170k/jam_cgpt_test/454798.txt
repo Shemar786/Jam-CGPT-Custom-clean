@@ -1,0 +1,13 @@
+TDAT: 	public void setLayoutProperty(String name, double value) {
+		// make sure it exists
+		if (layoutProperties.keySet().contains(name)) {
+			// get the corresponding text field
+			JTextField propField = (JTextField) layoutProperties.get(name);
+			// set its text to the value
+			propField.setText(value + "");
+		} else {
+			System.out.println("unable to match property to name " + name);
+		}
+	}
+
+COM:sets the text of a specific text field to a double value based on the name of the layout property

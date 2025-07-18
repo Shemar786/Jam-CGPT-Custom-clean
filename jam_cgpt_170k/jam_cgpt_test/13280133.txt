@@ -1,0 +1,15 @@
+TDAT:     protected void enableCostConstraintButton(ConventionalConstraint c) {
+
+	int cNum = c.getNumberOfCosts();
+	boolean toBeEnabled = false;
+
+	for (int i = 0; !toBeEnabled && (i < cNum); i++) {
+	    if (c.getCostFunctionReference(i) == null) {
+		toBeEnabled = true;
+	    }
+	}
+	((NodeGraphics) c.graphObject).activator.setEnabled(toBeEnabled);
+
+    }
+
+COM:enables a button if the given conventional constraint has at least one undefined cost function

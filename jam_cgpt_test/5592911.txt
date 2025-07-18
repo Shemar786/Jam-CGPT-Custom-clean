@@ -1,0 +1,14 @@
+TDAT:   public boolean renameFile() {
+
+    boolean renameOK = false;
+    File oldFile = getSelectedFile();
+    File newFile = fileEngine.renameFile(oldFile);
+
+    if (newFile != null) {
+      int index = projectList.indexOf( (File) oldFile);
+      renameOK = renameFile(index, newFile);
+    }
+    return renameOK;
+  }
+
+COM:renames a selected file and returns a boolean value indicating whether the renaming was successful or not

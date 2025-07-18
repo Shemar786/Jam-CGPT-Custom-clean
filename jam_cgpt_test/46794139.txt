@@ -1,0 +1,16 @@
+TDAT: 	public String getSrcDir(){
+		Node node =  getNodebyTag(NODENAMEPROPERTY,ATTRNAMENAME,TAGSRC);
+		String result = EMPTYSTRING;
+		if (node != null){
+			NamedNodeMap attributes = node.getAttributes(); 
+			for (int i = 0; i < attributes.getLength(); i++) { // Loop through Attributes
+				Node a = attributes.item(i);
+				if (ATTRNAMEVALUE.equals( a.getNodeName() )) {
+					result = a.getNodeValue();
+				}
+			}
+		}
+		return result;
+	}
+
+COM:retrieves the file directory path from a specific XML node attribute

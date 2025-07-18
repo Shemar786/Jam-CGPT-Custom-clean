@@ -1,0 +1,15 @@
+TDAT:     public String getAuthorityNameString() {
+        StringBuffer sb = new StringBuffer();
+        if (namespaceId != null) sb.append(namespaceId);
+        if (universalId != null) {
+            sb.append('&');
+        	sb.append(universalId);
+            if (universalIdType != null) {
+                sb.append('&');
+            	sb.append(universalIdType);
+            }
+        }
+        return sb.toString();
+    }
+
+COM:generates a string by appending a namespaceId, universalId and UniversalIdType (if available) to a StringBuffer and returning the result as a String

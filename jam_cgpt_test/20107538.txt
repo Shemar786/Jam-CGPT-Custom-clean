@@ -1,0 +1,14 @@
+TDAT:   public void wake() {
+    //if current thread doesn't hold the lock, then abort
+    Lib.assertTrue(conditionLock.isHeldByCurrentThread());
+    boolean status = Machine.interrupt().disable();
+    KThread thread = waitQueue.nextThread();
+    //wakes up thread
+    if (thread != null) {
+      thread.ready();
+    }
+    Machine.interrupt().restore(status);
+
+  }
+
+COM:wakes up the next thread in a wait queue, but only if the current thread holds the lock and interrupts are disabled

@@ -1,0 +1,10 @@
+TDAT: 	public File newDir(File directory) throws IOException {
+		Log.logf(0, "creating new directory %s.", directory);
+		if (directory.exists()) {
+			Log.logf(6, "creating new directory %s failed.", directory);
+			throw new IOException(directory + ": file already exists.");
+		}
+		return ensureDir(directory);
+	}
+
+COM:creates a new directory if it does not already exist and returns the newly created directory

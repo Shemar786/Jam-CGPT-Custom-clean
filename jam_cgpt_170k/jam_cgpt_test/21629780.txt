@@ -1,0 +1,13 @@
+TDAT:     public String getXlabel() {
+        if (null != this.xlabel) {
+            return this.xlabel;
+        }
+        ValueExpression _ve = getValueExpression("xlabel");
+        if (_ve != null) {
+            return (java.lang.String) _ve.getValue(getFacesContext().getELContext());
+        } else {
+            return null;
+        }
+    }
+
+COM:returns the X label as a string and checks for a value expression if the X label is null

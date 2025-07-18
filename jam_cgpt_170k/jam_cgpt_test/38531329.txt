@@ -1,0 +1,9 @@
+TDAT:     public void testClear() throws Exception {
+        System.out.println("testClear");
+        
+        // Add your test code below by replacing the default call to fail.
+        this.resourceSet.clear();
+        assertTrue("Cleared resource set, but still has elements", this.resourceSet.getSize() == 0);
+    }
+
+COM:tests that the resource set is cleared and that it has no elements afterwards

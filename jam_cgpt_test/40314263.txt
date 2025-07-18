@@ -1,0 +1,14 @@
+TDAT: 	static public String resolve(InvDataset ds, String href) {
+	  InvCatalog cat = ds.getParentCatalog();
+	  if (cat != null) {
+	    try {
+	      java.net.URI uri = cat.resolveUri(href);
+	      href = uri.toString();
+	    } catch (java.net.URISyntaxException e) {
+	      System.err.println("InvDatasetImpl.writeHtml: error parsing URL= " + href);
+	    }
+	  }
+	  return href;
+    }
+
+COM:resolves a dataset and returns a string representation of its URI

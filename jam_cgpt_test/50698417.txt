@@ -1,0 +1,16 @@
+TDAT:     protected int getBetaRating(int prune) {
+        int localPrune = NEGINV;
+        int i = 0;
+        while ((i < nodes.length) && (localPrune < prune)) {
+            int rat = nodes[i].getRating(localPrune);
+            if (rat > localPrune) {
+                localPrune = rat;
+                // save index of best node
+                bestIndex = i;
+            }
+            i++;
+        }
+        return localPrune;
+    }
+
+COM:returns the highest rating of nodes based on a pruning parameter

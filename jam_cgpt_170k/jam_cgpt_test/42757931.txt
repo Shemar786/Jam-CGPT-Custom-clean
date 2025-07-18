@@ -1,0 +1,11 @@
+TDAT: 	public void addChildNode(ASTNode childNode) throws IllegalArgumentException {
+		Assert.notNull(childNode, "Parameter childNode must be non null!");
+		Assert.isTrue((childNode != this),
+				"Can not add this as a child node of this.");
+		if (!childNodeList.contains(childNode)) {
+			childNode.setParentNode(this);
+			childNodeList.add(childNode);
+		}
+	}
+
+COM:adds a child node to a parent node while checking for null values and preventing a node from being added as its own child

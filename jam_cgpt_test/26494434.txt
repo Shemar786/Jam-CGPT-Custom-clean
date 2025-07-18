@@ -1,0 +1,17 @@
+TDAT:   public void processStatus(Status stat) {
+    StatusRequestListener listener;
+
+    for (int i = 0; i < _statusListeners.size(); i++) {
+      SoftReference ref = (SoftReference) _statusListeners.get(i);
+      listener = (StatusRequestListener) ref.get();
+
+      if (listener == null) {
+        _statusListeners.remove(i);
+        i--;
+      } else {
+        listener.onStatus(stat);
+      }
+    }
+  }
+
+COM:processes status updates by iterating through a list of listeners and calling their onStatus method, while also removing any null references

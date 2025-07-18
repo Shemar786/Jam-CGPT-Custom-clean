@@ -1,0 +1,17 @@
+TDAT:   protected void addLoginTimeoutPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBConnection_loginTimeout_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBConnection_loginTimeout_feature", "_UI_DBConnection_type"),
+				 DbPackage.Literals.DB_CONNECTION__LOGIN_TIMEOUT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a login timeout property descriptor to an object's item property descriptors

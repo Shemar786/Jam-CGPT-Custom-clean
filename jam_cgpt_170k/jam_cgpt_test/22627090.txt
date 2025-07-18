@@ -1,0 +1,11 @@
+TDAT: 	public String getHasIdeasForUse() {
+		ResultDocList annoResults = ( (ItemDocReader)primaryResultDoc.getDocReader() ).getAnnotationResultDocs();
+		for ( int i = 0; i < annoResults.size(); i++ ) {
+			if ( ( (DleseAnnoDocReader)annoResults.get(i).getDocReader() ).getType().equals( "See also" ) ) {
+				return "true";
+			}
+		}
+		return "false";
+	}
+
+COM:returns a string "true" if there are annotations with type "See also" in the primary result document, otherwise it returns "false"

@@ -1,0 +1,29 @@
+TDAT: 	public void load(InputStream is) {
+		String line;
+		String[] prop = new String[2];
+		int i;
+		InputStreamReader isr = new InputStreamReader(is);
+		BufferedReader br = new BufferedReader(isr);
+		try {
+			while ((line = br.readLine()) != null) {
+				i = 0;
+				String[] tokens = line.split("\\s");
+				for(String token : tokens) {
+					if(!token.equals("")) {
+						prop[i] = token;
+						i++;
+						if(i == 2) {
+							break;
+						}
+					}
+				}
+				this.put(prop[0],prop[1]);
+			}
+			br.close();
+			isr.close();
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}
+	}
+
+COM:takes an InputStream as input, reads lines from it, splits each line into two tokens, and stores them as key-value pairs in a data structure

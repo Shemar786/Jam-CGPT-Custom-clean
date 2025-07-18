@@ -1,0 +1,17 @@
+TDAT:     public boolean embeddingContainsEdge(Object edge) {
+        if (edge instanceof ConnectedNode) {
+            if (changedNode == ((ConnectedNode) edge).node) {
+                edge = ((ConnectedNode) edge).other;
+            }
+        }
+
+        for (int i = 0; i < repairEmbedding.length; i++) {
+            if (edge == repairEmbedding[i]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+COM:checks if an edge object is contained in a repair embedding and returns true if it does, false otherwise

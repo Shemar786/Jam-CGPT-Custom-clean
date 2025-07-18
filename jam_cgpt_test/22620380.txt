@@ -1,0 +1,12 @@
+TDAT: 	public Standard getStandardById () {
+		if (stdId == null || commCoreHelper == null || this.standard == null) {
+			log.error ("returning null");
+			return null;
+		}
+		Standard std = commCoreHelper.getStandard(this.standard.getDocumentIdentifier(), stdId);
+		if (std == null)
+			log.error ("std not found");
+		return std;
+	}
+
+COM:returns a Standard object by ID, but returning null and logging errors if necessary conditions are not met

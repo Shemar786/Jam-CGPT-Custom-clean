@@ -1,0 +1,17 @@
+TDAT: 	protected void addCalendarNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ScheduleSaflet_calendarName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScheduleSaflet_calendarName_feature", "_UI_ScheduleSaflet_type"),
+				 Actionpak1Package.Literals.SCHEDULE_SAFLET__CALENDAR_NAME,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property to a list of item property descriptors for a ScheduleSaflet object related to its calendar name

@@ -1,0 +1,20 @@
+TDAT: 	public List retrieveCategories(Document document) {
+		List categories = new ArrayList();
+		String key = null;
+
+		// not the most efficient implementation (loops entire library):
+		// - loop through all categories
+		// - match the document with all docs within each category
+		// - when matching add to current set of categories
+		Iterator iter = collection.keySet().iterator();
+		while (iter.hasNext()) {
+			key = (String) iter.next();
+
+			if (((ArrayList) collection.get(key)).contains(document)) {
+				categories.add(key);
+			}
+		}
+		return categories;
+	}
+
+COM:retrieves a list of categories that a given document belongs to by looping through all categories and matching the document with all documents within each category

@@ -1,0 +1,17 @@
+TDAT:     protected void synchronizeChildren() {
+
+        // no need to synchronize again
+        syncChildren = false;
+
+        // get children
+        DeferredDocumentImpl ownerDocument = (DeferredDocumentImpl)this.ownerDocument;
+        int index = ownerDocument.getFirstChild(fNodeIndex);
+        while (index != -1) {
+            Node child = ownerDocument.getNodeObject(index);
+            appendChild(child);
+            index = ownerDocument.getNextSibling(index);
+        }
+
+    } // synchronizeChildren()
+
+COM:synchronizes the children of a deferred document with the main document

@@ -1,0 +1,19 @@
+TDAT:     protected boolean isSymbol(char c) {
+        switch (c) {
+        case '<':
+            /** falls through */
+        case '/':
+            /** falls through */
+        case '>':
+            /** falls through */
+        case '\"':
+            /** falls through */
+        case '!':
+            return true;
+
+        default:
+            return false;
+        }
+    }
+
+COM:checks if a given character is a symbol by using a switch case statement

@@ -1,0 +1,9 @@
+TDAT: 	private void checkThread(Thread thread1, Thread thread2) {
+		
+		assertEquals("wrong id", thread1.getId(), thread2.getId());
+		assertEquals("wrong forum id", thread1.getForumId(), thread2.getForumId());
+		assertEquals("wrong usre id", thread1.getUserProfileId(), thread2.getUserProfileId());		
+		assertEquals("wrong usre title", thread1.getTitle(), thread2.getTitle());		
+	}
+
+COM:checks if two threads have matching IDs, forum IDs, user profile IDs, and titles using assertions

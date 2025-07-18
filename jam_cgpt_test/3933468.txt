@@ -1,0 +1,21 @@
+TDAT: 	public SquiggleInputHandler getInputHandler(ParsedURL purl) throws IOException {
+		Iterator<SquiggleInputHandler> iter = getHandlers().iterator();
+		SquiggleInputHandler handler = null;
+
+		while (iter.hasNext()) {
+			SquiggleInputHandler curHandler = (SquiggleInputHandler) iter.next();
+			if (curHandler.accept(purl)) {
+				handler = curHandler;
+				break;
+			}
+		}
+
+		// No handler found, use the default one.
+		if (handler == null) {
+			handler = defaultHandler;
+		}
+
+		return handler;
+	}
+
+COM:retrieves an appropriate SquiggleInputHandler based on a ParsedURL input or the default handler if none is found

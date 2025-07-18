@@ -1,0 +1,14 @@
+TDAT: 	protected String shortForm(IRI theIRI) {
+		String fragment = theIRI.getFragment();
+		if( fragment != null ) {
+			return fragment;
+		}
+		String str = theIRI.toString();
+		int lastSlashIndex = str.lastIndexOf( '/' );
+		if( lastSlashIndex != -1 ) {
+			return str.substring( lastSlashIndex + 1, str.length() );
+		}
+		return str;
+	}
+
+COM:returns the short form of an IRI by extracting the fragment or the substring after the last occurrence of "/" in the IRI string representation

@@ -1,0 +1,15 @@
+TDAT:     protected void overrideProperties(UIComponent component) {
+
+        super.overrideProperties(component);
+        if ((name != null) &&
+            (component.getAttribute("name") == null)) {
+            component.setAttribute("name", name);
+        }
+        if ((page != null) &&
+            (component.getAttribute("page") == null)) {
+            component.setAttribute("page", page);
+        }
+
+    }
+
+COM:overrides certain properties of a UI component and sets certain attributes if they are not already set

@@ -1,0 +1,12 @@
+TDAT: 	public ReservationUseBase getUsedReservation( String table, String column, SimpleNode where) {
+		where = where.simplify( MobisnapConstants.MSQL_SERVER, false);
+		Enumeration enum = usedRsrvs.elements();
+		while( enum.hasMoreElements()) {
+			ReservationUseBase rsrv = (ReservationUseBase)enum.nextElement();
+			if( rsrv.getRsrv().checkReservation( table, column, where))
+				return rsrv;
+		}
+		return null;
+	}
+
+COM:retrieves a ReservationUseBase object for a given table, column, and filter criteria if it exists in a collection, otherwise it returns null

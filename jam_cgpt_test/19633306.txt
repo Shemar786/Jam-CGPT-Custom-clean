@@ -1,0 +1,21 @@
+TDAT: 	public boolean isDownloadAllowed() {
+		int iAccessType = 0;
+
+		switch (this.itemType) {
+		case Resource.WORKFLOW:
+			iAccessType = ((Workflow) this).getAccessType();
+			break;
+		case Resource.FILE:
+			iAccessType = ((File) this).getAccessType();
+			break;
+		case Resource.PACK:
+			iAccessType = ((Pack) this).getAccessType();
+			break;
+		default:
+			iAccessType = 0;
+		}
+
+		return (iAccessType >= Resource.ACCESS_DOWNLOADING);
+	}
+
+COM:checks if download is allowed for a specific resource type by retrieving its access type and comparing it to a predefined constant value

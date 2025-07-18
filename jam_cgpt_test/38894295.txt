@@ -1,0 +1,15 @@
+TDAT:   private String scanIdentifier(char[] input, int offset, int end) {
+    int begin = offset;
+
+    while ((offset < end) && (isIdentifierChar(input[offset]))) {
+      offset++;
+    }
+
+    if ((offset == end) || (offset == begin)) {
+      return null;
+    } else {
+      return new String(input, begin, offset - begin);
+    }
+  }
+
+COM:scans a character array to find an identifier, given a specific start and end offset, and returns the identifier as a string

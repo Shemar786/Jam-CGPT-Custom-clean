@@ -1,0 +1,14 @@
+TDAT:     public String getImagesSubdirectory() {
+
+        if (ObjectStructureConfiguration.imageSubdirectoryCache == null) {
+            try {
+                ObjectStructureConfiguration.imageSubdirectoryCache = super.getStringProperty(ObjectStructureConfiguration.IMAGES_DIRECTORY_KEY);
+            } catch (final PropertiesException rjcepe) {
+                ObjectStructureConfiguration.log.error("A PropertiesException has been caught while attempting to read the images subdirectory", rjcepe);
+            }
+        }
+
+        return ObjectStructureConfiguration.imageSubdirectoryCache;
+    }
+
+COM:gets the subdirectory for images and caches it for future use

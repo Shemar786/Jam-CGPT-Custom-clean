@@ -1,0 +1,11 @@
+TDAT:     public void sendMessageToPeer(UserConnection userConnection, Message message) throws FelperNotSentMessageException {
+
+        SendMessageThread sendMessageThread = new SendMessageThread(userConnection, message);
+        sendMessageThread.start();
+        
+        if (sendMessageThread.isInterrupted())
+            throw new FelperNotSentMessageException();             
+
+    }
+
+COM:sends a message to a user connection using a separate thread and throws an exception if the message fails to send

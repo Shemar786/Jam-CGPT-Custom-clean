@@ -1,0 +1,20 @@
+TDAT: 	public void testVariant_07() throws Exception {
+		IMachineRoot mac = createMachine("mac");
+
+		addInitialisation(mac);
+		setOrdinary(addEvent(mac, "evt"));
+		addVariant(mac, "1");
+
+		saveRodinFileOf(mac);
+
+		runBuilder();
+
+		ISCMachineRoot file = mac.getSCMachineRoot();
+
+		containsEvents(file, IEvent.INITIALISATION, "evt");
+
+		hasMarker(mac.getVariants()[0], EventBAttributes.EXPRESSION_ATTRIBUTE,
+				GraphProblem.NoConvergentEventButVariantWarning);
+	}
+
+COM:creates a machine, adds an initialization and an event to it, sets a variant attribute to "1", saves and runs a builder, checks for the presence of the initialization and event in the generated file, and checks if the first variant has a specific marker

@@ -1,0 +1,13 @@
+TDAT:     public void addSegmentAt(int index,RouteSegment segment) {
+        if (index == 0) {
+            firstSegment = segment;
+        } else {
+            RouteSegment prevSeg = getSegmentAt(index-1);
+            RouteSegment oldNext = prevSeg.getNext();
+            prevSeg.appendNext(segment);
+            segment.appendNext(oldNext);
+        }
+        fireRouteChanged();
+    }
+
+COM:adds a new route segment at a specified index within a route and updates the route accordingly

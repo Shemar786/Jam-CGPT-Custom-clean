@@ -1,0 +1,9 @@
+TDAT:   public String getLevelName(int index) {
+    if ((vertZaxis == null) || (index < 0) || (index >= vertZaxis.getSize()))
+      throw new IllegalArgumentException("getLevelName = "+index);
+
+    NamedAnything name = (NamedAnything) levels.get(index);
+    return name.getName();
+  }
+
+COM:takes an integer index input, checks for certain conditions, retrieves a "NamedAnything" object from an ArrayList of levels based on the index and returns the name of the "NamedAnything" object as a String

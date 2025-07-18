@@ -1,0 +1,15 @@
+TDAT: 	public void doNextYear(ActionEvent event) {
+		try {
+			logger.debug("ProjectListBean.doNextYear");
+			listData = projectService.findAllNextYear();
+			if (listData.size() == 0)
+				throw new IASException("There is no audit project on next year.");
+			populateList();
+			this.lastButtonClicked = ProjectListBean.DO_NEXT_YEAR;
+		} catch (Exception ex) {
+			logger.error(ex);
+			FacesUtils.addErrorMessage(ex.getMessage());
+		}
+	}
+
+COM:retrieves a list of projects for the next year and populates it in a user interface while handling potential errors

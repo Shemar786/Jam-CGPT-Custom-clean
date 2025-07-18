@@ -1,0 +1,13 @@
+TDAT: 	public void close(){
+		try {
+			byte[] text = SecurityHandler.getBytes(new Packet((String)null));	//serialize a null message
+			byte[] encryptText = SecurityHandler.encrypt(text,_key);			//encrypts the message
+			_out.write(encryptText);											//sends the message
+			_out.close();
+		} catch (Exception e) {
+			SecurityHandler.catchException("closing chat", e, true);
+			//e.printStackTrace();
+		}
+	}
+
+COM:encrypts and sends a null message and then closes the output stream

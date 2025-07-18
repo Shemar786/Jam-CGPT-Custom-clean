@@ -1,0 +1,10 @@
+TDAT: 	public void testMoveToRoot() throws CoreException {
+		final String name = rDest.getElementName();
+
+		moveNegative(neSource, rfDest, null, null, false, INVALID_DESTINATION);
+		moveNegative(neSource, rfDest, null, name, false, INVALID_DESTINATION);
+		moveNegative(neSource, rfDest, null, null, true, INVALID_DESTINATION);
+		moveNegative(neSource, rfDest, null, name, true, INVALID_DESTINATION);
+	}
+
+COM:tests the functionality of moving negative source elements to different destinations with varying parameters

@@ -1,0 +1,11 @@
+TDAT:     public void push(Submission submission) {
+        if (submission == null) {
+            throw new NullPointerException("submission should not be null");
+        }
+        JudgingQueue.JudgingQueueNode node = new JudgingQueueNode();
+        JudgingQueue.JudgingQueueNode last = this.tail.getAndSet(node);
+        last.next = node;
+        last.submission = submission;
+    }
+
+COM:adds a new submission to a judging queue and throws an exception if the submission is null

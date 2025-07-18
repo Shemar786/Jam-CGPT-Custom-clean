@@ -1,0 +1,11 @@
+TDAT:     public boolean contains(Object obj) {
+        if (obj instanceof SWGCategory)
+            return categories != null && categories.contains(obj);
+        if (obj instanceof SWGSchematic)
+            return schematics != null && schematics.contains(obj);
+        if (obj instanceof SWGSchematic)
+            return items != null && items.contains(obj);
+        return false;
+    }
+
+COM:checks if an object of type SWGCategory, SWGSchematic, or SWGItem is contained within an ArrayList, and returns a boolean value indicating whether or not it is present

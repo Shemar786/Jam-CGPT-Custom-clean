@@ -1,0 +1,13 @@
+TDAT:     private double getWeightedErrorEstimate() {
+        double sum = 0;
+        double weight = 1;
+        double sub = 0;
+        for (byte c : sortedScore.getBytes()) {
+            sum += (c - 33) * weight;
+            sub += weight;
+            weight *= 0.85;
+        }
+        return getPhred(sum / sub);
+    }
+
+COM:calculates the weighted error estimate of a sorted score and returns it as a double

@@ -1,0 +1,17 @@
+TDAT:    public Vector getKey() {
+      Vector v = super.getKey();
+
+      if (((v == null) || v.isEmpty()) && !Util.isNull(from)) {
+         if (getConfig() != null) {
+            Table t = getConfig().getTableByName(from);
+
+            if (t != null) {
+               v = t.getKey();
+            }
+         }
+      }
+
+      return v;
+   }
+
+COM:returns a vector that is obtained from a table's key if the vector is empty or null and the table exists

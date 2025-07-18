@@ -1,0 +1,13 @@
+TDAT: 	protected String getHandlerClassName(String property) {
+		String handlerClassName = "CSSProperty";
+		String[] s = StringUtils.split(property, "-");
+		for (int i = 0; i < s.length; i++) {
+			String p = s[i];
+			p = p.substring(0, 1).toUpperCase() + p.substring(1, p.length());
+			handlerClassName += p;
+		}
+		handlerClassName += "Handler";
+		return handlerClassName;
+	}
+
+COM:takes a property and returns the corresponding handler class name for that property in CSS styling

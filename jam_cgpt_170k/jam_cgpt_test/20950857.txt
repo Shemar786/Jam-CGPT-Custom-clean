@@ -1,0 +1,14 @@
+TDAT: 	private LockedFile initFile(File dataDir, String tableName) throws SQLIOException {
+		File dbtFileHnd = new File(dataDir, tableName + MEMO_EXTENSION);
+
+		if (! dbtFileHnd.exists()) {
+			LockedFile file = new LockedFile(dbtFileHnd, true);
+			createHeader(file);
+			return file;
+		}
+		else {
+			return new LockedFile(dbtFileHnd, false);
+		}
+	}
+
+COM:initializes a locked file for a given data directory and table name, creating a file header if the file does not exist

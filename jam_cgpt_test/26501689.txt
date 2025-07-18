@@ -1,0 +1,17 @@
+TDAT:   public void clear(boolean freeMemory){
+    _arrayPos = 0;
+    _markOffset = 0;
+    _markPos = 0;
+    if(freeMemory){
+      _arrays = new ByteArray[_increment];
+    }
+    else{
+      for(int i = 0; i < _arrayCount; i++){
+        _arrays[i]._pos   = 0;
+        _arrays[i]._limit = 0;        
+      }      
+    }
+    _arrayCount = 0;
+  }
+
+COM:clears the internal state and optionally frees memory in a ByteArray array

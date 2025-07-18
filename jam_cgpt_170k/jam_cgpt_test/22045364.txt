@@ -1,0 +1,12 @@
+TDAT:     public double function( double x, double y ){
+	if(  x < 0 || Math.round( x ) - x != 0 )
+	    throw new ArithmeticException( "Permutation error" );
+	if(  y < 0 || y > x || Math.round( y ) - y != 0 )
+	    throw new ArithmeticException( "Permutation error" );
+	if( y == 0 )
+	    return 1;
+	else
+	    return x * function( x - 1, y - 1 );
+    }
+
+COM:calculates the factorial of a given double value x, given another double value y as the number of elements to be taken from x

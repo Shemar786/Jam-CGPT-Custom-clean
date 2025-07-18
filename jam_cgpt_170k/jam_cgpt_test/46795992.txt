@@ -1,0 +1,17 @@
+TDAT: 	private String getClassString(CodeElement element) {
+		String className = element.getElementName();
+		String derived = element.getDerived();
+		if (!EMPTYSTRING.equals( className )) {
+			String cnw=className;
+			if (derived != ""){
+				cnw+=":"+derived;
+			}
+			String s = processTemplate(DefaultPrefsSetter.CLASSTEMPLATE, TEMPLATEVARCLASS,cnw);
+			s=processTemplateString(s,TEMPLATEVARMODIFIER,element.getModifierAsString());
+			return s;
+			
+		}
+		return "";
+	}
+
+COM:returns a string containing class information based on the provided CodeElement

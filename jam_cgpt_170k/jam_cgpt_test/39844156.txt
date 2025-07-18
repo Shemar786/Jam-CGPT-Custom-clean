@@ -1,0 +1,12 @@
+TDAT:         public void addRegistration( Registration registration ) {
+
+                String key = registration.getPath();
+                ArrayList beanList = (ArrayList)registrations.get( key );
+                if( beanList == null ) {
+                        beanList  = new ArrayList();
+                        registrations.put( key, beanList );
+                }
+                beanList.add( registration );
+        }
+
+COM:adds a new registration to an existing ArrayList, or creates a new ArrayList if none exists, based on a specified key

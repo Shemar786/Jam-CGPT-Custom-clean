@@ -1,0 +1,19 @@
+TDAT: 	public String submitJob(JobDefinition jobDef) throws SecurityException, IOException, DRMException {
+
+		if (jobDef == null) {
+			logger.debug("null job definition");
+			throw new NullPointerException();
+		}
+
+		Job job = null;
+		Queue queue = new Queue(null, contactHost, contactPort, contactTimeout);
+		try {
+			job = queue.submitJob(jobDef);
+		} catch (Exception e) {
+			throw new DRMException(2000, e.getMessage());
+		}
+
+		return (job.getJobId());
+	} // End of submitJob
+
+COM:submits a job definition to a DRM queue and returns the ID of the job that was submitted, with error handling for null inputs and potential exceptions

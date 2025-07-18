@@ -1,0 +1,11 @@
+TDAT: 	private void initialiseContextMenu(){
+		//initialise the menu the listener
+		//NOTE: the rest of the initialisation of this class is done in the tabbox context listener class
+		contextMenu = new Menupopup();
+		contextMenu.setId(_contextId);
+		contextMenu.setParent(scratchPanel);
+		contextListener = new TabboxContextListener(this,contextMenu);
+		contextMenu.addEventListener("onOpen",contextListener);		
+	}
+
+COM:initializes a context menu by creating a new Menupopup, setting its ID and parent, creating a listener for it, and adding an event listener for opening the menu

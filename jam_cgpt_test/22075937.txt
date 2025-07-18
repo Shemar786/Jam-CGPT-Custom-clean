@@ -1,0 +1,12 @@
+TDAT: 	private Templates getTemplate () throws TransformerConfigurationException {
+		if (templateMap.containsKey(this.XSLName())) {
+			return templateMap.get(this.XSLName());
+		} else {
+			Source s = new StreamSource(new File(this.XSLFile()));
+			Templates t = transformer_factory.newTemplates(s);
+			templateMap.put(this.XSLName(), t);
+			return t;
+		}
+	}
+
+COM:retrieves an XSL template from a cache or generates a new one if not found

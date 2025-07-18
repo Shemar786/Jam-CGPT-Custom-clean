@@ -1,0 +1,21 @@
+TDAT: 	private String methodsCalledMapToString() {
+		StringBuffer buf = new StringBuffer("methodsCalledMap:\n");
+		Set<IMethod> keySet = methodsCalledMap.keySet();
+
+		for (IMethod caller : keySet) {
+			String sCaller;
+			try {
+				sCaller = getSignature(caller);
+			} catch (JavaModelException e) {
+				sCaller = caller.toString();
+			}
+			Set<IMethod> callees = methodsCalledMap.get(caller);
+			buf.append(sCaller);
+			buf.append(": ");
+			buf.append(callees.toString());
+			buf.append("\n");
+		}
+		return buf.toString();
+	}
+
+COM:converts a map of caller-callee method relationships into a formatted string

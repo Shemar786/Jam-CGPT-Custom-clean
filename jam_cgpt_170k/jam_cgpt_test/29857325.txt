@@ -1,0 +1,14 @@
+TDAT:   public void setWeek(int r, Week v) {
+    if (isChangedUI() 
+        || value[r] == null
+        || (value[r] != null && !value[r].equals(v))) {
+      // trails (backup) the record if necessary
+      trail(r);
+      // set value in the defined row
+      value[r] = v;
+      // inform that value has changed
+      setChanged(r);
+    }
+  }
+
+COM:sets a value in the specified row if it has changed from the previous value and trail it for backup

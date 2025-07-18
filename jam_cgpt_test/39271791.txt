@@ -1,0 +1,9 @@
+TDAT: 	public void setList(String s) {
+		if (s == null || s.length() <= 0)
+			throw new IllegalArgumentException(this.getClass().getName()
+				+ " : Cannot perform public void setList(String s), parameter s is null.");
+		this.sList = new String(s);
+		parse();
+	} // end public void setList(String s)
+
+COM:sets a string list and throws an exception if the parameter is null or the length is less than or equal to 0

@@ -1,0 +1,14 @@
+TDAT:     public void setUniversalId(String universal) {
+        if (universal != null) 
+        	universalId = universal.trim();
+        else
+        	universalId = null;
+        
+        if (universalId != null) {
+            universalKey = universalId;
+            if (universalIdType != null)
+                universalKey = universalKey + "&" + universalIdType;
+        }
+    }
+
+COM:sets a universal ID and creates a universal key using the ID and ID type

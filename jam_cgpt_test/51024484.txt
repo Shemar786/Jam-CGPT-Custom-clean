@@ -1,0 +1,14 @@
+TDAT: 	private String complileId(ConceptClass cc, Collection<ONDEXConcept> eqs) {
+		TreeSet<Integer> sortedSet = new TreeSet<Integer>();
+		for (ONDEXConcept c : eqs) {
+			sortedSet.add(c.getId());
+		}
+		StringBuilder b = new StringBuilder(cc.getId()+"#");
+		for (int i : sortedSet) {
+			b.append(i+":");
+		}
+		b.deleteCharAt(b.length()-1);
+		return b.toString();
+	}
+
+COM:takes in a concept class and a collection of ONDEX concepts, generates a sorted set of concept IDs, appends them to a StringBuilder and returns the resulting string

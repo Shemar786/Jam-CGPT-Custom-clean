@@ -1,0 +1,13 @@
+TDAT:     public void testSetEvtID() {
+        System.out.println("setEvtID");
+        
+        String evtID = "";
+        Email_DBImpl instance = new Email_DBImpl();
+        
+        instance.setEvtID(evtID);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the setEvtID method of the Email_DBImpl class by passing an empty string as the parameter and printing "setEvtID"

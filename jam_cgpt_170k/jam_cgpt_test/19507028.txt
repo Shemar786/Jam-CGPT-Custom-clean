@@ -1,0 +1,12 @@
+TDAT: 	public void testThrowCoreException() {
+		final CoreExceptionThrower action = new CoreExceptionThrower();
+		try {
+			RodinCore.run(action, null);
+			fail("Should have raised an exception");
+		} catch (RodinDBException e) {
+			assertSame(action.exc.getStatus(), e.getStatus());
+			assertSame(action.exc, e.getException());
+		}
+	}
+
+COM:tests the throwing of a CoreException with RodinCore and asserts that the exception matches the expected status

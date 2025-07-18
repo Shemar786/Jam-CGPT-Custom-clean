@@ -1,0 +1,17 @@
+TDAT: 	protected void addReferToPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TransformationCallsTransformationRuleAssociation_referTo_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TransformationCallsTransformationRuleAssociation_referTo_feature", "_UI_TransformationCallsTransformationRuleAssociation_type"),
+				 MethodcontentclassdiagramPackage.Literals.TRANSFORMATION_CALLS_TRANSFORMATION_RULE_ASSOCIATION__REFER_TO,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to an item property descriptor list for a transformation calls transformation rule association, with specific attributes like adapter factory, resource locator, and string descriptions

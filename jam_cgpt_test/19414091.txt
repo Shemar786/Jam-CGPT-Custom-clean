@@ -1,0 +1,23 @@
+TDAT:   public void executeDelete(File dir, String includes) throws CommandException {
+
+    if (project == null) {
+      project = getProjectInstance();
+    }
+
+    if (dir != null && dir.exists()) {
+
+      // <delete>
+      //
+      Delete delete = new Delete();
+      delete.setProject(project);
+
+      FileSet fileset = new FileSet();
+      fileset.setDir(dir);
+      fileset.setIncludes(includes);
+
+      delete.addFileset(fileset);
+      delete.execute();
+    }
+  }
+
+COM:executes a file deletion operation on a given directory and file search pattern, using Apache Ant's Delete task

@@ -1,0 +1,10 @@
+TDAT:   public File addExtension(File file){
+    if(file != null && !file.getName().endsWith(this.extension) ){
+      File parent = file.getParentFile();
+      return new File(parent, String.format("%s.%s", file.getName(), extension));
+    }
+    
+    return file;
+  }
+
+COM:adds a file extension to a specified File object if it doesn't already have that extension

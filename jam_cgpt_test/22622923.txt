@@ -1,0 +1,11 @@
+TDAT: 	private List getFormatList() {
+		List formats = new ArrayList();
+		formats.add(new org.apache.struts.util.LabelValueBean("-- Select format --", ""));
+		for (Iterator i = frameworkRegistry.getItemFormats().iterator(); i.hasNext(); ) {
+			String format = (String) i.next();
+			formats.add(new org.apache.struts.util.LabelValueBean(format, format));
+		}
+		return formats;
+	}
+
+COM:returns a list of formats, including a default "-- Select format --" option, obtained from an iterator over a registry of item formats

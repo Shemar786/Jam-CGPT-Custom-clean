@@ -1,0 +1,18 @@
+TDAT:     public IFunction buildFunction() throws FunctionBuildingException
+    {        
+        try
+        {
+            IFunction function = (IFunction)functionClass.newInstance();
+            return function;
+        }
+        catch (InstantiationException e)
+        {
+            throw new FunctionBuildingException("Building the function with class "+functionClass+" got",  e);
+        }
+        catch (IllegalAccessException e)
+        {
+            throw new FunctionBuildingException("Building the function with class "+functionClass+" got",  e);
+        }
+    }
+
+COM:builds and returns an instance of an IFunction object, which may throw a FunctionBuildingException if instantiation or access issues occur

@@ -1,0 +1,7 @@
+TDAT:     protected void fireElementsAdded(Collection nodes,Collection edges) {
+        EventListener[] listeners=m_listeners.getListeners(GraphListener.class);
+        for (int i=0;i<listeners.length;i++)
+            ((GraphListener)listeners[i]).elementsAdded(this,nodes,edges);
+    }
+
+COM:fires an event notifying all registered GraphListeners that new elements have been added to the graph

@@ -1,0 +1,12 @@
+TDAT:     protected double getSizeData(VisualItem item) {
+        if ( item.canGetString(m_sizeLabelName) ) {
+            try {
+                return (Double.parseDouble(item.getString(m_sizeLabelName)) );
+            } catch (NumberFormatException e) {
+                return 0; // size data can't be parse (wrong number format)
+            }
+        }
+        return 0; // no size data available
+    }
+
+COM:returns the size data of a VisualItem if available, otherwise it returns 0

@@ -1,0 +1,11 @@
+TDAT: 	public String toString() {
+		// It is possible to concatenate strings with '+'
+		// toString(), invoked on an object, returns a String representing
+		// the object (here a Date).
+		return "title=" + title
+				+ "\ncreationDate=" + creationDate.toString()
+				+ "\nid=" + id
+				+ "\nnumberOfPages=" + numberOfPages;
+	}
+
+COM:returns a formatted string representation of the object, which includes its title, creation date, ID, and number of pages

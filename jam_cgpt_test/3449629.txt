@@ -1,0 +1,12 @@
+TDAT:     private void unSessionizeTypes(final ActionForm form) {
+    	
+    	List types = ((TransportConfigForm) form).getTransportTypes();
+    	
+		//repeat as many times as there are transport types
+		for (int i = 0; i < types.size(); i++) {
+			session.removeAttribute(((TransportType) types.get(i)).getSessionName());
+		}
+		
+    }
+
+COM:removes session attributes for each transport type listed in a given ActionForm

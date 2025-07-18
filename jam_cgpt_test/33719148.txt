@@ -1,0 +1,13 @@
+TDAT:     public void testSetGroupCreator() {
+        System.out.println("SetGroupCreator");
+        
+        int gc = 0;
+        AutismGroup instance = new AutismGroup();
+        
+        instance.SetGroupCreator(gc);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+COM:tests the SetGroupCreator function in the AutismGroup class by setting the group creator to 0

@@ -1,0 +1,13 @@
+TDAT:     public long getMessageSize() throws MessagingException {
+        if (source != null && !isModified()) {
+            try {
+                return source.getMessageSize();
+            } catch (IOException ioe) {
+                throw new MessagingException("Error retrieving message size", ioe);
+            }
+        } else {
+            return MimeMessageUtil.calculateMessageSize(this);
+        }
+    }
+
+COM:retrieves the size of a message in bytes, either through a source or by calculating it

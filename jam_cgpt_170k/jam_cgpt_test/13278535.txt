@@ -1,0 +1,14 @@
+TDAT:     public void findBiggestEmbeddingAllMissingParts() {
+        // assign interpretations to all parts that could not be found.
+        Iterator it = allParts.iterator();
+
+        while (it.hasNext()) {
+            MovableSubgraphPart part = (MovableSubgraphPart) it.next();
+
+            if (! part.isInterpreted()) { // if a part is uninterpreted by now it could only partly be found. so try again, but be contend with a partiall match
+                part.findBiggestEmbedding();
+            }
+        }
+    }
+
+COM:finds the biggest embedding of movable subgraph parts by assigning interpretations to parts that could not be found and attempting to find a partial match

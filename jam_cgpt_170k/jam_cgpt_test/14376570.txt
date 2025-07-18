@@ -1,0 +1,21 @@
+TDAT: 	protected String extractPrefix(ITextViewer viewer, int offset) {
+		int i= offset;
+		IDocument document= viewer.getDocument();
+		if (i > document.getLength())
+			return ""; //$NON-NLS-1$
+
+		try {
+			while (i > 0) {
+				char ch= document.getChar(i - 1);
+				if (!Character.isJavaIdentifierPart(ch) && ch!='.' && ch!='-')
+					break;
+				i--;
+			}
+			prefix = document.get(i, offset - i);
+			return prefix;
+		} catch (BadLocationException e) {
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+COM:extracts a prefix from a text viewer's document based on the last non-identifier, non-dot, non-hyphen character at a given offset

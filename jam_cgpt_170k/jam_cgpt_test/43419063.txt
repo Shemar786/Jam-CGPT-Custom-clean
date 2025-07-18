@@ -1,0 +1,12 @@
+TDAT: 	private JButton getBtnZoomIn() {
+		if (btnZoomIn == null) {
+			btnZoomIn = new JButton();
+			btnZoomIn.setPreferredSize(new Dimension(45, 26));
+			btnZoomIn.setIcon(new ImageIcon(getClass().getResource(PathImage + "ListPlus.png")));
+			btnZoomIn.setToolTipText("Zoom in");
+			btnZoomIn.addActionListener(canvas.new ZoomAction(1.2));
+		}
+		return btnZoomIn;
+	}
+
+COM:returns a JButton that, when clicked, zooms in on a canvas

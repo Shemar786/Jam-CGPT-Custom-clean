@@ -1,0 +1,14 @@
+TDAT:   private String getDirConstant(ServletConfig config, String initParam, String defaultValue) {
+    String dir = config.getInitParameter(initParam);
+    if ((dir == null) || (dir.trim().length() < 1)) {
+      dir = defaultValue;
+    } else {
+      dir = dir.trim();
+    }
+    if (!dir.endsWith("/")) {
+      dir += "/";
+    }
+    return dir;
+  }
+
+COM:retrieves a specified directory constant from the configuration, with the option to use a default value if the parameter is not defined, and ensures that the returned value has a trailing slash

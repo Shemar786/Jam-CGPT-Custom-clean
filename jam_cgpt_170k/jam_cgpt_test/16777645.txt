@@ -1,0 +1,20 @@
+TDAT: 	public double evaluatePdf(IVector tv) {
+		if (this.correlated) {
+			throw new RuntimeException("StochVector.evaluatePdf()not implemented for correlated noise");
+		}
+
+		double prob = 1.0;
+		double values[] = tv.getValues();
+		int istart=0;
+		for (IStochVector child : children){
+			int length = child.getExpectations().getSize();
+			double valuesPart[] = new double[length];
+			System.arraycopy(values, istart, valuesPart, 0, values.length);
+			prob *= child.evaluatePdf(new Vector(valuesPart));
+			istart+=length;
+		}
+
+		return prob;
+	}
+
+COM:evaluates the probability density function of a stochastic vector, using the values of its children and throwing a runtime exception if the noise is correlated

@@ -1,0 +1,24 @@
+TDAT: 	public String getXmlFormat(String format, boolean filter) {
+		//prtln("getXmlFormat() format: " + format);
+		if (format == null)
+			return "";
+		if (format.equals(getDoctype())) {
+			if (filter)
+				return getXmlStripped();
+			else
+				return getXml();
+		}
+		else if (xmlConversionService != null) {
+			StringBuffer xml =
+					xmlConversionService.getConvertedXml(getDoctype(), format, getFile(), this);
+
+			if (xml == null)
+				return "";
+			else
+				return xml.toString();
+		}
+		else
+			return "";
+	}
+
+COM:takes a format string and a boolean filter as parameters, and returns an XML formatted string based on those parameters along with some additional logic

@@ -1,0 +1,11 @@
+TDAT:     public int getNumberCopyBooks(String ISBN) throws SQLException {
+        CallableStatement cs = dc.getConnection().prepareCall("{call getNumberCopyBooks(?)}");
+        cs.setString(1, ISBN);
+        ResultSet rs = cs.executeQuery();
+        if (rs.next()) {
+            return rs.getInt("NumberCopies");
+        }
+        return 0;
+    }
+
+COM:retrieves the number of copies of a book with the given ISBN using a SQL query and returns it as an integer

@@ -1,0 +1,21 @@
+TDAT: 	private GraphTraverser getGraphTraverser(String path, InputStream stream) {
+
+		StateMachineFlatFileParser2 smp = new StateMachineFlatFileParser2();
+
+		try {
+			smp.parseReader(new BufferedReader(new InputStreamReader(stream)),
+					graph);
+		} catch (InvalidFileException e) {
+			e.printStackTrace();
+		} catch (StateMachineInvalidException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("Semantic motifs loaded: " + path);
+
+		return new GraphTraverser(smp.getStateMachine());
+	}
+
+COM:returns a GraphTraverser object after parsing a flat file using the StateMachineFlatFileParser2 class and a specified input stream, and then printing a message to the console

@@ -1,0 +1,12 @@
+TDAT:     protected Configuration (final String propertyFileNameParam) throws PropertiesException {
+
+        try {
+            Locale locale = Locale.getDefault();
+            this.propertyFileName = propertyFileNameParam;
+            this.resourceBundle = ResourceBundle.getBundle(this.propertyFileName, locale);
+        } catch (final MissingResourceException mre) {
+            throw new PropertiesException("Unable to locate properties file at " + this.propertyFileName, mre);
+        }
+    }
+
+COM:initializes a Configuration object with a specified property file name and throws a PropertiesException if the file cannot be located

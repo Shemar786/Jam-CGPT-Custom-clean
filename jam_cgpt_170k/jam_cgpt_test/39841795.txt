@@ -1,0 +1,16 @@
+TDAT:     public void testGetSimpleLong() {
+
+        try {
+            Object value = dynaForm.get("longProperty");
+            assertNotNull("Got a value", value);
+            assertTrue("Got correct type", (value instanceof Long));
+            assertEquals("Got correct value",
+                    ((Long) value).longValue(),
+                    (long) 321);
+        } catch (Throwable t) {
+            fail("Exception: " + t);
+        }
+
+    }
+
+COM:tests whether the "longProperty" value obtained from the dynaForm object is of type Long and has a value of 321

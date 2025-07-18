@@ -1,0 +1,21 @@
+TDAT: 	public String toString() {
+		StringBuffer buf = new StringBuffer();
+		buf.append("\nname=");
+		buf.append(name);
+		buf.append(" ");
+		buf.append("\nid=");
+		buf.append(String.valueOf(getId()));
+		buf.append(" ");
+
+		if (getFields() != null) {
+			for (int i = 0; i < getFields().size(); i++) {
+				Field f = (Field) getFields().elementAt(i);
+				buf.append("\nfield: ");
+				buf.append(f.toString());
+			}
+		}
+
+		return buf.toString();
+	}
+
+COM:returns a string representation of an object that includes the name, ID, and any fields associated with it

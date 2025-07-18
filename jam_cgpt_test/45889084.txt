@@ -1,0 +1,9 @@
+TDAT: 	public Cursor findTaggedContent(String tag, String contentUri) {
+		Cursor c = mContext.getContentResolver().query(Tags.CONTENT_URI,
+				new String[] { Tags._ID, Tags.URI_2 },
+				"content1.uri like ? and content2.uri like ?",
+				new String[] { tag, contentUri + "%" }, "content2.uri");
+		return c;
+	}
+
+COM:searches for tagged content in a given URI and returns a Cursor object containing the results

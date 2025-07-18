@@ -1,0 +1,11 @@
+TDAT:     public ServletOutputStream getOutputStream() throws IOException {
+        if (gotWriter) throw new IllegalStateException(localStrings.getString("illegal_getoutputstream_call"));
+        ServletOutputStream internalOutputStream = getInternalOutputStream();
+        if (!gotOutputStream) {
+            servletOutputStream.setBufferSize(bufferSize);
+            gotOutputStream = true;
+        }
+        return internalOutputStream;
+    }
+
+COM:returns a ServletOutputStream object and sets its buffer size, throwing an exception if the writer has already been obtained

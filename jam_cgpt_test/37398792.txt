@@ -1,0 +1,16 @@
+TDAT:   public void endElement(String namespaceURI, String localName, String qName) {
+    // Retrieve the buffer, if need:
+    if (textIsNeeded() && (buffer.length() > 0)) {
+      propertyValue = buffer.toString();
+      addProperty();
+    }
+
+    // Clean up data:
+    propertyValue = null;
+    inTag = false;
+
+    // Pop last name in path:
+    path.remove(path.size() - 1);
+  }
+
+COM:handles the ending of an XML element by retrieving a buffer, adding the value to a property, cleaning up data, and removing the last name in the path

@@ -1,0 +1,16 @@
+TDAT: 	protected void add(Marker marker) {
+		for (Marker mark : markers) {
+			if (mark.getIdentifier().equals(marker.getIdentifier())) {
+				System.out.println("Marker with identifier: " + mark.getIdentifier() + " already added.");
+				return;
+			}
+		}
+		
+		System.out.println("ServiceContextManager ADDING Marker (" + marker.getClass().getName() + ")");
+
+		markers.add(marker);
+
+		fireMarkersChanged(marker, MarkersChangedEvent.Type.ADDED);
+	}
+
+COM:adds a marker to a list of markers and fires a notification of the addition

@@ -1,0 +1,13 @@
+TDAT:     public void convert(Node image, Element onode, Node hnode) {
+        if (bSupportMathML) {
+            if (converter.getTextCv().isDisplayEquation()) {
+            	onode.setAttribute("display", "block");
+            }
+            convertAsMathML(onode,hnode);
+        }
+        else {
+        	convertAsImageOrText(image,onode,hnode);
+        }
+    }
+
+COM:converts an image or text to MathML format if the bSupportMathML parameter is true, and sets the display attribute to block if the text is an equation

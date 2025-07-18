@@ -1,0 +1,16 @@
+TDAT:     private void evaluateProject(final Message message) {
+        String projectName = message.getText();
+
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.debug("READ PROJECT: " + projectName);
+        }
+
+        if (!node.getAntProjectName().equals(projectName)) {
+            LOGGER.error("connected to wrong ant instance! Should be "
+                         + node.getAntProjectName() + " but was "
+                         + projectName
+                         + "!");
+        }
+    }
+
+COM:evaluates a project by comparing the project name to the current Ant project name, and logs debugging or error messages

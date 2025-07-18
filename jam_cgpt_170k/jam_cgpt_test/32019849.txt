@@ -1,0 +1,13 @@
+TDAT:     protected boolean isDuplicate(Message message) {
+        boolean bRet = false;
+        for (int i = 0; i < messagesList.size(); i++) {
+            Message msg = (Message) messagesList.get(i);
+            if (msg.equals(message)) {
+                bRet = true;
+                break;
+            }            
+        }        
+        return bRet;
+    }
+
+COM:checks whether the given message object already exists in a list and returns a boolean value indicating the result

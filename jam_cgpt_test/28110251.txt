@@ -1,0 +1,10 @@
+TDAT:     public ObjectStructureTreeRenderer () {
+        // load the properties from the properties file
+        try {
+            this.objectStructureConfiguration = ObjectStructureConfiguration.getInstance();
+        } catch (final PropertiesException rjcepe) {
+            ObjectStructureTreeRenderer.log.error("A PropertiesException has been thrown while attempting to initialize the ViewConfiguration", rjcepe);
+        }
+    }
+
+COM:initializes an ObjectStructureTreeRenderer object with properties loaded from a file using the ObjectStructureConfiguration.getInstance() method and handles any PropertiesException that may occur

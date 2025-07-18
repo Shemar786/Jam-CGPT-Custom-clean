@@ -1,0 +1,16 @@
+TDAT:   public Profile findProfile(String aProfileName) {
+    // Validate the argument
+    if (aProfileName == null) {
+      throw new IllegalArgumentException("The profile name passed in is null");
+    }
+
+    // Search for the profile
+    Profile aProfile = getProfile(aProfileName);
+    if (aProfile == null && _theDefault != null) {
+      aProfile = getProfile(_theDefault);
+    }
+
+    return aProfile;
+  }
+
+COM:searches for and returns a profile by its name, and returns the default profile if the named profile is not found

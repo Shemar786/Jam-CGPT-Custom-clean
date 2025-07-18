@@ -1,0 +1,15 @@
+TDAT: 	public long readInteger() throws NumberFormatException, IOException {
+		stream.skip(1); // skips i
+		/** integer value **/
+		long value = 0;
+		char charBuf;
+		//read stream until e encountered.
+		while((charBuf = (char)stream.read()) != 'e') {
+			value *= 10;
+			value += Long.parseLong(""+charBuf);
+		};
+		//add integer to list
+		return value;
+	}
+
+COM:reads an integer value from a stream and returns it as a long, while skipping the 'i' character at the beginning and stopping at the 'e' character

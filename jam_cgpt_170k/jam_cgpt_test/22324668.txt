@@ -1,0 +1,10 @@
+TDAT:     public void setConfiguration (Configuration cfg) throws ConfigurationException {
+        this.cfg = cfg;
+        try {
+            init(cfg.get("provider"), cfg.get("lmk"), cfg.getBoolean("rebuildlmk"));
+        } catch (SMException e) {
+            throw  new ConfigurationException(e);
+        }
+    }
+
+COM:sets the configuration for the object using the input Configuration object and initializes it with certain properties, throwing a ConfigurationException if there is a SMException

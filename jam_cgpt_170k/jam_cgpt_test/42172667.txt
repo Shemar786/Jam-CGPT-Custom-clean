@@ -1,0 +1,17 @@
+TDAT:   protected void addDefaultPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBDriver_default_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBDriver_default_feature", "_UI_DBDriver_type"),
+				 DbPackage.Literals.DB_DRIVER__DEFAULT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a default property descriptor to an item property descriptor list in the DBDriver class

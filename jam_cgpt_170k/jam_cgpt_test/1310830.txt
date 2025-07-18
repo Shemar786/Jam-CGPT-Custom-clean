@@ -1,0 +1,12 @@
+TDAT: 	public boolean isEnabled(JMenuItem pItem, Action pAction) {
+		logger.info(this+" is asked for " + pAction + ".");
+		if (pAction instanceof NodeHookAction) {
+			NodeHookAction action = (NodeHookAction) pAction;
+			if(action.getHookName().equals(DatabaseConnector.SLAVE_STARTER_NAME)){
+				return !isMaster();
+			}
+		}
+		return !isSlave();
+	}
+
+COM:checks if a given Action is enabled for a JMenuItem based on the current state of the application

@@ -1,0 +1,17 @@
+TDAT:     public int readToSpace(BBuffer res) {
+        int resStart = start;
+        while (true) {
+          if (start >= end) {
+              break;
+          }
+          if (buff[start] == SP 
+                  || buff[start] == HT) {
+              break;
+          }
+          start++;
+        }
+        res.setBytes(buff, resStart, start - resStart);
+        return res.remaining();
+    }
+
+COM:reads bytes from a given buffer until it encounters a space or a tab character and returns the number of remaining bytes

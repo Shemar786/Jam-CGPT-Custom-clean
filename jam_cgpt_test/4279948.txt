@@ -1,0 +1,6 @@
+TDAT:     public boolean matches(RepoArtifactId id) {
+        return ((id.group == null) || id.group.equals(group)) && ((id.name == null) || id.name.equals(name))
+        && ((id.type == null) || id.type.equals(type)) && ((id.version == null) || id.version.equals(version));
+    }
+
+COM:takes a RepoArtifactId object as input and returns a boolean indicating whether it matches the group, name, type, and version properties of the current object

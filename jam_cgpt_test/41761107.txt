@@ -1,0 +1,19 @@
+TDAT: 	private TreeNode parseSimpleExpression() {
+		TreeNode t = parseTerm();
+		while ((token.getType() == Token.TokenType.PLUS)
+				|| token.getType() == Token.TokenType.MINUS) {
+			TreeNode p = SyntaxTree.makeNewNode(token);
+			if (p != null) {
+				p.setChild(0, t);
+				// t.setToken(token);
+
+				t = p;
+				tryMatch(token.getType());
+
+				t.setChild(1, parseTerm());
+			}
+		}
+		return t;
+	}
+
+COM:parses a simple arithmetic expression consisting of terms and plus or minus operators, and returns the resulting syntax tree

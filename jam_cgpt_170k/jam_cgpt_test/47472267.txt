@@ -1,0 +1,17 @@
+TDAT: 				protected int determineLocation(DropTargetEvent event) {
+					if (!(event.item instanceof Item)) {
+						return LOCATION_NONE;
+					}
+					Item item = (Item) event.item;
+					Point coordinates = new Point(event.x, event.y);
+					coordinates = getViewer().getControl().toControl(coordinates);
+					if (item != null) {
+						Rectangle bounds = getBounds(item);
+						if (bounds == null) {
+							return LOCATION_NONE;
+						}
+					}
+					return LOCATION_ON;
+				}
+
+COM:determines the location of a DropTargetEvent on an Item within a specified boundary

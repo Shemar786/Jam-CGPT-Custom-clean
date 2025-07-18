@@ -1,0 +1,20 @@
+TDAT: 	public void testCarrierSets_03_carrierSetFaultyName() throws Exception {
+		IContextRoot con = createContext("ctx");
+
+		addCarrierSets(con, makeSList("S>", "k-1", "#"));
+		
+		saveRodinFileOf(con);
+		
+		runBuilder();
+		
+		ISCContextRoot file = con.getSCContextRoot();
+		
+		containsCarrierSets(file);
+		
+		hasMarker(con.getCarrierSets()[0]);
+		hasMarker(con.getCarrierSets()[1]);
+		hasMarker(con.getCarrierSets()[2]);
+
+	}
+
+COM:tests for carrier sets with faulty names and ensures that markers are added to the carrier sets with issues

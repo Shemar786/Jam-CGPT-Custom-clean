@@ -1,0 +1,14 @@
+TDAT:     public void setUniversalIdType(String universalIdType) {
+        if (universalIdType != null) 
+        	this.universalIdType = universalIdType.trim();
+        else
+        	this.universalIdType = null;
+        
+        if (universalId != null) {
+            universalKey = universalId;
+            if (universalIdType != null)
+                universalKey = universalKey + "&" + universalIdType;
+        }
+    }
+
+COM:sets the universal ID type and updates the universal key if both the universal ID and type are not null

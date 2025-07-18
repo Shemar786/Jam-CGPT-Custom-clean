@@ -1,0 +1,17 @@
+TDAT: 	public void test_02() throws Exception {
+		E con = getGeneric().createElement("elt");
+
+		getGeneric().addPredicates(con, makeSList("A1"), makeSList("ℕ≠BOOL"), false);
+	
+		getGeneric().save(con);
+		
+		runBuilder();
+		
+		SCE file = getGeneric().getSCElement(con);
+		
+		getGeneric().containsPredicates(file, emptyEnv, makeSList(), makeSList());
+		
+		hasMarker(getGeneric().getPredicates(con)[0]);
+	}
+
+COM:creates an element, adds predicates to it, saves it, runs a builder, gets the SCElement, checks if it contains predicates, and checks if it has a marker

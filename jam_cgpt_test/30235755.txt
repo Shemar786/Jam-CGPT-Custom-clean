@@ -1,0 +1,11 @@
+TDAT: 	    public void setModel(Spatial model) {
+	        this.detachChild(this.model);
+	        this.model = model;
+	        this.attachChild(this.model);
+	        //obtain references to the front and back wheel
+	        
+	      //  backwheel = ((Node)(((Node)model).getChild(0))).getChild(1);
+	      //  frontwheel = ((Node)(((Node)model).getChild(0))).getChild(5);
+	    }
+
+COM:sets a new "Spatial" model, detaches the previous model, attaches the new model, and obtains references to front and back wheels (currently commented out)

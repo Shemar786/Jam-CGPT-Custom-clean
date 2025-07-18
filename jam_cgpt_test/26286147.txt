@@ -1,0 +1,8 @@
+TDAT:     public Dimension getPreferredSize() {
+        if(isPreferredSizeSet())
+            return super.getPreferredSize();
+        FontMetrics fm = getFontMetrics(getFont());
+        return new Dimension ((statusText==null?0:fm.stringWidth(statusText)) + 5, fm.getHeight() + 8);
+    }
+
+COM:returns a Dimension object representing the preferred size of a component

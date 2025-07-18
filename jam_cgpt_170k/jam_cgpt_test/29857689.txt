@@ -1,0 +1,22 @@
+TDAT:   public boolean isChanged() {
+    if (hasTrigger(TRG_CHANGED)) {
+      Object	res;
+
+      try {
+	res = callTrigger(TRG_CHANGED);
+      } catch (VException e) {
+        throw new InconsistencyException();
+      }
+
+      return ((Boolean)res).booleanValue();
+    } else {
+      for (int i = 0; i < blocks.length; i++) {
+	if (blocks[i].isChanged()) {
+	  return true;
+	}
+      }
+      return false;
+    }
+  }
+
+COM:checks whether an object has been changed or if any of its sub-objects have been changed

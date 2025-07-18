@@ -1,0 +1,14 @@
+TDAT: 	public Line findLine(NetworkID lineID) {
+		assert(locked) : "attempt made to modify model when not locked";
+
+		log.trace("request to find line with id " + lineID);
+		if (lineMap.containsKey(lineID)) {
+			log.trace("line found");
+			return (Line) lineMap.get(lineID);
+		} else {
+			log.trace("line does not exist");
+			return null;
+		}
+	}
+
+COM:returns a Line object based on a given NetworkID if it exists in the lineMap

@@ -1,0 +1,16 @@
+TDAT: 	protected void createColumns(final TableViewer viewer) {
+		for (int i = 0; i < getColumnsLabel().length; i++) {
+			final TableViewerColumn column = new TableViewerColumn(viewer,
+					SWT.NONE);
+			column.getColumn().setText(getColumnsLabel()[i]);
+			column.getColumn().setWidth(getColumnsBounds()[i]);
+			column.getColumn().setResizable(true);
+			column.getColumn().setMoveable(true);
+		}
+
+		final Table table = viewer.getTable();
+		table.setHeaderVisible(true);
+		table.setLinesVisible(true);
+	}
+
+COM:creates columns for a given TableViewer with labels and widths specified, making the table's header and lines visible

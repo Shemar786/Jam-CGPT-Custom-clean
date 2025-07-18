@@ -1,0 +1,15 @@
+TDAT:     public String dump() {
+        StringBuffer str = new StringBuffer();
+
+        str.append("Target[name=");
+        str.append(name);
+        str.append(",description=");
+        str.append(description);
+        str.append(",selected=");
+        str.append(selected);
+        str.append("]");
+
+        return str.toString();
+    }
+
+COM:returns a string that contains information about the target object's name, description, and selected status

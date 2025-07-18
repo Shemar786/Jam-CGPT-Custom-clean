@@ -1,0 +1,25 @@
+TDAT: 	public boolean updateOutCommandResult(int nodeId, int result) {
+
+		boolean searchFlag = false;
+
+		CommandEntity command;
+
+		Enumeration<CommandEntity> cmd = outcommandTable.elements();
+
+		while (true) {
+			try {
+				command = (CommandEntity) cmd.nextElement();
+				if ((command.getSyncFlag() == true) && (command.getNodeId() == nodeId)) {
+					searchFlag = true;
+					command.setResult(result);
+				}
+			} catch (Exception ex) {
+				// ex.printStackTrace();
+				command = null;
+				break;
+			}
+		}
+		return searchFlag;
+	}
+
+COM:updates the result of a command entity for a specific node ID and returns a boolean flag indicating if the update was successful

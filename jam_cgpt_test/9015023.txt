@@ -1,0 +1,18 @@
+TDAT: 	protected Node makeRemark(int start, int end) throws ParserException {
+		int length;
+		Node ret;
+
+		length = end - start;
+		if (0 != length) { // return tag based on second character, '/', '%',
+							// Letter (ch), '!'
+			if (2 > length)
+				// this is an error
+				return (makeString(start, end));
+			ret = getNodeFactory().createRemarkNode(this.getPage(), start, end);
+		} else
+			ret = null;
+
+		return (ret);
+	}
+
+COM:creates a Node object for a remark based on the start and end positions provided as parameters

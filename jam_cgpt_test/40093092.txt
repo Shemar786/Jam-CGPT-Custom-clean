@@ -1,0 +1,18 @@
+TDAT:     protected void saveSuiteContent(final File file, final XMLStringBuffer content) {
+      
+      try {
+        FileWriter fw = new FileWriter(file);
+        try {
+          fw.write(content.getStringBuffer().toString());
+        }
+        finally {
+          fw.close();
+        }
+      }
+      catch (IOException ioe) {
+        // TODO CQ is this normal to swallow exception here 
+        LOGGER.error("IO Exception", ioe);
+      }
+    }
+
+COM:saves the contents of an XMLStringBuffer to a specified File location

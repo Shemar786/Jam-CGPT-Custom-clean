@@ -1,0 +1,10 @@
+TDAT:     public void verifyNoActionMessages() {
+        if (logger.isDebugEnabled())
+            logger.debug("Entering");
+        init();
+        Common.verifyNoActionMessages(request,Globals.MESSAGE_KEY,"action");
+        if (logger.isDebugEnabled())
+            logger.debug("Exiting");
+    }
+
+COM:verifies that no action messages are present in the request object and logs debug messages

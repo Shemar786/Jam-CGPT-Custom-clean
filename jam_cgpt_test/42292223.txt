@@ -1,0 +1,24 @@
+TDAT: 	public boolean removeVertex(Vertex v) {
+		
+		if(this.containsVertex(v)) {
+			Vertex tmp;
+			for(Iterator<Vertex> i = vertexList.iterator(); i.hasNext(); ) {
+				tmp = i.next();
+				if(tmp.getId() == v.getId())
+					i.remove();
+				
+				if(tmp.hasPre(v.getId()))
+					tmp.removePre(v.getId());
+				
+				if(tmp.hasSuc(v.getId()))
+					tmp.removeSuc(v.getId());
+			}
+			return true;					
+		} 
+		else {
+			return false;
+		}
+		
+	}
+
+COM:removes a vertex from a graph by iterating through the vertex list and removing any edges that contain the corresponding vertex ID

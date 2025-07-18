@@ -1,0 +1,17 @@
+TDAT: 	public void convertTagListIntoTagCloudData(List<Tag> tags) {
+		try {
+			Document doc = null;
+
+			for (Tag t : tags) {
+				doc = this.getResource(Resource.TAG, t.getURI(),
+						Resource.REQUEST_DEFAULT_FROM_API);
+				Element rootElement = doc.getRootElement();
+				t.setCount(Integer.parseInt(rootElement.getChild("count")
+						.getText()));
+			}
+		} catch (Exception e) {
+			logger.error("Failed while getting tag application counts when turning tag list into tag cloud data");
+		}
+	}
+
+COM:converts a list of Tag objects into Tag Cloud Data and updates their count property by retrieving the count value from a third-party API resource

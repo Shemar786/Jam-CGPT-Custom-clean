@@ -1,0 +1,19 @@
+TDAT: 	public void renameProperty(String propName, String propNewName, String path, String userId) {
+		RenamePropertyThread.RenamePropertySettings attributes = new RenamePropertyThread.RenamePropertySettings();
+		attributes.DocumentName = getObjectId()+".xml";
+		attributes.PropertyName = propName;
+		attributes.PropertyNewName = propNewName;
+		attributes.SourcePath = path;
+		attributes.UserId = userId;
+		RenamePropertyThread rpt = _containerEditor.renameProperty(attributes);
+		try{
+			rpt.start();
+			rpt.join();
+		}
+		catch(InterruptedException ie){
+			ie.printStackTrace(System.err);
+		}
+		rpt.cleanThread();
+	}
+
+COM:renames a property in an XML document based on inputs of the current property name, new property name, file path, and user ID

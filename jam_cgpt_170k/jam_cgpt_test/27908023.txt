@@ -1,0 +1,15 @@
+TDAT: 	private NodeList XPathList(String xpath, Node parent) {
+
+		if(xpath.equals("") || (xpath.length() == 0))
+			throw new Error("Empty XPath string");
+
+		try {
+			return XPathAPI.selectNodeList(parent, xpath);
+		}
+		catch (javax.xml.transform.TransformerException e) {
+			e.printStackTrace();
+			throw new Error("Invalid XPath or document");
+		}
+	}
+
+COM:returns a NodeList of nodes that match a given XPath expression, under a specified parent node, throwing an error for invalid parameters or evaluation

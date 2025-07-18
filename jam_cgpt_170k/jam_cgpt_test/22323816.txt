@@ -1,0 +1,11 @@
+TDAT:     public ISOChannelPanel (String symbolicName) {
+        super();
+        this.symbolicName = symbolicName;
+        setLayout(new FlowLayout());
+        setBorder(BorderFactory.createRaisedBevelBorder());
+        log = new DefaultListModel();
+        add(createCountersPanel());
+        meter.setConnected(false);
+    }
+
+COM:creates a panel for displaying ISO channel information by setting its layout, border, creating a log list, adding a counters panel, and setting the meter to disconnected

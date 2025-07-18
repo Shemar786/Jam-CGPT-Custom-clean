@@ -1,0 +1,17 @@
+TDAT:     protected String getString(String key, Object... args) {
+        String answer = null;
+        try {
+            answer = bundle.getString(makeUnique(key));
+        }
+        catch (MissingResourceException e) {
+            return "!" + e.getKey() + "!";
+        }
+
+        if (0 != args.length) {
+            return MessageFormat.format(answer, args);
+        }
+
+        return answer;
+    }
+
+COM:returns a string value from a specified key in a ResourceBundle and can also format the string with any number of passed arguments

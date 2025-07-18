@@ -1,0 +1,17 @@
+TDAT:     public void writeTable() throws IOException  {
+        int i;
+
+        if (tblModel.getRowCount() > 0) {
+	        writeTableHeader();
+	
+	        //System.out.println("Write Table " + tblModel.getRowCount()
+	        //        + " ");
+	        for (i = 0; i < tblModel.getRowCount(); i++) {
+	            writeRow(i);
+	        }
+        }
+
+        writer.write("</table><P>&nbsp;</P>");
+    }
+
+COM:writes an HTML table using data from a table model

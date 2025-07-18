@@ -1,0 +1,15 @@
+TDAT: 	private String parseClusterParent(String[] rowArray) {
+		String parentId = null;
+		String key = colMap.getProperty(DotSonColumnMap.PARENT);
+		if (clusterHeaderMap.containsKey(key)) {
+			parentId = rowArray[clusterHeaderMap.get(key).intValue()];
+			// strip off optional encloseing braces
+			parentId = trimBraces(parentId);
+			if (parentId.equals("")) {
+				parentId = null;
+			}
+		}
+		return parentId;
+	}
+
+COM:parses a cluster parent from a row array and returns it as a String

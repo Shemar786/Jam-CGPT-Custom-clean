@@ -1,0 +1,24 @@
+TDAT: 	public boolean isElapsed() throws InterruptedException, ConnectionConfigurationException{
+		RunData dat = getRunData();
+		
+		// check max. duration
+		Duration d=getDuration();
+		if(d!=null){
+			Duration runDuration= dat.getRunDuration();
+			Duration stepDuration=runDuration.subtract(startedAtRunDuration);
+			if (getDuration().compareTo(stepDuration)<0) {
+				return true;
+			}
+		}
+		
+		// check max. height difference
+		if(maxHeightMeters!=null){
+			double runHeight=dat.getHeightDifference()-startedAtHeight;
+			if(runHeight>maxHeightMeters){
+				return true;
+			}
+		}
+		return false;
+	}
+
+COM:checks if the maximum duration or maximum height difference of a running process has been exceeded

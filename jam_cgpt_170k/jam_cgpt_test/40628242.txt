@@ -1,0 +1,9 @@
+TDAT:   public void save() {
+    Cookies.setCookie(COOKIE_NAME, container.toString(), new Date(System
+        .currentTimeMillis()
+        + 1000L * 60 * 60 * 24 * 365), null, null, false);
+
+    System.out.println(Cookies.getCookie(COOKIE_NAME));
+  }
+
+COM:saves container information as a cookie and prints the cookie value to the console

@@ -1,0 +1,26 @@
+TDAT: 	public void disconnectNode( ConnectionReference first, ConnectionReference last ) 
+	{                       	
+		if (first.edgeID == Registry.PRODUCT_EDGE) 
+		{
+			productVariable = null;
+			product = 0;
+		}
+		else {
+			Variable variable = (Variable) first.node;
+			double fVal = variable.value();
+			multiplyVariables.remove( variable );
+			multiplyVariableNumber--;			
+			if ( fVal != 0 ) 
+			{
+				productVariables = productVariables / fVal;
+			}
+			else 
+			{  
+				// deal with zero case
+				recalculate();
+			}
+		}
+		updateCosts();
+	}
+
+COM:disconnects two nodes in a graph and updates relevant variables and costs

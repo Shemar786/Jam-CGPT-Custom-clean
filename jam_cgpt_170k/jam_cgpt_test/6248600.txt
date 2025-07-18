@@ -1,0 +1,10 @@
+TDAT: 	protected ProgressMonitorPart createProgressMonitorPart(Composite parent, int height, int horizontalSpan, int indent){
+	    GridData data = new GridData(GridData.FILL_HORIZONTAL);
+		data.horizontalSpan = horizontalSpan;
+		data.horizontalIndent = indent;
+	    ProgressMonitorPart progressMonitor = new ProgressMonitorPart(parent, parent.getLayout(), height);
+	    progressMonitor.setLayoutData(data);
+	    return progressMonitor;
+	}
+
+COM:creates a progress monitor widget with specified dimensions and adds it to a parent composite

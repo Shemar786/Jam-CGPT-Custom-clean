@@ -1,0 +1,14 @@
+TDAT:   protected void connect() {
+    NXTConnector conn = new NXTConnector();
+
+    if (!conn.connectTo(nxtName, null, NXTCommFactory.BLUETOOTH)) {
+      error("NO NXT found");
+    }
+  
+    System.out.println("Connected to " + nxtName);
+  
+    dis = conn.getDataIn();
+    dos = conn.getDataOut();
+  }
+
+COM:establishes a Bluetooth connection with an NXT device and initializes data input/output streams

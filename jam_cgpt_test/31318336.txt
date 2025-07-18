@@ -1,0 +1,12 @@
+TDAT: 	public void testCheckNullID() {
+		for (int i = 0; i < 1000; i++) {
+			long upper32Bits = (long) ((Math.random() - 0.5) * Integer.MAX_VALUE);
+			long lower32Bits = 0x00000000ffffffffl;
+			long netid = upper32Bits << 32 | lower32Bits;
+			NetworkID netID = new NetworkID(netid);
+
+			assertTrue("null network id " + Long.toHexString(netid) + " did not register as null", netID.isNullID());
+		}
+	}
+
+COM:tests for null network IDs by generating random 64-bit IDs and creating new NetworkID objects, then asserting that they are equal to null

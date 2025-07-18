@@ -1,0 +1,13 @@
+TDAT:     public void setYear(int y) {
+        super.setValue(y, true, false);
+
+        if (dayChooser != null) {
+            dayChooser.setYear(value);
+        }
+
+        spinner.setValue(new Integer(value));
+        firePropertyChange(YEAR_PROPERTY, oldYear, value);
+        oldYear = value;
+    }
+
+COM:sets the year value of a component and updates related properties and values accordingly

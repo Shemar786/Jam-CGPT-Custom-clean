@@ -1,0 +1,10 @@
+TDAT:     private MetaRule getSuggestedItemsMethodRule(TagAttribute maxItems) {
+        final Class[] paramList = maxItems == null ? new Class[] { String.class }
+                : new Class[] { String.class, Integer.class };
+
+        logger.info("getSuggestedItemsMethodRule: " + maxItems);
+        return new MethodRule(SUGGESTED_ITEMS_METHOD_ATTRIBUTE_NAME,
+                List.class, paramList);
+    }
+
+COM:returns a MetaRule object with a list of suggested items based on a maximum number of items specified as a TagAttribute parameter

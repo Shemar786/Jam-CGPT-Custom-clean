@@ -1,0 +1,13 @@
+TDAT:     public void draw(Graphics2D g2){
+       g2.setColor(UIConstants.CONNECTION_POINT_COLOUR);
+        
+       Rectangle extClip = g2.getClipBounds().getBounds();
+       extClip.grow(5, 5);
+       for(GridObject p: grid.values()){           
+           if(extClip.contains(p)){
+            p.draw(g2);
+           }
+       }               
+    }   
+
+COM:draws grid objects within the specified clip bounds

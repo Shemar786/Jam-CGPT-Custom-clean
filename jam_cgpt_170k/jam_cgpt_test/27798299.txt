@@ -1,0 +1,12 @@
+TDAT:     public String PathAndFilenameToClassname(String pathAndFilename) {
+
+        String withoutExtension = pathAndFilename.replaceAll("\\.class$","");
+        String[] tokens = withoutExtension.split( "/" );
+        String classname = tokens[0];
+        for ( int i = 1; i < tokens.length; ++i ) {
+             classname = classname.concat( "."+tokens[i] );
+         }
+         return classname;
+    }
+
+COM:takes a file path and filename as input and returns a string representing the corresponding class name

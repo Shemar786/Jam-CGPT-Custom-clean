@@ -1,0 +1,13 @@
+TDAT:     private void unhideMenuItem() {
+        unhideMenuItem = new JMenuItem("Unhide...", KeyEvent.VK_U);
+        unhideMenuItem.setToolTipText("Unhide all hidden objects");
+        unhideMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (hiddenNodes.size() > 0) {
+                    unhideNodes();
+                }
+            }
+        });
+    }
+
+COM:creates a JMenuItem to unhide all hidden objects when clicked, and sets an ActionListener to execute the unhideNodes method if there are any hidden nodes

@@ -1,0 +1,13 @@
+TDAT:   public void mouseDragged(MouseEvent e) {
+    try {
+      ((GraphViewNode)dragObject).setX(e.getX());
+      ((GraphViewNode)dragObject).setY(e.getY());
+      repaint();
+    } catch (Exception exc) {
+      // for model dragging we will eat the exception for now that
+      // gets thrown because we haven't set dragObject to an object that
+      // has coordinates
+    }
+  }
+
+COM:updates the x and y coordinates of a mouse-dragged object on a graph view and repaints the graphics

@@ -1,0 +1,21 @@
+TDAT:     protected PooledObject create() throws PoolManException {
+        Object       obj       = factory.create();
+        PooledObject pooledObj;
+
+        if (createWrapper) {
+            pooledObj = new PooledObjectWrapper(obj);
+            pooledObj.setServerInfo(factory.getServerInfo(obj));
+        } else {
+            pooledObj = (PooledObject) obj;
+        }
+
+        pooledObj.setPool(this);
+
+        if (proxyHandler != null) {
+            pooledObj.setProxyHandler(proxyHandler);
+        }
+
+        return pooledObj;
+    }
+
+COM:creates a PooledObject using a factory and sets its pool, server info and optionally, a proxy handler

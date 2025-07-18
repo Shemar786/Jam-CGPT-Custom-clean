@@ -1,0 +1,11 @@
+TDAT:     private void parse(Connection con, ByteBuffer buf) {
+        int sz = buf.getShort() & 0xFFFF;
+        sz -= 2;
+        ByteBuffer b = (ByteBuffer)buf.slice().limit(sz);
+        b.order(ByteOrder.LITTLE_ENDIAN);
+        buf.position(buf.position()+sz); // read message fully
+        con.decript(b);
+        con.addReceivedMsg(b);
+    }
+
+COM:parses a message received over a connection by extracting the size of the message, decrypting the message, and adding the received message to the connection's list of messages

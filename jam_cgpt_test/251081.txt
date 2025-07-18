@@ -1,0 +1,18 @@
+TDAT: 	public DatastreamBindingMap getDatastreamBindingMap(){
+		logger.debug("entering getDatastreamBindingMap");
+		
+		DatastreamBindingMap dsMap = new DatastreamBindingMap();
+	
+		if(!disseminationID.equals(""))
+			dsMap.setDsBindMapID(disseminationID);
+		
+		dsMap.setDsBindMapLabel(label);
+		dsMap.setDsBindMechanismPID(bMechPID);
+		dsMap.setState(state);
+		dsMap.setDsBindings(getDatastreamBinding());
+		
+		logger.debug("exiting getDatastreamBindingMap");
+		return dsMap;
+	}
+
+COM:retrieves datastream binding information and creates a map of the bindings

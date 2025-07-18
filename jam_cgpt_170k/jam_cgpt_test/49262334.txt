@@ -1,0 +1,19 @@
+TDAT: 	public BufferedImage getBufferedImage(String filename) {
+		Image image = Toolkit.getDefaultToolkit().getImage(filename);
+
+		MediaTracker tr = new MediaTracker(new JComponent() {});
+		tr.addImage(image,0);
+		try { tr.waitForID(0); }
+		catch( InterruptedException e) {}
+
+		// Convert to BufferedImage
+		BufferedImage b_image = new BufferedImage(image.getWidth(frame),image.getHeight(frame),
+			BufferedImage.TYPE_INT_ARGB);
+		Graphics g = b_image.createGraphics();
+		g.drawImage(image,0,0,null);
+		g.dispose();
+
+		return b_image;
+	}
+
+COM:takes a filename as input, loads an image and converts it to a BufferedImage format before returning the BufferedImage

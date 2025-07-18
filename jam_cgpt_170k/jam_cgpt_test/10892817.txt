@@ -1,0 +1,12 @@
+TDAT:     protected int getTimeout() {
+        String timeoutS = servletConfig.getInitParameter("timeout");
+        int timeout = 120*1000; //2 min
+        try {
+            timeout = Integer.parseInt(timeoutS);
+        }catch (NumberFormatException nfe) {
+            //ignore, we have a default value
+        }
+        return timeout;
+    }
+
+COM:retrieves the "timeout" initialization parameter, parses it to an integer, with a default value of 2 minutes if the parameter doesn't exist, and returns the timeout value in milliseconds

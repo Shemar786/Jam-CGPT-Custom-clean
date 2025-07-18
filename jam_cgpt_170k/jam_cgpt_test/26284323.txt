@@ -1,0 +1,10 @@
+TDAT:     public void showHTMLDocument(URL url, String targetFrame, boolean reload) {
+        if (url != null) {
+            if (targetFrame == null)
+                targetFrame = viewer.name;
+            showDocument(new HistoryItem(url, targetFrame, url.getRef(), null, null), null,
+                    reload, HTMLConstants.HISTORY_NEW, 0);
+        }
+    }
+
+COM:displays an HTML document in a specified frame or viewer, with the option to reload the page

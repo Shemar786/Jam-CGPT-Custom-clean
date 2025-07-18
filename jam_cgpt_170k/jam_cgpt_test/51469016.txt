@@ -1,0 +1,10 @@
+TDAT:     public void initialise() throws ModelException {
+        setRoot(this);
+        addChild(External.getInstance());
+        addChild(Liabilities.getInstance());
+        addChild(Assets.getInstance());
+        addChild(Corporate.getInstance());
+        addChild(BusinessLogic.getInstance());
+    }
+
+COM:initializes a model by setting a root and adding child nodes for external, liabilities, assets, corporate and business logic instances

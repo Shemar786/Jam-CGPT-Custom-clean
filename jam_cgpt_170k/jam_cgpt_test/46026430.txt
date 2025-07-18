@@ -1,0 +1,14 @@
+TDAT: 	private int checkRanking(int maxcombo, int time) {
+		for(int i = 0; i < RANKING_MAX; i++) {
+			if(maxcombo > rankingCombo[goaltype][i]) {
+				return i;
+			} else if ((maxcombo == rankingCombo[goaltype][i]) && (time >= 0) &&
+					((time < rankingTime[goaltype][i]) || (rankingTime[goaltype][i] == -1))) {
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
+COM:checks the ranking of a player based on their maximum combo and time for a certain game mode

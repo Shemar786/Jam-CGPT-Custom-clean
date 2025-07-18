@@ -1,0 +1,16 @@
+TDAT:     public void overrideDates(IceDateTime parentStartdate, IceDateTime parentStopdate) {
+    // cleanup this DP
+	if (getStartdate().before(parentStartdate))
+	    setStartdate(parentStartdate);
+	if (getStopdate().after(parentStopdate))
+	    setStopdate(parentStopdate);
+		
+	// cleanup all DR
+	Iterator it = deliveryRules.iterator();
+	while (it.hasNext()) {
+	    DeliveryRule dr = (DeliveryRule) it.next();
+	    dr.overrideDates(parentStartdate,parentStopdate);
+	}
+    }
+
+COM:overrides the start and stop dates for a given object and its child objects with the parent's start and stop dates if they fall outside of that range

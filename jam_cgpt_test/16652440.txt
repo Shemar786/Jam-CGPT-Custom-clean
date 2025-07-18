@@ -1,0 +1,12 @@
+TDAT:   public long getCurrentMeasuringTime() {
+    // NOTE: We put the start time in a local variable to avoid it is changed
+    //       while this method is executed.
+    long startTime = mMeasureStart;
+    if (startTime == -1) {
+      return -1;
+    } else {
+      return System.currentTimeMillis() - startTime;
+    }
+  }
+
+COM:returns the time elapsed since measuring started and -1 if measuring has not started yet

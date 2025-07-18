@@ -1,0 +1,21 @@
+TDAT: 	public void setPluginData(String tPath, String tBackupPath, String tName) {
+
+		path = tPath;
+		backupPath = tBackupPath;
+		if (path == null || backupPath == null) {
+			managemenu.setVisible(true);
+			path = "";
+			backupPath = "";
+			filemenu.remove(delete);
+			onOrOff.setIcon(null);
+		} else {
+			filemenu.add(delete);
+		}
+		currentManagedPath = path;
+		theFile = new File(path);
+		backup = new File(backupPath);
+		pluginName.setText(tName);
+		this.pack();
+	}
+
+COM:sets plugin data, including the current path, backup path, and plugin name, with optional visibility and deletion settings for a manage menu

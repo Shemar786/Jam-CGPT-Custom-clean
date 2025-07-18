@@ -1,0 +1,8 @@
+TDAT:   public void setPixelSize(int width, int height) {
+    if (width >= 0)
+      DOM.setStyleAttribute(element, "width", width + "px");
+    if (height >= 0)
+      DOM.setStyleAttribute(element, "height", height + "px");
+  }
+
+COM:sets the size of a pixel based on the provided width and height values

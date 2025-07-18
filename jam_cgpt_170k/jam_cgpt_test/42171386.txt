@@ -1,0 +1,17 @@
+TDAT: 	protected void addPlatformDependantPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PlatformDisposition_platformDependant_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PlatformDisposition_platformDependant_feature", "_UI_PlatformDisposition_type"),
+				 CorePackage.Literals.PLATFORM_DISPOSITION__PLATFORM_DEPENDANT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:creates and adds a property descriptor for a boolean value related to a platform disposition object

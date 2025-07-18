@@ -1,0 +1,15 @@
+TDAT:     private void calculateEffectiveParameters() {
+        SVFParameters p = new SVFParameters();
+        for (int i = 0; i < getCommandsCount(); i++) {
+            // For each command
+            SVFCommand command = get(i);
+            if (command instanceof SVFAction)
+                // Set effective parameters
+                ((SVFAction) command).parameters = new SVFParameters(p);
+
+            // Merge parameters
+            p.mergeParameters(command);
+        }
+    }
+
+COM:calculates the effective parameters for a set of commands using the SVFParameters class

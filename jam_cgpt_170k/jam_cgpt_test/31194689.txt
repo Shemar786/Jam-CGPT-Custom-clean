@@ -1,0 +1,9 @@
+TDAT: 	public Object executeAndQuery(DataManager aRoot, Date timestamp) throws Exception {
+		
+		if(t==null||key==null);//NOTHING.
+		DataObject d = aRoot.findByTypeKey(t,key);
+		aRoot.deleteDataObject(d,true,false);//when something is deleted, it's key is still used. if purged, the key won't be used anymore.
+		return null;
+	}
+
+COM:takes a DataManager object and a Date object as parameters, searches for a specific DataObject, deletes it from the DataManager, and returns null

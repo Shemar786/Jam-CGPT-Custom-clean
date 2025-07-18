@@ -1,0 +1,19 @@
+TDAT:     protected File getFileForOption(int charVal, String msg, boolean isDir){
+	Object key = new Integer(charVal);
+	if(!cmdLineOptions.containsKey(key)){
+	    return null;
+	}
+	
+	String str = (String)cmdLineOptions.get(key);
+	if(str != null){
+	    File file = new File(str);
+	    if((!isDir && file.isFile()) || (isDir && file.isDirectory())){
+		return file;
+	    }
+	}
+	System.err.println("Error, " + msg + " has invalid arg " + str);
+	usage();
+	return null;
+    }
+
+COM:retrieves a file or directory based on a character value and error message

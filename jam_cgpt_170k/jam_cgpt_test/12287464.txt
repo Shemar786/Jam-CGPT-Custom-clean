@@ -1,0 +1,17 @@
+TDAT:     private void initialize(){
+
+      tablechangelistener =new TableModelListener() {
+
+            public void tableChanged(TableModelEvent e) {
+                if(e.getType()==TableModelEvent.UPDATE || e.getType()==TableModelEvent.DELETE || e.getType()==TableModelEvent.INSERT){
+                   getEditorSupport().addI18nSaveCookie();
+                }
+            }
+      };
+
+       i18nmodel=new RomaI18NTableModel(mngr);
+       
+       initComponents();
+    }
+
+COM:initializes a table change listener that monitors for updates, deletions, and additions, and adds an i18n save cookie to the editor if a change is detected, then initializes an i18n model and component

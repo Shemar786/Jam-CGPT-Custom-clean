@@ -1,0 +1,13 @@
+TDAT: 	public void removeComposedMachine(IComposedMachineRoot machineRoot) {
+		ModelComposesMachine machine = composedMachines.get(machineRoot);
+		if (machine != null) {
+			removeComposedMachineDependencies(machine);
+			//other machines also can't refine this machine anymore, because it won't exist any longer
+//			for(ModelMachine mach : machine.getRefinedByMachines()) {
+//				mach.removeRefinesMachine(machine);
+//			}
+			composedMachines.remove(machineRoot);
+		}
+	}
+
+COM:removes a composed machine specified by the parameter given, along with its dependencies, and updates the list of composed machines accordingly

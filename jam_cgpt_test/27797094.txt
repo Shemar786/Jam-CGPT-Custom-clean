@@ -1,0 +1,14 @@
+TDAT:   public void updateStatusLabel() {
+  
+    int nodeCount = getNodeViewCount();
+    int edgeCount = getEdgeViewCount();
+    int selectedNodes = getSelectedNodes().size();
+    int selectedEdges = getSelectedEdges().size();
+
+    statusLabel.setText("  Nodes: " + nodeCount
+                      + " ("+selectedNodes+" selected)"
+                      + " Edges: " + edgeCount
+                      + " ("+selectedEdges+" selected)" );
+  }
+
+COM:updates the status label to display the number of nodes and edges, as well as the number of selected nodes and edges

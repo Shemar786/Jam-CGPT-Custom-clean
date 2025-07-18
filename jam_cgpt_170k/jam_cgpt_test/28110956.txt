@@ -1,0 +1,13 @@
+TDAT:     public Object source(String filename, NameSpace nameSpace) throws FileNotFoundException, IOException, EvalError {
+        File file = pathToFile(filename);
+        if (Interpreter.DEBUG)
+            debug("Sourcing file: " + file);
+        Reader sourceIn = new BufferedReader(new FileReader(file));
+        try {
+            return eval(sourceIn, nameSpace, filename);
+        } finally {
+            sourceIn.close();
+        }
+    }
+
+COM:sources a Java file given a filename and namespace, reads the file using a buffered reader and returns the evaluated output

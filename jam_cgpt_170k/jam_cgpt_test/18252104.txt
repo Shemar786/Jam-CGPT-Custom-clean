@@ -1,0 +1,10 @@
+TDAT:     private void saveDisplayNames() throws FileNotFoundException {
+    	PrintWriter out = new PrintWriter(DataModel.getDisplayNamesFile());
+		out.println("# table; display name");
+		for (Map.Entry<String, String> e: displayNames.entrySet()) {
+			out.println(CsvFile.encodeCell(e.getKey()) + "; " + CsvFile.encodeCell(e.getValue()));
+		}
+		out.close();
+	}
+
+COM:saves Display Names to a file using a PrintWriter

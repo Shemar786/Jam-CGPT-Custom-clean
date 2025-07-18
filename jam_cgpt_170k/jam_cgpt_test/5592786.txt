@@ -1,0 +1,15 @@
+TDAT:   public void resetReader(int pO, int p1) {
+
+    docPos = p0;
+    this.p1 = Math.min(doc.getLength(), p1);
+    segment.setIndex(0);
+    index = 0;
+    try {
+      loadSegment();
+    }
+    catch (IOException ioe) {
+      throw new Error("unexpected: " + ioe);
+    }
+  }
+
+COM:resets the reader by setting various variables and loading a new segment

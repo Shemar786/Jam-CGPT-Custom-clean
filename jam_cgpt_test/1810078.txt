@@ -1,0 +1,13 @@
+TDAT:   public void addItem(TreeItem item) {
+    item.setTree(tree);
+    item.setParentItem(this);
+    children.add(item);
+
+    DOM.setStyleAttribute(item.getElement(), "marginLeft", 16 + "px");
+
+    DOM.appendChild(childSpanElem, item.getElement());
+    if (children.size() == 1)
+      updateState();
+  }
+
+COM:adds a TreeItem to a TreeView and updates its state if it is the first child

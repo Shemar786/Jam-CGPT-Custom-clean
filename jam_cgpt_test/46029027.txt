@@ -1,0 +1,12 @@
+TDAT: 	private boolean deleteRoom(NetRoomInfo roomInfo) {
+		if((roomInfo != null) && (roomInfo.playerList.isEmpty())) {
+			log.info("RoomDelete ID:" + roomInfo.roomID + " Title:" + roomInfo.strName);
+			broadcastRoomInfoUpdate(roomInfo, "roomdelete");
+			roomInfoList.remove(roomInfo);
+			roomInfo.delete();
+			return true;
+		}
+		return false;
+	}
+
+COM:deletes a network room if the room is not null and has no players in it, and returns true if the room was successfully deleted

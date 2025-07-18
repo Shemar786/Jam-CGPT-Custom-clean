@@ -1,0 +1,11 @@
+TDAT:   private JPanel getPBildinformationen() {
+    if (pBildinformationen == null) {
+      pBildinformationen = new JPanel();
+      pBildinformationen.setLayout(new BorderLayout());
+      pBildinformationen.add(getPBilddetails(), BorderLayout.NORTH);
+      pBildinformationen.add(getSpBilddetails(), BorderLayout.CENTER);
+    }
+    return pBildinformationen;
+  }
+
+COM:returns a JPanel that contains a layout with added panels for image details

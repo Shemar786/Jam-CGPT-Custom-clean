@@ -1,0 +1,15 @@
+TDAT:   public Object parse(String s, String userPattern) throws FormatException {
+    try {
+      String regex = super.findPattern(userPattern);
+      RE re = new RE(regex);
+      if (!re.match(s)) {
+        throw new FormatException(getErrorMessage(s));
+      }
+      return s;
+    } catch (RESyntaxException e) {
+			logger.error("exception caught", e);
+      throw new SoftException(e);
+    }
+  }
+
+COM:takes a string and a user-defined regular expression pattern and checks if the string matches the pattern, throwing a FormatException if it does not

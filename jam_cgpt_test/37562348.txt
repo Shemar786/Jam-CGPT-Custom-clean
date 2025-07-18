@@ -1,0 +1,11 @@
+TDAT: public void setFont (Font font){
+  checkWidget ();
+  if (font != null && font.isDisposed ()) {
+    SWT.error (SWT.ERROR_INVALID_ARGUMENT);
+  }
+  handle.setFont(font == null? null: font.handle);
+  ((CTree)parent.handle).getModel().nodeChanged((TreeNode)handle);
+  parent.handle.repaint();
+}
+
+COM:sets the font of a widget and updates the layout

@@ -1,0 +1,16 @@
+TDAT: 	public EntityManagerFactory getEntityManagerFactory(String persistenceUnit) {
+		
+		if (emfs.containsKey(persistenceUnit)) {
+			return emfs.get(persistenceUnit);
+			
+		} else {
+			log.debug("Creating entity manager factory for persistence unit \"" + persistenceUnit + "\"");
+
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory(persistenceUnit);
+			emfs.put(persistenceUnit, emf);
+			
+			return emf;
+		}
+	}
+
+COM:returns an EntityManagerFactory object for a given persistence unit, either by retrieving an existing one from a HashMap or creating a new one using Persistence.createEntityManagerFactory()

@@ -1,0 +1,17 @@
+TDAT:   protected void addJarsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DBDriver_jars_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DBDriver_jars_feature", "_UI_DBDriver_type"),
+				 DbPackage.Literals.DB_DRIVER__JARS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds property descriptors for jars in a DbDriver object

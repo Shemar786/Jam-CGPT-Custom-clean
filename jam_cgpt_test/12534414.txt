@@ -1,0 +1,16 @@
+TDAT: 	protected void dispatchDeadHead(DispatchTask task, TransportLocationIfc fromLoc){
+		task.setTypeToDeadHeadToLoad();
+		TransportLocationIfc origin = task.getLoadOrigin();
+		dequeue(task);
+		Queue queue = myDeadHeadPickupQByLocation.get(origin);
+		queue.enqueue(task);
+		task.setDriver(getIdleDriver(fromLoc));
+		task.setTruck(getIdleTruck(fromLoc));
+		task.setTrailer(getIdleTrailer(fromLoc));
+		task.allocateDriver();
+		task.allocateTruck();
+		task.allocateTrailer();
+		task.waitingForTransport();
+	}
+
+COM:dispatches a deadhead task to a specific location and allocates idle drivers, trucks, and trailers to it

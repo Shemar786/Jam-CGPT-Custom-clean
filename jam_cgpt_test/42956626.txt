@@ -1,0 +1,9 @@
+TDAT: 	public void update(long elapsedTime) {
+		for (int i = MAX_BLOCKS_HEIGHT - 1; i >= 0; i--) {
+			for (int j = MAX_BLOCKS_WIDTH - 1; j >= 0; j--) {
+				if (blocks[i][j] != null) blocks[i][j].update(elapsedTime);
+			}
+		}
+	}
+
+COM:updates the game blocks based on the elapsed time provided as an argument

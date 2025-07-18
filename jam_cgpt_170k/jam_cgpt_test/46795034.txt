@@ -1,0 +1,14 @@
+TDAT: 	protected String findTargetNodeName(Node targetNode) {
+		NamedNodeMap attributes = targetNode.getAttributes();
+		for (int i = 0; i < attributes.getLength(); i++) { // Loop through
+															// Attributes
+			Node a = attributes.item(i);
+			// System.out.println(a.getNodeName()+ " " + a.getNodeValue());
+			if (ATTRNAMENAME.equals(a.getNodeName())) {
+				return a.getNodeValue();
+			}
+		}
+		return EMPTYSTRING;
+	}
+
+COM:is used to find and return the name of a specific target node in an XML file using its attributes

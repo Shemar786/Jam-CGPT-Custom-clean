@@ -1,0 +1,12 @@
+TDAT:     private Image getImage(String name) throws IOException {
+        assert name != null;
+        URL picfile = getClass().getClassLoader().getResource(name);
+        if (picfile == null) {
+            throw new IOException("Can't load image: "  + name);
+        }
+        Image result = (new ImageIcon(picfile)).getImage();
+        assert result != null;
+        return result;
+    }
+
+COM:returns an image specified by the given filename and throws an IOException if it is unable to load the image

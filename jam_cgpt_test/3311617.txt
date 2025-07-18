@@ -1,0 +1,19 @@
+TDAT: 	protected void setThisShipsOrders(SpaceCraft sc) {
+		if (sc.isShip()) {
+			Ship ship = (Ship) sc;
+			if (ship.getShipDesign().getColonyModuleNumber() > 0) {
+				// System.out.println("colonizingstrategy="
+				// +colonizingStrategy);
+				if (!setOrderToColonizePlanet(ship, colonizingStrategy)) {
+					// System.out.println("found none");
+					scoutForHabitablePlanets(ship);
+				}
+			} else {
+				if (ship.hasInterstellarDrive()) {
+					scoutForHabitablePlanets(ship);
+				}
+			}
+		}
+	}
+
+COM:sets orders for a spacecraft to either colonize planets or scout for habitable planets based on its type and design

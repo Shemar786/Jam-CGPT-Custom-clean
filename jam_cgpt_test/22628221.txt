@@ -1,0 +1,16 @@
+TDAT: 	protected void process(XMLNode parentNode)  {
+	    map.put(parentNode.path, parentNode);
+
+		Element parentElement = parentNode.getElement();
+		List children = parentElement.getChildren();
+		int size = children.size();
+		for (int i=0; i<size; i++) {
+			Element childElement = (Element)children.get(i);
+			XMLNode childNode = new XMLNode(childElement, true);
+			parentNode.addChild(childNode);
+			//System.err.println("map path = " + childNode.path);
+			process(childNode);
+		}
+	}
+
+COM:recursively processes the XMLNode object and adds it to a map while also adding any child elements to the parentNode

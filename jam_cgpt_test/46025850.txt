@@ -1,0 +1,16 @@
+TDAT: 	public boolean decode(String source) {
+		try {
+			String decodedString = URLDecoder.decode(source, "UTF-8");
+			ByteArrayInputStream in = new ByteArrayInputStream(decodedString.getBytes("UTF-8"));
+			load(in);
+		} catch (UnsupportedEncodingException e) {
+			throw new Error("UTF-8 not supported", e);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+
+		return true;
+	}
+
+COM:decodes a string using URLDecoder and loads the decoded string into a ByteArrayInputStream object to be further processed

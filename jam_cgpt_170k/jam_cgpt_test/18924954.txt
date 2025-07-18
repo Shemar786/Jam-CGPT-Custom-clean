@@ -1,0 +1,13 @@
+TDAT: 	  public Component createComponent(RequestContext context) throws Exception {
+		  
+		  FavoriteComponent fc = new FavoriteComponent(id, context, getChartmodel(), getModel());
+		  
+		  /*String defaultFavorite = null;
+		  if(getFavoriteHttpParam()!=null && getFavoriteHttpParam().length() > 0){
+			  defaultFavorite = context.getParameter(getFavoriteHttpParam());
+			  fc.setChangeName(defaultFavorite);
+		  }		  */
+		return fc;
+	  }
+
+COM:creates a GUI component based on a request context

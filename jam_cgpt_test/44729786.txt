@@ -1,0 +1,19 @@
+TDAT: 	public void build(File rootPath) {
+
+		for (Iterator itGroups = getChilds().iterator(); itGroups.hasNext();) {
+			Group group = (Group) itGroups.next();
+			group.loadComments(rootPath);
+
+			for (Iterator itProjects = group.getChilds().iterator(); itProjects.hasNext();) {
+				Project project = (Project) itProjects.next();
+				project.loadComments(rootPath);
+
+				buildFolders(rootPath, project);
+
+			}
+
+		}
+
+	}
+
+COM:recursively builds folders for each project and group in a specified file path, while also loading any associated comments

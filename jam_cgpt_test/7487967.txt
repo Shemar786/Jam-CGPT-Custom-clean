@@ -1,0 +1,15 @@
+TDAT: 	public Configuration addResource(String resourceName, ClassLoader classLoader) throws MappingException {
+		log.info( "Reading mappings from resource: " + resourceName );
+		InputStream rsrc = classLoader.getResourceAsStream( resourceName );
+		if ( rsrc == null ) {
+			throw new MappingNotFoundException( "resource", resourceName );
+		}
+		try {
+			return addInputStream( rsrc );
+		}
+		catch (MappingException me) {
+			throw new InvalidMappingException( "resource", resourceName, me );
+		}
+	}
+
+COM:adds mappings from a specified resource using a provided class loader and throws exceptions if the resource is not found or the mapping is invalid

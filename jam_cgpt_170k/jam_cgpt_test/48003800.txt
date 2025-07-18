@@ -1,0 +1,16 @@
+TDAT: 	private Message addSubjectHandler(Object addSubject) {
+		if (addSubject instanceof Subject) {
+			Subject subject = (Subject) addSubject;
+			boolean flag = dataAccess.addSubject(subject);
+			if (flag != false) {
+				printToLog("add subject succeed ");
+				return (new Message(Message.ADD_SUBJECT_RESPOND,
+						refreshCatalog().getValue()));
+			}
+
+		}
+		printToLog("add subject failed ");
+		return (new Message(Message.ADD_SUBJECT_RESPOND, Message.FAIL));
+	}
+
+COM:adds a subject to the data access, logs the success or failure of the operation, and returns a message indicating the outcome

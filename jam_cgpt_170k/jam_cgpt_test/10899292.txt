@@ -1,0 +1,12 @@
+TDAT:     public void setSessionAttributeFilter(String sessionAttributeFilter) {
+        if (sessionAttributeFilter == null
+            || sessionAttributeFilter.trim().equals("")) {
+            this.sessionAttributeFilter = null;
+            sessionAttributePattern = null;
+        } else {
+            this.sessionAttributeFilter = sessionAttributeFilter;
+            sessionAttributePattern = Pattern.compile(sessionAttributeFilter);
+        }
+    }
+
+COM:sets a filter for session attributes and sets it to null if the filter is empty or null

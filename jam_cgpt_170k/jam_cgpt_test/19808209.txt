@@ -1,0 +1,12 @@
+TDAT: 	public void checkSessions(Map sessionsActive){
+		for(Object o : sessions.keySet()){
+			Map session = (Map)sessions.get(o);
+			//mark as inactive if we haven't already done so, and it is inactive
+			if(session.get("inactive") == null && sessionsActive.get(o) == null){
+				session.put("inactive", o);
+				activityLog.add(now() + " Session "+o+" closed.");
+			}
+		}
+	}
+
+COM:checks for inactive sessions and marks them as inactive if they have not already been marked as such

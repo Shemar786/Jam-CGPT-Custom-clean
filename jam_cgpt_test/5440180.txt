@@ -1,0 +1,11 @@
+TDAT:     private void removeAllFromMap(Object object, Map map) {
+        Iterator it = map.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry e = (Map.Entry)it.next();
+            if (e.getValue().equals(object)) {
+                it.remove();
+            }
+        }
+    }
+
+COM:removes all entries from a given Map that have a specified Object value

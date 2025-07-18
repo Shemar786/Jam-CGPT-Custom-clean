@@ -1,0 +1,15 @@
+TDAT:     public void setContigOids( int[] contig_oids ) {
+
+        _contig_oids  = new ArrayList();
+
+        if ( contig_oids == null ) {
+            return;
+        }
+
+        for ( int i = 0; i < contig_oids.length; ++i ) {
+            addContigOid( contig_oids[ i ] );
+        }
+
+    } // setContigOids( int[] )
+
+COM:sets the values for _contig_oids as an ArrayList using the input parameter contig_oids

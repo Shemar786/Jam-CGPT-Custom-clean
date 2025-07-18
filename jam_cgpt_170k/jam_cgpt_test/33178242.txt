@@ -1,0 +1,13 @@
+TDAT:     protected void setAccessible(boolean accessible) {
+        try {
+            Class[] paramsTypes = { boolean.class };
+            Method setAccessible
+                = Field.class.getMethod("setAccessible", paramsTypes);
+
+            Object[] params = { new Boolean(accessible) };
+            setAccessible.invoke(field, params);
+        }
+        catch (Exception e) { /* Ignore all errors */ }
+    }
+
+COM:sets the accessibility of a field

@@ -1,0 +1,17 @@
+TDAT: 	protected void addAll_HealthyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ACT_All_Healthy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ACT_All_Healthy_feature", "_UI_ACT_type"),
+				 Context_FmsCPackage.Literals.ACT__ALL_HEALTHY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a healthy property descriptor to an item property descriptor list

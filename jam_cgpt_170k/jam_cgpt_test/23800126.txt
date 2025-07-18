@@ -1,0 +1,11 @@
+TDAT:     private String getNewCatalogNumber(String catalogNumber) {
+
+        String prefix = catalogNumber.substring(0, 7);
+        int number = Integer.parseInt(catalogNumber.substring(7));
+
+        int newNumber = 1000000000 + number + 1;
+        String strNumber = String.valueOf(newNumber).substring(1);
+        return prefix.concat(strNumber);
+    }
+
+COM:returns a new catalog number by incrementing the number part of the input catalog number by 1

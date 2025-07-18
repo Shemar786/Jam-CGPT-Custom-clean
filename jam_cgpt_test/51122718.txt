@@ -1,0 +1,16 @@
+TDAT: 	protected String getKeyValues() {
+		String key = null;
+
+		try {
+			key = ParseUtil.getParameter(getRequest(), "k_"
+					+ getTable().getId() + "_" + keyId);
+			key = Util.decode(key, getRequest().getCharacterEncoding());
+			logCat.info("::getKeyValues - key: " + key);
+		} catch (UnsupportedEncodingException e) {
+			logCat.error(e);
+		}
+
+		return key;
+	}
+
+COM:retrieves a key value from a HTTP request parameter, with encoding and error handling included

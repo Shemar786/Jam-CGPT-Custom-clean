@@ -1,0 +1,18 @@
+TDAT:     public SuffixFormSet copy(SuffixData allSuccessors) {
+        SuffixFormSet copy = new SuffixFormSet(
+                id,
+                suffix,
+                generation,
+                terminationType
+        );
+
+        for (SuffixFormSet successor : allSuccessors) {
+            if (directSuccessors.contains(successor))
+                copy.directSuccessors.add(successor);
+            else
+                copy.successors.add(successor);
+        }
+        return copy;
+    }
+
+COM:creates a copy of a SuffixFormSet object and adds its successors based on a provided set of allSuccessors

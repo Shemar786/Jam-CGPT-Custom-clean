@@ -1,0 +1,14 @@
+TDAT:     @Override public Object newInstance(Object parent, Attributes atts) {
+        String scount = atts.getValue("count");
+        try {
+            int icount = Integer.parseInt(scount);
+            ColladaBooleanBuffer cbb = new ColladaBooleanBuffer(icount);
+            return cbb;
+        } catch (NumberFormatException ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
+    }
+
+COM:overrides the newInstance method and creates a new ColladaBooleanBuffer object based on the value of "count" attribute

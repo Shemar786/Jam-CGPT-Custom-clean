@@ -1,0 +1,9 @@
+TDAT: 	public TagLists getCoocNames() throws Exception{	
+		String query_clause = "SELECT a.id1, b.name FROM "+DataDefinitions.getCoOccurrenceTableName()+" AS a "
+		                    + " INNER JOIN "+DataDefinitions.getRelTagsTableName()+" AS b ON b.id = a.id1 "
+							+ " WHERE a.id1=a.id2 ORDER BY id1";
+		return getCoocNames(query_clause);
+		
+	}
+
+COM:retrieves a list of co-occurring tag names from a database

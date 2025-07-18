@@ -1,0 +1,21 @@
+TDAT: 	public void setStatusBarVisible(final boolean visible) {
+		int index;
+
+		index = -1;
+		for (int i = 0; (-1 == index) && (i < getComponentCount()); i++)
+			if (mPowerBar == getComponent(i))
+				index = i;
+		if (visible) {
+			if (-1 == index) {
+				add(mPowerBar, java.awt.BorderLayout.SOUTH);
+				invalidate();
+				validate();
+			}
+		} else if (-1 != index) {
+			remove(index);
+			invalidate();
+			validate();
+		}
+	}
+
+COM:sets the visibility of the status bar in a user interface, adding it to the layout if visible and removing it if not

@@ -1,0 +1,17 @@
+TDAT:   protected void addOutputTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Output_outputType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Output_outputType_feature", "_UI_Output_type"),
+				 ActionStepPackage.eINSTANCE.getOutput_OutputType(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds an itemPropertyDescriptor to the itemPropertyDescriptors list for a given output object

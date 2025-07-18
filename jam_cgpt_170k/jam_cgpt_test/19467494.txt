@@ -1,0 +1,17 @@
+TDAT: 	protected void addMachinePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IncludedMachine_machine_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedMachine_machine_feature", "_UI_IncludedMachine_type"),
+				 CompositionmodelPackage.eINSTANCE.getIncludedMachine_Machine(),
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for an included machine

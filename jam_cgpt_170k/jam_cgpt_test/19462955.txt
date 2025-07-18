@@ -1,0 +1,10 @@
+TDAT: 	private void checkConflicts(Set<IAttributeType> otherwiseTypes) {
+		Set<IAttributeType> intersection = new HashSet<IAttributeType>(otherwiseTypes);
+		intersection.retainAll(handledAttributes);
+
+		if (intersection.size() > 0) {
+			PersistencePlugin.getDefault().getLog().log(new Status(IStatus.ERROR, PersistencePlugin.PLUGIN_ID, "Conflicting attribute handlers for: " + intersection.toString()));
+		}
+	}
+
+COM:checks for conflicts between two sets of attribute types and logs an error if any conflicts are found

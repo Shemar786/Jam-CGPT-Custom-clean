@@ -1,0 +1,15 @@
+TDAT: 	private void setMatcherString(String pattern, boolean update) {
+		if (pattern.length() == 0) {
+			fStringMatcher = null;
+		} else {
+			fStringMatcher = new StringMatcher(pattern, true, false);
+		}
+		// Update the name pattern filter on the tree viewer
+		fNamePatternFilter.setStringMatcher(fStringMatcher);
+		// Update the tree viewer according to the pattern
+		if (update) {
+			stringMatcherUpdated();
+		}
+	}
+
+COM:sets a new string matcher with the given pattern and updates the name pattern filter and tree viewer accordingly, if specified

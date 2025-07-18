@@ -1,0 +1,13 @@
+TDAT:     protected void loginNode(UniqueID nodeID) {
+        log.debug("Running BrokerConnection.loginNode(nodeID)..");
+        userID = nodeID;
+        connectionMode = BrokerConnection.NODE_MODE;
+        try {
+            out("OK");
+        } catch (IOException e) {
+            log.warn("Command execution error", e);
+            throw new CommandException(e);
+        }
+    }
+
+COM:logs in a node with a given UniqueID and sets the connection mode to BrokerConnection.NODE_MODE

@@ -1,0 +1,11 @@
+TDAT:     public boolean intersectsWith(Line line) {
+        if (line==null) return false;
+        boolean result = false;
+        if (line.intersectsLine(getLine12())) result = true;
+        if (line.intersectsLine(getLine23())) result = true;
+        if (line.intersectsLine(getLine34())) result = true;
+        if (line.intersectsLine(getLine41())) result = true;
+        return result;
+    }
+
+COM:checks if a given line intersects with any of the four lines forming a specific geometric figure

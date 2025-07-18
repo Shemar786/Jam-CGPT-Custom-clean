@@ -1,0 +1,13 @@
+TDAT:     public void onCallTransferAccepted( ExtendedCall call, Message resp ) {
+
+    	log.debug( "onCallTransferAccepted", "Init..." );
+        
+        if ( call != this.call ) {
+        	log.debug( "onCallTransferAccepted", "NOT the current call." );
+            return;
+        }
+        
+        log.debug( "onCallTransferAccepted", "Transfer accepted." );
+    }
+
+COM:logs when a call transfer is accepted if it is the current call

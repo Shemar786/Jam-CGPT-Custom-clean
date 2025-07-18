@@ -1,0 +1,12 @@
+TDAT:     public IRubyObject createCallerBacktrace(Ruby runtime, int level) {
+        int traceSize = frameIndex - level + 1;
+        RubyArray backtrace = runtime.newArray(traceSize);
+
+        for (int i = traceSize - 1; i > 0; i--) {
+            addBackTraceElement(runtime, backtrace, frameStack[i], frameStack[i - 1]);
+        }
+        
+        return backtrace;
+    }
+
+COM:creates a backtrace in an array format for a Ruby runtime environment

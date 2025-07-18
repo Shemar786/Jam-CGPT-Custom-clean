@@ -1,0 +1,14 @@
+TDAT:    public String dump () {
+      StringBuilder sb = new StringBuilder();
+
+      sb.append("comment: ")
+        .append(comment)
+	.append(" nags: ");
+      if (nags != null)
+         for (int i=0; i < nags.length; i++) {
+	    sb.append(nags[i]).append(" ");
+	 }
+      return sb.toString();
+   }
+
+COM:returns a string with the comment and nags, if any, stored in a StringBuilder object

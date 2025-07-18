@@ -1,0 +1,14 @@
+TDAT: 	private JPanel getInvoerPanel() {
+		if (invoerPanel == null) {
+			invoerPanel = new JPanel();
+			invoerPanel.setLayout(new BoxLayout(getInvoerPanel(), BoxLayout.X_AXIS));
+			invoerPanel.setPreferredSize(new Dimension(300, 50));
+			invoerPanel.add(getCapPanel(), null);
+			invoerPanel.add(getEindTijdPanel(), null);
+			invoerPanel.add(getDisPanel(), null);
+			invoerPanel.add(getButtonPanel(), null);
+		}
+		return invoerPanel;
+	}
+
+COM:returns a JPanel that contains several subpanels and has a fixed size of 300x50

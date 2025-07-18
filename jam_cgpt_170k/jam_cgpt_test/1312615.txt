@@ -1,0 +1,11 @@
+TDAT:     public void dragEnter(DropTargetDragEvent dtde) {
+        // TODO: Accepting the action ACTION_MOVE is false, because we cannot
+        // know if the action is really ACTION_MOVE.
+        if (isDragAcceptable(dtde)) {
+            dtde.acceptDrag(DnDConstants.ACTION_MOVE);
+        } else {
+            dtde.rejectDrag();
+        }
+    }
+
+COM:handles when a dragged item enters a drop target and determines if the action can be accepted or rejected

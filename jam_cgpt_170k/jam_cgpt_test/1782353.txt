@@ -1,0 +1,9 @@
+TDAT:     public WebImage getImageWithName( String name ) {
+        WebImage[] images = getImages();
+        for (int i = 0; i < images.length; i++) {
+            if (HttpUnitUtils.matches( name, images[i].getName() )) return images[i];
+        }
+        return null;
+    }
+
+COM:returns a WebImage object that matches the given name, or null if no such object exists

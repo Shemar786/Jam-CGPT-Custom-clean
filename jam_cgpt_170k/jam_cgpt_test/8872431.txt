@@ -1,0 +1,10 @@
+TDAT:     public NameSearchResult searchForRecord(String name, LinnaeanRankClassification cl, RankType rank, boolean fuzzy)throws SearchResultException{
+        //search for more than 1 term in case homonym resolution takes place at a lower level??
+        List<NameSearchResult> results = searchForRecords(name, rank, cl, 10, fuzzy);
+        if(results != null && results.size()>0)
+            return results.get(0);
+
+        return null;
+    }
+
+COM:searches for a record by name, classification, rank, and fuzzy matching and returns the first result

@@ -1,0 +1,14 @@
+TDAT: 	public double getHigh() {
+		Element units = channel.getChild("units", this.namespace);
+
+		Element forecast = item.getChild("forecast", this.namespace);
+		String content = forecast.getAttributeValue("high");
+		double high = Double.parseDouble(content);
+		if (units.getAttributeValue("temperature").equals("F")) {
+			// Converte de Farehreit para Celcius.
+			high = (high - 32) * 5 / 9;
+		}
+		return high;
+	}
+
+COM:retrieves the high temperature forecasted in Celsius or Fahrenheit, converts it to Celsius if necessary, and returns it as a double value

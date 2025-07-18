@@ -1,0 +1,9 @@
+TDAT:   static public StringBuffer toUpper(String str) {
+    StringBuffer res = new StringBuffer(str);
+    for (int i=0; i<str.length(); i++) {
+      res.setCharAt(i,Character.toUpperCase(str.charAt(i)));
+    }
+    return res;
+  }
+
+COM:takes a string input and returns a StringBuffer with all the characters converted to uppercase

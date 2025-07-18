@@ -1,0 +1,13 @@
+TDAT:  	protected Point2D getTargetHandlePoint() {
+
+		// If there are no points in the list, use the point opposite
+		// to the targetPoint... the sourcePoint.
+		if ( handlePointList.size() == 0 )
+			return sourcePoint;
+
+		// If there are points, then use the one closest to the targetPoint. 
+		else	
+			return (Point2D)handlePointList.get( handlePointList.size() - 1 );
+	}
+
+COM:returns a point that is either the source point or the closest point to a target point based on whether there are points in a list or not

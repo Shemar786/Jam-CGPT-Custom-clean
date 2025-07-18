@@ -1,0 +1,17 @@
+TDAT: 	protected void addTaskPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TaskRoleAssociation_task_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TaskRoleAssociation_task_feature", "_UI_TaskRoleAssociation_type"),
+				 MethodusecasediagramPackage.Literals.TASK_ROLE_ASSOCIATION__TASK,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a task property descriptor to an item property descriptor list

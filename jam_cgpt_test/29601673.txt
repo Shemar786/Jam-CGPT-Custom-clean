@@ -1,0 +1,10 @@
+TDAT:     public StringItem getDicLoaderMessage() {
+        if (dicLoaderMessage == null) {//GEN-END:|119-getter|0|119-preInit
+            // write pre-init user code here
+            dicLoaderMessage = new StringItem(direction, "\nLoading dictionary...");//GEN-LINE:|119-getter|1|119-postInit
+        // write post-init user code here
+        }//GEN-BEGIN:|119-getter|2|
+        return dicLoaderMessage;
+    }
+
+COM:returns a StringItem object that displays a loading message for a dictionary

@@ -1,0 +1,8 @@
+TDAT:     public long deleteEntities(Table table) throws SQLException {
+        return session.executeUpdate(
+                "Delete From " + SQLDialect.dmlTableReference(ENTITY, session) + " " +
+                "Where r_entitygraph=" + graphID + " and " +
+                       "type='" + table.getName() +"'");
+    }
+
+COM:deletes entities from a specified table in a database using a SQL query

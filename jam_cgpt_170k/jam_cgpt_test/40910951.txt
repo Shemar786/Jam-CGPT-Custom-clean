@@ -1,0 +1,27 @@
+TDAT: 	private void ptab0(Pref.Tab tab, String url, boolean tabAvail) throws JspException {
+		String title = tab.getTitle();
+		String name = tab.getName();
+		String target = tabsetTarget;
+
+		if (url == null) {
+			p("<li id=\"current\">");
+		} else {
+			p("<li>");
+		}
+		if (url == null || !tabAvail) {
+			p("<strong>");
+			p(title);
+			p("</strong>");
+		} else {
+			p("<a href=\"");
+			p(url);
+			p("\" target=\"");
+			p(target);
+			p("\">");
+			p(title);
+			p("</a>");
+		}
+		p("</li>");
+	}
+
+COM:generates HTML code for a tabbed navigation system based on input parameters, including a specific tab's information and availability

@@ -1,0 +1,11 @@
+TDAT: 	public String genSecretKeyForUser(User user, byte[] pubKey) throws InvalidKeyException {
+		PublicKey pkey = encodedStringToPublicKey(pubKey);
+		byte[] key = genSecretKey();
+		LOG.info("Saving keys for user: " + user);
+		this.keyCache.put(user.getLogin(), new KeyTime(key));
+		byte[] enckey = encryptSecretKey(pkey, key);
+		String encKeyStr = encodeURLSafe(enckey);
+		return encKeyStr;
+	}
+
+COM:generates a secret key for a user, saves it to a cache, encrypts it using the user's public key and returns the encoded key as a URL-safe string

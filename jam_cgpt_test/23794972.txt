@@ -1,0 +1,8 @@
+TDAT:     public DataWrapper getDeterminationByTaxon(Taxon taxon, String collectionCode) {
+
+        logger.info("getDeterminationByTaxon");
+
+        return service.path("search").path("determinations").path("taxon").path(String.valueOf(taxon.getTaxonID())).path(collectionCode).accept(MediaType.APPLICATION_JSON).get(DataWrapper.class);
+    }
+
+COM:retrieves a determination by taxon ID and collection code from a RESTful web service and returns it as a DataWrapper object

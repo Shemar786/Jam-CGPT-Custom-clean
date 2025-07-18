@@ -1,0 +1,7 @@
+TDAT:     public void testReturnsNoDiffsForSameValues() {
+        String[] text = { "One", "Two", "Three" };
+        Difference[] diffs = Diff.diff(text, text);
+        assertEquals("Should not have diffs", 0, diffs.length);
+    }
+
+COM:tests that there are no differences between two identical arrays of strings

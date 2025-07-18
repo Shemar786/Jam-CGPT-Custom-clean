@@ -1,0 +1,18 @@
+TDAT:   private void dropImage(File file) throws VException {
+
+    if (file == null) {
+      return;
+    }
+
+    try {
+      FileInputStream	is = new FileInputStream(file);
+      byte[]            b = new byte[is.available()];
+
+      is.read(b);
+      dropImage(b);
+    } catch (Exception e) {
+      throw new VExecFailedException("bad-file", e);
+    }
+  }
+
+COM:drops an image specified by the input file, converting it to a byte array and passing it to another method, and throws a VExecFailedException with the message "bad-file" if an error occurs

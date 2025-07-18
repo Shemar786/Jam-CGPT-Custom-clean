@@ -1,0 +1,14 @@
+TDAT: public ObjectMatrix2D assign(ObjectMatrix2D other) {
+	if (other==this) return this;
+	checkShape(other);
+	if (haveSharedCells(other)) other = other.copy();
+	
+	for (int row=rows; --row >= 0;) {
+		for (int column=columns; --column >= 0;) {
+			setQuick(row,column,other.getQuick(row,column));
+		}
+	}
+	return this;
+}
+
+COM:assigns the values of another ObjectMatrix2D to the current object's values

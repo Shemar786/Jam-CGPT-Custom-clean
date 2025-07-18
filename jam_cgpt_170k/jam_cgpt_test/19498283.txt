@@ -1,0 +1,14 @@
+TDAT: 	public void test_11() throws Exception {
+		E con = getGeneric().createElement("elt");
+
+		getGeneric().addIdents(con, "C1");
+		getGeneric().addPredicates(con, makeSList("T1"), makeSList("C1 ∈ ℤ"), true);
+	
+		getGeneric().save(con);
+		
+		runBuilder();
+
+		getGeneric().containsMarkers(con, false);
+	}
+
+COM:creates an element, adds some identifiers and predicates to it, saves it, runs a builder, and checks if the marker is present or not

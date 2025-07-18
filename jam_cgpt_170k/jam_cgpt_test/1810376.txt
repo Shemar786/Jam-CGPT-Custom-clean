@@ -1,0 +1,10 @@
+TDAT:   public boolean fireBeforeTabSelected(SourcesTabEvents sender, int tabIndex) {
+    for (Iterator it = iterator(); it.hasNext();) {
+      TabListener listener = (TabListener) it.next();
+      if (!listener.onBeforeTabSelected(sender, tabIndex))
+        return false;
+    }
+    return true;
+  }
+
+COM:iterates through a collection of TabListeners and calls their onBeforeTabSelected method, returning true if all listeners return true

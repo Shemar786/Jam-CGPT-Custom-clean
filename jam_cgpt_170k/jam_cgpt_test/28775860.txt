@@ -1,0 +1,10 @@
+TDAT: 	private JTextField getTxtDevName() {
+		if (txtDevName == null) {
+			txtDevName = new JTextField();
+			txtDevName.setBounds(new Rectangle(15, 30, 133, 20));
+			txtDevName.setText(lang.get("MSG_20")+txtWirelessID.getText());
+		}
+		return txtDevName;
+	}
+
+COM:returns a JTextfield object with certain properties and a set text value, creating a new object if one doesn't exist already

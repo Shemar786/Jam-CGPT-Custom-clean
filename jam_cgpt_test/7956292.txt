@@ -1,0 +1,21 @@
+TDAT: 	protected OutputStream outputStreamFor(String name) throws IOException {
+
+		name = name.replace('/', File.separatorChar);
+
+		final File f = new File(outputDir, name);
+
+		if (f.exists()) {
+			f.delete();
+		}
+
+		final File dir = new File(f.getParent());
+		dir.mkdirs();
+
+		if (!dir.exists()) {
+			throw new RuntimeException("Couldn't create directory: " + dir);
+		}
+
+		return (new FileOutputStream(f));
+	}
+
+COM:returns an output stream for a given file name, creates a file with the given name if it does not already exist, and ensures that the necessary directories exist in order to create the file

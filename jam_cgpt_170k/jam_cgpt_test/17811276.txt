@@ -1,0 +1,10 @@
+TDAT: 	public void addWGS84BoundingBox(String CRS,String LngMin,String LatMin,String LngMax,String LatMax,String resx,String resy){
+
+		if (this.CRSExist && CRS ==null) {
+			CRS = this.CRS;
+		}
+		this.setWGS84BoundingBox(CRS, LngMin, LatMin, LngMax, LatMax, resx, resy);
+		this.addWGS84BoundingBox(this.wgs84BoundingBox);
+	}
+
+COM:adds a World Geodetic System 1984 (WGS84) bounding box to a map with a specified coordinate reference system (CRS), longitude and latitude minimum and maximum values, and resolution

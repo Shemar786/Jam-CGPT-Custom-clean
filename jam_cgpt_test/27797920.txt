@@ -1,0 +1,9 @@
+TDAT:   public void setVisualMapperEnabled(boolean newState) {
+    if (this.visualMapperEnabled != newState) {
+      this.visualMapperEnabled = newState;
+      getCyMenus().setVisualMapperItemsEnabled(newState);
+      if (newState == true) {redrawGraph(false, true);}
+    }
+  }
+
+COM:sets the state of visual mapper and enables or disables the corresponding menu items, triggering a graph redraw if the state is true

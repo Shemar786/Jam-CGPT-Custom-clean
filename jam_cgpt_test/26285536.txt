@@ -1,0 +1,14 @@
+TDAT:     private void validateMaximumSize() {
+        testSize = insetsSize + testDimension.getTotalMaximumSize();
+        testDimension.calculateSizes(offsetLeft, offsetRight, testSize);
+        nextSpacingStartPixel = margin + offsetLeft;
+
+        for (int i = 0; i < componentCount; ++i) {
+            position = (LinearPosition) positionList.get(i);
+            expectedPositionDesiredLength = position.getMaximumSize();
+
+            verifyPosition();
+        }
+    }
+
+COM:validates the maximum size of a group of components within a LinearPosition layout

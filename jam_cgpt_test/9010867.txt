@@ -1,0 +1,15 @@
+TDAT:     public void buildMemberComments() {
+        if(! configuration.nocomment){
+        	
+			/** TODO tanyuanji add **/
+        	MemberDoc doc = 
+                (MemberDoc) members.get(currentMemberIndex);
+			TanUtil.println("In the AnnotationTypeRequiredMemberBuilder: " , doc.commentText());
+			/** TODO tanyuanji add **/
+			
+			
+            writer.writeComments((MemberDoc) members.get(currentMemberIndex));
+        }
+    }
+
+COM:builds comments for a member if the configuration allows it, using the writer class

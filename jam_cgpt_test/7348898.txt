@@ -1,0 +1,11 @@
+TDAT: 	public String mapString(String originalString) {
+		String result = originalString;
+		Iterator<Map.Entry<Object,Object>> mapEntries = regExpMap.entrySet().iterator();
+		while (mapEntries.hasNext()) {
+			Map.Entry<Object,Object> entry = mapEntries.next();
+			result = result.replaceAll((String)entry.getKey(), (String)entry.getValue());
+		}
+		return result;
+	}
+
+COM:maps a given string by iterating through a map of regular expression matches and replacements and replacing all occurrences in the original string

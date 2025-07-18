@@ -1,0 +1,9 @@
+TDAT: 	public Object getRideResult(Ride[] ridesArray, int ind) {
+		if (ridesArray[ind].isNv() || BigDecimal.ZERO.equals(ridesArray[ind].getResult())) {
+			return new NVResult(ridesArray[ind].getResult());
+		} else {
+			return ridesArray[ind].getResult();
+		}
+	}
+
+COM:returns the ride result at a specific index in an array, and if the ride is marked as "NV" or the result is zero, it returns an object with a "NVResult" value

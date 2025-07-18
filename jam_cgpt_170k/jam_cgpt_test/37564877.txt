@@ -1,0 +1,9 @@
+TDAT: public void fillRectangle (Rectangle rect) {
+	if (rect == null) SWT.error(SWT.ERROR_NULL_ARGUMENT);
+  java.awt.Color oldColor = handle.getColor();
+  handle.setColor(data.background);
+  fillRectangle (rect.x, rect.y, rect.width, rect.height);
+  handle.setColor(oldColor);
+}
+
+COM:fills a rectangle with a specified color and throws an error if the rectangle argument is null

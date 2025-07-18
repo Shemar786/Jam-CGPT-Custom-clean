@@ -1,0 +1,13 @@
+TDAT: 		public void actionPerformed(final ActionEvent e) {
+			String foo = "The board appears to be valid.";
+			try {
+				// We never read it, but only care if it throws something.
+				final boolean isBoardValid = myBoard.IsBoardValid();
+			} catch (final InvalidBoardException ibe) {
+				foo = ibe.getMessage();
+			} finally { // Let the user know.
+				JOptionPane.showMessageDialog(null, foo);
+			}
+		} // End ValidateButtonHandler.actionPerformed()
+
+COM:validates a board by checking if it is valid and displaying an error message if it is not

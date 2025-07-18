@@ -1,0 +1,12 @@
+TDAT:     public void characters(char[] ch, int start, int length) {
+        // By default tableExists will be true. When tables to import are provided
+        // by the user - process only when table name in available in the xml file.
+        // else do not proceed.
+        if (tableExists && tempVal != null) {
+
+            // read the data and append it to the string buffer
+            tempVal.append(new String(ch, start, length));
+        }
+    }
+
+COM:reads and appends data to a string buffer if a table exists and a temporary value is not null

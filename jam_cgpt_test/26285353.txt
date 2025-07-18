@@ -1,0 +1,14 @@
+TDAT:     public Constraints getConstraints(Component component) {
+        if (component == null)
+            throw new NullPointerException ("Parameter component cannot be null.");
+
+        for (int entryNr = 0; entryNr < list.size(); entryNr++) {
+            Entry entry = (Entry) list.get(entryNr);
+
+            if (entry.component == component)
+                return entry;
+        }
+        return null;
+    }
+
+COM:gets the constraints for a given component from a list of entries, or returns null if no matching entry is found

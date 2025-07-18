@@ -1,0 +1,18 @@
+TDAT: 	private boolean isExceptionEdge(Edge edge) {
+		boolean isExceptionEdge = edge.isExceptionEdge();
+		if (isExceptionEdge) {
+			if (DEBUG)
+				System.out.println("Ignoring " + edge);
+			return true;
+			}
+		if (edge.getType() != EdgeTypes.FALL_THROUGH_EDGE)
+			return false;
+		InstructionHandle h = edge.getSource().getLastInstruction();
+		if (h != null && h.getInstruction() instanceof IFNONNULL && isNullCheck(h,  methodGen.getConstantPool()))
+			return true;
+		
+		return false;
+	
+	}
+
+COM:determines if an Edge object is an exception edge or a fall-through edge based on specific conditions

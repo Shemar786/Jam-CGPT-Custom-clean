@@ -1,0 +1,9 @@
+TDAT:   public char getResourceMnemonic ( String basename, String key ) {
+    String resource_string = getResourceString( basename, key );
+    if( resource_string.length() == 0 ) {
+      return Character.MIN_VALUE;
+    }
+    return resource_string.charAt( 0 );
+  } // getResourceMnemonic( String, String )
+
+COM:retrieves the mnemonic character from a resource bundle for a specified key and returns it

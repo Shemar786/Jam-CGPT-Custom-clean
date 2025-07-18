@@ -1,0 +1,13 @@
+TDAT:     public String encode(final Object value) {
+        final StringWriter writer = new StringWriter();
+        try {
+            this.encoder.encode(value, writer);
+            writer.flush();
+            return writer.getBuffer().toString();
+        }
+        catch (final IOException e) {
+            throw new RuntimeException("StringWriter should not throw IOException!", e);
+        }
+    }
+
+COM:encodes an object as a string using an encoder and returns the encoded string

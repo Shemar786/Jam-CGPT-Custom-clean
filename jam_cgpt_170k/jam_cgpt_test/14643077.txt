@@ -1,0 +1,15 @@
+TDAT: 	public boolean removeRemoteRepository(String peerName) throws Exception {
+		for (Iterator iter = this.fRepositoryFaces.iterator(); iter.hasNext();) {
+			RemoteRepositoryFace repositoryFace = (RemoteRepositoryFace) iter
+					.next();
+			if (repositoryFace.getRepositoryPeerName().equals(peerName)) {
+				this.fDeploymentManager.getScanner().removeResourceRepository(
+						repositoryFace);
+				iter.remove();
+				return true;
+			}
+		}
+		return false;
+	}
+
+COM:removes a remote repository identified by the given peer name from a list of repository faces and returns a boolean indicating whether the removal was successful or not while throwing an Exception

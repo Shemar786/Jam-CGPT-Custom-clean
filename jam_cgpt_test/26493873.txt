@@ -1,0 +1,11 @@
+TDAT:   public void removeParameter(Param aParameter) {
+    if (aParameter == null) {
+      throw new IllegalArgumentException("The parameter passed in is null");
+    } else if (aParameter.getName() == null) {
+      throw new IllegalArgumentException("The name of the parameter passed in is null");
+    }
+
+    _theParameters.remove(aParameter.getName());
+  }
+
+COM:removes a parameter from a collection of parameters, throws an exception if the parameter or its name is null

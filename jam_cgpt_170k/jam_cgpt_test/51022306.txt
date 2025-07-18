@@ -1,0 +1,18 @@
+TDAT: 		private void removeRow(int row) {
+			if (row < rowcount - 1) {
+				for (int i = row + 1; i < rowcount; i++) {
+					rowData[i - 1][0] = rowData[i][0];
+					rowData[i - 1][1] = rowData[i][1];
+				}
+			}
+			if (row == rowcount - 1) {
+				rowData[row][0] = null;
+				rowData[row][1] = null;
+			} else {
+				throw new ArrayIndexOutOfBoundsException(row);
+			}
+			rowcount--;
+			fireTableDataChanged();
+		}
+
+COM:removes a row from a table and adjusts the remaining rows accordingly

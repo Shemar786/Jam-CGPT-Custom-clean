@@ -1,0 +1,16 @@
+TDAT: 	public void generateErodabilities(int x, int y){
+		Vector<Layer> layers = map[x][y].getLayers();
+		for (Layer layer : layers) {
+			double min = layer.getLayerSpecification().getMinErodability();
+			double max = layer.getLayerSpecification().getMaxErodability();
+			double erod = min + generateGaussianLimited()*(max-min);
+			if(erod > max)
+				erod = max;
+			else if(erod < min)
+				erod = min;
+			layer.setErodability(erod);					
+				
+		}		
+	}
+
+COM:generates erosion values for a given location on a map using a Gaussian distribution with limits set by the minimum and maximum erosion values specified for each layer at the specified location

@@ -1,0 +1,10 @@
+TDAT:     private void addDefaultScreenButtons(ScreenDefinition screenDef,  UIComponent mainPanel) {
+        addCommandButton(mainPanel, "commandSave", "regularButton",
+                ResourceBundleUtil.getMessage("runit.save"), "#{"
+                        + getController() + ".process}");
+
+        addCommandButtonReset(mainPanel, "commandCancel", "regularButton",
+                ResourceBundleUtil.getMessage("common.button.cancel"));
+    }
+
+COM:adds default save and cancel buttons with their corresponding actions to a UI panel

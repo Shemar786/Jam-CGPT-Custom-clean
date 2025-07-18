@@ -1,0 +1,20 @@
+TDAT:    public void processKeyEvent(KeyEvent evt) {
+
+      if(evt.isConsumed())
+         return;
+
+      switch(evt.getID()) {
+      case KeyEvent.KEY_TYPED:
+         processVTKeyTyped(evt);
+         break;
+      case KeyEvent.KEY_PRESSED:
+         processVTKeyPressed(evt);
+         break;
+      case KeyEvent.KEY_RELEASED:
+         processVTKeyReleased(evt);
+         break;
+      }
+
+   }
+
+COM:processes a KeyEvent by checking if it is consumed and then switching to a specific method based on the type of KeyEvent

@@ -1,0 +1,15 @@
+TDAT:     private void update() {
+        currentTime = System.currentTimeMillis();
+        if (currentTime - lastTime > updateInterval && running) {
+            currentFrame++;
+            lastTime = currentTime;
+
+            if (currentFrame >= frames.size()) {
+                currentFrame = 0;
+                if (!isLoop)
+                    running = false;
+            }
+        }
+    }
+
+COM:updates the current frame in a looped animation if a specified time interval has passed, and stops the animation if the loop is not set to repeat

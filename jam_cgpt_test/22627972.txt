@@ -1,0 +1,16 @@
+TDAT: 	public void setRepositoryIdentifier(String value) {
+		if (value == null)
+			return;
+		try {
+			if (!adminData.oidExists(Keys.REPOSITORY_IDENTIFIER)) {
+				adminData.put(Keys.REPOSITORY_IDENTIFIER, value);
+			}
+			else {
+				adminData.update(Keys.REPOSITORY_IDENTIFIER, value);
+			}
+		} catch (Exception e) {
+			prtlnErr("Error saving serialized REPOSITORY_IDENTIFIER: " + e);
+		}
+	}
+
+COM:sets a repository identifier value in the adminData object if it doesn't exist already

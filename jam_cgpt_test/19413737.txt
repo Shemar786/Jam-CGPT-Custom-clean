@@ -1,0 +1,14 @@
+TDAT:   public void execute() throws CommandException {
+
+    // Use stuff that's being done in the superclass.
+    //
+    super.execute(); // Ignore the response from the superclass
+
+		SimpleMessage message =
+        new SimpleMessage(
+            getFrontendMessages().getString("message.MANIFEST_ACTIVATED"), new Object[]{getSelectedManifest().getName()}
+        );
+    getCommandResponse().addEvent(new MessageEvent(this, message));
+  }
+
+COM:executes a command, uses methods from the superclass, and adds a message event to the command response

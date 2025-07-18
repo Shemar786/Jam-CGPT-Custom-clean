@@ -1,0 +1,24 @@
+TDAT:     public File extractBookmarks(String result){
+		try {
+	        List<HashMap<String,Object>> list = SimpleBookmark.getBookmark(reader);
+	        if (list == null){
+	        	return null;
+	        }
+	        else{
+	        	File file = new File(result);
+				FileOutputStream fop = new FileOutputStream(file);
+	        	SimpleBookmark.exportToXML(list, fop, "ISO8859-1", true);
+	        	fop.flush();
+	        	fop.close();
+	        	return file;
+	        }
+	        
+	        
+		} catch (IOException e) {
+			e.printStackTrace();
+			return null;
+		}
+
+    }
+
+COM:extracts bookmarks from a PDF file and exports them to an XML file

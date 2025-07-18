@@ -1,0 +1,14 @@
+TDAT: 	private void createImage() {
+		// meet the preconditions first.
+		if ((image != null) || (width == -1) || (colorModel == null))
+			return;
+
+		// raster = colorModel.createCompatibleWritableRaster(width, height);
+
+		// boolean premult = colorModel.isAlphaPremultiplied();
+
+		// image = new BufferedImage(colorModel, raster, premult, properties);
+		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+	}
+
+COM:creates a BufferedImage with the given dimensions and color model

@@ -1,0 +1,12 @@
+TDAT:     public void remove(MutableTreeNode child) {
+        if (child == null) {
+            throw new IllegalArgumentException("argument is null");
+        }
+        int childIndex = getIndex(child);
+        if (childIndex == -1) {
+            throw new IllegalArgumentException("argument is not a child");
+        }
+        remove(childIndex); // linear search
+    }
+
+COM:removes a given MutableTreeNode from the current tree node after checking if it is a valid child

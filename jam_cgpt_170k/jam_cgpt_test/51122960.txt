@@ -1,0 +1,13 @@
+TDAT:    public String getContentType(String name) {
+      try {
+         //#changed by joe peer
+         //UploadedFile file = (UploadedFile)files.get(name);
+         FileHolder filePart = (FileHolder) files.get(name);
+
+         return filePart.getContentType(); // may be null
+      } catch (Exception e) {
+         return null;
+      }
+   }
+
+COM:returns the content type of a specified file, if available

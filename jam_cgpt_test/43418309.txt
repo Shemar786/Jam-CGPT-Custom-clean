@@ -1,0 +1,12 @@
+TDAT: 	protected void startAgentsFromCurrAgentList() {
+		
+		for (Iterator<AgentClassElement4SimStart> iterator = currAgentList.iterator(); iterator.hasNext();) {
+			AgentClassElement4SimStart agent2Start = iterator.next();
+			// --- Check for start arguments -------------------------
+			Object[] startArgs = this.getStartArguments(agent2Start);
+			// --- Start the agent -----------------------------------
+			this.startAgent(agent2Start.getStartAsName(), agent2Start.getAgentClassReference(), startArgs);
+		} 
+	}
+
+COM:starts multiple agents from the current agent list using their stored information

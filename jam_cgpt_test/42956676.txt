@@ -1,0 +1,20 @@
+TDAT: 	public void setRelativeMouseMode(boolean mode) {
+		if (mode == isRelativeMouseMode()) {
+			return;
+		}
+		
+		if (mode) {
+			try {
+				robot = new Robot();
+				recenterMouse();
+			} catch (AWTException e) {
+				if (Development.DEBUG_ENABLED) 
+					System.out.println(Development.DEBUG_LABEL + "InputManager.setRelativeMouseMode() " + e);
+				robot = null;
+			}
+		} else {
+			robot = null;
+		}
+	}
+
+COM:sets the relative mouse mode and initializes a Robot instance if the mode is true

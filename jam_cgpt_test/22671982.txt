@@ -1,0 +1,18 @@
+TDAT: 	private Table createTable(Composite parent) {
+		int style = SWT.SINGLE | SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL |
+		SWT.FULL_SELECTION | SWT.HIDE_SELECTION;
+
+		Table table = new Table(parent, style);
+
+		GridData gridData = new GridData(GridData.FILL_BOTH);
+		gridData.grabExcessVerticalSpace = true;
+		gridData.horizontalSpan = 1;
+		table.setLayoutData(gridData);
+
+		table.setLinesVisible(true);
+		table.setHeaderVisible(true);
+
+		return table;
+	}
+
+COM:creates a table with specified styles and layout data, and returns the newly created table

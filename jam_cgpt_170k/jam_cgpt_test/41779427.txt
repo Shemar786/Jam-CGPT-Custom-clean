@@ -1,0 +1,10 @@
+TDAT:     public Command getCmdAbout() {
+        if (cmdAbout == null) {//GEN-END:|65-getter|0|65-preInit
+            // write pre-init user code here
+            cmdAbout = new Command("About", Command.SCREEN, 0);//GEN-LINE:|65-getter|1|65-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|65-getter|2|
+        return cmdAbout;
+    }
+
+COM:returns a Command object for displaying information about the application

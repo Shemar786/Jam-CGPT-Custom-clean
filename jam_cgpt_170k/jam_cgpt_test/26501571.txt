@@ -1,0 +1,19 @@
+TDAT:   public String toString() {
+    StringBuffer buf = new StringBuffer(_scheme);
+
+    if ((_host != null) && !_host.equals(UNDEFINED_HOST)) {
+      buf.append(PROTO).append(_host);
+
+      if (_port != UNDEFINED_PORT) {
+        buf.append(COLON).append(_port);
+      }
+    } else {
+      buf.append(COLON);
+    }
+
+    buf.append(_query.toString());
+
+    return buf.toString();
+  }
+
+COM:returns a string representation of an object, utilizing a StringBuffer to build the string

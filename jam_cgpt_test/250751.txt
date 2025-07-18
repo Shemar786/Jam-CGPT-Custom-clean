@@ -1,0 +1,21 @@
+TDAT: 	public boolean getFeedbackEnabled(String collectionPID) throws AccessException {
+		logger.debug("entering getFeedbackEnabled");
+
+		String query = "SELECT HASFEEDBACK FROM collection "
+			+ " WHERE PID = '" + collectionPID + "'";
+
+		List list = buildResult(query);
+		convertBoolean(list, "HASFEEDBACK");
+		if (list.size() == 0) {
+			return false;
+		} else {
+			if (((Boolean) ((HashMap) list.get(0)).get("HASFEEDBACK"))
+					.booleanValue()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+
+COM:retrieves a boolean value indicating whether or not feedback is enabled for a specified collection ID

@@ -1,0 +1,11 @@
+TDAT: 	public void close() throws IOException {
+		// !! Alternate implementation: If this is a new file, perhaps only 
+		// write the file table information AFTER close() called so  
+		// incomplete/partial files don't exist.
+		flush();
+		File.writeTable(File.listFiles()); // Updates file size for this file.
+        page_pointer = file.page_location;
+        data_pointer = 0; // Start of first page
+	}
+
+COM:closes the file, updates file table information, and resets page and data pointers

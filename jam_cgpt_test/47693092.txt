@@ -1,0 +1,17 @@
+TDAT:     private void removeSpecificHeader(SVFCommand command) {
+    	String comment = command.comment;
+    	if (comment == null)
+    		return;
+    	
+    	if (!comment.startsWith(SVFWriter.HEADER1))
+    		return;
+    	int index = comment.indexOf(SVFWriter.HEADER3);
+    	if (index < 0)
+    		return;
+    	
+    	comment = comment.substring(index + 
+    			SVFWriter.HEADER3.length());
+    	command.setComment(comment);
+    }
+
+COM:removes a specific header from a given command's comment

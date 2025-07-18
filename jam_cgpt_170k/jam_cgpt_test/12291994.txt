@@ -1,0 +1,7 @@
+TDAT: 	public void createFieldEditors() {
+		addField(new StringFieldEditor("base_URL", "Base URL", getFieldEditorParent()));
+		addField(new StringFieldEditor("lookup_URL", "Server URL", getFieldEditorParent()));
+		addField(new StringFieldEditor("service_Name", "Service Name", getFieldEditorParent()));
+	}
+
+COM:creates and adds a set of string field editors to the user interface with labels and parents

@@ -1,0 +1,20 @@
+TDAT: 	protected void computeTasksHeight(int taskBarHeight) {
+		int oldTasksHeight = tasksHeight;
+		tasksHeight = taskBarHeight - 3 * TASK_MARGIN - 1;
+
+		if (tasksHeight == oldTasksHeight)
+			return; // Nothing to do;
+
+		
+		if ( tasksHeight < minTasksHeight){
+			SC.warn("Insufficient Taskbar height:<br>The Taskbar is going to be resized" );
+			tasksHeight = oldTasksHeight;
+		}else{
+			if ( tasksHeight > maxTasksHeight){
+				tasksHeight = maxTasksHeight;
+			}
+			updateTasksHeight();
+		}
+	}
+
+COM:computes and updates the height of a task bar based on the given height, with certain height bounds and an update method

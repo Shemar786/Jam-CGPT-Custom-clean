@@ -1,0 +1,14 @@
+TDAT:   public void addLineNumber(int line) {
+    String	label;
+
+    // create a unique label (syntactically illegal: cannot conflict with labels in source)
+    label = "'" + lineNumberId++;
+    try {
+      addLabel(label);
+    } catch (KsmError e) {
+      throw new InconsistencyException();
+    }
+    lines.addElement(new LineNumberInfo((short)line, new LabelReference(label)));
+  }
+
+COM:adds a line number and a unique label to a list of LineNumberInfo objects

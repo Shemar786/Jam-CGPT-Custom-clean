@@ -1,0 +1,14 @@
+TDAT:     public String getDownloaderConfig() {
+        if (this.downloadStarter == null) {
+            this.initDownloader();
+            if (this.downloadStarter == null) {
+                this.logger.warning("Download timer could not be initialised.");
+                return "";
+            }
+        }
+        DownloadTimer timer = this.downloadStarter.getTimer();
+        String parameters = timer.getConfiguration();
+        return parameters;
+    }
+
+COM:returns the configuration parameters of a download timer, after initializing the timer if necessary

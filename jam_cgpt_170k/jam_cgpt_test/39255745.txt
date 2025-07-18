@@ -1,0 +1,13 @@
+TDAT: 	public Rectangle getDataAreaBounds() {
+		Dimension size = getSize();
+		Insets insets = getInsets();
+		
+		int xStart = V_AXIS_PADDING + V_TITLE_PADDING + insets.left;
+		int yStart = TOP_PADDING + insets.top;
+		int width = size.width - xStart - RIGHT_PADDING - insets.right;
+		int height = size.height - yStart - H_AXIS_PADDING - H_TITLE_PADDING - insets.bottom;
+		
+		return new Rectangle(xStart, yStart, width, height);
+	}
+
+COM:returns a rectangle representing the bounds of the data area within a graphical component

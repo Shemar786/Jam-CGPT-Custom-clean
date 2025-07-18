@@ -1,0 +1,11 @@
+TDAT:     private void writeBestTermsVector(TermVector termVector, Configuration configuration) throws IOException {
+        String property = configuration.getProperty("bestTermsVector");
+        StorageClient client = getClient();
+        client.delete(property);
+        ObjectOutputStream outputStream = new ObjectOutputStream(client.getOutputStream(property));
+        outputStream.writeObject(termVector);
+        outputStream.close();
+        client.close();
+    }
+
+COM:writes a given term vector to storage, deleting any existing vector first, using the configuration specified

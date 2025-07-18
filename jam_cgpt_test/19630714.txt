@@ -1,0 +1,12 @@
+TDAT:   public void registerProblemWithResultType(int itemType) {
+    if (isValidResultType(itemType)) {
+      if (itemType == Resource.ALL_RESOURCE_TYPES) {
+        this.resultTypesWithProblems.addAll(Resource.ALL_SUPPORTED_RESOURCE_TYPES);
+      }
+      else {
+        this.resultTypesWithProblems.add(itemType);
+      }
+    }
+  }
+
+COM:registers a problem with a specified item type and handles the addition of valid result types to the resultTypesWithProblems list

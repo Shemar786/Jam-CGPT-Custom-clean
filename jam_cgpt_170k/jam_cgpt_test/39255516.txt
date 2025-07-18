@@ -1,0 +1,16 @@
+TDAT: 	public void notdone() {
+		StackTraceElement sti = null;
+		try {
+			throw new Exception();
+		}
+		catch (Exception ex) {
+			sti = ex.getStackTrace()[1];
+		}
+		
+		String message = "Not done: ";
+		message += sti.getClassName() + "." + sti.getMethodName();
+		message += "(" + sti.getFileName() + ":" + sti.getLineNumber() + ")";
+		System.err.println(message);
+	}
+
+COM:prints an error message indicating that the specified method is not implemented yet, along with the class name, method name, file name and line number where the call was made

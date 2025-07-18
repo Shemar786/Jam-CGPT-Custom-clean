@@ -1,0 +1,9 @@
+TDAT:   public void actionPerformed(ActionEvent e) {
+    if (e.getSource() instanceof JButton) {
+      int index = getPanelIndex(((JButton) e.getSource()).getText());
+      if (currentIndex >= 0 && currentIndex != index)
+        sweepBar(index);
+    }
+  }
+
+COM:performs an action when a JButton is clicked, and uses the button's text to determine which panel should be swept

@@ -1,0 +1,11 @@
+TDAT: 		private PlatformLoad measureLoad() {
+			PlatformLoad pl = new PlatformLoad();
+			pl.setLoadCPU(LoadMeasureThread.getLoadCPU());
+			pl.setLoadMemorySystem(LoadMeasureThread.getLoadMemorySystem());
+			pl.setLoadMemoryJVM(LoadMeasureThread.getLoadMemoryJVM());
+			pl.setLoadNoThreads(LoadMeasureThread.getLoadNoThreads());
+			pl.setLoadExceeded(LoadMeasureThread.getThresholdLevelExceeded());
+			return pl;
+		}
+
+COM:measures the platform load by setting and returning various load levels including CPU, memory, and number of threads

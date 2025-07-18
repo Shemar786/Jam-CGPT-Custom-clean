@@ -1,0 +1,17 @@
+TDAT:     public void initModule() {
+
+	taskQueue = new TaskQueue();
+
+	runningThreads = new Vector<WorkerThread>();
+
+	// Create a low-priority thread that will manage the queue and start
+	// worker threads for tasks
+	taskControllerThread = new Thread(this, "Task controller thread");
+	taskControllerThread.setPriority(Thread.MIN_PRIORITY);
+	taskControllerThread.start();
+
+	// Create the task progress window
+	taskWindow = new TaskProgressWindow();
+    }
+
+COM:initializes a task queue and sets up worker threads to manage and execute tasks, while also creating a progress window to track task progress

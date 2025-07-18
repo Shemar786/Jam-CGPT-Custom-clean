@@ -1,0 +1,10 @@
+TDAT: //  private void createFolderHelper(IFolder folder, IProgressMonitor monitor) throws CoreException {
+//    if (!folder.exists()) {
+//      IContainer parent = folder.getParent();
+//      if (parent instanceof IFolder && (!((IFolder) parent).exists()))
+//        createFolderHelper((IFolder) parent, monitor);
+//      folder.create(false, true, monitor);
+//    }
+//  }
+
+COM:creates a folder recursively and throws an exception if there is an error

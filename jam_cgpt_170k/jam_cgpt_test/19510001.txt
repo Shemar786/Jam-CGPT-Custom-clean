@@ -1,0 +1,8 @@
+TDAT: 	public void testBinaryExpressionRight() {
+		te = mTypeEnvironment("a", "S", "b", "T");
+		assertExpressionSpecialization(te, //
+				"a ↦ b", //
+				mSpec(te, mList("T", "U"), mList("b", "T", "c", "U")));
+	}
+
+COM:tests binary expressions with a type environment and checks for expression specialization

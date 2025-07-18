@@ -1,0 +1,10 @@
+TDAT:     public void charge(AGVRobot agv, ValueWithUnit<? extends EnergyUnit> amount) {
+        if(getStation().getAGVRobot() == agv) {
+            Battery battery = (Battery)agv.getModulesWithKey(getBatteryModuleKey()).get(0);
+            battery.changeCurrentEnergyLevel(amount);
+        }
+        else
+        	throw new IllegalArgumentException("The given agv is not present on this charge location");
+    }
+
+COM:charges the battery of an AGVRobot at a charging station with a specified amount of energy

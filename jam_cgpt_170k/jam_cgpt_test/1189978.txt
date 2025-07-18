@@ -1,0 +1,13 @@
+TDAT:    public Connection connect(String url, Properties prop) throws SQLException {
+      try {
+         String newurl = url.replace("jdbc:simpledb", "rmi") + "/simpledb";
+         RemoteDriver rdvr = (RemoteDriver) Naming.lookup(newurl);
+         RemoteConnection rconn = rdvr.connect();
+         return new SimpleConnection(rconn);
+      }
+      catch (Exception e) {
+         throw new SQLException(e);
+      }
+   }
+
+COM:establishes a remote connection to a database using a given url and properties

@@ -1,0 +1,12 @@
+TDAT:   public StringReader getReader() throws wpException {
+    final Document doc = this.getDocument();
+    try {
+      StringReader reader = new StringReader(doc.getText(0, doc.getLength()));
+      return reader;
+    }
+    catch (BadLocationException ble) {
+      throw new wpException(ble);
+    }
+  }
+
+COM:retrieves a string reader from a document and throws a custom exception if a bad location is encountered

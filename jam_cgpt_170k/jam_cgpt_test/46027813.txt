@@ -1,0 +1,11 @@
+TDAT: 	public NetSPRecord getRecord(String rule, String mode, int gtype) {
+		for(int i = 0; i < listRecord.size(); i++) {
+			NetSPRecord r = listRecord.get(i);
+			if(r.strRuleName.equals(rule) && r.strModeName.equals(mode) && r.gameType == gtype) {
+				return r;
+			}
+		}
+		return null;
+	}
+
+COM:searches for and returns a NetSPRecord object that matches the specified rule, mode, and game type parameters

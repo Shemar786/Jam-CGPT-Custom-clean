@@ -1,0 +1,9 @@
+TDAT: 	public void buildGridTotalRow(List<List<ReportCell>> grid, List<List<ReportCell>> totals) {
+		List<ReportCell> row = new ArrayList<ReportCell>();
+		if (totals.size() > 0) {
+			row = buildTotalRow(totals, ReportLabelConstants.TOTAL);
+			grid.add(grid.size(), row);
+		}
+	}
+
+COM:builds a total row for a given grid of cells by using a list of total cells

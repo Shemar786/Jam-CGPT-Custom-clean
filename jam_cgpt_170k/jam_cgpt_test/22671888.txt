@@ -1,0 +1,19 @@
+TDAT: 	public void doModelLoadedEvent(final IAdaptable model) {
+		Display display = this.getViewSite().getShell().getDisplay();
+		if (display.getThread() != Thread.currentThread()) {
+			display.asyncExec(
+					new Runnable() {
+						public void run() {
+							doModelLoadedEvent(model);
+						}
+					}
+			);
+		} else {
+			logger.debug("Account model loaded");
+			this.viewer.setInput(model);
+			this.viewer.getTree().setEnabled(true);
+			this.modelLoaded = true;
+		}
+	}
+
+COM:handles the events that occur when the model is loaded, and sets up the viewer and the tree accordingly

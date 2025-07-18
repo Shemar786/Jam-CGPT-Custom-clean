@@ -1,0 +1,16 @@
+TDAT: 	private ListGraph loadRuleGraph(Element element) {
+
+		ListGraph graph = new ListGraph();
+
+		Elements children = element.getChildElements();
+		for(int i = 0; i < children.size(); i++) {
+			String from = children.get(i).getAttributeValue("from");
+			String label = children.get(i).getAttributeValue("label");
+			String to = children.get(i).getAttributeValue("to");
+			graph.addEdge(from, label, to);		
+		}
+
+		return graph;
+	}
+
+COM:loads a graph by creating a ListGraph object and adding edges based on the values of the "from", "label", and "to" attributes of each child element of the input Element object

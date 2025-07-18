@@ -1,0 +1,15 @@
+TDAT: 	public String getMdpHandle() {
+		if (mdpHandle == null) {
+			try {
+				FindRequest request = new FindRequest(NDRConstants.NDRObjectType.METADATAPROVIDER);
+				request.addCommand("relationship", "aggregatedBy", this.getHandle());
+				return request.getResultHandle();
+			} catch (Throwable t) {
+				prtln("could not obtain mdpHandle: " + t);
+			}
+			mdpHandle = "";
+		}
+		return mdpHandle;
+	}
+
+COM:returns a handle to a MetadataProvider object, obtained through a FindRequest command with a specific relationship criteria

@@ -1,0 +1,15 @@
+TDAT: 	private void createPreferencesGroup() {
+		GridData gridData15 = new GridData();
+		gridData15.horizontalAlignment = GridData.FILL;
+		gridData15.grabExcessHorizontalSpace = true;
+		gridData15.grabExcessVerticalSpace = true;
+		gridData15.verticalAlignment = GridData.FILL;
+		preferencesGroup = new Group(tabFolder, SWT.NONE);
+		preferencesGroup.setText("Preferences");
+		preferencesGroup.setLayout(new GridLayout());
+		prefsTree = new Tree(preferencesGroup, SWT.BORDER);
+		prefsTree.setLayoutData(gridData15);
+		createPrefsControls();
+	}
+
+COM:creates a GUI group with the title "Preferences" that contains a Tree component and additional controls, using a specified layout

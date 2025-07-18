@@ -1,0 +1,15 @@
+TDAT:     public void addDescriptor(HandlerDescriptor added) throws DuplicateURIPatternException {
+        HandlerDescriptor existing = null;
+        for (HandlerDescriptor descriptor : descriptors) {
+            if (descriptor.equals(added)) {
+                existing = descriptor;
+                break;
+            }
+        }
+        if (existing != null) {
+            throw new DuplicateURIPatternException(existing, added);
+        }
+        descriptors.add(added);
+    }
+
+COM:adds a HandlerDescriptor object to a list of descriptors, checks if there are any duplicates, and throws an exception if a duplicate is found

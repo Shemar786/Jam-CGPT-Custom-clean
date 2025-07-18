@@ -1,0 +1,12 @@
+TDAT:     protected void dumpProperties() {
+        getLog().info("Properties:");
+        getLog().info("-----------");
+        Properties properties = project.getProperties();
+        if (properties != null) {
+            properties.list(System.out);
+        } else {
+            getLog().info("null");
+        }
+    }
+
+COM:logs a list of properties for a project, including the property names and their corresponding values

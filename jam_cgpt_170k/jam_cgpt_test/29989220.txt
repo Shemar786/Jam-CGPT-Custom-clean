@@ -1,0 +1,23 @@
+TDAT:     public Comparator getComparator() {
+
+        return new Comparator() {
+
+            public int compare(Object arg0, Object arg1) {
+
+                if (arg0 == null || arg1 == null) {
+                    return 0;
+                }
+                String name0 = ((INode) arg0).getName();
+                String name1 = ((INode) arg1).getName();
+
+                if (name0 == null || name1 == null) {
+                    return 0;
+                }
+
+                return name0.compareTo(name1);
+            }
+
+        };
+    }
+
+COM:returns a new comparator object that compares the name of two objects implementing the INode interface

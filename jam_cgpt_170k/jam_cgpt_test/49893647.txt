@@ -1,0 +1,19 @@
+TDAT: 	public void setRequestLine(String aLine) {
+		line = aLine;
+		int s1 = line.indexOf(' ');
+		if (s1 < 0) {
+			method = line;
+			return;
+		}
+		int s2 = line.indexOf(' ', s1 + 1);
+		method = line.substring(0, s1);
+		if (s2 > 0) {
+			requestURI = line.substring(s1 + 1, s2);
+			httpVersion = line.substring(s2 + 1).trim();
+		} else {
+			requestURI = line.substring(s1 + 1);
+			httpVersion = null;
+		}
+	}
+
+COM:sets the request line for an HTTP request and parses out the request method, URI, and HTTP version

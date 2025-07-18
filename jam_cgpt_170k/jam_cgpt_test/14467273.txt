@@ -1,0 +1,16 @@
+TDAT:   public void removeConstituent(Constituent c, boolean forward) {
+    // Clear the selection
+    if ( c == selConstituent ) {
+      this.selConstituent = null;
+      notifyObservers(Model.CONSTITUENT_SELECT, null, null, null, null, false);
+    }
+
+    // the called method takes care of the dirty work
+    if (c instanceof Node) {
+      removeNode((Node)c, forward);
+    } else {
+      removeRelation((Relation)c, forward);
+    }
+  }
+
+COM:removes a constituent (either a node or a relation) from a model and updates the selection if necessary

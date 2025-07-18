@@ -1,0 +1,5 @@
+TDAT:     public BeanMapperConfigurator addPathMapping(Class<?> srcType, String property, Class src, String path, boolean readOnly, String profile) {
+        return addPathMapping(srcType, property, src, path, (IPropertyConverter) null, readOnly, profile);
+    }
+
+COM:adds a path mapping for a source type, property, and path, with optional parameters for read-only and profile, and returns a BeanMapperConfigurator object

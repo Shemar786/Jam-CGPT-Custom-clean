@@ -1,0 +1,9 @@
+TDAT:     public String getStringMS() {
+        if (getHours() > 0) {
+            return getHours() + ":" + timeStr(getMinutes()) + ":" + timeStr(getSeconds());
+        } else {
+            return timeStr(getMinutes()) + ":" + timeStr(getSeconds());
+        }
+    }
+
+COM:returns a string representation of time in the format of hours:minutes:seconds if there are any hours present, and just minutes:seconds if there are no hours

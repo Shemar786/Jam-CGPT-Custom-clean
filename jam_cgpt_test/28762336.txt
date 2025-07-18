@@ -1,0 +1,7 @@
+TDAT:   public String expandTemplates(EnumWikipedia wikipedia, String title, String text) throws APIException {
+    ApiExpandResult expandResult = new ApiXmlExpandResult(wikipedia, httpClient, connection);
+    ApiExpandRequest expandRequest = new ApiExpandRequest(expandResult);
+    return expandRequest.expandTemplates(title, text);
+  }
+
+COM:expands templates in Wikipedia articles and returns the expanded text

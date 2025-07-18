@@ -1,0 +1,14 @@
+TDAT: 	public Direction direction() {
+		if (equals(ORIGIN)) {
+			throw new IllegalArgumentException("No direction for " + toString());
+		}
+		if (vector[2].equals(Space.ORIGIN)) {
+			return new Direction(vector[0].amount(Space.M), vector[1]
+					.amount(Space.M));
+		} else {
+			return new Direction(vector[0].amount(Space.M), vector[1]
+					.amount(Space.M), vector[2].amount(Space.M));
+		}
+	}
+
+COM:returns a direction based on the coordinates of corresponding vectors in a three-dimensional space, throwing an exception for the zero vector

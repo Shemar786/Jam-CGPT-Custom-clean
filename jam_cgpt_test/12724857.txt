@@ -1,0 +1,11 @@
+TDAT: protected void beforeInsertDummies(int index, int length) {
+	if (index > size || index < 0) 
+		throw new IndexOutOfBoundsException("Index: "+index+", Size: "+size);
+	if (length > 0) {
+		ensureCapacity(size + length);
+	    System.arraycopy(elements, index, elements, index + length, size-index);
+		size += length;
+	}
+}
+
+COM:inserts a specified number of dummy elements into an array at a specific index while ensuring there is enough capacity, and throwing an IndexOutOfBoundsException if the index is invalid

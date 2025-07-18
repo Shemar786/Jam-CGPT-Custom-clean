@@ -1,0 +1,15 @@
+TDAT:    private void loadCreateDateTime(SpooledFile p, Vector row) {
+
+      try {
+         String datetime = formatDate(p.getStringAttribute(PrintObject.ATTR_DATE)) +
+                           " " +
+                           formatTime(p.getStringAttribute(PrintObject.ATTR_TIME));
+         row.add(datetime);
+      }
+      catch (Exception ex) {
+//         System.out.println(ex.getMessage());
+         row.add("Attribute Not supported");
+      }
+   }
+
+COM:loads the creation date and time from a spooled file and adds it to a vector, while also handling any exceptions

@@ -1,0 +1,22 @@
+TDAT:     public void release() {
+        super.release();
+     
+        ignore = false;       
+        name = null;
+        property = null;
+        scope = null;
+        localeKey = null;
+        bundle = null;
+        errors = false;
+        token = false;
+        type = "amf";
+        errorname = Globals.ERROR_KEY;
+        errorproperty = null;
+        header = null;
+        footer = null;
+        prefix = null;
+        suffix = null;
+        locale = Globals.LOCALE_KEY;
+    }
+
+COM:releases all the variables and resets their values to null or default

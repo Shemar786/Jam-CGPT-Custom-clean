@@ -1,0 +1,8 @@
+TDAT:     public void moveBack() {
+        Vector3f backVec = new Vector3f(-getDirection().getX(), -getDirection().getY(), -getDirection().getZ());
+        backVec.normalizeTo(speed);
+        getEye().dirtyAdd(backVec);
+        changed = true;
+    }
+
+COM:moves an object backwards with a specified speed

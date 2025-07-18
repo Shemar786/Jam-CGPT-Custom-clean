@@ -1,0 +1,15 @@
+TDAT: 	public int getNetworkComponentCount(GraphNode node){
+		// Get the components from the controllers GridModel
+		Iterator<NetworkComponent> components = this.getNetworkComponents().values().iterator();						
+		int count = 0;
+		while(components.hasNext()){ // iterating through all network components
+			NetworkComponent comp = components.next();
+			// check if the component contains the current node
+			if(comp.getGraphElementIDs().contains(node.getId())){
+				count++;
+			}
+		}
+		return count;
+	}
+
+COM:returns the number of network components that contain a given GraphNode

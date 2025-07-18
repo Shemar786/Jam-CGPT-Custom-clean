@@ -1,0 +1,15 @@
+TDAT: 	public void receiveEvent(CommunicationEvent ce) {
+		switch(ce.getEventId()) {
+			case(CommunicationEvent.CONNECTION_ESTABLISHED):
+				statusBar.setText(ce.getData() + " connected to server!\n");
+				break;
+			case(CommunicationEvent.CONNECTION_BROKEN):
+				statusBar.setText("Connection to " + ce.getData() + " broken!\n");
+				break;
+			case(CommunicationEvent.CONNECTION_CLOSED):
+				statusBar.setText(ce.getData() + "disconnected from server!");
+				break;
+		}
+	}
+
+COM:receives a communication event and updates the status bar accordingly, either displaying that a connection has been established, broken, or closed

@@ -1,0 +1,15 @@
+TDAT: 	public GraphicsSettings getGraphicsSettings(){
+		// look through the blocks for one with a matching header
+		GraphicsSettings settings = null;
+		for (int i = 0; i < settingsBlocks.length; i++) {
+			if (settingsBlocks[i].trim().startsWith(GraphicsSettings.class.getName())){
+				
+				settings = (GraphicsSettings)addProps(new GraphicsSettings(),settingsBlocks[i]);
+				break;
+			}
+			
+		}
+		return settings;
+	}
+
+COM:searches for and returns a GraphicsSettings object by iterating through an array of settings blocks

@@ -1,0 +1,13 @@
+TDAT: 	private List getRoleOptions(Collection roles) {
+		// prtln ("getRoleOptions");
+		List options = new ArrayList();
+		options.add(new LabelValueBean("- none -", ""));
+		for (Iterator i = roles.iterator(); i.hasNext(); ) {
+			String role = Roles.toString((Roles.Role) i.next());
+			// prtln ("adding options for " + role);
+			options.add(new LabelValueBean(role, role));
+		}
+		return options;
+	}
+
+COM:takes a collection of roles and returns a list of options, including a default option and options for each role in the collection

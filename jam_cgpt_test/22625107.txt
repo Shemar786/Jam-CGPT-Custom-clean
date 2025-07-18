@@ -1,0 +1,11 @@
+TDAT: 	private void setNodeFieldIds( VocabList list, String id ) {
+		for ( int i = 0; i < list.item.size(); i++ ) {
+			VocabNode node = (VocabNode)list.item.get( i );
+			node.setFieldId( id );
+			if ( node.getList().item.size() > 0 ) {
+				setNodeFieldIds( node.getList(), id );
+			}
+		}
+	}
+
+COM:sets the field ID of all nodes in a given VocabList recursively

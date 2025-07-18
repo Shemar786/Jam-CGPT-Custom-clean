@@ -1,0 +1,16 @@
+TDAT: 	public Class getPersistentType() {
+		if (this.getType() == null) {
+			throw new JCartException("type was not defined");
+		}
+		switch (this.getType().getKey()) {
+						case AttributeType.KEY_STRING:
+							return StringValue.class;
+						case AttributeType.KEY_TEXT:
+							return TextValue.class;
+						// DONE: throw exception in case we can't find the correct type;
+						default:
+							throw new JCartException("Persistent type not defined for type: " + this.getType());
+		}
+	}
+
+COM:returns the persistent type of a given attribute based on its key value

@@ -1,0 +1,16 @@
+TDAT:     public AntTargetMap setTargetMap() {
+        AntTargetMap targetMap = null;
+        String strDefaultTarget = null;
+        targetMap = m_buildfile.getTargetMap();
+        strDefaultTarget = m_buildfile.getDefaultTarget();
+
+        if (m_bSelectWithDescription) {
+            targetMap.selectWithDescription();
+
+        }
+        setTargetMap(targetMap);
+
+        return m_targetMap;
+    }
+
+COM:sets the target map for Ant and selects targets based on their descriptions

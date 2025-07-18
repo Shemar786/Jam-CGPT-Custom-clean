@@ -1,0 +1,14 @@
+TDAT: 	private PaletteContainer createComplexConnections19Group() {
+		PaletteStack paletteContainer = new PaletteStack(
+				Messages.ComplexConnections19Group_title, null, null);
+		paletteContainer
+				.setDescription(Messages.ComplexConnections19Group_desc);
+		paletteContainer.add(createComplexConnection1CreationTool());
+		paletteContainer.setActiveEntry((ToolEntry) paletteContainer
+				.getChildren().get(paletteContainer.getChildren().size() - 1));
+		paletteContainer.add(createComplexConnectionFrom2CreationTool());
+		paletteContainer.add(createComplexConnectionTo3CreationTool());
+		return paletteContainer;
+	}
+
+COM:creates a palette container with three creation tools related to complex connections

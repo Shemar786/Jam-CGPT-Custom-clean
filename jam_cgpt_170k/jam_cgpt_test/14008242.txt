@@ -1,0 +1,15 @@
+TDAT: 	public String addPersonAward(String personID, String awardID) {
+		String msg = "";
+		try {
+			String query = "INSERT INTO award_person( awardID, personID ) VALUES ( " + awardID + ", " + personID + " )";
+			Statement st = DBManager.GetStatement();
+			st.executeUpdate(query);
+			DBManager.close(st);
+			msg = "SUCCESS: Person-Award assigned";
+		}catch(SQLException e){
+			msg = "ERROR: Assigning Performer/Director-award failed";
+		}
+		return msg;
+	}
+
+COM:adds a new entry to a database table linking a person and an award, returning a success or error message in a string format

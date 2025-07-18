@@ -1,0 +1,11 @@
+TDAT:     private void updateNearestNeighbours() {
+        for (List<V> nn : nearestNeighbours) {
+            nn.clear();
+        }
+        for (int i = 0; i < nearestCentroid.length; ++i) {
+            int nearest = nearestCentroid[i];
+            nearestNeighbours.get(nearest).add(vectors.get(i));
+        }
+    }
+
+COM:updates the list of nearest neighbors for each centroid based on a set of vectors

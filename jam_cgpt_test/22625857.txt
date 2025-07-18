@@ -1,0 +1,18 @@
+TDAT: 	public String getEndTime() {
+		String t = doc.get("endtime");
+
+		if (t == null)
+			return DEFAULT;
+		long time = -1;
+		try {
+			time = DateFieldTools.stringToTime(t);
+		} catch (ParseException pe) {
+			prtlnErr("Error in getEndTime(): " + pe);
+		}			
+		if (time <= 0)
+			return "Unknown";
+
+		return new SimpleDateFormat("h:mm:ss a zzz, EEE MMM d, yyyy").format(new Date(time));
+	}
+
+COM:retrieves the end time of a document, formats it in a specific date and time format, and returns it as a string

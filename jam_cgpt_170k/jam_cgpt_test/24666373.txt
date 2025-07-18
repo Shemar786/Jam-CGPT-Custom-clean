@@ -1,0 +1,15 @@
+TDAT: 	public void createPackageContents() {
+		if (isCreated) return;
+		isCreated = true;
+
+		// Create classes and their features
+		personEClass = createEClass(PERSON);
+		createEAttribute(personEClass, PERSON__FIRST_NAME);
+		createEAttribute(personEClass, PERSON__LAST_NAME);
+		createEReference(personEClass, PERSON__ADDRESS);
+
+		addressEClass = createEClass(ADDRESS);
+		createEAttribute(addressEClass, ADDRESS__DETAILS);
+	}
+
+COM:creates package contents, including classes and their features like person and address classes

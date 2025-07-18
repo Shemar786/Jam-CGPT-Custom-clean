@@ -1,0 +1,21 @@
+TDAT:     public String toString() {
+        StringBuffer sb = new StringBuffer();
+
+        sb.append(lazyFormatDate(timeStamp));
+
+        if (myMessage != null) {
+            sb.append(myMessage);
+
+            if (myThrowable != null) {
+                sb.append(System.getProperty("line.separator"));
+            }
+        }
+
+        if (myThrowable != null) {
+            sb.append(Log.getStackTrace(myThrowable));
+        }
+
+        return sb.toString();
+    }
+
+COM:returns a string representation of an object containing a timestamp, optional message, and optional throwable

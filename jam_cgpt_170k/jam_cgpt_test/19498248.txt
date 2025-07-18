@@ -1,0 +1,22 @@
+TDAT: 	public void testAcc_06() throws Exception {
+		IContextRoot abs = createContext("abs");
+		
+		addAxioms(abs, makeSList("T"), makeSList("x∈ℕ"), true);
+		
+		saveRodinFileOf(abs);
+		
+		IMachineRoot con = createMachine("cnc");
+		addMachineSees(con, "abs");
+		addInitialisation(con);
+		
+		addInvariants(con, makeSList("X"), makeSList("1<0"), true);
+		
+		saveRodinFileOf(con);
+		
+		runBuilder();
+		
+		containsMarkers(con, false);
+		isNotAccurate(con.getSCMachineRoot());
+	}
+
+COM:tests the accuracy of a context and machine file by creating and adding axioms and invariants before checking for error markers and accuracy

@@ -1,0 +1,13 @@
+TDAT:   private Vorschaupanel getPVorschau() {
+
+    if (pVorschau == null) {
+      pVorschau = new Vorschaupanel();
+      pVorschau.setLayout(new GridBagLayout());
+      pVorschau.setName("pVorschau");
+      pVorschau.setMinimumSize(new Dimension(10, (int) Toolkit
+          .getDefaultToolkit().getScreenSize().getHeight() / 4));
+    }
+    return pVorschau;
+  }
+
+COM:returns the Vorschaupanel object, creating a new one if it does not already exist

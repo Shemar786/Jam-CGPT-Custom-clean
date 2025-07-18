@@ -1,0 +1,13 @@
+TDAT: 	public String evalCommand(String cmdName, String[] words) {
+		if (ScriptCommands.isBuiltinCommand(cmdName))
+			return ScriptCommands.evalBuiltinCommand(cmdName, words, mDepth);
+
+		if (getFunctionsStore().contains(cmdName)) {
+			ScriptFunction func = (ScriptFunction) getFunctionsStore()
+					.getVariable(cmdName, mDepth);
+			return func.evalFunction(words, mDepth);
+		}
+		return "Unknown command " + cmdName;
+	}
+
+COM:evaluates a command or function specified by a given name and an array of words, and returns the result or an error message

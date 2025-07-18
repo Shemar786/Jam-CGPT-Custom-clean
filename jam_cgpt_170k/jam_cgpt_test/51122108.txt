@@ -1,0 +1,29 @@
+TDAT: 	private void init() {
+		conds = new ArrayList();
+		filterName = getFilterName(getTableId());
+
+		if (size == null) {
+			size = "1";
+		}
+
+		if (disabledCaption == null) {
+			disabledCaption = "";
+		}
+
+		if (setCaption == null) {
+			setCaption = "set";
+		}
+
+		if (unsetCaption == null) {
+			unsetCaption = "unset";
+		}
+		if (unsetStyleClass == null) {
+			unsetStyleClass = getStyleClass();
+		}
+
+		if (setStyleClass == null) {
+			setStyleClass = getStyleClass();
+		}
+	}
+
+COM:initializes default values for certain variables if they are not already set

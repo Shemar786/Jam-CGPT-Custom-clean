@@ -1,0 +1,11 @@
+TDAT:     public void setSymbol(final String newSymbol) {
+        if (newSymbol == null) {
+            throw new NullPointerException("The [newSymbol] argument cannot be null.");
+        }
+        if (newSymbol.trim().length() == 0) {
+            throw new IllegalArgumentException("The [newSymbol] argument cannot be empty.");
+        }
+        symbol = newSymbol;
+    }
+
+COM:sets a symbol, but will throw an exception if the new symbol is null or empty

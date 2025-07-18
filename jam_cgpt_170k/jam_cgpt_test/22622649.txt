@@ -1,0 +1,12 @@
+TDAT: /* 	public void setMetadataHandle(String handle) {
+		try {
+			if (getNode("/dcsDataRecord/metadataHandle") == null) {
+				this.getDocument().getRootElement().addElement("metadataHandle");
+			}
+			getNode("/dcsDataRecord/metadataHandle").setText(handle);
+		} catch (Throwable e) {
+			prtlnErr("setMetadataHandle failed: " + e.getMessage());
+		}
+	} */
+
+COM:sets the metadataHandle element in a DCS data record

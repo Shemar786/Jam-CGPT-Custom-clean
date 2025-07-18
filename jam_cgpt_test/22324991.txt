@@ -1,0 +1,8 @@
+TDAT:     protected String getKey(ISOMsg m) throws ISOException {
+        return (m.hasField(41)?ISOUtil.zeropad((String)m.getValue(41),16) : "")
+           + (m.hasField (traceNumberField) ?
+                ISOUtil.zeropad((String) m.getValue(traceNumberField),6) :
+                Long.toString (System.currentTimeMillis()));
+    }
+
+COM:takes an ISOMsg object as input and returns a concatenated string with a zero-padded field and a trace number or a current timestamp as a string, depending on whether the message has a trace number field

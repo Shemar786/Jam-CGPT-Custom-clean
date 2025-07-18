@@ -1,0 +1,22 @@
+TDAT: 	private void analyze() throws TreeException {
+		String token = nextToken();
+
+		if (token.equals("(")) {
+			analyze();
+		} else if (token.equals(")")) {
+			reduceLevel();
+		} else if (token.length() == 0) {
+			return;
+		} else {
+			String next = nextToken();
+
+			if (next.equals("(")) {
+				node(CHILD, token);
+			} else if (next.equals(")")) {
+				collectValue(token);
+				reduceLevel();
+			}
+		}
+	}
+
+COM:analyzes a tree hierarchy and manipulates its nodes and values based on the given tokens

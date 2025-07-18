@@ -1,0 +1,13 @@
+TDAT: 	public void addRelationType(RelationType rt) {
+		relationTypes.add(rt);
+		Collections.sort(relationTypes, new Comparator<RelationType>() {
+
+			@Override
+			public int compare(RelationType o1, RelationType o2) {
+				return o1.getId().compareToIgnoreCase(o2.getId());
+			}
+		});
+		fireContentsChanged(this, 0, relationTypes.size());
+	}
+
+COM:adds a relation type to a list, sorts the list alphabetically by relation type ID, and triggers a change event for the list

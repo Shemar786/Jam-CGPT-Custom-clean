@@ -1,0 +1,19 @@
+TDAT: 	private void startAcceptingClient() {
+		AbstractThread t = new InterruptibleThread(new Runnable() {
+			public void run() {
+				while (continueListening) {
+					try {
+						na.message("Waiting for client to connect.");
+						new ClientHandler(serverSocket.accept(), na).startHandling();
+					} catch (IOException e) {
+						System.out.println("Error connecting with client.");
+						System.out.println("Error Message: " + e.getMessage());
+					}
+				}
+			}
+		}, "Client Listening Thread");
+
+		t.start();
+	}
+
+COM:starts accepting clients and creates a new thread to handle incoming client connections

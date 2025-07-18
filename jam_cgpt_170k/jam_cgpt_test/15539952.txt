@@ -1,0 +1,20 @@
+TDAT:     private boolean isEnabled(int i) {
+      switch (i) {
+        case SUPGA:
+          return DO_SUPGA;
+        case ECHO:
+          return DO_ECHO;
+        case NAWS:
+          return DO_NAWS;
+        case TTYPE:
+          return DO_TTYPE;
+        case LINEMODE:
+          return DO_LINEMODE;
+        case NEWENV:
+          return DO_NEWENV;
+        default:
+          return false;
+      }
+    }//isEnabled
+
+COM:checks if a certain option is enabled based on the input integer i, which corresponds to different cases with corresponding boolean values

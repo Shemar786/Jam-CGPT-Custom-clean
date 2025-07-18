@@ -1,0 +1,11 @@
+TDAT:    public Dimension preferredLayoutSize(Container parent) {
+
+      Insets insets = parent.getInsets();
+      getGridSizes(parent, false);
+      return new Dimension(insets.left + insets.right + sum(col_widths)
+                      + (col_widths.length+1)*hgap,
+                      insets.top + insets.bottom + sum(row_heights)
+                      + (row_heights.length+1)*vgap);
+   }
+
+COM:calculates and returns the preferred size of a container's layout based on its child components' sizes and layout parameters

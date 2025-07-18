@@ -1,0 +1,19 @@
+TDAT: 	public ArrayList getDisabledSets() {
+		if (disabledSets == null) {
+			synchronized (setInfosLock) {
+				disabledSets = new ArrayList();
+				ArrayList setInfos = getSetInfos();
+				if (setInfos != null) {
+					SetInfo set;
+					for (int i = 0; i < setInfos.size(); i++) {
+						set = (SetInfo) setInfos.get(i);
+						if (!set.isEnabled())
+							disabledSets.add(set.getSetSpec());
+					}
+				}
+			}
+		}
+		return (ArrayList) disabledSets.clone();
+	}
+
+COM:returns an ArrayList of disabled sets, retrieving the information from a setInfos object and creating a new ArrayList if necessary

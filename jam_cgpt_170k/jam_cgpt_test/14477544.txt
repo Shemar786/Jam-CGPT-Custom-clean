@@ -1,0 +1,24 @@
+TDAT: 			public void run() {
+				try {
+					while (true) {
+						if (toSendList.size() == 0) {
+							synchronized (toSendList) {
+								toSendList.wait();
+							}
+						} else {
+							sendOutMessage((String) toSendList.elementAt(0));
+							// keep the synchronized block (in time) as small as possible
+							synchronized (toSendList) {
+								toSendList.removeElementAt(0);
+							}
+						}
+					}
+				} catch (IOException ioe) {
+					ioe.printStackTrace();
+					exception = ioe;
+				} catch (InterruptedException ignore) {
+					ignore.printStackTrace();
+				}
+			}
+
+COM:continuously checks a list for messages to send and sends them out while ensuring thread safety through synchronization

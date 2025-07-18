@@ -1,0 +1,11 @@
+TDAT:   public Signature newSignature(String algo) throws NoSuchAlgorithmException{
+    if(_provider != null){
+      return Signature.getInstance(algo, _provider);
+    }
+    else if(_defaultProvider != null){
+      return Signature.getInstance(algo, _provider);
+    }
+    return Signature.getInstance(algo);
+  }
+
+COM:creates a new Signature object with a specified algorithm and provider, or a default provider if none is specified

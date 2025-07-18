@@ -1,0 +1,11 @@
+TDAT:     private void addValidRemoteCandidate(TransportCandidate remoteCandidate) {
+        // Add the candidate to the list
+        if (remoteCandidate != null) {
+            synchronized (validRemoteCandidates) {
+                LOGGER.debug("Added valid candidate: " + remoteCandidate.getIp() + ":" + remoteCandidate.getPort());
+                validRemoteCandidates.add(remoteCandidate);
+            }
+        }
+    }
+
+COM:adds a valid remote candidate to a synchronized list, and logs the successful addition of the candidate

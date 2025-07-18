@@ -1,0 +1,7 @@
+TDAT:   public void testGetParent() {
+    super.assertTrue(_root.getParent() == null);
+    super.assertTrue(_child.getParent().getStmContext() == _root);    
+    super.assertTrue(_anonymous.getParent().getStmContext() == _child);    
+  }
+
+COM:tests the parent hierarchy of three objects and asserts that the expected parent objects are equal to their actual parent objects

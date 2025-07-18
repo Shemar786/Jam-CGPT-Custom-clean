@@ -1,0 +1,10 @@
+TDAT: 	public void setImages(String[] imgFiles){
+		if(imgFiles != null && imgFiles.length > 1){
+			setImages(imgFiles[0], imgFiles[1 % imgFiles.length], imgFiles[2 % imgFiles.length]);
+			getMaxButtonImageWidth();
+			if(useImages && imageAlign == GAlign.CENTER && text.length() > 0)
+				imageAlign = GAlign.LEFT;
+		}
+	}
+
+COM:sets an array of images and adjusts their alignment based on specified conditions

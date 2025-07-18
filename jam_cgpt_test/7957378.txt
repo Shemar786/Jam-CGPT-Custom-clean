@@ -1,0 +1,19 @@
+TDAT: 	public void print(final PrintStream out) {
+		out.println(name + "." + type + (isDirty ? " (dirty) " : "") + ":");
+
+		Iterator iter;
+
+		iter = code.iterator();
+
+		while (iter.hasNext()) {
+			out.println("    " + iter.next());
+		}
+
+		iter = tryCatches.iterator();
+
+		while (iter.hasNext()) {
+			out.println("    " + iter.next());
+		}
+	}
+
+COM:prints the specified output stream along with name, type, codes, and try-catch statements

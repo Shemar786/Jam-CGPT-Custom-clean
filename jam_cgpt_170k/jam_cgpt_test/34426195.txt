@@ -1,0 +1,10 @@
+TDAT:     private Component makeTopPanel() {
+        Box box = Box.createHorizontalBox();
+        box.setPreferredSize(new Dimension(1000, 150));
+        box.add(makeHarvesterPanel());
+        box.add(makeWarningOptionsPanel());
+        box.add(makeOwnersPanel());
+        return box;
+    }
+
+COM:creates and returns a graphical component that combines three panels to be displayed in a horizontal box with a specified dimension

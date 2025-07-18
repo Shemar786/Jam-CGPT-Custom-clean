@@ -1,0 +1,14 @@
+TDAT: 	protected DynaBean clone(Class[] face) {
+		Class[] iFace = injectDynamicInterface(face);
+		// return a new dynamic proxy
+		Map state = _getState();
+		DynaBeanImpl copy = newInstance();
+		copy._setState(state);
+		copy._setInterface(iFace);
+		Object proxy = Proxy.newProxyInstance(getClass().getClassLoader(),
+				iFace, copy);
+		copy._setProxy(proxy);
+		return (DynaBean) proxy;
+	}
+
+COM:creates and returns a clone of a DynaBean object with a specified set of interfaces using dynamic proxy

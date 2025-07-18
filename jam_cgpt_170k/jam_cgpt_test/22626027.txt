@@ -1,0 +1,16 @@
+TDAT: 	public String getOaiLastModifiedString() {
+		String t = doc.get("oaimodtime");
+
+		if (t == null)
+			return DEFAULT;
+
+		long modTime = -1;
+		try {
+			modTime = DateFieldTools.stringToTime(t);
+		} catch (java.text.ParseException pe) {
+			prtlnErr("Error in getOaiLastModifiedString(): " + pe);
+		}
+		return new SimpleDateFormat("MMM d, yyyy h:mm:ss a zzz").format(new Date(modTime));
+	}
+
+COM:retrieves and formats the last modified date/time of a document in the OAI format

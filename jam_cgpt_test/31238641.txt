@@ -1,0 +1,9 @@
+TDAT:     public Set scan() {
+        Set setOfFixtureNamesNotInTestSuite = new TreeSet();
+        setOfFixtureNamesNotInTestSuite.addAll(testFixturesFromFileSystem());
+        setOfFixtureNamesNotInTestSuite.removeAll(allFixtureNamesFromTestSuite());
+        setOfFixtureNamesNotInTestSuite.removeAll(excludedTests);
+        return setOfFixtureNamesNotInTestSuite;
+    }
+
+COM:scans for fixture names that are not in the test suite and returns a Set containing those names

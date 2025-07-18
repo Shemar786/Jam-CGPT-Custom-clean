@@ -1,0 +1,10 @@
+TDAT:     public Command getBackCommandLookUp() {
+        if (backCommandLookUp == null) {//GEN-END:|43-getter|0|43-preInit
+            // write pre-init user code here
+            backCommandLookUp = new Command("Back", Command.BACK, 0);//GEN-LINE:|43-getter|1|43-postInit
+        // write post-init user code here
+        }//GEN-BEGIN:|43-getter|2|
+        return backCommandLookUp;
+    }
+
+COM:returns a Command object called "backCommandLookUp", which is created if it does not already exist

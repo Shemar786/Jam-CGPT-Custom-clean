@@ -1,0 +1,14 @@
+TDAT: 	private void registerUndoRedoAction(String actionId, HistoryAction action) {
+		final IAction oldAction = getAction(actionId);
+		if (oldAction instanceof OperationHistoryActionHandler)
+			((OperationHistoryActionHandler) oldAction).dispose();
+		if (action == null)
+			return;
+		setAction(actionId, action);
+		final IActionBars actionBars = getEditorSite().getActionBars();
+		if (actionBars != null)
+			actionBars.setGlobalActionHandler(actionId, action);
+		action.setEnabled(false);
+	}
+
+COM:registers an undo-redo action and sets the corresponding action handler in the editor's action bars

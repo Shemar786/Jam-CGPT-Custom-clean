@@ -1,0 +1,25 @@
+TDAT: 	public void selfTest() {
+		super.selfTest();
+
+		KThread serverThread = new KThread(new Runnable() {
+			public void run() {
+				pingServer();
+			}
+		});
+
+		serverThread.fork();
+
+		System.out.println("Press any key to start the network test...");
+		console.readByte(true);
+
+		int local = Machine.networkLink().getLinkAddress();
+
+		// ping this machine first
+		ping(local);
+
+		// if we're 0 or 1, ping the opposite
+		if (local <= 1)
+			ping(1 - local);
+	}
+
+COM:performs a network self-test by pinging itself and other machines on the network

@@ -1,0 +1,9 @@
+TDAT:             private void showPopup(MouseEvent e) {
+                if (!e.isPopupTrigger())
+                    return;
+                final JPopupMenu popup = popupManager.getMenu(mapping.getSelectedRows());
+                if (popup.getComponentCount() > 0)
+                    popup.show(e.getComponent(), e.getX(), e.getY());
+            }
+
+COM:shows a popup menu based on the selected rows of a given component, triggered by a mouse event

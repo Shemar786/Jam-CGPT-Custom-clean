@@ -1,0 +1,18 @@
+TDAT: 	public void gvtRenderingCompleted(GVTTreeRendererEvent e) {
+		if (debug) {
+			System.out.print("GVT rendering completed in ");
+			System.out.println((System.currentTimeMillis() - time) + " ms");
+		}
+		statusBar.setMainMessage("");
+		statusBar.setMessage(resources.getString("Message.done"));
+		if (!svgCanvas.isDynamic() || managerStopped) {
+			stopAction.setEnabled(false);
+		}
+		svgCanvas.setCursor(DEFAULT_CURSOR);
+
+		transformHistory.update(svgCanvas.getRenderingTransform());
+		previousTransformAction.update();
+		nextTransformAction.update();
+	}
+
+COM:updates various parameters and UI elements after the completion of SVG rendering

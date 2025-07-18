@@ -1,0 +1,18 @@
+TDAT:     public void start() {
+        log.debug("Running Broker.start()..");
+
+        try {
+            while (true) {
+                Socket connectionSocket = serverSocket.accept();
+                BrokerConnection connection = new BrokerConnection(
+                        connectionSocket, dataBase, taskDispenser);
+                Thread clientConnectionThread = new Thread(connection);
+                clientConnectionThread.start();
+            }
+        } catch (Exception e) {
+            log.warn("Broker runtime error", e);
+            throw new RuntimeException(e);
+        }
+    }
+
+COM:starts a broker server and continuously accepts incoming socket connections, creating a new thread for each connection

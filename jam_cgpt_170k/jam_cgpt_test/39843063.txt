@@ -1,0 +1,13 @@
+TDAT:     public void putAttribute(PutListTag nestedTag) throws JspException {
+        // Check role
+        String role = nestedTag.getRole();
+        if (role != null
+            && !((HttpServletRequest) pageContext.getRequest()).isUserInRole(
+                role)) { // not allowed : skip attribute
+            return;
+        }
+
+        putAttribute(nestedTag.getName(), nestedTag.getList());
+    }
+
+COM:puts a specified attribute in a nested tag, but only if the user is in the specified role

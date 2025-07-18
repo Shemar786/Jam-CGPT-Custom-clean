@@ -1,0 +1,15 @@
+TDAT: public void beforeInsert(int index, int element) {
+	// overridden for performance only.
+	if (size == index) {
+		add(element);
+		return;
+	}
+	if (index > size || index < 0) 
+		throw new IndexOutOfBoundsException("Index: "+index+", Size: "+size);
+	ensureCapacity(size + 1);
+	System.arraycopy(elements, index, elements, index+1, size-index);
+	elements[index] = element;
+	size++;
+}
+
+COM:inserts an element at a specific index in an array, ensuring capacity and giving an error if the index is out of bounds

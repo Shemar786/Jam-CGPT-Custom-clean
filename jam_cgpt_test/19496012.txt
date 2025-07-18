@@ -1,0 +1,17 @@
+TDAT: 	private void addComponentName(IInternalElement root) {
+		// Print the Machine/Context name
+		beginLevel0();
+		if (root instanceof IMachineRoot) {
+			bold("MACHINE");
+		} else if (root instanceof IContextRoot) {
+			bold("CONTEXT");
+		}
+		append(SPACE);
+		final String handle = root.getHandleIdentifier();
+		final String bareName = root.getRodinFile().getBareName();
+		append(makeHyperlink(handle, bareName));
+		endLevel();
+		return;
+	}
+
+COM:adds the name and type of a machine or context to a string, along with a hyperlink to its handle identifier

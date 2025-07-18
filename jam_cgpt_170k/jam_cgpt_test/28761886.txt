@@ -1,0 +1,12 @@
+TDAT:   synchronized public void increaseContributions(Contributions other) {
+    if (other == null) {
+      return;
+    }
+    pages += other.pages;
+    dabLinks += other.dabLinks;
+    for (int errorNumber = 0; errorNumber < checkWikiErrors.length; errorNumber++) {
+      checkWikiErrors[errorNumber] += other.checkWikiErrors[errorNumber];
+    }
+  }
+
+COM:This synchronized Java method increases the contributions of a given Contributions object by adding its pages, dabLinks, and checkWikiErrors to the current object

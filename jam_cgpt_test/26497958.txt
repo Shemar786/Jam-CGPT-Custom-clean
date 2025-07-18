@@ -1,0 +1,10 @@
+TDAT:   public void addDef(Def def) throws ConfigurationException {
+    if(_defs.get(def.getName()) != null) {
+      throw new ConfigurationException("Definition already declared: "
+          + def.getName() + ", " + def.getClazz());
+    }
+
+    _defs.put(def.getName(), def);
+  }
+
+COM:adds a new definition to a map of definitions, but first checks if the definition already exists and throws a ConfigurationException if it does

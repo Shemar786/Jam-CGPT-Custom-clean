@@ -1,0 +1,11 @@
+TDAT: 		public String getStoredValue(IScopeContext[] lookupOrder, boolean ignoreTopScope, IWorkingCopyManager manager) {
+			for (int i = ignoreTopScope ? 1 : 0; i < lookupOrder.length; i++) {
+				String value = getStoredValue(lookupOrder[i], manager);
+				if (value != null) {
+					return value;
+				}
+			}
+			return null;
+		}
+
+COM:retrieves a stored value from multiple scope contexts, ignoring the top scope if specified, and returns the value or null if none is found

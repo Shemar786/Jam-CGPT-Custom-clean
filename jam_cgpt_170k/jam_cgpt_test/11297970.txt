@@ -1,0 +1,10 @@
+TDAT:     private String serialiseChildSequence() {
+        StringBuffer buffer = new StringBuffer();
+        for(Iterator it = childSequence.iterator(); it.hasNext();) {
+            Integer child = (Integer)it.next();
+            buffer.append("/" + child.toString());
+        }
+        return buffer.toString();
+    }
+
+COM:serializes a child sequence into a string with each child separated by a forward slash

@@ -1,0 +1,14 @@
+TDAT:     public void testEvaluateXPath_1() throws Exception {
+        Document validXML = loadDocument("valid.xml");
+        
+        NodeList elements = xmlUtilities.evaluateXPath(
+                "ns:properties/ns:property",
+                validXML,
+                nsCtx);
+        
+        assertEquals(
+                2,
+                elements.getLength());
+    }
+
+COM:tests the evaluation of an XPath expression on a valid XML document and checks that it returns a specific number of elements

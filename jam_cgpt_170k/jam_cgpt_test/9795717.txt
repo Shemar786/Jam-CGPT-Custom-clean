@@ -1,0 +1,9 @@
+TDAT: 	//  public void openEditorInFocus() {
+	//    m_CellEditor = m_Model.getCellEditor(m_FocusCol, m_FocusRow);
+	//    if (m_CellEditor != null) {
+	//      Rectangle r = getCellRect(m_FocusCol, m_FocusRow);
+	//      m_CellEditor.open(this, m_FocusCol, m_FocusRow, r);
+	//    }
+	//  }
+
+COM:opens the cell editor in focus if it exists

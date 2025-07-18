@@ -1,0 +1,18 @@
+TDAT: 		private void createResourceCopy(Resource res1, Resource res2) throws IOException, CoreException {
+			IResource file1 = WorkspaceSynchronizer.getFile(res1);
+			IResource file2 = WorkspaceSynchronizer.getFile(res2);
+			// if files already synchronised don't continue
+			if (file1.getModificationStamp() == file2.getModificationStamp())
+				return;
+			
+			res1.load(null);
+			EObject element = res1.getContents().get(0);
+			res2.save(Collections.EMPTY_MAP);
+			res2.getContents().add(element);
+			res2.save(Collections.EMPTY_MAP);
+			
+			// synchronise modification stamp (used to prevent synchronisation loop)
+			file2.revertModificationStamp(file1.getModificationStamp());
+		}
+
+COM:copies the contents of one Eclipse resource (res1) to another (res2), and synchronizes the modification stamp of the second resource with the first to prevent a synchronization loop

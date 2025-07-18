@@ -1,0 +1,15 @@
+TDAT: 	private void removLastView() {
+		if (lastView != null) {
+			if (lastView instanceof DeleteBook)
+				((DeleteBook) lastView).setVisible(false);
+			else if (lastView instanceof AddBook)
+				((AddBook) lastView).setVisible(false);
+			else if (lastView instanceof EditBook)
+				((EditBook) lastView).setVisible(false);
+			else if (lastView instanceof AddEditBook)
+				((AddEditBook) lastView).setVisible(false);
+		}
+
+	}
+
+COM:removes the last view that was displayed, by hiding it if it was an instance of a certain type of view

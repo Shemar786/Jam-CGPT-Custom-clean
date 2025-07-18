@@ -1,0 +1,17 @@
+TDAT:     public void init() throws MessagingException {
+        repositoryPath = getInitParameter("repositoryPath");
+        try {
+            passThrough = Boolean.valueOf(getInitParameter("passThrough"));
+        } catch (Exception e) {
+            // Ignore exception, default to false
+        }
+
+        try {
+            repository = mailStore.select(repositoryPath);
+        } catch (Exception e) {
+            throw new MessagingException("Failed to retrieve MailRepository for url " + repositoryPath, e);
+        }
+
+    }
+
+COM:initializes the MailRepository and sets the passThrough value based on the initParameter values passed into it, throwing a MessagingException if there is an error retrieving the MailRepository

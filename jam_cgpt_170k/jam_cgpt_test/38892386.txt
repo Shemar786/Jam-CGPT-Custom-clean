@@ -1,0 +1,37 @@
+TDAT: 	public int getIndexMax(byte group) {
+		int indexMax = 0;
+
+		switch (DataObject.getObjectType(group)) {
+		case BIN_IN:
+			indexMax = binaryInputs[binaryInputs.length - 1].index;
+
+			break;
+
+		case BIN_OUT:
+			indexMax = binaryOutputs[binaryOutputs.length - 1].index;
+
+			break;
+
+		case COUNTER:
+			indexMax = counters[counters.length - 1].index;
+
+			break;
+
+		case ANA_IN:
+			indexMax = analogInputs[analogInputs.length - 1].index;
+
+			break;
+
+		case ANA_OUT:
+			indexMax = analogOutputs[analogOutputs.length - 1].index;
+
+			break;
+
+		case TIME:
+			indexMax = dateAndTime[analogOutputs.length - 1].index;
+		}
+
+		return indexMax;
+	}
+
+COM:returns the maximum index value for a specific group type (binary inputs, binary outputs, counters, analog inputs, analog outputs, or date and time)

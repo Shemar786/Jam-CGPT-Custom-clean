@@ -1,0 +1,13 @@
+TDAT:     private String generateVariableName(LPVariable variable) {
+        String result = variable.getName();
+        if (result == null || result.length() == 0) {
+            result = "x" + this.varCounter++;
+        }
+        else if (!Character.isLetter(result.charAt(0))) {
+            result = "x" + result;
+        }
+        
+        return result;
+    }
+
+COM:generates a variable name based on the input LPVariable and a counter

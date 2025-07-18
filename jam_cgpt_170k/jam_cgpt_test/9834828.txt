@@ -1,0 +1,12 @@
+TDAT: 	public void initialize (FacesContext ctx) {
+		if (!this.initialized && this.getCompiler() != null) {
+			synchronized (this) { 
+				this.postInitializeExtensions(ctx, this.getCompiler());
+				this.initializeControllers();
+				this.navigationRules = new NavigationScript().createRuleSet(this.getCompiler().getClassLoader(), ctx);
+				this.initialized = true;
+			}
+		}
+	}
+
+COM:initializes various components of a web application if they have not been previously initialized

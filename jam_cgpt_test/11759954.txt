@@ -1,0 +1,10 @@
+TDAT: 	public void initPeers(int startIndex, int numPeers, PeerFactory peerFactory) {
+		for (int peerIndex = startIndex; peerIndex < startIndex + numPeers; peerIndex++) {
+			Peer peer = peerFactory.createPeer(peerIndex, this);
+			peer.init(networkInterfaceFactory, createClock(), getAddressToBindTo(peerIndex));
+			peers.setSize(startIndex + numPeers);
+			peers.setElementAt(peer, peerIndex);
+		}
+	}
+
+COM:initializes a specified number of peers with a specified start index using a peer factory and sets them in the peers vector

@@ -1,0 +1,17 @@
+TDAT: 	protected Element getInputElement() {
+		/* have to first test to see if we are rendering an optional, simpleContent element. if so,
+			then we must test to see if the parent exists before creating the inputElement
+
+			*/
+		Element inputElement = super.getInputElement();
+		if (schemaNode.isSimpleOrComplexContent() && !sh.isRequiredBranch(schemaNode)) {
+			Element nodeExists = nodeExistsTest();
+			nodeExists.add(inputElement);
+			return nodeExists;
+		}
+		else {
+			return inputElement;
+		}
+	}
+
+COM:returns an input element, potentially modified based on certain conditions

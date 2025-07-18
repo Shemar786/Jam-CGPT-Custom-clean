@@ -1,0 +1,12 @@
+TDAT: 	public void drawUnselected() {
+		// Remove each handle, but don't remove the associated point.
+		for (int i = 0; i < handlePointList.size(); i++) {
+      if ( i > handleList.size() ) {
+        continue;
+      }
+      edgeView.removeChild((PNamedHandle) handleList.get(i));
+    }
+		handleList.removeAllElements();
+  }
+
+COM:removes all unselected handles associated with a specific edge in a graphical user interface

@@ -1,0 +1,8 @@
+TDAT:     protected void writeL(long value) {
+        _bao.write((int) (value & 0xff));
+        _bao.write((int) (value >> 8 & 0xff));
+        _bao.write((int) (value >> 16 & 0xff));
+        _bao.write((int) (value >> 24 & 0xff));
+    }
+
+COM:writes a long value to a data output stream in little-endian byte order

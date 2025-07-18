@@ -1,0 +1,14 @@
+TDAT:     public void read(InputStream in, Document doc, int pos) throws IOException, BadLocationException {
+
+        if (doc instanceof StyledDocument) {
+            // PENDING(prinz) this needs to be fixed to
+            // insert to the given position.
+            ANSIReader rdr = new ANSIReader((StyledDocument) doc);
+            rdr.readFromStream(in);
+        } else {
+            // treat as text/plain
+            super.read(in, doc, pos);
+        }
+    }
+
+COM:reads from an input stream and inserts the data into a document, using ANSI formatting if the document is styled and plain text if it is not

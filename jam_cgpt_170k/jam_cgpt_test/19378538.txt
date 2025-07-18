@@ -1,0 +1,8 @@
+TDAT:    private MenuItem buildTestCase(Menu menuBar, Menu menu) {
+  	 	MenuItem mitem = new MenuItem(menuBar,DEFAULT_MENU_STYLE);
+  	    mitem.setText(Messages.getString("UCEd.70"));    //$NON-NLS-1$
+  		mitem.setMenu(menu);
+  	    return mitem;
+  	 }
+
+COM:builds a test case by creating and configuring a MenuItem within a given Menu and returns the MenuItem

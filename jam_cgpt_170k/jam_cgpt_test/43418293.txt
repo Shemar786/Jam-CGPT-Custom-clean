@@ -1,0 +1,15 @@
+TDAT: 	public void notifySensors(final EnvironmentModel currEnvironmentModel, final boolean aSynchron) {
+		
+		Runnable notifier = new Runnable() {
+			@Override
+			public void run() {
+				Object[] arrLocal = serviceSensors.toArray();
+				for (int i = arrLocal.length-1; i>=0; i--) {
+					((ServiceSensor)arrLocal[i]).putEnvironmentModel(currEnvironmentModel, aSynchron);
+				}
+			}
+		};
+		notifier.run();		
+	}
+
+COM:notifies sensors with the current environment model and a synchronization flag using a runnable object

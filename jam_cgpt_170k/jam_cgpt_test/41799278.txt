@@ -1,0 +1,12 @@
+TDAT:     public void serialize( DataOutputStream out ) throws IOException {
+        out.writeInt(objmap.size());
+        for(Enumeration e = objmap.keys(); e.hasMoreElements(); ){
+            String key = (String) e.nextElement();
+            int val = ((Integer)objmap.get(key)).intValue();
+            
+            out.writeUTF(key);
+            out.writeInt(val);
+        }
+    }
+
+COM:takes a DataOutputStream object as an input and writes the data stored in a Hashtable object(objmap) to the output stream in a serialized form

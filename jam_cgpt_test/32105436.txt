@@ -1,0 +1,12 @@
+TDAT:     public NodeImpl cloneNode(boolean deep) {
+
+    	ElementImpl newnode = (ElementImpl) super.cloneNode(deep);
+    	// Replicate NamedNodeMap rather than sharing it.
+        if (attributes != null) {
+            newnode.attributes = (AttributeMap) attributes.cloneMap(newnode);
+        }
+    	return newnode;
+
+    } // cloneNode(boolean):Node
+
+COM:creates a deep or shallow copy of the current node and returns the copied Node object

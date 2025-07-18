@@ -1,0 +1,17 @@
+TDAT:     private JSplitPane getJSplitPane() {
+
+        if (jSplitPane == null) {
+            jSplitPane = new JSplitPane();
+
+            DevicesTreePanel p = new DevicesTreePanel();
+            p.addSelectionChangeListener(this);
+            jSplitPane.setLeftComponent(p);
+            jSplitPane.setRightComponent(getJTabbedPane());
+
+            jSplitPane.setDividerSize(5);
+            jSplitPane.setDividerLocation(200);
+        }
+        return jSplitPane;
+    }
+
+COM:returns a JSplitPane object, initializes it with two components (DevicesTreePanel and JTabbedPane), and sets some divider properties

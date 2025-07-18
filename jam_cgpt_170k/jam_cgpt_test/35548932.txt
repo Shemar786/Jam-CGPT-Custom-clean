@@ -1,0 +1,14 @@
+TDAT: 	public void setResponseState(int[] portState) {
+		if (null == portState) {
+			for (int i = 0, n = cells.length; i < n; i++) {
+				cells[i].setResponseState(DBDataDesc.VLAN_NOT_USED);
+
+			}
+		} else {
+			for (int i = 0, n = cells.length; i < n; i++) {
+				cells[i].setResponseState(portState[i]);
+			}
+		}
+	}
+
+COM:sets the response state of cells in an array based on the provided port state array or defaults to VLAN_NOT_USED if the port state array is null

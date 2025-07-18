@@ -1,0 +1,12 @@
+TDAT:     private void send(String strData) {
+        byte[] nBuf = strData.getBytes();
+        try {
+            out.write(nBuf.length);
+            out.write(nBuf);
+
+        } catch (IOException ex) {
+            Debug.log("Error while sending " + strData + " to the crawler. " + ex.toString(), nDebugId, Debug.FLAG_ERROR);
+        }
+    }
+
+COM:sends a string as a byte array to a designated output stream

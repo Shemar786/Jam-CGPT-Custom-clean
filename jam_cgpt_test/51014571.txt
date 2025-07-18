@@ -1,0 +1,21 @@
+TDAT:     private String parseType(String line) {
+
+        //TODO: Fix this function
+        //To get the types from the molecule file: cat molecule.dat | grep ^TY | sort -u > types.txt
+        //But it is systematicaly incorrect:
+
+        String type = "Protein";
+
+        if (line.startsWith("family"))
+            type = "ProtFam";
+
+        if (line.startsWith("complex"))
+            type = "Protcmplx";
+
+        if (line.startsWith("other"))
+            type = "Comp";
+
+        return type;
+    }
+
+COM:takes a line of text as input and returns a String type based on the content of the line

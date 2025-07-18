@@ -1,0 +1,13 @@
+TDAT: 	public Date getCompletePeriodEnd() {
+		Calendar cal = Calendar.getInstance();
+
+		Date endDate = cal.getTime();
+		for (entry currentEntry : client.getEntries().getJournal(false)) {
+			if (currentEntry.getDate().getTime() > endDate.getTime()) {
+				endDate = currentEntry.getDate();
+			}
+		}
+		return endDate;
+	}
+
+COM:retrieves the end date of a complete period by iterating through a list of entries and returning the latest date

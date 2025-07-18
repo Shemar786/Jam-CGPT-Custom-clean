@@ -1,0 +1,9 @@
+TDAT:   public String substringData(final int offset, final int count) {
+    try {
+      return XMLParserImpl.substringData(this.getJsObject(), offset, count);
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_ACCESS_ERR, e, this);
+    }
+  }
+
+COM:returns a substring of the XMLParserImpl data object based on the specified offset and count parameters

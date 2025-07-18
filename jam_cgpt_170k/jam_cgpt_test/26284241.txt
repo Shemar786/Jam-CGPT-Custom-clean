@@ -1,0 +1,9 @@
+TDAT:     private boolean isSelected(int row, int col) {
+        if(mouseOverDate >= 0)
+            return mouseOverDate == row * xDaysOffsets.length + col;
+        if (isPrevMonth(row, col) || isNextMonth(row, col))
+            return false;
+        return getDate(row, col) == model.getDate();
+    }
+
+COM:checks if a date at a specific row and column is selected based on the mouseOverDate, the current month, and the model's date

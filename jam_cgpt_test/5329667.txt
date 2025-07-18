@@ -1,0 +1,11 @@
+TDAT:     public int getNumberOfCards() {
+        int numberOfCards = unlearnedBatch.getNumberOfCards();
+        numberOfCards += ultraShortTermList.size();
+        numberOfCards += shortTermList.size();
+        for (LongTermBatch longTermBatch : longTermBatches) {
+            numberOfCards += longTermBatch.getNumberOfCards();
+        }
+        return numberOfCards;
+    }
+
+COM:returns the total number of cards in all batches, including unlearned, ultra-short-term, short-term, and long-term batches

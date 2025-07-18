@@ -1,0 +1,14 @@
+TDAT: 	public Resource putContent(String resourceUrl, byte[] content, String label) throws Exception {
+		// if resource exists at resourceUrl, then use it
+		Resource resource = findResource(resourceUrl);
+		if (resource == null) {
+			prtln("putContent: resource does not exist");
+			resource = ndr.newObject(Type.Resource);
+		}
+		if (resource == null)
+			throw new Exception("Unable to create new resource");
+		setResourceContent(resource, content, label);
+		return resource;
+	}
+
+COM:either finds and updates an existing Resource object at a given URL with new byte content and label, or creates a new Resource object with the same parameters

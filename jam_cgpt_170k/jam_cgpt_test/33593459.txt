@@ -1,0 +1,15 @@
+TDAT:     public Event execute(RequestContext requestContext) throws Exception {
+        
+        /*
+         * Fetches the phone number from the request parameters.
+         */
+        String phoneNumber = requestContext.getRequestParameters().get("phoneInputForm:inputPhoneId");
+        
+        /*
+         * Service call with the previously fetched phone number
+         */
+        String exists = this.customerService.existsCustomer(phoneNumber);
+        return new Event(this, exists);
+    }
+
+COM:executes a service call with a phone number fetched from request parameters and returns an Event with the result

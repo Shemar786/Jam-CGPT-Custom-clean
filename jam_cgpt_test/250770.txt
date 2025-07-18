@@ -1,0 +1,23 @@
+TDAT: 	public String parse(byte[] b) {
+		logger.debug("entering ParsePDF.parse()");
+
+		ByteArrayInputStream is = new ByteArrayInputStream(b);
+
+		try {
+			PDFParser p = new PDFParser(is);
+			p.parse();
+			PDDocument pd = p.getPDDocument();
+			PDFTextStripper ts = new PDFTextStripper();
+
+			String str = ts.getText(pd);
+
+			pd.close();
+
+			return str;
+		} catch (Exception ex) {
+			logger.error("Error parsing pdf file", ex);
+			return "";
+		}
+	}
+
+COM:accepts a byte array containing a PDF file, uses a PDF parser to extract the text contents, and returns the extracted text as a String

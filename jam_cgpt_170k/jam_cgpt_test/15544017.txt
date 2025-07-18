@@ -1,0 +1,14 @@
+TDAT: 	public void ComputeTotalInformation( ) {
+	    int     i, j;
+	    int NumCities = Problem.NumCities;
+//	    TRACE ( printf("compute total information\n"); );
+
+	    for ( i = 0 ; i < NumCities ; i++ ) {
+	    	for ( j = 0 ; j < i ; j++ ) {
+	    		Total[i][j] = Math.pow(Pheromone[i][j],Acotsp.ALPHA) * Math.pow(HEURISTIC(i,j),Acotsp.BETA);
+	    		Total[j][i] = Total[i][j];
+	    	}
+	    }
+	}
+
+COM:calculates the total information of a given problem using a mathematical formula involving the Pheromone values and a heuristics function

@@ -1,0 +1,12 @@
+TDAT:   public Counter asCounter() {
+    PriorityQueue<E> pq = clone();
+    Counter<E> counter = new Counter<E>();
+    while (pq.hasNext()) {
+      double priority = pq.getPriority();
+      E element = pq.next();
+      counter.incrementCount(element, priority);
+    }
+    return counter;
+  }
+
+COM:converts a PriorityQueue into a Counter by counting the number of occurrences of each element in the PriorityQueue

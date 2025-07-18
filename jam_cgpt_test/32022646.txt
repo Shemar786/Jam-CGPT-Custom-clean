@@ -1,0 +1,15 @@
+TDAT:     public List find(String query, Type[] types, Object[] params) throws HibernateException {
+        List retList = null;
+        Session session = null;
+        try {
+            retList = find(getSession(), query, params, types);
+        } catch (HibernateException e) {
+            log.warn(e, e);
+            throw new HibernateException(e);
+        } finally {
+            close(session);
+        }
+        return retList;
+    }
+
+COM:searches for database records based on a Hibernate query using the provided parameters and returns the results in a list

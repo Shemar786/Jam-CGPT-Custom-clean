@@ -1,0 +1,18 @@
+TDAT: 		public void setFocus(ConceptClass cc) {
+			removeAll();
+			if (cc != null) {
+				ArrayList<EdgeMappingDescriptor> ds = cc2descriptorList.get(cc.getId());
+				if (ds != null) {
+					for (EdgeMappingDescriptor d : ds) {
+						JCheckBox box = new JCheckBox(d.getName());
+						box.setName(d.getId());
+						box.setBackground(Color.white);
+						add(box);
+					}
+				}
+			}
+			revalidate();
+			getParent().repaint();
+		}
+
+COM:sets focus on a given ConceptClass and creates JCheckBoxes based on EdgeMappingDescriptors associated with it

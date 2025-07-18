@@ -1,0 +1,23 @@
+TDAT:     public ProjectPart getPart(String partpath) {
+        Project parent = getProjectForPart(partpath);
+
+        if (parent == null)
+            return null;
+
+        if (parent == this) {
+            Iterator i = parts.iterator();
+
+            while (i.hasNext()) {
+                ProjectPart element = (ProjectPart) i.next();
+
+                if (element.getPartName().equals(partpath))
+                    return element;
+            }
+
+            return null;
+        }
+
+        return parent.getPart(getPartName(partpath));
+    }
+
+COM:returns a specific part of a project based on the provided path

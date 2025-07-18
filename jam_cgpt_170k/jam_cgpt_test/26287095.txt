@@ -1,0 +1,7 @@
+TDAT:     protected void paintButton(Graphics g, AbstractButton button) {
+        Graphics2D g2d = (Graphics2D)g;
+        g2d.setPaint(new GradientPaint(0, 0, button.getBackground().brighter(), 0,  button.getHeight()-2, button.getBackground().darker(), true));
+        g2d.fillRect(0,0,button.getWidth()-2, button.getHeight()-2);
+    }
+
+COM:paints a button with a gradient color background using the paintButton() method of AbstractButton and Graphics class

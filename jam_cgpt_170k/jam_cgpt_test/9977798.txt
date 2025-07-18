@@ -1,0 +1,10 @@
+TDAT:     private JSplitPane getVerticalSplitPane() {
+        if (verticalSplitPane == null) {
+            verticalSplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+            verticalSplitPane.setTopComponent(getHorizontalSplitPane());
+            verticalSplitPane.setBottomComponent(getDiagram());
+        }
+        return verticalSplitPane;
+    }
+
+COM:returns a JSplitPane with a horizontal split pane and a diagram component in its bottom section

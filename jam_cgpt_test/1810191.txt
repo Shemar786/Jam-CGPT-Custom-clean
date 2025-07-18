@@ -1,0 +1,8 @@
+TDAT:   public void fireCellClicked(SourcesTableEvents sender, int row, int cell) {
+    for (Iterator it = iterator(); it.hasNext();) {
+      TableListener listener = (TableListener) it.next();
+      listener.onCellClicked(sender, row, cell);
+    }
+  }
+
+COM:fires an event to notify TableListeners when a cell in a table is clicked

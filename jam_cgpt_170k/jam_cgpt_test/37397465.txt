@@ -1,0 +1,11 @@
+TDAT:   public void testDoEnd() throws IOException {
+    String resource = "test.org.chwf.taglib.ji18n.ResourceTagTest";
+    resourceTag.setBasename(resource);
+    resourceTag.doEnd();
+    
+    MessageTag messageTag = new MessageTag();
+    messageTag.setPageContext(this.getPageContext());
+    assertEquals(resource, messageTag.getResource());
+  }
+
+COM:tests the functionality of the doEnd() method of the ResourceTag class and sets the resource for the MessageTag class

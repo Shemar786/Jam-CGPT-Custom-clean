@@ -1,0 +1,10 @@
+TDAT:     public Command getExitCommandMenuList() {
+        if (exitCommandMenuList == null) {//GEN-END:|66-getter|0|66-preInit
+            // write pre-init user code here
+            exitCommandMenuList = new Command("Exit", Command.EXIT, 0);//GEN-LINE:|66-getter|1|66-postInit
+        // write post-init user code here
+        }//GEN-BEGIN:|66-getter|2|
+        return exitCommandMenuList;
+    }
+
+COM:returns the "Exit" command from a menu list, creating it if it has not been previously initialized

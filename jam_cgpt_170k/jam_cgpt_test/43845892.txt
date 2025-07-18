@@ -1,0 +1,8 @@
+TDAT:     public ByteCodeHelper strBuilderToString(int pos) {
+        mv.visitVarInsn(Opcodes.ALOAD, pos);
+        mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, "java/lang/StringBuilder", "toString", "()Ljava/lang/String;");
+        mv.visitInsn(Opcodes.POP);
+        return this;
+    }
+
+COM:converts a StringBuilder object to a String and returns the ByteCodeHelper object

@@ -1,0 +1,13 @@
+TDAT:     public DatagramPacket getPacket() {
+        try {
+            // forces the cipher to encrypt any remaining bytes
+            close();
+        } catch (IOException e) {
+            log.error("unable to flush stream to create packet!");
+        }
+        
+        byte[] packetBytes = packetByteStream.toByteArray();
+        return new DatagramPacket(packetBytes, packetBytes.length);
+    }
+
+COM:retrieves a DatagramPacket object after encrypting any remaining bytes and converting them into a byte array

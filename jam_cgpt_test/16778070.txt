@@ -1,0 +1,9 @@
+TDAT:     public void axpy(double alpha, IMatrix X){
+    	for(int i=0;i<this.m;i++){
+    		for(int j=0;j<this.n;j++){
+    			this.values[i][j]+=alpha*X.getValue(i,j);
+    		}
+    	}
+    }
+
+COM:performs the operation of scalar multiplication and matrix addition (AXPY) where each element of the current matrix is added with the product of given scalar and the corresponding element of the input matrix

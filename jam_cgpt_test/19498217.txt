@@ -1,0 +1,23 @@
+TDAT: 	public void testSeesContext_01() throws Exception {
+		IContextRoot con1 = createContext("con1");
+		saveRodinFileOf(con1);
+		
+		IContextRoot con2 = createContext("con2");
+		addContextExtends(con2, "con1");
+		saveRodinFileOf(con2);
+		
+		IMachineRoot mac = createMachine("mac");
+		addInitialisation(mac);
+		addMachineSees(mac, "con2");
+		saveRodinFileOf(mac);
+		
+		runBuilder();
+		
+		ISCMachineRoot file = mac.getSCMachineRoot();
+		seesContexts(file, "con2");
+		containsContexts(file, "con1", "con2");
+
+		containsMarkers(mac, false);
+	}
+
+COM:creates and saves several context and machine objects, verifies their properties, and checks for any markers

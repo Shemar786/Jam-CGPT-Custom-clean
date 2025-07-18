@@ -1,0 +1,10 @@
+TDAT:     public void setRequestHeaders(String s) {
+        requestHeaders = new HashMap();
+        StringTokenizer tok = new StringTokenizer(s, "|");
+        while (tok.hasMoreElements()) {
+            String header = (String) tok.nextElement();
+            setHeaderDetails(header, requestHeaders, true);
+        }
+    }
+
+COM:sets the request headers based on a given string

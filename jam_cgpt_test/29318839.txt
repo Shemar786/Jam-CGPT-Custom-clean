@@ -1,0 +1,11 @@
+TDAT:   private void addReplyTo(SOAPHeaderElement elem) throws MalformedURIException {
+    if (this.replyTo == null) {
+      this.replyTo = new ReplyTo(elem);
+    } else {
+      this.addrHeaderFault = new AddressingHeaderFault(
+        AddressingHeaderFault.INVALID_CARDINALITY,
+        Constants.REPLY_TO);
+    }
+  }
+
+COM:adds a reply-to element to a SOAP header, throwing a MalformedURIException if the URI is malformed

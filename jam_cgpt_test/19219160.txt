@@ -1,0 +1,10 @@
+TDAT:     public CharEntityInfo getCharEntityInfo(String charEntName) {
+        if (charEntName == null || charEntName.length() == 0) {
+            return null; // bail out
+        }
+        int index = charEntsLoaded.getElementIndex(charEntName);
+        return (CharEntityInfo) (index >= 0 ?
+                                 charEntsLoaded.getElementAt(index) : null);
+    }
+
+COM:retrieves information on a character entity based on its name

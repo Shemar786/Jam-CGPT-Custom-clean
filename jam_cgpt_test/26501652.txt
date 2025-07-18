@@ -1,0 +1,13 @@
+TDAT:   public Socket accept() throws IOException {
+    if (isClosed()) {
+      throw new SocketException("Socket is closed");
+    } else if (!isBound()) {
+      throw new SocketException("Socket is not bound yet");
+    } else if (_theDefaultConnector == null) {
+      initializeDefaultConnector();
+    }
+
+    return _theDefaultConnector.getQueue().getSocket();
+  }
+
+COM:accepts an incoming connection request, throwing an IOException if the socket is closed or not yet bound, and returns a Socket object

@@ -1,0 +1,10 @@
+TDAT: 	public String getVersion(String clientId) throws PsiscoreException, InvalidArgumentException{
+		if (!psiscoreServerClients.containsKey(clientId)){
+			throw new InvalidArgumentException("There is no client with this ID", new PsiscoreFault());
+		}
+        String version = psiscoreServerClients.get(clientId).getVersion();
+        //System.out.println("Version: " +  version);
+        return version;
+	}
+
+COM:retrieves the version number of a client application identified by its ID, throwing an exception if the ID is invalid or the client does not exist in the server's list

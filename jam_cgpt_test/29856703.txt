@@ -1,0 +1,10 @@
+TDAT:   public void setObject(int r, Object v) {
+    if (v instanceof byte[]) {
+      byte[]  b = (byte[])v;
+      setColor(r, new Color(reformat(b[0]), reformat(b[1]), reformat(b[2])));
+    } else {
+      setColor(r, (Color)v);
+    }
+  }
+
+COM:sets the color for a given object based on either a byte array or a Color object

@@ -1,0 +1,12 @@
+TDAT:   public void setPropertyValue(Object target, String propertyName, Object propertyValue) {
+    Method method = getSetter(propertyName);
+    if (!method.isAccessible())
+      method.setAccessible(true);
+    try {
+      method.invoke(target, propertyValue);
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+COM:sets a property value on a target object using its corresponding setter method

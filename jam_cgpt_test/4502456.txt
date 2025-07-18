@@ -1,0 +1,17 @@
+TDAT: 	public void setAdminDetails() {
+		FireEngineServiceStub.Point point = new FireEngineServiceStub.Point();
+		point.setX(mLocation.x);
+		point.setY(mLocation.y);
+		
+		SetAdminDetails adminDetails = new SetAdminDetails();
+		adminDetails.setHomeBase(point);
+		adminDetails.setDispatchService(mDispatchService);
+		
+		try {
+			mStub.setAdminDetails(adminDetails);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+	}
+
+COM:sets the administrative details of a fire engine service using the provided location and dispatch service

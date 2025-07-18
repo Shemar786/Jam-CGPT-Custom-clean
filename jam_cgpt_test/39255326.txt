@@ -1,0 +1,22 @@
+TDAT: 	private void loadData() {
+		dataLoaded = true;
+		mf = new JFrame();
+		pbar = new ProgressBarWrapper(mf, "Importing Test AMS Data", 100);
+		importer = new AMSDataSetImporter(table, mf, db, pbar);
+		
+		try {
+			importer.errorCheck();
+		} catch (DisplayException ex) {
+			ex.printStackTrace();
+			fail("Error in inserting AMS table data");
+		}
+		
+		try {
+			importer.collectTableInfo();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			fail("Error in importing test AMS data");
+		}
+	}
+
+COM:loads test AMS data into a database and displays a progress bar using a JFrame

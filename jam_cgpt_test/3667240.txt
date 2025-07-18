@@ -1,0 +1,13 @@
+TDAT:     public void setExtent(double newExtent) {
+        double extent = newExtent;
+        if (extent < 0.0)
+            extent = 0.0;
+        if (extent > (m_max - m_value))
+            extent = m_max - m_value;
+        setRangeProperties(
+            m_value, extent, m_min, m_max, m_adjusting,
+            LinearRangeModelEvent.GENERAL_ADJUSTMENT
+        );
+    }
+
+COM:sets the extent of a range model, ensuring that it is not less than 0 or greater than the maximum value minus the current value

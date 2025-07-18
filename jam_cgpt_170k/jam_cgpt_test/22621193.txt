@@ -1,0 +1,15 @@
+TDAT: 	public int getSelectedCATStartGrade(String[] gradeConstraints) {
+		if (gradeConstraints == null || !this.getCatHelper().getUseGradeRanges()) {
+			return CATRequestConstraints.ANY_GRADE;
+		}
+
+		int min = CATRequestConstraints.ANY_GRADE;
+		try {
+			min = Math.min(Integer.parseInt(gradeConstraints[0]), Integer.parseInt(gradeConstraints[1]));
+		} catch (Throwable t) {
+			prtln("WARNING: getSelectedCATStartGrade problem: " + t.getMessage());
+		}
+		return min;
+	}
+
+COM:returns the minimum grade selected by the user based on the given constraints

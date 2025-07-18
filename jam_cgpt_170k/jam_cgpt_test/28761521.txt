@@ -1,0 +1,13 @@
+TDAT:   private void updatePopupSelectErrors() {
+    for (CheckErrorAlgorithm algorithm : allAlgorithms) {
+      if (algorithm != null) {
+        int errorNumber = algorithm.getErrorNumber();
+        JMenuItem menuItem = menuItemAlgorithms.get(errorNumber);
+        if (menuItem != null) {
+          menuItem.setSelected(selectedAlgorithms.contains(algorithm));
+        }
+      }
+    }
+  }
+
+COM:updates the selection status of menu items based on whether certain algorithms contain errors

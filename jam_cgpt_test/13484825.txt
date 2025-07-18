@@ -1,0 +1,10 @@
+TDAT:     public void visitNEW(NEW nI) {
+        ConstantPoolGen cp = block.graph().method().getConstantPool();
+        Type type = nI.getLoadClassType(cp);
+        Expr top = new NewExpr(type, Type.OBJECT);
+        stack.push(top);
+
+        db("      new: " + top);
+    }
+
+COM:visits a NEW node in the code and creates a new object of the given class type, which is then added to the stack

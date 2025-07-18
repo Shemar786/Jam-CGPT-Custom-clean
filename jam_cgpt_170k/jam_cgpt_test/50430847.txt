@@ -1,0 +1,11 @@
+TDAT:     private int indexOf(String email) {
+        for(int i=0; i < contacts.size(); i++) {
+            String a = ((Contact)contacts.get(i)).getEmail().getAddress();
+            if(a.equalsIgnoreCase(email)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+COM:searches for the index of a specified email address within a list of Contact objects

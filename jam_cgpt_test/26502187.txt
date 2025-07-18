@@ -1,0 +1,12 @@
+TDAT:   public String getTime() {
+    long   aCurrentTime = System.currentTimeMillis();
+    Date   aCurrentDate = new Date(aCurrentTime);
+    String aResult      = _theFormat.format(aCurrentDate);
+
+    System.out.println((++_theCoutner) + " - Invocation took " +
+      (System.currentTimeMillis() - aCurrentTime) + " ms @" + _theId);
+
+    return aResult + "  @" + _theId;
+  }
+
+COM:returns the current time in a specific format and also prints out how long the method took to execute

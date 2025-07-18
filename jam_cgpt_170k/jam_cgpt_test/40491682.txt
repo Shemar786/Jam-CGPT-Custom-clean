@@ -1,0 +1,8 @@
+TDAT:     public void drive() {
+        double vX = convertControl(getPercent(x));
+        double vY = convertControl(getPercent(y));
+        log("Drive: " + (vY - vX) + "\t " + vY + vX);
+        base.percentDrive(vY - vX, vY + vX);
+    }
+
+COM:drives a robot by calculating the velocities for the left and right wheels and sending them to the robot's motor controllers

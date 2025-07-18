@@ -1,0 +1,10 @@
+TDAT:     public void addRotation(Vector3f axis, Angle rotation) {
+        Quaternion q = new Quaternion(rotation, axis);
+        Matrix result = new Matrix(4, 4);
+        Matrix quaternion = q.getRotationMatrix();
+       
+        Matrix.multiply(matrix,q.getRotationMatrix(), result);
+        matrix = result;
+    }
+
+COM:applies a rotation to a 4x4 matrix using a given axis and angle

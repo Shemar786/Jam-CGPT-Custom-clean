@@ -1,0 +1,20 @@
+TDAT: 	public void testConv_14_onlyContributorCanAddAttribute() throws Exception {
+		
+		IConfigurationElement[] vElements =
+			makeFileElementVersions(
+					new FileElementVersion(PLUGIN_ID, FILEA_TYPE, "1")
+			);
+		
+		IConfigurationElement[] cElements =
+			makeConversions(
+					new SimpleConversion(OTHER_PLUGIN_ID, FILEA_TYPE, "1",
+							new Element(
+									"/" + FILEA_TYPE + "/" + ELEMA_TYPE, 
+									new AddAttribute(ATTRS_TYPE, "x"))
+						)
+				);
+			
+		faultyConversions(vElements, cElements, cElements);
+	}
+
+COM:tests that only a contributor can add an attribute to a specific element in a given XML file

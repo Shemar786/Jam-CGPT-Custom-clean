@@ -1,0 +1,9 @@
+TDAT:   public Date toDateFormat(String value, String pattern) throws Exception {
+    if ((pattern == null) || (pattern.trim().length() < 1)) {
+      pattern = "dd-MM-yyyy";
+    }
+    java.text.SimpleDateFormat df = new java.text.SimpleDateFormat(pattern);
+    return df.parse(value);
+  }
+
+COM:converts a string to a date format using a specified pattern, and throws an exception if an error occurs

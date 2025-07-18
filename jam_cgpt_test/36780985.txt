@@ -1,0 +1,17 @@
+TDAT:   private void storeToFile(){
+    FileOutputStream fos = null;
+    try{
+        fos = new FileOutputStream(new File(accountFile));
+        users.store(fos, null);//no comments written
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        if(fos != null){
+            try{
+                fos.close();
+            } catch (IOException e) {}
+        }
+    }
+  }
+
+COM:writes the contents of a data structure 'users' to a file specified by 'accountFile' using a FileOutputStream, and closes the stream upon completion or in the event of an exception

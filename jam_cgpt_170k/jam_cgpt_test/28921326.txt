@@ -1,0 +1,15 @@
+TDAT: 	private Node blockPresentationMathML(final String data) {
+		try {
+			ComputereseTree computereseTree = computereseParser.parse(data);
+			DocumentFragment docFrag = presentationMathMLTranslator.translate(computereseTree, true, MathDisplayMode.BLOCK);
+			Node mathNode = docFrag.getFirstChild();
+			
+			return mathNode;		
+		} catch (ComputereseParserException cpe) {			
+			cpe.printStackTrace();
+			
+			return document.createCDATASection(cpe.getMessage()); 
+		}		
+	}
+
+COM:takes a string containing MathML data, parses it using a computerese parser, translates it into a DocumentFragment, and returns the resulting Node

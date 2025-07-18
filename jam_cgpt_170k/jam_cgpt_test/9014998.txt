@@ -1,0 +1,18 @@
+TDAT: 	protected Node makeTag(int start, int end, Vector attributes) throws ParserException {
+		int length;
+		Node ret;
+
+		length = end - start;
+		if (0 != length) { // return tag based on second character, '/', '%',
+							// Letter (ch), '!'
+			if (2 > length)
+				// this is an error
+				return (makeString(start, end));
+			ret = getNodeFactory().createTagNode(this.getPage(), start, end, attributes);
+		} else
+			ret = null;
+
+		return (ret);
+	}
+
+COM:creates a Node object for a parsed XML or HTML tag, given the start and end positions and any attributes

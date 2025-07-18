@@ -1,0 +1,11 @@
+TDAT: 	public int getPercent() {
+		double total = monitor.getMaximum() - monitor.getMinimum();
+		double value = monitor.getValue() - monitor.getMinimum();
+		if (total == 0) {
+			return 0; // avoid div 0
+		}
+		int proz = (int)(value / total * 100); 
+		return proz > 100 ? 100 : proz < 0 ? 0 : proz;
+	}
+
+COM:calculates the percentage of a monitoring value relative to the minimum and maximum values

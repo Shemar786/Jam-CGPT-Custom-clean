@@ -1,0 +1,10 @@
+TDAT:     public void bindFcNotification(String clientItfName, Object serverItf) throws NoSuchInterfaceException, IllegalBindingException,IllegalLifeCycleException {
+
+        Logger.println(LogReflex.info, "ReflexBindingMixin.bindFcNotification " + clientItfName);
+        Logger.println(LogReflex.debug, myName());
+        
+        // calls the overriden bindFc method
+        super.bindFc(clientItfName, serverItf);
+    }
+
+COM:binds a client interface to a server interface and throws exceptions if the binding is not valid

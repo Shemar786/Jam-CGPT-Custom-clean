@@ -1,0 +1,20 @@
+Show the status of the city that has hosted the greatest number of competitions.
+Please show the themes of competitions with host cities having populations larger than 1000.
+Please show the different statuses of cities and the average population of cities with each status.
+Please show the different statuses, ordered by the number of cities that have each.
+List the most common type of Status across cities.
+List the official names of cities that have not held any competition.
+Show the status shared by cities with population bigger than 1500 and smaller than 500.
+Find the official names of cities with population bigger than 1500 or smaller than 500.
+Show the census ranking of cities whose status are not "Village".
+Which course has the most number of registered students?
+What is the id of students who registered the least number of courses?
+What are the first name and last name of all candidates?
+List the id of students who never attend courses.
+List the id of students who attended some courses.
+What are the ids of all students and the names of those courses they registered?
+What is the detail of the student who most recently registered a course?
+How many students attend the course English?
+How many courses does the student with id 171 attend?
+Find the id of the candidate whose email is stanley.monahan@example.org.
+What is the detail of the student who registered the most number of courses?

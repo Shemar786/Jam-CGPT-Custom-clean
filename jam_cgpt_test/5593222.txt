@@ -1,0 +1,11 @@
+TDAT:     public void maskChanged(wpMaskEvent e) {
+      Action act[] = null;
+      wpMask mask = e.getMask();
+      int grp = mask.getGroup();
+      act = allActions[grp];
+      for (int i = 0; i < mask.getCount(); i++) {
+        act[mask.getIndices()[i]].setEnabled(mask.getStatus()[i]);
+      }
+    }
+
+COM:handles changes in a mask by getting the group and its actions and enabling or disabling them based on the mask's current status

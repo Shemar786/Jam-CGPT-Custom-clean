@@ -1,0 +1,8 @@
+TDAT: 	public void testConvert() {
+		SpeedVec a = new SpeedVec(base.times(2.1), base.times(-3.4), base);
+		SpeedVec b = new SpeedVec(a.toString());
+		System.out.println("new SpeedVec(" + a + ")=" + b);
+		assertEquals("Equals", a, b);
+	}
+
+COM:tests the conversion ability of the SpeedVec class by creating two instances of SpeedVec and checking whether they are equal

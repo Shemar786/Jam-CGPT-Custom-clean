@@ -1,0 +1,14 @@
+TDAT:     public void saveConfiguration() {
+        Configuration config = getConfiguration();
+        persistence.saveConfiguration(config);
+
+        log.info("Configuration saved");
+
+        log.debug("Notifying the registered ConfigurationListeners");
+        for (ConfigurationListener listener : configListenerList) {
+            listener.configurationChanged(new ConfigurationEvent(config));
+        }
+        log.debug("ConfigurationListeners notified");
+    }
+
+COM:saves the configuration and notifies registered listeners of the change

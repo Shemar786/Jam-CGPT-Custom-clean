@@ -1,0 +1,10 @@
+TDAT: 	public void allocateChunk(VideoChunk chunk, Data sizeInChunk) throws AllocationException {
+		if (sizeInChunk.isGreaterThan(unallocatedChunksize)) {
+			throw new AllocationException(chunk, this);
+		}
+		allocatedChunksizes.put(chunk, sizeInChunk);
+		unallocatedBlocksizes.put(chunk, sizeInChunk);
+		unallocatedChunksize = unallocatedChunksize.subtract(sizeInChunk);
+	}
+
+COM:allocates a video chunk with a given data size, throws an exception if the size exceeds the available unallocated chunk size, and updates the size of allocated and unallocated chunks

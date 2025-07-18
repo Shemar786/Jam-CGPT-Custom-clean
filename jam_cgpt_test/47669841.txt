@@ -1,0 +1,15 @@
+TDAT: 	private PaletteContainer createAssociations2Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(
+				FeatureUseCase.diagram.part.Messages.Associations2Group_title);
+		paletteContainer.setId("createAssociations2Group"); //$NON-NLS-1$
+		paletteContainer
+				.setDescription(FeatureUseCase.diagram.part.Messages.Associations2Group_desc);
+		paletteContainer.add(createMutex1CreationTool());
+		paletteContainer.add(createRequire2CreationTool());
+		paletteContainer.add(createUseCaseAssociation3CreationTool());
+		paletteContainer.add(createUseCaseIncludes4CreationTool());
+		paletteContainer.add(createUseCaseExtends5CreationTool());
+		return paletteContainer;
+	}
+
+COM:creates a PaletteDrawer that contains several creation tools for different types of associations

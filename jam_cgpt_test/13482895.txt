@@ -1,0 +1,17 @@
+TDAT:     public void visitSwitchStmt(SwitchStmt stmt) {
+        Set targets = new LinkedHashSet();
+
+        targets.add(stmt.defaultTarget());
+
+        for (int i = 0; i < stmt.targets().length; i++) {
+            targets.add(stmt.targets()[i]);
+        }
+
+        targets.addAll(stmt.catchTargets());
+
+        verifyTargets(stmt.block(), targets);
+
+        visitNode(stmt);
+    }
+
+COM:visits a switch statement and verifies its targets

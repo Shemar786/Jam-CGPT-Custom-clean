@@ -1,0 +1,17 @@
+TDAT: 	public String getCatName() {
+		String name = null;
+		if (category.equals("new")) {
+			return new String("Incoming");
+		} // end of if (category.equals("new"))
+		else if (category.equals("signed")) {
+			return new String("Signed");
+		} // end of else if (category.equals("signed"))
+		else if (category.equals("drafts")) {
+			return new String("Drafts");
+		} // end of else if (category.equals("drafts"))
+		else {
+			return new String("Watched");
+		} // end of else
+	}
+
+COM:returns a String representing the category of a document based on a predefined set of values

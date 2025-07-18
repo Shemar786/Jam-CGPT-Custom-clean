@@ -1,0 +1,17 @@
+TDAT:   protected void addQuerySqlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Query_querySql_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Query_querySql_feature", "_UI_Query_type"),
+				 DbPackage.Literals.QUERY__QUERY_SQL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a new descriptor for a Query's SQL property

@@ -1,0 +1,8 @@
+TDAT:    private void numberTrace(Point point, int number) {
+      graphic.setColor(Color.RED);
+      graphic.drawString(String.valueOf(number), (int)point.getX() - 5,
+            (int)point.getY() - 5);
+      graphic.setColor(Color.BLACK);
+   } // numberTrace
+
+COM:takes a Point object and an integer, sets the graphic color to red, draws the number as a string at the Point object's coordinates, then sets the color back to black

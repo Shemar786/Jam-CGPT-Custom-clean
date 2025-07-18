@@ -1,0 +1,12 @@
+TDAT:         protected void initInternal() throws Exception {
+
+                try {
+                        internal = MessageResources.getMessageResources(internalName);
+                } catch (MissingResourceException e) {
+                        log("Cannot load internal resources from '" + internalName + "'", e);
+                        throw new UnavailableException
+                                ("Cannot load internal resources from '" + internalName + "'");
+                }
+        }
+
+COM:initializes internal resources and throws an exception if the resources cannot be loaded

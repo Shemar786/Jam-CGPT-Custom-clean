@@ -1,0 +1,6 @@
+TDAT:         public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+            String description = value == null ? "" : ((javax.swing.filechooser.FileFilter)value).getDescription();
+            return super.getListCellRendererComponent(list, description, index, isSelected, cellHasFocus);
+        }
+
+COM:is used to render a list cell by getting the FileFilter object's description and passing it to the parent component

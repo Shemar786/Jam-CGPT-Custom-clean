@@ -1,0 +1,7 @@
+TDAT:     protected void setEnvironment() {
+        OS.getInstance().setVarVal("Dissi$Dir",
+                                   "$.Volumes.Personal.Acorn.Programming.ARM.Utilities.!Dissi", 0);
+        OSExt.getInstance().writeEnv("!RunImage", new Date());
+    }
+
+COM:sets the environment variable "Dissi$Dir" to a specified value and writes the current date to the environment variable "!RunImage"

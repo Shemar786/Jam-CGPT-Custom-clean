@@ -1,0 +1,15 @@
+TDAT:     public void setFillHint(Widget child, boolean expand) {
+
+        if (containsChildWidget(child)) {
+            if (expand) {
+                this.fillHintedWidgets.addElement(child);
+            } else {
+                this.fillHintedWidgets.removeElement(child);
+            }
+        } else {
+            throw new
+                IllegalArgumentException("was not a child widget: " + child);
+        }
+    }
+
+COM:sets a fill hint for a child widget by adding or removing it from a list of fill hinted widgets

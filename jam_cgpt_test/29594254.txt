@@ -1,0 +1,16 @@
+TDAT:   public String getString() {
+    int rank = getRank();
+    if (rank != 1)
+      throw new IllegalArgumentException("ArayChar.getString rank must be 1");
+    int strLen = getShape()[0];
+
+    int count = 0;
+    for (int k=0; k<strLen; k++) {
+      if (0 == storage[k])
+        break;
+      count++;
+    }
+    return new String(storage, 0, count);
+  }
+
+COM:returns a string of characters from an array, throwing an exception if the array rank is not 1

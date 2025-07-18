@@ -1,0 +1,10 @@
+TDAT:     public String getOutputIP(String input) {
+        if (this.method.compareTo("dbSorting") == 0) {
+            return this.compareWithAnchors(input);
+        } else if (this.method.compareTo("chordBased") == 0) {
+            return this.compareHashCode(input);
+        }
+        return "";
+    }
+
+COM:returns a string based on specific comparisons determined by the "method" variable

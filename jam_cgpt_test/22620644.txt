@@ -1,0 +1,17 @@
+TDAT: 	public void renderSubElements() {
+		if (typeDef != null && typeDef.isAnyType()) {
+			MdeAny any = new MdeAny(this);
+			any.render();
+		}
+		else if (typeDef == null || !typeDef.isComplexType()) {
+			MdeSimpleType st = new MdeSimpleType(this);
+			st.render();
+		}
+		else {
+			MdeComplexType ct = new MdeComplexType(this);
+			ct.renderSubElements();
+		}
+
+	}
+
+COM:renders sub-elements based on the type of the object

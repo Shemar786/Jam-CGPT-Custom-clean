@@ -1,0 +1,12 @@
+TDAT: 	public void setLimits(float init, float min, float max){
+		minValue = Math.min(min, max);
+		maxValue = Math.max(min, max);
+		this.init = PApplet.constrain(init, minValue, maxValue);
+
+		thumbTargetPos = thumbPos;
+		// Set the value immediately ignoring inertia
+		setValue(this.init, true);
+		_valueType = INTEGER;
+	}
+
+COM:sets limits for a value, constrains initial value within those limits, and initializes other variables for a slider or control element

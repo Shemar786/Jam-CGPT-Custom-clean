@@ -1,0 +1,6 @@
+TDAT:     public void xtestCookiesRejection1533762() throws Exception {
+      checkAcceptance( 1, true, "admin.automation.testing.com.ru", ".admin.automation.testing.com.ru",null);
+      checkAcceptance( 2, true, "admin.automation.testing.com.ru", ".testing.com.ru", null );
+    }
+
+COM:performs tests to check if cookies are rejected on specific domains

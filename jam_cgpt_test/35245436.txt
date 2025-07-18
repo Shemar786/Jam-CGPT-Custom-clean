@@ -1,0 +1,14 @@
+TDAT:     public boolean addBook(Book book) throws SQLException {
+        if (this.isAdministrator()) {
+            if (isLogin()) {
+                if (book.checkData() && book.checkCallNumber()) {
+                    boolean result = dq.addBook(book);
+                    Book.refreshBookTable();
+                    return result;
+                }
+            }
+        }
+        return false;
+    }
+
+COM:adds a book to a library system if the user is an administrator and has logged in, and if the book's data and call number pass certain checks

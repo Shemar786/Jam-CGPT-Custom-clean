@@ -1,0 +1,9 @@
+TDAT:     public void visitCHECKCAST(CHECKCAST cCI) {
+        Expr expr = stack.pop(Type.OBJECT);
+        ConstantPoolGen cp = block.graph().method().getConstantPool();
+        Type type = cCI.getType(cp);
+        Expr top = new CastExpr(expr, type, type);
+        stack.push(top);
+    }
+
+COM:pops an object from the stack, retrieves a type from the constant pool, creates a CastExpr object, and pushes it back onto the stack

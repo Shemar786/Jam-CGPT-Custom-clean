@@ -1,0 +1,11 @@
+TDAT:   public void testGetStateNames() {
+    Set expected = new HashSet();
+    expected.add("state1");
+    expected.add("state2");
+    String[] names = _child.getStateNames();
+    for(int i = 0; i < names.length; i++){
+      super.assertTrue(expected.contains(names[i]));
+    }
+  }
+
+COM:tests if the states obtained from the method _child.getStateNames() match the expected states "state1" and "state2"

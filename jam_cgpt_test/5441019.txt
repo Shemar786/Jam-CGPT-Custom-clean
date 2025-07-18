@@ -1,0 +1,10 @@
+TDAT:     public void setId(String anID) {
+        if (idSet) {
+            throw new IllegalStateException(localStrings.getString("session_id_already_set"));
+        }
+        id = anID;
+        sessionContext.addSession(this);
+        setMaxInactiveInterval(sessionContext.getDefaultMaxInactiveInterval());
+    }
+
+COM:sets the ID for a session and checks if the ID is already set, adding the session to the session context, and setting the maximum inactive interval if required

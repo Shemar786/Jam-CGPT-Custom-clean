@@ -1,0 +1,9 @@
+TDAT: 	public boolean isAcceptedBy(Filter filter){
+		if(constraintFailed(filter,"floors",this.floors)) return false;
+		if(constraintFailed(filter,"rooms",this.rooms)) return false;
+		if(constraintFailed(filter,"builtDate",this.builtDate)) return false;
+		
+		return super.isAcceptedBy(filter);
+	}
+
+COM:checks if the current object meets certain filter constraints and returns a boolean value

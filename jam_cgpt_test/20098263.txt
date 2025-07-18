@@ -1,0 +1,10 @@
+TDAT: 	private void initialize() {
+		setCheckingModel(new DefaultTreeCheckingModel(this.treeModel));
+		setCellRenderer(new DefaultCheckBoxTreeCellRenderer());
+		addMouseListener(new NodeCheckListener());
+		this.selectionModel.setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
+		setShowsRootHandles(true);
+		putClientProperty("JTree.lineStyle", "Angled");// for Metal L&F
+	}
+
+COM:initializes a JTree by setting the checking model, cell renderer, mouse listener, selection mode, root handles, and line style properties

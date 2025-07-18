@@ -1,0 +1,16 @@
+TDAT:   private void createTables() throws SQLException {
+    Connection conn = null;
+    Statement s = null;
+    try {
+      conn = DriverManager.getConnection(connectionURL);
+      s = conn.createStatement();
+      s.execute(createUserTableStatement);
+      s.close();
+    }
+    finally {
+      s.close();
+      conn.close();
+    }
+  }
+
+COM:creates a database connection and statement, executes a specified SQL statement to create a user table, and closes the connection and statement

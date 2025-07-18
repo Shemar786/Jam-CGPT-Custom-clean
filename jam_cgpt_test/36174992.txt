@@ -1,0 +1,9 @@
+TDAT: 	private String getImportIncludeReference(String fileContent, int fromIndex, String startSearchString, String endSearchString) {
+		int toIndex = fileContent.indexOf(endSearchString, fromIndex + startSearchString.length());
+		if (toIndex > -1) {
+			return fileContent.substring(fromIndex, toIndex);
+		}
+		return null;
+	}
+
+COM:returns a substring of the given fileContent from the specified fromIndex to the index of the endSearchString, given a startSearchString

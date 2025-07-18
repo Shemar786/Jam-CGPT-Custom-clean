@@ -1,0 +1,11 @@
+TDAT: 	private void setSorterCheckBoxes() {
+		boolean[] chBoxSorterBooleans = MainFrame.getInstance().getSorter().getVisibleColumns();
+		if(chBoxSorterBooleans.length != checkBoxSortList.size())
+			return;
+
+		for(int i = 0; i < checkBoxSortList.size(); i++){
+			checkBoxSortList.get(i).setSelected(chBoxSorterBooleans[i]);
+		}
+	}
+
+COM:sets the selected states of checkboxes based on a boolean array retrieved from a MainFrame instance

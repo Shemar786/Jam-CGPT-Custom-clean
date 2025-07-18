@@ -1,0 +1,7 @@
+TDAT:     public void testEmbeddedEquals() throws Exception {
+        addInput( "text", "age=x", "12" );
+        _form.submit();
+        assertEquals( "Expected response", "submitRequest( GET, http://localhost/tryMe?age%3Dx=12, null, null )", TestWindowProxy.popProxyCall() );
+    }
+
+COM:tests if the form submission generates the correct URL with input parameters

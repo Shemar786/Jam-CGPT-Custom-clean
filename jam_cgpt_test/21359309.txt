@@ -1,0 +1,12 @@
+TDAT:     public void importVCardFile(String fileName) {
+        Validate.notNull(fileName);
+
+        vcardRadioButton.setSelected(true);
+        updateBrowsePanel();
+        cardLayout.show(cardPanel, "browsePanel");
+        actualCard = "browsePanel";
+        fileTextField.setText(fileName);
+        forwardButtonActionPerformed(null);
+    }
+
+COM:imports a VCard file, sets a radio button and updates a panel

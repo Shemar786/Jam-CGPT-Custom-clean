@@ -1,0 +1,12 @@
+TDAT:   public void setEditorActionDefaultStat() {
+
+    try {
+      wpMask mask = new wpMask(EDITOR_ACTIONS, editorActionIndices,
+                               editorActionDefaultStat);
+      wpMaskEvent event = new wpMaskEvent(this, mask);
+      maskHandler.fireMaskChanged(event);
+    }
+    catch (wpMaskException me) {}
+  }
+
+COM:sets the default status for editor actions in a wpMask object and fires a wpMaskEvent to notify a maskHandler of the change

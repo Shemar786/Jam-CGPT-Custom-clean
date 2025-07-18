@@ -1,0 +1,22 @@
+TDAT: 	public void add(java.awt.Component comp, Object constraints) {
+		super.add(comp, constraints);
+		ComponentListener listener = new ComponentListener() {
+			public void componentResized(ComponentEvent e) {							   // Layout the JScrollPane
+				getParent().getParent().validate();
+			}
+
+			public void componentMoved(ComponentEvent e) {
+				componentResized(e);
+			}
+
+			public void componentShown(ComponentEvent e) {
+			}
+
+			public void componentHidden(ComponentEvent e) {
+			}
+		};
+		comp.addComponentListener(listener);
+		listeners.put(comp, listener);
+	}
+
+COM:adds a component to a container with specified constraints and adds a component listener to adjust the layout when the component is resized or moved

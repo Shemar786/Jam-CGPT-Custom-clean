@@ -1,0 +1,14 @@
+TDAT:   public void fire(){
+    if(counter != 0){
+      counter++;
+      counter = counter%reloadtime;
+    }
+    if(firing && counter == 0)
+      if(bullets > 0){
+        bullets--;
+        counter++;
+        bulletList.add(new Bullet(getMuzzleX(), getMuzzleY(), angle, 6));
+      }
+  }
+
+COM:fires bullets based on a reload time and available ammunition

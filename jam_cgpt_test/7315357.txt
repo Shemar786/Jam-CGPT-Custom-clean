@@ -1,0 +1,13 @@
+TDAT: 	public BigDecimal getAdjustedTargetHole(final BigDecimal targetPipeDiameter){
+		int comp = targetPipeDiameter.compareTo(targetHole);
+		BigDecimal ret = targetHole;
+		if(comp < 0){
+			ret = null; // target too small
+		}else if(comp == 0){
+			// source is 1.5 and target 2: take average
+			ret = ret.add(targetPipeDiameter).multiply(Diameter.D05.getMeasure());
+		}
+		return ret;
+	}
+
+COM:returns an adjusted target hole based on a given target pipe diameter, with special cases for when the target pipe is too small or equal to the current hole diameter

@@ -1,0 +1,13 @@
+TDAT: 	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+		ServletContext servletContext = getServletContext();
+		uriMappings = new UriMappings(servletContext, XML_PARSER);
+		xmlConfig = (String) servletContext.getInitParameter("UriSpoof.config");
+		if (xmlConfig.indexOf("/") == 0) {
+			xmlConfig = xmlConfig.substring(1, xmlConfig.length());
+		}
+		xmlConfig = servletContext.getRealPath("/") + xmlConfig;
+		uriMappings.loadMappings(xmlConfig);
+	}
+
+COM:initializes a servlet by setting up a context and loading URI mappings from a specified XML configuration file

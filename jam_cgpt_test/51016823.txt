@@ -1,0 +1,6 @@
+TDAT:     private boolean isPSIMIRef(DbReferenceType ref) {
+        return (ref.getDbAc() != null && ref.getDbAc().equals("MI:0488")) ||
+                (ref.getDb() != null && ref.getDb().equals("psi-mi"));
+    }
+
+COM:checks whether a given DbReferenceType object is a PSI-MI reference or not, and returns a boolean value accordingly

@@ -1,0 +1,14 @@
+TDAT:     private String extractFilename(final String uri) {
+        if (!uri.startsWith(FILE_PREFIX)) {
+            return uri;
+        }
+
+        if (uri.startsWith(ROOT_FILE_PREFIX)) {
+            return uri.substring(ROOT_FILE_PREFIX.length());
+        }
+
+        // URI starts with 'file:' Just remove that prefix.
+        return uri.substring(FILE_PREFIX.length());
+    }
+
+COM:This is a Java method that extracts the filename from a given URI string, excluding any prefix such as "file:" or a root directory prefix

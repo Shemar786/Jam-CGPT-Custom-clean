@@ -1,0 +1,9 @@
+TDAT:     private void inferRefreshHeader( String refreshHeader ) {
+        String originalHeader = getHeaderField( "Refresh" );
+        // System.err.println("original='"+originalHeader+"'\nrefreshHeader='"+refreshHeader+"'");
+        if (originalHeader == null) {
+            _refreshHeader = refreshHeader;
+        }
+    }
+
+COM:checks if the original "Refresh" header is null and sets the "_refreshHeader" to the passed in "refreshHeader" if it is null

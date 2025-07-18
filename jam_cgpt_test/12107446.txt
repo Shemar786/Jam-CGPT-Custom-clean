@@ -1,0 +1,11 @@
+TDAT:     private void startNow(Node n) throws VoidexException {
+        if (n.isStartSupported()) {
+            executioner.executeEvent(n.getStart(), n.getSatellite());
+
+            if (log != null) {
+                log.logEventExecution(n, "START", n.getStart());
+            }
+        }
+    }
+
+COM:starts a process associated with a node and logs the event execution if logging is enabled, throwing a VoidexException if start is not supported for the node

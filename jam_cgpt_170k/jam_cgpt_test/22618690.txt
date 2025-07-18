@@ -1,0 +1,14 @@
+TDAT: 	public List getOrderedPages() {
+		List pageParams = new ArrayList();
+		for (Enumeration e = properties.propertyNames(); e.hasMoreElements(); ) {
+			String propName = (String) e.nextElement();
+			if (propName.startsWith("page.")) {
+				pageParams.add(propName);
+			}
+		}
+		Collections.sort(pageParams, new PageSorter());
+		prtln("sorted pages");
+		return pageParams;
+	}
+
+COM:returns a sorted list of pages obtained from properties that begin with "page."

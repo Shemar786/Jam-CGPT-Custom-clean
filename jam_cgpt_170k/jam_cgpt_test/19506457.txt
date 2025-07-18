@@ -1,0 +1,21 @@
+TDAT: 	protected void privateAddEntry(LRUCacheEntry<K, V> entry, boolean shuffle) {
+
+		if (!shuffle) {
+			cache.putEntry(entry);
+		}
+
+		entry._fTimestamp = fTimestampCounter++;
+		entry._fNext = this.fEntryQueue;
+		entry._fPrevious = null;
+
+		if (fEntryQueue == null) {
+			/* this is the first and last entry */
+			fEntryQueueTail = entry;
+		} else {
+			fEntryQueue._fPrevious = entry;
+		}
+
+		fEntryQueue = entry;
+	}
+
+COM:adds an LRUCacheEntry to the cache and updates its timestamp and position in the queue

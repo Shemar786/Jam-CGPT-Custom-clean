@@ -1,0 +1,17 @@
+TDAT: 	public boolean hasRestrictions(MetadataSetAttribute aAttribute) {
+		Hashtable<MetadataSetRelationType, Set<Class>> theRelationTable = itsHashtable
+				.get(aAttribute);
+		if (theRelationTable == null || theRelationTable.isEmpty())
+			return false;
+		for (Set<Class> theHeuristics : theRelationTable.values()) {
+			if (theHeuristics.isEmpty())
+				continue;
+			for (Class o : theHeuristics) {
+				if (LOMRestrictionHeuristic.class.isAssignableFrom(o))
+					return true;
+			}
+		}
+		return false;
+	}
+
+COM:checks if a given MetadataSetAttribute has any LOMRestrictionHeuristic restrictions

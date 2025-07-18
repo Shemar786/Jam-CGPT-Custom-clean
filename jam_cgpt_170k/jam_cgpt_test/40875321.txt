@@ -1,0 +1,10 @@
+TDAT:     public Command getScreenCommand6() {
+        if (screenCommand6 == null) {//GEN-END:|609-getter|0|609-preInit
+            // write pre-init user code here
+            screenCommand6 = new Command("DICTAMEN", Command.SCREEN, 0);//GEN-LINE:|609-getter|1|609-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|609-getter|2|
+        return screenCommand6;
+    }
+
+COM:returns a Command object with the label "DICTAMEN", type SCREEN, and priority 0, creating it if it doesn't already exist

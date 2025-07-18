@@ -1,0 +1,15 @@
+TDAT: 	public void about() {
+		URL url;
+
+		try {
+			url = new URL("http://sourceforge.net/sflogo.php?group_id=24399");
+		} catch (MalformedURLException murle) {
+			url = null;
+		}
+		JOptionPane.showMessageDialog(this, "Scan and display the images behind thumbnails.\n" + "\n"
+				+ "An example application using the HTML Parser project.\n"
+				+ "Visit http://htmlparser.sourceforge.org for the latest\n" + "version and source code.\n",
+				"Thumbelina - About", JOptionPane.PLAIN_MESSAGE, new ImageIcon(url));
+	}
+
+COM:displays an "about" message box with information about an HTML parser project, along with an image

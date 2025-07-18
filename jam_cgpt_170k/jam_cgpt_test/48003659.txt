@@ -1,0 +1,15 @@
+TDAT: 	public Message hideBook(Object value){
+		if(value instanceof String){
+			String isbn=(String) value;
+			boolean flag=dataAccess.BookHide(isbn);
+			if(flag!=false){
+				return (new Message(Message.HIDE_BOOK_RESPOND,Message.SUCCEED ));
+			}
+			else{
+				return (new Message(Message.HIDE_BOOK_RESPOND,Message.FAIL ));
+			}
+		}
+		return (new Message(Message.HIDE_BOOK_RESPOND,Message.NOT_THE_TYPE_THAT_SEND ));
+	}
+
+COM:hides a book by receiving an object value and returning a message indicating the success or failure of hiding the book

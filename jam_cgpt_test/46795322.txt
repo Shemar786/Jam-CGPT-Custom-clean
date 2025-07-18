@@ -1,0 +1,15 @@
+TDAT: 	private String parseForType(String metadata) {
+		String retStr = "";
+		String[] splittedString = metadata.split(" ");
+		for(int i=0; i<splittedString.length; i++){
+			 if(splittedString[i].startsWith(MetadataElements.Type)){
+				 retStr = splittedString[i].substring(splittedString[i].lastIndexOf(":")+1, 
+							 splittedString[i].length());
+							
+				}
+		}
+		
+		return retStr;
+	}
+
+COM:parses a string for metadata and returns the value of the type element

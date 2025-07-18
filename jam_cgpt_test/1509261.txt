@@ -1,0 +1,22 @@
+TDAT:     public void close() {
+        try {
+            cancelPlayTimer();
+            hypnogram.clear();
+            if (edfFile != null) {
+                edfFile.close();
+                edfFile = null;
+            }
+            polysomnograph.clear();
+            montageToolbar.clear();
+            setTitle(version);
+            System.gc();
+        } catch (UserCancelException e) {
+            // cancelled by user
+        } finally {
+            updatePermissions();
+            repaint();
+        }
+
+    }
+
+COM:performs a series of actions to close and clean up resources in a program

@@ -1,0 +1,18 @@
+TDAT: 	public IVector createRealization() {
+		if (this.correlated) {
+			throw new RuntimeException("StochVector.createRealization()not implemented for correlated noise");
+		}
+		TreeVector realization = new TreeVector(this.id);
+		int i=0;
+		for (IStochVector child : children) {
+			if(child instanceof ITreeVector){
+				realization.addChild((TreeVector)child.createRealization());				
+			}else{
+				realization.addChild(new TreeVector(id+"_sub"+i,child.createRealization()));
+			}
+			i++;
+		}
+		return realization;
+	}
+
+COM:creates a realization of a stochastic vector, and checks for correlated noise before creating the TreeVector

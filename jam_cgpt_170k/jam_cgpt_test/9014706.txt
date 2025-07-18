@@ -1,0 +1,19 @@
+TDAT: 	public void ungetCharacter(Cursor cursor) throws ParserException {
+		int i;
+		char ch;
+
+		cursor.retreat();
+		i = cursor.getPosition();
+		try {
+			ch = mSource.getCharacter(i);
+			if (('\n' == ch) && (0 != i)) {
+				ch = mSource.getCharacter(i - 1);
+				if ('\r' == ch)
+					cursor.retreat();
+			}
+		} catch (IOException ioe) {
+			throw new ParserException("can't read a character at position " + cursor.getPosition(), ioe);
+		}
+	}
+
+COM:moves the cursor one character back in the source code and checks if the previous character is a carriage return followed by a newline, in which case it moves the cursor back one more character

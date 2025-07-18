@@ -1,0 +1,12 @@
+TDAT: 	public void zoomOut() {
+		if (sourceImage == null) {
+			return;
+		}
+		final Rectangle rect = getClientArea();
+		final int w = rect.width, h = rect.height;
+		final double dx = ((double) w) / 2;
+		final double dy = ((double) h) / 2;
+		centerZoom(dx, dy, ZOOMOUT_RATE, transform);
+	}
+
+COM:performs a zoom-out operation on an image, using the given zoom-out rate and transformation matrix

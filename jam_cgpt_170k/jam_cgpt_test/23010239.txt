@@ -1,0 +1,17 @@
+TDAT: 	protected void addAssignementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractEdge_Assignement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractEdge_Assignement_feature", "_UI_AbstractEdge_type"),
+				 TaEditorPackage.Literals.ABSTRACT_EDGE__ASSIGNEMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds an item property descriptor for the "Assignement" feature to the item property descriptors list

@@ -1,0 +1,10 @@
+TDAT:     public OObject xor( OObject z ){ 
+	if( (this instanceof Complex) && (z instanceof Complex) ) {
+	    return ((Complex)this).xor( (Complex)z );
+	} else if( !((this instanceof Error) || (z instanceof Error)) ){
+	    return new jscicalc.expression.Xor( this, z );
+	}
+	return new Error( "OObject xor( z ) error" );
+    }
+
+COM:compares two objects and returns a new object that performs the logical XOR operation on the input objects

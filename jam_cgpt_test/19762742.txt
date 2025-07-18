@@ -1,0 +1,12 @@
+TDAT:   public String bigIntegerListToString(List<BigInteger> list) {
+    String string = "";
+    // use comma to dilemma every element
+    for (BigInteger curInteger : list) {
+      String curString = "" + curInteger.intValue();
+      string = string + curString + ", ";
+    }
+    string = string.substring(0, string.lastIndexOf(", "));
+    return string;
+  }
+
+COM:takes a list of BigIntegers and converts it into a comma-separated string

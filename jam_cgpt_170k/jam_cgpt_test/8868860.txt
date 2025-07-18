@@ -1,0 +1,14 @@
+TDAT: 	private String addXmlOutputHeaders(String rawMessage, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.setContentType("text/xml");
+		StringBuffer sb = new StringBuffer();
+		sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+		sb.append("<?xml-stylesheet type=\"text/xsl\" href=\"");
+		sb.append(request.getContextPath());
+		sb.append("/");
+		sb.append(rawXmlStylesheet);
+		sb.append("\"?>");
+		sb.append(rawMessage);
+		return sb.toString();
+	}
+
+COM:adds XML output headers and stylesheets to a rawMessage and returns the result as a string

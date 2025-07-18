@@ -1,0 +1,23 @@
+TDAT: 	private EntryLocator locate(ELogEntry entry) {
+		assert entry != null;
+
+		EntryLocator locator = null;
+
+		int idx = 0;
+		for (Iterator<ELogEntryImpl> it = entries.iterator(); it.hasNext();) {
+			ELogEntryImpl curr = it.next();
+			if (curr.equals(entry)) {
+				locator = new EntryLocator();
+				locator.entry = curr;
+				locator.iterator = it;
+				locator.idx = idx;
+				break;
+			}
+
+			idx++;
+		}
+
+		return locator;
+	}
+
+COM:locates a specific entry within an iterator and returns a locator object containing information about its index and iterator position

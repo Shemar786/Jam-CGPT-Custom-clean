@@ -1,0 +1,12 @@
+TDAT:     private String makeCacheKey(org.osid.shared.Id fid, org.osid.shared.Id qid) throws AuthorizationException {
+        String retval;
+        try {
+            retval = fid.getIdString()+"/"+ qid.getIdString();
+        } catch (org.osid.shared.SharedException oe) {
+            throw new AuthorizationException(AuthorizationException.OPERATION_FAILED);
+        }
+        return retval;
+        
+    }
+
+COM:takes two object IDs and concatenates them with a forward slash to create a cache key, which is then returned as a String

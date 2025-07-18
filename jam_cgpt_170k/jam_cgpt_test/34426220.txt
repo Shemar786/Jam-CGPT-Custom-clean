@@ -1,0 +1,12 @@
+TDAT:     private SWGNotes writeNotesCheck(JButton write) {
+        SWGNotes notes = getNotes();
+        if (notes == null)
+            notes = SWGNotes.getInstance(
+                    notesFileName, getStation(), null, true);
+        if (notes == null || !writeNotesCheckEmpty(notes, write))
+            return null;
+
+        return notes;
+    }
+
+COM:checks if notes exist and are not empty, and returns the notes object if they do

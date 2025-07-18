@@ -1,0 +1,11 @@
+TDAT:     private boolean checkCode(int index, int number){
+        for(int i = 0; i < max; i++){
+            if(i == index)
+                return (number >= Math.pow(2, 31-i)+INT_SIZE);
+            if(number >= Math.pow(2, 31-i)+INT_SIZE)
+                number -= Math.pow(2, 31-i);
+        }
+        return false;
+    }
+
+COM:checks whether a given number in binary format exceeds the maximum limit based on the provided index value

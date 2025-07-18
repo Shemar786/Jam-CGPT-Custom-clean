@@ -1,0 +1,20 @@
+TDAT:   public Callable remove() {
+
+    // Wait if there is nothing in the queue
+    synchronized (queue) {
+      while (queue.isEmpty()) {
+        try {
+
+          queue.wait();
+        } catch (InterruptedException e) {
+          throw new IllegalStateException("unable to remove item from queue"
+              + e);
+        }
+      }
+
+      // Remove the next item from the queue
+      return queue.remove(0);
+    }
+  }
+
+COM:removes the next item from a synchronized queue, blocking if the queue is empty

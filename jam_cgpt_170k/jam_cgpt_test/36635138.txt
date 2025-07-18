@@ -1,0 +1,11 @@
+TDAT:     public int addNewLayer(){
+        if(dataItems == null)
+            dataItems = addBranch(dataItems);
+        else if(dataItems.length == 0)
+            dataItems = addBranch(dataItems);
+        else if(dataItems[dataItems.length - 1].length > 0)
+            dataItems = addBranch(dataItems);
+        return dataItems.length-1;
+    }
+
+COM:adds a new layer to an existing data structure and returns the index of the new layer

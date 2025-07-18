@@ -1,0 +1,12 @@
+TDAT: public void showItem (TreeItem item) {
+	checkWidget ();
+	if (item == null) error (SWT.ERROR_NULL_ARGUMENT);
+	if (item.isDisposed ()) error(SWT.ERROR_INVALID_ARGUMENT);
+  int row = ((CTree)handle).getRowForPath(new TreePath(item.handle.getPath()));
+  if(row < 0) {
+    return;
+  }
+  ((CTree)handle).ensureRowVisible(row);
+}
+
+COM:shows a given tree item and ensures its visibility in the CTree

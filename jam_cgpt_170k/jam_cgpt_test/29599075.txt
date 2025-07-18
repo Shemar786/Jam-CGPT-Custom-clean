@@ -1,0 +1,11 @@
+TDAT:     public void copy(final InterchunkWord o) {
+        /* Yes, we're only copying chunk, not queue as well.
+         * This is what the C++ code does as well.
+         * However, the C++ code makes this private, as it overloads the '=' operator,
+         * then calls this method. Java doesn't have operator overloading, so making
+         * this method public instead.
+         */
+        _chunk = o._chunk;
+    }
+
+COM:copies the chunk from the given InterchunkWord object

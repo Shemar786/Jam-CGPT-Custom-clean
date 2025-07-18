@@ -1,0 +1,12 @@
+TDAT:     public String getAsList(String key, String separator) {
+        StringBuffer sb = new StringBuffer();
+        Iterator it = (Iterator)get(key);
+        while (it != null && it.hasNext()) {
+            if (sb.length() != 0) 
+                sb.append(separator);
+            sb.append(it.next().toString());
+        }
+        return sb.toString();
+    }
+
+COM:takes in a key and separator, retrieves an iterator from the key, and returns a string representation of the values in the iterator separated by the given separator

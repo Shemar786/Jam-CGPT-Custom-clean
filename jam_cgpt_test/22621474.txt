@@ -1,0 +1,12 @@
+TDAT: 	public void initialize(Subject subject, CallbackHandler callbackHandler, Map sharedState, Map options) {
+		prtln("initialize");
+		super.initialize(subject, callbackHandler, sharedState, options);
+		String propsFile = getOption("propsFile", null);
+		if (propsFile == null)
+			throw new Error("UcasLogin config error: propsFile not supplied");
+		prtln("propsFile: " + propsFile);
+		MyUcasClient.setPropsPath(propsFile);
+
+	}
+
+COM:initializes a subject using a provided callback handler, shared state, and options, sets a properties file path for a MyUcasClient, and throws an error if the file path is not provided

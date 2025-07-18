@@ -1,0 +1,16 @@
+TDAT: 	public File unmarshall(String destinationPath) {
+		if (!isvalid() || fileContent == null) {
+			throw new SBVR2GrailsResultException("SBVR2GrailsResult not set.");
+		}
+		File file = new File(destinationPath+"/"+fileName);
+		try {
+			FileOutputStream out = new FileOutputStream(file);
+	        out.write(fileContent);
+	        out.close();
+	    } catch (IOException e) {
+	    	throw new SBVR2GrailsResultException("Could not write content to "+file+".",e);
+	    }
+		return file;
+	}
+
+COM:unmarshalls a file to a specified destination path

@@ -1,0 +1,25 @@
+TDAT: 	private boolean createNewList(String name) {
+
+		if (name.equals("")) {
+			// User has not provided any name
+			Toast.makeText(this, getString(R.string.please_enter_name),
+					Toast.LENGTH_SHORT).show();
+			return false;
+		}
+
+		String previousTheme = loadListTheme();
+
+		int newId = (int) ShoppingUtils.getList(this, name);
+		fillListFilter();
+
+		setSelectedListId(newId);
+
+		// Now set the theme based on the selected list:
+		saveListTheme(previousTheme);
+		setListTheme(previousTheme);
+		applyListTheme();
+
+		return true;
+	}
+
+COM:creates a new list with a given name and sets the list theme based on the selected list

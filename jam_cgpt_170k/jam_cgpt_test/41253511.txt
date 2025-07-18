@@ -1,0 +1,10 @@
+TDAT:         public void removeFromLexicon(Lexicon lexicon) {
+                if(getSubcategorizationFrame() != null)
+                        lexicon.getHasSubcatFrame().remove(getSubcategorizationFrame());
+                if(getSemanticPredicate() != null)
+                        lexicon.getHasPredicate().remove(getSemanticPredicate());
+                if(getLexicalEntry() != null)
+                        lexicon.getHasLexicalEntry().remove(getLexicalEntry());
+        }
+
+COM:removes specific elements from a Lexicon based on the properties of an object

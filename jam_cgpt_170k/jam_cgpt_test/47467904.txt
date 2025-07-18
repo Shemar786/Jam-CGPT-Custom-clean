@@ -1,0 +1,9 @@
+TDAT: 	private IRuntimeClasspathEntry getJREEntry(ILaunchConfiguration configuration) throws CoreException {
+		IVMInstall jre = VMHelper.createLauncher(configuration);
+		IPath containerPath = new Path(JavaRuntime.JRE_CONTAINER);
+		containerPath = containerPath.append(jre.getVMInstallType().getId());
+		containerPath = containerPath.append(jre.getName());
+		return JavaRuntime.newRuntimeContainerClasspathEntry(containerPath, IRuntimeClasspathEntry.BOOTSTRAP_CLASSES);
+	}
+
+COM:returns a runtime classpath entry for the Java Runtime Environment specified in the input launch configuration

@@ -1,0 +1,18 @@
+TDAT: 	protected void openAction() {
+		FileDialog dialog;
+		File file;
+
+		dialog = new FileDialog(this);
+		dialog.setMode(FileDialog.LOAD);
+		dialog.setTitle("Open");
+		dialog.setDirectory(mHomeDir);
+		dialog.setVisible(true);
+		if (null != dialog.getFile()) {
+			mHomeDir = dialog.getDirectory();
+			file = new File(mHomeDir + dialog.getFile());
+			open(file.getAbsolutePath());
+			setTitle(TITLE + " - " + file.getAbsolutePath());
+		}
+	}
+
+COM:opens a file dialog, loads a selected file, and sets the title of the application to the selected file's path

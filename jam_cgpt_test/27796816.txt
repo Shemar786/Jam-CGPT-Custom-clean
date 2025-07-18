@@ -1,0 +1,14 @@
+TDAT:     private ValueDisplayer getMapValue(Object currentMapping) {
+        ValueDisplayer mapValue;
+        if (currentMapping == null) {
+            // display default selection
+            mapValue = ValueDisplayer.getBlankDisplayFor
+                    (parentDialog, USER_MSG, defaultObject);
+        } else { // display current mapping
+            mapValue = ValueDisplayer.getDisplayFor
+                    (parentDialog, USER_MSG, currentMapping);
+        }
+        return mapValue;
+    }
+
+COM:retrieves the value of a mapping and displays it either as a default selection or as the current mapping

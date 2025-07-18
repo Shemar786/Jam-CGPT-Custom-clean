@@ -1,0 +1,15 @@
+TDAT:     protected void configure() {
+        /**
+         * ensure we get the right logger
+         */
+        logger =
+                LoggerFactory.getLogger(PSIModMassCalculator.class,
+                        CommonUtilities.getResource(Constants.OLS_CONFIG_FILE)
+                );
+        parser = new OBOFormatParser();
+        ONTOLOGY_DEFINITION = "PSI MOD";
+        FULL_NAME = "PSI PTM";
+        SHORT_NAME = "MOD";
+    }
+
+COM:configures the logger, parser, and ontology definition for the PSI Mod Mass Calculator

@@ -1,0 +1,9 @@
+TDAT:     public void printClasses(PrintWriter out, int indent) {
+        TypeNode objectNode = this.getExtendsNode(new ObjectType(
+                "java.lang.Object"));
+        indent(out, indent);
+        out.println(objectNode.type);
+        printSubclasses(objectNode.type, out, true, indent + 2);
+    }
+
+COM:prints the classes and their subclasses, with indentation and output stream specified as parameters

@@ -1,0 +1,19 @@
+TDAT: 	private void resetOptions() {
+	    _conditionCombo.removeAll();
+		_conditionCombo.add("that meet the following conditions: ");
+		_conditionCombo.add("that do not meet the following conditions: ");
+		_conditionCombo.select(0);
+		
+		_elementTypeCombo.removeAll();
+		
+		for(FilterableCategory fc : _filterableCats) {
+		    _elementTypeCombo.add(fc.getName(), fc.getIndex());
+		}
+        _elementTypeCombo.select(0);
+		
+		_patternText.setText(".*");
+		
+		_visHolder.reset();
+	}
+
+COM:resets and initializes several components used for filtering in a Java application

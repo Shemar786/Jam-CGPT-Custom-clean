@@ -1,0 +1,12 @@
+TDAT: 	public void zoomIn() {
+		if (sourceImage == null) {
+			return;
+		}
+		final Rectangle rect = getClientArea();
+		final int w = rect.width, h = rect.height;
+		final double dx = ((double) w) / 2;
+		final double dy = ((double) h) / 2;
+		centerZoom(dx, dy, ZOOMIN_RATE, transform);
+	}
+
+COM:zooms in the source image by a fixed rate and centers the zoom on the current view

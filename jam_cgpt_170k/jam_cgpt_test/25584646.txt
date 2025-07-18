@@ -1,0 +1,12 @@
+TDAT:     public int getNumVisibleGameObjects() {
+        int numVisibleGameObjects = 0;
+
+        for (GameLayer gameLayer : gameEngine.gameLayers.values()) {
+            if (gameLayer.gameLayerVisibility == GameLayer.GameLayerVisibility.VISIBLE) {
+                numVisibleGameObjects += gameLayer.gameObjectsDrawOrderSorted.size();
+            }
+        }
+        return numVisibleGameObjects;
+    }
+
+COM:returns the total number of visible game objects in a game engine's game layers

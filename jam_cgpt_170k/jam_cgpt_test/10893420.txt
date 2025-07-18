@@ -1,0 +1,20 @@
+TDAT:     public StandardServer getServer() {
+        
+        if (server != null) {
+            return server;
+        }
+        
+        initBaseDir(); 
+        
+        System.setProperty("catalina.useNaming", "false");
+        
+        server = new StandardServer();
+        server.setPort( -1 );
+        
+        service = new StandardService();
+        service.setName("Tomcat");
+        server.addService( service );
+        return server;
+    }
+
+COM:returns a StandardServer object and if it is null, it initializes several properties and creates a new StandardServer object with a StandardService added to it, before returning it

@@ -1,0 +1,11 @@
+TDAT: 	private JTextField getJTextFieldValPerc() {
+		if (jTextFieldValPerc == null) {
+			jTextFieldValPerc = new JTextField();
+			jTextFieldValPerc.setBounds(new Rectangle(148, 319, 41, 20));
+			jTextFieldValPerc.setEditable(false);
+			jTextFieldValPerc.setVisible(false);
+		}
+		return jTextFieldValPerc;
+	}
+
+COM:returns a JTextField object and creates it if it doesn't exist yet, with specific properties like its position, size, and editable/visible settings

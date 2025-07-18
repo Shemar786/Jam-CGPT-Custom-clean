@@ -1,0 +1,14 @@
+TDAT:     private void init() {
+        if (engine == null) {
+            engine = manager.getEngineByName("js");
+            invocable = (Invocable) engine;
+        }
+        if (engine == null) {
+            throw new IllegalStateException("JavaScript execution not supported");
+        }
+        if (variables == null) {
+             variables = new HashMap<GatewayVariable, String>();
+        }
+    }
+
+COM:initializes the engine and variables required for JavaScript execution

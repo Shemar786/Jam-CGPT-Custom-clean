@@ -1,0 +1,17 @@
+TDAT:   protected void addParameterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SetQueryParam_parameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SetQueryParam_parameter_feature", "_UI_SetQueryParam_type"),
+				 ActionStepPackage.eINSTANCE.getSetQueryParam_Parameter(),
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds a descriptor for a parameter in an action step to a list of item property descriptors

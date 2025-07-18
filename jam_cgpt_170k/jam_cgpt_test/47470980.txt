@@ -1,0 +1,13 @@
+TDAT: 	private IPluginModelBase getPluginModelBase() {
+		FormEditor formEditor = fSourcePage.getEditor();
+		if ((formEditor instanceof PDEFormEditor) == false) {
+			return null;
+		}
+		IBaseModel bModel = ((PDEFormEditor) formEditor).getAggregateModel();
+		if ((bModel instanceof IPluginModelBase) == false) {
+			return null;
+		}
+		return (IPluginModelBase) bModel;
+	}
+
+COM:retrieves the plugin model base for a form editor, returning null if it is not a PDEFormEditor or if the aggregate model is not an IPluginModelBase

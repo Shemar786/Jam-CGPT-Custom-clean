@@ -1,0 +1,13 @@
+TDAT:     protected Point getPreferredLocation(IFigure borderItem) {
+      return getPreferredLocation(PositionConstants.EAST, borderItem);
+//        Point constraintLocation = getConstraint().getLocation();
+//        Point ptAbsoluteLocation = this.getAbsoluteToBorder(constraintLocation);
+//
+//        if (constraintLocation.x == 0 || constraintLocation.y == 0) {
+//            return getPreferredLocation(getPreferredSideOfParent(), borderItem);
+//        } else {
+//            return ptAbsoluteLocation;
+//        }
+    }
+
+COM:returns the preferred location for a border item on the east side of the figure

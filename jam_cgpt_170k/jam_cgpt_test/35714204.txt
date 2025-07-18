@@ -1,0 +1,14 @@
+TDAT: 	public void setPassword(String password) {
+		boolean found = false;
+		for (int i = 0; i < fields.length && !found; ++i) {
+			if (fields[i].type.equals("password")) {
+				fields[i].value = password;
+				found = true;
+			}
+		}
+		if (!found) {
+			throw new IllegalArgumentException("No such text field.");
+		}
+	}
+
+COM:sets the password for a text field in an array of fields, or throws an exception if the specified field does not exist

@@ -1,0 +1,10 @@
+TDAT:     public Object findById(Class oClass, Integer id) {
+        try {
+            return super.load(oClass, id);
+        } catch (Exception e) {
+            log.error("Error finding object type " + oClass.getName() +" with id " + id, e);
+        }
+        return null;
+    }
+
+COM:takes in a class and an integer as parameters, and attempts to load an object of that class with a matching ID, logging any errors encountered and returning null if the object is not found

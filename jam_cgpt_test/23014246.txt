@@ -1,0 +1,8 @@
+TDAT:     public float calculateFloat(float time,Vector4f first, Vector4f second){
+        float delta = second.getX()- first.getX();
+        float ratio = (time - first.getX())/delta;
+        
+        return first.getY() + ratio*(second.getY()-first.getY());
+    }
+
+COM:returns a calculated floating point value based on input time and two 4-dimensional vectors

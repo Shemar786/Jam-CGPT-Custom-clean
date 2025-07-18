@@ -1,0 +1,14 @@
+TDAT:     public boolean checkSecurity(int securityId) {
+        
+        if (tblAppSecurityHash == null)
+            return false;
+        Short valueInHash = (Short) tblAppSecurityHash.get(new Integer(securityId));
+        if (valueInHash == null)
+            return false; // not found
+        if (valueInHash.intValue() == 0)
+            return false;
+        else
+            return true;
+    }
+
+COM:checks if a security ID is present in a hash table and returns true or false accordingly

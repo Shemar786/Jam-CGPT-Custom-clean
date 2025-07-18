@@ -1,0 +1,11 @@
+TDAT:     public boolean equals(Object obj) {
+        if (obj instanceof Rectangle) {
+            Rectangle r = (Rectangle)obj;
+            return ((x == r.x) && (y == r.y) &&
+                    (width == r.width) && (height == r.height));
+        } else {
+        	return super.equals(obj);
+        }
+    }
+
+COM:checks whether the passed object is equal to the Rectangle object and returns true if its properties such as x, y, width, and height are the same, and returns the result of calling the equals() method of the superclass if the passed object is not a Rectangle type

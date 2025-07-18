@@ -1,0 +1,10 @@
+TDAT:     public Object getNextReturnObject( Object key ) {
+        if (key == null) {
+            key = Null.NULL;
+        }
+        ReturnObjectList returnObjectList = (ReturnObjectList)returnObjectLists.get(key);
+        AssertMo.assertNotNull(name + " does not contain " + key.toString(), returnObjectList);
+        return returnObjectList.nextReturnObject();
+    }
+
+COM:takes an object key, checks if it is null and gets the next object in a list based on the key

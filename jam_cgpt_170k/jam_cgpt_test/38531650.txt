@@ -1,0 +1,13 @@
+TDAT:     public void testSetResourceAsNode() {
+        System.out.println("testSetResourceAsNode");
+        
+        // TODO add your test code below by replacing the default call to fail.
+       try {
+           this.handler.setResourceAsNode(null);
+           fail("Exception expected");
+       } catch (UnsupportedOperationException expected){
+           //expected
+       }
+    }
+
+COM:tests whether an exception is thrown when setting a resource as a node

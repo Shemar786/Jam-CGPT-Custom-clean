@@ -1,0 +1,12 @@
+TDAT:   protected JScrollPane createContentScrollPane () {
+    if( contentPanel == null ) {
+      contentPanel = createContentPanel();
+    }
+    return new JScrollPane(
+      contentPanel,
+      ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
+      ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED
+    );
+  } // createContentScrollPane()
+
+COM:creates and returns a JScrollPane object with a contentPanel and vertical and horizontal scrollbars if they are needed

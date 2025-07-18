@@ -1,0 +1,11 @@
+TDAT:     public UnSyncStringBuffer append(char str[]) {
+        int len = str.length;
+        int newcount = count + len;
+        if (newcount > value.length)
+            expandCapacity(newcount);
+        System.arraycopy(str, 0, value, count, len);
+        count = newcount;
+        return this;
+    }
+
+COM:appends the characters in a given character array to an "unsynchronized" string buffer, expanding the buffer's capacity if necessary

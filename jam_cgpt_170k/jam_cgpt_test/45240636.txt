@@ -1,0 +1,13 @@
+TDAT: 	public void sendFriendList() {
+		RSCPacketBuilder s = new RSCPacketBuilder();
+		s.setID(249);
+		s.addByte((byte)player.getFriendList().size());
+		for(Entry<Long, Integer> friend : player.getFriendList()) {
+			int world = friend.getValue();
+			s.addLong(friend.getKey());
+			s.addByte((byte)(world == Config.SERVER_NUM ? 99 : world));
+		}
+		packets.add(s.toPacket());
+	}
+
+COM:sends the player's friend list to the server as a packet

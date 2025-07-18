@@ -1,0 +1,14 @@
+TDAT:   public Object getRoot(JAXBContext jc, InputSource inSource){
+
+    Object nodeObj=null;
+    try{
+      Unmarshaller u = jc.createUnmarshaller();
+      nodeObj = u.unmarshal(inSource);
+
+    }catch( JAXBException jex){
+      gui.logArea.appendBad(MODULE_ID, jex.getMessage() + "\n");
+    }
+    return nodeObj;
+  }
+
+COM:uses JAXBContext and InputSource to unmarshal an XML input and return the root object

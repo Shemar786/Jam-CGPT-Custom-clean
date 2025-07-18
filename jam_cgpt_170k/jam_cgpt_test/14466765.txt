@@ -1,0 +1,10 @@
+TDAT:   public void paint(Graphics g, int x2, int y2) {
+    int x1 = this.getOrigin().getCenterX();
+    int y1 = this.getOrigin().getCenterY();
+    Graphics2D g2D = (Graphics2D)g;
+    g2D.setColor(borderColor);
+    g2D.setStroke(borderStroke);
+    g2D.drawLine(x1, y1, x2, y2);
+  }
+
+COM:paints a line from the center of an object to a specified point with a specified border color and stroke

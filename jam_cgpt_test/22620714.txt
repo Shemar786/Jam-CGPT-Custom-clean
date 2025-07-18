@@ -1,0 +1,12 @@
+TDAT: 	protected void attachElementId(Element e) {
+		// define javascript id for this node based on xpath
+		// ISSUE: is this ever actually used??
+		e.addElement("c__set")
+			.addAttribute("var", "elementPath")
+			.addAttribute("value", xpath);
+		e.addElement("c__set")
+			.addAttribute("var", "id")
+			.addAttribute("value", "${sf__pathToId(elementPath)}");
+	}
+
+COM:attaches a unique JavaScript id to an element based on its xpath

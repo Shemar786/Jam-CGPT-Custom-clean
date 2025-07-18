@@ -1,0 +1,12 @@
+TDAT: 	private JPanel getButtonPanel() {
+		if (buttonPanel == null) {
+			buttonPanel = new JPanel();
+			buttonPanel.setLayout(new BorderLayout());
+			buttonPanel.setPreferredSize(new Dimension(84, 50));
+			buttonPanel.add(getPrintButton(), java.awt.BorderLayout.NORTH);
+			buttonPanel.add(getVoegToeButton(), java.awt.BorderLayout.CENTER);
+		}
+		return buttonPanel;
+	}
+
+COM:creates and returns a JPanel with a specific layout, dimensions, and two buttons: a "Print" button on the top and a "Voeg Toe" button in the center

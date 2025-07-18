@@ -1,0 +1,10 @@
+TDAT:   protected void resizeIgnoreColumns () {
+    if( tableData == null ) {
+      // TODO: Error handling
+      System.err.println( "WARNING: Unable to resetIgnoreColumns because getTableData() is null." );
+      return;
+    }
+    resizeIgnoreColumns( TableReader.countTableColumns( tableData ) );
+  } // resizeIgnoreColumns(..)
+
+COM:resizes the ignore columns based on the table data, with error handling in cases where the table data is null

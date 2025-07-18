@@ -1,0 +1,22 @@
+TDAT: 		public int compare(Object o1, Object o2) {
+
+			GradeRangeItem gr1 = (GradeRangeItem) o1;
+			GradeRangeItem gr2 = (GradeRangeItem) o2;
+
+			int minComp = getMinComparison(gr1, gr2);
+			int diffComp = getDiffComparison(gr1, gr2);
+			int maxComp = getMaxComparison(gr1, gr2);
+
+			if (gr1.contains(gr2))
+				return 1;
+
+			if (gr2.contains(gr1))
+				return -1;
+
+			if (minComp == 0)
+				return maxComp;
+			else
+				return minComp;
+		}
+
+COM:compares two objects of type GradeRangeItem based on their minimum, maximum, and difference values, and whether one contains the other, and returns an integer value indicating the comparison result

@@ -1,0 +1,16 @@
+TDAT:     public int getNextCluster(int cluster) {
+	int nextCluster = 0xffff;
+	try {
+	    nextCluster = ((int[])(this.fat.get(0)))[cluster];
+	    if (nextCluster >= 0xfff8) {
+		nextCluster = 0xffff;
+	    }
+	} catch (Exception e) {
+	    System.err.println("Cluster after " + Integer.toHexString(cluster) + " is out of range (" +
+			       Integer.toHexString(this.volume.getNumberOfClusters()) + ") - the FAT table is " +
+			       Integer.toHexString(((int[])this.fat.get(0)).length));
+	}
+	return (nextCluster);
+    }
+
+COM:returns the next cluster in a file allocation table given a current cluster index, with error handling for out of range clusters

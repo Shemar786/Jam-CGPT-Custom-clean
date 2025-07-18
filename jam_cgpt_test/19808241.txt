@@ -1,0 +1,17 @@
+TDAT: 	protected void delete() {
+		int indx = mainTable.getSelectedRow();
+		if (indx == -1)
+			return;
+		String clickedFile = mainTable.getValueAt(indx, 0).toString();
+		try {
+			if (files.get(clickedFile).equals("dir")) 
+				executeCommand("rmdir \"" + clickedFile + "\"\n");
+			else
+				executeCommand("rm \"" + clickedFile + "\"\n");
+		} catch (MsfException ex) {
+			JOptionPane.showMessageDialog(null, ex);
+		}
+		getFiles();
+	}
+
+COM:deletes a selected file or directory from a table, using a command based on the type of file, and updates the table

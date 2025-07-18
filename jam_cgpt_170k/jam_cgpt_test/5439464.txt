@@ -1,0 +1,16 @@
+TDAT:     public InputStream getResourceAsStream(String aURI) {
+        try {
+            URL aURL = getResource(aURI);
+            if (aURL == null) {
+                return null;
+            }
+            // return the cached version (rik)
+            return service.getFileCache().getFileProxy(aURL).getInputStream();
+        }
+        catch (Throwable t) {
+            // ignore
+        }
+        return null;
+    }
+
+COM:returns an InputStream for the resource specified by the given URI

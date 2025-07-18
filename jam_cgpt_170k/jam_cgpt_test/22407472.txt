@@ -1,0 +1,14 @@
+TDAT:     public int getIndexOfChild(Object parent, Object child) {
+        final NodeList children = project.getChildNodes();
+
+        for (int i = 0; i < children.getLength(); i++) {
+            final Node node = children.item(i);
+            if (node.toString().equals(child.toString())) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+COM:returns the index of a child node within a list, given its parent and child objects

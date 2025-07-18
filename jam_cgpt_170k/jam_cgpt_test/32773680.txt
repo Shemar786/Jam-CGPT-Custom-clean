@@ -1,0 +1,15 @@
+TDAT:     public void threadUpdated(SefirsThread thread) {
+        boolean removed = false;
+        synchronized(threads) {
+            if(threads.remove(thread)) {
+                if(thread.isAlive())
+                    threads.add(thread);
+                /* else, the thread died during this iteration */
+                removed = true;
+            }
+        }
+        if(removed)
+            notifyListeners(new ThreadStatusUpdatedEvent(thread));
+    }
+
+COM:updates the status of a thread and notifies listeners if the thread is removed

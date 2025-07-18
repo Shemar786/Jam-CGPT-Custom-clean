@@ -1,0 +1,19 @@
+TDAT:   protected String findPattern(String userPattern) {
+    
+    if (userPattern != null && userPattern.length() > 0)
+      return userPattern;
+      
+    Iterator it = patterns.iterator();
+
+    while (it.hasNext()) {
+      Pattern p = (Pattern) it.next();
+
+      if (locale.getLanguage().equals(p.getLanguage())) {
+        return p.getPattern();
+      }
+    }
+
+    return this.getPattern();
+  }
+
+COM:returns a pattern string based on user input, matching the language of the pattern if possible

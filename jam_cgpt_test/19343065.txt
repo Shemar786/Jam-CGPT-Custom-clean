@@ -1,0 +1,14 @@
+TDAT:   public void setDescription(String val) {
+
+      if ((val == null || "".equals(val))
+      && (description == null || "".equals(description))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(description)) || (updateStatus == NULL_INT_VALUE)) {
+           description = val;
+           updateStatus = UPDATED;
+      }
+  }
+
+COM:sets the description of an object if the input string is not empty and has not already been set, and marks the object as updated

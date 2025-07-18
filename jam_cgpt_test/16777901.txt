@@ -1,0 +1,7 @@
+TDAT:    public Mask or(Mask mask) {
+      if (mask == null || mask.getSize() != this.values.length) throw new RuntimeException(this.sizeMismatch);
+      for (int i = 0; i < this.values.length; ++i) this.values[i] |= mask.values[i];
+      return this;
+   }
+
+COM:performs a bitwise OR operation between two Mask objects and updates the values of the current Mask object

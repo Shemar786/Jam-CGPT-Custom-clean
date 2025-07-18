@@ -1,0 +1,23 @@
+TDAT: 	public void defineOaiSetsForCollections(boolean runInBackground) throws Exception {
+		// Run in background (synchronization is handled in dependent methods):
+		if (runInBackground) {
+			new Thread(
+				new Runnable() {
+					public void run() {
+						try {
+							prtln("Creating OAI sets for each collection in the background...");
+							doDefineOaiSetsForCollections();
+							prtln("Finished creating OAI sets for each collection");
+						} catch (Exception e) {
+							prtlnErr("Error creating OAI sets: " + e);
+						}
+					}
+				}).start();
+		}
+		// Run in sequence:
+		else {
+			doDefineOaiSetsForCollections();
+		}
+	}
+
+COM:defines OAI sets for collections either in the background or in sequence, with synchronization handled in dependent methods

@@ -1,0 +1,9 @@
+TDAT:     public long getSize() throws org.xmldb.api.base.XMLDBException {
+        try {
+            return this.stub.getSize(this.resourceSet);
+        } catch (java.rmi.RemoteException e){
+            throw new org.xmldb.api.base.XMLDBException(org.xmldb.api.base.ErrorCodes.VENDOR_ERROR, e);
+        }
+    }
+
+COM:returns the size of a resource set and throws an XMLDBException if there is a remote exception

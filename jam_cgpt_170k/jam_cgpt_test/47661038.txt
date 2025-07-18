@@ -1,0 +1,17 @@
+TDAT: 	protected void addCodeAssociationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TransformationRule_codeAssociations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TransformationRule_codeAssociations_feature", "_UI_TransformationRule_type"),
+				 WorkspacePackage.Literals.TRANSFORMATION_RULE__CODE_ASSOCIATIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+COM:adds property descriptors for a code association feature in a transformation rule

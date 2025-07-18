@@ -1,0 +1,16 @@
+TDAT:     public Input findButton(String aButtonID) {
+    	Input theInput = null;
+    	
+        Vector theVector = findInputTypeButtons();
+        ListIterator theListIterator = theVector.listIterator();
+        while (theListIterator.hasNext()) {
+			Input theNextInput = (Input) theListIterator.next();
+			if(theNextInput.getID().equals(aButtonID)) {
+				theInput = theNextInput;
+				break;
+			}
+		}
+        return theInput;
+    }
+
+COM:searches for a button with a specific ID and returns the corresponding Input object

@@ -1,0 +1,17 @@
+TDAT: 	protected void addConstantsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MachineState_constants_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MachineState_constants_feature", "_UI_MachineState_type"),
+				 ExtcorePackage.Literals.MACHINE_STATE__CONSTANTS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor to an item property descriptors list for the constants feature of a MachineState object

@@ -1,0 +1,16 @@
+TDAT:     public void updateScanner(int p0, int p1) {
+      try {
+        if (!lexerValid) {
+          lexer.setRange(lexer.getScannerStart(p0), p1);
+          lexerValid = true;
+        }
+        while (lexer.getScanPosition() <= p0) {
+          lexer.scan();
+        }
+      }
+      catch (Throwable e) {
+        e.printStackTrace();
+      }
+    }
+
+COM:updates the scanner based on two integer parameters and uses a try-catch block to handle any errors that occur during the process

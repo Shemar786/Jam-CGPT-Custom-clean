@@ -1,0 +1,13 @@
+TDAT: 	public void testNextSiblingInexistent() throws Exception {
+		final NamedElement ne = getNamedElement(root, "foo");
+		try {
+			ne.getNextSibling();
+			fail("should have raised an exception");
+		} catch (RodinDBException e) {
+			IRodinDBStatus st = e.getRodinDBStatus();
+			assertTrue(st.isDoesNotExist());
+			assertEquals(Arrays.asList(ne), Arrays.asList(st.getElements()));
+		}
+	}
+
+COM:tests for the existence of the next sibling of a NamedElement and throws an exception if it does not exist

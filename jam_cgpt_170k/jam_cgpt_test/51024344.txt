@@ -1,0 +1,16 @@
+TDAT: 	private TreeSelectionListener getTreeListener() {
+		if (tsl == null) {
+			tsl = new TreeSelectionListener() {
+				public void valueChanged(TreeSelectionEvent e) {
+					JTree tree = (JTree)e.getSource();
+					TreePath path = tree.getSelectionPath();
+					DefaultMutableTreeNode node = (DefaultMutableTreeNode)path.getLastPathComponent();
+					ConceptClass cc = (ConceptClass) node.getUserObject();
+					profileList.setFocus(cc);
+				}
+			};
+		}
+		return tsl;
+	}
+
+COM:returns a TreeSelectionListener that listens for changes in the selected node of a JTree and focuses on a ConceptClass in a profile list

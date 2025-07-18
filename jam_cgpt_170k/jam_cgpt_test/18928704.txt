@@ -1,0 +1,8 @@
+TDAT:   public String getString(String key) throws MissingResourceException {
+    String s = provider.getString(key);
+    if (s == null)
+      throw new MissingResourceException("missing resource for " + key, this.getClass().getName(), key);
+    return s.trim();
+  }
+
+COM:returns a trimmed string value for a given key, throws a MissingResourceException if the key is not found in the resource provider

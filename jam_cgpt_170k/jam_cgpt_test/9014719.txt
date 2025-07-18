@@ -1,0 +1,7 @@
+TDAT: 	public boolean isValued() {
+		return ((null != super.getValue()) // an explicit value provided
+		// or it is coming from a page and has a non-empty value
+		|| ((null != mPage) && ((0 <= mValueStart) && (0 <= mValueEnd)) && (mValueStart != mValueEnd)));
+	}
+
+COM:checks if a value is provided explicitly or coming from a page with a non-empty value

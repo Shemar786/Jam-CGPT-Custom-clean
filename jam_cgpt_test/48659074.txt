@@ -1,0 +1,22 @@
+TDAT: 	public void activateAccount(long id, String emailToken) throws Exception {
+		AccountManager am = new AccountManager();
+		Account acct = null;
+		acct = am.getAccount(id);
+		if (acct == null) {
+			am.closeSession();
+			throw new ILException(ILException.UNKNOWN_ACCOUNT);
+		}
+		String stoken = acct.getEmailToken();
+		if (!stoken.equalsIgnoreCase(emailToken)) {
+			am.closeSession();
+			throw new ILException(ILException.BAD_TOKEN);
+		}
+		// activate
+		acct.setStatus(Account.STATUS_ACTIVE);
+		am.saveOrUpdateAccount(acct);
+		// send them their security token
+	//	emailSecurityToken(acct);
+		am.closeSession();
+	}
+
+COM:activates an account by checking the validity of the email token and updating the account status to active

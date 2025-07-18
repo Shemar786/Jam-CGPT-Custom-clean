@@ -1,0 +1,9 @@
+TDAT: 	private void saveSetting(CustomProperties prop) {
+		prop.setProperty("retromarathon.gametype", gametype);
+		prop.setProperty("retromarathon.startlevel", startlevel);
+		prop.setProperty("retromarathon.startheight", startheight);
+		prop.setProperty("retromarathon.big", big);
+		prop.setProperty("retromarathon.version", version);
+	}
+
+COM:saves custom properties for a retro marathon game

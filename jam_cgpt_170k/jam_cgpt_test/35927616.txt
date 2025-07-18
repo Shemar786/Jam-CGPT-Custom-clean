@@ -1,0 +1,21 @@
+TDAT: 	 private void setKeyWordInputFilter() {
+	    	keyWordInputFilter = new InputFilter() {
+				
+				@Override
+				public CharSequence filter(CharSequence source, int start, int end,
+						Spanned dest, int dstart, int dend) {
+					for(String s : keyWordList)
+					{
+						if(s.equals(source.toString()))
+						{						
+							SpannableString sp = new SpannableString(source);
+							sp.setSpan(new ForegroundColorSpan(Color.RED), 0, sp.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);						
+							return sp;
+						}
+					}
+					return source;
+				}
+			};
+	}
+
+COM:sets an input filter for a keyword list, highlighting any matching input with red text color

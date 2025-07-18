@@ -1,0 +1,19 @@
+TDAT: 	public boolean createIndex(String dataType, String fieldSpec) {
+		String table = getDynamicTableName(DynamicTable.AtomInfoDense, dataType);
+		
+		String indexName = "index_" + fieldSpec.replaceAll("[^A-Za-z0-9]","");
+		String s = "CREATE INDEX " + indexName + " ON " + table 
+			+ " (" + fieldSpec + ")";
+		
+		try {
+			Statement stmt = con.createStatement();
+			boolean ret = stmt.execute(s);
+			stmt.close();
+			return true;
+		} catch (SQLException e) {
+			System.err.println(e.toString());
+			return false;
+		}
+	}
+
+COM:creates an index on a specified field in a specified data type's table and returns true if successful and false otherwise

@@ -1,0 +1,13 @@
+TDAT: 		public void setLomvalue(String aString) {
+			LOMVocabularyElement theElement = itsLOMVocabulary
+					.getVocabularyElement(aString);
+			// if (theElement.getName().equals("")) System.out.println(aString
+			// +" is not regular vocabulary for "+itsLOMAttribute.getName());
+			// else
+			setSelectedItem(theElement);
+			if (SuggestionCloudTest.ISACTIVE) {
+				SuggestionCloudTest.getInstance().endDragEvent(itsLOMAttribute);
+			}
+		}
+
+COM:sets the selected item based on the input string and, if SuggestionCloudTest is active, triggers an end drag event for the attribute

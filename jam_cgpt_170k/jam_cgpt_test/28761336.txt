@@ -1,0 +1,14 @@
+TDAT:   public void displayToc() {
+    if (!tocIsDisplayed) {
+      updateTreeToc();
+      updateTreeToc2();
+      selectTreeToc2();
+      tocIsDisplayed = true;
+    }
+    splitPane.setDividerLocation(200);
+    splitPane.setDividerSize(2);
+    splitPane.setResizeWeight(0.0);
+    textPane.setEditableInternal(false);
+  }
+
+COM:displays a table of contents and sets the divider, size, and weight of a split pane while also making the text pane non-editable

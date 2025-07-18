@@ -1,0 +1,13 @@
+TDAT:     protected Integer sprintTotalPoints(ISprint sprint) {
+        Integer tmp = 0;
+        IStory s;
+        for (Object o : sprint.getProductBacklogItems()) {
+            s = (IStory) o;
+            if (s.getEstimatedPoints() != IStory.SPRINT_POINT && s.getState() > IStory.STATE_SUBMITED) {
+                tmp += s.getEstimatedPoints();
+            }
+        }
+        return tmp;
+    }
+
+COM:calculates the total points of a sprint by iterating through the product backlog items and summing up the estimated points of stories that are not in the state of "submitted" and not equal to "SPRINT_POINT"

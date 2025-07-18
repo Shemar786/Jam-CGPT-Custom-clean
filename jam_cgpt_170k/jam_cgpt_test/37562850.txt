@@ -1,0 +1,14 @@
+TDAT: public void remove (int index) {
+	checkWidget ();
+	int count = getItemCount();
+	if (!(0 <= index && index < count)) error (SWT.ERROR_INVALID_RANGE);
+  TableItem tableItem = (TableItem)itemList.get(index);
+  if(tableItem != null) {
+    tableItem.dispose();
+  } else {
+    itemList.remove(index);
+    ((CTable)handle).removeItem(index);
+  }
+}
+
+COM:removes an item from a table at the specified index

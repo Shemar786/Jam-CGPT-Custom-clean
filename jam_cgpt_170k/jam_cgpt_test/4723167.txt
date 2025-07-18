@@ -1,0 +1,5 @@
+TDAT: 	public void setPixels(int x, int y, int w, int h, ColorModel model, int[] pixels, int offset, int scansize) {
+		image.setRGB(x, y, w, h, pixels, offset, scansize);
+	}
+
+COM:sets the pixels of an image using the provided parameters

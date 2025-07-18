@@ -1,0 +1,13 @@
+TDAT:     public void filterMappings(Collection<PublicationMapping> pubMaps) {
+
+        Iterator<PublicationMapping> pubIt = pubMaps.iterator();
+        while (pubIt.hasNext()) {
+            PublicationMapping pubMap = pubIt.next();
+            filterMappings(pubMap);
+        }
+
+        System.out.println("Filtered text mining relations: "
+                + getNumOfFilteredRelations());
+    }
+
+COM:filters a collection of PublicationMappings and prints the number of filtered text mining relations

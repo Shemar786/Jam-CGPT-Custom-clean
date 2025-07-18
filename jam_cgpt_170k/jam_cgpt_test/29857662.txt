@@ -1,0 +1,17 @@
+TDAT:   public Component getDisplay() {
+    Component           value = null;
+
+    if (hasListener) {
+      Object[]          listeners = fieldListener.getListenerList();
+
+      for (int i = listeners.length-2; i>=0 && value == null; i-=2) {
+        if (listeners[i]==FieldListener.class) {
+          value = ((FieldListener)listeners[i+1]).getCurrentDisplay();
+        }
+      }
+    }
+
+    return value;
+  }
+
+COM:returns a Component object which represents the current display, retrieved through FieldListener objects if present

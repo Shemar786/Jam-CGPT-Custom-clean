@@ -1,0 +1,8 @@
+TDAT: 	public GetQueueConfigParamsResponse getQueueConfigParams(GetQueueConfigParams request) throws RemoteException, QueuingFaultType {
+		QueuingResource resource = this.getResource();
+		GetQueueConfigParamsResponse response = new GetQueueConfigParamsResponse(resource.getConfig());
+		logger.debug("ready to invoke test " + resource.getConfig().getCommunityGisHandle());
+		return response;
+	}
+
+COM:returns the configuration parameters for a queuing resource, using a specified request object

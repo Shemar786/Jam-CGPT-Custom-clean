@@ -1,0 +1,10 @@
+TDAT: 	private void calculateParameters (Collection<IEvent> events, HashMap<IEvent, Collection<IParameter>> parameterMap) throws RodinDBException {
+		for (IEvent event : events) {
+			Collection<IParameter> parameters = new ArrayList<IParameter>();
+			for (IParameter parameter : event.getParameters())
+				parameters.add(parameter);
+			parameterMap.put(event, parameters);
+		}
+	}
+
+COM:calculates parameters for a given collection of events and stores them in a HashMap

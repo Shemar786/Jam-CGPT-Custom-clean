@@ -1,0 +1,16 @@
+TDAT:     public void testGetStopSpacing() {
+        assertEquals(testPosition.getStopSeparation(), 0);
+
+        int newValue = 9872;
+
+        testPosition.setStopSeparation(newValue);
+        assertEquals(testPosition.getStopSeparation(), newValue);
+
+        int invalidValue = -1;
+
+        testPosition.setStopSeparation(invalidValue);
+        assertEquals(testPosition.getStopSeparation(), 0);
+
+    }
+
+COM:tests and sets the stop separation value for a position object, checking for invalid input

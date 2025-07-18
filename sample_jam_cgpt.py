@@ -1,146 +1,131 @@
+#!/usr/bin/env python3
 """
-Sample from a trained model
+sample_jam_cgpt.py
+==================
+
+• SINGLE‑PROMPT MODE
+    python3 sample_jam_cgpt.py config/finetune_small_sql8k.py \
+        --out_dir out-sql8k-scratch \
+        --outfilename ckpt_sql8k_scratch.pt \
+        --prompt "Show the status …"
+  → prints ONLY the generated SQL.
+
+• BATCH MODE (omit --prompt)
+  Acts like the original script: samples N rows from a CSV and writes
+  jam_cgpt_predictions/<prediction_filename>.
 """
-import os
-import pickle
+
+import os, csv, argparse, torch, tiktoken
 from contextlib import nullcontext
-import torch
-import tiktoken
 from model import GPTConfig, GPT
-import re
-import tqdm
 
-# -----------------------------------------------------------------------------
-init_from = 'resume' # either 'resume' (from an out_dir) or a gpt2 variant (e.g. 'gpt2-xl')
-out_dir = 'out' # ignored if init_from is not 'resume'
-start = "\n" # or "<|endoftext|>" or etc. Can also specify a file, use as: "FILE:prompt.txt"
-num_samples = 1 # number of samples to draw
-max_new_tokens = 50 # number of tokens generated in each sample
-temperature = 0.001 # 1.0 = no change, < 1.0 = less random, > 1.0 = more random, in predictions
-top_k = 200 # retain only the top_k most likely tokens, clamp others to have 0 probability
-seed = 1337
-device = 'cuda' # examples: 'cpu', 'cuda', 'cuda:0', 'cuda:1', etc.
-dtype = 'bfloat16' # 'float32' or 'bfloat16' or 'float16'
-outfilename = 'ckpt_pretrain.pt'
-compile = False # use PyTorch 2.0 to compile the model to be faster
-prediction_filename = f'predict_{out_dir}.txt'
-exec(open('configurator.py').read()) # overrides from command line or config file
-# -----------------------------------------------------------------------------
+# ── Argument parsing ───────────────────────────────────────────
+parser = argparse.ArgumentParser(description="Sample Jam‑CGPT model")
+parser.add_argument("config_file", help="Path to the model‑config Python file")
 
-torch.manual_seed(seed)
-torch.cuda.manual_seed(seed)
-torch.backends.cuda.matmul.allow_tf32 = True # allow tf32 on matmul
-torch.backends.cudnn.allow_tf32 = True # allow tf32 on cudnn
-device_type = 'cuda' if 'cuda' in device else 'cpu' # for later use in torch.autocast
-ptdtype = {'float32': torch.float32, 'bfloat16': torch.bfloat16, 'float16': torch.float16}[dtype]
-ctx = nullcontext() if device_type == 'cpu' else torch.amp.autocast(device_type=device_type, dtype=ptdtype)
+# Shared flags
+parser.add_argument("--out_dir",     required=True)
+parser.add_argument("--outfilename", required=True)
+parser.add_argument("--device", default="cuda")
+parser.add_argument("--dtype",  choices=["float32","bfloat16","float16"],
+                    default="float16")
 
+# Single‑prompt flag
+parser.add_argument("--prompt",
+                    help="ONE English question → prints SQL and exits")
 
-if(not os.path.exists('jam_cgpt_predictions')):
-    os.mkdir('jam_cgpt_predictions')
+# Batch‑mode‑only flags
+parser.add_argument("--batch_file")
+parser.add_argument("--prediction_filename")
+parser.add_argument("--num_samples", type=int, default=1)
+parser.add_argument("--max_new_tokens", type=int, default=64)
+parser.add_argument("--temperature",   type=float, default=0.2)
+parser.add_argument("--top_k",         type=int,   default=200)
+args = parser.parse_args()
 
-# model
-if init_from == 'resume':
-    # init from a model saved in a specific directory
-    ckpt_path = os.path.join(out_dir, outfilename)
-    checkpoint = torch.load(ckpt_path, map_location=device)
-    gptconf = GPTConfig(**checkpoint['model_args'])
-    model = GPT(gptconf)
-    state_dict = checkpoint['model']
-    unwanted_prefix = '_orig_mod.'
-    for k,v in list(state_dict.items()):
-        if k.startswith(unwanted_prefix):
-            state_dict[k[len(unwanted_prefix):]] = state_dict.pop(k)
-    model.load_state_dict(state_dict)
-elif init_from.startswith('gpt2'):
-    # init from a given GPT-2 model
-    model = GPT.from_pretrained(init_from, dict(dropout=0.0))
+# ── Sanity check for batch mode ───────────────────────────────
+if not args.prompt:
+    missing = [x for x in ("batch_file", "prediction_filename")
+               if getattr(args, x) is None]
+    if missing:
+        parser.error("--" + " and --".join(missing) +
+                     " required when --prompt is not used")
 
+# ── Load finetune config (exec pattern) ───────────────────────
+cfg = {}
+with open(args.config_file, "r") as f:
+    exec(f.read(), cfg)
+
+# ── Load checkpoint & build model ─────────────────────────────
+ckpt_path  = os.path.join(args.out_dir, args.outfilename)
+ckpt       = torch.load(ckpt_path, map_location=args.device)
+model_cfg  = GPTConfig(**ckpt["model_args"])
+model      = GPT(model_cfg)
+
+# strip '_orig_mod.' prefixes
+state = {k[len("_orig_mod."):] if k.startswith("_orig_mod.") else k: v
+         for k, v in ckpt.get("model", ckpt).items()}
+model.load_state_dict(state, strict=True)
+
+device_type = "cuda" if args.device.startswith("cuda") else "cpu"
+model.to(args.device)
 model.eval()
-model.to(device)
-if compile:
-    model = torch.compile(model) # requires PyTorch 2.0 (optional)
+ctx = nullcontext() if device_type == "cpu" else torch.amp.autocast(
+        device_type=device_type, dtype=getattr(torch, args.dtype))
 
-# look for the meta pickle in case it is available in the dataset folder
-load_meta = False
-if init_from == 'resume' and 'config' in checkpoint and 'dataset' in checkpoint['config']: # older checkpoints might not have these...
-    meta_path = os.path.join('data', checkpoint['config']['dataset'], 'meta.pkl')
-    load_meta = os.path.exists(meta_path)
-if load_meta:
-    print(f"Loading meta from {meta_path}...")
-    with open(meta_path, 'rb') as f:
-        meta = pickle.load(f)
-    # TODO want to make this more general to arbitrary encoder/decoder schemes
-    stoi, itos = meta['stoi'], meta['itos']
-    encode = lambda s: [stoi[c] for c in s]
-    decode = lambda l: ''.join([itos[i] for i in l])
-else:
-    # ok let's assume gpt-2 encodings by default
-    print("No meta.pkl found, assuming GPT-2 encodings...")
-    enc = tiktoken.get_encoding("gpt2")
-    encode = lambda s: enc.encode(s, allowed_special={"<|endoftext|>"})
-    decode = lambda l: enc.decode(l)
+# ── Tokenizer helpers ─────────────────────────────────────────
+enc    = tiktoken.get_encoding("gpt2")
+encode = lambda s: enc.encode(s, allowed_special={"<|endoftext|>"})
+decode = lambda ids: enc.decode(ids)
 
-testdir = f'data/{dataset}/funcom_test/'
-arr = os.listdir(testdir)
-testfiles = []
-for file in arr:
-    if file.endswith('.txt'):
-        testfiles.append(testdir + file)
+def translate(question: str,
+              max_new: int = 64,
+              temp: float = 0.2,
+              top_k: int = 200) -> str:
+    prompt = f"ENG:\t{question}\nSQL:\t"
+    ids    = encode(prompt)
+    x      = torch.tensor([ids], dtype=torch.long, device=args.device)
 
-pf = open(f'jam_cgpt_predictions/{prediction_filename}', 'w')
+    with torch.no_grad(), ctx:
+        y = model.generate(x, max_new_tokens=max_new,
+                           temperature=temp, top_k=top_k)
 
-#c = 0
+    gen = y[0].tolist()[len(ids):]
+    if enc.eot_token in gen:
+        gen = gen[:gen.index(enc.eot_token)]
+    return decode(gen).strip()
 
-for testfile in tqdm.tqdm(testfiles):
-    fid = testfile.split('/')
-    fid = fid[-1]
-    fid = fid.split('.')
-    fid = int(fid[0])
+# ── SINGLE‑PROMPT MODE ────────────────────────────────────────
+if args.prompt:
+    sql = translate(args.prompt.strip(),
+                    max_new=args.max_new_tokens,
+                    temp=args.temperature,
+                    top_k=args.top_k)
 
-    #c += 1
-    #if c < 8435:
-    #    continue
+    # strip "SQL:" prefix and <|endoftext|> tail, if any
+    if "SQL:" in sql:
+        sql = sql.split("SQL:", 1)[-1].strip()
+    if "<|endoftext|>" in sql:
+        sql = sql.split("<|endoftext|>", 1)[0].strip()
 
-    # encode the beginning of the prompt
-    #if start.startswith('FILE:'):
-    #    with open(start[5:], 'r', encoding='utf-8') as f:
-    #        start = f.read()
-    with open(testfile, 'r') as f:
-        start = f.read()
+    print(sql)
+    raise SystemExit(0)
 
-    try:
-        start = start.replace('\n', '<NL>')
-        start = re.search('(TDAT:.*COM:)', start, re.MULTILINE)
-        start = start.group(0)
-        start = start.replace('<NL>', '\n')
-    except:
-        print(fid)
-        continue
+# ── BATCH MODE ────────────────────────────────────────────────
+with open(args.batch_file, newline='', encoding="utf-8") as f:
+    prompts = [row["text_query"] for row in csv.DictReader(f)]
+prompts = prompts[:args.num_samples]
 
-    #start = re.search('(TDAT:.*COM:)', start)
-    #start = start.group(0)
-    #print(start)
-    #quit()
+os.makedirs("jam_cgpt_predictions", exist_ok=True)
+out_path = os.path.join("jam_cgpt_predictions", args.prediction_filename)
 
-    start_ids = encode(start)
-    x = (torch.tensor(start_ids, dtype=torch.long, device=device)[None, ...])
+with open(out_path, "w", encoding="utf-8") as outf:
+    for q in prompts:
+        sql = translate(q,
+                        max_new=args.max_new_tokens,
+                        temp=args.temperature,
+                        top_k=args.top_k)
+        outf.write(f"{q}\t{sql}\n")
+        outf.flush()
 
-    # run generation
-    with torch.no_grad():
-        with ctx:
-            for k in range(num_samples):
-                try:
-                    y = model.generate(x, max_new_tokens, temperature=temperature, top_k=top_k)
-                    ret = decode(y[0].tolist())
-                    ret = ret.split('COM:')[1]
-                    ret = ret.split('<|endoftext|>')[0]
-                    pf.write(f'{fid}\t{ret}\n')
-                except:
-                    pf.write(f'{fid}\t<s> none </s>\n')
-
-                pf.flush()
-
-
-pf.close()
-
+print(f"\n✅ Predictions written to {out_path}")

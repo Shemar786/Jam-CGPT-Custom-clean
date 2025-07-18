@@ -1,0 +1,12 @@
+TDAT: 	public void resetPreviewCanvas() {
+		PCamera theCamera = itsPreviewCanvas.getCamera();
+		for (int i = 0; i < theCamera.getLayerCount(); i++) {
+			if (theCamera.getLayer(i) != itsPreviewLocalizatorLayer)
+				theCamera.removeLayer(i);
+		}
+		if (LessonMapper2.getInstance().getActiveProject() != null)
+			theCamera.addLayer(0, LessonMapper2.getInstance()
+					.getUpperActivity());
+	}
+
+COM:resets the preview canvas by removing layers from the camera and adding the upper activity layer if an active project exists

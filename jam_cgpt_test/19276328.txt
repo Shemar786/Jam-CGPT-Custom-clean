@@ -1,0 +1,9 @@
+TDAT:     public void flush() {
+
+        if (this.getDbId() == null)
+            ((org.pimslims.hibernate.WritableVersionImpl) this.get_Version()).save(this);
+        if (((org.pimslims.hibernate.WritableVersionImpl) this.get_Version()).isFlushSessionAfterCreate())
+            this.get_Version().getSession().flush();
+    }
+
+COM:flushes the session after creating and saving data if a condition is met

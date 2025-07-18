@@ -1,0 +1,14 @@
+TDAT: 	private boolean containsInterface(Interface interfac, Interface[] extendedInterfaces) {
+		boolean foundInterface = false;
+		
+		int numExtInterfaces = extendedInterfaces.length;
+		for(int i = 0; i < numExtInterfaces && !foundInterface; i++) {
+		  if(interfac.isEquivalentTo(extendedInterfaces[i]))
+		    foundInterface = true;
+		  else if(containsInterface(interfac, extendedInterfaces[i].getExtendedInterfaces()))
+			foundInterface = true;
+		}
+		return foundInterface;
+	  }
+
+COM:checks if an interface is contained within an array of extended interfaces, including recursively searching through each interface's extended interfaces

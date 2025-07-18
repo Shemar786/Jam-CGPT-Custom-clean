@@ -1,0 +1,14 @@
+TDAT: 	public void create(String text) {
+		this.clear();
+		this.computeNGrams(1, 5, text);
+		if (this.containsKey("_")) {
+			int blanksScore = this.remove("_");
+			this.put("_", blanksScore / 2);
+		}
+
+		entries = new TreeSet<Entry<String, Integer>>(
+				new NGramEntryComparator());
+		entries.addAll(this.entrySet());
+	}
+
+COM:creates n-grams from text, removes blank entries, sorts them in a TreeSet, and stores the resulting entries

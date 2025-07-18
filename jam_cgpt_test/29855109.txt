@@ -1,0 +1,9 @@
+TDAT:   public VKFieldColumns cloneToPos(int pos) {
+    VKFieldColumn[]	clone = new VKFieldColumn[columns.length];
+    for (int i = 0; i < columns.length; i++) {
+      clone[i] = columns[i].cloneToPos(pos);
+    }
+    return new VKFieldColumns(getTokenReference(), clone, indices, priority);
+  }
+
+COM:clones an array of VKFieldColumns to a specific position and returns a new VKFieldColumns object

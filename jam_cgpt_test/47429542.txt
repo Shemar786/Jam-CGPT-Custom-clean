@@ -1,0 +1,14 @@
+TDAT:     public boolean receiveFile(String path, InputStream in) {
+        boolean result = false;
+        try {
+            File file = new File(path);
+            ByteStream.toFile(in, file);
+            result = true;
+        } catch (java.lang.Exception exc) {
+            System.out.println(exc);
+            result = false;
+        }
+        return result;
+    }
+
+COM:receives a file from an InputStream, saves it to a specified path, and returns a boolean value indicating whether the operation was successful or not

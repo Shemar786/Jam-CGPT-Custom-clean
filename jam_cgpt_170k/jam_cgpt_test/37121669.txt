@@ -1,0 +1,11 @@
+TDAT:     public void setItemName(String itemName) {
+
+        if ((itemName == null) || (itemName == "")) {
+            throw new IllegalArgumentException("null or empty item name");
+        }
+
+        this.itemName = itemName;
+        this.textArea.setText("Remove the item?\n" + itemName);
+    }
+
+COM:sets the name of an item and updates a text area

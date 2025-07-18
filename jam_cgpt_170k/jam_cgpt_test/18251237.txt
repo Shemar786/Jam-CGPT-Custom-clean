@@ -1,0 +1,10 @@
+TDAT:     private String generateComponentsTable(Composite composite) throws SQLException, FileNotFoundException, IOException {
+        List<String> componentNames = new ArrayList<String>();
+        
+        for (Table component: composite.componentTables) {
+            componentNames.add(linkTo(component));
+        }
+        return generateHTMLTable("Components", null, componentNames, null);
+    }
+
+COM:generates an HTML table of components based on a composite input, including links to each component table

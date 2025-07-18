@@ -1,0 +1,5 @@
+TDAT: 	protected JsonRepresentation ecapsulateExceptionJson(ServiceException ex) {
+		return createJSonError(ex.getLocalizedMessage(), null, (ex.getHttpStatus() != null? ex.getHttpStatus().getName():Status.CLIENT_ERROR_BAD_REQUEST.getName()) );
+	}
+
+COM:returns a JSON representation of a Service Exception

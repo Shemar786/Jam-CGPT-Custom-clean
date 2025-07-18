@@ -1,0 +1,14 @@
+TDAT: 	public void addPages() {
+		matchingPage = new MatchingWizardPage(selection, openFiles, data);
+		addPage(matchingPage);
+		syntaxCheckingPage = new SyntaxCheckingWizardPage(matchingPage);
+		addPage(syntaxCheckingPage);
+		mergingPage = new MergingWizardPage(matchingPage, openFiles, data);
+		addPage(mergingPage);		
+		renamingPage = new RenamingWizardPage(matchingPage, mergingPage, data);
+		addPage(renamingPage);
+		incorporatingPage = new IncorporatingWizardPage(matchingPage, mergingPage, data);
+		addPage(incorporatingPage);
+	}
+
+COM:adds several wizard pages to the program

@@ -1,0 +1,12 @@
+TDAT:     private Method getSet1Method() throws NoSuchMethodException {
+        if (null != set1Method) {
+            return set1Method;
+        }
+        set1Method =
+            metaClass.getJavaClass().getMethod(
+                "set" + Character.toUpperCase(baseName.charAt(0)) + baseName.substring(1),
+                new Class[] { getOtherMetaClass().getJavaClass() });
+        return set1Method;
+    }
+
+COM:retrieves the "set1" method from a meta class and returns it, or throws a NoSuchMethodException if the method does not exist

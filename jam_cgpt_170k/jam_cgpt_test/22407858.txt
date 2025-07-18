@@ -1,0 +1,16 @@
+TDAT:     public void messageLogged(final BuildEvent event) {
+        if ((out != null) && detectedInput) {
+            detectedInput = false;
+
+            Message message =
+                    new Message(Protocol.INPUT_TASK, event.getMessage());
+
+            try {
+                send(message);
+            } catch (IOException ignore) {
+                System.err.println("could not send to AntRunner");
+            }
+        }
+    }
+
+COM:sends a message to AntRunner if there is input detected and it catches and ignores any IOException

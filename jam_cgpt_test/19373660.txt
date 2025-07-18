@@ -1,0 +1,11 @@
+TDAT:   public UseCaseDescriptionBlock createNextBlock() {
+  	UseCaseDescriptionBlock brother = (UseCaseDescriptionBlock)getBrotherBeforeMe();
+  	if (brother == NullUseCaseDescriptionBlock.getDefault()) {
+  		brother = ((UseCaseDescriptionBlock)getParent()).determineNodeBeforeFirst();
+  	}
+  	
+  	UseCaseDescriptionBlock newChild = brother.createNextBlock();
+  	return(newChild);
+  }
+
+COM:creates a new UseCaseDescriptionBlock after the current block

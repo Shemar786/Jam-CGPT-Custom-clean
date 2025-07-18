@@ -1,0 +1,14 @@
+TDAT:     public void testparseUTCDate() throws AssertionFailedException {
+        Log.debug("parseUTCDate");
+        System.out.println("\nTESTING parseUTCDate()");
+
+        String utc = this.utc;
+        Date expectedResultDate = dateobject;
+        Date resultDate = MailDateFormatter.parseUTCDate(utc);
+        String expectedResult = expectedResultDate.toString();
+        String result = resultDate.toString();
+
+        assertEquals(expectedResult, result);
+    }
+
+COM:tests the parseUTCDate function by comparing the expected result of parsing a UTC date string to the actual result

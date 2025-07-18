@@ -1,0 +1,12 @@
+TDAT:   protected void initializeIndexMap () {
+    super2modelIndexMap = new OpenIntIntHashMap( PrimeFinder.nextPrime(matrix.rows() ) );
+    Iterator nodes = nodesIterator();
+    int modelIndex = 0;
+    while ( nodes.hasNext() ) {
+      PGraphNode node = (PGraphNode)nodes.next();
+      super2modelIndexMap.put( node.getIndex(), modelIndex );
+      modelIndex++;
+    }
+  }
+
+COM:initializes an OpenIntIntHashMap and populates it with index and model information for PGraphNode objects

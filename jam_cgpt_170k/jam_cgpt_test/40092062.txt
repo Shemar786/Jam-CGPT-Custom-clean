@@ -1,0 +1,13 @@
+TDAT:   static public void assertDirectory(File tstvalue, String message) {
+  	boolean condition=false;
+  	try {
+  	condition=tstvalue.isDirectory();
+  	} catch(SecurityException e) {
+  	failSecurity(e,tstvalue,fileType(tstvalue),"Directory", message);
+  	}
+  	if(!condition) {
+  	failFile(tstvalue,fileType(tstvalue),"Directory", message);
+  	}
+  }
+
+COM:checks if a given file is a directory and throws an exception if it is not

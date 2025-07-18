@@ -1,0 +1,9 @@
+TDAT:     public void displayPopupMenu(MouseEvent e) {
+        if (e.isPopupTrigger() && this.mode == UserMode.Selecting) {
+            if (selection.size() > 0) {
+                popupMenu.show(this, e.getX(), e.getY());
+            }
+        }
+    }
+
+COM:displays a pop-up menu when triggered by a mouse event, but only if the user is currently in "selecting" mode and has made a selection

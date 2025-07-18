@@ -1,0 +1,12 @@
+TDAT:     public void changeBlockTypeFace(Block block, TypeFaceDescriptor descriptor) {
+        documentModel.getAccessLock();
+        
+        block.setLastModified(applicationClock.getApplicationTime());
+        block.setTypeface(descriptor);
+        documentModel.blockModified(block);
+        protocolController.sendBlockUpdate(block);
+        
+        documentModel.releaseAccessLock();
+    }
+
+COM:changes the typeface of a specified block in a document, updates its last modified time, notifies the model of the modification, sends an update over a protocol, and releases an access lock

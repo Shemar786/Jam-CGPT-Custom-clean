@@ -1,0 +1,15 @@
+TDAT: 	public int row(Cursor cursor) {
+		int ret;
+
+		ret = Sort.bsearch(this, cursor);
+		// handle line transition, the search returns the index if it matches
+		// exactly one of the line end positions, so we advance one line if
+		// it's equal to the offset at the row index, since that position is
+		// actually the beginning of the next line
+		if ((ret < mCount) && (cursor.getPosition() == mIndices[ret]))
+			ret++;
+
+		return (ret);
+	}
+
+COM:returns the row index of a cursor after performing a binary search and handling line transitions

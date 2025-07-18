@@ -1,0 +1,10 @@
+TDAT: 		public void onCreate(SQLiteDatabase db) {
+			db.execSQL("CREATE TABLE "
+					+ SensorSimulatorProvider.DATABASE_TABLE_SETTINGS + " ("
+					+ "_id INTEGER PRIMARY KEY," // Database Version 1
+					+ SensorSimulator.Settings.KEY + " VARCHAR," // V1
+					+ SensorSimulator.Settings.VALUE + " VARCHAR" // V1
+					+ ");");
+		}
+
+COM:creates a new table in a SQLite database with a primary key and two columns for key-value pairs

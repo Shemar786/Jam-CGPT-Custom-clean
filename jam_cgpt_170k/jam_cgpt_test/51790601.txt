@@ -1,0 +1,15 @@
+TDAT: 	private void createLocalCache(String localDirName) throws FlickrDesktopException {
+		File dir = new File(localDirName);
+		if (!dir.mkdir()) 
+			throwFlickrDesktopException("Could not create local cache");
+		try {
+			localDirName = dir.getCanonicalPath();
+		} catch (IOException e) {
+			// Should not happen as mkdir succeeded
+			e.printStackTrace();
+			throwFlickrDesktopException("IOException thrown in cache constructor");
+		}
+		createIconDirectory(localDirName);		
+	}
+
+COM:creates a local cache directory, and throws a custom exception if the creation of the directory fails

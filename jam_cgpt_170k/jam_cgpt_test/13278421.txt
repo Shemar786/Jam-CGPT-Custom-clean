@@ -1,0 +1,13 @@
+TDAT:     public TestGraphTypesContainer getTypeTestGraphs() {
+        Iterator                it     = testGraphs.iterator();
+        TestGraphTypesContainer result = new TestGraphTypesContainer(this);
+
+        while (it.hasNext()) {
+            Vector actualTestGraphData = (Vector) it.next();
+            result.addTestGraph(getTestGraph(actualTestGraphData, true));
+        }
+
+        return result;
+    }
+
+COM:returns a container of test graph types by iterating through a Vector of test graph data and adding the corresponding test graph to the container

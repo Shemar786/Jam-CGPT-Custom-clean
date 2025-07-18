@@ -1,0 +1,14 @@
+TDAT: 	public void selectTab( int tabNumber ) {
+
+		if( selectedTab >= 0 && selectedTab < tabBar.getWidgetCount() )
+			tabBar.getWidget( selectedTab ).removeStyleDependentName( "selected" );		
+		selectedTab = -1;
+		
+		if( tabNumber < 0 || tabNumber >= tabBar.getWidgetCount() )
+			return;
+
+		selectedTab = tabNumber;
+		tabBar.getWidget( selectedTab ).addStyleDependentName( "selected" );				
+	}
+
+COM:selects a tab in a user interface by removing the "selected" style from the previous tab and adding it to the new one

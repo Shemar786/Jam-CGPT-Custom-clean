@@ -1,0 +1,13 @@
+TDAT: 	public String getWMSData(int wmsID, String column) {
+		Cursor c = db.query(WMS_TABLE, new String[] { column }, ID + "="
+				+ wmsID, null, null, null, null);
+		String ret = null;
+
+		if (c.moveToFirst()) {
+			ret = c.getString(0);
+		}
+		c.close();
+		return ret;
+	}
+
+COM:retrieves data from a specified column in a database table based on a given WMS ID

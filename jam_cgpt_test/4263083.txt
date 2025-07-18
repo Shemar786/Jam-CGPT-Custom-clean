@@ -1,0 +1,11 @@
+TDAT:     private void initSpringLengths() {
+        for (int i = 0; i < numParticles - 1; i++) {
+            for (int j = i + 1; j < numParticles; j++) {
+                int k = getSpringIndex(i, j);
+                springList[k] = new Spring(particle[i], particle[j],
+                        pose.targetSpring[k], springStrength, springDamping);
+            }
+        }
+    }
+
+COM:initializes the lengths of springs between particles in a system

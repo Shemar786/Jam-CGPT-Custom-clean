@@ -1,0 +1,19 @@
+TDAT: 	public void startBlockTransmission(PieceMessage message) {
+		Bandwidth currentBW = up.getRateLimit();
+		Bandwidth newFairshare = currentBW.divideBy(transmissions.size()+1);
+		Time now = up.getPeer().getClock().getTime();
+		
+		// Update old transmissions
+		for(Transmission t : transmissions) {
+			t.updateTransmission(lastUpdate, now, fairshare, newFairshare);
+		}
+		
+		// Create new transmission
+		transmissions.add(new Transmission(this, message, now, newFairshare));
+		
+		// Update stored Bandwidth and Time
+		lastUpdate = now;
+		fairshare = newFairshare;
+	}
+
+COM:starts a new block transmission by updating the bandwidth and time for all current and new transmissions

@@ -1,0 +1,8 @@
+TDAT: 	public void testKRAN() {
+		testPredicates(new String[] { "ran({1|->2, 2|->3}) = {3,2}",
+				"3: ran({1|->2, 2|->3})", "1/: ran({1|->2, 2|->3})" },
+				new boolean[] { true, true, true });
+
+	}
+
+COM:tests predicates related to a given function

@@ -1,0 +1,16 @@
+TDAT: 	private void handleCancelMessage(CancelMessage message) {
+		FileSharingNeighborManager nm = state.getNeighborManager();
+		Finger remotePeer = nm.getNeighborByNetworkAddress(
+				message.getSourceAddress());
+
+		if (remotePeer != null) {
+			ConnectionState cs = nm.getConnectionState(remotePeer);
+			if (cs != null) {
+				BlockDescriptor block = new BlockDescriptor(
+						message.getChunkIndex(), message.getBlockIndex());
+				cs.removeRequest(block);
+			}
+		}
+	}
+
+COM:handles a cancel message from a remote peer by removing a requested block from the corresponding connection state

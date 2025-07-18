@@ -1,0 +1,14 @@
+TDAT: 	public String getInputFileName(String fname, String message) {
+		FileDialog locateInput = new FileDialog(this, message, FileDialog.LOAD);
+		// throw up open dialog
+		locateInput.setSize(450, 300);
+		locateInput.setFile(fname);
+		locateInput.setDirectory(control.getCurrentPath());
+		locateInput.setVisible(true);
+		String inputFileName = locateInput.getFile();
+		String inputPath = locateInput.getDirectory();
+		control.setCurrentPath(inputPath);
+		return inputFileName;
+	}
+
+COM:displays a file dialog to locate and retrieve the user's selected input file name and path

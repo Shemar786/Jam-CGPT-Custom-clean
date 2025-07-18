@@ -1,0 +1,10 @@
+TDAT: 	public void testMarkerAttrLocInexistent() throws Exception {
+		IRodinFile rodinFile = createRodinFile("P/x.test");
+		RodinTestRoot root = (RodinTestRoot) rodinFile.getRoot();
+		IInternalElement ne = createNEPositive(root, "ne1", null);
+		rodinFile.save(null, false);
+		createMarkerNegative(ATTRIBUTE_DOES_NOT_EXIST, ne, fString, 0, 3,
+				TestProblem.err0);
+	}
+
+COM:creates a negative marker for a nonexistent attribute in a Rodin file

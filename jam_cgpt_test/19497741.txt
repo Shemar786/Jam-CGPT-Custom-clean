@@ -1,0 +1,16 @@
+TDAT: 	public void testDelta_15_Machine() throws Exception {
+		final IMachineRoot mac = createMachine("mac");
+		final IPORoot po = mac.getPORoot();
+		
+		addInvariants(mac, makeSList("I"), makeSList("1∈ℤ"), false);
+		saveRodinFileOf(mac);
+
+		runBuilder();
+
+		addVariant(mac, "1");
+		saveRodinFileOf(mac);
+
+		runBuilderNotChanged(po);
+	}
+
+COM:creates a machine with an invariant and a variant, saves it to a Rodin file, and runs a builder on it

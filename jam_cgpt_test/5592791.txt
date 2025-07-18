@@ -1,0 +1,15 @@
+TDAT:   public int read() throws IOException {
+
+    // check if the segment index is bigger than the total count.
+    // if so, load a new segment.
+    if (index >= segment.offset + segment.count) {
+      if (docPos >= p1) {
+        // no more data
+        return -1;
+      }
+      loadSegment();
+    }
+    return segment.array[index++];
+  } // end read
+
+COM:reads and returns the next byte of data from a segment, while also checking if a new segment needs to be loaded

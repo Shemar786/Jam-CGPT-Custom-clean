@@ -1,0 +1,15 @@
+TDAT:     public void parse() throws BuildfileParsingException {
+        final String file = buildfile.getFullName();
+        parser = BuildfileParserFactory.getBuildfileParser();
+
+        try {
+            parser.parse(file);
+        } catch (SAXParseException se) {
+            throw new BuildfileParsingException(file, se, se.getLineNumber(),
+                                                se.getColumnNumber());
+        } catch (Exception e) {
+            throw new BuildfileParsingException(file, e);
+        }
+    }
+
+COM:parses a build file using a parser and throws a BuildfileParsingException if the parsing fails

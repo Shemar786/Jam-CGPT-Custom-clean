@@ -1,0 +1,13 @@
+TDAT: 	private String formatWithWildcard(String value, String prefix, String suffix) {
+		if ((prefix != null) && (suffix != null)) {
+			return prefix + value + suffix;
+		} else if ((prefix != null)) {
+			return prefix + value;
+		} else if ((suffix != null)) {
+			return value + suffix;
+		} else {
+			return value;
+		}
+	}
+
+COM:takes a string value and formats it by adding a prefix and/or suffix with a wildcard option

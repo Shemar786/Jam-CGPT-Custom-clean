@@ -1,0 +1,16 @@
+TDAT:   public void repair() {
+    fleetShoots.clear();
+    Map ships = retrieveShips();
+    try {
+      Iterator items = ships.values().iterator();
+      while (items.hasNext()) {
+        Ship ship = (Ship) items.next();
+        ship.repair();
+      }
+    }
+    finally {
+      releaseShips(ships);
+    }
+  }
+
+COM:is used to repair all the ships in the fleet by retrieving them, iterating over all the ships and calling the "repair" method, and then releasing the ships

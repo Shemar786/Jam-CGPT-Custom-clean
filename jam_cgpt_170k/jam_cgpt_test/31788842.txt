@@ -1,0 +1,10 @@
+TDAT:     protected String getErrors() {
+        StringBuffer buff = new StringBuffer();
+        int size = errorList.size();
+        for (int index = 0; index < size && index < 100; index++) {
+            buff.append((String) errorList.get(index) + "\n");
+        }
+        return buff.toString();
+    }
+
+COM:retrieves and concatenates the first 100 errors in an error list and returns them as a string

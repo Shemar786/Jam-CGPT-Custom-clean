@@ -1,0 +1,11 @@
+TDAT: 	public int getCurrentMaxGroupId() throws Exception {
+		int group_id = 0;
+		String query_clause = "SELECT MAX(group_id) AS max_group_id FROM "+DataDefinitions.getRelTagsTableName();
+		ResultSet res_max_group_id = query(query_clause);
+		res_max_group_id.next();	
+		group_id = res_max_group_id.getInt("max_group_id");
+		DataDefinitions.logger.addLogLine("Found maximum group_id = "+group_id,2);
+		return group_id;
+	}	
+
+COM:retrieves the maximum group ID from a database table and returns it as an integer, while also logging the result

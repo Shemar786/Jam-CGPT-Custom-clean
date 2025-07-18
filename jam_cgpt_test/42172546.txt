@@ -1,0 +1,17 @@
+TDAT:   protected void addLastUpdatedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ServerResource_lastUpdated_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServerResource_lastUpdated_feature", "_UI_ServerResource_type"),
+				 ConfigPackage.Literals.SERVER_RESOURCE__LAST_UPDATED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+COM:adds a property descriptor for the "last updated" feature of a server resource object

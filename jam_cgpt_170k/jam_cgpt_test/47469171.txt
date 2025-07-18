@@ -1,0 +1,13 @@
+TDAT: 	public void removeAllSelectionChangedListeners() {
+		// Remove the tree listener added by our parent for our parent:
+		// org.eclipse.ui.views.contentoutline.ContentOutlinePage
+		if (isViewerDefined()) {
+			viewer.removeSelectionChangedListener(this);
+		}
+		// Remove all current listeners
+		for (int i = 0; i < fListenerList.size(); i++) {
+			super.removeSelectionChangedListener((ISelectionChangedListener) fListenerList.get(i));
+		}
+	}
+
+COM:removes all selection changed listeners from a viewer object and its parent

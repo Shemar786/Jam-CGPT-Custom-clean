@@ -1,0 +1,17 @@
+TDAT:     public Mib load(String name) throws IOException, MibLoaderException {
+        MibSource  src;
+        Mib        mib;
+
+        mib = getMib(name);
+        if (mib == null) {
+            src = locate(name);
+            if (src == null) {
+                throw new FileNotFoundException("couldn't locate MIB: '" +
+                                                name + "'");
+            }
+            mib = load(src);
+        }
+        return mib;
+    }
+
+COM:loads a MIB file by name, checks if it already exists, and if not, attempts to locate and load the file

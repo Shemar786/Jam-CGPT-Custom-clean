@@ -1,0 +1,11 @@
+TDAT:     public void testgetPRN() {
+        System.out.println("getPRN");
+        org.gps.types.GpsSatellite instance = new org.gps.types.GpsSatellite();
+        java.lang.String expectedResult = null;
+        java.lang.String result = instance.getPRN();
+        assertEquals(expectedResult, result);
+        
+    
+    }
+
+COM:tests the "getPRN" method of the GpsSatellite class and uses an assertion to check if the expected and actual results match

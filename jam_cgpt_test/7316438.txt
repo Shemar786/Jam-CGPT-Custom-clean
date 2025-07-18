@@ -1,0 +1,14 @@
+TDAT: 	public String getDisplayName(String fieldName, int uppercase, int plural) {
+		String displayName = "[INVALID FIELD NAME]";
+		if (plural == PLURAL_FORM) {
+			displayName = pluralNames.get(fieldName);
+		} else {
+			displayName = singularNames.get(fieldName);
+		}
+		if (uppercase == UPPERCASE_FIRST_LETTER) {
+			displayName = StringUtils.capitalize(displayName);
+		}
+		return displayName;
+	}
+
+COM:returns the display name of a field based on its name, whether it should be capitalized, and whether it is in plural or singular form

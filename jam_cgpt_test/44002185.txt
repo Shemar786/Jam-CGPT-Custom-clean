@@ -1,0 +1,11 @@
+TDAT:     public XmlBuilder withAttribute(final String name, final Object value) {
+        if (!tagIsPendingTermination) {
+            throw new XmlZenException("Can't add attribute now, " +
+                    "call openTag() first!");
+        }
+        body.append(' ').append(name).append("=\"")
+            .append(value).append('"');
+        return this;
+    }
+
+COM:adds an attribute to an XML element in an XmlBuilder object, throwing an exception if the element has not been opened yet
